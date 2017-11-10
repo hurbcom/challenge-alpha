@@ -1,4 +1,4 @@
-# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="FrontEndBR" width="24" /> Desafio α
+# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Desafio α
 
 Crie um aplicativo para dispositivo móvel (**Objective-C**, **Swift**, **Kotlin**, **React Native**) que consuma o JSON exporto pela API de hotéis e o exiba usando uma _table view_. Você pode usar bibliotecas de terceiros para criar sua aplicação.
 
@@ -213,6 +213,14 @@ O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Jane
   - Deve estar ordena descrentemente pela quantidade de estrelas.
 - Ter testes para o código criado
 
+
+## Critério de avaliação
+
+- Organização do código
+- Legibilidade do código (incluindo comentários)
+- Histórico de commits (estrutura e qualidade)
+- Cobertura de testes
+
 ## Dúvidas
 
 Quaisquer dúvidas que você venha a ter, consulte as [/issues] para ver se alguém já não a fez e caso você não ache sua resposta, abra você mesmo uma nova issue!
@@ -244,9 +252,9 @@ Boa sorte e boa viagem! ;)
 <table>
 <tr><td>Pacote Rio de Janeiro: Carnaval 2018</td></tr>
 <tr><td>O pacote&nbsp;inclui: &nbsp;
-    
+
     Aéreo: Passagem aérea de ida e volta de São Paulo para Rio de Janeiro.
-    
+
     Hospedagem: no Rio de Janeiro no Rios Presidente Hotel, Copacabana Mar Hotel, Augusto`s Copacabana Hotel ou similar (com café da manhã</td></tr>
 </table>
 </td>
