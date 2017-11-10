@@ -216,15 +216,15 @@ O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Jane
 
 ## Critério de avaliação
 
-- Organização do código
-- Clareza: O README explica de forma resumida qual é o problema e como pode rodar a aplicação?
-- Acertividade: A aplicação está fazendo o que é esperado? Se tem algo faltando, o README explica o porquê?
-- Legibilidade do código (incluindo comentários)
-- Segurança: Existe alguma vulnerabilidade clara?
-- Histórico de commits (estrutura e qualidade)
-- Cobertura de testes (Não esperamos cobertura completa)
-- UX: A interface é de fácil uso e auto-explicativa? A API é intuitiva?
-- Escolhas técnicas: A escolha das bibliotecas, banco de dados, arquitetura, etc, é a melhor escolha para a aplicação?
+- *Organização do código*: Separação de módulos, view e model, back-end e front-end
+- *Clareza*: O README explica de forma resumida qual é o problema e como pode rodar a aplicação?
+- *Acertividade*: A aplicação está fazendo o que é esperado? Se tem algo faltando, o README explica o porquê?
+- *Legibilidade do código* (incluindo comentários)
+- *Segurança*: Existe alguma vulnerabilidade clara?
+- *Cobertura de testes* (Não esperamos cobertura completa)
+- *Histórico de commits* (estrutura e qualidade)
+- *UX*: A interface é de fácil uso e auto-explicativa? A API é intuitiva?
+- *Escolhas técnicas*: A escolha das bibliotecas, banco de dados, arquitetura, etc, é a melhor escolha para a aplicação?
 
 ## Dúvidas
 
