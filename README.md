@@ -3,9 +3,8 @@
 Crie um aplicativo para dispositivo móvel (**Objective-C**, **Swift**, **Kotlin**, **React Native**) que consuma o JSON exporto pela API de hotéis e o exiba usando uma _table view_. Você pode usar bibliotecas de terceiros para criar sua aplicação.
 
 
-## URL da API
+## API
 A URL a seguir entrega a listagem de resultados para a cidade de Búzios como um documento JSON.
-
 
 O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Janeiro que você precisará exibir.
 
@@ -232,7 +231,7 @@ Boa sorte e boa viagem! ;)
 <table>
 <tr><td>Barra Flat</td></tr>
 <tr><td>Locação direto da Rio Apart Hoteis, não fazendo parte da administração da rede hoteleira que funciona no mesmo prédio. Troca de toalhas de 3 em 3 dias. Sem café da manhã incluso. Terá acesso normal a todas as áreas comuns do Prédio.</td></tr>
-<tr><td>Barra Flat 2</td></tr>
+<tr><td>Barra Flat 2</td>`</tr>
 <tr><td>Locação direto da Rio Apart Hoteis, não fazendo parte da administração da rede hoteleira que funciona no mesmo prédio. Troca de toalhas de 3 em 3 dias. Sem café da manhã incluso. Terá acesso normal a todas as áreas comuns do Prédio.</td></tr>
 </table>
 </td>
@@ -250,3 +249,7 @@ Boa sorte e boa viagem! ;)
 </tr>
 </table>
 
+
+<p align="center">
+  <img src="ca.jpg" alt="Challange accepted" />
+</p>
