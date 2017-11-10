@@ -243,7 +243,11 @@ Boa sorte e boa viagem! ;)
 <td>
 <table>
 <tr><td>Pacote Rio de Janeiro: Carnaval 2018</td></tr>
-<tr><td>O pacote&nbsp;inclui: &nbsp;\r\n\r\nA&eacute;reo: Passagem a&eacute;rea de ida e volta de S&atilde;o Paulo para Rio de Janeiro. &nbsp;\r\n\r\nHospedagem: no Rio de Janeiro&nbsp;no Rios Presidente Hotel, Copacabana Mar Hotel, Augusto`s Copacabana Hotel ou similar (com caf&eacute; da manh&atilde</td></tr>
+<tr><td>O pacote&nbsp;inclui: &nbsp;
+    
+    Aéreo: Passagem aérea de ida e volta de São Paulo para Rio de Janeiro.
+    
+    Hospedagem: no Rio de Janeiro no Rios Presidente Hotel, Copacabana Mar Hotel, Augusto`s Copacabana Hotel ou similar (com café da manhã</td></tr>
 </table>
 </td>
 </tr>
