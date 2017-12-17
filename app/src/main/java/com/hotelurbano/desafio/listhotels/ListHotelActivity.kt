@@ -14,7 +14,7 @@ import com.hotelurbano.desafio.listhotels.presenter.ListHotelPresenter
 import com.hotelurbano.desafio.listhotels.view.ListHotelView
 import com.hotelurbano.desafio.listhotels.viewholder.HotelSection
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
-import kotlinx.android.synthetic.main.activity_hotel_list.*
+import kotlinx.android.synthetic.main.activity_list_hotel.*
 import org.greenrobot.eventbus.Subscribe
 import org.jetbrains.anko.toast
 import javax.inject.Inject
@@ -30,7 +30,7 @@ class ListHotelActivity : BaseActivity(), ListHotelView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hotel_list)
+        setContentView(R.layout.activity_list_hotel)
 
         presenter.getHotels(city)
     }
