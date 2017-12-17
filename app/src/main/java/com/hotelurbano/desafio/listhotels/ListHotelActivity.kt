@@ -1,9 +1,11 @@
 package com.hotelurbano.desafio.listhotels
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.hotelurbano.desafio.R
 import com.hotelurbano.desafio.base.BaseActivity
+import com.hotelurbano.desafio.detailshotels.DetailsHotelActivity
 import com.hotelurbano.desafio.listhotels.di.DaggerListHotelActivityComponent
 import com.hotelurbano.desafio.listhotels.di.ListHotelActivityModule
 import com.hotelurbano.desafio.listhotels.filter.Criteria
@@ -14,9 +16,10 @@ import com.hotelurbano.desafio.listhotels.presenter.ListHotelPresenter
 import com.hotelurbano.desafio.listhotels.view.ListHotelView
 import com.hotelurbano.desafio.listhotels.viewholder.HotelSection
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
-import kotlinx.android.synthetic.main.activity_hotel_list.*
+import kotlinx.android.synthetic.main.activity_list_hotel.*
 import org.greenrobot.eventbus.Subscribe
 import org.jetbrains.anko.toast
+import java.io.Serializable
 import javax.inject.Inject
 
 class ListHotelActivity : BaseActivity(), ListHotelView {
@@ -30,7 +33,7 @@ class ListHotelActivity : BaseActivity(), ListHotelView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hotel_list)
+        setContentView(R.layout.activity_list_hotel)
 
         presenter.getHotels(city)
     }
@@ -87,6 +90,8 @@ class ListHotelActivity : BaseActivity(), ListHotelView {
 
     @Subscribe
     fun onRowClicked(item: HotelItem) {
-       toast(item.name)
+        val intent = Intent(this, DetailsHotelActivity::class.java)
+        intent.putExtra("Hotel", item as Serializable)
+        startActivity(intent)
     }
 }
