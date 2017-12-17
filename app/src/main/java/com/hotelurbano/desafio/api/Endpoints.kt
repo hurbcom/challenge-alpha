@@ -10,5 +10,5 @@ import retrofit2.http.Query
  */
 interface Endpoints {
     @GET("/busca/api")
-    fun search(@Query("q") city: String): Observable<HotelResponse>
+    fun getHotels(@Query("q") city: String): Observable<HotelResponse>
 }
