@@ -1,7 +1,8 @@
-package com.hotelurbano.desafio
+package com.hotelurbano.desafio.listhotels
 
 import android.app.Activity
 import android.os.Bundle
+import com.hotelurbano.desafio.R
 
 class ListActivity : Activity() {
 
