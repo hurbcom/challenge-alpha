@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hotel Urbano</string>
+    <string name="reserve">Reservar</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula mauris in purus ultricies, vel fermentum felis fermentum. Sed pulvinar nisi sit amet enim condimentum, ut vestibulum nisi malesuada. Fusce sed diam dictum, cursus massa et, lobortis felis. Etiam porta tortor non iaculis pharetra.</string>
+</resources>
