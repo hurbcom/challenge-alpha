@@ -27,3 +27,10 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+    daggerVersion = "2.9"
+    annotationVersion = "10.0-b28"
+    retrofitVersion = "2.3.0"
+    okhttpVersion = "3.4.1"
+}

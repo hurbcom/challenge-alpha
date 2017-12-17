@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:fullBackupContent="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListActivity">
+        <activity android:name=".listhotels.ListHotelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
