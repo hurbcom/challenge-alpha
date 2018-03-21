@@ -9,7 +9,7 @@ A URL a seguir entrega a listagem de resultados para a cidade de Búzios como um
 O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Janeiro que você precisará exibir.
 
 **URL:**
-`GET https://www.hu.com.br/busca/api?q=Rio%20de%20Janeiro`
+`GET https://search.hotelurbano.com/api?q=Rio%20de%20Janeiro`
 
 **Exemplo de resposta:**
 
