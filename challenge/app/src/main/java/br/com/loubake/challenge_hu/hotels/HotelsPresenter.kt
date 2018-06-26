@@ -1,14 +1,26 @@
 package br.com.loubake.challenge_hu.hotels
 
-class HotelsPresenter : HotelsContract.Presenter {
+import android.content.Context
+import android.widget.Toast
+import br.com.loubake.challenge_hu.data.ApiService
+import br.com.loubake.challenge_hu.data.HotelResults
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-    lateinit var mHotelsView: HotelsContract.View
+class HotelsPresenter(var context: Context, var mHotelsView: HotelsContract.View) : HotelsContract.Presenter {
 
     override fun loadHotels() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+        val query = "Rio de Janeiro"
+        val service = ApiService(context)
+        service.getHotelsApi().listHotels(query).enqueue(object : Callback<HotelResults> {
+            override fun onResponse(call: Call<HotelResults>?, response: Response<HotelResults>?) {
+                mHotelsView.setHotelsList((response?.body() as HotelResults).hotels)
+            }
 
-    override fun setHotelsList() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            override fun onFailure(call: Call<HotelResults>?, t: Throwable?) {
+                Toast.makeText(context, "Falha: " + call.toString(), Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }

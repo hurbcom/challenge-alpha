@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Challenge-HU</string>
 
+    <string name="base_url">http://search.hotelurbano.com/</string>
+
     <!--Hotels-->
     <string name="error_loading_hotels">Erro ao carregar conteúdo</string>
 </resources>

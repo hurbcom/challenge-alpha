@@ -5,14 +5,16 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.widget.ProgressBar
+import android.widget.Toast
 import br.com.loubake.challenge_hu.R
+import br.com.loubake.challenge_hu.data.HotelResults
 
 class HotelsActivity : AppCompatActivity(), HotelsContract.View {
 
     lateinit var toolbar: Toolbar
     lateinit var mRecyclerHotels: RecyclerView
     lateinit var mProgress: ProgressBar
-    lateinit var mPresenter: HotelsContract.Presenter
+    lateinit var mPresenter: HotelsPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,9 @@ class HotelsActivity : AppCompatActivity(), HotelsContract.View {
 
         toolbar.setTitle(R.string.app_name)
         setSupportActionBar(toolbar)
+
+        mPresenter = HotelsPresenter(this, this)
+        mPresenter.loadHotels()
     }
 
     override fun showLoading() {
@@ -40,5 +45,11 @@ class HotelsActivity : AppCompatActivity(), HotelsContract.View {
 
     override fun showErrorLayout() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun setHotelsList(results: List<HotelResults.Hotel>?) {
+        Toast.makeText(this,
+            "Sucesso: " + results?.get(0)?.name,
+            Toast.LENGTH_LONG).show()
     }
 }
