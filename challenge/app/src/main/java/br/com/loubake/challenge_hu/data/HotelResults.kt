@@ -15,8 +15,21 @@ class HotelResults {
         var address: Address? = null
         var image: String? = null
         var amenities: List<Amenity>? = null
+        var isHotel: Boolean = false
+        var isPackage: Boolean = false
+        var stars: Int? = null
 
-        class Price {
+        open class Price {
+        }
+
+        class HotelPrice : Price() {
+            @SerializedName("old_price")
+            var oldPrice: Double = 0.0
+            @SerializedName("current_price")
+            var currentPrice: Double = 0.0
+        }
+
+        class PackagePrice : Price(){
             var oldPrice: Double = 0.0
             var currentPrice: Double = 0.0
         }

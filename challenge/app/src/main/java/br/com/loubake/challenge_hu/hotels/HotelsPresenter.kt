@@ -16,10 +16,12 @@ class HotelsPresenter(var context: Context, var mHotelsView: HotelsContract.View
         service.getHotelsApi().listHotels(query).enqueue(object : Callback<HotelResults> {
             override fun onResponse(call: Call<HotelResults>?, response: Response<HotelResults>?) {
                 mHotelsView.setHotelsList((response?.body() as HotelResults).hotels)
+                mHotelsView.hideLoading()
             }
 
             override fun onFailure(call: Call<HotelResults>?, t: Throwable?) {
-                Toast.makeText(context, "Falha: " + call.toString(), Toast.LENGTH_LONG).show()
+                mHotelsView.showErrorLayout()
+                mHotelsView.hideLoading()
             }
         })
     }

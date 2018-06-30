@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".hotels.HotelsActivity">
+
+        <ImageView
+            android:id="@+id/hotel_image"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:scaleType="centerCrop"
+            android:background="#E6E6E6"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hotel_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textAllCaps="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold"
+                    tools:text="Rio de Janeiro"/>
+
+                <TextView
+                    android:id="@+id/hotel_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    tools:text="Rio de Janeiro"/>
+
+                <TextView
+                    android:id="@+id/hotel_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_marginTop="8dp"
+                    tools:text="Hotel Urbano"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/hotel_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginLeft="8dp"
+                tools:text="R$ 200,99"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hotel_amenities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            tools:text="Amenidades: Serviço 24h, WiFi, Piscina"/>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
