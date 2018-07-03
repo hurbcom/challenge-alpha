@@ -9,10 +9,11 @@ interface HotelsContract {
         fun hideLoading()
         fun showHotelsList()
         fun showErrorLayout()
-        fun setHotelsList(results: List<HotelResults.Hotel>?)
+        fun setHotelsList(results: List<Any>)
     }
 
     interface Presenter {
         fun loadHotels()
+        fun handleHotelsResponse(results: List<HotelResults.Hotel>) : List<Any>
     }
 }

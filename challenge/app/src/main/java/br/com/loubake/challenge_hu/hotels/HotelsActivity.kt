@@ -9,7 +9,6 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import br.com.loubake.challenge_hu.R
-import br.com.loubake.challenge_hu.data.HotelResults
 
 class HotelsActivity : AppCompatActivity(), HotelsContract.View {
 
@@ -51,43 +50,11 @@ class HotelsActivity : AppCompatActivity(), HotelsContract.View {
         mErrorTxt.visibility = View.VISIBLE
     }
 
-    override fun setHotelsList(results: List<HotelResults.Hotel>?) {
-        if (results == null || results.isEmpty()) {
-            showErrorLayout()
-            return
-        }
-
-        var hotels = ArrayList<HotelResults.Hotel>(results)
-
-        hotels.sortByDescending {
-            it.stars
-        }
-        var groupedList = ArrayList<Any>(hotels)
-
-        val starsCount : Int? = (groupedList[0] as HotelResults.Hotel)?.stars
-        if (starsCount != null) {
-            groupedList.add(0, getString(R.string.group_stars, starsCount))
-            for (i in 1..groupedList.size) {
-                if (groupedList[i] !is String) {
-                        val currentItem = groupedList[i] as HotelResults.Hotel
-                        val nextItem = groupedList[i+1] as HotelResults.Hotel
-                    if (i + 1 < groupedList.size) {
-                        if (nextItem.isPackage && currentItem.isHotel) {
-                            groupedList.add(i+1, getString(R.string.group_package))
-                            break
-                        }
-                        if (nextItem.stars != currentItem.stars) {
-                            groupedList.add(i+1, getString(R.string.group_stars, nextItem.stars))
-                        }
-                    }
-                }
-            }
-        }
-
+    override fun setHotelsList(results: List<Any>) {
         mRecyclerHotels.layoutManager = LinearLayoutManager(this).apply {
             orientation = LinearLayoutManager.VERTICAL
         }
-        var adapter = HotelsAdapter(this, groupedList)
+        var adapter = HotelsAdapter(this, results)
         mRecyclerHotels.adapter = adapter
     }
 }

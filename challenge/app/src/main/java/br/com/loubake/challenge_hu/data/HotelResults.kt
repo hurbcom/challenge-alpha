@@ -10,17 +10,16 @@ class HotelResults {
     lateinit var hotels: List<Hotel>
 
     class Hotel {
-        var name: String? = null
-        var price: Price? = null
-        var address: Address? = null
-        var image: String? = null
-        var amenities: List<Amenity>? = null
+        var name: String? = ""
+        var price: Price? = Price()
+        var address: Address? = Address()
+        var image: String? = ""
+        var amenities: List<Amenity>? = arrayListOf()
         var isHotel: Boolean = false
         var isPackage: Boolean = false
-        var stars: Int? = null
+        var stars: Int? = 0
 
-        open class Price {
-        }
+        open class Price
 
         class HotelPrice : Price() {
             @SerializedName("old_price")
@@ -35,14 +34,14 @@ class HotelResults {
         }
 
         class Address {
-            lateinit var country: String
-            lateinit var state: String
-            lateinit var city: String
+            var country: String = ""
+            var state: String = ""
+            var city: String = ""
         }
 
         class Amenity {
-            lateinit var name: String
-            lateinit var category: String
+            var name: String = ""
+            var category: String = ""
         }
     }
 }
