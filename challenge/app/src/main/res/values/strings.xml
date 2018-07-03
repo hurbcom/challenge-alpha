@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Challenge-HU</string>
+
+    <string name="base_url">http://search.hotelurbano.com/</string>
+
+    <!--Hotels-->
+    <string name="error_loading_hotels">Erro ao carregar conteúdo</string>
+    <string name="group_stars">%1$d estrelas</string>
+    <string name="group_package">Pacotes</string>
+    <string name="price">R$ %1$.2f</string>
+    <string name="amenities">Amenidades: %1$s</string>
+</resources>
