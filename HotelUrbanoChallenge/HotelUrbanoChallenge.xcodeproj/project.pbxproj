@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31C488ED2108EA2B003A6A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C488EC2108EA2B003A6A73 /* AppDelegate.swift */; };
+		31C488EF2108EA2B003A6A73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C488EE2108EA2B003A6A73 /* ViewController.swift */; };
+		31C488F22108EA2B003A6A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C488F02108EA2B003A6A73 /* Main.storyboard */; };
+		31C488F42108EA2D003A6A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C488F32108EA2D003A6A73 /* Assets.xcassets */; };
+		31C488F72108EA2D003A6A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C488F52108EA2D003A6A73 /* LaunchScreen.storyboard */; };
+		BD15D6801351F364934760CF /* Pods_HotelUrbanoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60558C82D6AA391F4964AF70 /* Pods_HotelUrbanoChallenge.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		31C488E92108EA2B003A6A73 /* HotelUrbanoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelUrbanoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31C488EC2108EA2B003A6A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		31C488EE2108EA2B003A6A73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		31C488F12108EA2B003A6A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31C488F32108EA2D003A6A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31C488F62108EA2D003A6A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		31C488F82108EA2D003A6A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60558C82D6AA391F4964AF70 /* Pods_HotelUrbanoChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelUrbanoChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BB5D2D58C16781E9BBDB358 /* Pods-HotelUrbanoChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelUrbanoChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		F1912AD1A42B2D9D0FDEFD25 /* Pods-HotelUrbanoChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelUrbanoChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31C488E62108EA2B003A6A73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD15D6801351F364934760CF /* Pods_HotelUrbanoChallenge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3194C2112108EAC1004FCAE7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				31C488EE2108EA2B003A6A73 /* ViewController.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		3194C2122108EAC9004FCAE7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3194C2132108EAD5004FCAE7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				31C488EC2108EA2B003A6A73 /* AppDelegate.swift */,
+				31C488F32108EA2D003A6A73 /* Assets.xcassets */,
+				31C488F82108EA2D003A6A73 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3194C2142108EADE004FCAE7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3194C2152108EAE6004FCAE7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				31C488F52108EA2D003A6A73 /* LaunchScreen.storyboard */,
+				31C488F02108EA2B003A6A73 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		31C488E02108EA2B003A6A73 = {
+			isa = PBXGroup;
+			children = (
+				31C488EB2108EA2B003A6A73 /* HotelUrbanoChallenge */,
+				31C488EA2108EA2B003A6A73 /* Products */,
+				835767CD411203786F452D67 /* Pods */,
+				EDAD22F1F1B91A871D89FCCE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		31C488EA2108EA2B003A6A73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31C488E92108EA2B003A6A73 /* HotelUrbanoChallenge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31C488EB2108EA2B003A6A73 /* HotelUrbanoChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				3194C2112108EAC1004FCAE7 /* Features */,
+				3194C2122108EAC9004FCAE7 /* Helpers */,
+				3194C2132108EAD5004FCAE7 /* Resources */,
+				3194C2142108EADE004FCAE7 /* Services */,
+				3194C2152108EAE6004FCAE7 /* Storyboards */,
+			);
+			path = HotelUrbanoChallenge;
+			sourceTree = "<group>";
+		};
+		835767CD411203786F452D67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1912AD1A42B2D9D0FDEFD25 /* Pods-HotelUrbanoChallenge.debug.xcconfig */,
+				9BB5D2D58C16781E9BBDB358 /* Pods-HotelUrbanoChallenge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EDAD22F1F1B91A871D89FCCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60558C82D6AA391F4964AF70 /* Pods_HotelUrbanoChallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31C488E82108EA2B003A6A73 /* HotelUrbanoChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31C488FB2108EA2D003A6A73 /* Build configuration list for PBXNativeTarget "HotelUrbanoChallenge" */;
+			buildPhases = (
+				5F15DAD6A472888405587C86 /* [CP] Check Pods Manifest.lock */,
+				31C488E52108EA2B003A6A73 /* Sources */,
+				31C488E62108EA2B003A6A73 /* Frameworks */,
+				31C488E72108EA2B003A6A73 /* Resources */,
+				196D23541ADED69F9501B433 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotelUrbanoChallenge;
+			productName = HotelUrbanoChallenge;
+			productReference = 31C488E92108EA2B003A6A73 /* HotelUrbanoChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31C488E12108EA2B003A6A73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Ronilson;
+				TargetAttributes = {
+					31C488E82108EA2B003A6A73 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 31C488E42108EA2B003A6A73 /* Build configuration list for PBXProject "HotelUrbanoChallenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 31C488E02108EA2B003A6A73;
+			productRefGroup = 31C488EA2108EA2B003A6A73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31C488E82108EA2B003A6A73 /* HotelUrbanoChallenge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31C488E72108EA2B003A6A73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31C488F72108EA2D003A6A73 /* LaunchScreen.storyboard in Resources */,
+				31C488F42108EA2D003A6A73 /* Assets.xcassets in Resources */,
+				31C488F22108EA2B003A6A73 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		196D23541ADED69F9501B433 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F15DAD6A472888405587C86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotelUrbanoChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31C488E52108EA2B003A6A73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31C488EF2108EA2B003A6A73 /* ViewController.swift in Sources */,
+				31C488ED2108EA2B003A6A73 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		31C488F02108EA2B003A6A73 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31C488F12108EA2B003A6A73 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		31C488F52108EA2D003A6A73 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31C488F62108EA2D003A6A73 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		31C488F92108EA2D003A6A73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		31C488FA2108EA2D003A6A73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31C488FC2108EA2D003A6A73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1912AD1A42B2D9D0FDEFD25 /* Pods-HotelUrbanoChallenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HotelUrbanoChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ronilson-batista.HotelUrbanoChallenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		31C488FD2108EA2D003A6A73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BB5D2D58C16781E9BBDB358 /* Pods-HotelUrbanoChallenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HotelUrbanoChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ronilson-batista.HotelUrbanoChallenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31C488E42108EA2B003A6A73 /* Build configuration list for PBXProject "HotelUrbanoChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31C488F92108EA2D003A6A73 /* Debug */,
+				31C488FA2108EA2D003A6A73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31C488FB2108EA2D003A6A73 /* Build configuration list for PBXNativeTarget "HotelUrbanoChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31C488FC2108EA2D003A6A73 /* Debug */,
+				31C488FD2108EA2D003A6A73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31C488E12108EA2B003A6A73 /* Project object */;
+}
