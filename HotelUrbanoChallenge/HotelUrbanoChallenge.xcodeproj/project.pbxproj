@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		313236DA2108F2BB00E95575 /* ServiceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236D92108F2BB00E95575 /* ServiceURL.swift */; };
+		313236DC2108F2EE00E95575 /* HotelUrbanoChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236DB2108F2EE00E95575 /* HotelUrbanoChallengeService.swift */; };
+		313236E12108F33800E95575 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236DE2108F33800E95575 /* ServiceError.swift */; };
+		313236E22108F33800E95575 /* ServiceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236DF2108F33800E95575 /* ServiceManagerProtocol.swift */; };
+		313236E32108F33800E95575 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236E02108F33800E95575 /* ServiceManager.swift */; };
+		313236E52108F87300E95575 /* Amenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236E42108F87300E95575 /* Amenities.swift */; };
 		3194C21F2108EDE8004FCAE7 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2192108EDE8004FCAE7 /* Address.swift */; };
 		3194C2202108EDE8004FCAE7 /* FeaturedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */; };
 		3194C2212108EDE8004FCAE7 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21B2108EDE8004FCAE7 /* Price.swift */; };
@@ -43,6 +49,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		313236D92108F2BB00E95575 /* ServiceURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceURL.swift; sourceTree = "<group>"; };
+		313236DB2108F2EE00E95575 /* HotelUrbanoChallengeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelUrbanoChallengeService.swift; sourceTree = "<group>"; };
+		313236DE2108F33800E95575 /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		313236DF2108F33800E95575 /* ServiceManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManagerProtocol.swift; sourceTree = "<group>"; };
+		313236E02108F33800E95575 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		313236E42108F87300E95575 /* Amenities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenities.swift; sourceTree = "<group>"; };
 		3194C2192108EDE8004FCAE7 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedItem.swift; sourceTree = "<group>"; };
 		3194C21B2108EDE8004FCAE7 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
@@ -94,6 +106,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		313236DD2108F32600E95575 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				313236DE2108F33800E95575 /* ServiceError.swift */,
+				313236E02108F33800E95575 /* ServiceManager.swift */,
+				313236DF2108F33800E95575 /* ServiceManagerProtocol.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		3194C2112108EAC1004FCAE7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +127,7 @@
 		3194C2122108EAC9004FCAE7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				313236DD2108F32600E95575 /* Service */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -115,6 +138,7 @@
 				31C488EC2108EA2B003A6A73 /* AppDelegate.swift */,
 				31C488F32108EA2D003A6A73 /* Assets.xcassets */,
 				31C488F82108EA2D003A6A73 /* Info.plist */,
+				313236D92108F2BB00E95575 /* ServiceURL.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -123,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				3194C2162108EDB1004FCAE7 /* Entities */,
+				313236DB2108F2EE00E95575 /* HotelUrbanoChallengeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				3194C2192108EDE8004FCAE7 /* Address.swift */,
+				313236E42108F87300E95575 /* Amenities.swift */,
 				3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */,
 				3194C21D2108EDE8004FCAE7 /* Gallery.swift */,
 				3194C21B2108EDE8004FCAE7 /* Price.swift */,
@@ -245,6 +271,7 @@
 				31C488E62108EA2B003A6A73 /* Frameworks */,
 				31C488E72108EA2B003A6A73 /* Resources */,
 				EA7AED9B50A6A6885603A22D /* [CP] Copy Pods Resources */,
+				4A61E62D8A0E3705EE0099C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,6 +329,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A61E62D8A0E3705EE0099C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7A1D0EEB73A75AAF4B4B2C92 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,6 +400,8 @@
 				3194C2302108EE0E004FCAE7 /* Pagination.swift in Sources */,
 				3194C21F2108EDE8004FCAE7 /* Address.swift in Sources */,
 				3194C24C2108EE33004FCAE7 /* District.swift in Sources */,
+				313236E12108F33800E95575 /* ServiceError.swift in Sources */,
+				313236E52108F87300E95575 /* Amenities.swift in Sources */,
 				3194C2482108EE33004FCAE7 /* Regulation.swift in Sources */,
 				3194C2472108EE33004FCAE7 /* States.swift in Sources */,
 				3194C2432108EE33004FCAE7 /* Cities.swift in Sources */,
@@ -366,10 +415,14 @@
 				3194C2212108EDE8004FCAE7 /* Price.swift in Sources */,
 				31C488ED2108EA2B003A6A73 /* AppDelegate.swift in Sources */,
 				3194C22F2108EE0E004FCAE7 /* Meta.swift in Sources */,
+				313236DC2108F2EE00E95575 /* HotelUrbanoChallengeService.swift in Sources */,
 				3194C22D2108EE0E004FCAE7 /* ResponseTime.swift in Sources */,
 				3194C2412108EE33004FCAE7 /* Prices.swift in Sources */,
+				313236DA2108F2BB00E95575 /* ServiceURL.swift in Sources */,
+				313236E22108F33800E95575 /* ServiceManagerProtocol.swift in Sources */,
 				3194C24A2108EE33004FCAE7 /* Filters.swift in Sources */,
 				3194C2222108EDE8004FCAE7 /* QuantityDescriptors.swift in Sources */,
+				313236E32108F33800E95575 /* ServiceManager.swift in Sources */,
 				3194C24B2108EE33004FCAE7 /* DepartureCities.swift in Sources */,
 				3194C2452108EE33004FCAE7 /* Attributes.swift in Sources */,
 				3194C24D2108EE33004FCAE7 /* Countries.swift in Sources */,

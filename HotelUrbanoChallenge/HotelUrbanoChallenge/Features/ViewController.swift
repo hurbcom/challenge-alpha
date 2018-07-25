@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var service = HotelUrbanoService()
+    var hotels: Hotels?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.service.getHotels(success: { result  in
+            self.hotels = result
+            print("Hotels: \(String(describing: self.hotels))")
+        }) { error in
+            print("ERRRRRRO")
+            
+        }
+        
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

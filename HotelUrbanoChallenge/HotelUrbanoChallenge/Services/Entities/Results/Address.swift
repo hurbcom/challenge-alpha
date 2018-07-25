@@ -11,7 +11,7 @@ import Foundation
 struct Address : Codable {
 	let city : String?
 	let country : String?
-	let idCity : String?
+	let idCity : Int?
 	let idCountry : Int?
 	let idState : Int?
 	let state : String?
@@ -36,7 +36,7 @@ struct Address : Codable {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		city = try values.decodeIfPresent(String.self, forKey: .city)
 		country = try values.decodeIfPresent(String.self, forKey: .country)
-		idCity = try values.decodeIfPresent(String.self, forKey: .idCity)
+		idCity = try values.decodeIfPresent(Int.self, forKey: .idCity)
 		idCountry = try values.decodeIfPresent(Int.self, forKey: .idCountry)
 		idState = try values.decodeIfPresent(Int.self, forKey: .idState)
 		state = try values.decodeIfPresent(String.self, forKey: .state)

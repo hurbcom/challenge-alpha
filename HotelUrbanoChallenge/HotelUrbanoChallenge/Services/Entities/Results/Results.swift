@@ -13,7 +13,7 @@ struct Results : Codable {
 	let isHotel : Bool?
 	let category : String?
 	let smallDescription : String?
-	let amenities : [String]?
+	let amenities : [Amenities]?
 	let id : String?
 	let price : Price?
 	let image : String?
@@ -54,7 +54,7 @@ struct Results : Codable {
 		isHotel = try values.decodeIfPresent(Bool.self, forKey: .isHotel)
 		category = try values.decodeIfPresent(String.self, forKey: .category)
 		smallDescription = try values.decodeIfPresent(String.self, forKey: .smallDescription)
-		amenities = try values.decodeIfPresent([String].self, forKey: .amenities)
+		amenities = try values.decodeIfPresent([Amenities].self, forKey: .amenities)
 		id = try values.decodeIfPresent(String.self, forKey: .id)
 		price = try values.decodeIfPresent(Price.self, forKey: .price)
 		image = try values.decodeIfPresent(String.self, forKey: .image)
