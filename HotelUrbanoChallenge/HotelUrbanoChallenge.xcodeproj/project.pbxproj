@@ -7,15 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3194C21F2108EDE8004FCAE7 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2192108EDE8004FCAE7 /* Address.swift */; };
+		3194C2202108EDE8004FCAE7 /* FeaturedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */; };
+		3194C2212108EDE8004FCAE7 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21B2108EDE8004FCAE7 /* Price.swift */; };
+		3194C2222108EDE8004FCAE7 /* QuantityDescriptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21C2108EDE8004FCAE7 /* QuantityDescriptors.swift */; };
+		3194C2232108EDE8004FCAE7 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21D2108EDE8004FCAE7 /* Gallery.swift */; };
+		3194C2242108EDE8004FCAE7 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21E2108EDE8004FCAE7 /* Results.swift */; };
+		3194C22B2108EE0E004FCAE7 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2252108EE0E004FCAE7 /* ProductType.swift */; };
+		3194C22C2108EE0E004FCAE7 /* Hotels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2262108EE0E004FCAE7 /* Hotels.swift */; };
+		3194C22D2108EE0E004FCAE7 /* ResponseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2272108EE0E004FCAE7 /* ResponseTime.swift */; };
+		3194C22E2108EE0E004FCAE7 /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2282108EE0E004FCAE7 /* GeoLocation.swift */; };
+		3194C22F2108EE0E004FCAE7 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2292108EE0E004FCAE7 /* Meta.swift */; };
+		3194C2302108EE0E004FCAE7 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C22A2108EE0E004FCAE7 /* Pagination.swift */; };
+		3194C2402108EE33004FCAE7 /* PriceInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2312108EE32004FCAE7 /* PriceInterval.swift */; };
+		3194C2412108EE33004FCAE7 /* Prices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2322108EE32004FCAE7 /* Prices.swift */; };
+		3194C2422108EE33004FCAE7 /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2332108EE32004FCAE7 /* Stars.swift */; };
+		3194C2432108EE33004FCAE7 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2342108EE32004FCAE7 /* Cities.swift */; };
+		3194C2442108EE33004FCAE7 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2352108EE32004FCAE7 /* People.swift */; };
+		3194C2452108EE33004FCAE7 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2362108EE33004FCAE7 /* Attributes.swift */; };
+		3194C2462108EE33004FCAE7 /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2372108EE33004FCAE7 /* Rooms.swift */; };
+		3194C2472108EE33004FCAE7 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2382108EE33004FCAE7 /* States.swift */; };
+		3194C2482108EE33004FCAE7 /* Regulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2392108EE33004FCAE7 /* Regulation.swift */; };
+		3194C2492108EE33004FCAE7 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C23A2108EE33004FCAE7 /* Duration.swift */; };
+		3194C24A2108EE33004FCAE7 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C23B2108EE33004FCAE7 /* Filters.swift */; };
+		3194C24B2108EE33004FCAE7 /* DepartureCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C23C2108EE33004FCAE7 /* DepartureCities.swift */; };
+		3194C24C2108EE33004FCAE7 /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C23D2108EE33004FCAE7 /* District.swift */; };
+		3194C24D2108EE33004FCAE7 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C23E2108EE33004FCAE7 /* Countries.swift */; };
+		3194C24E2108EE33004FCAE7 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C23F2108EE33004FCAE7 /* Food.swift */; };
 		31C488ED2108EA2B003A6A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C488EC2108EA2B003A6A73 /* AppDelegate.swift */; };
 		31C488EF2108EA2B003A6A73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C488EE2108EA2B003A6A73 /* ViewController.swift */; };
 		31C488F22108EA2B003A6A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C488F02108EA2B003A6A73 /* Main.storyboard */; };
 		31C488F42108EA2D003A6A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C488F32108EA2D003A6A73 /* Assets.xcassets */; };
 		31C488F72108EA2D003A6A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C488F52108EA2D003A6A73 /* LaunchScreen.storyboard */; };
-		BD15D6801351F364934760CF /* Pods_HotelUrbanoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60558C82D6AA391F4964AF70 /* Pods_HotelUrbanoChallenge.framework */; };
+		BFFB2A96C4A6CEF471C91DB6 /* Pods_HotelUrbanoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02E628EF6ED00960C6376B6 /* Pods_HotelUrbanoChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3194C2192108EDE8004FCAE7 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedItem.swift; sourceTree = "<group>"; };
+		3194C21B2108EDE8004FCAE7 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		3194C21C2108EDE8004FCAE7 /* QuantityDescriptors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuantityDescriptors.swift; sourceTree = "<group>"; };
+		3194C21D2108EDE8004FCAE7 /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		3194C21E2108EDE8004FCAE7 /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		3194C2252108EE0E004FCAE7 /* ProductType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
+		3194C2262108EE0E004FCAE7 /* Hotels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hotels.swift; sourceTree = "<group>"; };
+		3194C2272108EE0E004FCAE7 /* ResponseTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseTime.swift; sourceTree = "<group>"; };
+		3194C2282108EE0E004FCAE7 /* GeoLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
+		3194C2292108EE0E004FCAE7 /* Meta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		3194C22A2108EE0E004FCAE7 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		3194C2312108EE32004FCAE7 /* PriceInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceInterval.swift; sourceTree = "<group>"; };
+		3194C2322108EE32004FCAE7 /* Prices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prices.swift; sourceTree = "<group>"; };
+		3194C2332108EE32004FCAE7 /* Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
+		3194C2342108EE32004FCAE7 /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		3194C2352108EE32004FCAE7 /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		3194C2362108EE33004FCAE7 /* Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		3194C2372108EE33004FCAE7 /* Rooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
+		3194C2382108EE33004FCAE7 /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
+		3194C2392108EE33004FCAE7 /* Regulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regulation.swift; sourceTree = "<group>"; };
+		3194C23A2108EE33004FCAE7 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		3194C23B2108EE33004FCAE7 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		3194C23C2108EE33004FCAE7 /* DepartureCities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureCities.swift; sourceTree = "<group>"; };
+		3194C23D2108EE33004FCAE7 /* District.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
+		3194C23E2108EE33004FCAE7 /* Countries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		3194C23F2108EE33004FCAE7 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		31C488E92108EA2B003A6A73 /* HotelUrbanoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelUrbanoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C488EC2108EA2B003A6A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31C488EE2108EA2B003A6A73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,9 +77,9 @@
 		31C488F32108EA2D003A6A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C488F62108EA2D003A6A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31C488F82108EA2D003A6A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		60558C82D6AA391F4964AF70 /* Pods_HotelUrbanoChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelUrbanoChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BB5D2D58C16781E9BBDB358 /* Pods-HotelUrbanoChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelUrbanoChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge.release.xcconfig"; sourceTree = "<group>"; };
-		F1912AD1A42B2D9D0FDEFD25 /* Pods-HotelUrbanoChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelUrbanoChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		712E7A866A92058827F767B8 /* Pods-HotelUrbanoChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelUrbanoChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		A02E628EF6ED00960C6376B6 /* Pods_HotelUrbanoChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelUrbanoChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA2992ABE1EADC2402EC5CC6 /* Pods-HotelUrbanoChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelUrbanoChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD15D6801351F364934760CF /* Pods_HotelUrbanoChallenge.framework in Frameworks */,
+				BFFB2A96C4A6CEF471C91DB6 /* Pods_HotelUrbanoChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +122,7 @@
 		3194C2142108EADE004FCAE7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3194C2162108EDB1004FCAE7 /* Entities */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -81,13 +136,63 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		3194C2162108EDB1004FCAE7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3194C2282108EE0E004FCAE7 /* GeoLocation.swift */,
+				3194C2262108EE0E004FCAE7 /* Hotels.swift */,
+				3194C2292108EE0E004FCAE7 /* Meta.swift */,
+				3194C22A2108EE0E004FCAE7 /* Pagination.swift */,
+				3194C2252108EE0E004FCAE7 /* ProductType.swift */,
+				3194C2272108EE0E004FCAE7 /* ResponseTime.swift */,
+				3194C2172108EDC8004FCAE7 /* Filters */,
+				3194C2182108EDD6004FCAE7 /* Results */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		3194C2172108EDC8004FCAE7 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				3194C2362108EE33004FCAE7 /* Attributes.swift */,
+				3194C2342108EE32004FCAE7 /* Cities.swift */,
+				3194C23E2108EE33004FCAE7 /* Countries.swift */,
+				3194C23C2108EE33004FCAE7 /* DepartureCities.swift */,
+				3194C23D2108EE33004FCAE7 /* District.swift */,
+				3194C23A2108EE33004FCAE7 /* Duration.swift */,
+				3194C23B2108EE33004FCAE7 /* Filters.swift */,
+				3194C23F2108EE33004FCAE7 /* Food.swift */,
+				3194C2352108EE32004FCAE7 /* People.swift */,
+				3194C2312108EE32004FCAE7 /* PriceInterval.swift */,
+				3194C2322108EE32004FCAE7 /* Prices.swift */,
+				3194C2392108EE33004FCAE7 /* Regulation.swift */,
+				3194C2372108EE33004FCAE7 /* Rooms.swift */,
+				3194C2332108EE32004FCAE7 /* Stars.swift */,
+				3194C2382108EE33004FCAE7 /* States.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		3194C2182108EDD6004FCAE7 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				3194C2192108EDE8004FCAE7 /* Address.swift */,
+				3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */,
+				3194C21D2108EDE8004FCAE7 /* Gallery.swift */,
+				3194C21B2108EDE8004FCAE7 /* Price.swift */,
+				3194C21C2108EDE8004FCAE7 /* QuantityDescriptors.swift */,
+				3194C21E2108EDE8004FCAE7 /* Results.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
 		31C488E02108EA2B003A6A73 = {
 			isa = PBXGroup;
 			children = (
 				31C488EB2108EA2B003A6A73 /* HotelUrbanoChallenge */,
 				31C488EA2108EA2B003A6A73 /* Products */,
-				835767CD411203786F452D67 /* Pods */,
-				EDAD22F1F1B91A871D89FCCE /* Frameworks */,
+				36D101ADB46588A66535B557 /* Pods */,
+				3841DDC94B8321E04A5CEADE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,19 +216,19 @@
 			path = HotelUrbanoChallenge;
 			sourceTree = "<group>";
 		};
-		835767CD411203786F452D67 /* Pods */ = {
+		36D101ADB46588A66535B557 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F1912AD1A42B2D9D0FDEFD25 /* Pods-HotelUrbanoChallenge.debug.xcconfig */,
-				9BB5D2D58C16781E9BBDB358 /* Pods-HotelUrbanoChallenge.release.xcconfig */,
+				712E7A866A92058827F767B8 /* Pods-HotelUrbanoChallenge.debug.xcconfig */,
+				FA2992ABE1EADC2402EC5CC6 /* Pods-HotelUrbanoChallenge.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		EDAD22F1F1B91A871D89FCCE /* Frameworks */ = {
+		3841DDC94B8321E04A5CEADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				60558C82D6AA391F4964AF70 /* Pods_HotelUrbanoChallenge.framework */,
+				A02E628EF6ED00960C6376B6 /* Pods_HotelUrbanoChallenge.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,11 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31C488FB2108EA2D003A6A73 /* Build configuration list for PBXNativeTarget "HotelUrbanoChallenge" */;
 			buildPhases = (
-				5F15DAD6A472888405587C86 /* [CP] Check Pods Manifest.lock */,
+				7A1D0EEB73A75AAF4B4B2C92 /* [CP] Check Pods Manifest.lock */,
 				31C488E52108EA2B003A6A73 /* Sources */,
 				31C488E62108EA2B003A6A73 /* Frameworks */,
 				31C488E72108EA2B003A6A73 /* Resources */,
-				196D23541ADED69F9501B433 /* [CP] Embed Pods Frameworks */,
+				EA7AED9B50A6A6885603A22D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,29 +302,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		196D23541ADED69F9501B433 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F15DAD6A472888405587C86 /* [CP] Check Pods Manifest.lock */ = {
+		7A1D0EEB73A75AAF4B4B2C92 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -237,6 +320,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EA7AED9B50A6A6885603A22D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -244,8 +345,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3194C2422108EE33004FCAE7 /* Stars.swift in Sources */,
+				3194C22E2108EE0E004FCAE7 /* GeoLocation.swift in Sources */,
+				3194C22C2108EE0E004FCAE7 /* Hotels.swift in Sources */,
+				3194C2202108EDE8004FCAE7 /* FeaturedItem.swift in Sources */,
+				3194C2442108EE33004FCAE7 /* People.swift in Sources */,
+				3194C2302108EE0E004FCAE7 /* Pagination.swift in Sources */,
+				3194C21F2108EDE8004FCAE7 /* Address.swift in Sources */,
+				3194C24C2108EE33004FCAE7 /* District.swift in Sources */,
+				3194C2482108EE33004FCAE7 /* Regulation.swift in Sources */,
+				3194C2472108EE33004FCAE7 /* States.swift in Sources */,
+				3194C2432108EE33004FCAE7 /* Cities.swift in Sources */,
+				3194C2462108EE33004FCAE7 /* Rooms.swift in Sources */,
+				3194C22B2108EE0E004FCAE7 /* ProductType.swift in Sources */,
+				3194C2242108EDE8004FCAE7 /* Results.swift in Sources */,
+				3194C2232108EDE8004FCAE7 /* Gallery.swift in Sources */,
+				3194C24E2108EE33004FCAE7 /* Food.swift in Sources */,
 				31C488EF2108EA2B003A6A73 /* ViewController.swift in Sources */,
+				3194C2492108EE33004FCAE7 /* Duration.swift in Sources */,
+				3194C2212108EDE8004FCAE7 /* Price.swift in Sources */,
 				31C488ED2108EA2B003A6A73 /* AppDelegate.swift in Sources */,
+				3194C22F2108EE0E004FCAE7 /* Meta.swift in Sources */,
+				3194C22D2108EE0E004FCAE7 /* ResponseTime.swift in Sources */,
+				3194C2412108EE33004FCAE7 /* Prices.swift in Sources */,
+				3194C24A2108EE33004FCAE7 /* Filters.swift in Sources */,
+				3194C2222108EDE8004FCAE7 /* QuantityDescriptors.swift in Sources */,
+				3194C24B2108EE33004FCAE7 /* DepartureCities.swift in Sources */,
+				3194C2452108EE33004FCAE7 /* Attributes.swift in Sources */,
+				3194C24D2108EE33004FCAE7 /* Countries.swift in Sources */,
+				3194C2402108EE33004FCAE7 /* PriceInterval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,11 +515,12 @@
 		};
 		31C488FC2108EA2D003A6A73 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1912AD1A42B2D9D0FDEFD25 /* Pods-HotelUrbanoChallenge.debug.xcconfig */;
+			baseConfigurationReference = 712E7A866A92058827F767B8 /* Pods-HotelUrbanoChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HotelUrbanoChallenge/Info.plist;
+				DEVELOPMENT_TEAM = 6FVWXKY4X6;
+				INFOPLIST_FILE = "$(SRCROOT)/HotelUrbanoChallenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,11 +534,12 @@
 		};
 		31C488FD2108EA2D003A6A73 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BB5D2D58C16781E9BBDB358 /* Pods-HotelUrbanoChallenge.release.xcconfig */;
+			baseConfigurationReference = FA2992ABE1EADC2402EC5CC6 /* Pods-HotelUrbanoChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HotelUrbanoChallenge/Info.plist;
+				DEVELOPMENT_TEAM = 6FVWXKY4X6;
+				INFOPLIST_FILE = "$(SRCROOT)/HotelUrbanoChallenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
