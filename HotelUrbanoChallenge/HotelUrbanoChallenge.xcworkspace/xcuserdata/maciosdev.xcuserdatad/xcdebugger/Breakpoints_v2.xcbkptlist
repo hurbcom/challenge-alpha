@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/View/HotelListViewController.swift"
-            timestampString = "554312378.631824"
+            timestampString = "554319797.385874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Presenter/HotelListPresenter.swift"
-            timestampString = "554312378.6319031"
+            timestampString = "554319797.385956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Presenter/HotelListPresenter.swift"
-            timestampString = "554312378.6322269"
+            timestampString = "554319797.386366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Presenter/HotelListPresenter.swift"
-            timestampString = "554312378.632736"
+            timestampString = "554319797.386664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListSetup.swift"
-            timestampString = "554312378.632949"
+            timestampString = "554319664.53284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListSetup.swift"
-            timestampString = "554312378.632996"
+            timestampString = "554319664.532927"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListSetup.swift"
-            timestampString = "554312378.633038"
+            timestampString = "554319664.5329829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListSetup.swift"
-            timestampString = "554312378.633077"
+            timestampString = "554319664.533071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListSetup.swift"
-            timestampString = "554312378.6331151"
+            timestampString = "554319664.533136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListSetup.swift"
-            timestampString = "554312378.63318"
+            timestampString = "554319664.533192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListSetup.swift"
-            timestampString = "554312378.633219"
+            timestampString = "554319664.533253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListSetup.swift"
-            timestampString = "554312378.633258"
+            timestampString = "554319664.533303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -230,11 +230,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Helpers/Extensions/ExtensionSequence.swift"
-            timestampString = "554312378.633298"
+            timestampString = "554319797.387086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -246,11 +246,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Helpers/Extensions/ExtensionSequence.swift"
-            timestampString = "554312378.633363"
+            timestampString = "554319797.387174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -262,11 +262,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Helpers/Extensions/ExtensionSequence.swift"
-            timestampString = "554312378.6334029"
+            timestampString = "554319797.387229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -281,56 +281,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HotelUrbanoChallenge/Features/HotelList/Presenter/HotelListPresenter.swift"
-            timestampString = "554312378.633634"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "handleDataHotels()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HotelUrbanoChallenge.HotelListPresenter.(handleDataHotels in _B70502A03629E64D199D4CC0AA31BD7E)() -&gt; ()"
-                  moduleName = "HotelUrbanoChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maciosdev/Documents/challenge-alpha/HotelUrbanoChallenge/HotelUrbanoChallenge/Features/HotelList/Presenter/HotelListPresenter.swift"
-                  timestampString = "554312378.8070281"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "927">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (HotelUrbanoChallenge.Results) -&gt; Swift.Int in HotelUrbanoChallenge.HotelListPresenter.(handleDataHotels in _B70502A03629E64D199D4CC0AA31BD7E)() -&gt; ()"
-                  moduleName = "HotelUrbanoChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maciosdev/Documents/challenge-alpha/HotelUrbanoChallenge/HotelUrbanoChallenge/Features/HotelList/Presenter/HotelListPresenter.swift"
-                  timestampString = "554312378.808694"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Helpers/Extensions/ExtensionSequence.swift"
-            timestampString = "554312378.633819"
+            timestampString = "554319797.387277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -342,11 +294,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Helpers/Extensions/ExtensionSequence.swift"
-            timestampString = "554312378.63386"
+            timestampString = "554319797.387325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -358,15 +310,127 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HotelUrbanoChallenge/Helpers/Extensions/ExtensionSequence.swift"
+            timestampString = "554319797.38737"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "groupBy(closure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListViewModel.swift"
+            timestampString = "554319797.387414"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "init(groupDescription:hotelList:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListViewModel.swift"
+            timestampString = "554319797.387463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "HotelItemViewModel"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListViewModel.swift"
+            timestampString = "554319797.387506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "HotelItemViewModel"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListViewModel.swift"
+            timestampString = "554319797.38755"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "HotelItemViewModel"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListViewModel.swift"
+            timestampString = "554319797.387591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "HotelItemViewModel"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HotelUrbanoChallenge/Features/HotelList/Model/HotelListViewModel.swift"
+            timestampString = "554319797.3876359"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init(groupDescription:hotelList:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelUrbanoChallenge/Features/HotelList/Presenter/HotelListPresenter.swift"
-            timestampString = "554312570.9016761"
+            timestampString = "554319797.387675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "handleDataHotels()"
             landmarkType = "7">
          </BreakpointContent>

@@ -12,9 +12,8 @@ final class HotelListPresenter {
     
     fileprivate unowned let view: HotelListProtocol
     fileprivate let service: HotelUrbanoService
-    fileprivate(set) var listParameters: HotelListSetup!
     fileprivate(set) var hotels: [Results] = []
-    
+    fileprivate(set) var hotelListViewModel: [HotelListViewModel] = []
     
     init(view: HotelListProtocol) {
         self.view = view
@@ -49,6 +48,13 @@ extension HotelListPresenter {
 //        let filteredApplications = self.hotels.filter { $0.address?.state == "Rio de Janeiro" }
         var hotels: [Int: [Results]] = [:]
         hotels =  self.hotels.groupBy { ($0.stars)! }
+        
+        for hotel in hotels {
+            
+            let hotelList = HotelListViewModel(groupDescription: hotel.key, hotelList: hotel.value)
+            self.hotelListViewModel.append(hotelList)
+        }
+        
     }
     
     fileprivate func requestError(errorDescription: String) {

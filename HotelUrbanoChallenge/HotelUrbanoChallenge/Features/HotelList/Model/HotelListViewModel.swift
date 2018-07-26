@@ -10,14 +10,25 @@ import Foundation
 
 final class HotelListViewModel: NSObject {
     
-    let groupDescription: String
+    let groupDescription: Int
     var hotelItems: [HotelItemViewModel] = []
     
-    init(groupDescription: String, hotel: [Results]) {
+    init(groupDescription: Int, hotelList: [Results]) {
         self.groupDescription = groupDescription
+        
+        
+        // Setup hotel to view cell
+        let hotels = hotelList.groupBy { $0.name ?? "" }
+        
+        for item in hotels {
+            let hotel = item.value.first!
+            let itemViewModel = HotelItemViewModel(hotelItem: hotel)
+            self.hotelItems.append(itemViewModel)
+        }
     }
     
     // MARK: - HotelItemViewModel
+    
     internal struct HotelItemViewModel {
 
         let name: String?
