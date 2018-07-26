@@ -13,6 +13,13 @@
 		313236E22108F33800E95575 /* ServiceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236DF2108F33800E95575 /* ServiceManagerProtocol.swift */; };
 		313236E32108F33800E95575 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236E02108F33800E95575 /* ServiceManager.swift */; };
 		313236E52108F87300E95575 /* Amenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236E42108F87300E95575 /* Amenities.swift */; };
+		316C9E432109F996005DC3B3 /* HotelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9E422109F996005DC3B3 /* HotelListViewModel.swift */; };
+		316C9E462109F9AA005DC3B3 /* HotelListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9E452109F9AA005DC3B3 /* HotelListPresenter.swift */; };
+		316C9E482109F9B7005DC3B3 /* HotelListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9E472109F9B7005DC3B3 /* HotelListProtocol.swift */; };
+		316C9E4B2109FB40005DC3B3 /* HotelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9E492109FB40005DC3B3 /* HotelListViewController.swift */; };
+		316C9E4C2109FB40005DC3B3 /* HotelListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 316C9E4A2109FB40005DC3B3 /* HotelListViewController.xib */; };
+		316C9E4E210A0452005DC3B3 /* HotelListSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9E4D210A0452005DC3B3 /* HotelListSetup.swift */; };
+		316C9E50210A0670005DC3B3 /* ExtensionSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9E4F210A0670005DC3B3 /* ExtensionSequence.swift */; };
 		3194C21F2108EDE8004FCAE7 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2192108EDE8004FCAE7 /* Address.swift */; };
 		3194C2202108EDE8004FCAE7 /* FeaturedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */; };
 		3194C2212108EDE8004FCAE7 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21B2108EDE8004FCAE7 /* Price.swift */; };
@@ -41,7 +48,6 @@
 		3194C24D2108EE33004FCAE7 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C23E2108EE33004FCAE7 /* Countries.swift */; };
 		3194C24E2108EE33004FCAE7 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C23F2108EE33004FCAE7 /* Food.swift */; };
 		31C488ED2108EA2B003A6A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C488EC2108EA2B003A6A73 /* AppDelegate.swift */; };
-		31C488EF2108EA2B003A6A73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C488EE2108EA2B003A6A73 /* ViewController.swift */; };
 		31C488F22108EA2B003A6A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C488F02108EA2B003A6A73 /* Main.storyboard */; };
 		31C488F42108EA2D003A6A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C488F32108EA2D003A6A73 /* Assets.xcassets */; };
 		31C488F72108EA2D003A6A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C488F52108EA2D003A6A73 /* LaunchScreen.storyboard */; };
@@ -55,6 +61,13 @@
 		313236DF2108F33800E95575 /* ServiceManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManagerProtocol.swift; sourceTree = "<group>"; };
 		313236E02108F33800E95575 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		313236E42108F87300E95575 /* Amenities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenities.swift; sourceTree = "<group>"; };
+		316C9E422109F996005DC3B3 /* HotelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListViewModel.swift; sourceTree = "<group>"; };
+		316C9E452109F9AA005DC3B3 /* HotelListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListPresenter.swift; sourceTree = "<group>"; };
+		316C9E472109F9B7005DC3B3 /* HotelListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListProtocol.swift; sourceTree = "<group>"; };
+		316C9E492109FB40005DC3B3 /* HotelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListViewController.swift; sourceTree = "<group>"; };
+		316C9E4A2109FB40005DC3B3 /* HotelListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelListViewController.xib; sourceTree = "<group>"; };
+		316C9E4D210A0452005DC3B3 /* HotelListSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListSetup.swift; sourceTree = "<group>"; };
+		316C9E4F210A0670005DC3B3 /* ExtensionSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSequence.swift; sourceTree = "<group>"; };
 		3194C2192108EDE8004FCAE7 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedItem.swift; sourceTree = "<group>"; };
 		3194C21B2108EDE8004FCAE7 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
@@ -84,7 +97,6 @@
 		3194C23F2108EE33004FCAE7 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		31C488E92108EA2B003A6A73 /* HotelUrbanoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelUrbanoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C488EC2108EA2B003A6A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31C488EE2108EA2B003A6A73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31C488F12108EA2B003A6A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31C488F32108EA2D003A6A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C488F62108EA2D003A6A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,10 +128,55 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		316C9E3E2109F917005DC3B3 /* HotelList */ = {
+			isa = PBXGroup;
+			children = (
+				316C9E3F2109F92E005DC3B3 /* Model */,
+				316C9E412109F93E005DC3B3 /* Presenter */,
+				316C9E402109F935005DC3B3 /* View */,
+			);
+			path = HotelList;
+			sourceTree = "<group>";
+		};
+		316C9E3F2109F92E005DC3B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				316C9E422109F996005DC3B3 /* HotelListViewModel.swift */,
+				316C9E4D210A0452005DC3B3 /* HotelListSetup.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		316C9E402109F935005DC3B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				316C9E492109FB40005DC3B3 /* HotelListViewController.swift */,
+				316C9E4A2109FB40005DC3B3 /* HotelListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		316C9E412109F93E005DC3B3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				316C9E452109F9AA005DC3B3 /* HotelListPresenter.swift */,
+				316C9E472109F9B7005DC3B3 /* HotelListProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		316C9E51210A0674005DC3B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				316C9E4F210A0670005DC3B3 /* ExtensionSequence.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3194C2112108EAC1004FCAE7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				31C488EE2108EA2B003A6A73 /* ViewController.swift */,
+				316C9E3E2109F917005DC3B3 /* HotelList */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -127,6 +184,7 @@
 		3194C2122108EAC9004FCAE7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				316C9E51210A0674005DC3B3 /* Extensions */,
 				313236DD2108F32600E95575 /* Service */,
 			);
 			path = Helpers;
@@ -270,7 +328,6 @@
 				31C488E52108EA2B003A6A73 /* Sources */,
 				31C488E62108EA2B003A6A73 /* Frameworks */,
 				31C488E72108EA2B003A6A73 /* Resources */,
-				EA7AED9B50A6A6885603A22D /* [CP] Copy Pods Resources */,
 				4A61E62D8A0E3705EE0099C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -323,6 +380,7 @@
 				31C488F72108EA2D003A6A73 /* LaunchScreen.storyboard in Resources */,
 				31C488F42108EA2D003A6A73 /* Assets.xcassets in Resources */,
 				31C488F22108EA2B003A6A73 /* Main.storyboard in Resources */,
+				316C9E4C2109FB40005DC3B3 /* HotelListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,11 +396,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,24 +427,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EA7AED9B50A6A6885603A22D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotelUrbanoChallenge/Pods-HotelUrbanoChallenge-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -395,25 +437,30 @@
 				3194C2422108EE33004FCAE7 /* Stars.swift in Sources */,
 				3194C22E2108EE0E004FCAE7 /* GeoLocation.swift in Sources */,
 				3194C22C2108EE0E004FCAE7 /* Hotels.swift in Sources */,
+				316C9E432109F996005DC3B3 /* HotelListViewModel.swift in Sources */,
 				3194C2202108EDE8004FCAE7 /* FeaturedItem.swift in Sources */,
 				3194C2442108EE33004FCAE7 /* People.swift in Sources */,
 				3194C2302108EE0E004FCAE7 /* Pagination.swift in Sources */,
 				3194C21F2108EDE8004FCAE7 /* Address.swift in Sources */,
+				316C9E50210A0670005DC3B3 /* ExtensionSequence.swift in Sources */,
 				3194C24C2108EE33004FCAE7 /* District.swift in Sources */,
 				313236E12108F33800E95575 /* ServiceError.swift in Sources */,
 				313236E52108F87300E95575 /* Amenities.swift in Sources */,
 				3194C2482108EE33004FCAE7 /* Regulation.swift in Sources */,
+				316C9E4B2109FB40005DC3B3 /* HotelListViewController.swift in Sources */,
 				3194C2472108EE33004FCAE7 /* States.swift in Sources */,
 				3194C2432108EE33004FCAE7 /* Cities.swift in Sources */,
 				3194C2462108EE33004FCAE7 /* Rooms.swift in Sources */,
 				3194C22B2108EE0E004FCAE7 /* ProductType.swift in Sources */,
+				316C9E482109F9B7005DC3B3 /* HotelListProtocol.swift in Sources */,
+				316C9E4E210A0452005DC3B3 /* HotelListSetup.swift in Sources */,
 				3194C2242108EDE8004FCAE7 /* Results.swift in Sources */,
 				3194C2232108EDE8004FCAE7 /* Gallery.swift in Sources */,
 				3194C24E2108EE33004FCAE7 /* Food.swift in Sources */,
-				31C488EF2108EA2B003A6A73 /* ViewController.swift in Sources */,
 				3194C2492108EE33004FCAE7 /* Duration.swift in Sources */,
 				3194C2212108EDE8004FCAE7 /* Price.swift in Sources */,
 				31C488ED2108EA2B003A6A73 /* AppDelegate.swift in Sources */,
+				316C9E462109F9AA005DC3B3 /* HotelListPresenter.swift in Sources */,
 				3194C22F2108EE0E004FCAE7 /* Meta.swift in Sources */,
 				313236DC2108F2EE00E95575 /* HotelUrbanoChallengeService.swift in Sources */,
 				3194C22D2108EE0E004FCAE7 /* ResponseTime.swift in Sources */,
