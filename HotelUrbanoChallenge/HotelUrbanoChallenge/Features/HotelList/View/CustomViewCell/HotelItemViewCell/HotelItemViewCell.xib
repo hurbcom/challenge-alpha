@@ -29,7 +29,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1V6-NN-Lrb">
                         <rect key="frame" x="16" y="187" width="288" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.82745098039999998" green="0.0" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ws-y0-4Mi">
@@ -74,6 +74,7 @@
                 <outlet property="city" destination="k2D-LR-rcG" id="EVG-es-f2W"/>
                 <outlet property="imageHotel" destination="Q6t-36-BWv" id="SI3-dk-OKH"/>
                 <outlet property="name" destination="uhl-5C-GDo" id="1Zy-UC-2mr"/>
+                <outlet property="price" destination="1V6-NN-Lrb" id="fOi-N0-rnr"/>
                 <outlet property="state" destination="9ws-y0-4Mi" id="ZEE-DV-E8k"/>
             </connections>
             <point key="canvasLocation" x="-32" y="110.5"/>

@@ -16,7 +16,6 @@ final class HotelListViewModel: NSObject {
     init(groupDescription: Int, hotelList: [Results]) {
         self.groupDescription = groupDescription
         
-        
         // Setup hotel to view cell
         let hotels = hotelList.groupBy { $0.name ?? "" }
         
@@ -28,9 +27,8 @@ final class HotelListViewModel: NSObject {
     }
     
     // MARK: - HotelItemViewModel
-    
     internal struct HotelItemViewModel {
-
+        
         let name: String?
         let price: Double?
         let state: String?
@@ -40,7 +38,7 @@ final class HotelListViewModel: NSObject {
         init(hotelItem: Results) {
             
             self.name = hotelItem.name
-            self.price = hotelItem.price?.amount
+            self.price = hotelItem.price?.currentPrice
             self.state = hotelItem.address?.state
             self.city = hotelItem.address?.city
             self.image = hotelItem.image

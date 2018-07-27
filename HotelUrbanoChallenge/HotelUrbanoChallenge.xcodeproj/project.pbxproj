@@ -22,6 +22,7 @@
 		316C9E5D210A629A005DC3B3 /* HotelItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9E5B210A629A005DC3B3 /* HotelItemViewCell.swift */; };
 		316C9E5E210A629A005DC3B3 /* HotelItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 316C9E5C210A629A005DC3B3 /* HotelItemViewCell.xib */; };
 		316C9E61210B4D65005DC3B3 /* ExtensionNSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9E60210B4D65005DC3B3 /* ExtensionNSObject.swift */; };
+		316C9E65210B66C2005DC3B3 /* ExtensionDouble .swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9E64210B66C2005DC3B3 /* ExtensionDouble .swift */; };
 		3194C21F2108EDE8004FCAE7 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C2192108EDE8004FCAE7 /* Address.swift */; };
 		3194C2202108EDE8004FCAE7 /* FeaturedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */; };
 		3194C2212108EDE8004FCAE7 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194C21B2108EDE8004FCAE7 /* Price.swift */; };
@@ -72,6 +73,7 @@
 		316C9E5B210A629A005DC3B3 /* HotelItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelItemViewCell.swift; sourceTree = "<group>"; };
 		316C9E5C210A629A005DC3B3 /* HotelItemViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelItemViewCell.xib; sourceTree = "<group>"; };
 		316C9E60210B4D65005DC3B3 /* ExtensionNSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNSObject.swift; sourceTree = "<group>"; };
+		316C9E64210B66C2005DC3B3 /* ExtensionDouble .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionDouble .swift"; sourceTree = "<group>"; };
 		3194C2192108EDE8004FCAE7 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		3194C21A2108EDE8004FCAE7 /* FeaturedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedItem.swift; sourceTree = "<group>"; };
 		3194C21B2108EDE8004FCAE7 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				316C9E4F210A0670005DC3B3 /* ExtensionSequence.swift */,
 				316C9E60210B4D65005DC3B3 /* ExtensionNSObject.swift */,
+				316C9E64210B66C2005DC3B3 /* ExtensionDouble .swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				3194C24A2108EE33004FCAE7 /* Filters.swift in Sources */,
 				3194C2222108EDE8004FCAE7 /* QuantityDescriptors.swift in Sources */,
 				313236E32108F33800E95575 /* ServiceManager.swift in Sources */,
+				316C9E65210B66C2005DC3B3 /* ExtensionDouble .swift in Sources */,
 				3194C24B2108EE33004FCAE7 /* DepartureCities.swift in Sources */,
 				3194C2452108EE33004FCAE7 /* Attributes.swift in Sources */,
 				3194C24D2108EE33004FCAE7 /* Countries.swift in Sources */,

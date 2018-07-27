@@ -12,7 +12,7 @@ import AlamofireImage
 class HotelItemViewCell: UITableViewCell {
     
     @IBOutlet fileprivate weak var name: UILabel!
-//    @IBOutlet fileprivate weak var price: UILabel!
+    @IBOutlet fileprivate weak var price: UILabel!
     @IBOutlet fileprivate weak var state: UILabel!
     @IBOutlet fileprivate weak var city: UILabel!
     @IBOutlet fileprivate weak var imageHotel: UIImageView!
@@ -35,7 +35,7 @@ class HotelItemViewCell: UITableViewCell {
         self.city.text = hotel.city
         self.name.text = hotel.name
         self.state.text = hotel.state
-//        self.price.text = "R$$"
+        self.price.text = hotel.price?.formatedAsCurreny()
         
 //            Double(hotel.price!)
         
