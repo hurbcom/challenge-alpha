@@ -16,11 +16,8 @@ class HotelListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        self.tableView.register(UINib(nibName: HotelItemViewCell.identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: HotelItemViewCell.identifier)
-        
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexadecimal: 0x143775)
         self.tableView.register(UINib(nibName: HotelItemViewCell.identifier, bundle: nil), forCellReuseIdentifier: HotelItemViewCell.identifier)
-        
         self.presenter = HotelListPresenter(view: self)
         self.presenter.loadHotels()
     }
@@ -58,14 +55,14 @@ extension HotelListViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
-        header.backgroundColor = .white  //F4F4F9
+        header.backgroundColor = .white
         
         let y: CGFloat = 5
         
         let title = UILabel(frame: CGRect(x: 20, y: y, width: view.frame.width, height: 50))
-        title.text = String(self.presenter.hotelListViewModel[section].groupDescription)
-        title.font = UIFont.boldSystemFont(ofSize: 18)
-        title.textColor = .darkGray
+        title.text = "\(String(self.presenter.hotelListViewModel[section].groupDescription)) Estrelas"
+        title.font = UIFont.boldSystemFont(ofSize: 22)
+        title.textColor = UIColor(hexadecimal: 0x143775)
         header.addSubview(title)
         
         return header

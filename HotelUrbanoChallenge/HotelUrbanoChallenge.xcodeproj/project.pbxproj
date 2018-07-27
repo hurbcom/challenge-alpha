@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3130E399210BAFC8004EAA7A /* ExtensionColoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3130E398210BAFC8004EAA7A /* ExtensionColoring.swift */; };
 		313236DA2108F2BB00E95575 /* ServiceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236D92108F2BB00E95575 /* ServiceURL.swift */; };
 		313236DC2108F2EE00E95575 /* HotelUrbanoChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236DB2108F2EE00E95575 /* HotelUrbanoChallengeService.swift */; };
 		313236E12108F33800E95575 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313236DE2108F33800E95575 /* ServiceError.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3130E398210BAFC8004EAA7A /* ExtensionColoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColoring.swift; sourceTree = "<group>"; };
 		313236D92108F2BB00E95575 /* ServiceURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceURL.swift; sourceTree = "<group>"; };
 		313236DB2108F2EE00E95575 /* HotelUrbanoChallengeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelUrbanoChallengeService.swift; sourceTree = "<group>"; };
 		313236DE2108F33800E95575 /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				316C9E4F210A0670005DC3B3 /* ExtensionSequence.swift */,
 				316C9E60210B4D65005DC3B3 /* ExtensionNSObject.swift */,
 				316C9E64210B66C2005DC3B3 /* ExtensionDouble .swift */,
+				3130E398210BAFC8004EAA7A /* ExtensionColoring.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				3194C24C2108EE33004FCAE7 /* District.swift in Sources */,
 				313236E12108F33800E95575 /* ServiceError.swift in Sources */,
 				313236E52108F87300E95575 /* Amenities.swift in Sources */,
+				3130E399210BAFC8004EAA7A /* ExtensionColoring.swift in Sources */,
 				3194C2482108EE33004FCAE7 /* Regulation.swift in Sources */,
 				316C9E4B2109FB40005DC3B3 /* HotelListViewController.swift in Sources */,
 				3194C2472108EE33004FCAE7 /* States.swift in Sources */,
@@ -578,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -632,7 +636,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

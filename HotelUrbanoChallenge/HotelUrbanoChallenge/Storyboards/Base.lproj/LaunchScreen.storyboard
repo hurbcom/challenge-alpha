@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hu" translatesAutoresizingMaskIntoConstraints="NO" id="kc5-Nx-2Z4">
-                                <rect key="frame" x="75" y="221.5" width="224" height="224"/>
+                                <rect key="frame" x="131" y="277.5" width="112" height="112"/>
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.21568627450980393" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Hu" width="224" height="224"/>
+        <image name="Hu" width="112" height="112"/>
     </resources>
 </document>
