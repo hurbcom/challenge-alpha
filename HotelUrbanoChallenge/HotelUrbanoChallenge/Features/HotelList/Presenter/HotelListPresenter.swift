@@ -43,18 +43,33 @@ extension HotelListPresenter {
 
 extension HotelListPresenter {
     
+    
     fileprivate func handleDataHotels() {
         
-//        let filteredApplications = self.hotels.filter { $0.address?.state == "Rio de Janeiro" }
+        // checking which are hotels
+        let isHotel = self.hotels.filter {
+            $0.isHotel == true
+        }
+        
+        // Empty dictionary
         var hotels: [Int: [Results]] = [:]
-        hotels =  self.hotels.groupBy { ($0.stars)! }
+        
+        //Grouping by stars
+        hotels =  isHotel.groupBy { ($0.stars)! }
         
         for hotel in hotels {
-            
             let hotelList = HotelListViewModel(groupDescription: hotel.key, hotelList: hotel.value)
             self.hotelListViewModel.append(hotelList)
         }
+    
+        self.sortedByOrder()
+    }
+    
+    fileprivate func sortedByOrder() {
         
+        //Sorts the grouped data based on number of stars
+        let order =  self.hotelListViewModel.sorted(by: { $0.groupDescription > $1.groupDescription })
+        self.hotelListViewModel = order
     }
     
     fileprivate func requestError(errorDescription: String) {
