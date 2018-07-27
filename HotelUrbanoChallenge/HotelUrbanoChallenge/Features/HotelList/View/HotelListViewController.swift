@@ -58,7 +58,7 @@ extension HotelListViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
-        header.backgroundColor = .white
+        header.backgroundColor = .white  //F4F4F9
         
         let y: CGFloat = 5
         
@@ -72,7 +72,7 @@ extension HotelListViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 277
+        return 154
     }
     
 }
