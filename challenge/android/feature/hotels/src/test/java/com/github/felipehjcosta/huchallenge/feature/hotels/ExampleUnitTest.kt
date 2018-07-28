@@ -1,4 +1,4 @@
-package com.github.felipehjcosta.huchallenge.feature
+package com.github.felipehjcosta.huchallenge.feature.hotels
 
 import org.junit.Test
 
