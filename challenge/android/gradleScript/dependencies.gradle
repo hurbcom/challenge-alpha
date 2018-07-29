@@ -3,10 +3,12 @@ ext {
     constraintLayout = '1.1.2'
 
     espressoLibrary = "3.0.2"
+    androidTestLibrary = "1.0.2"
 
     supportDependencies = [
             appCompat        : "com.android.support:appcompat-v7:${supportLibrary}",
-            constraintLayout : "com.android.support.constraint:constraint-layout:${constraintLayout}"
+            constraintLayout : "com.android.support.constraint:constraint-layout:${constraintLayout}",
+            recyclerView     : "com.android.support:recyclerview-v7:${supportLibrary}",
     ]
 
     kotlinDependencies = [
@@ -16,5 +18,7 @@ ext {
     androidTestDependencies = [
             espressoCore   : "com.android.support.test.espresso:espresso-core:$espressoLibrary",
             espressoContrib: "com.android.support.test.espresso:espresso-contrib:$espressoLibrary",
+            androidTestRunner : "com.android.support.test:runner:$androidTestLibrary",
+            androidTestRules  : "com.android.support.test:rules:$androidTestLibrary"
     ]
 }
