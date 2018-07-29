@@ -1,13 +1,16 @@
 apply plugin: 'com.android.feature'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion compileSdk
+    buildToolsVersion buildTools
+
     baseFeature true
+
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode versionCodeValue
+        versionName versionNameValue
     }
     buildTypes {
         release {
@@ -18,8 +21,10 @@ android {
 }
 
 dependencies {
-    api 'com.android.support:appcompat-v7:27.1.1'
-    api 'com.android.support.constraint:constraint-layout:1.1.2'
     application project(':app')
     feature project(':feature:hotels')
+
+    api kotlinDependencies.values()
+
+    api supportDependencies.values()
 }

@@ -1,18 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    
-
+    compileSdkVersion compileSdk
+    buildToolsVersion buildTools
 
     defaultConfig {
         applicationId "com.github.felipehjcosta.huchallenge.app"
-        minSdkVersion 21
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
-
-
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode versionCodeValue
+        versionName versionNameValue
     }
 
     buildTypes {
