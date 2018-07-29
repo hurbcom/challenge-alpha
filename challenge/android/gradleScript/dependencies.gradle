@@ -2,6 +2,8 @@ ext {
     supportLibrary = '27.1.1'
     constraintLayout = '1.1.2'
 
+    espressoLibrary = "3.0.2"
+
     supportDependencies = [
             appCompat        : "com.android.support:appcompat-v7:${supportLibrary}",
             constraintLayout : "com.android.support.constraint:constraint-layout:${constraintLayout}"
@@ -9,5 +11,10 @@ ext {
 
     kotlinDependencies = [
             kotlinStd    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${ext.kotlinVersion}"
+    ]
+
+    androidTestDependencies = [
+            espressoCore   : "com.android.support.test.espresso:espresso-core:$espressoLibrary",
+            espressoContrib: "com.android.support.test.espresso:espresso-contrib:$espressoLibrary",
     ]
 }
