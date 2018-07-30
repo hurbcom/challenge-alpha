@@ -70,6 +70,7 @@ extension HotelListPresenter {
         //Sorts the grouped data based on number of stars
         let order =  self.hotelListViewModel.sorted(by: { $0.groupDescription > $1.groupDescription })
         self.hotelListViewModel = order
+        
     }
     
     fileprivate func requestError(errorDescription: String) {

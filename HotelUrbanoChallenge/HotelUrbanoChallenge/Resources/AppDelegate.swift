@@ -16,17 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UIGestureRecognizerDeleg
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: nil)
-        tapGesture.delegate = self
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        window?.addGestureRecognizer(tapGesture)
-        
-        let initialViewController = HotelListViewController(nibName: "HotelListViewController", bundle: nil)
-        
-        self.window?.rootViewController = initialViewController
+        let viewController = HotelListViewController(nibName: "HotelListViewController", bundle: nil)
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [viewController]
+        self.window!.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
-        
+
         // Override point for customization after application launch.
         return true
     }

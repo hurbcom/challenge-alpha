@@ -35,7 +35,12 @@ class HotelItemViewCell: UITableViewCell {
         self.cityAndState.text = "\(hotel.city ?? " ")/ \(hotel.state ?? " ")"
         self.name.text = hotel.name
         self.price.text = hotel.price?.formatedAsCurreny()
-
+        
+        let amenities = hotel.amenities
+        let amenitiesSelect: [String] = [Array(amenities!.prefix(3)).joined(separator: ", ")]
+        self.amenities.text = amenitiesSelect.joined()
+        
+//        self.amenities.text = amenitiesSelct
         
         if let imageString = hotel.image, let imageURL = URL(string: imageString) {
             imageHotel!.af_setImage(withURL: imageURL)

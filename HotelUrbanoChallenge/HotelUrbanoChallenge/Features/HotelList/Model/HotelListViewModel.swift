@@ -34,6 +34,7 @@ final class HotelListViewModel: NSObject {
         let state: String?
         let city: String?
         let image: String?
+        var amenities: [String]?
 
         init(hotelItem: Results) {
             
@@ -42,7 +43,7 @@ final class HotelListViewModel: NSObject {
             self.state = hotelItem.address?.state
             self.city = hotelItem.address?.city
             self.image = hotelItem.image
+            self.amenities = hotelItem.featuredItem?.amenities
         }
     }
-    
 }
