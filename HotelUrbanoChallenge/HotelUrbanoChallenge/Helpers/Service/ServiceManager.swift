@@ -25,7 +25,6 @@ final class ServiceManager: ServiceManagerProtocol {
                     failure(ServiceError(code: (response.response?.statusCode)!))
                     return
                 }
-                
                 success(response.result.value!)
         }
     }

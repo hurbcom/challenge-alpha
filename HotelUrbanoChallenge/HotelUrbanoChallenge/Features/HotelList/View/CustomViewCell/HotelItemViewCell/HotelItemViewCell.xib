@@ -36,25 +36,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="incluindo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf4-0g-dx0">
-                                <rect key="frame" x="163" y="72.5" width="51" height="14"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                                <rect key="frame" x="163" y="72.5" width="52.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabeLabelLabelLabe" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnY-X2-gqJ">
-                                <rect key="frame" x="163" y="89.5" width="192" height="16"/>
+                                <rect key="frame" x="163" y="89" width="192" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A parti:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POk-3u-YS3">
-                                <rect key="frame" x="163" y="108.5" width="40.5" height="15"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                <rect key="frame" x="163" y="108" width="45.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="R$ 400" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abq-ib-Adn">
-                                <rect key="frame" x="212" y="108.5" width="55.5" height="19.5"/>
+                                <rect key="frame" x="217" y="108" width="55.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.078431372550000003" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -66,7 +66,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.042540667808219176" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZnY-X2-gqJ" firstAttribute="top" secondItem="Pf4-0g-dx0" secondAttribute="bottom" constant="3" id="2iq-Yx-9oE"/>
                             <constraint firstItem="POk-3u-YS3" firstAttribute="leading" secondItem="0iS-PT-oIo" secondAttribute="trailing" constant="8" id="7UE-W6-98S"/>
@@ -95,6 +94,7 @@
                     <constraint firstAttribute="trailing" secondItem="PZh-vg-7dB" secondAttribute="trailing" constant="8" id="u65-Gi-ivj"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="amenities" destination="ZnY-X2-gqJ" id="2Ao-8r-PSY"/>

@@ -22,12 +22,12 @@ class HotelItemViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cellView.layer.cornerRadius = 10
+        cellView.layer.cornerRadius = 20
         cellView.backgroundColor = UIColor.white
         cellView.layer.shadowOffset = CGSize(width: 1, height: 1)
         cellView.layer.shadowColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1).cgColor
         cellView.layer.shadowOpacity = 1
-        cellView.layer.shadowRadius = 5
+        cellView.layer.shadowRadius = 10
     }
     
     func fillOutlets(hotel: HotelListViewModel.HotelItemViewModel) {
@@ -39,9 +39,7 @@ class HotelItemViewCell: UITableViewCell {
         let amenities = hotel.amenities
         let amenitiesSelect: [String] = [Array(amenities!.prefix(3)).joined(separator: ", ")]
         self.amenities.text = amenitiesSelect.joined()
-        
-//        self.amenities.text = amenitiesSelct
-        
+
         if let imageString = hotel.image, let imageURL = URL(string: imageString) {
             imageHotel!.af_setImage(withURL: imageURL)
         }

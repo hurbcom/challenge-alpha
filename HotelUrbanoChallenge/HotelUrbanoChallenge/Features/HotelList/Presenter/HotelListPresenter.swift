@@ -34,7 +34,7 @@ extension HotelListPresenter {
             self.view.reloadTableView()
             self.view.stopLoading()
         }) { error in
-            self.requestError(errorDescription: error)
+            self.requestError(errorDescription: error.description)
         }
     }
 }
