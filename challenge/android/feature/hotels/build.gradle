@@ -35,6 +35,7 @@ dependencies {
     implementation rxJavaDependencies.values()
 
     testImplementation testDependencies.values()
+    testImplementation kotlinTestDependencies.values()
 
     androidTestImplementation androidTestDependencies.values()
     
