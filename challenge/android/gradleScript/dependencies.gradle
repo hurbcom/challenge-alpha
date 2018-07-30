@@ -5,20 +5,42 @@ ext {
     espressoLibrary = "3.0.2"
     androidTestLibrary = "1.0.2"
 
+    rxJavaLibrary = "2.1.6"
+    rxJavaAndroidLibrary = "2.0.1"
+    rxJavaJakewhartonLibrary = "2.0.0"
+    rxActionLibrary = "1.1.0"
+
+    junitLibrary = "4.12"
+
     supportDependencies = [
-            appCompat        : "com.android.support:appcompat-v7:${supportLibrary}",
-            constraintLayout : "com.android.support.constraint:constraint-layout:${constraintLayout}",
-            recyclerView     : "com.android.support:recyclerview-v7:${supportLibrary}",
+            appCompat       : "com.android.support:appcompat-v7:${supportLibrary}",
+            constraintLayout: "com.android.support.constraint:constraint-layout:${constraintLayout}",
+            recyclerView    : "com.android.support:recyclerview-v7:${supportLibrary}",
     ]
 
     kotlinDependencies = [
-            kotlinStd    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${ext.kotlinVersion}"
+            kotlinStd: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${ext.kotlinVersion}"
     ]
 
     androidTestDependencies = [
-            espressoCore   : "com.android.support.test.espresso:espresso-core:$espressoLibrary",
-            espressoContrib: "com.android.support.test.espresso:espresso-contrib:$espressoLibrary",
-            androidTestRunner : "com.android.support.test:runner:$androidTestLibrary",
-            androidTestRules  : "com.android.support.test:rules:$androidTestLibrary"
+            espressoCore     : "com.android.support.test.espresso:espresso-core:$espressoLibrary",
+            espressoContrib  : "com.android.support.test.espresso:espresso-contrib:$espressoLibrary",
+            androidTestRunner: "com.android.support.test:runner:$androidTestLibrary",
+            androidTestRules : "com.android.support.test:rules:$androidTestLibrary"
+    ]
+
+    rxJavaDependencies = [
+            rxJava               : "io.reactivex.rxjava2:rxjava:$rxJavaLibrary",
+            rxJavaAndroid        : "io.reactivex.rxjava2:rxandroid:$rxJavaAndroidLibrary",
+            rxRelay              : "com.jakewharton.rxrelay2:rxrelay:$rxJavaJakewhartonLibrary",
+            rxBinding            : "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxJavaJakewhartonLibrary",
+            rxBindingDesign      : "com.jakewharton.rxbinding2:rxbinding-design-kotlin:$rxJavaJakewhartonLibrary",
+            rxBindingSupportv4   : "com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:$rxJavaJakewhartonLibrary",
+            rxBindingRecyclerView: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:$rxJavaJakewhartonLibrary",
+            rxAction             : "com.github.felipehjcosta:rxaction:$rxActionLibrary"
+    ]
+
+    testDependencies = [
+            junit             : "junit:junit:$junitLibrary"
     ]
 }

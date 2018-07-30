@@ -31,9 +31,10 @@ android {
 dependencies {
     implementation project(':feature:base')
     implementation kotlinDependencies.values()
-
     implementation supportDependencies.values()
-    testImplementation 'junit:junit:4.12'
+    implementation rxJavaDependencies.values()
+
+    testImplementation testDependencies.values()
 
     androidTestImplementation androidTestDependencies.values()
     

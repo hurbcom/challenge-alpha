@@ -25,6 +25,6 @@ dependencies {
     feature project(':feature:hotels')
 
     api kotlinDependencies.values()
-
     api supportDependencies.values()
+    api rxJavaDependencies.values()
 }
