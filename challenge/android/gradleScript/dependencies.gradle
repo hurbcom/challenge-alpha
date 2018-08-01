@@ -11,6 +11,9 @@ ext {
     rxKotlinLibrary = "2.2.0"
     rxActionLibrary = "1.1.0"
 
+    daggerLibrary = "2.13"
+    javaxAnnotationLibrary = "1.0"
+
     junitLibrary = "4.12"
     robolectricLibrary = "3.7.1"
     mockkLibrary = "1.6"
@@ -19,10 +22,12 @@ ext {
             appCompat       : "com.android.support:appcompat-v7:${supportLibrary}",
             constraintLayout: "com.android.support.constraint:constraint-layout:${constraintLayout}",
             recyclerView    : "com.android.support:recyclerview-v7:${supportLibrary}",
+            design           : "com.android.support:design:${supportLibrary}",
     ]
 
     kotlinDependencies = [
-            kotlinStd: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${ext.kotlinVersion}"
+            kotlinStd: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${ext.kotlinVersion}",
+            kotlinReflect: "org.jetbrains.kotlin:kotlin-reflect:${ext.kotlinVersion}"
     ]
 
     androidTestDependencies = [
@@ -42,6 +47,20 @@ ext {
             rxBindingRecyclerView: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:$rxJavaJakewhartonLibrary",
             rxKotlin             : "io.reactivex.rxjava2:rxkotlin:$rxKotlinLibrary",
             rxAction             : "com.github.felipehjcosta:rxaction:$rxActionLibrary"
+    ]
+
+    daggerDependencies = [
+            dagger              : "com.google.dagger:dagger:$daggerLibrary",
+            daggerAndroidSupport: "com.google.dagger:dagger-android-support:$daggerLibrary"
+    ]
+
+    daggerCompilerDependencies = [
+            dagger                : "com.google.dagger:dagger-compiler:$daggerLibrary",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$daggerLibrary"
+    ]
+
+    annotationsDependencies = [
+            javaxAnnotation: "javax.annotation:jsr250-api:$javaxAnnotationLibrary"
     ]
 
     testDependencies = [

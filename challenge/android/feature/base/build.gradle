@@ -1,4 +1,6 @@
 apply plugin: 'com.android.feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion compileSdk
@@ -18,6 +20,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
 }
 
 dependencies {
@@ -27,4 +35,7 @@ dependencies {
     api kotlinDependencies.values()
     api supportDependencies.values()
     api rxJavaDependencies.values()
+    api daggerDependencies.values()
+    kapt daggerCompilerDependencies.values()
+    compileOnly annotationsDependencies.values()
 }

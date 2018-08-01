@@ -1,6 +1,7 @@
 apply plugin: 'com.android.feature'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion compileSdk
@@ -33,6 +34,9 @@ dependencies {
     implementation kotlinDependencies.values()
     implementation supportDependencies.values()
     implementation rxJavaDependencies.values()
+    implementation daggerDependencies.values()
+    kapt daggerCompilerDependencies.values()
+    compileOnly annotationsDependencies.values()
 
     testImplementation testDependencies.values()
     testImplementation kotlinTestDependencies.values()
