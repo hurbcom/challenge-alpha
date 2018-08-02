@@ -67,7 +67,9 @@ ext {
             junit             : "junit:junit:$junitLibrary",
             robolectric       : "org.robolectric:robolectric:$robolectricLibrary",
             robolectricSupport: "org.robolectric:shadows-supportv4:$robolectricLibrary",
-            mockk             : "io.mockk:mockk:$mockkLibrary"
+            mockk             : "io.mockk:mockk:$mockkLibrary",
+            androidTestRunner : "com.android.support.test:runner:$androidTestLibrary",
+            androidTestRules  : "com.android.support.test:rules:$androidTestLibrary"
     ]
 
     kotlinTestDependencies = [
