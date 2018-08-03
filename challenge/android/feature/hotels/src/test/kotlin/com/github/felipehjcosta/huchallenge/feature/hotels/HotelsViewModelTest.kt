@@ -1,5 +1,9 @@
 package com.github.felipehjcosta.huchallenge.feature.hotels
 
+import com.github.felipehjcosta.huchallenge.base.hotels.HotelsRepository
+import io.mockk.every
+import io.mockk.mockk
+import io.reactivex.Observable.just
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.observers.TestObserver
 import io.reactivex.plugins.RxJavaPlugins
@@ -10,7 +14,9 @@ import java.util.concurrent.TimeUnit
 
 class HotelsViewModelTest {
 
-    private val viewModel = HotelsViewModel()
+    private val mockHotelsRepository = mockk<HotelsRepository>()
+
+    private val viewModel = HotelsViewModel(mockHotelsRepository)
 
     @Before
     fun setUp() {
@@ -25,6 +31,7 @@ class HotelsViewModelTest {
     fun subscribedToItemsWhenExecuteLoadItemsCommandThenReturnItems() {
 
         val hotelName = "Hotel Vilamar Copacabana"
+        every { mockHotelsRepository.fetchHotels() } returns just(listOf(hotelName))
 
         val itemsObserver = TestObserver.create<List<String>>()
 

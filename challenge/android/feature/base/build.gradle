@@ -38,4 +38,7 @@ dependencies {
     api daggerDependencies.values()
     kapt daggerCompilerDependencies.values()
     compileOnly annotationsDependencies.values()
+
+    testImplementation testDependencies.values()
+    testImplementation kotlinTestDependencies.values()
 }

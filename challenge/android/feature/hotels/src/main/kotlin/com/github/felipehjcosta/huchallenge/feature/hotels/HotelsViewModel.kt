@@ -2,14 +2,14 @@ package com.github.felipehjcosta.huchallenge.feature.hotels
 
 import com.felipecosta.rxaction.RxAction
 import com.felipecosta.rxaction.RxCommand
+import com.github.felipehjcosta.huchallenge.base.hotels.HotelsRepository
 import io.reactivex.Observable
-import io.reactivex.Observable.just
 import javax.inject.Inject
 
-class HotelsViewModel @Inject constructor() {
+class HotelsViewModel @Inject constructor(hotelsRepository: HotelsRepository) {
 
     private val asyncLoadItemsCommand = RxAction<Any, List<String>> {
-        just(listOf("Hotel Vilamar Copacabana"))
+        hotelsRepository.fetchHotels()
     }
 
     val items: Observable<List<String>>
