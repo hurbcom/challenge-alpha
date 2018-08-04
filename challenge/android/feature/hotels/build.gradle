@@ -41,12 +41,16 @@ dependencies {
     implementation supportDependencies.values()
     implementation rxJavaDependencies.values()
     implementation daggerDependencies.values()
+    implementation networkDependencies.values()
     kapt daggerCompilerDependencies.values()
     compileOnly annotationsDependencies.values()
 
     testImplementation testDependencies.values()
     testImplementation kotlinTestDependencies.values()
 
+    androidTestImplementation networkTestDependencies.values()
+    kaptAndroidTest daggerCompilerDependencies.values()
     androidTestImplementation androidTestDependencies.values()
+    androidTestUtil androidTestUtilDependencies.values()
     
 }
