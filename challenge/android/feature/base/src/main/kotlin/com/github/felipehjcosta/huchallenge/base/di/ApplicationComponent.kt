@@ -14,6 +14,7 @@ import javax.inject.Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
     AndroidSupportInjectionModule::class,
+    NetworkModule::class,
     HotelsModule::class
 ])
 interface ApplicationComponent {

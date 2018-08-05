@@ -13,7 +13,7 @@ android {
         versionCode versionCodeValue
         versionName versionNameValue
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.github.felipehjcosta.huchallenge.HUChallengeAndroidJUnitRunner"
     }
     buildTypes {
         release {

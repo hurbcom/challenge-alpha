@@ -8,7 +8,7 @@ import javax.inject.Singleton
 class HotelsModule {
     @Singleton
     @Provides
-    fun providesHotelsRepository(): HotelsRepository {
-        return MemoryHotelsRepository()
+    fun providesHotelsRepository(searchApi: SearchApi): HotelsRepository {
+        return NetworkHotelsRepository(searchApi)
     }
 }

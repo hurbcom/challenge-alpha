@@ -42,6 +42,7 @@ dependencies {
 
     testImplementation testDependencies.values()
     testImplementation kotlinTestDependencies.values()
+    testImplementation networkTestDependencies.values()
 
     androidTestImplementation networkTestDependencies.values()
     kaptAndroidTest daggerCompilerDependencies.values()
