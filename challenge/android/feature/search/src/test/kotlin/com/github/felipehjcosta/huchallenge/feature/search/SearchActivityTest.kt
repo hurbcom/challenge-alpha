@@ -1,7 +1,9 @@
 package com.github.felipehjcosta.huchallenge.feature.search
 
 import android.support.v7.widget.RecyclerView
+import com.github.felipehjcosta.huchallenge.base.hotels.Hotel
 import com.github.felipehjcosta.huchallenge.feature.TestStubApplication
+import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.HotelsListViewModel
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.SearchViewModel
 import io.mockk.every
 import io.mockk.mockk
@@ -33,12 +35,16 @@ class SearchActivityTest {
             .create()
             .apply { get().viewModel = mockViewModel }
 
-    private val items = listOf("Awesome Hotel", "New Hotel")
+    private val hotels = listOf(
+            Hotel("Awesome Hotel"),
+            Hotel("New Hotel")
+    )
 
+    private val hotelsListViewModel = HotelsListViewModel(hotels)
 
     @Test
     fun ensureItemsAreDisplayedAfterStart() {
-        every { mockViewModel.items } returns just(items)
+        every { mockViewModel.items } returns just(hotelsListViewModel)
         searchActivityController.start()
                 .postCreate(null)
                 .resume()
@@ -50,7 +56,7 @@ class SearchActivityTest {
 
     @Test
     fun ensureViewModelPropsAreDisposeAfterStopped() {
-        val itemsSubject = BehaviorSubject.createDefault(items).apply {
+        val itemsSubject = BehaviorSubject.createDefault(hotelsListViewModel).apply {
             every { mockViewModel.items } returns this
         }
 

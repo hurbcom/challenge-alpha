@@ -10,13 +10,13 @@ import javax.inject.Inject
 
 class SearchViewModel @Inject constructor(hotelsRepository: HotelsRepository) {
 
-    private val asyncLoadItemsCommand = RxAction<Any, List<String>> {
-        hotelsRepository.fetchHotels().map { it.map { it.name } }
+    private val asyncLoadItemsCommand = RxAction<Any, HotelsListViewModel> {
+        hotelsRepository.fetchHotels().map { HotelsListViewModel(it) }
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
     }
 
-    val items: Observable<List<String>>
+    val items: Observable<HotelsListViewModel>
         get() = asyncLoadItemsCommand.elements
 
 

@@ -36,7 +36,7 @@ class SearchViewModelTest {
         val hotel = Hotel(hotelName)
         every { mockHotelsRepository.fetchHotels() } returns just(listOf(hotel))
 
-        val itemsObserver = TestObserver.create<List<String>>()
+        val itemsObserver = TestObserver.create<HotelsListViewModel>()
 
         viewModel.items.subscribe(itemsObserver)
 
@@ -44,7 +44,7 @@ class SearchViewModelTest {
 
         itemsObserver.await(1000L, TimeUnit.MILLISECONDS)
 
-        itemsObserver.assertValue { it[0] == hotelName }
+        itemsObserver.assertValue { it[0]!!.name == hotelName }
 
         disposable.dispose()
     }
