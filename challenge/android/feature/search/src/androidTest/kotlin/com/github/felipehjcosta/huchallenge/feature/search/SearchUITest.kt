@@ -56,7 +56,7 @@ class SearchUITest {
     }
 
     @Test
-    fun name() {
+    fun whenLaunchedThenTheFirstHotelIsShown() {
         onView(allOf(withId(R.id.hotels_recycler_view),
                 hasDescendant(withText("Hotel Vilamar Copacabana"))))
                 .check(matches(isDisplayed()))
