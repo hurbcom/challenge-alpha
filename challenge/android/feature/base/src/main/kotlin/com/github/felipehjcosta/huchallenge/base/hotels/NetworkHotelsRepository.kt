@@ -4,7 +4,7 @@ import io.reactivex.Observable
 
 internal class NetworkHotelsRepository(private val searchApi: SearchApi) : HotelsRepository {
 
-    override fun fetchHotels(): Observable<List<String>> {
-        return searchApi.searchHotels().map { it.results.map { it.name } }
+    override fun fetchHotels(): Observable<List<Hotel>> {
+        return searchApi.searchHotels().map { it.results }
     }
 }

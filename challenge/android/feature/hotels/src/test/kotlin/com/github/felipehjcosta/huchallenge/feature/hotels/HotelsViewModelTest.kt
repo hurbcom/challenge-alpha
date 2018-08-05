@@ -1,5 +1,6 @@
 package com.github.felipehjcosta.huchallenge.feature.hotels
 
+import com.github.felipehjcosta.huchallenge.base.hotels.Hotel
 import com.github.felipehjcosta.huchallenge.base.hotels.HotelsRepository
 import io.mockk.every
 import io.mockk.mockk
@@ -31,7 +32,8 @@ class HotelsViewModelTest {
     fun subscribedToItemsWhenExecuteLoadItemsCommandThenReturnItems() {
 
         val hotelName = "Hotel Vilamar Copacabana"
-        every { mockHotelsRepository.fetchHotels() } returns just(listOf(hotelName))
+        val hotel = Hotel(hotelName)
+        every { mockHotelsRepository.fetchHotels() } returns just(listOf(hotel))
 
         val itemsObserver = TestObserver.create<List<String>>()
 

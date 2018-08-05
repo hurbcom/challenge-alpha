@@ -38,13 +38,13 @@ class NetworkHotelsRepositoryTest {
 
         mockWebServer.enqueue(MockResponse().setResponseCode(200).setBody(body))
 
-        val itemObserver = TestObserver.create<List<String>>()
+        val itemObserver = TestObserver.create<List<Hotel>>()
         networkDataRepository.fetchHotels().subscribe(itemObserver)
 
         itemObserver.awaitTerminalEvent()
 
         itemObserver.assertValue { it.size == 20 }
-        itemObserver.assertValue { it[0] == "Hotel Vilamar Copacabana" }
+        itemObserver.assertValue { it[0].name == "Hotel Vilamar Copacabana" }
 
         itemObserver.dispose()
     }

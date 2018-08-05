@@ -11,7 +11,7 @@ import javax.inject.Inject
 class HotelsViewModel @Inject constructor(hotelsRepository: HotelsRepository) {
 
     private val asyncLoadItemsCommand = RxAction<Any, List<String>> {
-        hotelsRepository.fetchHotels()
+        hotelsRepository.fetchHotels().map { it.map { it.name } }
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
     }
