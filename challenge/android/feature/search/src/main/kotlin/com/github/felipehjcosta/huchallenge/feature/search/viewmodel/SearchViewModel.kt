@@ -15,7 +15,7 @@ class SearchViewModel @Inject constructor(hotelsRepository: HotelsRepository) {
                 .map {
                     val hotels = it.filter { it.isHotel }
                     val listItemViewModels = mutableListOf<ListItemViewModel>()
-                    hotels.groupBy { it.stars }.forEach {
+                    hotels.groupBy { it.stars }.toSortedMap(reverseOrder()).forEach {
                         listItemViewModels.add(SectionListItemViewModel(it.key.toString()))
                         it.value.forEach { listItemViewModels.add(HotelListItemViewModel(it)) }
                     }
