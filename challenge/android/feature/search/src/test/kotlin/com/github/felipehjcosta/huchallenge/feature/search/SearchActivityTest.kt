@@ -1,9 +1,8 @@
 package com.github.felipehjcosta.huchallenge.feature.search
 
 import android.support.v7.widget.RecyclerView
-import com.github.felipehjcosta.huchallenge.base.hotels.Hotel
 import com.github.felipehjcosta.huchallenge.feature.TestStubApplication
-import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.HotelsListViewModel
+import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.ListViewModel
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.SearchViewModel
 import io.mockk.every
 import io.mockk.mockk
@@ -15,8 +14,8 @@ import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.android.controller.ActivityController
 import org.robolectric.annotation.Config
-import kotlin.test.assertEquals
 import kotlin.test.assertFalse
+import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 @RunWith(RobolectricTestRunner::class)
@@ -35,12 +34,7 @@ class SearchActivityTest {
             .create()
             .apply { get().viewModel = mockViewModel }
 
-    private val hotels = listOf(
-            Hotel("Awesome Hotel"),
-            Hotel("New Hotel")
-    )
-
-    private val hotelsListViewModel = HotelsListViewModel(hotels)
+    private val hotelsListViewModel = mockk<ListViewModel>(relaxed = true)
 
     @Test
     fun ensureItemsAreDisplayedAfterStart() {
@@ -51,7 +45,7 @@ class SearchActivityTest {
                 .visible()
 
         val recyclerView = searchActivityController.get().findViewById<RecyclerView>(R.id.hotels_recycler_view)
-        assertEquals(2, recyclerView.adapter.itemCount)
+        assertNotNull(recyclerView.adapter)
     }
 
     @Test

@@ -10,13 +10,23 @@ import javax.inject.Inject
 
 class SearchViewModel @Inject constructor(hotelsRepository: HotelsRepository) {
 
-    private val asyncLoadItemsCommand = RxAction<Any, HotelsListViewModel> {
-        hotelsRepository.fetchHotels().map { HotelsListViewModel(it) }
+    private val asyncLoadItemsCommand = RxAction<Any, ListViewModel> {
+        hotelsRepository.fetchHotels()
+                .map {
+                    val hotels = it.filter { it.isHotel }
+                    val listItemViewModels = mutableListOf<ListItemViewModel>()
+                    hotels.groupBy { it.stars }.forEach {
+                        listItemViewModels.add(SectionListItemViewModel(it.key.toString()))
+                        it.value.forEach { listItemViewModels.add(HotelListItemViewModel(it)) }
+                    }
+                    listItemViewModels
+                }
+                .map { ListViewModel(it) }
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
     }
 
-    val items: Observable<HotelsListViewModel>
+    val items: Observable<ListViewModel>
         get() = asyncLoadItemsCommand.elements
 
 
