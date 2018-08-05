@@ -1,1 +1,1 @@
-include ':feature:hotels', ':feature:base', ':app', ':instantapp'
+include ':feature:search', ':feature:base', ':app', ':instantapp'

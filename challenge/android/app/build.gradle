@@ -22,6 +22,6 @@ android {
 }
 
 dependencies {
-    implementation project(':feature:hotels')
+    implementation project(':feature:search')
     implementation project(':feature:base')
 }

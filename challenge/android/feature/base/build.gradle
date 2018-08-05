@@ -30,7 +30,7 @@ android {
 
 dependencies {
     application project(':app')
-    feature project(':feature:hotels')
+    feature project(':feature:search')
 
     api kotlinDependencies.values()
     api supportDependencies.values()
