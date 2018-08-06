@@ -1,0 +1,53 @@
+apply plugin: 'com.android.feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: "com.vanniktech.android.junit.jacoco"
+
+android {
+    compileSdkVersion compileSdk
+    buildToolsVersion buildTools
+
+    baseFeature true
+
+    defaultConfig {
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode versionCodeValue
+        versionName versionNameValue
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+dependencies {
+    application project(':app')
+    feature project(':feature:search')
+
+    api kotlinDependencies.values()
+    api supportDependencies.values()
+    api rxJavaDependencies.values()
+    api daggerDependencies.values()
+    api networkDependencies.values()
+    kapt daggerCompilerDependencies.values()
+    compileOnly annotationsDependencies.values()
+    api imageLoaderDependencies.values()
+
+    testImplementation testDependencies.values()
+    testImplementation kotlinTestDependencies.values()
+    testImplementation networkTestDependencies.values()
+
+    androidTestImplementation networkTestDependencies.values()
+    kaptAndroidTest daggerCompilerDependencies.values()
+    androidTestImplementation androidTestDependencies.values()
+    androidTestUtil androidTestUtilDependencies.values()
+}
