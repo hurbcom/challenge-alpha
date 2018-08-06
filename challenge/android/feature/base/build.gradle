@@ -39,6 +39,7 @@ dependencies {
     api networkDependencies.values()
     kapt daggerCompilerDependencies.values()
     compileOnly annotationsDependencies.values()
+    api imageLoaderDependencies.values()
 
     testImplementation testDependencies.values()
     testImplementation kotlinTestDependencies.values()

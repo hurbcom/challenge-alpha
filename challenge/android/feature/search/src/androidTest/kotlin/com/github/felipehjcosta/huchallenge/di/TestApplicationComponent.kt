@@ -1,6 +1,7 @@
 package com.github.felipehjcosta.huchallenge.di
 
 import com.github.felipehjcosta.huchallenge.base.di.ApplicationComponent
+import com.github.felipehjcosta.huchallenge.base.di.UiModule
 import com.github.felipehjcosta.huchallenge.base.hotels.HotelsModule
 import com.github.felipehjcosta.huchallenge.feature.search.SearchUITest
 import dagger.Component
@@ -13,6 +14,7 @@ import javax.inject.Singleton
     TestApplicationModule::class,
     TestNetworkModule::class,
     HotelsModule::class,
+    UiModule::class,
     AndroidInjectionModule::class,
     AndroidSupportInjectionModule::class
 ])

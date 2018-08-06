@@ -21,6 +21,8 @@ ext {
     daggerLibrary = "2.13"
     javaxAnnotationLibrary = "1.0"
 
+    imageLoaderLibrary = "1.9.5"
+
     junitLibrary = "4.12"
     robolectricLibrary = "3.7.1"
     mockkLibrary = "1.6"
@@ -89,6 +91,10 @@ ext {
 
     annotationsDependencies = [
             javaxAnnotation: "javax.annotation:jsr250-api:$javaxAnnotationLibrary"
+    ]
+
+    imageLoaderDependencies = [
+            universalImageLoader: "com.nostra13.universalimageloader:universal-image-loader:$imageLoaderLibrary"
     ]
 
     testDependencies = [

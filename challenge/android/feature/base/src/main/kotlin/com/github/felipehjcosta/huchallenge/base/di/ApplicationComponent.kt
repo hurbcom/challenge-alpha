@@ -4,6 +4,7 @@ import android.app.Application
 import com.github.felipehjcosta.huchallenge.base.MainApplication
 import com.github.felipehjcosta.huchallenge.base.hotels.HotelsModule
 import com.github.felipehjcosta.huchallenge.base.hotels.HotelsRepository
+import com.github.felipehjcosta.huchallenge.base.imageloader.ImageLoader
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -14,7 +15,9 @@ import javax.inject.Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
     AndroidSupportInjectionModule::class,
+    ApplicationModule::class,
     NetworkModule::class,
+    UiModule::class,
     HotelsModule::class
 ])
 interface ApplicationComponent {
@@ -29,4 +32,6 @@ interface ApplicationComponent {
     }
 
     val hotelsRepository: HotelsRepository
+
+    val imageLoader: ImageLoader
 }
