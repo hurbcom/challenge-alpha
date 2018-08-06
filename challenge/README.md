@@ -13,7 +13,7 @@ The project is in `/challenge/android` and you can run the apk module with 2 way
 * Open with Android Studio
 * Run the command `./gradlew build installDebug`
 
-If you would like to run the instant app module, you can run the following commands:
+If you would like to run the instant app module (it's more safe to test on Android Oreo), you can run the following commands:
 
 1. Build instantapp module
 ```shell
