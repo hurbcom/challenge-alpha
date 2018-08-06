@@ -6,7 +6,9 @@
 
     <TextView
         android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/margin_padding_size_medium"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"

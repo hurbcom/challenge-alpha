@@ -173,13 +173,71 @@ class HotelsAdapterTest {
         val parent = FrameLayout(context)
         val holder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.PACKAGE_VIEW_TYPE)
 
-        val listItemViewModel = mockk<HotelListItemViewModel>()
-        val title = "package"
-        every { listItemViewModel.name } returns title
+        val listItemViewModel = mockk<HotelListItemViewModel>(relaxed = true)
+        val title = "hotel".apply { every { listItemViewModel.name } returns this }
+        val city = "Rio de Janeiro".apply { every { listItemViewModel.city } returns this }
+        val state = "Rio de Janeiro".apply { every { listItemViewModel.state } returns this }
+        val amount = NumberFormat.getCurrencyInstance().format(BigDecimal("159.99"))
+        val price = amount.apply { every { listItemViewModel.price } returns this }
+        val amenity1 = "amenity1".apply { every { listItemViewModel.amenity1 } returns this }
+        val amenity2 = "amenity1".apply { every { listItemViewModel.amenity2 } returns this }
+        val amenity3 = "amenity1".apply { every { listItemViewModel.amenity3 } returns this }
         every { mockListViewModel[1] } returns listItemViewModel
         hotelsAdapter.bindViewHolder(holder, 1)
 
-        val currentTitle = (holder as HotelsAdapter.PackageViewHolder).title.text
-        assertEquals(title, currentTitle)
+        assertEquals(title, (holder as HotelsAdapter.HotelsViewHolder).title.text)
+        assertEquals("$city - $state", holder.address.text)
+        assertEquals(price, holder.price.text)
+        assertEquals(View.VISIBLE, holder.amenityTitle.visibility)
+        assertEquals(amenity1, holder.amenity1.text)
+        assertEquals(amenity2, holder.amenity2.text)
+        assertEquals(amenity3, holder.amenity3.text)
+    }
+
+    @Test
+    fun ensurePackageBindingAmenityTitleIsNotShownWhenCallListViewModelWithNoAmenity() {
+        val context = Robolectric.buildActivity(SearchActivity::class.java).create().get()
+        val parent = FrameLayout(context)
+        val holder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.HOTEL_VIEW_TYPE)
+
+        val listItemViewModel = mockk<HotelListItemViewModel>(relaxed = true)
+        "".apply { every { listItemViewModel.amenity1 } returns this }
+        "".apply { every { listItemViewModel.amenity2 } returns this }
+        "".apply { every { listItemViewModel.amenity3 } returns this }
+        every { mockListViewModel[1] } returns listItemViewModel
+        hotelsAdapter.bindViewHolder(holder, 1)
+
+        assertEquals(View.GONE, (holder as HotelsAdapter.HotelsViewHolder).amenityTitle.visibility)
+    }
+
+    @Test
+    fun ensurePackageAmenityBindingCorrectlyWhenCallListViewModel() {
+        val context = Robolectric.buildActivity(SearchActivity::class.java).create().get()
+        val parent = FrameLayout(context)
+        val holder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.HOTEL_VIEW_TYPE)
+
+        val listItemViewModelWithoutAmenities = mockk<HotelListItemViewModel>(relaxed = true)
+        "".apply { every { listItemViewModelWithoutAmenities.amenity1 } returns this }
+        "".apply { every { listItemViewModelWithoutAmenities.amenity2 } returns this }
+        "".apply { every { listItemViewModelWithoutAmenities.amenity3 } returns this }
+        every { mockListViewModel[1] } returns listItemViewModelWithoutAmenities
+        hotelsAdapter.bindViewHolder(holder, 1)
+
+        assertEquals(View.GONE, (holder as HotelsAdapter.HotelsViewHolder).amenityTitle.visibility)
+        assertEquals(View.GONE, holder.amenity1.visibility)
+        assertEquals(View.GONE, holder.amenity2.visibility)
+        assertEquals(View.GONE, holder.amenity3.visibility)
+
+        val listItemViewModelWithAmenities = mockk<HotelListItemViewModel>(relaxed = true)
+        "amenity1".apply { every { listItemViewModelWithAmenities.amenity1 } returns this }
+        "amenity2".apply { every { listItemViewModelWithAmenities.amenity2 } returns this }
+        "amenity3".apply { every { listItemViewModelWithAmenities.amenity3 } returns this }
+        every { mockListViewModel[2] } returns listItemViewModelWithAmenities
+        hotelsAdapter.bindViewHolder(holder, 2)
+
+        assertEquals(View.VISIBLE, (holder as HotelsAdapter.HotelsViewHolder).amenityTitle.visibility)
+        assertEquals(View.VISIBLE, holder.amenity1.visibility)
+        assertEquals(View.VISIBLE, holder.amenity2.visibility)
+        assertEquals(View.VISIBLE, holder.amenity3.visibility)
     }
 }

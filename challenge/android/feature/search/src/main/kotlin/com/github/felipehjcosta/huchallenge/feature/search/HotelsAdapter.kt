@@ -25,7 +25,7 @@ class HotelsAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
             PACKAGE_SECTION_VIEW_TYPE -> PackageSectionViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.package_section_item_layout, parent, false))
-            PACKAGE_VIEW_TYPE -> PackageViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.package_item_layout, parent, false))
+            PACKAGE_VIEW_TYPE -> HotelsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.hotels_item_layout, parent, false))
             HOTEL_SECTION_VIEW_TYPE -> HotelSectionViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.section_item_layout, parent, false))
             else -> HotelsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.hotels_item_layout, parent, false))
         }
@@ -34,17 +34,13 @@ class HotelsAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder.itemViewType) {
             PACKAGE_SECTION_VIEW_TYPE -> bindPackageSection(holder as? PackageSectionViewHolder?, listViewModel[position])
-            PACKAGE_VIEW_TYPE -> bindPackage(holder as? PackageViewHolder?, listViewModel[position])
+            PACKAGE_VIEW_TYPE -> bindHotel(holder as? HotelsViewHolder?, listViewModel[position])
             HOTEL_SECTION_VIEW_TYPE -> bindSection(holder as? HotelSectionViewHolder?, listViewModel[position])
             else -> bindHotel(holder as? HotelsViewHolder?, listViewModel[position])
         }
     }
 
     private fun bindPackageSection(holder: PackageSectionViewHolder?, listItemViewModel: ListItemViewModel?) {}
-
-    private fun bindPackage(holder: PackageViewHolder?, listItemViewModel: ListItemViewModel?) {
-        holder?.title?.text = listItemViewModel?.name
-    }
 
     private fun bindSection(hotel: HotelSectionViewHolder?, listItemViewModel: ListItemViewModel?) {
         hotel?.let {
@@ -99,10 +95,6 @@ class HotelsAdapter(
     }
 
     inner class PackageSectionViewHolder(view: View) : RecyclerView.ViewHolder(view)
-
-    inner class PackageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        internal val title = view.findViewById<TextView>(R.id.item_title)
-    }
 
     private val RecyclerView.ViewHolder.resources: Resources
         get() = itemView.resources
