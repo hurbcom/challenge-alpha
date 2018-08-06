@@ -29,11 +29,12 @@ ext {
             appCompat       : "com.android.support:appcompat-v7:${supportLibrary}",
             constraintLayout: "com.android.support.constraint:constraint-layout:${constraintLayout}",
             recyclerView    : "com.android.support:recyclerview-v7:${supportLibrary}",
-            design           : "com.android.support:design:${supportLibrary}",
+            design          : "com.android.support:design:${supportLibrary}",
+            cardView        : "com.android.support:cardview-v7:${supportLibrary}"
     ]
 
     kotlinDependencies = [
-            kotlinStd: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${ext.kotlinVersion}",
+            kotlinStd    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${ext.kotlinVersion}",
             kotlinReflect: "org.jetbrains.kotlin:kotlin-reflect:${ext.kotlinVersion}"
     ]
 
@@ -42,9 +43,9 @@ ext {
             espressoContrib  : "com.android.support.test.espresso:espresso-contrib:$espressoLibrary",
             androidTestRunner: "com.android.support.test:runner:$androidTestLibrary",
             androidTestRules : "com.android.support.test:rules:$androidTestLibrary",
-            mockitAndroid  : "org.mockito:mockito-android:$mockitAndroidLibrary",
-            rx2Idler       : "com.squareup.rx.idler:rx2-idler:$rx2IdlerLibrary",
-            testButler     : "com.linkedin.testbutler:test-butler-library:$testButlerLibrary"
+            mockitAndroid    : "org.mockito:mockito-android:$mockitAndroidLibrary",
+            rx2Idler         : "com.squareup.rx.idler:rx2-idler:$rx2IdlerLibrary",
+            testButler       : "com.linkedin.testbutler:test-butler-library:$testButlerLibrary"
     ]
 
     androidTestUtilDependencies = [
