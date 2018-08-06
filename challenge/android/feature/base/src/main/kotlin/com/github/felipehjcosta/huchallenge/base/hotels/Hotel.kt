@@ -6,5 +6,9 @@ data class Hotel(
     @SerializedName("name") val name: String = "",
     @SerializedName("stars") val stars: Int = -1,
     @SerializedName("isHotel") val isHotel: Boolean = false,
-    @SerializedName("isPackage") val isPackage: Boolean = false
+    @SerializedName("isPackage") val isPackage: Boolean = false,
+    @SerializedName("gallery") val list: List<Image> = emptyList(),
+    @SerializedName("amenities") val amenities: List<Amenity> = emptyList(),
+    @SerializedName("address") val address: Address = Address(),
+    @SerializedName("price") val price: Price = Price()
 )
