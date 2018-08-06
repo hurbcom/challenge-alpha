@@ -5,12 +5,15 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import com.github.felipehjcosta.huchallenge.base.imageloader.ImageLoader
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.ListItemViewModel
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.ListViewModel
 
 class HotelsAdapter(
-        private val listViewModel: ListViewModel
+        private val listViewModel: ListViewModel,
+        private val imageLoader: ImageLoader
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -51,6 +54,7 @@ class HotelsAdapter(
 
     private fun bindHotel(holder: HotelsViewHolder?, listItemViewModel: ListItemViewModel?) {
         holder?.let {
+            imageLoader.loadImage(listItemViewModel?.imageUrl, it.image)
             it.title.text = listItemViewModel?.name
             it.address.text = it.resources.getString(R.string.hotel_address, listItemViewModel?.city, listItemViewModel?.state)
             it.price.text = listItemViewModel?.price
@@ -85,6 +89,7 @@ class HotelsAdapter(
     }
 
     inner class HotelsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        internal val image = view.findViewById<ImageView>(R.id.item_image)
         internal val title = view.findViewById<TextView>(R.id.item_title)
         internal val address = view.findViewById<TextView>(R.id.item_address)
         internal val price = view.findViewById<TextView>(R.id.item_price)

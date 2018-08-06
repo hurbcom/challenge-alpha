@@ -8,4 +8,5 @@ class PackageSectionListItemViewModel : ListItemViewModel {
     override val amenity1: String? = null
     override val amenity2: String? = null
     override val amenity3: String? = null
+    override val imageUrl: String? = null
 }

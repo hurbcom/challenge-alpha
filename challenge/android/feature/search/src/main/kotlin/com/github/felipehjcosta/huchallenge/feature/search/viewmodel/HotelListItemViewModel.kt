@@ -20,8 +20,13 @@ class HotelListItemViewModel(
 
     override val amenity1: String?
         get() = hotel.amenities.getOrNull(0)?.name
+
     override val amenity2: String?
         get() = hotel.amenities.getOrNull(1)?.name
+
     override val amenity3: String?
         get() = hotel.amenities.getOrNull(2)?.name
+
+    override val imageUrl: String?
+        get() = hotel.gallery.getOrNull(0)?.url
 }

@@ -1,6 +1,7 @@
 package com.github.felipehjcosta.huchallenge.feature.search
 
 import android.support.v7.widget.RecyclerView
+import com.github.felipehjcosta.huchallenge.base.imageloader.ImageLoader
 import com.github.felipehjcosta.huchallenge.feature.TestStubApplication
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.ListViewModel
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.SearchViewModel
@@ -29,10 +30,15 @@ class SearchActivityTest {
 
     private val mockViewModel = mockk<SearchViewModel>(relaxed = true)
 
+    private val mockImageLoader = mockk<ImageLoader>(relaxed = true)
+
     private val searchActivityController: ActivityController<SearchActivity> = Robolectric
             .buildActivity(SearchActivity::class.java)
             .create()
-            .apply { get().viewModel = mockViewModel }
+            .apply {
+                get().viewModel = mockViewModel
+                get().imageLoader = mockImageLoader
+            }
 
     private val hotelsListViewModel = mockk<ListViewModel>(relaxed = true)
 

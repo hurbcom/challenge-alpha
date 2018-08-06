@@ -2,6 +2,7 @@ package com.github.felipehjcosta.huchallenge.feature.search
 
 import android.view.View
 import android.widget.FrameLayout
+import com.github.felipehjcosta.huchallenge.base.imageloader.ImageLoader
 import com.github.felipehjcosta.huchallenge.feature.TestStubApplication
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.HotelListItemViewModel
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.HotelSectionListItemViewModel
@@ -30,7 +31,9 @@ class HotelsAdapterTest {
 
     private val mockListViewModel = mockk<ListViewModel>(relaxed = true)
 
-    private val hotelsAdapter = HotelsAdapter(mockListViewModel)
+    private val mockImageLoader = mockk<ImageLoader>(relaxed = true)
+
+    private val hotelsAdapter = HotelsAdapter(mockListViewModel, mockImageLoader)
 
     @Test
     fun ensureSizeWhenCallListViewModel() {
@@ -85,6 +88,8 @@ class HotelsAdapterTest {
         val holder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.HOTEL_VIEW_TYPE)
 
         val listItemViewModel = mockk<HotelListItemViewModel>(relaxed = true)
+        val imageUrl = "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2822/hotel-vilamar-copacabana-rio-de-janeiro-rj-001_20180409114156.png"
+        val image = imageUrl.apply { every { listItemViewModel.imageUrl } returns this }
         val title = "hotel".apply { every { listItemViewModel.name } returns this }
         val city = "Rio de Janeiro".apply { every { listItemViewModel.city } returns this }
         val state = "Rio de Janeiro".apply { every { listItemViewModel.state } returns this }
@@ -103,6 +108,7 @@ class HotelsAdapterTest {
         assertEquals(amenity1, holder.amenity1.text)
         assertEquals(amenity2, holder.amenity2.text)
         assertEquals(amenity3, holder.amenity3.text)
+        verify { mockImageLoader.loadImage(image, holder.image) }
     }
 
     @Test
@@ -174,7 +180,9 @@ class HotelsAdapterTest {
         val holder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.PACKAGE_VIEW_TYPE)
 
         val listItemViewModel = mockk<HotelListItemViewModel>(relaxed = true)
-        val title = "hotel".apply { every { listItemViewModel.name } returns this }
+        val imageUrl = "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2822/hotel-vilamar-copacabana-rio-de-janeiro-rj-001_20180409114156.png"
+        val image = imageUrl.apply { every { listItemViewModel.imageUrl } returns this }
+        val title = "package".apply { every { listItemViewModel.name } returns this }
         val city = "Rio de Janeiro".apply { every { listItemViewModel.city } returns this }
         val state = "Rio de Janeiro".apply { every { listItemViewModel.state } returns this }
         val amount = NumberFormat.getCurrencyInstance().format(BigDecimal("159.99"))
@@ -192,6 +200,7 @@ class HotelsAdapterTest {
         assertEquals(amenity1, holder.amenity1.text)
         assertEquals(amenity2, holder.amenity2.text)
         assertEquals(amenity3, holder.amenity3.text)
+        verify { mockImageLoader.loadImage(image, holder.image) }
     }
 
     @Test

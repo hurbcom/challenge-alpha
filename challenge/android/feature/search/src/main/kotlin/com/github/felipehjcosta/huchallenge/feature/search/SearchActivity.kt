@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.github.felipehjcosta.huchallenge.base.imageloader.ImageLoader
 import com.github.felipehjcosta.huchallenge.feature.search.di.setupDependencyInjection
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.SearchViewModel
 import io.reactivex.disposables.CompositeDisposable
@@ -14,6 +15,9 @@ class SearchActivity : AppCompatActivity() {
 
     @Inject
     lateinit var viewModel: SearchViewModel
+
+    @Inject
+    lateinit var imageLoader: ImageLoader
 
     private lateinit var compositeDisposable: CompositeDisposable
 
@@ -34,7 +38,7 @@ class SearchActivity : AppCompatActivity() {
         compositeDisposable = CompositeDisposable()
 
         compositeDisposable += viewModel.items.subscribe {
-            recyclerView.adapter = HotelsAdapter(it)
+            recyclerView.adapter = HotelsAdapter(it, imageLoader)
         }
 
         compositeDisposable += viewModel.loadItemsCommand.execute().subscribe()

@@ -14,4 +14,6 @@ interface ListItemViewModel {
     val amenity2: String?
 
     val amenity3: String?
+
+    val imageUrl: String?
 }
