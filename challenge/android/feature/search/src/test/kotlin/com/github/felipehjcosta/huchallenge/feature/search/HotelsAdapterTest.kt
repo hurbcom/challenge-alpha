@@ -3,15 +3,18 @@ package com.github.felipehjcosta.huchallenge.feature.search
 import android.widget.FrameLayout
 import com.github.felipehjcosta.huchallenge.feature.TestStubApplication
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.HotelListItemViewModel
+import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.HotelSectionListItemViewModel
 import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.ListViewModel
-import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.SectionListItemViewModel
+import com.github.felipehjcosta.huchallenge.feature.search.viewmodel.PackageSectionListItemViewModel
 import io.mockk.every
 import io.mockk.mockk
+import io.mockk.verify
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 @RunWith(RobolectricTestRunner::class)
@@ -30,62 +33,92 @@ class HotelsAdapterTest {
     @Test
     fun ensureSizeWhenCallListViewModel() {
         every { mockListViewModel.size } returns 1
-        assertTrue { hotelsAdapter.itemCount == 1 }
+        assertEquals(1, hotelsAdapter.itemCount)
     }
 
     @Test
     fun ensureSectionTypeWhenCallListViewModel() {
         every { mockListViewModel.isSection(0) } returns true
-        assertTrue { hotelsAdapter.getItemViewType(0) == HotelsAdapter.SECTION_VIEW_TYPE }
+        assertEquals(HotelsAdapter.HOTEL_SECTION_VIEW_TYPE, hotelsAdapter.getItemViewType(0))
     }
 
     @Test
     fun ensureHotelTypeWhenCallListViewModel() {
         every { mockListViewModel.isSection(1) } returns false
-        assertTrue { hotelsAdapter.getItemViewType(1) == HotelsAdapter.HOTEL_VIEW_TYPE }
+        assertEquals(hotelsAdapter.getItemViewType(1), HotelsAdapter.HOTEL_VIEW_TYPE)
     }
 
     @Test
-    fun ensureSectionHolderCreationWhenCallListViewModel() {
-        val context = Robolectric.buildActivity(SearchActivity::class.java).create().get()
-        val parent = FrameLayout(context)
-        assertTrue { hotelsAdapter.createViewHolder(parent, HotelsAdapter.SECTION_VIEW_TYPE).javaClass == HotelsAdapter.SectionViewHolder::class.java }
+    fun ensurePackageSectionTypeWhenCallListViewModel() {
+        every { mockListViewModel.isPackageSection(0) } returns true
+        assertEquals(HotelsAdapter.PACKAGE_SECTION_VIEW_TYPE, hotelsAdapter.getItemViewType(0))
     }
 
     @Test
-    fun ensureHotelHolderCreationWhenCallListViewModel() {
-        val context = Robolectric.buildActivity(SearchActivity::class.java).create().get()
-        val parent = FrameLayout(context)
-        assertTrue { hotelsAdapter.createViewHolder(parent, HotelsAdapter.SECTION_VIEW_TYPE).javaClass == HotelsAdapter.SectionViewHolder::class.java }
+    fun ensurePackageTypeWhenCallListViewModel() {
+        every { mockListViewModel.isPackage(1) } returns true
+        assertEquals(HotelsAdapter.PACKAGE_VIEW_TYPE, hotelsAdapter.getItemViewType(1))
     }
 
     @Test
     fun ensureSectionBindingWhenCallListViewModel() {
         val context = Robolectric.buildActivity(SearchActivity::class.java).create().get()
         val parent = FrameLayout(context)
-        val sectionHolder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.SECTION_VIEW_TYPE)
+        val holder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.HOTEL_SECTION_VIEW_TYPE)
 
-        val sectionListItemViewModel = mockk<SectionListItemViewModel>()
-        val sectionTitle = "section"
-        every { sectionListItemViewModel.name } returns sectionTitle
-        every { mockListViewModel[0] } returns sectionListItemViewModel
-        hotelsAdapter.bindViewHolder(sectionHolder, 0)
+        val listItemViewModel = mockk<HotelSectionListItemViewModel>()
+        val title = "section"
+        every { listItemViewModel.name } returns title
+        every { mockListViewModel[0] } returns listItemViewModel
+        hotelsAdapter.bindViewHolder(holder, 0)
 
-        assertTrue { (sectionHolder as HotelsAdapter.SectionViewHolder).title.text == sectionTitle }
+        val currentTitle = (holder as HotelsAdapter.HotelSectionViewHolder).title.text
+        assertEquals(title, currentTitle)
     }
 
     @Test
     fun ensureHotelBindingWhenCallListViewModel() {
         val context = Robolectric.buildActivity(SearchActivity::class.java).create().get()
         val parent = FrameLayout(context)
-        val sectionHolder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.HOTEL_VIEW_TYPE)
+        val holder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.HOTEL_VIEW_TYPE)
 
-        val hotelListItemViewModel = mockk<HotelListItemViewModel>()
-        val sectionTitle = "hotel"
-        every { hotelListItemViewModel.name } returns sectionTitle
-        every { mockListViewModel[1] } returns hotelListItemViewModel
-        hotelsAdapter.bindViewHolder(sectionHolder, 1)
+        val listItemViewModel = mockk<HotelListItemViewModel>()
+        val title = "hotel"
+        every { listItemViewModel.name } returns title
+        every { mockListViewModel[1] } returns listItemViewModel
+        hotelsAdapter.bindViewHolder(holder, 1)
 
-        assertTrue { (sectionHolder as HotelsAdapter.HotelsViewHolder).title.text == sectionTitle }
+        assertTrue { (holder as HotelsAdapter.HotelsViewHolder).title.text == title }
+    }
+
+    @Test
+    fun ensurePackageSectionBindingWhenCallListViewModel() {
+        val context = Robolectric.buildActivity(SearchActivity::class.java).create().get()
+        val parent = FrameLayout(context)
+        val holder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.PACKAGE_SECTION_VIEW_TYPE)
+
+        val listItemViewModel = mockk<PackageSectionListItemViewModel>()
+        val title = null
+        every { listItemViewModel.name } returns title
+        every { mockListViewModel[0] } returns listItemViewModel
+        hotelsAdapter.bindViewHolder(holder, 0)
+
+        verify(exactly = 0) { listItemViewModel.name }
+    }
+
+    @Test
+    fun ensurePackageBindingWhenCallListViewModel() {
+        val context = Robolectric.buildActivity(SearchActivity::class.java).create().get()
+        val parent = FrameLayout(context)
+        val holder = hotelsAdapter.createViewHolder(parent, HotelsAdapter.PACKAGE_VIEW_TYPE)
+
+        val listItemViewModel = mockk<HotelListItemViewModel>()
+        val title = "package"
+        every { listItemViewModel.name } returns title
+        every { mockListViewModel[1] } returns listItemViewModel
+        hotelsAdapter.bindViewHolder(holder, 1)
+
+        val currentTitle = (holder as HotelsAdapter.PackageViewHolder).title.text
+        assertEquals(title, currentTitle)
     }
 }

@@ -6,5 +6,9 @@ class ListViewModel(private val items: List<ListItemViewModel>) {
 
     operator fun get(index: Int): ListItemViewModel? = items[index]
 
-    fun isSection(index: Int): Boolean = items[index] is SectionListItemViewModel
+    fun isSection(index: Int): Boolean = items[index] is HotelSectionListItemViewModel
+
+    fun isPackageSection(index: Int): Boolean = items[index] is PackageSectionListItemViewModel
+
+    fun isPackage(index: Int): Boolean = items[index] is PackageListItemViewModel
 }

@@ -67,7 +67,7 @@ class SearchViewModelTest {
 
         disposable.dispose()
 
-        assertTrue { listViewModel.size == 0 }
+        assertEquals(0, listViewModel.size)
     }
 
     @Test
@@ -162,11 +162,42 @@ class SearchViewModelTest {
         disposable.dispose()
 
         assertTrue { listViewModel.size == 6 }
-        assertEquals("5", (listViewModel[0] as SectionListItemViewModel).name)
+        assertEquals("5", (listViewModel[0] as HotelSectionListItemViewModel).name)
         assertEquals("Hotel star 5", (listViewModel[1] as HotelListItemViewModel).name)
-        assertEquals("4", (listViewModel[2] as SectionListItemViewModel).name)
+        assertEquals("4", (listViewModel[2] as HotelSectionListItemViewModel).name)
         assertEquals("Hotel star 4", (listViewModel[3] as HotelListItemViewModel).name)
-        assertEquals("3", (listViewModel[4] as SectionListItemViewModel).name)
+        assertEquals("3", (listViewModel[4] as HotelSectionListItemViewModel).name)
         assertEquals("Hotel star 3", (listViewModel[5] as HotelListItemViewModel).name)
+    }
+
+    @Test
+    fun ensureItemsContainsSectionedHotelsAndPackagesWhenFetchReturnsHotels() {
+        val hotels = mutableListOf<Hotel>().apply {
+            add(Hotel(name = "Hotel star 3", stars = 3, isHotel = true))
+            add(Hotel(name = "Hotel star 5", stars = 5, isHotel = true))
+            add(Hotel(name = "Hotel pacote", stars = 5, isPackage = true))
+        }
+
+        every { mockHotelsRepository.fetchHotels() } returns just(hotels)
+
+        val itemsObserver = TestObserver.create<ListViewModel>()
+
+        viewModel.items.subscribe(itemsObserver)
+
+        val disposable = viewModel.loadItemsCommand.execute().subscribe()
+
+        itemsObserver.await(1000L, TimeUnit.MILLISECONDS)
+
+        val listViewModel = itemsObserver.values()[0]
+
+        disposable.dispose()
+
+        assertTrue { listViewModel.size == 6 }
+        assertEquals("5", (listViewModel[0] as HotelSectionListItemViewModel).name)
+        assertEquals("Hotel star 5", (listViewModel[1] as HotelListItemViewModel).name)
+        assertEquals("3", (listViewModel[2] as HotelSectionListItemViewModel).name)
+        assertEquals("Hotel star 3", (listViewModel[3] as HotelListItemViewModel).name)
+        assertEquals(null, (listViewModel[4] as PackageSectionListItemViewModel).name)
+        assertEquals("Hotel pacote", (listViewModel[5] as PackageListItemViewModel).name)
     }
 }
