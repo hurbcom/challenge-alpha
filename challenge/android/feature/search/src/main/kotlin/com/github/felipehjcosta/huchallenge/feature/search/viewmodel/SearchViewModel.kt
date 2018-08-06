@@ -33,9 +33,12 @@ class SearchViewModel @Inject constructor(hotelsRepository: HotelsRepository) {
         return ListViewModel(listItemViewModels)
     }
 
+    val loadItemsCommand: RxCommand<Any>
+        get() = asyncLoadItemsCommand
+
     val items: Observable<ListViewModel>
         get() = asyncLoadItemsCommand.elements
 
-    val loadItemsCommand: RxCommand<Any>
-        get() = asyncLoadItemsCommand
+    val showLoading: Observable<Boolean>
+        get() = asyncLoadItemsCommand.executing
 }

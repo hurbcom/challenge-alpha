@@ -32,6 +32,24 @@ class SearchViewModelTest {
     }
 
     @Test
+    fun subscribedToShowLoadingWhenExecuteLoadItemsCommandThenReturnItems() {
+
+        val hotelName = "Hotel Vilamar Copacabana"
+        val hotel = Hotel(hotelName)
+        every { mockHotelsRepository.fetchHotels() } returns just(listOf(hotel))
+
+        val itemsObserver = TestObserver.create<Boolean>()
+
+        viewModel.showLoading.subscribe(itemsObserver)
+
+        val disposable = viewModel.loadItemsCommand.execute().subscribe()
+
+        itemsObserver.assertValues(true, false)
+
+        disposable.dispose()
+    }
+
+    @Test
     fun subscribedToItemsWhenExecuteLoadItemsCommandThenReturnItems() {
 
         val hotelName = "Hotel Vilamar Copacabana"
