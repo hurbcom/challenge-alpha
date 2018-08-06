@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.test.InstrumentationRegistry
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.assertion.ViewAssertions.matches
+import android.support.test.espresso.contrib.RecyclerViewActions.scrollTo
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
@@ -13,7 +14,6 @@ import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.RecordedRequest
-import org.hamcrest.core.AllOf.allOf
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -57,8 +57,8 @@ class SearchUITest {
 
     @Test
     fun whenLaunchedThenTheFirstHotelIsShown() {
-        onView(allOf(withId(R.id.hotels_recycler_view),
-                hasDescendant(withText("Hotel Vilamar Copacabana"))))
+        onView(withId(R.id.hotels_recycler_view))
                 .check(matches(isDisplayed()))
+                .perform(scrollTo<HotelsAdapter.HotelsViewHolder>(hasDescendant(withText("Hotel Vilamar Copacabana"))))
     }
 }
