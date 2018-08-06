@@ -1,3 +1,9 @@
 <resources>
     <string name="package_section_item_title">Pacotes</string>
+    <string name="card_title">Titulo</string>
+    <string name="card_image">Imagem</string>
+    <string name="hotel_section_title">%1$s estrelas</string>
+    <string name="hotel_address">%1$s - %2$s</string>
+    <string name="item_price_title">A partir de</string>
+    <string name="item_amenity_title">Comodidades</string>
 </resources>

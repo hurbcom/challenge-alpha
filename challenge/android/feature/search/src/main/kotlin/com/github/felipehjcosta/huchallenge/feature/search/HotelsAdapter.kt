@@ -1,5 +1,6 @@
 package com.github.felipehjcosta.huchallenge.feature.search
 
+import android.content.res.Resources
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -46,11 +47,32 @@ class HotelsAdapter(
     }
 
     private fun bindSection(hotel: HotelSectionViewHolder?, listItemViewModel: ListItemViewModel?) {
-        hotel?.title?.text = listItemViewModel?.name
+        hotel?.let {
+            val name = listItemViewModel?.name ?: ""
+            it.title?.text = it.resources.getString(R.string.hotel_section_title, name)
+        }
     }
 
     private fun bindHotel(holder: HotelsViewHolder?, listItemViewModel: ListItemViewModel?) {
-        holder?.title?.text = listItemViewModel?.name
+        holder?.let {
+            it.title.text = listItemViewModel?.name
+            it.address.text = it.resources.getString(R.string.hotel_address, listItemViewModel?.city, listItemViewModel?.state)
+            it.price.text = listItemViewModel?.price
+            val amenity1 = listItemViewModel?.amenity1
+            val amenity2 = listItemViewModel?.amenity2
+            val amenity3 = listItemViewModel?.amenity3
+
+            val isAmenitiesAbsent = amenity1.isNullOrBlank() && amenity2.isNullOrBlank() && amenity3.isNullOrBlank()
+            val amenityVisibility = if (isAmenitiesAbsent) View.GONE else View.VISIBLE
+
+            it.amenityTitle.visibility = amenityVisibility
+            it.amenity1.text = amenity1
+            it.amenity1.visibility = amenityVisibility
+            it.amenity2.text = amenity2
+            it.amenity2.visibility = amenityVisibility
+            it.amenity3.text = amenity3
+            it.amenity3.visibility = amenityVisibility
+        }
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -68,6 +90,12 @@ class HotelsAdapter(
 
     inner class HotelsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         internal val title = view.findViewById<TextView>(R.id.item_title)
+        internal val address = view.findViewById<TextView>(R.id.item_address)
+        internal val price = view.findViewById<TextView>(R.id.item_price)
+        internal val amenityTitle = view.findViewById<TextView>(R.id.item_amenity_title)
+        internal val amenity1 = view.findViewById<TextView>(R.id.item_amenity_first)
+        internal val amenity2 = view.findViewById<TextView>(R.id.item_amenity_second)
+        internal val amenity3 = view.findViewById<TextView>(R.id.item_amenity_third)
     }
 
     inner class PackageSectionViewHolder(view: View) : RecyclerView.ViewHolder(view)
@@ -75,4 +103,7 @@ class HotelsAdapter(
     inner class PackageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         internal val title = view.findViewById<TextView>(R.id.item_title)
     }
+
+    private val RecyclerView.ViewHolder.resources: Resources
+        get() = itemView.resources
 }
