@@ -1,5 +1,5 @@
 import {
-  SET_ALL_HOTEIS,
+  SET_ALL_HOTELS,
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -9,10 +9,10 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
 
-    case SET_ALL_HOTEIS:
+    case SET_ALL_HOTELS:
       return {
         ...state,
-        hoteis: action.hoteis
+        hoteis: action.hotels
       };
       break;
 

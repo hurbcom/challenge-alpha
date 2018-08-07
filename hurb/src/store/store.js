@@ -1,19 +1,22 @@
-import { createStore, combineReducers, compose } from "redux";
+import {
+  createStore,
+  combineReducers,
+  compose,
+  applyMiddleware
+} from "redux";
 
-import placesReducer from "./reducers/places";
+import thunk from 'redux-thunk'
+
+import uiReducer from "./reducers/uiReducer";
+import hotelReducer from "./reducers/hotelReducer";
 
 const rootReducer = combineReducers({
-  places: placesReducer
+  hotel: hotelReducer,
+  ui: uiReducer,
 });
 
-let composeEnhancers = compose;
-
-if (__DEV__) {
-  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-}
-
-const store = () => {
-  return createStore(rootReducer, composeEnhancers());
+const configStore = () => {
+  return createStore(rootReducer, compose(applyMiddleware(thunk)));
 };
 
-export default store;
+export default configStore;
