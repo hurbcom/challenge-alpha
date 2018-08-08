@@ -3,6 +3,8 @@ import { Text, View, StyleSheet, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 
 import { fetchHotels, setHotels } from '../../store/actions/hotelActions';
+import { colors } from '../../styles'
+
 
 
 export class SplashScreen extends Component {
@@ -23,7 +25,7 @@ export class SplashScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ActivityIndicator />
+        <ActivityIndicator size="large" color={colors.accent} />
       </View>
     )
   }
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: colors.primary,
   }
 });
 

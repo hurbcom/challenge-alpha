@@ -1,3 +1,17 @@
 export default {
-  
+  primary: '#223f9a',
+  primaryLight: '#486ad7',
+  primaryDark: '#172b6a',
+  secondary: '#a2c13d',
+  accent: '#fa0077',
+  charcoal: '#474747',
+  gray: '#7d7d7d',
+  lightGray: '#9d9d9d',
+  lightishGray: '#d6d6d6',
+  smoke: '#eeeeee',
+  white: '#ffffff',
+  success: '#8BC34A',
+  warning: '#ffcc00',
+  error: '#f44336',
+  golden: '#ffd700',
 }
