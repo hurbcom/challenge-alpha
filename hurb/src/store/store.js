@@ -11,7 +11,7 @@ import uiReducer from "./reducers/uiReducer";
 import hotelReducer from "./reducers/hotelReducer";
 
 const rootReducer = combineReducers({
-  hotel: hotelReducer,
+  hotels: hotelReducer,
   ui: uiReducer,
 });
 

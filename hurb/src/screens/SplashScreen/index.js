@@ -14,10 +14,12 @@ export class SplashScreen extends Component {
     });
 
     let hotels = await this.props.fetchHotels();
+    console.log(hotels);
     await this.props.setHotels(hotels);
-    this.props.storeHotels(hotels);
+    // this.props.storeHotels(hotels);
     this.props.navigation.navigate('HomeStack');
   }
+  
   render() {
     return (
       <View style={styles.container}>

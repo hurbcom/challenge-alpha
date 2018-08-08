@@ -3,7 +3,7 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
-  hoteis: []
+  hotels: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
     case SET_ALL_HOTELS:
       return {
         ...state,
-        hoteis: action.hotels
+        hotels: action.hotels
       };
       break;
 
