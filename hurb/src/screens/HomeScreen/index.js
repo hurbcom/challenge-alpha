@@ -10,6 +10,13 @@ import HotelListItem from './HotelListItem';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 
 export class HomeScreen extends Component {
+  static navigationOptions = {
+    title: 'Hotel Urbano',
+    headerStyle: {
+      backgroundColor: colors.primary,
+    },
+    headerTintColor: colors.white,
+  }
 
   
   render() {
@@ -30,11 +37,11 @@ export class HomeScreen extends Component {
 
     return (
       <Container>
-        <Header style={styles.header}>
+        {/* <Header style={styles.header}>
           <Body>
               <Title>Hotel Urbano</Title>
           </Body>
-        </Header>
+        </Header> */}
         <Content style={styles.content}>
           <SectionList
             renderItem={({ item }) => <HotelListItem hotel={item} onHotelSelected={() => this.props.navigation.push('HotelDetailsScreen', {'hotel': item})}/>}

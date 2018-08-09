@@ -8,10 +8,7 @@ export const HomeStack = createStackNavigator(
   {
     HomeScreen: { screen: HomeScreen },
     HotelDetailsScreen: { screen: HotelDetailsScreen },
-  }, 
-  {
-    headerMode: 'none'
-  }
+  },
 );
 
 export const LauncherNavigator = createSwitchNavigator(
@@ -19,7 +16,4 @@ export const LauncherNavigator = createSwitchNavigator(
     SplashScreen: { screen: SplashScreen },
     HomeStack: { screen: HomeStack },
   }, 
-  {
-    headerMode: 'none'
-  }
 );
