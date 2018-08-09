@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 5,
     justifyContent: 'center',
-    backgroundColor: colors.primary.concat('33'),
     borderWidth: 1,
     borderColor: colors.primary,
     borderRadius: metrics.baseRadius,

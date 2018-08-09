@@ -37,11 +37,6 @@ export class HomeScreen extends Component {
 
     return (
       <Container>
-        {/* <Header style={styles.header}>
-          <Body>
-              <Title>Hotel Urbano</Title>
-          </Body>
-        </Header> */}
         <Content style={styles.content}>
           <SectionList
             renderItem={({ item }) => <HotelListItem hotel={item} onHotelSelected={() => this.props.navigation.push('HotelDetailsScreen', {'hotel': item})}/>}
@@ -63,15 +58,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: colors.primaryLight,
   },
-
-  content: {
-    backgroundColor: colors.white,
-  },
-
-  header: {
-    elevation: 4,
-    backgroundColor: colors.primary,
-  }
 });
 
 const mapStateToProps = state => {

@@ -26,16 +26,6 @@ export class HotelDetailsScreen extends Component {
   render() {
     return (
       <Container>
-        {/* <Header style={styles.header}>
-          <Left>
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.goBack()}>
-              <Icon name="arrow-back" style={{ color: 'white'}} />
-            </TouchableWithoutFeedback>
-          </Left>
-          <Body>
-            <Title>{this.state.hotel.name}</Title>
-          </Body>
-        </Header> */}
         <Content>
           <Image source={{ uri: this.state.hotel.image}} style={styles.image} resizeMode="cover" />
           <View style={styles.content}>
@@ -53,7 +43,10 @@ export class HotelDetailsScreen extends Component {
 
             <AmenitiesBox amenities={this.state.hotel.amenities} />
 
-            <Text style={styles.priceText}>{formatPrice(this.state.hotel.price)}</Text>
+            <View style={styles.priceRow}>
+              <Text style={styles.labelText}>Diária: </Text>
+              <Text style={styles.priceText}>{formatPrice(this.state.hotel.price)}</Text>
+            </View>
           </View>
         </Content>
       </Container>
@@ -86,6 +79,7 @@ const styles = StyleSheet.create({
   labelText: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: colors.charcoal,
   },
 
   titleText: {
@@ -93,17 +87,26 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 10,
+    color: colors.charcoal,
   },
 
   subText: {
     fontSize: 20,
+    color: colors.charcoal,
+  },
+
+  priceRow: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    marginVertical: 10,    
   },
 
   priceText: {
     fontSize: 30,
     textAlign: 'right',
     fontWeight: 'bold',
-    marginVertical: 10,    
+    color: colors.charcoal,
   },
 });
 

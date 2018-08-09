@@ -55,15 +55,18 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: colors.charcoal,
   },
 
   subText: {
     fontSize: 16,
+    color: colors.charcoal,
   },
 
   priceText: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: colors.charcoal,
   },
 });
 

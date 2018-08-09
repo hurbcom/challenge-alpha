@@ -41,14 +41,13 @@ export class SectionHeader extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 45,
+    height: 50,
     paddingHorizontal: 10,
     justifyContent: 'center',
-    backgroundColor: colors.primary,
   },
 
   title: {
-    color: colors.smoke,
+    color: colors.charcoal,
   },
 
   row: {
