@@ -28,8 +28,6 @@ export class HomeScreen extends Component {
       ...noStars,
     ];
 
-    console.log("section content", sectionContent);
-
     return (
       <Container>
         <Header style={styles.header}>
@@ -39,7 +37,7 @@ export class HomeScreen extends Component {
         </Header>
         <Content style={styles.content}>
           <SectionList
-            renderItem={({ item }) => <HotelListItem hotel={item} />}
+            renderItem={({ item }) => <HotelListItem hotel={item} onHotelSelected={() => this.props.navigation.push('HotelDetailsScreen', {'hotel': item})}/>}
             renderSectionHeader={({ section }) => <SectionHeader title={section.title} />}
             sections={sectionContent}
             keyExtractor={(item) => item.name}

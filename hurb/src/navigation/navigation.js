@@ -1,11 +1,13 @@
 import { createStackNavigator, createSwitchNavigator } from 'react-navigation'
 
-import HomeScreen from '../screens/Home'
 import SplashScreen from '../screens/SplashScreen'
+import HomeScreen from '../screens/HomeScreen'
+import HotelDetailsScreen from '../screens/HotelDetailsScreen'
 
 export const HomeStack = createStackNavigator(
   {
     HomeScreen: { screen: HomeScreen },
+    HotelDetailsScreen: { screen: HotelDetailsScreen },
   }, 
   {
     headerMode: 'none'
