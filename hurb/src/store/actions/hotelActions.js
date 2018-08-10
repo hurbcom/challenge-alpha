@@ -16,6 +16,7 @@ export const fetchHotels = (search = "") => {
     dispatch(uiStartLoading());
     try {
       let { results } = await fetcher.get(search);
+      console.log("Response: ", results); // Log dos dados recebidos
       return results.map(hotel => {
         if(hotel.isHotel) {
           return {
