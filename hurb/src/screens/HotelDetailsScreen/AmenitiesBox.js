@@ -11,7 +11,7 @@ export class AmenitiesBox extends Component {
       <View style={styles.container}>
         <Text style={styles.title}>Possui:</Text>
         {this.props.amenities.map(amenity => (
-          <Text style={styles.text}>{amenity.name}</Text>
+          <Text style={styles.text} key={amenity.name}>{amenity.name}</Text>
         ))}
       </View>
     )
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     marginVertical: 10,
-    marginHorizontal: 5,
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: colors.primary,

@@ -31,6 +31,10 @@ export class HotelDetailsScreen extends Component {
           <View style={styles.content}>
             <Text style={styles.titleText}>{this.state.hotel.name}</Text>
 
+            <View style={styles.descriptionBox}>
+              <Text style={styles.descriptionText}>{this.state.hotel.description}</Text>
+            </View>
+
             <View style={styles.textBox}>
               <Text style={styles.labelText}>Cidade:</Text>
               <Text style={styles.subText}>{this.state.hotel.city}</Text>
@@ -88,6 +92,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 10,
     color: colors.charcoal,
+  },
+
+  descriptionBox: {
+    flex: 1,
+    marginVertical: 10,  
+  },
+
+  descriptionText: {
+    fontSize: 18,
+    color: colors.charcoal,
+    textAlign: 'justify',
   },
 
   subText: {

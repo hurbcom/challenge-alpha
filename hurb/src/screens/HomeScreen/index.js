@@ -2,38 +2,47 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { SectionList, View, StyleSheet } from 'react-native';
 import { Container, Header, Body, Title, Content } from 'native-base';
+import Image from 'react-native-remote-svg'
 
 import { fetchHotels, setHotels } from '../../store/actions/hotelActions';
 
 import { colors } from '../../styles'
 import HotelListItem from './HotelListItem';
-import SectionHeader from '../../components/SectionHeader/SectionHeader';
+import SectionHeader from './SectionHeader';
 
 export class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Hotel Urbano',
+    headerLeft: <Image
+      source={require('../../assets/icons/icon-hu-white.svg')}
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 16,
+      }}
+    />,
     headerStyle: {
       backgroundColor: colors.primary,
     },
     headerTintColor: colors.white,
   }
 
+  _setSectionContent = () => {
+    let sectionContent = [];
+
+    for(let i=5; i>=1; i--) {
+      let data = this.props.hotels.filter(hotel => hotel.stars === i);
+      if(data.length > 0) sectionContent.push({ data, title: i});
+    }
+
+    let packages = this.props.hotels.filter(hotel => hotel.stars === null);
+    if(packages.length > 0) sectionContent.push({ data: packages, title: 'Pacotes'});
+
+    return sectionContent;
+  }
+
   
   render() {
-    let noStars = this.props.hotels.filter(hotel => hotel.stars === null);
-
-    noStars = noStars.map(hotel => {
-      return { data: [hotel], title: hotel.name };
-    });
-
-    let sectionContent = [
-      { data: this.props.hotels.filter(hotel => hotel.stars === 5), title: 5 },
-      { data: this.props.hotels.filter(hotel => hotel.stars === 4), title: 4 },
-      { data: this.props.hotels.filter(hotel => hotel.stars === 3), title: 3 },
-      { data: this.props.hotels.filter(hotel => hotel.stars === 2), title: 2 },
-      { data: this.props.hotels.filter(hotel => hotel.stars === 1), title: 1 },
-      ...noStars,
-    ];
 
     return (
       <Container>
@@ -41,9 +50,10 @@ export class HomeScreen extends Component {
           <SectionList
             renderItem={({ item }) => <HotelListItem hotel={item} onHotelSelected={() => this.props.navigation.push('HotelDetailsScreen', {'hotel': item})}/>}
             renderSectionHeader={({ section }) => <SectionHeader title={section.title} />}
-            sections={sectionContent}
+            sections={this._setSectionContent()}
             keyExtractor={(item) => item.name}
             stickySectionHeadersEnabled={true}
+            enableEmptySections={true}
           />
         </Content>
       </Container>

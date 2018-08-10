@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ActivityIndicator } from 'react-native';
+import Image from 'react-native-remote-svg'
 import { connect } from 'react-redux';
 
 import { fetchHotels, setHotels } from '../../store/actions/hotelActions';
@@ -25,6 +26,10 @@ export class SplashScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image
+          source={require('../../assets/icons/icon-hu-white.svg')}
+          style={styles.icon}
+        />
         <ActivityIndicator size="large" color={colors.accent} />
       </View>
     )
@@ -37,6 +42,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.primary,
+  },
+
+  icon: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 100, 
+    height: 100, 
+    margin: 20,
   }
 });
 
