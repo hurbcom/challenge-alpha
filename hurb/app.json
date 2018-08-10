@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Hurb",
+    "icon": "./src/assets/icons/icon.png",
+    "version": "0.0.1",
+    "slug": "hurb",
+    "sdkVersion": "27.0.0",    
+    "android": {
+      "package": "com.dmscn.hurb"
+    },
+    "androidStatusBarColor": "#223f9a",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#223f9a"
+    }
+  }
+}
