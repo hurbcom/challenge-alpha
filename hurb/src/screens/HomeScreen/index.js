@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SectionList, View, StyleSheet } from 'react-native';
+import { SectionList, View, StyleSheet, Image } from 'react-native';
 import { Container, Header, Body, Title, Content } from 'native-base';
-import Image from 'react-native-remote-svg'
 
 import { fetchHotels, setHotels } from '../../store/actions/hotelActions';
 
@@ -14,12 +13,15 @@ export class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Hotel Urbano',
     headerLeft: <Image
-      source={require('../../assets/icons/icon-hu-white.svg')}
+      source={require('../../assets/icons/icon-hu-white.png')}
       style={{
         justifyContent: 'center',
         alignItems: 'center',
         marginHorizontal: 16,
+        width: 30,
       }}
+      resizeMethod="scale"
+      resizeMode="contain"
     />,
     headerStyle: {
       backgroundColor: colors.primary,
