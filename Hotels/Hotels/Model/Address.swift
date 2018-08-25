@@ -18,4 +18,10 @@ class Address: EVObject {
     var state: String?
     var street: String?
     var zipcode: String?
+    
+    var addressResume: String {
+        get {
+            return (city ?? "-") + ", " + (state ?? "-")
+        }
+    }
 }

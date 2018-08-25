@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HotelsViewController: UIViewController {
 
+    var hotels = [Hotel]()
+    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         HUAPIHelper.loadHotels { (hotels, success) in
-            print(hotels)
+            if success {
+                guard let _ = hotels else { return }
+                print(hotels!)
+                self.hotels = hotels!
+                self.tableView.reloadData()
+            }
         }
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,4 +47,40 @@ class HotelsViewController: UIViewController {
     }
     */
 
+}
+
+
+extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return hotels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HOTEL_CELL_IDENTIFIER", for: indexPath) as? HotelTableViewCell
+        let hotel = hotels[indexPath.row]
+        cell?.hotelName.text = hotel.name
+        cell?.hotelAddress.text = hotel.address?.addressResume
+        cell?.hotelPrice.text = hotel.price?.current_price?.doubleValue.getMoneyValue()
+        cell?.hotelImage.sd_setImage(with: URL(string: hotel.image ?? "Error"), completed: { (image, error, type, url) in
+            print(error ?? "Nenhum erro")
+        })
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.0
+    }
+}
+
+
+extension HotelsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
+    
 }

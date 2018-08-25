@@ -11,10 +11,18 @@ import EVReflection
 
 class Hotel: EVObject {
     var id: String?
+    var isHotel = false
+    var isPackage = false
     var name: String?
     var image: String?
     var stars: NSNumber?
     var address: Address?
     var price: Price?
     var amenities = [Amenity]()
+    
+    var adType: AdType {
+        get {
+            return isHotel ? .Hotel : (isPackage ? .Package : .Hotel)
+        }
+    }
 }
