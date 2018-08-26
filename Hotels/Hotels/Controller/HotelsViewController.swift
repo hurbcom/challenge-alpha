@@ -61,6 +61,8 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.hotelName.text = hotel.name
         cell?.hotelAddress.text = hotel.address?.addressResume
         cell?.hotelPrice.text = hotel.price?.current_price?.doubleValue.getMoneyValue()
+        cell?.amenities = Array(hotel.amenities.prefix(4))
+        cell?.amenitiesCollectionView.reloadData()
         cell?.hotelImage.sd_setImage(with: URL(string: hotel.image ?? "Error"), completed: { (image, error, type, url) in
             print(error ?? "Nenhum erro")
         })

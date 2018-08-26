@@ -128,20 +128,77 @@
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdZ-U7-7pH">
+                                                            <rect key="frame" x="181" y="90" width="156" height="1"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="kKn-2k-cvI"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UbF-Sv-VIg">
+                                                            <rect key="frame" x="181" y="94" width="156" height="34"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Duo-Ha-afm">
+                                                                <size key="itemSize" width="70" height="14"/>
+                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            </collectionViewFlowLayout>
+                                                            <cells>
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AMENITY_CELL_IDENTIFIER" id="net-U6-jSn" customClass="AmenityCollectionViewCell" customModule="Hotels" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="14"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="14"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMENITY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGZ-98-t8Z">
+                                                                                <rect key="frame" x="3" y="2" width="64" height="10"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </view>
+                                                                    <color key="backgroundColor" red="0.078431372550000003" green="0.20000000000000001" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="OGZ-98-t8Z" secondAttribute="trailing" constant="3" id="7ZG-5d-aA3"/>
+                                                                        <constraint firstItem="OGZ-98-t8Z" firstAttribute="leading" secondItem="net-U6-jSn" secondAttribute="leading" constant="3" id="GOf-Gq-mP5"/>
+                                                                        <constraint firstItem="OGZ-98-t8Z" firstAttribute="top" secondItem="net-U6-jSn" secondAttribute="top" constant="2" id="kRY-iD-AZl"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="OGZ-98-t8Z" secondAttribute="bottom" constant="2" id="zx9-iD-9FO"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <outlet property="amenityName" destination="OGZ-98-t8Z" id="Na0-Uy-5ZT"/>
+                                                                    </connections>
+                                                                </collectionViewCell>
+                                                            </cells>
+                                                        </collectionView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="kdZ-U7-7pH" firstAttribute="top" secondItem="tYx-Om-ZGo" secondAttribute="bottom" constant="1" id="1gf-Ii-wh7"/>
                                                         <constraint firstItem="tYx-Om-ZGo" firstAttribute="leading" secondItem="VnK-lf-Cgt" secondAttribute="trailing" constant="2" id="4Sc-xs-Ceo"/>
                                                         <constraint firstItem="jh8-E5-QWC" firstAttribute="top" secondItem="a0y-cc-Y7R" secondAttribute="top" constant="3" id="AjW-64-hNv"/>
+                                                        <constraint firstItem="UbF-Sv-VIg" firstAttribute="leading" secondItem="ZHI-vj-v1E" secondAttribute="trailing" constant="8" id="CFv-x7-ocY"/>
+                                                        <constraint firstItem="UbF-Sv-VIg" firstAttribute="top" secondItem="tYx-Om-ZGo" secondAttribute="bottom" constant="5" id="FoK-xr-Mf3"/>
                                                         <constraint firstAttribute="trailing" secondItem="jh8-E5-QWC" secondAttribute="trailing" constant="8" id="GGN-f0-WZM"/>
+                                                        <constraint firstItem="kdZ-U7-7pH" firstAttribute="leading" secondItem="HAb-gK-dbB" secondAttribute="leading" id="Pst-xx-SKN"/>
                                                         <constraint firstItem="HAb-gK-dbB" firstAttribute="leading" secondItem="ZHI-vj-v1E" secondAttribute="trailing" constant="8" id="U9p-c8-J4j"/>
                                                         <constraint firstItem="ZHI-vj-v1E" firstAttribute="top" secondItem="a0y-cc-Y7R" secondAttribute="top" constant="3" id="UCh-Hx-mav"/>
                                                         <constraint firstAttribute="trailing" secondItem="HAb-gK-dbB" secondAttribute="trailing" constant="8" id="YV9-v0-O3v"/>
                                                         <constraint firstAttribute="bottom" secondItem="ZHI-vj-v1E" secondAttribute="bottom" constant="3" id="a4a-Pk-q64"/>
                                                         <constraint firstItem="tYx-Om-ZGo" firstAttribute="top" secondItem="HAb-gK-dbB" secondAttribute="bottom" id="an7-af-1T2"/>
+                                                        <constraint firstItem="kdZ-U7-7pH" firstAttribute="trailing" secondItem="HAb-gK-dbB" secondAttribute="trailing" id="c2N-fN-kvt"/>
                                                         <constraint firstAttribute="trailing" secondItem="tYx-Om-ZGo" secondAttribute="trailing" constant="8" id="dlA-to-H35"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UbF-Sv-VIg" secondAttribute="trailing" constant="8" id="fBX-rL-k2B"/>
                                                         <constraint firstItem="HAb-gK-dbB" firstAttribute="top" secondItem="jh8-E5-QWC" secondAttribute="bottom" id="iBm-fN-t9X"/>
                                                         <constraint firstItem="VnK-lf-Cgt" firstAttribute="top" secondItem="HAb-gK-dbB" secondAttribute="bottom" id="os1-pX-wYR"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UbF-Sv-VIg" secondAttribute="bottom" id="pSf-Zl-6pQ"/>
                                                         <constraint firstItem="VnK-lf-Cgt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a0y-cc-Y7R" secondAttribute="leading" constant="20" symbolic="YES" id="tBo-ud-XY4"/>
                                                         <constraint firstItem="jh8-E5-QWC" firstAttribute="leading" secondItem="ZHI-vj-v1E" secondAttribute="trailing" constant="8" id="uEb-ZD-ZAK"/>
                                                         <constraint firstItem="ZHI-vj-v1E" firstAttribute="leading" secondItem="a0y-cc-Y7R" secondAttribute="leading" constant="3" id="uUx-8d-KKk"/>
@@ -162,6 +219,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="amenitiesCollectionView" destination="UbF-Sv-VIg" id="FSo-z0-qu4"/>
                                             <outlet property="background" destination="a0y-cc-Y7R" id="sDm-II-1mD"/>
                                             <outlet property="hotelAddress" destination="HAb-gK-dbB" id="GP8-Bf-UGo"/>
                                             <outlet property="hotelImage" destination="ZHI-vj-v1E" id="ljo-Yh-Vwt"/>
