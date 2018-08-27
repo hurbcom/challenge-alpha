@@ -25,4 +25,18 @@ class Hotel: EVObject {
             return isHotel ? .Hotel : (isPackage ? .Package : .Hotel)
         }
     }
+    
+    static func getHotels(hotels: [Hotel]) -> [Hotel] {
+        let hotels = hotels.filter { (hotel) -> Bool in
+            return hotel.adType == .Hotel
+        }
+        return hotels
+    }
+    
+    static func getPackages(hotels: [Hotel]) -> [Hotel] {
+        let packages = hotels.filter { (hotel) -> Bool in
+            return hotel.adType == .Package
+        }
+        return packages
+    }
 }
