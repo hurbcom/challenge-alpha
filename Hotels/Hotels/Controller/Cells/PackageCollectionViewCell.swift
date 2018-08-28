@@ -35,7 +35,7 @@ class PackageCollectionViewCell: UICollectionViewCell {
 
 
 
-
+//MARK: - collection view datasource
 extension PackageCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return amenities.count
@@ -50,7 +50,7 @@ extension PackageCollectionViewCell: UICollectionViewDelegate, UICollectionViewD
 
 
 
-
+//MARk: - collection view flow layout
 extension PackageCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

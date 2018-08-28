@@ -40,7 +40,7 @@ class HotelTableViewCell: UITableViewCell {
 }
 
 
-
+//MARK: - collection view datasource
 extension HotelTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return amenities.count
@@ -55,7 +55,7 @@ extension HotelTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
 
 
 
-
+//MARk: - collection view flow layout
 extension HotelTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

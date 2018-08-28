@@ -31,6 +31,7 @@ class PackagesTableViewCell: UITableViewCell {
 
 
 
+//MARK: - collection view datasource
 extension PackagesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return packages.count
@@ -48,7 +49,7 @@ extension PackagesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         cell.packageName.text = package.name
         cell.packageAddress.text = package.address?.addressResume
         cell.packagePrice.text = package.price?.currentPrice?.doubleValue.getMoneyValue()
-        cell.amenities = package.amenities
+        cell.amenities = Array(package.amenities.prefix(4))
         cell.packageImage.sd_setImage(with: URL(string: package.gallery.first?.url ?? ""), completed: { (image, error, type, url) in
             print(error ?? "Sem erros")
         })
@@ -57,7 +58,7 @@ extension PackagesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
 
 
 
-
+//MARk: - collection view flow layout
 extension PackagesTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
