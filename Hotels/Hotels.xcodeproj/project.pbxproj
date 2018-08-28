@@ -25,6 +25,9 @@
 		1655C4D82131D6F000BBCCE8 /* HotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655C4D72131D6F000BBCCE8 /* HotelTableViewCell.swift */; };
 		1655C4DA21320ADC00BBCCE8 /* UtilExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655C4D921320ADC00BBCCE8 /* UtilExtensions.swift */; };
 		1655C4DC2132307700BBCCE8 /* AmenityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655C4DB2132307700BBCCE8 /* AmenityCollectionViewCell.swift */; };
+		1655C4DE2134D91A00BBCCE8 /* PackageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655C4DD2134D91A00BBCCE8 /* PackageCollectionViewCell.swift */; };
+		1655C4E02134DEB900BBCCE8 /* PackagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655C4DF2134DEB900BBCCE8 /* PackagesTableViewCell.swift */; };
+		1655C4E22134EE1F00BBCCE8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655C4E12134EE1F00BBCCE8 /* Photo.swift */; };
 		38A3F7C97EF4331A3F0A0454 /* Pods_HotelsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1230FE72334DDD57E53CCF4 /* Pods_HotelsTests.framework */; };
 		65C6280604E5B714F4785AE4 /* Pods_Hotels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7E8409FB7402CEB83680F2 /* Pods_Hotels.framework */; };
 		CEF833FB21607C003ECC38FC /* Pods_HotelsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905E49A9D0FDBD4F6C44B2FE /* Pods_HotelsUITests.framework */; };
@@ -72,6 +75,9 @@
 		1655C4D72131D6F000BBCCE8 /* HotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelTableViewCell.swift; sourceTree = "<group>"; };
 		1655C4D921320ADC00BBCCE8 /* UtilExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilExtensions.swift; sourceTree = "<group>"; };
 		1655C4DB2132307700BBCCE8 /* AmenityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmenityCollectionViewCell.swift; sourceTree = "<group>"; };
+		1655C4DD2134D91A00BBCCE8 /* PackageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCollectionViewCell.swift; sourceTree = "<group>"; };
+		1655C4DF2134DEB900BBCCE8 /* PackagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableViewCell.swift; sourceTree = "<group>"; };
+		1655C4E12134EE1F00BBCCE8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1C9BBDD24EC549C500C49A54 /* Pods-Hotels.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotels.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hotels/Pods-Hotels.release.xcconfig"; sourceTree = "<group>"; };
 		6E1A796B8A54D41A898E551E /* Pods-Hotels.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotels.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hotels/Pods-Hotels.debug.xcconfig"; sourceTree = "<group>"; };
 		7E7E8409FB7402CEB83680F2 /* Pods_Hotels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hotels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +180,7 @@
 				1655C4C821319E0D00BBCCE8 /* Price.swift */,
 				1655C4CA21319F3000BBCCE8 /* Amenity.swift */,
 				1655C4CE2131A58600BBCCE8 /* Response.swift */,
+				1655C4E12134EE1F00BBCCE8 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +218,8 @@
 			children = (
 				1655C4D72131D6F000BBCCE8 /* HotelTableViewCell.swift */,
 				1655C4DB2132307700BBCCE8 /* AmenityCollectionViewCell.swift */,
+				1655C4DD2134D91A00BBCCE8 /* PackageCollectionViewCell.swift */,
+				1655C4DF2134DEB900BBCCE8 /* PackagesTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -452,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1655C4E22134EE1F00BBCCE8 /* Photo.swift in Sources */,
 				1655C4C721319C6A00BBCCE8 /* Address.swift in Sources */,
 				1655C4DA21320ADC00BBCCE8 /* UtilExtensions.swift in Sources */,
 				1655C4C921319E0D00BBCCE8 /* Price.swift in Sources */,
@@ -459,12 +469,14 @@
 				1655C4D52131C59D00BBCCE8 /* UtilEnuns.swift in Sources */,
 				1655C4D32131A8CF00BBCCE8 /* HotelsViewController.swift in Sources */,
 				1655C4CF2131A58600BBCCE8 /* Response.swift in Sources */,
+				1655C4DE2134D91A00BBCCE8 /* PackageCollectionViewCell.swift in Sources */,
 				1655C4D82131D6F000BBCCE8 /* HotelTableViewCell.swift in Sources */,
 				160CAACA2130DFF400F69234 /* Hotels.xcdatamodeld in Sources */,
 				1655C4C22130EA4800BBCCE8 /* Hotel.swift in Sources */,
 				160CAAC22130DFF400F69234 /* AppDelegate.swift in Sources */,
 				1655C4CB21319F3000BBCCE8 /* Amenity.swift in Sources */,
 				1655C4DC2132307700BBCCE8 /* AmenityCollectionViewCell.swift in Sources */,
+				1655C4E02134DEB900BBCCE8 /* PackagesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

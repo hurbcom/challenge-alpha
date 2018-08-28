@@ -19,6 +19,7 @@ class Hotel: EVObject {
     var address: Address?
     var price: Price?
     var amenities = [Amenity]()
+    var gallery = [Photo]()
     
     var adType: AdType {
         get {

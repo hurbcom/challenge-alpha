@@ -27,8 +27,6 @@ class HotelsViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,24 +50,40 @@ class HotelsViewController: UIViewController {
 
 extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hotels.count
+        return Hotel.getHotels(hotels: self.hotels).count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HOTEL_CELL_IDENTIFIER", for: indexPath) as? HotelTableViewCell
-        let hotel = hotels[indexPath.row]
-        cell?.hotelName.text = hotel.name
-        cell?.hotelAddress.text = hotel.address?.addressResume
-        cell?.hotelPrice.text = hotel.price?.current_price?.doubleValue.getMoneyValue()
-        cell?.amenities = Array(hotel.amenities.prefix(4))
-        cell?.hotelImage.sd_setImage(with: URL(string: hotel.image ?? "Error"), completed: { (image, error, type, url) in
-            print(error ?? "Nenhum erro")
-        })
-        return cell!
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PACKAGES_CELL_IDENTIFIER", for: indexPath) as? PackagesTableViewCell
+            fillPackageCell(cell: cell!, packages: Hotel.getPackages(hotels: self.hotels))
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HOTEL_CELL_IDENTIFIER", for: indexPath) as? HotelTableViewCell
+            let hotel = Hotel.getHotels(hotels: self.hotels)[indexPath.row-1]
+            fillHotelCell(cell: cell!, hotel: hotel)
+            return cell!
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150.0
+        return indexPath.row == 0 ? 280.0 : 150.0
+    }
+    
+    //MARK: - Fill cells
+    private func fillHotelCell(cell: HotelTableViewCell, hotel: Hotel) {
+        cell.hotelName.text = hotel.name
+        cell.hotelAddress.text = hotel.address?.addressResume
+        cell.hotelPrice.text = hotel.price?.currentPrice?.doubleValue.getMoneyValue()
+        cell.amenities = Array(hotel.amenities.prefix(4))
+        cell.hotelImage.sd_setImage(with: URL(string: hotel.image ?? "Error"), completed: { (image, error, type, url) in
+            print(error ?? "Nenhum erro")
+        })
+    }
+    
+    private func fillPackageCell(cell: PackagesTableViewCell, packages: [Hotel]) {
+        cell.packages = packages
+        cell.packagesCollectionView.reloadData()
     }
 }
 

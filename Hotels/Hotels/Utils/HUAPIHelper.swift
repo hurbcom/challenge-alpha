@@ -23,7 +23,7 @@ class HUAPIHelper: NSObject {
     }
     
     //MARK: - Hotels
-    static func loadHotels(query: String = "Rio de Janeiro", completionHandler: @escaping ((_ hotels: [Hotel]?, _ success: Bool) -> ())) {
+    static func loadHotels(query: String = "Fortaleza", completionHandler: @escaping ((_ hotels: [Hotel]?, _ success: Bool) -> ())) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         HUAPIHelper.configAlamofire()
         

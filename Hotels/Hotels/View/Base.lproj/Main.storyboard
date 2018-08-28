@@ -154,7 +154,7 @@
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMENITY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGZ-98-t8Z">
                                                                                 <rect key="frame" x="3" y="2" width="64" height="10"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="9"/>
                                                                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
@@ -225,6 +225,199 @@
                                             <outlet property="hotelImage" destination="ZHI-vj-v1E" id="ljo-Yh-Vwt"/>
                                             <outlet property="hotelName" destination="jh8-E5-QWC" id="Yfl-6v-djz"/>
                                             <outlet property="hotelPrice" destination="tYx-Om-ZGo" id="04y-oM-LMP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PACKAGES_CELL_IDENTIFIER" rowHeight="280" id="es4-b5-ehD" customClass="PackagesTableViewCell" customModule="Hotels" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="178" width="375" height="280"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="es4-b5-ehD" id="igi-cP-jIJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1ia-PH-1Zh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+                                                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WKh-c4-YjL">
+                                                        <size key="itemSize" width="200" height="250"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PACKAGE_CELL_IDENTIFIER" id="iQR-h0-6TG" customClass="PackageCollectionViewCell" customModule="Hotels" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="15" width="200" height="250"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-cx-2Os">
+                                                                        <rect key="frame" x="8" y="8" width="184" height="234"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BkQ-NF-PQS">
+                                                                                <rect key="frame" x="3" y="3" width="178" height="100"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="100" id="pel-Vw-PCy"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                        <integer key="value" value="7"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PACKAGE NAME" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmm-kL-SJd">
+                                                                                <rect key="frame" x="8" y="103" width="168" height="35"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="35" id="ln3-N3-g7t"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PACKAGE CITY / STATE" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDq-16-5mC">
+                                                                                <rect key="frame" x="8" y="135" width="168" height="21"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="21" id="mQb-RR-w6l"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="10"/>
+                                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="PRICE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxn-3U-pMJ">
+                                                                                <rect key="frame" x="136" y="156" width="40" height="21"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="21" id="AQq-hK-NpU"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8k-hy-tD6">
+                                                                                <rect key="frame" x="122.5" y="156" width="11.5" height="21"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="21" id="Pjy-MJ-Oxo"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="10"/>
+                                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fm4-Ih-37E">
+                                                                                <rect key="frame" x="8" y="177" width="168" height="1"/>
+                                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="BiF-aY-bhm"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZgA-eU-SqW">
+                                                                                <rect key="frame" x="8" y="183" width="168" height="48"/>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jkI-9v-hy2">
+                                                                                    <size key="itemSize" width="70" height="14"/>
+                                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                </collectionViewFlowLayout>
+                                                                                <cells>
+                                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AMENITY_CELL_IDENTIFIER" id="vQb-3v-6H0" customClass="AmenityCollectionViewCell" customModule="Hotels" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="14"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="14"/>
+                                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                                            <subviews>
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMENITY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et3-bq-cAR">
+                                                                                                    <rect key="frame" x="3" y="2" width="64" height="10"/>
+                                                                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="9"/>
+                                                                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                                                    <nil key="highlightedColor"/>
+                                                                                                </label>
+                                                                                            </subviews>
+                                                                                        </view>
+                                                                                        <color key="backgroundColor" red="0.078431372550000003" green="0.20000000000000001" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="bottom" secondItem="Et3-bq-cAR" secondAttribute="bottom" constant="2" id="Aht-vZ-7dL"/>
+                                                                                            <constraint firstItem="Et3-bq-cAR" firstAttribute="top" secondItem="vQb-3v-6H0" secondAttribute="top" constant="2" id="U0V-ts-LBL"/>
+                                                                                            <constraint firstItem="Et3-bq-cAR" firstAttribute="leading" secondItem="vQb-3v-6H0" secondAttribute="leading" constant="3" id="mzc-ti-Tdi"/>
+                                                                                            <constraint firstAttribute="trailing" secondItem="Et3-bq-cAR" secondAttribute="trailing" constant="3" id="s7o-M9-rOi"/>
+                                                                                        </constraints>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                                <integer key="value" value="5"/>
+                                                                                            </userDefinedRuntimeAttribute>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                        <connections>
+                                                                                            <outlet property="amenityName" destination="Et3-bq-cAR" id="vMe-Q0-DYZ"/>
+                                                                                        </connections>
+                                                                                    </collectionViewCell>
+                                                                                </cells>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerradius">
+                                                                                        <integer key="value" value="7"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </collectionView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="Cmm-kL-SJd" firstAttribute="top" secondItem="BkQ-NF-PQS" secondAttribute="bottom" id="1VF-oZ-jkG"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Cmm-kL-SJd" secondAttribute="trailing" constant="8" id="4p0-Ge-pet"/>
+                                                                            <constraint firstItem="Fm4-Ih-37E" firstAttribute="leading" secondItem="I2n-cx-2Os" secondAttribute="leading" constant="8" id="51c-vw-ZTz"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="BkQ-NF-PQS" secondAttribute="trailing" constant="3" id="9Es-za-Lxv"/>
+                                                                            <constraint firstItem="w8k-hy-tD6" firstAttribute="top" secondItem="rDq-16-5mC" secondAttribute="bottom" id="AEw-AF-Zmw"/>
+                                                                            <constraint firstItem="Cmm-kL-SJd" firstAttribute="leading" secondItem="I2n-cx-2Os" secondAttribute="leading" constant="8" id="LTP-s0-Opt"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="mxn-3U-pMJ" secondAttribute="trailing" constant="8" id="Nik-E6-ShP"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="rDq-16-5mC" secondAttribute="trailing" constant="8" id="OUE-Cv-eJL"/>
+                                                                            <constraint firstItem="ZgA-eU-SqW" firstAttribute="leading" secondItem="I2n-cx-2Os" secondAttribute="leading" constant="8" id="Psw-oZ-dWl"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="ZgA-eU-SqW" secondAttribute="trailing" constant="8" id="QiU-ik-fml"/>
+                                                                            <constraint firstItem="w8k-hy-tD6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I2n-cx-2Os" secondAttribute="leading" constant="20" symbolic="YES" id="QvH-Pj-Qs8"/>
+                                                                            <constraint firstItem="ZgA-eU-SqW" firstAttribute="top" secondItem="Fm4-Ih-37E" secondAttribute="bottom" constant="5" id="Uyg-jI-3yP"/>
+                                                                            <constraint firstItem="mxn-3U-pMJ" firstAttribute="leading" secondItem="w8k-hy-tD6" secondAttribute="trailing" constant="2" id="WoJ-v6-1C6"/>
+                                                                            <constraint firstItem="BkQ-NF-PQS" firstAttribute="top" secondItem="I2n-cx-2Os" secondAttribute="top" constant="3" id="giF-2o-e1v"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="ZgA-eU-SqW" secondAttribute="bottom" constant="3" id="jzm-aM-Vu0"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Fm4-Ih-37E" secondAttribute="trailing" constant="8" id="ugZ-0a-MDR"/>
+                                                                            <constraint firstItem="rDq-16-5mC" firstAttribute="leading" secondItem="I2n-cx-2Os" secondAttribute="leading" constant="8" id="vy7-60-rvB"/>
+                                                                            <constraint firstItem="BkQ-NF-PQS" firstAttribute="leading" secondItem="I2n-cx-2Os" secondAttribute="leading" constant="3" id="wle-Dc-Lmu"/>
+                                                                            <constraint firstItem="rDq-16-5mC" firstAttribute="top" secondItem="Cmm-kL-SJd" secondAttribute="bottom" constant="-3" id="yFs-QM-XjI"/>
+                                                                            <constraint firstItem="mxn-3U-pMJ" firstAttribute="top" secondItem="rDq-16-5mC" secondAttribute="bottom" id="zXD-QB-IDD"/>
+                                                                            <constraint firstItem="Fm4-Ih-37E" firstAttribute="top" secondItem="mxn-3U-pMJ" secondAttribute="bottom" id="zou-oM-9j0"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="7"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="I2n-cx-2Os" secondAttribute="bottom" constant="8" id="3o2-5b-9vc"/>
+                                                                <constraint firstItem="I2n-cx-2Os" firstAttribute="top" secondItem="iQR-h0-6TG" secondAttribute="top" constant="8" id="JvK-32-l9H"/>
+                                                                <constraint firstAttribute="trailing" secondItem="I2n-cx-2Os" secondAttribute="trailing" constant="8" id="crf-Eu-FDz"/>
+                                                                <constraint firstItem="I2n-cx-2Os" firstAttribute="leading" secondItem="iQR-h0-6TG" secondAttribute="leading" constant="8" id="rFB-rW-mK0"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="amenitiesCollectionView" destination="ZgA-eU-SqW" id="2pP-bZ-GUf"/>
+                                                                <outlet property="background" destination="I2n-cx-2Os" id="gWB-2c-3zg"/>
+                                                                <outlet property="packageAddress" destination="rDq-16-5mC" id="rvM-NX-Czf"/>
+                                                                <outlet property="packageImage" destination="BkQ-NF-PQS" id="DaS-4i-bZA"/>
+                                                                <outlet property="packageName" destination="Cmm-kL-SJd" id="1Jr-dT-raj"/>
+                                                                <outlet property="packagePrice" destination="mxn-3U-pMJ" id="HYd-0E-yMs"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="1ia-PH-1Zh" firstAttribute="top" secondItem="igi-cP-jIJ" secondAttribute="top" id="AfA-JG-xXw"/>
+                                                <constraint firstItem="1ia-PH-1Zh" firstAttribute="leading" secondItem="igi-cP-jIJ" secondAttribute="leading" id="FRz-CM-nkQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="1ia-PH-1Zh" secondAttribute="bottom" id="txJ-1s-PVL"/>
+                                                <constraint firstAttribute="trailing" secondItem="1ia-PH-1Zh" secondAttribute="trailing" id="zSL-Dx-ynm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="packagesCollectionView" destination="1ia-PH-1Zh" id="8EJ-QG-Wg7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
