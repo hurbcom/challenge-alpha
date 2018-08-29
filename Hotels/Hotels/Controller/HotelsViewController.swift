@@ -18,7 +18,7 @@ class HotelsViewController: UIViewController {
     
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
     
-    let favorites = ["Fortaleza", "Rio de Janeiro", "São Paulo", "Rio Grande do Sul", "Pernambuco", "Recife", "Piauí"]
+    let favoriteDestinies = Destinies()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,8 @@ class HotelsViewController: UIViewController {
         indicator.hidesWhenStopped = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
         
-        loadHotels()
+        favoriteDestinies.commonDestinies()
+        loadHotels(destiny: favoriteDestinies.getSelected())
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,9 +36,9 @@ class HotelsViewController: UIViewController {
     }
     
     //MARK: - load hotels
-    private func loadHotels(place: String = "Fortaleza") {
+    private func loadHotels(destiny: Destiny) {
         indicator.startAnimating()
-        HUAPIHelper.loadHotels(query: place, completionHandler: { (hotels, success) in
+        HUAPIHelper.loadHotels(query: destiny.name!, completionHandler: { (hotels, success) in
             if success {
                 guard let _ = hotels else { return }
                 print(hotels!)
@@ -105,17 +106,18 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - collection view datasource and delegate
 extension HotelsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return favorites.count
+        return favoriteDestinies.destinies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SEARCH_NAME_CELL_IDENTIFIER", for: indexPath) as? FavoriteSearchCollectionViewCell
-        cell?.searchName.text = favorites[indexPath.row]
+        cell?.searchName.text = favoriteDestinies.destinies[indexPath.row].name
         return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.loadHotels(place: favorites[indexPath.row])
+        favoriteDestinies.destinies[indexPath.row].select()
+        self.loadHotels(destiny: favoriteDestinies.getSelected())
     }
     
 }
