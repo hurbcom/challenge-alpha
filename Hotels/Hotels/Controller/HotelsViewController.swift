@@ -67,7 +67,7 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 280.0 : 150.0
+        return indexPath.row == 0 ? 280.0 : 155.0
     }
     
     //MARK: - Fill cells
