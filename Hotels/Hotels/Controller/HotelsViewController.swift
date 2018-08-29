@@ -16,17 +16,17 @@ class HotelsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchCollectionView: UICollectionView!
     
+    let indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+    
+    let favorites = ["Fortaleza", "Rio de Janeiro", "São Paulo", "Rio Grande do Sul", "Pernambuco", "Recife", "Piauí"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        HUAPIHelper.loadHotels { (hotels, success) in
-            if success {
-                guard let _ = hotels else { return }
-                print(hotels!)
-                self.hotels = hotels!
-                self.tableView.reloadData()
-            }
-        }
+        indicator.hidesWhenStopped = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
+        
+        loadHotels()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +34,20 @@ class HotelsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //MARK: - load hotels
+    private func loadHotels(place: String = "Fortaleza") {
+        indicator.startAnimating()
+        HUAPIHelper.loadHotels(query: place, completionHandler: { (hotels, success) in
+            if success {
+                guard let _ = hotels else { return }
+                print(hotels!)
+                self.hotels = hotels!
+                self.tableView.reloadData()
+                self.indicator.stopAnimating()
+            }
+        })
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -48,6 +61,7 @@ class HotelsViewController: UIViewController {
 }
 
 
+//MARK: - table view datasource
 extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Hotel.getHotels(hotels: self.hotels).count + 1
@@ -88,14 +102,32 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
+//MARK: - collection view datasource and delegate
 extension HotelsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return favorites.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SEARCH_NAME_CELL_IDENTIFIER", for: indexPath) as? FavoriteSearchCollectionViewCell
+        cell?.searchName.text = favorites[indexPath.row]
+        return cell!
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.loadHotels(place: favorites[indexPath.row])
+    }
+    
+}
+
+
+
+
+//MARk: - collection view flow layout
+extension HotelsViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 7.0, bottom: 0, right: 7.0)
+    }
     
 }
