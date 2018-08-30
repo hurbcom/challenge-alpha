@@ -67,7 +67,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.8901960784313725" green="0.15686274509803921" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.22870885260000001" green="0.52643916420000003" blue="0.6242503157" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="XEu-I1-cr6" secondAttribute="bottom" constant="3" id="5Un-5w-yxc"/>
                                             <constraint firstAttribute="trailing" secondItem="XEu-I1-cr6" secondAttribute="trailing" constant="8" id="908-l8-UZc"/>
@@ -93,18 +93,18 @@
                                 <rect key="frame" x="0.0" y="50" width="375" height="553"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HOTEL_CELL_IDENTIFIER" rowHeight="155" id="Zyq-KS-oeW" customClass="HotelTableViewCell" customModule="Hotels" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="155"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HOTEL_CELL_IDENTIFIER" rowHeight="158" id="Zyq-KS-oeW" customClass="HotelTableViewCell" customModule="Hotels" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zyq-KS-oeW" id="AzH-5m-Sfm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0y-cc-Y7R">
-                                                    <rect key="frame" x="15" y="11" width="345" height="133"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="136"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-vj-v1E">
-                                                            <rect key="frame" x="3" y="3" width="175" height="127"/>
+                                                            <rect key="frame" x="3" y="3" width="175" height="130"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="175" id="BM0-zR-Xyu"/>
                                                             </constraints>
@@ -159,7 +159,7 @@
                                                             </constraints>
                                                         </view>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UbF-Sv-VIg">
-                                                            <rect key="frame" x="186" y="94" width="156" height="39"/>
+                                                            <rect key="frame" x="186" y="94" width="156" height="42"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Duo-Ha-afm">
                                                                 <size key="itemSize" width="70" height="14"/>
@@ -251,7 +251,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PACKAGES_CELL_IDENTIFIER" rowHeight="280" id="es4-b5-ehD" customClass="PackagesTableViewCell" customModule="Hotels" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="183" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="186" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="es4-b5-ehD" id="igi-cP-jIJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>

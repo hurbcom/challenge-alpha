@@ -82,7 +82,7 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 280.0 : 155.0
+        return indexPath.row == 0 ? 280.0 : 158.0
     }
     
     //MARK: - Fill cells
@@ -112,12 +112,21 @@ extension HotelsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SEARCH_NAME_CELL_IDENTIFIER", for: indexPath) as? FavoriteSearchCollectionViewCell
         cell?.searchName.text = favoriteDestinies.destinies[indexPath.row].name
+        if favoriteDestinies.destinies[indexPath.row].isSelected {
+            cell?.layer.borderColor = #colorLiteral(red: 0.9216816425, green: 0.2687143087, blue: 0.5662311912, alpha: 1).cgColor
+            cell?.layer.borderWidth = 5
+        } else {
+            cell?.layer.borderWidth = 0
+        }
+
         return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        favoriteDestinies.destinies[indexPath.row].select()
+        self.favoriteDestinies.destinies[indexPath.row].select()
         self.loadHotels(destiny: favoriteDestinies.getSelected())
+        self.searchCollectionView.reloadData()
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
 }
