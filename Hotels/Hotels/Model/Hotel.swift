@@ -40,4 +40,11 @@ class Hotel: EVObject {
         }
         return packages
     }
+    
+    static func getHotelsWith(stars: Int, hotels: [Hotel]) -> [Hotel] {
+        let hotels = hotels.filter { (hotel) -> Bool in
+            return hotel.adType == .Hotel && hotel.stars?.intValue == stars
+        }
+        return hotels
+    }
 }

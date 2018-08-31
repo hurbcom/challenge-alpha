@@ -8,6 +8,7 @@ target 'Hotels' do
   # Pods for Hotels
   pod "EVReflection/Alamofire"
   pod 'SDWebImage'
+  pod 'Cosmos'
 
   target 'HotelsTests' do
     inherit! :search_paths

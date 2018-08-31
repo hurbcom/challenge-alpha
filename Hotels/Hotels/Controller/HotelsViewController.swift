@@ -64,6 +64,10 @@ class HotelsViewController: UIViewController {
 
 //MARK: - table view datasource
 extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Hotel.getHotels(hotels: self.hotels).count + 1
     }
@@ -83,6 +87,16 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.row == 0 ? 280.0 : 158.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let starsHeader = tableView.dequeueReusableCell(withIdentifier: "STARS_HEADER_IDENTIFIER") as? StarsTableViewHeaderCell
+        starsHeader?.cosmosView.rating = 4
+        return starsHeader
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 55.0
     }
     
     //MARK: - Fill cells

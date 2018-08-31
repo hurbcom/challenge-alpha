@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160087AF2138C94F00F3972E /* StarsTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160087AE2138C94F00F3972E /* StarsTableViewHeaderCell.swift */; };
 		160CAAC22130DFF400F69234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160CAAC12130DFF400F69234 /* AppDelegate.swift */; };
 		160CAAC72130DFF400F69234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 160CAAC52130DFF400F69234 /* Main.storyboard */; };
 		160CAACA2130DFF400F69234 /* Hotels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 160CAAC82130DFF400F69234 /* Hotels.xcdatamodeld */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		160087AE2138C94F00F3972E /* StarsTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		160CAABE2130DFF400F69234 /* Hotels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hotels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		160CAAC12130DFF400F69234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		160CAAC62130DFF400F69234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +195,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		164BAA292138C25D006530AD /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				160087AE2138C94F00F3972E /* StarsTableViewHeaderCell.swift */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		1655C4C321319B6D00BBCCE8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 		1655C4D62131D6CB00BBCCE8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				164BAA292138C25D006530AD /* Headers */,
 				1655C4D72131D6F000BBCCE8 /* HotelTableViewCell.swift */,
 				1655C4DB2132307700BBCCE8 /* AmenityCollectionViewCell.swift */,
 				1655C4DD2134D91A00BBCCE8 /* PackageCollectionViewCell.swift */,
@@ -449,12 +460,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Hotels/Pods-Hotels-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/EVReflection/EVReflection.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EVReflection.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
@@ -484,6 +497,7 @@
 				160CAACA2130DFF400F69234 /* Hotels.xcdatamodeld in Sources */,
 				168CFD7E2136364A0059EEEC /* FavoriteSearchCollectionViewCell.swift in Sources */,
 				1655C4C22130EA4800BBCCE8 /* Hotel.swift in Sources */,
+				160087AF2138C94F00F3972E /* StarsTableViewHeaderCell.swift in Sources */,
 				160CAAC22130DFF400F69234 /* AppDelegate.swift in Sources */,
 				1655C4CB21319F3000BBCCE8 /* Amenity.swift in Sources */,
 				1655C4DC2132307700BBCCE8 /* AmenityCollectionViewCell.swift in Sources */,
