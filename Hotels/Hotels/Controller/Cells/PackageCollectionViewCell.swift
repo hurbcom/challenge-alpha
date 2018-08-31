@@ -27,6 +27,8 @@ class PackageCollectionViewCell: UICollectionViewCell {
         background.layer.shadowRadius = 4
         background.layer.shadowPath = UIBezierPath(rect: background.bounds).cgPath
         
+        packageImage.roundCorners([.topLeft, .topRight], radius: 7)
+        
         amenitiesCollectionView.delegate = self
         amenitiesCollectionView.dataSource = self
     }
