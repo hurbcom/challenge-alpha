@@ -101,12 +101,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8r-66-Jrg" customClass="SwiftyStarRatingView" customModule="SwiftyStarRatingView">
-                                                    <rect key="frame" x="15" y="25" width="150" height="25"/>
+                                                    <rect key="frame" x="15" y="35" width="115" height="15"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <color key="tintColor" red="0.85098039219999999" green="0.59215686270000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="LO6-94-RBw"/>
-                                                        <constraint firstAttribute="height" constant="25" id="sn5-uM-7UJ"/>
+                                                        <constraint firstAttribute="width" constant="115" id="LO6-94-RBw"/>
+                                                        <constraint firstAttribute="height" constant="15" id="sn5-uM-7UJ"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
@@ -124,7 +124,7 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="j8r-66-Jrg" firstAttribute="top" secondItem="1Bu-FU-GWg" secondAttribute="top" constant="25" id="jfE-cS-2h1"/>
+                                                <constraint firstItem="j8r-66-Jrg" firstAttribute="top" secondItem="1Bu-FU-GWg" secondAttribute="top" constant="35" id="jfE-cS-2h1"/>
                                                 <constraint firstAttribute="bottom" secondItem="j8r-66-Jrg" secondAttribute="bottom" constant="5" id="lPN-fm-1aH"/>
                                                 <constraint firstItem="j8r-66-Jrg" firstAttribute="leading" secondItem="1Bu-FU-GWg" secondAttribute="leading" constant="15" id="qpO-pU-PYL"/>
                                             </constraints>
