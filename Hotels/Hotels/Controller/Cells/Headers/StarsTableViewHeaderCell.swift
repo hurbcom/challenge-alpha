@@ -7,15 +7,19 @@
 //
 
 import UIKit
-import Cosmos
+import SwiftyStarRatingView
 
 class StarsTableViewHeaderCell: UITableViewCell {
 
-    @IBOutlet var cosmosView: CosmosView!
+    @IBOutlet var starsRatingView: SwiftyStarRatingView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cosmosView.settings.updateOnTouch = false
+        
+        
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -91,7 +91,7 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let starsHeader = tableView.dequeueReusableCell(withIdentifier: "STARS_HEADER_IDENTIFIER") as? StarsTableViewHeaderCell
-        starsHeader?.cosmosView.rating = 4
+        starsHeader?.starsRatingView.value = 3.0
         return starsHeader
     }
     
