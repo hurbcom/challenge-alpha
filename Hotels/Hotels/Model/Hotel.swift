@@ -47,4 +47,18 @@ class Hotel: EVObject {
         }
         return hotels
     }
+    
+    static func existsPackage(hotels: [Hotel]) -> Bool {
+        return !Hotel.getPackages(hotels: hotels).isEmpty
+    }
+    
+    static func getStarsThatContainHotels(hotels: [Hotel]) -> [Int] {
+        var stars = [Int]()
+        if !Hotel.getHotelsWith(stars: 5, hotels: hotels).isEmpty { stars.append(5) }
+        if !Hotel.getHotelsWith(stars: 4, hotels: hotels).isEmpty { stars.append(4) }
+        if !Hotel.getHotelsWith(stars: 3, hotels: hotels).isEmpty { stars.append(3) }
+        if !Hotel.getHotelsWith(stars: 2, hotels: hotels).isEmpty { stars.append(2) }
+        if !Hotel.getHotelsWith(stars: 1, hotels: hotels).isEmpty { stars.append(1) }
+        return stars
+    }
 }
