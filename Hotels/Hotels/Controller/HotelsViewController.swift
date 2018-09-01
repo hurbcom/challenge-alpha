@@ -23,10 +23,13 @@ class HotelsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //configurando activity indicator
         indicator.hidesWhenStopped = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
         
+        //preenchendo locais para pesquisa
         favoriteDestinies.commonDestinies()
+        //carregando hotéis e pacotes do destino default: fortaleza
         loadHotels(destiny: favoriteDestinies.getSelected())
     }
 
@@ -36,6 +39,12 @@ class HotelsViewController: UIViewController {
     }
     
     //MARK: - load hotels
+    /*
+     > faz o download do json com as informações dos hotéis e pacotes
+     > atualiza a tabela após o download concluído
+     > printa as informações recebidas
+     > anima o indicator
+    */
     private func loadHotels(destiny: Destiny) {
         indicator.startAnimating()
         HUAPIHelper.loadHotels(query: destiny.name!, completionHandler: { (hotels, success) in
@@ -48,16 +57,6 @@ class HotelsViewController: UIViewController {
             }
         })
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -136,11 +135,14 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
             //altura da header que mostra as estrelas deve ser maior que a altura da header de pacotes
             return section == 0 ? 44.0 : 55.0
         }
-        //não existindo pacotes, todas as headers tem a mesma alturas (header de estrelas)
+        //não existindo pacotes, todas as headers têm a mesma alturas (header de estrelas)
         return 55.0
     }
     
     //MARK: - Fill cells
+    /*
+     > faz a associação das informações de hotéis com a view
+    */
     private func fillHotelCell(cell: HotelTableViewCell, hotel: Hotel) {
         cell.hotelName.text = hotel.name
         cell.hotelAddress.text = hotel.address?.addressResume
@@ -151,6 +153,9 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    /*
+     > passa os objetos hotéis que representam pacotes para a collection view correspondente
+    */
     private func fillPackageCell(cell: PackagesTableViewCell, packages: [Hotel]) {
         cell.packages = packages
         cell.packagesCollectionView.reloadData()
@@ -159,6 +164,9 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 //MARK: - collection view datasource and delegate
+/*
+ COLLECTION VIEW PRINCIPAIS DESTINOS
+*/
 extension HotelsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoriteDestinies.destinies.count
@@ -167,11 +175,13 @@ extension HotelsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SEARCH_NAME_CELL_IDENTIFIER", for: indexPath) as? FavoriteSearchCollectionViewCell
         cell?.searchName.text = favoriteDestinies.destinies[indexPath.row].name
+        //definindo estilo para célula selecionada naquele momento
         if favoriteDestinies.destinies[indexPath.row].isSelected {
             cell?.layer.borderColor = #colorLiteral(red: 0.9216816425, green: 0.2687143087, blue: 0.5662311912, alpha: 1).cgColor
             cell?.layer.borderWidth = 5
             cell?.searchName.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         } else {
+            //demais células
             cell?.layer.borderWidth = 0
             cell?.searchName.textColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         }
@@ -179,6 +189,11 @@ extension HotelsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell!
     }
     
+    /*
+     > no momento que uma célula é selecionada, é feita uma requisição com o destino escolhido
+     > collection view de destinos é atualizada para apresentar o atual selecionado
+     > o destino escolhido deve ficar centralizado e em destaque
+    */
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.favoriteDestinies.destinies[indexPath.row].select()
         self.loadHotels(destiny: favoriteDestinies.getSelected())
@@ -194,6 +209,7 @@ extension HotelsViewController: UICollectionViewDelegate, UICollectionViewDataSo
 //MARk: - collection view flow layout
 extension HotelsViewController: UICollectionViewDelegateFlowLayout {
     
+    //define a distância entre as células de destinos
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 7.0, bottom: 0, right: 7.0)
     }

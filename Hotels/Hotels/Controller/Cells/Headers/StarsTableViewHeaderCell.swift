@@ -13,12 +13,8 @@ class StarsTableViewHeaderCell: UITableViewCell {
 
     @IBOutlet var starsRatingView: SwiftyStarRatingView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-        
         
     }
 

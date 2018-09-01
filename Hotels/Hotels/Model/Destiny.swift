@@ -12,6 +12,7 @@ class Destiny: NSObject {
     var name: String?
     var isSelected = false
     
+    //referência para o objeto destinies que contém um array de destinos
     var destiniesRef: Destinies?
     
     init(name: String, isSelected: Bool, destiniesRef: Destinies) {
@@ -20,6 +21,9 @@ class Destiny: NSObject {
         self.destiniesRef = destiniesRef
     }
     
+    /*
+     > seleciona um destino
+    */
     func select() {
         for destiny in destiniesRef!.destinies {
             destiny.deselect()
@@ -27,6 +31,10 @@ class Destiny: NSObject {
         isSelected = true
     }
     
+    /*
+     > deseleciona um destino
+     > método privado pois só é usado no escopo desta classe
+    */
     private func deselect() {
         isSelected = false
     }

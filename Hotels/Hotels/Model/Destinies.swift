@@ -8,10 +8,10 @@
 
 import UIKit
 
-//Estados ou capitais
 class Destinies: NSObject {
     var destinies = [Destiny]()
     
+    //destinos escolhidos que podem ser cidades ou até mesmo estados
     func commonDestinies() {
         destinies = [
             Destiny(name: "Fortaleza", isSelected: true, destiniesRef: self),
@@ -28,6 +28,9 @@ class Destinies: NSObject {
         ]
     }
     
+    /*
+     > retorna o destino escolhido naquele momento
+    */
     func getSelected() -> Destiny {
         let selectedArray = destinies.filter { (destiny) -> Bool in
             return destiny.isSelected

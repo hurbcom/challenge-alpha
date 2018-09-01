@@ -21,12 +21,14 @@ class PackageCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //definindo sombra para células de pacotes
         background.layer.shadowColor = UIColor.gray.cgColor
         background.layer.shadowOpacity = 0.5
         background.layer.shadowOffset = CGSize.zero
         background.layer.shadowRadius = 4
         background.layer.shadowPath = UIBezierPath(rect: background.bounds).cgPath
         
+        //arredondando bordas: superior esquerda e superior direita
         packageImage.roundCorners([.topLeft, .topRight], radius: 7)
         
         amenitiesCollectionView.delegate = self
@@ -38,6 +40,9 @@ class PackageCollectionViewCell: UICollectionViewCell {
 
 
 //MARK: - collection view datasource
+/*
+ COLLECTION VIEW DE AMENITIES DE PACOTES
+*/
 extension PackageCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return amenities.count
@@ -55,6 +60,7 @@ extension PackageCollectionViewCell: UICollectionViewDelegate, UICollectionViewD
 //MARk: - collection view flow layout
 extension PackageCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
+    //definindo tamanho das células da collection de amenities de pacotes
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
         let height = collectionView.bounds.height

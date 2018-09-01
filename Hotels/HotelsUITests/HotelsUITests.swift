@@ -33,4 +33,22 @@ class HotelsUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    func testGeneral() {
+        
+        let app = XCUIApplication()
+        
+        sleep(10)
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Pacote Fortaleza - 2019"]/*[[".cells.staticTexts[\"Pacote Fortaleza - 2019\"]",".staticTexts[\"Pacote Fortaleza - 2019\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeLeft()
+        
+        
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Hotel Oásis Atlântico"]/*[[".cells.staticTexts[\"Hotel Oásis Atlântico\"]",".staticTexts[\"Hotel Oásis Atlântico\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        
+        let collectionViewsQuery = app.collectionViews
+        collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["São Paulo"]/*[[".cells.staticTexts[\"São Paulo\"]",".staticTexts[\"São Paulo\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        sleep(10)
+        collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["Santa Catarina"]/*[[".cells.staticTexts[\"Santa Catarina\"]",".staticTexts[\"Santa Catarina\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeLeft()
+        
+    }
+    
 }

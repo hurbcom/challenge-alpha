@@ -21,6 +21,7 @@ class HotelTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //definindo sombra às células de hotéis
         background.layer.shadowColor = UIColor.gray.cgColor
         background.layer.shadowOpacity = 0.5
         background.layer.shadowOffset = CGSize.zero
@@ -41,6 +42,9 @@ class HotelTableViewCell: UITableViewCell {
 
 
 //MARK: - collection view datasource
+/*
+ COLLECTION VIEW DE AMENITIES DE HOTÉIS
+*/
 extension HotelTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return amenities.count
@@ -58,6 +62,7 @@ extension HotelTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
 //MARk: - collection view flow layout
 extension HotelTableViewCell: UICollectionViewDelegateFlowLayout {
     
+    //definindo tamanho das células de amenities de hotéis
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
         let height = collectionView.bounds.height

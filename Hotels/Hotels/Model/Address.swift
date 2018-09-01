@@ -19,6 +19,7 @@ class Address: EVObject {
     var street: String?
     var zipcode: String?
     
+    //facilita o acesso ao resumo de endereço
     var addressResume: String {
         get {
             return (city ?? "-") + ", " + (state ?? "-")

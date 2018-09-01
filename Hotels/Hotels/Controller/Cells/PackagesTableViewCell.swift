@@ -32,6 +32,9 @@ class PackagesTableViewCell: UITableViewCell {
 
 
 //MARK: - collection view datasource
+/*
+ COLLECTION VIEW DE PACOTES
+*/
 extension PackagesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return packages.count
@@ -45,6 +48,9 @@ extension PackagesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     //MARK: - Fill cells
+    /*
+     > faz a associação das informações de pacotes com a view
+    */
     private func fillPackageCell(cell: PackageCollectionViewCell, package: Hotel) {
         cell.packageName.text = package.name
         cell.packageAddress.text = package.address?.addressResume
@@ -58,9 +64,10 @@ extension PackagesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
 
 
 
-//MARk: - collection view flow layout
+//MARK: - collection view flow layout
 extension PackagesTableViewCell: UICollectionViewDelegateFlowLayout {
     
+    //definindo distância entre células de pacotes
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 7.0, bottom: 0, right: 3.0)
     }

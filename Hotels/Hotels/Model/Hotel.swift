@@ -21,12 +21,20 @@ class Hotel: EVObject {
     var amenities = [Amenity]()
     var gallery = [Photo]()
     
+    /*
+     > retorna o tipo do anúncio: .Hotel ou .Package
+    */
     var adType: AdType {
         get {
             return isHotel ? .Hotel : (isPackage ? .Package : .Hotel)
         }
     }
     
+    //MARK: - Util methods
+    
+    /*
+     > filtra e retorna somente os hotéis
+    */
     static func getHotels(hotels: [Hotel]) -> [Hotel] {
         let hotels = hotels.filter { (hotel) -> Bool in
             return hotel.adType == .Hotel
@@ -34,6 +42,9 @@ class Hotel: EVObject {
         return hotels
     }
     
+    /*
+     > filtra e retorna somente os pacotes
+    */
     static func getPackages(hotels: [Hotel]) -> [Hotel] {
         let packages = hotels.filter { (hotel) -> Bool in
             return hotel.adType == .Package
@@ -41,6 +52,9 @@ class Hotel: EVObject {
         return packages
     }
     
+    /*
+     > filtra e retorna somente os hotéis classificados com a quantidade de estrelas passadas por parâmetro
+    */
     static func getHotelsWith(stars: Int, hotels: [Hotel]) -> [Hotel] {
         let hotels = hotels.filter { (hotel) -> Bool in
             return hotel.adType == .Hotel && hotel.stars?.intValue == stars
@@ -48,10 +62,17 @@ class Hotel: EVObject {
         return hotels
     }
     
+    /*
+     > retorna um booleano indicando se entre os hotéis existem pacotes ou não
+    */
     static func existsPackage(hotels: [Hotel]) -> Bool {
         return !Hotel.getPackages(hotels: hotels).isEmpty
     }
     
+    /*
+     > retorna um array de inteiros correspondente às estrelas que possuem hotéis
+     > ex: se apenas possuem hotéis com 3 e 4 estrelas então o resultado será [3, 4]
+    */
     static func getStarsThatContainHotels(hotels: [Hotel]) -> [Int] {
         var stars = [Int]()
         if !Hotel.getHotelsWith(stars: 5, hotels: hotels).isEmpty { stars.append(5) }

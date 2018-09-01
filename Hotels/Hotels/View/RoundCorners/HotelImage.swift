@@ -12,7 +12,8 @@ class HotelImage: UIImageView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-            
+        
+        //arredonda bordas das imagens dos hotéis no lado esquerdo: superior esquerdo e inferior esquerdo
         self.roundCorners([.topLeft, .bottomLeft], radius: 7)
     }
 
