@@ -170,8 +170,10 @@ extension HotelsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if favoriteDestinies.destinies[indexPath.row].isSelected {
             cell?.layer.borderColor = #colorLiteral(red: 0.9216816425, green: 0.2687143087, blue: 0.5662311912, alpha: 1).cgColor
             cell?.layer.borderWidth = 5
+            cell?.searchName.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         } else {
             cell?.layer.borderWidth = 0
+            cell?.searchName.textColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         }
 
         return cell!
