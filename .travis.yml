@@ -4,6 +4,6 @@ osx_image: xcode9.4
 podfile: Hotels/Podfile
 
 script:
-  - xcodebuild -project Hotels/Hotels.xcodeproj -scheme 'Hotels' -sdk iphonesimulator build
-  - xcodebuild test -project Hotels/Hotels.xcodeproj -scheme 'HotelsTests' -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4'
-  - xcodebuild test -project Hotels/Hotels.xcodeproj -scheme 'HotelsUITests' -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4'
+  - xcodebuild -project Hotels/Hotels.xcworkspace -scheme 'Hotels' -sdk iphonesimulator build
+  - xcodebuild test -project Hotels/Hotels.xcworkspace -scheme 'HotelsTests' -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4'
+  - xcodebuild test -project Hotels/Hotels.xcworkspace -scheme 'HotelsUITests' -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4'
