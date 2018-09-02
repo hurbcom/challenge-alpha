@@ -30,7 +30,7 @@ class MoneyTests: XCTestCase {
     
     func testDoubleToMoney() {
         let money = 345.89.getMoneyValue()
-        XCTAssertEqual(money, "345.89")
+        XCTAssertEqual(money, "345,89")
     }
     
 }
