@@ -30,6 +30,7 @@
 		1655C4E02134DEB900BBCCE8 /* PackagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655C4DF2134DEB900BBCCE8 /* PackagesTableViewCell.swift */; };
 		1655C4E22134EE1F00BBCCE8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655C4E12134EE1F00BBCCE8 /* Photo.swift */; };
 		168CFD7E2136364A0059EEEC /* FavoriteSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CFD7D2136364A0059EEEC /* FavoriteSearchCollectionViewCell.swift */; };
+		16F363D6213C658400C8FE60 /* MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F363D5213C658400C8FE60 /* MoneyTests.swift */; };
 		38A3F7C97EF4331A3F0A0454 /* Pods_HotelsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1230FE72334DDD57E53CCF4 /* Pods_HotelsTests.framework */; };
 		65C6280604E5B714F4785AE4 /* Pods_Hotels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7E8409FB7402CEB83680F2 /* Pods_Hotels.framework */; };
 		CEF833FB21607C003ECC38FC /* Pods_HotelsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905E49A9D0FDBD4F6C44B2FE /* Pods_HotelsUITests.framework */; };
@@ -85,6 +86,7 @@
 		1655C4DF2134DEB900BBCCE8 /* PackagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableViewCell.swift; sourceTree = "<group>"; };
 		1655C4E12134EE1F00BBCCE8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		168CFD7D2136364A0059EEEC /* FavoriteSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		16F363D5213C658400C8FE60 /* MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTests.swift; sourceTree = "<group>"; };
 		1C9BBDD24EC549C500C49A54 /* Pods-Hotels.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotels.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hotels/Pods-Hotels.release.xcconfig"; sourceTree = "<group>"; };
 		6E1A796B8A54D41A898E551E /* Pods-Hotels.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotels.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hotels/Pods-Hotels.debug.xcconfig"; sourceTree = "<group>"; };
 		7E7E8409FB7402CEB83680F2 /* Pods_Hotels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hotels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 			children = (
 				160CAAD92130DFF600F69234 /* HotelsTests.swift */,
 				160CAADB2130DFF600F69234 /* Info.plist */,
+				16F363D5213C658400C8FE60 /* MoneyTests.swift */,
 			);
 			path = HotelsTests;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16F363D6213C658400C8FE60 /* MoneyTests.swift in Sources */,
 				160CAADA2130DFF600F69234 /* HotelsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

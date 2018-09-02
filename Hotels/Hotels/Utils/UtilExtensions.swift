@@ -9,6 +9,7 @@
 import UIKit
 
 extension Double {
+    //estrutura definida para transformar um Double em formato de Reais (R$)
     func getMoneyValue() -> String {
         Double.currencyFormatter.locale = Locale(identifier: "pt_BR")
         let stringValue = String(format: "%.2f", self)
@@ -30,6 +31,7 @@ extension Double {
 
 extension UIView {
     
+    //método utilizado para arredondar bordas de determinada view
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
