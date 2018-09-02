@@ -30,6 +30,17 @@ class Hotel: EVObject {
         }
     }
     
+    //usado somente para testes
+    init(id: String, isHotel: Bool, isPackage: Bool, name: String, stars: Int?) {
+        self.id = id
+        self.isHotel = isHotel
+        self.isPackage = isPackage
+        self.name = name
+        self.stars = NSNumber(value: stars ?? 0)
+    }
+    
+    required init() {}
+    
     //MARK: - Util methods
     
     /*
