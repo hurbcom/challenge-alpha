@@ -98,7 +98,7 @@ class HotelsTests: XCTestCase {
          > Resultado esperado: [5, 4, 3]
         */
         let stars = Hotel.getStarsThatContainHotels(hotels: self.hotels)
-        XCTAssertEqual(stars, [5, 4, 3])
+        XCTAssertEqual(stars, [5, 2, 3])
     }
     
 }
