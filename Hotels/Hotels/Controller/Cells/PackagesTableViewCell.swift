@@ -57,7 +57,7 @@ extension PackagesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         cell.packagePrice.text = package.price?.currentPrice?.doubleValue.getMoneyValue()
         cell.amenities = Array(package.amenities.prefix(4))
         cell.packageImage.sd_setImage(with: URL(string: package.gallery.first?.url ?? ""), placeholderImage: #imageLiteral(resourceName: "placeholder-image"), options: SDWebImageOptions.progressiveDownload) { (image, error, type, url) in
-            print(error ?? "Sem erros")
+            print(error ?? "Imagem de pacote carregada com sucesso: \(String(describing: url))")
         }
     }
 }

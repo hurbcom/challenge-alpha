@@ -149,7 +149,7 @@ extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.hotelPrice.text = hotel.price?.currentPrice?.doubleValue.getMoneyValue()
         cell.amenities = Array(hotel.amenities.prefix(4))
         cell.hotelImage.sd_setImage(with: URL(string: hotel.image ?? "Error"), placeholderImage: #imageLiteral(resourceName: "placeholder-image"), options: SDWebImageOptions.progressiveDownload) { (image, error, type, url) in
-            print(error ?? "Nenhum erro")
+            print(error ?? "Imagem de hotél carregada com sucesso: \(String(describing: url))")
         }
     }
     

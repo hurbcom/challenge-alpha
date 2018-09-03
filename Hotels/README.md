@@ -46,4 +46,6 @@ No projeto, foi utilizado o Travis CI, um servidor de Integração Contínua que
 
 ### Extra
 
-O aplicativo segue um conceito de **Melhores destinos**, isso quer dizer que, na parte superior da tela, é exibido uma CollectionView que permite ao usuário escolher o seu destino entre os sugeridos.
+* O aplicativo segue um conceito de **Melhores destinos**, isso quer dizer que, na parte superior da tela, é exibido uma CollectionView que permite ao usuário escolher o seu destino entre os sugeridos.
+
+* A biblioteca **EVReflection** fornece logs para atributos que não foram mapeados. Como no projeto não utilizamos todos os atributos disponibilizados pela API, é normal que apareçam os logs.
