@@ -1,0 +1,9 @@
+language: objective-c
+osx_image: xcode9.4
+
+podfile: Hotels/Podfile
+
+script:
+  - xcodebuild -workspace Hotels/Hotels.xcworkspace -scheme 'Hotels' -sdk iphonesimulator build
+  - xcodebuild test -workspace Hotels/Hotels.xcworkspace -scheme 'HotelsTests' -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4'
+  - xcodebuild test -workspace Hotels/Hotels.xcworkspace -scheme 'HotelsUITests' -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4'
