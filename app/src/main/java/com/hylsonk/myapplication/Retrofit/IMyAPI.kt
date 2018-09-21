@@ -11,8 +11,11 @@ import retrofit2.http.Query
 
 interface IMyAPI {
 
+    /*
+        API para consumir o Json do https://search.hotelurbano.com/ por GET
+     */
     @GET("api")
-    fun hitCountCheck(@Query("q") q:String):Observable<RootObject>
+    fun fetchResult(@Query("q") q:String):Observable<RootObject>
 
     companion object {
         fun create():IMyAPI{
@@ -23,5 +26,6 @@ interface IMyAPI {
                 .build()
             return retrofit.create(IMyAPI::class.java)
         }
+
     }
 }

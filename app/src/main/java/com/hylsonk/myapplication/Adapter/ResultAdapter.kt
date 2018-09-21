@@ -20,6 +20,8 @@ class ResultAdapter(internal var context: Context, internal var resultList:List<
 
     override fun onBindViewHolder(holder: ResultViewHolder, position: Int) {
         holder.stars.text = resultList[position].getStars().toString()+" stars"
+        holder.name.text = resultList[position].getName().toString()
+        holder.description.text = resultList[position].getDescription().toString()
     }
 
 }

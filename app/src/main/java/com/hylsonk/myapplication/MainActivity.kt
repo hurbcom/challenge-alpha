@@ -3,10 +3,8 @@ package com.hylsonk.myapplication
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.LinearLayout
 import android.widget.Toast
 import com.hylsonk.myapplication.Adapter.ResultAdapter
-import com.hylsonk.myapplication.Model.Meta
 import com.hylsonk.myapplication.Model.Result
 import com.hylsonk.myapplication.Retrofit.IMyAPI
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -18,6 +16,10 @@ class MainActivity : AppCompatActivity() {
 
     private var disposable:Disposable ? = null
 
+
+    /*
+        Inicia a API
+     */
     private val iMyAPI by lazy {
         IMyAPI.create()
     }
@@ -33,12 +35,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchData(){
-        disposable = iMyAPI.hitCountCheck("Rio%20de%20Janeiro")
+        disposable = iMyAPI.fetchResult("Rio%20de%20Janeiro")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {result ->
                     var results: ArrayList<Result> = result.getResults()!!
+                    results = results.sortBy{ it.getStars() }
                     displayData(results)
                 },
                 {error -> Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()}

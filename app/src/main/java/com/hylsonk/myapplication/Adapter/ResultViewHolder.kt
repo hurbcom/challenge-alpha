@@ -6,5 +6,6 @@ import kotlinx.android.synthetic.main.result_layout.view.*
 
 class ResultViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
     val stars = itemView.stars
-
+    val name = itemView.name
+    val description = itemView.description
 }

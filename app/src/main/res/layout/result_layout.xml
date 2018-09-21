@@ -8,20 +8,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stretchColumns="*"
-        android:shrinkColumns="*">
+        android:shrinkColumns="*"
+        android:background="@drawable/border">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
             <TextView
                 android:id="@+id/stars"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Stars"
-                android:layout_span="3"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*"
+                android:shrinkColumns="*"
+                android:layout_margin="10dp"
+                android:background="@drawable/border"
+                android:padding="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp"/>
+
+                </TableRow>
+
+            </TableLayout>
         </TableRow>
 
     </TableLayout>
