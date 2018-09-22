@@ -9,7 +9,8 @@
         android:layout_height="match_parent"
         android:stretchColumns="*"
         android:shrinkColumns="*"
-        android:background="@drawable/border">
+        android:background="@drawable/border"
+        android:layout_marginTop="5dp">
 
         <TableRow
             android:layout_width="match_parent"

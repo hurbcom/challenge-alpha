@@ -16,9 +16,15 @@ class MainActivity : AppCompatActivity() {
 
     private var disposable:Disposable ? = null
 
+    /**
+     * Separa os hoteis dos pacotes em duas listas
+     */
 
-    /*
-        Inicia a API
+    private var hotels = ArrayList<Result>()
+    private var packages = ArrayList<Result>()
+
+    /**
+     * Inicia a API
      */
     private val iMyAPI by lazy {
         IMyAPI.create()
@@ -34,20 +40,34 @@ class MainActivity : AppCompatActivity() {
         fetchData()
     }
 
+    /**
+     * Requisição de dados dos results filtrando quais são hoteis e quais são pacotes
+     */
     private fun fetchData(){
         disposable = iMyAPI.fetchResult("Rio%20de%20Janeiro")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {result ->
-                    var results: ArrayList<Result> = result.getResults()!!
-                    results = results.sortBy{ it.getStars() }
-                    displayData(results)
+                    var results = result.getResults()!!
+                    results.forEach {
+                        if (it.getIsHotel()){
+                            hotels.add(it)
+                        }
+                        else{
+                            packages.add(it)
+                        }
+                    }
+                    val sortedResults = hotels.sortedWith(compareBy({it.getStars()}))
+                    displayData(sortedResults)
                 },
                 {error -> Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()}
             )
     }
 
+    /**
+     * Exibi os dados
+     */
     private fun displayData(result: List<Result>?) {
         val adapter = ResultAdapter(this,result!!)
         recyclerView.adapter = adapter
