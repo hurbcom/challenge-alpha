@@ -12,6 +12,8 @@ interface APIHotels {
         fun requestHotelsStart()
         fun requestHotelsSucess(result: Result)
         fun requestHotelsError()
+        fun buildListHotels(result: Result): List<Hotels>
+        fun buildListPackage(result: Result): List<Hotels>
     }
 
     interface ModelHotelsImpl{

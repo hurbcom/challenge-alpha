@@ -10,5 +10,6 @@ data class Hotels(
     val image: String,
     val name: String,
     val stars: Int,
-    val address: Address
+    val address: Address,
+    val gallery: List<Gallery>
 )

@@ -1,19 +1,32 @@
 package br.com.hu.allyson.desafiohu
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.hu.allyson.desafiohu.ui.hotels.HotelsFragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager.widget.ViewPager
+import br.com.hu.allyson.desafiohu.adapter.MainTabsAdapter
+import br.com.hu.allyson.desafiohu.fragments.HotelsFragment
+import br.com.hu.allyson.desafiohu.fragments.PackagesFragment
+import kotlinx.android.synthetic.main.main_activity.*
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, HotelsFragment.newInstance())
-                .commitNow()
-        }
+
+        setupViewPager(pages)
+        tab.setupWithViewPager(pages)
+
+
     }
+
+    fun setupViewPager(viewPager: ViewPager) {
+        var adapter = MainTabsAdapter(supportFragmentManager)
+        adapter.addFragment(HotelsFragment(), "Hotéis")
+        adapter.addFragment(PackagesFragment(), "Pacotes")
+        viewPager.adapter = adapter;
+    }
+
 
 }

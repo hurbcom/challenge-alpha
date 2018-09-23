@@ -25,10 +25,18 @@ class PresenterHotels : APIHotels.PresenterHotelsImpl{
     }
 
     override fun requestHotelsSucess(result: Result) {
-
+        view.requestHotelsSucess(result)
     }
 
     override fun requestHotelsError() {
 
+    }
+
+    override fun buildListHotels(result: Result): List<Hotels> {
+        return result.results.filter { it.isHotel }
+    }
+
+    override fun buildListPackage(result: Result): List<Hotels> {
+        return result.results.filter { it.isPackage }
     }
 }

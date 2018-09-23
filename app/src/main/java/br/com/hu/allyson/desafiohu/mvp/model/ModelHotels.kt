@@ -1,6 +1,5 @@
 package br.com.hu.allyson.desafiohu.mvp.model
 
-import br.com.hu.allyson.desafiohu.domain.Hotels
 import br.com.hu.allyson.desafiohu.domain.Result
 import br.com.hu.allyson.desafiohu.mvp.interfaces.APIHotels
 import br.com.hu.allyson.desafiohu.mvp.presenter.PresenterHotels
