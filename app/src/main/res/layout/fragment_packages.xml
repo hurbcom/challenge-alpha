@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.PackagesFragment">
+    tools:context=".fragments.PackagesFragment"
+    android:fillViewport="true">
 
 
-    <include layout="@layout/layout_no_data"
+    <include layout="@layout/layout_list_packages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
