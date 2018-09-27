@@ -1,11 +1,8 @@
-package br.com.hu.allyson.desafiohu.adapter
+package br.com.hu.allyson.desafiohu.ui.hotels.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-
-import br.com.hu.allyson.desafiohu.fragments.HotelsFragment
-import br.com.hu.allyson.desafiohu.fragments.PackagesFragment
 
 class MainTabsAdapter(fm: FragmentManager
                       ): FragmentPagerAdapter(fm) {

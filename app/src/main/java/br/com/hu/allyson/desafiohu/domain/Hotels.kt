@@ -5,6 +5,7 @@ data class Hotels(
     val isHotel: Boolean,
     val isPackage: Boolean,
     val amenities: List<Amenity>,
+    val smallDescription: String,
     val id: String,
     val price: Price,
     val image: String,

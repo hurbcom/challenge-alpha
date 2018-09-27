@@ -27,8 +27,27 @@
                 />
 
             <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="R$800.00"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="@id/image_package"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintVertical_bias="1.0"
+                />
+
+            <TextView
                 android:id="@+id/local_package"
                 android:layout_width="0dp"
+                android:textSize="16sp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/image_package"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +60,11 @@
                 />
 
             <TextView
-                android:id="@+id/package_description"
+                android:id="@+id/package_name"
                 android:layout_width="0dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/local_package"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,10 +78,11 @@
 
 
             <TextView
-                android:id="@+id/package_contains"
+                android:id="@+id/package_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/package_description"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/package_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -69,6 +92,20 @@
                 tools:text="Pacote inclui:"
                 />
 
+
+            <TextView
+                android:id="@+id/package_amenities"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/package_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                android:textColor="@color/colorPrimary"
+                android:layout_margin="8dp"
+                tools:text="Cortesias:"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

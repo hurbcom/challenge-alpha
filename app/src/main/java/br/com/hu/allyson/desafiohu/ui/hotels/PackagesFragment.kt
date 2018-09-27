@@ -1,4 +1,4 @@
-package br.com.hu.allyson.desafiohu.fragments
+package br.com.hu.allyson.desafiohu.ui.hotels
 
 
 import android.os.Bundle
@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import br.com.hu.allyson.desafiohu.R
-import br.com.hu.allyson.desafiohu.adapter.PackageAdapter
+import br.com.hu.allyson.desafiohu.ui.hotels.adapter.PackageAdapter
 import br.com.hu.allyson.desafiohu.domain.Hotels
-import br.com.hu.allyson.desafiohu.ui.hotels.HotelsViewModel
 import kotlinx.android.synthetic.main.layout_list_packages.*
 
 /**

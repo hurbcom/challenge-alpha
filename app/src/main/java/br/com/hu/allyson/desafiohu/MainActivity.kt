@@ -5,11 +5,11 @@ import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
-import br.com.hu.allyson.desafiohu.adapter.MainTabsAdapter
+import br.com.hu.allyson.desafiohu.ui.hotels.adapter.MainTabsAdapter
 import br.com.hu.allyson.desafiohu.domain.Hotels
 import br.com.hu.allyson.desafiohu.domain.Result
-import br.com.hu.allyson.desafiohu.fragments.HotelsFragment
-import br.com.hu.allyson.desafiohu.fragments.PackagesFragment
+import br.com.hu.allyson.desafiohu.ui.hotels.HotelsFragment
+import br.com.hu.allyson.desafiohu.ui.hotels.PackagesFragment
 import br.com.hu.allyson.desafiohu.mvp.interfaces.APIHotels
 import br.com.hu.allyson.desafiohu.mvp.presenter.PresenterHotels
 import br.com.hu.allyson.desafiohu.network.HotelsManager
