@@ -6,16 +6,14 @@ import android.view.View
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
-import br.com.hu.allyson.desafiohu.ui.hotels.adapter.MainTabsAdapter
-import br.com.hu.allyson.desafiohu.domain.Hotels
 import br.com.hu.allyson.desafiohu.domain.Result
-import br.com.hu.allyson.desafiohu.ui.hotels.HotelsFragment
-import br.com.hu.allyson.desafiohu.ui.hotels.PackagesFragment
 import br.com.hu.allyson.desafiohu.mvp.interfaces.APIHotels
 import br.com.hu.allyson.desafiohu.mvp.presenter.PresenterHotels
 import br.com.hu.allyson.desafiohu.network.HotelsManager
+import br.com.hu.allyson.desafiohu.ui.hotels.HotelsFragment
 import br.com.hu.allyson.desafiohu.ui.hotels.HotelsViewModel
-import com.google.gson.Gson
+import br.com.hu.allyson.desafiohu.ui.hotels.PackagesFragment
+import br.com.hu.allyson.desafiohu.ui.hotels.adapter.MainTabsAdapter
 import kotlinx.android.synthetic.main.error_screen.*
 import kotlinx.android.synthetic.main.main_activity.*
 
@@ -39,15 +37,15 @@ class MainActivity : FragmentActivity(), APIHotels.ViewHotelsImpl {
             error_page.visibility = View.INVISIBLE
             requestHotelsStart()
         }
-            requestHotelsStart()
+        requestHotelsStart()
 
     }
 
-    fun setupViewPager(viewPager: ViewPager) {
-        var adapter = MainTabsAdapter(supportFragmentManager)
+    private fun setupViewPager(viewPager: ViewPager) {
+        val adapter = MainTabsAdapter(supportFragmentManager)
         adapter.addFragment(HotelsFragment(), "Hotéis")
         adapter.addFragment(PackagesFragment(), "Pacotes")
-        viewPager.adapter = adapter;
+        viewPager.adapter = adapter
     }
 
     override fun requestHotelsStart() {
@@ -66,13 +64,13 @@ class MainActivity : FragmentActivity(), APIHotels.ViewHotelsImpl {
         showError()
     }
 
-    fun showPages(){
+    fun showPages() {
         pages.visibility = View.VISIBLE
         progress_bar.visibility = View.INVISIBLE
         error_page.visibility = View.INVISIBLE
     }
 
-    fun showError(){
+    private fun showError() {
         pages.visibility = View.INVISIBLE
         progress_bar.visibility = View.INVISIBLE
         error_page.visibility = View.VISIBLE

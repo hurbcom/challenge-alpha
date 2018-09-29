@@ -11,7 +11,6 @@ import br.com.hu.allyson.desafiohu.util.DoubleUtils
 import br.com.hu.allyson.desafiohu.util.StatesUtil
 import br.com.hu.allyson.desafiohu.util.StringUtils
 import com.squareup.picasso.Picasso
-import java.lang.Exception
 
 class PackageAdapter(val context: Context, var list: List<Hotels>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -27,24 +26,24 @@ class PackageAdapter(val context: Context, var list: List<Hotels>) : RecyclerVie
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
-            (holder as PackageViewHolder).local_package.text = "${list[position].address.city} - ${StatesUtil.getSigleState(list[position].address.state)}"
+        (holder as PackageViewHolder).local_package.text = "${list[position].address.city} - ${StatesUtil.getSigleState(list[position].address.state)}"
 
-            Picasso.get()
-                .load(list[position].gallery[0].url)
-                .fit()
-                .into(holder.image_package)
+        Picasso.get()
+            .load(list[position].gallery[0].url)
+            .fit()
+            .into(holder.image_package)
 
-            holder.package_name.text = list[position].name
+        holder.package_name.text = list[position].name
 
-            holder.package_description.text = list[position].smallDescription
+        holder.package_description.text = list[position].smallDescription
 
-            holder.price.text = DoubleUtils.formatToBrazilianCurrency(list[position].price.currentPrice)
+        holder.price.text = DoubleUtils.formatToBrazilianCurrency(list[position].price.currentPrice)
 
-            holder.package_amenities.text = "Cortesias:\n ${StringUtils.formatAmenities(list[position].amenities)}"
+        holder.package_amenities.text = "Cortesias:\n ${StringUtils.formatAmenities(list[position].amenities)}"
 
     }
 
-    fun addItens(list: List<Hotels>){
+    fun addItens(list: List<Hotels>) {
         this.list = list
     }
 }

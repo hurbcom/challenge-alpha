@@ -7,9 +7,9 @@ import br.com.hu.allyson.desafiohu.mvp.model.ModelHotels
 import br.com.hu.allyson.desafiohu.network.NetworkHotels
 
 class PresenterHotels : APIHotels.PresenterHotelsImpl{
-    private lateinit var view: APIHotels.ViewHotelsImpl
-    private lateinit var repository: NetworkHotels.HotelsRepositoryImpl
-    private lateinit var model: APIHotels.ModelHotelsImpl
+    lateinit var view: APIHotels.ViewHotelsImpl
+    lateinit var repository: NetworkHotels.HotelsRepositoryImpl
+    lateinit var model: APIHotels.ModelHotelsImpl
     override fun bind(view: APIHotels.ViewHotelsImpl, repository: NetworkHotels.HotelsRepositoryImpl) {
         this.repository = repository
         this.view = view
