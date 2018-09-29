@@ -29,7 +29,7 @@ class PresenterHotels : APIHotels.PresenterHotelsImpl{
     }
 
     override fun requestHotelsError() {
-
+        view.requestHotelsError()
     }
 
     override fun buildListHotels(result: Result): List<Hotels> {

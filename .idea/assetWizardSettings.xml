@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio%20Preview/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_hotel_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio%20Preview/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/alert/ic_error_outline_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="717171" />
-                            <entry key="outputName" value="ic_hotel" />
+                            <entry key="color" value="143a7b" />
+                            <entry key="outputName" value="ic_error" />
                             <entry key="sourceFile" value="C:\Users\Allyson" />
                           </map>
                         </option>

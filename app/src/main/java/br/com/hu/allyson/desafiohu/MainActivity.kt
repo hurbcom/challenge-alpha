@@ -16,6 +16,7 @@ import br.com.hu.allyson.desafiohu.mvp.presenter.PresenterHotels
 import br.com.hu.allyson.desafiohu.network.HotelsManager
 import br.com.hu.allyson.desafiohu.ui.hotels.HotelsViewModel
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.error_screen.*
 import kotlinx.android.synthetic.main.main_activity.*
 
 
@@ -33,7 +34,11 @@ class MainActivity : FragmentActivity(), APIHotels.ViewHotelsImpl {
         tab.setupWithViewPager(pages)
         viewModel = ViewModelProviders.of(this).get(HotelsViewModel::class.java)
         presenter = PresenterHotels()
-
+        try_again.setOnClickListener {
+            progress_bar.visibility = View.VISIBLE
+            error_page.visibility = View.INVISIBLE
+            requestHotelsStart()
+        }
             requestHotelsStart()
 
     }
@@ -58,12 +63,19 @@ class MainActivity : FragmentActivity(), APIHotels.ViewHotelsImpl {
     }
 
     override fun requestHotelsError() {
-
+        showError()
     }
 
     fun showPages(){
         pages.visibility = View.VISIBLE
         progress_bar.visibility = View.INVISIBLE
+        error_page.visibility = View.INVISIBLE
+    }
+
+    fun showError(){
+        pages.visibility = View.INVISIBLE
+        progress_bar.visibility = View.INVISIBLE
+        error_page.visibility = View.VISIBLE
     }
 
 

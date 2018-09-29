@@ -51,6 +51,10 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
+    <include layout="@layout/error_screen"
+        android:visibility="invisible"
+        android:id="@+id/error_page"/>
+
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
