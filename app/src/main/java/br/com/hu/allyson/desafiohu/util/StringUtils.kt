@@ -19,7 +19,7 @@ object StringUtils {
             else
                 amenitiesConcat += amenities[count].name
             count++
-        }while (count <= 2)
+        }while (count <= 2 && amenities.size > count)
 
         return amenitiesConcat
     }

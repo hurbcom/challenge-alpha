@@ -33,10 +33,10 @@ class PresenterHotels : APIHotels.PresenterHotelsImpl{
     }
 
     override fun buildListHotels(result: Result): List<Hotels> {
-        return result.results.filter { it.isHotel }
+        return result.results.filter { it.isHotel }.sortedByDescending { it.stars }
     }
 
     override fun buildListPackage(result: Result): List<Hotels> {
-        return result.results.filter { it.isPackage }
+        return result.results.filter { it.isPackage }.sortedByDescending { it.stars }
     }
 }

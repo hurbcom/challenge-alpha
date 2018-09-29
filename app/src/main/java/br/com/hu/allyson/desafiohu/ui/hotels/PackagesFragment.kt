@@ -24,8 +24,14 @@ class PackagesFragment : Fragment() {
 
 
     private val observerPackages = Observer<List<Hotels>>{
-        adapter.addItens(it)
-        adapter.notifyDataSetChanged()
+
+        if(it.isNotEmpty()) {
+            adapter.addItens(it)
+            adapter.notifyDataSetChanged()
+        }else{
+            list_package.visibility = View.INVISIBLE
+            page_no_data_package.visibility = View.VISIBLE
+        }
     }
 
 

@@ -15,4 +15,8 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
     />
+    <include layout="@layout/layout_no_data"
+        android:id="@+id/page_no_data_package"
+        android:visibility="invisible"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,8 @@
 package br.com.hu.allyson.desafiohu.domain
 
+import android.os.Parcel
+import android.os.Parcelable
+
 data class Hotels(
     val sku: String,
     val isHotel: Boolean,

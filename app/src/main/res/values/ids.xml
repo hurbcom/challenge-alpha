@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="icon" type="id"/>
+    <item name="title" type="id"/>
+    <item name="subtitle" type="id"/>
+
+</resources>

@@ -2,6 +2,7 @@ package br.com.hu.allyson.desafiohu
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
@@ -14,16 +15,15 @@ import br.com.hu.allyson.desafiohu.mvp.interfaces.APIHotels
 import br.com.hu.allyson.desafiohu.mvp.presenter.PresenterHotels
 import br.com.hu.allyson.desafiohu.network.HotelsManager
 import br.com.hu.allyson.desafiohu.ui.hotels.HotelsViewModel
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.main_activity.*
 
 
 class MainActivity : FragmentActivity(), APIHotels.ViewHotelsImpl {
 
     private lateinit var presenter: PresenterHotels
-    private var hotels = listOf<Hotels>()
-    private var packages = listOf<Hotels>()
     private lateinit var viewModel: HotelsViewModel
-
+    private lateinit var result: Result
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +31,10 @@ class MainActivity : FragmentActivity(), APIHotels.ViewHotelsImpl {
 
         setupViewPager(pages)
         tab.setupWithViewPager(pages)
-
         viewModel = ViewModelProviders.of(this).get(HotelsViewModel::class.java)
+        presenter = PresenterHotels()
 
-        requestHotelsStart()
+            requestHotelsStart()
 
     }
 
@@ -46,19 +46,25 @@ class MainActivity : FragmentActivity(), APIHotels.ViewHotelsImpl {
     }
 
     override fun requestHotelsStart() {
-        presenter = PresenterHotels()
         presenter.bind(this, HotelsManager("Rio de Janeiro"))
         presenter.requestHotelsStart()
     }
 
     override fun requestHotelsSucess(result: Result) {
+        this.result = result
         viewModel.getHotels().value = presenter.buildListHotels(result)
         viewModel.getPackages().value = presenter.buildListPackage(result)
-        //packages = presenter.buildListPackage(result)
         Log.e("OK", "Ok")
     }
 
     override fun requestHotelsError() {
 
     }
+
+    fun showPages(){
+        pages.visibility = View.VISIBLE
+        progress_bar.visibility = View.INVISIBLE
+    }
+
+
 }
