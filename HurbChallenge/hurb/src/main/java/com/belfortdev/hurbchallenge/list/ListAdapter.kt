@@ -3,6 +3,7 @@ package com.belfortdev.hurbchallenge.list
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import com.belfortdev.hurbchallenge.R
@@ -62,13 +63,26 @@ class ListAdapter(private val picasso: Picasso) :
             with(itemView) {
                 titleTV.text = hotel.name
                 cityTV.text = hotel.address?.city
-                priceTV.text = hotel.price?.currentPrice?.toInt().toString()
+                setPriceTextView(hotel)
                 hotel.stars?.let { ratingBar.rating = it }
-                hotel.huFreeCancellation?.let { freeCancellation ->
-                    if (freeCancellation) {
-                        freeCancellationTV.visibility = VISIBLE
-                    }
+                setFreeCancellationTextView(hotel)
+            }
+        }
+
+        private fun View.setFreeCancellationTextView(hotel: SearchDomain.Hotel): Unit? {
+            return hotel.huFreeCancellation?.let { freeCancellation ->
+                if (freeCancellation) {
+                    freeCancellationTV.visibility = VISIBLE
                 }
+            }
+        }
+
+        private fun View.setPriceTextView(hotel: SearchDomain.Hotel) {
+            if (hotel.price?.currentPrice == null) {
+                priceTV.text = ""
+                currencyTV.visibility = GONE
+            } else {
+                priceTV.text = hotel.price?.currentPrice?.toInt().toString()
             }
         }
     }

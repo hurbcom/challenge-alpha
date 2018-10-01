@@ -106,7 +106,6 @@
             android:textColor="@color/highlight_text"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
             app:layout_constraintEnd_toEndOf="@+id/priceTV"
             tools:visibility="visible" />
