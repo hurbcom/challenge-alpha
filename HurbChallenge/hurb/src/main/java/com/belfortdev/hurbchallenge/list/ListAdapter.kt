@@ -15,6 +15,10 @@ class ListAdapter(private val picasso: Picasso) :
 
     private var data = emptyList<SearchDomain.Hotel>()
 
+    private enum class SortType {
+        RATING
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         return ListViewHolder(
                 LayoutInflater.from(parent.context).inflate(
@@ -35,7 +39,18 @@ class ListAdapter(private val picasso: Picasso) :
 
     fun setData(data: List<SearchDomain.Hotel>?) {
         this.data = data ?: this.data
+        sortDataBy(SortType.RATING, false)
         notifyDataSetChanged()
+    }
+
+    private fun sortDataBy(type: SortType, ascending: Boolean) {
+        val sortedList = when (type) {
+            SortType.RATING -> {
+                if (ascending) data.sortedWith(compareBy(SearchDomain.Hotel::stars, SearchDomain.Hotel::isHotel))
+                else data.sortedWith(compareByDescending<SearchDomain.Hotel> { it.stars }.thenBy { it.isHotel })
+            }
+        }
+        this.data = sortedList
     }
 
     class ListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
