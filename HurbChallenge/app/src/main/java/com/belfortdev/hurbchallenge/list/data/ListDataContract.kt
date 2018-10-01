@@ -1,4 +1,4 @@
-package com.belfortdev.hurbchallenge.list.data
+package com.example.belfortdev.modernandroid.list.data
 
 import com.example.belfortdev.modernandroid.core.model.SearchDomain
 import com.mpaani.core.networking.Outcome
