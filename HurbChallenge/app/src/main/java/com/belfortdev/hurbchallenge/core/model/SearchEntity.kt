@@ -1,4 +1,4 @@
-package com.example.belfortdev.modernandroid.core.model
+package com.belfortdev.hurbchallenge.core.model
 
 import android.arch.persistence.room.*
 import com.belfortdev.hurbchallenge.core.data.Converter

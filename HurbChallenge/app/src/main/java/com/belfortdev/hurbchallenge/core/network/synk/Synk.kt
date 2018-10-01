@@ -1,4 +1,4 @@
-package com.karntrehan.posts.core.networking.synk
+package com.belfortdev.hurbchallenge.core.network.synk
 
 import android.content.Context
 import android.content.SharedPreferences

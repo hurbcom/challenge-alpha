@@ -1,10 +1,10 @@
 package com.belfortdev.hurbchallenge.core
 
 import android.app.Application
-import com.example.belfortdev.modernandroid.core.injection.component.AppComponent
-import com.example.belfortdev.modernandroid.core.injection.component.DaggerAppComponent
-import com.example.belfortdev.modernandroid.core.injection.module.AppModule
-import com.karntrehan.posts.core.networking.synk.Synk
+import com.belfortdev.hurbchallenge.core.injection.component.AppComponent
+import com.belfortdev.hurbchallenge.core.injection.component.DaggerAppComponent
+import com.belfortdev.hurbchallenge.core.injection.module.AppModule
+import com.belfortdev.hurbchallenge.core.network.synk.Synk
 
 open class CoreApplication : Application() {
 

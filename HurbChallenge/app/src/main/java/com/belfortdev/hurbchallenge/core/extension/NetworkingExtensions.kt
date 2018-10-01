@@ -1,6 +1,6 @@
-package com.example.belfortdev.modernandroid.core.extension
+package com.belfortdev.hurbchallenge.core.extension
 
-import com.karntrehan.posts.core.networking.synk.Synk
+import com.belfortdev.hurbchallenge.core.network.synk.Synk
 import io.reactivex.Single
 
 /**

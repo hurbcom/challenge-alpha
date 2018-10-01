@@ -1,4 +1,4 @@
-package com.example.belfortdev.modernandroid.core.injection.module
+package com.belfortdev.hurbchallenge.core.injection.module
 
 import android.content.Context
 import com.belfortdev.hurbchallenge.core.network.AppScheduler
