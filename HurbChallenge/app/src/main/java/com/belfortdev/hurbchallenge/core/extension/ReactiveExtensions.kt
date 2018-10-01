@@ -1,4 +1,4 @@
-package com.example.belfortdev.modernandroid.core.extension
+package com.belfortdev.hurbchallenge.core.extension
 
 import com.belfortdev.hurbchallenge.core.network.Scheduler
 import io.reactivex.Completable

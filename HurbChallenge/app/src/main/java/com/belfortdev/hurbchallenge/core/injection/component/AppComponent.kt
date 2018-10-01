@@ -1,12 +1,12 @@
-package com.example.belfortdev.modernandroid.core.injection.component
+package com.belfortdev.hurbchallenge.core.injection.component
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.belfortdev.hurbchallenge.core.injection.module.AppModule
+import com.belfortdev.hurbchallenge.core.injection.module.ImageModule
+import com.belfortdev.hurbchallenge.core.injection.module.NetworkModule
+import com.belfortdev.hurbchallenge.core.injection.module.StorageModule
 import com.belfortdev.hurbchallenge.core.network.Scheduler
-import com.example.belfortdev.modernandroid.core.injection.module.AppModule
-import com.example.belfortdev.modernandroid.core.injection.module.ImageModule
-import com.example.belfortdev.modernandroid.core.injection.module.NetworkModule
-import com.example.belfortdev.modernandroid.core.injection.module.StorageModule
 import com.squareup.picasso.Picasso
 import dagger.Component
 import retrofit2.Retrofit

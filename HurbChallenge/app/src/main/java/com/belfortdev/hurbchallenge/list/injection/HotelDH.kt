@@ -1,4 +1,4 @@
-package com.example.belfortdev.modernandroid.list.injection
+package com.belfortdev.hurbchallenge.list.injection
 
 import com.belfortdev.hurbchallenge.core.CoreApplication
 import javax.inject.Singleton

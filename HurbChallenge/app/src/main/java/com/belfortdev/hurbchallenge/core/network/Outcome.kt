@@ -1,4 +1,4 @@
-package com.mpaani.core.networking
+package com.belfortdev.hurbchallenge.core.network
 
 sealed class Outcome<T> {
     data class Progress<T>(var loading: Boolean) : Outcome<T>()

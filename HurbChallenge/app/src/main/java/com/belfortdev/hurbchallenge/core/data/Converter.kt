@@ -1,7 +1,7 @@
 package com.belfortdev.hurbchallenge.core.data
 
 import android.arch.persistence.room.TypeConverter
-import com.example.belfortdev.modernandroid.core.model.SearchEntity
+import com.belfortdev.hurbchallenge.core.model.SearchEntity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.util.*

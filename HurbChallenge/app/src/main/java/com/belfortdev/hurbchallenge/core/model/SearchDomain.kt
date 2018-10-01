@@ -1,6 +1,4 @@
-package com.example.belfortdev.modernandroid.core.model
-
-import com.belfortdev.hurbchallenge.core.model.SearchResponse
+package com.belfortdev.hurbchallenge.core.model
 
 object SearchDomain {
 

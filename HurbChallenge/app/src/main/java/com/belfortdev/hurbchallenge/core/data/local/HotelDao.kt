@@ -1,7 +1,7 @@
-package com.example.belfortdev.modernandroid.core.data.local
+package com.belfortdev.hurbchallenge.core.data.local
 
 import android.arch.persistence.room.*
-import com.example.belfortdev.modernandroid.core.model.SearchEntity
+import com.belfortdev.hurbchallenge.core.model.SearchEntity
 import io.reactivex.Flowable
 
 /**

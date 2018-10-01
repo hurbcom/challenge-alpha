@@ -1,8 +1,8 @@
-package com.example.belfortdev.modernandroid.core.extension
+package com.belfortdev.hurbchallenge.core.extension
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
-import com.mpaani.core.networking.Outcome
+import com.belfortdev.hurbchallenge.core.network.Outcome
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.subjects.PublishSubject
 

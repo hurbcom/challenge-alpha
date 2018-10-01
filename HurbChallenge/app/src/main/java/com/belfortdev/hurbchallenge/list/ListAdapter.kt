@@ -6,8 +6,7 @@ import android.view.View
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import com.belfortdev.hurbchallenge.R
-import com.example.belfortdev.modernandroid.R
-import com.example.belfortdev.modernandroid.core.model.SearchDomain
+import com.belfortdev.hurbchallenge.core.model.SearchDomain
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.hotel_item.view.*
 
@@ -51,7 +50,9 @@ class ListAdapter(private val picasso: Picasso) :
                 priceTV.text = hotel.price?.currentPrice?.toInt().toString()
                 hotel.stars?.let { ratingBar.rating = it }
                 hotel.huFreeCancellation?.let { freeCancellation ->
-                    if (freeCancellation) { freeCancellationTV.visibility = VISIBLE }
+                    if (freeCancellation) {
+                        freeCancellationTV.visibility = VISIBLE
+                    }
                 }
             }
         }

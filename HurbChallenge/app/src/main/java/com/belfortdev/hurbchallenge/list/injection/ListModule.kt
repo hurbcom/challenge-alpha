@@ -1,15 +1,15 @@
-package com.example.belfortdev.modernandroid.list.injection
+package com.belfortdev.hurbchallenge.list.injection
 
 import android.arch.persistence.room.Room
 import android.content.Context
 import com.belfortdev.hurbchallenge.core.Constants
+import com.belfortdev.hurbchallenge.core.data.local.HotelDatabase
 import com.belfortdev.hurbchallenge.core.data.remote.SearchService
 import com.belfortdev.hurbchallenge.core.network.Scheduler
-import com.example.belfortdev.modernandroid.core.data.local.HotelDatabase
-import com.example.belfortdev.modernandroid.list.data.ListDataContract
-import com.example.belfortdev.modernandroid.list.data.ListLocalData
-import com.example.belfortdev.modernandroid.list.data.ListRemoteData
-import com.example.belfortdev.modernandroid.list.data.ListRepository
+import com.belfortdev.hurbchallenge.list.data.ListDataContract
+import com.belfortdev.hurbchallenge.list.data.ListLocalData
+import com.belfortdev.hurbchallenge.list.data.ListRemoteData
+import com.belfortdev.hurbchallenge.list.data.ListRepository
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable

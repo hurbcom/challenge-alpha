@@ -1,7 +1,7 @@
-package com.example.belfortdev.modernandroid.list.data
+package com.belfortdev.hurbchallenge.list.data
 
-import com.example.belfortdev.modernandroid.core.model.SearchDomain
-import com.mpaani.core.networking.Outcome
+import com.belfortdev.hurbchallenge.core.model.SearchDomain
+import com.belfortdev.hurbchallenge.core.network.Outcome
 import io.reactivex.Flowable
 import io.reactivex.Single
 import io.reactivex.subjects.PublishSubject

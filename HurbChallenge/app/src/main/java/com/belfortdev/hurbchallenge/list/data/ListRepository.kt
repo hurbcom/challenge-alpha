@@ -1,12 +1,12 @@
-package com.example.belfortdev.modernandroid.list.data
+package com.belfortdev.hurbchallenge.list.data
 
+import com.belfortdev.hurbchallenge.core.extension.*
+import com.belfortdev.hurbchallenge.core.model.SearchDomain
+import com.belfortdev.hurbchallenge.core.network.Outcome
 import com.belfortdev.hurbchallenge.core.network.Scheduler
+import com.belfortdev.hurbchallenge.core.network.synk.Synk
+import com.belfortdev.hurbchallenge.core.network.synk.SynkKeys
 import com.belfortdev.hurbchallenge.list.HotelException
-import com.example.belfortdev.modernandroid.core.extension.*
-import com.example.belfortdev.modernandroid.core.model.SearchDomain
-import com.karntrehan.posts.core.networking.synk.Synk
-import com.karntrehan.posts.core.networking.synk.SynkKeys
-import com.mpaani.core.networking.Outcome
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.subjects.PublishSubject
 import java.util.concurrent.TimeUnit

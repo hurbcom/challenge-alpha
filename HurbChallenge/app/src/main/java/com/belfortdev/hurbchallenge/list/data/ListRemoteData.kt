@@ -1,7 +1,7 @@
-package com.example.belfortdev.modernandroid.list.data
+package com.belfortdev.hurbchallenge.list.data
 
 import com.belfortdev.hurbchallenge.core.data.remote.SearchService
-import com.example.belfortdev.modernandroid.core.model.SearchDomain
+import com.belfortdev.hurbchallenge.core.model.SearchDomain
 import io.reactivex.Single
 
 class ListRemoteData(private val searchService: SearchService) : ListDataContract.Remote {

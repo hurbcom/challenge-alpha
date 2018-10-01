@@ -1,10 +1,10 @@
-package com.example.belfortdev.modernandroid.list.data
+package com.belfortdev.hurbchallenge.list.data
 
+import com.belfortdev.hurbchallenge.core.data.local.HotelDatabase
+import com.belfortdev.hurbchallenge.core.extension.performOnBack
+import com.belfortdev.hurbchallenge.core.model.SearchDomain
+import com.belfortdev.hurbchallenge.core.model.SearchEntity
 import com.belfortdev.hurbchallenge.core.network.Scheduler
-import com.example.belfortdev.modernandroid.core.data.local.HotelDatabase
-import com.example.belfortdev.modernandroid.core.extension.performOnBack
-import com.example.belfortdev.modernandroid.core.model.SearchDomain
-import com.example.belfortdev.modernandroid.core.model.SearchEntity
 import io.reactivex.Completable
 import io.reactivex.Flowable
 
