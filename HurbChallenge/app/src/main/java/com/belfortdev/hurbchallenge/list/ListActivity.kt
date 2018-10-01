@@ -1,7 +1,8 @@
-package com.belfortdev.hurbchallenge
+package com.belfortdev.hurbchallenge.list
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.belfortdev.hurbchallenge.R
 
 class ListActivity : AppCompatActivity() {
 

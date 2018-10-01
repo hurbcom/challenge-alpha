@@ -1,6 +1,6 @@
 package com.example.belfortdev.modernandroid.list.injection
 
-import com.belfortdev.hurbchallenge.ListActivity
+import com.belfortdev.hurbchallenge.list.ListActivity
 import com.belfortdev.hurbchallenge.core.data.remote.SearchService
 import com.belfortdev.hurbchallenge.core.network.Scheduler
 import com.example.belfortdev.modernandroid.core.data.local.HotelDatabase
