@@ -1,9 +1,10 @@
-package com.belfortdev.hurbchallenge.list
+package com.belfortdev.hurbchallenge.list.ui
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.widget.Toast
 import com.belfortdev.hurbchallenge.R
@@ -39,6 +40,7 @@ class ListActivity : BaseActivity() {
         setContentView(R.layout.activity_list)
         component.inject(this)
 
+        hotelRecyclerView.layoutManager = LinearLayoutManager(this)
         hotelRecyclerView.adapter = adapter
         swipeToRefreshHotels.setOnRefreshListener { viewModel.refreshPosts() }
 

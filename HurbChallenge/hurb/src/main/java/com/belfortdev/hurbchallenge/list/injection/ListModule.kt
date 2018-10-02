@@ -6,7 +6,7 @@ import com.belfortdev.hurbchallenge.core.Constants
 import com.belfortdev.hurbchallenge.core.data.local.HotelDatabase
 import com.belfortdev.hurbchallenge.core.data.remote.SearchService
 import com.belfortdev.hurbchallenge.core.network.Scheduler
-import com.belfortdev.hurbchallenge.list.ListAdapter
+import com.belfortdev.hurbchallenge.list.ui.ListAdapter
 import com.belfortdev.hurbchallenge.list.data.ListDataContract
 import com.belfortdev.hurbchallenge.list.data.ListLocalData
 import com.belfortdev.hurbchallenge.list.data.ListRemoteData

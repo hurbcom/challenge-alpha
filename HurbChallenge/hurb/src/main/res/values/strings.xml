@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HurbChallenge</string>
+    <string name="package_header_title">Pacotes</string>
 </resources>

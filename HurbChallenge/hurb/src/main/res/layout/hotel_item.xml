@@ -16,7 +16,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
 
         <ImageView
             android:id="@+id/hotelIV"
@@ -67,7 +68,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:numStars="5"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/titleTV"
             app:layout_constraintTop_toBottomOf="@+id/titleTV" />
 
@@ -106,9 +106,46 @@
             android:textColor="@color/highlight_text"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
             app:layout_constraintEnd_toEndOf="@+id/priceTV"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/amenityOneTV"
+            style="@style/AmenityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/ratingBar"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            tools:text="Recepção 24 horas" />
+
+        <TextView
+            android:id="@+id/amenityTwoTV"
+            style="@style/AmenityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/amenityOneTV"
+            app:layout_constraintTop_toBottomOf="@+id/amenityOneTV"
+            tools:text="Serviço de limpeza diário" />
+
+        <TextView
+            android:id="@+id/amenityThreeTV"
+            style="@style/AmenityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/amenityTwoTV"
+            app:layout_constraintTop_toBottomOf="@+id/amenityTwoTV"
+            tools:text="Business Center" />
+
+        <android.support.constraint.Group
+            android:id="@+id/expandedView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="amenityOneTV, amenityTwoTV, amenityThreeTV"
             tools:visibility="visible" />
 
     </android.support.constraint.ConstraintLayout>
