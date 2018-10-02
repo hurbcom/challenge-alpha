@@ -1,9 +1,12 @@
 package com.belfortdev.hurbchallenge.list.ui
 
+import android.support.transition.AutoTransition
+import android.support.transition.TransitionManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.view.ViewGroup
 import com.belfortdev.hurbchallenge.R
 import com.belfortdev.hurbchallenge.core.model.SearchDomain
 import com.squareup.picasso.Picasso
@@ -17,10 +20,6 @@ class ListAdapter(private val picasso: Picasso) : SectionedRecyclerViewAdapter()
 
     private var fullData = emptyList<SearchDomain.Hotel>()
     private var sectionMap = HashMap<Int, Section>()
-
-    private enum class SortType {
-        RATING
-    }
 
     companion object {
         private const val MAX_RATING = 5
@@ -121,6 +120,8 @@ class ListAdapter(private val picasso: Picasso) : SectionedRecyclerViewAdapter()
     }
 
     private inner class ListItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private var isExpanded: Boolean = false
+
         fun bind(hotel: SearchDomain.Hotel, picasso: Picasso) {
             picasso.load(hotel.image)
                     .placeholder(R.drawable.placeholder)
@@ -132,6 +133,35 @@ class ListAdapter(private val picasso: Picasso) : SectionedRecyclerViewAdapter()
                 setPriceTextView(hotel)
                 hotel.stars?.let { ratingBar.rating = it }
                 setFreeCancellationTextView(hotel)
+                populateAmenities(hotel.amenities)
+            }
+            itemView.setOnClickListener { onItemClick() }
+        }
+
+        private fun onItemClick() {
+            val smoothTransition = AutoTransition()
+            smoothTransition.duration = 100
+            TransitionManager.beginDelayedTransition(itemView.hotelCard.parent as ViewGroup, smoothTransition)
+            if (isExpanded) {
+                itemView.expandedView.visibility = GONE
+                isExpanded = false
+            } else {
+                itemView.expandedView.visibility = VISIBLE
+                isExpanded = true
+            }
+        }
+
+        private fun View.populateAmenities(amenities: List<SearchDomain.Amenity?>?) {
+            if (amenities != null) {
+                if (amenities.isNotEmpty()) {
+                    amenityOneTV.text = amenities[0]?.name
+                }
+                if (amenities.size >= 2) {
+                    amenityTwoTV.text = amenities[1]?.name
+                }
+                if (amenities.size >= 3) {
+                    amenityThreeTV.text = amenities[2]?.name
+                }
             }
         }
 

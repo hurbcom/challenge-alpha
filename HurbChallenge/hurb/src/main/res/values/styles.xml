@@ -15,4 +15,11 @@
         <item name="android:progressTint" tools:targetApi="lollipop">@color/yellowStar</item>
     </style>
 
+    <style name="AmenityTextView" >
+        <item name="android:textStyle">bold | italic</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:textColor">@color/terciary_text</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>
