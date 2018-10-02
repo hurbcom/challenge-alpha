@@ -7,7 +7,7 @@ android {
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
-        applicationId "com.example.belfortdev.modernandroid"
+        applicationId "com.belfortdev.hurbchallenge"
         versionCode 1
         versionName "1.0"
 
@@ -79,6 +79,7 @@ dependencies {
     implementation deps.square.gsonConverter
     implementation deps.square.retrofitRxAdapter
 
+    implementation deps.additional.sectionedRVAdapter
     implementation deps.additional.jodaTime
 
     testImplementation 'junit:junit:4.12'

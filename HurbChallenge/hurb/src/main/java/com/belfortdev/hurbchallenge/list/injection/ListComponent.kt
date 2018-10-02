@@ -4,7 +4,7 @@ import com.belfortdev.hurbchallenge.core.data.local.HotelDatabase
 import com.belfortdev.hurbchallenge.core.data.remote.SearchService
 import com.belfortdev.hurbchallenge.core.injection.component.AppComponent
 import com.belfortdev.hurbchallenge.core.network.Scheduler
-import com.belfortdev.hurbchallenge.list.ListActivity
+import com.belfortdev.hurbchallenge.list.ui.ListActivity
 import com.squareup.picasso.Picasso
 import dagger.Component
 
