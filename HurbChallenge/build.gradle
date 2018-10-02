@@ -26,6 +26,12 @@ buildscript {
             'jodaTime'         : '2.9.9',
             'secRVAdapter'     : '1.2.0',
 
+            'junit'            : '4.12',
+            'atsl'             : '1.0.1',
+            'mockitoKotlin'    : '1.5.0',
+            'roomTesting'      : '1.1.1',
+            'livedataTesting'  : '1.1.1',
+
             'sourceCompat'     : JavaVersion.VERSION_1_8,
             'targetCompat'     : JavaVersion.VERSION_1_8
     ]
@@ -74,6 +80,15 @@ buildscript {
                     'jodaTime'          : "joda-time:joda-time:${versions.jodaTime}",
                     'sectionedRVAdapter': "io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:${versions.secRVAdapter}"
             ],
+            test      : [
+                    'junit'          : "junit:junit:${versions.junit}",
+                    'atslRunner'     : "com.android.support.test:runner:${versions.atsl}",
+                    'atslRules'      : "com.android.support.test:rules:${versions.atsl}",
+                    'mockitoKotlin'  : "com.nhaarman:mockito-kotlin:${versions.mockitoKotlin}",
+                    'mockWebServer'  : "com.squareup.okhttp3:mockwebserver:${versions.okhttp}",
+                    'roomTesting'    : "android.arch.persistence.room:testing:${versions.roomTesting}",
+                    'livedataTesting': "android.arch.core:core-testing:${versions.livedataTesting}",
+            ]
     ]
 
     repositories {
