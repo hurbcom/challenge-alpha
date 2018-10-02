@@ -24,6 +24,7 @@ class ListAdapter(private val picasso: Picasso) : SectionedRecyclerViewAdapter()
 
     companion object {
         private const val MAX_RATING = 5
+        private const val MIN_RATING = 1
         private const val PACKAGE_SECTION = -1
     }
 
@@ -38,7 +39,7 @@ class ListAdapter(private val picasso: Picasso) : SectionedRecyclerViewAdapter()
     }
 
     private fun buildRatedSections() {
-        for (i in 1..MAX_RATING) {
+        for (i in MAX_RATING downTo MIN_RATING) {
             val ratedSection = Section(picasso, i.toFloat())
             ratedSection.isVisible = false
             addSection(ratedSection)
@@ -54,7 +55,7 @@ class ListAdapter(private val picasso: Picasso) : SectionedRecyclerViewAdapter()
     }
 
     private fun populateRatedSections() {
-        for (i in 1..MAX_RATING) {
+        for (i in MAX_RATING downTo MIN_RATING) {
             val sectionHotels = getHotelsWithRating(i.toFloat())
             if (sectionHotels.isNotEmpty()) {
                 sectionMap[i]?.addData(sectionHotels)
