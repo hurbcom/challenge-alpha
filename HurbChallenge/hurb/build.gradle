@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion versions.compileSdk
+
+    defaultConfig {
+        applicationId "com.belfortdev.hurbchallenge"
+        versionCode 1
+        versionName "1.0"
+
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField 'String', 'BASE_URL', '"https://search.hotelurbano.com"'
+        }
+        debug {
+            buildConfigField 'String', 'BASE_URL', '"https://search.hotelurbano.com"'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility versions.sourceCompat
+        targetCompatibility versions.targetCompat
+    }
+
+    //For testing
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    kapt deps.android.roomCompiler
+    kapt deps.google.daggerProcessor
+
+    implementation deps.support.appCompat
+    implementation deps.support.recyclerView
+    implementation deps.support.cardView
+    implementation deps.support.support
+    implementation deps.support.designSupport
+    implementation deps.support.constraintLayout
+
+    implementation deps.android.lifecycleExt
+    implementation deps.android.lifecycleCommon
+    implementation deps.android.roomRuntime
+    implementation deps.android.roomRx
+
+    implementation deps.kotlin.lib
+
+    implementation deps.reactivex.rxJava
+    implementation deps.reactivex.rxAndroid
+
+    implementation deps.google.dagger
+    implementation deps.google.gson
+
+    implementation deps.square.picasso
+    implementation deps.square.okhttpDownloader
+
+    implementation deps.square.retrofit
+    implementation deps.square.okhttp
+    implementation deps.square.logger
+    implementation deps.square.gsonConverter
+    implementation deps.square.retrofitRxAdapter
+
+    implementation deps.additional.sectionedRVAdapter
+    implementation deps.additional.jodaTime
+
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockitoKotlin
+    testImplementation deps.test.mockWebServer
+    testImplementation deps.test.livedataTesting
+    testImplementation deps.test.roomTesting
+
+    androidTestImplementation deps.test.junit
+    androidTestImplementation deps.test.mockitoKotlin
+    androidTestImplementation deps.test.atslRunner
+    androidTestImplementation deps.test.atslRules
+    androidTestImplementation deps.test.roomTesting
+    androidTestImplementation deps.test.livedataTesting
+}
