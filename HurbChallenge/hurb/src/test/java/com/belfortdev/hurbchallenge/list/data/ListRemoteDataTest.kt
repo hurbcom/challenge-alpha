@@ -26,8 +26,8 @@ class ListRemoteDataTest {
             val hotel = values()[0]!![0]
 
             Assert.assertEquals(values()[0]!!.size, 1)
-            Assert.assertEquals(hotel!!.id,"321321")
-            Assert.assertEquals(hotel!!.isHotel,true)
+            Assert.assertEquals(hotel!!.id, "321321")
+            Assert.assertEquals(hotel!!.isHotel, true)
         }
     }
 

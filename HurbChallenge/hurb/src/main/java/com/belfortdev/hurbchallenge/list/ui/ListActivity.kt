@@ -42,7 +42,7 @@ class ListActivity : BaseActivity() {
 
         hotelRecyclerView.layoutManager = LinearLayoutManager(this)
         hotelRecyclerView.adapter = adapter
-        swipeToRefreshHotels.setOnRefreshListener { viewModel.refreshPosts() }
+        swipeToRefreshHotels.setOnRefreshListener { viewModel.refreshHotels() }
 
         viewModel.getHotels()
         initDataListener()

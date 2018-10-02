@@ -22,7 +22,7 @@ class ListViewModel(private val repo: ListDataContract.Repository,
         }
     }
 
-    fun refreshPosts() {
+    fun refreshHotels() {
         repo.refreshHotels()
     }
 
