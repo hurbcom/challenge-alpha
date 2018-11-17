@@ -1,9 +1,9 @@
 import 'react-native';
 
-import { getHotelsSuccess, getHotelsFail } from './hotelActions';
+import { getHotelsSuccess, getHotelsFail } from './hotelsActions';
 import * as constants from '../constants/hotels';
 
-describe('hotelActions', () => {
+describe('hotelsActions', () => {
 
     it('should dispatch fetch hotels success', () => {
         const hotels = [ 'hotelzinho suave' ];

@@ -1,0 +1,11 @@
+import thunk from 'redux-thunk';
+import  {createStore, applyMiddleware} from 'redux';
+import rootReducer from '../reducers';
+
+const initialState = {
+    hotels: [],
+};
+
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
+
+export default store;

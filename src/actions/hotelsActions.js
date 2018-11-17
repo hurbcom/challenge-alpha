@@ -11,14 +11,14 @@ export const getHotelsFail = () =>
 export const getHotelsByLocation = (location = '') => {
   return(dispatch) => {
     return hurbApi.getHotels(location).then(response => {
-        const hotels = ramda.path(
-            ['results'], response);
-        if (hotels) {
-            return dispatch(getHotelsSuccess(hotels));
-        }
-        return dispatch(getHotelsFail());
+      const hotels = ramda.path(
+          ['results'], response);
+      if (hotels) {
+          return dispatch(getHotelsSuccess(hotels));
+      }
+      return dispatch(getHotelsFail());
     }).catch(err => {
-        return dispatch(getHotelsFail());
+      return dispatch(getHotelsFail());
     })
   }
 }
