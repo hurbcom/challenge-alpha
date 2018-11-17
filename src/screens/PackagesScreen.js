@@ -4,10 +4,10 @@ import { bindActionCreators } from 'redux';
 import { Image, StyleSheet, Text, View, ListView, ActivityIndicator } from 'react-native';
 import * as hotelsActions from '../actions/hotelsActions';
 
-class HomeScreen extends React.Component {
+class PackagesScreen extends React.Component {
   
   static navigationOptions = {
-    title: 'Home',
+    title: 'Pacotes',
   };
 
   constructor(props){
@@ -23,15 +23,18 @@ class HomeScreen extends React.Component {
 
   componentWillMount(){
     this.props.actions.getHotelsByLocation('Rio de Janeiro');
-  }
+  } 
 
   componentWillReceiveProps(nextProps){
     let ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2,
     })
+
+    let packages = nextProps.hotels.filter(item => item.isPackage)
+
     this.setState({ 
-      dataSource: ds.cloneWithRows(nextProps.hotels), 
-      _data: nextProps.hotels, 
+      dataSource: ds.cloneWithRows(packages), 
+      _data: packages, 
       isLoading: false 
     });
   }
@@ -39,7 +42,25 @@ class HomeScreen extends React.Component {
   renderRow(rowData){
     return (
       <View style={styles.listItem}>
-        <Text>{rowData.name}</Text>
+        <View style={styles.imageWrapper}>
+          <Image
+            style={{ width: 70, height: 70 }}
+            source={{
+              uri: rowData.image === '' ||
+                rowData.image === null
+                ? 'https://via.placeholder.com/70x70.jpg'
+                : rowData.image,
+            }}
+          />
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.title}>
+            {rowData.name}
+          </Text>
+          <Text style={styles.subtitle}>
+            {rowData.smallDescription}
+          </Text>
+        </View>
       </View>
     );
   }
@@ -78,7 +99,7 @@ const mapStateToProps = (state, ownProps) =>
 const mapDispatchToProps = (dispatch) =>
   ({ actions: bindActionCreators(hotelsActions, dispatch) });
 
-export default connect(mapStateToProps , mapDispatchToProps)(HomeScreen);
+export default connect(mapStateToProps , mapDispatchToProps)(PackagesScreen);
 
 const styles = StyleSheet.create({
   container: {
@@ -100,5 +121,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'left',
     margin: 6
-  }
+  },
+  subtitle: {
+    fontSize: 10,
+    textAlign: 'left',
+    margin: 6,
+  },
 });

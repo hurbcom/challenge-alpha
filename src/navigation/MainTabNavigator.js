@@ -1,17 +1,32 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
+import HotelsScreen from '../screens/HotelsScreen';
+import PackagesScreen from '../screens/PackagesScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-const HomeStack = createStackNavigator({
-  Links: HomeScreen,
+const HotelsStack = createStackNavigator({
+  Links: HotelsScreen,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+HotelsStack.navigationOptions = {
+  tabBarLabel: 'Hotéis',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
+
+const PackagesStack = createStackNavigator({
+  Links: PackagesScreen,
+});
+
+PackagesStack.navigationOptions = {
+  tabBarLabel: 'Pacotes',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -25,7 +40,7 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: 'Configurações',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -34,7 +49,8 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-export default createDrawerNavigator({
-  HomeStack,
+export default createBottomTabNavigator({
+  HotelsStack,
+  PackagesStack,
   SettingsStack,
 });
