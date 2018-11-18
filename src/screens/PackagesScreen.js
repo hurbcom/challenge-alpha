@@ -17,6 +17,8 @@ class PackagesScreen extends React.Component {
   
   static navigationOptions = {
     title: 'Pacotes',
+    headerStyle: { backgroundColor: '#000000' },
+    headerTitleStyle: { color: '#BBC933' }
   };
 
   constructor(props){
@@ -53,29 +55,50 @@ class PackagesScreen extends React.Component {
   }
 
   renderRow(rowData){
+
+    let { amenities } = rowData;
+    var amenitiesBoard = [
+        <Text key={0} style={styles.noAmenity}>
+          {'Sem mimos'}
+        </Text>
+    ]
+    if(amenities.length > 0){
+      amenitiesBoard = [
+          <Text key={0} style={styles.amenity}>
+            {amenities[0].name == null ? '' : amenities[0].name}
+          </Text> ,
+          <Text key={1} style={styles.amenity}>
+            {amenities[1].name == null ? '' : amenities[1].name}
+          </Text> ,
+          <Text key={2}style={styles.amenity}>
+            {amenities[2].name == null ? '' : amenities[2].name}
+          </Text>
+      ]      
+    }
+
     return (
       <TouchableNativeFeedback onPress={this.handleClick.bind(this, rowData)} >
-        <View style={styles.listItem}>
-          <View style={styles.imageWrapper}>
-            <Image
-              style={{ width: 70, height: 70 }}
-              source={{
-                uri: rowData.image === '' ||
-                  rowData.image === null
-                  ? 'https://via.placeholder.com/70x70.jpg'
-                  : rowData.image,
-              }}
-            />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.title}>
-              {rowData.name}
-            </Text>
-            <Text style={styles.subtitle}>
-              {rowData.smallDescription}
-            </Text>
+      <View style={styles.listItem}>
+        <View style={styles.imageWrapper}>
+          <Image
+            style={{ width: 130, height: 130, borderRadius: 8 }}
+            source={{
+              uri: rowData.image === '' ||
+                rowData.image === null
+                ? 'https://via.placeholder.com/70x70.jpg'
+                : rowData.image,
+            }}
+          />
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.title}>
+            {rowData.name}
+          </Text>
+          <View>
+            { amenitiesBoard } 
           </View>
         </View>
+      </View>
       </TouchableNativeFeedback>
     );
   }
@@ -120,7 +143,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 15,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
+    textDecorationColor: '#202026'
   },
   listItem: {
     flex: 1,
@@ -135,18 +159,29 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
+    color: '#2D2034',
     textAlign: 'left',
     margin: 5
   },
-  subtitle: {
-    fontSize: 12,
-    textAlign: 'left',
-    margin: 5,
+  stars: {
+    marginBottom: 6,
+    width: 15,
+    height: 15
+  },
+  starsContainer: {
+    flex: 1
   },
   amenity: {
     fontSize: 12,
     textAlign: 'left',
     marginLeft: 5,
-    marginRight: 5
+    marginRight: 5,
+    color: '#4CBB91'
+  },
+  noAmenity: {
+    fontSize: 12,
+    textAlign: 'left',
+    margin: 5,
+    color: 'red'
   }
 });

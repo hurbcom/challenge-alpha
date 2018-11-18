@@ -8,16 +8,18 @@ import {
   View, 
   ListView, 
   ActivityIndicator, 
-  TouchableNativeFeedback,
-  TouchableHighlight
+  TouchableNativeFeedback
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import * as hotelsActions from '../actions/hotelsActions';
+import starIcon from '../../assets/icons/star.png';
 
 class HotelsScreen extends React.Component {
   
   static navigationOptions = {
-    title: 'Hotéis',
+    title: 'Hoteis',
+    headerStyle: { backgroundColor: '#000000' },
+    headerTitleStyle: { color: '#BBC933' }
   };
 
   constructor(props){
@@ -63,28 +65,35 @@ class HotelsScreen extends React.Component {
   }
 
   renderRow(rowData){
+    let stars = []
+    for(var i = 0; i < rowData.stars; i++){
+      stars.push(
+        <Image
+          key={i}
+          source={ starIcon }
+          style={styles.stars}
+        />
+      );
+    } 
+
     let { amenities } = rowData;
-    var amenitiesBoard = (
-      <View>
-        <Text style={styles.amenity}>
+    var amenitiesBoard = [
+        <Text key={0} style={styles.noAmenity}>
           {'Sem mimos'}
         </Text>
-      </View>
-    )
+    ]
     if(amenities.length > 0){
-      amenitiesBoard = (
-        <View>
-          <Text style={styles.amenity}>
+      amenitiesBoard = [
+          <Text key={0} style={styles.amenity}>
             {amenities[0].name == null ? '' : amenities[0].name}
-          </Text>
-          <Text style={styles.amenity}>
+          </Text> ,
+          <Text key={1} style={styles.amenity}>
             {amenities[1].name == null ? '' : amenities[1].name}
-          </Text>
-          <Text style={styles.amenity}>
+          </Text> ,
+          <Text key={2}style={styles.amenity}>
             {amenities[2].name == null ? '' : amenities[2].name}
           </Text>
-        </View>
-      )
+      ]      
     }
 
     return (
@@ -92,7 +101,7 @@ class HotelsScreen extends React.Component {
       <View style={styles.listItem}>
         <View style={styles.imageWrapper}>
           <Image
-            style={{ width: 120, height: 120, borderRadius: 8 }}
+            style={{ width: 130, height: 130, borderRadius: 8 }}
             source={{
               uri: rowData.image === '' ||
                 rowData.image === null
@@ -105,10 +114,12 @@ class HotelsScreen extends React.Component {
           <Text style={styles.title}>
             {rowData.name}
           </Text>
-          <Text style={styles.subtitle}>
-            {rowData.stars}
-          </Text>
-          { amenitiesBoard } 
+          <View style={{ flex: 1, flexDirection: 'row' }}>
+            { stars }
+          </View>
+          <View>
+            { amenitiesBoard } 
+          </View>
         </View>
       </View>
       </TouchableNativeFeedback>
@@ -125,6 +136,7 @@ class HotelsScreen extends React.Component {
     } else {
       return (
         <ListView
+          style={styles.container}
           dataSource={this.state.dataSource}
           renderRow={this.renderRow}
           onEndReached={() => {/* do nothing */}}
@@ -155,7 +167,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 15,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
+    textDecorationColor: '#202026'
   },
   listItem: {
     flex: 1,
@@ -170,18 +183,29 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
+    color: '#2D2034',
     textAlign: 'left',
     margin: 5
   },
-  subtitle: {
-    fontSize: 12,
-    textAlign: 'left',
-    margin: 5,
+  stars: {
+    marginBottom: 6,
+    width: 15,
+    height: 15
+  },
+  starsContainer: {
+    flex: 1
   },
   amenity: {
     fontSize: 12,
     textAlign: 'left',
     marginLeft: 5,
-    marginRight: 5
+    marginRight: 5,
+    color: '#4CBB91'
+  },
+  noAmenity: {
+    fontSize: 12,
+    textAlign: 'left',
+    margin: 5,
+    color: 'red'
   }
 });

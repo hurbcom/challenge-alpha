@@ -12,11 +12,11 @@ const HotelsStack = createStackNavigator({
 });
 
 HotelsStack.navigationOptions = {
-  tabBarLabel: 'Hotéis',
+  tabBarLabel: 'Hoteis',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={Platform.OS === 'ios' ? 'ios-bed' : 'md-bed'}
     />
   ),
 };
@@ -30,7 +30,7 @@ PackagesStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={Platform.OS === 'ios' ? 'ios-gift' : 'md-gift'}
     />
   ),
 };
@@ -40,11 +40,15 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Configurações',
+  tabBarLabel: 'Informações',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-information-circle${focused ? '' : '-outline'}`
+          : 'md-information-circle'
+      }
     />
   ),
 };
@@ -53,4 +57,12 @@ export default createBottomTabNavigator({
   HotelsStack,
   PackagesStack,
   SettingsStack,
+},
+{
+  tabBarOptions: {
+    style: { 
+      backgroundColor: '#000000',
+      padding: 2
+    }
+  }
 });
