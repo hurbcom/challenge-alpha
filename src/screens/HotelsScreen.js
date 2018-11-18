@@ -1,10 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Image, StyleSheet, Text, View, ListView, ActivityIndicator } from 'react-native';
+import { 
+  Image, 
+  StyleSheet, 
+  Text, 
+  View, 
+  ListView, 
+  ActivityIndicator, 
+  TouchableNativeFeedback,
+  TouchableHighlight
+} from 'react-native';
+import { WebBrowser } from 'expo';
 import * as hotelsActions from '../actions/hotelsActions';
 
-class HomeScreen extends React.Component {
+class HotelsScreen extends React.Component {
   
   static navigationOptions = {
     title: 'Hotéis',
@@ -22,8 +32,8 @@ class HomeScreen extends React.Component {
   }
 
   componentWillMount(){
-   this.props.actions.getHotelsByLocation('Rio de Janeiro');
-  }
+    this.props.actions.getHotelsByLocation('Rio de Janeiro');
+  } 
 
   componentWillReceiveProps(nextProps){
     let ds = new ListView.DataSource({
@@ -36,7 +46,7 @@ class HomeScreen extends React.Component {
       if (a.stars < b.stars)
         return 1;
       if (a.stars > b.stars)
-        return 1;
+        return -1;
       return 0;
     });
 
@@ -47,9 +57,20 @@ class HomeScreen extends React.Component {
     });
   }
 
+  handleClick(rowData){
+    console.log(rowData);
+    WebBrowser.openBrowserAsync(rowData.url);
+  }
+
   renderRow(rowData){
     let { amenities } = rowData;
-    var amenitiesBoard = (<View/>)
+    var amenitiesBoard = (
+      <View>
+        <Text style={styles.amenity}>
+          {'Sem mimos'}
+        </Text>
+      </View>
+    )
     if(amenities.length > 0){
       amenitiesBoard = (
         <View>
@@ -67,10 +88,11 @@ class HomeScreen extends React.Component {
     }
 
     return (
+      <TouchableNativeFeedback onPress={this.handleClick.bind(this, rowData)} >
       <View style={styles.listItem}>
         <View style={styles.imageWrapper}>
           <Image
-            style={{ width: 110, height: 110 }}
+            style={{ width: 120, height: 120, borderRadius: 8 }}
             source={{
               uri: rowData.image === '' ||
                 rowData.image === null
@@ -89,6 +111,7 @@ class HomeScreen extends React.Component {
           { amenitiesBoard } 
         </View>
       </View>
+      </TouchableNativeFeedback>
     );
   }
 
@@ -126,7 +149,7 @@ const mapStateToProps = (state, ownProps) =>
 const mapDispatchToProps = (dispatch) =>
   ({ actions: bindActionCreators(hotelsActions, dispatch) });
 
-export default connect(mapStateToProps , mapDispatchToProps)(HomeScreen);
+export default connect(mapStateToProps , mapDispatchToProps)(HotelsScreen);
 
 const styles = StyleSheet.create({
   container: {
@@ -143,6 +166,7 @@ const styles = StyleSheet.create({
   },
   imageWrapper: {
     padding: 4,
+    borderRadius: 20
   },
   title: {
     fontSize: 16,
