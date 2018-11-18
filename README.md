@@ -1,3 +1,25 @@
+## Main scripts
+`$ npm install` - installing dependencies
+
+`$ npm run start` or `$ expo start` - start development server
+
+`$ npm run android` or `$ expo start --android` - start android development server
+
+`$ npm run ios` or `$ expo start --ios` - start ios development server
+
+`$ npm run test` - runs tests
+
+`$ npm run eject` or `$ expo eject` - ejects to full react native (see: [expo eject](https://docs.expo.io/versions/latest/expokit/eject))
+
+## React Native + Expo
+O Expo é uma biblioteca para React Native que provê uma api poderosa com abstração de diversos componentes. Com ela, não precisamos nos preocupar com código nativo. Dado a complexidade do aplicativo, ela permite um desenvolvimento mais ágil com uma UX melhor. Caso a complexidade do aplicativo cresça e necessite de funções nativas de cada plataforma (Como integração com Google e Apple pay por exemplo), basta executar `$ expo eject` para ter acesso ao uso de código nativo IOS e Android.
+
+## Screenshots
+![Hotéis](/screenshots/1.jpg?raw=true)
+![Pacotes](/screenshots/2.jpg?raw=true)
+![Informações](/screenshots/3.jpg?raw=true)
+
+
 # <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Desafio Alpha
 
 Crie um aplicativo para dispositivo móvel (**Objective-C**, **Swift**, **Kotlin**, **React Native**) que consuma o JSON exporto pela API de hotéis e o exiba usando uma _table view_. Você pode usar bibliotecas de terceiros para criar sua aplicação.
