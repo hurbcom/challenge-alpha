@@ -24,7 +24,7 @@ class SearchResultsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        performInitialFetch(with: "Angra")
+        performInitialFetch(with: "Rio de Janeiro")
     }
     
     func performInitialFetch(with searchTerm: String) {

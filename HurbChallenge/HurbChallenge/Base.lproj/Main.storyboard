@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-325" y="154"/>
         </scene>
-        <!--Hotéis-->
+        <!--Busca-->
         <scene sceneID="xa6-ja-865">
             <objects>
                 <viewController id="N2C-qH-Bu5" customClass="SearchResultsViewController" customModule="HurbChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3FV-6U-J25">
                                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="158"/>
-                                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.20459653253424659" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEP-FT-Y7b">
                                                                     <rect key="frame" x="289.5" y="8" width="76.5" height="26"/>
@@ -182,7 +182,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Bd-3c-zy6"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hotéis" id="g9K-g0-Vi6">
+                    <navigationItem key="navigationItem" title="Busca" id="g9K-g0-Vi6">
                         <barButtonItem key="backBarButtonItem" title=" " id="zaX-Ew-cyA"/>
                     </navigationItem>
                     <connections>

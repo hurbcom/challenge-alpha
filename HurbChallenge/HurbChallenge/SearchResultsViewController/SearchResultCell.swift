@@ -51,6 +51,7 @@ class SearchResultCell: UITableViewCell {
         amenitiesLabel.text = nil
         priceLabel.text = nil
         priceBorderView.isHidden = true
+        img.alpha = 1.0
         img.sd_cancelCurrentImageLoad()
     }
     
@@ -73,7 +74,12 @@ class SearchResultCell: UITableViewCell {
         }
         
         if let imgUrlString = result?.gallery.first?.url {
-            img.sd_setImage(with: URL(string: imgUrlString), placeholderImage: nil)
+            img.sd_setImage(with: URL(string: imgUrlString)) { (_, _, cache, _) in
+                if cache == .none {
+                    self.img.alpha = 0
+                    UIView.animate(withDuration: 0.45, animations: {self.img.alpha = 1.0})
+                }
+            }
         }
     }
 
