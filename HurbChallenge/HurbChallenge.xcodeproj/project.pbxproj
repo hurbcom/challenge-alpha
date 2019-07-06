@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092F35A99FE254C6545273CB /* libPods-HurbChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C75ECCD8B5717BF7CB1C570B /* libPods-HurbChallenge.a */; };
 		5588E6F022D01056007483E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E6EF22D01056007483E5 /* AppDelegate.swift */; };
-		5588E6F222D01056007483E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E6F122D01056007483E5 /* ViewController.swift */; };
+		5588E6F222D01056007483E5 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E6F122D01056007483E5 /* SearchResultsViewController.swift */; };
 		5588E6F522D01056007483E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5588E6F322D01056007483E5 /* Main.storyboard */; };
 		5588E6FA22D01058007483E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5588E6F922D01058007483E5 /* Assets.xcassets */; };
 		5588E6FD22D01058007483E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5588E6FB22D01058007483E5 /* LaunchScreen.storyboard */; };
@@ -21,14 +22,13 @@
 		5588E71E22D017D3007483E5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71C22D017D3007483E5 /* Meta.swift */; };
 		5588E72022D017EA007483E5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71F22D017EA007483E5 /* Pagination.swift */; };
 		5588E72122D017EA007483E5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71F22D017EA007483E5 /* Pagination.swift */; };
-		5588E72322D01800007483E5 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72222D01800007483E5 /* Hotel.swift */; };
-		5588E72422D01800007483E5 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72222D01800007483E5 /* Hotel.swift */; };
-		5588E72622D01895007483E5 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72522D01895007483E5 /* Address.swift */; };
-		5588E72722D01895007483E5 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72522D01895007483E5 /* Address.swift */; };
-		5588E72922D018DF007483E5 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72822D018DF007483E5 /* Price.swift */; };
-		5588E72A22D018DF007483E5 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72822D018DF007483E5 /* Price.swift */; };
 		5588E72D22D01AEA007483E5 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72C22D01AEA007483E5 /* URLSession.swift */; };
 		5588E72E22D01AEA007483E5 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72C22D01AEA007483E5 /* URLSession.swift */; };
+		5588E73022D01D95007483E5 /* RemoteSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72F22D01D95007483E5 /* RemoteSearch.swift */; };
+		5588E73222D0329F007483E5 /* HotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E73122D0329F007483E5 /* HotelTableViewCell.swift */; };
+		5588E73422D043B7007483E5 /* SearchResultElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E73322D043B7007483E5 /* SearchResultElement.swift */; };
+		55A74F8422D0570000C8411E /* SearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A74F8322D0570000C8411E /* SearchResultsDataSource.swift */; };
+		95959AB6A0076771EED2AEF4 /* libPods-HurbChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 901EA130D7DC4D7E021776EF /* libPods-HurbChallengeTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		323C25231552587C3651CDB3 /* Pods-HurbChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbChallenge.release.xcconfig"; path = "Target Support Files/Pods-HurbChallenge/Pods-HurbChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		364F610FEDDC9198703FE870 /* Pods-HurbChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-HurbChallengeTests/Pods-HurbChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5588E6EC22D01056007483E5 /* HurbChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5588E6EF22D01056007483E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5588E6F122D01056007483E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5588E6F122D01056007483E5 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		5588E6F422D01056007483E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5588E6F922D01058007483E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5588E6FC22D01058007483E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,10 +58,15 @@
 		5588E71922D0175E007483E5 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		5588E71C22D017D3007483E5 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		5588E71F22D017EA007483E5 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
-		5588E72222D01800007483E5 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
-		5588E72522D01895007483E5 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		5588E72822D018DF007483E5 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		5588E72C22D01AEA007483E5 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		5588E72F22D01D95007483E5 /* RemoteSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSearch.swift; sourceTree = "<group>"; };
+		5588E73122D0329F007483E5 /* HotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelTableViewCell.swift; sourceTree = "<group>"; };
+		5588E73322D043B7007483E5 /* SearchResultElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultElement.swift; sourceTree = "<group>"; };
+		55A74F8322D0570000C8411E /* SearchResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDataSource.swift; sourceTree = "<group>"; };
+		5C96FA15BAF8DE3792970C48 /* Pods-HurbChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbChallenge.debug.xcconfig"; path = "Target Support Files/Pods-HurbChallenge/Pods-HurbChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		901EA130D7DC4D7E021776EF /* libPods-HurbChallengeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HurbChallengeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7AA6FDA1FF0CAAEBC55E355 /* Pods-HurbChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-HurbChallengeTests/Pods-HurbChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		C75ECCD8B5717BF7CB1C570B /* libPods-HurbChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HurbChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092F35A99FE254C6545273CB /* libPods-HurbChallenge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95959AB6A0076771EED2AEF4 /* libPods-HurbChallengeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +95,8 @@
 				5588E6EE22D01056007483E5 /* HurbChallenge */,
 				5588E70622D01058007483E5 /* HurbChallengeTests */,
 				5588E6ED22D01056007483E5 /* Products */,
+				64B2325DC721742280E54CD0 /* Pods */,
+				D7897F8EF0E155B6263E5C7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,8 +114,9 @@
 			children = (
 				5588E72B22D01AD9007483E5 /* Extensions */,
 				5588E71222D01202007483E5 /* Models */,
+				55A74F8522D05A5A00C8411E /* SearchResultsViewController */,
+				55A74F8622D05A9700C8411E /* Utils */,
 				5588E6EF22D01056007483E5 /* AppDelegate.swift */,
-				5588E6F122D01056007483E5 /* ViewController.swift */,
 				5588E6F322D01056007483E5 /* Main.storyboard */,
 				5588E6F922D01058007483E5 /* Assets.xcassets */,
 				5588E6FB22D01058007483E5 /* LaunchScreen.storyboard */,
@@ -125,13 +137,11 @@
 		5588E71222D01202007483E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5588E72522D01895007483E5 /* Address.swift */,
+				5588E73322D043B7007483E5 /* SearchResultElement.swift */,
 				5588E71922D0175E007483E5 /* Filters.swift */,
-				5588E72222D01800007483E5 /* Hotel.swift */,
 				5588E71C22D017D3007483E5 /* Meta.swift */,
 				5588E71622D01707007483E5 /* Page.swift */,
 				5588E71F22D017EA007483E5 /* Pagination.swift */,
-				5588E72822D018DF007483E5 /* Price.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +154,44 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		55A74F8522D05A5A00C8411E /* SearchResultsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5588E6F122D01056007483E5 /* SearchResultsViewController.swift */,
+				5588E73122D0329F007483E5 /* HotelTableViewCell.swift */,
+			);
+			path = SearchResultsViewController;
+			sourceTree = "<group>";
+		};
+		55A74F8622D05A9700C8411E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5588E72F22D01D95007483E5 /* RemoteSearch.swift */,
+				55A74F8322D0570000C8411E /* SearchResultsDataSource.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		64B2325DC721742280E54CD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C96FA15BAF8DE3792970C48 /* Pods-HurbChallenge.debug.xcconfig */,
+				323C25231552587C3651CDB3 /* Pods-HurbChallenge.release.xcconfig */,
+				364F610FEDDC9198703FE870 /* Pods-HurbChallengeTests.debug.xcconfig */,
+				A7AA6FDA1FF0CAAEBC55E355 /* Pods-HurbChallengeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D7897F8EF0E155B6263E5C7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C75ECCD8B5717BF7CB1C570B /* libPods-HurbChallenge.a */,
+				901EA130D7DC4D7E021776EF /* libPods-HurbChallengeTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5588E70C22D01059007483E5 /* Build configuration list for PBXNativeTarget "HurbChallenge" */;
 			buildPhases = (
+				51F6AB2AB32BE0A112153022 /* [CP] Check Pods Manifest.lock */,
 				5588E6E822D01056007483E5 /* Sources */,
 				5588E6E922D01056007483E5 /* Frameworks */,
 				5588E6EA22D01056007483E5 /* Resources */,
@@ -168,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5588E70F22D01059007483E5 /* Build configuration list for PBXNativeTarget "HurbChallengeTests" */;
 			buildPhases = (
+				131F8C74401465A35F7263F7 /* [CP] Check Pods Manifest.lock */,
 				5588E6FF22D01058007483E5 /* Sources */,
 				5588E70022D01058007483E5 /* Frameworks */,
 				5588E70122D01058007483E5 /* Resources */,
@@ -240,20 +290,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		131F8C74401465A35F7263F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HurbChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51F6AB2AB32BE0A112153022 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HurbChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5588E6E822D01056007483E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5588E6F222D01056007483E5 /* ViewController.swift in Sources */,
+				5588E6F222D01056007483E5 /* SearchResultsViewController.swift in Sources */,
 				5588E6F022D01056007483E5 /* AppDelegate.swift in Sources */,
 				5588E72D22D01AEA007483E5 /* URLSession.swift in Sources */,
-				5588E72322D01800007483E5 /* Hotel.swift in Sources */,
-				5588E72622D01895007483E5 /* Address.swift in Sources */,
 				5588E71A22D0175E007483E5 /* Filters.swift in Sources */,
+				5588E73222D0329F007483E5 /* HotelTableViewCell.swift in Sources */,
 				5588E72022D017EA007483E5 /* Pagination.swift in Sources */,
-				5588E72922D018DF007483E5 /* Price.swift in Sources */,
+				5588E73022D01D95007483E5 /* RemoteSearch.swift in Sources */,
+				55A74F8422D0570000C8411E /* SearchResultsDataSource.swift in Sources */,
 				5588E71D22D017D3007483E5 /* Meta.swift in Sources */,
+				5588E73422D043B7007483E5 /* SearchResultElement.swift in Sources */,
 				5588E71722D01707007483E5 /* Page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,10 +365,7 @@
 				5588E72E22D01AEA007483E5 /* URLSession.swift in Sources */,
 				5588E72122D017EA007483E5 /* Pagination.swift in Sources */,
 				5588E71E22D017D3007483E5 /* Meta.swift in Sources */,
-				5588E72A22D018DF007483E5 /* Price.swift in Sources */,
 				5588E71822D01707007483E5 /* Page.swift in Sources */,
-				5588E72722D01895007483E5 /* Address.swift in Sources */,
-				5588E72422D01800007483E5 /* Hotel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +517,7 @@
 		};
 		5588E70D22D01059007483E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C96FA15BAF8DE3792970C48 /* Pods-HurbChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -440,6 +536,7 @@
 		};
 		5588E70E22D01059007483E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 323C25231552587C3651CDB3 /* Pods-HurbChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +555,7 @@
 		};
 		5588E71022D01059007483E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 364F610FEDDC9198703FE870 /* Pods-HurbChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -479,6 +577,7 @@
 		};
 		5588E71122D01059007483E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7AA6FDA1FF0CAAEBC55E355 /* Pods-HurbChallengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

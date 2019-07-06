@@ -1,0 +1,6 @@
+module Pods_HurbChallenge {
+  umbrella header "Pods-HurbChallenge-umbrella.h"
+
+  export *
+  module * { export * }
+}

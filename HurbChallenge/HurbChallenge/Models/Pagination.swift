@@ -17,7 +17,8 @@ struct Pagination: Codable {
     
     func fixedNextPageUrl() -> URL? {
         guard let nextPage = nextPage else { return nil }
-        let fixedAddress = nextPage.replacingOccurrences(of: "http://searchapi/v2/search", with: "https://www.hurb.com/search/api")
-        return URL(string: fixedAddress)
+        let fixedAddress = nextPage.replacingOccurrences(of: "http://searchapi/v2/search", with: "https://www.hurb.com/search/api").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = URL(string: fixedAddress)
+        return url
     }
 }

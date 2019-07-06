@@ -11,6 +11,6 @@ import Foundation
 struct Page: Codable {
     let meta: Meta
     let filters: Filters
-    let results: [Hotel]
+    let results: [SearchResultElement]
     let pagination: Pagination
 }
