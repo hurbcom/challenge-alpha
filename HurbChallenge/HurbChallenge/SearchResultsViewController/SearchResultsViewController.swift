@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promises
 
 fileprivate let LOADING_CELL_SECTION: Int = 7
 
@@ -23,52 +24,36 @@ class SearchResultsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        remoteSearch = RemoteSearch(term: "Rio de Janeiro")
-        loadMore()
+        performInitialFetch(with: "Rio de Janeiro")
+    }
+    
+    func performInitialFetch(with searchTerm: String) {
+        remoteSearch = RemoteSearch(term: searchTerm)
+        remoteSearch
+            .loadNextPage()
+            .then(datasource.update)
+            .always(tableView.reloadData)
+            .always(activityIndicator.stopAnimating)
     }
     
     func loadMore() {
-        loadingMore = datasource.hasItems()
-        if (loadingMore) {
-            tableView.reloadSections(IndexSet(integer: LOADING_CELL_SECTION), with: .none)
-        }
+        loadingMore.toggle()
+        tableView.reloadSections(IndexSet(integer: LOADING_CELL_SECTION), with: .none)
         remoteSearch
             .loadNextPage()
-            .always { self.loadingMore = false }
-            .then (self.insertNewResults)
-            .always{ self.updateView() }
-            .catch({print($0)})
+            .then(datasource.update)
+            .always({self.loadingMore.toggle()})
+            .always(tableView.beginUpdates)
+            .always({self.tableView.reloadSections(IndexSet(integer: LOADING_CELL_SECTION), with: .none)})
+            .then({self.tableView.insertRows(at: $0, with: .automatic)})
+            .always(tableView.endUpdates)
     }
-
-    func insertNewResults(_ newItems: [SearchResultElement]) {
-        let alreadyHadItemsBeforeMerge = datasource.hasItems()
-        datasource
-            .update(with: newItems)
-            .then({ insertedIndexPaths in
-                if alreadyHadItemsBeforeMerge {
-                    self.tableView.beginUpdates()
-                    self.tableView.reloadSections(IndexSet(integer: LOADING_CELL_SECTION), with: .none)
-                    self.tableView.insertRows(at: insertedIndexPaths, with: .automatic)
-                    self.tableView.endUpdates()
-                } else {
-                    self.tableView.reloadData()
-                }
-            })
-    }
-    
-    func updateView() {
-        activityIndicator.stopAnimating()
-    }
-}
+ }
 
 extension SearchResultsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == LOADING_CELL_SECTION {
-            if loadingMore {
-                return 1
-            } else {
-                return 0
-            }
+            return loadingMore ? 1 : 0
         } else {
              return datasource.numberOfItems(in: section)
         }

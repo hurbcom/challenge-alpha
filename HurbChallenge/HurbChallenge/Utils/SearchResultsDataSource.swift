@@ -9,12 +9,12 @@
 import Foundation
 import Promises
 
-struct SearchResultsDataSource {
+class SearchResultsDataSource {
     
     private let sections = ["5 estrelas", "4 estrelas", "3 estrelas", "2 estrelas", "1 estrelas", "Tickets", "Pacotes"]
     private var elements: [[SearchResultElement]] = [[], [], [], [], [], [], []]
     
-    mutating func update(with list: [SearchResultElement]) -> Promise<[IndexPath]> {
+    func update(with list: [SearchResultElement]) -> Promise<[IndexPath]> {
         return Promise<[IndexPath]> { resolve, reject in
             var indexPaths: [IndexPath] = []
             list.forEach { item in
