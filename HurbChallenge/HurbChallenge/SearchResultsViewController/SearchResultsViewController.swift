@@ -92,7 +92,7 @@ extension SearchResultsViewController: UITableViewDataSource {
         if indexPath.section == LOADING_CELL_SECTION {
             return 60
         } else {
-            return 140
+            return 250
         }
     }
 }
