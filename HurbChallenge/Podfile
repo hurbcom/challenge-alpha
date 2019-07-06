@@ -5,6 +5,7 @@ target 'HurbChallenge' do
   pod 'PromisesObjC', '1.2.8', :modular_headers => true
   pod 'PromisesSwift', '1.2.8'
   pod 'SDWebImage', '5.0.3'
+  pod 'DeepDiff'
 
   target 'HurbChallengeTests' do
     inherit! :search_paths

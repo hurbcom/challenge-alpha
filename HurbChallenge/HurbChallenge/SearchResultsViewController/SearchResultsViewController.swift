@@ -31,53 +31,53 @@ class SearchResultsViewController: UIViewController {
         remoteSearch = RemoteSearch(term: searchTerm)
         remoteSearch
             .loadNextPage()
-            .then(datasource.update)
+            .then(on: DispatchQueue.global(), datasource.update)
             .always(tableView.reloadData)
             .always(activityIndicator.stopAnimating)
     }
     
     func loadMore() {
-        loadingMore.toggle()
-        tableView.reloadSections(IndexSet(integer: LOADING_CELL_SECTION), with: .none)
+        guard !loadingMore else { return }
+        loadingMore = true
         remoteSearch
             .loadNextPage()
-            .then(datasource.update)
-            .always({self.loadingMore.toggle()})
-            .always(tableView.beginUpdates)
-            .always({self.tableView.reloadSections(IndexSet(integer: LOADING_CELL_SECTION), with: .none)})
-            .then({self.tableView.insertRows(at: $0, with: .automatic)})
-            .always(tableView.endUpdates)
+            .then(on: DispatchQueue.global(), datasource.update)
+            .then(insertRows)
+            .always({self.loadingMore = false})
+    }
+    
+    func insertRows(at indexPaths: [IndexPath]) -> Promise<Void> {
+        return Promise<Void> { resolve, _ in
+            self.tableView.beginUpdates()
+            self.tableView.insertRows(at: indexPaths, with: .fade)
+            self.tableView.endUpdates()
+            resolve(())
+        }
     }
  }
 
 extension SearchResultsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == LOADING_CELL_SECTION {
-            return loadingMore ? 1 : 0
-        } else {
-             return datasource.numberOfItems(in: section)
-        }
+        return datasource.numberOfItems(at: section)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return datasource.numberOfSections() + 1
+        return datasource.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == LOADING_CELL_SECTION {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath)
-            (cell.viewWithTag(101) as! UIActivityIndicatorView).startAnimating()
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: HotelTableViewCell.identifier, for: indexPath) as! HotelTableViewCell
-            let item = datasource.item(in: indexPath)
-            cell.configure(with: item)
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier, for: indexPath) as! SearchResultCell
+        let item = datasource.item(at: indexPath)
+        cell.configure(with: item)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return datasource.title(for: section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
     }
 }
 
@@ -88,8 +88,8 @@ extension SearchResultsViewController: UITableViewDelegate {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
 
-        if offsetY > contentHeight - scrollView.frame.height * 1.1 {
-            if remoteSearch.hasMoreToLoad() && !loadingMore {
+        if offsetY > contentHeight - scrollView.frame.height {
+            if remoteSearch.hasMoreToLoad() {
                 loadMore()
             }
         }

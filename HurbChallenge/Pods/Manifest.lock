@@ -1,4 +1,5 @@
 PODS:
+  - DeepDiff (2.2.0)
   - PromisesObjC (1.2.8)
   - PromisesSwift (1.2.8):
     - PromisesObjC (= 1.2.8)
@@ -7,21 +8,24 @@ PODS:
   - SDWebImage/Core (5.0.3)
 
 DEPENDENCIES:
+  - DeepDiff
   - PromisesObjC (= 1.2.8)
   - PromisesSwift (= 1.2.8)
   - SDWebImage (= 5.0.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - DeepDiff
     - PromisesObjC
     - PromisesSwift
     - SDWebImage
 
 SPEC CHECKSUMS:
+  DeepDiff: e329bc46dd14ca788d8ec08d34420799ba1d77f2
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
   SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
 
-PODFILE CHECKSUM: 1f2470f4266782e4929a5278f7609bec02e8f0e8
+PODFILE CHECKSUM: eeeba0f9c116f9ff2e2c3822a4834d3faccd8968
 
 COCOAPODS: 1.7.3

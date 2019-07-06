@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DeepDiff
 
 struct SearchResultElement: Codable {
     let sku: String
@@ -51,6 +52,14 @@ struct SearchResultElement: Codable {
         case featuredItem
         case isPackage
         case isTicket
+    }
+}
+
+extension SearchResultElement: DiffAware {
+    typealias DiffId = String
+    var diffId: SearchResultElement.DiffId { return self.sku }
+    static func compareContent(_ a: SearchResultElement, _ b: SearchResultElement) -> Bool {
+        return a.sku == b.sku
     }
 }
 

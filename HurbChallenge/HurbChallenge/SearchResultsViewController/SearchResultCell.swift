@@ -1,5 +1,5 @@
 //
-//  HotelTableViewCell.swift
+//  SearchResultCell.swift
 //  HurbChallenge
 //
 //  Created by Felipe Alves on 05/07/19.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class HotelTableViewCell: UITableViewCell {
+class SearchResultCell: UITableViewCell {
 
-    static let identifier = "HotelCell"
+    static let identifier = "SearchResultCell"
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,11 +26,11 @@ class HotelTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        textLabel?.text = nil
+        nameLabel.text = nil
     }
     
-    func configure(with hotel: SearchResultElement?) {
-        textLabel?.text = hotel?.name
+    func configure(with result: SearchResultElement?) {
+        nameLabel.text = result?.name
     }
 
 }
