@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ShadowView: UIView {
     override var bounds: CGRect {
@@ -31,20 +32,49 @@ class SearchResultCell: UITableViewCell {
     static let identifier = "SearchResultCell"
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cityStateLabel: UILabel!
-    @IBOutlet weak var firstAmenityLabel: UILabel!
-    @IBOutlet weak var secondAmenityLabel: UILabel!
-    @IBOutlet weak var thirdAmenityLabel: UILabel!
+    @IBOutlet weak var amenitiesLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var priceBorderView: UIView!
     @IBOutlet weak var img: UIImageView!
+    
+    lazy var formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "pt_BR")
+        formatter.numberStyle = .currency
+        return formatter
+    }()
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        nameLabel.text = nil
+        cityStateLabel.text = nil
+        amenitiesLabel.text = nil
+        priceLabel.text = nil
+        priceBorderView.isHidden = true
+        img.sd_cancelCurrentImageLoad()
     }
     
     func configure(with result: SearchResultElement?) {
         nameLabel.text = result?.name
         cityStateLabel.text = [result?.address.city, result?.address.state].compactMap{$0}.joined(separator: ", ")
-//        firstAmenityLabel.text = result.ame
+        if let amenities = result?.amenities {
+            if amenities.count >= 3 {
+                amenitiesLabel.text = result?.amenities.compactMap({$0.name})[0..<3].joined(separator: ", ")
+            } else {
+                amenitiesLabel.text = result?.amenities.compactMap({$0.name}).joined(separator: ", ")
+            }
+        }
+        if let price = result?.price.currentPrice, let priceString = formatter.string(from: price as NSNumber) {
+            priceLabel.text = priceString
+            priceBorderView.isHidden = false
+        } else if let price = result?.price.amount, let priceString = formatter.string(from: price as NSNumber) {
+            priceLabel.text = priceString
+            priceBorderView.isHidden = false
+        }
+        
+        if let imgUrlString = result?.gallery.first?.url {
+            img.sd_setImage(with: URL(string: imgUrlString), placeholderImage: nil)
+        }
     }
 
 }

@@ -8,7 +8,6 @@
 
 import Foundation
 import Promises
-import DeepDiff
 
 class SearchResultsDataSource {
     

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import DeepDiff
 
 struct SearchResultElement: Codable {
     let sku: String
@@ -55,14 +54,6 @@ struct SearchResultElement: Codable {
     }
 }
 
-extension SearchResultElement: DiffAware {
-    typealias DiffId = String
-    var diffId: SearchResultElement.DiffId { return self.sku }
-    static func compareContent(_ a: SearchResultElement, _ b: SearchResultElement) -> Bool {
-        return a.sku == b.sku
-    }
-}
-
 // MARK: - Address
 struct Address: Codable {
     let city: String?
@@ -100,13 +91,13 @@ struct GeoLocation: Codable {
     let lon: Double?
 }
 
-// MARK: - Amenity
+// MARK: -
 struct Amenity: Codable {
     let name: String
     let category: String
 }
 
-// MARK: - FeaturedItem
+// MARK: -
 struct FeaturedItem: Codable {
     let amenities: [String]?
     let name: String?
@@ -125,7 +116,7 @@ struct FeaturedItem: Codable {
     }
 }
 
-// MARK: - Gallery
+// MARK: -
 struct ImageElement: Codable {
     let imageDescription: String?
     let url: String
@@ -136,36 +127,32 @@ struct ImageElement: Codable {
     }
 }
 
-// MARK: - Price
+// MARK: -
 struct Price: Codable {
     let currency: String?
     let currencyOriginal: String?
-    let priceCurrentPrice: Double?
-    let priceOldPrice: Double?
     let sku: String
     let originalAmountPerDay: Double?
     let amountPerDay: Double
     let amount: Double
-    let oldPrice: Int?
-    let currentPrice: Int?
-    let originalAmount: Int?
+    let oldPrice: Double?
+    let currentPrice: Double?
+    let originalAmount: Double?
     
     enum CodingKeys: String, CodingKey {
         case currency
         case currencyOriginal = "currency_original"
-        case priceCurrentPrice = "current_price"
-        case priceOldPrice = "old_price"
         case sku
         case originalAmountPerDay
         case amountPerDay
         case amount
-        case oldPrice
-        case currentPrice
+        case oldPrice = "old_price"
+        case currentPrice = "current_price"
         case originalAmount
     }
 }
 
-// MARK: - QuantityDescriptors
+// MARK: -
 struct QuantityDescriptors: Codable {
     let maxChildren: Int?
     let maxAdults: Int?
