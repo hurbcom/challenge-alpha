@@ -16,6 +16,8 @@ class SearchResultsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var noResultsLabel: UILabel!
+
     var datasource: SearchResultsDataSource = SearchResultsDataSource()
     var remoteSearch: RemoteSearch!
     var loadingMore = false
@@ -23,6 +25,7 @@ class SearchResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        noResultsLabel.isHidden = true
         definesPresentationContext = true
         tableView.dataSource = self
         tableView.delegate = self
@@ -42,6 +45,7 @@ class SearchResultsViewController: UIViewController {
         guard let searchTerm = searchTerm else { return }
         remoteSearch?.canceled = true
         if reload {
+            noResultsLabel.isHidden = true
             datasource = SearchResultsDataSource()
             tableView.reloadData()
             activityIndicator.startAnimating()
@@ -50,8 +54,11 @@ class SearchResultsViewController: UIViewController {
         remoteSearch
             .loadNextPage()
             .then(on: DispatchQueue.global(), datasource.update)
-            .always(tableView.reloadData)
             .always(activityIndicator.stopAnimating)
+            .then {
+                self.noResultsLabel.isHidden = $0.count > 0
+                self.tableView.reloadData()
+        }
     }
     
     func loadMore() {

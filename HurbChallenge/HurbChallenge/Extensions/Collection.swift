@@ -8,6 +8,9 @@
 
 import Foundation
 
+/*
+ Essa extensão permite acessar indices potencialmente inexistentes em um array e retornar um optional, sem ocasionar uma exceção
+ */
 extension Collection {
     
     subscript (safe index: Index) -> Element? {

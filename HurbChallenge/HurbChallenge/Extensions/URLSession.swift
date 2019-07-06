@@ -8,6 +8,9 @@
 
 import Foundation
 
+/*
+ Essa extensão foi criada para facilitar o acesso à API, abstraindo a conversão de um JSON para um modelo interno que seja Codable
+ */
 extension URLSession {
     fileprivate func codableTask<T: Codable>(with url: URL, completionHandler: @escaping (T?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         return self.dataTask(with: url) { data, response, error in

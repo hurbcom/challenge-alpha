@@ -170,13 +170,23 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nenhum resultado encontrado" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8G-7i-tbG">
+                                <rect key="frame" x="87.5" y="438" width="239" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="V8G-7i-tbG" firstAttribute="centerY" secondItem="6lb-Md-fOM" secondAttribute="centerY" id="2is-mN-DIJ"/>
+                            <constraint firstItem="2Bd-3c-zy6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V8G-7i-tbG" secondAttribute="trailing" constant="32" id="2u9-gJ-3sD"/>
                             <constraint firstItem="o2Q-ZA-Fug" firstAttribute="top" secondItem="6lb-Md-fOM" secondAttribute="top" id="Dpp-e5-iuH"/>
                             <constraint firstItem="QuK-P7-eDW" firstAttribute="centerY" secondItem="6lb-Md-fOM" secondAttribute="centerY" id="HTa-5K-CYS"/>
                             <constraint firstItem="QuK-P7-eDW" firstAttribute="centerX" secondItem="6lb-Md-fOM" secondAttribute="centerX" id="UZz-FO-ngV"/>
                             <constraint firstItem="o2Q-ZA-Fug" firstAttribute="leading" secondItem="2Bd-3c-zy6" secondAttribute="leading" id="WeH-m6-6Sc"/>
+                            <constraint firstItem="V8G-7i-tbG" firstAttribute="centerX" secondItem="6lb-Md-fOM" secondAttribute="centerX" id="WfT-oo-gzx"/>
+                            <constraint firstItem="V8G-7i-tbG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Bd-3c-zy6" secondAttribute="leading" constant="32" id="bII-y6-uNu"/>
                             <constraint firstItem="o2Q-ZA-Fug" firstAttribute="trailing" secondItem="2Bd-3c-zy6" secondAttribute="trailing" id="cXY-zb-Ebc"/>
                             <constraint firstAttribute="bottom" secondItem="o2Q-ZA-Fug" secondAttribute="bottom" id="ffC-HI-OfO"/>
                         </constraints>
@@ -187,6 +197,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="QuK-P7-eDW" id="rKx-ek-gKm"/>
+                        <outlet property="noResultsLabel" destination="V8G-7i-tbG" id="HZS-Pp-MkA"/>
                         <outlet property="tableView" destination="o2Q-ZA-Fug" id="bff-uf-NHk"/>
                     </connections>
                 </viewController>

@@ -27,7 +27,6 @@ class RemoteSearch {
     func loadNextPage() -> Promise<[SearchResultElement]> {
         return Promise<[SearchResultElement]> { resolve, reject in
             let url = self.nextPageUrl()
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
             URLSession
                 .shared
                 .pageTask(with: url, completionHandler: { (page, _, error) in
@@ -38,9 +37,6 @@ class RemoteSearch {
                         return
                     }
                     self.latestPagination = page.pagination
-                    DispatchQueue.main.async {
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                    }
                     if !self.canceled {
                         resolve(page.results ?? [])
                     }
