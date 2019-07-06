@@ -41,15 +41,15 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultCell" rowHeight="140" id="juH-1s-ygy" customClass="SearchResultCell" customModule="HurbChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="juH-1s-ygy" id="dMY-Qr-Fh2">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="juH-1s-ygy" id="dMY-Qr-Fh2">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buy-cV-rcZ">
-                                                    <rect key="frame" x="20" y="11" width="374" height="120"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="118"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-Eh-WZK">
-                                                            <rect key="frame" x="166" y="49.5" width="42" height="21"/>
+                                                            <rect key="frame" x="166" y="48.5" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -59,7 +59,6 @@
                                                     <constraints>
                                                         <constraint firstItem="X8I-Eh-WZK" firstAttribute="centerY" secondItem="buy-cV-rcZ" secondAttribute="centerY" id="0SC-XK-kGX"/>
                                                         <constraint firstItem="X8I-Eh-WZK" firstAttribute="centerX" secondItem="buy-cV-rcZ" secondAttribute="centerX" id="hnC-Zr-GrZ"/>
-                                                        <constraint firstAttribute="height" constant="120" id="nfh-Fc-uWZ"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -73,6 +72,24 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="X8I-Eh-WZK" id="JF9-iT-IKW"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoadinCell" rowHeight="60" id="78R-qX-CP1">
+                                        <rect key="frame" x="0.0" y="168" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="78R-qX-CP1" id="jDB-vM-hH9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="OYJ-rG-4Nr">
+                                                    <rect key="frame" x="188.5" y="11.5" width="37" height="37"/>
+                                                    <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OYJ-rG-4Nr" firstAttribute="centerX" secondItem="jDB-vM-hH9" secondAttribute="centerX" id="dBp-MG-eIz"/>
+                                                <constraint firstItem="OYJ-rG-4Nr" firstAttribute="centerY" secondItem="jDB-vM-hH9" secondAttribute="centerY" id="oe6-WM-MvA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

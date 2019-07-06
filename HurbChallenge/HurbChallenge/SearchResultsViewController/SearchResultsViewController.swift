@@ -24,7 +24,7 @@ class SearchResultsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        performInitialFetch(with: "Rio de Janeiro")
+        performInitialFetch(with: "Angra")
     }
     
     func performInitialFetch(with searchTerm: String) {
@@ -39,11 +39,13 @@ class SearchResultsViewController: UIViewController {
     func loadMore() {
         guard !loadingMore else { return }
         loadingMore = true
+        tableView.reloadSections(IndexSet(integer: LOADING_CELL_SECTION), with: .none)
         remoteSearch
             .loadNextPage()
             .then(on: DispatchQueue.global(), datasource.update)
             .then(insertRows)
-            .always({self.loadingMore = false})
+            .always{self.loadingMore = false}
+            .always{self.tableView.reloadSections(IndexSet(integer: LOADING_CELL_SECTION), with: .none)}
     }
     
     func insertRows(at indexPaths: [IndexPath]) -> Promise<Void> {
@@ -58,26 +60,40 @@ class SearchResultsViewController: UIViewController {
 
 extension SearchResultsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datasource.numberOfItems(at: section)
+        if section == LOADING_CELL_SECTION {
+            return loadingMore ? 1 : 0
+        } else {
+            return datasource.numberOfRowsInSection(section)
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return datasource.numberOfSections()
+        return datasource.numberOfSections() + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier, for: indexPath) as! SearchResultCell
-        let item = datasource.item(at: indexPath)
-        cell.configure(with: item)
-        return cell
+        if indexPath.section == LOADING_CELL_SECTION {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LoadinCell", for: indexPath)
+            (cell.viewWithTag(101) as! UIActivityIndicatorView).startAnimating()
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier, for: indexPath) as! SearchResultCell
+            let item = datasource.item(at: indexPath)
+            cell.configure(with: item)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return datasource.title(for: section)
+        return datasource.titleForHeaderInSection(section)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        if indexPath.section == LOADING_CELL_SECTION {
+            return 60
+        } else {
+            return 140
+        }
     }
 }
 

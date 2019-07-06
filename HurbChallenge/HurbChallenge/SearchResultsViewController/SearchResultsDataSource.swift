@@ -45,7 +45,7 @@ class SearchResultsDataSource {
         }
     }
     
-    func title(for index: Int) -> String? {
+    func titleForHeaderInSection(_ index: Int) -> String? {
         guard let section = section(for: index) else { return nil }
         return section.title
     }
@@ -54,7 +54,7 @@ class SearchResultsDataSource {
         return 7
     }
     
-    func numberOfItems(at index: Int) -> Int {
+    func numberOfRowsInSection(_ index: Int) -> Int {
         guard let section = section(for: index) else { return 0 }
         return section.items.count
     }
