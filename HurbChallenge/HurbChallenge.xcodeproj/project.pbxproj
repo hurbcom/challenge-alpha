@@ -10,10 +10,25 @@
 		5588E6F022D01056007483E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E6EF22D01056007483E5 /* AppDelegate.swift */; };
 		5588E6F222D01056007483E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E6F122D01056007483E5 /* ViewController.swift */; };
 		5588E6F522D01056007483E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5588E6F322D01056007483E5 /* Main.storyboard */; };
-		5588E6F822D01056007483E5 /* HurbChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5588E6F622D01056007483E5 /* HurbChallenge.xcdatamodeld */; };
 		5588E6FA22D01058007483E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5588E6F922D01058007483E5 /* Assets.xcassets */; };
 		5588E6FD22D01058007483E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5588E6FB22D01058007483E5 /* LaunchScreen.storyboard */; };
 		5588E70822D01058007483E5 /* HurbChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E70722D01058007483E5 /* HurbChallengeTests.swift */; };
+		5588E71722D01707007483E5 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71622D01707007483E5 /* Page.swift */; };
+		5588E71822D01707007483E5 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71622D01707007483E5 /* Page.swift */; };
+		5588E71A22D0175E007483E5 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71922D0175E007483E5 /* Filters.swift */; };
+		5588E71B22D0175E007483E5 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71922D0175E007483E5 /* Filters.swift */; };
+		5588E71D22D017D3007483E5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71C22D017D3007483E5 /* Meta.swift */; };
+		5588E71E22D017D3007483E5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71C22D017D3007483E5 /* Meta.swift */; };
+		5588E72022D017EA007483E5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71F22D017EA007483E5 /* Pagination.swift */; };
+		5588E72122D017EA007483E5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E71F22D017EA007483E5 /* Pagination.swift */; };
+		5588E72322D01800007483E5 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72222D01800007483E5 /* Hotel.swift */; };
+		5588E72422D01800007483E5 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72222D01800007483E5 /* Hotel.swift */; };
+		5588E72622D01895007483E5 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72522D01895007483E5 /* Address.swift */; };
+		5588E72722D01895007483E5 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72522D01895007483E5 /* Address.swift */; };
+		5588E72922D018DF007483E5 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72822D018DF007483E5 /* Price.swift */; };
+		5588E72A22D018DF007483E5 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72822D018DF007483E5 /* Price.swift */; };
+		5588E72D22D01AEA007483E5 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72C22D01AEA007483E5 /* URLSession.swift */; };
+		5588E72E22D01AEA007483E5 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E72C22D01AEA007483E5 /* URLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +46,20 @@
 		5588E6EF22D01056007483E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5588E6F122D01056007483E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5588E6F422D01056007483E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5588E6F722D01056007483E5 /* HurbChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HurbChallenge.xcdatamodel; sourceTree = "<group>"; };
 		5588E6F922D01058007483E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5588E6FC22D01058007483E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5588E6FE22D01058007483E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5588E70322D01058007483E5 /* HurbChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HurbChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5588E70722D01058007483E5 /* HurbChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbChallengeTests.swift; sourceTree = "<group>"; };
 		5588E70922D01059007483E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5588E71622D01707007483E5 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		5588E71922D0175E007483E5 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		5588E71C22D017D3007483E5 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		5588E71F22D017EA007483E5 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		5588E72222D01800007483E5 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		5588E72522D01895007483E5 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		5588E72822D018DF007483E5 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		5588E72C22D01AEA007483E5 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +101,14 @@
 		5588E6EE22D01056007483E5 /* HurbChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				5588E72B22D01AD9007483E5 /* Extensions */,
+				5588E71222D01202007483E5 /* Models */,
 				5588E6EF22D01056007483E5 /* AppDelegate.swift */,
 				5588E6F122D01056007483E5 /* ViewController.swift */,
 				5588E6F322D01056007483E5 /* Main.storyboard */,
 				5588E6F922D01058007483E5 /* Assets.xcassets */,
 				5588E6FB22D01058007483E5 /* LaunchScreen.storyboard */,
 				5588E6FE22D01058007483E5 /* Info.plist */,
-				5588E6F622D01056007483E5 /* HurbChallenge.xcdatamodeld */,
 			);
 			path = HurbChallenge;
 			sourceTree = "<group>";
@@ -97,6 +120,28 @@
 				5588E70922D01059007483E5 /* Info.plist */,
 			);
 			path = HurbChallengeTests;
+			sourceTree = "<group>";
+		};
+		5588E71222D01202007483E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5588E72522D01895007483E5 /* Address.swift */,
+				5588E71922D0175E007483E5 /* Filters.swift */,
+				5588E72222D01800007483E5 /* Hotel.swift */,
+				5588E71C22D017D3007483E5 /* Meta.swift */,
+				5588E71622D01707007483E5 /* Page.swift */,
+				5588E71F22D017EA007483E5 /* Pagination.swift */,
+				5588E72822D018DF007483E5 /* Price.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5588E72B22D01AD9007483E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5588E72C22D01AEA007483E5 /* URLSession.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +247,14 @@
 			files = (
 				5588E6F222D01056007483E5 /* ViewController.swift in Sources */,
 				5588E6F022D01056007483E5 /* AppDelegate.swift in Sources */,
-				5588E6F822D01056007483E5 /* HurbChallenge.xcdatamodeld in Sources */,
+				5588E72D22D01AEA007483E5 /* URLSession.swift in Sources */,
+				5588E72322D01800007483E5 /* Hotel.swift in Sources */,
+				5588E72622D01895007483E5 /* Address.swift in Sources */,
+				5588E71A22D0175E007483E5 /* Filters.swift in Sources */,
+				5588E72022D017EA007483E5 /* Pagination.swift in Sources */,
+				5588E72922D018DF007483E5 /* Price.swift in Sources */,
+				5588E71D22D017D3007483E5 /* Meta.swift in Sources */,
+				5588E71722D01707007483E5 /* Page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +263,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5588E70822D01058007483E5 /* HurbChallengeTests.swift in Sources */,
+				5588E71B22D0175E007483E5 /* Filters.swift in Sources */,
+				5588E72E22D01AEA007483E5 /* URLSession.swift in Sources */,
+				5588E72122D017EA007483E5 /* Pagination.swift in Sources */,
+				5588E71E22D017D3007483E5 /* Meta.swift in Sources */,
+				5588E72A22D018DF007483E5 /* Price.swift in Sources */,
+				5588E71822D01707007483E5 /* Page.swift in Sources */,
+				5588E72722D01895007483E5 /* Address.swift in Sources */,
+				5588E72422D01800007483E5 /* Hotel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,19 +529,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		5588E6F622D01056007483E5 /* HurbChallenge.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				5588E6F722D01056007483E5 /* HurbChallenge.xcdatamodel */,
-			);
-			currentVersion = 5588E6F722D01056007483E5 /* HurbChallenge.xcdatamodel */;
-			path = HurbChallenge.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 5588E6E422D01056007483E5 /* Project object */;
 }
