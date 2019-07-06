@@ -17,6 +17,7 @@ class RemoteSearch {
     
     private let baseUrlString: String = "https://www.hurb.com/search/api"
     private var latestPagination: Pagination? = nil
+    var canceled = false
     var searchTerm: String
     
     required init(term: String) {
@@ -31,14 +32,18 @@ class RemoteSearch {
                 .shared
                 .pageTask(with: url, completionHandler: { (page, _, error) in
                     guard let page = page, error == nil else {
-                        reject(error ?? RemoteError.fetchFailed)
+                        if !self.canceled {
+                            reject(error ?? RemoteError.fetchFailed)
+                        }
                         return
                     }
                     self.latestPagination = page.pagination
                     DispatchQueue.main.async {
                         UIApplication.shared.isNetworkActivityIndicatorVisible = true
                     }
-                    resolve(page.results)
+                    if !self.canceled {
+                        resolve(page.results ?? [])
+                    }
                 }).resume()
         }
     }

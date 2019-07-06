@@ -57,23 +57,23 @@ class SearchResultCell: UITableViewCell {
     
     func configure(with result: SearchResultElement?) {
         nameLabel.text = result?.name
-        cityStateLabel.text = [result?.address.city, result?.address.state].compactMap{$0}.joined(separator: ", ")
+        cityStateLabel.text = [result?.address?.city, result?.address?.state].compactMap{$0}.joined(separator: ", ")
         if let amenities = result?.amenities {
             if amenities.count >= 3 {
-                amenitiesLabel.text = result?.amenities.compactMap({$0.name})[0..<3].joined(separator: ", ")
+                amenitiesLabel.text = result?.amenities?.compactMap({$0.name})[0..<3].joined(separator: ", ")
             } else {
-                amenitiesLabel.text = result?.amenities.compactMap({$0.name}).joined(separator: ", ")
+                amenitiesLabel.text = result?.amenities?.compactMap({$0.name}).joined(separator: ", ")
             }
         }
-        if let price = result?.price.currentPrice, let priceString = formatter.string(from: price as NSNumber) {
+        if let price = result?.price?.currentPrice, let priceString = formatter.string(from: price as NSNumber) {
             priceLabel.text = priceString
             priceBorderView.isHidden = false
-        } else if let price = result?.price.amount, let priceString = formatter.string(from: price as NSNumber) {
+        } else if let price = result?.price?.amount, let priceString = formatter.string(from: price as NSNumber) {
             priceLabel.text = priceString
             priceBorderView.isHidden = false
         }
         
-        if let imgUrlString = result?.gallery.first?.url {
+        if let imgUrlString = result?.gallery?.first?.url {
             img.sd_setImage(with: URL(string: imgUrlString)) { (_, _, cache, _) in
                 if cache == .none {
                     self.img.alpha = 0

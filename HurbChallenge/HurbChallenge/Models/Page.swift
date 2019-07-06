@@ -9,8 +9,8 @@
 import Foundation
 
 struct Page: Codable {
-    let meta: Meta
-    let filters: Filters
-    let results: [SearchResultElement]
-    let pagination: Pagination
+    let meta: Meta?
+    let filters: Filters?
+    let results: [SearchResultElement]?
+    let pagination: Pagination?
 }

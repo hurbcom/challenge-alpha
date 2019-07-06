@@ -10,6 +10,7 @@ import UIKit
 import Promises
 
 fileprivate let LOADING_CELL_SECTION: Int = 7
+fileprivate let DEFAULT_SEARCH_TERM = "Rio de Janeiro"
 
 class SearchResultsViewController: UIViewController {
 
@@ -18,16 +19,33 @@ class SearchResultsViewController: UIViewController {
     var datasource: SearchResultsDataSource = SearchResultsDataSource()
     var remoteSearch: RemoteSearch!
     var loadingMore = false
+    var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        definesPresentationContext = true
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        performInitialFetch(with: "Rio de Janeiro")
+        createSearchBar()
+        performInitialFetch()
     }
     
-    func performInitialFetch(with searchTerm: String) {
+    func createSearchBar() {
+        let search = UISearchController(searchResultsController: nil)
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.delegate = self
+        self.navigationItem.searchController = search
+    }
+    
+    func performInitialFetch(with searchTerm: String? = DEFAULT_SEARCH_TERM, reload: Bool = false) {
+        guard let searchTerm = searchTerm else { return }
+        remoteSearch?.canceled = true
+        if reload {
+            datasource = SearchResultsDataSource()
+            tableView.reloadData()
+            activityIndicator.startAnimating()
+        }
         remoteSearch = RemoteSearch(term: searchTerm)
         remoteSearch
             .loadNextPage()
@@ -57,6 +75,18 @@ class SearchResultsViewController: UIViewController {
         }
     }
  }
+
+extension SearchResultsViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        performInitialFetch(with: searchBar.text, reload: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if remoteSearch.searchTerm != DEFAULT_SEARCH_TERM {
+            performInitialFetch(reload: true)
+        }
+    }
+}
 
 extension SearchResultsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -9,24 +9,24 @@
 import Foundation
 
 struct SearchResultElement: Codable {
-    let sku: String
+    let sku: String?
     let isHotel: Bool?
-    let category: String
-    let smallDescription: String
-    let amenities: [Amenity]
-    let id: String
-    let price: Price
+    let category: String?
+    let smallDescription: String?
+    let amenities: [Amenity]?
+    let id: String?
+    let price: Price?
     let huFreeCancellation: Bool?
     let image: String?
-    let name: String
-    let url: String
-    let packageDescription: String
+    let name: String?
+    let url: String?
+    let packageDescription: String?
     let stars: Int?
-    let gallery: [ImageElement]
-    let address: Address
+    let gallery: [ImageElement]?
+    let address: Address?
     let tags: [String]?
-    let quantityDescriptors: QuantityDescriptors
-    let featuredItem: FeaturedItem
+    let quantityDescriptors: QuantityDescriptors?
+    let featuredItem: FeaturedItem?
     let isPackage: Bool?
     let isTicket: Bool?
     
@@ -57,7 +57,7 @@ struct SearchResultElement: Codable {
 // MARK: - Address
 struct Address: Codable {
     let city: String?
-    let country: String
+    let country: String?
     let idAtlasCity: Int?
     let idAtlasCountry: Int?
     let idAtlasNeighborhood: Int?
@@ -65,10 +65,10 @@ struct Address: Codable {
     let idCity: Int?
     let idCountry: Int?
     let idState: Int?
-    let state: String
+    let state: String?
     let street: String?
     let zipcode: String?
-    let geoLocation: GeoLocation
+    let geoLocation: GeoLocation?
     
     enum CodingKeys: String, CodingKey {
         case city, country
@@ -93,8 +93,8 @@ struct GeoLocation: Codable {
 
 // MARK: -
 struct Amenity: Codable {
-    let name: String
-    let category: String
+    let name: String?
+    let category: String?
 }
 
 // MARK: -
@@ -119,7 +119,7 @@ struct FeaturedItem: Codable {
 // MARK: -
 struct ImageElement: Codable {
     let imageDescription: String?
-    let url: String
+    let url: String?
     
     enum CodingKeys: String, CodingKey {
         case imageDescription = "description"
@@ -131,10 +131,10 @@ struct ImageElement: Codable {
 struct Price: Codable {
     let currency: String?
     let currencyOriginal: String?
-    let sku: String
+    let sku: String?
     let originalAmountPerDay: Double?
-    let amountPerDay: Double
-    let amount: Double
+    let amountPerDay: Double?
+    let amount: Double?
     let oldPrice: Double?
     let currentPrice: Double?
     let originalAmount: Double?

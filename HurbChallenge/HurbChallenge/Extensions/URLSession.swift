@@ -19,6 +19,7 @@ extension URLSession {
                 let obj = try newJSONDecoder().decode(T.self, from: data)
                 completionHandler(obj, response, nil)
             } catch let ex {
+                print(ex)
                 completionHandler(nil, response, ex)
             }
             

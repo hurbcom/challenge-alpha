@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-325" y="154"/>
         </scene>
-        <!--Busca-->
+        <!--Hotéis-->
         <scene sceneID="xa6-ja-865">
             <objects>
                 <viewController id="N2C-qH-Bu5" customClass="SearchResultsViewController" customModule="HurbChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,7 +182,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Bd-3c-zy6"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Busca" id="g9K-g0-Vi6">
+                    <navigationItem key="navigationItem" title="Hotéis" id="g9K-g0-Vi6">
                         <barButtonItem key="backBarButtonItem" title=" " id="zaX-Ew-cyA"/>
                     </navigationItem>
                     <connections>
