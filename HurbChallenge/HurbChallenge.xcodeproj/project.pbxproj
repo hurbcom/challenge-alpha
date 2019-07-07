@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		092F35A99FE254C6545273CB /* libPods-HurbChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C75ECCD8B5717BF7CB1C570B /* libPods-HurbChallenge.a */; };
+		55416C5022D23CEC0028E57F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55416C4F22D23CEC0028E57F /* ShadowView.swift */; };
 		5550E92F22D141C30006FC8D /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5550E92E22D141C30006FC8D /* Collection.swift */; };
 		5588E6F022D01056007483E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E6EF22D01056007483E5 /* AppDelegate.swift */; };
 		5588E6F222D01056007483E5 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588E6F122D01056007483E5 /* SearchResultsViewController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		323C25231552587C3651CDB3 /* Pods-HurbChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbChallenge.release.xcconfig"; path = "Target Support Files/Pods-HurbChallenge/Pods-HurbChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		364F610FEDDC9198703FE870 /* Pods-HurbChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-HurbChallengeTests/Pods-HurbChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		55416C4F22D23CEC0028E57F /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		5550E92E22D141C30006FC8D /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		5588E6EC22D01056007483E5 /* HurbChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5588E6EF22D01056007483E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				5588E72F22D01D95007483E5 /* RemoteSearch.swift */,
+				55416C4F22D23CEC0028E57F /* ShadowView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				5588E73022D01D95007483E5 /* RemoteSearch.swift in Sources */,
 				55A74F8422D0570000C8411E /* SearchResultsDataSource.swift in Sources */,
 				5588E71D22D017D3007483E5 /* Meta.swift in Sources */,
+				55416C5022D23CEC0028E57F /* ShadowView.swift in Sources */,
 				5588E73422D043B7007483E5 /* SearchResultElement.swift in Sources */,
 				5588E71722D01707007483E5 /* Page.swift in Sources */,
 			);

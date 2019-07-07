@@ -9,24 +9,6 @@
 import UIKit
 import SDWebImage
 
-class ShadowView: UIView {
-    override var bounds: CGRect {
-        didSet {
-            setupShadow()
-        }
-    }
-    
-    private func setupShadow() {
-        self.layer.cornerRadius = 5
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
-        self.layer.shadowRadius = 2
-        self.layer.shadowOpacity = 0.4
-        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: 5, height: 5)).cgPath
-        self.layer.shouldRasterize = true
-        self.layer.rasterizationScale = UIScreen.main.scale
-    }
-}
-
 class SearchResultCell: UITableViewCell {
 
     static let identifier = "SearchResultCell"
@@ -51,29 +33,54 @@ class SearchResultCell: UITableViewCell {
         amenitiesLabel.text = nil
         priceLabel.text = nil
         priceBorderView.isHidden = true
-        img.alpha = 1.0
         img.sd_cancelCurrentImageLoad()
+        img.alpha = 1.0
     }
     
     func configure(with result: SearchResultElement?) {
-        nameLabel.text = result?.name
-        cityStateLabel.text = [result?.address?.city, result?.address?.state].compactMap{$0}.joined(separator: ", ")
-        if let amenities = result?.amenities {
+        setNameLabel(result?.name)
+        setCityLabel(result?.address)
+        setAmenitiesLabel(result?.amenities)
+        setPriceLabel(result?.price)
+        loadImage(result?.gallery)
+    }
+
+}
+
+// MARK - Métodos Privados
+
+fileprivate extension SearchResultCell {
+    
+    func setNameLabel(_ name: String?) {
+        nameLabel.text = name
+    }
+    
+    func setCityLabel(_ address: Address?) {
+        cityStateLabel.text = [address?.city, address?.state].compactMap{$0}.joined(separator: ", ")
+    }
+    
+    func setAmenitiesLabel(_ amenities: [Amenity]?) {
+        if let amenities = amenities {
             if amenities.count >= 3 {
-                amenitiesLabel.text = result?.amenities?.compactMap({$0.name})[0..<3].joined(separator: ", ")
+                amenitiesLabel.text = amenities.compactMap({$0.name})[0..<3].joined(separator: ", ")
             } else {
-                amenitiesLabel.text = result?.amenities?.compactMap({$0.name}).joined(separator: ", ")
+                amenitiesLabel.text = amenities.compactMap({$0.name}).joined(separator: ", ")
             }
         }
-        if let price = result?.price?.currentPrice, let priceString = formatter.string(from: price as NSNumber) {
+    }
+    
+    func setPriceLabel(_ price: Price?) {
+        if let value = price?.currentPrice, let priceString = formatter.string(from: value as NSNumber) {
             priceLabel.text = priceString
             priceBorderView.isHidden = false
-        } else if let price = result?.price?.amount, let priceString = formatter.string(from: price as NSNumber) {
+        } else if let value = price?.amount, let priceString = formatter.string(from: value as NSNumber) {
             priceLabel.text = priceString
             priceBorderView.isHidden = false
         }
-        
-        if let imgUrlString = result?.gallery?.first?.url {
+    }
+    
+    func loadImage(_ gallery: [ImageElement]?) {
+        if let imgUrlString = gallery?.first?.url {
             img.sd_setImage(with: URL(string: imgUrlString)) { (_, _, cache, _) in
                 if cache == .none {
                     self.img.alpha = 0
@@ -82,5 +89,4 @@ class SearchResultCell: UITableViewCell {
             }
         }
     }
-
 }

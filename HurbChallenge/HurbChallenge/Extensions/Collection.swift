@@ -13,6 +13,12 @@ import Foundation
  */
 extension Collection {
     
+    /**
+     Retorna o elemento no indice especifidado, se existir.
+     
+     - parameter index: O índice do elemento desejado
+     - returns: O elemento no indice especificado, se existir
+    */
     subscript (safe index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
     }
