@@ -1,0 +1,67 @@
+{
+    "sku": "OMN-9025-0-0-0-0-0-1",
+    "isHotel": true,
+    "category": "hotel",
+    "smallDescription": "Surge um diferencial em pousadas, onde você irá encontrar um ambiente familiar, seguro, aconchegante e acomodações amplas e confortáveis. Há o compromisso de priorizar uma estadia prazerosa, a fim de que se sinta como extensão de seu lar, não importando o",
+    "amenities": [
+        {
+            "name": "Internet Banda Larga",
+            "category": "Diversos"
+        }
+    ],
+    "id": "AT529344",
+    "price": {
+        "currency": "BRL",
+        "currency_original": "BRL",
+        "current_price": 204.59,
+        "old_price": 0,
+        "sku": "OMN-9025-0-0-0-0-0-0",
+        "originalAmountPerDay": 0,
+        "amountPerDay": 204.59,
+        "amount": 204.59
+    },
+    "hu_free_cancellation": false,
+    "image": "http://media.omnibees.com/Images/9025/Property/409925.jpg",
+    "name": "Icarai Suites",
+    "url": "https://www.hurb.com/hoteis/niteroi/icarai-suites-OMN-9025",
+    "description": "Surge um diferencial em pousadas, onde você irá encontrar um ambiente familiar, seguro, aconchegante e acomodações amplas e confortáveis. Há o compromisso de priorizar uma estadia prazerosa, a fim de que se sinta como extensão de seu lar, não importando o seu tempo de permanência.\r\nA POUSADA ICARAÍ SUÍTES possui oito maravilhosas suítes e uma escada leva você a uma área silvestre aberta, cercada de muito verde, onde é servido o café da manhã, além de ser um perfeito lugar para descansar ou proporcionar uma reunião com os amigos. \r\nA localização é no bairro nobre de Icaraí, a apenas alguns passos da praia, conhecida pela prática de esportes e a maravilhosa vista da cidade do Rio de Janeiro. Possui fácil acesso a importantes vias da cidade e atrativos turísticos de Niterói ou do Rio de Janeiro. \r\nSe você deseja conhecer o polo gastronômico de Niterói, estamos na mesma rua dos principais bares e restaurantes. Ficará encantado com os mais diversos tipos de comida, petiscos, bebidas e muita gente bonita. Vale conferir!",
+    "stars": 1,
+    "gallery": [
+        {
+            "description": "",
+            "url": "http://media.omnibees.com/Images/9025/Property/409925.jpg"
+        }
+    ],
+    "address": {
+        "city": "Niteroi",
+        "country": "Brasil",
+        "id_atlas_city": null,
+        "id_atlas_country": null,
+        "id_atlas_neighborhood": null,
+        "id_atlas_state": null,
+        "id_city": 330330,
+        "id_country": 1,
+        "id_state": 33,
+        "state": "Rio de Janeiro",
+        "street": "Rua Mariz e Barros, 147 ",
+        "zipcode": "24220120",
+        "geoLocation": {
+            "lat": -22.9080913,
+            "lon": -43.1070286
+        }
+    },
+    "tags": [],
+    "quantityDescriptors": {
+        "maxChildren": 10,
+        "maxAdults": 10,
+        "maxFreeChildrenAge": 17
+    },
+    "featuredItem": {
+        "amenities": [
+            "Ar Condicionado"
+        ],
+        "name": "Quarto Duplo",
+        "image": "http://media.omnibees.com/Images/9025/RoomTypes/413193.jpg",
+        "description": "Tamanho do quarto 18 m²\r\rEste Quarto com Cama de Casal ou 2 de Solteiro tem ar-condicionado, frigobar e TV a cabo."
+    }
+    }
