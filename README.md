@@ -18,7 +18,7 @@ O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Jane
 
 `GET https://www.hurb.com/search/api/suggestion?q=grama` (Opcional)
 
-**Exemplo de resposta:**
+**Exemplo de resposta /search:**
 
 ```js
 {
@@ -258,6 +258,7 @@ O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Jane
     }
 }
 ```
+_Faça a requisição para obter o Payload completo._
 
 ## Requisitos Mínimos
 - Forkar esse desafio e criar o seu projeto (ou workspace) usando a sua versão desse repositório, tão logo acabe o desafio, submeta um *pull request*.
