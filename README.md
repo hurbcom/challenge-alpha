@@ -1,6 +1,10 @@
 # <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Desafio Alpha
 
-Crie um aplicativo para dispositivo móvel (**Objective-C**, **Swift**, **Kotlin**, **React Native**) que consuma o JSON exporto pela API de hotéis e o exiba usando uma _table view_. Você pode usar bibliotecas de terceiros para criar sua aplicação.
+Crie um aplicativo para dispositivo móvel (**Swift**, **Kotlin**, **React Native**, **Flutter**) que consuma o JSON exposto pela API de busca e apresente as informações em uma listagem. Você é livre para utiliar bibliotecas de terceiros. 
+
+**Atenção**: a apresentação em forma de listagem é apenas o requisito mínimo do desafio. Sinta-se livre para construir a sua solução. Exemplo: implementação de uma barra de busca com sugestões, detalhes de um certo produto, etc. 
+
+Queremos ver o **máximo da sua capacidade técnica**! Quem decide o limite é você.
 
 
 ## API
@@ -9,222 +13,285 @@ A URL a seguir entrega a listagem de resultados para a cidade de Búzios como um
 O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Janeiro que você precisará exibir.
 
 **URL:**
-`GET https://search.hotelurbano.com/api?q=Rio%20de%20Janeiro`
+`GET https://www.hurb.com/search/api?q=gramado&page=1`
 
 **Exemplo de resposta:**
 
 ```js
 {
     "meta": {
-        "count": 260,
+        "count": 193,
         "offset": 0,
-        "query": "Rio de Janeiro",
+        "query": "gramado",
         "warning": "results.price.current_price and results.price.old_price are deprecated",
         "countWithAvailabilityInPage": 0,
-        "responseTime": {
-            "searchEngine": 937,
-            "total": 1657
-        },
-        "countHotel": 237,
-        "countPackage": 23
+        "countHotel": 143,
+        "countPackage": 24,
+        "countTicket": 26,
+        "countBustrip": 0,
+        "countDisney": 0
     },
-    "results": [{
-        "sku": "NHU-4623-0-0-0-0",
-        "isHotel": true,
-        "category": "hotel",
-        "smallDescription": ".",
-        "amenities": [{
-                "name": "Quadra de tênis",
-                "category": "Atividades"
-            },
+    "filters": {
+        "amenities": [
             {
-                "name": "Piscina ao ar livre (o ano inteiro)",
-                "category": "Piscina e comodidades de bem-estar"
-            },
-            {
-                "name": "Sauna",
-                "category": "Piscina e comodidades de bem-estar"
-            },
-            {
-                "name": "Academia",
-                "category": "Piscina e comodidades de bem-estar"
-            },
-            {
-                "name": "Serviço diário de limpeza",
-                "category": "Serviços de limpeza / Lavanderia"
-            },
-            {
-                "name": "Recepção 24 horas",
-                "category": "Serviços de recepção"
-            },
-            {
-                "name": "Balcão de turismo",
-                "category": "Serviços de recepção"
-            },
-            {
-                "name": "Depósito de bagagens",
-                "category": "Serviços de recepção"
-            },
-            {
-                "name": "Business center",
-                "category": "Comodidades / Instalações para negócios"
-            },
-            {
-                "name": "Quartos não fumantes",
-                "category": "Diversos"
-            },
-            {
-                "name": "Ar-condicionado",
-                "category": "Diversos"
-            },
-            {
-                "name": "Jardim",
-                "category": "Áreas comuns"
-            },
-            {
-                "name": "Aparelho TV",
-                "category": "Acomodação"
-            },
-            {
-                "name": "Ar-Condicionado",
-                "category": "Acomodação"
-            },
-            {
-                "name": "Banheiro",
-                "category": "Acomodação"
-            },
-            {
-                "name": "Frigobar",
-                "category": "Acomodação"
-            },
-            {
-                "name": "Piso",
-                "category": "Acomodação"
-            },
-            {
-                "name": "Telefone",
-                "category": "Acomodação"
-            },
-            {
-                "name": "TV por cabo",
-                "category": "Acomodação"
+                "term": "Academia de ginástica gratuita",
+                "filter": "amenity_academia_de_ginastica_gratuita|1",
+                "count": 28
             }
         ],
-        "id": "HU4623",
-        "price": {
-            "current_price": 155.84,
-            "old_price": 300,
-            "sku": "NHU-4623-0-0-0-0",
-            "originalAmountPerDay": 300,
-            "amountPerDay": 155.84,
-            "amount": 155.84
-        },
-        "image": "https://d1wawz8va1fvss.cloudfront.net/reservas/prod0/4/4623/54fdde003ccb5_41762396.jpg",
-        "name": "Barra Flat",
-        "url": "https://www.hu.com.br/hoteis/rio-de-janeiro/barra-premium-4623",
-        "description": "Locação direto da Rio Apart Hoteis, não fazendo parte da administração da rede hoteleira que funciona no mesmo prédio. Troca de toalhas de 3 em 3 dias. Sem café da manhã incluso. Terá acesso normal a todas as áreas comuns do Prédio.",
-        "stars": 3,
-        "gallery": [{
-                "description": "A 750 m do shopping Rio Design",
-                "url": "https://d1wawz8va1fvss.cloudfront.net/reservas/prod0/4/4623/54fdde003ccb5_41762396.jpg"
-            },
+        "attributes": [
             {
-                "description": "",
-                "url": "https://d1wawz8va1fvss.cloudfront.net/reservas/prod0/4/4623/54fdddece38af_41748326.jpg"
-            },
-            {
-                "description": "",
-                "url": "https://d1wawz8va1fvss.cloudfront.net/reservas/prod0/4/4623/54fdddf0a2fa2_41752452.jpg"
-            },
-            {
-                "description": "",
-                "url": "https://d1wawz8va1fvss.cloudfront.net/reservas/prod0/4/4623/5693c7b050bfd_barra-premium.JPG"
-            },
-            {
-                "description": "",
-                "url": "https://d1wawz8va1fvss.cloudfront.net/reservas/prod0/4/4623/5693c7b1b6538_barra-premium.JPG"
-            },
-            {
-                "description": "",
-                "url": "https://d1wawz8va1fvss.cloudfront.net/reservas/prod0/4/4623/5693c7b4975ef_barra-premium.JPG"
+                "term": "Acessibilidade",
+                "filter": "attribute_acessibilidade|1",
+                "count": 3
             }
         ],
-        "address": {
-            "city": "Rio de Janeiro",
-            "country": "Brasil",
-            "state": "Rio de Janeiro",
-            "street": "Rua Malibu,",
-            "zipcode": "22793-295",
-            "geoLocation": {
-                "lat": -23.0016013,
-                "lon": -43.3920804
+        "countries": [
+            {
+                "term": "Brasil",
+                "filter": "country_brasil|1",
+                "count": 193
             }
-        },
-        "tags": [
-            "reveillon",
-            "Saldão 10 OFF",
-            "Turismo Historico - Sudeste",
-            "Pascoa - Sudeste",
-            "Tiradentes - Sudeste",
-            "Dia do Trabalho - Sudeste",
-            "Corpus Christi - Sudeste",
-            "Dia da Independência - Sudeste",
-            "Dia das Crianças - Sudeste",
-            "super-blacktrip"
         ],
-        "quantityDescriptors": {
-            "maxChildren": 0,
-            "maxAdults": 2,
-            "maxFreeChildrenAge": 0
+        "cities": [
+            {
+                "term": "Campos dos Goytacazes",
+                "filter": "city_campos_dos_goytacazes|1,state_rio_de_janeiro|1",
+                "count": 1
+            }
+        ],
+        "departureCities": [
+            {
+                "term": "Aracaju",
+                "filter": "departurecity_aracaju|1",
+                "count": 1
+            }
+        ],
+        "district": [
+            {
+                "term": "Alpes Verdes, Canela",
+                "filter": "neighborhood_alpes_verdes|1,city_canela|1",
+                "count": 1
+            }
+        ],
+        "neighborhood": [
+            {
+                "term": "Alpes Verdes, Canela",
+                "filter": "neighborhood_alpes_verdes|1,city_canela|1",
+                "count": 1
+            }
+        ],
+        "duration": [
+            {
+                "term": "1 diária",
+                "filter": "duration_1_diaria|1",
+                "count": 26
+            }
+        ],
+        "food": [
+            {
+                "term": "Almoço",
+                "filter": "food_almoco|1",
+                "count": 1
+            }
+        ],
+        "people": [
+            {
+                "term": "1",
+                "filter": "total_people_1|1",
+                "count": 49
+            }
+        ],
+        "prices": [
+            {
+                "min": 0,
+                "maxExclusive": 300,
+                "filter": "pricegroup_1|1",
+                "count": 120
+            }
+        ],
+        "priceInterval": {
+            "min": 1800,
+            "max": 300300,
+            "filterPattern": "price_[min|max]_[value]"
         },
-        "featuredItem": {
+        "productType": [
+            {
+                "term": "hospedagem",
+                "filter": "product_type_hospedagem|1",
+                "count": 24
+            }
+        ],
+        "regulation": [
+            {
+                "term": "accessibility_no",
+                "filter": "regulation_accessibility_no|1",
+                "count": 50
+            }
+        ],
+        "rooms": [
+            {
+                "term": "Standard",
+                "filter": "room_standard|1",
+                "count": 13
+            }
+        ],
+        "stars": [
+            {
+                "term": "1",
+                "filter": "stars_1|1",
+                "count": 1
+            }
+        ],
+        "states": [
+            {
+                "term": "Rio de Janeiro",
+                "filter": "state_rio_de_janeiro|1,country_brasil|1",
+                "count": 2
+            }
+        ]
+    },
+    "results": [
+        {
+            "sku": "OMN-2762-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Klein Ville Gramado te espera com uma ótima estrutura projetada para oferecer conforto e tranquilidade. O hotel possui a sua disposição uma equipe treinada e capacitada para bem atendê-lo. Todos os apartamentos são equipados com internet, telefone, TV a",
             "amenities": [
-                "Aparelho TV",
-                "Ar-Condicionado",
-                "Banheiro",
-                "Frigobar",
-                "Internet WiFi",
-                "Serviço de despertador",
-                "Telefone",
-                "TV por cabo",
-                "Varanda / Sacada"
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Recepção 24 horas",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Estacionamento",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                }
             ],
-            "name": "Flat para duas pessoas - Sem café",
-            "image": "https://d1wawz8va1fvss.cloudfront.net/reservas/prodaccommodation/13271/41749764.jpg",
-            "description": "Flat de 32m² com varanda, ar-condicionado, TV LCD com canais a cabo e minibar. Sem café da manhã. Troca da roupa de banho de 3 em 3 dias."
-        },
-        "goodDates": [{
-            "checkin": "2017-12-22",
-            "checkout": "2017-12-26",
-            "name": "Natal",
-            "image": "https://d1wawz8va1fvss.cloudfront.net/reservas/prod/eventos/desktop/648/595fca1e93a1f_Natal-Desktop (1).jpg",
-            "price": 722.08
-        }]
-    }]
+            "id": "AT648",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 194.04,
+                "old_price": 194.04,
+                "sku": "OMN-2762-0-0-0-0-0-0",
+                "originalAmountPerDay": 194.04,
+                "amountPerDay": 194.04,
+                "amount": 194.04
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/648/hotel-klein-ville-gramado-001_20181127120123_20190625175541.jpg",
+            "name": "Hotel Klein Ville Gramado",
+            "url": "https://www.hurb.com/hoteis/gramado/hotel-klein-ville-gramado-OMN-2762",
+            "description": "O Hotel Klein Ville Gramado te espera com uma ótima estrutura projetada para oferecer conforto e tranquilidade. O hotel possui a sua disposição uma equipe treinada e capacitada para bem atendê-lo. Todos os apartamentos são equipados com internet, telefone, TV a Cabo, ar condicionado, cama box, frigobar, cofre e mesa de trabalho, além de uma decoração contemporânea e charmosa. Além de todo o conforto será possível desfrutar de uma farto e delicioso café da manhã, estilo colonial. No Hotel Klein Ville Gramado \" entre como hóspede e saia como amigo!\" \r\nQuer viajar em grupo? o HU te leva! Grupos a partir de 8 quartos podem solicitar cotações especiais! Basta entrar em contato pelo email grupohu@hotelurbano.com.br  ",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/648/hotel-klein-ville-gramado-001_20181127120123_20190625175541.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/2762/Property/125224.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/2762/Property/306273.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/2762/Property/306274.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/2762/Property/306275.jpg"
+                }
+            ],
+            "address": {
+                "city": "Gramado",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 430910,
+                "id_country": 1,
+                "id_state": 43,
+                "state": "Rio Grande do Sul",
+                "street": "Rua Itapeva, 59 Carniel",
+                "zipcode": "95670000",
+                "geoLocation": {
+                    "lat": -29.3596688,
+                    "lon": -50.8557461
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [],
+                "name": "LUXO",
+                "image": "http://media.omnibees.com/Images/2762/RoomTypes/306260.jpg",
+                "description": "- Ar condicionado; \r- Mini bar; \r- Secador de cabelo; \r- Cofre; \r- Wi-fi grátis; \r- TV a cabo; "
+            }
+        }
+    ],
+    "pagination": {
+        "count": 10,
+        "firstPage": "http://searchapi/v2/search?q=gramado&page=1",
+        "nextPage": "http://searchapi/v2/search?q=gramado&page=2",
+        "previousPage": null,
+        "lastPage": "http://searchapi/v2/search?q=gramado&page=10"
+    }
 }
 ```
 
-## Requisitos
+## Requisitos Mínimos
 - Forkar esse desafio e criar o seu projeto (ou workspace) usando a sua versão desse repositório, tão logo acabe o desafio, submeta um *pull request*.
+
 - Faça chamadas assíncronas para a API e emita um log dos dados recebidos.
+
 - Ler o resultado do JSON e colocar numa lista chamada `Hotels`.
+
 - Exibir os itens de `Hotels` numa UITableView ou UICollectionView (como no iOS, por exemplo). Cada célula vai representar um ítem de `Hotels`e deve mostrar seu nome, preço, cidade, estado, uma foto  e três amenidades.
+
 - Agrupar as células (usando um título para separá-las) pela quantidade de estrelas. Caso não exista estrelas, agrupe em *Pacotes*.
   - Deve estar ordena descrentemente pela quantidade de estrelas.
+
 - Ter testes para o código criado
 
 
 ## Critério de avaliação
 
 - **Organização do código**: Separação de módulos, view e model, back-end e front-end
+
 - **Clareza**: O README explica de forma resumida qual é o problema e como pode rodar a aplicação?
-- **Acertividade**: A aplicação está fazendo o que é esperado? Se tem algo faltando, o README explica o porquê?
+
+- **Assertividade**: A aplicação está fazendo o que é esperado? Se tem algo faltando, o README explica o porquê?
+
 - **Legibilidade do código** (incluindo comentários)
+
 - **Segurança**: Existe alguma vulnerabilidade clara?
+
 - **Cobertura de testes** (Não esperamos cobertura completa)
+
 - **Histórico de commits** (estrutura e qualidade)
+
 - **UX**: A interface é de fácil uso e auto-explicativa? A API é intuitiva?
+
 - **Escolhas técnicas**: A escolha das bibliotecas, banco de dados, arquitetura, etc, é a melhor escolha para a aplicação?
+
+- **"Algo a mais"**: Foi adicionada alguma feature não descrita nos requisitos mínimos? Ela foi bem executada? Traz alguma inovação interessante?
 
 ## Dúvidas
 
