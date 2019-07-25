@@ -13,7 +13,10 @@ A URL a seguir entrega a listagem de resultados para a cidade de Búzios como um
 O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Janeiro que você precisará exibir.
 
 **URL:**
-`GET https://www.hurb.com/search/api?q=gramado&page=1`
+
+`GET https://www.hurb.com/search/api?q=gramado&page=1` (Obrigatória)
+
+`GET https://www.hurb.com/search/api/suggestion?q=grama` (Opcional)
 
 **Exemplo de resposta:**
 
