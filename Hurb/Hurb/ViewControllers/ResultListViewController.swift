@@ -85,14 +85,6 @@ class ResultListViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setNeedsStatusBarAppearanceUpdate()
-    }
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return .lightContent
-    }
-    
 }
 
 extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -106,6 +98,10 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
             return hotelData.count
         }
         return 0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Defines.LIST_HEADER[section]
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

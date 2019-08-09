@@ -8,11 +8,13 @@ target 'Hurb' do
   # Pods for Hurb
   pod 'SwiftyJSON'
   pod 'Alamofire'
-  pod 'PromisesSwift'
   pod 'SVProgressHUD'
   pod 'SDWebImage'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'ImageSlideshow'
+  pod 'ImageSlideshow/SDWebImage'
+  
 
   target 'HurbTests' do
     inherit! :search_paths

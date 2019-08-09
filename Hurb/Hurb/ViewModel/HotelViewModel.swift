@@ -56,6 +56,10 @@ class HotelViewModel {
         return hotel.amenities ?? []
     }
     
+    var gallery: [Gallery] {
+        return hotel.gallery ?? []
+    }
+    
     var priceDescription: String {
         if let isHotel = hotel.isHotel {
             return isHotel ? "Diárias a partir de" : "A partir de"

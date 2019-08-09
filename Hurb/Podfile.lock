@@ -1,8 +1,16 @@
 PODS:
   - Alamofire (4.8.2)
-  - PromisesObjC (1.2.8)
-  - PromisesSwift (1.2.8):
-    - PromisesObjC (= 1.2.8)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - ImageSlideshow (1.8.0):
+    - ImageSlideshow/Core (= 1.8.0)
+  - ImageSlideshow/Alamofire (1.8.0):
+    - AlamofireImage (~> 3.0)
+    - ImageSlideshow/Core
+  - ImageSlideshow/Core (1.8.0)
+  - ImageSlideshow/SDWebImage (1.8.0):
+    - ImageSlideshow/Core
+    - SDWebImage (>= 3.7)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -17,7 +25,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - PromisesSwift
+  - ImageSlideshow
+  - ImageSlideshow/Alamofire
+  - ImageSlideshow/SDWebImage
   - RxCocoa
   - RxSwift
   - SDWebImage
@@ -25,10 +35,10 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
-    - PromisesObjC
-    - PromisesSwift
+    - AlamofireImage
+    - ImageSlideshow
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -38,8 +48,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
-  PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
@@ -47,6 +57,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 75f8a65d0e08801a050e49eae419ba244ea93e2d
+PODFILE CHECKSUM: f8b24a40c7816a7a31079ce89c2dcc3e1c187a85
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.0.beta.1
