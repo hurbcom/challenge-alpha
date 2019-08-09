@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '11.0'
+
+target 'Hurb' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Hurb
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
+  pod 'PromisesSwift'
+  pod 'SVProgressHUD'
+  pod 'SDWebImage'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
+  target 'HurbTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'HurbUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
