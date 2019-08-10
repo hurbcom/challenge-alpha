@@ -115,7 +115,7 @@ extension HotelDetailViewController: ImageSlideshowDelegate {
         var sources: [SDWebImageSource] = []
         
         for image in hotelViewModel.gallery {
-            let sdWebImageSource = SDWebImageSource(urlString: image.url!, placeholder: UIImage(named: "placeholderImage"))!
+            let sdWebImageSource = SDWebImageSource(urlString: image.url!.convertStringToUrlString, placeholder: UIImage(named: "placeholderImage"))!
             sources.append(sdWebImageSource)
         }
         

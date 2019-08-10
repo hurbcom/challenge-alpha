@@ -15,7 +15,7 @@ class APIRouter {
         var urlComponents = URLComponents(string: Defines.BASE_URL)!
         
         urlComponents.queryItems = [
-            URLQueryItem(name: "q", value: place.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)),
+            URLQueryItem(name: "q", value: place.convertStringToUrlString),
             URLQueryItem(name: "sort", value: "stars"),
             URLQueryItem(name: "page", value: "\(page)")
         ]

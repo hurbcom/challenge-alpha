@@ -1,12 +1,7 @@
 PODS:
   - Alamofire (4.8.2)
-  - AlamofireImage (3.5.2):
-    - Alamofire (~> 4.8)
   - ImageSlideshow (1.8.0):
     - ImageSlideshow/Core (= 1.8.0)
-  - ImageSlideshow/Alamofire (1.8.0):
-    - AlamofireImage (~> 3.0)
-    - ImageSlideshow/Core
   - ImageSlideshow/Core (1.8.0)
   - ImageSlideshow/SDWebImage (1.8.0):
     - ImageSlideshow/Core
@@ -26,7 +21,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - ImageSlideshow
-  - ImageSlideshow/Alamofire
   - ImageSlideshow/SDWebImage
   - RxCocoa
   - RxSwift
@@ -35,9 +29,8 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
-    - AlamofireImage
     - ImageSlideshow
     - RxCocoa
     - RxRelay
@@ -48,7 +41,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
@@ -57,6 +49,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: f8b24a40c7816a7a31079ce89c2dcc3e1c187a85
+PODFILE CHECKSUM: 3063888080818278de776e281c7752ebfd340746
 
-COCOAPODS: 1.8.0.beta.1
+COCOAPODS: 1.7.5

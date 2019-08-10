@@ -18,6 +18,7 @@ class ResultListViewController: UIViewController {
     //MARK: - Properties
     private let resultCell = "resultCell"
     private let disposeBag = DisposeBag()
+    private var searchText: String = Defines.DEFAULT_PLACE
     private var resultListViewModel = ResultListViewModel(place: Defines.DEFAULT_PLACE)
     private var results: [TableSection: [Hotel]] = [:]
     private var lastContentOffset: CGFloat = 0
@@ -118,6 +119,13 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: resultCell, for: indexPath) as! ResultCell
+
+        var rowNumber = indexPath.row
+        for i in 0..<indexPath.section {
+            rowNumber += self.tableView.numberOfRows(inSection: i)
+        }
+        print(rowNumber)
+         _ = resultListViewModel[rowNumber]
         
         if let tableSection = TableSection(rawValue: indexPath.section), let hotel = results[tableSection]?[indexPath.row] {
             cell.hotel = HotelViewModel(hotel)
@@ -160,5 +168,24 @@ extension ResultListViewController: UIScrollViewDelegate {
 //            }
         }
         
+    }
+}
+
+extension ResultListViewController: UISearchControllerDelegate, UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchText = searchText
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchText.count > 3 {
+            self.dismissKeyboard()
+            self.results = [:]
+            self.resultListViewModel.removeAll()
+            resultListViewModel = ResultListViewModel(place: searchText)
+            self.setupSearchHotelsViewModelObserver()
+        } else {
+            self.present(showAlert(mensagem: "Por favor, digite ao menos 3 caracteres"), animated: true, completion: nil)
+        }
     }
 }

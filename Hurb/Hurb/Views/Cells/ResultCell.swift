@@ -39,14 +39,21 @@ class ResultCell: UITableViewCell {
     fileprivate func updateUI() {
         lbCity.text = hotel.cityState
         lbName.text = hotel.name
-        imgPhoto.sd_setImage(with: hotel.imageUrl, placeholderImage: UIImage(named: "placeholderImage"), options: [.continueInBackground], completed: nil)
+        
+        if hotel.imageUrl == nil {
+            if let firstImageGallery = hotel.gallery.first {
+                imgPhoto.sd_setImage(with: URL(string: firstImageGallery.url!), placeholderImage: UIImage(named: "placeholderImage"), options: [.continueInBackground], completed: nil)
+            }
+        } else {
+            imgPhoto.sd_setImage(with: hotel.imageUrl, placeholderImage: UIImage(named: "placeholderImage"), options: [.continueInBackground], completed: nil)
+        }
         
         setStars()
         vwFreeCancellation.isHidden = !hotel.isFreeCancellation
         
         setAmenities()
         lbPriceDescription.text = hotel.priceDescription
-        lbPrice.text = hotel.price
+        lbPrice.text = hotel.price 
         
     }
     
@@ -67,7 +74,11 @@ class ResultCell: UITableViewCell {
     fileprivate func setAmenities() {
         vwAmenities.isHidden = hotel.amenities.count == 0
         lbAmenitiesTotal.text = "\(hotel.amenities.count) Amenidades"
-        lbAmenities.text = hotel.amenities.compactMap({"◆ \($0.name ?? "")"})[0..<3].joined(separator: "\n")
+        if hotel.amenities.count < 3 {
+            lbAmenities.text = hotel.amenities.compactMap({"◆ \($0.name ?? "")"})[0..<hotel.amenities.count].joined(separator: "\n")
+        } else {
+            lbAmenities.text = hotel.amenities.compactMap({"◆ \($0.name ?? "")"})[0..<3].joined(separator: "\n")
+        }
     }
     
 }

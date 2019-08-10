@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		84E2FFEEF5207C4969B34C8C /* Pods_Hurb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8579635BAD3B741773CA035 /* Pods_Hurb.framework */; };
+		8D29E2D422FF1D9300379F9B /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2D322FF1D9300379F9B /* Extensions+UIViewController.swift */; };
+		8D29E2D622FF257C00379F9B /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2D522FF257C00379F9B /* Extensions+String.swift */; };
 		8D741A9822FC539800CC2D77 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9722FC539800CC2D77 /* ResultListViewController.swift */; };
 		8D741A9A22FC56DE00CC2D77 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9922FC56DE00CC2D77 /* Page.swift */; };
 		8D741A9C22FC584900CC2D77 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9B22FC584900CC2D77 /* Meta.swift */; };
@@ -58,6 +60,8 @@
 		48DD124EEB69B395EA3F7182 /* Pods_HurbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HurbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6924E27613AB40D5AADCCE92 /* Pods-Hurb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb.release.xcconfig"; path = "Target Support Files/Pods-Hurb/Pods-Hurb.release.xcconfig"; sourceTree = "<group>"; };
 		79CBF9A79FAAF4AE1D011697 /* Pods-HurbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbTests.release.xcconfig"; path = "Target Support Files/Pods-HurbTests/Pods-HurbTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D29E2D322FF1D9300379F9B /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
+		8D29E2D522FF257C00379F9B /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
 		8D741A9722FC539800CC2D77 /* ResultListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListViewController.swift; sourceTree = "<group>"; };
 		8D741A9922FC56DE00CC2D77 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		8D741A9B22FC584900CC2D77 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				8DC0E85422FC4F4E006A046E /* Assets.xcassets */,
 				8D741AA822FC639500CC2D77 /* Colors.xcassets */,
 				8D741AAD22FC8BE300CC2D77 /* Defines.swift */,
+				8D29E2D322FF1D9300379F9B /* Extensions+UIViewController.swift */,
+				8D29E2D522FF257C00379F9B /* Extensions+String.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -515,8 +521,10 @@
 				8D741AB022FC9D0E00CC2D77 /* APIClient.swift in Sources */,
 				8D741AA022FC595100CC2D77 /* Filters.swift in Sources */,
 				8D741AA222FC5ABB00CC2D77 /* Hotel.swift in Sources */,
+				8D29E2D422FF1D9300379F9B /* Extensions+UIViewController.swift in Sources */,
 				8D741A9822FC539800CC2D77 /* ResultListViewController.swift in Sources */,
 				8D741ABC22FCB32B00CC2D77 /* Connectivity.swift in Sources */,
+				8D29E2D622FF257C00379F9B /* Extensions+String.swift in Sources */,
 				8D741AB422FCA4B400CC2D77 /* HotelViewModel.swift in Sources */,
 				8D741AAE22FC8BE300CC2D77 /* Defines.swift in Sources */,
 				8D741A9A22FC56DE00CC2D77 /* Page.swift in Sources */,

@@ -16,4 +16,5 @@ class Utils {
         formatter.numberStyle = .currency
         return formatter.string(from: number as NSNumber) ?? ""
     }
+    
 }

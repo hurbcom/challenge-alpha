@@ -38,13 +38,19 @@ class ResultListViewModel {
         fetchMoreHotels(place: place)
     }
     
+    func removeAll() {
+        hotelList = BehaviorRelay<[Hotel]>(value: [])
+    }
+    
     //MARK: - Fatch more hotels
     private func fetchMoreHotels(place: String) {
         page = page + 1
         APIClient.searchHotels(by: place, page: page) { [unowned self] result in
             switch result {
             case .success(let page):
-                self.hotelList.accept(self.hotelList.value + page.results!)
+                if let pageResult = page.results {
+                    self.hotelList.accept(self.hotelList.value + pageResult)
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }

@@ -14,12 +14,11 @@ class HotelViewModel {
     //MARK: - Variables
     private let hotel: Hotel
     
-    
-    
     //MARK: - Init
     init(_ hotel: Hotel) {
         self.hotel = hotel
     }
+    
     
     //MARK: - Hotel properties
     var name: String {
@@ -43,7 +42,7 @@ class HotelViewModel {
     
     var imageUrl: URL? {
         if let image = hotel.image {
-            return URL(string: image)
+            return URL(string: image.convertStringToUrlString)
         }
         return nil
     }
@@ -72,7 +71,11 @@ class HotelViewModel {
             if let currentPrice = price.currentPrice {
                 return Utils.convertDoubleToCurrencyString(number: currentPrice)
             }
+            if let amountPrice = price.amount {
+                return Utils.convertDoubleToCurrencyString(number: amountPrice)
+            }
         }
+        
         return ""
     }
 }
