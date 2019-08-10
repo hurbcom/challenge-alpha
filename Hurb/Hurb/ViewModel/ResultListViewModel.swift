@@ -45,14 +45,16 @@ class ResultListViewModel {
     //MARK: - Fatch more hotels
     private func fetchMoreHotels(place: String) {
         page = page + 1
-        APIClient.searchHotels(by: place, page: page) { [unowned self] result in
-            switch result {
-            case .success(let page):
-                if let pageResult = page.results {
-                    self.hotelList.accept(self.hotelList.value + pageResult)
+        APIClient.searchHotels(by: place, page: page) { [weak self] result in
+            if let strongSelf = self {
+                switch result {
+                case .success(let page):
+                    if let pageResult = page.results {
+                        strongSelf.hotelList.accept(strongSelf.hotelList.value + pageResult)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
     }

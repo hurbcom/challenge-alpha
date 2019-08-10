@@ -10,6 +10,9 @@
 		84E2FFEEF5207C4969B34C8C /* Pods_Hurb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8579635BAD3B741773CA035 /* Pods_Hurb.framework */; };
 		8D29E2D422FF1D9300379F9B /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2D322FF1D9300379F9B /* Extensions+UIViewController.swift */; };
 		8D29E2D622FF257C00379F9B /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2D522FF257C00379F9B /* Extensions+String.swift */; };
+		8D29E2D822FF35FC00379F9B /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2D722FF35FC00379F9B /* Suggestion.swift */; };
+		8D29E2DA22FF398E00379F9B /* SuggestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2D922FF398E00379F9B /* SuggestionViewModel.swift */; };
+		8D29E2DD22FF54FD00379F9B /* aroundTheWorld.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D29E2DC22FF54FC00379F9B /* aroundTheWorld.json */; };
 		8D741A9822FC539800CC2D77 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9722FC539800CC2D77 /* ResultListViewController.swift */; };
 		8D741A9A22FC56DE00CC2D77 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9922FC56DE00CC2D77 /* Page.swift */; };
 		8D741A9C22FC584900CC2D77 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9B22FC584900CC2D77 /* Meta.swift */; };
@@ -62,6 +65,9 @@
 		79CBF9A79FAAF4AE1D011697 /* Pods-HurbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbTests.release.xcconfig"; path = "Target Support Files/Pods-HurbTests/Pods-HurbTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D29E2D322FF1D9300379F9B /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		8D29E2D522FF257C00379F9B /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
+		8D29E2D722FF35FC00379F9B /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		8D29E2D922FF398E00379F9B /* SuggestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewModel.swift; sourceTree = "<group>"; };
+		8D29E2DC22FF54FC00379F9B /* aroundTheWorld.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = aroundTheWorld.json; sourceTree = "<group>"; };
 		8D741A9722FC539800CC2D77 /* ResultListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListViewController.swift; sourceTree = "<group>"; };
 		8D741A9922FC56DE00CC2D77 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		8D741A9B22FC584900CC2D77 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -123,6 +129,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D29E2DB22FF54ED00379F9B /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				8D29E2DC22FF54FC00379F9B /* aroundTheWorld.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		8D741A9422FC52BB00CC2D77 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +163,7 @@
 				8D741A9D22FC588000CC2D77 /* Pagination.swift */,
 				8D741A9F22FC595100CC2D77 /* Filters.swift */,
 				8D741AA122FC5ABB00CC2D77 /* Hotel.swift */,
+				8D29E2D722FF35FC00379F9B /* Suggestion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +187,7 @@
 		8D741AA722FC636500CC2D77 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				8D29E2DB22FF54ED00379F9B /* Animations */,
 				8DC0E85422FC4F4E006A046E /* Assets.xcassets */,
 				8D741AA822FC639500CC2D77 /* Colors.xcassets */,
 				8D741AAD22FC8BE300CC2D77 /* Defines.swift */,
@@ -196,6 +212,7 @@
 			children = (
 				8D741AB322FCA4B400CC2D77 /* HotelViewModel.swift */,
 				8D741AB922FCAFFB00CC2D77 /* ResultListViewModel.swift */,
+				8D29E2D922FF398E00379F9B /* SuggestionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -396,6 +413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D29E2DD22FF54FD00379F9B /* aroundTheWorld.json in Resources */,
 				8DC0E85822FC4F4E006A046E /* LaunchScreen.storyboard in Resources */,
 				8D741AA922FC639500CC2D77 /* Colors.xcassets in Resources */,
 				8DC0E85522FC4F4E006A046E /* Assets.xcassets in Resources */,
@@ -513,10 +531,12 @@
 				8D741A9C22FC584900CC2D77 /* Meta.swift in Sources */,
 				8D741ABE22FCCCA100CC2D77 /* HotelDetailViewController.swift in Sources */,
 				8D741ABA22FCAFFB00CC2D77 /* ResultListViewModel.swift in Sources */,
+				8D29E2D822FF35FC00379F9B /* Suggestion.swift in Sources */,
 				8D741AB222FC9EB300CC2D77 /* APIRouter.swift in Sources */,
 				8DC0E84E22FC4F4B006A046E /* AppDelegate.swift in Sources */,
 				8D741AB822FCA8C400CC2D77 /* Utils.swift in Sources */,
 				8D741AA622FC604D00CC2D77 /* ResultCell.swift in Sources */,
+				8D29E2DA22FF398E00379F9B /* SuggestionViewModel.swift in Sources */,
 				8D741A9E22FC588000CC2D77 /* Pagination.swift in Sources */,
 				8D741AB022FC9D0E00CC2D77 /* APIClient.swift in Sources */,
 				8D741AA022FC595100CC2D77 /* Filters.swift in Sources */,

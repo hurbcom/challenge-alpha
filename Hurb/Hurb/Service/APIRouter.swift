@@ -28,4 +28,20 @@ class APIRouter {
         return request as URLRequestConvertible
     }
     
+    static func getSuggestions(by place: String) -> URLRequestConvertible {
+        
+        var urlComponents = URLComponents(string: Defines.SUGGESTION_URL)!
+        
+        urlComponents.queryItems = [
+            URLQueryItem(name: "q", value: place.convertStringToUrlString),
+        ]
+        
+        var request = URLRequest(url: urlComponents.url!)
+        request.httpMethod = "GET"
+        request.timeoutInterval = 20
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        return request as URLRequestConvertible
+    }
+    
 }

@@ -6,6 +6,7 @@ target 'Hurb' do
   use_frameworks!
 
   # Pods for Hurb
+  pod 'lottie-ios'
   pod 'SwiftyJSON'
   pod 'Alamofire'
   pod 'SVProgressHUD'
