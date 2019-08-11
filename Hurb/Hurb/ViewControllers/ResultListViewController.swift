@@ -40,12 +40,15 @@ class ResultListViewController: UIViewController {
     @IBOutlet weak var animationLoadingView: UIView!
     @IBOutlet weak var searchResultsView: UIView!
     @IBOutlet weak var noResultsView: UIView!
+    @IBOutlet weak var resultsView: UIView!
     
     @IBAction func cancelarBusca(_ sender: UIButton) {
         self.suggestions = []
         self.searchResultsView.isHidden = true
         self.searchBar.text = ""
         self.widthCancelSearchButton.constant = 0
+        self.searchBar.resignFirstResponder()
+        self.dismissKeyboard()
     }
     
     //MARK: - ViewController life cycle
@@ -60,20 +63,35 @@ class ResultListViewController: UIViewController {
         
         self.searchResultsView.isHidden = true
         self.navigationItem.title = "Busca: \(searchText)"
-        setupSearchHotelsViewModelObserver()
+        
+        
+        
+        
         
     }
     
     func loading() {
-        loadingView.isHidden = false
-        animationView = AnimationView(name: "aroundTheWorld")
-        animationView!.frame = CGRect(x: 0, y: 0, width: animationLoadingView.frame.size.width, height: animationLoadingView.frame.size.height)
-        animationView!.contentMode = .scaleAspectFit
-        animationView!.loopMode = .loop
-        animationLoadingView.addSubview(animationView!)
-        animationView!.play()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(continueAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        if !Reachability.isConnectedToNetwork(){
+            print("Internet Connection not Available!")
+            loadingView.isHidden = true
+            noResultsView.isHidden = false
+//            FirebaseAnalyticsHelper.isNotConnectedEventLogger()
+        }else{
+            print("Internet Connection Available!")
+            loadingView.isHidden = false
+            animationView = AnimationView(name: "aroundTheWorld")
+            animationView!.frame = CGRect(x: 0, y: 0, width: animationLoadingView.frame.size.width, height: animationLoadingView.frame.size.height)
+            animationView!.contentMode = .scaleAspectFit
+            animationView!.loopMode = .loop
+            animationLoadingView.addSubview(animationView!)
+            animationView!.play()
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(continueAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
+            
+            setupSearchHotelsViewModelObserver()
+        }
         
     }
     
@@ -95,11 +113,15 @@ class ResultListViewController: UIViewController {
                     self.results[.ZeroEstrelas] = hotels.filter({$0.stars == 0})
                     self.results[.Pacotes] = hotels.filter({$0.stars == nil})
                     
+                    print(hotels.count)
                     self.tableViewResults.reloadData()
 //                    self.tableView.unlock()
                     
-                    self.loadingView.isHidden = true
-                    self.animationView!.stop()
+                    if hotels.count > 0 {
+                        self.loadingView.isHidden = true
+                    } else {
+                        self.loadingView.isHidden = false
+                    }
                     
                     if self.resultListViewModel.count == 0 {
                         self.noResultsView.isHidden = false
@@ -194,7 +216,7 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
             for i in 0..<indexPath.section {
                 rowNumber += self.tableViewResults.numberOfRows(inSection: i)
             }
-            print(rowNumber)
+            
             _ = resultListViewModel[rowNumber]
             
             if let tableSection = TableSection(rawValue: indexPath.section), let hotel = results[tableSection]?[indexPath.row] {
@@ -231,6 +253,9 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == tableViewSuggestions {
             self.searchResultsView.isHidden = true
             
+            self.loadingView.isHidden = false
+            self.animationView?.play()
+            
             self.widthCancelSearchButton.constant = 0
             
             let suggestionViewModel = SuggestionViewModel(suggestions[indexPath.row])
@@ -251,33 +276,23 @@ extension ResultListViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         dismissKeyboard()
-        
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        
-        // Exibir/ocultar a barra de navegação enquanto usa o scroll
-        if (self.lastContentOffset > scrollView.contentOffset.y) {
-            navigationController?.setNavigationBarHidden(false, animated: true)
-        }
-        else if (self.lastContentOffset < scrollView.contentOffset.y && self.lastContentOffset > 0) {
-            navigationController?.setNavigationBarHidden(true, animated: true)
-        }
-        
-        // Chegando ao final do conteúdo, carregar próxima página
-        if offsetY > contentHeight - scrollView.frame.height * 1.1 {
-//            if service.hasMorePages {
-//                loadMorePages()
-//            }
-        }
-        
     }
 }
 
 extension ResultListViewController: UISearchControllerDelegate, UISearchBarDelegate {
     
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        self.widthCancelSearchButton.constant = 70
+        self.loadingView.isHidden = true
+        self.searchResultsView.isHidden = false
+        self.suggestions = []
+        self.tableViewSuggestions.reloadData()
+        return true
+    }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.widthCancelSearchButton.constant = 70
-        
+        self.loadingView.isHidden = true
         self.searchResultsView.isHidden = false
         self.suggestions = []
         self.tableViewSuggestions.reloadData()

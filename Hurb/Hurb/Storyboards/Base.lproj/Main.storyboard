@@ -25,7 +25,7 @@
                                     <searchBar contentMode="redraw" placeholder="Buscar" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4C-ji-rKv">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                         <color key="backgroundColor" name="corPrincipal"/>
-                                        <color key="tintColor" name="corSecundaria"/>
+                                        <color key="tintColor" name="corPrincipal"/>
                                         <color key="barTintColor" name="corPrincipal"/>
                                         <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -89,7 +89,7 @@ Por favor, tente novamente.</string>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="corSecundaria"/>
                                         <constraints>
                                             <constraint firstItem="34L-ET-io2" firstAttribute="leading" secondItem="fhC-da-mht" secondAttribute="leading" constant="40" id="0DT-7w-cI4"/>
                                             <constraint firstItem="34L-ET-io2" firstAttribute="centerY" secondItem="fhC-da-mht" secondAttribute="centerY" id="Mnv-2p-QF6"/>
@@ -464,7 +464,7 @@ Por favor, tente novamente.</string>
                                                 </connections>
                                             </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="corSecundaria"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Vuu-hE-4Ua" secondAttribute="trailing" id="3ij-gU-xK9"/>
                                             <constraint firstItem="Vuu-hE-4Ua" firstAttribute="top" secondItem="Jbk-IF-CWA" secondAttribute="top" id="Z7q-5L-SW5"/>
@@ -511,7 +511,7 @@ Por favor, tente novamente.</string>
                                                 </connections>
                                             </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="corSecundaria"/>
                                         <constraints>
                                             <constraint firstItem="DRt-sm-1Jo" firstAttribute="top" secondItem="Dey-Ik-a74" secondAttribute="top" id="E8I-YN-f08"/>
                                             <constraint firstAttribute="bottom" secondItem="DRt-sm-1Jo" secondAttribute="bottom" id="JaO-vx-cu6"/>
@@ -531,7 +531,7 @@ Por favor, tente novamente.</string>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="corSecundaria"/>
                                         <constraints>
                                             <constraint firstItem="A0o-AP-mgq" firstAttribute="centerY" secondItem="UpR-Wx-P1Y" secondAttribute="centerY" id="HOB-am-U0G"/>
                                             <constraint firstItem="A0o-AP-mgq" firstAttribute="centerX" secondItem="UpR-Wx-P1Y" secondAttribute="centerX" id="Zjs-sZ-VTo"/>
@@ -578,6 +578,7 @@ Por favor, tente novamente.</string>
                         <outlet property="animationLoadingView" destination="A0o-AP-mgq" id="lBv-D3-qWG"/>
                         <outlet property="loadingView" destination="UpR-Wx-P1Y" id="UmE-GX-HWE"/>
                         <outlet property="noResultsView" destination="fhC-da-mht" id="Nf7-Ba-caS"/>
+                        <outlet property="resultsView" destination="Jbk-IF-CWA" id="hRt-8U-5wK"/>
                         <outlet property="searchBar" destination="w4C-ji-rKv" id="UDh-oJ-LKV"/>
                         <outlet property="searchResultsView" destination="Dey-Ik-a74" id="Nbz-HQ-p86"/>
                         <outlet property="tableViewResults" destination="Vuu-hE-4Ua" id="uq1-Qg-m1X"/>

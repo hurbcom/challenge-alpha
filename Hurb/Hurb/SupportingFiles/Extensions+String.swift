@@ -14,4 +14,8 @@ extension String {
         
         return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     }
+    
+    var urlEncoding: String{
+        return self.folding(options: .diacriticInsensitive, locale: .current).replacingOccurrences(of: ",", with: " ")
+    }
 }

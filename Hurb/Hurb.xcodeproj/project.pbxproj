@@ -13,6 +13,7 @@
 		8D29E2D822FF35FC00379F9B /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2D722FF35FC00379F9B /* Suggestion.swift */; };
 		8D29E2DA22FF398E00379F9B /* SuggestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2D922FF398E00379F9B /* SuggestionViewModel.swift */; };
 		8D29E2DD22FF54FD00379F9B /* aroundTheWorld.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D29E2DC22FF54FC00379F9B /* aroundTheWorld.json */; };
+		8D29E2E122FF875F00379F9B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2E022FF875F00379F9B /* Reachability.swift */; };
 		8D741A9822FC539800CC2D77 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9722FC539800CC2D77 /* ResultListViewController.swift */; };
 		8D741A9A22FC56DE00CC2D77 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9922FC56DE00CC2D77 /* Page.swift */; };
 		8D741A9C22FC584900CC2D77 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9B22FC584900CC2D77 /* Meta.swift */; };
@@ -68,6 +69,7 @@
 		8D29E2D722FF35FC00379F9B /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
 		8D29E2D922FF398E00379F9B /* SuggestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewModel.swift; sourceTree = "<group>"; };
 		8D29E2DC22FF54FC00379F9B /* aroundTheWorld.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = aroundTheWorld.json; sourceTree = "<group>"; };
+		8D29E2E022FF875F00379F9B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		8D741A9722FC539800CC2D77 /* ResultListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListViewController.swift; sourceTree = "<group>"; };
 		8D741A9922FC56DE00CC2D77 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		8D741A9B22FC584900CC2D77 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				8D741AB722FCA8C400CC2D77 /* Utils.swift */,
+				8D29E2E022FF875F00379F9B /* Reachability.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				8D741ABC22FCB32B00CC2D77 /* Connectivity.swift in Sources */,
 				8D29E2D622FF257C00379F9B /* Extensions+String.swift in Sources */,
 				8D741AB422FCA4B400CC2D77 /* HotelViewModel.swift in Sources */,
+				8D29E2E122FF875F00379F9B /* Reachability.swift in Sources */,
 				8D741AAE22FC8BE300CC2D77 /* Defines.swift in Sources */,
 				8D741A9A22FC56DE00CC2D77 /* Page.swift in Sources */,
 			);
