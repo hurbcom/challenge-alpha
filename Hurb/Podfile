@@ -15,6 +15,7 @@ target 'Hurb' do
   pod 'RxCocoa'
   pod 'ImageSlideshow'
   pod 'ImageSlideshow/SDWebImage'
+  pod 'Firebase/Analytics'
   
 
   target 'HurbTests' do

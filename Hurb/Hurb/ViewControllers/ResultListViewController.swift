@@ -10,8 +10,13 @@ import UIKit
 import RxSwift
 import Lottie
 
+//Enum para definir as seções,
 enum TableSection: Int {
     case CincoEstrelas = 0, QuatroEstrelas = 1, TresEstrelas = 2 , DuasEstrelas = 3, UmaEstrela = 4, ZeroEstrelas = 5, Pacotes = 6
+}
+
+protocol ResultListDelegate {
+    func updateResultList(newPlace: SuggestionViewModel)
 }
 
 class ResultListViewController: UIViewController {
@@ -19,12 +24,16 @@ class ResultListViewController: UIViewController {
     //MARK: - Properties
     private let resultCell = "resultCell"
     private let suggestionCell = "suggestionCell"
+    
     private let disposeBag = DisposeBag()
+    
+    //O Default Place está como Rio de Janeiro. No desafio não estava claro se o lugar default era Rio de Janeiro ou Búzios. E no exemplo ainda está usando a cidade de Gramado.
     private var searchText: String = Defines.DEFAULT_PLACE
+    
     private var resultListViewModel = ResultListViewModel(place: Defines.DEFAULT_PLACE)
     private var results: [TableSection: [Hotel]] = [:]
-    private var lastContentOffset: CGFloat = 0
-    fileprivate let heightSectionHeader: CGFloat = 25
+    
+    
     fileprivate var animationView: AnimationView?
     
     private var suggestions: [Suggestion] = []
@@ -32,55 +41,43 @@ class ResultListViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableViewResults: UITableView!
-    @IBOutlet weak var tableViewSuggestions: UITableView!
     
-    @IBOutlet weak var widthCancelSearchButton: NSLayoutConstraint!
-   
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var animationLoadingView: UIView!
-    @IBOutlet weak var searchResultsView: UIView!
     @IBOutlet weak var noResultsView: UIView!
     @IBOutlet weak var resultsView: UIView!
+    @IBOutlet weak var noInternetConnectionView: UIView!
     
-    @IBAction func cancelarBusca(_ sender: UIButton) {
-        self.suggestions = []
-        self.searchResultsView.isHidden = true
-        self.searchBar.text = ""
-        self.widthCancelSearchButton.constant = 0
-        self.searchBar.resignFirstResponder()
-        self.dismissKeyboard()
+    @IBAction func reconnect(_ sender: UIButton) {
+        resultListViewModel = ResultListViewModel(place: Defines.DEFAULT_PLACE)
+        loading()
     }
     
     //MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        widthCancelSearchButton.constant = 0
-        loading()
-        
         self.tableViewResults.tableFooterView = UIView(frame: .zero)
-        self.tableViewSuggestions.tableFooterView = UIView(frame: .zero)
-        
-        self.searchResultsView.isHidden = true
         self.navigationItem.title = "Busca: \(searchText)"
         
-        
-        
-        
+        loading()
         
     }
     
+    //MARK: - Functions
     func loading() {
         
-        
+        //verifica se existe conectividade com a internet
         if !Reachability.isConnectedToNetwork(){
             print("Internet Connection not Available!")
             loadingView.isHidden = true
-            noResultsView.isHidden = false
-//            FirebaseAnalyticsHelper.isNotConnectedEventLogger()
+            noResultsView.isHidden = true
+            noInternetConnectionView.isHidden = false
+            FirebaseAnalyticsHelper.isNotConnectedEventLogger()
         }else{
             print("Internet Connection Available!")
             loadingView.isHidden = false
+            noInternetConnectionView.isHidden = true
+            
             animationView = AnimationView(name: "aroundTheWorld")
             animationView!.frame = CGRect(x: 0, y: 0, width: animationLoadingView.frame.size.width, height: animationLoadingView.frame.size.height)
             animationView!.contentMode = .scaleAspectFit
@@ -92,7 +89,6 @@ class ResultListViewController: UIViewController {
             
             setupSearchHotelsViewModelObserver()
         }
-        
     }
     
     @objc func continueAnimation() {
@@ -101,7 +97,7 @@ class ResultListViewController: UIViewController {
     
     //MARK: - Rx Setup
     private func setupSearchHotelsViewModelObserver() {
-        if Connectivity.isConnectedToInternet() {
+        if Reachability.isConnectedToNetwork(){
             resultListViewModel.hotelsObservable
                 .subscribe(onNext: { hotels in
                     
@@ -115,7 +111,6 @@ class ResultListViewController: UIViewController {
                     
                     print(hotels.count)
                     self.tableViewResults.reloadData()
-//                    self.tableView.unlock()
                     
                     if hotels.count > 0 {
                         self.loadingView.isHidden = true
@@ -131,15 +126,9 @@ class ResultListViewController: UIViewController {
                 })
                 .disposed(by: disposeBag)
         } else {
-//            self.noResultsView.isHidden = false
-//            self.errorLabel.text = "No internet connection detected. Please, check it and try again."
+            self.noResultsView.isHidden = false
+            FirebaseAnalyticsHelper.isNotConnectedEventLogger()
         }
-    }
-    
-    //MARK: - Functions
-    @objc func dismissKeyboard() {
-        searchBar.text = ""
-        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -150,46 +139,50 @@ class ResultListViewController: UIViewController {
                 }
             }
         }
+        
+        if segue.identifier == "showSearchPlace"{
+            if let vc = segue.destination as? SuggestionsViewController {
+                vc.resultListDelegate = self
+            }
+        }
     }
     
+}
+
+extension ResultListViewController: ResultListDelegate {
+    
+    //Atualizar página com novo local escolhido
+    func updateResultList(newPlace: SuggestionViewModel) {
+        
+        self.loadingView.isHidden = false
+        self.animationView?.play()
+        
+        self.navigationItem.title = "Busca: \(newPlace.name)"
+        self.results = [:]
+        self.resultListViewModel.removeAll()
+        resultListViewModel = ResultListViewModel(place: newPlace.name)
+        self.setupSearchHotelsViewModelObserver()
+    }
 }
 
 extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
     //MARK: - UITableView extension
     func numberOfSections(in tableView: UITableView) -> Int {
-        if tableView == tableViewResults {
-            return 7 // De 0 a 5 estrelas e Pacotes
-        }
-        
-        if tableView == tableViewSuggestions {
-            return 1
-        }
-        
-        return 0
+        return 7 // De 0 a 5 estrelas e Pacotes
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if tableView == tableViewResults {
-            if let tableSection = TableSection(rawValue: section), let hotelData = results[tableSection] {
-                return hotelData.count
-            }
-        }
-        
-        if tableView == tableViewSuggestions {
-            return suggestions.count
+        //Buscar título do Header de acordo com o número de estrelas.
+        if let tableSection = TableSection(rawValue: section), let hotelData = results[tableSection] {
+            return hotelData.count
         }
         
         return 0
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if tableView == tableViewResults {
-            return Defines.LIST_HEADER[section]
-        }
-        
-        return nil
-        
+        return Defines.LIST_HEADER[section]
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -198,128 +191,50 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
         //return SectionHeaderHeight
         // First check if there is a valid section of table.
         // Then we check that for the section there is more than 1 row.
-        if tableView == tableViewResults {
-            if let tableSection = TableSection(rawValue: section), let hotelData = results[tableSection], hotelData.count > 0 {
-                return heightSectionHeader
-            }
+        if let tableSection = TableSection(rawValue: section), let hotelData = results[tableSection], hotelData.count > 0 {
+            return 25
         }
-        
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if tableView == tableViewResults {
-            let cell = tableView.dequeueReusableCell(withIdentifier: resultCell, for: indexPath) as! ResultCell
-            
-            var rowNumber = indexPath.row
-            for i in 0..<indexPath.section {
-                rowNumber += self.tableViewResults.numberOfRows(inSection: i)
-            }
-            
-            _ = resultListViewModel[rowNumber]
-            
-            if let tableSection = TableSection(rawValue: indexPath.section), let hotel = results[tableSection]?[indexPath.row] {
-                cell.hotel = HotelViewModel(hotel)
-            }
-            
-            return cell
+    
+        let cell = tableView.dequeueReusableCell(withIdentifier: resultCell, for: indexPath) as! ResultCell
+        
+        var rowNumber = indexPath.row
+        for i in 0..<indexPath.section {
+            rowNumber += self.tableViewResults.numberOfRows(inSection: i)
         }
         
-        if tableView == tableViewSuggestions {
-            let cell = tableView.dequeueReusableCell(withIdentifier: suggestionCell)!
-            
-            let suggestionViewModel = SuggestionViewModel(suggestions[indexPath.row])
-            
-            cell.textLabel!.text = suggestionViewModel.name
-            cell.detailTextLabel!.text = suggestionViewModel.type
-            
-            return cell
+        _ = resultListViewModel[rowNumber]
+        
+        if let tableSection = TableSection(rawValue: indexPath.section), let hotel = results[tableSection]?[indexPath.row] {
+            cell.hotel = HotelViewModel(hotel)
         }
         
-        return UITableViewCell()
+        return cell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        if tableView == tableViewResults {
-            if let tableSection = TableSection(rawValue: indexPath.section), let hotel = results[tableSection]?[indexPath.row] {
-                performSegue(withIdentifier: "showDetails", sender: HotelViewModel(hotel))
-            }
+    
+        if let tableSection = TableSection(rawValue: indexPath.section), let hotel = results[tableSection]?[indexPath.row] {
+            performSegue(withIdentifier: "showDetails", sender: HotelViewModel(hotel))
         }
-        
-        if tableView == tableViewSuggestions {
-            self.searchResultsView.isHidden = true
-            
-            self.loadingView.isHidden = false
-            self.animationView?.play()
-            
-            self.widthCancelSearchButton.constant = 0
-            
-            let suggestionViewModel = SuggestionViewModel(suggestions[indexPath.row])
-            
-            self.navigationItem.title = "Busca: \(suggestionViewModel.name)"
-            self.results = [:]
-            self.resultListViewModel.removeAll()
-            resultListViewModel = ResultListViewModel(place: suggestionViewModel.name)
-            self.setupSearchHotelsViewModelObserver()
-            
-        }
+    
     }
     
 }
 
 //MARK: - UIScrollView extension
-extension ResultListViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        dismissKeyboard()
-    }
-}
 
 extension ResultListViewController: UISearchControllerDelegate, UISearchBarDelegate {
     
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        self.widthCancelSearchButton.constant = 70
-        self.loadingView.isHidden = true
-        self.searchResultsView.isHidden = false
-        self.suggestions = []
-        self.tableViewSuggestions.reloadData()
-        return true
-    }
-    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.widthCancelSearchButton.constant = 70
-        self.loadingView.isHidden = true
-        self.searchResultsView.isHidden = false
-        self.suggestions = []
-        self.tableViewSuggestions.reloadData()
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.searchText = searchText
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if self.searchText.count >= 3 {
-            self.dismissKeyboard()
-            
-            searchBar.text = searchText
-            
-            APIClient.searchSuggestions(by: self.searchText, completion: { [unowned self] result in
-                switch result {
-                case .success(let suggestionResults):
-                    self.suggestions = suggestionResults.suggestions ?? []
-                    self.tableViewSuggestions.reloadData()
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            })
-            
-        } else {
-            self.present(showAlert(mensagem: "Por favor, digite ao menos 3 caracteres"), animated: true, completion: nil)
-        }
+        self.performSegue(withIdentifier: "showSearchPlace", sender: nil)
+        self.searchBar.resignFirstResponder()
+        self.dismissKeyboard()
     }
 }

@@ -14,6 +14,9 @@
 		8D29E2DA22FF398E00379F9B /* SuggestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2D922FF398E00379F9B /* SuggestionViewModel.swift */; };
 		8D29E2DD22FF54FD00379F9B /* aroundTheWorld.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D29E2DC22FF54FC00379F9B /* aroundTheWorld.json */; };
 		8D29E2E122FF875F00379F9B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2E022FF875F00379F9B /* Reachability.swift */; };
+		8D29E2E32301BC6400379F9B /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2E22301BC6400379F9B /* SuggestionsViewController.swift */; };
+		8D29E2E52301E62300379F9B /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29E2E42301E62300379F9B /* FirebaseAnalytics.swift */; };
+		8D29E2E72301E73000379F9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D29E2E62301E73000379F9B /* GoogleService-Info.plist */; };
 		8D741A9822FC539800CC2D77 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9722FC539800CC2D77 /* ResultListViewController.swift */; };
 		8D741A9A22FC56DE00CC2D77 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9922FC56DE00CC2D77 /* Page.swift */; };
 		8D741A9C22FC584900CC2D77 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741A9B22FC584900CC2D77 /* Meta.swift */; };
@@ -70,6 +73,9 @@
 		8D29E2D922FF398E00379F9B /* SuggestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewModel.swift; sourceTree = "<group>"; };
 		8D29E2DC22FF54FC00379F9B /* aroundTheWorld.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = aroundTheWorld.json; sourceTree = "<group>"; };
 		8D29E2E022FF875F00379F9B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		8D29E2E22301BC6400379F9B /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
+		8D29E2E42301E62300379F9B /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
+		8D29E2E62301E73000379F9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D741A9722FC539800CC2D77 /* ResultListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListViewController.swift; sourceTree = "<group>"; };
 		8D741A9922FC56DE00CC2D77 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		8D741A9B22FC584900CC2D77 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 			children = (
 				8D741A9722FC539800CC2D77 /* ResultListViewController.swift */,
 				8D741ABD22FCCCA100CC2D77 /* HotelDetailViewController.swift */,
+				8D29E2E22301BC6400379F9B /* SuggestionsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -195,6 +202,7 @@
 				8D741AAD22FC8BE300CC2D77 /* Defines.swift */,
 				8D29E2D322FF1D9300379F9B /* Extensions+UIViewController.swift */,
 				8D29E2D522FF257C00379F9B /* Extensions+String.swift */,
+				8D29E2E62301E73000379F9B /* GoogleService-Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -224,6 +232,7 @@
 			children = (
 				8D741AB722FCA8C400CC2D77 /* Utils.swift */,
 				8D29E2E022FF875F00379F9B /* Reachability.swift */,
+				8D29E2E42301E62300379F9B /* FirebaseAnalytics.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -421,6 +430,7 @@
 				8D741AA922FC639500CC2D77 /* Colors.xcassets in Resources */,
 				8DC0E85522FC4F4E006A046E /* Assets.xcassets in Resources */,
 				8DC0E85322FC4F4B006A046E /* Main.storyboard in Resources */,
+				8D29E2E72301E73000379F9B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +551,7 @@
 				8D741AA622FC604D00CC2D77 /* ResultCell.swift in Sources */,
 				8D29E2DA22FF398E00379F9B /* SuggestionViewModel.swift in Sources */,
 				8D741A9E22FC588000CC2D77 /* Pagination.swift in Sources */,
+				8D29E2E32301BC6400379F9B /* SuggestionsViewController.swift in Sources */,
 				8D741AB022FC9D0E00CC2D77 /* APIClient.swift in Sources */,
 				8D741AA022FC595100CC2D77 /* Filters.swift in Sources */,
 				8D741AA222FC5ABB00CC2D77 /* Hotel.swift in Sources */,
@@ -551,6 +562,7 @@
 				8D741AB422FCA4B400CC2D77 /* HotelViewModel.swift in Sources */,
 				8D29E2E122FF875F00379F9B /* Reachability.swift in Sources */,
 				8D741AAE22FC8BE300CC2D77 /* Defines.swift in Sources */,
+				8D29E2E52301E62300379F9B /* FirebaseAnalytics.swift in Sources */,
 				8D741A9A22FC56DE00CC2D77 /* Page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

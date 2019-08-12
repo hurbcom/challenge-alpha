@@ -12,6 +12,9 @@ class Defines {
     
     static let BASE_URL = "https://www.hurb.com/search/api"
     static let SUGGESTION_URL = "https://www.hurb.com/search/api/suggestion"
-    static let DEFAULT_PLACE = "ARARUAMA"
+    
+    static let DEFAULT_PLACE = "Rio de Janeiro"
+    
     static let LIST_HEADER = ["5 ESTRELAS", "4 ESTRELAS", "3 ESTRELAS", "2 ESTRELAS", "1 ESTRELA", "0 ESTRELAS", "PACOTES"]
+    
 }

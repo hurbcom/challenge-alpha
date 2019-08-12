@@ -17,4 +17,8 @@ extension UIViewController {
         
         return alertController
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
