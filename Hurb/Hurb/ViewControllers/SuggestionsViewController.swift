@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import Lottie
 
 class SuggestionsViewController: UIViewController {
 
     //MARK: - Properties
-    private let suggestionCell = "suggestionCell"
+    fileprivate let suggestionCell = "suggestionCell"
+    fileprivate var animationView: AnimationView?
     
     var resultListDelegate: ResultListDelegate!
     
     //O Default Place está como Rio de Janeiro. No desafio não estava claro se o lugar default era Rio de Janeiro ou Búzios. E no exemplo ainda está usando a cidade de Gramado.
-    private var searchText: String = Defines.DEFAULT_PLACE
-    private var suggestions: [Suggestion] = []
+    fileprivate var searchText: String = Defines.DEFAULT_PLACE
+    fileprivate var suggestions: [Suggestion] = []
     
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
@@ -28,6 +30,7 @@ class SuggestionsViewController: UIViewController {
     
     @IBOutlet weak var animationLoadingView: UIView!
     
+    
     @IBAction func reconnect(_ sender: UIButton) {
         searchPlace() 
     }
@@ -35,12 +38,18 @@ class SuggestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //esconder as views de Sem Resultados e Sem Conexão com a Internet.
         self.noResultsView.isHidden = true
         self.noInternetConnectionView.isHidden = true
-        self.tableView.tableFooterView = UIView(frame: .zero)
         
+        //
+        
+        //Colocar o focus no searchBar e abrir o teclado
+        self.searchBar.becomeFirstResponder()
+        
+        //Remover as linhas vazias da tableView
+        self.tableView.tableFooterView = UIView(frame: .zero)
     }
-    
 }
 
 extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDelegate {
@@ -62,6 +71,7 @@ extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDele
     func searchPlace() {
         self.dismissKeyboard()
         
+        //fazer consulta com pelo menos 3 caracteres, senão exibe um alertView
         if self.searchText.count >= 3 {
             
             if !Reachability.isConnectedToNetwork(){
@@ -72,16 +82,31 @@ extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDele
                 FirebaseAnalyticsHelper.isNotConnectedEventLogger()
             }else{
                 print("Internet Connection Available!")
+                //exibir a tela de loading
                 loadingView.isHidden = false
                 noInternetConnectionView.isHidden = true
                 
+                //carregar a animação do loading
+                animationView = AnimationView(name: "aroundTheWorld")
+                animationView!.frame = CGRect(x: 0, y: 0, width: animationLoadingView.frame.size.width, height: animationLoadingView.frame.size.height)
+                animationView!.contentMode = .scaleAspectFit
+                animationView!.loopMode = .loop
+                animationLoadingView.addSubview(animationView!)
+                animationView!.play()
+                
+                //Continuar a animação depois que o app voltar para o Foreground
+                NotificationCenter.default.addObserver(self, selector: #selector(continueAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
+                
+                
                 searchBar.text = searchText
                 
+                //Fazer busca de sugestões a partir do que foi digitado no SearechBar
                 APIClient.searchSuggestions(by: self.searchText, completion: { [unowned self] result in
                     
                     self.loadingView.isHidden = true
                     switch result {
                     case .success(let suggestionResults):
+                        //se for sucesso, pegar a lista de sugestoes e atualizar tabela
                         self.suggestions = suggestionResults.suggestions ?? []
                         if suggestionResults.suggestions?.count == 0 {
                             self.noResultsView.isHidden = false
@@ -100,6 +125,10 @@ extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDele
             self.present(showAlert(mensagem: "Por favor, digite ao menos 3 caracteres"), animated: true, completion: nil)
         }
     }
+    
+    @objc func continueAnimation() {
+        animationView!.play()
+    }
 }
 
 extension SuggestionsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -111,7 +140,7 @@ extension SuggestionsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: suggestionCell)!
+        let cell = tableView.dequeueReusableCell(withIdentifier: suggestionCell, for: indexPath)
         
         let suggestionViewModel = SuggestionViewModel(suggestions[indexPath.row])
         
@@ -124,6 +153,7 @@ extension SuggestionsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        //ao selecionar uma sugestão, pegar o SuggestionViewModel e passar para o delegate (ResultListDelegate) da ViewController anterior (ResultViewController) atualizar a tableView e remover a viewcontroller da stack de navegação.
         let suggestionViewModel = SuggestionViewModel(suggestions[indexPath.row])
         resultListDelegate.updateResultList(newPlace: suggestionViewModel)
         

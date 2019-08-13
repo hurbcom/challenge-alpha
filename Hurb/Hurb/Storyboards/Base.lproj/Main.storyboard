@@ -573,7 +573,7 @@ Por favor, tente novamente.</string>
                         <outlet property="noResultsView" destination="fhC-da-mht" id="Nf7-Ba-caS"/>
                         <outlet property="resultsView" destination="Jbk-IF-CWA" id="hRt-8U-5wK"/>
                         <outlet property="searchBar" destination="w4C-ji-rKv" id="UDh-oJ-LKV"/>
-                        <outlet property="tableViewResults" destination="Vuu-hE-4Ua" id="uq1-Qg-m1X"/>
+                        <outlet property="tableView" destination="Vuu-hE-4Ua" id="uq1-Qg-m1X"/>
                         <segue destination="c7B-SD-HJY" kind="show" identifier="showDetails" id="XnE-Ko-uUW"/>
                         <segue destination="ANZ-tC-qcD" kind="show" identifier="showSearchPlace" id="kdy-Ma-ggp"/>
                     </connections>
@@ -769,7 +769,7 @@ Por favor, tente novamente.</string>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="corPrincipal"/>
                         <constraints>
                             <constraint firstItem="qXv-E2-dfF" firstAttribute="top" secondItem="6SC-c1-DXB" secondAttribute="bottom" id="8YW-zW-E0N"/>
                             <constraint firstItem="6SC-c1-DXB" firstAttribute="leading" secondItem="pDW-IX-1q9" secondAttribute="leading" id="NzP-cF-ycR"/>

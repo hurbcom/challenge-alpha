@@ -39,7 +39,7 @@
 		8DC0E85822FC4F4E006A046E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC0E85622FC4F4E006A046E /* LaunchScreen.storyboard */; };
 		8DC0E86322FC4F4E006A046E /* HurbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0E86222FC4F4E006A046E /* HurbTests.swift */; };
 		8DC0E86E22FC4F4E006A046E /* HurbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0E86D22FC4F4E006A046E /* HurbUITests.swift */; };
-		BF6A3978618245AE8EB018A6 /* Pods_HurbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DD124EEB69B395EA3F7182 /* Pods_HurbUITests.framework */; };
+		C6CAC2997382ADAB3D8D983D /* Pods_Hurb_HurbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA27A5002C6D6697F83BFFCD /* Pods_Hurb_HurbUITests.framework */; };
 		DEB83DE261A348B305A3BB20 /* Pods_HurbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DBA76B621B5471ECC51E798 /* Pods_HurbTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,12 +61,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00FD5D30C3B8871883E8A1DC /* Pods-Hurb-HurbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb-HurbUITests.release.xcconfig"; path = "Target Support Files/Pods-Hurb-HurbUITests/Pods-Hurb-HurbUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3957D9980D33F8C5ADDDD390 /* Pods-HurbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbTests.debug.xcconfig"; path = "Target Support Files/Pods-HurbTests/Pods-HurbTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3DBA76B621B5471ECC51E798 /* Pods_HurbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HurbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47047686EB6F4278578516BA /* Pods-Hurb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb.debug.xcconfig"; path = "Target Support Files/Pods-Hurb/Pods-Hurb.debug.xcconfig"; sourceTree = "<group>"; };
-		48DD124EEB69B395EA3F7182 /* Pods_HurbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HurbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6924E27613AB40D5AADCCE92 /* Pods-Hurb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb.release.xcconfig"; path = "Target Support Files/Pods-Hurb/Pods-Hurb.release.xcconfig"; sourceTree = "<group>"; };
 		79CBF9A79FAAF4AE1D011697 /* Pods-HurbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbTests.release.xcconfig"; path = "Target Support Files/Pods-HurbTests/Pods-HurbTests.release.xcconfig"; sourceTree = "<group>"; };
+		7CA2374C33871DE49BAC3853 /* Pods-Hurb-HurbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb-HurbUITests.debug.xcconfig"; path = "Target Support Files/Pods-Hurb-HurbUITests/Pods-Hurb-HurbUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D29E2D322FF1D9300379F9B /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		8D29E2D522FF257C00379F9B /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
 		8D29E2D722FF35FC00379F9B /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 		8DC0E86F22FC4F4E006A046E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5E9A5E8708A8F8ABD31DEBC /* Pods-HurbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbUITests.release.xcconfig"; path = "Target Support Files/Pods-HurbUITests/Pods-HurbUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C8579635BAD3B741773CA035 /* Pods_Hurb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hurb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA27A5002C6D6697F83BFFCD /* Pods_Hurb_HurbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hurb_HurbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB9FACE4FF01B15D9E44FD4 /* Pods-HurbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbUITests.debug.xcconfig"; path = "Target Support Files/Pods-HurbUITests/Pods-HurbUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6A3978618245AE8EB018A6 /* Pods_HurbUITests.framework in Frameworks */,
+				C6CAC2997382ADAB3D8D983D /* Pods_Hurb_HurbUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +305,8 @@
 				79CBF9A79FAAF4AE1D011697 /* Pods-HurbTests.release.xcconfig */,
 				EBB9FACE4FF01B15D9E44FD4 /* Pods-HurbUITests.debug.xcconfig */,
 				A5E9A5E8708A8F8ABD31DEBC /* Pods-HurbUITests.release.xcconfig */,
+				7CA2374C33871DE49BAC3853 /* Pods-Hurb-HurbUITests.debug.xcconfig */,
+				00FD5D30C3B8871883E8A1DC /* Pods-Hurb-HurbUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -312,7 +316,7 @@
 			children = (
 				C8579635BAD3B741773CA035 /* Pods_Hurb.framework */,
 				3DBA76B621B5471ECC51E798 /* Pods_HurbTests.framework */,
-				48DD124EEB69B395EA3F7182 /* Pods_HurbUITests.framework */,
+				CA27A5002C6D6697F83BFFCD /* Pods_Hurb_HurbUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,6 +370,7 @@
 				8DC0E86522FC4F4E006A046E /* Sources */,
 				8DC0E86622FC4F4E006A046E /* Frameworks */,
 				8DC0E86722FC4F4E006A046E /* Resources */,
+				E76593C843D435287A891DE0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -527,11 +532,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HurbUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Hurb-HurbUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E76593C843D435287A891DE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hurb-HurbUITests/Pods-Hurb-HurbUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hurb-HurbUITests/Pods-Hurb-HurbUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hurb-HurbUITests/Pods-Hurb-HurbUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -820,9 +842,9 @@
 		};
 		8DC0E87922FC4F4E006A046E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBB9FACE4FF01B15D9E44FD4 /* Pods-HurbUITests.debug.xcconfig */;
+			baseConfigurationReference = 7CA2374C33871DE49BAC3853 /* Pods-Hurb-HurbUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3FMA3WV25L;
 				INFOPLIST_FILE = HurbUITests/Info.plist;
@@ -841,9 +863,9 @@
 		};
 		8DC0E87A22FC4F4E006A046E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5E9A5E8708A8F8ABD31DEBC /* Pods-HurbUITests.release.xcconfig */;
+			baseConfigurationReference = 00FD5D30C3B8871883E8A1DC /* Pods-Hurb-HurbUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3FMA3WV25L;
 				INFOPLIST_FILE = HurbUITests/Info.plist;

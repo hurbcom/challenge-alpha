@@ -21,6 +21,7 @@ class ResultListViewModel {
     }
     
     //MARK: - Subscript
+    //Carregar mais hoteis quando restarem menos de 5 itens
     subscript(index: Int) -> HotelViewModel {
         if index > count - 5 {
             fetchMoreHotels(place: place)
@@ -42,7 +43,7 @@ class ResultListViewModel {
         hotelList = BehaviorRelay<[Hotel]>(value: [])
     }
     
-    //MARK: - Fatch more hotels
+    //Buscar mais hoteis
     private func fetchMoreHotels(place: String) {
         page = page + 1
         APIClient.searchHotels(by: place, page: page) { [weak self] result in

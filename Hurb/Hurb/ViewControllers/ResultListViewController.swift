@@ -24,13 +24,12 @@ class ResultListViewController: UIViewController {
     //MARK: - Properties
     private let resultCell = "resultCell"
     private let suggestionCell = "suggestionCell"
-    
     private let disposeBag = DisposeBag()
     
     //O Default Place está como Rio de Janeiro. No desafio não estava claro se o lugar default era Rio de Janeiro ou Búzios. E no exemplo ainda está usando a cidade de Gramado.
     private var searchText: String = Defines.DEFAULT_PLACE
     
-    private var resultListViewModel = ResultListViewModel(place: Defines.DEFAULT_PLACE)
+    private var resultListViewModel: ResultListViewModel?
     private var results: [TableSection: [Hotel]] = [:]
     
     
@@ -40,14 +39,16 @@ class ResultListViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableViewResults: UITableView!
-    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var animationLoadingView: UIView!
     @IBOutlet weak var noResultsView: UIView!
     @IBOutlet weak var resultsView: UIView!
     @IBOutlet weak var noInternetConnectionView: UIView!
     
+    
+    //MARK: - IB Actions
+    //Verific
     @IBAction func reconnect(_ sender: UIButton) {
         resultListViewModel = ResultListViewModel(place: Defines.DEFAULT_PLACE)
         loading()
@@ -56,9 +57,10 @@ class ResultListViewController: UIViewController {
     //MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableViewResults.tableFooterView = UIView(frame: .zero)
+        self.tableView.tableFooterView = UIView(frame: .zero)
         self.navigationItem.title = "Busca: \(searchText)"
         
+        resultListViewModel = ResultListViewModel(place: searchText)
         loading()
         
     }
@@ -98,7 +100,7 @@ class ResultListViewController: UIViewController {
     //MARK: - Rx Setup
     private func setupSearchHotelsViewModelObserver() {
         if Reachability.isConnectedToNetwork(){
-            resultListViewModel.hotelsObservable
+            resultListViewModel?.hotelsObservable
                 .subscribe(onNext: { hotels in
                     
                     self.results[.CincoEstrelas] = hotels.filter({$0.stars == 5})
@@ -110,7 +112,7 @@ class ResultListViewController: UIViewController {
                     self.results[.Pacotes] = hotels.filter({$0.stars == nil})
                     
                     print(hotels.count)
-                    self.tableViewResults.reloadData()
+                    self.tableView.reloadData()
                     
                     if hotels.count > 0 {
                         self.loadingView.isHidden = true
@@ -118,7 +120,7 @@ class ResultListViewController: UIViewController {
                         self.loadingView.isHidden = false
                     }
                     
-                    if self.resultListViewModel.count == 0 {
+                    if self.resultListViewModel?.count == 0 {
                         self.noResultsView.isHidden = false
                     } else {
                         self.noResultsView.isHidden = true
@@ -159,7 +161,7 @@ extension ResultListViewController: ResultListDelegate {
         
         self.navigationItem.title = "Busca: \(newPlace.name)"
         self.results = [:]
-        self.resultListViewModel.removeAll()
+        self.resultListViewModel?.removeAll()
         resultListViewModel = ResultListViewModel(place: newPlace.name)
         self.setupSearchHotelsViewModelObserver()
     }
@@ -204,10 +206,10 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
         
         var rowNumber = indexPath.row
         for i in 0..<indexPath.section {
-            rowNumber += self.tableViewResults.numberOfRows(inSection: i)
+            rowNumber += self.tableView.numberOfRows(inSection: i)
         }
         
-        _ = resultListViewModel[rowNumber]
+        _ = resultListViewModel?[rowNumber]
         
         if let tableSection = TableSection(rawValue: indexPath.section), let hotel = results[tableSection]?[indexPath.row] {
             cell.hotel = HotelViewModel(hotel)
@@ -229,9 +231,9 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 //MARK: - UIScrollView extension
-
 extension ResultListViewController: UISearchControllerDelegate, UISearchBarDelegate {
     
+    //Ao clicar no SearchBar, redirecionar para a View SuggestionsViewController
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.performSegue(withIdentifier: "showSearchPlace", sender: nil)
         self.searchBar.resignFirstResponder()
