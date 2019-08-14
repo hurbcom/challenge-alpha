@@ -29,7 +29,6 @@ class ResultListViewController: UIViewController {
     
     //O Default Place está como Rio de Janeiro. No desafio não estava claro se o lugar default era Rio de Janeiro ou Búzios. E no exemplo ainda está usando a cidade de Gramado.
     fileprivate var searchText: String = Defines.DEFAULT_PLACE
-    
     fileprivate var resultListViewModel: ResultListViewModel?
     fileprivate var results: [TableSection: [Hotel]] = [:]
     fileprivate var animationView: AnimationView?
@@ -43,12 +42,11 @@ class ResultListViewController: UIViewController {
     @IBOutlet weak var resultsView: UIView!
     @IBOutlet weak var noInternetConnectionView: UIView!
     
-    
     //MARK: - IB Actions
-    //Verific
+    //Atual
     @IBAction func reconnect(_ sender: UIButton) {
-        resultListViewModel = ResultListViewModel(place: Defines.DEFAULT_PLACE)
-        loading()
+        self.resultListViewModel = ResultListViewModel(place: self.searchText)
+        self.loading()
     }
     
     //MARK: - ViewController life cycle
@@ -57,8 +55,8 @@ class ResultListViewController: UIViewController {
         self.tableView.tableFooterView = UIView(frame: .zero)
         self.navigationItem.title = "Busca: \(searchText)"
         
-        resultListViewModel = ResultListViewModel(place: searchText)
-        loading()
+        self.resultListViewModel = ResultListViewModel(place: self.searchText)
+        self.loading()
         
     }
     
@@ -67,26 +65,29 @@ class ResultListViewController: UIViewController {
         
         //verifica se existe conectividade com a internet
         if !Reachability.isConnectedToNetwork(){
+            //se não tiver conectividade, exibe mensagem e gera evento no Firebase
             print("Internet Connection not Available!")
-            loadingView.isHidden = true
-            noResultsView.isHidden = true
-            noInternetConnectionView.isHidden = false
+            self.loadingView.isHidden = true
+            self.noResultsView.isHidden = true
+            self.noInternetConnectionView.isHidden = false
             FirebaseAnalyticsHelper.isNotConnectedEventLogger()
         }else{
+            //se tiver conectividade, exibir animação de loading e buscar os hoteis
             print("Internet Connection Available!")
-            loadingView.isHidden = false
-            noInternetConnectionView.isHidden = true
+            self.loadingView.isHidden = false
+            self.noInternetConnectionView.isHidden = true
             
             animationView = AnimationView(name: "aroundTheWorld")
             animationView!.frame = CGRect(x: 0, y: 0, width: animationLoadingView.frame.size.width, height: animationLoadingView.frame.size.height)
             animationView!.contentMode = .scaleAspectFit
             animationView!.loopMode = .loop
-            animationLoadingView.addSubview(animationView!)
+            self.animationLoadingView.addSubview(animationView!)
             animationView!.play()
             
+            //Quando o app entra em background, a animação é suspensa. Com essa notificação, quando o app for aberto novamente, a animação do loding deve continuar.
             NotificationCenter.default.addObserver(self, selector: #selector(continueAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
             
-            setupSearchHotelsViewModelObserver()
+            self.setupSearchHotelsViewModelObserver()
         }
     }
     
@@ -97,9 +98,11 @@ class ResultListViewController: UIViewController {
     //MARK: - Rx Setup
     fileprivate func setupSearchHotelsViewModelObserver() {
         if Reachability.isConnectedToNetwork(){
-            resultListViewModel?.hotelsObservable
+            //aqui é iniciado o Observable do resultListViewModel
+            self.resultListViewModel?.hotelsObservable
                 .subscribe(onNext: { hotels in
                     
+                    //organizar a lista de hoteis em suas respectivas categorias
                     self.results[.CincoEstrelas] = hotels.filter({$0.stars == 5})
                     self.results[.QuatroEstrelas] = hotels.filter({$0.stars == 4})
                     self.results[.TresEstrelas] = hotels.filter({$0.stars == 3})
@@ -108,15 +111,16 @@ class ResultListViewController: UIViewController {
                     self.results[.ZeroEstrelas] = hotels.filter({$0.stars == 0})
                     self.results[.Pacotes] = hotels.filter({$0.stars == nil})
                     
-                    print(hotels.count)
                     self.tableView.reloadData()
                     
+                    //se ainda não tiver vindo resultados, exibe o loading
                     if hotels.count > 0 {
                         self.loadingView.isHidden = true
                     } else {
                         self.loadingView.isHidden = false
                     }
                     
+                    //se a lista ainda estiver vazia, exibe a view de sem resultados
                     if self.resultListViewModel?.count == 0 {
                         self.noResultsView.isHidden = false
                     } else {
@@ -125,13 +129,14 @@ class ResultListViewController: UIViewController {
                 })
                 .disposed(by: disposeBag)
         } else {
-            self.noResultsView.isHidden = false
+            self.noInternetConnectionView.isHidden = false
             FirebaseAnalyticsHelper.isNotConnectedEventLogger()
         }
     }
     
     //MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //navegação para a tela de Detalhes do Hotel/Pacote
         if segue.identifier == "showDetails" {
             if let vc = segue.destination as? HotelDetailViewController {
                 if let hotelViewModel = sender as? HotelViewModel {
@@ -140,6 +145,7 @@ class ResultListViewController: UIViewController {
             }
         }
         
+        //navegação para a tela de Buscar Lugares
         if segue.identifier == "showSearchPlace"{
             if let vc = segue.destination as? SuggestionsViewController {
                 vc.resultListDelegate = self
@@ -152,7 +158,7 @@ class ResultListViewController: UIViewController {
 //MARK: - implementação dos métodos de ResultListDelegate
 extension ResultListViewController: ResultListDelegate {
     
-    //Atualizar página com novo local escolhido
+    //Atualizar página com novo local escolhido (usado na tela de Buscar Lugares)
     func updateResultList(newPlace: SuggestionViewModel) {
         
         self.loadingView.isHidden = false
@@ -161,7 +167,8 @@ extension ResultListViewController: ResultListDelegate {
         self.navigationItem.title = "Busca: \(newPlace.name)"
         self.results = [:]
         self.resultListViewModel?.removeAll()
-        resultListViewModel = ResultListViewModel(place: newPlace.name)
+        self.searchText = newPlace.name
+        self.resultListViewModel = ResultListViewModel(place: self.searchText)
         self.setupSearchHotelsViewModelObserver()
     }
 }

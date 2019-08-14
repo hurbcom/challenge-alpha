@@ -33,7 +33,7 @@ class SuggestionsViewController: UIViewController {
     
     
     @IBAction func reconnect(_ sender: UIButton) {
-        searchPlace() 
+        self.searchPlace()
     }
     
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class SuggestionsViewController: UIViewController {
         animationView!.frame = CGRect(x: 0, y: 0, width: animationLoadingView.frame.size.width, height: animationLoadingView.frame.size.height)
         animationView!.contentMode = .scaleAspectFit
         animationView!.loopMode = .loop
-        animationLoadingView.addSubview(animationView!)
+        self.animationLoadingView.addSubview(animationView!)
         animationView!.play()
         
         //Colocar o focus no searchBar e abrir o teclado
@@ -56,9 +56,6 @@ class SuggestionsViewController: UIViewController {
         
         //Remover as linhas vazias da tableView
         self.tableView.tableFooterView = UIView(frame: .zero)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
     }
 }
 
@@ -66,23 +63,26 @@ class SuggestionsViewController: UIViewController {
 extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDelegate {
  
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        //Ao começar a digitar, limpar as sugestões
         self.loadingView.isHidden = true
         self.suggestions = []
         self.tableView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        timer?.invalidate()
+        //se houver algum timer ativo para afzer busca de sugestões, descarte-o
+        self.timer?.invalidate()
         
         self.searchText = searchText
         
+        //Após 3 caracteres, fazer uma busca de sugestões se o usuário ficar mais de 0,5 segundo sem digitar
         if self.searchText.count >= 3 {
-            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(getSuggestions), userInfo: nil, repeats: false)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(getSuggestions), userInfo: nil, repeats: false)
         }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchPlace()
+        self.searchPlace()
     }
     
     func searchPlace() {
@@ -90,30 +90,33 @@ extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDele
         
         //fazer consulta com pelo menos 3 caracteres, senão exibe um alertView
         if self.searchText.count >= 3 {
-            getSuggestions()
+            self.getSuggestions()
         } else {
             self.present(showAlert(mensagem: "Por favor, digite ao menos 3 caracteres"), animated: true, completion: nil)
         }
     }
     
     @objc func getSuggestions(){
+        //Verifica conectividade com a internet
         if !Reachability.isConnectedToNetwork(){
+            //se não tiver conectividade, exibe mensagem e gera evento no Firebase
             print("Internet Connection not Available!")
-            loadingView.isHidden = true
-            noResultsView.isHidden = true
-            noInternetConnectionView.isHidden = false
+            self.loadingView.isHidden = true
+            self.noResultsView.isHidden = true
+            self.noInternetConnectionView.isHidden = false
             FirebaseAnalyticsHelper.isNotConnectedEventLogger()
         }else{
             print("Internet Connection Available!")
             //exibir a tela de loading
-            loadingView.isHidden = false
-            noInternetConnectionView.isHidden = true
+            self.loadingView.isHidden = false
+            self.noResultsView.isHidden = true
+            self.noInternetConnectionView.isHidden = true
             
-            //Continuar a animação depois que o app voltar para o Foreground
+            //Quando o app entra em background, a animação é suspensa. Com essa notificação, quando o app for aberto novamente, a animação do loding deve continuar.
             NotificationCenter.default.addObserver(self, selector: #selector(continueAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
             
             
-            searchBar.text = searchText
+            self.searchBar.text = self.searchText
             
             //Fazer busca de sugestões a partir do que foi digitado no SearechBar
             APIClient.searchSuggestions(by: self.searchText, completion: { [unowned self] result in
@@ -138,7 +141,7 @@ extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDele
     }
     
     @objc func continueAnimation() {
-        animationView!.play()
+        self.animationView!.play()
     }
 }
 
@@ -151,9 +154,9 @@ extension SuggestionsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: suggestionCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.suggestionCell, for: indexPath)
         
-        let suggestionViewModel = SuggestionViewModel(suggestions[indexPath.row])
+        let suggestionViewModel = SuggestionViewModel(self.suggestions[indexPath.row])
         
         cell.textLabel!.text = suggestionViewModel.name
         cell.detailTextLabel!.text = suggestionViewModel.type
@@ -165,14 +168,14 @@ extension SuggestionsViewController: UITableViewDelegate, UITableViewDataSource 
         tableView.deselectRow(at: indexPath, animated: true)
         
         //ao selecionar uma sugestão, pegar o SuggestionViewModel e passar para o delegate (ResultListDelegate) da ViewController anterior (ResultViewController) atualizar a tableView e remover a viewcontroller da stack de navegação.
-        let suggestionViewModel = SuggestionViewModel(suggestions[indexPath.row])
-        resultListDelegate.updateResultList(newPlace: suggestionViewModel)
+        let suggestionViewModel = SuggestionViewModel(self.suggestions[indexPath.row])
+        self.resultListDelegate.updateResultList(newPlace: suggestionViewModel)
         
         FirebaseAnalyticsHelper.suggestionChosenEventoLoger(place: suggestionViewModel.name)
         self.navigationController?.popViewController(animated: true)
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        dismissKeyboard()
+        self.dismissKeyboard()
     }
 }
