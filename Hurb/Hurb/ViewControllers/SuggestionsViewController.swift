@@ -14,6 +14,7 @@ class SuggestionsViewController: UIViewController {
     //MARK: - Properties
     fileprivate let suggestionCell = "suggestionCell"
     fileprivate var animationView: AnimationView?
+    fileprivate var timer: Timer?
     
     var resultListDelegate: ResultListDelegate!
     
@@ -42,16 +43,26 @@ class SuggestionsViewController: UIViewController {
         self.noResultsView.isHidden = true
         self.noInternetConnectionView.isHidden = true
         
-        //
+        //carregar a animação do loading
+        animationView = AnimationView(name: "aroundTheWorld")
+        animationView!.frame = CGRect(x: 0, y: 0, width: animationLoadingView.frame.size.width, height: animationLoadingView.frame.size.height)
+        animationView!.contentMode = .scaleAspectFit
+        animationView!.loopMode = .loop
+        animationLoadingView.addSubview(animationView!)
+        animationView!.play()
         
         //Colocar o focus no searchBar e abrir o teclado
         self.searchBar.becomeFirstResponder()
         
         //Remover as linhas vazias da tableView
         self.tableView.tableFooterView = UIView(frame: .zero)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 }
 
+//MARK: UISearch extensions
 extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDelegate {
  
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -61,7 +72,13 @@ extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDele
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        timer?.invalidate()
+        
         self.searchText = searchText
+        
+        if self.searchText.count >= 3 {
+            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(getSuggestions), userInfo: nil, repeats: false)
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -73,56 +90,50 @@ extension SuggestionsViewController: UISearchControllerDelegate, UISearchBarDele
         
         //fazer consulta com pelo menos 3 caracteres, senão exibe um alertView
         if self.searchText.count >= 3 {
-            
-            if !Reachability.isConnectedToNetwork(){
-                print("Internet Connection not Available!")
-                loadingView.isHidden = true
-                noResultsView.isHidden = true
-                noInternetConnectionView.isHidden = false
-                FirebaseAnalyticsHelper.isNotConnectedEventLogger()
-            }else{
-                print("Internet Connection Available!")
-                //exibir a tela de loading
-                loadingView.isHidden = false
-                noInternetConnectionView.isHidden = true
-                
-                //carregar a animação do loading
-                animationView = AnimationView(name: "aroundTheWorld")
-                animationView!.frame = CGRect(x: 0, y: 0, width: animationLoadingView.frame.size.width, height: animationLoadingView.frame.size.height)
-                animationView!.contentMode = .scaleAspectFit
-                animationView!.loopMode = .loop
-                animationLoadingView.addSubview(animationView!)
-                animationView!.play()
-                
-                //Continuar a animação depois que o app voltar para o Foreground
-                NotificationCenter.default.addObserver(self, selector: #selector(continueAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
-                
-                
-                searchBar.text = searchText
-                
-                //Fazer busca de sugestões a partir do que foi digitado no SearechBar
-                APIClient.searchSuggestions(by: self.searchText, completion: { [unowned self] result in
-                    
-                    self.loadingView.isHidden = true
-                    switch result {
-                    case .success(let suggestionResults):
-                        //se for sucesso, pegar a lista de sugestoes e atualizar tabela
-                        self.suggestions = suggestionResults.suggestions ?? []
-                        if suggestionResults.suggestions?.count == 0 {
-                            self.noResultsView.isHidden = false
-                        } else {
-                            self.noResultsView.isHidden = true
-                            self.tableView.reloadData()
-                        }
-                        
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                })
-            }
-            
+            getSuggestions()
         } else {
             self.present(showAlert(mensagem: "Por favor, digite ao menos 3 caracteres"), animated: true, completion: nil)
+        }
+    }
+    
+    @objc func getSuggestions(){
+        if !Reachability.isConnectedToNetwork(){
+            print("Internet Connection not Available!")
+            loadingView.isHidden = true
+            noResultsView.isHidden = true
+            noInternetConnectionView.isHidden = false
+            FirebaseAnalyticsHelper.isNotConnectedEventLogger()
+        }else{
+            print("Internet Connection Available!")
+            //exibir a tela de loading
+            loadingView.isHidden = false
+            noInternetConnectionView.isHidden = true
+            
+            //Continuar a animação depois que o app voltar para o Foreground
+            NotificationCenter.default.addObserver(self, selector: #selector(continueAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
+            
+            
+            searchBar.text = searchText
+            
+            //Fazer busca de sugestões a partir do que foi digitado no SearechBar
+            APIClient.searchSuggestions(by: self.searchText, completion: { [unowned self] result in
+                
+                self.loadingView.isHidden = true
+                switch result {
+                case .success(let suggestionResults):
+                    //se for sucesso, pegar a lista de sugestoes e atualizar tabela
+                    self.suggestions = suggestionResults.suggestions ?? []
+                    if suggestionResults.suggestions?.count == 0 {
+                        self.noResultsView.isHidden = false
+                    } else {
+                        self.noResultsView.isHidden = true
+                        self.tableView.reloadData()
+                    }
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            })
         }
     }
     
@@ -158,8 +169,9 @@ extension SuggestionsViewController: UITableViewDelegate, UITableViewDataSource 
         resultListDelegate.updateResultList(newPlace: suggestionViewModel)
         
         self.navigationController?.popViewController(animated: true)
-    
-        
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        dismissKeyboard()
+    }
 }

@@ -11,19 +11,10 @@ import FirebaseAnalytics
 
 class FirebaseAnalyticsHelper {
     
-    static func addFavoriteEventLogger(movieId: Int, movieTitle: String){
+    static func viewHotelDetailsEventLogger(hotelName: Int){
         
-        Analytics.logEvent("addFavorite", parameters: [
-            "id": movieId as NSObject,
-            "title": movieTitle as NSObject
-            ])
-        
-    }
-    
-    static func removeFavoriteEventLogger(movieId: Int, movieTitle: String){
-        Analytics.logEvent("removeFavorite", parameters: [
-            "id": movieId as NSObject,
-            "title": movieTitle as NSObject
+        Analytics.logEvent("viewDetails", parameters: [
+            "hotelName": hotelName as NSObject
             ])
     }
     

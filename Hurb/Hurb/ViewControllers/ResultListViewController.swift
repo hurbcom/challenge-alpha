@@ -15,6 +15,7 @@ enum TableSection: Int {
     case CincoEstrelas = 0, QuatroEstrelas = 1, TresEstrelas = 2 , DuasEstrelas = 3, UmaEstrela = 4, ZeroEstrelas = 5, Pacotes = 6
 }
 
+
 protocol ResultListDelegate {
     func updateResultList(newPlace: SuggestionViewModel)
 }
@@ -22,22 +23,18 @@ protocol ResultListDelegate {
 class ResultListViewController: UIViewController {
 
     //MARK: - Properties
-    private let resultCell = "resultCell"
-    private let suggestionCell = "suggestionCell"
-    private let disposeBag = DisposeBag()
+    fileprivate let resultCell = "resultCell"
+    fileprivate let suggestionCell = "suggestionCell"
+    fileprivate let disposeBag = DisposeBag()
     
     //O Default Place está como Rio de Janeiro. No desafio não estava claro se o lugar default era Rio de Janeiro ou Búzios. E no exemplo ainda está usando a cidade de Gramado.
-    private var searchText: String = Defines.DEFAULT_PLACE
+    fileprivate var searchText: String = Defines.DEFAULT_PLACE
     
-    private var resultListViewModel: ResultListViewModel?
-    private var results: [TableSection: [Hotel]] = [:]
-    
-    
+    fileprivate var resultListViewModel: ResultListViewModel?
+    fileprivate var results: [TableSection: [Hotel]] = [:]
     fileprivate var animationView: AnimationView?
     
-    private var suggestions: [Suggestion] = []
-    
-    //MARK: - Outlets
+    //MARK: - IB Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: UIView!
@@ -66,7 +63,7 @@ class ResultListViewController: UIViewController {
     }
     
     //MARK: - Functions
-    func loading() {
+    fileprivate func loading() {
         
         //verifica se existe conectividade com a internet
         if !Reachability.isConnectedToNetwork(){
@@ -98,7 +95,7 @@ class ResultListViewController: UIViewController {
     }
     
     //MARK: - Rx Setup
-    private func setupSearchHotelsViewModelObserver() {
+    fileprivate func setupSearchHotelsViewModelObserver() {
         if Reachability.isConnectedToNetwork(){
             resultListViewModel?.hotelsObservable
                 .subscribe(onNext: { hotels in
@@ -133,6 +130,7 @@ class ResultListViewController: UIViewController {
         }
     }
     
+    //MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             if let vc = segue.destination as? HotelDetailViewController {
@@ -151,6 +149,7 @@ class ResultListViewController: UIViewController {
     
 }
 
+//MARK: - implementação dos métodos de ResultListDelegate
 extension ResultListViewController: ResultListDelegate {
     
     //Atualizar página com novo local escolhido
@@ -167,8 +166,8 @@ extension ResultListViewController: ResultListDelegate {
     }
 }
 
+//MARK: - UITableView extension
 extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
-    //MARK: - UITableView extension
     func numberOfSections(in tableView: UITableView) -> Int {
         return 7 // De 0 a 5 estrelas e Pacotes
     }
@@ -188,11 +187,7 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        // If we wanted to always show a section header regardless of whether or not there were rows in it,
-        // then uncomment this line below:
-        //return SectionHeaderHeight
-        // First check if there is a valid section of table.
-        // Then we check that for the section there is more than 1 row.
+        //se houver conteudo na section, alterar height do header para 25. Senão, retorna 0 (conteúdo vazio).
         if let tableSection = TableSection(rawValue: section), let hotelData = results[tableSection], hotelData.count > 0 {
             return 25
         }
@@ -201,14 +196,15 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    
         let cell = tableView.dequeueReusableCell(withIdentifier: resultCell, for: indexPath) as! ResultCell
         
+        //pegar a posição geral
         var rowNumber = indexPath.row
         for i in 0..<indexPath.section {
             rowNumber += self.tableView.numberOfRows(inSection: i)
         }
         
+        //inicializar viewModel de acordo com a sua posição geral na página de resultados
         _ = resultListViewModel?[rowNumber]
         
         if let tableSection = TableSection(rawValue: indexPath.section), let hotel = results[tableSection]?[indexPath.row] {

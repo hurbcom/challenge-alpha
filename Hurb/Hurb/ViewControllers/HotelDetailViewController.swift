@@ -8,15 +8,20 @@
 
 import UIKit
 import ImageSlideshow
+import GoogleMaps
 
 class HotelDetailViewController: UIViewController {
 
+    //MARK: - Properties
     var hotelViewModel: HotelViewModel!
     var amenities: [Amenity] = []
     var imageArray: [UIImage] = []
     
+    let googleMapsService = GoogleMapsService()
+    var marker = GMSMarker()
+    
+    //MARK: - IB Outlets
     @IBOutlet weak var slideshow: ImageSlideshow!
-//    @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var lbCity: UILabel!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var imgStar1: UIImageView!
@@ -36,18 +41,38 @@ class HotelDetailViewController: UIViewController {
     @IBOutlet weak var tableViewAmenities: UITableView!
     @IBOutlet weak var heightTableViewAmenities: NSLayoutConstraint!
     
+    @IBOutlet weak var lbAddress: UILabel!
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var heightMapView: NSLayoutConstraint!
+    
+    //MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        self.navigationItem.title = hotelViewModel.isHotel ? "Detalhe do Hotel" : "Detalhe do Pacote"
         
-        self.navigationController?.title = "Detalhe do Hotel"
     }
     
-    func updateUI() {
+    //ao abrir a view controller, zerar os marcadores e carregar o mapa
+    override func viewDidAppear(_ animated: Bool) {
+        marker.map = nil
+        if hotelViewModel.isHotel {
+            self.heightMapView.constant = 300
+            setMap()
+        } else {
+            self.mapView.isHidden = true
+            self.heightMapView.constant = 0
+        }
+        
+    }
+    
+    //MARK: - Functions
+    
+    //atualizar a UI com o viewModel
+    fileprivate func updateUI() {
         
         lbCity.text = hotelViewModel.cityState
         lbName.text = hotelViewModel.name
-//        imgPhoto.sd_setImage(with: hotelViewModel.imageUrl, placeholderImage: UIImage(named: "placeholderImage"), options: [.continueInBackground], completed: nil)
         
         setImageGallery()
         setStars()
@@ -65,8 +90,36 @@ class HotelDetailViewController: UIViewController {
         heightTableViewAmenities.constant = tableViewAmenities.contentSize.height
     }
     
+    //configurar o mapa
+    fileprivate func setMap() {
+        
+        self.mapView.clear()
+        self.mapView.settings.compassButton = true
+        self.mapView.settings.zoomGestures = true
+        self.mapView.isIndoorEnabled = false
+        
+        //pegar as coordenadas de acordo com o endereço (geocoding)
+        googleMapsService.getLatitudeLongitude(endereco: hotelViewModel.address, successCompletion: { location, address in
+            //mover câmera do mapa para o marcador
+            let target = CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
+            self.mapView.animate(toLocation: target)
+            self.mapView.animate(toZoom: 14)
+            
+            // Criar marcador no mapa
+            self.marker.position = CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
+            self.marker.title = self.hotelViewModel.name
+            self.marker.snippet = self.hotelViewModel.address
+            self.marker.map = self.mapView
+            
+            //atualizar endereço com o endereço formatado do Google Maps
+            self.lbAddress.text = "Endereço: \(address)"
+        
+        }, errorCompletion: { erro in
+            print(erro)
+        })
+    }
     
-    
+    //verificar quantidade de estrelas que serão exibidas
     fileprivate func setStars(){
         let imgStars = [imgStar1, imgStar2, imgStar3, imgStar4, imgStar5]
         
@@ -80,17 +133,10 @@ class HotelDetailViewController: UIViewController {
             }
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setNeedsStatusBarAppearanceUpdate()
-    }
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return .lightContent
-    }
-    
+
 }
 
+//MARK: - UITableView extension - Lista de Amenidades
 extension HotelDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return amenities.count
@@ -110,10 +156,12 @@ extension HotelDetailViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
+//MARK: - ImageSlideshow extension
 extension HotelDetailViewController: ImageSlideshowDelegate {
     fileprivate func setImageGallery(){
         var sources: [SDWebImageSource] = []
         
+        //criando o source de imagens da galeria para o slideshow
         for image in hotelViewModel.gallery {
             let sdWebImageSource = SDWebImageSource(urlString: image.url!.convertStringToUrlString, placeholder: UIImage(named: "placeholderImage"))!
             sources.append(sdWebImageSource)
@@ -121,32 +169,27 @@ extension HotelDetailViewController: ImageSlideshowDelegate {
         
         slideshow.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
         slideshow.contentScaleMode = UIViewContentMode.scaleAspectFill
+        slideshow.circular = false
         
         let pageControl = UIPageControl()
-        pageControl.currentPageIndicatorTintColor = UIColor.lightGray
-        pageControl.pageIndicatorTintColor = UIColor.black
+        pageControl.currentPageIndicatorTintColor = UIColor.black
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
         slideshow.pageIndicator = pageControl
         
-        // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
         slideshow.activityIndicator = DefaultActivityIndicator()
         slideshow.delegate = self
         
-        // can be used with other sample sources as `afNetworkingSource`, `alamofireSource` or `sdWebImageSource` or `kingfisherSource`
+        //adicionando o source de imagens ao slideshow
         slideshow.setImageInputs(sources)
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
         slideshow.addGestureRecognizer(recognizer)
         
-        //        for image in hotelViewModel.gallery {
-        //            let imageView = UIImageView(frame: imgPhoto.frame)
-        //            imageView.sd_setImage(with: URL(string: image.url!), placeholderImage: UIImage(named: "placeholderImage"), options: [.continueInBackground], completed: nil)
-        //        }
-        
     }
     
     @objc func didTap() {
+        //ao dar um tap em uma imagem, abrir em full screen
         let fullScreenController = slideshow.presentFullScreenController(from: self)
-        // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
         fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
     }
 

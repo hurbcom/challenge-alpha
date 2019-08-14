@@ -16,7 +16,7 @@ target 'Hurb' do
   pod 'ImageSlideshow'
   pod 'ImageSlideshow/SDWebImage'
   pod 'Firebase/Analytics'
-  
+  pod 'GoogleMaps'
 
   target 'HurbTests' do
     inherit! :search_paths

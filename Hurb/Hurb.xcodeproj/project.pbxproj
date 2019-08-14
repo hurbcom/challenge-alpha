@@ -31,8 +31,9 @@
 		8D741AB422FCA4B400CC2D77 /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741AB322FCA4B400CC2D77 /* HotelViewModel.swift */; };
 		8D741AB822FCA8C400CC2D77 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741AB722FCA8C400CC2D77 /* Utils.swift */; };
 		8D741ABA22FCAFFB00CC2D77 /* ResultListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741AB922FCAFFB00CC2D77 /* ResultListViewModel.swift */; };
-		8D741ABC22FCB32B00CC2D77 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741ABB22FCB32B00CC2D77 /* Connectivity.swift */; };
 		8D741ABE22FCCCA100CC2D77 /* HotelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741ABD22FCCCA100CC2D77 /* HotelDetailViewController.swift */; };
+		8DAA27D12303A5C600D557A2 /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAA27D02303A5C600D557A2 /* GoogleMapsService.swift */; };
+		8DAA27D32303A68B00D557A2 /* GeocodingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAA27D22303A68B00D557A2 /* GeocodingResponse.swift */; };
 		8DC0E84E22FC4F4B006A046E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0E84D22FC4F4B006A046E /* AppDelegate.swift */; };
 		8DC0E85322FC4F4B006A046E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC0E85122FC4F4B006A046E /* Main.storyboard */; };
 		8DC0E85522FC4F4E006A046E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DC0E85422FC4F4E006A046E /* Assets.xcassets */; };
@@ -91,8 +92,9 @@
 		8D741AB322FCA4B400CC2D77 /* HotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewModel.swift; sourceTree = "<group>"; };
 		8D741AB722FCA8C400CC2D77 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8D741AB922FCAFFB00CC2D77 /* ResultListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListViewModel.swift; sourceTree = "<group>"; };
-		8D741ABB22FCB32B00CC2D77 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		8D741ABD22FCCCA100CC2D77 /* HotelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailViewController.swift; sourceTree = "<group>"; };
+		8DAA27D02303A5C600D557A2 /* GoogleMapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsService.swift; sourceTree = "<group>"; };
+		8DAA27D22303A68B00D557A2 /* GeocodingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingResponse.swift; sourceTree = "<group>"; };
 		8DC0E84A22FC4F4B006A046E /* Hurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC0E84D22FC4F4B006A046E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DC0E85222FC4F4B006A046E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				8D741A9F22FC595100CC2D77 /* Filters.swift */,
 				8D741AA122FC5ABB00CC2D77 /* Hotel.swift */,
 				8D29E2D722FF35FC00379F9B /* Suggestion.swift */,
+				8DAA27D22303A68B00D557A2 /* GeocodingResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,7 +217,7 @@
 			children = (
 				8D741AAF22FC9D0E00CC2D77 /* APIClient.swift */,
 				8D741AB122FC9EB300CC2D77 /* APIRouter.swift */,
-				8D741ABB22FCB32B00CC2D77 /* Connectivity.swift */,
+				8DAA27D02303A5C600D557A2 /* GoogleMapsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				8DC0E84722FC4F4B006A046E /* Frameworks */,
 				8DC0E84822FC4F4B006A046E /* Resources */,
 				39D0DC7C1C2E7D038598D07D /* [CP] Embed Pods Frameworks */,
+				CAA4025078FD5F8FC5E27532 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -371,6 +375,7 @@
 				8DC0E86622FC4F4E006A046E /* Frameworks */,
 				8DC0E86722FC4F4E006A046E /* Resources */,
 				E76593C843D435287A891DE0 /* [CP] Embed Pods Frameworks */,
+				F03451F6F04FD306D78A23AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -539,6 +544,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CAA4025078FD5F8FC5E27532 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hurb/Pods-Hurb-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hurb/Pods-Hurb-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hurb/Pods-Hurb-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E76593C843D435287A891DE0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -556,6 +578,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hurb-HurbUITests/Pods-Hurb-HurbUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F03451F6F04FD306D78A23AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hurb-HurbUITests/Pods-Hurb-HurbUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hurb-HurbUITests/Pods-Hurb-HurbUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hurb-HurbUITests/Pods-Hurb-HurbUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -565,9 +604,11 @@
 			files = (
 				8D741A9C22FC584900CC2D77 /* Meta.swift in Sources */,
 				8D741ABE22FCCCA100CC2D77 /* HotelDetailViewController.swift in Sources */,
+				8DAA27D32303A68B00D557A2 /* GeocodingResponse.swift in Sources */,
 				8D741ABA22FCAFFB00CC2D77 /* ResultListViewModel.swift in Sources */,
 				8D29E2D822FF35FC00379F9B /* Suggestion.swift in Sources */,
 				8D741AB222FC9EB300CC2D77 /* APIRouter.swift in Sources */,
+				8DAA27D12303A5C600D557A2 /* GoogleMapsService.swift in Sources */,
 				8DC0E84E22FC4F4B006A046E /* AppDelegate.swift in Sources */,
 				8D741AB822FCA8C400CC2D77 /* Utils.swift in Sources */,
 				8D741AA622FC604D00CC2D77 /* ResultCell.swift in Sources */,
@@ -579,7 +620,6 @@
 				8D741AA222FC5ABB00CC2D77 /* Hotel.swift in Sources */,
 				8D29E2D422FF1D9300379F9B /* Extensions+UIViewController.swift in Sources */,
 				8D741A9822FC539800CC2D77 /* ResultListViewController.swift in Sources */,
-				8D741ABC22FCB32B00CC2D77 /* Connectivity.swift in Sources */,
 				8D29E2D622FF257C00379F9B /* Extensions+String.swift in Sources */,
 				8D741AB422FCA4B400CC2D77 /* HotelViewModel.swift in Sources */,
 				8D29E2E122FF875F00379F9B /* Reachability.swift in Sources */,

@@ -78,4 +78,21 @@ class HotelViewModel {
         
         return ""
     }
+    
+    var address: String {
+        if let address = hotel.address {
+            guard let street = address.street else { return "" }
+            guard let city = address.city else { return "" }
+            guard let state = address.state else { return "" }
+            guard let country = address.country else { return "" }
+            
+            return "\(street), \(city), \(state), \(country)"
+        } else {
+            return ""
+        }
+    }
+    
+    var isHotel: Bool {
+        return hotel.isHotel ?? false
+    }
 }

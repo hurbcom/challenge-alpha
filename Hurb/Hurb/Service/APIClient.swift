@@ -11,7 +11,7 @@ import Alamofire
 
 class APIClient {
     
-    //MARK: searchHotels by place request
+    //MARK: - searchHotels by place request
     static func searchHotels(by place: String, page: Int, completion:@escaping (Result<Page>)->Void) {
         
         Alamofire.request(APIRouter.getHotels(by: place, page: page))
@@ -35,7 +35,7 @@ class APIClient {
         }
     }
     
-    //MARK: searchSuggestions by place request
+    //MARK: - searchSuggestions by place request
     static func searchSuggestions(by place: String, completion:@escaping (Result<ResultSuggestion>)->Void) {
         
         Alamofire.request(APIRouter.getSuggestions(by: place))

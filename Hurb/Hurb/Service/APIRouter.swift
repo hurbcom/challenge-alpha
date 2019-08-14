@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 class APIRouter {
+    
+    //MARK: - Criar request para getHotels
     static func getHotels(by place: String, page: Int) -> URLRequestConvertible {
         
         var urlComponents = URLComponents(string: Defines.BASE_URL)!
@@ -28,6 +30,7 @@ class APIRouter {
         return request as URLRequestConvertible
     }
     
+    //MARK: - Criar request para getSuggestions
     static func getSuggestions(by place: String) -> URLRequestConvertible {
         
         var urlComponents = URLComponents(string: Defines.SUGGESTION_URL)!
