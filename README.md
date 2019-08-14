@@ -20,15 +20,15 @@ Na URL acima, é passado como parâmetros o texto para busca. O documento JSON c
 ## Funcionalidades
 - A interface foi inspirada no site do Hurb: as células no resultado da consulta e as cores (azul e rosa).
 - Listagem inicial dos hotéis e pacotes com o termo "Rio de Janeiro".
--- Os hotéis estão ordenados em quantidade de estrelas (de 5 a 0) e, por último, os pacotes.
--- Algumas informações importantes foram adicionadas nas células, para melhor visualização do hotel, como nome, preço, cidade, estado, uma foto e três amenidades.
+	* Os hotéis estão ordenados em quantidade de estrelas (de 5 a 0) e, por último, os pacotes.
+	* Algumas informações importantes foram adicionadas nas células, para melhor visualização do hotel, como nome, preço, cidade, estado, uma foto e três amenidades.
 - Campo de busca de lugares. 
--- Ao digitar na busca, se possuir mais de 3 caracteres e o intervalo entre um caracter e outro for mais de 0,5 segundos, uma chamada à API será feita, simulando um autocomplete. 
+	* Ao digitar na busca, se possuir mais de 3 caracteres e o intervalo entre um caracter e outro for mais de 0,5 segundos, uma chamada à API será feita, simulando um autocomplete. 
 - Tela de detalhes do hotel ou pacote
--- Há uma galeria de fotos. Ao deslizar o dedo sobre a galeria, é possível visualizar todas as fotos. Clicando sobre a foto, uma nova view é aberta em full screen. Ela pode ser dispensada clicando no X ou fazendo o swipe pra cima ou pra baixo na foto.
--- Há a lista de todas as amenidades.
--- Há o endereço completo
--- Há um mapa para visualizar o endereço.
+	* Há uma galeria de fotos. Ao deslizar o dedo sobre a galeria, é possível visualizar todas as fotos. Clicando sobre a foto, uma nova view é aberta em full screen. Ela pode ser dispensada clicando no X ou fazendo o swipe pra cima ou pra baixo na foto.
+	* Há a lista de todas as amenidades.
+	* Há o endereço completo
+	* Há um mapa para visualizar o endereço.
 
 ## Bibliotecas utilizadas
 - **Google Maps**, para fazer o geocoding (conversão de endereço para coordenadas de latitude e longitude)  e visualizar o mapa na tela de detalhes.
@@ -40,12 +40,12 @@ Na URL acima, é passado como parâmetros o texto para busca. O documento JSON c
 - **FirebaseAnalytics**, para gravar eventos gerados no aplicativo e estudar o comportamento dos usuários.
  
 ## Testes
-- Foi criado 2 testes unitários:
--- Buscar hotéis (utilizando a API)
--- Converter uma string de número para moeda.
+* Foi criado 2 testes unitários:
+	* Buscar hotéis (utilizando a API)
+	* Converter uma string de número para moeda.
 
-- Foi criado 1 teste UI:
--- Navegação para a tela de Busca e consultar o lugar "Búzios".
+* Foi criado 1 teste UI:
+	 * Navegação para a tela de Busca e consultar o lugar "Búzios".
 
 ## Algo a mais
 - Busca de sugestão de lugares
