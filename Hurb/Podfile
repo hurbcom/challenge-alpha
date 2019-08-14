@@ -9,7 +9,6 @@ target 'Hurb' do
   pod 'lottie-ios'
   pod 'SwiftyJSON'
   pod 'Alamofire'
-  pod 'SVProgressHUD'
   pod 'SDWebImage'
   pod 'RxSwift'
   pod 'RxCocoa'

@@ -11,10 +11,17 @@ import FirebaseAnalytics
 
 class FirebaseAnalyticsHelper {
     
-    static func viewHotelDetailsEventLogger(hotelName: Int){
+    static func viewHotelDetailsEventLogger(hotelName: String){
         
         Analytics.logEvent("viewDetails", parameters: [
             "hotelName": hotelName as NSObject
+            ])
+    }
+    
+    static func suggestionChosenEventoLoger(place: String){
+        
+        Analytics.logEvent("suggestionChosen", parameters: [
+            "place": place as NSObject
             ])
     }
     

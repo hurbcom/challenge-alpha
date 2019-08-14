@@ -219,6 +219,7 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     
         if let tableSection = TableSection(rawValue: indexPath.section), let hotel = results[tableSection]?[indexPath.row] {
+            FirebaseAnalyticsHelper.viewHotelDetailsEventLogger(hotelName: hotel.name!)
             performSegue(withIdentifier: "showDetails", sender: HotelViewModel(hotel))
         }
     

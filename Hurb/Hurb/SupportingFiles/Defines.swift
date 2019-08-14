@@ -13,7 +13,7 @@ class Defines {
     static let GOOGLE_KEY = "AIzaSyBRB_ZzYgxTL3XRKfHvuq5jcaP3-VgkaLE"
     static let GOOGLE_MAPS_GEOCODE = "https://maps.googleapis.com/maps/api/geocode/json?address=%@&key=%@"
     
-    static let BASE_URL = "https://www.hurb.com/search/api"
+    static let SEARCH_URL = "https://www.hurb.com/search/api"
     static let SUGGESTION_URL = "https://www.hurb.com/search/api/suggestion"
     
     static let DEFAULT_PLACE = "Rio de Janeiro"

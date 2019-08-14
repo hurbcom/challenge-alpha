@@ -14,7 +14,7 @@ class APIRouter {
     //MARK: - Criar request para getHotels
     static func getHotels(by place: String, page: Int) -> URLRequestConvertible {
         
-        var urlComponents = URLComponents(string: Defines.BASE_URL)!
+        var urlComponents = URLComponents(string: Defines.SEARCH_URL)!
         
         urlComponents.queryItems = [
             URLQueryItem(name: "q", value: place.urlEncoding),

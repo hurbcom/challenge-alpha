@@ -168,6 +168,7 @@ extension SuggestionsViewController: UITableViewDelegate, UITableViewDataSource 
         let suggestionViewModel = SuggestionViewModel(suggestions[indexPath.row])
         resultListDelegate.updateResultList(newPlace: suggestionViewModel)
         
+        FirebaseAnalyticsHelper.suggestionChosenEventoLoger(place: suggestionViewModel.name)
         self.navigationController?.popViewController(animated: true)
     }
     
