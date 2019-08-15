@@ -19,7 +19,7 @@ O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Jane
 `GET https://www.hurb.com/search/api/suggestion?q=grama` (Opcional)
 
 ## Requisitos Mínimos
-- Forkar esse desafio e criar o seu projeto (ou workspace) usando a sua versão desse repositório, tão logo acabe o desafio, submeta um *pull request*.
+- Forkar esse desafio e criar o seu projeto (ou workspace) usando a sua versão desse repositório, tão logo acabe o desafio, submeta um *pull request*. Caso você tenha algum motivo para não submeter um *pull request*, ao término do desafio preencha o arquivo chamado `pull-request.txt`, comprima a pasta do projeto - incluindo a pasta `.git` - e nos envie por email.
 
 - Faça chamadas assíncronas para a API e emita um log dos dados recebidos.
 
