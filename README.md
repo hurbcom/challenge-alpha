@@ -3,6 +3,9 @@
 
 Aplicativo para dispositivo iOS (**Swift**) que consome o JSON exposto pela API de busca do Hurb e apresenta as informações em uma listagem. Há ainda a opção de buscar sugestões de lugares e visualizar os detalhes de um determinado produto.
 
+## Screenshots
+![Telas do Hurb](/screenshots/screenshots.png?raw=true)
+
 ## API
 A API utilizada neste desafio foi do próprio Hurb, que fornece duas URLs: uma que entrega a listagem de resultados para um determinado local e outra que retorna uma lista de sugestões de lugares de acordo com o texto informado.
 
@@ -17,6 +20,17 @@ Na URL acima, é passado como parâmetros o texto para busca, o item que será o
 
 Na URL acima, é passado como parâmetros o texto para busca. O documento JSON contem um nó chamado `suggestions`, que contém a lista de sugestões de lugares de acordo com o texto informado.
 
+## Instalação do Projeto
+ 1. Fazer o clone do projeto:
+`git clone https://github.com/alexpapanis/challenge-alpha.git`
+ 
+ 2. Pelo terminal, entrar na pasta /Hurb e rodar o comando:
+`pod install`
+
+3. Abrir arquivo `Hurb.xcworkspace`
+
+4. Fazer o build e rodar o projeto
+
 ## Funcionalidades
 - A interface foi inspirada no site do Hurb: as células no resultado da consulta e as cores (azul e rosa).
 - Listagem inicial dos hotéis e pacotes com o termo "Rio de Janeiro".
@@ -28,6 +42,7 @@ Na URL acima, é passado como parâmetros o texto para busca. O documento JSON c
 	* Há uma galeria de fotos. Ao deslizar o dedo sobre a galeria, é possível visualizar todas as fotos. Clicando sobre a foto, uma nova view é aberta em full screen. Ela pode ser dispensada clicando no X ou fazendo o swipe pra cima ou pra baixo na foto.
 	* Há a lista de todas as amenidades.
 	* Há o endereço completo
+	* Há um botão para traçar rota pelo Google Maps, Apple Maps ou Waze.
 	* Há um mapa para visualizar o endereço.
 
 ## Bibliotecas utilizadas

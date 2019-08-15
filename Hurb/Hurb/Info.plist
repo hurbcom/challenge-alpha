@@ -57,6 +57,7 @@
 			<array>
 				<string>googlechromes</string>
 				<string>comgooglemaps</string>
+				<string>waze</string>
 			</array>
 		</dict>
 	</array>

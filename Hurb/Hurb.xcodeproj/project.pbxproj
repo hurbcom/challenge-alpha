@@ -34,6 +34,7 @@
 		8D741ABE22FCCCA100CC2D77 /* HotelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D741ABD22FCCCA100CC2D77 /* HotelDetailViewController.swift */; };
 		8DAA27D12303A5C600D557A2 /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAA27D02303A5C600D557A2 /* GoogleMapsService.swift */; };
 		8DAA27D32303A68B00D557A2 /* GeocodingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAA27D22303A68B00D557A2 /* GeocodingResponse.swift */; };
+		8DB6A78E2304E4BB0055328A /* MapasUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6A78D2304E4BB0055328A /* MapasUtil.swift */; };
 		8DC0E84E22FC4F4B006A046E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0E84D22FC4F4B006A046E /* AppDelegate.swift */; };
 		8DC0E85322FC4F4B006A046E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC0E85122FC4F4B006A046E /* Main.storyboard */; };
 		8DC0E85522FC4F4E006A046E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DC0E85422FC4F4E006A046E /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		8D741ABD22FCCCA100CC2D77 /* HotelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailViewController.swift; sourceTree = "<group>"; };
 		8DAA27D02303A5C600D557A2 /* GoogleMapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsService.swift; sourceTree = "<group>"; };
 		8DAA27D22303A68B00D557A2 /* GeocodingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingResponse.swift; sourceTree = "<group>"; };
+		8DB6A78D2304E4BB0055328A /* MapasUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapasUtil.swift; sourceTree = "<group>"; };
 		8DC0E84A22FC4F4B006A046E /* Hurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC0E84D22FC4F4B006A046E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DC0E85222FC4F4B006A046E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				8D741AB722FCA8C400CC2D77 /* Utils.swift */,
 				8D29E2E022FF875F00379F9B /* Reachability.swift */,
 				8D29E2E42301E62300379F9B /* FirebaseAnalytics.swift */,
+				8DB6A78D2304E4BB0055328A /* MapasUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				8D29E2E122FF875F00379F9B /* Reachability.swift in Sources */,
 				8D741AAE22FC8BE300CC2D77 /* Defines.swift in Sources */,
 				8D29E2E52301E62300379F9B /* FirebaseAnalytics.swift in Sources */,
+				8DB6A78E2304E4BB0055328A /* MapasUtil.swift in Sources */,
 				8D741A9A22FC56DE00CC2D77 /* Page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,6 +19,7 @@ class HotelDetailViewController: UIViewController {
     
     let googleMapsService = GoogleMapsService()
     var marker = GMSMarker()
+    var mapAddress: String = ""
     
     //MARK: - IB Outlets
     @IBOutlet weak var slideshow: ImageSlideshow!
@@ -31,6 +32,7 @@ class HotelDetailViewController: UIViewController {
     @IBOutlet weak var imgStar5: UIImageView!
     
     @IBOutlet weak var vwFreeCancellation: UIView!
+    @IBOutlet weak var heightFreeCancellationView: NSLayoutConstraint!
     @IBOutlet weak var lbPriceDescription: UILabel!
     @IBOutlet weak var lbPrice: UILabel!
     
@@ -44,6 +46,32 @@ class HotelDetailViewController: UIViewController {
     @IBOutlet weak var lbAddress: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var heightMapView: NSLayoutConstraint!
+    
+    //MARK: - IB Actions
+    @IBAction func reservarHotel(_ sender: UIButton) {
+        self.present(self.showAlert(mensagem: "Sistema de reservas estará disponível na próxima versão"), animated: true, completion: nil)
+    }
+    
+    @IBAction func tracarRota(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Traçar Rota",
+                                      message: "Selecione uma opção:",
+                                      preferredStyle: UIAlertController.Style.alert)
+        
+        let googleMapsAction = UIAlertAction(title: "Google Maps",
+                                             style: .default, handler: { action in MapasUtil.openGoogleMaps(endereco: self.mapAddress)})
+        let appleMapsAction = UIAlertAction(title: "Apple Maps",
+                                            style: .default, handler: { action in MapasUtil.openAppleMaps(endereco: self.mapAddress)})
+        let wazeAction = UIAlertAction(title: "Waze",
+                                       style: .default, handler: { action in MapasUtil.openWaze(endereco: self.mapAddress)})
+        let cancelAction = UIAlertAction(title: "Cancelar",
+                                         style: .cancel, handler: nil)
+        
+        alert.addAction(googleMapsAction)
+        alert.addAction(appleMapsAction)
+        alert.addAction(wazeAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     //MARK: - ViewController life cycle
     override func viewDidLoad() {
@@ -77,6 +105,7 @@ class HotelDetailViewController: UIViewController {
         setImageGallery()
         setStars()
         vwFreeCancellation.isHidden = !hotelViewModel.isFreeCancellation
+        heightFreeCancellationView.constant = hotelViewModel.isFreeCancellation ? 25 : 0
         
         lbPriceDescription.text = hotelViewModel.priceDescription
         lbPrice.text = hotelViewModel.price
@@ -113,6 +142,7 @@ class HotelDetailViewController: UIViewController {
             
             //atualizar endereço com o endereço formatado do Google Maps
             self.lbAddress.text = "Endereço: \(address)"
+            self.mapAddress = address
         
         }, errorCompletion: { erro in
             print(erro)

@@ -25,6 +25,7 @@ class GoogleMapsService {
         var enderecoSemEspacos = endereco.replacingOccurrences(of: " ", with: "+")
         enderecoSemEspacos = enderecoSemEspacos.replacingOccurrences(of: "/", with: "%2F")
         enderecoSemEspacos = enderecoSemEspacos.folding(options: .diacriticInsensitive, locale: .current)
+        enderecoSemEspacos = enderecoSemEspacos.convertStringToUrlString
         
         let url = String.init(format: Defines.GOOGLE_MAPS_GEOCODE, enderecoSemEspacos, Defines.GOOGLE_KEY)
         
