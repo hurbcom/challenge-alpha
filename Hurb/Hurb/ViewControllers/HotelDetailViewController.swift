@@ -48,11 +48,15 @@ class HotelDetailViewController: UIViewController {
     @IBOutlet weak var heightMapView: NSLayoutConstraint!
     
     //MARK: - IB Actions
-    @IBAction func reservarHotel(_ sender: UIButton) {
+    @IBAction func bookHotel(_ sender: UIButton) {
+        
+        //Como não há API disponível para fazer reservas, exiba apenas um AlertView informando que não está disponível no momento.
         self.present(self.showAlert(mensagem: "Sistema de reservas estará disponível na próxima versão"), animated: true, completion: nil)
     }
     
-    @IBAction func tracarRota(_ sender: UIButton) {
+    @IBAction func traceRoute(_ sender: UIButton) {
+        
+        //Ao clicar no botão de navegação, perguntar ao usuário qual aplicativo de navegação ele deseja traçar a rota.
         let alert = UIAlertController(title: "Traçar Rota",
                                       message: "Selecione uma opção:",
                                       preferredStyle: UIAlertController.Style.alert)
