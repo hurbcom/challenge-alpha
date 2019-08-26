@@ -29,7 +29,7 @@ O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Jane
 
 -   Exibir os itens de `Hotels` numa UITableView ou UICollectionView (como no iOS, por exemplo). Cada célula vai representar um ítem de `Hotels`e deve mostrar seu nome, preço, cidade, estado, uma foto e três amenidades.
 
--   Agrupar as células (usando um título para separá-las) pela quantidade de estrelas. Caso não exista estrelas, agrupe em _Pacotes_.
+-   Agrupar as células (usando um título para separá-las) pela quantidade de estrelas. Caso não exista estrelas, agrupe em _Pacotes_. Veja os exemplos de resposta para [hoteis](examples/hotel.json) e [pacotes](examples/package.json)
 
     -   Deve estar ordena descrentemente pela quantidade de estrelas.
 
