@@ -14,9 +14,9 @@ O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Jane
 
 **URL:**
 
-`GET https://www.hurb.com/search/api?q=gramado&page=1` (Obrigatória)
+`GET https://www.hurb.com/search/api?q=buzios&page=1` (Obrigatória)
 
-`GET https://www.hurb.com/search/api/suggestion?q=grama` (Opcional)
+`GET https://www.hurb.com/search/api/suggestion?q=buzios` (Opcional)
 
 ## Requisitos Mínimos
 
