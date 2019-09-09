@@ -8,20 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, DAORequester {
-
+class ViewController: UIViewController {
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        DAO.instance.jsonDataRequest(page: 1, requester: self)
+        
         
     }
     
-    func readedDataFromJson(result: Hotel) {
-        for element in result.results {
-            print("\n===========", element.address.city)
-        }
-    }
 
 
 }

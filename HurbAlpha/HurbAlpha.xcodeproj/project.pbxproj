@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153F69FD23205BE200C7630C /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153F69FC23205BE200C7630C /* TableViewCell.xib */; };
+		153F6A0323205C1600C7630C /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F6A0023205C1500C7630C /* ViewExtensions.swift */; };
+		153F6A0423205C1600C7630C /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F6A0123205C1600C7630C /* UIView+Additions.swift */; };
+		153F6A092320A57300C7630C /* FeedViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F6A082320A57300C7630C /* FeedViewContoller.swift */; };
+		1568E3002326D37C003720C1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568E2FF2326D37C003720C1 /* TableViewCell.swift */; };
 		15F34CB3231F4A6D0015FEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CB2231F4A6D0015FEFB /* AppDelegate.swift */; };
 		15F34CB5231F4A6D0015FEFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CB4231F4A6D0015FEFB /* ViewController.swift */; };
 		15F34CB8231F4A6D0015FEFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F34CB6231F4A6D0015FEFB /* Main.storyboard */; };
@@ -17,19 +22,14 @@
 		15F34CE5231F74020015FEFB /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CE4231F74020015FEFB /* DAO.swift */; };
 		15F34CE7231F74940015FEFB /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CE6231F74940015FEFB /* Hotel.swift */; };
 		15F34CE9231F77B90015FEFB /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CE8231F77B90015FEFB /* Adress.swift */; };
-		15F34CEB231F7CAB0015FEFB /* AmenityElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CEA231F7CAB0015FEFB /* AmenityElement.swift */; };
 		15F34CED231F7CC80015FEFB /* FeaturedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CEC231F7CC80015FEFB /* FeaturedItem.swift */; };
 		15F34CEF231F7D000015FEFB /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CEE231F7D000015FEFB /* Gallery.swift */; };
 		15F34CF1231F7D4C0015FEFB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CF0231F7D4C0015FEFB /* Result.swift */; };
 		15F34CF3231F7D740015FEFB /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CF2231F7D740015FEFB /* Filters.swift */; };
-		15F34CF5231F7D9D0015FEFB /* PurpleAmenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CF4231F7D9D0015FEFB /* PurpleAmenity.swift */; };
-		15F34CF7231F7DC20015FEFB /* PriceInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CF6231F7DC20015FEFB /* PriceInterval.swift */; };
-		15F34CF9231F7DDC0015FEFB /* PriceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CF8231F7DDC0015FEFB /* PriceElement.swift */; };
 		15F34CFB231F7DED0015FEFB /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CFA231F7DED0015FEFB /* GeoLocation.swift */; };
 		15F34CFD231F7E080015FEFB /* ResultPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CFC231F7E080015FEFB /* ResultPrice.swift */; };
 		15F34CFF231F7E2C0015FEFB /* QuantityDescriptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CFE231F7E2C0015FEFB /* QuantityDescriptors.swift */; };
 		15F34D05231F7F890015FEFB /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34D04231F7F890015FEFB /* Amenity.swift */; };
-		15F34D09232027DE0015FEFB /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34D08232027DE0015FEFB /* Meta.swift */; };
 		15F34D0B232027F60015FEFB /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34D0A232027F60015FEFB /* Pagination.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		153F69FC23205BE200C7630C /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		153F6A0023205C1500C7630C /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		153F6A0123205C1600C7630C /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		153F6A05232067ED00C7630C /* SFCompactDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Light.otf"; sourceTree = "<group>"; };
+		153F6A082320A57300C7630C /* FeedViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewContoller.swift; sourceTree = "<group>"; };
+		1568E2FF2326D37C003720C1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		15F34CAF231F4A6D0015FEFB /* HurbAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15F34CB2231F4A6D0015FEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15F34CB4231F4A6D0015FEFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,19 +73,14 @@
 		15F34CE4231F74020015FEFB /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		15F34CE6231F74940015FEFB /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		15F34CE8231F77B90015FEFB /* Adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
-		15F34CEA231F7CAB0015FEFB /* AmenityElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmenityElement.swift; sourceTree = "<group>"; };
 		15F34CEC231F7CC80015FEFB /* FeaturedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedItem.swift; sourceTree = "<group>"; };
 		15F34CEE231F7D000015FEFB /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		15F34CF0231F7D4C0015FEFB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		15F34CF2231F7D740015FEFB /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
-		15F34CF4231F7D9D0015FEFB /* PurpleAmenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleAmenity.swift; sourceTree = "<group>"; };
-		15F34CF6231F7DC20015FEFB /* PriceInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceInterval.swift; sourceTree = "<group>"; };
-		15F34CF8231F7DDC0015FEFB /* PriceElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceElement.swift; sourceTree = "<group>"; };
 		15F34CFA231F7DED0015FEFB /* GeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
 		15F34CFC231F7E080015FEFB /* ResultPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPrice.swift; sourceTree = "<group>"; };
 		15F34CFE231F7E2C0015FEFB /* QuantityDescriptors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityDescriptors.swift; sourceTree = "<group>"; };
 		15F34D04231F7F890015FEFB /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
-		15F34D08232027DE0015FEFB /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		15F34D0A232027F60015FEFB /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +109,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		153F69F9232050B000C7630C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		153F69FE23205C0800C7630C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				153F6A0123205C1600C7630C /* UIView+Additions.swift */,
+				153F6A0023205C1500C7630C /* ViewExtensions.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		15F34CA6231F4A6D0015FEFB = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +149,7 @@
 		15F34CB1231F4A6D0015FEFB /* HurbAlpha */ = {
 			isa = PBXGroup;
 			children = (
+				153F6A05232067ED00C7630C /* SFCompactDisplay-Light.otf */,
 				15F34CB2231F4A6D0015FEFB /* AppDelegate.swift */,
 				15F34CE0231F4A750015FEFB /* Model */,
 				15F34CE1231F4A7C0015FEFB /* View */,
@@ -161,18 +179,15 @@
 		15F34CE0231F4A750015FEFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				153F69FE23205C0800C7630C /* View */,
+				153F69F9232050B000C7630C /* Managers */,
 				15F34CE4231F74020015FEFB /* DAO.swift */,
 				15F34CE6231F74940015FEFB /* Hotel.swift */,
 				15F34CF2231F7D740015FEFB /* Filters.swift */,
-				15F34CF4231F7D9D0015FEFB /* PurpleAmenity.swift */,
-				15F34CF6231F7DC20015FEFB /* PriceInterval.swift */,
-				15F34CF8231F7DDC0015FEFB /* PriceElement.swift */,
-				15F34D08232027DE0015FEFB /* Meta.swift */,
 				15F34D0A232027F60015FEFB /* Pagination.swift */,
 				15F34CF0231F7D4C0015FEFB /* Result.swift */,
 				15F34CE8231F77B90015FEFB /* Adress.swift */,
 				15F34CFA231F7DED0015FEFB /* GeoLocation.swift */,
-				15F34CEA231F7CAB0015FEFB /* AmenityElement.swift */,
 				15F34CEC231F7CC80015FEFB /* FeaturedItem.swift */,
 				15F34CEE231F7D000015FEFB /* Gallery.swift */,
 				15F34CFC231F7E080015FEFB /* ResultPrice.swift */,
@@ -185,6 +200,7 @@
 		15F34CE1231F4A7C0015FEFB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				153F69FC23205BE200C7630C /* TableViewCell.xib */,
 				15F34CB6231F4A6D0015FEFB /* Main.storyboard */,
 				15F34CBB231F4A6F0015FEFB /* LaunchScreen.storyboard */,
 			);
@@ -195,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				15F34CB4231F4A6D0015FEFB /* ViewController.swift */,
+				153F6A082320A57300C7630C /* FeedViewContoller.swift */,
+				1568E2FF2326D37C003720C1 /* TableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -313,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15F34CBD231F4A6F0015FEFB /* LaunchScreen.storyboard in Resources */,
+				153F69FD23205BE200C7630C /* TableViewCell.xib in Resources */,
 				15F34CBA231F4A6F0015FEFB /* Assets.xcassets in Resources */,
 				15F34CB8231F4A6D0015FEFB /* Main.storyboard in Resources */,
 			);
@@ -339,24 +358,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				153F6A0323205C1600C7630C /* ViewExtensions.swift in Sources */,
 				15F34CF1231F7D4C0015FEFB /* Result.swift in Sources */,
 				15F34CF3231F7D740015FEFB /* Filters.swift in Sources */,
 				15F34CFB231F7DED0015FEFB /* GeoLocation.swift in Sources */,
-				15F34CF9231F7DDC0015FEFB /* PriceElement.swift in Sources */,
+				1568E3002326D37C003720C1 /* TableViewCell.swift in Sources */,
 				15F34CEF231F7D000015FEFB /* Gallery.swift in Sources */,
 				15F34CE5231F74020015FEFB /* DAO.swift in Sources */,
+				153F6A0423205C1600C7630C /* UIView+Additions.swift in Sources */,
 				15F34CB5231F4A6D0015FEFB /* ViewController.swift in Sources */,
 				15F34CFF231F7E2C0015FEFB /* QuantityDescriptors.swift in Sources */,
 				15F34CE7231F74940015FEFB /* Hotel.swift in Sources */,
 				15F34CE9231F77B90015FEFB /* Adress.swift in Sources */,
 				15F34D05231F7F890015FEFB /* Amenity.swift in Sources */,
 				15F34CED231F7CC80015FEFB /* FeaturedItem.swift in Sources */,
-				15F34D09232027DE0015FEFB /* Meta.swift in Sources */,
-				15F34CEB231F7CAB0015FEFB /* AmenityElement.swift in Sources */,
 				15F34CB3231F4A6D0015FEFB /* AppDelegate.swift in Sources */,
-				15F34CF5231F7D9D0015FEFB /* PurpleAmenity.swift in Sources */,
+				153F6A092320A57300C7630C /* FeedViewContoller.swift in Sources */,
 				15F34D0B232027F60015FEFB /* Pagination.swift in Sources */,
-				15F34CF7231F7DC20015FEFB /* PriceInterval.swift in Sources */,
 				15F34CFD231F7E080015FEFB /* ResultPrice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

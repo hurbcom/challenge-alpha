@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - ResultPrice
-class ResultPrice: Codable {
+struct ResultPrice: Codable {
     let currency, currencyOriginal: String?
     let priceCurrentPrice, priceOldPrice: Double?
     let sku: String
@@ -24,21 +24,19 @@ class ResultPrice: Codable {
         case priceOldPrice
         case sku, originalAmountPerDay, amountPerDay, amount, oldPrice, currentPrice, originalAmount
     }
-    
-    init(currency: String?, currencyOriginal: String?, priceCurrentPrice: Double?, priceOldPrice: Double?, sku: String, originalAmountPerDay: Double?, amountPerDay: Double, amount: Double, oldPrice: Int?, currentPrice: Int?, originalAmount: Int?) {
-        self.currency = currency
-        self.currencyOriginal = currencyOriginal
-        self.priceCurrentPrice = priceCurrentPrice
-        self.priceOldPrice = priceOldPrice
-        self.sku = sku
-        self.originalAmountPerDay = originalAmountPerDay
-        self.amountPerDay = amountPerDay
-        self.amount = amount
-        self.oldPrice = oldPrice
-        self.currentPrice = currentPrice
-        self.originalAmount = originalAmount
-    }
-    
+}
+
+// MARK: - PriceInterval
+struct PriceInterval: Codable {
+    let min, max: Int
+    let filterPattern: String
+}
+
+// MARK: - PriceElement
+struct PriceElement: Codable {
+    let min, maxExclusive: Int
+    let filter: String
+    let count: Int
 }
 
 

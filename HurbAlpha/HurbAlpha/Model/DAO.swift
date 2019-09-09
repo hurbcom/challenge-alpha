@@ -7,33 +7,66 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DAORequester {
-    func readedDataFromJson(result:Hotel)
+    func finishedLoading()
+    func finishedLoading(with Error:HotelReadingError)
 }
 
+enum HotelReadingError:Error {
+    case badURL
+    case badData
+    case DataIsNotHotelModel
+}
+
+
 class DAO {
+    
+    
     
     static let instance = DAO()
     private init() {}
     
-    func jsonDataRequest (page:Int, requester: DAORequester) {
-        let url = "https://www.hurb.com/search/api?q=gramado&page=\(String(page))"
-        let urlObj = URL(string: url)
-        URLSession.shared.dataTask(with: urlObj!) { (data, response, error) in
-            do {
+    
+    var loadedHotels:[Result] = []
+    var favorites:[Result] = []
+    var hotelsByStars:[(key: Int, value: [Result])] {
+        var hotelsByStars:[Int:[Result]] = [:]
+        
+        for hotel in loadedHotels {
+            let stars = hotel.stars ?? Int.max
+            hotelsByStars[stars] = hotelsByStars[stars] ?? []
+            
+            hotelsByStars[stars]?.append(hotel)
+            
+        }
+        return hotelsByStars.sorted { $0.key < $1.key }
 
-                // Json to Hotel
-                let result = try JSONDecoder().decode(Hotel.self, from: data!)
-                requester.readedDataFromJson(result: result)
-
-                // Logic after response has arrived
-                DispatchQueue.main.async {
-                    debugPrint("main.async")
-                }
-            } catch {
-                debugPrint(error)
-            }
-            }.resume()
     }
+    
+    func jsonDataRequest (page:Int, requester: DAORequester) {
+        DispatchQueue.main.async {
+            let urlString = "https://www.hurb.com/search/api?q=buzios&page=\(page)"
+            guard let url = URL(string: urlString) else {
+                debugPrint("error in url", urlString)
+                requester.finishedLoading(with: .badURL)
+                return
+            }
+            guard let data = try? Data(contentsOf: url) else {
+                debugPrint("error reading data from", urlString)
+                requester.finishedLoading(with: .badData)
+                return
+            }
+            guard let hotel = try? JSONDecoder().decode(Hotel.self, from: data) else {
+                debugPrint("error converting data from", urlString, "to Hotel model")
+                requester.finishedLoading(with: .DataIsNotHotelModel)
+                return
+            }
+            self.loadedHotels = hotel.results
+            requester.finishedLoading()
+        }
+    }
+    
 }
+

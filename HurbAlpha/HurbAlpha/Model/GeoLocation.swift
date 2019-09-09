@@ -9,11 +9,6 @@
 import Foundation
 
 // MARK: - GeoLocation
-class GeoLocation: Codable {
+struct GeoLocation: Codable {
     let lat, lon: Double
-    
-    init(lat: Double, lon: Double) {
-        self.lat = lat
-        self.lon = lon
-    }
 }

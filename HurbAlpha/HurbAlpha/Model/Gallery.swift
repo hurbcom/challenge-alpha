@@ -9,17 +9,12 @@
 import Foundation
 
 // MARK: - Gallery
-class Gallery: Codable {
+struct Gallery: Codable {
     let galleryDescription: String?
     let url: String
     
     enum CodingKeys: String, CodingKey {
         case galleryDescription
         case url
-    }
-    
-    init(galleryDescription: String?, url: String) {
-        self.galleryDescription = galleryDescription
-        self.url = url
     }
 }

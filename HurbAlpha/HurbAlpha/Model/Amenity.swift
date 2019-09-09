@@ -8,13 +8,19 @@
 
 import Foundation
 // MARK: - Amenity
-class Amenity: Codable {
+struct Amenity: Codable {
     let name: String?
     let category: String?
-    
-    init(name: String?, category: String?) {
-        self.name = name
-        self.category = category
-    }
+}
 
+// MARK: - AmenityElement
+struct AmenityElement: Codable {
+    let name: String
+    let category: String
+}
+
+// MARK: - PurpleAmenity
+struct PurpleAmenity: Codable {
+    let term, filter: String
+    let count: Int
 }
