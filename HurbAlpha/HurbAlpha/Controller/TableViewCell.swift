@@ -22,9 +22,8 @@ class TableViewCell: UITableViewCell {
         case loaded(UIImage)
     }
     
-    var hotel: Hotel? = nil
-    var type: CellType = .hotel
     var isFlagged: Bool = false
+    var type:CellType = .hotel
     
     private let activityView = UIActivityIndicatorView(style: .gray)
     
@@ -39,6 +38,7 @@ class TableViewCell: UITableViewCell {
                 activityView.startAnimating()
             case let .loaded(img):
                 photo.image = img
+                photo.contentMode = .scaleAspectFill
                 activityView.stopAnimating()
             }
         }
@@ -85,22 +85,32 @@ class TableViewCell: UITableViewCell {
         let imageNormal = UIImage(named: "favoriteFlag")
         favoriteButton.setImage(imageNormal, for: .normal)
         
+        for item in cellView.subviews {
+            item.isUserInteractionEnabled = false
+        }
+        
+        cellView.isUserInteractionEnabled = true
+        self.photo.layer.cornerRadius = 10
+        self.photo.clipsToBounds = true
         
     }
     
     func loadInfo(on result:Result) {
-        if result.isHotel == true {
-            self.type = .hotel
-        } else {
+        if result.isHotel == nil {
             self.type = .package
+        }
+        let currency = String(result.price.currency ?? "BRL") + " "
+        var cents = String(result.price.amount).split(separator: ".")[1]
+        let value = String(result.price.amount).split(separator: ".")[0]
+        if cents.count == 1 {
+            cents = cents + "0"
         }
         switch type {
         case .hotel:
             self.nameLabel.text = result.name
             self.nameLabel.textColor = .baseBlue
             self.localLabel.text = result.address.city + " | " + result.address.state
-            let currency = String(result.price.currency ?? "BRL") + " "
-            self.maxValorLabel.text = currency + String(result.price.amountPerDay).split(separator: ".")[0] + "," + String(result.price.amountPerDay).split(separator: ".")[1]
+            self.maxValorLabel.text = currency + value + "," + cents
             let amenitiesList = result.amenities
             switch amenitiesList.count {
             case 0:
@@ -120,6 +130,16 @@ class TableViewCell: UITableViewCell {
                 self.amenity2.text = amenitiesList[1].name
                 self.amenity3.text = amenitiesList[2].name
             }
+            
+            self.amenity1.layer.cornerRadius = 10
+            self.amenity1.clipsToBounds = true
+            
+            self.amenity2.layer.cornerRadius = 10
+            self.amenity2.clipsToBounds = true
+            
+            self.amenity3.layer.cornerRadius = 10
+            self.amenity3.clipsToBounds = true
+            
             let stars = [self.star1, self.star2, self.star3, self.star4, self.star5]
             if result.stars != nil {
                 for i in 0...result.stars! - 1 {
@@ -127,12 +147,33 @@ class TableViewCell: UITableViewCell {
                 }
             }
             if !result.gallery.isEmpty {
-                loadImage(from: result.gallery[0].url, imageView: photo)
+                loadImage(from: result.gallery[0].url)
             }
         case .package:
             self.nameLabel.text = result.name
             self.nameLabel.textColor = .baseBlue
-            
+            let amenitiesList = result.amenities
+            switch amenitiesList.count {
+            case 0:
+                self.amenity1.isHidden = true
+                self.amenity2.isHidden = true
+                self.amenity3.isHidden = true
+            case 1:
+                self.amenity1.text = amenitiesList[0].name
+                self.amenity2.isHidden = true
+                self.amenity3.isHidden = true
+            case 2:
+                self.amenity1.text = amenitiesList[0].name
+                self.amenity2.text = amenitiesList[1].name
+                self.amenity3.isHidden = true
+            default:
+                self.amenity1.text = amenitiesList[0].name
+                self.amenity2.text = amenitiesList[1].name
+                self.amenity3.text = amenitiesList[2].name
+            }
+            if !result.gallery.isEmpty {
+                loadImage(from: result.gallery[0].url)
+            }
         }
         
         activityView.color = UIColor.baseBlue
@@ -145,7 +186,7 @@ class TableViewCell: UITableViewCell {
     
     
     
-    func loadImage(from imageURL: String, imageView: UIImageView) {
+    func loadImage(from imageURL: String) {
         DispatchQueue.main.async {
             self.loadingState = .loading
             guard let url = URL(string: imageURL) else {
@@ -153,7 +194,7 @@ class TableViewCell: UITableViewCell {
                 return
             }
             guard let data = try? Data(contentsOf: url) else {
-                debugPrint("error getting data", #function, url)
+//                debugPrint("error getting data", #function, url)
                 return
             }
             guard let img = UIImage(data: data) else {

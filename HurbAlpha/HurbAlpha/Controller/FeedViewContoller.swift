@@ -21,7 +21,7 @@ class FeedViewController: UIViewController, DAORequester {
     
     var dao = DAO.instance
     var currentPage = 1
-    
+    var selectedHotel:Result?
     //outlets
     @IBOutlet weak var feedTableView: UITableView!
     
@@ -30,9 +30,10 @@ class FeedViewController: UIViewController, DAORequester {
     override func viewDidLoad() {
         
         self.feedTableView.separatorStyle = .none
+        self.feedTableView.estimatedRowHeight = 560
         
         feedTableView.dataSource = self
-        //        feedTableView.delegate = self
+        feedTableView.delegate = self
         feedTableView.allowsSelection = true
         
         feedTableView.refreshControl = refreshControl
@@ -52,8 +53,8 @@ class FeedViewController: UIViewController, DAORequester {
         activityView.startAnimating()
         
         
-        feedTableView.rowHeight = UITableView.automaticDimension
-        feedTableView.estimatedRowHeight = UITableView.automaticDimension
+//        feedTableView.rowHeight = 550
+        
         feedTableView.reloadData()
         
     }
@@ -82,19 +83,26 @@ class FeedViewController: UIViewController, DAORequester {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailsFromFeed" {
+            if let destinationVC = segue.destination as? DetailsViewController {
+                destinationVC.currentHotel = self.selectedHotel
+            }
+        }
+    }
+    
 }
 
-extension FeedViewController: UITableViewDataSource, UITabBarDelegate{
+extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return dao.hotelsByStars.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         switch dao.hotelsByStars[section].key {
         case 1:
-            return String(dao.hotelsByStars[section].key) + " estrela"    
+            return String(dao.hotelsByStars[section].key) + " estrela"
         case Int.max:
             return "Pacotes"
         default:
@@ -102,8 +110,13 @@ extension FeedViewController: UITableViewDataSource, UITabBarDelegate{
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedHotel = dao.hotelsByStars[indexPath.section].value[indexPath.row]
+        self.performSegue(withIdentifier: "detailsFromFeed", sender: nil)
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return 30
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,7 +130,9 @@ extension FeedViewController: UITableViewDataSource, UITabBarDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 408.0
+        return 572
     
     }
+    
+    
 }
