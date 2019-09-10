@@ -114,6 +114,7 @@
 		153F69F9232050B000C7630C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				15F34CE4231F74020015FEFB /* DAO.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -181,9 +182,6 @@
 		15F34CE0231F4A750015FEFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				153F69FE23205C0800C7630C /* View */,
-				153F69F9232050B000C7630C /* Managers */,
-				15F34CE4231F74020015FEFB /* DAO.swift */,
 				15F34CE6231F74940015FEFB /* Hotel.swift */,
 				15F34CF2231F7D740015FEFB /* Filters.swift */,
 				15F34D0A232027F60015FEFB /* Pagination.swift */,
@@ -195,6 +193,8 @@
 				15F34CFC231F7E080015FEFB /* ResultPrice.swift */,
 				15F34CFE231F7E2C0015FEFB /* QuantityDescriptors.swift */,
 				15F34D04231F7F890015FEFB /* Amenity.swift */,
+				153F69FE23205C0800C7630C /* View */,
+				153F69F9232050B000C7630C /* Managers */,
 			);
 			path = Model;
 			sourceTree = "<group>";

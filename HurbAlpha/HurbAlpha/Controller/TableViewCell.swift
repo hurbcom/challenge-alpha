@@ -25,6 +25,8 @@ class TableViewCell: UITableViewCell {
     var isFlagged: Bool = false
     var type:CellType = .hotel
     
+    var myHotel:Result?
+    
     private let activityView = UIActivityIndicatorView(style: .gray)
     
     var loadingState: LoadingState = .notLoading {
@@ -47,7 +49,6 @@ class TableViewCell: UITableViewCell {
     //outlets
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     
     // stars - for hotels only
@@ -77,17 +78,11 @@ class TableViewCell: UITableViewCell {
         cellView.layer.shadowOpacity = 0.23
         cellView.layer.shadowRadius = 4
         cellView.layer.cornerRadius = 12
+
         
-        // Favorite Button image
-        let imageSelected = UIImage(named: "favoritoSelected")
-        favoriteButton.setImage(imageSelected, for: .selected)
-        
-        let imageNormal = UIImage(named: "favoriteFlag")
-        favoriteButton.setImage(imageNormal, for: .normal)
-        
-        for item in cellView.subviews {
-            item.isUserInteractionEnabled = false
-        }
+//        for item in cellView.subviews {
+//            item.isUserInteractionEnabled = false
+//        }
         
         cellView.isUserInteractionEnabled = true
         self.photo.layer.cornerRadius = 10
@@ -105,6 +100,7 @@ class TableViewCell: UITableViewCell {
         if cents.count == 1 {
             cents = cents + "0"
         }
+        
         switch type {
         case .hotel:
             self.nameLabel.text = result.name
@@ -141,6 +137,9 @@ class TableViewCell: UITableViewCell {
             self.amenity3.clipsToBounds = true
             
             let stars = [self.star1, self.star2, self.star3, self.star4, self.star5]
+            for star in stars {
+                star?.isHidden = true
+            }
             if result.stars != nil {
                 for i in 0...result.stars! - 1 {
                     stars[i]!.isHidden = false
@@ -207,16 +206,5 @@ class TableViewCell: UITableViewCell {
         
     }
     
-    
-    
-    @IBAction func favoriteClicked(_ sender: Any) {
-        isFlagged = !isFlagged
-        switch isFlagged {
-        case true:
-            favoriteButton.isSelected = true
-        case false:
-            favoriteButton.isSelected = false
-        }
-    }
     
 }

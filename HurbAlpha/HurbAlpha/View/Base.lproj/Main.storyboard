@@ -15,25 +15,66 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Favorites View Controller-->
         <scene sceneID="KuB-82-wop">
             <objects>
-                <viewController id="sQY-Ss-Xhb" sceneMemberID="viewController">
+                <viewController id="sQY-Ss-Xhb" customClass="FavoritesViewController" customModule="HurbAlpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wjA-FD-U8X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eQ9-3C-0Uy">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você não possui favoritos ainda..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jQb-1O-qOk">
+                                    <rect key="frame" x="0.0" y="436" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="408" id="85x-ae-FHS">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="408"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="85x-ae-FHS" id="0Jk-iE-oZ2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="407.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seus hotéis e pacotes favoritos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13C-to-PXj">
+                                <rect key="frame" x="61" y="42" width="253" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eQ9-3C-0Uy" firstAttribute="top" secondItem="13C-to-PXj" secondAttribute="bottom" constant="8.5" id="2Xd-Wb-Bze"/>
+                            <constraint firstAttribute="bottom" secondItem="eQ9-3C-0Uy" secondAttribute="bottom" id="D6i-Xy-PHn"/>
+                            <constraint firstItem="eQ9-3C-0Uy" firstAttribute="leading" secondItem="R0f-uG-rvb" secondAttribute="leading" id="Ign-jn-etK"/>
+                            <constraint firstItem="eQ9-3C-0Uy" firstAttribute="top" secondItem="R0f-uG-rvb" secondAttribute="top" constant="52" id="Oqy-a6-zve"/>
+                            <constraint firstItem="eQ9-3C-0Uy" firstAttribute="trailing" secondItem="R0f-uG-rvb" secondAttribute="trailing" id="SsF-dB-nsR"/>
+                            <constraint firstItem="R0f-uG-rvb" firstAttribute="trailing" secondItem="13C-to-PXj" secondAttribute="trailing" constant="61" id="Wlx-rj-xrV"/>
+                            <constraint firstItem="13C-to-PXj" firstAttribute="top" secondItem="R0f-uG-rvb" secondAttribute="top" constant="22" id="ZH7-zl-fox"/>
+                            <constraint firstItem="13C-to-PXj" firstAttribute="leading" secondItem="R0f-uG-rvb" secondAttribute="leading" constant="61" id="nwA-cd-AVI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="R0f-uG-rvb"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="favoritesIcon" selectedImage="favoritesIcon" id="577-BW-JaS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="y7K-SR-qYj" kind="show" identifier="seeFavorite" id="EmR-hs-25x"/>
+                        <outlet property="favoritesTableView" destination="eQ9-3C-0Uy" id="AsK-Q9-bOI"/>
+                        <outlet property="noFavoritesLabel" destination="jQb-1O-qOk" id="PmO-sC-vM9"/>
+                        <segue destination="yyA-0q-yVL" kind="show" identifier="detailsFromFav" id="V4J-ft-DdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y51-b1-VCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2226" y="932"/>
+            <point key="canvasLocation" x="-1311.2" y="900.89955022488766"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="0bU-mN-rOx">
@@ -179,6 +220,9 @@
                                     <constraint firstAttribute="width" constant="26" id="cam-P6-kx6"/>
                                 </constraints>
                                 <state key="normal" image="favoriteFlag"/>
+                                <connections>
+                                    <action selector="addToFavorite:" destination="yyA-0q-yVL" eventType="touchUpInside" id="JXC-wg-UZr"/>
+                                </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estrela" translatesAutoresizingMaskIntoConstraints="NO" id="d03-52-gpy" userLabel="Star5">
                                 <rect key="frame" x="127" y="240" width="20" height="30"/>
@@ -283,6 +327,7 @@
                     <connections>
                         <outlet property="amenitiesTextView" destination="Yye-Tn-mcs" id="QBS-Lf-P1h"/>
                         <outlet property="descriptionTextView" destination="BF3-NG-NXv" id="lxT-6V-1d2"/>
+                        <outlet property="favoriteButton" destination="BX1-BD-xr3" id="Ari-T6-WnW"/>
                         <outlet property="local" destination="QtD-NS-33e" id="oAz-rN-VLh"/>
                         <outlet property="name" destination="PBP-M3-a1a" id="wuX-o1-N2p"/>
                         <outlet property="photo" destination="TG6-I4-iYM" id="4ER-rY-zSE"/>
@@ -307,10 +352,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZhI-lB-2GD">
-                                <rect key="frame" x="0.0" y="72" width="375" height="534"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="534" id="KB9-da-czV"/>
+                                    <constraint firstAttribute="height" constant="554" id="KB9-da-czV"/>
                                     <constraint firstAttribute="width" constant="375" id="vMh-z4-eGA"/>
                                 </constraints>
                                 <prototypes>
@@ -324,13 +369,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotéis e Pacotes em: Búzios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiI-n7-No6">
+                                <rect key="frame" x="72" y="34" width="230" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ZhI-lB-2GD" firstAttribute="top" secondItem="WL8-ez-KTP" secondAttribute="top" constant="52" id="KiO-3W-xz3"/>
+                            <constraint firstItem="ZhI-lB-2GD" firstAttribute="top" secondItem="PiI-n7-No6" secondAttribute="bottom" constant="8.5" id="JoS-aw-KjG"/>
+                            <constraint firstItem="ZhI-lB-2GD" firstAttribute="top" secondItem="WL8-ez-KTP" secondAttribute="top" constant="44" id="KiO-3W-xz3"/>
+                            <constraint firstItem="PiI-n7-No6" firstAttribute="top" secondItem="WL8-ez-KTP" secondAttribute="top" constant="14" id="XzM-T6-Zqe"/>
                             <constraint firstItem="ZhI-lB-2GD" firstAttribute="trailing" secondItem="WL8-ez-KTP" secondAttribute="trailing" id="cDo-UH-Uvn"/>
-                            <constraint firstItem="WL8-ez-KTP" firstAttribute="bottom" secondItem="ZhI-lB-2GD" secondAttribute="bottom" constant="12" id="i7l-jQ-DnN"/>
+                            <constraint firstItem="WL8-ez-KTP" firstAttribute="bottom" secondItem="ZhI-lB-2GD" secondAttribute="bottom" id="i7l-jQ-DnN"/>
                             <constraint firstItem="ZhI-lB-2GD" firstAttribute="leading" secondItem="WL8-ez-KTP" secondAttribute="leading" id="iHR-1C-Olj"/>
+                            <constraint firstItem="PiI-n7-No6" firstAttribute="leading" secondItem="WL8-ez-KTP" secondAttribute="leading" constant="72" id="jGt-oe-FM9"/>
+                            <constraint firstItem="WL8-ez-KTP" firstAttribute="trailing" secondItem="PiI-n7-No6" secondAttribute="trailing" constant="73" id="upz-2s-VkF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WL8-ez-KTP"/>
                     </view>
@@ -343,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WlN-aO-uEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1310" y="-152"/>
+            <point key="canvasLocation" x="-1311.2" y="-152.47376311844079"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cYn-1c-Pgi">
@@ -363,25 +418,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qm5-2A-uvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2226" y="-152"/>
-        </scene>
-        <!--Favorites View Controller-->
-        <scene sceneID="YVt-cf-FCl">
-            <objects>
-                <viewController id="y7K-SR-qYj" customClass="FavoritesViewController" customModule="HurbAlpha" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UQh-su-yEh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="hHm-DH-272"/>
-                    </view>
-                    <connections>
-                        <segue destination="yyA-0q-yVL" kind="show" identifier="detailsFromFav" id="Tb9-XP-dG3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SUK-Ry-YhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1309" y="933"/>
+            <point key="canvasLocation" x="-2302" y="394"/>
         </scene>
     </scenes>
     <resources>
@@ -394,6 +431,6 @@
         <image name="localizacao" width="23" height="29.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qgG-X6-8kG"/>
+        <segue reference="V4J-ft-DdL"/>
     </inferredMetricsTieBreakers>
 </document>

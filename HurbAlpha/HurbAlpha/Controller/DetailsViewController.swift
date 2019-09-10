@@ -28,6 +28,11 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var vmax: UILabel!
     @IBOutlet weak var local: UILabel!
     
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    
+    
+    
     var currentHotel:Result?
     
     enum LoadingState {
@@ -37,6 +42,7 @@ class DetailsViewController: UIViewController {
     }
     
     private let activityView = UIActivityIndicatorView(style: .gray)
+    var isFlagged: Bool = false
     
     var loadingState: LoadingState = .notLoading {
         didSet {
@@ -66,9 +72,13 @@ class DetailsViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             return
         }
+        
+        if DAO.instance.favorites.contains(where: { $0.id == myHotel.id }) {
+            self.favoriteButton.isSelected = true
+        } 
         self.name.text = myHotel.name
         self.name.textColor = .baseBlue
-        self.descriptionTextView.text = myHotel.resultDescription
+        self.descriptionTextView.text = myHotel.resultDescription ?? "Hotel sem descrição cadastrada."
         self.descriptionTextView.layer.cornerRadius = 10
         self.descriptionTextView.clipsToBounds = true
         let currency = String(myHotel.price.currency ?? "BRL") + " "
@@ -100,6 +110,13 @@ class DetailsViewController: UIViewController {
                 stars[i]!.isHidden = false
             }
         }
+        
+        // Favorite Button image
+        let imageSelected = UIImage(named: "favoritoSelected")
+        favoriteButton.setImage(imageSelected, for: .selected)
+        
+        let imageNormal = UIImage(named: "favoriteFlag")
+        favoriteButton.setImage(imageNormal, for: .normal)
     }
     
     func loadImage(from imageURL: String) {
@@ -125,6 +142,17 @@ class DetailsViewController: UIViewController {
     
 
     @IBAction func addToFavorite(_ sender: Any) {
+        guard let myHotel = currentHotel else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        DAO.instance.manageFavorite(at: myHotel)
+        
+        if DAO.instance.favorites.contains(where: { $0.id == myHotel.id }) {
+            self.favoriteButton.isSelected = true
+        } else {
+            self.favoriteButton.isSelected = false
+        }
     }
     
     
@@ -138,8 +166,15 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func dismiss(_ sender: Any) {
-        
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? FeedViewController {
+            destinationVC.feedTableView.reloadData()
+        } else if let destinationVC = segue.destination as? FavoritesViewController {
+            destinationVC.favoritesTableView.reloadData()
+        }
     }
 }
 

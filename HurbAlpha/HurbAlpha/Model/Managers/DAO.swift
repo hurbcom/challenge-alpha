@@ -39,7 +39,6 @@ class DAO {
             hotelsByStars[stars] = hotelsByStars[stars] ?? []
             
             hotelsByStars[stars]?.append(hotel)
-            
         }
         return hotelsByStars.sorted { $0.key < $1.key }
 
@@ -65,6 +64,14 @@ class DAO {
             }
             self.loadedHotels = hotel.results
             requester.finishedLoading()
+        }
+    }
+    
+    func manageFavorite(at item:Result) {
+        if favorites.contains(where: { $0.id == item.id }) {
+            favorites.removeAll(where: { $0.id == item.id })
+        } else {
+            favorites.append(item)
         }
     }
     

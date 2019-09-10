@@ -20,13 +20,13 @@ class FeedViewController: UIViewController, DAORequester {
     private let activityView = UIActivityIndicatorView(style: .gray)
     
     var dao = DAO.instance
-    var currentPage = 1
     var selectedHotel:Result?
     //outlets
     @IBOutlet weak var feedTableView: UITableView!
     
 
-
+    @IBOutlet weak var navigationBarTitle: UINavigationBar!
+    
     override func viewDidLoad() {
         
         self.feedTableView.separatorStyle = .none
@@ -43,7 +43,7 @@ class FeedViewController: UIViewController, DAORequester {
         let nib = UINib.init(nibName: "TableViewCell", bundle: nil)
         self.feedTableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         
-        dao.jsonDataRequest(page: currentPage, requester: self)
+        dao.jsonDataRequest(page: 1, requester: self)
         
         activityView.color = UIColor.baseBlue
         activityView.frame = CGRect(x: 0, y: 0, width: 300.0, height: 300.0)
@@ -78,7 +78,7 @@ class FeedViewController: UIViewController, DAORequester {
         DispatchQueue.main.async {
             sleep(3)
             debugPrint("retrying read data")
-            self.dao.jsonDataRequest(page: self.currentPage, requester: self)
+            self.dao.jsonDataRequest(page: 1, requester: self)
         }
         
     }
