@@ -29,7 +29,9 @@ class FeedViewController: UIViewController, DAORequester {
     private let activityView = UIActivityIndicatorView(style: .gray)
     
     // DAO instance
-    var dao = DAO.instance
+    var dao:DAO {
+        return DAO.instance
+    }
     
     // The reference for the selected hotel
     var selectedHotel:Result?

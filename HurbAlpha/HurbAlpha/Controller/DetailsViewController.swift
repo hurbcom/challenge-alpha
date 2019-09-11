@@ -44,6 +44,10 @@ class DetailsViewController: UIViewController {
     // The images manager instance
     let imageManager = ImagesManager.instance
     
+    var dao:DAO {
+        return DAO.instance
+    }
+    
     /**
      Set up all view elements.
      */
@@ -53,7 +57,7 @@ class DetailsViewController: UIViewController {
             return
         }
         
-        if DAO.instance.favorites.contains(where: { $0.id == myHotel.id }) {
+        if dao.favorites.contains(where: { $0.id == myHotel.id }) {
             self.favoriteButton.isSelected = true
         }
         self.photoImageView.layer.cornerRadius = 10
@@ -121,9 +125,9 @@ class DetailsViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             return
         }
-        DAO.instance.manageFavorite(at: myHotel)
+        dao.manageFavorite(at: myHotel)
         
-        if DAO.instance.favorites.contains(where: { $0.id == myHotel.id }) {
+        if dao.favorites.contains(where: { $0.id == myHotel.id }) {
             self.favoriteButton.isSelected = true
         } else {
             self.favoriteButton.isSelected = false

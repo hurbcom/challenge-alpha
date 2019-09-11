@@ -26,8 +26,10 @@ class FavoritesViewController: UIViewController {
     // The refresh control for table view
     private let refreshControl = UIRefreshControl()
     
-    // DAO instance
-    var dao = DAO.instance
+    // The dao instance
+    var dao:DAO {
+        return DAO.instance
+    }
     
     // The selected hotel reference
     var selectedHotel:Result?
