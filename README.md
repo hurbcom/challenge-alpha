@@ -21,7 +21,7 @@ O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Jane
 ## Requisitos Mínimos
 
 -   Forkar esse desafio e criar o seu projeto (ou workspace) usando a sua versão desse repositório, tão logo acabe o desafio, submeta um _pull request_.
-    -   Caso você tenha algum motivo para não submeter um _pull request_, crie um repositório privado no Github e adicione como colaborador o usuário `automator-hurb` e o deixe disponível por pelo menos 30 dias. Ao terminar o desafio, envie o código para esse projeto criado, preencha o arquivo chamado `pull-request.txt` e nos envie um email avisando do término.
+    -   Caso você tenha algum motivo para não submeter um _pull request_, crie um repositório privado no Github, faça todo desafio na branch **master** e não se esqueça de preencher o arquivo `pull-request.txt`. Tão logo termine seu trabalho, adicione como colaborador o usuário `automator-hurb` e o deixe disponível por pelo menos 30 dias.
     -   Caso você tenha algum problema para criar o repositório privado, ao término do desafio preencha o arquivo chamado `pull-request.txt`, comprima a pasta do projeto - incluindo a pasta `.git` - e nos envie por email.
 -   Faça chamadas assíncronas para a API e emita um log dos dados recebidos.
 
