@@ -60,7 +60,7 @@ class DetailsViewController: UIViewController {
         self.photoImageView.clipsToBounds = true
         self.nameLabel.text = myHotel.name
         self.nameLabel.textColor = .baseBlue
-        self.descriptionTextView.text = myHotel.resultDescription ?? "Hotel sem descrição cadastrada."
+        self.descriptionTextView.text = myHotel.resultDescription ?? "Sem descrição cadastrada."
         self.descriptionTextView.layer.cornerRadius = 10
         self.descriptionTextView.clipsToBounds = true
         let currency = String(myHotel.price.currency ?? "BRL") + " "

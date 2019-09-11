@@ -114,7 +114,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         switch dao.hotelsByStars[section].key {
         case 1:
             return String(dao.hotelsByStars[section].key) + " estrela"
-        case Int.max:
+        case 0:
             return "Pacotes"
         default:
             return String(dao.hotelsByStars[section].key) + " estrelas"

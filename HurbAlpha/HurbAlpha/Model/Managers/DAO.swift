@@ -52,12 +52,12 @@ class DAO {
         var hotelsByStars:[Int:[Result]] = [:]
         
         for hotel in loadedHotels {
-            let stars = hotel.stars ?? Int.max
+            let stars = hotel.stars ?? 0
             hotelsByStars[stars] = hotelsByStars[stars] ?? []
             
             hotelsByStars[stars]?.append(hotel)
         }
-        return hotelsByStars.sorted { $0.key < $1.key }
+        return hotelsByStars.sorted { $0.key > $1.key }
 
     }
     
