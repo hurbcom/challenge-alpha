@@ -8,11 +8,14 @@
 
 import Foundation
 
-// MARK: - Gallery
+// MARK: - Declaration
+
 struct Gallery: Codable {
     let galleryDescription: String?
     let url: String
     
+    // MARK: - Enum Coding Keys Declaration
+
     enum CodingKeys: String, CodingKey {
         case galleryDescription
         case url

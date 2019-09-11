@@ -8,7 +8,8 @@
 
 import Foundation
 
-// MARK: - GeoLocation
+// MARK: - Declaration
+
 struct GeoLocation: Codable {
     let lat, lon: Double
 }

@@ -9,10 +9,17 @@
 import Foundation
 import UIKit
 
+// MARK: - Protocol Requester Declaration
+
 protocol DAORequester {
+    
+    
     func finishedLoading()
     func finishedLoading(with Error:HotelReadingError)
 }
+
+
+// MARK: - Enum Error Handler Declaration
 
 enum HotelReadingError:Error {
     case badURL
@@ -20,17 +27,27 @@ enum HotelReadingError:Error {
     case DataIsNotHotelModel
 }
 
+// MARK: - Declaration
 
 class DAO {
     
-    
+    // MARK: - Instance Initialization
     
     static let instance = DAO()
     private init() {}
     
+    // Result of the JSON retriever
+    var hotel: Hotel?
     
-    var loadedHotels:[Result] = []
+    // The array containing only the hotels from the URL query
+    var loadedHotels:[Result] {
+        return hotel?.results ?? []
+    }
+    
+    // The array containing the hotels that were favorited
     var favorites:[Result] = []
+    
+    // The dictionary sorted by hotel stars
     var hotelsByStars:[(key: Int, value: [Result])] {
         var hotelsByStars:[Int:[Result]] = [:]
         
@@ -44,6 +61,12 @@ class DAO {
 
     }
     
+    /**
+     Convert JSON URL into data and tries to convert data into Hotel model.
+     - Parameters:
+        - page: The API page to convert.
+        - requester: The class that is requesting the convertion.
+     */
     func jsonDataRequest (page:Int, requester: DAORequester) {
         DispatchQueue.main.async {
             let urlString = "https://www.hurb.com/search/api?q=buzios&page=\(page)"
@@ -62,11 +85,16 @@ class DAO {
                 requester.finishedLoading(with: .DataIsNotHotelModel)
                 return
             }
-            self.loadedHotels = hotel.results
+            self.hotel = hotel
             requester.finishedLoading()
         }
     }
     
+    /**
+     Manages item to Favorites array: if the array already contains the item, it removes, if it doesen't, it appends.
+     - Parameters:
+        - item: The item to be removed or added.
+     */
     func manageFavorite(at item:Result) {
         if favorites.contains(where: { $0.id == item.id }) {
             favorites.removeAll(where: { $0.id == item.id })

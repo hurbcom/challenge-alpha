@@ -8,7 +8,8 @@
 
 import Foundation
 
-// MARK: - Address
+// MARK: - Declaration
+
 class Address: Codable {
     let city: String
     let country: String
@@ -18,6 +19,8 @@ class Address: Codable {
     let street, zipcode: String?
     let geoLocation: GeoLocation
     
+    // MARK: - Enum Coding Keys Declaration
+
     enum CodingKeys: String, CodingKey {
         case city, country
         case idAtlasCity
@@ -30,6 +33,8 @@ class Address: Codable {
         case state, street, zipcode, geoLocation
     }
     
+    // MARK: - Initialization
+
     init(city: String, country: String, idAtlasCity: String?, idAtlasCountry: String?, idAtlasNeighborhood: String?, idAtlasState: String?, idCity: Int?, idCountry: Int?, idState: Int?, state: String, street: String?, zipcode: String?, geoLocation: GeoLocation) {
         self.city = city
         self.country = country

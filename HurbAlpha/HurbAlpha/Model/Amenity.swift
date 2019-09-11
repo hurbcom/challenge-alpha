@@ -7,19 +7,23 @@
 //
 
 import Foundation
-// MARK: - Amenity
+
+// MARK: - Declaration
+
 struct Amenity: Codable {
     let name: String?
     let category: String?
 }
 
-// MARK: - AmenityElement
+// MARK: - Amenity Element Declaration
+
 struct AmenityElement: Codable {
     let name: String
     let category: String
 }
 
-// MARK: - PurpleAmenity
+// MARK: - Purple Amenity Declaration
+
 struct PurpleAmenity: Codable {
     let term, filter: String
     let count: Int

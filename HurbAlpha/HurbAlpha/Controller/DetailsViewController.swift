@@ -8,58 +8,32 @@
 
 import UIKit
 
+// MARK: - Declaration
+
 class DetailsViewController: UIViewController {
     
     // - MARK: Outlets
     
-    @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var name: UILabel!
-    
-    @IBOutlet weak var star1: UIImageView!
-    @IBOutlet weak var star2: UIImageView!
-    @IBOutlet weak var star3: UIImageView!
-    @IBOutlet weak var star4: UIImageView!
-    @IBOutlet weak var star5: UIImageView!
-    
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var star1Image: UIImageView!
+    @IBOutlet weak var star2Image: UIImageView!
+    @IBOutlet weak var star3Image: UIImageView!
+    @IBOutlet weak var star4Image: UIImageView!
+    @IBOutlet weak var star5Image: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
-    
     @IBOutlet weak var amenitiesTextView: UITextView!
-    
-    @IBOutlet weak var vmax: UILabel!
-    @IBOutlet weak var local: UILabel!
-    
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var cityStateLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
     
     
-    
+    // - MARK: The hotel selected from table view
     var currentHotel:Result?
     
-    enum LoadingState {
-        case notLoading
-        case loading
-        case loaded(UIImage)
-    }
-    
-    private let activityView = UIActivityIndicatorView(style: .gray)
+    // The bool to check if the hotel is favorited
     var isFlagged: Bool = false
-    
-    var loadingState: LoadingState = .notLoading {
-        didSet {
-            switch loadingState {
-            case .notLoading:
-                photo.image = nil
-                activityView.stopAnimating()
-            case .loading:
-                photo.image = nil
-                activityView.startAnimating()
-            case let .loaded(img):
-                photo.image = img
-                activityView.stopAnimating()
-            }
-        }
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +41,12 @@ class DetailsViewController: UIViewController {
         setUpView()
     }
     
+    // The images manager instance
+    let imageManager = ImagesManager.instance
+    
+    /**
+     Set up all view elements.
+     */
     func setUpView() {
         guard let myHotel = currentHotel else {
             self.dismiss(animated: true, completion: nil)
@@ -75,9 +55,11 @@ class DetailsViewController: UIViewController {
         
         if DAO.instance.favorites.contains(where: { $0.id == myHotel.id }) {
             self.favoriteButton.isSelected = true
-        } 
-        self.name.text = myHotel.name
-        self.name.textColor = .baseBlue
+        }
+        self.photoImageView.layer.cornerRadius = 10
+        self.photoImageView.clipsToBounds = true
+        self.nameLabel.text = myHotel.name
+        self.nameLabel.textColor = .baseBlue
         self.descriptionTextView.text = myHotel.resultDescription ?? "Hotel sem descrição cadastrada."
         self.descriptionTextView.layer.cornerRadius = 10
         self.descriptionTextView.clipsToBounds = true
@@ -87,8 +69,8 @@ class DetailsViewController: UIViewController {
         if cents.count == 1 {
             cents = cents + "0"
         }
-        self.vmax.text = currency + value + "," + cents
-        self.local.text = myHotel.address.city + " | " + myHotel.address.state
+        self.priceLabel.text = currency + value + "," + cents
+        self.cityStateLabel.text = myHotel.address.city + " | " + myHotel.address.state
         var amenitiesText = ""
         for amenity in myHotel.amenities {
             if let amenityName = amenity.name {
@@ -104,7 +86,7 @@ class DetailsViewController: UIViewController {
         }
         loadImage(from: myHotel.gallery[0].url)
         
-        let stars = [self.star1, self.star2, self.star3, self.star4, self.star5]
+        let stars = [self.star1Image, self.star2Image, self.star3Image, self.star4Image, self.star5Image]
         if myHotel.stars != nil {
             for i in 0...myHotel.stars! - 1 {
                 stars[i]!.isHidden = false
@@ -119,28 +101,21 @@ class DetailsViewController: UIViewController {
         favoriteButton.setImage(imageNormal, for: .normal)
     }
     
+    
+    /**
+     Convert image URL into data and tries to convert data into UIImage.
+     - Parameters:
+        - imageURL: The URL image to convert.
+     */
     func loadImage(from imageURL: String) {
-        DispatchQueue.main.async {
-            self.loadingState = .loading
-            guard let url = URL(string: imageURL) else {
-                debugPrint("error in image url", #function)
-                return
-            }
-            guard let data = try? Data(contentsOf: url) else {
-                //                debugPrint("error getting data", #function, url)
-                return
-            }
-            guard let img = UIImage(data: data) else {
-                debugPrint("error in uiimage", #function)
-                self.loadingState = .notLoading
-                return
-            }
-            self.loadingState = .loaded(img)
-        }
-        
+        imageManager.onImageView = self.photoImageView
+        imageManager.tryConvertionFromURL(from: imageURL)
     }
     
 
+    /**
+     Handles adding/removing hotel from favorite.
+     */
     @IBAction func addToFavorite(_ sender: Any) {
         guard let myHotel = currentHotel else {
             self.dismiss(animated: true, completion: nil)
@@ -155,7 +130,9 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    
+    /**
+     Opens on browser the url from the current hotel.
+     */
     @IBAction func seeOnWebsite(_ sender: Any) {
         guard let myHotel = currentHotel else {
             self.dismiss(animated: true, completion: nil)
@@ -168,6 +145,7 @@ class DetailsViewController: UIViewController {
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? FeedViewController {

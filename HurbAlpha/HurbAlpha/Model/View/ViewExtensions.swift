@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIColor {
+    
+    // MARK: - Colors Palette Declaration
+
     static let baseBlue = UIColor(red:17.0/255.0, green: 41.0/255.0, blue: 104.0/255.0, alpha: 1.0)
     static let basePink = UIColor(red:221.0/255.0, green: 0.0/255.0, blue: 116.0/255.0, alpha: 1.0)
     static let baseOrange = UIColor(red:231.0/255.0, green: 85.0/255.0, blue: 7.0/255.0, alpha: 1.0)

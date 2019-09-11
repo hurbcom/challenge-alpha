@@ -9,30 +9,38 @@
 import Foundation
 import UIKit
 
+// MARK: - Declaration
+
 class FavoritesViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var favoritesTableView: UITableView!
-    
     @IBOutlet weak var noFavoritesLabel: UILabel!
+    
+    // The cell xib
     var xibCell:TableViewCell?
+    
+    // The index from the selected cell on table view
     var selectedIndex:Int?
+    
+    // The refresh control for table view
     private let refreshControl = UIRefreshControl()
     
+    // DAO instance
     var dao = DAO.instance
+    
+    // The selected hotel reference
     var selectedHotel:Result?
     
     override func viewDidLoad() {
         
         self.favoritesTableView.separatorStyle = .none
         self.favoritesTableView.estimatedRowHeight = 560
-        
         favoritesTableView.dataSource = self
         favoritesTableView.delegate = self
         favoritesTableView.allowsSelection = true
-        
         favoritesTableView.refreshControl = refreshControl
         refreshControl.tintColor = UIColor.baseBlue
-        
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
         let nib = UINib.init(nibName: "TableViewCell", bundle: nil)
@@ -42,6 +50,9 @@ class FavoritesViewController: UIViewController {
         
     }
     
+    /**
+     Refreshs the table view content.
+     */
     @objc func refreshData() {
         self.refreshControl.endRefreshing()
         self.favoritesTableView.reloadData()
@@ -57,6 +68,9 @@ class FavoritesViewController: UIViewController {
     
     
 }
+
+
+// MARK: - Extention for TableViewDelegate and TableViewDataSource
 
 extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     

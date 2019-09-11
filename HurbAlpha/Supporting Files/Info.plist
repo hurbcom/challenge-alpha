@@ -47,6 +47,11 @@
 		<true/>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>Item 0</key>
+			<string>http://www.hurb.com/</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

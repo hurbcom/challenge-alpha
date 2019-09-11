@@ -8,11 +8,14 @@
 
 import Foundation
 
-// MARK: - QuantityDescriptors
+// MARK: - Declaration
+
 class QuantityDescriptors: Codable {
     let maxChildren, maxAdults, maxFreeChildrenAge, nights: Int?
     let maxPeople: Int?
     
+    // MARK: - Initialization
+
     init(maxChildren: Int?, maxAdults: Int?, maxFreeChildrenAge: Int?, nights: Int?, maxPeople: Int?) {
         self.maxChildren = maxChildren
         self.maxAdults = maxAdults

@@ -8,7 +8,8 @@
 
 import Foundation
 
-// MARK: - ResultPrice
+// MARK: - Declaration
+
 struct ResultPrice: Codable {
     let currency, currencyOriginal: String?
     let priceCurrentPrice, priceOldPrice: Double?
@@ -17,6 +18,8 @@ struct ResultPrice: Codable {
     let amountPerDay, amount: Double
     let oldPrice, currentPrice, originalAmount: Int?
     
+    // MARK: - Enum Coding Keys Declaration
+
     enum CodingKeys: String, CodingKey {
         case currency
         case currencyOriginal
@@ -26,13 +29,15 @@ struct ResultPrice: Codable {
     }
 }
 
-// MARK: - PriceInterval
+// MARK: - Price Interval Declaration
+
 struct PriceInterval: Codable {
     let min, max: Int
     let filterPattern: String
 }
 
-// MARK: - PriceElement
+// MARK: - Price Element Declaration
+
 struct PriceElement: Codable {
     let min, maxExclusive: Int
     let filter: String

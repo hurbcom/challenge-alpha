@@ -27,22 +27,12 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você não possui favoritos ainda..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jQb-1O-qOk">
-                                    <rect key="frame" x="0.0" y="436" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="408" id="85x-ae-FHS">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="408"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="85x-ae-FHS" id="0Jk-iE-oZ2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="407.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seus hotéis e pacotes favoritos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13C-to-PXj">
                                 <rect key="frame" x="61" y="42" width="253" height="21.5"/>
@@ -158,7 +148,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="A2J-mi-apr"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -326,17 +316,17 @@
                     </view>
                     <connections>
                         <outlet property="amenitiesTextView" destination="Yye-Tn-mcs" id="QBS-Lf-P1h"/>
+                        <outlet property="cityStateLabel" destination="QtD-NS-33e" id="oAz-rN-VLh"/>
                         <outlet property="descriptionTextView" destination="BF3-NG-NXv" id="lxT-6V-1d2"/>
                         <outlet property="favoriteButton" destination="BX1-BD-xr3" id="Ari-T6-WnW"/>
-                        <outlet property="local" destination="QtD-NS-33e" id="oAz-rN-VLh"/>
-                        <outlet property="name" destination="PBP-M3-a1a" id="wuX-o1-N2p"/>
-                        <outlet property="photo" destination="TG6-I4-iYM" id="4ER-rY-zSE"/>
-                        <outlet property="star1" destination="QdE-MJ-PRJ" id="BWR-0R-GdV"/>
-                        <outlet property="star2" destination="brM-8d-h1X" id="N2c-3Q-Pju"/>
-                        <outlet property="star3" destination="hHG-c9-1XH" id="3J8-SQ-4Bo"/>
-                        <outlet property="star4" destination="riZ-Lx-i1F" id="pVY-0z-Egp"/>
-                        <outlet property="star5" destination="d03-52-gpy" id="Eed-8a-mfI"/>
-                        <outlet property="vmax" destination="9Jx-i4-bAK" id="ERr-5p-Nvs"/>
+                        <outlet property="nameLabel" destination="PBP-M3-a1a" id="wuX-o1-N2p"/>
+                        <outlet property="photoImageView" destination="TG6-I4-iYM" id="4ER-rY-zSE"/>
+                        <outlet property="priceLabel" destination="9Jx-i4-bAK" id="ERr-5p-Nvs"/>
+                        <outlet property="star1Image" destination="QdE-MJ-PRJ" id="BWR-0R-GdV"/>
+                        <outlet property="star2Image" destination="brM-8d-h1X" id="N2c-3Q-Pju"/>
+                        <outlet property="star3Image" destination="hHG-c9-1XH" id="3J8-SQ-4Bo"/>
+                        <outlet property="star4Image" destination="riZ-Lx-i1F" id="pVY-0z-Egp"/>
+                        <outlet property="star5Image" destination="d03-52-gpy" id="Eed-8a-mfI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NsI-eT-3Dw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -358,16 +348,6 @@
                                     <constraint firstAttribute="height" constant="554" id="KB9-da-czV"/>
                                     <constraint firstAttribute="width" constant="375" id="vMh-z4-eGA"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="408" id="El2-t6-UGk">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="408"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="El2-t6-UGk" id="OEx-ph-yuG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="407.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotéis e Pacotes em: Búzios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiI-n7-No6">
                                 <rect key="frame" x="72" y="34" width="230" height="21.5"/>
@@ -431,6 +411,6 @@
         <image name="localizacao" width="23" height="29.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V4J-ft-DdL"/>
+        <segue reference="qgG-X6-8kG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,41 +9,45 @@
 import Foundation
 import UIKit
 
+// MARK: - Declaration
+
 class FeedViewController: UIViewController, DAORequester {
     
-    
-    
-   // var activityView:UIActivityIndicatorView!
+    // MARK: - Outlets
+    @IBOutlet weak var feedTableView: UITableView!
+
+    // The cell xib
     var xibCell:TableViewCell?
+    
+    // The index from the selected cell
     var selectedIndex:Int?
+    
+    // The refresh control for table view
     private let refreshControl = UIRefreshControl()
+    
+    // The activity indicator for table view
     private let activityView = UIActivityIndicatorView(style: .gray)
     
+    // DAO instance
     var dao = DAO.instance
-    var selectedHotel:Result?
-    //outlets
-    @IBOutlet weak var feedTableView: UITableView!
     
-
-    @IBOutlet weak var navigationBarTitle: UINavigationBar!
+    // The reference for the selected hotel
+    var selectedHotel:Result?
     
     override func viewDidLoad() {
         
         self.feedTableView.separatorStyle = .none
         self.feedTableView.estimatedRowHeight = 560
-        
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.allowsSelection = true
-        
         feedTableView.refreshControl = refreshControl
-        refreshControl.tintColor = UIColor.baseBlue
         
+        refreshControl.tintColor = UIColor.baseBlue
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        
         let nib = UINib.init(nibName: "TableViewCell", bundle: nil)
         self.feedTableView.register(nib, forCellReuseIdentifier: "TableViewCell")
-        
-        dao.jsonDataRequest(page: 1, requester: self)
         
         activityView.color = UIColor.baseBlue
         activityView.frame = CGRect(x: 0, y: 0, width: 300.0, height: 300.0)
@@ -52,19 +56,22 @@ class FeedViewController: UIViewController, DAORequester {
         view.addSubview(activityView)
         activityView.startAnimating()
         
-        
-//        feedTableView.rowHeight = 550
-        
         feedTableView.reloadData()
-        
+        dao.jsonDataRequest(page: 1, requester: self)
     }
     
+    /**
+     Refreshs the table view content.
+     */
     @objc func refreshData() {
         dao.jsonDataRequest(page: 1, requester: self)
         self.refreshControl.endRefreshing()
         self.feedTableView.reloadData()
     }
     
+    /**
+     Refreshs the table view content since it finished loading data from DAO.
+     */
     func finishedLoading() {
         debugPrint("finished with", dao.loadedHotels.count)
         DispatchQueue.main.async {
@@ -73,11 +80,13 @@ class FeedViewController: UIViewController, DAORequester {
         }
     }
     
-    // TODO: Melhorar o feedback erro de leitura
+    /**
+     Handles the error on reading data from JSON.
+     */
     func finishedLoading(with Error: HotelReadingError) {
         DispatchQueue.main.async {
             sleep(3)
-            debugPrint("retrying read data")
+            debugPrint("Error reading data from JSON, atempting to retry.")
             self.dao.jsonDataRequest(page: 1, requester: self)
         }
         
@@ -92,6 +101,8 @@ class FeedViewController: UIViewController, DAORequester {
     }
     
 }
+
+// MARK: - Extention for TableViewDelegate and TableViewDataSource
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -131,7 +142,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 572
-    
     }
     
     

@@ -18,10 +18,49 @@ class HurbAlphaTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testDAOPopulatesHotel() {
+        
+        struct Requester: DAORequester {
+            
+            var expectation = XCTestExpectation(description: "DAO fetch URL")
+            
+            func finishedLoading() {
+//                guard DAO.instance.hotel?.pagination.count == DAO.instance.loadedHotels.count else {
+//                    XCTFail()
+//                    return
+//                }
+                expectation.fulfill()
+            }
+            
+            func finishedLoading(with Error: HotelReadingError) {
+                XCTFail()
+            }
+            
+            
+        }
+        
+        let requester = Requester()
+        DAO.instance.jsonDataRequest(page: 1, requester: requester)
+        wait(for: [requester.expectation], timeout: 3)
+    }
+    
+    func throwError() throws {
+        struct MyError: Error {}
+        throw MyError()
+    }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//        XCTAssertEqual(2 + 2, 4)
+//        let a: Int? = nil
+//        XCTAssertNotNil(a)
+//        XCTAssertThrowsError(try throwError())
+        let a = 2 + 2
+        let b = 5
+        guard a == b else {
+            XCTFail()
+            return
+        }
     }
 
     func testPerformanceExample() {

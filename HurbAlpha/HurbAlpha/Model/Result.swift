@@ -8,7 +8,8 @@
 
 import Foundation
 
-// MARK: - Result
+// MARK: - Declaration
+
 struct Result: Codable {
     let sku: String
     let isPackage: Bool?
@@ -26,6 +27,8 @@ struct Result: Codable {
     let quantityDescriptors: QuantityDescriptors
     let id: String
     let amenities: [Amenity]
+    
+    // MARK: - Enum Coding Keys Declaration
     
     enum CodingKeys: String, CodingKey {
         case sku, isHotel, name, url, smallDescription, isPackage, stars

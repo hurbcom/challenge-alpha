@@ -8,7 +8,8 @@
 
 import Foundation
 
-// MARK: - Filters
+// MARK: - Declaration
+
 struct Filters: Codable {
     let amenities, attributes, countries, cities: [PurpleAmenity]
     let departureCities, duration, food, people: [PurpleAmenity]

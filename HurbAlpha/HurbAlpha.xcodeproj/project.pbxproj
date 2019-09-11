@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		153F69FD23205BE200C7630C /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153F69FC23205BE200C7630C /* TableViewCell.xib */; };
 		153F6A0323205C1600C7630C /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F6A0023205C1500C7630C /* ViewExtensions.swift */; };
-		153F6A0423205C1600C7630C /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F6A0123205C1600C7630C /* UIView+Additions.swift */; };
 		153F6A092320A57300C7630C /* FeedViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F6A082320A57300C7630C /* FeedViewContoller.swift */; };
 		1568E3002326D37C003720C1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568E2FF2326D37C003720C1 /* TableViewCell.swift */; };
 		1568E30223282D42003720C1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568E30123282D42003720C1 /* FavoritesViewController.swift */; };
+		15806973232895C800C458FE /* ImagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15806972232895C800C458FE /* ImagesManager.swift */; };
 		15F34CB3231F4A6D0015FEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CB2231F4A6D0015FEFB /* AppDelegate.swift */; };
 		15F34CB5231F4A6D0015FEFB /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F34CB4231F4A6D0015FEFB /* DetailsViewController.swift */; };
 		15F34CB8231F4A6D0015FEFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F34CB6231F4A6D0015FEFB /* Main.storyboard */; };
@@ -54,11 +54,11 @@
 /* Begin PBXFileReference section */
 		153F69FC23205BE200C7630C /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		153F6A0023205C1500C7630C /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		153F6A0123205C1600C7630C /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
 		153F6A05232067ED00C7630C /* SFCompactDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Light.otf"; sourceTree = "<group>"; };
 		153F6A082320A57300C7630C /* FeedViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewContoller.swift; sourceTree = "<group>"; };
 		1568E2FF2326D37C003720C1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1568E30123282D42003720C1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		15806972232895C800C458FE /* ImagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesManager.swift; sourceTree = "<group>"; };
 		15F34CAF231F4A6D0015FEFB /* HurbAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15F34CB2231F4A6D0015FEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15F34CB4231F4A6D0015FEFB /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				15F34CE4231F74020015FEFB /* DAO.swift */,
+				15806972232895C800C458FE /* ImagesManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -122,7 +123,6 @@
 		153F69FE23205C0800C7630C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				153F6A0123205C1600C7630C /* UIView+Additions.swift */,
 				153F6A0023205C1500C7630C /* ViewExtensions.swift */,
 			);
 			path = View;
@@ -365,10 +365,10 @@
 				15F34CF1231F7D4C0015FEFB /* Result.swift in Sources */,
 				15F34CF3231F7D740015FEFB /* Filters.swift in Sources */,
 				15F34CFB231F7DED0015FEFB /* GeoLocation.swift in Sources */,
+				15806973232895C800C458FE /* ImagesManager.swift in Sources */,
 				1568E3002326D37C003720C1 /* TableViewCell.swift in Sources */,
 				15F34CEF231F7D000015FEFB /* Gallery.swift in Sources */,
 				15F34CE5231F74020015FEFB /* DAO.swift in Sources */,
-				153F6A0423205C1600C7630C /* UIView+Additions.swift in Sources */,
 				15F34CB5231F4A6D0015FEFB /* DetailsViewController.swift in Sources */,
 				15F34CFF231F7E2C0015FEFB /* QuantityDescriptors.swift in Sources */,
 				1568E30223282D42003720C1 /* FavoritesViewController.swift in Sources */,

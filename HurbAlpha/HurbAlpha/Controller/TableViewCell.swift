@@ -9,44 +9,12 @@
 import Foundation
 import UIKit
 
+// MARK: - Declaration
+
 class TableViewCell: UITableViewCell {
     
-    enum CellType {
-        case package
-        case hotel
-    }
-    
-    enum LoadingState {
-        case notLoading
-        case loading
-        case loaded(UIImage)
-    }
-    
-    var isFlagged: Bool = false
-    var type:CellType = .hotel
-    
-    var myHotel:Result?
-    
-    private let activityView = UIActivityIndicatorView(style: .gray)
-    
-    var loadingState: LoadingState = .notLoading {
-        didSet {
-            switch loadingState {
-            case .notLoading:
-                photo.image = nil
-                activityView.stopAnimating()
-            case .loading:
-                photo.image = nil
-                activityView.startAnimating()
-            case let .loaded(img):
-                photo.image = img
-                photo.contentMode = .scaleAspectFill
-                activityView.stopAnimating()
-            }
-        }
-    }
-    
-    //outlets
+    // MARK: - Outlets
+
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -57,20 +25,33 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var star3: UIImageView!
     @IBOutlet weak var star4: UIImageView!
     @IBOutlet weak var star5: UIImageView!
-    
-    
-    //outlets
     @IBOutlet weak var localLabel: UILabel!
     @IBOutlet weak var maxValorLabel: UILabel!
-    //    @IBOutlet weak var minValorLabel: UILabel!
-    
-    
-    //amenities - for hotels or atribuites - for packages
+
+    // Amenities - for hotels or atribuites - for packages
     @IBOutlet weak var amenity1: UILabel!
     @IBOutlet weak var amenity2: UILabel!
     @IBOutlet weak var amenity3: UILabel!
     
+    // MARK: - Enum for cell type declaration
+    enum CellType {
+        case package
+        case hotel
+    }
     
+    // Bool to check if the hotel is favorited
+    var isFlagged: Bool = false
+    
+    // The cell type default initialization
+    var type:CellType = .hotel
+    
+    // The current hotel
+    var myHotel:Result?
+    
+    // The images manager instance
+    let imageManager = ImagesManager.instance
+    
+    // The ui set ups in subviews
     override func layoutSubviews() {
         //Shadows
         cellView.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -78,18 +59,16 @@ class TableViewCell: UITableViewCell {
         cellView.layer.shadowOpacity = 0.23
         cellView.layer.shadowRadius = 4
         cellView.layer.cornerRadius = 12
-
-        
-//        for item in cellView.subviews {
-//            item.isUserInteractionEnabled = false
-//        }
-        
         cellView.isUserInteractionEnabled = true
         self.photo.layer.cornerRadius = 10
         self.photo.clipsToBounds = true
-        
     }
     
+    /**
+     Loads ui elements using the information of the desired hotel.
+     - Parameters:
+        - result: The result to be shown.
+     */
     func loadInfo(on result:Result) {
         if result.isHotel == nil {
             self.type = .package
@@ -100,43 +79,45 @@ class TableViewCell: UITableViewCell {
         if cents.count == 1 {
             cents = cents + "0"
         }
+        self.nameLabel.text = result.name
+        self.nameLabel.textColor = .baseBlue
+        self.localLabel.text = result.address.city + " | " + result.address.state
+        self.maxValorLabel.text = currency + value + "," + cents
+        let amenitiesList = result.amenities
+        switch amenitiesList.count {
+        case 0:
+            self.amenity1.isHidden = true
+            self.amenity2.isHidden = true
+            self.amenity3.isHidden = true
+        case 1:
+            self.amenity1.text = amenitiesList[0].name
+            self.amenity2.isHidden = true
+            self.amenity3.isHidden = true
+        case 2:
+            self.amenity1.text = amenitiesList[0].name
+            self.amenity2.text = amenitiesList[1].name
+            self.amenity3.isHidden = true
+        default:
+            self.amenity1.text = amenitiesList[0].name
+            self.amenity2.text = amenitiesList[1].name
+            self.amenity3.text = amenitiesList[2].name
+        }
         
+        self.amenity1.layer.cornerRadius = 10
+        self.amenity1.clipsToBounds = true
+        
+        self.amenity2.layer.cornerRadius = 10
+        self.amenity2.clipsToBounds = true
+        
+        self.amenity3.layer.cornerRadius = 10
+        self.amenity3.clipsToBounds = true
+        
+        let stars = [self.star1, self.star2, self.star3, self.star4, self.star5]
+        if !result.gallery.isEmpty {
+            loadImage(from: result.gallery)
+        }
         switch type {
         case .hotel:
-            self.nameLabel.text = result.name
-            self.nameLabel.textColor = .baseBlue
-            self.localLabel.text = result.address.city + " | " + result.address.state
-            self.maxValorLabel.text = currency + value + "," + cents
-            let amenitiesList = result.amenities
-            switch amenitiesList.count {
-            case 0:
-                self.amenity1.isHidden = true
-                self.amenity2.isHidden = true
-                self.amenity3.isHidden = true
-            case 1:
-                self.amenity1.text = amenitiesList[0].name
-                self.amenity2.isHidden = true
-                self.amenity3.isHidden = true
-            case 2:
-                self.amenity1.text = amenitiesList[0].name
-                self.amenity2.text = amenitiesList[1].name
-                self.amenity3.isHidden = true
-            default:
-                self.amenity1.text = amenitiesList[0].name
-                self.amenity2.text = amenitiesList[1].name
-                self.amenity3.text = amenitiesList[2].name
-            }
-            
-            self.amenity1.layer.cornerRadius = 10
-            self.amenity1.clipsToBounds = true
-            
-            self.amenity2.layer.cornerRadius = 10
-            self.amenity2.clipsToBounds = true
-            
-            self.amenity3.layer.cornerRadius = 10
-            self.amenity3.clipsToBounds = true
-            
-            let stars = [self.star1, self.star2, self.star3, self.star4, self.star5]
             for star in stars {
                 star?.isHidden = true
             }
@@ -145,66 +126,28 @@ class TableViewCell: UITableViewCell {
                     stars[i]!.isHidden = false
                 }
             }
-            if !result.gallery.isEmpty {
-                loadImage(from: result.gallery[0].url)
-            }
         case .package:
-            self.nameLabel.text = result.name
-            self.nameLabel.textColor = .baseBlue
-            let amenitiesList = result.amenities
-            switch amenitiesList.count {
-            case 0:
-                self.amenity1.isHidden = true
-                self.amenity2.isHidden = true
-                self.amenity3.isHidden = true
-            case 1:
-                self.amenity1.text = amenitiesList[0].name
-                self.amenity2.isHidden = true
-                self.amenity3.isHidden = true
-            case 2:
-                self.amenity1.text = amenitiesList[0].name
-                self.amenity2.text = amenitiesList[1].name
-                self.amenity3.isHidden = true
-            default:
-                self.amenity1.text = amenitiesList[0].name
-                self.amenity2.text = amenitiesList[1].name
-                self.amenity3.text = amenitiesList[2].name
-            }
-            if !result.gallery.isEmpty {
-                loadImage(from: result.gallery[0].url)
+            for star in stars {
+                star?.isHidden = true
             }
         }
-        
-        activityView.color = UIColor.baseBlue
-        activityView.frame = CGRect(x: 0, y: 0, width: 150.0, height: 150.0)
-        activityView.center = photo.center
-        activityView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        self.cellView.addSubview(activityView)
+        imageManager.activityView.color = UIColor.baseBlue
+        imageManager.activityView.frame = CGRect(x: 0, y: 0, width: 150.0, height: 150.0)
+        imageManager.activityView.center = photo.center
+        imageManager.activityView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        self.cellView.addSubview(imageManager.activityView)
         
     }
     
     
-    
-    func loadImage(from imageURL: String) {
-        DispatchQueue.main.async {
-            self.loadingState = .loading
-            guard let url = URL(string: imageURL) else {
-                debugPrint("error in image url", #function)
-                return
-            }
-            guard let data = try? Data(contentsOf: url) else {
-//                debugPrint("error getting data", #function, url)
-                return
-            }
-            guard let img = UIImage(data: data) else {
-                debugPrint("error in uiimage", #function)
-                self.loadingState = .notLoading
-                return
-            }
-            self.loadingState = .loaded(img)
-        }
-        
+    /**
+     Loads one of the images in the result gallery.
+     - Parameters:
+        - imageURLGallery: The image gallery of the hotel.
+     */
+    func loadImage(from imageURLGallery: [Gallery]) {
+        imageManager.onImageView = self.photo
+        imageManager.tryConvertionFromURL(from: imageURLGallery[0].url)
     }
-    
     
 }

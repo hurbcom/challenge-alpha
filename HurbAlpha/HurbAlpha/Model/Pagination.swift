@@ -7,7 +7,9 @@
 //
 
 import Foundation
-// MARK: - Pagination
+
+// MARK: - Declaration
+
 struct Pagination: Codable {
     let count: Int
     let firstPage, nextPage: String
