@@ -27,3 +27,4 @@ When running the application, the sistem will fetch from the API (https://www.hu
 
 Hurb Alpha has unit tests written for the asyncronous functions on the application. These tests are in the HurbAlphaTests group. To run the unit tests, select the HurbAlphaTests scheme in the Scheme menu. Then hold the Run button down and select the "Test" option, or press Command+u to run the tests. The application does not count with UITests due to the inaccuracy of these tests on async content table views.
 
+Last modified: 11/09/2019 - Júlia Affonso Figueiredo Rocha
