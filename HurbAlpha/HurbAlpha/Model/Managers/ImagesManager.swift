@@ -82,10 +82,10 @@ class ImagesManager {
         - url: The image url to convert.
      */
     func transformToHTTPS(on url:String) -> String {
-        let nohttp = url.split(separator: ":")
-        if nohttp[0] == "https" {
+        if url.dropFirst(5) == "https" {
             return url
         } else {
+            let nohttp = url.split(separator: ":")
             return "https:" + nohttp[1]
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import UIKit
 @testable import HurbAlpha
 
 class HurbAlphaTests: XCTestCase {
@@ -19,50 +20,35 @@ class HurbAlphaTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testDAOPopulatesHotel() {
-        
-        struct Requester: DAORequester {
-            
-            var expectation = XCTestExpectation(description: "DAO fetch URL")
-            
-            func finishedLoading() {
-//                guard DAO.instance.hotel?.pagination.count == DAO.instance.loadedHotels.count else {
-//                    XCTFail()
-//                    return
-//                }
-                expectation.fulfill()
-            }
-            
-            func finishedLoading(with Error: HotelReadingError) {
-                XCTFail()
-            }
-            
-            
+    // Struct that emulates the DAO Requester Protocol for testing
+    struct TestRequester: DAORequester {
+        var expectation = XCTestExpectation(description: "DAO fetch URL")
+        func finishedLoading() {
+            expectation.fulfill()
         }
-        
-        let requester = Requester()
+        func finishedLoading(with Error: HotelReadingError) {
+            XCTFail()
+        }
+    }
+    
+    // Testing for JSON reader success
+    func testDAOPopulatesHotel() {
+        let requester = TestRequester()
         DAO.instance.jsonDataRequest(page: 1, requester: requester)
         wait(for: [requester.expectation], timeout: 3)
     }
-    
-    func throwError() throws {
-        struct MyError: Error {}
-        throw MyError()
-    }
 
-    func testExample() {
-//        XCTAssertEqual(2 + 2, 4)
-//        let a: Int? = nil
-//        XCTAssertNotNil(a)
-//        XCTAssertThrowsError(try throwError())
-        let a = 2 + 2
-        let b = 5
-        guard a == b else {
+    // Testing for image URL convertion
+    func testConvertImageURLToImageFromURL() {
+        ImagesManager.instance.onImageView = UIImageView()
+        ImagesManager.instance.tryConvertionFromURL(from: "https://media.omnibees.com/Images/6533/Property/229896.jpg")
+        guard let _ = ImagesManager.instance.onImageView else {
             XCTFail()
             return
         }
     }
 
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

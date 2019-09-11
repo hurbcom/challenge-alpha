@@ -25,27 +25,5 @@ class HurbAlphaUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-    }
     
-    
-    
-    func testAddToFavorites() {
-        let app = XCUIApplication()
-        app.tables/*@START_MENU_TOKEN@*/.staticTexts["BRL 348,19"]/*[[".cells.staticTexts[\"BRL 348,19\"]",".staticTexts[\"BRL 348,19\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app.buttons["favoriteFlag"].tap()
-        app.buttons["Voltar"].tap()
-        app.tabBars.children(matching: .button).element(boundBy: 1).tap()
-        if app.tables["Empty list"].exists {
-            XCTFail()
-        }
-        
-    }
-    
-    
-
 }
