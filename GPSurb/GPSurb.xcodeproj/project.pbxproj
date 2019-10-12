@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B922352241B00ABF951 /* AppDelegate.swift */; };
+		029D5B952352241B00ABF951 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B942352241B00ABF951 /* SceneDelegate.swift */; };
+		029D5B972352241B00ABF951 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B962352241B00ABF951 /* ViewController.swift */; };
+		029D5B9A2352241B00ABF951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029D5B982352241B00ABF951 /* Main.storyboard */; };
+		029D5B9D2352241B00ABF951 /* GPSurb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B9B2352241B00ABF951 /* GPSurb.xcdatamodeld */; };
+		029D5B9F2352241D00ABF951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029D5B9E2352241D00ABF951 /* Assets.xcassets */; };
+		029D5BA22352241D00ABF951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029D5BA02352241D00ABF951 /* LaunchScreen.storyboard */; };
+		029D5BAD2352241D00ABF951 /* GPSurbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5BAC2352241D00ABF951 /* GPSurbTests.swift */; };
+		029D5BB82352241D00ABF951 /* GPSurbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5BB72352241D00ABF951 /* GPSurbUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		029D5BA92352241D00ABF951 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 029D5B872352241B00ABF951 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 029D5B8E2352241B00ABF951;
+			remoteInfo = GPSurb;
+		};
+		029D5BB42352241D00ABF951 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 029D5B872352241B00ABF951 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 029D5B8E2352241B00ABF951;
+			remoteInfo = GPSurb;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		029D5B8F2352241B00ABF951 /* GPSurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		029D5B922352241B00ABF951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		029D5B942352241B00ABF951 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		029D5B962352241B00ABF951 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		029D5B992352241B00ABF951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		029D5B9C2352241B00ABF951 /* GPSurb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GPSurb.xcdatamodel; sourceTree = "<group>"; };
+		029D5B9E2352241D00ABF951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		029D5BA12352241D00ABF951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		029D5BA32352241D00ABF951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		029D5BA82352241D00ABF951 /* GPSurbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPSurbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		029D5BAC2352241D00ABF951 /* GPSurbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSurbTests.swift; sourceTree = "<group>"; };
+		029D5BAE2352241D00ABF951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		029D5BB32352241D00ABF951 /* GPSurbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPSurbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		029D5BB72352241D00ABF951 /* GPSurbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSurbUITests.swift; sourceTree = "<group>"; };
+		029D5BB92352241D00ABF951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		029D5B8C2352241B00ABF951 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029D5BA52352241D00ABF951 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029D5BB02352241D00ABF951 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		029D5B862352241B00ABF951 = {
+			isa = PBXGroup;
+			children = (
+				029D5B912352241B00ABF951 /* GPSurb */,
+				029D5BAB2352241D00ABF951 /* GPSurbTests */,
+				029D5BB62352241D00ABF951 /* GPSurbUITests */,
+				029D5B902352241B00ABF951 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		029D5B902352241B00ABF951 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				029D5B8F2352241B00ABF951 /* GPSurb.app */,
+				029D5BA82352241D00ABF951 /* GPSurbTests.xctest */,
+				029D5BB32352241D00ABF951 /* GPSurbUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		029D5B912352241B00ABF951 /* GPSurb */ = {
+			isa = PBXGroup;
+			children = (
+				029D5B922352241B00ABF951 /* AppDelegate.swift */,
+				029D5B942352241B00ABF951 /* SceneDelegate.swift */,
+				029D5B962352241B00ABF951 /* ViewController.swift */,
+				029D5B982352241B00ABF951 /* Main.storyboard */,
+				029D5B9E2352241D00ABF951 /* Assets.xcassets */,
+				029D5BA02352241D00ABF951 /* LaunchScreen.storyboard */,
+				029D5BA32352241D00ABF951 /* Info.plist */,
+				029D5B9B2352241B00ABF951 /* GPSurb.xcdatamodeld */,
+			);
+			path = GPSurb;
+			sourceTree = "<group>";
+		};
+		029D5BAB2352241D00ABF951 /* GPSurbTests */ = {
+			isa = PBXGroup;
+			children = (
+				029D5BAC2352241D00ABF951 /* GPSurbTests.swift */,
+				029D5BAE2352241D00ABF951 /* Info.plist */,
+			);
+			path = GPSurbTests;
+			sourceTree = "<group>";
+		};
+		029D5BB62352241D00ABF951 /* GPSurbUITests */ = {
+			isa = PBXGroup;
+			children = (
+				029D5BB72352241D00ABF951 /* GPSurbUITests.swift */,
+				029D5BB92352241D00ABF951 /* Info.plist */,
+			);
+			path = GPSurbUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		029D5B8E2352241B00ABF951 /* GPSurb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 029D5BBC2352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurb" */;
+			buildPhases = (
+				029D5B8B2352241B00ABF951 /* Sources */,
+				029D5B8C2352241B00ABF951 /* Frameworks */,
+				029D5B8D2352241B00ABF951 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GPSurb;
+			productName = GPSurb;
+			productReference = 029D5B8F2352241B00ABF951 /* GPSurb.app */;
+			productType = "com.apple.product-type.application";
+		};
+		029D5BA72352241D00ABF951 /* GPSurbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 029D5BBF2352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurbTests" */;
+			buildPhases = (
+				029D5BA42352241D00ABF951 /* Sources */,
+				029D5BA52352241D00ABF951 /* Frameworks */,
+				029D5BA62352241D00ABF951 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				029D5BAA2352241D00ABF951 /* PBXTargetDependency */,
+			);
+			name = GPSurbTests;
+			productName = GPSurbTests;
+			productReference = 029D5BA82352241D00ABF951 /* GPSurbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		029D5BB22352241D00ABF951 /* GPSurbUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 029D5BC22352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurbUITests" */;
+			buildPhases = (
+				029D5BAF2352241D00ABF951 /* Sources */,
+				029D5BB02352241D00ABF951 /* Frameworks */,
+				029D5BB12352241D00ABF951 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				029D5BB52352241D00ABF951 /* PBXTargetDependency */,
+			);
+			name = GPSurbUITests;
+			productName = GPSurbUITests;
+			productReference = 029D5BB32352241D00ABF951 /* GPSurbUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		029D5B872352241B00ABF951 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Gilson Santos";
+				TargetAttributes = {
+					029D5B8E2352241B00ABF951 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					029D5BA72352241D00ABF951 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 029D5B8E2352241B00ABF951;
+					};
+					029D5BB22352241D00ABF951 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 029D5B8E2352241B00ABF951;
+					};
+				};
+			};
+			buildConfigurationList = 029D5B8A2352241B00ABF951 /* Build configuration list for PBXProject "GPSurb" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 029D5B862352241B00ABF951;
+			productRefGroup = 029D5B902352241B00ABF951 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				029D5B8E2352241B00ABF951 /* GPSurb */,
+				029D5BA72352241D00ABF951 /* GPSurbTests */,
+				029D5BB22352241D00ABF951 /* GPSurbUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		029D5B8D2352241B00ABF951 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029D5BA22352241D00ABF951 /* LaunchScreen.storyboard in Resources */,
+				029D5B9F2352241D00ABF951 /* Assets.xcassets in Resources */,
+				029D5B9A2352241B00ABF951 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029D5BA62352241D00ABF951 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029D5BB12352241D00ABF951 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		029D5B8B2352241B00ABF951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029D5B972352241B00ABF951 /* ViewController.swift in Sources */,
+				029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */,
+				029D5B9D2352241B00ABF951 /* GPSurb.xcdatamodeld in Sources */,
+				029D5B952352241B00ABF951 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029D5BA42352241D00ABF951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029D5BAD2352241D00ABF951 /* GPSurbTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029D5BAF2352241D00ABF951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029D5BB82352241D00ABF951 /* GPSurbUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		029D5BAA2352241D00ABF951 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 029D5B8E2352241B00ABF951 /* GPSurb */;
+			targetProxy = 029D5BA92352241D00ABF951 /* PBXContainerItemProxy */;
+		};
+		029D5BB52352241D00ABF951 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 029D5B8E2352241B00ABF951 /* GPSurb */;
+			targetProxy = 029D5BB42352241D00ABF951 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		029D5B982352241B00ABF951 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				029D5B992352241B00ABF951 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		029D5BA02352241D00ABF951 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				029D5BA12352241D00ABF951 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		029D5BBA2352241D00ABF951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		029D5BBB2352241D00ABF951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		029D5BBD2352241D00ABF951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34J349V9U7;
+				INFOPLIST_FILE = GPSurb/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gpsurb.GPSurb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		029D5BBE2352241D00ABF951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34J349V9U7;
+				INFOPLIST_FILE = GPSurb/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gpsurb.GPSurb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		029D5BC02352241D00ABF951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34J349V9U7;
+				INFOPLIST_FILE = GPSurbTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gpsurb.GPSurbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPSurb.app/GPSurb";
+			};
+			name = Debug;
+		};
+		029D5BC12352241D00ABF951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34J349V9U7;
+				INFOPLIST_FILE = GPSurbTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gpsurb.GPSurbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPSurb.app/GPSurb";
+			};
+			name = Release;
+		};
+		029D5BC32352241D00ABF951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34J349V9U7;
+				INFOPLIST_FILE = GPSurbUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gpsurb.GPSurbUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GPSurb;
+			};
+			name = Debug;
+		};
+		029D5BC42352241D00ABF951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34J349V9U7;
+				INFOPLIST_FILE = GPSurbUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gpsurb.GPSurbUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GPSurb;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		029D5B8A2352241B00ABF951 /* Build configuration list for PBXProject "GPSurb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029D5BBA2352241D00ABF951 /* Debug */,
+				029D5BBB2352241D00ABF951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		029D5BBC2352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029D5BBD2352241D00ABF951 /* Debug */,
+				029D5BBE2352241D00ABF951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		029D5BBF2352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029D5BC02352241D00ABF951 /* Debug */,
+				029D5BC12352241D00ABF951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		029D5BC22352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurbUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029D5BC32352241D00ABF951 /* Debug */,
+				029D5BC42352241D00ABF951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		029D5B9B2352241B00ABF951 /* GPSurb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				029D5B9C2352241B00ABF951 /* GPSurb.xcdatamodel */,
+			);
+			currentVersion = 029D5B9C2352241B00ABF951 /* GPSurb.xcdatamodel */;
+			path = GPSurb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 029D5B872352241B00ABF951 /* Project object */;
+}
