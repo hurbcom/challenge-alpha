@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,13 @@
 		3141D6F1235368DE00A922DF /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141D6F0235368DE00A922DF /* UI.swift */; };
 		3141D6FA2353692000A922DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3141D6F92353692000A922DF /* LaunchScreen.storyboard */; };
 		31537DD3235383390011DBD4 /* environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31537DD2235383390011DBD4 /* environment.plist */; };
+		31537DD623538B970011DBD4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DD523538B970011DBD4 /* Alamofire.framework */; };
+		31537DDA23538B9A0011DBD4 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DD923538B9A0011DBD4 /* RxBlocking.framework */; };
+		31537DDD23538B9F0011DBD4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DDC23538B9F0011DBD4 /* RxCocoa.framework */; };
+		31537DE023538BA10011DBD4 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DDF23538BA10011DBD4 /* RxRelay.framework */; };
+		31537DE323538BA60011DBD4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE223538BA60011DBD4 /* RxSwift.framework */; };
+		31537DE623538BA90011DBD4 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE523538BA90011DBD4 /* RxTest.framework */; };
+		31537DE923538BAD0011DBD4 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE823538BAD0011DBD4 /* SnapKit.framework */; };
 		5049A7247E388D946CD3BA13 /* Pods_Alpha_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDEE93DE217919E7296253D /* Pods_Alpha_UITests.framework */; };
 		85B72D178CF0C045F9352FEB /* Pods_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B20EA360F6167A8DE959ACF /* Pods_Alpha.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +59,20 @@
 		3141D70023536E9900A922DF /* environment.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = environment.plist; sourceTree = "<group>"; };
 		3141D70223536E9900A922DF /* environment.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = environment.plist; sourceTree = "<group>"; };
 		31537DD2235383390011DBD4 /* environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = environment.plist; sourceTree = "<group>"; };
+		31537DD4235384240011DBD4 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		31537DD523538B970011DBD4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		31537DD923538B9A0011DBD4 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		31537DDC23538B9F0011DBD4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		31537DDF23538BA10011DBD4 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		31537DE223538BA60011DBD4 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		31537DE523538BA90011DBD4 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		31537DE823538BAD0011DBD4 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		31537DEF23538FFE0011DBD4 /* UnitTests-inputPaths.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "UnitTests-inputPaths.xcfilelist"; sourceTree = "<group>"; };
+		31537DF023538FFE0011DBD4 /* UITests-outputPaths.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "UITests-outputPaths.xcfilelist"; sourceTree = "<group>"; };
+		31537DF123538FFE0011DBD4 /* Alpha-inputPaths.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "Alpha-inputPaths.xcfilelist"; sourceTree = "<group>"; };
+		31537DF223538FFE0011DBD4 /* UnitTests-outputPaths.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "UnitTests-outputPaths.xcfilelist"; sourceTree = "<group>"; };
+		31537DF323538FFE0011DBD4 /* Alpha-outputPaths.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "Alpha-outputPaths.xcfilelist"; sourceTree = "<group>"; };
+		31537DF423538FFE0011DBD4 /* UITests-inputPaths.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "UITests-inputPaths.xcfilelist"; sourceTree = "<group>"; };
 		3C056A18A56871D4FC2E06C2 /* Pods-Alpha-UnitTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha-UnitTests.appstore.xcconfig"; path = "Target Support Files/Pods-Alpha-UnitTests/Pods-Alpha-UnitTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		40AD377B4CF48B1C10011F4D /* Pods-Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha.debug.xcconfig"; path = "Target Support Files/Pods-Alpha/Pods-Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		46385A8F6815058A76A975AE /* Pods-Alpha-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha-UnitTests.debug.xcconfig"; path = "Target Support Files/Pods-Alpha-UnitTests/Pods-Alpha-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,7 +91,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31537DE623538BA90011DBD4 /* RxTest.framework in Frameworks */,
+				31537DDD23538B9F0011DBD4 /* RxCocoa.framework in Frameworks */,
 				85B72D178CF0C045F9352FEB /* Pods_Alpha.framework in Frameworks */,
+				31537DE323538BA60011DBD4 /* RxSwift.framework in Frameworks */,
+				31537DD623538B970011DBD4 /* Alamofire.framework in Frameworks */,
+				31537DDA23538B9A0011DBD4 /* RxBlocking.framework in Frameworks */,
+				31537DE023538BA10011DBD4 /* RxRelay.framework in Frameworks */,
+				31537DE923538BAD0011DBD4 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +140,8 @@
 		3141D6AE235366A100A922DF = {
 			isa = PBXGroup;
 			children = (
+				31537DD4235384240011DBD4 /* Cartfile */,
+				31537DEE23538FFE0011DBD4 /* xcfilelists */,
 				3141D6FC23536E9900A922DF /* Environment */,
 				3141D6B9235366A100A922DF /* Alpha */,
 				3141D6E92353689D00A922DF /* Tests */,
@@ -284,9 +314,30 @@
 			path = Current;
 			sourceTree = "<group>";
 		};
+		31537DEE23538FFE0011DBD4 /* xcfilelists */ = {
+			isa = PBXGroup;
+			children = (
+				31537DEF23538FFE0011DBD4 /* UnitTests-inputPaths.xcfilelist */,
+				31537DF023538FFE0011DBD4 /* UITests-outputPaths.xcfilelist */,
+				31537DF123538FFE0011DBD4 /* Alpha-inputPaths.xcfilelist */,
+				31537DF223538FFE0011DBD4 /* UnitTests-outputPaths.xcfilelist */,
+				31537DF323538FFE0011DBD4 /* Alpha-outputPaths.xcfilelist */,
+				31537DF423538FFE0011DBD4 /* UITests-inputPaths.xcfilelist */,
+			);
+			name = xcfilelists;
+			path = Carthage/xcfilelists;
+			sourceTree = "<group>";
+		};
 		F24959DACDC1A23768E78085 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31537DE823538BAD0011DBD4 /* SnapKit.framework */,
+				31537DE523538BA90011DBD4 /* RxTest.framework */,
+				31537DE223538BA60011DBD4 /* RxSwift.framework */,
+				31537DDF23538BA10011DBD4 /* RxRelay.framework */,
+				31537DDC23538B9F0011DBD4 /* RxCocoa.framework */,
+				31537DD923538B9A0011DBD4 /* RxBlocking.framework */,
+				31537DD523538B970011DBD4 /* Alamofire.framework */,
 				7B20EA360F6167A8DE959ACF /* Pods_Alpha.framework */,
 				5EDEE93DE217919E7296253D /* Pods_Alpha_UITests.framework */,
 				4E943A1F96B7303D4496381E /* Pods_Alpha_UnitTests.framework */,
@@ -302,12 +353,14 @@
 			buildConfigurationList = 3141D6CB235366A300A922DF /* Build configuration list for PBXNativeTarget "Alpha" */;
 			buildPhases = (
 				8D02919956BC227154062A97 /* [CP] Check Pods Manifest.lock */,
-				3141D6B3235366A100A922DF /* Sources */,
+				31537DEB23538DE90011DBD4 /* [Carthage] Check installed versions */,
 				3141D6FB23536D7700A922DF /* Environment switch */,
+				31266D8323537E0C0022CBA2 /* SwiftGen */,
+				3141D6B3235366A100A922DF /* Sources */,
+				31266D8423537E770022CBA2 /* Swiftlint */,
 				3141D6B4235366A100A922DF /* Frameworks */,
 				3141D6B5235366A100A922DF /* Resources */,
-				31266D8323537E0C0022CBA2 /* SwiftGen */,
-				31266D8423537E770022CBA2 /* Swiftlint */,
+				31537DEC23538E1A0011DBD4 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -485,6 +538,44 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "CURRENT_ENV_FILE=\"${ALPHA_ENVIRONMENT_DIR}/.current\"\nENVIRONMENT=`cat ${CURRENT_ENV_FILE} || echo \"Development\"`\nSELECTED_ENV_DIR=\"${ALPHA_ENVIRONMENT_DIR}/${ENVIRONMENT}\"\nCURRENT_ENV_DIR=\"${ALPHA_ENVIRONMENT_DIR}/Current\"\n\necho \"Deleting with command rm -rf ${CURRENT_ENV_DIR}\"\nrm -rf \"${CURRENT_ENV_DIR}\"\n\necho \"Copping ${SELECTED_ENV_DIR} ${CURRENT_ENV_DIR}\"\ncp -r \"${SELECTED_ENV_DIR}\" \"${CURRENT_ENV_DIR}\"\necho \"Touching ${INFOPLIST_FILE}\"\ntouch \"${INFOPLIST_FILE}\"\necho \"Touching ${CURRENT_ENV_DIR}\"\ntouch \"$CURRENT_ENV_DIR\"\n";
+		};
+		31537DEB23538DE90011DBD4 /* [Carthage] Check installed versions */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[Carthage] Check installed versions";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n#\n# This script verifies that the commitish values in the Cartfile.resolved are in\n# sync with the commitish values in the Carthage/Build/*.version files.\n#\n# Usage:\n#   cd ProjectFolder && /path/to/carthage-verify\n\nsed -E 's/(github|git|binary) \\\"([^\\\"]+)\\\" \\\"([^\\\"]+)\\\"/\\2 \\3/g' Cartfile.resolved | while read line\ndo\nread -a array <<< \"$line\"\n\n# Handles:\n# - ReactiveCocoa/ReactiveSwift > ReactiveSwift\n# - https://github.com/Carthage/Carthage.git > Carthage\n# - https://www.mapbox.com/ios-sdk/Mapbox-iOS-SDK.json > Mapbox-iOS-SDK\ndependency=`basename ${array[0]} | awk -F'.' '{ print $1 }'`\n\nresolved_commitish=${array[1]}\n\necho -e \"Cartfile.resolved[$dependency] at $resolved_commitish\"\n\nversion_file=\"Carthage/Build/.$dependency.version\"\n\nif [ ! -f \"$version_file\" ]\nthen\necho -e \"No version file found for $dependency at $version_file, skipping.\"\necho\ncontinue\nfi\n\nversion_file_commitish=`grep -o '\"commitish\".*\"' \"$version_file\" | awk -F'\"' '{ print $4 }'`\n\necho -e \"$version_file at $version_file_commitish\"\n\nif [ \"$resolved_commitish\" != \"$version_file_commitish\" ]\nthen\necho\necho -e \"$dependency commitish ($version_file_commitish) does not match resolved commitish ($resolved_commitish)\"\nexit 1\nfi\n\necho\ndone\n";
+		};
+		31537DEC23538E1A0011DBD4 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/Carthage/xcfilelists/Alpha-inputPaths.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/Carthage/xcfilelists/Alpha-outputPaths.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		8D02919956BC227154062A97 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -730,6 +821,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = ALPHA_BUILD_NUMBER;
 				DEVELOPMENT_TEAM = SV3T6FB38J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Alpha/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "$(ALPHA_ENVIRONMENT_DIR)/.environment_preprocess.h";
 				INFOPLIST_PREPROCESS = YES;
@@ -756,6 +851,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = ALPHA_BUILD_NUMBER;
 				DEVELOPMENT_TEAM = SV3T6FB38J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Alpha/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "$(ALPHA_ENVIRONMENT_DIR)/.environment_preprocess.h";
 				INFOPLIST_PREPROCESS = YES;
@@ -843,6 +942,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = ALPHA_BUILD_NUMBER;
 				DEVELOPMENT_TEAM = SV3T6FB38J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Alpha/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "$(ALPHA_ENVIRONMENT_DIR)/.environment_preprocess.h";
 				INFOPLIST_PREPROCESS = YES;
