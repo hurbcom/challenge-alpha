@@ -21,6 +21,7 @@
 		31537DE323538BA60011DBD4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE223538BA60011DBD4 /* RxSwift.framework */; };
 		31537DE623538BA90011DBD4 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE523538BA90011DBD4 /* RxTest.framework */; };
 		31537DE923538BAD0011DBD4 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE823538BAD0011DBD4 /* SnapKit.framework */; };
+		31537DF7235394790011DBD4 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537DF6235394790011DBD4 /* Environment.swift */; };
 		5049A7247E388D946CD3BA13 /* Pods_Alpha_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDEE93DE217919E7296253D /* Pods_Alpha_UITests.framework */; };
 		85B72D178CF0C045F9352FEB /* Pods_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B20EA360F6167A8DE959ACF /* Pods_Alpha.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		31537DF223538FFE0011DBD4 /* UnitTests-outputPaths.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "UnitTests-outputPaths.xcfilelist"; sourceTree = "<group>"; };
 		31537DF323538FFE0011DBD4 /* Alpha-outputPaths.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "Alpha-outputPaths.xcfilelist"; sourceTree = "<group>"; };
 		31537DF423538FFE0011DBD4 /* UITests-inputPaths.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "UITests-inputPaths.xcfilelist"; sourceTree = "<group>"; };
+		31537DF6235394790011DBD4 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		3C056A18A56871D4FC2E06C2 /* Pods-Alpha-UnitTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha-UnitTests.appstore.xcconfig"; path = "Target Support Files/Pods-Alpha-UnitTests/Pods-Alpha-UnitTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		40AD377B4CF48B1C10011F4D /* Pods-Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha.debug.xcconfig"; path = "Target Support Files/Pods-Alpha/Pods-Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		46385A8F6815058A76A975AE /* Pods-Alpha-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha-UnitTests.debug.xcconfig"; path = "Target Support Files/Pods-Alpha-UnitTests/Pods-Alpha-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		3141D6FC23536E9900A922DF /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				31537DF5235394790011DBD4 /* Generated */,
 				31537DD1235383390011DBD4 /* Current */,
 				3141D6FD23536E9900A922DF /* Development */,
 				3141D6FF23536E9900A922DF /* Production */,
@@ -326,6 +329,14 @@
 			);
 			name = xcfilelists;
 			path = Carthage/xcfilelists;
+			sourceTree = "<group>";
+		};
+		31537DF5235394790011DBD4 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				31537DF6235394790011DBD4 /* Environment.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		F24959DACDC1A23768E78085 /* Frameworks */ = {
@@ -500,7 +511,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"${PODS_ROOT}/SwiftGen/bin:$PATH\"\n\nLOC_SRC_FILE=\"${SCRIPT_INPUT_FILE_0}\"\nIMG_SRC_FILE=\"${SCRIPT_INPUT_FILE_1}\"\nPLIST_SRC_FILE=\"${SCRIPT_INPUT_FILE_2}\"\n\ntouch \"$LOC_SRC_FILE\"\ntouch \"$IMG_SRC_FILE\"\n\nswiftgen strings -t structured-swift5 \"$LOC_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\necho $?\nswiftgen xcassets -t swift5 \"$IMG_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_1}\"\necho $?\nswiftgen plist -t runtime-swift5 \"$PLIST_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_2}\" --param enumName=\"Environment\"\necho $?\n";
+			shellScript = "export PATH=\"${PODS_ROOT}/SwiftGen/bin:$PATH\"\n\nLOC_SRC_FILE=\"${SCRIPT_INPUT_FILE_0}\"\nIMG_SRC_FILE=\"${SCRIPT_INPUT_FILE_1}\"\nPLIST_SRC_FILE=\"${SCRIPT_INPUT_FILE_2}\"\n\ntouch \"$LOC_SRC_FILE\"\ntouch \"$IMG_SRC_FILE\"\n\nswiftgen strings -t structured-swift5 \"$LOC_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\necho $?\nswiftgen xcassets -t swift4 \"$IMG_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_1}\"\necho $?\nswiftgen plist -t runtime-swift4 \"$PLIST_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_2}\" --param enumName=\"Environment\"\necho $?\n";
 		};
 		31266D8423537E770022CBA2 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -651,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3141D6BB235366A100A922DF /* AppDelegate.swift in Sources */,
+				31537DF7235394790011DBD4 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
