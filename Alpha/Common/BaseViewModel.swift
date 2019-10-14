@@ -11,6 +11,7 @@ import os.log
 
 /// Base class for all View Models of the project
 class BaseViewModel: NSObject {
+    /// Variable to enable or disable view's logs
     static var logEnabled: Bool = true
 
     override init() {
