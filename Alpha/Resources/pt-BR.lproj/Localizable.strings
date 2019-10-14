@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Alpha
+
+  Created by Theo Mendes on 14/10/19.
+  Copyright © 2019 Hurb. All rights reserved.
+*/
+"basic.error" = "Error";
+"basic.ok" = "OK";
+"basic.show_more" = "Ver Mais";
+"basic.error.message" = "Algo deu errado";
