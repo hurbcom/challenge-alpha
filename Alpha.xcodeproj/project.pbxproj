@@ -26,6 +26,8 @@
 		31537DFB2353A9610011DBD4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537DFA2353A9610011DBD4 /* BaseViewModel.swift */; };
 		31537DFD2353A9DC0011DBD4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537DFC2353A9DC0011DBD4 /* Logger.swift */; };
 		31537DFF2353AAA80011DBD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537DFE2353AAA80011DBD4 /* BaseViewController.swift */; };
+		31537E012354C0F10011DBD4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31537E002354C0F10011DBD4 /* Localizable.strings */; };
+		31537E042354C2540011DBD4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E032354C2530011DBD4 /* Assets.swift */; };
 		5049A7247E388D946CD3BA13 /* Pods_Alpha_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDEE93DE217919E7296253D /* Pods_Alpha_UITests.framework */; };
 		85B72D178CF0C045F9352FEB /* Pods_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B20EA360F6167A8DE959ACF /* Pods_Alpha.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		31537DFA2353A9610011DBD4 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		31537DFC2353A9DC0011DBD4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		31537DFE2353AAA80011DBD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		31537E002354C0F10011DBD4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		31537E032354C2530011DBD4 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		3C056A18A56871D4FC2E06C2 /* Pods-Alpha-UnitTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha-UnitTests.appstore.xcconfig"; path = "Target Support Files/Pods-Alpha-UnitTests/Pods-Alpha-UnitTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		40AD377B4CF48B1C10011F4D /* Pods-Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha.debug.xcconfig"; path = "Target Support Files/Pods-Alpha/Pods-Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		46385A8F6815058A76A975AE /* Pods-Alpha-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha-UnitTests.debug.xcconfig"; path = "Target Support Files/Pods-Alpha-UnitTests/Pods-Alpha-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			children = (
 				3141D6C3235366A300A922DF /* Assets.xcassets */,
 				3141D6F92353692000A922DF /* LaunchScreen.storyboard */,
+				31537E002354C0F10011DBD4 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 		3141D6D22353675600A922DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				31537E022354C2530011DBD4 /* Generated */,
 				31537DFC2353A9DC0011DBD4 /* Logger.swift */,
 			);
 			path = Model;
@@ -351,6 +357,14 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		31537E022354C2530011DBD4 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				31537E032354C2530011DBD4 /* Assets.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		F24959DACDC1A23768E78085 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3141D6C4235366A300A922DF /* Assets.xcassets in Resources */,
+				31537E012354C0F10011DBD4 /* Localizable.strings in Resources */,
 				3141D6FA2353692000A922DF /* LaunchScreen.storyboard in Resources */,
 				31537DD3235383390011DBD4 /* environment.plist in Resources */,
 			);
@@ -511,6 +526,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${PROJECT_DIR}/${TARGET_NAME}/Resources/en.lproj/Localizable.strings",
 				"${PROJECT_DIR}/${TARGET_NAME}/Resources/Images.xcassets",
 				"$(ALPHA_ENVIRONMENT_DIR)/Current/environment.plist",
 			);
@@ -518,12 +534,13 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${PROJECT_DIR}/${TARGET_NAME}/Model/Generated/LocalizedStrings.swift",
 				"${PROJECT_DIR}/${TARGET_NAME}/Model/Generated/Assets.swift",
 				"${PROJECT_DIR}/Environment/Generated/Environment.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"${PODS_ROOT}/SwiftGen/bin:$PATH\"\n\nLOC_SRC_FILE=\"${SCRIPT_INPUT_FILE_0}\"\nIMG_SRC_FILE=\"${SCRIPT_INPUT_FILE_1}\"\nPLIST_SRC_FILE=\"${SCRIPT_INPUT_FILE_2}\"\n\ntouch \"$LOC_SRC_FILE\"\ntouch \"$IMG_SRC_FILE\"\n\nswiftgen strings -t structured-swift5 \"$LOC_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\necho $?\nswiftgen xcassets -t swift4 \"$IMG_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_1}\"\necho $?\nswiftgen plist -t runtime-swift4 \"$PLIST_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_2}\" --param enumName=\"Environment\"\necho $?\n";
+			shellScript = "export PATH=\"${PODS_ROOT}/SwiftGen/bin:$PATH\"\n\nLOC_SRC_FILE=\"${SCRIPT_INPUT_FILE_0}\"\nIMG_SRC_FILE=\"${SCRIPT_INPUT_FILE_1}\"\nPLIST_SRC_FILE=\"${SCRIPT_INPUT_FILE_2}\"\n\ntouch \"$LOC_SRC_FILE\"\ntouch \"$IMG_SRC_FILE\"\n\nswiftgen strings -t structured-swift4 \"$LOC_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\necho $?\nswiftgen xcassets -t swift4 \"$IMG_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_1}\"\necho $?\nswiftgen plist -t runtime-swift4 \"$PLIST_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_2}\" --param enumName=\"Environment\"\necho $?\n";
 		};
 		31266D8423537E770022CBA2 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -674,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31537DFD2353A9DC0011DBD4 /* Logger.swift in Sources */,
+				31537E042354C2540011DBD4 /* Assets.swift in Sources */,
 				3141D6BB235366A100A922DF /* AppDelegate.swift in Sources */,
 				31537DFB2353A9610011DBD4 /* BaseViewModel.swift in Sources */,
 				31537DF7235394790011DBD4 /* Environment.swift in Sources */,
