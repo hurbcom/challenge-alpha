@@ -12,7 +12,7 @@
 		025E91D62354B8BB007CC0A0 /* PersistentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E91D32354B8BB007CC0A0 /* PersistentManager.swift */; };
 		029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B922352241B00ABF951 /* AppDelegate.swift */; };
 		029D5B952352241B00ABF951 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B942352241B00ABF951 /* SceneDelegate.swift */; };
-		029D5B972352241B00ABF951 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B962352241B00ABF951 /* ViewController.swift */; };
+		029D5B972352241B00ABF951 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B962352241B00ABF951 /* HomeViewController.swift */; };
 		029D5B9A2352241B00ABF951 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029D5B982352241B00ABF951 /* Home.storyboard */; };
 		029D5B9D2352241B00ABF951 /* GPSurb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B9B2352241B00ABF951 /* GPSurb.xcdatamodeld */; };
 		029D5B9F2352241D00ABF951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029D5B9E2352241D00ABF951 /* Assets.xcassets */; };
@@ -43,7 +43,7 @@
 		029D5B8F2352241B00ABF951 /* GPSurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029D5B922352241B00ABF951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029D5B942352241B00ABF951 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		029D5B962352241B00ABF951 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		029D5B962352241B00ABF951 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		029D5B992352241B00ABF951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		029D5B9C2352241B00ABF951 /* GPSurb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GPSurb.xcdatamodel; sourceTree = "<group>"; };
 		029D5B9E2352241D00ABF951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 		025E91D82354B8EB007CC0A0 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				029D5B962352241B00ABF951 /* ViewController.swift */,
+				029D5B962352241B00ABF951 /* HomeViewController.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -363,7 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				029D5B972352241B00ABF951 /* ViewController.swift in Sources */,
+				029D5B972352241B00ABF951 /* HomeViewController.swift in Sources */,
 				025E91D42354B8BB007CC0A0 /* PersistentManager.swift in Sources */,
 				029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */,
 				029D5B9D2352241B00ABF951 /* GPSurb.xcdatamodeld in Sources */,
