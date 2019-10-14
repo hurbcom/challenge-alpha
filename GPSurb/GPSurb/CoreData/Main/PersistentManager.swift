@@ -14,7 +14,7 @@ class PersistentManager {
         static let shared = PersistentManager()
         
         private lazy var persistentContainer: NSPersistentContainer = {
-            let container = NSPersistentContainer(name: "Tecnol")
+            let container = NSPersistentContainer(name: "GPSurb")
             container.loadPersistentStores(completionHandler: { (_, error) in
                 if let error = error as NSError? {
                     print("Unresolved error \(error), \(error.userInfo)")
