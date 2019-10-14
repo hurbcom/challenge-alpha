@@ -9,11 +9,21 @@
 import UIKit
 import os.log
 
+/// Base class for all View Controllers of the project
 class BaseViewController: UIViewController {
+    /// Variable to enable or disable view's logs
     static var logEnabled: Bool = true
-
+    /// Controller's View Model
     var viewModel: BaseViewModel?
 
+    /**
+    Initializes a new View Controller with View Model and logging
+
+    - Parameters:
+       - viewModel: The View Model that the VC will use
+
+    - Returns: A Base View Controller with View Model
+    */
     init(viewModel: BaseViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -32,7 +42,8 @@ class BaseViewController: UIViewController {
             os_log("🎮 ⚰️ %@", log: Logger.lifecycleLog(), type: .info, "\(self)")
         }
     }
-
+    // MARK: - viewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -40,14 +51,16 @@ class BaseViewController: UIViewController {
         bindViewModel()
     }
 
+    // MARK: - View methods
+    
+    /// Setup the view's UI, here you should put the **addSubView**
     func setupUI() {
         updateUI()
     }
-
+    /// Setup all the constraints of the view
     func setupConstraints() {}
-
+    /// Bind all the UI elements with the View Model
     func bindViewModel() {}
-
+    /// Is called when the view should be updated
     func updateUI() {}
-
 }
