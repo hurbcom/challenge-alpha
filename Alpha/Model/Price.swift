@@ -9,11 +9,11 @@
 import Foundation
 
 struct Price: Codable {
-    var currency: String
-    var currentPrice: String
-    
+    var currency: String?
+    var amount: Float
+
     enum CodingKeys: String, CodingKey {
         case currency
-        case currentPrice = "current_price"
+        case amount
     }
 }

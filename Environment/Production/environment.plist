@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>apiBaseURL</key>
-	<string>https://www.hurb.com/search/api</string>
+	<string>https://www.hurb.com</string>
 </dict>
 </plist>

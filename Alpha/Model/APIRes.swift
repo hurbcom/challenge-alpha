@@ -1,5 +1,5 @@
 //
-//  Amenities.swift
+//  APIRes.swift
 //  Alpha
 //
 //  Created by Theo Mendes on 15/10/19.
@@ -8,11 +8,10 @@
 
 import Foundation
 
-struct Amenities: Codable {
-    var name: String
-    var category: String
+struct APIRes: Codable {
+    var results: [APIResult]
 
     enum CodingKeys: String, CodingKey {
-        case name, category
+        case results
     }
 }

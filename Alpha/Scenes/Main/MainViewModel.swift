@@ -26,6 +26,9 @@ class MainViewModel: BaseViewModel, ViewModelType {
 
         input.headerRefresh.flatMapLatest { [weak self] () -> Observable<[String]> in
             guard let self = self else { return Observable.just([]) }
+            APIClient.getFeed(forCity: "buzios") { (hotels, error) in
+                return Observable.just(hotels)
+            }
             return Observable.just([])
         }.subscribe(onNext: { (items) in
             elements.accept(items)

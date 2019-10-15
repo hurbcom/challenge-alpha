@@ -11,7 +11,7 @@ import Foundation
 struct Image: Codable {
     var url: URL
     var description: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case url
         case description
