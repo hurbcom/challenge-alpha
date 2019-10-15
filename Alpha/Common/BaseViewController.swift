@@ -43,7 +43,7 @@ class BaseViewController: UIViewController {
         }
     }
     // MARK: - viewDidLoad
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -52,7 +52,7 @@ class BaseViewController: UIViewController {
     }
 
     // MARK: - View methods
-    
+
     /// Setup the view's UI, here you should put the **addSubView**
     func setupUI() {
         updateUI()
