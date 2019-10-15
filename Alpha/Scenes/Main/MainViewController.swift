@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 class MainViewController: BaseViewController {
+    let disposeBag = DisposeBag()
     let headerRefreshTrigger = PublishSubject<Void>()
 
     override func viewDidLoad() {
@@ -28,5 +29,11 @@ class MainViewController: BaseViewController {
         let input = MainViewModel.Input(headerRefresh: refresh)
 
         let output = viewModel.transform(input: input)
+
+        output.feed.subscribe(
+            onNext: { [weak self] items in
+                print(items)
+            }
+        ).disposed(by: disposeBag)
     }
 }

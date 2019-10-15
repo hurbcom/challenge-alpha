@@ -18,21 +18,19 @@ class MainViewModel: BaseViewModel, ViewModelType {
         let headerRefresh: Observable<Void>
     }
     struct Output {
-        let feed: BehaviorRelay<[String]>
+        let feed: BehaviorRelay<[APIResult]>
     }
 
     func transform(input: Input) -> Output {
-        let elements = BehaviorRelay<[String]>(value: [])
+        let elements = BehaviorRelay<[APIResult]>(value: [])
 
-        input.headerRefresh.flatMapLatest { [weak self] () -> Observable<[String]> in
-            guard let self = self else { return Observable.just([]) }
-            APIClient.getFeed(forCity: "buzios") { (hotels, error) in
-                return Observable.just(hotels)
+        input.headerRefresh.flatMapLatest { [weak self] () -> Observable<[APIResult]> in
+            return APIClient.RxGetFeed(forCity: "buzios", page: 1)
+        }.subscribe(
+            onNext: { [weak self] items in
+                elements.accept(items)
             }
-            return Observable.just([])
-        }.subscribe(onNext: { (items) in
-            elements.accept(items)
-            }).disposed(by: disposeBag)
+        ).disposed(by: disposeBag)
 
         return Output(feed: elements)
     }

@@ -7,34 +7,54 @@
 //
 
 import Alamofire
+import RxSwift
+
+enum APIError: Int, Error {
+    case unAuthorized = 401
+    case notFound = 404
+    case unknow = 500
+}
 
 class APIClient {
 
-    @discardableResult
-    private static func performRequest(route: APIRouter, completion: @escaping (AFDataResponse<Any>?)-> Void) -> DataRequest {
-        return AF.request(route).validate().responseJSON { (response: AFDataResponse<Any>) in
+    private static func performRequest(route: APIRouter, completion: @escaping (AFDataResponse<Any>?) -> Void) {
+        AF.request(route).validate().responseJSON { (response: AFDataResponse<Any>) in
             completion(response)
         }
     }
 
-    static func getFeed(forCity city: String? = "buzios", completion: @escaping ([APIResult]?, Error?) -> Void) {
-        performRequest(route: .search(parameters: SearchParams(keyword: city, page: 1))) { (res) in
-            if let error = res?.error {
-                completion(nil, error)
-            }
-//            guard let values = res?.value else { return }
-            guard let data = res?.data, let utf8Text = String(data: data, encoding: .utf8) else { return }
-            guard let json = utf8Text.data(using: .utf8) else { return }
+    static func RxGetFeed(forCity city: String, page: Int = 1) -> Observable<[APIResult]> {
+        return Observable.create { (observer) -> Disposable in
 
-            do {
-                let decoder = JSONDecoder()
-                let decodedJson = try decoder.decode(APIRes.self, from: json)
-                dump(decodedJson)
-                completion(decodedJson.results, nil)
-            } catch (let e) {
-                completion(nil, e)
+            let _ = performRequest(route: .search(parameters: SearchParams(keyword: city, page: page))) { (res) in
+                switch res?.result {
+                case .success:
+                    guard let data = res?.data,
+                        let utf8Text = String(data: data, encoding: .utf8) else {
+                            // if no error provided by alamofire return .notFound error instead.
+                            // .notFound should never happen here?
+                            observer.onError(res?.error ?? APIError.notFound)
+                            return
+                    }
+                    guard let json = utf8Text.data(using: .utf8) else { return }
+                    do {
+                        let decoder = JSONDecoder()
+                        let decodedJson = try decoder.decode(APIRes.self, from: json)
+                        observer.onNext(decodedJson.results)
+                    } catch (let e) {
+                        observer.onError(e)
+                    }
+                case .failure(let error):
+                    if let statusCode = res?.response?.statusCode,
+                        let reason = APIError(rawValue: statusCode) {
+                        observer.onError(reason)
+                    }
+                    observer.onError(error)
+                case .none:
+                    observer.onError(res?.error ?? APIError.notFound)
+                }
             }
-
+            return Disposables.create()
         }
     }
 }
