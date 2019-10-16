@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HURBListModel: Codable {
+public struct HURBListModel: Codable {
     let meta: MetaModel?
     let filters: FiltersModel?
     let results: [ResultsModel]?
