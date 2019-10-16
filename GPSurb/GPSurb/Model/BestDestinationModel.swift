@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BestDestinationModel: Codable {
+public struct BestDestinationModel: Codable {
     let name: String?
     let imageName: String?
     let query: String?

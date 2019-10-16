@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="pakenham rg.ttf">
+            <string>PakenhamRg-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BestDestinationsCollectionViewCell" id="gTV-IL-0wX" customClass="BestDestinationsCollectionViewCell" customModule="GPSurb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="235" height="325"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="235" height="325"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rt-j3-yGG">
+                        <rect key="frame" x="0.0" y="0.0" width="235" height="325"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAQ-7d-eQh">
+                                <rect key="frame" x="15" y="15" width="205" height="280"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TCx-46-L7m">
+                                        <rect key="frame" x="0.0" y="0.0" width="205" height="280"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.047058823529411764" green="0.93725490196078431" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="TCx-46-L7m" firstAttribute="leading" secondItem="CAQ-7d-eQh" secondAttribute="leading" id="KAy-A4-Y3t"/>
+                                    <constraint firstAttribute="trailing" secondItem="TCx-46-L7m" secondAttribute="trailing" id="Yr4-iw-9Rt"/>
+                                    <constraint firstItem="TCx-46-L7m" firstAttribute="top" secondItem="CAQ-7d-eQh" secondAttribute="top" id="a3c-9Z-Und"/>
+                                    <constraint firstAttribute="bottom" secondItem="TCx-46-L7m" secondAttribute="bottom" id="acW-tc-NgD"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rio de Janeiro - Brasil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ix1-7I-H2j">
+                                <rect key="frame" x="15" y="303" width="204" height="20"/>
+                                <fontDescription key="fontDescription" name="PakenhamRg-Regular" family="Pakenham" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ix1-7I-H2j" firstAttribute="leading" secondItem="8Rt-j3-yGG" secondAttribute="leading" constant="15" id="3xf-XZ-Qz6"/>
+                            <constraint firstAttribute="trailing" secondItem="ix1-7I-H2j" secondAttribute="trailing" constant="16" id="9e4-vC-KJF"/>
+                            <constraint firstItem="CAQ-7d-eQh" firstAttribute="top" secondItem="8Rt-j3-yGG" secondAttribute="top" constant="15" id="ISm-1H-cV8"/>
+                            <constraint firstAttribute="bottom" secondItem="CAQ-7d-eQh" secondAttribute="bottom" constant="30" id="ekN-aw-bI5"/>
+                            <constraint firstAttribute="trailing" secondItem="CAQ-7d-eQh" secondAttribute="trailing" constant="15" id="lE4-ND-gqY"/>
+                            <constraint firstItem="CAQ-7d-eQh" firstAttribute="leading" secondItem="8Rt-j3-yGG" secondAttribute="leading" constant="15" id="nO6-Bp-aap"/>
+                            <constraint firstItem="ix1-7I-H2j" firstAttribute="top" secondItem="CAQ-7d-eQh" secondAttribute="bottom" constant="8" id="win-mb-xKf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8Rt-j3-yGG" secondAttribute="bottom" id="BIn-ln-BpE"/>
+                <constraint firstItem="8Rt-j3-yGG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dmj-2g-rbK"/>
+                <constraint firstAttribute="trailing" secondItem="8Rt-j3-yGG" secondAttribute="trailing" id="Euw-Wm-mDg"/>
+                <constraint firstItem="8Rt-j3-yGG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XZb-5a-SiV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="98" height="580"/>
+            <connections>
+                <outlet property="cardView" destination="CAQ-7d-eQh" id="wg9-eJ-9vK"/>
+                <outlet property="containerView" destination="8Rt-j3-yGG" id="8tj-Aa-G20"/>
+                <outlet property="destinationImage" destination="TCx-46-L7m" id="XXS-kJ-fdA"/>
+                <outlet property="nameLabel" destination="ix1-7I-H2j" id="2jG-Va-8bc"/>
+            </connections>
+            <point key="canvasLocation" x="171.73913043478262" y="236.71875"/>
+        </collectionViewCell>
+    </objects>
+</document>

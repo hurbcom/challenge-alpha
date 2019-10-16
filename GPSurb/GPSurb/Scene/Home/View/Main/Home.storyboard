@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="llj-gf-1J2">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="pakenham rg.ttf">
+            <string>PakenhamRg-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="JtQ-uj-Cbq">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationHome" id="llj-gf-1J2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="42t-9h-dXv">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.047058823530000002" green="0.93725490199999995" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="PakenhamRg-Regular" family="Pakenham" pointSize="25"/>
+                            <color key="textColor" red="0.047058823530000002" green="0.93725490199999995" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.047058823530000002" green="0.93725490199999995" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XSl-le-hPZ" kind="relationship" relationship="rootViewController" id="4ZT-ef-xlQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EbZ-Xz-KRH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-674" y="90"/>
+        </scene>
+        <!--Best Destinations-->
+        <scene sceneID="wXa-ZT-II3">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="XSl-le-hPZ" customClass="HomeViewController" customModule="GPSurb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S2d-d9-YC3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bO-dd-wu2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W5b-Xu-51U">
+                                        <rect key="frame" x="10" y="172" width="355" height="528"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="5" id="pfL-nB-DE2">
+                                            <size key="itemSize" width="250" height="345"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="XSl-le-hPZ" id="Vg0-rt-oM7"/>
+                                            <outlet property="delegate" destination="XSl-le-hPZ" id="tOI-VB-QFd"/>
+                                        </connections>
+                                    </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Os melhores destinos estão aqui, escolha o seu:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DB-vM-AYq">
+                                        <rect key="frame" x="50" y="128" width="275" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="0BS-Lu-T4c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PakenhamRg-Regular" family="Pakenham" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="W5b-Xu-51U" firstAttribute="height" secondItem="9bO-dd-wu2" secondAttribute="height" multiplier="0.65" id="5rU-2C-6Js"/>
+                                    <constraint firstItem="W5b-Xu-51U" firstAttribute="leading" secondItem="9bO-dd-wu2" secondAttribute="leading" constant="10" id="B5W-bU-rzS"/>
+                                    <constraint firstItem="W5b-Xu-51U" firstAttribute="centerY" secondItem="9bO-dd-wu2" secondAttribute="centerY" constant="30" id="IUb-Cq-nmJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="8DB-vM-AYq" secondAttribute="trailing" constant="50" id="TDS-dn-8fy"/>
+                                    <constraint firstItem="W5b-Xu-51U" firstAttribute="top" secondItem="8DB-vM-AYq" secondAttribute="bottom" id="mMu-cH-DGP"/>
+                                    <constraint firstItem="8DB-vM-AYq" firstAttribute="leading" secondItem="9bO-dd-wu2" secondAttribute="leading" constant="50" id="oTn-JL-a6U"/>
+                                    <constraint firstAttribute="trailing" secondItem="W5b-Xu-51U" secondAttribute="trailing" constant="10" id="rFF-J7-I3V"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E38-B9-GYD" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="112.66666666666669" y="358" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="3Rb-T1-5d0"/>
+                                    <constraint firstAttribute="height" constant="150" id="a7O-di-rvh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9bO-dd-wu2" firstAttribute="leading" secondItem="Jpy-j4-ll6" secondAttribute="leading" id="76Q-Qf-mey"/>
+                            <constraint firstItem="E38-B9-GYD" firstAttribute="centerX" secondItem="Jpy-j4-ll6" secondAttribute="centerX" id="GEL-sq-ZGO"/>
+                            <constraint firstItem="E38-B9-GYD" firstAttribute="centerY" secondItem="Jpy-j4-ll6" secondAttribute="centerY" id="HQF-P0-T4F"/>
+                            <constraint firstItem="9bO-dd-wu2" firstAttribute="top" secondItem="S2d-d9-YC3" secondAttribute="top" id="cTG-2V-ajB"/>
+                            <constraint firstAttribute="bottom" secondItem="9bO-dd-wu2" secondAttribute="bottom" id="gae-qE-ZlJ"/>
+                            <constraint firstItem="9bO-dd-wu2" firstAttribute="trailing" secondItem="Jpy-j4-ll6" secondAttribute="trailing" id="t6g-wC-Mb9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jpy-j4-ll6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Best Destinations" id="O64-iG-Nxm">
+                        <barButtonItem key="backBarButtonItem" title=" " id="cFF-Pf-rQw"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="W5b-Xu-51U" id="br5-o1-eaI"/>
+                        <outlet property="loadingView" destination="E38-B9-GYD" id="7WJ-UY-Aef"/>
+                        <outlet property="messageLabel" destination="8DB-vM-AYq" id="084-f6-vX2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7WU-9C-9N9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="89.732142857142847"/>
+        </scene>
+    </scenes>
+</document>
