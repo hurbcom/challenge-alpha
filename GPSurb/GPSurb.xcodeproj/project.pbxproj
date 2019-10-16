@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,9 @@
 		02BBA2562354C54E0072F0F9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */; };
 		02BBA2572354C54E0072F0F9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */; };
 		02BBA2582354C54E0072F0F9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */; };
+		5088F6BBD5241B55039B73B5 /* Pods_GPSurb_GPSurbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B0E15A5FB1679FAF03E2ED /* Pods_GPSurb_GPSurbTests.framework */; };
+		7970DEDA1148DB178FE13601 /* Pods_GPSurb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593CAC9081DA251F0B19872A /* Pods_GPSurb.framework */; };
+		833A38435474B679A6125DA0 /* Pods_GPSurb_GPSurbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED374AE198DD76E036A6B566 /* Pods_GPSurb_GPSurbUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,15 @@
 		029D5BB92352241D00ABF951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BBA2512354C54E0072F0F9 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		360EA976BD7E51F8AC62A9FA /* Pods-GPSurb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb.debug.xcconfig"; path = "Target Support Files/Pods-GPSurb/Pods-GPSurb.debug.xcconfig"; sourceTree = "<group>"; };
+		52CD3C558B1F1DADA12050E1 /* Pods-GPSurb-GPSurbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb-GPSurbUITests.release.xcconfig"; path = "Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests.release.xcconfig"; sourceTree = "<group>"; };
+		593CAC9081DA251F0B19872A /* Pods_GPSurb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSurb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A07E0F52495B2F7B497075B /* Pods-GPSurb-GPSurbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb-GPSurbUITests.debug.xcconfig"; path = "Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A5B0E15A5FB1679FAF03E2ED /* Pods_GPSurb_GPSurbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSurb_GPSurbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFBB2E8C320323436132EC67 /* Pods-GPSurb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb.release.xcconfig"; path = "Target Support Files/Pods-GPSurb/Pods-GPSurb.release.xcconfig"; sourceTree = "<group>"; };
+		DB4B692887503230C1ABB376 /* Pods-GPSurb-GPSurbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb-GPSurbTests.release.xcconfig"; path = "Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests.release.xcconfig"; sourceTree = "<group>"; };
+		E16234467BC7320FD53E096C /* Pods-GPSurb-GPSurbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb-GPSurbTests.debug.xcconfig"; path = "Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED374AE198DD76E036A6B566 /* Pods_GPSurb_GPSurbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSurb_GPSurbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7970DEDA1148DB178FE13601 /* Pods_GPSurb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5088F6BBD5241B55039B73B5 /* Pods_GPSurb_GPSurbTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833A38435474B679A6125DA0 /* Pods_GPSurb_GPSurbUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +278,8 @@
 				029D5BAB2352241D00ABF951 /* GPSurbTests */,
 				029D5BB62352241D00ABF951 /* GPSurbUITests */,
 				029D5B902352241B00ABF951 /* Products */,
+				7DAC65EA9B1350AD8DBD1F8E /* Pods */,
+				943CA992E0B48B7232F80D8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -310,6 +327,29 @@
 			path = GPSurbUITests;
 			sourceTree = "<group>";
 		};
+		7DAC65EA9B1350AD8DBD1F8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				360EA976BD7E51F8AC62A9FA /* Pods-GPSurb.debug.xcconfig */,
+				CFBB2E8C320323436132EC67 /* Pods-GPSurb.release.xcconfig */,
+				E16234467BC7320FD53E096C /* Pods-GPSurb-GPSurbTests.debug.xcconfig */,
+				DB4B692887503230C1ABB376 /* Pods-GPSurb-GPSurbTests.release.xcconfig */,
+				8A07E0F52495B2F7B497075B /* Pods-GPSurb-GPSurbUITests.debug.xcconfig */,
+				52CD3C558B1F1DADA12050E1 /* Pods-GPSurb-GPSurbUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		943CA992E0B48B7232F80D8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				593CAC9081DA251F0B19872A /* Pods_GPSurb.framework */,
+				A5B0E15A5FB1679FAF03E2ED /* Pods_GPSurb_GPSurbTests.framework */,
+				ED374AE198DD76E036A6B566 /* Pods_GPSurb_GPSurbUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +357,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 029D5BBC2352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurb" */;
 			buildPhases = (
+				D7DB22EAA591CF724109C2C3 /* [CP] Check Pods Manifest.lock */,
 				029D5B8B2352241B00ABF951 /* Sources */,
 				029D5B8C2352241B00ABF951 /* Frameworks */,
 				029D5B8D2352241B00ABF951 /* Resources */,
@@ -334,9 +375,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 029D5BBF2352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurbTests" */;
 			buildPhases = (
+				D5ADAB6C4662806E24176D00 /* [CP] Check Pods Manifest.lock */,
 				029D5BA42352241D00ABF951 /* Sources */,
 				029D5BA52352241D00ABF951 /* Frameworks */,
 				029D5BA62352241D00ABF951 /* Resources */,
+				D35EA04310ED54D2D92E566E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -352,9 +395,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 029D5BC22352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurbUITests" */;
 			buildPhases = (
+				BB0F920804AC10B2D5187D80 /* [CP] Check Pods Manifest.lock */,
 				029D5BAF2352241D00ABF951 /* Sources */,
 				029D5BB02352241D00ABF951 /* Frameworks */,
 				029D5BB12352241D00ABF951 /* Resources */,
+				087D2F68E89C2DC39A2046DA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -441,6 +486,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		087D2F68E89C2DC39A2046DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB0F920804AC10B2D5187D80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GPSurb-GPSurbUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D35EA04310ED54D2D92E566E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5ADAB6C4662806E24176D00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GPSurb-GPSurbTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7DB22EAA591CF724109C2C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GPSurb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		029D5B8B2352241B00ABF951 /* Sources */ = {
@@ -636,7 +784,9 @@
 		};
 		029D5BBD2352241D00ABF951 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 360EA976BD7E51F8AC62A9FA /* Pods-GPSurb.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34J349V9U7;
@@ -654,7 +804,9 @@
 		};
 		029D5BBE2352241D00ABF951 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFBB2E8C320323436132EC67 /* Pods-GPSurb.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34J349V9U7;
@@ -672,6 +824,7 @@
 		};
 		029D5BC02352241D00ABF951 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E16234467BC7320FD53E096C /* Pods-GPSurb-GPSurbTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -694,6 +847,7 @@
 		};
 		029D5BC12352241D00ABF951 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB4B692887503230C1ABB376 /* Pods-GPSurb-GPSurbTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -716,6 +870,7 @@
 		};
 		029D5BC32352241D00ABF951 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A07E0F52495B2F7B497075B /* Pods-GPSurb-GPSurbUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -736,6 +891,7 @@
 		};
 		029D5BC42352241D00ABF951 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52CD3C558B1F1DADA12050E1 /* Pods-GPSurb-GPSurbUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
