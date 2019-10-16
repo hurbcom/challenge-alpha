@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Rio de Janeiro - Brasil",
+        "imageName": "riodejaneiro",
+        "query": "rj"
+    },
+    {
+        "name": "Paris - França",
+        "imageName": "paris",
+        "query": "paris"
+    },
+    {
+        "name": "Londres - Inglaterra",
+        "imageName": "londres",
+        "query": "londres"
+    },
+    {
+        "name": "Madri - Espanha",
+        "imageName": "madri",
+        "query": "madri"
+    },
+    {
+        "name": "Nova York - EUA",
+        "imageName": "novayork",
+        "query": "nova_york"
+    },
+    {
+        "name": "Lisboa - Portugal",
+        "imageName": "lisboa",
+        "query": "lisboa"
+    }
+]

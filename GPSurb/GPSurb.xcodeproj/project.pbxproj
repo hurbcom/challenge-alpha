@@ -22,6 +22,12 @@
 		025E91DE2354C300007CC0A0 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025E91DD2354C300007CC0A0 /* TabBar.storyboard */; };
 		025E91DF2354C300007CC0A0 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025E91DD2354C300007CC0A0 /* TabBar.storyboard */; };
 		025E91E02354C300007CC0A0 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025E91DD2354C300007CC0A0 /* TabBar.storyboard */; };
+		026C963A235761B1002C1CC4 /* best_destinations.json in Resources */ = {isa = PBXBuildFile; fileRef = 026C9639235761B1002C1CC4 /* best_destinations.json */; };
+		026C963B235761B1002C1CC4 /* best_destinations.json in Resources */ = {isa = PBXBuildFile; fileRef = 026C9639235761B1002C1CC4 /* best_destinations.json */; };
+		026C963C235761B1002C1CC4 /* best_destinations.json in Resources */ = {isa = PBXBuildFile; fileRef = 026C9639235761B1002C1CC4 /* best_destinations.json */; };
+		026C963E235761F0002C1CC4 /* BestDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C963D235761F0002C1CC4 /* BestDestination.swift */; };
+		026C963F235761F0002C1CC4 /* BestDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C963D235761F0002C1CC4 /* BestDestination.swift */; };
+		026C9640235761F0002C1CC4 /* BestDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C963D235761F0002C1CC4 /* BestDestination.swift */; };
 		029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B922352241B00ABF951 /* AppDelegate.swift */; };
 		029D5B952352241B00ABF951 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B942352241B00ABF951 /* SceneDelegate.swift */; };
 		029D5B972352241B00ABF951 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B962352241B00ABF951 /* HomeViewController.swift */; };
@@ -65,6 +71,8 @@
 		02596BFB2354CB1C0027C9EE /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		025E91D32354B8BB007CC0A0 /* PersistentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentManager.swift; sourceTree = "<group>"; };
 		025E91DD2354C300007CC0A0 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		026C9639235761B1002C1CC4 /* best_destinations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = best_destinations.json; sourceTree = "<group>"; };
+		026C963D235761F0002C1CC4 /* BestDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestDestination.swift; sourceTree = "<group>"; };
 		029D5B8F2352241B00ABF951 /* GPSurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029D5B922352241B00ABF951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029D5B942352241B00ABF951 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 		025E91CB2354B7E0007CC0A0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				026C9639235761B1002C1CC4 /* best_destinations.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -174,6 +183,7 @@
 		025E91CD2354B7F5007CC0A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				026C963D235761F0002C1CC4 /* BestDestination.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +473,7 @@
 				029D5BA22352241D00ABF951 /* LaunchScreen.storyboard in Resources */,
 				029D5B9F2352241D00ABF951 /* Assets.xcassets in Resources */,
 				029D5B9A2352241B00ABF951 /* Home.storyboard in Resources */,
+				026C963A235761B1002C1CC4 /* best_destinations.json in Resources */,
 				02596BF72354CA870027C9EE /* Favorites.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02596BF82354CA870027C9EE /* Favorites.storyboard in Resources */,
+				026C963B235761B1002C1CC4 /* best_destinations.json in Resources */,
 				025E91DF2354C300007CC0A0 /* TabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02596BF92354CA870027C9EE /* Favorites.storyboard in Resources */,
+				026C963C235761B1002C1CC4 /* best_destinations.json in Resources */,
 				025E91E02354C300007CC0A0 /* TabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +616,7 @@
 				02BBA2562354C54E0072F0F9 /* TabBarViewController.swift in Sources */,
 				029D5B9D2352241B00ABF951 /* GPSurb.xcdatamodeld in Sources */,
 				02596BFC2354CB1C0027C9EE /* FavoritesPresenter.swift in Sources */,
+				026C963E235761F0002C1CC4 /* BestDestination.swift in Sources */,
 				029D5B952352241B00ABF951 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +627,7 @@
 			files = (
 				02596BFD2354CB1C0027C9EE /* FavoritesPresenter.swift in Sources */,
 				02BBA2572354C54E0072F0F9 /* TabBarViewController.swift in Sources */,
+				026C963F235761F0002C1CC4 /* BestDestination.swift in Sources */,
 				025E91D52354B8BB007CC0A0 /* PersistentManager.swift in Sources */,
 				029D5BAD2352241D00ABF951 /* GPSurbTests.swift in Sources */,
 				02596C002354CB1C0027C9EE /* FavoritesViewController.swift in Sources */,
@@ -626,6 +641,7 @@
 			files = (
 				02596BFE2354CB1C0027C9EE /* FavoritesPresenter.swift in Sources */,
 				02BBA2582354C54E0072F0F9 /* TabBarViewController.swift in Sources */,
+				026C9640235761F0002C1CC4 /* BestDestination.swift in Sources */,
 				025E91D62354B8BB007CC0A0 /* PersistentManager.swift in Sources */,
 				029D5BB82352241D00ABF951 /* GPSurbUITests.swift in Sources */,
 				02596C012354CB1C0027C9EE /* FavoritesViewController.swift in Sources */,
