@@ -1,5 +1,5 @@
 //
-//  BestDestination.swift
+//  CountriesModel.swift
 //  GPSurb
 //
 //  Created by Gilson Santos on 16/10/19.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct BestDestination: Codable {
-    let name: String?
-    let imageName: String?
-    let query: String?
+struct CountriesModel: Codable {
+    let term: String?
+    let filter: String?
+    let count: Int?
 }
