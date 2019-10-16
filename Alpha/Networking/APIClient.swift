@@ -26,7 +26,7 @@ class APIClient {
     static func RxGetFeed(forCity city: String, page: Int = 1) -> Observable<[APIResult]> {
         return Observable.create { (observer) -> Disposable in
 
-            let _ = performRequest(route: .search(parameters: SearchParams(keyword: city, page: page))) { (res) in
+            performRequest(route: .search(parameters: SearchParams(keyword: city, page: page))) { (res) in
                 switch res?.result {
                 case .success:
                     guard let data = res?.data,

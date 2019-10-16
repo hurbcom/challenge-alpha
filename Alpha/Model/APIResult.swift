@@ -22,6 +22,7 @@ struct APIResult: Codable {
     var isPackage: Bool?
     // Hotel attributes
     var isHotel: Bool?
+    var stars: Int?
     var huFreeCancellation: Bool?
 
     enum CodingKeys: String, CodingKey {
@@ -39,5 +40,6 @@ struct APIResult: Codable {
         // Hotel keys
         case isHotel
         case huFreeCancellation = "hu_free_cancellation"
+        case stars
     }
 }

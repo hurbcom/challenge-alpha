@@ -32,7 +32,7 @@ class MainViewController: BaseViewController {
 
         output.feed.subscribe(
             onNext: { [weak self] items in
-                print(items)
+                dump(items)
             }
         ).disposed(by: disposeBag)
     }

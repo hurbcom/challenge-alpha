@@ -9,3 +9,7 @@
 "basic.ok" = "OK";
 "basic.show_more" = "Show more";
 "basic.error.message" = "Something went wrong";
+
+"feed.section.package.title" = "Packages";
+"feed.section.package.subtitle" = "The best deals for you!";
+

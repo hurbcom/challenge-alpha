@@ -40,6 +40,10 @@
 		31537E2423560CDF0011DBD4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E2323560CDF0011DBD4 /* APIClient.swift */; };
 		31537E27235628B00011DBD4 /* SearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E26235628B00011DBD4 /* SearchParams.swift */; };
 		31537E292356500C0011DBD4 /* APIRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E282356500C0011DBD4 /* APIRes.swift */; };
+		31CF025123577D5B008C92B0 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025023577D5B008C92B0 /* FeedSection.swift */; };
+		31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025323577D8E008C92B0 /* FeedSectionType.swift */; };
+		31CF025623577E42008C92B0 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025523577E42008C92B0 /* Identifiers.swift */; };
+		31CF025823579CD6008C92B0 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025723579CD6008C92B0 /* LocalizedStrings.swift */; };
 		5049A7247E388D946CD3BA13 /* Pods_Alpha_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDEE93DE217919E7296253D /* Pods_Alpha_UITests.framework */; };
 		85B72D178CF0C045F9352FEB /* Pods_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B20EA360F6167A8DE959ACF /* Pods_Alpha.framework */; };
 /* End PBXBuildFile section */
@@ -115,6 +119,10 @@
 		31537E2323560CDF0011DBD4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31537E26235628B00011DBD4 /* SearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParams.swift; sourceTree = "<group>"; };
 		31537E282356500C0011DBD4 /* APIRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRes.swift; sourceTree = "<group>"; };
+		31CF025023577D5B008C92B0 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
+		31CF025323577D8E008C92B0 /* FeedSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionType.swift; sourceTree = "<group>"; };
+		31CF025523577E42008C92B0 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		31CF025723579CD6008C92B0 /* LocalizedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		3C056A18A56871D4FC2E06C2 /* Pods-Alpha-UnitTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha-UnitTests.appstore.xcconfig"; path = "Target Support Files/Pods-Alpha-UnitTests/Pods-Alpha-UnitTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		40AD377B4CF48B1C10011F4D /* Pods-Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha.debug.xcconfig"; path = "Target Support Files/Pods-Alpha/Pods-Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		46385A8F6815058A76A975AE /* Pods-Alpha-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha-UnitTests.debug.xcconfig"; path = "Target Support Files/Pods-Alpha-UnitTests/Pods-Alpha-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +260,7 @@
 				31537E1C2355D6F60011DBD4 /* Images.swift */,
 				31537E26235628B00011DBD4 /* SearchParams.swift */,
 				31537E282356500C0011DBD4 /* APIRes.swift */,
+				31CF025023577D5B008C92B0 /* FeedSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +282,7 @@
 		3141D6D52353677800A922DF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				31CF025223577D77008C92B0 /* Enumerations */,
 				3141D6D72353679200A922DF /* Protocols */,
 				3141D6D32353676300A922DF /* Extensions */,
 				31537DFA2353A9610011DBD4 /* BaseViewModel.swift */,
@@ -396,6 +406,7 @@
 		31537E022354C2530011DBD4 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				31CF025723579CD6008C92B0 /* LocalizedStrings.swift */,
 				31537E032354C2530011DBD4 /* Assets.swift */,
 			);
 			path = Generated;
@@ -419,6 +430,15 @@
 				31537E2323560CDF0011DBD4 /* APIClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		31CF025223577D77008C92B0 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				31CF025323577D8E008C92B0 /* FeedSectionType.swift */,
+				31CF025523577E42008C92B0 /* Identifiers.swift */,
+			);
+			path = Enumerations;
 			sourceTree = "<group>";
 		};
 		F24959DACDC1A23768E78085 /* Frameworks */ = {
@@ -750,6 +770,7 @@
 				31537E132355489B0011DBD4 /* AppCoordinator.swift in Sources */,
 				31537E27235628B00011DBD4 /* SearchParams.swift in Sources */,
 				31537E20235600460011DBD4 /* APIRouter.swift in Sources */,
+				31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */,
 				31537DFD2353A9DC0011DBD4 /* Logger.swift in Sources */,
 				31537E2423560CDF0011DBD4 /* APIClient.swift in Sources */,
 				31537E042354C2540011DBD4 /* Assets.swift in Sources */,
@@ -764,10 +785,13 @@
 				31537DF92353A9130011DBD4 /* ViewModelType.swift in Sources */,
 				31537E1B2355D62D0011DBD4 /* Price.swift in Sources */,
 				31537E192355D51A0011DBD4 /* Amenities.swift in Sources */,
+				31CF025623577E42008C92B0 /* Identifiers.swift in Sources */,
 				31537DFF2353AAA80011DBD4 /* BaseViewController.swift in Sources */,
 				31537E0B235526DB0011DBD4 /* MainViewController.swift in Sources */,
 				31537E15235549670011DBD4 /* MainCoordinator.swift in Sources */,
+				31CF025823579CD6008C92B0 /* LocalizedStrings.swift in Sources */,
 				31537E112355487F0011DBD4 /* BaseCoordinator.swift in Sources */,
+				31CF025123577D5B008C92B0 /* FeedSection.swift in Sources */,
 				31537E0D235526FB0011DBD4 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
