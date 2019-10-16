@@ -9,8 +9,8 @@
 import Foundation
 
 struct HURBListModel: Codable {
-    let meta : MetaModel?
-    let filters : FiltersModel?
-    let results : [ResultsModel]?
-    let pagination : PaginationModel?
+    let meta: MetaModel?
+    let filters: FiltersModel?
+    let results: [ResultsModel]?
+    let pagination: PaginationModel?
 }

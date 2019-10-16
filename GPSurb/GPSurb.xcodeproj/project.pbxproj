@@ -88,6 +88,12 @@
 		026C9696235774F7002C1CC4 /* StatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C9695235774F7002C1CC4 /* StatesModel.swift */; };
 		026C9697235774F7002C1CC4 /* StatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C9695235774F7002C1CC4 /* StatesModel.swift */; };
 		026C9698235774F7002C1CC4 /* StatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C9695235774F7002C1CC4 /* StatesModel.swift */; };
+		026C969A2357769B002C1CC4 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C96992357769B002C1CC4 /* BaseService.swift */; };
+		026C969B2357769B002C1CC4 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C96992357769B002C1CC4 /* BaseService.swift */; };
+		026C969C2357769B002C1CC4 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C96992357769B002C1CC4 /* BaseService.swift */; };
+		026C969E235793D1002C1CC4 /* HotelPackageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C969D235793D1002C1CC4 /* HotelPackageService.swift */; };
+		026C969F235793D1002C1CC4 /* HotelPackageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C969D235793D1002C1CC4 /* HotelPackageService.swift */; };
+		026C96A0235793D1002C1CC4 /* HotelPackageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C969D235793D1002C1CC4 /* HotelPackageService.swift */; };
 		029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B922352241B00ABF951 /* AppDelegate.swift */; };
 		029D5B952352241B00ABF951 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B942352241B00ABF951 /* SceneDelegate.swift */; };
 		029D5B972352241B00ABF951 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B962352241B00ABF951 /* HomeViewController.swift */; };
@@ -103,9 +109,9 @@
 		02BBA2562354C54E0072F0F9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */; };
 		02BBA2572354C54E0072F0F9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */; };
 		02BBA2582354C54E0072F0F9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */; };
-		5088F6BBD5241B55039B73B5 /* Pods_GPSurb_GPSurbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B0E15A5FB1679FAF03E2ED /* Pods_GPSurb_GPSurbTests.framework */; };
-		7970DEDA1148DB178FE13601 /* Pods_GPSurb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593CAC9081DA251F0B19872A /* Pods_GPSurb.framework */; };
-		833A38435474B679A6125DA0 /* Pods_GPSurb_GPSurbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED374AE198DD76E036A6B566 /* Pods_GPSurb_GPSurbUITests.framework */; };
+		2EE5802760CE3A1E07FB73EE /* Pods_GPSurbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49B5634CB679D47835FBA9A /* Pods_GPSurbTests.framework */; };
+		85C09EB628A341755E350E08 /* Pods_GPSurbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE4F4B2B77A23C99E68AC80 /* Pods_GPSurbUITests.framework */; };
+		D352E91D233AA0AF5A56EA28 /* Pods_GPSurb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99A9E6C7A936EEF52CFED35 /* Pods_GPSurb.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +159,8 @@
 		026C968D2357748A002C1CC4 /* RoomsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsModel.swift; sourceTree = "<group>"; };
 		026C9691235774C6002C1CC4 /* StarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsModel.swift; sourceTree = "<group>"; };
 		026C9695235774F7002C1CC4 /* StatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesModel.swift; sourceTree = "<group>"; };
+		026C96992357769B002C1CC4 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseService.swift; path = GPSurb/Model/BaseService.swift; sourceTree = SOURCE_ROOT; };
+		026C969D235793D1002C1CC4 /* HotelPackageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotelPackageService.swift; path = GPSurb/Model/HotelPackageService.swift; sourceTree = SOURCE_ROOT; };
 		029D5B8F2352241B00ABF951 /* GPSurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029D5B922352241B00ABF951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029D5B942352241B00ABF951 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,15 +178,15 @@
 		029D5BB92352241D00ABF951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BBA2512354C54E0072F0F9 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		360EA976BD7E51F8AC62A9FA /* Pods-GPSurb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb.debug.xcconfig"; path = "Target Support Files/Pods-GPSurb/Pods-GPSurb.debug.xcconfig"; sourceTree = "<group>"; };
-		52CD3C558B1F1DADA12050E1 /* Pods-GPSurb-GPSurbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb-GPSurbUITests.release.xcconfig"; path = "Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests.release.xcconfig"; sourceTree = "<group>"; };
-		593CAC9081DA251F0B19872A /* Pods_GPSurb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSurb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A07E0F52495B2F7B497075B /* Pods-GPSurb-GPSurbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb-GPSurbUITests.debug.xcconfig"; path = "Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A5B0E15A5FB1679FAF03E2ED /* Pods_GPSurb_GPSurbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSurb_GPSurbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFBB2E8C320323436132EC67 /* Pods-GPSurb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb.release.xcconfig"; path = "Target Support Files/Pods-GPSurb/Pods-GPSurb.release.xcconfig"; sourceTree = "<group>"; };
-		DB4B692887503230C1ABB376 /* Pods-GPSurb-GPSurbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb-GPSurbTests.release.xcconfig"; path = "Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests.release.xcconfig"; sourceTree = "<group>"; };
-		E16234467BC7320FD53E096C /* Pods-GPSurb-GPSurbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb-GPSurbTests.debug.xcconfig"; path = "Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests.debug.xcconfig"; sourceTree = "<group>"; };
-		ED374AE198DD76E036A6B566 /* Pods_GPSurb_GPSurbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSurb_GPSurbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		376511F8EF2FFD9289E0FFFC /* Pods-GPSurb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb.release.xcconfig"; path = "Target Support Files/Pods-GPSurb/Pods-GPSurb.release.xcconfig"; sourceTree = "<group>"; };
+		6DA24E31BA02CEDFD3174451 /* Pods-GPSurbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurbUITests.release.xcconfig"; path = "Target Support Files/Pods-GPSurbUITests/Pods-GPSurbUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E676C749DF6FC9A58E4FD24 /* Pods-GPSurb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb.debug.xcconfig"; path = "Target Support Files/Pods-GPSurb/Pods-GPSurb.debug.xcconfig"; sourceTree = "<group>"; };
+		9FE4F4B2B77A23C99E68AC80 /* Pods_GPSurbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSurbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36BB89E1E9A521BEA02588D /* Pods-GPSurbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurbUITests.debug.xcconfig"; path = "Target Support Files/Pods-GPSurbUITests/Pods-GPSurbUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3D82FA66A2C3A9A17EB472A /* Pods-GPSurbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurbTests.release.xcconfig"; path = "Target Support Files/Pods-GPSurbTests/Pods-GPSurbTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE3BF2BFC2DF2CF4E7C93A08 /* Pods-GPSurbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurbTests.debug.xcconfig"; path = "Target Support Files/Pods-GPSurbTests/Pods-GPSurbTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E49B5634CB679D47835FBA9A /* Pods_GPSurbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSurbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E99A9E6C7A936EEF52CFED35 /* Pods_GPSurb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSurb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7970DEDA1148DB178FE13601 /* Pods_GPSurb.framework in Frameworks */,
+				D352E91D233AA0AF5A56EA28 /* Pods_GPSurb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5088F6BBD5241B55039B73B5 /* Pods_GPSurb_GPSurbTests.framework in Frameworks */,
+				2EE5802760CE3A1E07FB73EE /* Pods_GPSurbTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833A38435474B679A6125DA0 /* Pods_GPSurb_GPSurbUITests.framework in Frameworks */,
+				85C09EB628A341755E350E08 /* Pods_GPSurbUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +299,8 @@
 		025E91CE2354B801007CC0A0 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				026C96992357769B002C1CC4 /* BaseService.swift */,
+				026C969D235793D1002C1CC4 /* HotelPackageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -389,7 +399,7 @@
 				029D5BB62352241D00ABF951 /* GPSurbUITests */,
 				029D5B902352241B00ABF951 /* Products */,
 				7DAC65EA9B1350AD8DBD1F8E /* Pods */,
-				943CA992E0B48B7232F80D8F /* Frameworks */,
+				A41B54189829B12C1B37961A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -440,22 +450,22 @@
 		7DAC65EA9B1350AD8DBD1F8E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				360EA976BD7E51F8AC62A9FA /* Pods-GPSurb.debug.xcconfig */,
-				CFBB2E8C320323436132EC67 /* Pods-GPSurb.release.xcconfig */,
-				E16234467BC7320FD53E096C /* Pods-GPSurb-GPSurbTests.debug.xcconfig */,
-				DB4B692887503230C1ABB376 /* Pods-GPSurb-GPSurbTests.release.xcconfig */,
-				8A07E0F52495B2F7B497075B /* Pods-GPSurb-GPSurbUITests.debug.xcconfig */,
-				52CD3C558B1F1DADA12050E1 /* Pods-GPSurb-GPSurbUITests.release.xcconfig */,
+				6E676C749DF6FC9A58E4FD24 /* Pods-GPSurb.debug.xcconfig */,
+				376511F8EF2FFD9289E0FFFC /* Pods-GPSurb.release.xcconfig */,
+				AE3BF2BFC2DF2CF4E7C93A08 /* Pods-GPSurbTests.debug.xcconfig */,
+				A3D82FA66A2C3A9A17EB472A /* Pods-GPSurbTests.release.xcconfig */,
+				A36BB89E1E9A521BEA02588D /* Pods-GPSurbUITests.debug.xcconfig */,
+				6DA24E31BA02CEDFD3174451 /* Pods-GPSurbUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		943CA992E0B48B7232F80D8F /* Frameworks */ = {
+		A41B54189829B12C1B37961A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				593CAC9081DA251F0B19872A /* Pods_GPSurb.framework */,
-				A5B0E15A5FB1679FAF03E2ED /* Pods_GPSurb_GPSurbTests.framework */,
-				ED374AE198DD76E036A6B566 /* Pods_GPSurb_GPSurbUITests.framework */,
+				E99A9E6C7A936EEF52CFED35 /* Pods_GPSurb.framework */,
+				E49B5634CB679D47835FBA9A /* Pods_GPSurbTests.framework */,
+				9FE4F4B2B77A23C99E68AC80 /* Pods_GPSurbUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -467,10 +477,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 029D5BBC2352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurb" */;
 			buildPhases = (
-				D7DB22EAA591CF724109C2C3 /* [CP] Check Pods Manifest.lock */,
+				2ACF6C7716752D3A227DA1A5 /* [CP] Check Pods Manifest.lock */,
 				029D5B8B2352241B00ABF951 /* Sources */,
 				029D5B8C2352241B00ABF951 /* Frameworks */,
 				029D5B8D2352241B00ABF951 /* Resources */,
+				79C80E7377D9E4B139E06DFD /* [CP] Embed Pods Frameworks */,
+				026C96A12357951D002C1CC4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -485,11 +497,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 029D5BBF2352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurbTests" */;
 			buildPhases = (
-				D5ADAB6C4662806E24176D00 /* [CP] Check Pods Manifest.lock */,
+				B6C8BC23546D9333A3A39530 /* [CP] Check Pods Manifest.lock */,
 				029D5BA42352241D00ABF951 /* Sources */,
 				029D5BA52352241D00ABF951 /* Frameworks */,
 				029D5BA62352241D00ABF951 /* Resources */,
-				D35EA04310ED54D2D92E566E /* [CP] Embed Pods Frameworks */,
+				FDA0E7308CD94B13E8A2A71F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -505,11 +517,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 029D5BC22352241D00ABF951 /* Build configuration list for PBXNativeTarget "GPSurbUITests" */;
 			buildPhases = (
-				BB0F920804AC10B2D5187D80 /* [CP] Check Pods Manifest.lock */,
+				75ADB7F4A50B32E40FBE1A9F /* [CP] Check Pods Manifest.lock */,
 				029D5BAF2352241D00ABF951 /* Sources */,
 				029D5BB02352241D00ABF951 /* Frameworks */,
 				029D5BB12352241D00ABF951 /* Resources */,
-				087D2F68E89C2DC39A2046DA /* [CP] Embed Pods Frameworks */,
+				C882ED4EAC285FE981DB8B34 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -601,24 +613,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		087D2F68E89C2DC39A2046DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbUITests/Pods-GPSurb-GPSurbUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB0F920804AC10B2D5187D80 /* [CP] Check Pods Manifest.lock */ = {
+		026C96A12357951D002C1CC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -626,60 +621,16 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GPSurb-GPSurbUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
-		D35EA04310ED54D2D92E566E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPSurb-GPSurbTests/Pods-GPSurb-GPSurbTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D5ADAB6C4662806E24176D00 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GPSurb-GPSurbTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7DB22EAA591CF724109C2C3 /* [CP] Check Pods Manifest.lock */ = {
+		2ACF6C7716752D3A227DA1A5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -699,6 +650,101 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75ADB7F4A50B32E40FBE1A9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GPSurbUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79C80E7377D9E4B139E06DFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurb/Pods-GPSurb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurb/Pods-GPSurb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPSurb/Pods-GPSurb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6C8BC23546D9333A3A39530 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GPSurbTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C882ED4EAC285FE981DB8B34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurbUITests/Pods-GPSurbUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurbUITests/Pods-GPSurbUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPSurbUITests/Pods-GPSurbUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDA0E7308CD94B13E8A2A71F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurbTests/Pods-GPSurbTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPSurbTests/Pods-GPSurbTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPSurbTests/Pods-GPSurbTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -721,6 +767,7 @@
 				029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */,
 				026C964A2357637A002C1CC4 /* HURBListModel.swift in Sources */,
 				02BBA2562354C54E0072F0F9 /* TabBarViewController.swift in Sources */,
+				026C969E235793D1002C1CC4 /* HotelPackageService.swift in Sources */,
 				026C968E2357748A002C1CC4 /* RoomsModel.swift in Sources */,
 				026C9652235770E7002C1CC4 /* AmenitiesModel.swift in Sources */,
 				026C966E235772D8002C1CC4 /* MetaModel.swift in Sources */,
@@ -734,6 +781,7 @@
 				026C9696235774F7002C1CC4 /* StatesModel.swift in Sources */,
 				02596BFC2354CB1C0027C9EE /* FavoritesPresenter.swift in Sources */,
 				026C967E235773BA002C1CC4 /* PricesModel.swift in Sources */,
+				026C969A2357769B002C1CC4 /* BaseService.swift in Sources */,
 				026C964623576302002C1CC4 /* BestDestinationModel.swift in Sources */,
 				026C966223577227002C1CC4 /* FiltersModel.swift in Sources */,
 				026C965A235771A4002C1CC4 /* CountriesModel.swift in Sources */,
@@ -749,6 +797,7 @@
 				02596BFD2354CB1C0027C9EE /* FavoritesPresenter.swift in Sources */,
 				026C967F235773BA002C1CC4 /* PricesModel.swift in Sources */,
 				026C966323577227002C1CC4 /* FiltersModel.swift in Sources */,
+				026C969B2357769B002C1CC4 /* BaseService.swift in Sources */,
 				026C9653235770E7002C1CC4 /* AmenitiesModel.swift in Sources */,
 				026C9697235774F7002C1CC4 /* StatesModel.swift in Sources */,
 				02BBA2572354C54E0072F0F9 /* TabBarViewController.swift in Sources */,
@@ -757,6 +806,7 @@
 				026C96772357733F002C1CC4 /* PriceModel.swift in Sources */,
 				026C966B2357729B002C1CC4 /* GeoLocationModel.swift in Sources */,
 				026C965B235771A4002C1CC4 /* CountriesModel.swift in Sources */,
+				026C969F235793D1002C1CC4 /* HotelPackageService.swift in Sources */,
 				029D5BAD2352241D00ABF951 /* GPSurbTests.swift in Sources */,
 				026C9683235773EC002C1CC4 /* ProductTypeModel.swift in Sources */,
 				026C964B2357637A002C1CC4 /* HURBListModel.swift in Sources */,
@@ -783,6 +833,7 @@
 				02596BFE2354CB1C0027C9EE /* FavoritesPresenter.swift in Sources */,
 				026C9680235773BA002C1CC4 /* PricesModel.swift in Sources */,
 				026C966423577227002C1CC4 /* FiltersModel.swift in Sources */,
+				026C969C2357769B002C1CC4 /* BaseService.swift in Sources */,
 				026C9654235770E7002C1CC4 /* AmenitiesModel.swift in Sources */,
 				026C9698235774F7002C1CC4 /* StatesModel.swift in Sources */,
 				02BBA2582354C54E0072F0F9 /* TabBarViewController.swift in Sources */,
@@ -791,6 +842,7 @@
 				026C96782357733F002C1CC4 /* PriceModel.swift in Sources */,
 				026C966C2357729B002C1CC4 /* GeoLocationModel.swift in Sources */,
 				026C965C235771A4002C1CC4 /* CountriesModel.swift in Sources */,
+				026C96A0235793D1002C1CC4 /* HotelPackageService.swift in Sources */,
 				029D5BB82352241D00ABF951 /* GPSurbUITests.swift in Sources */,
 				026C9684235773EC002C1CC4 /* ProductTypeModel.swift in Sources */,
 				026C964C2357637A002C1CC4 /* HURBListModel.swift in Sources */,
@@ -960,13 +1012,14 @@
 		};
 		029D5BBD2352241D00ABF951 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 360EA976BD7E51F8AC62A9FA /* Pods-GPSurb.debug.xcconfig */;
+			baseConfigurationReference = 6E676C749DF6FC9A58E4FD24 /* Pods-GPSurb.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34J349V9U7;
 				INFOPLIST_FILE = GPSurb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -974,19 +1027,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.gpsurb.GPSurb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		029D5BBE2352241D00ABF951 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFBB2E8C320323436132EC67 /* Pods-GPSurb.release.xcconfig */;
+			baseConfigurationReference = 376511F8EF2FFD9289E0FFFC /* Pods-GPSurb.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34J349V9U7;
 				INFOPLIST_FILE = GPSurb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -994,15 +1048,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.gpsurb.GPSurb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		029D5BC02352241D00ABF951 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E16234467BC7320FD53E096C /* Pods-GPSurb-GPSurbTests.debug.xcconfig */;
+			baseConfigurationReference = AE3BF2BFC2DF2CF4E7C93A08 /* Pods-GPSurbTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34J349V9U7;
@@ -1023,9 +1077,9 @@
 		};
 		029D5BC12352241D00ABF951 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB4B692887503230C1ABB376 /* Pods-GPSurb-GPSurbTests.release.xcconfig */;
+			baseConfigurationReference = A3D82FA66A2C3A9A17EB472A /* Pods-GPSurbTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34J349V9U7;
@@ -1046,9 +1100,9 @@
 		};
 		029D5BC32352241D00ABF951 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A07E0F52495B2F7B497075B /* Pods-GPSurb-GPSurbUITests.debug.xcconfig */;
+			baseConfigurationReference = A36BB89E1E9A521BEA02588D /* Pods-GPSurbUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34J349V9U7;
 				INFOPLIST_FILE = GPSurbUITests/Info.plist;
@@ -1067,9 +1121,9 @@
 		};
 		029D5BC42352241D00ABF951 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52CD3C558B1F1DADA12050E1 /* Pods-GPSurb-GPSurbUITests.release.xcconfig */;
+			baseConfigurationReference = 6DA24E31BA02CEDFD3174451 /* Pods-GPSurbUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34J349V9U7;
 				INFOPLIST_FILE = GPSurbUITests/Info.plist;

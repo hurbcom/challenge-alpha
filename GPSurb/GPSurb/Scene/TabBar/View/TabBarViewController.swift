@@ -21,7 +21,7 @@ class TabBarViewController: UITabBarController {
     // MARK: IBACTIONS
 }
 
-//MARK: - LIFE CYCLE -
+// MARK: - LIFE CYCLE -
 extension TabBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ extension TabBarViewController {
     }
 }
 
-//MARK: - DELEGATE PRESENTER -
+// MARK: - DELEGATE PRESENTER -
 extension TabBarViewController: TabBarViewDelegate {
     func setViewData(viewData: TabBarViewData) {
         self.viewData = viewData
@@ -38,7 +38,7 @@ extension TabBarViewController: TabBarViewDelegate {
     }
 }
 
-//MARK: - AUX METHODS -
+// MARK: - AUX METHODS -
 extension TabBarViewController {
     private func createTabBar() {
         var controllers = [UIViewController]()

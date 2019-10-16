@@ -8,17 +8,17 @@
 
 import Foundation
 
-//MARK: - STRUCT VIEW DATA -
+// MARK: - STRUCT VIEW DATA -
 struct FavoritesViewData {
     
 }
 
-//MARK: - VIEW DELEGATE -
+// MARK: - VIEW DELEGATE -
 protocol FavoritesViewDelegate: NSObjectProtocol {
     
 }
 
-//MARK: - PRESENTER CLASS -
+// MARK: - PRESENTER CLASS -
 class FavoritesPresenter {
     
     private weak var viewDelegate: FavoritesViewDelegate?

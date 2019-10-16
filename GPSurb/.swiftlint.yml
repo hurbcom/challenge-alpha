@@ -1,0 +1,8 @@
+disabled_rules:
+ - empty_enum_arguments
+ - unused_optional_binding
+ - trailing_whitespace
+ - vertical_whitespace
+ - line_length
+excluded:
+ - Pods

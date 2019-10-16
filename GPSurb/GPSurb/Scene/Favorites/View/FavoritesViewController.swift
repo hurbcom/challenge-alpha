@@ -16,12 +16,12 @@ class FavoritesViewController: UIViewController {
     
     // MARK: VARIABLES
     private var presenter: FavoritesPresenter!
-    private lazy var viewData:FavoritesViewData = FavoritesViewData()
+    private lazy var viewData: FavoritesViewData = FavoritesViewData()
     
     // MARK: IBACTIONS
 }
 
-//MARK: - LIFE CYCLE -
+// MARK: - LIFE CYCLE -
 extension FavoritesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,12 @@ extension FavoritesViewController {
     }
 }
 
-//MARK: - DELEGATE PRESENTER -
+// MARK: - DELEGATE PRESENTER -
 extension FavoritesViewController: FavoritesViewDelegate {
 
 }
 
-//MARK: - AUX METHODS -
+// MARK: - AUX METHODS -
 extension FavoritesViewController {
 
 }

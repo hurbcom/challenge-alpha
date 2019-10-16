@@ -14,9 +14,9 @@ struct ResultsModel: Codable {
     let category: String?
     let smallDescription: String?
     let amenities: [AmenitiesModel]?
-    let id: String?
+    let idResult: String?
     let price: PriceModel?
-    let hu_free_cancellation: Bool?
+    let huFreeCancellation: Bool?
     let image: String?
     let name: String?
     let url: String?
@@ -27,4 +27,25 @@ struct ResultsModel: Codable {
     let tags: [String]?
     let quantityDescriptors: QuantityDescriptorsModel?
     let featuredItem: FeaturedItemModel?
+    
+    enum CodingKeys: String, CodingKey {
+        case sku = "sku"
+        case isHotel = "isHotel"
+        case category = "category"
+        case smallDescription = "smallDescription"
+        case amenities = "amenities"
+        case idResult = "id"
+        case price = "price"
+        case huFreeCancellation = "hu_free_cancellation"
+        case image = "image"
+        case name = "name"
+        case url = "url"
+        case description = "description"
+        case stars = "stars"
+        case gallery = "gallery"
+        case address = "address"
+        case tags = "tags"
+        case quantityDescriptors = "quantityDescriptors"
+        case featuredItem = "featuredItem"
+    }
 }

@@ -32,7 +32,7 @@ enum MenuName: String {
     case favorite = "Favoritos"
 }
 
-//MARK: - STRUCT VIEW DATA -
+// MARK: - STRUCT VIEW DATA -
 struct TabBarViewData {
     var tabaBarItens = [TabBarItem]()
 }
@@ -43,9 +43,7 @@ struct TabBarItem {
     var viewControllerIdentifier = IdentifierViewController.home
     var imageTabBar = TabBarImage()
     var accessibilityIdentifier: String {
-        get {
-            return "\(self.name)-identifier"
-        }
+        return "\(self.name)-identifier"
     }
 }
 
@@ -53,24 +51,19 @@ struct TabBarImage {
     var imageNameNormal = ImageName.homeNormal
     var imageNameSelected = ImageName.homeSelected
     var imageNotSelected: UIImage? {
-        get {
-            let image = UIImage(named: self.imageNameNormal.rawValue)
-            return image
-        }
+        return UIImage(named: self.imageNameNormal.rawValue)
     }
     var imageSelected: UIImage? {
-        get {
-            return UIImage(named: self.imageNameSelected.rawValue)
-        }
+        return UIImage(named: self.imageNameSelected.rawValue)
     }
 }
 
-//MARK: - VIEW DELEGATE -
+// MARK: - VIEW DELEGATE -
 protocol TabBarViewDelegate: NSObjectProtocol {
     func setViewData(viewData: TabBarViewData)
 }
 
-//MARK: - PRESENTER CLASS -
+// MARK: - PRESENTER CLASS -
 class TabBarPresenter {
     
     private weak var viewDelegate: TabBarViewDelegate?
@@ -82,7 +75,7 @@ class TabBarPresenter {
     }
 }
 
-//MARK: - PUBLICS METHODS -
+// MARK: - PUBLICS METHODS -
 extension TabBarPresenter {
     func getTabBarItens() {
         self.createTabBar()
@@ -98,7 +91,7 @@ extension TabBarPresenter {
     }
 }
 
-//MARK: - AUX METHODS -
+// MARK: - AUX METHODS -
 extension TabBarPresenter {
     
     private func getMenuItem(menuNameTabBar: MenuName) -> TabBarItem {
@@ -118,10 +111,10 @@ extension TabBarPresenter {
         }
     }
       
-    private func getItemTabBar(storyBoardName:StoryBoardName,
+    private func getItemTabBar(storyBoardName: StoryBoardName,
                                controllerId: IdentifierViewController,
                                nameMenu: MenuName, imageSelectedName: ImageName,
-                               imageNotSelectedName:ImageName) -> TabBarItem {
+                               imageNotSelectedName: ImageName) -> TabBarItem {
         
         let imageTabBar = TabBarImage(imageNameNormal: imageNotSelectedName,
                                       imageNameSelected: imageSelectedName)
