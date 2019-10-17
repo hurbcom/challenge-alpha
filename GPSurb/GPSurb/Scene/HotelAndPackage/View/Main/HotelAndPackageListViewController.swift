@@ -44,11 +44,12 @@ extension HotelAndPackageListViewController {
 // MARK: - DATASOURCE TABLEVIEW -
 extension HotelAndPackageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.viewData.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ElementTableViewCell = self.tableView.dequeueReusableCell(for: indexPath)
+        cell.prepareCell(viewData: self.viewData.list[indexPath.row])
         return cell
     }
     
