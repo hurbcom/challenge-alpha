@@ -104,6 +104,13 @@ extension HomeViewController {
         self.collectionView.register(BestDestinationsCollectionViewCell.self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let viewController = segue.destination as? HotelAndPackageListViewController,
+              segue.identifier == self.segueList,
+              let index = sender as? Int else { return }
+        viewController.query = self.viewData.bestDestinations[index].query
+    }
+    
     private func collectionViewItemAnimation(itemView: UIView, index: Int, itemHeight: CGFloat) {
         itemView.transform = CGAffineTransform(translationX: 0, y: itemHeight / 2)
         itemView.alpha = 0

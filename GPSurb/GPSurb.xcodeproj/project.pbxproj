@@ -133,6 +133,9 @@
 		027766D62357B6210042BFE8 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 027766D52357B6210042BFE8 /* loader.json */; };
 		027766D72357B6210042BFE8 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 027766D52357B6210042BFE8 /* loader.json */; };
 		027766D82357B6210042BFE8 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 027766D52357B6210042BFE8 /* loader.json */; };
+		028EC17C235915D6005CEC60 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028EC17B235915D6005CEC60 /* UITableViewExtension.swift */; };
+		028EC17D235915D6005CEC60 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028EC17B235915D6005CEC60 /* UITableViewExtension.swift */; };
+		028EC17E235915D6005CEC60 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028EC17B235915D6005CEC60 /* UITableViewExtension.swift */; };
 		029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B922352241B00ABF951 /* AppDelegate.swift */; };
 		029D5B952352241B00ABF951 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B942352241B00ABF951 /* SceneDelegate.swift */; };
 		029D5B9D2352241B00ABF951 /* GPSurb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 029D5B9B2352241B00ABF951 /* GPSurb.xcdatamodeld */; };
@@ -146,6 +149,15 @@
 		02BBA2562354C54E0072F0F9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */; };
 		02BBA2572354C54E0072F0F9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */; };
 		02BBA2582354C54E0072F0F9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */; };
+		02F22134235910E50033D2DE /* ElementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F22133235910E40033D2DE /* ElementTableViewCell.xib */; };
+		02F22135235910E50033D2DE /* ElementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F22133235910E40033D2DE /* ElementTableViewCell.xib */; };
+		02F22136235910E50033D2DE /* ElementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F22133235910E40033D2DE /* ElementTableViewCell.xib */; };
+		02F221382359110A0033D2DE /* ElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F221372359110A0033D2DE /* ElementTableViewCell.swift */; };
+		02F221392359110A0033D2DE /* ElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F221372359110A0033D2DE /* ElementTableViewCell.swift */; };
+		02F2213A2359110A0033D2DE /* ElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F221372359110A0033D2DE /* ElementTableViewCell.swift */; };
+		02F2213D235911BA0033D2DE /* pakenham rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02F2213C235911BA0033D2DE /* pakenham rg.ttf */; };
+		02F2213E235911BA0033D2DE /* pakenham rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02F2213C235911BA0033D2DE /* pakenham rg.ttf */; };
+		02F2213F235911BA0033D2DE /* pakenham rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02F2213C235911BA0033D2DE /* pakenham rg.ttf */; };
 		2EE5802760CE3A1E07FB73EE /* Pods_GPSurbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49B5634CB679D47835FBA9A /* Pods_GPSurbTests.framework */; };
 		85C09EB628A341755E350E08 /* Pods_GPSurbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE4F4B2B77A23C99E68AC80 /* Pods_GPSurbUITests.framework */; };
 		D352E91D233AA0AF5A56EA28 /* Pods_GPSurb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99A9E6C7A936EEF52CFED35 /* Pods_GPSurb.framework */; };
@@ -211,6 +223,7 @@
 		027766CC2357ABA20042BFE8 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		027766D02357ACD40042BFE8 /* BestDestinationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BestDestinationService.swift; path = GPSurb/Helper/Extension/BestDestinationService.swift; sourceTree = SOURCE_ROOT; };
 		027766D52357B6210042BFE8 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		028EC17B235915D6005CEC60 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		029D5B8F2352241B00ABF951 /* GPSurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029D5B922352241B00ABF951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029D5B942352241B00ABF951 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +239,9 @@
 		029D5BB92352241D00ABF951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BBA2512354C54E0072F0F9 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		02F22133235910E40033D2DE /* ElementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElementTableViewCell.xib; sourceTree = "<group>"; };
+		02F221372359110A0033D2DE /* ElementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTableViewCell.swift; sourceTree = "<group>"; };
+		02F2213C235911BA0033D2DE /* pakenham rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pakenham rg.ttf"; sourceTree = "<group>"; };
 		376511F8EF2FFD9289E0FFFC /* Pods-GPSurb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb.release.xcconfig"; path = "Target Support Files/Pods-GPSurb/Pods-GPSurb.release.xcconfig"; sourceTree = "<group>"; };
 		6DA24E31BA02CEDFD3174451 /* Pods-GPSurbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurbUITests.release.xcconfig"; path = "Target Support Files/Pods-GPSurbUITests/Pods-GPSurbUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E676C749DF6FC9A58E4FD24 /* Pods-GPSurb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSurb.debug.xcconfig"; path = "Target Support Files/Pods-GPSurb/Pods-GPSurb.debug.xcconfig"; sourceTree = "<group>"; };
@@ -285,8 +301,8 @@
 		0251A5132359069600105C1E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0251A5242359075700105C1E /* HotelAndPackageList.storyboard */,
-				0251A51D2359072900105C1E /* HotelAndPackageListViewController.swift */,
+				02F2212023590F600033D2DE /* Main */,
+				02F2212123590F660033D2DE /* ElementTableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +347,7 @@
 		025E91CB2354B7E0007CC0A0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				02F2213B235911BA0033D2DE /* Font */,
 				027766D42357B6020042BFE8 /* Lottie */,
 				026C9639235761B1002C1CC4 /* best_destinations.json */,
 			);
@@ -502,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				027766CC2357ABA20042BFE8 /* UICollectionViewExtension.swift */,
+				028EC17B235915D6005CEC60 /* UITableViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -568,6 +586,32 @@
 				029D5BB92352241D00ABF951 /* Info.plist */,
 			);
 			path = GPSurbUITests;
+			sourceTree = "<group>";
+		};
+		02F2212023590F600033D2DE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0251A5242359075700105C1E /* HotelAndPackageList.storyboard */,
+				0251A51D2359072900105C1E /* HotelAndPackageListViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		02F2212123590F660033D2DE /* ElementTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				02F22133235910E40033D2DE /* ElementTableViewCell.xib */,
+				02F221372359110A0033D2DE /* ElementTableViewCell.swift */,
+			);
+			path = ElementTableViewCell;
+			sourceTree = "<group>";
+		};
+		02F2213B235911BA0033D2DE /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				02F2213C235911BA0033D2DE /* pakenham rg.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		7DAC65EA9B1350AD8DBD1F8E /* Pods */ = {
@@ -707,9 +751,11 @@
 				025E91DE2354C300007CC0A0 /* TabBar.storyboard in Resources */,
 				026C96BE2357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				027766D62357B6210042BFE8 /* loader.json in Resources */,
+				02F2213D235911BA0033D2DE /* pakenham rg.ttf in Resources */,
 				029D5BA22352241D00ABF951 /* LaunchScreen.storyboard in Resources */,
 				029D5B9F2352241D00ABF951 /* Assets.xcassets in Resources */,
 				026C96AC2357A384002C1CC4 /* Home.storyboard in Resources */,
+				02F22134235910E50033D2DE /* ElementTableViewCell.xib in Resources */,
 				026C963A235761B1002C1CC4 /* best_destinations.json in Resources */,
 				0251A5252359075900105C1E /* HotelAndPackageList.storyboard in Resources */,
 				02596BF72354CA870027C9EE /* Favorites.storyboard in Resources */,
@@ -723,9 +769,11 @@
 				027766D72357B6210042BFE8 /* loader.json in Resources */,
 				026C96BF2357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				02596BF82354CA870027C9EE /* Favorites.storyboard in Resources */,
+				02F2213E235911BA0033D2DE /* pakenham rg.ttf in Resources */,
 				026C963B235761B1002C1CC4 /* best_destinations.json in Resources */,
 				025E91DF2354C300007CC0A0 /* TabBar.storyboard in Resources */,
 				026C96AD2357A384002C1CC4 /* Home.storyboard in Resources */,
+				02F22135235910E50033D2DE /* ElementTableViewCell.xib in Resources */,
 				0251A5262359075900105C1E /* HotelAndPackageList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,9 +785,11 @@
 				027766D82357B6210042BFE8 /* loader.json in Resources */,
 				026C96C02357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				02596BF92354CA870027C9EE /* Favorites.storyboard in Resources */,
+				02F2213F235911BA0033D2DE /* pakenham rg.ttf in Resources */,
 				026C963C235761B1002C1CC4 /* best_destinations.json in Resources */,
 				025E91E02354C300007CC0A0 /* TabBar.storyboard in Resources */,
 				026C96AE2357A384002C1CC4 /* Home.storyboard in Resources */,
+				02F22136235910E50033D2DE /* ElementTableViewCell.xib in Resources */,
 				0251A5272359075900105C1E /* HotelAndPackageList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,11 +965,13 @@
 				027766CD2357ABA20042BFE8 /* UICollectionViewExtension.swift in Sources */,
 				026C964E235763C2002C1CC4 /* AddressModel.swift in Sources */,
 				026C967A23577370002C1CC4 /* PriceIntervalModel.swift in Sources */,
+				028EC17C235915D6005CEC60 /* UITableViewExtension.swift in Sources */,
 				026C96762357733F002C1CC4 /* PriceModel.swift in Sources */,
 				026C966A2357729B002C1CC4 /* GeoLocationModel.swift in Sources */,
 				026C96862357741B002C1CC4 /* QuantityDescriptorsModel.swift in Sources */,
 				026C96B22357A68E002C1CC4 /* NibLoadableView.swift in Sources */,
 				026C9696235774F7002C1CC4 /* StatesModel.swift in Sources */,
+				02F221382359110A0033D2DE /* ElementTableViewCell.swift in Sources */,
 				02596BFC2354CB1C0027C9EE /* FavoritesPresenter.swift in Sources */,
 				026C967E235773BA002C1CC4 /* PricesModel.swift in Sources */,
 				026C969A2357769B002C1CC4 /* BaseService.swift in Sources */,
@@ -946,7 +998,9 @@
 				026C9653235770E7002C1CC4 /* AmenitiesModel.swift in Sources */,
 				027766CE2357ABA20042BFE8 /* UICollectionViewExtension.swift in Sources */,
 				026C9697235774F7002C1CC4 /* StatesModel.swift in Sources */,
+				028EC17D235915D6005CEC60 /* UITableViewExtension.swift in Sources */,
 				02BBA2572354C54E0072F0F9 /* TabBarViewController.swift in Sources */,
+				02F221392359110A0033D2DE /* ElementTableViewCell.swift in Sources */,
 				026C96672357725A002C1CC4 /* GalleryModel.swift in Sources */,
 				025E91D52354B8BB007CC0A0 /* PersistentManager.swift in Sources */,
 				026C96772357733F002C1CC4 /* PriceModel.swift in Sources */,
@@ -991,7 +1045,9 @@
 				026C9654235770E7002C1CC4 /* AmenitiesModel.swift in Sources */,
 				027766CF2357ABA20042BFE8 /* UICollectionViewExtension.swift in Sources */,
 				026C9698235774F7002C1CC4 /* StatesModel.swift in Sources */,
+				028EC17E235915D6005CEC60 /* UITableViewExtension.swift in Sources */,
 				02BBA2582354C54E0072F0F9 /* TabBarViewController.swift in Sources */,
+				02F2213A2359110A0033D2DE /* ElementTableViewCell.swift in Sources */,
 				026C96682357725A002C1CC4 /* GalleryModel.swift in Sources */,
 				025E91D62354B8BB007CC0A0 /* PersistentManager.swift in Sources */,
 				026C96782357733F002C1CC4 /* PriceModel.swift in Sources */,
