@@ -73,17 +73,13 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let itemName = "BestDestinationsCollectionViewCell"
-        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: itemName, for: indexPath) as?
-              BestDestinationsCollectionViewCell
-              else { return UICollectionViewCell() }
-        item.setupItem(viewData: self.viewData.bestDestinations[indexPath.row])
-        self.collectionViewItemAnimation(itemView: item.contentView,
+        let cell: BestDestinationsCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.setupItem(viewData: self.viewData.bestDestinations[indexPath.row])
+        self.collectionViewItemAnimation(itemView: cell.contentView,
                                          index: indexPath.row,
-                                         itemHeight: item.contentView.bounds.height)
-        return item
+                                         itemHeight: cell.contentView.bounds.height)
+        return cell
     }
-    
 }
 
 // MARK: - COLLECTIONVIEW FLOWLAYOUT DELEGATE -
