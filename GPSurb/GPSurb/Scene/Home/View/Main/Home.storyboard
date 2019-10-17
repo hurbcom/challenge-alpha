@@ -109,11 +109,22 @@
                         <outlet property="collectionView" destination="W5b-Xu-51U" id="br5-o1-eaI"/>
                         <outlet property="loadingView" destination="E38-B9-GYD" id="7WJ-UY-Aef"/>
                         <outlet property="messageLabel" destination="8DB-vM-AYq" id="084-f6-vX2"/>
+                        <segue destination="lQS-E3-BjO" kind="show" identifier="showList" id="oEb-tM-vUl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WU-9C-9N9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="73.913043478260875" y="89.732142857142847"/>
+        </scene>
+        <!--HotelAndPackageListNavigation-->
+        <scene sceneID="YFL-hL-BIa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HotelAndPackageList" referencedIdentifier="HotelAndPackageListNavigation" id="lQS-E3-BjO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2gt-X6-fcI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyP-jA-MUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="-70"/>
         </scene>
     </scenes>
 </document>

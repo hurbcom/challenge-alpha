@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ypG-N5-r8t">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="hOn-zZ-sqR">
+            <objects>
+                <navigationController id="ypG-N5-r8t" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qbh-B9-BWw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JIv-OH-zVO" kind="relationship" relationship="rootViewController" id="YK8-Xb-udZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fa6-mr-ZNZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-506" y="109"/>
+        </scene>
+        <!--Hotel And Package List View Controller-->
+        <scene sceneID="vea-4i-bXj">
+            <objects>
+                <viewController storyboardIdentifier="HotelAndPackageListNavigation" id="JIv-OH-zVO" customClass="HotelAndPackageListViewController" customModule="GPSurb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EaN-Vd-EAu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XDs-Ov-c2Q">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JIv-OH-zVO" id="rpx-hL-R25"/>
+                                    <outlet property="delegate" destination="JIv-OH-zVO" id="KTR-bm-9Z7"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xlm-ZU-huq" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="HRL-ZP-1JH"/>
+                                    <constraint firstAttribute="width" constant="150" id="qJL-cg-Iii"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XDs-Ov-c2Q" firstAttribute="leading" secondItem="L3i-Wf-l3e" secondAttribute="leading" id="Aiq-AE-0FL"/>
+                            <constraint firstAttribute="bottom" secondItem="XDs-Ov-c2Q" secondAttribute="bottom" id="M3k-Lu-Yq4"/>
+                            <constraint firstItem="Xlm-ZU-huq" firstAttribute="centerY" secondItem="XDs-Ov-c2Q" secondAttribute="centerY" id="ZKx-LR-mDo"/>
+                            <constraint firstItem="XDs-Ov-c2Q" firstAttribute="top" secondItem="EaN-Vd-EAu" secondAttribute="top" id="Zks-Dt-for"/>
+                            <constraint firstItem="Xlm-ZU-huq" firstAttribute="centerX" secondItem="XDs-Ov-c2Q" secondAttribute="centerX" id="m9J-Qg-ANc"/>
+                            <constraint firstItem="XDs-Ov-c2Q" firstAttribute="trailing" secondItem="L3i-Wf-l3e" secondAttribute="trailing" id="zIX-Mw-cdk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L3i-Wf-l3e"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fXr-D6-hSn">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9FG-Id-64V">
+                            <rect key="frame" x="55" y="0.0" width="304" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="NFe-n4-k98"/>
+                            </constraints>
+                            <segments>
+                                <segment title="Hotéis"/>
+                                <segment title="Pacotes"/>
+                            </segments>
+                            <connections>
+                                <action selector="changeFilterAction:" destination="JIv-OH-zVO" eventType="valueChanged" id="0iZ-gl-Ftg"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="loadingView" destination="Xlm-ZU-huq" id="XVi-u3-abh"/>
+                        <outlet property="segmentedControl" destination="9FG-Id-64V" id="8Bj-Je-w64"/>
+                        <outlet property="tableView" destination="XDs-Ov-c2Q" id="2dS-gE-Ikn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZx-ws-TOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343.47826086956525" y="107.8125"/>
+        </scene>
+    </scenes>
+</document>
