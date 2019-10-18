@@ -33,12 +33,6 @@ class ElementTableViewCell: UITableViewCell {
         super.layoutIfNeeded()
         self.heightImage.constant = self.cardView.bounds.height
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.cardImage.kf.cancelDownloadTask()
-        self.cardImage.image = nil
-    }
 }
 
 // MARK: - AUX METHODS  -
@@ -87,10 +81,9 @@ extension ElementTableViewCell {
             self.cardImage.kf.indicatorType = .activity
             self.cardImage.kf.setImage(with: resource, placeholder: nil, options: [.transition(.fade(0.8)), .cacheOriginalImage, .processor(processor)], progressBlock: nil) { (result) in
                 switch result {
-                case .success(let imageResult):
-                    self.cardImage.image = imageResult.image
                 case .failure(_):
                      self.cardImage.image = UIImage(named: "")
+                default: break
                 }
             }
         }

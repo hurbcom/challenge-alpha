@@ -85,7 +85,7 @@ extension HotelAndPackageListPresenter {
     /// Function for parse Model to ViewData in HURBListModel
     /// - Parameter model: HURBListModel
     private func parseFromModelToViewData(model: HURBListModel) -> [ResultViewData] {
-        guard let results = model.results else { return [ResultViewData]()}
+        guard let results = model.results?.sorted(by: {$0.stars ?? 0 > $1.stars ?? 0}) else { return [ResultViewData]()}
         self.viewData.totalPages = model.pagination?.count ?? 0
         return results.map({self.parseResultFromModelToViewData(model: $0)})
     }

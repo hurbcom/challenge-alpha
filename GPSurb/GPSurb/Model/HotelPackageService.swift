@@ -19,10 +19,9 @@ open class HotelPackageService: BaseService {
     
     open func getHotelAndPackage(query: String, filter: TypeFilter, page: Int, completion: @escaping (Swift.Result<HURBListModel, ErrorType>) -> Void) {
         
-        let parameter: [String: Any] = ["q": query, "filters": filter.rawValue, "page": page]
-        let url = self.getHost() + self.path
+        let url = self.getHost() + self.path + "?q=\(query)&filters=\(filter.rawValue)&page=\(page)"
         
-        self.sessionManager.request(url, method: .get, parameters: parameter, encoding: URLEncoding(destination: .queryString), headers: nil).responseJSON { (response) in
+        self.sessionManager.request(url, method: .get).responseJSON { (response) in
             switch response.result {
             case .success:
                 do {

@@ -26,9 +26,9 @@ class HotelAndPackageListViewController: UIViewController {
     
     // MARK: IBACTIONS
     @IBAction func changeFilterAction(_ sender: UISegmentedControl) {
-        print(sender)
+        let filter = sender.selectedSegmentIndex == 0 ? TypeFilter.hotel : TypeFilter.package
+        self.presenter.getOffers(query: self.query, filter: filter)
     }
-    
 }
 
 // MARK: - LIFE CYCLE -
