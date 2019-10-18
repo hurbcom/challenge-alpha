@@ -74,6 +74,9 @@ class MainViewModel: BaseViewModel, ViewModelType {
             print("\(key) ==> \(value.count)")
         }
 
+        // DESC sort order
+        hotelsFeed = hotelsFeed.sorted(by: { $0.title > $1.title})
+
         return hotelsFeed
     }
 
