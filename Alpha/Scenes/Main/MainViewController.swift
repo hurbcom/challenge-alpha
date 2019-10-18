@@ -6,7 +6,7 @@
 //  Copyright © 2019 Hurb. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
@@ -17,10 +17,18 @@ class MainViewController: BaseViewController {
     let headerRefreshTrigger = PublishSubject<Void>()
 
     internal lazy var dataSource: RxTableViewSectionedReloadDataSource<FeedSection> = {
-        let dataSource = RxTableViewSectionedReloadDataSource<FeedSection>(configureCell: { (_, tableView, indexPath, target) -> UITableViewCell in
-
-            let cell = UITableViewCell()
-            return cell
+        let dataSource = RxTableViewSectionedReloadDataSource<FeedSection>(configureCell: { (_, tableView, indexPath, feedSection) -> UITableViewCell in
+            switch feedSection {
+            case .Star(let hotels):
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: feedSection.identifier)
+                as? StarTableViewCell else { fatalError("Unknown identifier") }
+                cell.currentDataSource = HotelsDataSource(with: hotels)
+                return cell
+            case .Package(let packages):
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: feedSection.identifier)
+                as? StarTableViewCell else { fatalError("Unknown identifier") }
+                return cell
+            }
         })
         dataSource.titleForHeaderInSection = { dataSource, index in
             dataSource.sectionModels[index].header
@@ -31,8 +39,16 @@ class MainViewController: BaseViewController {
     internal var feedTableView: UITableView = {
         let view = UITableView()
         view.backgroundColor = .clear
+        view.register(StarTableViewCell.self, forCellReuseIdentifier: Identifiers.Star.rawValue)
+        view.register(StarTableViewCell.self, forCellReuseIdentifier: Identifiers.Package.rawValue)
         view.tableFooterView = UIView(frame: .zero)
-        view.isScrollEnabled = false
+        view.isScrollEnabled = true
+        view.showsVerticalScrollIndicator = false
+        view.rowHeight = UITableView.automaticDimension
+        view.sectionHeaderHeight = UITableView.automaticDimension
+        view.estimatedRowHeight = 140.0
+        view.estimatedSectionHeaderHeight = 55.0
+        view.layoutMargins = .zero
         return view
     }()
 
@@ -53,12 +69,6 @@ class MainViewController: BaseViewController {
         let input = MainViewModel.Input(headerRefresh: refresh)
 
         let output = viewModel.transform(input: input)
-
-//        output.feed.subscribe(
-//            onNext: { [weak self] items in
-//                dump(items)
-//            }
-//        ).disposed(by: disposeBag)
 
         output.feed.asDriver(onErrorJustReturn: [])
             .drive(feedTableView.rx.items(dataSource: dataSource))

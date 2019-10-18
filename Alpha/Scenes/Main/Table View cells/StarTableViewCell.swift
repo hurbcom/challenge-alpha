@@ -9,14 +9,14 @@
 import UIKit
 import SnapKit
 
-class HotelTableViewCell: BaseTableViewCell {
+class StarTableViewCell: BaseTableViewCell {
     var currentDataSource: UICollectionViewDataSource? {
         didSet {
             self.collectionView.dataSource = currentDataSource
             self.collectionView.reloadData()
         }
     }
-    
+
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -24,9 +24,10 @@ class HotelTableViewCell: BaseTableViewCell {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = .clear
+        view.register(HotelCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.Hotels.rawValue)
         return view
     }()
-    
+
     override func setupUI() {
         self.contentView.addSubview(collectionView)
     }

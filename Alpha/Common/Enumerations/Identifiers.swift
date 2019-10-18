@@ -8,6 +8,7 @@
 
 enum Identifiers: String {
     case Star = "starCell"
+    case Hotels = "hotelsCollectionCell"
     case Package = "packageCell"
 
     case FeedSection = "FeedSection"
