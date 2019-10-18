@@ -9,6 +9,10 @@
 import UIKit
 import Kingfisher
 
+protocol ElementDelegate: NSObjectProtocol {
+    func showDetail(viewData: ResultViewData)
+}
+
 class ElementTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cardView: UIView!
@@ -23,6 +27,8 @@ class ElementTableViewCell: UITableViewCell {
     @IBOutlet weak var newPrice: UILabel!
     @IBOutlet weak var heightImage: NSLayoutConstraint!
     @IBOutlet weak var freeCancellationStackView: UIStackView!
+    private lazy var viewData = ResultViewData()
+    public weak var delegate: ElementDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,11 +39,16 @@ class ElementTableViewCell: UITableViewCell {
         super.layoutIfNeeded()
         self.heightImage.constant = self.cardView.bounds.height
     }
+    
+    @IBAction func showDetail(_ sender: UIButton) {
+        self.delegate?.showDetail(viewData: self.viewData)
+    }
 }
 
 // MARK: - AUX METHODS  -
 extension ElementTableViewCell {
     public func prepareCell(viewData: ResultViewData) {
+        self.viewData = viewData
         self.destinationName.text = viewData.destinationName
         self.offerName.text = viewData.offerName
         self.oldPrice.text = viewData.oldPrice

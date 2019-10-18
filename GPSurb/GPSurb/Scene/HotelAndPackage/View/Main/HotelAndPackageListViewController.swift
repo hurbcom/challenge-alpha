@@ -16,7 +16,7 @@ class HotelAndPackageListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: AnimationView!
     // MARK: CONSTANTS
-    
+    private let segueDetail = "segueDetail"
     // MARK: VARIABLES
     private var presenter: HotelAndPackageListPresenter!
     private lazy var viewData: HotelAndPackageListViewData = HotelAndPackageListViewData()
@@ -49,6 +49,7 @@ extension HotelAndPackageListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ElementTableViewCell = self.tableView.dequeueReusableCell(for: indexPath)
+        cell.delegate = self
         cell.prepareCell(viewData: self.viewData.list[indexPath.row])
         return cell
     }
@@ -100,9 +101,22 @@ extension HotelAndPackageListViewController: HotelAndPackageListViewDelegate {
     }
 }
 
+// MARK: - DELEGATE ELEMENTDELEGATE -
+extension HotelAndPackageListViewController: ElementDelegate {
+    func showDetail(viewData: ResultViewData) {
+        self.performSegue(withIdentifier: self.segueDetail, sender: viewData)
+    }
+}
+
 // MARK: - AUX METHODS -
 extension HotelAndPackageListViewController {
     private func registerNIB() {
         self.tableView.register(ElementTableViewCell.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? DetailViewController, let viewData = sender as? ResultViewData {
+            viewController.viewData = viewData
+        }
     }
 }

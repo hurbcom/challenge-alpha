@@ -137,6 +137,9 @@
                                                 <state key="normal" title="Ver Detalhes">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="showDetail:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DOF-IR-zXe"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="QFR-AW-0AX">
                                                 <rect key="frame" x="84.5" y="0.0" width="96.5" height="41"/>

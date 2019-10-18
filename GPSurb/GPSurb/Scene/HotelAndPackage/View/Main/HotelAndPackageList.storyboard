@@ -79,11 +79,22 @@
                         <outlet property="loadingView" destination="Xlm-ZU-huq" id="XVi-u3-abh"/>
                         <outlet property="segmentedControl" destination="9FG-Id-64V" id="8Bj-Je-w64"/>
                         <outlet property="tableView" destination="XDs-Ov-c2Q" id="2dS-gE-Ikn"/>
+                        <segue destination="rof-24-pC5" kind="show" identifier="segueDetail" id="zyQ-4p-QVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZx-ws-TOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="343.47826086956525" y="107.8125"/>
+        </scene>
+        <!--DetailViewController-->
+        <scene sceneID="Qah-oC-Xbo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" referencedIdentifier="DetailViewController" id="rof-24-pC5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8ub-3x-8Wm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVj-7n-VaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1346" y="-2"/>
         </scene>
     </scenes>
 </document>

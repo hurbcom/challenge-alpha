@@ -8,17 +8,17 @@
 
 import Foundation
 
-//MARK: - STRUCT VIEW DATA -
+// MARK: - STRUCT VIEW DATA -
 struct DetailViewData {
     
 }
 
-//MARK: - VIEW DELEGATE -
+// MARK: - VIEW DELEGATE -
 protocol DetailViewDelegate: NSObjectProtocol {
     
 }
 
-//MARK: - PRESENTER CLASS -
+// MARK: - PRESENTER CLASS -
 class DetailPresenter {
     
     private weak var viewDelegate: DetailViewDelegate?
