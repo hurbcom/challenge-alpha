@@ -143,6 +143,15 @@
 		029D5BA22352241D00ABF951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029D5BA02352241D00ABF951 /* LaunchScreen.storyboard */; };
 		029D5BAD2352241D00ABF951 /* GPSurbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5BAC2352241D00ABF951 /* GPSurbTests.swift */; };
 		029D5BB82352241D00ABF951 /* GPSurbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D5BB72352241D00ABF951 /* GPSurbUITests.swift */; };
+		02A51D3B235A2EA100A339B0 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A51D3A235A2EA100A339B0 /* Detail.storyboard */; };
+		02A51D3C235A2EA100A339B0 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A51D3A235A2EA100A339B0 /* Detail.storyboard */; };
+		02A51D3D235A2EA100A339B0 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A51D3A235A2EA100A339B0 /* Detail.storyboard */; };
+		02A51D40235A2EBE00A339B0 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A51D3E235A2EBE00A339B0 /* DetailPresenter.swift */; };
+		02A51D41235A2EBE00A339B0 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A51D3E235A2EBE00A339B0 /* DetailPresenter.swift */; };
+		02A51D42235A2EBE00A339B0 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A51D3E235A2EBE00A339B0 /* DetailPresenter.swift */; };
+		02A51D43235A2EBE00A339B0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A51D3F235A2EBE00A339B0 /* DetailViewController.swift */; };
+		02A51D44235A2EBE00A339B0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A51D3F235A2EBE00A339B0 /* DetailViewController.swift */; };
+		02A51D45235A2EBE00A339B0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A51D3F235A2EBE00A339B0 /* DetailViewController.swift */; };
 		02BBA2532354C54E0072F0F9 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2512354C54E0072F0F9 /* TabBarPresenter.swift */; };
 		02BBA2542354C54E0072F0F9 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2512354C54E0072F0F9 /* TabBarPresenter.swift */; };
 		02BBA2552354C54E0072F0F9 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBA2512354C54E0072F0F9 /* TabBarPresenter.swift */; };
@@ -237,6 +246,9 @@
 		029D5BB32352241D00ABF951 /* GPSurbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPSurbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		029D5BB72352241D00ABF951 /* GPSurbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSurbUITests.swift; sourceTree = "<group>"; };
 		029D5BB92352241D00ABF951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02A51D3A235A2EA100A339B0 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		02A51D3E235A2EBE00A339B0 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		02A51D3F235A2EBE00A339B0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		02BBA2512354C54E0072F0F9 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		02BBA2522354C54E0072F0F9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		02F22133235910E40033D2DE /* ElementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElementTableViewCell.xib; sourceTree = "<group>"; };
@@ -339,6 +351,7 @@
 				025E91DA2354C2CC007CC0A0 /* TabBar */,
 				025E91D72354B8E1007CC0A0 /* Home */,
 				0251A5112359067300105C1E /* HotelAndPackage */,
+				02A51D37235A2E6100A339B0 /* Detail */,
 				02596BF32354CA310027C9EE /* Favorites */,
 			);
 			path = Scene;
@@ -588,6 +601,32 @@
 			path = GPSurbUITests;
 			sourceTree = "<group>";
 		};
+		02A51D37235A2E6100A339B0 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				02A51D38235A2E6F00A339B0 /* View */,
+				02A51D39235A2E7700A339B0 /* Presenter */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		02A51D38235A2E6F00A339B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02A51D3A235A2EA100A339B0 /* Detail.storyboard */,
+				02A51D3F235A2EBE00A339B0 /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		02A51D39235A2E7700A339B0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				02A51D3E235A2EBE00A339B0 /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		02F2212023590F600033D2DE /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -759,6 +798,7 @@
 				026C963A235761B1002C1CC4 /* best_destinations.json in Resources */,
 				0251A5252359075900105C1E /* HotelAndPackageList.storyboard in Resources */,
 				02596BF72354CA870027C9EE /* Favorites.storyboard in Resources */,
+				02A51D3B235A2EA100A339B0 /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,6 +809,7 @@
 				027766D72357B6210042BFE8 /* loader.json in Resources */,
 				026C96BF2357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				02596BF82354CA870027C9EE /* Favorites.storyboard in Resources */,
+				02A51D3C235A2EA100A339B0 /* Detail.storyboard in Resources */,
 				02F2213E235911BA0033D2DE /* pakenham rg.ttf in Resources */,
 				026C963B235761B1002C1CC4 /* best_destinations.json in Resources */,
 				025E91DF2354C300007CC0A0 /* TabBar.storyboard in Resources */,
@@ -785,6 +826,7 @@
 				027766D82357B6210042BFE8 /* loader.json in Resources */,
 				026C96C02357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				02596BF92354CA870027C9EE /* Favorites.storyboard in Resources */,
+				02A51D3D235A2EA100A339B0 /* Detail.storyboard in Resources */,
 				02F2213F235911BA0033D2DE /* pakenham rg.ttf in Resources */,
 				026C963C235761B1002C1CC4 /* best_destinations.json in Resources */,
 				025E91E02354C300007CC0A0 /* TabBar.storyboard in Resources */,
@@ -939,6 +981,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0251A5212359072900105C1E /* HotelAndPackageListViewController.swift in Sources */,
+				02A51D40235A2EBE00A339B0 /* DetailPresenter.swift in Sources */,
 				026C96722357730E002C1CC4 /* PaginationModel.swift in Sources */,
 				02596BFF2354CB1C0027C9EE /* FavoritesViewController.swift in Sources */,
 				027766D12357ACD40042BFE8 /* BestDestinationService.swift in Sources */,
@@ -948,6 +991,7 @@
 				025E91D42354B8BB007CC0A0 /* PersistentManager.swift in Sources */,
 				026C968A2357744C002C1CC4 /* ResultsModel.swift in Sources */,
 				0251A51E2359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */,
+				02A51D43235A2EBE00A339B0 /* DetailViewController.swift in Sources */,
 				02BBA2532354C54E0072F0F9 /* TabBarPresenter.swift in Sources */,
 				026C96562357711F002C1CC4 /* CitiesModel.swift in Sources */,
 				029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */,
@@ -1008,11 +1052,13 @@
 				0251A5222359072900105C1E /* HotelAndPackageListViewController.swift in Sources */,
 				026C965B235771A4002C1CC4 /* CountriesModel.swift in Sources */,
 				026C969F235793D1002C1CC4 /* HotelPackageService.swift in Sources */,
+				02A51D41235A2EBE00A339B0 /* DetailPresenter.swift in Sources */,
 				029D5BAD2352241D00ABF951 /* GPSurbTests.swift in Sources */,
 				026C9683235773EC002C1CC4 /* ProductTypeModel.swift in Sources */,
 				026C964B2357637A002C1CC4 /* HURBListModel.swift in Sources */,
 				026C964F235763C2002C1CC4 /* AddressModel.swift in Sources */,
 				026C9693235774C6002C1CC4 /* StarsModel.swift in Sources */,
+				02A51D44235A2EBE00A339B0 /* DetailViewController.swift in Sources */,
 				026C967B23577370002C1CC4 /* PriceIntervalModel.swift in Sources */,
 				02596C002354CB1C0027C9EE /* FavoritesViewController.swift in Sources */,
 				026C966F235772D8002C1CC4 /* MetaModel.swift in Sources */,
@@ -1055,11 +1101,13 @@
 				0251A5232359072900105C1E /* HotelAndPackageListViewController.swift in Sources */,
 				026C965C235771A4002C1CC4 /* CountriesModel.swift in Sources */,
 				026C96A0235793D1002C1CC4 /* HotelPackageService.swift in Sources */,
+				02A51D42235A2EBE00A339B0 /* DetailPresenter.swift in Sources */,
 				029D5BB82352241D00ABF951 /* GPSurbUITests.swift in Sources */,
 				026C9684235773EC002C1CC4 /* ProductTypeModel.swift in Sources */,
 				026C964C2357637A002C1CC4 /* HURBListModel.swift in Sources */,
 				026C9650235763C2002C1CC4 /* AddressModel.swift in Sources */,
 				026C9694235774C6002C1CC4 /* StarsModel.swift in Sources */,
+				02A51D45235A2EBE00A339B0 /* DetailViewController.swift in Sources */,
 				026C967C23577370002C1CC4 /* PriceIntervalModel.swift in Sources */,
 				02596C012354CB1C0027C9EE /* FavoritesViewController.swift in Sources */,
 				026C9670235772D8002C1CC4 /* MetaModel.swift in Sources */,
