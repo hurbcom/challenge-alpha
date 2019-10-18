@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct APIRes: Codable {
+struct APIRoot: Codable {
     var results: [APIResult]
 
     enum CodingKeys: String, CodingKey {

@@ -5,15 +5,19 @@
 //  Created by Theo Mendes on 16/10/19.
 //  Copyright © 2019 Hurb. All rights reserved.
 //
+import RxDataSources
 
-class FeedSection {
-    var title: String
+struct FeedSection {
+    var header: String
     var subTitle: String?
-    var cellData: FeedSectionType
+    var items: [FeedSectionType]
+}
 
-    init(title: String, subTitle: String?, cellData: FeedSectionType) {
-        self.title = title
-        self.subTitle = subTitle
-        self.cellData = cellData
+extension FeedSection: SectionModelType {
+    typealias Item = FeedSectionType
+
+    init(original: FeedSection, items: [Item]) {
+        self = original
+        self.items = items
     }
 }

@@ -54,9 +54,9 @@ class MainViewModel: BaseViewModel, ViewModelType {
             return false
         })
 
-        let packageFeed = FeedSection(title: L10n.Feed.Section.Package.title,
+        let packageFeed = FeedSection(header: L10n.Feed.Section.Package.title,
                                       subTitle: L10n.Feed.Section.Package.title,
-                                      cellData: .Package(packages: packages))
+                                      items: [.Package(packages: packages)])
 
         let hotelsFeed = splitHotels(withStarsDic: stars)
 
@@ -70,12 +70,12 @@ class MainViewModel: BaseViewModel, ViewModelType {
         var hotelsFeed: [FeedSection] = []
 
         for (key, value) in dic {
-            hotelsFeed.append(FeedSection(title: String(key), subTitle: nil, cellData: .Star(hotels: value)))
+            hotelsFeed.append(FeedSection(header: String(key), subTitle: nil, items: [.Star(hotels: value)]))
             print("\(key) ==> \(value.count)")
         }
 
         // DESC sort order
-        hotelsFeed = hotelsFeed.sorted(by: { $0.title > $1.title})
+        hotelsFeed = hotelsFeed.sorted(by: { $0.header > $1.header})
 
         return hotelsFeed
     }
