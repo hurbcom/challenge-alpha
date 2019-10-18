@@ -12,7 +12,7 @@ import Alamofire
 enum APIRouter: URLRequestConvertible {
     /// A search case
     case search(parameters: SearchParams)
-    
+
     /// The methods for each of the cases
     private var method: HTTPMethod {
         switch self {

@@ -18,18 +18,17 @@ class MainViewModel: BaseViewModel, ViewModelType {
         let headerRefresh: Observable<Void>
     }
     struct Output {
-        let feed: BehaviorRelay<[APIResult]>
+        let feed: BehaviorRelay<[FeedSection]>
     }
 
     func transform(input: Input) -> Output {
-        let elements = BehaviorRelay<[APIResult]>(value: [])
+        let elements = BehaviorRelay<[FeedSection]>(value: [])
 
         input.headerRefresh.flatMapLatest { () -> Observable<[APIResult]> in
             return APIClient.RxGetFeed(forCity: "buzios", page: 1)
         }.subscribe(
             onNext: { items in
-                let _ = self.handleFeed(withRawElements: items)
-//                elements.accept(items)
+                elements.accept(self.handleFeed(withRawElements: items))
             }
         ).disposed(by: disposeBag)
 
@@ -66,7 +65,7 @@ class MainViewModel: BaseViewModel, ViewModelType {
 
         return feed
     }
-    
+
     func splitHotels(withStarsDic dic: [Int: [APIResult]]) -> [FeedSection] {
         var hotelsFeed: [FeedSection] = []
 

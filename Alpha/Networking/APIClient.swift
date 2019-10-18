@@ -36,7 +36,7 @@ class APIClient {
             completion(response)
         }
     }
-    
+
     /**
     A Reactive funcion that get the "feed" for the city
      
@@ -63,9 +63,9 @@ class APIClient {
                             observer.onError(res?.error ?? APIError.internalServer)
                             return
                     }
-                    
+
                     guard let json = utf8Text.data(using: .utf8) else { return }
-                    
+
                     do {
                         let decoder = JSONDecoder()
                         let decodedJson = try decoder.decode(APIRes.self, from: json)
@@ -73,7 +73,7 @@ class APIClient {
                     } catch (let e) {
                         observer.onError(e)
                     }
-                    
+
                 case .failure(let error):
                     if let statusCode = res?.response?.statusCode,
                         let reason = APIError(rawValue: statusCode) {
