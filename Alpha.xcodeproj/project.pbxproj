@@ -39,7 +39,9 @@
 		31537E2223560BF80011DBD4 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E2123560BF80011DBD4 /* NetworkConstants.swift */; };
 		31537E2423560CDF0011DBD4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E2323560CDF0011DBD4 /* APIClient.swift */; };
 		31537E27235628B00011DBD4 /* SearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E26235628B00011DBD4 /* SearchParams.swift */; };
-		31537E292356500C0011DBD4 /* APIRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E282356500C0011DBD4 /* APIRes.swift */; };
+		31537E292356500C0011DBD4 /* APIRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E282356500C0011DBD4 /* APIRoot.swift */; };
+		31B00F77235A1D0C00AD62B8 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B00F76235A1D0C00AD62B8 /* RxDataSources.framework */; };
+		31B00F78235A1D0C00AD62B8 /* RxDataSources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31B00F76235A1D0C00AD62B8 /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		31CF025123577D5B008C92B0 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025023577D5B008C92B0 /* FeedSection.swift */; };
 		31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025323577D8E008C92B0 /* FeedSectionType.swift */; };
 		31CF025623577E42008C92B0 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025523577E42008C92B0 /* Identifiers.swift */; };
@@ -64,6 +66,20 @@
 			remoteInfo = Alpha;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		31B00F79235A1D0C00AD62B8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				31B00F78235A1D0C00AD62B8 /* RxDataSources.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		245A0236F81041C5F7852670 /* Pods-Alpha.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha.appstore.xcconfig"; path = "Target Support Files/Pods-Alpha/Pods-Alpha.appstore.xcconfig"; sourceTree = "<group>"; };
@@ -118,7 +134,8 @@
 		31537E2123560BF80011DBD4 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		31537E2323560CDF0011DBD4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31537E26235628B00011DBD4 /* SearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParams.swift; sourceTree = "<group>"; };
-		31537E282356500C0011DBD4 /* APIRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRes.swift; sourceTree = "<group>"; };
+		31537E282356500C0011DBD4 /* APIRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoot.swift; sourceTree = "<group>"; };
+		31B00F76235A1D0C00AD62B8 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		31CF025023577D5B008C92B0 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
 		31CF025323577D8E008C92B0 /* FeedSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionType.swift; sourceTree = "<group>"; };
 		31CF025523577E42008C92B0 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -144,6 +161,7 @@
 				31537DDD23538B9F0011DBD4 /* RxCocoa.framework in Frameworks */,
 				85B72D178CF0C045F9352FEB /* Pods_Alpha.framework in Frameworks */,
 				31537DE323538BA60011DBD4 /* RxSwift.framework in Frameworks */,
+				31B00F77235A1D0C00AD62B8 /* RxDataSources.framework in Frameworks */,
 				31537DE023538BA10011DBD4 /* RxRelay.framework in Frameworks */,
 				31537DE923538BAD0011DBD4 /* SnapKit.framework in Frameworks */,
 			);
@@ -259,7 +277,7 @@
 				31537E1A2355D62D0011DBD4 /* Price.swift */,
 				31537E1C2355D6F60011DBD4 /* Images.swift */,
 				31537E26235628B00011DBD4 /* SearchParams.swift */,
-				31537E282356500C0011DBD4 /* APIRes.swift */,
+				31537E282356500C0011DBD4 /* APIRoot.swift */,
 				31CF025023577D5B008C92B0 /* FeedSection.swift */,
 			);
 			path = Model;
@@ -444,6 +462,7 @@
 		F24959DACDC1A23768E78085 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31B00F76235A1D0C00AD62B8 /* RxDataSources.framework */,
 				31537DE823538BAD0011DBD4 /* SnapKit.framework */,
 				31537DE523538BA90011DBD4 /* RxTest.framework */,
 				31537DE223538BA60011DBD4 /* RxSwift.framework */,
@@ -474,6 +493,7 @@
 				3141D6B4235366A100A922DF /* Frameworks */,
 				3141D6B5235366A100A922DF /* Resources */,
 				31537DEC23538E1A0011DBD4 /* Carthage */,
+				31B00F79235A1D0C00AD62B8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -781,7 +801,7 @@
 				31537E172355D4C50011DBD4 /* APIResult.swift in Sources */,
 				31537DF7235394790011DBD4 /* Environment.swift in Sources */,
 				31537E2223560BF80011DBD4 /* NetworkConstants.swift in Sources */,
-				31537E292356500C0011DBD4 /* APIRes.swift in Sources */,
+				31537E292356500C0011DBD4 /* APIRoot.swift in Sources */,
 				31537DF92353A9130011DBD4 /* ViewModelType.swift in Sources */,
 				31537E1B2355D62D0011DBD4 /* Price.swift in Sources */,
 				31537E192355D51A0011DBD4 /* Amenities.swift in Sources */,
