@@ -134,7 +134,7 @@
                                                     <constraint firstAttribute="height" constant="26" id="7d3-s7-UbS"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="11"/>
-                                                <state key="normal" title="Ver Pacote">
+                                                <state key="normal" title="Ver Detalhes">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -248,6 +248,7 @@
                 <outlet property="cardView" destination="U7b-Xc-irh" id="MaS-gq-d57"/>
                 <outlet property="destinationName" destination="3GI-y1-72N" id="Dsq-ZW-lCO"/>
                 <outlet property="firstBenefitName" destination="ZC2-MT-ban" id="gEM-CL-ayi"/>
+                <outlet property="freeCancellationStackView" destination="MiB-O3-ysY" id="pKY-e1-a2o"/>
                 <outlet property="heightImage" destination="3ri-Wl-OZs" id="wdK-fH-zV8"/>
                 <outlet property="newPrice" destination="KDn-hm-ovd" id="aO9-wC-GRa"/>
                 <outlet property="offerName" destination="w0r-Xu-whv" id="k8w-6S-X68"/>

@@ -22,7 +22,8 @@ class ElementTableViewCell: UITableViewCell {
     @IBOutlet weak var oldPrice: UILabel!
     @IBOutlet weak var newPrice: UILabel!
     @IBOutlet weak var heightImage: NSLayoutConstraint!
-
+    @IBOutlet weak var freeCancellationStackView: UIStackView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupView()
@@ -32,6 +33,12 @@ class ElementTableViewCell: UITableViewCell {
         super.layoutIfNeeded()
         self.heightImage.constant = self.cardView.bounds.height
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.cardImage.kf.cancelDownloadTask()
+        self.cardImage.image = nil
+    }
 }
 
 // MARK: - AUX METHODS  -
@@ -39,14 +46,25 @@ extension ElementTableViewCell {
     public func prepareCell(viewData: ResultViewData) {
         self.destinationName.text = viewData.destinationName
         self.offerName.text = viewData.offerName
-        //self.firstBenefitName.text = viewData.amenities[0]
-        //self.secondBenefitName.text = viewData.amenities[1]
-        //self.thirdBenefitName.text = viewData.amenities[2]
         self.oldPrice.text = viewData.oldPrice
         self.newPrice.text = viewData.newPrice
-        let url = URL(string: viewData.image)
-        self.cardImage.kf.indicatorType = .activity
-        self.cardImage.kf.setImage(with: url)
+        self.freeCancellationStackView.isHidden = !viewData.freeCancellation
+        self.downloadImage(urlString: viewData.urlImageCard)
+        self.setBenefits(benefits: viewData.amenities)
+    }
+    
+    private func setBenefits(benefits: [String]) {
+        let resultList = benefits.count > 3 ? [String](benefits.prefix(upTo: 3)) : benefits
+        for (index, element) in resultList.enumerated() {
+            switch index {
+            case 0:
+                self.firstBenefitName.text = element
+            case 1:
+                self.secondBenefitName.text = element
+            default:
+                self.thirdBenefitName.text = element
+            }
+        }
     }
     
     func setupView() {
@@ -60,5 +78,21 @@ extension ElementTableViewCell {
         self.cardView.layer.shadowOffset = .zero
         self.cardView.layer.shadowRadius = 4
         self.layoutIfNeeded()
+    }
+    
+    private func downloadImage(urlString: String) {
+        if let url: URL = URL(string: urlString) {
+            let resource = ImageResource(downloadURL: url, cacheKey: urlString)
+            let processor = DownsamplingImageProcessor(size: self.cardImage.bounds.size)
+            self.cardImage.kf.indicatorType = .activity
+            self.cardImage.kf.setImage(with: resource, placeholder: nil, options: [.transition(.fade(0.8)), .cacheOriginalImage, .processor(processor)], progressBlock: nil) { (result) in
+                switch result {
+                case .success(let imageResult):
+                    self.cardImage.image = imageResult.image
+                case .failure(_):
+                     self.cardImage.image = UIImage(named: "")
+                }
+            }
+        }
     }
 }

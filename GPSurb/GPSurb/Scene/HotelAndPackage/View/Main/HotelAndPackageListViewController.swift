@@ -37,7 +37,7 @@ extension HotelAndPackageListViewController {
         super.viewDidLoad()
         self.presenter = HotelAndPackageListPresenter(viewDelegate: self, service: HotelPackageService())
         self.registerNIB()
-        self.presenter.getOffers(query: self.query, filter: filter, page: page)
+        self.presenter.getOffers(query: self.query, filter: filter)
     }
 }
 
@@ -52,8 +52,17 @@ extension HotelAndPackageListViewController: UITableViewDataSource {
         cell.prepareCell(viewData: self.viewData.list[indexPath.row])
         return cell
     }
-    
+}
 
+// MARK: - DELEGATE TABLEVIEW -
+extension HotelAndPackageListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.viewData.list.count - 10, self.viewData.totalPages != self.viewData.currentPage {
+            self.viewData.currentPage += 1
+            self.presenter.getOffers(for: self.viewData.currentPage, query: self.query, filter: self.filter)
+        }
+    }
 }
 
 // MARK: - DELEGATE PRESENTER -
@@ -82,6 +91,11 @@ extension HotelAndPackageListViewController: HotelAndPackageListViewDelegate {
     
     func setViewData(viewData: HotelAndPackageListViewData) {
         self.viewData = viewData
+        self.tableView.reloadData()
+    }
+    
+    func setViewDataOfNextPage(viewData: [ResultViewData]) {
+        self.viewData.list += viewData
         self.tableView.reloadData()
     }
 }
