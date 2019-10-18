@@ -30,9 +30,7 @@ class MainViewController: BaseViewController {
                 return cell
             }
         })
-        dataSource.titleForHeaderInSection = { dataSource, index in
-            dataSource.sectionModels[index].header
-        }
+
         return dataSource
     }()
 
@@ -41,6 +39,7 @@ class MainViewController: BaseViewController {
         view.backgroundColor = .clear
         view.register(StarTableViewCell.self, forCellReuseIdentifier: Identifiers.Star.rawValue)
         view.register(StarTableViewCell.self, forCellReuseIdentifier: Identifiers.Package.rawValue)
+        view.register(StarTableViewHeader.self, forHeaderFooterViewReuseIdentifier: Identifiers.FeedSection.rawValue)
         view.tableFooterView = UIView(frame: .zero)
         view.isScrollEnabled = true
         view.showsVerticalScrollIndicator = false
@@ -57,7 +56,11 @@ class MainViewController: BaseViewController {
     }
 
     override func setupUI() {
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .white
+
+        feedTableView
+            .rx.setDelegate(self)
+            .disposed(by: disposeBag)
 
         self.view.addSubview(feedTableView)
     }
@@ -80,9 +83,25 @@ class MainViewController: BaseViewController {
 
         feedTableView.snp.makeConstraints { (make) in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leadingMargin)
+            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leadingMargin).offset(20.0)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailingMargin)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailingMargin).offset(-20.0)
         }
+    }
+}
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView,
+                   viewForHeaderInSection section: Int) -> UIView? {
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: Identifiers.FeedSection.rawValue)
+            as? StarTableViewHeader else { return nil }
+
+        view.titleLabel.text = dataSource.sectionModels[section].header
+
+        return view
+    }
+    func tableView(_ tableView: UITableView,
+                   estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 55.0
     }
 }

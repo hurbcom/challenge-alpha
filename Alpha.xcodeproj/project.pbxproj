@@ -48,7 +48,8 @@
 		31B00F81235A2C7300AD62B8 /* StarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F80235A2C7300AD62B8 /* StarTableViewCell.swift */; };
 		31B00F83235A30E900AD62B8 /* HotelsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F82235A30E900AD62B8 /* HotelsDataSource.swift */; };
 		31B00F85235A318E00AD62B8 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F84235A318E00AD62B8 /* BaseCollectionViewCell.swift */; };
-		31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift */; };
+		31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift */; };
+		31B00F8A235A5DCB00AD62B8 /* StarTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F89235A5DCB00AD62B8 /* StarTableViewHeader.swift */; };
 		31CF025123577D5B008C92B0 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025023577D5B008C92B0 /* FeedSection.swift */; };
 		31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025323577D8E008C92B0 /* FeedSectionType.swift */; };
 		31CF025623577E42008C92B0 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025523577E42008C92B0 /* Identifiers.swift */; };
@@ -149,7 +150,8 @@
 		31B00F80235A2C7300AD62B8 /* StarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTableViewCell.swift; sourceTree = "<group>"; };
 		31B00F82235A30E900AD62B8 /* HotelsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsDataSource.swift; sourceTree = "<group>"; };
 		31B00F84235A318E00AD62B8 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCollectionViewCell.swift; sourceTree = "<group>"; };
+		31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCollectionViewCell.swift.swift; sourceTree = "<group>"; };
+		31B00F89235A5DCB00AD62B8 /* StarTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTableViewHeader.swift; sourceTree = "<group>"; };
 		31CF025023577D5B008C92B0 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
 		31CF025323577D8E008C92B0 /* FeedSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionType.swift; sourceTree = "<group>"; };
 		31CF025523577E42008C92B0 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				31B00F80235A2C7300AD62B8 /* StarTableViewCell.swift */,
+				31B00F89235A5DCB00AD62B8 /* StarTableViewHeader.swift */,
 			);
 			path = "Table View cells";
 			sourceTree = "<group>";
@@ -481,7 +484,7 @@
 		31B00F86235A31A600AD62B8 /* Collection View cells */ = {
 			isa = PBXGroup;
 			children = (
-				31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift */,
+				31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift */,
 			);
 			path = "Collection View cells";
 			sourceTree = "<group>";
@@ -832,7 +835,7 @@
 				31B00F85235A318E00AD62B8 /* BaseCollectionViewCell.swift in Sources */,
 				31B00F7E235A294500AD62B8 /* BaseTableViewCell.swift in Sources */,
 				31537DFD2353A9DC0011DBD4 /* Logger.swift in Sources */,
-				31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift in Sources */,
+				31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift in Sources */,
 				31537E2423560CDF0011DBD4 /* APIClient.swift in Sources */,
 				31537E042354C2540011DBD4 /* Assets.swift in Sources */,
 				31537E1D2355D6F60011DBD4 /* Images.swift in Sources */,
@@ -850,6 +853,7 @@
 				31CF025623577E42008C92B0 /* Identifiers.swift in Sources */,
 				31537DFF2353AAA80011DBD4 /* BaseViewController.swift in Sources */,
 				31537E0B235526DB0011DBD4 /* MainViewController.swift in Sources */,
+				31B00F8A235A5DCB00AD62B8 /* StarTableViewHeader.swift in Sources */,
 				31537E15235549670011DBD4 /* MainCoordinator.swift in Sources */,
 				31CF025823579CD6008C92B0 /* LocalizedStrings.swift in Sources */,
 				31537E112355487F0011DBD4 /* BaseCoordinator.swift in Sources */,
@@ -908,6 +912,7 @@
 				ALPHA_ENVIRONMENT_DIR = "$(PROJECT_DIR)/Environment";
 				ALPHA_PROJECT_VERSION = 0.0;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -973,6 +978,7 @@
 				ALPHA_ENVIRONMENT_DIR = "$(PROJECT_DIR)/Environment";
 				ALPHA_PROJECT_VERSION = 0.0;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1092,6 +1098,7 @@
 				ALPHA_ENVIRONMENT_DIR = "$(PROJECT_DIR)/Environment";
 				ALPHA_PROJECT_VERSION = 0.0;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

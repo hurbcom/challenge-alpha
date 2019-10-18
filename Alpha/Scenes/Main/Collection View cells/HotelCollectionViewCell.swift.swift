@@ -13,6 +13,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         didSet {
             guard let hotel = hotel else { return }
             titleLabel.text = hotel.name
+            priceLabel.text = "\(hotel.price.symbol) \(hotel.price.amount)"
         }
     }
 
@@ -36,9 +37,20 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
 
+    let priceLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = .systemFont(ofSize: 20.0, weight: .regular)
+        label.textColor = .white
+        label.textAlignment = .right
+        label.numberOfLines = 1
+        label.backgroundColor = .blue
+        return label
+    }()
+
     override func setupUI() {
         self.contentView.addSubview(imageView)
         self.contentView.addSubview(titleLabel)
+        self.contentView.addSubview(priceLabel)
     }
 
     override func setupConstraints() {
@@ -55,6 +67,11 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             make.top.equalTo(imageView.snp.bottom).offset(10)
             make.leading.trailing.equalTo(imageView)
             make.bottom.equalToSuperview()
+        }
+
+        priceLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(imageView.snp.top).offset(10)
+            make.trailing.equalTo(imageView.snp.trailing)
         }
     }
 }
