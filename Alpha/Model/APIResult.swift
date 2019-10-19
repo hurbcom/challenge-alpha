@@ -22,6 +22,7 @@ struct APIResult: Codable {
     var isPackage: Bool?
     // Hotel attributes
     var isHotel: Bool?
+    var image: URL?
     var stars: Int?
     var huFreeCancellation: Bool?
 
@@ -40,6 +41,7 @@ struct APIResult: Codable {
         // Hotel keys
         case isHotel
         case huFreeCancellation = "hu_free_cancellation"
+        case image
         case stars
     }
 }
