@@ -20,7 +20,7 @@ class StarTableViewCell: BaseTableViewCell {
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = CGSize(width: 205, height: 260)
+        layout.estimatedItemSize = CGSize(width: 300, height: 225)
         layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 20
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)

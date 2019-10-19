@@ -27,18 +27,16 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             if oldPrice != 0 {
                 let discount: Int = Int(((oldPrice - currentPrice) / oldPrice) * 100)
                 if discount < 0 {
-                    print("Has discount of \(discount)")
                     discountLabel.text = "\(String(discount))%"
                 } else {
-                    print("Dont have discount \(discount)")
                     discountLabel.isHidden = true
                 }
             }
         }
     }
 
-    var imageView: UIImageView = {
-        let view = UIImageView(frame: .zero)
+    var imageView: GradientUIImage = {
+        let view = GradientUIImage(frame: .zero)
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 14
@@ -50,7 +48,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
     let titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 20.0, weight: .regular)
-        label.textColor = .black
+        label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 2
         return label
@@ -92,19 +90,17 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
     }
 
     override func setupConstraints() {
-        // Aspect Ratio is original height / width
-        let imageAspec = (200.0 / 153.0)
-
         imageView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalToSuperview()
-            make.width.equalTo(205.0)
-            make.height.equalTo(imageView.snp.width).priority(999)
+            make.width.equalTo(300)
+            make.height.equalTo(200).priority(999)
         }
 
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
-            make.leading.trailing.equalTo(imageView)
+            make.bottom.equalTo(imageView.snp.bottom).offset(-5)
+            make.leading.equalTo(imageView.snp.leading).offset(5)
+            make.trailing.equalTo(imageView.snp.trailing).offset(-5)
         }
 
         priceLabel.snp.makeConstraints { (make) in

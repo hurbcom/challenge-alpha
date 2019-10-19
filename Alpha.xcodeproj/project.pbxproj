@@ -20,6 +20,7 @@
 		310CEA63235B6A9D0022EFF5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE223538BA60011DBD4 /* RxSwift.framework */; };
 		310CEA65235B6A9D0022EFF5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE823538BAD0011DBD4 /* SnapKit.framework */; };
 		310CEA67235B7E9A0022EFF5 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310CEA66235B7E9A0022EFF5 /* Address.swift */; };
+		310CEA69235B83670022EFF5 /* GradientUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310CEA68235B83670022EFF5 /* GradientUIImage.swift */; };
 		3141D6BB235366A100A922DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141D6BA235366A100A922DF /* AppDelegate.swift */; };
 		3141D6C4235366A300A922DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3141D6C3235366A300A922DF /* Assets.xcassets */; };
 		3141D6E12353689300A922DF /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141D6E02353689300A922DF /* Unit.swift */; };
@@ -83,6 +84,7 @@
 /* Begin PBXFileReference section */
 		245A0236F81041C5F7852670 /* Pods-Alpha.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha.appstore.xcconfig"; path = "Target Support Files/Pods-Alpha/Pods-Alpha.appstore.xcconfig"; sourceTree = "<group>"; };
 		310CEA66235B7E9A0022EFF5 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		310CEA68235B83670022EFF5 /* GradientUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUIImage.swift; sourceTree = "<group>"; };
 		3141D6B7235366A100A922DF /* Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3141D6BA235366A100A922DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		3141D6C3235366A300A922DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				31B00F7D235A294500AD62B8 /* BaseTableViewCell.swift */,
 				31B00F84235A318E00AD62B8 /* BaseCollectionViewCell.swift */,
 				31B00F8B235A6CD200AD62B8 /* PaddingUILabel.swift */,
+				310CEA68235B83670022EFF5 /* GradientUIImage.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				31537E2223560BF80011DBD4 /* NetworkConstants.swift in Sources */,
 				31537E292356500C0011DBD4 /* APIRoot.swift in Sources */,
 				31537DF92353A9130011DBD4 /* ViewModelType.swift in Sources */,
+				310CEA69235B83670022EFF5 /* GradientUIImage.swift in Sources */,
 				31B00F8C235A6CD200AD62B8 /* PaddingUILabel.swift in Sources */,
 				31537E1B2355D62D0011DBD4 /* Price.swift in Sources */,
 				31537E192355D51A0011DBD4 /* Amenities.swift in Sources */,
