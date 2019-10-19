@@ -26,16 +26,10 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             comps.scheme = "https"
             imageView.kf.setImage(with: comps.url)
 
-            guard let currentPrice = hotel.price.currentPrice,
-                let oldPrice = hotel.price.oldPrice else { return }
-
-            if oldPrice != 0 {
-                let discount: Int = Int(((oldPrice - currentPrice) / oldPrice) * 100)
-                if discount < 0 {
-                    discountLabel.text = "\(String(discount))%"
-                } else {
-                    discountLabel.isHidden = true
-                }
+            if hotel.price.discount != 0 {
+                discountLabel.text = "\(hotel.price.discount)%"
+            } else {
+                discountLabel.isHidden = true
             }
         }
     }

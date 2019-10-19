@@ -22,6 +22,19 @@ struct Price: Codable {
         default: return "R$"
         }
     }
+    var discount: Int {
+        if let currentPrice = self.currentPrice,
+            let oldPrice = self.oldPrice {
+
+            return (oldPrice != 0) ? Int(((oldPrice - currentPrice) / oldPrice) * 100) : 0
+
+        } else if let currentPrice = self.currentPricePkg,
+            let oldPrice = self.oldPricePkg {
+
+            return (oldPrice != 0) ? Int(((oldPrice - currentPrice) / oldPrice) * 100) : 0
+        }
+        return 0
+    }
 
     enum CodingKeys: String, CodingKey {
         case currentPricePkg = "currentPrice"
