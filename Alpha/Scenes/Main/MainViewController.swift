@@ -83,9 +83,9 @@ class MainViewController: BaseViewController {
 
         feedTableView.snp.makeConstraints { (make) in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leadingMargin).offset(20.0)
+            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leadingMargin)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailingMargin).offset(-20.0)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailingMargin)
         }
     }
 }

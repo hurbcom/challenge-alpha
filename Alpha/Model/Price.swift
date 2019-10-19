@@ -10,6 +10,10 @@ import Foundation
 
 struct Price: Codable {
     var currency: String?
+    var currentPricePkg: Float?
+    var oldPricePkg: Float?
+    var currentPrice: Float?
+    var oldPrice: Float?
     var amount: Float
     var symbol: String {
         switch self.currency {
@@ -20,6 +24,10 @@ struct Price: Codable {
     }
 
     enum CodingKeys: String, CodingKey {
+        case currentPricePkg = "currentPrice"
+        case oldPricePkg = "oldPrice"
+        case currentPrice = "current_price"
+        case oldPrice = "old_price"
         case currency
         case amount
     }

@@ -71,6 +71,7 @@ class APIClient {
                         let decodedJson = try decoder.decode(APIRoot.self, from: json)
                         observer.onNext(decodedJson.results)
                     } catch (let e) {
+                        print(e)
                         observer.onError(e)
                     }
 

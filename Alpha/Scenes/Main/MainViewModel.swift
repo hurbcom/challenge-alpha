@@ -63,6 +63,8 @@ class MainViewModel: BaseViewModel, ViewModelType {
         feed.append(packageFeed)
         feed = feed + hotelsFeed
 
+        dump(feed)
+
         return feed
     }
 
