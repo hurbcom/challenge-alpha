@@ -12,4 +12,6 @@
 
 "feed.section.package.title" = "Packages";
 "feed.section.package.subtitle" = "The best deals for you!";
+"feed.section.star" = "Star";
+"feed.section.stars" = "Stars";
 

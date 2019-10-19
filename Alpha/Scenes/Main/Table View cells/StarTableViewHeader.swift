@@ -33,7 +33,6 @@ class StarTableViewHeader: UITableViewHeaderFooterView {
 
         subTitle.snp.makeConstraints { (make) in
             make.top.equalTo(contentView.snp.top)
-            make.leading.equalTo(contentView.snp.leading)
             make.leading.equalTo(contentView.snp.leading).offset(20)
             make.trailing.equalTo(contentView.snp.trailing).offset(-20)
         }
