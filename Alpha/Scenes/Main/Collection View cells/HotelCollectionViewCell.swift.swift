@@ -39,7 +39,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
 
     let priceLabel: PaddingUILabel = {
         let label = PaddingUILabel(withInsets: 8, 8, 10, 10)
-        label.font = .systemFont(ofSize: 20.0, weight: .regular)
+        label.font = .systemFont(ofSize: 16.0, weight: .regular)
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 1
@@ -55,8 +55,6 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         self.contentView.addSubview(imageView)
         self.contentView.addSubview(titleLabel)
         self.contentView.addSubview(priceLabel)
-
-//        roundPriceLabelCorners()
     }
 
     override func setupConstraints() {
@@ -65,27 +63,18 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
 
         imageView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
-            make.width.equalTo(153.0)
-            make.height.equalTo(200).priority(999)
+            make.width.equalTo(205.0)
+            make.height.equalTo(imageView.snp.width).priority(999)
         }
 
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(imageView.snp.bottom).offset(10)
             make.leading.trailing.equalTo(imageView)
-            make.bottom.equalToSuperview()
         }
 
         priceLabel.snp.makeConstraints { (make) in
             make.top.equalTo(imageView.snp.top)
             make.trailing.equalTo(imageView.snp.trailing)
         }
-    }
-
-    private func roundPriceLabelCorners() {
-        let rectShape = CAShapeLayer()
-        rectShape.bounds = priceLabel.frame
-        rectShape.position = priceLabel.center
-        rectShape.path = UIBezierPath(roundedRect: priceLabel.bounds, byRoundingCorners: [.bottomLeft, .topRight], cornerRadii: CGSize(width: 8, height: 8)).cgPath
-        priceLabel.layer.mask = rectShape
     }
 }

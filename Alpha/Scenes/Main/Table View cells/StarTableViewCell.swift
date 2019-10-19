@@ -20,7 +20,9 @@ class StarTableViewCell: BaseTableViewCell {
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 153, height: 263)
+        layout.estimatedItemSize = CGSize(width: 205, height: 260)
+        layout.minimumInteritemSpacing = 20
+        layout.minimumLineSpacing = 20
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = .clear
@@ -34,7 +36,8 @@ class StarTableViewCell: BaseTableViewCell {
 
     override func setupConstraints() {
         collectionView.snp.makeConstraints { (make) in
-            make.leading.trailing.top.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().offset(-20.0)
             make.height.equalTo(263).priority(999)
         }

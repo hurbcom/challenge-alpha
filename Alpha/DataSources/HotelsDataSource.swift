@@ -28,17 +28,17 @@ extension HotelsDataSource: UICollectionViewDataSource {
     }
 }
 
-extension HotelsDataSource: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.Hotels.rawValue, for: indexPath) as? HotelCollectionViewCell else { fatalError("Unknown identifier") }
-
-        cell.hotel = items[indexPath.row]
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
-        let size: CGSize = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        return CGSize(width: size.width, height: 263)
-    }
-}
+//extension HotelsDataSource: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.Hotels.rawValue, for: indexPath) as? HotelCollectionViewCell else { fatalError("Unknown identifier") }
+//
+//        cell.hotel = items[indexPath.row]
+//        cell.setNeedsLayout()
+//        cell.layoutIfNeeded()
+//        let size: CGSize = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+//        return CGSize(width: size.width, height: 263)
+//    }
+//}
