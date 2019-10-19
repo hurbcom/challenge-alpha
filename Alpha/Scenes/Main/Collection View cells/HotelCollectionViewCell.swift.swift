@@ -18,12 +18,17 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             guard let hotel = hotel else { return }
             titleLabel.text = hotel.name
             priceLabel.text = "\(hotel.price.symbol) \(hotel.price.amount)"
+            descriptionLabel.text = "\(hotel.address.city) | \(hotel.address.state)"
+
             guard let imageURL = hotel.image else { return }
             guard var comps = URLComponents(url: imageURL,
                                             resolvingAgainstBaseURL: false) else { return }
             comps.scheme = "https"
             imageView.kf.setImage(with: comps.url)
-            guard let currentPrice = hotel.price.currentPrice, let oldPrice = hotel.price.oldPrice else { return }
+
+            guard let currentPrice = hotel.price.currentPrice,
+                let oldPrice = hotel.price.oldPrice else { return }
+
             if oldPrice != 0 {
                 let discount: Int = Int(((oldPrice - currentPrice) / oldPrice) * 100)
                 if discount < 0 {
@@ -49,8 +54,17 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 20.0, weight: .regular)
         label.textColor = .white
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.numberOfLines = 2
+        return label
+    }()
+
+    let descriptionLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = .systemFont(ofSize: 12.0, weight: .regular)
+        label.textColor = .gray
+        label.textAlignment = .left
+        label.numberOfLines = 1
         return label
     }()
 
@@ -87,6 +101,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         self.contentView.addSubview(titleLabel)
         self.contentView.addSubview(priceLabel)
         self.contentView.addSubview(discountLabel)
+        self.contentView.addSubview(descriptionLabel)
     }
 
     override func setupConstraints() {
@@ -99,8 +114,8 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
 
         titleLabel.snp.makeConstraints { (make) in
             make.bottom.equalTo(imageView.snp.bottom).offset(-5)
-            make.leading.equalTo(imageView.snp.leading).offset(5)
-            make.trailing.equalTo(imageView.snp.trailing).offset(-5)
+            make.leading.equalTo(imageView.snp.leading).offset(10)
+            make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
 
         priceLabel.snp.makeConstraints { (make) in
@@ -111,6 +126,12 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         discountLabel.snp.makeConstraints { (make) in
             make.top.equalTo(priceLabel.snp.bottom)
             make.trailing.equalTo(imageView.snp.trailing)
+        }
+
+        descriptionLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.leading.equalTo(imageView.snp.leading).offset(10)
+            make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
     }
 }
