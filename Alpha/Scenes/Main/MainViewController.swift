@@ -97,6 +97,7 @@ extension MainViewController: UITableViewDelegate {
             as? StarTableViewHeader else { return nil }
 
         view.titleLabel.text = dataSource.sectionModels[section].header
+        view.subTitle.text = dataSource.sectionModels[section].subTitle
 
         return view
     }

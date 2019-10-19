@@ -37,7 +37,7 @@ class StarTableViewCell: BaseTableViewCell {
 
     override func setupConstraints() {
         collectionView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(10)
+            make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().offset(-20.0)
             make.height.equalTo(263).priority(999)

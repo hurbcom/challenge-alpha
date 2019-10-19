@@ -40,6 +40,7 @@ class StarTableViewHeader: UITableViewHeaderFooterView {
             make.top.equalTo(subTitle.snp.bottom)
             make.leading.equalTo(contentView.snp.leading).offset(20)
             make.trailing.equalTo(contentView.snp.trailing).offset(-20)
+            make.bottom.equalToSuperview().priority(999)
         }
     }
 
