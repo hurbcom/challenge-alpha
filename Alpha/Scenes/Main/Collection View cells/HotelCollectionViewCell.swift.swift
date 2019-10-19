@@ -26,10 +26,9 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             comps.scheme = "https"
             imageView.kf.setImage(with: comps.url)
 
-            if hotel.price.discount != 0 {
+            if hotel.price.discount < 0 {
                 discountLabel.text = "\(hotel.price.discount)%"
-            } else {
-                discountLabel.isHidden = true
+                discountLabel.isHidden = false
             }
         }
     }
@@ -82,6 +81,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 1
+        label.isHidden = true
         label.layer.cornerRadius = 14
         label.layer.maskedCorners = [.layerMinXMaxYCorner]
         label.backgroundColor = .orange
@@ -127,5 +127,21 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
+    }
+
+    override func prepareForReuse() {
+        // invoke superclass implementation
+        super.prepareForReuse()
+
+        hotel = nil
+
+        // reset (hide) the checkmark label
+        discountLabel.isHidden = true
+        titleLabel.text = nil
+        priceLabel.text = nil
+        descriptionLabel.text = nil
+        imageView.image = nil
+        discountLabel.text = nil
+
     }
 }

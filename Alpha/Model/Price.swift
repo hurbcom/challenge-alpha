@@ -25,13 +25,12 @@ struct Price: Codable {
     var discount: Int {
         if let currentPrice = self.currentPrice,
             let oldPrice = self.oldPrice {
-
-            return (oldPrice != 0) ? Int(((oldPrice - currentPrice) / oldPrice) * 100) : 0
+            return (oldPrice != 0) ? Int(((currentPrice - oldPrice) / currentPrice) * 100) : 0
 
         } else if let currentPrice = self.currentPricePkg,
             let oldPrice = self.oldPricePkg {
 
-            return (oldPrice != 0) ? Int(((oldPrice - currentPrice) / oldPrice) * 100) : 0
+            return (oldPrice != 0) ? Int(((currentPrice - oldPrice) / currentPrice) * 100) : 0
         }
         return 0
     }

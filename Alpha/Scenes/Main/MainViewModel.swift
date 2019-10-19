@@ -63,8 +63,6 @@ class MainViewModel: BaseViewModel, ViewModelType {
         feed.append(packageFeed)
         feed = feed + hotelsFeed
 
-        dump(feed)
-
         return feed
     }
 
@@ -72,16 +70,16 @@ class MainViewModel: BaseViewModel, ViewModelType {
         var hotelsFeed: [FeedSection] = []
 
         for (key, value) in dic {
+            let sortedHotels = value.sorted(by: { $0.price.discount < $1.price.discount })
             if key == 1 {
                 hotelsFeed.append(FeedSection(header: "\(String(key)) \(L10n.Feed.Section.star)",
                                               subTitle: nil,
-                                              items: [.Star(hotels: value)]))
+                                              items: [.Star(hotels: sortedHotels)]))
             } else {
                 hotelsFeed.append(FeedSection(header: "\(String(key)) \(L10n.Feed.Section.stars)",
                 subTitle: nil,
-                items: [.Star(hotels: value)]))
+                items: [.Star(hotels: sortedHotels)]))
             }
-            print("\(key) ==> \(value.count)")
         }
 
         // DESC sort order
