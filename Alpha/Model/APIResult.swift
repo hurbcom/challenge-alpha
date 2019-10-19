@@ -18,6 +18,7 @@ struct APIResult: Codable {
     var url: URL
     var amenities: [Amenities]
     var price: Price
+    var address: Address
     // Package attributes
     var isPackage: Bool?
     // Hotel attributes
@@ -36,6 +37,7 @@ struct APIResult: Codable {
         case url
         case amenities
         case price
+        case address
         // Package keys
         case isPackage
         // Hotel keys

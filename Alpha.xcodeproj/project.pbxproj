@@ -19,6 +19,7 @@
 		310CEA62235B6A9D0022EFF5 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DDF23538BA10011DBD4 /* RxRelay.framework */; };
 		310CEA63235B6A9D0022EFF5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE223538BA60011DBD4 /* RxSwift.framework */; };
 		310CEA65235B6A9D0022EFF5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE823538BAD0011DBD4 /* SnapKit.framework */; };
+		310CEA67235B7E9A0022EFF5 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310CEA66235B7E9A0022EFF5 /* Address.swift */; };
 		3141D6BB235366A100A922DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141D6BA235366A100A922DF /* AppDelegate.swift */; };
 		3141D6C4235366A300A922DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3141D6C3235366A300A922DF /* Assets.xcassets */; };
 		3141D6E12353689300A922DF /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141D6E02353689300A922DF /* Unit.swift */; };
@@ -81,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		245A0236F81041C5F7852670 /* Pods-Alpha.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha.appstore.xcconfig"; path = "Target Support Files/Pods-Alpha/Pods-Alpha.appstore.xcconfig"; sourceTree = "<group>"; };
+		310CEA66235B7E9A0022EFF5 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		3141D6B7235366A100A922DF /* Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3141D6BA235366A100A922DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		3141D6C3235366A300A922DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				31537E26235628B00011DBD4 /* SearchParams.swift */,
 				31537E282356500C0011DBD4 /* APIRoot.swift */,
 				31CF025023577D5B008C92B0 /* FeedSection.swift */,
+				310CEA66235B7E9A0022EFF5 /* Address.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -861,6 +864,7 @@
 				31537E2423560CDF0011DBD4 /* APIClient.swift in Sources */,
 				31537E042354C2540011DBD4 /* Assets.swift in Sources */,
 				31537E1D2355D6F60011DBD4 /* Images.swift in Sources */,
+				310CEA67235B7E9A0022EFF5 /* Address.swift in Sources */,
 				31537E0F235548550011DBD4 /* Coordinator.swift in Sources */,
 				31B00F81235A2C7300AD62B8 /* StarTableViewCell.swift in Sources */,
 				3141D6BB235366A100A922DF /* AppDelegate.swift in Sources */,
