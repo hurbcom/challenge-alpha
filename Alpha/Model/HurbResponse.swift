@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct APIRoot: Codable {
-    var results: [APIResult]
+struct HurbResponse: Codable {
+    var results: [Deal]
 
     enum CodingKeys: String, CodingKey {
         case results

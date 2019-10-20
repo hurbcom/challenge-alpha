@@ -24,7 +24,7 @@ class FeedViewModel: BaseViewModel, ViewModelType {
     func transform(input: Input) -> Output {
         let elements = BehaviorRelay<[FeedSection]>(value: [])
 
-        input.headerRefresh.flatMapLatest { () -> Observable<[APIResult]> in
+        input.headerRefresh.flatMapLatest { () -> Observable<[Deal]> in
             return APIClient.RxGetFeed(forCity: "buzios", page: 1)
         }.subscribe(
             onNext: { items in
@@ -35,9 +35,9 @@ class FeedViewModel: BaseViewModel, ViewModelType {
         return Output(feed: elements)
     }
 
-    func handleFeed(withRawElements elements: [APIResult]) -> [FeedSection] {
+    func handleFeed(withRawElements elements: [Deal]) -> [FeedSection] {
         var feed: [FeedSection] = []
-        var stars: [Int: [APIResult]] = [:]
+        var stars: [Int: [Deal]] = [:]
 
         // Split package from hotel
         var packages = elements.filter({ (element) in
@@ -68,7 +68,7 @@ class FeedViewModel: BaseViewModel, ViewModelType {
         return feed
     }
 
-    func splitHotels(withStarsDic dic: [Int: [APIResult]]) -> [FeedSection] {
+    func splitHotels(withStarsDic dic: [Int: [Deal]]) -> [FeedSection] {
         var hotelsFeed: [FeedSection] = []
 
         for (key, value) in dic {

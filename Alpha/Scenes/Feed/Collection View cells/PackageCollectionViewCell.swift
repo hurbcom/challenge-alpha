@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class PackageCollectionViewCell: BaseCollectionViewCell {
-    var package: APIResult? {
+    var package: Deal? {
         didSet {
             guard let package = package else { return }
             titleLabel.text = package.name

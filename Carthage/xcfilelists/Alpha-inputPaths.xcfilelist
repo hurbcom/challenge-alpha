@@ -7,3 +7,5 @@ $(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework
 $(SRCROOT)/Carthage/Build/iOS/Differentiator.framework
 $(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework
 $(SRCROOT)/Carthage/Build/iOS/Result.framework
+$(SRCROOT)/Carthage/Build/iOS/Moya.framework
+$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework

@@ -46,7 +46,7 @@ class APIClient {
     - Returns: An `Observable` `APIResult` array.
     */
     static func RxGetFeed(forCity city: String,
-                          page: Int = 1) -> Observable<[APIResult]> {
+                          page: Int = 1) -> Observable<[Deal]> {
         return Observable.create { (observer) -> Disposable in
 
             performRequest(route: .search(
@@ -68,7 +68,7 @@ class APIClient {
 
                     do {
                         let decoder = JSONDecoder()
-                        let decodedJson = try decoder.decode(APIRoot.self, from: json)
+                        let decodedJson = try decoder.decode(HurbResponse.self, from: json)
                         observer.onNext(decodedJson.results)
                     } catch (let e) {
                         print(e)

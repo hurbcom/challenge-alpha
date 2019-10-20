@@ -11,7 +11,7 @@ import Kingfisher
 
 class HotelCollectionViewCell: BaseCollectionViewCell {
 
-    var hotel: APIResult? {
+    var hotel: Deal? {
         didSet {
             guard let hotel = hotel else { return }
             titleLabel.text = hotel.name

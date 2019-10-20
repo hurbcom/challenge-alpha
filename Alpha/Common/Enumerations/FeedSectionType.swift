@@ -7,8 +7,8 @@
 //
 
 enum FeedSectionType {
-    case Star(hotels: [APIResult])
-    case Package(packages: [APIResult])
+    case Star(hotels: [Deal])
+    case Package(packages: [Deal])
 
     var identifier: String {
         switch self {

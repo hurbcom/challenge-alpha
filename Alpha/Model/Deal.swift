@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct APIResult: Codable {
+struct Deal: Codable {
     var sku: String
     var name: String
     var smallDescription: String

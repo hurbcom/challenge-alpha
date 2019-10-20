@@ -9,9 +9,9 @@
 import UIKit
 
 class PackageDataSource: NSObject {
-    var items: [APIResult] = []
+    var items: [Deal] = []
 
-    init(with items: [APIResult]) {
+    init(with items: [Deal]) {
         self.items = items
     }
 }
