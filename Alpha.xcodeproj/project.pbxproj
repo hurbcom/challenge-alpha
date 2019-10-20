@@ -21,6 +21,9 @@
 		310CEA65235B6A9D0022EFF5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DE823538BAD0011DBD4 /* SnapKit.framework */; };
 		310CEA67235B7E9A0022EFF5 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310CEA66235B7E9A0022EFF5 /* Address.swift */; };
 		310CEA69235B83670022EFF5 /* GradientUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310CEA68235B83670022EFF5 /* GradientUIImage.swift */; };
+		310CEA6B235BA8980022EFF5 /* PackageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310CEA6A235BA8980022EFF5 /* PackageCollectionViewCell.swift */; };
+		310CEA6D235BA9060022EFF5 /* PackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310CEA6C235BA9060022EFF5 /* PackageTableViewCell.swift */; };
+		310CEA6F235BAC610022EFF5 /* PackageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310CEA6E235BAC610022EFF5 /* PackageDataSource.swift */; };
 		3141D6BB235366A100A922DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141D6BA235366A100A922DF /* AppDelegate.swift */; };
 		3141D6C4235366A300A922DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3141D6C3235366A300A922DF /* Assets.xcassets */; };
 		3141D6E12353689300A922DF /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141D6E02353689300A922DF /* Unit.swift */; };
@@ -85,6 +88,9 @@
 		245A0236F81041C5F7852670 /* Pods-Alpha.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alpha.appstore.xcconfig"; path = "Target Support Files/Pods-Alpha/Pods-Alpha.appstore.xcconfig"; sourceTree = "<group>"; };
 		310CEA66235B7E9A0022EFF5 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		310CEA68235B83670022EFF5 /* GradientUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUIImage.swift; sourceTree = "<group>"; };
+		310CEA6A235BA8980022EFF5 /* PackageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCollectionViewCell.swift; sourceTree = "<group>"; };
+		310CEA6C235BA9060022EFF5 /* PackageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageTableViewCell.swift; sourceTree = "<group>"; };
+		310CEA6E235BAC610022EFF5 /* PackageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDataSource.swift; sourceTree = "<group>"; };
 		3141D6B7235366A100A922DF /* Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3141D6BA235366A100A922DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		3141D6C3235366A300A922DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -314,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				31B00F82235A30E900AD62B8 /* HotelsDataSource.swift */,
+				310CEA6E235BAC610022EFF5 /* PackageDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -482,6 +489,7 @@
 			children = (
 				31B00F80235A2C7300AD62B8 /* StarTableViewCell.swift */,
 				31B00F89235A5DCB00AD62B8 /* StarTableViewHeader.swift */,
+				310CEA6C235BA9060022EFF5 /* PackageTableViewCell.swift */,
 			);
 			path = "Table View cells";
 			sourceTree = "<group>";
@@ -490,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift */,
+				310CEA6A235BA8980022EFF5 /* PackageCollectionViewCell.swift */,
 			);
 			path = "Collection View cells";
 			sourceTree = "<group>";
@@ -876,6 +885,7 @@
 				31537DF7235394790011DBD4 /* Environment.swift in Sources */,
 				31537E2223560BF80011DBD4 /* NetworkConstants.swift in Sources */,
 				31537E292356500C0011DBD4 /* APIRoot.swift in Sources */,
+				310CEA6B235BA8980022EFF5 /* PackageCollectionViewCell.swift in Sources */,
 				31537DF92353A9130011DBD4 /* ViewModelType.swift in Sources */,
 				310CEA69235B83670022EFF5 /* GradientUIImage.swift in Sources */,
 				31B00F8C235A6CD200AD62B8 /* PaddingUILabel.swift in Sources */,
@@ -887,6 +897,8 @@
 				31B00F8A235A5DCB00AD62B8 /* StarTableViewHeader.swift in Sources */,
 				31537E15235549670011DBD4 /* MainCoordinator.swift in Sources */,
 				31CF025823579CD6008C92B0 /* LocalizedStrings.swift in Sources */,
+				310CEA6F235BAC610022EFF5 /* PackageDataSource.swift in Sources */,
+				310CEA6D235BA9060022EFF5 /* PackageTableViewCell.swift in Sources */,
 				31537E112355487F0011DBD4 /* BaseCoordinator.swift in Sources */,
 				31CF025123577D5B008C92B0 /* FeedSection.swift in Sources */,
 				31537E0D235526FB0011DBD4 /* MainViewModel.swift in Sources */,

@@ -1,31 +1,29 @@
 //
-//  HotelsCollectionViewCell.swift
+//  PackageCollectionViewCell.swift
 //  Alpha
 //
-//  Created by Theo Mendes on 18/10/19.
+//  Created by Theo Mendes on 19/10/19.
 //  Copyright © 2019 Hurb. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
-class HotelCollectionViewCell: BaseCollectionViewCell {
-
-    var hotel: APIResult? {
+class PackageCollectionViewCell: BaseCollectionViewCell {
+    var package: APIResult? {
         didSet {
-            guard let hotel = hotel else { return }
-            titleLabel.text = hotel.name
-            priceLabel.text = "\(hotel.price.symbol) \(hotel.price.amount)"
-            descriptionLabel.text = "\(hotel.address.city) | \(hotel.address.state)"
+            guard let package = package else { return }
+            titleLabel.text = package.name
+            priceLabel.text = "\(package.price.symbol) \(package.price.amount)"
+            descriptionLabel.text = "\(package.address.city) | \(package.address.state)"
 
-            guard let imageURL = hotel.image else { return }
-            guard var comps = URLComponents(url: imageURL,
+            guard var comps = URLComponents(url: package.gallery[0].url,
                                             resolvingAgainstBaseURL: false) else { return }
             comps.scheme = "https"
             imageView.kf.setImage(with: comps.url)
 
-            if hotel.price.discount < 0 {
-                discountLabel.text = "\(hotel.price.discount)%"
+            if package.price.discount < 0 {
+                discountLabel.text = "\(package.price.discount)%"
                 discountLabel.isHidden = false
             }
         }
@@ -100,8 +98,8 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         imageView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalToSuperview()
-            make.width.equalTo(300)
-            make.height.equalTo(200).priority(999)
+            make.width.equalTo(335)
+            make.height.equalTo(224).priority(999)
         }
 
         titleLabel.snp.makeConstraints { (make) in
@@ -131,7 +129,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         // invoke superclass implementation
         super.prepareForReuse()
 
-        hotel = nil
+        package = nil
 
         // reset (hide) the checkmark label
         discountLabel.isHidden = true

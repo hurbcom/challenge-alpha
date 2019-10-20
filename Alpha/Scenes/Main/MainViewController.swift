@@ -26,7 +26,8 @@ class MainViewController: BaseViewController {
                 return cell
             case .Package(let packages):
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: feedSection.identifier)
-                as? StarTableViewCell else { fatalError("Unknown identifier") }
+                as? PackageTableViewCell else { fatalError("Unknown identifier") }
+                cell.currentDataSource = PackageDataSource(with: packages)
                 return cell
             }
         })
@@ -38,7 +39,7 @@ class MainViewController: BaseViewController {
         let view = UITableView()
         view.backgroundColor = .clear
         view.register(StarTableViewCell.self, forCellReuseIdentifier: Identifiers.Star.rawValue)
-        view.register(StarTableViewCell.self, forCellReuseIdentifier: Identifiers.Package.rawValue)
+        view.register(PackageTableViewCell.self, forCellReuseIdentifier: Identifiers.Package.rawValue)
         view.register(StarTableViewHeader.self, forHeaderFooterViewReuseIdentifier: Identifiers.FeedSection.rawValue)
         view.tableFooterView = UIView(frame: .zero)
         view.isScrollEnabled = true

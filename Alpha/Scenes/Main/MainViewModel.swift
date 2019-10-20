@@ -40,7 +40,7 @@ class MainViewModel: BaseViewModel, ViewModelType {
         var stars: [Int: [APIResult]] = [:]
 
         // Split package from hotel
-        let packages = elements.filter({ (element) in
+        var packages = elements.filter({ (element) in
             if element.isPackage == true {
                 return true
             }
@@ -53,6 +53,8 @@ class MainViewModel: BaseViewModel, ViewModelType {
             }
             return false
         })
+
+        packages = packages + packages
 
         let packageFeed = FeedSection(header: L10n.Feed.Section.Package.title,
                                       subTitle: L10n.Feed.Section.Package.subtitle,

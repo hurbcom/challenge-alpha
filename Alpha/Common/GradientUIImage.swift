@@ -30,16 +30,10 @@ class GradientUIImage: UIImageView {
   }
 
   func setup() {
-    let colors: [CGColor] = [
-        UIColor.clear.cgColor,
-        UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor,
-        UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor,
-        UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor,
-        UIColor.clear.cgColor
-    ]
     gradient.colors = [
         UIColor.clear.cgColor,
-        UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
+        UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+    ]
     self.layer.addSublayer(gradient)
   }
 
