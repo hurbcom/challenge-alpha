@@ -12,7 +12,7 @@ import RxCocoa
 import RxDataSources
 import SnapKit
 
-class MainViewController: BaseViewController {
+class FeedViewController: BaseViewController {
     let disposeBag = DisposeBag()
     let headerRefreshTrigger = PublishSubject<Void>()
 
@@ -67,10 +67,10 @@ class MainViewController: BaseViewController {
     }
 
     override func bindViewModel() {
-        guard let viewModel = viewModel as? MainViewModel else { return }
+        guard let viewModel = viewModel as? FeedViewModel else { return }
 
         let refresh = Observable.of(Observable.just(()), headerRefreshTrigger).merge()
-        let input = MainViewModel.Input(headerRefresh: refresh)
+        let input = FeedViewModel.Input(headerRefresh: refresh)
 
         let output = viewModel.transform(input: input)
 
@@ -91,7 +91,7 @@ class MainViewController: BaseViewController {
     }
 }
 
-extension MainViewController: UITableViewDelegate {
+extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: Identifiers.FeedSection.rawValue)

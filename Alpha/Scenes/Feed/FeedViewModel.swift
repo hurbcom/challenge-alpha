@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import os.log
 
-class MainViewModel: BaseViewModel, ViewModelType {
+class FeedViewModel: BaseViewModel, ViewModelType {
     let disposeBag = DisposeBag()
 
     struct Input {

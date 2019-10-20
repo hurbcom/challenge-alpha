@@ -18,7 +18,7 @@ class AppCoordinator: BaseCoordinator {
     override func start() {
         // preparing root view
         let navigationController = UINavigationController()
-        let mainCoordinator = MainCoordinator(navigationController: navigationController)
+        let mainCoordinator = FeedCoordinator(navigationController: navigationController)
 
         // store child coordinator
         self.store(coordinator: mainCoordinator)

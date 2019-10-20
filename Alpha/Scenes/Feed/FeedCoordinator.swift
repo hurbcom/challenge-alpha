@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCoordinator: BaseCoordinator {
+class FeedCoordinator: BaseCoordinator {
     var navigationController: UINavigationController?
 
     init(navigationController: UINavigationController?) {
@@ -16,8 +16,8 @@ class MainCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let viewModel = MainViewModel()
-        let viewController = MainViewController(viewModel: viewModel)
+        let viewModel = FeedViewModel()
+        let viewController = FeedViewController(viewModel: viewModel)
 
         navigationController?.pushViewController(viewController, animated: true)
     }
