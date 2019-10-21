@@ -15,6 +15,7 @@ enum HurbAPI {
 extension HurbAPI: TargetType {
 
     var baseURL: URL {
+        // swiftlint:disable:next force_unwrapping
         return URL(string: Environment.apiBaseURL)!
     }
 

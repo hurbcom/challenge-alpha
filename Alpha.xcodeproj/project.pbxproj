@@ -47,9 +47,6 @@
 		31537E192355D51A0011DBD4 /* Amenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E182355D51A0011DBD4 /* Amenities.swift */; };
 		31537E1B2355D62D0011DBD4 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E1A2355D62D0011DBD4 /* Price.swift */; };
 		31537E1D2355D6F60011DBD4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E1C2355D6F60011DBD4 /* Images.swift */; };
-		31537E20235600460011DBD4 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E1F235600460011DBD4 /* APIRouter.swift */; };
-		31537E2223560BF80011DBD4 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E2123560BF80011DBD4 /* NetworkConstants.swift */; };
-		31537E2423560CDF0011DBD4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E2323560CDF0011DBD4 /* APIClient.swift */; };
 		31537E27235628B00011DBD4 /* SearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E26235628B00011DBD4 /* SearchParams.swift */; };
 		31537E292356500C0011DBD4 /* HurbResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E282356500C0011DBD4 /* HurbResponse.swift */; };
 		31B00F7E235A294500AD62B8 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F7D235A294500AD62B8 /* BaseTableViewCell.swift */; };
@@ -145,9 +142,6 @@
 		31537E182355D51A0011DBD4 /* Amenities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenities.swift; sourceTree = "<group>"; };
 		31537E1A2355D62D0011DBD4 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		31537E1C2355D6F60011DBD4 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
-		31537E1F235600460011DBD4 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		31537E2123560BF80011DBD4 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
-		31537E2323560CDF0011DBD4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31537E26235628B00011DBD4 /* SearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParams.swift; sourceTree = "<group>"; };
 		31537E282356500C0011DBD4 /* HurbResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbResponse.swift; sourceTree = "<group>"; };
 		31B00F76235A1D0C00AD62B8 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -495,9 +489,6 @@
 			isa = PBXGroup;
 			children = (
 				31CBD33D235D08E70027444E /* Stubbed Responses */,
-				31537E1F235600460011DBD4 /* APIRouter.swift */,
-				31537E2123560BF80011DBD4 /* NetworkConstants.swift */,
-				31537E2323560CDF0011DBD4 /* APIClient.swift */,
 				31CBD33B235D03310027444E /* HurbAPI.swift */,
 				31CBD342235D15AA0027444E /* AlphaAPI.swift */,
 				31CBD344235D192B0027444E /* AlphaNetworkManager.swift */,
@@ -899,7 +890,6 @@
 				310CEA73235CCCDC0022EFF5 /* FeedViewModel.swift in Sources */,
 				31537E132355489B0011DBD4 /* AppCoordinator.swift in Sources */,
 				31537E27235628B00011DBD4 /* SearchParams.swift in Sources */,
-				31537E20235600460011DBD4 /* APIRouter.swift in Sources */,
 				31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */,
 				31B00F83235A30E900AD62B8 /* HotelsDataSource.swift in Sources */,
 				31CBD33C235D03310027444E /* HurbAPI.swift in Sources */,
@@ -907,7 +897,6 @@
 				31B00F7E235A294500AD62B8 /* BaseTableViewCell.swift in Sources */,
 				31537DFD2353A9DC0011DBD4 /* Logger.swift in Sources */,
 				31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift in Sources */,
-				31537E2423560CDF0011DBD4 /* APIClient.swift in Sources */,
 				31537E042354C2540011DBD4 /* Assets.swift in Sources */,
 				31537E1D2355D6F60011DBD4 /* Images.swift in Sources */,
 				310CEA67235B7E9A0022EFF5 /* Address.swift in Sources */,
@@ -918,7 +907,6 @@
 				31537DFB2353A9610011DBD4 /* BaseViewModel.swift in Sources */,
 				31537E172355D4C50011DBD4 /* Deal.swift in Sources */,
 				31537DF7235394790011DBD4 /* Environment.swift in Sources */,
-				31537E2223560BF80011DBD4 /* NetworkConstants.swift in Sources */,
 				31537E292356500C0011DBD4 /* HurbResponse.swift in Sources */,
 				310CEA6B235BA8980022EFF5 /* PackageCollectionViewCell.swift in Sources */,
 				31537DF92353A9130011DBD4 /* ViewModelType.swift in Sources */,
