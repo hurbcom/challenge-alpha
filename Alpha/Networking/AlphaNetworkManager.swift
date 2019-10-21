@@ -12,7 +12,6 @@ import RxMoya
 import RxSwift
 
 struct AlphaNetworkManager: AlphaAPI {
-    // This is the provider for the service we defined earlier
     private let provider = MoyaProvider<HurbAPI>(plugins: [NetworkLoggerPlugin()])
 
     static let shared = AlphaNetworkManager()

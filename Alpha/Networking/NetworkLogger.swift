@@ -9,6 +9,7 @@
 import Moya
 import os.log
 
+/// The plugin that perform the request log
 final class NetworkLoggerPlugin: PluginType {
     public func willSend(_ request: RequestType, target: TargetType) {
         guard let requestURL = request.request?.url?.absoluteString else { return }
