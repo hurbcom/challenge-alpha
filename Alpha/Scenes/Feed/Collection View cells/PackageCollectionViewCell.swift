@@ -139,7 +139,7 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         priceLabel.snp.makeConstraints { (make) in
             make.top.equalTo(imageView.snp.bottom)
             make.trailing.leading.equalTo(imageView)
-//            make.bottom.equalTo(contentView.snp.bottom).priority(999)
+//            make.bottom.equalTo(contentView.snp.bottom).offset(-10).priority(999)
         }
 
         flightLabel.snp.makeConstraints { (make) in

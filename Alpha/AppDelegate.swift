@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow()
 
         guard let window = window else { fatalError("Window was nil") }
+        os_log("\nLog Meaning:\n👶 -> View Init\n⚰️ -> View Deinit\n🧠 -> View Model\n🧭 -> Coordinator\n🎮 -> View Controller\n🔲 -> Table View Cell\n🏻 -> Collection View Cell\n📶 -> Network\n\t⬇️ -> Receiving\n\t⬆️ -> Sending\n\t✅ -> Status Successful\n\t⚠️ -> Status Failure", log: Logger.appLog(), type: .info)
 
         let appCoordinator = AppCoordinator(window: window, provider: AlphaNetworkManager.shared)
         appCoordinator.start()

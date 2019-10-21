@@ -10,7 +10,7 @@
 "basic.show_more" = "Ver Mais";
 "basic.error.message" = "Algo deu errado";
 
-"feed.section.package.title" = "Packages";
+"feed.section.package.title" = "Pacotes";
 "feed.section.package.subtitle" = "As melhores ofertas para você!";
 "feed.section.star" = "Estrela";
 "feed.section.stars" = "Estrelas";

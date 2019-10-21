@@ -68,7 +68,7 @@ class FeedViewModel: BaseViewModel, ViewModelType {
         var stars: [Int: [Deal]] = [:]
 
         // Split package from hotel
-        let packages = elements.filter({ (element) in
+        var packages = elements.filter({ (element) in
             if element.isPackage == true {
                 return true
             }
@@ -82,8 +82,8 @@ class FeedViewModel: BaseViewModel, ViewModelType {
             return false
         })
 
-//        #warning("Remove before send")
-//        packages = packages + packages
+        #warning("Remove before send")
+        packages = packages + packages
 
         let packageFeed = FeedSection(header: L10n.Feed.Section.Package.title,
                                       subTitle: L10n.Feed.Section.Package.subtitle,

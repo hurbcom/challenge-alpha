@@ -25,7 +25,7 @@ class PackageTableViewCell: BaseTableViewCell, UICollectionViewDelegate, UIColle
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.width * (350 / 377)))
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.showsHorizontalScrollIndicator = false
@@ -46,7 +46,7 @@ class PackageTableViewCell: BaseTableViewCell, UICollectionViewDelegate, UIColle
         collectionView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(UIScreen.main.bounds.width * (350 / 377) + 5)
+            make.height.equalTo(UIScreen.main.bounds.width * (350 / 377) + 15)
             make.bottom.equalToSuperview().priority(999)
         }
     }
