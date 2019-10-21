@@ -14,9 +14,7 @@ class PackageTableViewCell: BaseTableViewCell, UICollectionViewDelegate, UIColle
 
     var currentDataSource: UICollectionViewDataSource? {
         didSet {
-            guard let currentDataSource = currentDataSource as? PackageDataSource else { return }
             self.collectionView.dataSource = currentDataSource
-            self.pageControl.numberOfPages = currentDataSource.items.count
             self.collectionView.reloadData()
         }
     }
@@ -24,39 +22,22 @@ class PackageTableViewCell: BaseTableViewCell, UICollectionViewDelegate, UIColle
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = CGSize(width: 340, height: 254)
+        layout.estimatedItemSize = CGSize(width: 300, height: 360)
         layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 20
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.showsHorizontalScrollIndicator = false
-        view.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         view.backgroundColor = .clear
-        view.register(PackageCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.Package.rawValue)
-        view.isPagingEnabled = true
+        view.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        view.register(PackageCollectionViewCell.self,
+                      forCellWithReuseIdentifier: Identifiers.Package.rawValue)
         return view
     }()
-
-    private var pageControl: UIPageControl = {
-        let page = UIPageControl(frame: .zero)
-        return page
-    }()
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-
-        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-    }
-
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-
-        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-    }
 
     // MARK: - View methods
 
     override func setupUI() {
-        collectionView.delegate = self
         self.contentView.addSubview(collectionView)
-        self.contentView.addSubview(pageControl)
     }
 
     override func setupConstraints() {
@@ -64,12 +45,7 @@ class PackageTableViewCell: BaseTableViewCell, UICollectionViewDelegate, UIColle
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().offset(-20.0)
-            make.height.equalTo(280).priority(999)
-        }
-        pageControl.snp.makeConstraints { (make) in
-            make.top.equalTo(collectionView.snp.bottom)
-            make.leading.trailing.equalTo(collectionView)
-            make.bottom.equalToSuperview().priority(999)
+            make.height.equalTo(348).priority(999)
         }
     }
 }

@@ -10,6 +10,13 @@
 struct Amenities: Codable {
     var name: String
     var category: String
+    var planeIncluded: Bool {
+        if (name == "Passagem Aérea") {
+            return true
+        } else {
+            return false
+        }
+    }
 
     enum CodingKeys: String, CodingKey {
         case name, category

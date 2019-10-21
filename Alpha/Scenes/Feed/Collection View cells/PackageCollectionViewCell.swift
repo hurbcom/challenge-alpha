@@ -17,16 +17,15 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
             guard let package = package else { return }
             titleLabel.text = package.name
             priceLabel.text = "\(package.price.symbol) \(package.price.amount)"
-            descriptionLabel.text = "\(package.address.city) | \(package.address.state)"
+            descriptionLabel.text = "\(package.amenities[0].name) + \(package.amenities[1].name) + \(package.amenities[2].name)"
 
             guard var comps = URLComponents(url: package.gallery[0].url,
                                             resolvingAgainstBaseURL: false) else { return }
             comps.scheme = "https"
             imageView.kf.setImage(with: comps.url)
 
-            if package.price.discount < 0 {
-                discountLabel.text = "\(package.price.discount)%"
-                discountLabel.isHidden = false
+            if (package.amenities.filter({ $0.planeIncluded }).count >= 1) {
+                flightLabel.isHidden = false
             }
         }
     }
@@ -36,6 +35,7 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 14
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         view.backgroundColor = .gray
         view.clipsToBounds = true
         return view
@@ -53,36 +53,37 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
     let descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 12.0, weight: .regular)
-        label.textColor = .gray
+        label.textColor = Theme.hurbLightGray
         label.textAlignment = .left
-        label.numberOfLines = 1
+        label.numberOfLines = 2
         return label
     }()
 
     let priceLabel: PaddingUILabel = {
-        let label = PaddingUILabel(withInsets: 8, 8, 10, 10)
-        label.font = .systemFont(ofSize: 16.0, weight: .regular)
+        let label = PaddingUILabel(withInsets: 10, 10, 10, 10)
+        label.font = .systemFont(ofSize: 18.0, weight: .semibold)
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 1
         label.layer.cornerRadius = 14
-        label.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner]
-        label.backgroundColor = .blue
+        label.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        label.backgroundColor = Theme.hurbOrange
         label.clipsToBounds = true
         label.sizeToFit()
         return label
     }()
 
-    let discountLabel: PaddingUILabel = {
+    let flightLabel: PaddingUILabel = {
         let label = PaddingUILabel(withInsets: 8, 8, 10, 10)
         label.font = .systemFont(ofSize: 16.0, weight: .bold)
-        label.textColor = .white
+        label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 1
         label.isHidden = true
+        label.text = L10n.Feed.Cell.planeIncluded
         label.layer.cornerRadius = 14
-        label.layer.maskedCorners = [.layerMinXMaxYCorner]
-        label.backgroundColor = .orange
+        label.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMinYCorner]
+        label.backgroundColor = Theme.hurbYellow
         label.clipsToBounds = true
         label.sizeToFit()
         return label
@@ -92,56 +93,57 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
 
     override func setupUI() {
         self.contentView.addSubview(imageView)
+        self.contentView.addSubview(flightLabel)
+        self.contentView.addSubview(descriptionLabel)
         self.contentView.addSubview(titleLabel)
         self.contentView.addSubview(priceLabel)
-        self.contentView.addSubview(discountLabel)
-        self.contentView.addSubview(descriptionLabel)
     }
 
     override func setupConstraints() {
         imageView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalToSuperview()
-            make.width.equalTo(335)
-            make.height.equalTo(224).priority(999)
+            make.width.equalTo(300)
+            make.height.equalTo(310).priority(999)
+        }
+
+        descriptionLabel.snp.makeConstraints { (make) in
+            make.bottom.equalTo(imageView.snp.bottom).offset(-10)
+            make.leading.equalTo(imageView.snp.leading).offset(10)
+            make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
 
         titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(imageView.snp.bottom).offset(-5)
+            make.bottom.equalTo(descriptionLabel.snp.top).offset(-5)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
 
         priceLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(imageView.snp.top)
-            make.trailing.equalTo(imageView.snp.trailing)
+            make.top.equalTo(imageView.snp.bottom)
+            make.trailing.leading.equalTo(imageView)
+            make.bottom.equalTo(contentView.snp.bottom).priority(999)
         }
 
-        discountLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(priceLabel.snp.bottom)
-            make.trailing.equalTo(imageView.snp.trailing)
+        flightLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(flightLabel.snp.top)
+            make.leading.equalTo(imageView.snp.leading)
         }
 
-        descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
-            make.leading.equalTo(imageView.snp.leading).offset(10)
-            make.trailing.equalTo(imageView.snp.trailing).offset(-10)
-        }
     }
 
     override func prepareForReuse() {
-        // invoke superclass implementation
         super.prepareForReuse()
 
         package = nil
 
         // reset (hide) the checkmark label
-        discountLabel.isHidden = true
+        flightLabel.isHidden = true
         titleLabel.text = nil
         priceLabel.text = nil
         descriptionLabel.text = nil
         imageView.image = nil
-        discountLabel.text = nil
+        flightLabel.text = nil
 
     }
 }

@@ -14,6 +14,7 @@
 "feed.section.package.subtitle" = "Best prices for you!";
 "feed.section.star" = "Star";
 "feed.section.stars" = "Stars";
+"feed.cell.planeIncluded" = "Flight included!";
 
 "loading.text" = "Searching for the best deals...";
 

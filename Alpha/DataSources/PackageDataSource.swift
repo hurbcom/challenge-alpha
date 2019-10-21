@@ -12,6 +12,7 @@ import UIKit
 class PackageDataSource: NSObject {
     // MARK: - Properties
     var items: [Deal] = []
+    var width: Float
 
     // MARK: - Lifecycle
 
@@ -23,8 +24,9 @@ class PackageDataSource: NSObject {
 
     - Returns: An initialized data source object.
     */
-    init(with items: [Deal]) {
+    init(with items: [Deal], width: Float) {
         self.items = items
+        self.width = width
     }
 }
 
@@ -42,5 +44,14 @@ extension PackageDataSource: UICollectionViewDataSource {
         }
         cell.package = items[indexPath.row]
         return cell
+    }
+}
+
+extension PackageDataSource: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                                layout collectionViewLayout: UICollectionViewLayout,
+                                sizeForItemAt indexPath: IndexPath) -> CGSize {
+                let kWhateverHeightYouWant = 251
+                return CGSize(width: collectionView.bounds.size.width, height: CGFloat(kWhateverHeightYouWant))
     }
 }

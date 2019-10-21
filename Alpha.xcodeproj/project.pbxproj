@@ -63,6 +63,8 @@
 		31CBD345235D192B0027444E /* AlphaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD344235D192B0027444E /* AlphaNetworkManager.swift */; };
 		31CBD34B235D524E0027444E /* LoadingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD34A235D524E0027444E /* LoadingUIView.swift */; };
 		31CBD34D235D5C5A0027444E /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD34C235D5C5A0027444E /* NetworkLogger.swift */; };
+		31CBD351235DE2C60027444E /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD350235DE2C60027444E /* ThemeProvider.swift */; };
+		31CBD353235DE2E40027444E /* UIColor + Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD352235DE2E40027444E /* UIColor + Theme.swift */; };
 		31CF025123577D5B008C92B0 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025023577D5B008C92B0 /* FeedSection.swift */; };
 		31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025323577D8E008C92B0 /* FeedSectionType.swift */; };
 		31CF025623577E42008C92B0 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025523577E42008C92B0 /* Identifiers.swift */; };
@@ -161,6 +163,8 @@
 		31CBD344235D192B0027444E /* AlphaNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaNetworkManager.swift; sourceTree = "<group>"; };
 		31CBD34A235D524E0027444E /* LoadingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUIView.swift; sourceTree = "<group>"; };
 		31CBD34C235D5C5A0027444E /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		31CBD350235DE2C60027444E /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
+		31CBD352235DE2E40027444E /* UIColor + Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Theme.swift"; sourceTree = "<group>"; };
 		31CF025023577D5B008C92B0 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
 		31CF025323577D8E008C92B0 /* FeedSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionType.swift; sourceTree = "<group>"; };
 		31CF025523577E42008C92B0 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 		3141D6CF2353674400A922DF /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				31CBD350235DE2C60027444E /* ThemeProvider.swift */,
+				31CBD352235DE2E40027444E /* UIColor + Theme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -898,6 +904,7 @@
 				31537DFD2353A9DC0011DBD4 /* Logger.swift in Sources */,
 				31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift in Sources */,
 				31537E042354C2540011DBD4 /* Assets.swift in Sources */,
+				31CBD353235DE2E40027444E /* UIColor + Theme.swift in Sources */,
 				31537E1D2355D6F60011DBD4 /* Images.swift in Sources */,
 				310CEA67235B7E9A0022EFF5 /* Address.swift in Sources */,
 				31537E0F235548550011DBD4 /* Coordinator.swift in Sources */,
@@ -915,6 +922,7 @@
 				31B00F8C235A6CD200AD62B8 /* PaddingUILabel.swift in Sources */,
 				310CEA72235CCCDC0022EFF5 /* FeedViewController.swift in Sources */,
 				31537E1B2355D62D0011DBD4 /* Price.swift in Sources */,
+				31CBD351235DE2C60027444E /* ThemeProvider.swift in Sources */,
 				31537E192355D51A0011DBD4 /* Amenities.swift in Sources */,
 				31CF025623577E42008C92B0 /* Identifiers.swift in Sources */,
 				31537DFF2353AAA80011DBD4 /* BaseViewController.swift in Sources */,
