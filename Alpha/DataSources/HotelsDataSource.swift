@@ -8,9 +8,21 @@
 
 import UIKit
 
+/// A Data Source for the Hotels Collection View
 class HotelsDataSource: NSObject {
+    // MARK: - Properties
     var items: [Deal] = []
+    
+    // MARK: - Lifecycle
 
+    /**
+    Initializes a new Hotels Data Source.
+
+    - Parameters:
+       - items: A Deal array to be shown in the collection view.
+
+    - Returns: An initialized data source object.
+    */
     init(with items: [Deal]) {
         self.items = items
     }
@@ -27,18 +39,3 @@ extension HotelsDataSource: UICollectionViewDataSource {
         return cell
     }
 }
-
-//extension HotelsDataSource: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.Hotels.rawValue, for: indexPath) as? HotelCollectionViewCell else { fatalError("Unknown identifier") }
-//
-//        cell.hotel = items[indexPath.row]
-//        cell.setNeedsLayout()
-//        cell.layoutIfNeeded()
-//        let size: CGSize = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-//        return CGSize(width: size.width, height: 263)
-//    }
-//}
