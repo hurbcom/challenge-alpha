@@ -52,6 +52,13 @@ class FeedViewController: BaseViewController {
         return view
     }()
 
+    internal var loadingView: LoadingUIView = {
+        let view = LoadingUIView(frame: .zero)
+        view.isHidden = false
+        view.backgroundColor = .white
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -64,6 +71,7 @@ class FeedViewController: BaseViewController {
             .disposed(by: disposeBag)
 
         self.view.addSubview(feedTableView)
+        self.view.addSubview(loadingView)
     }
 
     override func bindViewModel() {
@@ -73,6 +81,14 @@ class FeedViewController: BaseViewController {
         let input = FeedViewModel.Input(headerRefresh: refresh)
 
         let output = viewModel.transform(input: input)
+
+        output.isLoading.subscribe(onNext: { event in
+            if !event {
+                self.loadingView.isHidden = true
+            } else {
+                self.loadingView.isHidden = false
+            }
+            }).disposed(by: disposeBag)
 
         output.feed.asDriver(onErrorJustReturn: [])
             .drive(feedTableView.rx.items(dataSource: dataSource))
@@ -88,6 +104,16 @@ class FeedViewController: BaseViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailingMargin)
         }
+        loadingView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+//        activity.snp.makeConstraints { (make) in
+//            make.centerX.centerY.equalTo(loadingView)
+//        }
+//        loadingLabel.snp.makeConstraints { (make) in
+//            make.centerX.equalTo(activity.snp.centerX)
+//            make.top.equalTo(activity.snp.top).offset(20)
+//        }
     }
 }
 

@@ -10,13 +10,15 @@ import UIKit
 
 class FeedCoordinator: BaseCoordinator {
     var navigationController: UINavigationController?
+    let provider: AlphaAPI
 
-    init(navigationController: UINavigationController?) {
+    init(navigationController: UINavigationController?, provider: AlphaAPI) {
         self.navigationController = navigationController
+        self.provider = provider
     }
 
     override func start() {
-        let viewModel = FeedViewModel()
+        let viewModel = FeedViewModel(provider: provider)
         let viewController = FeedViewController(viewModel: viewModel)
 
         navigationController?.pushViewController(viewController, animated: true)

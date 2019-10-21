@@ -19,20 +19,26 @@ class FeedViewModel: BaseViewModel, ViewModelType {
     }
     struct Output {
         let feed: BehaviorRelay<[FeedSection]>
+        let isLoading: BehaviorRelay<Bool>
     }
 
     func transform(input: Input) -> Output {
         let elements = BehaviorRelay<[FeedSection]>(value: [])
+        let isLoading = BehaviorRelay<Bool>(value: true)
 
-        input.headerRefresh.flatMapLatest { () -> Observable<[Deal]> in
-            return APIClient.RxGetFeed(forCity: "buzios", page: 1)
-        }.subscribe(
-            onNext: { items in
-                elements.accept(self.handleFeed(withRawElements: items))
-            }
-        ).disposed(by: disposeBag)
+        input.headerRefresh.flatMapLatest({[weak self] () -> Observable<[Deal]> in
+            guard let self = self else { return Observable.just([]) }
+            return self.request(query: "buzios", page: 1).trackActivity(self.loading)
+        }).subscribe(onNext: { items in
+            elements.accept(self.handleFeed(withRawElements: items))
+            isLoading.accept(false)
+            }).disposed(by: disposeBag)
 
-        return Output(feed: elements)
+        return Output(feed: elements, isLoading: isLoading)
+    }
+
+    func request(query: String, page: Int) -> Observable<[Deal]> {
+        return provider.search(query: query, page: page).map { $0.results }.trackActivity(loading)
     }
 
     func handleFeed(withRawElements elements: [Deal]) -> [FeedSection] {

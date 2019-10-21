@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import RxRelay
 
 /// Base class for all View Controllers of the project
 class BaseViewController: UIViewController {
@@ -15,6 +16,8 @@ class BaseViewController: UIViewController {
     static var logEnabled: Bool = true
     /// Controller's View Model
     var viewModel: BaseViewModel?
+
+    let isLoading = BehaviorRelay(value: false)
 
     /**
     Initializes a new View Controller with View Model and logging

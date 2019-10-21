@@ -1,0 +1,3199 @@
+{
+    "meta": {
+        "count": 259,
+        "offset": 0,
+        "query": "buzios",
+        "warning": "results.price.current_price and results.price.old_price are deprecated",
+        "countWithAvailabilityInPage": 0,
+        "countHotel": 252,
+        "countPackage": 5,
+        "countTicket": 2,
+        "countBustrip": 0,
+        "countDisney": 0
+    },
+    "filters": {
+        "amenities": [
+            {
+                "term": "Aparelho TV",
+                "filter": "amenity_aparelho_tv|1",
+                "count": 67
+            },
+            {
+                "term": "Ar-Condicionado",
+                "filter": "amenity_arcondicionado|1",
+                "count": 78
+            },
+            {
+                "term": "Ar-condicionado",
+                "filter": "amenity_arcondicionado|1",
+                "count": 63
+            },
+            {
+                "term": "Banheiro",
+                "filter": "amenity_banheiro|1",
+                "count": 62
+            },
+            {
+                "term": "Bar",
+                "filter": "amenity_bar|1",
+                "count": 84
+            },
+            {
+                "term": "Bar de Piscina",
+                "filter": "amenity_bar_de_piscina|1",
+                "count": 49
+            },
+            {
+                "term": "Estacionamento Gratuito",
+                "filter": "amenity_estacionamento_gratuito|1",
+                "count": 77
+            },
+            {
+                "term": "Free Wifi",
+                "filter": "amenity_free_wifi|1",
+                "count": 118
+            },
+            {
+                "term": "Frigobar",
+                "filter": "amenity_frigobar|1",
+                "count": 69
+            },
+            {
+                "term": "Internet Banda Larga",
+                "filter": "amenity_internet_banda_larga|1",
+                "count": 46
+            },
+            {
+                "term": "Internet WiFi",
+                "filter": "amenity_internet_wifi|1",
+                "count": 82
+            },
+            {
+                "term": "Jardim",
+                "filter": "amenity_jardim|1",
+                "count": 62
+            },
+            {
+                "term": "Lounge compartilhado / Sala de TV",
+                "filter": "amenity_lounge_compartilhado_sala_de_tv|1",
+                "count": 34
+            },
+            {
+                "term": "Massagens a Pedido",
+                "filter": "amenity_massagens_a_pedido|1",
+                "count": 39
+            },
+            {
+                "term": "Piscina",
+                "filter": "amenity_piscina|1",
+                "count": 86
+            },
+            {
+                "term": "Piscina Exterior",
+                "filter": "amenity_piscina_exterior|1",
+                "count": 75
+            },
+            {
+                "term": "Piscina ao ar livre",
+                "filter": "amenity_piscina_ao_ar_livre|1",
+                "count": 41
+            },
+            {
+                "term": "Piscina ao ar livre (o ano inteiro)",
+                "filter": "amenity_piscina_ao_ar_livre_o_ano_inteiro|1",
+                "count": 39
+            },
+            {
+                "term": "Quartos para famílias",
+                "filter": "amenity_quartos_para_familias|1",
+                "count": 48
+            },
+            {
+                "term": "Recepção 24 horas",
+                "filter": "amenity_recepcao_24_horas|1",
+                "count": 48
+            },
+            {
+                "term": "Restaurante",
+                "filter": "amenity_restaurante|1",
+                "count": 78
+            },
+            {
+                "term": "Sala de Reuniões",
+                "filter": "amenity_sala_de_reunioes|1",
+                "count": 51
+            },
+            {
+                "term": "Sala de tv",
+                "filter": "amenity_sala_de_tv|1",
+                "count": 55
+            },
+            {
+                "term": "Serviço de translado (custo adicional)",
+                "filter": "amenity_servico_de_translado_custo_adicional|1",
+                "count": 43
+            },
+            {
+                "term": "Serviço diário de limpeza",
+                "filter": "amenity_servico_diario_de_limpeza|1",
+                "count": 54
+            },
+            {
+                "term": "TV por cabo",
+                "filter": "amenity_tv_por_cabo|1",
+                "count": 43
+            },
+            {
+                "term": "Translado aeroporto (custo adicional)",
+                "filter": "amenity_translado_aeroporto_custo_adicional|1",
+                "count": 45
+            },
+            {
+                "term": "Varanda / Sacada",
+                "filter": "amenity_varanda_sacada|1",
+                "count": 45
+            },
+            {
+                "term": "Ventilador",
+                "filter": "amenity_ventilador|1",
+                "count": 41
+            },
+            {
+                "term": "Wifi",
+                "filter": "amenity_wifi|1",
+                "count": 100
+            }
+        ],
+        "attributes": [
+            {
+                "term": "Aluguel de carro",
+                "filter": "attribute_aluguel_de_carro|1",
+                "count": 1
+            },
+            {
+                "term": "Apartamento",
+                "filter": "attribute_apartamento|1",
+                "count": 5
+            },
+            {
+                "term": "Atendimento Bilíngue",
+                "filter": "attribute_atendimento_bilingue|1",
+                "count": 1
+            },
+            {
+                "term": "Café da manhã",
+                "filter": "attribute_cafe_da_manha|1",
+                "count": 5
+            },
+            {
+                "term": "Camareira",
+                "filter": "attribute_camareira|1",
+                "count": 1
+            },
+            {
+                "term": "Cofre",
+                "filter": "attribute_cofre|1",
+                "count": 1
+            },
+            {
+                "term": "Com criança grátis",
+                "filter": "attribute_freechildren_yes|1",
+                "count": 6
+            },
+            {
+                "term": "Estacionamento",
+                "filter": "attribute_estacionamento|1",
+                "count": 1
+            },
+            {
+                "term": "Grátis para criança",
+                "filter": "attribute_gratis_para_crianca|1",
+                "count": 1
+            },
+            {
+                "term": "Internet wireless",
+                "filter": "attribute_internet_wireless|1",
+                "count": 1
+            },
+            {
+                "term": "Passagem Aérea",
+                "filter": "attribute_passagem_aerea|1",
+                "count": 4
+            },
+            {
+                "term": "Passaporte para diversão",
+                "filter": "attribute_passaporte_para_diversao|1",
+                "count": 1
+            },
+            {
+                "term": "Passeio",
+                "filter": "attribute_passeio|1",
+                "count": 1
+            },
+            {
+                "term": "Passeio de barco",
+                "filter": "attribute_passeio_de_barco|1",
+                "count": 2
+            },
+            {
+                "term": "Piscina",
+                "filter": "attribute_piscina|1",
+                "count": 1
+            },
+            {
+                "term": "Serviço de quarto",
+                "filter": "attribute_servico_de_quarto|1",
+                "count": 1
+            },
+            {
+                "term": "Área de lazer",
+                "filter": "attribute_area_de_lazer|1",
+                "count": 1
+            }
+        ],
+        "countries": [
+            {
+                "term": "Brasil",
+                "filter": "country_brasil|1",
+                "count": 259
+            }
+        ],
+        "cities": [
+            {
+                "term": "Armação dos Búzios",
+                "filter": "city_armacao_dos_buzios|1,state_rio_de_janeiro|1",
+                "count": 258
+            },
+            {
+                "term": "Cabo Frio",
+                "filter": "city_cabo_frio|1,state_rio_de_janeiro|1",
+                "count": 1
+            }
+        ],
+        "departureCities": [
+            {
+                "term": "Belo Horizonte",
+                "filter": "departurecity_belo_horizonte|1",
+                "count": 4
+            },
+            {
+                "term": "Belém",
+                "filter": "departurecity_belem|1",
+                "count": 3
+            },
+            {
+                "term": "Brasília",
+                "filter": "departurecity_brasilia|1",
+                "count": 4
+            },
+            {
+                "term": "Curitiba",
+                "filter": "departurecity_curitiba|1",
+                "count": 4
+            },
+            {
+                "term": "Florianópolis",
+                "filter": "departurecity_florianopolis|1",
+                "count": 2
+            },
+            {
+                "term": "Porto Alegre",
+                "filter": "departurecity_porto_alegre|1",
+                "count": 4
+            },
+            {
+                "term": "Recife",
+                "filter": "departurecity_recife|1",
+                "count": 2
+            },
+            {
+                "term": "Salvador",
+                "filter": "departurecity_salvador|1",
+                "count": 4
+            },
+            {
+                "term": "São Paulo",
+                "filter": "departurecity_sao_paulo|1",
+                "count": 4
+            },
+            {
+                "term": "Vitória",
+                "filter": "departurecity_vitoria|1",
+                "count": 2
+            }
+        ],
+        "duration": [
+            {
+                "term": "1 diária",
+                "filter": "duration_1_diaria|1",
+                "count": 2
+            },
+            {
+                "term": "2 diárias",
+                "filter": "duration_2_diarias|1",
+                "count": 1
+            },
+            {
+                "term": "3 diárias",
+                "filter": "duration_3_diarias|1",
+                "count": 2
+            },
+            {
+                "term": "4 diárias",
+                "filter": "duration_4_diarias|1",
+                "count": 3
+            },
+            {
+                "term": "5 diárias",
+                "filter": "duration_5_diarias|1",
+                "count": 1
+            },
+            {
+                "term": "6 diárias",
+                "filter": "duration_6_diarias|1",
+                "count": 2
+            },
+            {
+                "term": "8 diárias",
+                "filter": "duration_8_diarias|1",
+                "count": 1
+            }
+        ],
+        "food": [
+            {
+                "term": "Café da manhã",
+                "filter": "food_cafe_da_manha|1",
+                "count": 5
+            }
+        ],
+        "people": [
+            {
+                "term": "1",
+                "filter": "total_people_1|1",
+                "count": 5
+            },
+            {
+                "term": "2",
+                "filter": "total_people_2|1",
+                "count": 2
+            }
+        ],
+        "prices": [
+            {
+                "min": 0,
+                "maxExclusive": 300,
+                "filter": "pricegroup_1|1",
+                "count": 211
+            },
+            {
+                "min": 300,
+                "maxExclusive": 600,
+                "filter": "pricegroup_2|1",
+                "count": 34
+            },
+            {
+                "min": 600,
+                "maxExclusive": 900,
+                "filter": "pricegroup_3|1",
+                "count": 8
+            },
+            {
+                "min": 900,
+                "maxExclusive": 1200,
+                "filter": "pricegroup_4|1",
+                "count": 3
+            },
+            {
+                "min": 1200,
+                "maxExclusive": 1500,
+                "filter": "pricegroup_5|1",
+                "count": 1
+            },
+            {
+                "min": 1500,
+                "maxExclusive": 1800,
+                "filter": "pricegroup_6|1",
+                "count": 2
+            }
+        ],
+        "priceInterval": {
+            "min": 2019,
+            "max": 158925,
+            "filterPattern": "price_[min|max]_[value]"
+        },
+        "productType": [
+            {
+                "term": "hospedagem",
+                "filter": "product_type_hospedagem|1",
+                "count": 5
+            },
+            {
+                "term": "hotel",
+                "filter": "product_type_hotel|1",
+                "count": 252
+            },
+            {
+                "term": "servico",
+                "filter": "product_type_servico|1",
+                "count": 2
+            }
+        ],
+        "regulation": [
+            {
+                "term": "accessibility_no",
+                "filter": "regulation_accessibility_no|1",
+                "count": 7
+            },
+            {
+                "term": "child_no",
+                "filter": "regulation_child_no|1",
+                "count": 1
+            },
+            {
+                "term": "child_yes",
+                "filter": "regulation_child_yes|1",
+                "count": 6
+            },
+            {
+                "term": "extra_bed_no",
+                "filter": "regulation_extra_bed_no|1",
+                "count": 7
+            },
+            {
+                "term": "internet_no",
+                "filter": "regulation_internet_no|1",
+                "count": 6
+            },
+            {
+                "term": "internet_yes",
+                "filter": "regulation_internet_yes|1",
+                "count": 1
+            },
+            {
+                "term": "parking_no",
+                "filter": "regulation_parking_no|1",
+                "count": 6
+            },
+            {
+                "term": "parking_yes",
+                "filter": "regulation_parking_yes|1",
+                "count": 1
+            }
+        ],
+        "rooms": [
+            {
+                "term": "Apartamento Duplo",
+                "filter": "room_apartamento_duplo|1",
+                "count": 6
+            },
+            {
+                "term": "Apartamento Duplo Standard",
+                "filter": "room_apartamento_duplo_standard|1",
+                "count": 7
+            },
+            {
+                "term": "Apartamento Triplo Standard",
+                "filter": "room_apartamento_triplo_standard|1",
+                "count": 5
+            },
+            {
+                "term": "Duplo",
+                "filter": "room_duplo|1",
+                "count": 5
+            },
+            {
+                "term": "Duplo MAP OP",
+                "filter": "room_duplo_map_op|1",
+                "count": 5
+            },
+            {
+                "term": "Duplo Standard",
+                "filter": "room_duplo_standard|1",
+                "count": 10
+            },
+            {
+                "term": "Duplo com cafe da manha",
+                "filter": "room_duplo_com_cafe_da_manha|1",
+                "count": 6
+            },
+            {
+                "term": "Duplo com cafe da manha OP",
+                "filter": "room_duplo_com_cafe_da_manha_op|1",
+                "count": 6
+            },
+            {
+                "term": "Luxo",
+                "filter": "room_luxo|1",
+                "count": 9
+            },
+            {
+                "term": "Master",
+                "filter": "room_master|1",
+                "count": 5
+            },
+            {
+                "term": "Quadruplo com cafe da manha",
+                "filter": "room_quadruplo_com_cafe_da_manha|1",
+                "count": 5
+            },
+            {
+                "term": "Quadruplo com cafe da manha OP",
+                "filter": "room_quadruplo_com_cafe_da_manha_op|1",
+                "count": 5
+            },
+            {
+                "term": "Quarto Duplo",
+                "filter": "room_quarto_duplo|1",
+                "count": 28
+            },
+            {
+                "term": "Quarto Duplo Standard",
+                "filter": "room_quarto_duplo_standard|1",
+                "count": 19
+            },
+            {
+                "term": "Quarto Duplo Superior",
+                "filter": "room_quarto_duplo_superior|1",
+                "count": 8
+            },
+            {
+                "term": "Quarto Quadruplo",
+                "filter": "room_quarto_quadruplo|1",
+                "count": 6
+            },
+            {
+                "term": "Quarto Quádruplo",
+                "filter": "room_quarto_quadruplo|1",
+                "count": 19
+            },
+            {
+                "term": "Quarto Quádruplo Standard",
+                "filter": "room_quarto_quadruplo_standard|1",
+                "count": 13
+            },
+            {
+                "term": "Quarto Triplo",
+                "filter": "room_quarto_triplo|1",
+                "count": 26
+            },
+            {
+                "term": "Quarto Triplo Standard",
+                "filter": "room_quarto_triplo_standard|1",
+                "count": 16
+            },
+            {
+                "term": "Quarto Triplo Superior",
+                "filter": "room_quarto_triplo_superior|1",
+                "count": 5
+            },
+            {
+                "term": "STANDARD",
+                "filter": "room_standard|1",
+                "count": 5
+            },
+            {
+                "term": "Standard",
+                "filter": "room_standard|1",
+                "count": 10
+            },
+            {
+                "term": "Standard Duplo",
+                "filter": "room_standard_duplo|1",
+                "count": 8
+            },
+            {
+                "term": "Standard Triplo",
+                "filter": "room_standard_triplo|1",
+                "count": 7
+            },
+            {
+                "term": "Super Luxo",
+                "filter": "room_super_luxo|1",
+                "count": 5
+            },
+            {
+                "term": "Superior",
+                "filter": "room_superior|1",
+                "count": 7
+            },
+            {
+                "term": "Suíte Dupla",
+                "filter": "room_suite_dupla|1",
+                "count": 9
+            },
+            {
+                "term": "Suíte Tripla",
+                "filter": "room_suite_tripla|1",
+                "count": 5
+            },
+            {
+                "term": "Triplo Standard",
+                "filter": "room_triplo_standard|1",
+                "count": 9
+            }
+        ],
+        "stars": [
+            {
+                "term": "1",
+                "filter": "stars_1|1",
+                "count": 1
+            },
+            {
+                "term": "2",
+                "filter": "stars_2|1",
+                "count": 28
+            },
+            {
+                "term": "3",
+                "filter": "stars_3|1",
+                "count": 163
+            },
+            {
+                "term": "4",
+                "filter": "stars_4|1",
+                "count": 48
+            },
+            {
+                "term": "5",
+                "filter": "stars_5|1",
+                "count": 12
+            }
+        ],
+        "states": [
+            {
+                "term": "Rio de Janeiro",
+                "filter": "state_rio_de_janeiro|1,country_brasil|1",
+                "count": 259
+            }
+        ]
+    },
+    "results": [
+        {
+            "sku": "OMN-5608-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "A Buzios Garden Pousada está localizada entre os bairros Brava e João Fernandes. Com acesso fácil as famosas praias: Brava, João Fernades, João Fernandinho, Azeda, Azedinha e Ossos. Com 15 minutos de caminhada pela Orla Bardot chega-se ao centro de Búzio",
+            "amenities": [
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                }
+            ],
+            "id": "AT2420",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 243.2,
+                "old_price": 243.2,
+                "sku": "OMN-5608-0-0-0-0-0-0",
+                "originalAmountPerDay": 243.2,
+                "amountPerDay": 243.2,
+                "amount": 243.2
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2420/buzios-garden-003_20180629200606.jpg",
+            "name": "Búzios Garden",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/buzios-garden-OMN-5608",
+            "description": "A Buzios Garden Pousada está localizada entre os bairros Brava e João Fernandes. Com acesso fácil as famosas praias: Brava, João Fernades, João Fernandinho, Azeda, Azedinha e Ossos. \r\nCom 15 minutos de caminhada pela Orla Bardot chega-se ao centro de Búzios, onde encontram-se restaurantes (gastronomia nacional e internacional), música ao vivo, obras de arte, lojas de griffe e a charmosa e badalada Rua das Pedras.",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2420/buzios-garden-003_20180629200606.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5608/RoomTypes/164885.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5608/RoomTypes/164896.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5608/RoomTypes/164897.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5608/RoomTypes/167143.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Rua 13,  Quadra G, lote 3, nº 3",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7510327158453,
+                    "lon": -41.877562622818
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Ar Condicionado",
+                    "Chuveiro",
+                    "Artigos para Banheiro",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Frigobar",
+                    "Banheiro privado",
+                    "Apartamento para não Fumantes",
+                    "Secador de cabelo"
+                ],
+                "name": "Apartamento Standard",
+                "image": "http://media.omnibees.com/Images/5608/RoomTypes/199412.jpg",
+                "description": "Confortáveis suítes equipadas com: ar condicionado, cama casal, TV LED, frigobar e secador de cabelo. "
+            }
+        },
+        {
+            "sku": "OMN-5252-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Búzios Beach Resort está localizado na cidade de Armação dos Búzios, na praia de Tucuns, a 165 km da capital Rio de Janeiro e 24 km de Cabo Frio. A 15 minutos do centro da cidade e dos principais pontos turísticos da cidade como a Rua das Pedras e a Orl",
+            "amenities": [
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Sala de Jogos",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Massagens a Pedido",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Acesso direto à praia",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Centro de Conferências",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Kids Club",
+                    "category": "Entretenimento e serviços para famílias"
+                },
+                {
+                    "name": "Mini Golfe",
+                    "category": "Atividades"
+                }
+            ],
+            "id": "AT2312",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 491.03,
+                "old_price": 454.24,
+                "sku": "OMN-5252-0-0-0-0-0-0",
+                "originalAmountPerDay": 454.24,
+                "amountPerDay": 491.03,
+                "amount": 491.03
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2312/buzios-beach-resort-armacao-de-buzios-rj-001_20180319120148_20190625162725.jpg",
+            "name": "Buzios Beach Resort",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/buzios-beach-resort-OMN-5252",
+            "description": "                                                                             O Búzios Beach Resort está localizado na cidade de Armação dos Búzios, na praia de Tucuns, a 165 km da capital Rio de Janeiro e 24 km de Cabo Frio. A 15 minutos do centro da cidade e dos principais pontos turísticos da cidade como a Rua das Pedras e a Orla Bardot.\r\nSomos o maior Resort da Região dos Lagos, com infraestrutura completa de lazer e entretenimento, além de contar com um maiores Centros de Convenções da região.\r\n                                                                             Dispomos de profissionais treinados e capacitados para oferecer atendimento de qualidade.\r\n \r\n        Tudo isso com um único objetivo: Deixar a sua estadia ainda mais agradável! \r\n ",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2312/buzios-beach-resort-armacao-de-buzios-rj-001_20180319120148_20190625162725.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5252/Property/115847.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5252/Property/115952.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5252/Property/115953.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5252/Property/115954.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Avenida Dos Tucuns, S/N  Praia de Tucuns",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.790146,
+                    "lon": -41.926743
+                }
+            },
+            "tags": [
+                "mais vendidos"
+            ],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Serviço de Quarto 24 horas",
+                    ".",
+                    "Telefone",
+                    "Banheiro privado",
+                    "Varanda",
+                    "Chuveiro",
+                    "Cofre",
+                    "Artigos para Banheiro",
+                    "Ar Condicionado",
+                    "TV a Cabo",
+                    "Serviço de limpeza diário",
+                    "Secador de cabelo",
+                    "Jacuzzi / hidromassagem"
+                ],
+                "name": "Bangalô",
+                "image": "http://media.omnibees.com/Images/5252/RoomTypes/118633.jpg",
+                "description": "83m² de área privativa, com piscina própria (acesso comum a todos os hóspedes) e jacuzzi. Varanda com deck, vista mar e piscina. Composto por 01 cama de casal e 01 sofá-cama. Política de hospedagem: 2 adultos com 2 crianças de até 11 anos (cortesia) ou 3 adultos (triplo) sem crianças por apartamento."
+            }
+        },
+        {
+            "sku": "OMN-5284-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O hotel Atlântico Búzios está situado à frente da Baía da Armação dos Búzios, a apenas duas horas do Rio de Janeiro. Rodeado por uma paisagem natural única, seus 172 apartamentos oferecem uma excelente infraestrutura e um ambiente elegante e refinado idea",
+            "amenities": [
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                }
+            ],
+            "id": "AT2785",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 394.91,
+                "old_price": 394.91,
+                "sku": "OMN-5284-0-0-0-0-0-0",
+                "originalAmountPerDay": 394.91,
+                "amountPerDay": 394.91,
+                "amount": 394.91
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2785/Atlantico_Buzios_20181219171234.jpg",
+            "name": "Hotel Atlântico Búzios Convention & Resort",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/hotel-atlantico-buzios-convention-resort-OMN-5284",
+            "description": " O hotel Atlântico Búzios Convention & Resort está rodeado por uma paisagem natural única, seus 172 apartamentos oferecem uma excelente infraestrutura e um ambiente elegante e refinado ideal para um relax perfeito para você e sua família. Hospedar-se no Hotel Atlântico Búzios é viver momentos inesquecíveis em família. Deixe as preocupações na recepção e concentre-se apenas em desfrutar da mais completa estrutura de lazer em uma das mais belas paisagens do Brasil. Considerado um dos melhores hotéis de Búzios, o Hotel Atlântico Búzios oferece diversas atividades o ano inteiro, com restaurante exclusivo, piscina aquecida, SPA e salão de beleza. Além disso, está localizado em um dos melhores points da famosa Orla Bardot.",
+            "stars": 5,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2785/Atlantico_Buzios_20181219171234.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5284/Property/133327.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5284/Property/133328.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5284/Property/133340.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5284/Property/133343.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Estrada da Usina, 294 - Morro do Humaitá, Armação dos Búzios - RJ ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7513832,
+                    "lon": -41.8815391
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Serviço de limpeza diário",
+                    ".",
+                    "TV a Cabo",
+                    "Serviço de Quarto 24 horas",
+                    "Ar Condicionado",
+                    "Cofre",
+                    "Secador de cabelo"
+                ],
+                "name": "Standard Frente Jardim - duplo",
+                "image": "http://media.omnibees.com/Images/5284/RoomTypes/133887.jpg",
+                "description": "Esta acomodação dispõe de sistema eletrônico de acesso, TV a cabo, ar condicionado, cofre digital, mini bar, secador de cabelo, 110V e 220V, radio despertador, internet banda larga e uma arquitetura aconchegante que convida ao relaxamento, privacidade e conforto de seus hóspedes."
+            }
+        },
+        {
+            "sku": "OMN-7021-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Pousada Le Palmier BúziosLocalização privilegiada a 500 metros da Rua das Pedras e a 700 metros da Praia da Ferradura. A Pousada Le Palmier oferece aos seus hóspedes um estilo único, que caracteriza-se pelo atendimento diferenciado e confortável, criando",
+            "amenities": [
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Sala de Jogos",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Mesa de Bilhar",
+                    "category": "Atividades"
+                }
+            ],
+            "id": "AT525788",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 179.03,
+                "old_price": 159.13,
+                "sku": "OMN-7021-0-0-0-0-0-0",
+                "originalAmountPerDay": 159.13,
+                "amountPerDay": 179.03,
+                "amount": 179.03
+            },
+            "hu_free_cancellation": false,
+            "image": "http://media.omnibees.com/Images/7021/Property/278419.jpg",
+            "name": "Pousada Le Palmier Búzios",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/pousada-le-palmier-buzios-OMN-7021",
+            "description": "Pousada Le Palmier Búzios\r\nLocalização privilegiada a 500 metros da Rua das Pedras e a 700 metros da Praia da Ferradura. A Pousada Le Palmier oferece aos seus hóspedes um estilo único, que caracteriza-se pelo atendimento diferenciado e confortável, criando assim uma sensação de harmonia e bem estar.\r\nSão 3000 metros quadrados de área verde, onde pode-se desfrutar de um belo e aconchegante jardim tropical, divertir-se em nossa piscina ou sala de jogos com mesa de sinuca, experimentar um delicioso drink no bar ou simplesmente ler um bom livro em nossa mini-biblioteca.\r\nA Pousada Le Palmier também oferece sala de TV a Cabo / DVD, sinal Wifi, recepção 24 horas e estacionamento privativo.\r\n\r\n\r\n ",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7021/Property/278419.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7021/Property/287025.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7021/Property/278410.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7021/Property/278411.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7021/Property/278412.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "R. J VI, 14 - Village da Ferradura,  ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": 22.7624108,
+                    "lon": 41.8902683
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    ".",
+                    "Frigobar",
+                    "Ar Condicionado",
+                    "Piscina infantil",
+                    "Apartamento para não Fumantes",
+                    "Varanda",
+                    "Banheiro privado",
+                    "Cofre",
+                    "Chuveiro"
+                ],
+                "name": "Duplo Casal",
+                "image": "http://media.omnibees.com/Images/7021/RoomTypes/278420.jpg",
+                "description": "Apartamento duplo com cama de casal, TV, ar-condicionado, frigobar e cofre. "
+            }
+        },
+        {
+            "sku": "OMN-6533-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Hotel encontra-se a apenas alguns passos da famosa Praia de João Fernandes, conhecida internacionalmente por sua beleza e charme. Sua localização privilegiada, oferece aos seus hóspedes uma inigualável vista da paisagem local . O Hotel foi cuidadosament",
+            "amenities": [
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Fax",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Kids Club",
+                    "category": "Entretenimento e serviços para famílias"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Sala de Jogos",
+                    "category": "Áreas comuns"
+                }
+            ],
+            "id": "AT524842",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 278.46,
+                "old_price": 278.46,
+                "sku": "OMN-6533-0-0-0-0-0-0",
+                "originalAmountPerDay": 278.46,
+                "amountPerDay": 278.46,
+                "amount": 278.46
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/524842/001-fachada-piscinario-buzios-beach-hotel-001_20190313184649.png",
+            "name": "Rio Búzios Beach Hotel",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/rio-buzios-beach-hotel-OMN-6533",
+            "description": "O Rio Búzios Beach Hotel está localizado em Búzios, Rio de Janeiro.\r\nNAS PROXIMIDADES: O hotel fica a alguns passos da Praia de João Fernandes. A Orla Bardot e a famosa Rua das Pedras encontram-se a 1 Km de distância da propriedade. Já o Silk Beach Club está a 1,8 Km. A Praia da Ferradura fica a 3,7 Km, enquanto a Praia de Geribá, a 5,7 Km.\r\nIDEAL PARA: O Rio Búzios Beach Hotel foi cuidadosamente planejado para integrar-se a arquitetura e a natureza local. O hotel conta com uma equipe de serviços pronta para tornar a estadia de seus clientes uma experiência inesquecível. Essa é uma hospedagem com excelente custo-benefício, perfeita para casais e grupos de amigos.\r\nCOMODIDADES: O hotel oferece piscina ao ar livre, sauna, fitness center, salão de jogos com tênis de mesa e videogames, bar, restaurante com pratos nacionais e internacionais, internet Wi-Fi e estacionamento gratuitos. Serviços adicionais de aluguel de bicicletas e de transfer para o aeroporto também estão disponíveis para os hóspedes. A recepção funciona 24 horas. \r\nREFEIÇÃO: O café da manhã está incluso nas diárias.\r\nPETS: Animais de estimação não são permitidos.\r\nACOMODAÇÕES: Os quartos são bem iluminados e decorados com móveis de madeira. Todos estão equipados com ar condicionado, TV a cabo e secador de cabelo. Algumas unidades possuem vista para o mar.\r\nCOMO CHEGAR: avião + transfer; carro; ônibus saindo do Rio de Janeiro ou São Paulo.\r\nNa compra da opção MEIA-PENSÃO é oferecido jantar (entrada, prato principal e sobremesa).",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/524842/001-fachada-piscinario-buzios-beach-hotel-001_20190313184649.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6533/Property/229892.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6533/Property/229894.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6533/Property/229895.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6533/Property/229896.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "R. Praia de João Fernandes, s/n João Fernandes, Búzios - RJ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7441472,
+                    "lon": -41.8774809
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Telefone",
+                    "Cofre",
+                    "Varanda",
+                    "120 AC",
+                    "Chaleira Eléctrica",
+                    "Frigobar",
+                    "Artigos para Banheiro",
+                    "Jacuzzi / hidromassagem",
+                    "Secador de cabelo",
+                    "Banheiro privado",
+                    "Televisão",
+                    "Chaleira Eléctrica",
+                    "Apartamento para não Fumantes"
+                ],
+                "name": "Luxo com Hidromassagem Vista Jardim",
+                "image": "http://media.omnibees.com/Images/6533/RoomTypes/232879.jpg",
+                "description": "Apartamentos com varanda vista para o jardim. Equipados com Hidromassagem para 2 pessoas , Tv LCD 32\" com canais a cabo, cama king-size, cofre digital, fechadura eletrônica, frigobar, secador de cabelo e rádio relógio.\rOcupação Max : 2 Adultos + 1 Criança ( gratis até 12 anos )\r* TODOS OS APARTAMENTOS SÃO NÃO FUMANTES."
+            }
+        },
+        {
+            "sku": "OMN-5617-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Hotel em Búzios com várias opções de lazer.",
+            "amenities": [
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                }
+            ],
+            "id": "AT2433",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 485.41,
+                "old_price": 471.92,
+                "sku": "OMN-5617-0-0-0-0-0-0",
+                "originalAmountPerDay": 471.92,
+                "amountPerDay": 485.41,
+                "amount": 485.41
+            },
+            "hu_free_cancellation": true,
+            "image": "http://media.omnibees.com/Images/5617/Property/194460.jpg",
+            "name": "Colonna Park Hotel",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/colonna-park-hotel-OMN-5617",
+            "description": "O Colonna Park Hotel está situado em Armação de Búzios, perto da Rua das Pedras. \r\nA diversão dos viajantes do HU será promovida pela sauna, piscina e sala de TV na área de lazer do hotel. \r\nConcedem facilidades de café da manhã e acesso à Internet. As acomodações possuem ar-condicionado, TV e frigobar. ",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5617/Property/194460.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5617/Property/164282.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5617/Property/164284.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5617/Property/164285.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5617/Property/164287.png"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "R. Praia de João Fernandes, s/n João Fernandes, Búzios - RJ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7400663,
+                    "lon": -41.8734549
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Varanda",
+                    "Chuveiro",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Ar Condicionado",
+                    "Cofre",
+                    "Artigos para Banheiro",
+                    "Televisão",
+                    "Tábua de Passar",
+                    "Telefone",
+                    "Frigobar",
+                    "Banheiro privado",
+                    "Tv com controle Remoto",
+                    ".",
+                    "Acesso a internet",
+                    "Secador de cabelo",
+                    "TV a Cabo"
+                ],
+                "name": "Standard sem Vista Mar",
+                "image": "http://media.omnibees.com/Images/5617/RoomTypes/164329.png",
+                "description": "Apartamento com varanda, vista para o jardim ou para a rua lateral, equipado com ar-condicionado split, TV a cabo, frigobar, telefone, interfone, secador de cabelo e cofre (custo adicional).\rDisponibilidade para acomodar 2 (duas) ou 3 (três) pessoas."
+            }
+        },
+        {
+            "sku": "OMN-5277-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Vila d'este é uma linda e exclusiva propriedade de estilo Italiano que oferece uma vista deslumbrante do oceano. Rodeada de encantos e elegantes detalhes, tanto nas áreas sociais, como nos apartamentos. ",
+            "amenities": [
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Fax",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Cyber Point",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Massagens a Pedido",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                }
+            ],
+            "id": "AT2794",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 741.97,
+                "old_price": 637.28,
+                "sku": "OMN-5277-0-0-0-0-0-0",
+                "originalAmountPerDay": 637.28,
+                "amountPerDay": 741.97,
+                "amount": 741.97
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2794/vila-d-este-001_20190110131344.png",
+            "name": "Vila d’este",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/vila-deste-OMN-5277",
+            "description": "O Vila d'este está localizado em Armação dos Búzios, Rio de Janeiro.\r\nNAS PROXIMIDADES: A acomodação fica a 500 metros de distância da Orla Bardot, a 600 metros da Privilège e a 800 metros da famosa Rua das Pedras, repleta de bares, restaurantes e lojas. É possível chegar às praias de João Fernandes e da Ferradura em 10 minutos de carro. A Praia de Geribá encontra-se a 4,5 Km da casa de temporada.\r\nIDEAL PARA: Vila d'este é uma linda e exclusiva propriedade de estilo Italiano que oferece uma vista deslumbrante do oceano. Com o cuidado de um trabalho manual, pequenas peças estão delicadamente distribuídas, criando cenários mágicos. Um ambiente romântico, perfeito para casais em lua de mel, e com a calorosa hospitalidade brasileira. \r\nCOMODIDADES: A casa de temporada dispõe de duas piscinas frente mar, uma delas climatizada e com hidromassagem, sauna a vapor, serviço de bar na piscina, solarium, business center, balcão de turismo e Wi-Fi gratuito. A área relax & massage está rodeada por jardins tropicais. O Sunset bar & restaurante serve pratos da cozinha mediterrânea e apresenta uma carta variada de vinhos. A recepção da propriedade funciona 24 horas. O serviço de lavanderia e o transfer para o aeroporto estão disponíveis com custo adicional. \r\nREFEIÇÃO: O buffet de café da manhã é servido diariamente. \r\nPETS: Animais de estimação não são permitidos. \r\nACOMODAÇÕES: Os 19 apartamentos do Vila d'este são individualmente decorados e espaçosos. Alguns possuem jacuzzi e vista para o mar. \r\nCOMO CHEGAR: avião + transfer; carro; ônibus saindo principalmente do Rio de Janeiro e São Paulo. \t\r\nOBS.: O Vila d'este não hospeda e nem recebe menores de 14 anos. \r\n",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2794/vila-d-este-001_20190110131344.png"
+                },
+                {
+                    "description": "Recepção",
+                    "url": "http://media.omnibees.com/Images/5277/Property/120503.jpg"
+                },
+                {
+                    "description": "Deck do Restaurante Egeo",
+                    "url": "http://media.omnibees.com/Images/5277/Property/120513.jpg"
+                },
+                {
+                    "description": "Amenities L'Occitane",
+                    "url": "http://media.omnibees.com/Images/5277/Property/120521.jpg"
+                },
+                {
+                    "description": "Ceviche de Camarão na Papaia",
+                    "url": "http://media.omnibees.com/Images/5277/Property/120523.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Rua Morro do Humaitá, 11 Centro",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7523562,
+                    "lon": -41.8830697
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Internet Wireless",
+                    "Banheiro privado",
+                    "Varanda",
+                    "Leitor de DVD",
+                    "Telefone",
+                    "Área de Estar",
+                    "Serviço de Quarto 24 horas",
+                    "TV a Cabo",
+                    "Roupão de Banho",
+                    "Tv com controle Remoto",
+                    "Rádio",
+                    "Copos",
+                    "Televisão",
+                    "Serviço de limpeza diário",
+                    "Chuveiro",
+                    "Serviço de Despertar",
+                    "Bidet",
+                    "Jacuzzi / hidromassagem",
+                    "Chaleira Eléctrica",
+                    "Cofre",
+                    "Leitor de CD",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Frigobar",
+                    ".",
+                    "Chaleira Eléctrica",
+                    "Secador de cabelo",
+                    "Artigos para Banheiro",
+                    "Ar Condicionado"
+                ],
+                "name": "Suite Master Frente Mar com Jacuzzi",
+                "image": "http://media.omnibees.com/Images/5277/RoomTypes/335828.jpg",
+                "description": "Ampla e iluminada, estilo loft tropical, ambientação romântica ideal para lua de mel e ocasiões especiais. Deliciosa varanda, de frente para o mar com jacuzzi, total privacidade. Acomoda até duas pessoas em cama king size com dossel,  acesso à internet. Somente disponível com cama de casal."
+            }
+        },
+        {
+            "sku": "OMN-8493-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Chez Pitu Praia Hotel está localizado na Praia de Geribá, em Búzios, e conta com acomodações equipadas com televisão de tela plana. Possui terraço, piscina e sauna.Os quartos do Chez Pitu Praia têm uma decoração moderna e prática. Todos são equipados ",
+            "amenities": [
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Fotocópias",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Fax",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Aluguel de bicicletas",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento com manobrista",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Acesso direto à praia",
+                    "category": "Piscina e comodidades de bem-estar"
+                }
+            ],
+            "id": "AT528947",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 605.18,
+                "old_price": 578.86,
+                "sku": "OMN-8493-0-0-0-0-0-0",
+                "originalAmountPerDay": 578.86,
+                "amountPerDay": 605.18,
+                "amount": 605.18
+            },
+            "hu_free_cancellation": false,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/528947/chez-pitu-praia-hotel-buzios-036_20190514200921.jpg",
+            "name": "Chez Pitu Praia Hotel",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/chez-pitu-praia-hotel-OMN-8493",
+            "description": "O Chez Pitu Praia Hotel está localizado na Praia de Geribá, em Búzios, e conta com acomodações equipadas com televisão de tela plana. Possui terraço, piscina e sauna.\r\n\r\nOs quartos do Chez Pitu Praia têm uma decoração moderna e prática. Todos são equipados com ar-condicionado, frigobar, cofre e acesso gratuito à internet sem fio (Wi-Fi). Alguns deles dispõem de varanda privada com vista panorâmica do Oceano Atlântico.\r\n\r\nUma variedade de bebidas e lanches são servidos no bar da piscina. Há acesso direto à praia, onde um serviço especial é fornecido para os hóspedes do hotel. \r\nA recepção está disponível 24 horas por dia.\r\n\r\nO centro de Búzios, onde a Rua das Pedras está localizada, fica a apenas 5 minutos de carro do hotel.\r\n\r\nGeribá é uma ótima escolha para viajantes interessados em praias com faixa de areia, caminhadas na praia e gastronomia.\r\n\r\nEssa acomodação também tem uma das localizações mais bem avaliadas em Búzios! Os hóspedes estão mais felizes com ela, em comparação a outras acomodações na região.",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/528947/chez-pitu-praia-hotel-buzios-036_20190514200921.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8493/Property/368244.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8493/Property/368245.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8493/Property/368246.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8493/Property/368247.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Av. Geriba 10",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7774187,
+                    "lon": -41.9077268
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Ar Condicionado",
+                    "Mini-Bar",
+                    "Televisão",
+                    "Acesso a internet",
+                    "Banheiro privado",
+                    "Serviço de Despertar",
+                    "Cofre",
+                    "Secador de cabelo",
+                    "TV a Cabo",
+                    "Telefone",
+                    "Chuveiro",
+                    "Tv de tela Plano / Plasma / LCD"
+                ],
+                "name": "Quarto standard",
+                "image": "http://media.omnibees.com/Images/8493/RoomTypes/368212.jpg",
+                "description": "Quartos localizados no: Piso Térreo e Superior\r"
+            }
+        },
+        {
+            "sku": "OMN-7693-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Esta acomodação fica a 3 minutos a pé da praia. O Hotel Ferradura Resort fica em Búzios, a 2 km da animais Rua das Pedras. Oferecendo WiFi gratuito, este resort dispõe de piscina ampla ao ar livre com bar de piscina. O buffet de café da manhã inclui fruta",
+            "amenities": [
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Sala de Jogos",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Buffet",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Acesso direto à praia",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Mesa de Bilhar",
+                    "category": "Atividades"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Centro de Conferências",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Auditório",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Kids Club",
+                    "category": "Entretenimento e serviços para famílias"
+                }
+            ],
+            "id": "AT527715",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 657.7,
+                "old_price": 657.7,
+                "sku": "OMN-7693-0-0-0-0-0-0",
+                "originalAmountPerDay": 657.7,
+                "amountPerDay": 657.7,
+                "amount": 657.7
+            },
+            "hu_free_cancellation": false,
+            "image": "http://media.omnibees.com/Images/7693/Property/332502.jpg",
+            "name": "Ferradura Resort",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/ferradura-resort-OMN-7693",
+            "description": "O Ferradura Resort está situado em Búzios, Rio de Janeiro. **NO HURB A TAXA DE SERVIÇO JÁ ESTÁ INCLUÍDA.**\r\nNAS PROXIMIDADES: O resort fica a 100 metros de distância da Praia da Ferradura e a 2 Km da Rua das Pedras, repleta de bares, restaurantes e lojas. A Praia da Ferradurinha e o Silk Beach Club encontram-se a 3 Km da hospedagem. A Praia de Geribá está a 4 Km.\r\nIDEAL PARA: O Ferradura Resort possui uma infraestrutura completa, cercado por uma beleza natural deslumbrante. É ideal para casais em lua de mel e para famílias que desejam passar as férias com o melhor de Búzios. \r\nCOMODIDADES: A acomodação oferece seis piscinas, três hidromassagens aquecidas, academia, quadra de areia, salão de jogos, espaço kids, copa baby, dois bares molhados, Wi-Fi e estacionamento gratuitos. Há ainda um restaurante com o melhor das culinárias nacional e internacional. Serviço adicional de transfer para o aeroporto também está disponível para os hóspedes.\r\nREFEIÇÃO: O buffet de café da manhã está incluso nas diárias. \r\nPETS: Animais de estimação não são permitidos.\r\nACOMODAÇÕES: Com decoração exclusiva, as suítes do Ferradura Resort são modernas e dispõem de ar condicionado, TV a cabo, frigobar e varanda privativa com uma vista espetacular. \r\nCOMO CHEGAR: avião + transfer; carro; ônibus saindo de Rio de Janeiro ou São Paulo.\r\n",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7693/Property/332502.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7693/Property/332494.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7693/Property/332495.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7693/Property/332496.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7693/Property/332497.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Rua O  Lote 4",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7604535,
+                    "lon": -41.9088735
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    ".",
+                    "Frigobar",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Varanda",
+                    "Jacuzzi / hidromassagem",
+                    "Cofre",
+                    "Roupão de Banho",
+                    "Ar Condicionado",
+                    "Telefone",
+                    "Artigos para Banheiro",
+                    "TV a Cabo"
+                ],
+                "name": "Suite Ferradura",
+                "image": "http://media.omnibees.com/Images/7693/RoomTypes/332482.jpg",
+                "description": "Nossa diferenciada e exclusiva suíte Master, está localizada na ala central do hotel, e possui 1 cama king, banheira de hidromassagem para duas pessoas e amenities. Além de ampla varanda, a suíte dispõe de uma ante-sala e lavabo. Com vista para a lagoa da Ferradura e piscina principal, a Suíte Ferradura oferece uma experiência de conforto e bem estar."
+            }
+        },
+        {
+            "sku": "OMN-5754-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Localizada dentro do Condomínio do Atlântico e uma reserva ecológica, o Travel Inn  Unicórnio  oferece privacidade, segurança, paz e harmonia em perfeito equilíbrio com a natureza.Nossa pousada oferece café da manhã estilo buffet, Spa, piscina tratada co",
+            "amenities": [
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Acesso direto à praia",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Mesa de Bilhar",
+                    "category": "Atividades"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                }
+            ],
+            "id": "AT3218",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 240.75,
+                "old_price": 281.2,
+                "sku": "OMN-5754-0-0-0-0-0-0",
+                "originalAmountPerDay": 281.2,
+                "amountPerDay": 240.75,
+                "amount": 240.75
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/3218/travel-inn-unicornio-001_20180503161428.jpg",
+            "name": "Unicórnio & SPA BY MN Hoteis",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/unicornio-spa-by-mn-hoteis-OMN-5754",
+            "description": "Localizada dentro do Condomínio do Atlântico e uma reserva ecológica, o Travel Inn  Unicórnio  oferece privacidade, segurança, paz e harmonia em perfeito equilíbrio com a natureza.\r\nNossa pousada oferece café da manhã estilo buffet, Spa, piscina tratada com sais minerais e \r\ntodos os quartos com varanda com vista ou frente mar.\r\n",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/3218/travel-inn-unicornio-001_20180503161428.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5754/Property/171431.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5754/Property/171432.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5754/Property/171433.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5754/Property/171434.png"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "R. Miriam Gomes, 868 - Cond. do Atalntico - Ferradura,  ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.775739,
+                    "lon": -41.886865
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "120 AC",
+                    "Bidet",
+                    "Serviço de Despertar",
+                    "Internet Wireless",
+                    "Chuveiro",
+                    "Artigos para Banheiro",
+                    "Banheiro privado",
+                    "Varanda",
+                    "Frigobar",
+                    "Telefone",
+                    "Mini-Bar",
+                    "Telefone",
+                    "Cofre",
+                    "Mini-Bar",
+                    "Frigobar",
+                    "Secador de cabelo",
+                    "TV a Cabo",
+                    "Ar Condicionado",
+                    "Varanda",
+                    "Televisão",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Tv com controle Remoto"
+                ],
+                "name": "SUITE UNICORNIO",
+                "image": "http://media.omnibees.com/Images/5754/RoomTypes/179782.jpg",
+                "description": "As suites unicornio estão completamente equipadas. Sua localização privilegiada permite ter vista para o mar desde o interior e da varanda,  próprio para relaxar e desfrutar. A decoração, amenities e roupa de cama são diferenciadas. Suítes disponíveis somente para casal."
+            }
+        },
+        {
+            "sku": "OMN-8516-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Hotel Doce Mar fica a 3 minutos a pé da praia da Armação. À apenas 70m da pitoresca Orla Bardot, o Hotel Doce Mar oferece piscina ao ar livre com serviço de bar, sauna à vapor e recepção 24 horas. O Wi-Fi e o estacionamento são gratuitos. As vagas no es",
+            "amenities": [
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                }
+            ],
+            "id": "AT529345",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 220.2,
+                "old_price": 210.83,
+                "sku": "OMN-8516-0-0-0-0-0-0",
+                "originalAmountPerDay": 210.83,
+                "amountPerDay": 220.2,
+                "amount": 220.2
+            },
+            "hu_free_cancellation": false,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/529345/001_20190611093500.jpg",
+            "name": "Hotel Doce Mar",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/hotel-doce-mar-OMN-8516",
+            "description": "O Hotel Doce Mar fica a 3 minutos a pé da praia da Armação. À apenas 70m da pitoresca Orla Bardot, o Hotel Doce Mar oferece piscina ao ar livre com serviço de bar, sauna à vapor e recepção 24 horas. O Wi-Fi e o estacionamento são gratuitos. As vagas no estacionamento são limitadas.\r\nOs quartos dispõem de ar-condicionado split, TV LCD de 32″, telefone, frigobar, cofre e música ambiente. Incluem um banheiro espaçoso com box de vidro e pia em mármore .\r\nO buffet de café da manhã é servido diariamente das 08:00 às 11:00h, com uma variedade de frutas da estação, sucos, pães, croissant, frios e bolos.\r\nHá opções gastronômicas na animada Rua das Pedras, que está localizada a 300m de distância.",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/529345/001_20190611093500.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8516/Property/369974.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8516/Property/369975.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8516/Property/369976.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8516/Property/369977.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Alto do Humaitá, 4 ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7517139,
+                    "lon": -41.8854173
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Ar Condicionado",
+                    "Chuveiro",
+                    "Tv com controle Remoto",
+                    "Frigobar",
+                    "Televisão",
+                    "Cofre",
+                    "Rádio",
+                    "Telefone",
+                    "Banheiro privado"
+                ],
+                "name": "Quarto com Cama de Casal ou 2 de Solteiro",
+                "image": "http://media.omnibees.com/Images/8516/RoomTypes/406703.jpg",
+                "description": "Este quarto inclui ar-condicionado e banheiro espaçoso, com box de vidro, detalhes em granito . Dispõe de uma TV LCD de 32\", telefone, frigobar e cofre."
+            }
+        },
+        {
+            "sku": "NHU-6669-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Hotel Boutique a 100 m da praia de Geribá.",
+            "amenities": [
+                {
+                    "name": "Serviço de concierge",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Cofre",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Business center",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Área específica para fumantes",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Quartos para famílias",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Ar-condicionado",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Aquecimento",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Wifi",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Jardim",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Lounge compartilhado / Sala de TV",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Salão de jogos",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Amenidade de banho",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Aparelho TV",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Aquecimento",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Ar-Condicionado",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Banheiro",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Cofre",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Closet",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "DVD",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Frigobar",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Internet WiFi",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Secador de cabelo",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Sofá-cama",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Telefone",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "TV por cabo",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Varanda / Sacada",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Berço",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "berço (mediante pedido)",
+                    "category": "Acomodação"
+                }
+            ],
+            "id": "AT6669",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 356.49,
+                "old_price": 0,
+                "sku": "NHU-6669-0-0-0-0",
+                "originalAmountPerDay": 0,
+                "amountPerDay": 356.49,
+                "amount": 356.49
+            },
+            "hu_free_cancellation": true,
+            "image": "https://static.hotelurbano.com/reservas/prod0/6/6669/5d07f74d58272_serena-hotel-boutique.jpg",
+            "name": "Serena Boutique Resort - Búzios",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/serena-hotel-boutique-6669",
+            "description": "O Serena Boutique Resort está localizado em Armação dos Búzios, Rio de Janeiro.\r\nNAS PROXIMIDADES: O resort está a 3 minutos da Praia de Geribá e a 1,3 Km da Praia de Manguinhos. A Praia da Armação está a 5,5 Km e a Ilha Japonesa fica a 20,3 Km.\r\nIDEAL PARA: Uma ótima escolha para quem deseja uma estrutura completa e aproveitar o melhor de Búzios.\r\nCOMODIDADES: O Serena Boutique Resort oferece academia, piscina, Wi-Fi, recepção 24 horas, centro de negócios, balcão de turismo, parquinho infantil e jardim. O restaurante e o bar da piscina contam com cardápio da culinária nacional e internacional. O serviço de babá está disponível, caso você esteja com crianças e queira aproveitar a vida noturna de Búzios.\r\nREFEIÇÃO: O café da manhã está incluso nas diárias.\r\nPETS: Animais de estimação não são permitidos. \r\nACOMODAÇÕES: O Serena Boutique Resort dispõe de unidades com cama queen size, TV a cabo, frigobar e cofre. Algumas possuem jardins privados com jacuzzi. \r\nCOMO CHEGAR: avião + transfer; carro; ônibus saindo principalmente do Rio de Janeiro e São Paulo.",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/6/6669/5d07f74d58272_serena-hotel-boutique.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/6/6669/5d07f74e949d2_serena-hotel-boutique.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/6/6669/5d07f74fe56bf_serena-hotel-boutique.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/6/6669/5d07f75143c4b_serena-hotel-boutique.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/6/6669/5d07f7529232d_serena-hotel-boutique.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 19,
+                "state": "Rio de Janeiro",
+                "street": "Rua Campo de Pouso, Av. Geribá, 1630",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.777219,
+                    "lon": -41.911251
+                }
+            },
+            "tags": [
+                "Hotéis Região dos Lagos",
+                "Praias no Sudeste",
+                "Festival de hoteis - Sudeste"
+            ],
+            "quantityDescriptors": {
+                "maxChildren": 4,
+                "maxAdults": 5,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Amenidade de banho",
+                    "Aparelho TV",
+                    "Aquecimento",
+                    "Ar-Condicionado",
+                    "Banheiro",
+                    "Cofre",
+                    "DVD",
+                    "Frigobar",
+                    "Internet WiFi",
+                    "Secador de cabelo",
+                    "Telefone",
+                    "TV por cabo",
+                    "Varanda / Sacada",
+                    "Berço"
+                ],
+                "name": "Standard",
+                "image": "https://static.hotelurbano.com/reservas/prodaccommodation/22325/5c45cbc5dfecf_serena-hotel-boutique.jpg",
+                "description": "Acomodação com aparelho de TV com canais a cabo, ar-condicionado, banheiro, cofre, berço sujeito a disponibilidade, banheiro, amenidade de banho, telefone, varanda/sacada e frigobar."
+            }
+        },
+        {
+            "sku": "OMN-5321-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Búzios Centro Hotel, possui uma completa estrutura de lazer e serviços. Possui recepcão 24hs pronta para atender aos seus hóspedes com as melhores informações sobre a cidade, passeios, pontos turísticos, bares e restaurantes. As principais atrações da p",
+            "amenities": [
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                }
+            ],
+            "id": "AT2821",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 199.47,
+                "old_price": 176.34,
+                "sku": "OMN-5321-0-0-0-0-0-0",
+                "originalAmountPerDay": 176.34,
+                "amountPerDay": 199.47,
+                "amount": 199.47
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2821/buzios-centro-hotel-capa_20190625155906.jpg",
+            "name": "Buzios Centro Hotel",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/buzios-centro-hotel-OMN-5321",
+            "description": "O Búzios Centro Hotel, possui uma completa estrutura de lazer e serviços. Possui recepcão 24hs pronta para atender aos seus hóspedes com as melhores informações sobre a cidade, passeios, pontos turísticos, bares e restaurantes. As principais atrações da pousada são: Piscina, Estacionamento privado, Internet WIFI cortesia na área da recepção e recepção 24hs.\r\nA pousada Búzios Centro Hotel, possui uma arquitetura única, desenvolvida para contemplar os Hóspedes. Os quartos da mesma categoria podem possuir diferenças de espaço e decoracão entre si, porém respeitando sempre as características de cada tipo de acomodação.\r\nPiscina e Serviço de Bar\r\nAproveite a volta da praia para desfrutar de nosso espaço de piscina, com confortáveis espreguiçadeiras e área para descanso e relaxamento. Contamos ainda com ducha para banho e serviço de bebidas e petiscos.\r\n\r\nA ótima localização do BC Hotel aliada a comodidade de um amplo estacionamento privativo, proporcionam a nossos hóspedes a facilidade de acessar as melhores atrações de Búzios a pé, mantendo seu carro em total segurança no estacionamento da pousada. ",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2821/buzios-centro-hotel-capa_20190625155906.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5321/RoomTypes/139204.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5321/RoomTypes/255475.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5321/RoomTypes/255476.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5321/RoomTypes/255484.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Rua Caiçara 09 - Centro ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7519606239725,
+                    "lon": -41.8802718995172
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Frigobar",
+                    ".",
+                    "Free Wifi",
+                    "Telefone",
+                    "Chuveiro",
+                    "Banheiro privado",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Ar Condicionado",
+                    "120 AC",
+                    "Serviço de Despertar"
+                ],
+                "name": "Apartamento Econômico",
+                "image": "http://media.omnibees.com/Images/5321/RoomTypes/139202.png",
+                "description": "Compactos apartamentos para que quer aproveitar Búzios sem gastar muito. Possui WIFI Grátis, cama de casal, piso de cerâmica, TV LCD, Ar condicionado, ventilador de teto, e frigobar.\r\r"
+            }
+        },
+        {
+            "sku": "OMN-5956-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O hotel Don Quijote fica a menos de 300m de todas as facilidades do comércio local, com seus restaurantes temáticos, boates, boutiques, casas de câmbio, bancos, Praia do canto e é claro a famosa Rua das Pedras.",
+            "amenities": [
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Cabeleireiro a Pedido",
+                    "category": "Lojas"
+                }
+            ],
+            "id": "AT3308",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 296.86,
+                "old_price": 275.81,
+                "sku": "OMN-5956-0-0-0-0-0-0",
+                "originalAmountPerDay": 275.81,
+                "amountPerDay": 296.86,
+                "amount": 296.86
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/3308/hotel-don-quijote-buzios-rj-002_20180322105650.png",
+            "name": "Hotel Don Quijote",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/hotel-don-quijote-OMN-5956",
+            "description": "O hotel Don Quijote Búzios fica a menos de 300m da  famosa Rua das Pedras e de todas as facilidades do comércio local, com seus restaurantes temáticos, boates, boutiques, casas de câmbio, bancos e Praia do Canto. O Hotel Don Quijote Búzios oferece quartos confortáveis com ar-condicionado, frigobar, banheiro privativo e TV. O hotel ainda dispõe de piscina ao ar livre, Wi-Fi e estacionamento gratuitos. Além disso o hotel Don Quijote serve buffet de café da manhã diariamente, e possui balcão de turismo, onde você pode reservar passeios pela cidade de Búzios, de escuna ou de mergulho com snorkel.     ",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/3308/hotel-don-quijote-buzios-rj-002_20180322105650.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5956/Property/184862.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5956/Property/184863.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5956/Property/184864.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5956/Property/184865.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Est. Da Usina, 300 - Centro Armação dos Buzios - RJ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7596629,
+                    "lon": -41.8892973
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Piscina coberta(sazonal)",
+                    ".",
+                    "Cofre",
+                    "Televisão",
+                    "Telefone",
+                    "Ar Condicionado",
+                    "Frigobar",
+                    ".",
+                    "Televisão",
+                    "Telefone",
+                    "Chuveiro",
+                    "Frigobar"
+                ],
+                "name": "Standard",
+                "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/3308/Std_1_20190211120344_20190211120522.jpg",
+                "description": "Este quarto está equipado com ar-condicionado, TV de 21\" e Wi-Fi grátis. Inclui cofre, frigobar e banheiro privativo com kit de banho"
+            }
+        },
+        {
+            "sku": "OMN-7212-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Localizada na praia de Manguinhoss, Búzios Colinas tem o mesmo rostro de Búzios: sofisticação e, ao mesmo tempo, informalidade, pes descalços e descontraimento.​ Orientada para  o oeste, proporciona todas as tardes um maravilhoso pôr do sol, cenário único",
+            "amenities": [
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Buffet",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Privado",
+                    "category": "Comida / Bebida"
+                }
+            ],
+            "id": "AT528676",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 71.96,
+                "old_price": 71.96,
+                "sku": "OMN-7212-0-0-0-0-0-0",
+                "originalAmountPerDay": 71.96,
+                "amountPerDay": 71.96,
+                "amount": 71.96
+            },
+            "hu_free_cancellation": false,
+            "image": "http://media.omnibees.com/Images/7212/Property/297582.JPG",
+            "name": "Pousada Buzios Colinas",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/pousada-buzios-colinas-OMN-7212",
+            "description": "Localizada na praia de Manguinhoss, Búzios Colinas tem o mesmo rostro de Búzios: sofisticação e, ao mesmo tempo, informalidade, pes descalços e descontraimento.​ Orientada para  o oeste, proporciona todas as tardes um maravilhoso pôr do sol, cenário único e deslumbrante. Na maioria das vezes o vento vem do leste formando um porto natural sem ondas e uma praia com água calma ideal para os amantes da fotografia, os esportes aquáticos e a natureza. Venha desfrutar todas as sensações que esta vila de pescadores, que encanta visitantes e moradores, de natureza exuberante, praias lindas, brisa maninha constante, aida tem para descobrir.",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7212/Property/297582.JPG"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7212/Property/297572.JPG"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7212/Property/297575.JPG"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7212/Property/297576.JPG"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7212/Property/297577.JPG"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "R. dos Pescadores, 57 Campo de Pouso, Búzios - RJ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7557962,
+                    "lon": -41.887857
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Ar Condicionado",
+                    "Telefone",
+                    "Varanda",
+                    "Frigobar",
+                    "Chuveiro",
+                    "Banheiro privado",
+                    "Televisão"
+                ],
+                "name": "Quarto Duplo",
+                "image": "http://media.omnibees.com/Images/7212/RoomTypes/297601.JPG",
+                "description": "Suíte com cama de casal, ar-condicionado, frigobar, TV a cabo e chuveiro quente"
+            }
+        },
+        {
+            "sku": "OMN-1607-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "A pouco mais de duas horas de carro da cidade do Rio de Janeiro.Perto da famosa Rua das Pedras e das muitas praias que rodeiam a península de Búzios. PortoBay Búzios é um boutique hotel com 21 suítes espaçosas envolvidas por uma floresta tropical, loca",
+            "amenities": [
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Fotocópias",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Aluguel de bicicletas",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Massagens a Pedido",
+                    "category": "Piscina e comodidades de bem-estar"
+                }
+            ],
+            "id": "AT1386",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 679.98,
+                "old_price": 509.99,
+                "sku": "OMN-1607-0-0-0-0-0-0",
+                "originalAmountPerDay": 509.99,
+                "amountPerDay": 679.98,
+                "amount": 679.98
+            },
+            "hu_free_cancellation": true,
+            "image": "http://media.omnibees.com/Images/1607/Property/67863.jpg",
+            "name": "PortoBay Búzios Hotel Boutique",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/portobay-buzios-hotel-boutique-OMN-1607",
+            "description": "A pouco mais de duas horas de carro da cidade do Rio de Janeiro.\r\nPerto da famosa Rua das Pedras e das muitas praias que rodeiam a península de Búzios. \r\n\r\nPortoBay Búzios é um boutique hotel com 21 suítes espaçosas envolvidas por uma floresta tropical, localizado no coração da característica e especial cidade de Búzios. O café da manhã é servido à beira da piscina. \r\n\r\nO hotel fica bem perto das praias que rodeiam a península e da famosa Rua das Pedras. Encontrará aqui uma variedade de comércio tradicional, onde pode apreciar as diversas galerias de arte, comprar artesanato típico e desfrutar dos prazeres da mesa em restaurantes fantásticos..",
+            "stars": 5,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1607/Property/67863.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1607/RoomTypes/115746.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1607/RoomTypes/67873.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1607/RoomTypes/115741.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1607/RoomTypes/67875.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Rua 15, nº10, Armação dos Búzios ",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.755154,
+                    "lon": -41.881682
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Serviço de Quarto 24 horas",
+                    "Serviço de limpeza diário",
+                    "Artigos para Banheiro",
+                    "Varanda",
+                    "Tv com controle Remoto",
+                    "Telefone",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Banheiro privado",
+                    "Frigobar",
+                    "Copos",
+                    "Roupão de Banho",
+                    "Chinelos de quarto",
+                    "TV a Cabo",
+                    "Cofre",
+                    "Piscina infantil",
+                    "Chuveiro",
+                    "Internet Wireless",
+                    ".",
+                    "Chinelos de quarto",
+                    "Secador de cabelo",
+                    "Apartamento para não Fumantes",
+                    "Ar Condicionado"
+                ],
+                "name": "SUÍTE JUNIOR",
+                "image": "http://media.omnibees.com/Images/1607/RoomTypes/67870.jpg",
+                "description": "40 m2 \r\rHall de entrada; Quarto com cama “queen”, almofadas de plumas; Banheiro privativo, secador de cabelo; Varanda com mesa e cadeiras; Mesa de apoio, TV por satélite, leitor de DVD/CD; Ar condicionado Split.\rAmenities; Roupão; Chinelos “havaianas”; \tCofre; Frigobar; Chaleira; Serviço de quartos 13h às 20h30; Acesso gratuito Wi-Fi.\r\r"
+            }
+        },
+        {
+            "sku": "LGPKG-852254-0",
+            "isPackage": true,
+            "name": "Pacote Búzios + Arraial do Cabo - 2020",
+            "url": "https://www.hurb.com/pacote/buzios-arraial-do-cabo-aereo-hotel-aluguel-de-carro/852254",
+            "smallDescription": "Parcele no Boleto",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo:&nbsp;Passagem a&eacute;rea da cidade de origem para Rio de Janeiro e do Rio de Janeiro para a cidade origem.\r\n\r\nHospedagem:&nbsp;\r\n\r\n- Em B&uacute;zios&nbsp;no Costa do Sol ou hotel de mesma categoria, padr&atilde;o 3 estrelas - com caf&eacute; da manh&atilde;.\r\n\r\n- Em Arraial&nbsp;na Pousada Para&iacute;so do Atl&acirc;ntico ou&nbsp;hotel de mesma categoria, padr&atilde;o 3 estrelas - com caf&eacute; da manh&atilde;.\r\n\r\nAluguel de carro:&nbsp;Aluguel&nbsp;de&nbsp;carro&nbsp;econ&ocirc;mico com KM Livre e seguro CDW (taxas n&atilde;o inclusas).\r\n\r\n**Para o aluguel do carro, &eacute; necess&aacute;rio que o viajante tenha, no m&iacute;nimo, 25 anos de idade e possuir CNH v&aacute;lida e definitiva. Taxas e impostos locais do aluguel de carro&nbsp;n&atilde;o&nbsp;est&atilde;o inclusas e dever&atilde;o ser pagas diretamente na locadora.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/02/27/18/08/Pacote_B__zios___Arraial_do_Cabo___ID_852254.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/10/20/armacao_dos_buzios_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/10/20/armacao_dos_buzios_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/10/20/armacao_dos_buzios_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/10/20/armacao_dos_buzios_004__01_.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Búzios",
+                "geoLocation": {
+                    "lat": -22.774787,
+                    "lon": -41.92319
+                }
+            },
+            "tags": [
+                "Boleto Parcelado",
+                "Boleto parcelado - Pacotes Nacional",
+                "Baixa temporada Boleto",
+                "Boleto 2020"
+            ],
+            "price": {
+                "oldPrice": 2718,
+                "currentPrice": 2718,
+                "sku": "LGPKG-852254-0",
+                "originalAmount": 2718,
+                "amountPerDay": 543.6,
+                "amount": 2718
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 5,
+                "maxPeople": 1
+            },
+            "id": "852254",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Aluguel de carro",
+                    "category": "Aluguel de carro"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "OMN-2307-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": ". A cidade une tudo o que a sua próxima viagem precisa para ser inesquecível: sombra, água fresca, um visual fascinante e os ótimos serviços do La Chimère Búzios Essence.",
+            "amenities": [
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Fotocópias",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Fax",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Aluguel de bicicletas",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                }
+            ],
+            "id": "AT391",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 317.13,
+                "old_price": 268.75,
+                "sku": "OMN-2307-0-0-0-0-0-0",
+                "originalAmountPerDay": 268.75,
+                "amountPerDay": 317.13,
+                "amount": 317.13
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/391/la-chimere-buzios-essence-buzios-rj-_001_12_20170818160733.jpg",
+            "name": "La Chimère Búzios Essence",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/la-chimere-buzios-essence-OMN-2307",
+            "description": "Búzios, localizado na região dos lagos do Rio de Janeiro, é o destino preferido de milhares de turistas. A cidade une tudo o que a sua próxima viagem precisa para ser inesquecível: sombra, água fresca, um visual fascinante e os ótimos serviços do La Chimère Búzios Essence. Além da estrutura completa de um hotel quatro estrelas, com piscina, um delicioso café da manhã para iniciar o dia com o pé direito, snack bar com várias opções de drinks e petiscos, o La Chimère Búzios Essence ainda possui ótima localização. Com apenas 12 minutos de caminhada, aproximadamente, você chega à famosa Rua das Pedras -  onde encontrará muitas opções de restaurantes, lojas e bares – e às maravilhosas praias. Não resta dúvidas que Búzios guarda momentos incríveis para toda a sua família. Então corre para garantir a sua reserva!\t\t",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/391/la-chimere-buzios-essence-buzios-rj-_001_12_20170818160733.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/391/la-chimere-buzios-essence-buzios-rj-_001_6_20170818160834.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/391/la-chimere-buzios-essence-buzios-rj-_001_9_20170818160851.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/391/la-chimere-buzios-essence-buzios-rj-_001_10_20170818160916.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/391/la-chimere-buzios-essence-buzios-rj-_001_5_20170818160931.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Praça Eugênio Honold, 36 Ossos",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.74694,
+                    "lon": -41.88056
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Telefone",
+                    "120 DC",
+                    "Internet Wireless",
+                    "Telefone com linha directa",
+                    "Berço",
+                    "Tv com controle Remoto",
+                    "Frigobar",
+                    "Serviço de Quarto 24 horas",
+                    "Serviço de limpeza diário",
+                    "Mini-Bar",
+                    "Serviço de Despertar",
+                    "Televisão",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "TV a Cabo",
+                    "Artigos para Banheiro",
+                    "Banheiro privado",
+                    "220 DC",
+                    ".",
+                    "Secador de cabelo",
+                    "Ar Condicionado"
+                ],
+                "name": "DUPLO SUPERIOR CASAL",
+                "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/391/la-chimere-buzios-essence-buzios-rj-_001_15_20170818160243.jpg",
+                "description": "Apartamento Superior: Possui aproximadamente 18m², decoração diferenciada, equipado com cama King Size (2.00 x 1.88), ar condicionado, TV LCD 32 polegadas, Internet wi-fi, telefone, frigobar, secador de cabelos e cofre. Não acomoda cama extra ou berço."
+            }
+        },
+        {
+            "sku": "OMN-6795-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Latitud Buzios Hotel espera por você para hospedá-lo em uma das cidades mais atraentes e turísticas do Brasil.Localizado em um dos pontos mais estratégicos da cidade, devido à sua proximidade com a reconhecida rua do centro, Rua Das Pedras (600 metros",
+            "amenities": [
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                }
+            ],
+            "id": "AT525091",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 195.51,
+                "old_price": 195.51,
+                "sku": "OMN-6795-0-0-0-0-0-0",
+                "originalAmountPerDay": 195.51,
+                "amountPerDay": 195.51,
+                "amount": 195.51
+            },
+            "hu_free_cancellation": false,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/525091/latitud-buzios-hotel-001_20180815113745.png",
+            "name": "Latitud Buzios Hotel",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/latitud-buzios-hotel-OMN-6795",
+            "description": "O Latitud Buzios Hotel espera por você para hospedá-lo em uma das cidades mais atraentes e turísticas do Brasil.\r\n\r\nLocalizado em um dos pontos mais estratégicos da cidade, devido à sua proximidade com a reconhecida rua do centro, Rua Das Pedras (600 metros planos), e várias praias como Forno (800 m) e Brava (1100 m), permite que você combine a tranquilidade, o relaxamento e a diversão.\r\nCada espaço é projetado para proporcionar o maior conforto ao hóspede, é por isso que o seu particular estilo arquitetônico cria um espaço ideal para desfrutar das melhores férias, enquanto consegue o melhor descanso.\r\nCom design exclusivo, o hotel possui um jardim central, algo quase único em Búzios, já que todos os hotéis estão localizados em morros. Seus jardins e áreas comuns espaçosas permitem que você possa desfrutar de sua estadia no hotel.",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/525091/latitud-buzios-hotel-001_20180815113745.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6795/Property/256644.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6795/Property/256647.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6795/Property/256648.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6795/Property/256652.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Avenida do Forno s/n Quadra N, lote 3 e 4",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.7583441,
+                    "lon": -41.8810107
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    ".",
+                    "Acesso a internet",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Piscina infantil",
+                    "Banheiro privado",
+                    "Cofre",
+                    "Artigos para Banheiro",
+                    "Ar Condicionado",
+                    "Telefone",
+                    "Frigobar",
+                    "Apartamento para não Fumantes"
+                ],
+                "name": "Duplo com cafe da manha",
+                "image": "http://media.omnibees.com/Images/6795/RoomTypes/365154.jpg",
+                "description": "Este quarto moderno dispõe de ar-condicionado, TV LCD e frigobar. Também inclui WiFi gratuito."
+            }
+        },
+        {
+            "sku": "OMN-2363-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Pousada dos Búzios é a mais nova Pousada da nobre área do Alto do Humaitá, no centro de Armação dos Búzios. Está localizada frente à entrada da Pousada Byblos e a aproximadamente 500 metros da Rua das Pedras. Próximas estão as praias da Armação, Orla Bard",
+            "amenities": [
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                }
+            ],
+            "id": "AT596",
+            "price": {
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "current_price": 522.16,
+                "old_price": 522.16,
+                "sku": "OMN-2363-0-0-0-0-0-0",
+                "originalAmountPerDay": 522.16,
+                "amountPerDay": 522.16,
+                "amount": 522.16
+            },
+            "hu_free_cancellation": true,
+            "image": "http://media.omnibees.com/Images/2363/Property/76937.jpg",
+            "name": "Pousada Dos Búzios",
+            "url": "https://www.hurb.com/hoteis/armacao-dos-buzios/pousada-dos-buzios-OMN-2363",
+            "description": "Pousada dos Búzios é a mais nova Pousada da nobre área do Alto do Humaitá, no centro de Armação dos Búzios. Está localizada frente à entrada da Pousada Byblos e a aproximadamente 500 metros da Rua das Pedras. Próximas estão as praias da Armação, Orla Bardot - 100 metros, Praia dos Ossos - 400 metros, Azeda e Azedinha - 600 metros. Na Orla Bardot, existe a ótima opção de transporte de aquataxi e são oferecidos os pacotes com traslados regulares a 3 diferentes praias diariamente. É modernamente equipada com fechaduras e cofres eletrônicos de última geração, Televisores LCD 32’, camas Box, ar condicionados Split, além de Minibares, dois telefones, secador de cabelos e Varandas. Tem possibilidade de apartamentos casal, Twin, triplos e quádruplos, além de poder conjugar diversas unidades. Temos as categorias Standard e Luxo. Estes últimos são maiores e vários contam com hidromassagem. A Pousada possui Wi Fi, nas areas comuns e estacionamento gratis. Todos os serviços de opcionais como locação de veículos, motos, bicicletas, passeios diversos, cursos de mergulho, pacotes de golfe também podem ser contratados na recepção. A administração é ligada a Byblos Pousada. Por este motivo, oferecemos aos hóspedes a Meia pensão em ambiente com vista ao mar na Byblos. A Pousada dos Búzios é mais uma integrante do Búzios Class, tendo assim os mesmos pacotes oferecidos ha anos por este seleto grupo. \r\n",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/2363/Property/76937.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/2363/Property/71019.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/2363/Property/76938.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/2363/Property/139279.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/2363/Property/139280.jpg"
+                }
+            ],
+            "address": {
+                "city": "Armação dos Búzios",
+                "country": "Brasil",
+                "id_atlas_city": null,
+                "id_atlas_country": null,
+                "id_atlas_neighborhood": null,
+                "id_atlas_state": null,
+                "id_city": 6850,
+                "id_country": 1,
+                "id_state": 33,
+                "state": "Rio de Janeiro",
+                "street": "Rua Alto do Humaitá 11 Lote 2 Quadra E Centro",
+                "zipcode": "28950000",
+                "geoLocation": {
+                    "lat": -22.75306,
+                    "lon": -41.88306
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Frigobar",
+                    "Serviço de limpeza diário",
+                    "Cofre",
+                    "Serviço de Quarto 24 horas",
+                    ".",
+                    "Secador de cabelo",
+                    "Ar Condicionado"
+                ],
+                "name": "STANDARD VISTA JARDIM",
+                "image": "http://media.omnibees.com/Images/2363/RoomTypes/71021.jpg",
+                "description": "É equipado com TV LCD 32″, ar condicionado split, frigobar, telefone, secador de cabelo e fechadura e cofre eletrônicos. Todo o conforto e tranquilidade durante sua estada no balneário mais famoso do Rio de Janeiro.\r\r\"ACEITAMOS ANIMAIS DE ESTIMAÇÃO DE PEQUENO PORTE (ATÉ 07 KG) EM APARTAMENTOS ESPECIFICOS E SOMENTE 01 POR APARTAMENTO, COM CUSTO ADICIONAL \"\r\r "
+            }
+        }
+    ],
+    "pagination": {
+        "count": 13,
+        "firstPage": "http://searchapi/v2/search?q=buzios&page=1",
+        "nextPage": "http://searchapi/v2/search?q=buzios&page=2",
+        "previousPage": null,
+        "lastPage": "http://searchapi/v2/search?q=buzios&page=13"
+    }
+}
+

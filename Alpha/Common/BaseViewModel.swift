@@ -13,8 +13,13 @@ import os.log
 class BaseViewModel: NSObject {
     /// Variable to enable or disable view's logs
     static var logEnabled: Bool = true
+    let provider: AlphaAPI
 
-    override init() {
+    let loading = ActivityIndicator()
+    let headerLoading = ActivityIndicator()
+
+    init(provider: AlphaAPI) {
+        self.provider = provider
         super.init()
         if BaseViewModel.logEnabled {
             os_log("🧠 👶 %@", log: Logger.lifecycleLog(), type: .info, "\(self)")

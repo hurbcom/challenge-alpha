@@ -61,6 +61,12 @@
 		31B00F8C235A6CD200AD62B8 /* PaddingUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F8B235A6CD200AD62B8 /* PaddingUILabel.swift */; };
 		31CBD336235D027A0027444E /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CBD334235D027A0027444E /* RxMoya.framework */; };
 		31CBD338235D027A0027444E /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CBD335235D027A0027444E /* Moya.framework */; };
+		31CBD33C235D03310027444E /* HurbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD33B235D03310027444E /* HurbAPI.swift */; };
+		31CBD341235D0A230027444E /* Hurb.json in Resources */ = {isa = PBXBuildFile; fileRef = 31CBD340235D0A230027444E /* Hurb.json */; };
+		31CBD343235D15AA0027444E /* AlphaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD342235D15AA0027444E /* AlphaAPI.swift */; };
+		31CBD345235D192B0027444E /* AlphaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD344235D192B0027444E /* AlphaNetworkManager.swift */; };
+		31CBD349235D3C430027444E /* RxActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD348235D3C430027444E /* RxActivityIndicator.swift */; };
+		31CBD34B235D524E0027444E /* LoadingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD34A235D524E0027444E /* LoadingUIView.swift */; };
 		31CF025123577D5B008C92B0 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025023577D5B008C92B0 /* FeedSection.swift */; };
 		31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025323577D8E008C92B0 /* FeedSectionType.swift */; };
 		31CF025623577E42008C92B0 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025523577E42008C92B0 /* Identifiers.swift */; };
@@ -157,6 +163,12 @@
 		31B00F95235B61CF00AD62B8 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		31CBD334235D027A0027444E /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
 		31CBD335235D027A0027444E /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		31CBD33B235D03310027444E /* HurbAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAPI.swift; sourceTree = "<group>"; };
+		31CBD340235D0A230027444E /* Hurb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Hurb.json; sourceTree = "<group>"; };
+		31CBD342235D15AA0027444E /* AlphaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaAPI.swift; sourceTree = "<group>"; };
+		31CBD344235D192B0027444E /* AlphaNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaNetworkManager.swift; sourceTree = "<group>"; };
+		31CBD348235D3C430027444E /* RxActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxActivityIndicator.swift; sourceTree = "<group>"; };
+		31CBD34A235D524E0027444E /* LoadingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUIView.swift; sourceTree = "<group>"; };
 		31CF025023577D5B008C92B0 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
 		31CF025323577D8E008C92B0 /* FeedSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionType.swift; sourceTree = "<group>"; };
 		31CF025523577E42008C92B0 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -268,6 +280,7 @@
 				3141D6D12353675100A922DF /* Scenes */,
 				3141D6D02353674A00A922DF /* Resources */,
 				3141D6CF2353674400A922DF /* Theme */,
+				31CBD346235D3C0B0027444E /* Third Party */,
 				3141D6C8235366A300A922DF /* Info.plist */,
 			);
 			path = Alpha;
@@ -344,6 +357,7 @@
 				31B00F84235A318E00AD62B8 /* BaseCollectionViewCell.swift */,
 				31B00F8B235A6CD200AD62B8 /* PaddingUILabel.swift */,
 				310CEA68235B83670022EFF5 /* GradientUIImage.swift */,
+				31CBD34A235D524E0027444E /* LoadingUIView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -483,9 +497,13 @@
 		31537E1E2355FFCC0011DBD4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				31CBD33D235D08E70027444E /* Stubbed Responses */,
 				31537E1F235600460011DBD4 /* APIRouter.swift */,
 				31537E2123560BF80011DBD4 /* NetworkConstants.swift */,
 				31537E2323560CDF0011DBD4 /* APIClient.swift */,
+				31CBD33B235D03310027444E /* HurbAPI.swift */,
+				31CBD342235D15AA0027444E /* AlphaAPI.swift */,
+				31CBD344235D192B0027444E /* AlphaNetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -507,6 +525,30 @@
 				310CEA6A235BA8980022EFF5 /* PackageCollectionViewCell.swift */,
 			);
 			path = "Collection View cells";
+			sourceTree = "<group>";
+		};
+		31CBD33D235D08E70027444E /* Stubbed Responses */ = {
+			isa = PBXGroup;
+			children = (
+				31CBD340235D0A230027444E /* Hurb.json */,
+			);
+			path = "Stubbed Responses";
+			sourceTree = "<group>";
+		};
+		31CBD346235D3C0B0027444E /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				31CBD347235D3C2B0027444E /* RxActivityIndicator */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		31CBD347235D3C2B0027444E /* RxActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				31CBD348235D3C430027444E /* RxActivityIndicator.swift */,
+			);
+			path = RxActivityIndicator;
 			sourceTree = "<group>";
 		};
 		31CF025223577D77008C92B0 /* Enumerations */ = {
@@ -658,6 +700,7 @@
 			files = (
 				3141D6C4235366A300A922DF /* Assets.xcassets in Resources */,
 				31537E05235525050011DBD4 /* Localizable.strings in Resources */,
+				31CBD341235D0A230027444E /* Hurb.json in Resources */,
 				3141D6FA2353692000A922DF /* LaunchScreen.storyboard in Resources */,
 				31537DD3235383390011DBD4 /* environment.plist in Resources */,
 			);
@@ -709,7 +752,7 @@
 			);
 			inputPaths = (
 				"${PROJECT_DIR}/${TARGET_NAME}/Resources/en.lproj/Localizable.strings",
-				"${PROJECT_DIR}/${TARGET_NAME}/Resources/Images.xcassets",
+				"${PROJECT_DIR}/${TARGET_NAME}/Resources/Assets.xcassets",
 				"$(ALPHA_ENVIRONMENT_DIR)/Current/environment.plist",
 			);
 			name = SwiftGen;
@@ -876,8 +919,10 @@
 				31537E132355489B0011DBD4 /* AppCoordinator.swift in Sources */,
 				31537E27235628B00011DBD4 /* SearchParams.swift in Sources */,
 				31537E20235600460011DBD4 /* APIRouter.swift in Sources */,
+				31CBD349235D3C430027444E /* RxActivityIndicator.swift in Sources */,
 				31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */,
 				31B00F83235A30E900AD62B8 /* HotelsDataSource.swift in Sources */,
+				31CBD33C235D03310027444E /* HurbAPI.swift in Sources */,
 				31B00F85235A318E00AD62B8 /* BaseCollectionViewCell.swift in Sources */,
 				31B00F7E235A294500AD62B8 /* BaseTableViewCell.swift in Sources */,
 				31537DFD2353A9DC0011DBD4 /* Logger.swift in Sources */,
@@ -889,6 +934,7 @@
 				31537E0F235548550011DBD4 /* Coordinator.swift in Sources */,
 				31B00F81235A2C7300AD62B8 /* StarTableViewCell.swift in Sources */,
 				3141D6BB235366A100A922DF /* AppDelegate.swift in Sources */,
+				31CBD34B235D524E0027444E /* LoadingUIView.swift in Sources */,
 				31537DFB2353A9610011DBD4 /* BaseViewModel.swift in Sources */,
 				31537E172355D4C50011DBD4 /* Deal.swift in Sources */,
 				31537DF7235394790011DBD4 /* Environment.swift in Sources */,
@@ -896,6 +942,7 @@
 				31537E292356500C0011DBD4 /* HurbResponse.swift in Sources */,
 				310CEA6B235BA8980022EFF5 /* PackageCollectionViewCell.swift in Sources */,
 				31537DF92353A9130011DBD4 /* ViewModelType.swift in Sources */,
+				31CBD343235D15AA0027444E /* AlphaAPI.swift in Sources */,
 				310CEA69235B83670022EFF5 /* GradientUIImage.swift in Sources */,
 				31B00F8C235A6CD200AD62B8 /* PaddingUILabel.swift in Sources */,
 				310CEA72235CCCDC0022EFF5 /* FeedViewController.swift in Sources */,
@@ -905,6 +952,7 @@
 				31537DFF2353AAA80011DBD4 /* BaseViewController.swift in Sources */,
 				31B00F8A235A5DCB00AD62B8 /* StarTableViewHeader.swift in Sources */,
 				31537E15235549670011DBD4 /* FeedCoordinator.swift in Sources */,
+				31CBD345235D192B0027444E /* AlphaNetworkManager.swift in Sources */,
 				31CF025823579CD6008C92B0 /* LocalizedStrings.swift in Sources */,
 				310CEA6F235BAC610022EFF5 /* PackageDataSource.swift in Sources */,
 				310CEA6D235BA9060022EFF5 /* PackageTableViewCell.swift in Sources */,

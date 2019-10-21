@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         guard let window = window else { fatalError("Window was nil") }
 
-        let appCoordinator = AppCoordinator(window: window)
+        let appCoordinator = AppCoordinator(window: window, provider: AlphaNetworkManager.shared)
         appCoordinator.start()
         self.appCoordinator = appCoordinator
         return true
