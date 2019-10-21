@@ -7,11 +7,22 @@
 //
 
 import UIKit
+import os.log
 
+/// Base class for all the project's Collection View Cells
 class BaseCollectionViewCell: UICollectionViewCell {
+    // MARK: - Properties
+
+    static var logEnabled: Bool = true
+
+    // MARK: - Lifecycle
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        if BaseCollectionViewCell.logEnabled {
+            os_log("🏻 👶 %@", log: Logger.lifecycleLog(), type: .info, "\(self)")
+        }
+
         setupUI()
         setupConstraints()
     }
@@ -20,15 +31,22 @@ class BaseCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    deinit {
+        if BaseCollectionViewCell.logEnabled {
+            os_log("🔲 ⚰️ %@", log: Logger.lifecycleLog(), type: .info, "\(self)")
+        }
+    }
+
+    // MARK: - View methods
+
+    /// Setup the view's UI
     func setupUI() {
         self.layer.masksToBounds = true
         updateUI()
     }
-
-    func setupConstraints() {
-
-    }
-
+    /// Setup the view's Constraints
+    func setupConstraints() {}
+    /// Is called when the view should be updated
     func updateUI() {
         setNeedsDisplay()
     }

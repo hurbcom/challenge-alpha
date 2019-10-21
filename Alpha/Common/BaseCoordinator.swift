@@ -6,8 +6,10 @@
 //  Copyright © 2019 Hurb. All rights reserved.
 //
 
+/// The coordinator that holds all coordinators
 class BaseCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
+    /// Is called when the coordinator is completed
     var isCompleted: (() -> ())?
 
     func start() {

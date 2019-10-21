@@ -12,12 +12,16 @@ import RxRelay
 
 /// Base class for all View Controllers of the project
 class BaseViewController: UIViewController {
+    // MARK: - Properties
+
     /// Variable to enable or disable view's logs
     static var logEnabled: Bool = true
     /// Controller's View Model
     var viewModel: BaseViewModel?
 
     let isLoading = BehaviorRelay(value: false)
+
+    // MARK: - Lifecycle
 
     /**
     Initializes a new View Controller with View Model and logging

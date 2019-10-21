@@ -9,7 +9,10 @@
 import UIKit
 import os.log
 
+/// Base class for all the project's Table View Cells
 class BaseTableViewCell: UITableViewCell {
+    // MARK: - Properties
+
     static var logEnabled: Bool = true
 
     var isSelection = false
@@ -18,6 +21,9 @@ class BaseTableViewCell: UITableViewCell {
             setSelected(isSelected, animated: true)
         }
     }
+
+    // MARK: - Lifecycle
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         if BaseTableViewCell.logEnabled {
@@ -44,6 +50,9 @@ class BaseTableViewCell: UITableViewCell {
         backgroundColor = selected ? selectionColor : .clear
     }
 
+    // MARK: - View methods
+
+    /// Setup the view's UI
     func setupUI() {
         layer.masksToBounds = true
         selectionStyle = .none
@@ -51,9 +60,9 @@ class BaseTableViewCell: UITableViewCell {
 
         updateUI()
     }
-
+    /// Setup the view's Constraints
     func setupConstraints() {}
-
+    /// Is called when the view should be updated
     func updateUI() {
         setNeedsDisplay()
     }

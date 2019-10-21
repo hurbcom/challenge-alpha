@@ -9,7 +9,9 @@
 import UIKit
 import SnapKit
 
-public class LoadingUIView: UIView {
+/// A Custom UIView to be shown before content loads
+class LoadingUIView: UIView {
+    // MARK: - Properties
 
     var loadingImage: UIImageView = {
         let view = UIImageView(frame: .zero)
@@ -36,23 +38,28 @@ public class LoadingUIView: UIView {
         return view
     }()
 
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        makeUI()
+        setupUI()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func makeUI() {
+    // MARK: - View methods
+
+    /// Setup the view's UI
+    func setupUI() {
         stackView.addArrangedSubview(loadingImage)
         stackView.addArrangedSubview(loadingLabel)
         self.addSubview(stackView)
-        updateUI()
+        setupConstraints()
     }
-
-    func updateUI() {
+    /// Setup the view's Constraints
+    func setupConstraints() {
         setNeedsDisplay()
 
         loadingImage.snp.makeConstraints { (make) in
@@ -65,10 +72,6 @@ public class LoadingUIView: UIView {
             make.left.equalToSuperview().offset(46.0)
             make.right.equalToSuperview().offset(-46.0)
         }
-    }
-
-    func getCenter() -> CGPoint {
-        return convert(center, from: superview)
     }
 }
 
