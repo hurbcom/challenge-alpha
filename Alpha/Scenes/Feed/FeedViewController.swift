@@ -29,7 +29,7 @@ class FeedViewController: BaseViewController {
             case .Package(let packages):
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: feedSection.identifier)
                 as? PackageTableViewCell else { fatalError("Unknown identifier") }
-                cell.currentDataSource = PackageDataSource(with: packages, width: Float(UIScreen.main.bounds.width))
+                cell.currentDataSource = PackageDataSource(with: packages, width: UIScreen.main.bounds.width)
                 return cell
             }
         })

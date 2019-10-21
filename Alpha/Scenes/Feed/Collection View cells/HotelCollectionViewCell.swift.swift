@@ -18,7 +18,20 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             titleLabel.text = hotel.name
             priceLabel.text = "\(hotel.price.symbol) \(hotel.price.amount)"
             descriptionLabel.text = "\(hotel.address.city) | \(hotel.address.state)"
-            amenitiesLabel.text = "\(L10n.Feed.Cell.amenities): \(hotel.amenities[0].name), \(hotel.amenities[1].name), \(hotel.amenities[2].name)..."
+            var amenitiesText: String = "\(L10n.Feed.Cell.amenities): "
+
+            for (idx, element) in hotel.amenities.enumerated() {
+                if idx > 2 {
+                    break
+                }
+                if idx == hotel.amenities.startIndex {
+                    amenitiesText = amenitiesText + " \(element.name)"
+                } else if idx != hotel.amenities.endIndex-1 {
+                    amenitiesText = amenitiesText + ", \(element.name)"
+                }
+            }
+
+            amenitiesLabel.text = amenitiesText
 
             guard let imageURL = hotel.image else { return }
             guard var comps = URLComponents(url: imageURL,
@@ -144,7 +157,6 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             make.top.equalTo(descriptionLabel.snp.bottom).offset(5)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
-            make.bottom.equalToSuperview().priority(999)
         }
     }
 

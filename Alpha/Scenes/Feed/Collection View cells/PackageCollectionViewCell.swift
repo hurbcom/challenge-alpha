@@ -26,7 +26,21 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
 
             if (package.amenities.filter({ $0.planeIncluded }).count >= 1) {
                 flightLabel.isHidden = false
+            } else {
+                flightLabel.isHidden = true
             }
+        }
+    }
+
+    var widthConstrant: CGFloat? {
+        didSet {
+//            guard let widthConstrant = widthConstrant else { return }
+//            imageView.snp.remakeConstraints { (make) in
+//                make.top.equalToSuperview()
+//                make.left.equalToSuperview()
+//                make.width.equalTo(widthConstrant)
+//                make.height.equalTo(310).priority(999)
+//            }
         }
     }
 
@@ -79,7 +93,7 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 1
-        label.isHidden = true
+        label.isHidden = false
         label.text = L10n.Feed.Cell.planeIncluded
         label.layer.cornerRadius = 14
         label.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMinYCorner]
@@ -100,21 +114,24 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
     }
 
     override func setupConstraints() {
+        // Aspect Ratio is original height / width
+        let imageAspec = (307.0 / 335.0)
+
         imageView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.width.equalTo(300)
-            make.height.equalTo(310).priority(999)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(UIScreen.main.bounds.width - 40)
+            make.height.equalTo(imageView.snp.width).multipliedBy(imageAspec)
         }
 
         descriptionLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(imageView.snp.bottom).offset(-10)
+            make.bottom.equalTo(imageView.snp.bottom).offset(-10).priority(900)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
 
         titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(descriptionLabel.snp.top).offset(-5)
+            make.bottom.equalTo(descriptionLabel.snp.top).offset(-5).priority(800)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
@@ -122,11 +139,11 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         priceLabel.snp.makeConstraints { (make) in
             make.top.equalTo(imageView.snp.bottom)
             make.trailing.leading.equalTo(imageView)
-            make.bottom.equalTo(contentView.snp.bottom).priority(999)
+//            make.bottom.equalTo(contentView.snp.bottom).priority(999)
         }
 
         flightLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(flightLabel.snp.top)
+            make.top.equalTo(imageView.snp.top)
             make.leading.equalTo(imageView.snp.leading)
         }
 
@@ -136,14 +153,11 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         super.prepareForReuse()
 
         package = nil
-
-        // reset (hide) the checkmark label
-        flightLabel.isHidden = true
         titleLabel.text = nil
         priceLabel.text = nil
+        flightLabel.isHidden = false
         descriptionLabel.text = nil
         imageView.image = nil
-        flightLabel.text = nil
 
     }
 }

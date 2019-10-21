@@ -12,7 +12,7 @@ import UIKit
 class PackageDataSource: NSObject {
     // MARK: - Properties
     var items: [Deal] = []
-    var width: Float
+    var width: CGFloat
 
     // MARK: - Lifecycle
 
@@ -24,7 +24,7 @@ class PackageDataSource: NSObject {
 
     - Returns: An initialized data source object.
     */
-    init(with items: [Deal], width: Float) {
+    init(with items: [Deal], width: CGFloat) {
         self.items = items
         self.width = width
     }
@@ -43,6 +43,7 @@ extension PackageDataSource: UICollectionViewDataSource {
                 fatalError("Unknown identifier")
         }
         cell.package = items[indexPath.row]
+        cell.widthConstrant = width
         return cell
     }
 }
@@ -51,7 +52,6 @@ extension PackageDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                                 layout collectionViewLayout: UICollectionViewLayout,
                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
-                let kWhateverHeightYouWant = 251
-                return CGSize(width: collectionView.bounds.size.width, height: CGFloat(kWhateverHeightYouWant))
+                return CGSize(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.width * (350 / 377)))
     }
 }
