@@ -6,6 +6,7 @@
 //  Copyright © 2019 Hurb. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Kingfisher
 
@@ -16,7 +17,9 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         didSet {
             guard let hotel = hotel else { return }
             titleLabel.text = hotel.name
-            priceLabel.text = "\(hotel.price.symbol) \(hotel.price.amount)"
+            currencyFormatter.currencySymbol = hotel.price.symbol
+
+            priceLabel.text = currencyFormatter.string(from: NSNumber(value: hotel.price.amount))
             descriptionLabel.text = "\(hotel.address.city) | \(hotel.address.state)"
             var amenitiesText: String = "\(L10n.Feed.Cell.amenities): "
 
@@ -45,6 +48,15 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             }
         }
     }
+
+    private let currencyFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .currency
+        // Localize
+        formatter.locale = Locale.current
+        return formatter
+    }()
 
     var imageView: GradientUIImage = {
         let view = GradientUIImage(frame: .zero)

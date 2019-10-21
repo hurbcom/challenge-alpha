@@ -12,7 +12,6 @@ import UIKit
 class PackageDataSource: NSObject {
     // MARK: - Properties
     var items: [Deal] = []
-    var width: CGFloat
 
     // MARK: - Lifecycle
 
@@ -24,9 +23,8 @@ class PackageDataSource: NSObject {
 
     - Returns: An initialized data source object.
     */
-    init(with items: [Deal], width: CGFloat) {
+    init(with items: [Deal]) {
         self.items = items
-        self.width = width
     }
 }
 
@@ -43,7 +41,6 @@ extension PackageDataSource: UICollectionViewDataSource {
                 fatalError("Unknown identifier")
         }
         cell.package = items[indexPath.row]
-        cell.widthConstrant = width
         return cell
     }
 }

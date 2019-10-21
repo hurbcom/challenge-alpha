@@ -16,7 +16,9 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         didSet {
             guard let package = package else { return }
             titleLabel.text = package.name
-            priceLabel.text = "\(package.price.symbol) \(package.price.amount)"
+            currencyFormatter.currencySymbol = package.price.symbol
+
+            priceLabel.text = currencyFormatter.string(from: NSNumber(value: package.price.amount))
             descriptionLabel.text = "\(package.amenities[0].name) + \(package.amenities[1].name) + \(package.amenities[2].name)"
 
             guard var comps = URLComponents(url: package.gallery[0].url,
@@ -32,17 +34,14 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         }
     }
 
-    var widthConstrant: CGFloat? {
-        didSet {
-//            guard let widthConstrant = widthConstrant else { return }
-//            imageView.snp.remakeConstraints { (make) in
-//                make.top.equalToSuperview()
-//                make.left.equalToSuperview()
-//                make.width.equalTo(widthConstrant)
-//                make.height.equalTo(310).priority(999)
-//            }
-        }
-    }
+    private let currencyFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .currency
+        // Localize
+        formatter.locale = Locale.current
+        return formatter
+    }()
 
     var imageView: GradientUIImage = {
         let view = GradientUIImage(frame: .zero)
@@ -139,7 +138,6 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         priceLabel.snp.makeConstraints { (make) in
             make.top.equalTo(imageView.snp.bottom)
             make.trailing.leading.equalTo(imageView)
-//            make.bottom.equalTo(contentView.snp.bottom).offset(-10).priority(999)
         }
 
         flightLabel.snp.makeConstraints { (make) in
