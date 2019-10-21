@@ -22,7 +22,7 @@ extension HotelsDataSource: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.Hotels.rawValue, for: indexPath) as? HotelCollectionViewCell else { fatalError("Unknown identifier") }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.Hotel.rawValue, for: indexPath) as? HotelCollectionViewCell else { fatalError("Unknown identifier") }
         cell.hotel = items[indexPath.row]
         return cell
     }

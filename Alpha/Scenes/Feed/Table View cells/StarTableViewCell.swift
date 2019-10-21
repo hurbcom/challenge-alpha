@@ -27,7 +27,7 @@ class StarTableViewCell: BaseTableViewCell {
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = .clear
         view.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        view.register(HotelCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.Hotels.rawValue)
+        view.register(HotelCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.Hotel.rawValue)
         return view
     }()
 
