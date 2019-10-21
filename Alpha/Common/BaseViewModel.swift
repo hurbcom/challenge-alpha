@@ -15,9 +15,6 @@ class BaseViewModel: NSObject {
     static var logEnabled: Bool = true
     let provider: AlphaAPI
 
-    let loading = ActivityIndicator()
-    let headerLoading = ActivityIndicator()
-
     init(provider: AlphaAPI) {
         self.provider = provider
         super.init()

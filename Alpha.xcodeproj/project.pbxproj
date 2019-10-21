@@ -65,7 +65,6 @@
 		31CBD341235D0A230027444E /* Hurb.json in Resources */ = {isa = PBXBuildFile; fileRef = 31CBD340235D0A230027444E /* Hurb.json */; };
 		31CBD343235D15AA0027444E /* AlphaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD342235D15AA0027444E /* AlphaAPI.swift */; };
 		31CBD345235D192B0027444E /* AlphaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD344235D192B0027444E /* AlphaNetworkManager.swift */; };
-		31CBD349235D3C430027444E /* RxActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD348235D3C430027444E /* RxActivityIndicator.swift */; };
 		31CBD34B235D524E0027444E /* LoadingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD34A235D524E0027444E /* LoadingUIView.swift */; };
 		31CF025123577D5B008C92B0 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025023577D5B008C92B0 /* FeedSection.swift */; };
 		31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025323577D8E008C92B0 /* FeedSectionType.swift */; };
@@ -167,7 +166,6 @@
 		31CBD340235D0A230027444E /* Hurb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Hurb.json; sourceTree = "<group>"; };
 		31CBD342235D15AA0027444E /* AlphaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaAPI.swift; sourceTree = "<group>"; };
 		31CBD344235D192B0027444E /* AlphaNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaNetworkManager.swift; sourceTree = "<group>"; };
-		31CBD348235D3C430027444E /* RxActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxActivityIndicator.swift; sourceTree = "<group>"; };
 		31CBD34A235D524E0027444E /* LoadingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUIView.swift; sourceTree = "<group>"; };
 		31CF025023577D5B008C92B0 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
 		31CF025323577D8E008C92B0 /* FeedSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionType.swift; sourceTree = "<group>"; };
@@ -280,7 +278,6 @@
 				3141D6D12353675100A922DF /* Scenes */,
 				3141D6D02353674A00A922DF /* Resources */,
 				3141D6CF2353674400A922DF /* Theme */,
-				31CBD346235D3C0B0027444E /* Third Party */,
 				3141D6C8235366A300A922DF /* Info.plist */,
 			);
 			path = Alpha;
@@ -533,22 +530,6 @@
 				31CBD340235D0A230027444E /* Hurb.json */,
 			);
 			path = "Stubbed Responses";
-			sourceTree = "<group>";
-		};
-		31CBD346235D3C0B0027444E /* Third Party */ = {
-			isa = PBXGroup;
-			children = (
-				31CBD347235D3C2B0027444E /* RxActivityIndicator */,
-			);
-			path = "Third Party";
-			sourceTree = "<group>";
-		};
-		31CBD347235D3C2B0027444E /* RxActivityIndicator */ = {
-			isa = PBXGroup;
-			children = (
-				31CBD348235D3C430027444E /* RxActivityIndicator.swift */,
-			);
-			path = RxActivityIndicator;
 			sourceTree = "<group>";
 		};
 		31CF025223577D77008C92B0 /* Enumerations */ = {
@@ -919,7 +900,6 @@
 				31537E132355489B0011DBD4 /* AppCoordinator.swift in Sources */,
 				31537E27235628B00011DBD4 /* SearchParams.swift in Sources */,
 				31537E20235600460011DBD4 /* APIRouter.swift in Sources */,
-				31CBD349235D3C430027444E /* RxActivityIndicator.swift in Sources */,
 				31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */,
 				31B00F83235A30E900AD62B8 /* HotelsDataSource.swift in Sources */,
 				31CBD33C235D03310027444E /* HurbAPI.swift in Sources */,

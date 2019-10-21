@@ -28,9 +28,9 @@ class FeedViewModel: BaseViewModel, ViewModelType {
 
         input.headerRefresh.flatMapLatest({[weak self] () -> Observable<[Deal]> in
             guard let self = self else { return Observable.just([]) }
-            return self.request(query: "buzios", page: 1).trackActivity(self.loading)
+            return self.request(query: "buzios", page: 1)
         }).subscribe(onNext: { items in
-            elements.accept(self.handleFeed(withRawElements: items))
+            elements.accept(self.handleFeed(withDealArray: items))
             isLoading.accept(false)
             }).disposed(by: disposeBag)
 
@@ -38,10 +38,10 @@ class FeedViewModel: BaseViewModel, ViewModelType {
     }
 
     func request(query: String, page: Int) -> Observable<[Deal]> {
-        return provider.search(query: query, page: page).map { $0.results }.trackActivity(loading)
+        return provider.search(query: query, page: page).map { $0.results }.asObservable()
     }
 
-    func handleFeed(withRawElements elements: [Deal]) -> [FeedSection] {
+    func handleFeed(withDealArray elements: [Deal]) -> [FeedSection] {
         var feed: [FeedSection] = []
         var stars: [Int: [Deal]] = [:]
 
