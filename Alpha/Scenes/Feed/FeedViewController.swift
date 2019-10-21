@@ -13,10 +13,12 @@ import RxDataSources
 import SnapKit
 
 class FeedViewController: BaseViewController {
+    // MARK: - Properties
+
     let disposeBag = DisposeBag()
     let headerRefreshTrigger = PublishSubject<Void>()
 
-    internal lazy var dataSource: RxTableViewSectionedReloadDataSource<FeedSection> = {
+    lazy var dataSource: RxTableViewSectionedReloadDataSource<FeedSection> = {
         let dataSource = RxTableViewSectionedReloadDataSource<FeedSection>(configureCell: { (_, tableView, indexPath, feedSection) -> UITableViewCell in
             switch feedSection {
             case .Star(let hotels):
@@ -35,7 +37,7 @@ class FeedViewController: BaseViewController {
         return dataSource
     }()
 
-    internal var feedTableView: UITableView = {
+    var feedTableView: UITableView = {
         let view = UITableView()
         view.backgroundColor = .clear
         view.register(StarTableViewCell.self, forCellReuseIdentifier: Identifiers.Star.rawValue)
@@ -52,16 +54,20 @@ class FeedViewController: BaseViewController {
         return view
     }()
 
-    internal var loadingView: LoadingUIView = {
+    var loadingView: LoadingUIView = {
         let view = LoadingUIView(frame: .zero)
         view.isHidden = false
         view.backgroundColor = .white
         return view
     }()
 
+    // MARK: - viewDidLoad
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    // MARK: - View methods
 
     override func setupUI() {
         self.view.backgroundColor = .white
@@ -104,18 +110,14 @@ class FeedViewController: BaseViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailingMargin)
         }
+
         loadingView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-//        activity.snp.makeConstraints { (make) in
-//            make.centerX.centerY.equalTo(loadingView)
-//        }
-//        loadingLabel.snp.makeConstraints { (make) in
-//            make.centerX.equalTo(activity.snp.centerX)
-//            make.top.equalTo(activity.snp.top).offset(20)
-//        }
     }
 }
+
+// MARK: - Table View delegate
 
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
@@ -127,9 +129,5 @@ extension FeedViewController: UITableViewDelegate {
         view.subTitle.text = dataSource.sectionModels[section].subTitle
 
         return view
-    }
-    func tableView(_ tableView: UITableView,
-                   estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 55.0
     }
 }

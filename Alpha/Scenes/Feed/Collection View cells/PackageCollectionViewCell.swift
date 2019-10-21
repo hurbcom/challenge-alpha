@@ -10,6 +10,8 @@ import UIKit
 import Kingfisher
 
 class PackageCollectionViewCell: BaseCollectionViewCell {
+    // MARK: - Properties
+
     var package: Deal? {
         didSet {
             guard let package = package else { return }
@@ -85,6 +87,8 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         label.sizeToFit()
         return label
     }()
+
+    // MARK: - View methods
 
     override func setupUI() {
         self.contentView.addSubview(imageView)

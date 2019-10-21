@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
-import UIKit
 import SnapKit
 
 class PackageTableViewCell: BaseTableViewCell, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    // MARK: - Properties
+
     var currentDataSource: UICollectionViewDataSource? {
         didSet {
             guard let currentDataSource = currentDataSource as? PackageDataSource else { return }
@@ -36,7 +36,7 @@ class PackageTableViewCell: BaseTableViewCell, UICollectionViewDelegate, UIColle
         return view
     }()
 
-    private lazy var pageControl: UIPageControl = {
+    private var pageControl: UIPageControl = {
         let page = UIPageControl(frame: .zero)
         return page
     }()
@@ -50,6 +50,8 @@ class PackageTableViewCell: BaseTableViewCell, UICollectionViewDelegate, UIColle
 
         pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
+
+    // MARK: - View methods
 
     override func setupUI() {
         collectionView.delegate = self

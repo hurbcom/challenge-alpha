@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 
 class StarTableViewCell: BaseTableViewCell {
+    // MARK: - Properties
+
     var currentDataSource: UICollectionViewDataSource? {
         didSet {
             self.collectionView.dataSource = currentDataSource
@@ -27,9 +29,12 @@ class StarTableViewCell: BaseTableViewCell {
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = .clear
         view.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        view.register(HotelCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.Hotel.rawValue)
+        view.register(HotelCollectionViewCell.self,
+                      forCellWithReuseIdentifier: Identifiers.Hotel.rawValue)
         return view
     }()
+
+    // MARK: - View methods
 
     override func setupUI() {
         self.contentView.addSubview(collectionView)

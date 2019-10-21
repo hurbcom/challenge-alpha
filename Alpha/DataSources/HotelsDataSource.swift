@@ -12,7 +12,7 @@ import UIKit
 class HotelsDataSource: NSObject {
     // MARK: - Properties
     var items: [Deal] = []
-    
+
     // MARK: - Lifecycle
 
     /**

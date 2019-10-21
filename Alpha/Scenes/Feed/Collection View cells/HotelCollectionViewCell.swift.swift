@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 
 class HotelCollectionViewCell: BaseCollectionViewCell {
+    // MARK: - Properties
 
     var hotel: Deal? {
         didSet {
@@ -88,6 +89,8 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
 
+    // MARK: - View methods
+
     override func setupUI() {
         self.contentView.addSubview(imageView)
         self.contentView.addSubview(titleLabel)
@@ -128,7 +131,6 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
     }
 
     override func prepareForReuse() {
-        // invoke superclass implementation
         super.prepareForReuse()
 
         hotel = nil
