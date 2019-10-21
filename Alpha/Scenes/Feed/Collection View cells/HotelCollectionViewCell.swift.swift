@@ -18,6 +18,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             titleLabel.text = hotel.name
             priceLabel.text = "\(hotel.price.symbol) \(hotel.price.amount)"
             descriptionLabel.text = "\(hotel.address.city) | \(hotel.address.state)"
+            amenitiesLabel.text = "\(L10n.Feed.Cell.amenities): \(hotel.amenities[0].name), \(hotel.amenities[1].name), \(hotel.amenities[2].name)..."
 
             guard let imageURL = hotel.image else { return }
             guard var comps = URLComponents(url: imageURL,
@@ -51,10 +52,19 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
 
+    let amenitiesLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = .systemFont(ofSize: 12.0, weight: .regular)
+        label.textColor = Theme.hurbDarkGray
+        label.textAlignment = .left
+        label.numberOfLines = 2
+        return label
+    }()
+
     let descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 12.0, weight: .regular)
-        label.textColor = .gray
+        label.textColor = Theme.hurbGray
         label.textAlignment = .left
         label.numberOfLines = 1
         return label
@@ -63,12 +73,12 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
     let priceLabel: PaddingUILabel = {
         let label = PaddingUILabel(withInsets: 8, 8, 10, 10)
         label.font = .systemFont(ofSize: 16.0, weight: .regular)
-        label.textColor = .white
+        label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 1
         label.layer.cornerRadius = 14
         label.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner]
-        label.backgroundColor = .blue
+        label.backgroundColor = Theme.hurbYellow
         label.clipsToBounds = true
         label.sizeToFit()
         return label
@@ -83,7 +93,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         label.isHidden = true
         label.layer.cornerRadius = 14
         label.layer.maskedCorners = [.layerMinXMaxYCorner]
-        label.backgroundColor = .orange
+        label.backgroundColor = Theme.hurbOrange
         label.clipsToBounds = true
         label.sizeToFit()
         return label
@@ -97,6 +107,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         self.contentView.addSubview(priceLabel)
         self.contentView.addSubview(discountLabel)
         self.contentView.addSubview(descriptionLabel)
+        self.contentView.addSubview(amenitiesLabel)
     }
 
     override func setupConstraints() {
@@ -127,6 +138,13 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             make.top.equalTo(imageView.snp.bottom).offset(10)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
+        }
+
+        amenitiesLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(5)
+            make.leading.equalTo(imageView.snp.leading).offset(10)
+            make.trailing.equalTo(imageView.snp.trailing).offset(-10)
+            make.bottom.equalToSuperview().priority(999)
         }
     }
 

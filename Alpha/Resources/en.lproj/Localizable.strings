@@ -15,6 +15,7 @@
 "feed.section.star" = "Star";
 "feed.section.stars" = "Stars";
 "feed.cell.planeIncluded" = "Flight included!";
+"feed.cell.amenities" = "Amenities";
 
 "loading.text" = "Searching for the best deals...";
 

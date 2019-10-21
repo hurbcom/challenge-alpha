@@ -22,7 +22,7 @@ class StarTableViewCell: BaseTableViewCell {
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = CGSize(width: 300, height: 225)
+        layout.estimatedItemSize = CGSize(width: 300, height: 260)
         layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 20
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -38,6 +38,7 @@ class StarTableViewCell: BaseTableViewCell {
 
     override func setupUI() {
         self.contentView.addSubview(collectionView)
+        self.collectionView.collectionViewLayout.invalidateLayout()
     }
 
     override func setupConstraints() {
