@@ -63,6 +63,7 @@
 		31CBD343235D15AA0027444E /* AlphaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD342235D15AA0027444E /* AlphaAPI.swift */; };
 		31CBD345235D192B0027444E /* AlphaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD344235D192B0027444E /* AlphaNetworkManager.swift */; };
 		31CBD34B235D524E0027444E /* LoadingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD34A235D524E0027444E /* LoadingUIView.swift */; };
+		31CBD34D235D5C5A0027444E /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBD34C235D5C5A0027444E /* NetworkLogger.swift */; };
 		31CF025123577D5B008C92B0 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025023577D5B008C92B0 /* FeedSection.swift */; };
 		31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025323577D8E008C92B0 /* FeedSectionType.swift */; };
 		31CF025623577E42008C92B0 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF025523577E42008C92B0 /* Identifiers.swift */; };
@@ -161,6 +162,7 @@
 		31CBD342235D15AA0027444E /* AlphaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaAPI.swift; sourceTree = "<group>"; };
 		31CBD344235D192B0027444E /* AlphaNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaNetworkManager.swift; sourceTree = "<group>"; };
 		31CBD34A235D524E0027444E /* LoadingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUIView.swift; sourceTree = "<group>"; };
+		31CBD34C235D5C5A0027444E /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		31CF025023577D5B008C92B0 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
 		31CF025323577D8E008C92B0 /* FeedSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionType.swift; sourceTree = "<group>"; };
 		31CF025523577E42008C92B0 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				31CBD33B235D03310027444E /* HurbAPI.swift */,
 				31CBD342235D15AA0027444E /* AlphaAPI.swift */,
 				31CBD344235D192B0027444E /* AlphaNetworkManager.swift */,
+				31CBD34C235D5C5A0027444E /* NetworkLogger.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -887,6 +890,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31CBD34D235D5C5A0027444E /* NetworkLogger.swift in Sources */,
 				310CEA73235CCCDC0022EFF5 /* FeedViewModel.swift in Sources */,
 				31537E132355489B0011DBD4 /* AppCoordinator.swift in Sources */,
 				31537E27235628B00011DBD4 /* SearchParams.swift in Sources */,
