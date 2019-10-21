@@ -6,8 +6,7 @@
 //  Copyright © 2019 Hurb. All rights reserved.
 //
 
-import Foundation
-
+/// Amenities is something considered to benefit a property
 struct Amenities: Codable {
     var name: String
     var category: String

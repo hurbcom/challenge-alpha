@@ -7,6 +7,7 @@
 //
 import RxDataSources
 
+/// The feed section
 struct FeedSection {
     var header: String
     var subTitle: String?

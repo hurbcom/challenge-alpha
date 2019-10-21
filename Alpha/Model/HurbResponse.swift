@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Is the top-level of the API's response
 struct HurbResponse: Codable {
     var results: [Deal]
 

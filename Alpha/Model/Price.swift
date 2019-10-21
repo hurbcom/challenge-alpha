@@ -6,8 +6,6 @@
 //  Copyright © 2019 Hurb. All rights reserved.
 //
 
-import Foundation
-
 struct Price: Codable {
     var currency: String?
     var currentPricePkg: Float?

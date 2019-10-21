@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A Deal can be either a Hotel or a Package
 struct Deal: Codable {
     var sku: String
     var name: String
@@ -19,9 +20,9 @@ struct Deal: Codable {
     var amenities: [Amenities]
     var price: Price
     var address: Address
-    // Package attributes
+    // MARK: - Package attributes
     var isPackage: Bool?
-    // Hotel attributes
+    // MARK: - Hotel attributes
     var isHotel: Bool?
     var image: URL?
     var stars: Int?
