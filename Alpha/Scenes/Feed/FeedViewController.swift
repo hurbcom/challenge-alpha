@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import SnapKit
+import os.log
 
 class FeedViewController: BaseViewController {
     // MARK: - Properties
@@ -23,12 +24,18 @@ class FeedViewController: BaseViewController {
             switch feedSection {
             case .Star(let hotels):
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: feedSection.identifier)
-                as? StarTableViewCell else { fatalError("Unknown identifier") }
+                as? StarTableViewCell else {
+                    os_log("❌ - Unknown cell identifier %@", log: Logger.appLog(), type: .fault, "\(self)")
+                    fatalError("Unknown identifier")
+                }
                 cell.currentDataSource = HotelsDataSource(with: hotels)
                 return cell
             case .Package(let packages):
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: feedSection.identifier)
-                as? PackageTableViewCell else { fatalError("Unknown identifier") }
+                as? PackageTableViewCell else {
+                    os_log("❌ - Unknown cell identifier %@", log: Logger.appLog(), type: .fault, "\(self)")
+                    fatalError("Unknown identifier")
+                }
                 cell.currentDataSource = PackageDataSource(with: packages)
                 return cell
             }
@@ -91,8 +98,13 @@ class FeedViewController: BaseViewController {
         self.view.addSubview(loadingView)
     }
 
+    // MARK: - Binding
+    
     override func bindViewModel() {
-        guard let viewModel = viewModel as? FeedViewModel else { return }
+        guard let viewModel = viewModel as? FeedViewModel else {
+            os_log("❌ - Couldn't transform ViewModel %@", log: Logger.appLog(), type: .fault, "\(self)")
+            return
+        }
 
         let refresh = Observable.of(Observable.just(()), headerRefreshTrigger).merge()
         let input = FeedViewModel.Input(headerRefresh: refresh)
@@ -111,7 +123,9 @@ class FeedViewController: BaseViewController {
             .drive(feedTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
-
+    
+    // MARK: - Constraints
+    
     override func setupConstraints() {
         super.setupConstraints()
 

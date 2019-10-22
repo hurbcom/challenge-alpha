@@ -8,13 +8,17 @@
 
 import UIKit
 import Kingfisher
+import os.log
 
 class PackageCollectionViewCell: BaseCollectionViewCell {
     // MARK: - Properties
 
     var package: Deal? {
         didSet {
-            guard let package = package else { return }
+            guard let package = package else {
+                os_log("❌ - Package was nil %@", log: Logger.appLog(), type: .fault, "\(self)")
+                return
+            }
             titleLabel.text = package.name
             currencyFormatter.currencySymbol = package.price.symbol
 
@@ -37,7 +41,10 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
             amenitiesLabel.text = amenitiesText
 
             guard var comps = URLComponents(url: package.gallery[0].url,
-                                            resolvingAgainstBaseURL: false) else { return }
+                                            resolvingAgainstBaseURL: false) else {
+                os_log("❌ - URLComponents was unable to transform URL %@", log: Logger.appLog(), type: .fault, "\(self)")
+                return
+            }
             // Not every image url that comes in the API use the HTTPS protocol,
             // so we have to change the protocol, this is not a very good practice
             // since we don't known if every image server suports it, but Apple don't
@@ -140,6 +147,8 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         self.contentView.addSubview(locationLabel)
         self.contentView.addSubview(priceLabel)
     }
+    
+    // MARK: - Constraints
 
     override func setupConstraints() {
         // Aspect Ratio is original height / width

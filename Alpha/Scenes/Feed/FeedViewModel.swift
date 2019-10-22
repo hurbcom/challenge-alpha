@@ -16,6 +16,7 @@ class FeedViewModel: BaseViewModel, ViewModelType {
 
     let disposeBag = DisposeBag()
 
+    // MARK: - Input Output
     struct Input {
         let headerRefresh: Observable<Void>
     }

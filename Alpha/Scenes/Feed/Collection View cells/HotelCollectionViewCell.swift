@@ -9,13 +9,17 @@
 import Foundation
 import UIKit
 import Kingfisher
+import os.log
 
 class HotelCollectionViewCell: BaseCollectionViewCell {
     // MARK: - Properties
 
     var hotel: Deal? {
         didSet {
-            guard let hotel = hotel else { return }
+            guard let hotel = hotel else {
+                os_log("❌ - Hotel was nil %@", log: Logger.appLog(), type: .fault, "\(self)")
+                return
+            }
             titleLabel.text = hotel.name
             // The API return the Currency, so we can't localize that
             currencyFormatter.currencySymbol = hotel.price.symbol
@@ -141,6 +145,8 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         self.contentView.addSubview(locationLabel)
         self.contentView.addSubview(amenitiesLabel)
     }
+    
+    // MARK: - Constraints
 
     override func setupConstraints() {
         imageView.snp.makeConstraints { (make) in
