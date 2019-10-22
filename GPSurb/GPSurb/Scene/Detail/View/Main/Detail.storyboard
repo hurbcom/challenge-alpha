@@ -85,7 +85,7 @@
                                         </connections>
                                     </collectionView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gqw-vU-Cx5">
-                                        <rect key="frame" x="0.0" y="221" width="320" height="148.5"/>
+                                        <rect key="frame" x="0.0" y="221" width="320" height="138.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -101,7 +101,7 @@
                                     <constraint firstAttribute="trailing" secondItem="gqw-vU-Cx5" secondAttribute="trailing" id="B0k-xc-nMi"/>
                                     <constraint firstItem="YSK-sh-6Je" firstAttribute="top" secondItem="hvP-FE-WOy" secondAttribute="bottom" constant="5" id="Wyy-xw-Alc"/>
                                     <constraint firstItem="hvP-FE-WOy" firstAttribute="leading" secondItem="Cwy-Ma-gbw" secondAttribute="leading" constant="10" id="e6H-Ah-B18"/>
-                                    <constraint firstAttribute="bottom" secondItem="gqw-vU-Cx5" secondAttribute="bottom" id="fib-kh-J8n"/>
+                                    <constraint firstAttribute="bottom" secondItem="gqw-vU-Cx5" secondAttribute="bottom" constant="10" id="fib-kh-J8n"/>
                                     <constraint firstAttribute="trailing" secondItem="1rX-fm-adE" secondAttribute="trailing" constant="10" id="ga6-g0-qg0"/>
                                     <constraint firstAttribute="trailing" secondItem="YSK-sh-6Je" secondAttribute="trailing" id="k0g-7Z-nvV"/>
                                     <constraint firstAttribute="trailing" secondItem="hvP-FE-WOy" secondAttribute="trailing" constant="10" id="l09-Wo-cI8"/>
@@ -115,7 +115,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yId-WF-73l" firstAttribute="trailing" secondItem="Cwy-Ma-gbw" secondAttribute="trailing" id="HIa-jB-3iG"/>
-                            <constraint firstAttribute="bottom" secondItem="Cwy-Ma-gbw" secondAttribute="bottom" id="Q4b-ff-e69"/>
+                            <constraint firstItem="yId-WF-73l" firstAttribute="bottom" secondItem="Cwy-Ma-gbw" secondAttribute="bottom" id="Q4b-ff-e69"/>
                             <constraint firstItem="yId-WF-73l" firstAttribute="trailing" secondItem="bDV-SL-nDR" secondAttribute="trailing" id="QNA-8c-4CZ"/>
                             <constraint firstItem="bDV-SL-nDR" firstAttribute="top" secondItem="yId-WF-73l" secondAttribute="top" id="YZa-4G-W5U"/>
                             <constraint firstItem="Cwy-Ma-gbw" firstAttribute="leading" secondItem="yId-WF-73l" secondAttribute="leading" id="qzZ-nQ-qVG"/>

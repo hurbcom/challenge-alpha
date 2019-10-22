@@ -79,6 +79,6 @@ extension DetailViewController {
     private func setupView() {
         self.lblLocation.text = self.viewData.destinationName
         self.lblShortDescription.text = self.viewData.offerName
-        self.txtViewDescription.text = self.viewData.description
+        self.txtViewDescription.text = self.viewData.description.textWithoutHtml
     }
 }

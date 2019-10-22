@@ -16,6 +16,9 @@
 		02512CF7235F503C00DF8A19 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CF6235F503C00DF8A19 /* UiViewExtension.swift */; };
 		02512CF8235F503C00DF8A19 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CF6235F503C00DF8A19 /* UiViewExtension.swift */; };
 		02512CF9235F503C00DF8A19 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CF6235F503C00DF8A19 /* UiViewExtension.swift */; };
+		02512CFB235F630B00DF8A19 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CFA235F630B00DF8A19 /* StringExtension.swift */; };
+		02512CFC235F630B00DF8A19 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CFA235F630B00DF8A19 /* StringExtension.swift */; };
+		02512CFD235F630B00DF8A19 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CFA235F630B00DF8A19 /* StringExtension.swift */; };
 		0251A51E2359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */; };
 		0251A51F2359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */; };
 		0251A5202359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */; };
@@ -202,6 +205,7 @@
 		023222FA235E407D00F00608 /* AmenitiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmenitiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		023222FB235E407D00F00608 /* AmenitiesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmenitiesCollectionViewCell.xib; sourceTree = "<group>"; };
 		02512CF6235F503C00DF8A19 /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
+		02512CFA235F630B00DF8A19 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAndPackageListPresenter.swift; sourceTree = "<group>"; };
 		0251A51D2359072900105C1E /* HotelAndPackageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAndPackageListViewController.swift; sourceTree = "<group>"; };
 		0251A5242359075700105C1E /* HotelAndPackageList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HotelAndPackageList.storyboard; sourceTree = "<group>"; };
@@ -564,6 +568,7 @@
 				027766CC2357ABA20042BFE8 /* UICollectionViewExtension.swift */,
 				028EC17B235915D6005CEC60 /* UITableViewExtension.swift */,
 				02512CF6235F503C00DF8A19 /* UiViewExtension.swift */,
+				02512CFA235F630B00DF8A19 /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1019,6 +1024,7 @@
 				026C96722357730E002C1CC4 /* PaginationModel.swift in Sources */,
 				02596BFF2354CB1C0027C9EE /* FavoritesViewController.swift in Sources */,
 				027766D12357ACD40042BFE8 /* BestDestinationService.swift in Sources */,
+				02512CFB235F630B00DF8A19 /* StringExtension.swift in Sources */,
 				026C9682235773EC002C1CC4 /* ProductTypeModel.swift in Sources */,
 				026C965E235771DF002C1CC4 /* FeaturedItemModel.swift in Sources */,
 				026C9692235774C6002C1CC4 /* StarsModel.swift in Sources */,
@@ -1099,6 +1105,7 @@
 				02A51D44235A2EBE00A339B0 /* DetailViewController.swift in Sources */,
 				026C967B23577370002C1CC4 /* PriceIntervalModel.swift in Sources */,
 				02596C002354CB1C0027C9EE /* FavoritesViewController.swift in Sources */,
+				02512CFC235F630B00DF8A19 /* StringExtension.swift in Sources */,
 				026C966F235772D8002C1CC4 /* MetaModel.swift in Sources */,
 				026C96B32357A68E002C1CC4 /* NibLoadableView.swift in Sources */,
 				026C96732357730E002C1CC4 /* PaginationModel.swift in Sources */,
@@ -1150,6 +1157,7 @@
 				02A51D45235A2EBE00A339B0 /* DetailViewController.swift in Sources */,
 				026C967C23577370002C1CC4 /* PriceIntervalModel.swift in Sources */,
 				02596C012354CB1C0027C9EE /* FavoritesViewController.swift in Sources */,
+				02512CFD235F630B00DF8A19 /* StringExtension.swift in Sources */,
 				026C9670235772D8002C1CC4 /* MetaModel.swift in Sources */,
 				026C96B42357A68E002C1CC4 /* NibLoadableView.swift in Sources */,
 				026C96742357730E002C1CC4 /* PaginationModel.swift in Sources */,
