@@ -47,6 +47,7 @@
 		31537E1B2355D62D0011DBD4 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E1A2355D62D0011DBD4 /* Price.swift */; };
 		31537E1D2355D6F60011DBD4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E1C2355D6F60011DBD4 /* Images.swift */; };
 		31537E292356500C0011DBD4 /* HurbResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31537E282356500C0011DBD4 /* HurbResponse.swift */; };
+		31916867235F610900566025 /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31916866235F610900566025 /* CarouselLayout.swift */; };
 		31B00F7E235A294500AD62B8 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F7D235A294500AD62B8 /* BaseTableViewCell.swift */; };
 		31B00F81235A2C7300AD62B8 /* StarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F80235A2C7300AD62B8 /* StarTableViewCell.swift */; };
 		31B00F83235A30E900AD62B8 /* HotelsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F82235A30E900AD62B8 /* HotelsDataSource.swift */; };
@@ -145,6 +146,7 @@
 		31537E1C2355D6F60011DBD4 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		31537E282356500C0011DBD4 /* HurbResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbResponse.swift; sourceTree = "<group>"; };
 		31916865235F512800566025 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		31916866235F610900566025 /* CarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayout.swift; sourceTree = "<group>"; };
 		31B00F76235A1D0C00AD62B8 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		31B00F7A235A224400AD62B8 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		31B00F7D235A294500AD62B8 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 			children = (
 				31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift */,
 				310CEA6A235BA8980022EFF5 /* PackageCollectionViewCell.swift */,
+				31916866235F610900566025 /* CarouselLayout.swift */,
 			);
 			path = "Collection View cells";
 			sourceTree = "<group>";
@@ -894,6 +897,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31CBD34D235D5C5A0027444E /* NetworkLogger.swift in Sources */,
+				31916867235F610900566025 /* CarouselLayout.swift in Sources */,
 				310CEA73235CCCDC0022EFF5 /* FeedViewModel.swift in Sources */,
 				31537E132355489B0011DBD4 /* AppCoordinator.swift in Sources */,
 				31CF025423577D8E008C92B0 /* FeedSectionType.swift in Sources */,

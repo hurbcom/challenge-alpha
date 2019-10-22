@@ -15,16 +15,17 @@ class StarTableViewCell: BaseTableViewCell {
     var currentDataSource: UICollectionViewDataSource? {
         didSet {
             self.collectionView.dataSource = currentDataSource
+            self.collectionView.delegate = self
             self.collectionView.reloadData()
         }
     }
 
     var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = CGSize(width: 300, height: 260)
-        layout.minimumInteritemSpacing = 20
-        layout.minimumLineSpacing = 20
+        let layout = CarouselLayout()
+//        layout.scrollDirection = .horizontal
+//        layout.estimatedItemSize = CGSize(width: 300, height: 260)
+//        layout.minimumInteritemSpacing = 20
+//        layout.minimumLineSpacing = 20
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = .clear
@@ -48,5 +49,11 @@ class StarTableViewCell: BaseTableViewCell {
             make.bottom.equalToSuperview().offset(-20.0)
             make.height.equalTo(263).priority(999)
         }
+    }
+}
+
+extension StarTableViewCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 300, height: 240)
     }
 }
