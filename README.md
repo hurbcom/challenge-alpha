@@ -5,13 +5,10 @@
 ## Contúdo
 
 * [O Projeto](#o-projeto)
-* [Instalação](#instala--o)
-  + [Prepare o ambiente](#prepare-o-ambiente)
-  + [Configuração do projeto](#configura--o-do-projeto)
+* [Instalação](#instalação)
 * [Design](#design)
-  + [Feed](#feed)
 * ["Toque a mais"](#-toque-a-mais-)
-* [Dependências](#depend-ncias)
+* [Dependências](#dependências)
 * [Vulnerabilidades](#vulnerabilidades)
 
 ## O Projeto
