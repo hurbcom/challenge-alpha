@@ -1,6 +1,0 @@
-framework module Pods_GPSurb {
-  umbrella header "Pods-GPSurb-umbrella.h"
-
-  export *
-  module * { export * }
-}

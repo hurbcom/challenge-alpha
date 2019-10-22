@@ -1,6 +1,0 @@
-framework module Pods_GPSurbUITests {
-  umbrella header "Pods-GPSurbUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

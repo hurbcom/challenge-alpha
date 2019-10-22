@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-GPSurbTests/Pods-GPSurbTests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework

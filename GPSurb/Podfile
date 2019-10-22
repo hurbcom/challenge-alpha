@@ -9,6 +9,7 @@ def shared_pods
  pod 'Kingfisher'
  pod 'SwiftLint'
  pod 'lottie-ios'
+ pod 'Cosmos'
 
 end
 
