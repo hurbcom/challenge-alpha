@@ -144,6 +144,7 @@
 		31537E1A2355D62D0011DBD4 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		31537E1C2355D6F60011DBD4 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		31537E282356500C0011DBD4 /* HurbResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbResponse.swift; sourceTree = "<group>"; };
+		31916865235F512800566025 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		31B00F76235A1D0C00AD62B8 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		31B00F7A235A224400AD62B8 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		31B00F7D235A294500AD62B8 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -243,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				31537DD4235384240011DBD4 /* Cartfile */,
+				31916865235F512800566025 /* README.md */,
 				31537DEE23538FFE0011DBD4 /* xcfilelists */,
 				3141D6FC23536E9900A922DF /* Environment */,
 				3141D6B9235366A100A922DF /* Alpha */,
