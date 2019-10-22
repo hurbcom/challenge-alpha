@@ -1,6 +1,16 @@
 # Desafio Alpha
 
-**Por: Theo Mendes.**
+**Por:** [Theo Mendes](https://github.com/theomendes) <theodefranca@gmail.com>.
+
+## O Projeto
+--> Arquitetura: **MVVM-C**
+A escolha resta arquitetura deve-se ao fato de ser bastante testavel mas ainda ter um nivel de simplicidade que pode ser rápidamente estruturado. Implementei um Coordinator pois isso é uma das coisas que falta no MVVM uma camada de routing.
+
+O projeto é separado em 3 Schemas: Development, Production, Stage. Cada uma tem uma bundle id, nome e icones diferentes, para assim em um único aparelho poder se instaladas cada versão, o nome e icone são para mera diferenciação visual.
+
+O projeto para evitar erro humano automaticamente detecta para qual schema esta buildando e pega as variaveis de ambientes de acordo, por exemplo você pode querer durante o desenvolvimento usar o localhost como url para consumir uma API, e uma url real para o app em produção. Para assim evitar que haja chance de acabar indo uma url de desenvolvimento para produção.
+
+No projeto eu usei tanto o CocoaPods, como Carthage. Fiz essa escolha pois como o Carthage compila os frameworks quando você pega eles, isso faz diminuir consideravelmente o tempo de compilação do projeto todo, assim aumentando a produtividade. Usei o CocoaPods somente pelo fato que nem tudo esta no Carthage, principalmente dois grandes frameworks muito usados: SwiftLint e SwiftGen.
 
 ## Instalação
 
@@ -34,17 +44,24 @@ bundle exec pod install
 carthage bootstrap --platform ios --cache-builds --no-use-binaries
 ```
 ## Dependências
-* [Bundler](http://bundler.io)
-* [CocoaPods](https://cocoapods.org/)
-    * [SwiftLint](https://github.com/realm/SwiftLint)
-    * [SwiftGen](https://github.com/SwiftGen/SwiftGen)
+### [Bundler](http://bundler.io)
+### [CocoaPods](https://cocoapods.org/)
+#### [SwiftLint](https://github.com/realm/SwiftLint)
+Creio que em grandes projetos tem que haver uma maneira de garantir que as regras de boas práticas sejam compridas, então não há escolha melhor que esta.
+#### [SwiftGen](https://github.com/SwiftGen/SwiftGen)
+Um dos grandes problemas, principalmente em assets, é garantir que eles sejam TypeSafe, escolhi ele para garantir que os Assets e arquivos de Localização fiquem todos TypeSafe.
 
-* [Carthage](https://github.com/Carthage/Carthage)
-    * [RxSwift](https://github.com/ReactiveX/RxSwift)
-    * [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources)
-    * [Moya](https://github.com/Moya/Moya)
-    * [SnapKit](https://github.com/SnapKit/SnapKit)
-    * [Kingfisher](https://github.com/SnapKit/Kingfisher)
+### [Carthage](https://github.com/Carthage/Carthage)
+#### [RxSwift](https://github.com/ReactiveX/RxSwift)
+O forte do MVVM é a ligação entre a View e ViewModel, então bibliotecas reativas são muito bem vindas. Eu fiquei em duvida entre usar ele ou ReactiveSwift, ReactiveSwift esta presente a mais tempo no mundo Reativo do Swift e ele se aproxima mais a guidelines do Swift do que resto do mundo, por outro lado RxSwift se aproxima ao framework ReactiveX que esta disponivel em diversas plataformas logo ese tenta manter uma guideline padrão, creio que em um lugar como a Hurb com diversas linguagens de desenvolvimento seja mais atrativo manter um padrão entre elas.
+#### [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources)
+Uma falha no RxSwift é que ele não suporta a construção de feeds mais complexos que simples colections views ou table views, com isso para facilitar o trabalho resolvi usar ele.
+#### [Moya](https://github.com/Moya/Moya)
+Uma das grandes dificuldades em network layer é garantir que ele seja altamente testavel, escolhi o Moya por ele ser construido em cima do Alamofire, que ja esta a muito tempo presente no Swift, e ser altamente testavel.
+#### [SnapKit](https://github.com/SnapKit/SnapKit)
+Ficar escrevendo constraints é um trabalho que demanda um certo tempo, e de não ser muito bonito em escrever, SnapKit facilita bastante mas ainda se acemelha muito a lógica da constraint nativa.
+#### [Kingfisher](https://github.com/SnapKit/Kingfisher)
+Kingfisher oferece maneiras eficientes de fazer o download de imagens e guardar em cache, evitando que a pessoa tenha sempre que fazer download de imagem, assim autentando a responsividade do app e economizando gets na AWS ou outro serviço de hospedagem, o que significa menos $$ gasto.
 
 ## Design
 ### Feed
