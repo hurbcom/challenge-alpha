@@ -58,13 +58,17 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.collectionView.register(UINib(nibName: ListHotelCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ListHotelCollectionViewCell.identifier)
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.viewModel.sortedHotels.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.hotels.count
+        return self.viewModel.sortedHotels[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListHotelCollectionViewCell.identifier, for: indexPath) as! ListHotelCollectionViewCell
-        cell.config(with: self.viewModel.hotels[indexPath.row])
+        cell.config(with: self.viewModel.sortedHotels[indexPath.section][indexPath.row])//[indexPath.row])
         return cell
     }
     

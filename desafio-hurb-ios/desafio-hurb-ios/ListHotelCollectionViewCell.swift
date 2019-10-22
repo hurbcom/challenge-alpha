@@ -14,6 +14,7 @@ class ListHotelCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var hotelPriceLabel: UILabel!
     @IBOutlet weak var hotelCityLabel: UILabel!
     @IBOutlet weak var hotelImageView: UIImageView!
+    @IBOutlet weak var hotelAmenitiesLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
@@ -24,6 +25,7 @@ class ListHotelCollectionViewCell: UICollectionViewCell {
     
     func customize() {
         self.roundedCorner(with: 8)
+        self.containerView.roundedCorner(with: 8)
         self.containerView.backgroundColor = Theme.surfaceColor
         self.hotelPriceLabel.textColor = Theme.secondaryColor
     }
@@ -32,6 +34,10 @@ class ListHotelCollectionViewCell: UICollectionViewCell {
         self.hotelNameLabel.text = hotel.name
         self.hotelPriceLabel.text = hotel.price.inCurrency()
         self.hotelCityLabel.text = "\(hotel.address.city) - \(hotel.address.state)"
+        self.hotelImageView.setImage(with: hotel.image ?? "")
+        self.hotelAmenitiesLabel.text = hotel.first3Amenities()
     }
+    
+    
 
 }

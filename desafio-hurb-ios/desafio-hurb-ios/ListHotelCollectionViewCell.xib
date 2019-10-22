@@ -84,9 +84,10 @@
             <size key="customSize" width="644" height="166"/>
             <connections>
                 <outlet property="containerView" destination="Yk4-gL-pv9" id="SSj-nd-mkZ"/>
-                <outlet property="hotelCityLabel" destination="yqT-cY-gCD" id="mZ4-au-D4n"/>
+                <outlet property="hotelAmenitiesLabel" destination="Xdf-Y5-Gba" id="t6P-9l-mnQ"/>
+                <outlet property="hotelCityLabel" destination="cXi-uA-p3Z" id="BYR-k9-MlL"/>
                 <outlet property="hotelImageView" destination="4b6-dz-wLR" id="fAQ-kD-Kah"/>
-                <outlet property="hotelNameLabel" destination="yqT-cY-gCD" id="A79-uL-VNe"/>
+                <outlet property="hotelNameLabel" destination="yqT-cY-gCD" id="c5Y-c7-D5N"/>
                 <outlet property="hotelPriceLabel" destination="bgw-7Q-Ucf" id="9XM-nG-AQf"/>
             </connections>
             <point key="canvasLocation" x="73.913043478260875" y="-48.214285714285715"/>

@@ -13,6 +13,16 @@ class Hotel: Codable {
     var image: String?
     var price: Price
     var address: Address
+    var stars: Int?
+    var amenities: [Amenity]
+    
+    func first3Amenities() -> String {
+        var initialString: String = ""
+        for amenity in amenities {
+            initialString += "\(amenity.name)\n"
+        }
+        return initialString
+    }
 }
 
 class Price: Codable {
@@ -29,4 +39,9 @@ class Price: Codable {
 class Address: Codable {
     var city: String
     var state: String
+}
+
+class Amenity: Codable {
+    var name: String
+    var category: String
 }

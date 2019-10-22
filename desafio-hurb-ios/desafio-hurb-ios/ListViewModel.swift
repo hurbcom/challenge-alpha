@@ -11,6 +11,7 @@ import Foundation
 class ListViewModel {
     
     var hotels = [Hotel]()
+    var sortedHotels: [[Hotel]]
     let view: ListViewProtocol!
     var status: ViewStatus = .none {
         didSet {
@@ -20,6 +21,7 @@ class ListViewModel {
     
     init(view: ListViewProtocol) {
         self.view = view
+        self.sortedHotels = HotelSorter.sortedHotels(from: hotels)
     }
     
 }
@@ -32,6 +34,7 @@ extension ListViewModel {
             switch result {
             case .success(let hotels):
                 self.hotels = hotels
+                self.sortedHotels = HotelSorter.sortedHotels(from: hotels)
                 self.status = .loaded
             case .failure(let error):
 //                DispatchQueue.main.async {

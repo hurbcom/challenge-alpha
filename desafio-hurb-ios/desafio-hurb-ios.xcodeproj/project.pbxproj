@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31617D65CE53D39694AB9417 /* Pods_desafio_hurb_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF02CD7319A02644DA78D4E9 /* Pods_desafio_hurb_ios.framework */; };
 		806643D5235E83D200C79B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806643D4235E83D200C79B50 /* AppDelegate.swift */; };
 		806643D7235E83D200C79B50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806643D6235E83D200C79B50 /* SceneDelegate.swift */; };
 		806643DC235E83D200C79B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806643DA235E83D200C79B50 /* Main.storyboard */; };
@@ -25,9 +26,12 @@
 		8074C2DE235EA13600BA6E2E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2DD235EA13600BA6E2E /* Endpoints.swift */; };
 		8074C2E0235EA17E00BA6E2E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2DF235EA17E00BA6E2E /* Services.swift */; };
 		8074C2E2235EA60000BA6E2E /* ViewStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2E1235EA60000BA6E2E /* ViewStatus.swift */; };
+		80B7652A235EABAE00EBDB31 /* UIImageView+KF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B76529235EABAE00EBDB31 /* UIImageView+KF.swift */; };
+		80B7652C235F0F2F00EBDB31 /* HotelsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7652B235F0F2F00EBDB31 /* HotelsSorter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4573ECDC701FF8154ABA8A5E /* Pods-desafio-hurb-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-hurb-ios.release.xcconfig"; path = "Target Support Files/Pods-desafio-hurb-ios/Pods-desafio-hurb-ios.release.xcconfig"; sourceTree = "<group>"; };
 		806643D1235E83D200C79B50 /* desafio-hurb-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-hurb-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		806643D4235E83D200C79B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		806643D6235E83D200C79B50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +52,10 @@
 		8074C2DD235EA13600BA6E2E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		8074C2DF235EA17E00BA6E2E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		8074C2E1235EA60000BA6E2E /* ViewStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatus.swift; sourceTree = "<group>"; };
+		80B76529235EABAE00EBDB31 /* UIImageView+KF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+KF.swift"; sourceTree = "<group>"; };
+		80B7652B235F0F2F00EBDB31 /* HotelsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsSorter.swift; sourceTree = "<group>"; };
+		AF02CD7319A02644DA78D4E9 /* Pods_desafio_hurb_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafio_hurb_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D37A3F6A23D1083236FD7A69 /* Pods-desafio-hurb-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-hurb-ios.debug.xcconfig"; path = "Target Support Files/Pods-desafio-hurb-ios/Pods-desafio-hurb-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31617D65CE53D39694AB9417 /* Pods_desafio_hurb_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +75,8 @@
 			children = (
 				806643D3235E83D200C79B50 /* desafio-hurb-ios */,
 				806643D2235E83D200C79B50 /* Products */,
+				DB4182C8ED55945F787C497F /* Pods */,
+				D590DD2D4B2CB206AEE2CE0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +102,8 @@
 				8074C2D3235E9E7D00BA6E2E /* Hotel.swift */,
 				8074C2D5235E9F2900BA6E2E /* APIResponse.swift */,
 				8074C2E1235EA60000BA6E2E /* ViewStatus.swift */,
+				80B76529235EABAE00EBDB31 /* UIImageView+KF.swift */,
+				80B7652B235F0F2F00EBDB31 /* HotelsSorter.swift */,
 				8074C2DA235EA0FB00BA6E2E /* Networking */,
 				806643EF235E885C00C79B50 /* ListHotelCollectionViewCell.xib */,
 				806643DA235E83D200C79B50 /* Main.storyboard */,
@@ -111,6 +124,23 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		D590DD2D4B2CB206AEE2CE0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF02CD7319A02644DA78D4E9 /* Pods_desafio_hurb_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB4182C8ED55945F787C497F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D37A3F6A23D1083236FD7A69 /* Pods-desafio-hurb-ios.debug.xcconfig */,
+				4573ECDC701FF8154ABA8A5E /* Pods-desafio-hurb-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 806643E5235E83D300C79B50 /* Build configuration list for PBXNativeTarget "desafio-hurb-ios" */;
 			buildPhases = (
+				66AE78B67D488A913BE51F87 /* [CP] Check Pods Manifest.lock */,
 				806643CD235E83D200C79B50 /* Sources */,
 				806643CE235E83D200C79B50 /* Frameworks */,
 				806643CF235E83D200C79B50 /* Resources */,
+				D09EEC0CF4D23E9FD9EEF8CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,6 +210,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		66AE78B67D488A913BE51F87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-desafio-hurb-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D09EEC0CF4D23E9FD9EEF8CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-desafio-hurb-ios/Pods-desafio-hurb-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-desafio-hurb-ios/Pods-desafio-hurb-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-desafio-hurb-ios/Pods-desafio-hurb-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		806643CD235E83D200C79B50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -194,7 +268,9 @@
 				806643D7235E83D200C79B50 /* SceneDelegate.swift in Sources */,
 				806643EB235E871E00C79B50 /* ListViewModel.swift in Sources */,
 				806643E9235E86B000C79B50 /* ListViewController.swift in Sources */,
+				80B7652C235F0F2F00EBDB31 /* HotelsSorter.swift in Sources */,
 				806643F3235E8E2C00C79B50 /* UICollectionViewCell+Extensions.swift in Sources */,
+				80B7652A235EABAE00EBDB31 /* UIImageView+KF.swift in Sources */,
 				8074C2DE235EA13600BA6E2E /* Endpoints.swift in Sources */,
 				806643F0235E885C00C79B50 /* ListHotelCollectionViewCell.swift in Sources */,
 			);
@@ -338,6 +414,7 @@
 		};
 		806643E6235E83D300C79B50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D37A3F6A23D1083236FD7A69 /* Pods-desafio-hurb-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +433,7 @@
 		};
 		806643E7235E83D300C79B50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4573ECDC701FF8154ABA8A5E /* Pods-desafio-hurb-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
