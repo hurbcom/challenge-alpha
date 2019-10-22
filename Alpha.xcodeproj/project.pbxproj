@@ -13,7 +13,6 @@
 		310CEA5B235B6A9D0022EFF5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DD523538B970011DBD4 /* Alamofire.framework */; };
 		310CEA5C235B6A9D0022EFF5 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B00F7A235A224400AD62B8 /* Differentiator.framework */; };
 		310CEA5D235B6A9D0022EFF5 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B00F95235B61CF00AD62B8 /* Kingfisher.framework */; };
-		310CEA5E235B6A9D0022EFF5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D8CC32235B645B008D06E8 /* Result.framework */; };
 		310CEA60235B6A9D0022EFF5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DDC23538B9F0011DBD4 /* RxCocoa.framework */; };
 		310CEA61235B6A9D0022EFF5 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B00F76235A1D0C00AD62B8 /* RxDataSources.framework */; };
 		310CEA62235B6A9D0022EFF5 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31537DDF23538BA10011DBD4 /* RxRelay.framework */; };
@@ -192,7 +191,6 @@
 				310CEA5B235B6A9D0022EFF5 /* Alamofire.framework in Frameworks */,
 				310CEA5C235B6A9D0022EFF5 /* Differentiator.framework in Frameworks */,
 				310CEA5D235B6A9D0022EFF5 /* Kingfisher.framework in Frameworks */,
-				310CEA5E235B6A9D0022EFF5 /* Result.framework in Frameworks */,
 				31CBD338235D027A0027444E /* Moya.framework in Frameworks */,
 				310CEA60235B6A9D0022EFF5 /* RxCocoa.framework in Frameworks */,
 				31CBD336235D027A0027444E /* RxMoya.framework in Frameworks */,
