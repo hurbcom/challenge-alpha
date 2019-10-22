@@ -1,16 +1,30 @@
 # Desafio Alpha
 
-**Por:** [Theo Mendes](https://github.com/theomendes) <theodefranca@gmail.com>.
+**Por:** [Theo Mendes](https://github.com/theomendes) < theodefranca@gmail.com >.
+
+## Contúdo
+
+* [O Projeto](#o-projeto)
+* [Instalação](#instala--o)
+  + [Prepare o ambiente](#prepare-o-ambiente)
+  + [Configuração do projeto](#configura--o-do-projeto)
+* [Design](#design)
+  + [Feed](#feed)
+* ["Toque a mais"](#-toque-a-mais-)
+* [Dependências](#depend-ncias)
+* [Vulnerabilidades](#vulnerabilidades)
 
 ## O Projeto
---> Arquitetura: **MVVM-C**
+Arquitetura: **MVVM-C**
+
 A escolha resta arquitetura deve-se ao fato de ser bastante testavel mas ainda ter um nivel de simplicidade que pode ser rápidamente estruturado. Implementei um Coordinator pois isso é uma das coisas que falta no MVVM uma camada de routing.
 
-O projeto é separado em 3 Schemas: Development, Production, Stage. Cada uma tem uma bundle id, nome e icones diferentes, para assim em um único aparelho poder se instaladas cada versão, o nome e icone são para mera diferenciação visual.
+O projeto é separado em 3 Schemas: **Debug, AdHoc e AppStore** e 3 Build Configurations: **Development, Production, Stage**, tem uma bundle id, nome e icones diferentes para cada Build Configuration, para assim em um único aparelho poder se instaladas cada versão, o nome e icone são para mera diferenciação visual.
 
 O projeto para evitar erro humano automaticamente detecta para qual schema esta buildando e pega as variaveis de ambientes de acordo, por exemplo você pode querer durante o desenvolvimento usar o localhost como url para consumir uma API, e uma url real para o app em produção. Para assim evitar que haja chance de acabar indo uma url de desenvolvimento para produção.
 
 No projeto eu usei tanto o CocoaPods, como Carthage. Fiz essa escolha pois como o Carthage compila os frameworks quando você pega eles, isso faz diminuir consideravelmente o tempo de compilação do projeto todo, assim aumentando a produtividade. Usei o CocoaPods somente pelo fato que nem tudo esta no Carthage, principalmente dois grandes frameworks muito usados: SwiftLint e SwiftGen.
+
 
 ## Instalação
 
@@ -43,8 +57,33 @@ bundle exec pod install
 ```bash
 carthage bootstrap --platform ios --cache-builds --no-use-binaries
 ```
+## Design
+
+### Feed
+Como o desafio não impunha um design especifico do feed, preparei algumas telas. Não quis seguir com o exemplo de tabulação dado no README do desafio pelo de ter ja de cara um problema de UX, o usuário para ir até a informação que precisa precisa escrolar muito, como por exemplo, se ele quiser procurar um hotel 3 estrelas, na tabulação de exemplo ele teria que percorrer um grande caminho e poderia até desistir da compra.
+
+Analizando o app de vocês para iOS e o site, para mim ficou claro que vocês valorizam dar destaque para o local e o preço atrativo. Seguindo esta ideia resolvi aplicar um feed com sessões laterais, dentro das sessões laterais eu ordenei decrescente pela porcentagem de desconto, logo os hoteis que acabaram de ter desconto ficam por ultimo.
+
+Percebi que a Hurb da bastante valor para os pacotes, levando em conta isso resolvi colocar os pacotes como a primeira coisa do feed e dando bastante destaque para foto.
+
+Preparei também 2 telas extras, uma de carregando e outra de quando deu erro, por questão de escopo não preparei metodos para se recuperar do erro.
+
+<p align="center">
+    <img src="Design/FeedDesign.png" alt="Feed Design" />
+</p>
+
+## "Toque a mais"
+* Além dos requisitos minimos, configurei o projeto de maneira segura para diversos ambientes, Dev, AdHoc e AppStore.
+* Exibo além do preço atual, o desconto atual do local.
+* Uso células diferenciadas para o Hotel e Pacotes
+* Feed centrado na experiência do usuário
+* Auto Layout, a célula de pacote se adapita a largura do celular, mantendo aspect ratio.
+
 ## Dependências
+
 ### [Bundler](http://bundler.io)
+Uso ele para garantir consistencia entre as versões do cocoapods dos contribuidores do projeto, assim evitando problemas no Podfile.lock
+
 ### [CocoaPods](https://cocoapods.org/)
 #### [SwiftLint](https://github.com/realm/SwiftLint)
 Creio que em grandes projetos tem que haver uma maneira de garantir que as regras de boas práticas sejam compridas, então não há escolha melhor que esta.
@@ -63,21 +102,8 @@ Ficar escrevendo constraints é um trabalho que demanda um certo tempo, e de nã
 #### [Kingfisher](https://github.com/SnapKit/Kingfisher)
 Kingfisher oferece maneiras eficientes de fazer o download de imagens e guardar em cache, evitando que a pessoa tenha sempre que fazer download de imagem, assim autentando a responsividade do app e economizando gets na AWS ou outro serviço de hospedagem, o que significa menos $$ gasto.
 
-## Design
-### Feed
-Como o desafio não impunha um design especifico do feed, preparei algumas telas. Não quis seguir com o exemplo de tabulação dado no README do desafio pelo de ter ja de cara um problema de UX, o usuário para ir até a informação que precisa precisa escrolar muito, como por exemplo, se ele quiser procurar um hotel 3 estrelas, na tabulação de exemplo ele teria que percorrer um grande caminho e poderia até desistir da compra.
-
-Analizando o app de vocês para iOS e o site, para mim ficou claro que vocês valorizam dar destaque para o local e o preço atrativo. Seguindo esta ideia resolvi aplicar um feed com sessões laterais, dentro das sessões laterais eu ordenei decrescente pela porcentagem de desconto, logo os hoteis que acabaram de ter desconto ficam por ultimo.
-
-Percebi que a Hurb da bastante valor para os pacotes, levando em conta isso resolvi colocar os pacotes como a primeira coisa do feed e dando bastante destaque para foto.
-
-Preparei também 2 telas extras, uma de carregando e outra de quando deu erro, por questão de escopo não preparei metodos para se recuperar do erro.
-
-<p align="center">
-    <img src="Design/FeedDesign.png" alt="Challange accepted" />
-</p>
-
 ## Vulnerabilidades
+
 ### Moya
 Não é considerado uma vulnerabilidade, mas pelo fato de estar usando Swift 5.1 o Moya não atualizou certas dependências dele na versão estavel, tal como o ReactiveSwift que ainda esta na versão anterior assim não compilando. Com isso tive que usar a versão 14 Beta 4 do Moya.
 
