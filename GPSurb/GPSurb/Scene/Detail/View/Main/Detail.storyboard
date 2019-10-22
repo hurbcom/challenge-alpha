@@ -36,9 +36,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rX-fm-adE">
                                         <rect key="frame" x="10" y="10" width="300" height="30"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HgX-wL-Uth" userLabel="ViewStars">
-                                                <rect key="frame" x="150" y="0.0" width="150" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HgX-wL-Uth" userLabel="ViewStars" customClass="CosmosView" customModule="Cosmos">
+                                                <rect key="frame" x="150" y="5" width="150" height="20"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="(5)"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hc-zE-1he">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -49,11 +58,11 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="HgX-wL-Uth" firstAttribute="top" secondItem="1rX-fm-adE" secondAttribute="top" id="02R-cp-5pa"/>
+                                            <constraint firstItem="HgX-wL-Uth" firstAttribute="top" secondItem="1rX-fm-adE" secondAttribute="top" constant="5" id="02R-cp-5pa"/>
                                             <constraint firstItem="HgX-wL-Uth" firstAttribute="width" secondItem="1rX-fm-adE" secondAttribute="width" multiplier="0.5" id="0yk-lp-WHw"/>
                                             <constraint firstAttribute="bottom" secondItem="3hc-zE-1he" secondAttribute="bottom" id="9ff-RK-bNa"/>
                                             <constraint firstItem="3hc-zE-1he" firstAttribute="leading" secondItem="1rX-fm-adE" secondAttribute="leading" id="Ilr-Zw-Hna"/>
-                                            <constraint firstAttribute="bottom" secondItem="HgX-wL-Uth" secondAttribute="bottom" id="ZNK-D9-53g"/>
+                                            <constraint firstAttribute="bottom" secondItem="HgX-wL-Uth" secondAttribute="bottom" constant="5" id="ZNK-D9-53g"/>
                                             <constraint firstItem="3hc-zE-1he" firstAttribute="top" secondItem="1rX-fm-adE" secondAttribute="top" id="gzf-18-Ief"/>
                                             <constraint firstAttribute="trailing" secondItem="HgX-wL-Uth" secondAttribute="trailing" id="tUx-nw-twI"/>
                                             <constraint firstAttribute="height" constant="30" id="veG-m7-eKD"/>
@@ -131,6 +140,7 @@
                         <outlet property="lblLocation" destination="3hc-zE-1he" id="y0f-nv-Cfx"/>
                         <outlet property="lblShortDescription" destination="hvP-FE-WOy" id="1SU-MZ-cbY"/>
                         <outlet property="txtViewDescription" destination="gqw-vU-Cx5" id="5UQ-qy-F9Q"/>
+                        <outlet property="viewStar" destination="HgX-wL-Uth" id="vcy-5z-y5O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZd-AT-bhJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

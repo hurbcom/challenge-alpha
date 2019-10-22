@@ -26,6 +26,8 @@ struct ResultViewData {
     var freeCancellation = false
     var smallDescription = ""
     var description = ""
+    var type = TypeFilter.hotel
+    var stars = 0.0
 }
 
 
@@ -106,6 +108,8 @@ extension HotelAndPackageListPresenter {
         viewData.freeCancellation = model.huFreeCancellation ?? false
         viewData.smallDescription = model.smallDescription ?? ""
         viewData.description = model.description ?? ""
+        viewData.type = model.isHotel ?? false ? TypeFilter.hotel : TypeFilter.package
+        viewData.stars = Double(model.stars ?? 0)
         return viewData
     }
 }

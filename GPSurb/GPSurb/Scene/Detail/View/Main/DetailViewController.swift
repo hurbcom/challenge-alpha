@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Cosmos
 
 class DetailViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imgHeader: UIImageView!
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var lblShortDescription: UILabel!
+    @IBOutlet weak var viewStar: CosmosView!
     @IBOutlet weak var txtViewDescription: UITextView!
     @IBOutlet weak var collectionView: UICollectionView!
     // MARK: CONSTANTS
@@ -80,5 +82,8 @@ extension DetailViewController {
         self.lblLocation.text = self.viewData.destinationName
         self.lblShortDescription.text = self.viewData.offerName
         self.txtViewDescription.text = self.viewData.description.textWithoutHtml
+        self.viewStar.isHidden = self.viewData.type == .package
+        self.viewStar.rating = self.viewData.stars
+        self.viewStar.text = "(\(self.viewData.stars))"
     }
 }
