@@ -7,7 +7,7 @@
 * [O Projeto](#o-projeto)
 * [Instalação](#instalação)
 * [Design](#design)
-* ["Toque a mais"](#"toque-a-mais")
+* ["Toque a mais"](#toque-a-mais)
 * [Dependências](#dependências)
 * [Vulnerabilidades](#vulnerabilidades)
 
@@ -69,32 +69,32 @@ Preparei também 2 telas extras, uma de carregando e outra de quando deu erro, p
     <img src="Design/FeedDesign.png" alt="Feed Design" />
 </p>
 
-## "Toque a mais"
+## Toque a mais
 * Além dos requisitos minimos, configurei o projeto de maneira segura para diversos ambientes, Dev, AdHoc e AppStore.
 * Exibo além do preço atual, o desconto atual do local.
 * Uso células diferenciadas para o Hotel e Pacotes
 * Feed centrado na experiência do usuário
 * Auto Layout, a célula de pacote se adapita a largura do celular, mantendo aspect ratio.
-* Localizei o app tanto em Inglês quanto Português, icluindo o preço, como por exempo em **en_US** 3,000.00 em **pt_BR** 3.000,00. Mas tomei cuidado com o fato da API retornar a currency que o preço esta, então independente do caso vai sempre aparecer o simbulo como R$.
+* Localizei o app tanto em Inglês quanto Português, incluindo o preço, como por exempo em **en_US** 3,000.00 em **pt_BR** 3.000,00. Mas tomei cuidado com o fato da API retornar a currency que o preço esta, então independente do caso vai sempre aparecer o simbulo como R$.
 
 ## Dependências
 
 ### [Bundler](http://bundler.io)
-Uso ele para garantir consistencia entre as versões do cocoapods dos contribuidores do projeto, assim evitando problemas no Podfile.lock
+Uso ele para garantir consistencia entre as versões do cocoapods dos contribuidores do projeto, assim evitando problemas no Podfile.lock e consequentemente no workspace.
 
 ### [CocoaPods](https://cocoapods.org/)
 #### [SwiftLint](https://github.com/realm/SwiftLint)
 Creio que em grandes projetos tem que haver uma maneira de garantir que as regras de boas práticas sejam compridas, então não há escolha melhor que esta.
 #### [SwiftGen](https://github.com/SwiftGen/SwiftGen)
-Um dos grandes problemas, principalmente em assets, é garantir que eles sejam TypeSafe, escolhi ele para garantir que os Assets e arquivos de Localização fiquem todos TypeSafe.
+Um dos grandes problemas, principalmente em assets, é garantir que eles sejam type-safe, escolhi ele para garantir que os Assets e arquivos de Localização fiquem todos type-safe.
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 #### [RxSwift](https://github.com/ReactiveX/RxSwift)
 O forte do MVVM é a ligação entre a View e ViewModel, então bibliotecas reativas são muito bem vindas. Eu fiquei em duvida entre usar ele ou ReactiveSwift, ReactiveSwift esta presente a mais tempo no mundo Reativo do Swift e ele se aproxima mais a guidelines do Swift do que resto do mundo, por outro lado RxSwift se aproxima ao framework ReactiveX que esta disponivel em diversas plataformas logo ese tenta manter uma guideline padrão, creio que em um lugar como a Hurb com diversas linguagens de desenvolvimento seja mais atrativo manter um padrão entre elas.
 #### [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources)
-Uma falha no RxSwift é que ele não suporta a construção de feeds mais complexos que simples colections views ou table views, com isso para facilitar o trabalho resolvi usar ele.
+Uma falha no RxSwift é que ele não facilita a construção de feeds mais complexos que simples colections views ou table views, com isso para facilitar o trabalho resolvi usar ele.
 #### [Moya](https://github.com/Moya/Moya)
-Uma das grandes dificuldades em network layer é garantir que ele seja altamente testavel, escolhi o Moya por ele ser construido em cima do Alamofire, que ja esta a muito tempo presente no Swift, e ser altamente testavel.
+Uma das grandes dificuldades em network layer é garantir que ele seja altamente testavel, escolhi o Moya por ele ser construido em cima do Alamofire, que ja esta a muito tempo presente no Swift, ser altamente testavel e type-safe.
 #### [SnapKit](https://github.com/SnapKit/SnapKit)
 Ficar escrevendo constraints é um trabalho que demanda um certo tempo, e de não ser muito bonito em escrever, SnapKit facilita bastante mas ainda se acemelha muito a lógica da constraint nativa.
 #### [Kingfisher](https://github.com/SnapKit/Kingfisher)
