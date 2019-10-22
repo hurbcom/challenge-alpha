@@ -17,12 +17,14 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         didSet {
             guard let hotel = hotel else { return }
             titleLabel.text = hotel.name
+            // The API return the Currency, so we can't localize that
             currencyFormatter.currencySymbol = hotel.price.symbol
 
             priceLabel.text = currencyFormatter.string(from: NSNumber(value: hotel.price.amount))
-            descriptionLabel.text = "\(hotel.address.city) | \(hotel.address.state)"
-            var amenitiesText: String = "\(L10n.Feed.Cell.amenities): "
+            locationLabel.text = "\(hotel.address.city) | \(hotel.address.state)"
 
+            // Concat 3 or less amenities (some times the API only return 2)
+            var amenitiesText: String = "\(L10n.Feed.Cell.amenities): "
             for (idx, element) in hotel.amenities.enumerated() {
                 if idx > 2 {
                     break
@@ -37,11 +39,16 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             amenitiesLabel.text = amenitiesText
 
             guard let imageURL = hotel.image else { return }
+            // Not every image url that comes in the API use the HTTPS protocol,
+            // so we have to change the protocol, this is not a very good practice
+            // since we don't known if every image server suports it, but Apple don't
+            // allow non HTTPS calls, at least not in a production app.
             guard var comps = URLComponents(url: imageURL,
                                             resolvingAgainstBaseURL: false) else { return }
             comps.scheme = "https"
             imageView.kf.setImage(with: comps.url)
 
+            // Only show if have discount
             if hotel.price.discount < 0 {
                 discountLabel.text = "\(hotel.price.discount)%"
                 discountLabel.isHidden = false
@@ -86,10 +93,10 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
 
-    let descriptionLabel: UILabel = {
+    let locationLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.font = .systemFont(ofSize: 12.0, weight: .regular)
-        label.textColor = Theme.hurbGray
+        label.font = .systemFont(ofSize: 12.0, weight: .bold)
+        label.textColor = Theme.hurbLightGray
         label.textAlignment = .left
         label.numberOfLines = 1
         return label
@@ -131,7 +138,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         self.contentView.addSubview(titleLabel)
         self.contentView.addSubview(priceLabel)
         self.contentView.addSubview(discountLabel)
-        self.contentView.addSubview(descriptionLabel)
+        self.contentView.addSubview(locationLabel)
         self.contentView.addSubview(amenitiesLabel)
     }
 
@@ -140,11 +147,17 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             make.top.equalToSuperview()
             make.left.equalToSuperview()
             make.width.equalTo(300)
-            make.height.equalTo(200).priority(999)
+            make.height.equalTo(200)
+        }
+
+        locationLabel.snp.makeConstraints { (make) in
+            make.bottom.equalTo(imageView.snp.bottom).offset(-10)
+            make.leading.equalTo(imageView.snp.leading).offset(10)
+            make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
 
         titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(imageView.snp.bottom).offset(-5)
+            make.bottom.equalTo(locationLabel.snp.top).offset(-5)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
@@ -159,31 +172,25 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
             make.trailing.equalTo(imageView.snp.trailing)
         }
 
-        descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
-            make.leading.equalTo(imageView.snp.leading).offset(10)
-            make.trailing.equalTo(imageView.snp.trailing).offset(-10)
-        }
-
         amenitiesLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(5)
+            make.top.equalTo(imageView.snp.bottom).offset(5)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
     }
 
+    // MARK: - View lifecycle
+    // We need to clean the Cell since is going to be reused
     override func prepareForReuse() {
         super.prepareForReuse()
 
         hotel = nil
 
-        // reset (hide) the checkmark label
         discountLabel.isHidden = true
         titleLabel.text = nil
         priceLabel.text = nil
-        descriptionLabel.text = nil
+        locationLabel.text = nil
         imageView.image = nil
         discountLabel.text = nil
-
     }
 }
