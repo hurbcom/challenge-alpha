@@ -19,7 +19,22 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
             currencyFormatter.currencySymbol = package.price.symbol
 
             priceLabel.text = currencyFormatter.string(from: NSNumber(value: package.price.amount))
-            descriptionLabel.text = "\(package.amenities[0].name) + \(package.amenities[1].name) + \(package.amenities[2].name)"
+            locationLabel.text = "\(package.address.city) | \(package.address.state)"
+
+            var amenitiesText: String = "\(L10n.Feed.Cell.amenities): "
+
+            for (idx, element) in package.amenities.enumerated() {
+                if idx > 2 {
+                    break
+                }
+                if idx == package.amenities.startIndex {
+                    amenitiesText = amenitiesText + " \(element.name)"
+                } else if idx != package.amenities.endIndex-1 {
+                    amenitiesText = amenitiesText + ", \(element.name)"
+                }
+            }
+
+            amenitiesLabel.text = amenitiesText
 
             guard var comps = URLComponents(url: package.gallery[0].url,
                                             resolvingAgainstBaseURL: false) else { return }
@@ -63,12 +78,21 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
 
-    let descriptionLabel: UILabel = {
+    let amenitiesLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 12.0, weight: .regular)
         label.textColor = Theme.hurbLightGray
         label.textAlignment = .left
         label.numberOfLines = 2
+        return label
+    }()
+
+    let locationLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = .systemFont(ofSize: 12.0, weight: .bold)
+        label.textColor = Theme.hurbLightGray
+        label.textAlignment = .left
+        label.numberOfLines = 1
         return label
     }()
 
@@ -87,7 +111,7 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
     }()
 
     let flightLabel: PaddingUILabel = {
-        let label = PaddingUILabel(withInsets: 8, 8, 10, 10)
+        let label = PaddingUILabel(withInsets: 8, 10, 10, 8)
         label.font = .systemFont(ofSize: 16.0, weight: .bold)
         label.textColor = .black
         label.textAlignment = .center
@@ -107,8 +131,9 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
     override func setupUI() {
         self.contentView.addSubview(imageView)
         self.contentView.addSubview(flightLabel)
-        self.contentView.addSubview(descriptionLabel)
         self.contentView.addSubview(titleLabel)
+        self.contentView.addSubview(amenitiesLabel)
+        self.contentView.addSubview(locationLabel)
         self.contentView.addSubview(priceLabel)
     }
 
@@ -123,14 +148,20 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
             make.height.equalTo(imageView.snp.width).multipliedBy(imageAspec)
         }
 
-        descriptionLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(imageView.snp.bottom).offset(-10).priority(900)
+        locationLabel.snp.makeConstraints { (make) in
+            make.bottom.equalTo(imageView.snp.bottom).offset(-10)
+            make.leading.equalTo(imageView.snp.leading).offset(10)
+            make.trailing.equalTo(imageView.snp.trailing).offset(-10)
+        }
+
+        amenitiesLabel.snp.makeConstraints { (make) in
+            make.bottom.equalTo(locationLabel.snp.top).offset(-5)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
 
         titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(descriptionLabel.snp.top).offset(-5).priority(800)
+            make.bottom.equalTo(amenitiesLabel.snp.top).offset(-10)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
@@ -154,8 +185,9 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         titleLabel.text = nil
         priceLabel.text = nil
         flightLabel.isHidden = false
-        descriptionLabel.text = nil
+        amenitiesLabel.text = nil
         imageView.image = nil
+        locationLabel.text = nil
 
     }
 }
