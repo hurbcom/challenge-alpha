@@ -7,7 +7,7 @@
 * [O Projeto](#o-projeto)
 * [Instalação](#instalação)
 * [Design](#design)
-* ["Toque a mais"](#-toque-a-mais-)
+* ["Toque a mais"](#"toque-a-mais")
 * [Dependências](#dependências)
 * [Vulnerabilidades](#vulnerabilidades)
 
@@ -20,7 +20,7 @@ O projeto é separado em 3 Schemas: **Debug, AdHoc e AppStore** e 3 Build Config
 
 O projeto para evitar erro humano automaticamente detecta para qual schema esta buildando e pega as variaveis de ambientes de acordo, por exemplo você pode querer durante o desenvolvimento usar o localhost como url para consumir uma API, e uma url real para o app em produção. Para assim evitar que haja chance de acabar indo uma url de desenvolvimento para produção.
 
-No projeto eu usei tanto o CocoaPods, como Carthage. Fiz essa escolha pois como o Carthage compila os frameworks quando você pega eles, isso faz diminuir consideravelmente o tempo de compilação do projeto todo, assim aumentando a produtividade. Usei o CocoaPods somente pelo fato que nem tudo esta no Carthage, principalmente dois grandes frameworks muito usados: SwiftLint e SwiftGen.
+Usei tanto o CocoaPods, como Carthage. Fiz essa escolha pois como o Carthage compila os frameworks quando você pega eles, isso faz diminuir consideravelmente o tempo de compilação do projeto todo, assim aumentando a produtividade. Usei o CocoaPods somente pelo fato que nem tudo esta no Carthage, principalmente dois grandes frameworks muito usados: SwiftLint e SwiftGen.
 
 
 ## Instalação
@@ -75,6 +75,7 @@ Preparei também 2 telas extras, uma de carregando e outra de quando deu erro, p
 * Uso células diferenciadas para o Hotel e Pacotes
 * Feed centrado na experiência do usuário
 * Auto Layout, a célula de pacote se adapita a largura do celular, mantendo aspect ratio.
+* Localizei o app tanto em Inglês quanto Português, icluindo o preço, como por exempo em **en_US** 3,000.00 em **pt_BR** 3.000,00. Mas tomei cuidado com o fato da API retornar a currency que o preço esta, então independente do caso vai sempre aparecer o simbulo como R$.
 
 ## Dependências
 
