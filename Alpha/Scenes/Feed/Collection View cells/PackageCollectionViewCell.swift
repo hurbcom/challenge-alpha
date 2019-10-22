@@ -148,20 +148,20 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
             make.height.equalTo(imageView.snp.width).multipliedBy(imageAspec)
         }
 
-        locationLabel.snp.makeConstraints { (make) in
+        amenitiesLabel.snp.makeConstraints { (make) in
             make.bottom.equalTo(imageView.snp.bottom).offset(-10)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
 
-        amenitiesLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(locationLabel.snp.top).offset(-5)
+        locationLabel.snp.makeConstraints { (make) in
+            make.bottom.equalTo(amenitiesLabel.snp.top).offset(-5)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
 
         titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(amenitiesLabel.snp.top).offset(-10)
+            make.bottom.equalTo(locationLabel.snp.top).offset(-10)
             make.leading.equalTo(imageView.snp.leading).offset(10)
             make.trailing.equalTo(imageView.snp.trailing).offset(-10)
         }
