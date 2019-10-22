@@ -13,7 +13,10 @@ class DetailViewController: UIViewController {
     
     // MARK: OUTLETS
     @IBOutlet weak var imgHeader: UIImageView!
-    
+    @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var lblShortDescription: UILabel!
+    @IBOutlet weak var txtViewDescription: UITextView!
+    @IBOutlet weak var collectionView: UICollectionView!
     // MARK: CONSTANTS
     
     // MARK: VARIABLES
@@ -29,6 +32,21 @@ extension DetailViewController {
         super.viewDidLoad()
         self.presenter = DetailPresenter(viewDelegate: self)
         self.downloadImage(urlString: self.viewData.urlImageCard)
+        self.registerNIB()
+        self.setupView()
+    }
+}
+
+// MARK: - DELEGATE COLLECTIONVIEWDATASOURCE -
+extension DetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.viewData.amenities.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: AmenitiesCollectionViewCell = self.collectionView.dequeueReusableCell(for: indexPath)
+        cell.setupCell(description: self.viewData.amenities[indexPath.row])
+        return cell
     }
 }
 
@@ -53,4 +71,14 @@ extension DetailViewController {
                }
            }
        }
+    
+    private func registerNIB() {
+        self.collectionView.register(AmenitiesCollectionViewCell.self)
+    }
+    
+    private func setupView() {
+        self.lblLocation.text = self.viewData.destinationName
+        self.lblShortDescription.text = self.viewData.offerName
+        self.txtViewDescription.text = self.viewData.description
+    }
 }

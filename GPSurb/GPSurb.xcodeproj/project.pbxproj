@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023222FC235E407D00F00608 /* AmenitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023222FA235E407D00F00608 /* AmenitiesCollectionViewCell.swift */; };
+		023222FD235E407D00F00608 /* AmenitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023222FA235E407D00F00608 /* AmenitiesCollectionViewCell.swift */; };
+		023222FE235E407D00F00608 /* AmenitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023222FA235E407D00F00608 /* AmenitiesCollectionViewCell.swift */; };
+		023222FF235E407D00F00608 /* AmenitiesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023222FB235E407D00F00608 /* AmenitiesCollectionViewCell.xib */; };
+		02322300235E407D00F00608 /* AmenitiesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023222FB235E407D00F00608 /* AmenitiesCollectionViewCell.xib */; };
+		02322301235E407D00F00608 /* AmenitiesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023222FB235E407D00F00608 /* AmenitiesCollectionViewCell.xib */; };
+		02512CF7235F503C00DF8A19 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CF6235F503C00DF8A19 /* UiViewExtension.swift */; };
+		02512CF8235F503C00DF8A19 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CF6235F503C00DF8A19 /* UiViewExtension.swift */; };
+		02512CF9235F503C00DF8A19 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CF6235F503C00DF8A19 /* UiViewExtension.swift */; };
 		0251A51E2359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */; };
 		0251A51F2359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */; };
 		0251A5202359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */; };
@@ -190,6 +199,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		023222FA235E407D00F00608 /* AmenitiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmenitiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		023222FB235E407D00F00608 /* AmenitiesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmenitiesCollectionViewCell.xib; sourceTree = "<group>"; };
+		02512CF6235F503C00DF8A19 /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
 		0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAndPackageListPresenter.swift; sourceTree = "<group>"; };
 		0251A51D2359072900105C1E /* HotelAndPackageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAndPackageListViewController.swift; sourceTree = "<group>"; };
 		0251A5242359075700105C1E /* HotelAndPackageList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HotelAndPackageList.storyboard; sourceTree = "<group>"; };
@@ -293,6 +305,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		023222F8235E402400F00608 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				023222FB235E407D00F00608 /* AmenitiesCollectionViewCell.xib */,
+				023222FA235E407D00F00608 /* AmenitiesCollectionViewCell.swift */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		023222F9235E403500F00608 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				02A51D3A235A2EA100A339B0 /* Detail.storyboard */,
+				02A51D3F235A2EBE00A339B0 /* DetailViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		0251A5112359067300105C1E /* HotelAndPackage */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +563,7 @@
 			children = (
 				027766CC2357ABA20042BFE8 /* UICollectionViewExtension.swift */,
 				028EC17B235915D6005CEC60 /* UITableViewExtension.swift */,
+				02512CF6235F503C00DF8A19 /* UiViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -613,8 +644,8 @@
 		02A51D38235A2E6F00A339B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				02A51D3A235A2EA100A339B0 /* Detail.storyboard */,
-				02A51D3F235A2EBE00A339B0 /* DetailViewController.swift */,
+				023222F9235E403500F00608 /* Main */,
+				023222F8235E402400F00608 /* CollectionCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -792,6 +823,7 @@
 				027766D62357B6210042BFE8 /* loader.json in Resources */,
 				02F2213D235911BA0033D2DE /* pakenham rg.ttf in Resources */,
 				029D5BA22352241D00ABF951 /* LaunchScreen.storyboard in Resources */,
+				023222FF235E407D00F00608 /* AmenitiesCollectionViewCell.xib in Resources */,
 				029D5B9F2352241D00ABF951 /* Assets.xcassets in Resources */,
 				026C96AC2357A384002C1CC4 /* Home.storyboard in Resources */,
 				02F22134235910E50033D2DE /* ElementTableViewCell.xib in Resources */,
@@ -807,6 +839,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				027766D72357B6210042BFE8 /* loader.json in Resources */,
+				02322300235E407D00F00608 /* AmenitiesCollectionViewCell.xib in Resources */,
 				026C96BF2357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				02596BF82354CA870027C9EE /* Favorites.storyboard in Resources */,
 				02A51D3C235A2EA100A339B0 /* Detail.storyboard in Resources */,
@@ -824,6 +857,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				027766D82357B6210042BFE8 /* loader.json in Resources */,
+				02322301235E407D00F00608 /* AmenitiesCollectionViewCell.xib in Resources */,
 				026C96C02357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				02596BF92354CA870027C9EE /* Favorites.storyboard in Resources */,
 				02A51D3D235A2EA100A339B0 /* Detail.storyboard in Resources */,
@@ -1003,12 +1037,14 @@
 				026C96B62357A719002C1CC4 /* ReusableIdentifier.swift in Sources */,
 				026C9652235770E7002C1CC4 /* AmenitiesModel.swift in Sources */,
 				026C96A42357A2F7002C1CC4 /* HomePresenter.swift in Sources */,
+				023222FC235E407D00F00608 /* AmenitiesCollectionViewCell.swift in Sources */,
 				026C966E235772D8002C1CC4 /* MetaModel.swift in Sources */,
 				026C96662357725A002C1CC4 /* GalleryModel.swift in Sources */,
 				029D5B9D2352241B00ABF951 /* GPSurb.xcdatamodeld in Sources */,
 				027766CD2357ABA20042BFE8 /* UICollectionViewExtension.swift in Sources */,
 				026C964E235763C2002C1CC4 /* AddressModel.swift in Sources */,
 				026C967A23577370002C1CC4 /* PriceIntervalModel.swift in Sources */,
+				02512CF7235F503C00DF8A19 /* UiViewExtension.swift in Sources */,
 				028EC17C235915D6005CEC60 /* UITableViewExtension.swift in Sources */,
 				026C96762357733F002C1CC4 /* PriceModel.swift in Sources */,
 				026C966A2357729B002C1CC4 /* GeoLocationModel.swift in Sources */,
@@ -1055,7 +1091,9 @@
 				02A51D41235A2EBE00A339B0 /* DetailPresenter.swift in Sources */,
 				029D5BAD2352241D00ABF951 /* GPSurbTests.swift in Sources */,
 				026C9683235773EC002C1CC4 /* ProductTypeModel.swift in Sources */,
+				023222FD235E407D00F00608 /* AmenitiesCollectionViewCell.swift in Sources */,
 				026C964B2357637A002C1CC4 /* HURBListModel.swift in Sources */,
+				02512CF8235F503C00DF8A19 /* UiViewExtension.swift in Sources */,
 				026C964F235763C2002C1CC4 /* AddressModel.swift in Sources */,
 				026C9693235774C6002C1CC4 /* StarsModel.swift in Sources */,
 				02A51D44235A2EBE00A339B0 /* DetailViewController.swift in Sources */,
@@ -1104,7 +1142,9 @@
 				02A51D42235A2EBE00A339B0 /* DetailPresenter.swift in Sources */,
 				029D5BB82352241D00ABF951 /* GPSurbUITests.swift in Sources */,
 				026C9684235773EC002C1CC4 /* ProductTypeModel.swift in Sources */,
+				023222FE235E407D00F00608 /* AmenitiesCollectionViewCell.swift in Sources */,
 				026C964C2357637A002C1CC4 /* HURBListModel.swift in Sources */,
+				02512CF9235F503C00DF8A19 /* UiViewExtension.swift in Sources */,
 				026C9650235763C2002C1CC4 /* AddressModel.swift in Sources */,
 				026C9694235774C6002C1CC4 /* StarsModel.swift in Sources */,
 				02A51D45235A2EBE00A339B0 /* DetailViewController.swift in Sources */,

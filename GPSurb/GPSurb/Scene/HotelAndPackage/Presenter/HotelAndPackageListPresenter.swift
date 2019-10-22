@@ -24,6 +24,8 @@ struct ResultViewData {
     var urlImageCard = ""
     var gallery = [String]()
     var freeCancellation = false
+    var smallDescription = ""
+    var description = ""
 }
 
 
@@ -102,6 +104,8 @@ extension HotelAndPackageListPresenter {
         viewData.urlImageCard = model.image ?? model.gallery?.first?.url ?? ""
         model.gallery?.forEach({viewData.gallery.append($0.url ?? "")})
         viewData.freeCancellation = model.huFreeCancellation ?? false
+        viewData.smallDescription = model.smallDescription ?? ""
+        viewData.description = model.description ?? ""
         return viewData
     }
 }
