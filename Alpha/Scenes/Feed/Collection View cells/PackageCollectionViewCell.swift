@@ -21,8 +21,8 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
             priceLabel.text = currencyFormatter.string(from: NSNumber(value: package.price.amount))
             locationLabel.text = "\(package.address.city) | \(package.address.state)"
 
+            // Concat 3 or less amenities (some times the API only return 2)
             var amenitiesText: String = "\(L10n.Feed.Cell.amenities): "
-
             for (idx, element) in package.amenities.enumerated() {
                 if idx > 2 {
                     break
@@ -38,6 +38,10 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
 
             guard var comps = URLComponents(url: package.gallery[0].url,
                                             resolvingAgainstBaseURL: false) else { return }
+            // Not every image url that comes in the API use the HTTPS protocol,
+            // so we have to change the protocol, this is not a very good practice
+            // since we don't known if every image server suports it, but Apple don't
+            // allow non HTTPS calls, at least not in a production app.
             comps.scheme = "https"
             imageView.kf.setImage(with: comps.url)
 
@@ -178,6 +182,8 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
 
     }
 
+    // MARK: - View lifecycle
+    // We need to clean the Cell since is going to be reused
     override func prepareForReuse() {
         super.prepareForReuse()
 

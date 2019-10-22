@@ -4,7 +4,7 @@
 //
 //  Created by Theo Mendes on 22/10/19.
 //  Copyright © 2019 Hurb. All rights reserved.
-//
+//  Thanks https://bulldogjob.com/articles/1013-carousel-collection-view-layout
 
 import UIKit
 

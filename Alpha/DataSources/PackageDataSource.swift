@@ -44,11 +44,3 @@ extension PackageDataSource: UICollectionViewDataSource {
         return cell
     }
 }
-
-extension PackageDataSource: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                                layout collectionViewLayout: UICollectionViewLayout,
-                                sizeForItemAt indexPath: IndexPath) -> CGSize {
-                return CGSize(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.width * (350 / 377)))
-    }
-}
