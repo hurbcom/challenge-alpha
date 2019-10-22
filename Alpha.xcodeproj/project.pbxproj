@@ -52,7 +52,7 @@
 		31B00F81235A2C7300AD62B8 /* StarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F80235A2C7300AD62B8 /* StarTableViewCell.swift */; };
 		31B00F83235A30E900AD62B8 /* HotelsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F82235A30E900AD62B8 /* HotelsDataSource.swift */; };
 		31B00F85235A318E00AD62B8 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F84235A318E00AD62B8 /* BaseCollectionViewCell.swift */; };
-		31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift */; };
+		31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift */; };
 		31B00F8A235A5DCB00AD62B8 /* StarTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F89235A5DCB00AD62B8 /* StarTableViewHeader.swift */; };
 		31B00F8C235A6CD200AD62B8 /* PaddingUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B00F8B235A6CD200AD62B8 /* PaddingUILabel.swift */; };
 		31CBD336235D027A0027444E /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CBD334235D027A0027444E /* RxMoya.framework */; };
@@ -153,7 +153,7 @@
 		31B00F80235A2C7300AD62B8 /* StarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTableViewCell.swift; sourceTree = "<group>"; };
 		31B00F82235A30E900AD62B8 /* HotelsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsDataSource.swift; sourceTree = "<group>"; };
 		31B00F84235A318E00AD62B8 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCollectionViewCell.swift.swift; sourceTree = "<group>"; };
+		31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCollectionViewCell.swift; sourceTree = "<group>"; };
 		31B00F89235A5DCB00AD62B8 /* StarTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTableViewHeader.swift; sourceTree = "<group>"; };
 		31B00F8B235A6CD200AD62B8 /* PaddingUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingUILabel.swift; sourceTree = "<group>"; };
 		31B00F95235B61CF00AD62B8 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -517,7 +517,7 @@
 		31B00F86235A31A600AD62B8 /* Collection View cells */ = {
 			isa = PBXGroup;
 			children = (
-				31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift */,
+				31B00F87235A31C100AD62B8 /* HotelCollectionViewCell.swift */,
 				310CEA6A235BA8980022EFF5 /* PackageCollectionViewCell.swift */,
 				31916866235F610900566025 /* CarouselLayout.swift */,
 			);
@@ -906,7 +906,7 @@
 				31B00F85235A318E00AD62B8 /* BaseCollectionViewCell.swift in Sources */,
 				31B00F7E235A294500AD62B8 /* BaseTableViewCell.swift in Sources */,
 				31537DFD2353A9DC0011DBD4 /* Logger.swift in Sources */,
-				31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift.swift in Sources */,
+				31B00F88235A31C100AD62B8 /* HotelCollectionViewCell.swift in Sources */,
 				31537E042354C2540011DBD4 /* Assets.swift in Sources */,
 				31CBD353235DE2E40027444E /* UIColor + Theme.swift in Sources */,
 				31537E1D2355D6F60011DBD4 /* Images.swift in Sources */,
