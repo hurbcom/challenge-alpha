@@ -24,6 +24,7 @@
 		8074C2DC235EA10A00BA6E2E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2DB235EA10A00BA6E2E /* Networking.swift */; };
 		8074C2DE235EA13600BA6E2E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2DD235EA13600BA6E2E /* Endpoints.swift */; };
 		8074C2E0235EA17E00BA6E2E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2DF235EA17E00BA6E2E /* Services.swift */; };
+		8074C2E2235EA60000BA6E2E /* ViewStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2E1235EA60000BA6E2E /* ViewStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8074C2DB235EA10A00BA6E2E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		8074C2DD235EA13600BA6E2E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		8074C2DF235EA17E00BA6E2E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		8074C2E1235EA60000BA6E2E /* ViewStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				806643F6235E935000C79B50 /* Theme.swift */,
 				8074C2D3235E9E7D00BA6E2E /* Hotel.swift */,
 				8074C2D5235E9F2900BA6E2E /* APIResponse.swift */,
+				8074C2E1235EA60000BA6E2E /* ViewStatus.swift */,
 				8074C2DA235EA0FB00BA6E2E /* Networking */,
 				806643EF235E885C00C79B50 /* ListHotelCollectionViewCell.xib */,
 				806643DA235E83D200C79B50 /* Main.storyboard */,
@@ -184,6 +187,7 @@
 				806643F5235E926100C79B50 /* UIView+Extensions.swift in Sources */,
 				8074C2DC235EA10A00BA6E2E /* Networking.swift in Sources */,
 				806643F7235E935000C79B50 /* Theme.swift in Sources */,
+				8074C2E2235EA60000BA6E2E /* ViewStatus.swift in Sources */,
 				806643D5235E83D200C79B50 /* AppDelegate.swift in Sources */,
 				8074C2D6235E9F2900BA6E2E /* APIResponse.swift in Sources */,
 				8074C2D4235E9E7D00BA6E2E /* Hotel.swift in Sources */,

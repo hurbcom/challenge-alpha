@@ -26,11 +26,16 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-5T-1Yg">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4si-BR-rVA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1LO-qa-QzA"/>
+                            <constraint firstItem="rMe-5T-1Yg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A1B-rR-3r8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4si-BR-rVA" secondAttribute="bottom" id="QyN-0y-yBM"/>
+                            <constraint firstItem="rMe-5T-1Yg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="am6-of-Rzm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4si-BR-rVA" secondAttribute="trailing" id="l3m-ug-b1n"/>
                             <constraint firstItem="4si-BR-rVA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uix-rp-IIf"/>
                         </constraints>
@@ -38,6 +43,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pqL-eo-WEy"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="rMe-5T-1Yg" id="rRr-Qh-Hff"/>
                         <outlet property="collectionView" destination="4si-BR-rVA" id="ejw-WO-Ikg"/>
                     </connections>
                 </viewController>

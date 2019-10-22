@@ -27,5 +27,11 @@ class ListHotelCollectionViewCell: UICollectionViewCell {
         self.containerView.backgroundColor = Theme.surfaceColor
         self.hotelPriceLabel.textColor = Theme.secondaryColor
     }
+    
+    func config(with hotel: Hotel) {
+        self.hotelNameLabel.text = hotel.name
+        self.hotelPriceLabel.text = hotel.price.inCurrency()
+        self.hotelCityLabel.text = "\(hotel.address.city) - \(hotel.address.state)"
+    }
 
 }

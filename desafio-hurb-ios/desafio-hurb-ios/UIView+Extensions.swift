@@ -16,4 +16,11 @@ extension UIView {
         self.layer.masksToBounds = true
     }
 
+    func hide() {
+        self.isHidden = true
+    }
+    
+    func show() {
+        self.isHidden = false
+    }
 }

@@ -9,12 +9,13 @@
 import UIKit
 
 protocol ListViewProtocol {
-    
+    func setupView()->Void
 }
 
 class ListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var viewModel: ListViewModel!
     
@@ -22,11 +23,11 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
 
         self.viewModel = ListViewModel(view: self)
+        self.viewModel.getHotels(with: "buzios")
         self.setup()
         self.customize()
         self.setupCollectionView()
     }
-
 }
 
 // MARK: - Setup Methods
@@ -35,6 +36,8 @@ extension ListViewController {
     
     func setup() {
         self.title = "Hotéis"
+        self.collectionView.hide()
+        self.activityIndicatorView.stopAnimating()
     }
     
     func customize() {
@@ -56,11 +59,12 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return self.viewModel.hotels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListHotelCollectionViewCell.identifier, for: indexPath) as! ListHotelCollectionViewCell
+        cell.config(with: self.viewModel.hotels[indexPath.row])
         return cell
     }
     
@@ -83,5 +87,22 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
 // MARK: - Protocol Methods
 
 extension ListViewController: ListViewProtocol {
+    
+    func setupView() {
+        
+        self.activityIndicatorView.stopAnimating()
+        self.collectionView.hide()
+        
+        switch self.viewModel.status {
+        case .loading:
+            self.activityIndicatorView.startAnimating()
+        case .loaded:
+            self.collectionView.reloadData()
+            self.collectionView.show()
+        default:
+            print("default")
+        }
+        
+    }
     
 }
