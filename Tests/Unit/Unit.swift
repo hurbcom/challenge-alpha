@@ -13,7 +13,7 @@ import RxSwift
 class UnitTests: XCTestCase {
     var provider: AlphaNetworkManager!
     var disposeBag: DisposeBag!
-    var viewModel: FeedViewModel!
+    var viewModel: BaseViewModel!
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -26,6 +26,7 @@ class UnitTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         provider = nil
         disposeBag = nil
+        viewModel = nil
     }
 
     func testNetworkLayer() {
@@ -60,6 +61,7 @@ class UnitTests: XCTestCase {
 
     // This tests the inputs and outputs of the view model.
     func testFeedViewModel() {
+        guard let viewModel = viewModel as? FeedViewModel else { return }
         let expectation = self.expectation(description: "View Model test")
         
         let input = FeedViewModel.Input(headerRefresh: Observable.just(()))

@@ -99,7 +99,7 @@
 		310CEA6E235BAC610022EFF5 /* PackageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDataSource.swift; sourceTree = "<group>"; };
 		310CEA70235CCCDB0022EFF5 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		310CEA71235CCCDC0022EFF5 /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
-		3141D6B7235366A100A922DF /* Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3141D6B7235366A100A922DF /* Alpha  Δ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alpha  Δ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3141D6BA235366A100A922DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		3141D6C3235366A300A922DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3141D6C8235366A300A922DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 		3141D6B8235366A100A922DF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3141D6B7235366A100A922DF /* Alpha.app */,
+				3141D6B7235366A100A922DF /* Alpha  Δ.app */,
 				3141D6DE2353689300A922DF /* UnitTests.xctest */,
 				3141D6EE235368DE00A922DF /* UITests.xctest */,
 			);
@@ -588,7 +588,7 @@
 			);
 			name = Alpha;
 			productName = Alpha;
-			productReference = 3141D6B7235366A100A922DF /* Alpha.app */;
+			productReference = 3141D6B7235366A100A922DF /* Alpha  Δ.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3141D6DD2353689300A922DF /* UnitTests */ = {
@@ -1135,7 +1135,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theomendes.Alpha${BUNDLE_ID_SUFFIX}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Alpha  Δ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1165,7 +1165,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theomendes.Alpha${BUNDLE_ID_SUFFIX}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Alpha  Δ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1257,7 +1257,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theomendes.Alpha${BUNDLE_ID_SUFFIX}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Alpha  Δ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
