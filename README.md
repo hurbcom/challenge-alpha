@@ -7,7 +7,8 @@
 * [O Projeto](#o-projeto)
 * [Instalação](#instalação)
 * [Design](#design)
-* ["Toque a mais"](#toque-a-mais)
+* [Toque a mais](#toque-a-mais)
+* [Testes](#testes)
 * [Dependências](#dependências)
 * [Vulnerabilidades](#vulnerabilidades)
 
@@ -76,6 +77,15 @@ Preparei também 2 telas extras, uma de carregando e outra de quando deu erro, p
 * Feed centrado na experiência do usuário
 * Auto Layout, a célula de pacote se adapita a largura do celular, mantendo aspect ratio.
 * Localizei o app tanto em Inglês quanto Português, incluindo o preço, como por exempo em **en_US** 3,000.00 em **pt_BR** 3.000,00. Mas tomei cuidado com o fato da API retornar a currency que o preço esta, então independente do caso vai sempre aparecer o simbulo como R$.
+
+## Testes
+Total de cobertura:  **86%**
+
+### Unitários
+Criei testes unitários para o ViewModel e o Network layer, usei um stub em formato json para mockar a resposta da API, para assim garantir a consistencia dos dados. o stup criei de uma resposta da API da hurb, mas deletei alguns objetos para garantir a diferença entre a API real para o stub
+
+### UI
+Pelo fato do app conter uma tela eu testei o scroll vertical, e swipe em duas sessões.
 
 ## Dependências
 
