@@ -8,7 +8,7 @@
 "basic.error" = "Error";
 "basic.ok" = "OK";
 "basic.show_more" = "Ver Mais";
-"basic.error.message" = "Algo deu errado";
+"basic.error.message" = "Vish! Algo deu errado";
 
 "feed.section.package.title" = "Pacotes";
 "feed.section.package.subtitle" = "As melhores ofertas para você!";

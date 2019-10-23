@@ -18,7 +18,7 @@ class FeedViewModel: BaseViewModel, ViewModelType {
 
     // MARK: - Input Output
     struct Input {
-        let headerRefresh: Observable<Void>
+        let refresh: Observable<Void>
     }
     struct Output {
         let feed: BehaviorRelay<[FeedSection]>
@@ -29,13 +29,13 @@ class FeedViewModel: BaseViewModel, ViewModelType {
         let elements = BehaviorRelay<[FeedSection]>(value: [])
         let isLoading = BehaviorRelay<Bool>(value: true)
 
-        input.headerRefresh.flatMapLatest({[weak self] () -> Observable<[Deal]> in
+        input.refresh.flatMapLatest({[weak self] () -> Observable<[Deal]> in
             guard let self = self else { return Observable.just([]) }
             return self.request(query: "buzios", page: 1)
         }).subscribe(onNext: { items in
-            elements.accept(self.handleFeed(withDealArray: items))
-            isLoading.accept(false)
-            }).disposed(by: disposeBag)
+                elements.accept(self.handleFeed(withDealArray: items))
+                isLoading.accept(false)
+        }).disposed(by: disposeBag)
 
         return Output(feed: elements, isLoading: isLoading)
     }

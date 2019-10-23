@@ -1,8 +1,8 @@
 //
-//  LoadingUIView.swift
+//  ErrorUIView.swift
 //  Alpha
 //
-//  Created by Theo Mendes on 20/10/19.
+//  Created by Theo Mendes on 23/10/19.
 //  Copyright © 2019 Hurb. All rights reserved.
 //
 
@@ -10,21 +10,13 @@ import UIKit
 import SnapKit
 
 /// A Custom UIView to be shown before content loads
-class LoadingUIView: UIView {
+class ErrorUIView: UIView {
     // MARK: - Properties
 
     var loadingImage: UIImageView = {
         let view = UIImageView(frame: .zero)
-        view.image = Asset.hotel.image
+        view.image = Asset.error.image
         view.contentMode = .scaleAspectFill
-        return view
-    }()
-
-    var activityIndicator: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView()
-        view.style = .whiteLarge
-        view.color = .black
-        view.startAnimating()
         return view
     }()
 
@@ -32,7 +24,7 @@ class LoadingUIView: UIView {
         let label = UILabel(frame: .zero)
         label.textColor = .black
         label.textAlignment = .center
-        label.text = L10n.Loading.text
+        label.text = L10n.Basic.Error.message
         label.numberOfLines = 2
         label.font = .systemFont(ofSize: 28.0, weight: .bold)
         return label
@@ -63,7 +55,6 @@ class LoadingUIView: UIView {
     func setupUI() {
         stackView.addArrangedSubview(loadingImage)
         stackView.addArrangedSubview(loadingLabel)
-        stackView.addArrangedSubview(activityIndicator)
         self.addSubview(stackView)
         setupConstraints()
     }
@@ -83,4 +74,3 @@ class LoadingUIView: UIView {
         }
     }
 }
-

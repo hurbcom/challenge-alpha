@@ -8,7 +8,7 @@
 "basic.error" = "Error";
 "basic.ok" = "OK";
 "basic.show_more" = "Show more";
-"basic.error.message" = "Something went wrong";
+"basic.error.message" = "Oh snap! Something went wrong";
 
 "feed.section.package.title" = "Packages";
 "feed.section.package.subtitle" = "Best prices for you!";

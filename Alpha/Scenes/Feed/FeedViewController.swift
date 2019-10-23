@@ -73,6 +73,13 @@ class FeedViewController: BaseViewController {
         return view
     }()
 
+    var errorView: ErrorUIView = {
+        let view = ErrorUIView(frame: .zero)
+        view.isHidden = true
+        view.backgroundColor = .white
+        return view
+    }()
+
     // MARK: - viewDidLoad
 
     override func viewDidLoad() {
@@ -100,29 +107,29 @@ class FeedViewController: BaseViewController {
             .disposed(by: disposeBag)
 
         self.view.addSubview(feedTableView)
+        self.view.addSubview(errorView)
         self.view.addSubview(loadingView)
     }
 
     // MARK: - Binding
 
     override func bindViewModel() {
-        guard let viewModel = viewModel as? FeedViewModel else {
-            os_log("❌ - Couldn't transform ViewModel %@", log: Logger.appLog(), type: .fault, "\(self)")
-            return
-        }
+        guard let viewModel = viewModel as? FeedViewModel else { return }
 
         let refresh = Observable.of(Observable.just(()), headerRefreshTrigger).merge()
-        let input = FeedViewModel.Input(headerRefresh: refresh)
+        let input = FeedViewModel.Input(refresh: refresh)
 
         let output = viewModel.transform(input: input)
 
-        output.isLoading.subscribe(onNext: { event in
+        output.isLoading.subscribe(onNext: { [weak self] event in
             if !event {
-                self.loadingView.isHidden = true
+                self?.loadingView.isHidden = true
             } else {
-                self.loadingView.isHidden = false
+                self?.loadingView.isHidden = false
             }
-            }).disposed(by: disposeBag)
+        }, onError: { [weak self] _ in
+            self?.errorView.isHidden = false
+        }).disposed(by: disposeBag)
 
         output.feed.asDriver(onErrorJustReturn: [])
             .drive(feedTableView.rx.items(dataSource: dataSource))
@@ -142,6 +149,10 @@ class FeedViewController: BaseViewController {
         }
 
         loadingView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+
+        errorView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
     }
