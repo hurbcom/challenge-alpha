@@ -84,13 +84,33 @@ Preparei também 2 telas extras, uma de carregando e outra de quando deu erro, p
     <img src="Design/FeedDesign.png" alt="Feed Design" />
 </p>
 
+<p align="center">
+    <img src="Design/Icons.png" alt="Icons" />
+</p>
+
 ## Toque a mais
-* Além dos requisitos minimos, configurei o projeto de maneira segura para diversos ambientes, Dev, AdHoc e AppStore.
-* Exibo além do preço atual, o desconto atual do local.
-* Uso células diferenciadas para o Hotel e Pacotes
-* Feed centrado na experiência do usuário
-* Auto Layout, a célula de pacote se adapita a largura do celular, mantendo aspect ratio.
-* Localizei o app tanto em Inglês quanto Português, incluindo o preço, como por exempo em **en_US** 3,000.00 em **pt_BR** 3.000,00. Mas tomei cuidado com o fato da API retornar a currency que o preço esta, então independente do caso vai sempre aparecer o simbulo como R$.
+Ao invés de implementar telas extras resolvi somente focar no desenvolvimento do feed, para assim criar um feed bem conceituado e um projeto bem configurado
+
+### Configurei o projeto de maneira segura para diversos ambientes, Dev, AdHoc e AppStore.
+Isso mantem a consistencia do projeto entre os colaboradores, não precisando ficar mudando strings de API antes de dar um push, por exemplo, ou até mesmo ao mandar para a AppStore.
+
+### Exibo além do preço atual, o desconto atual do local.
+Pela análise tanto do app como site vi que uma coisa que vocês valorizam é o preço atrativo, então adicionar essa lógica me pareceu interessante.
+
+### Dentro das seções são ordanadas pela porcentagem do desconto
+Com isso eu crio um destaque para os maiores descontos, e consequentemente o item que o desconto acabou de finalizar tem menos prioridade no feed.
+
+### Uso células diferenciadas para o Hotel e Pacotes
+A Hurb valoriza os seus pacotes, então colocando eles na primeira parte do feed, e com elementos diferenciados do hotel, crio um destaque para eles.
+
+### Feed centrado na experiência do usuário
+O usuário acha rapidamente a informação que ele quer, como o Preço, facilidades, local e estrelas.
+
+### Auto Layout, a célula de pacote se adapita a largura do celular, mantendo aspect ratio.
+A celula fica proporcional para qualquer dispositivo, e as de hotel sempre ficam no centro da tela.
+
+### Localização do app tanto em Inglês quanto Português.
+Como a Hurb esta em um processo de internacionalização, é uma obrigação do app se adaptar aos locais que ele vai está disponível. Isso incluindo o preço, como por exempo em **en_US** 3,000.00 em **pt_BR** 3.000,00. Mas tomei cuidado com o fato da API retornar a currency que o preço esta, então independente do caso vai sempre aparecer o simbulo como R$.
 
 ## Testes
 Total de cobertura:  **86%**
@@ -126,7 +146,7 @@ Kingfisher oferece maneiras eficientes de fazer o download de imagens e guardar 
 
 ## Vulnerabilidades
 
-### Moya
+### Moya - Beta
 Não é considerado uma vulnerabilidade, mas pelo fato de estar usando Swift 5.1 o Moya não atualizou certas dependências dele na versão estavel, tal como o ReactiveSwift que ainda esta na versão anterior assim não compilando. Com isso tive que usar a versão 14 Beta 4 do Moya.
 
 ### Imagens das celulas de collection view - HTTPS
