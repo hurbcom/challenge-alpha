@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.0.0-rc.2)
+  - ImageLoader (0.15.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.2)
+  - ImageLoader
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ImageLoader
 
 SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  ImageLoader: e0635d52020d64dc7687e3a3b14dc53212ac0442
 
-PODFILE CHECKSUM: 72b8e244131ab0a1feaba26495bb2da69315a960
+PODFILE CHECKSUM: a3adbcaa0d0b3818ca33e8c118b574a35500a3cd
 
 COCOAPODS: 1.8.4

@@ -7,5 +7,6 @@ target 'DesafioHurb' do
 
   # Pods for DesafioHurb
   pod 'Alamofire', '~> 5.0.0-rc.2'
+  pod 'ImageLoader'
 
 end
