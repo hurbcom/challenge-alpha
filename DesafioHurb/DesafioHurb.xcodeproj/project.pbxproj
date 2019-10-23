@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5FC743326A4C04AA7FBF478B /* Pods_DesafioHurb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A2D752A199FB416C542E51 /* Pods_DesafioHurb.framework */; };
+		802CF50D235FD3E5007DCD03 /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF50C235FD3E5007DCD03 /* ApplicationService.swift */; };
+		802CF510235FD6F5007DCD03 /* StaticValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF50F235FD6F5007DCD03 /* StaticValues.swift */; };
+		802CF512235FE186007DCD03 /* StaticFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF511235FE186007DCD03 /* StaticFunctions.swift */; };
+		8061AFED235FCC7600690DE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061AFEC235FCC7600690DE4 /* AppDelegate.swift */; };
+		8061AFEF235FCC7600690DE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061AFEE235FCC7600690DE4 /* SceneDelegate.swift */; };
+		8061AFF4235FCC7600690DE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8061AFF2235FCC7600690DE4 /* Main.storyboard */; };
+		8061AFF7235FCC7600690DE4 /* DesafioHurb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8061AFF5235FCC7600690DE4 /* DesafioHurb.xcdatamodeld */; };
+		8061AFF9235FCC7800690DE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8061AFF8235FCC7800690DE4 /* Assets.xcassets */; };
+		8061AFFC235FCC7800690DE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8061AFFA235FCC7800690DE4 /* LaunchScreen.storyboard */; };
+		8061B004235FCC9800690DE4 /* HotelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061B003235FCC9800690DE4 /* HotelsViewController.swift */; };
+		8061B007235FCCA900690DE4 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061B006235FCCA900690DE4 /* Hotel.swift */; };
+		8061B00B235FCCD300690DE4 /* HotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061B009235FCCD300690DE4 /* HotelTableViewCell.swift */; };
+		8061B00C235FCCD300690DE4 /* HotelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8061B00A235FCCD300690DE4 /* HotelTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05A2D752A199FB416C542E51 /* Pods_DesafioHurb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioHurb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		802CF50C235FD3E5007DCD03 /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
+		802CF50F235FD6F5007DCD03 /* StaticValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticValues.swift; sourceTree = "<group>"; };
+		802CF511235FE186007DCD03 /* StaticFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFunctions.swift; sourceTree = "<group>"; };
+		8061AFE9235FCC7600690DE4 /* DesafioHurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioHurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8061AFEC235FCC7600690DE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8061AFEE235FCC7600690DE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8061AFF3235FCC7600690DE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8061AFF6235FCC7600690DE4 /* DesafioHurb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DesafioHurb.xcdatamodel; sourceTree = "<group>"; };
+		8061AFF8235FCC7800690DE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8061AFFB235FCC7800690DE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8061AFFD235FCC7800690DE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8061B003235FCC9800690DE4 /* HotelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsViewController.swift; sourceTree = "<group>"; };
+		8061B006235FCCA900690DE4 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		8061B009235FCCD300690DE4 /* HotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelTableViewCell.swift; sourceTree = "<group>"; };
+		8061B00A235FCCD300690DE4 /* HotelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelTableViewCell.xib; sourceTree = "<group>"; };
+		96C8FDC6CF3F8102FD2551B7 /* Pods-DesafioHurb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioHurb.release.xcconfig"; path = "Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb.release.xcconfig"; sourceTree = "<group>"; };
+		9738BBCD66C8A82F9A3C74DE /* Pods-DesafioHurb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioHurb.debug.xcconfig"; path = "Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8061AFE6235FCC7600690DE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC743326A4C04AA7FBF478B /* Pods_DesafioHurb.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		802CF50E235FD3E9007DCD03 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				802CF50C235FD3E5007DCD03 /* ApplicationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		802CF513235FE18C007DCD03 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				802CF50F235FD6F5007DCD03 /* StaticValues.swift */,
+				802CF511235FE186007DCD03 /* StaticFunctions.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		8061AFE0235FCC7600690DE4 = {
+			isa = PBXGroup;
+			children = (
+				8061AFEB235FCC7600690DE4 /* DesafioHurb */,
+				8061AFEA235FCC7600690DE4 /* Products */,
+				DBF231B1D3A4CB7EB58D8FF0 /* Pods */,
+				C86F95313EE2F7C9576EF999 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8061AFEA235FCC7600690DE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8061AFE9235FCC7600690DE4 /* DesafioHurb.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8061AFEB235FCC7600690DE4 /* DesafioHurb */ = {
+			isa = PBXGroup;
+			children = (
+				8061AFEC235FCC7600690DE4 /* AppDelegate.swift */,
+				8061AFEE235FCC7600690DE4 /* SceneDelegate.swift */,
+				802CF513235FE18C007DCD03 /* Tools */,
+				802CF50E235FD3E9007DCD03 /* Services */,
+				8061B008235FCCAC00690DE4 /* Model */,
+				8061B00D235FCCD700690DE4 /* View */,
+				8061B005235FCC9C00690DE4 /* Controller */,
+				8061AFF8235FCC7800690DE4 /* Assets.xcassets */,
+				8061AFFD235FCC7800690DE4 /* Info.plist */,
+				8061AFF5235FCC7600690DE4 /* DesafioHurb.xcdatamodeld */,
+			);
+			path = DesafioHurb;
+			sourceTree = "<group>";
+		};
+		8061B005235FCC9C00690DE4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8061B003235FCC9800690DE4 /* HotelsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8061B008235FCCAC00690DE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8061B006235FCCA900690DE4 /* Hotel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8061B00D235FCCD700690DE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8061AFFA235FCC7800690DE4 /* LaunchScreen.storyboard */,
+				8061AFF2235FCC7600690DE4 /* Main.storyboard */,
+				8061B009235FCCD300690DE4 /* HotelTableViewCell.swift */,
+				8061B00A235FCCD300690DE4 /* HotelTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C86F95313EE2F7C9576EF999 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05A2D752A199FB416C542E51 /* Pods_DesafioHurb.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBF231B1D3A4CB7EB58D8FF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9738BBCD66C8A82F9A3C74DE /* Pods-DesafioHurb.debug.xcconfig */,
+				96C8FDC6CF3F8102FD2551B7 /* Pods-DesafioHurb.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8061AFE8235FCC7600690DE4 /* DesafioHurb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8061B000235FCC7800690DE4 /* Build configuration list for PBXNativeTarget "DesafioHurb" */;
+			buildPhases = (
+				E11244561F686438696AE06A /* [CP] Check Pods Manifest.lock */,
+				8061AFE5235FCC7600690DE4 /* Sources */,
+				8061AFE6235FCC7600690DE4 /* Frameworks */,
+				8061AFE7235FCC7600690DE4 /* Resources */,
+				335AB8E9489FABCEC6352368 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesafioHurb;
+			productName = DesafioHurb;
+			productReference = 8061AFE9235FCC7600690DE4 /* DesafioHurb.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8061AFE1235FCC7600690DE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Filipo Negrao";
+				TargetAttributes = {
+					8061AFE8235FCC7600690DE4 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 8061AFE4235FCC7600690DE4 /* Build configuration list for PBXProject "DesafioHurb" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8061AFE0235FCC7600690DE4;
+			productRefGroup = 8061AFEA235FCC7600690DE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8061AFE8235FCC7600690DE4 /* DesafioHurb */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8061AFE7235FCC7600690DE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8061AFFC235FCC7800690DE4 /* LaunchScreen.storyboard in Resources */,
+				8061AFF9235FCC7800690DE4 /* Assets.xcassets in Resources */,
+				8061B00C235FCCD300690DE4 /* HotelTableViewCell.xib in Resources */,
+				8061AFF4235FCC7600690DE4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		335AB8E9489FABCEC6352368 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E11244561F686438696AE06A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioHurb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8061AFE5235FCC7600690DE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8061B007235FCCA900690DE4 /* Hotel.swift in Sources */,
+				8061AFF7235FCC7600690DE4 /* DesafioHurb.xcdatamodeld in Sources */,
+				802CF512235FE186007DCD03 /* StaticFunctions.swift in Sources */,
+				8061B00B235FCCD300690DE4 /* HotelTableViewCell.swift in Sources */,
+				802CF50D235FD3E5007DCD03 /* ApplicationService.swift in Sources */,
+				8061AFED235FCC7600690DE4 /* AppDelegate.swift in Sources */,
+				802CF510235FD6F5007DCD03 /* StaticValues.swift in Sources */,
+				8061B004235FCC9800690DE4 /* HotelsViewController.swift in Sources */,
+				8061AFEF235FCC7600690DE4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8061AFF2235FCC7600690DE4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8061AFF3235FCC7600690DE4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8061AFFA235FCC7800690DE4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8061AFFB235FCC7800690DE4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8061AFFE235FCC7800690DE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8061AFFF235FCC7800690DE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8061B001235FCC7800690DE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9738BBCD66C8A82F9A3C74DE /* Pods-DesafioHurb.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M7KY4TXQRJ;
+				INFOPLIST_FILE = DesafioHurb/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = filiponegrao.DesafioHurb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8061B002235FCC7800690DE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96C8FDC6CF3F8102FD2551B7 /* Pods-DesafioHurb.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M7KY4TXQRJ;
+				INFOPLIST_FILE = DesafioHurb/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = filiponegrao.DesafioHurb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8061AFE4235FCC7600690DE4 /* Build configuration list for PBXProject "DesafioHurb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8061AFFE235FCC7800690DE4 /* Debug */,
+				8061AFFF235FCC7800690DE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8061B000235FCC7800690DE4 /* Build configuration list for PBXNativeTarget "DesafioHurb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8061B001235FCC7800690DE4 /* Debug */,
+				8061B002235FCC7800690DE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8061AFF5235FCC7600690DE4 /* DesafioHurb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8061AFF6235FCC7600690DE4 /* DesafioHurb.xcdatamodel */,
+			);
+			currentVersion = 8061AFF6235FCC7600690DE4 /* DesafioHurb.xcdatamodel */;
+			path = DesafioHurb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8061AFE1235FCC7600690DE4 /* Project object */;
+}
