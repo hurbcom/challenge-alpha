@@ -136,10 +136,10 @@ O usuário acha rapidamente a informação que ele quer, como o Preço, facilida
 A celula fica proporcional para qualquer dispositivo, e as de hotel sempre ficam no centro da tela.
 
 ### 6.7 Localização do app tanto em Inglês quanto Português.
-Como a Hurb esta em um processo de internacionalização, é uma obrigação do app se adaptar aos locais que ele vai está disponível. Isso incluindo o preço, como por exempo em **en_US** 3,000.00 em **pt_BR** 3.000,00. Mas tomei cuidado com o fato da API retornar a currency que o preço esta, então independente do caso vai sempre aparecer o simbulo como R$.
+Como a Hurb esta em um processo de internacionalização, é uma obrigação do app se adaptar aos locais que ele vai está disponível. Isso incluindo o preço, como por exempo em **en_US** 3,000.00 em **pt_BR** 3.000,00. Mas tomei cuidado com o fato da API retornar a currency que o preço esta, então independente do caso vai sempre aparecer o simbolo como R$.
 
 ## 7. Testes
-Total de cobertura:  **86%**
+Total de cobertura:  **87%**
 
 ### 7.1. Unitários
 Criei testes unitários para o ViewModel e o Network layer, usei um stub em formato json para mockar a resposta da API, para assim garantir a consistencia dos dados. o stup criei de uma resposta da API da hurb, mas deletei alguns objetos para garantir a diferença entre a API real para o stub
