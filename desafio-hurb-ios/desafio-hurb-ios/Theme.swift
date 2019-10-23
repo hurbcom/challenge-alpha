@@ -14,4 +14,5 @@ struct Theme {
     static let primaryColor = UIColor(red: 29/255, green: 57/255, blue: 210/255, alpha: 1)
     static let onPrimaryColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
     static let secondaryColor = UIColor(red: 213/255, green: 57/255, blue: 125/255, alpha: 1)
+    static let lightGrayColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1)
 }

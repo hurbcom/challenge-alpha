@@ -13,3 +13,9 @@ extension UICollectionViewCell {
         return String(describing: self)
     }
 }
+
+extension UITableViewCell {
+    class var identifier: String {
+        return String(describing: self)
+    }
+}

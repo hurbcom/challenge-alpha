@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelDetailTableViewCell" rowHeight="177" id="KGk-i7-Jjw" customClass="HotelDetailTableViewCell" customModule="desafio_hurb_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="177"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="483" height="177"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do hotel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyp-TV-y6Z">
+                        <rect key="frame" x="16" y="16" width="451" height="26.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAX-Kk-Kf3">
+                        <rect key="frame" x="16" y="46.5" width="451" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-Oa-AOK">
+                        <rect key="frame" x="16" y="79.5" width="451" height="29"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glR-2B-gjg">
+                                <rect key="frame" x="0.0" y="0.0" width="409" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-a6-FWU">
+                                <rect key="frame" x="419" y="0.0" width="32" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbe-CT-JKT">
+                        <rect key="frame" x="16" y="124.5" width="451" height="36.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cyp-TV-y6Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="40U-NP-aY9"/>
+                    <constraint firstAttribute="trailing" secondItem="mAX-Kk-Kf3" secondAttribute="trailing" constant="16" id="AU4-5v-gYf"/>
+                    <constraint firstItem="jbe-CT-JKT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="GBe-VP-Eii"/>
+                    <constraint firstItem="hUW-Oa-AOK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Uol-LQ-raf"/>
+                    <constraint firstAttribute="trailing" secondItem="cyp-TV-y6Z" secondAttribute="trailing" constant="16" id="VpO-QE-aS0"/>
+                    <constraint firstAttribute="trailing" secondItem="hUW-Oa-AOK" secondAttribute="trailing" constant="16" id="X0k-Fx-bMK"/>
+                    <constraint firstItem="hUW-Oa-AOK" firstAttribute="top" secondItem="mAX-Kk-Kf3" secondAttribute="bottom" constant="16" id="dJw-lG-pUa"/>
+                    <constraint firstItem="cyp-TV-y6Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dpZ-Mt-a94"/>
+                    <constraint firstItem="jbe-CT-JKT" firstAttribute="top" secondItem="hUW-Oa-AOK" secondAttribute="bottom" constant="16" id="e0l-SO-vE6"/>
+                    <constraint firstItem="mAX-Kk-Kf3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="eYm-SK-TdL"/>
+                    <constraint firstAttribute="trailing" secondItem="jbe-CT-JKT" secondAttribute="trailing" constant="16" id="v35-r1-I3l"/>
+                    <constraint firstItem="mAX-Kk-Kf3" firstAttribute="top" secondItem="cyp-TV-y6Z" secondAttribute="bottom" constant="4" id="vxW-J4-Cu3"/>
+                    <constraint firstAttribute="bottom" secondItem="jbe-CT-JKT" secondAttribute="bottom" constant="16" id="zsf-M4-dOq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="hotelAdressLabel" destination="mAX-Kk-Kf3" id="Mba-sc-Ezx"/>
+                <outlet property="hotelDescriptionLabel" destination="jbe-CT-JKT" id="D97-9w-loj"/>
+                <outlet property="hotelNameLabel" destination="cyp-TV-y6Z" id="nJy-Xu-m7H"/>
+                <outlet property="hotelPriceLabel" destination="glR-2B-gjg" id="1Cj-ZI-A3T"/>
+                <outlet property="hotelStarsLabel" destination="V2G-a6-FWU" id="xKl-Oi-AS1"/>
+            </connections>
+            <point key="canvasLocation" x="80.434782608695656" y="-49.21875"/>
+        </tableViewCell>
+    </objects>
+</document>

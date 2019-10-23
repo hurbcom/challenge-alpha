@@ -28,17 +28,27 @@ class ListHotelCollectionViewCell: UICollectionViewCell {
         self.containerView.roundedCorner(with: 8)
         self.containerView.backgroundColor = Theme.surfaceColor
         self.hotelPriceLabel.textColor = Theme.secondaryColor
+        self.hotelCityLabel.textColor = Theme.lightGrayColor
+        self.hotelAmenitiesLabel.textColor = Theme.lightGrayColor
         self.hotelImageView.contentMode = .scaleAspectFill
+        self.hotelAmenitiesLabel.lineBreakMode = .byClipping
     }
     
     func config(with hotel: Hotel) {
         self.hotelNameLabel.text = hotel.name
         self.hotelPriceLabel.text = hotel.price.inCurrency()
         self.hotelCityLabel.text = "\(hotel.address.city) - \(hotel.address.state)"
-        self.hotelImageView.setImage(with: hotel.image ?? "", placeholder: "placeholder")
         self.hotelAmenitiesLabel.text = hotel.first3Amenities()
+        
+        if let image = hotel.image {
+            self.hotelImageView.setImage(with: image, placeholder: "placeholder")
+        }
     }
     
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.hotelImageView.image = UIImage(named: "placeholder")
+    }
 
 }

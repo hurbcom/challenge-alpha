@@ -10,7 +10,7 @@
         <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="desafio_hurb_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" id="BYZ-38-t0r" customClass="ListViewController" customModule="desafio_hurb_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,6 +95,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="822" y="138"/>
+        </scene>
+        <!--Hotel Detail View Controller-->
+        <scene sceneID="UqO-kW-kp3">
+            <objects>
+                <viewController storyboardIdentifier="HotelDetailViewController" id="HTM-J4-7SN" customClass="HotelDetailViewController" customModule="desafio_hurb_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cTr-1Q-tnB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0oH-v7-ZUD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0T3-LO-mhg" firstAttribute="bottom" secondItem="0oH-v7-ZUD" secondAttribute="bottom" id="F9l-Td-UD3"/>
+                            <constraint firstItem="0oH-v7-ZUD" firstAttribute="leading" secondItem="0T3-LO-mhg" secondAttribute="leading" id="OQh-K8-2gD"/>
+                            <constraint firstItem="0oH-v7-ZUD" firstAttribute="top" secondItem="0T3-LO-mhg" secondAttribute="top" id="gTJ-Zo-pSf"/>
+                            <constraint firstItem="0T3-LO-mhg" firstAttribute="trailing" secondItem="0oH-v7-ZUD" secondAttribute="trailing" id="hNG-XS-du5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0T3-LO-mhg"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="0oH-v7-ZUD" id="HrO-RB-SJq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gR-MJ-Jxl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1510" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Ad-ZL-6Cv">

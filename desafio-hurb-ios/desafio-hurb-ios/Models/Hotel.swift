@@ -12,6 +12,7 @@ class Hotel: Codable {
     var name: String
     var image: String?
     var price: Price
+    var smallDescription: String
     var address: Address
     var stars: Int?
     var amenities: [Amenity]
@@ -22,6 +23,10 @@ class Hotel: Codable {
             initialString += "\(amenity.name)\n"
         }
         return initialString
+    }
+    
+    func fullAdress() -> String {
+        return self.address.street == nil ? "\(self.address.city) - \(self.address.state)" : "\(self.address.street ?? "") - \(self.address.city) - \(self.address.state)"
     }
 }
 
@@ -39,6 +44,7 @@ class Price: Codable {
 class Address: Codable {
     var city: String
     var state: String
+    var street: String?
 }
 
 class Amenity: Codable {

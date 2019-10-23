@@ -44,6 +44,7 @@ extension ListViewController {
     func customize() {
         self.view.backgroundColor = Theme.backgroundColor
         self.collectionView.backgroundColor = Theme.backgroundColor
+        self.customizeNavigationController()
     }
     
     @IBAction func tryAgainButtonTapped() {
@@ -60,11 +61,18 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func setupCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.collectionView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         self.collectionView.register(UINib(nibName: ListHotelCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ListHotelCollectionViewCell.identifier)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.viewModel.sortedHotels.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let destination = StoryboardHelper.detailVC as! HotelDetailViewController
+        destination.selectedHotel = self.viewModel.sortedHotels[indexPath.section][indexPath.row]
+        self.navigationController?.pushViewController(destination, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

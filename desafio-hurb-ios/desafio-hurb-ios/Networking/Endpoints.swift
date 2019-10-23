@@ -29,13 +29,3 @@ class hurbSearch: Endpoint {
         self.endpoint = "search/api?q=\(searchParameter)&page=1"
     }
 }
-
-//class PicPayTransaction: Endpoint {
-//    var endpoint: String = "transaction/"
-//    var method: RequestMethod = .post
-//    var parameters: Data?
-//
-//    init(with payment: Payment) {
-//        self.parameters = payment.asData()
-//    }
-//}

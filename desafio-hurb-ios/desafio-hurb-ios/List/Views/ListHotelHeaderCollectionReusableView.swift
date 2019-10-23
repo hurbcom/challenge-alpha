@@ -10,4 +10,9 @@ import UIKit
 
 class ListHotelHeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var sectionTitleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.sectionTitleLabel.textColor = Theme.lightGrayColor
+    }
 }
