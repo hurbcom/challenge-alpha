@@ -17,7 +17,7 @@ class ApplicationService : NSObject {
     }
     
     /** Método responsável por recuperar os hoteis da API */
-    func getHotels(
+    func getData(
         searchText: String?,
         pageIndex: Int,
         callback: @escaping((_ hotels: [Hotel], _ error: String?)->())) {
@@ -57,7 +57,52 @@ class ApplicationService : NSObject {
                 callback(result, ERROR_SERVER_MESSAGE)
             }
         }
+    }
+    
+    func getHotels(
+           searchText: String?,
+           pageIndex: Int,
+           callback: @escaping((_ hotels: [Hotel], _ error: String?)->())) {
         
+        self.getData(searchText: searchText, pageIndex: pageIndex) { (hotels: [Hotel], error: String?) in
+            if let error = error {
+                callback(hotels, error)
+            }
+            var filtered = [Hotel]()
+            for hotel in hotels {
+                if hotel.isHotel {
+                    filtered.append(hotel)
+                }
+            }
+            callback(filtered, error)
+        }
+    }
+    
+    func getHotelsAndPackages(
+           searchText: String?,
+           pageIndex: Int,
+           callback: @escaping((_ hotels: [Hotel], _ packages: [Hotel], _ error: String?)->())) {
+        
+        self.getData(searchText: searchText, pageIndex: pageIndex) { (result: [Hotel], error: String?) in
+            var hotels = [Hotel]()
+            var packages = [Hotel]()
+            if let error = error {
+                callback(hotels, packages, error)
+            }
+            for hotel in result {
+                if hotel.isHotel {
+                    hotels.append(hotel)
+                }
+                if hotel.isPackage {
+                    packages.append(hotel)
+                }
+            }
+            
+            hotels = hotels.sorted(by: { $0.stars > $1.stars })
+            packages = packages.sorted(by: { $0.stars > $1.stars })
+
+            callback(hotels, packages, error)
+        }
     }
     
 }
