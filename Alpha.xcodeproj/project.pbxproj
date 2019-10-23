@@ -495,7 +495,7 @@
 		31537E1E2355FFCC0011DBD4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				31CBD33D235D08E70027444E /* Stubbed Responses */,
+				31CBD33D235D08E70027444E /* Stub */,
 				31CBD33B235D03310027444E /* HurbAPI.swift */,
 				31CBD342235D15AA0027444E /* AlphaAPI.swift */,
 				31CBD344235D192B0027444E /* AlphaNetworkManager.swift */,
@@ -524,12 +524,12 @@
 			path = "Collection View cells";
 			sourceTree = "<group>";
 		};
-		31CBD33D235D08E70027444E /* Stubbed Responses */ = {
+		31CBD33D235D08E70027444E /* Stub */ = {
 			isa = PBXGroup;
 			children = (
 				31CBD340235D0A230027444E /* Hurb.json */,
 			);
-			path = "Stubbed Responses";
+			path = Stub;
 			sourceTree = "<group>";
 		};
 		31CF025223577D77008C92B0 /* Enumerations */ = {

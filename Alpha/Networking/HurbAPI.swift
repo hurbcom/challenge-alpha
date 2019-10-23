@@ -64,12 +64,20 @@ extension HurbAPI: TargetType {
     var sampleData: Data {
         var dataUrl: URL?
         switch self {
-        case .search:
-            dataUrl = Bundle.main.url(forResource: "Hurb", withExtension: "json")
+        case .search: dataUrl = Bundle.main.url(forResource: "Hurb", withExtension: "json")
         }
         if let url = dataUrl, let data = try? Data(contentsOf: url) {
+            print(data)
             return data
         }
         return Data()
+    }
+
+    func stubbedResponse(_ file: String) -> Data {
+        @objc class TestClass: NSObject {}
+
+        let bundle = Bundle(for: TestClass.self)
+        let path = bundle.path(forResource: file, ofType: "json")
+        return (try! Data(contentsOf: URL(fileURLWithPath: path!)))
     }
 }

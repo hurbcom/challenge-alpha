@@ -11,12 +11,22 @@ import Moya
 import RxMoya
 import RxSwift
 
+enum NetworkState {
+    case Unit
+    case Production
+}
+
 struct AlphaNetworkManager: AlphaAPI {
-    private let provider = MoyaProvider<HurbAPI>(plugins: [NetworkLoggerPlugin()])
+    private let provider: MoyaProvider<HurbAPI>
 
-    static let shared = AlphaNetworkManager()
-
-    private init() {}
+    init(state: NetworkState) {
+        switch state {
+        case .Unit:
+            provider = MoyaProvider<HurbAPI>(stubClosure: MoyaProvider.immediatelyStub)
+        case .Production:
+            provider = MoyaProvider<HurbAPI>(plugins: [NetworkLoggerPlugin()])
+        }
+    }
 
     func search(query: String, page: Int) -> Single<HurbResponse> {
         return provider.rx
