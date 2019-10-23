@@ -145,7 +145,7 @@ class HotelCollectionViewCell: BaseCollectionViewCell {
         self.contentView.addSubview(locationLabel)
         self.contentView.addSubview(amenitiesLabel)
     }
-    
+
     // MARK: - Constraints
 
     override func setupConstraints() {

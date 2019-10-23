@@ -29,6 +29,8 @@ class FeedViewController: BaseViewController {
                     fatalError("Unknown identifier")
                 }
                 cell.currentDataSource = HotelsDataSource(with: hotels)
+                cell.collectionView.accessibilityIdentifier = "PackageCollectionView\(indexPath)"
+                cell.accessibilityIdentifier = "Star\(indexPath)"
                 return cell
             case .Package(let packages):
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: feedSection.identifier)
@@ -37,6 +39,8 @@ class FeedViewController: BaseViewController {
                     fatalError("Unknown identifier")
                 }
                 cell.currentDataSource = PackageDataSource(with: packages)
+                cell.collectionView.accessibilityIdentifier = "HotelCollectionView\(indexPath)"
+                cell.accessibilityIdentifier = "PackageTable\(indexPath)"
                 return cell
             }
         })
@@ -58,6 +62,7 @@ class FeedViewController: BaseViewController {
         view.estimatedRowHeight = 140.0
         view.estimatedSectionHeaderHeight = 55.0
         view.layoutMargins = .zero
+        view.accessibilityIdentifier = "feedTableView"
         return view
     }()
 
@@ -99,7 +104,7 @@ class FeedViewController: BaseViewController {
     }
 
     // MARK: - Binding
-    
+
     override func bindViewModel() {
         guard let viewModel = viewModel as? FeedViewModel else {
             os_log("❌ - Couldn't transform ViewModel %@", log: Logger.appLog(), type: .fault, "\(self)")
@@ -123,9 +128,9 @@ class FeedViewController: BaseViewController {
             .drive(feedTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
-    
+
     // MARK: - Constraints
-    
+
     override func setupConstraints() {
         super.setupConstraints()
 

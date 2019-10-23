@@ -36,6 +36,9 @@ extension HotelsDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.Hotel.rawValue, for: indexPath) as? HotelCollectionViewCell else { fatalError("Unknown identifier") }
         cell.hotel = items[indexPath.row]
+        cell.accessibilityIdentifier = "Hotel\(indexPath)"
+        cell.imageView.accessibilityIdentifier = "HotelImage\(indexPath)"
+        cell.imageView.isAccessibilityElement = true
         return cell
     }
 }

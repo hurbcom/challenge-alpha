@@ -41,6 +41,7 @@ extension PackageDataSource: UICollectionViewDataSource {
                 fatalError("Unknown identifier")
         }
         cell.package = items[indexPath.row]
+        cell.accessibilityIdentifier = "Package\(indexPath)"
         return cell
     }
 }

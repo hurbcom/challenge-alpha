@@ -147,7 +147,7 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
         self.contentView.addSubview(locationLabel)
         self.contentView.addSubview(priceLabel)
     }
-    
+
     // MARK: - Constraints
 
     override func setupConstraints() {
