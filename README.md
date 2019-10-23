@@ -23,6 +23,20 @@ O projeto para evitar erro humano automaticamente detecta para qual schema esta 
 
 Usei tanto o CocoaPods, como Carthage. Fiz essa escolha pois como o Carthage compila os frameworks quando você pega eles, isso faz diminuir consideravelmente o tempo de compilação do projeto todo, assim aumentando a produtividade. Usei o CocoaPods somente pelo fato que nem tudo esta no Carthage, principalmente dois grandes frameworks muito usados: SwiftLint e SwiftGen.
 
+## Significado dos logs
+* 👶 -> View Init
+* ⚰️ -> View Deinit
+* 🧠 -> View Model
+* 🧭 -> Coordinator
+* 🎮 -> View Controller
+* 🔲 -> Table View Cell
+* 🏻 -> Collection View Cell
+* 📶 -> Network
+    * ⬇️ -> Receiving
+    * ⬆️ -> Sending
+    * ✅ -> Status Successful
+    * ⚠️ -> Status Failure
+
 
 ## Instalação
 
