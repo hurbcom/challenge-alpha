@@ -12,10 +12,13 @@ class ListViewModel {
     
     var hotels = [Hotel]()
     var sortedHotels: [[Hotel]]
+    var sortedHotelsTitles: [String] = ["5 Estrelas", "4 Estrelas", "3 Estrelas", "2 Estrelas", "1 Estrela", "Pacotes"]
     let view: ListViewProtocol!
     var status: ViewStatus = .none {
         didSet {
-            self.view.setupView()
+            DispatchQueue.main.async {
+                self.view.setupView()
+            }
         }
     }
     
@@ -30,6 +33,7 @@ class ListViewModel {
 extension ListViewModel {
     
     func getHotels(with query: String) {
+        self.status = .loading
         NetworkingServices.getHotels(with: query) { (result) in
             switch result {
             case .success(let hotels):
@@ -37,9 +41,7 @@ extension ListViewModel {
                 self.sortedHotels = HotelSorter.sortedHotels(from: hotels)
                 self.status = .loaded
             case .failure(let error):
-//                DispatchQueue.main.async {
-//                    self.view.setupError()
-//                }
+                self.status = .error
                 NSLog(error.localizedDescription)
             }
         }

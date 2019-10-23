@@ -16,6 +16,7 @@ class ListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var errorView: UIStackView!
     
     var viewModel: ListViewModel!
     
@@ -23,10 +24,10 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
 
         self.viewModel = ListViewModel(view: self)
-        self.viewModel.getHotels(with: "buzios")
         self.setup()
         self.customize()
         self.setupCollectionView()
+        self.viewModel.getHotels(with: "buzios")
     }
 }
 
@@ -37,12 +38,16 @@ extension ListViewController {
     func setup() {
         self.title = "Hotéis"
         self.collectionView.hide()
-        self.activityIndicatorView.stopAnimating()
+        self.errorView.hide()
     }
     
     func customize() {
         self.view.backgroundColor = Theme.backgroundColor
         self.collectionView.backgroundColor = Theme.backgroundColor
+    }
+    
+    @IBAction func tryAgainButtonTapped() {
+        self.viewModel.getHotels(with: "buzios")
     }
     
 }
@@ -72,13 +77,43 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+    
+      switch kind {
+      case UICollectionView.elementKindSectionHeader:
+        guard let headerView = collectionView.dequeueReusableSupplementaryView( ofKind: kind, withReuseIdentifier: "ListHotelHeaderCollectionReusableView", for: indexPath) as? ListHotelHeaderCollectionReusableView
+          else {
+            fatalError("Invalid view type")
+        }
+
+        let searchTerm = self.viewModel.sortedHotelsTitles[indexPath.section]
+        headerView.sectionTitleLabel.text = searchTerm
+        return headerView
+      default:
+        assert(false, "Invalid element type")
+      }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if self.viewModel.sortedHotels[section].count == 0 {
+            return .zero
+        } else {
+            return CGSize(width: self.collectionView.frame.width, height: 40)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.collectionView.frame.width
         return CGSize(width: width, height: 130)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
+        if self.viewModel.sortedHotels[section].count == 0 {
+            return .zero
+        } else {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -95,6 +130,7 @@ extension ListViewController: ListViewProtocol {
     func setupView() {
         
         self.activityIndicatorView.stopAnimating()
+        self.errorView.hide()
         self.collectionView.hide()
         
         switch self.viewModel.status {
@@ -103,6 +139,8 @@ extension ListViewController: ListViewProtocol {
         case .loaded:
             self.collectionView.reloadData()
             self.collectionView.show()
+        case .error:
+            self.errorView.show()
         default:
             print("default")
         }

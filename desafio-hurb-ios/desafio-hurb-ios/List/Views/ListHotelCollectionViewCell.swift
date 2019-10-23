@@ -28,13 +28,14 @@ class ListHotelCollectionViewCell: UICollectionViewCell {
         self.containerView.roundedCorner(with: 8)
         self.containerView.backgroundColor = Theme.surfaceColor
         self.hotelPriceLabel.textColor = Theme.secondaryColor
+        self.hotelImageView.contentMode = .scaleAspectFill
     }
     
     func config(with hotel: Hotel) {
         self.hotelNameLabel.text = hotel.name
         self.hotelPriceLabel.text = hotel.price.inCurrency()
         self.hotelCityLabel.text = "\(hotel.address.city) - \(hotel.address.state)"
-        self.hotelImageView.setImage(with: hotel.image ?? "")
+        self.hotelImageView.setImage(with: hotel.image ?? "", placeholder: "placeholder")
         self.hotelAmenitiesLabel.text = hotel.first3Amenities()
     }
     
