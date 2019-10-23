@@ -8,7 +8,7 @@
 
 import XCTest
 import RxSwift
-@testable import Alpha
+@testable import Alpha__Δ
 
 class UnitTests: XCTestCase {
     var provider: AlphaNetworkManager!
@@ -35,7 +35,6 @@ class UnitTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         provider
             .search(query: "", page: 1)
-            .map { $0.results }
             .asObservable()
             .subscribe(onNext: { items in
                 XCTAssertEqual(items.count, 18)
@@ -50,7 +49,6 @@ class UnitTests: XCTestCase {
         let expectation = self.expectation(description: "Package Request")
         provider
             .search(query: "", page: 1)
-            .map { $0.results }
             .asObservable()
             .subscribe(onNext: { items in
                 XCTAssertEqual(items.filter({ ($0.isPackage ?? false) }).count, 1)
@@ -64,7 +62,7 @@ class UnitTests: XCTestCase {
         guard let viewModel = viewModel as? FeedViewModel else { return }
         let expectation = self.expectation(description: "View Model test")
         
-        let input = FeedViewModel.Input(headerRefresh: Observable.just(()))
+        let input = FeedViewModel.Input(refresh: Observable.just(()))
         let output = viewModel.transform(input: input)
         
         output

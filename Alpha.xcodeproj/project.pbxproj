@@ -1288,7 +1288,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alpha.app/Alpha";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alpha  Δ.app/Alpha  Δ";
 			};
 			name = Debug;
 		};
@@ -1313,7 +1313,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alpha.app/Alpha";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alpha  Δ.app/Alpha  Δ";
 			};
 			name = AppStore;
 		};
@@ -1338,7 +1338,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alpha.app/Alpha";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alpha  Δ.app/Alpha  Δ";
 			};
 			name = AdHoc;
 		};

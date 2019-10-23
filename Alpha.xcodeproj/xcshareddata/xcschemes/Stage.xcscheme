@@ -15,7 +15,7 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "3141D6B6235366A100A922DF"
-                     BuildableName = "Alpha.app"
+                     BuildableName = "Alpha  &#x394;.app"
                      BlueprintName = "Alpha"
                      ReferencedContainer = "container:Alpha.xcodeproj">
                   </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3141D6B6235366A100A922DF"
-               BuildableName = "Alpha.app"
+               BuildableName = "Alpha  &#x394;.app"
                BlueprintName = "Alpha"
                ReferencedContainer = "container:Alpha.xcodeproj">
             </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3141D6B6235366A100A922DF"
-            BuildableName = "Alpha.app"
+            BuildableName = "Alpha  &#x394;.app"
             BlueprintName = "Alpha"
             ReferencedContainer = "container:Alpha.xcodeproj">
          </BuildableReference>
@@ -100,7 +100,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3141D6B6235366A100A922DF"
-            BuildableName = "Alpha.app"
+            BuildableName = "Alpha  &#x394;.app"
             BlueprintName = "Alpha"
             ReferencedContainer = "container:Alpha.xcodeproj">
          </BuildableReference>
