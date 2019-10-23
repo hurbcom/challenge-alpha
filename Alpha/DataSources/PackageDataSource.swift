@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 /// A Data Source for the Package Collection View
 class PackageDataSource: NSObject {
@@ -38,6 +39,7 @@ extension PackageDataSource: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: Identifiers.Package.rawValue,
             for: indexPath) as? PackageCollectionViewCell else {
+                os_log("❌ - Unknown cell identifier %@", log: Logger.appLog(), type: .fault, "\(self)")
                 fatalError("Unknown identifier")
         }
         cell.package = items[indexPath.row]

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 /// A Data Source for the Hotels Collection View
 class HotelsDataSource: NSObject {
@@ -34,7 +35,11 @@ extension HotelsDataSource: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.Hotel.rawValue, for: indexPath) as? HotelCollectionViewCell else { fatalError("Unknown identifier") }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.Hotel.rawValue, for: indexPath) as? HotelCollectionViewCell else {
+            os_log("❌ - Unknown cell identifier %@", log: Logger.appLog(), type: .fault, "\(self)")
+            fatalError("Unknown identifier")
+
+        }
         cell.hotel = items[indexPath.row]
         cell.accessibilityIdentifier = "Hotel\(indexPath)"
         cell.imageView.accessibilityIdentifier = "HotelImage\(indexPath)"

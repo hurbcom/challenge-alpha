@@ -52,7 +52,6 @@ class FeedViewModel: BaseViewModel, ViewModelType {
     func request(query: String, page: Int) -> Observable<[Deal]> {
         return provider
             .search(query: query, page: page)
-            .map { $0.results }
             .asObservable()
     }
 

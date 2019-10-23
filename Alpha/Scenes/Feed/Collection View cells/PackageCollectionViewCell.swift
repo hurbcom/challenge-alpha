@@ -15,10 +15,7 @@ class PackageCollectionViewCell: BaseCollectionViewCell {
 
     var package: Deal? {
         didSet {
-            guard let package = package else {
-                os_log("❌ - Package was nil %@", log: Logger.appLog(), type: .fault, "\(self)")
-                return
-            }
+            guard let package = package else { return }
             titleLabel.text = package.name
             currencyFormatter.currencySymbol = package.price.symbol
 

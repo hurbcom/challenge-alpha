@@ -20,5 +20,5 @@ protocol AlphaAPI {
 
     - Returns: An HurbResponse sequence
     */
-    func search(query: String, page: Int) -> Single<HurbResponse>
+    func search(query: String, page: Int) -> Single<[Deal]>
 }

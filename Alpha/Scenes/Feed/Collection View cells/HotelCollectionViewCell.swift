@@ -9,17 +9,13 @@
 import Foundation
 import UIKit
 import Kingfisher
-import os.log
 
 class HotelCollectionViewCell: BaseCollectionViewCell {
     // MARK: - Properties
 
     var hotel: Deal? {
         didSet {
-            guard let hotel = hotel else {
-                os_log("❌ - Hotel was nil %@", log: Logger.appLog(), type: .fault, "\(self)")
-                return
-            }
+            guard let hotel = hotel else { return }
             titleLabel.text = hotel.name
             // The API return the Currency, so we can't localize that
             currencyFormatter.currencySymbol = hotel.price.symbol

@@ -10,6 +10,7 @@ import Foundation
 import Moya
 import RxMoya
 import RxSwift
+import os.log
 
 enum NetworkState {
     case Unit
@@ -28,10 +29,15 @@ struct AlphaNetworkManager: AlphaAPI {
         }
     }
 
-    func search(query: String, page: Int) -> Single<HurbResponse> {
+    func search(query: String, page: Int) -> Single<[Deal]> {
         return provider.rx
             .request(.search(query: query, page: page))
             .filterSuccessfulStatusAndRedirectCodes()
-            .map(HurbResponse.self)
+            .map(HurbResponse.self).map { (res) in
+                os_log("RECEIVED DATA LOG:\n%@",
+                       log: Logger.networkingLog(),
+                       type: .info, "\(res)")
+                return res.results
+        }
     }
 }

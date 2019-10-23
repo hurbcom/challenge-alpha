@@ -164,7 +164,10 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: Identifiers.FeedSection.rawValue)
-            as? StarTableViewHeader else { return nil }
+            as? StarTableViewHeader else {
+                os_log("❌ - Unknown cell identifier %@", log: Logger.appLog(), type: .fault, "\(self)")
+                fatalError("Unknown identifier")
+        }
 
         view.titleLabel.text = dataSource.sectionModels[section].header
         view.subTitle.text = dataSource.sectionModels[section].subTitle
