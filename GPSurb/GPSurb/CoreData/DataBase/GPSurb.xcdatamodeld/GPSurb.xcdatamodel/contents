@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AmenitiesDB" representedClassName="AmenitiesDB" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="favorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteDB" inverseName="amenities" inverseEntity="FavoriteDB"/>
+    </entity>
+    <entity name="FavoriteDB" representedClassName="FavoriteDB" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptionFavorite" optional="YES" attributeType="String"/>
+        <attribute name="destinationName" optional="YES" attributeType="String"/>
+        <attribute name="freeCancellation" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="newPrice" optional="YES" attributeType="String"/>
+        <attribute name="offerName" optional="YES" attributeType="String"/>
+        <attribute name="oldPrice" optional="YES" attributeType="String"/>
+        <attribute name="sku" optional="YES" attributeType="String"/>
+        <attribute name="smallDescription" optional="YES" attributeType="String"/>
+        <attribute name="stars" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="urlImageCard" optional="YES" attributeType="String"/>
+        <relationship name="amenities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AmenitiesDB" inverseName="favorite" inverseEntity="AmenitiesDB"/>
+        <relationship name="gallery" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="GalleryDB" inverseName="favorite" inverseEntity="GalleryDB"/>
+    </entity>
+    <entity name="GalleryDB" representedClassName="GalleryDB" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="favorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteDB" inverseName="gallery" inverseEntity="FavoriteDB"/>
+    </entity>
+    <elements>
+        <element name="FavoriteDB" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="AmenitiesDB" positionX="-54" positionY="63" width="128" height="73"/>
+        <element name="GalleryDB" positionX="-36" positionY="99" width="128" height="73"/>
+    </elements>
 </model>

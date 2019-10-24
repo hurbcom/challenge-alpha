@@ -16,6 +16,7 @@ struct HotelAndPackageListViewData {
 }
 
 struct ResultViewData {
+    var sku = ""
     var destinationName = ""
     var offerName = ""
     var amenities = [String]()
@@ -98,6 +99,7 @@ extension HotelAndPackageListPresenter {
     /// - Parameter model: ResultsModel
     private func parseResultFromModelToViewData(model: ResultsModel) -> ResultViewData {
         var viewData = ResultViewData()
+        viewData.sku = model.sku ?? ""
         viewData.destinationName = "\(model.address?.state ?? "") - \(model.address?.country ?? "")"
         viewData.offerName = model.name ?? ""
         model.amenities?.forEach({viewData.amenities.append($0.name ?? "")})

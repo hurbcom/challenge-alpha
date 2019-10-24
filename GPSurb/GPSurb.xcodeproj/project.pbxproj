@@ -19,6 +19,21 @@
 		02512CFB235F630B00DF8A19 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CFA235F630B00DF8A19 /* StringExtension.swift */; };
 		02512CFC235F630B00DF8A19 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CFA235F630B00DF8A19 /* StringExtension.swift */; };
 		02512CFD235F630B00DF8A19 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512CFA235F630B00DF8A19 /* StringExtension.swift */; };
+		02512D0123608D5A00DF8A19 /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 02512CFE23608D5900DF8A19 /* error.json */; };
+		02512D0223608D5A00DF8A19 /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 02512CFE23608D5900DF8A19 /* error.json */; };
+		02512D0323608D5A00DF8A19 /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 02512CFE23608D5900DF8A19 /* error.json */; };
+		02512D0423608D5A00DF8A19 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 02512CFF23608D5900DF8A19 /* empty.json */; };
+		02512D0523608D5A00DF8A19 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 02512CFF23608D5900DF8A19 /* empty.json */; };
+		02512D0623608D5A00DF8A19 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 02512CFF23608D5900DF8A19 /* empty.json */; };
+		02512D0723608D5A00DF8A19 /* favourite_app_icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 02512D0023608D5900DF8A19 /* favourite_app_icon.json */; };
+		02512D0823608D5A00DF8A19 /* favourite_app_icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 02512D0023608D5900DF8A19 /* favourite_app_icon.json */; };
+		02512D0923608D5A00DF8A19 /* favourite_app_icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 02512D0023608D5900DF8A19 /* favourite_app_icon.json */; };
+		02512D0C23608EB500DF8A19 /* HapticAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512D0B23608EB500DF8A19 /* HapticAlert.swift */; };
+		02512D0D23608EB500DF8A19 /* HapticAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512D0B23608EB500DF8A19 /* HapticAlert.swift */; };
+		02512D0E23608EB500DF8A19 /* HapticAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512D0B23608EB500DF8A19 /* HapticAlert.swift */; };
+		02512D11236091EC00DF8A19 /* FavoritePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512D10236091EC00DF8A19 /* FavoritePersistence.swift */; };
+		02512D12236091EC00DF8A19 /* FavoritePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512D10236091EC00DF8A19 /* FavoritePersistence.swift */; };
+		02512D13236091EC00DF8A19 /* FavoritePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02512D10236091EC00DF8A19 /* FavoritePersistence.swift */; };
 		0251A51E2359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */; };
 		0251A51F2359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */; };
 		0251A5202359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */; };
@@ -206,6 +221,11 @@
 		023222FB235E407D00F00608 /* AmenitiesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmenitiesCollectionViewCell.xib; sourceTree = "<group>"; };
 		02512CF6235F503C00DF8A19 /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
 		02512CFA235F630B00DF8A19 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		02512CFE23608D5900DF8A19 /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
+		02512CFF23608D5900DF8A19 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
+		02512D0023608D5900DF8A19 /* favourite_app_icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favourite_app_icon.json; sourceTree = "<group>"; };
+		02512D0B23608EB500DF8A19 /* HapticAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticAlert.swift; sourceTree = "<group>"; };
+		02512D10236091EC00DF8A19 /* FavoritePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePersistence.swift; sourceTree = "<group>"; };
 		0251A51C2359072900105C1E /* HotelAndPackageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAndPackageListPresenter.swift; sourceTree = "<group>"; };
 		0251A51D2359072900105C1E /* HotelAndPackageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAndPackageListViewController.swift; sourceTree = "<group>"; };
 		0251A5242359075700105C1E /* HotelAndPackageList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HotelAndPackageList.storyboard; sourceTree = "<group>"; };
@@ -327,6 +347,22 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		02512D0A23608EA700DF8A19 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				02512D0B23608EB500DF8A19 /* HapticAlert.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		02512D0F2360915C00DF8A19 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				02512D10236091EC00DF8A19 /* FavoritePersistence.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		0251A5112359067300105C1E /* HotelAndPackage */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +440,7 @@
 		025E91CC2354B7F0007CC0A0 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				02512D0A23608EA700DF8A19 /* Other */,
 				027766CB2357AB890042BFE8 /* Extension */,
 				026C96B02357A664002C1CC4 /* Cell */,
 			);
@@ -463,6 +500,7 @@
 			children = (
 				025E91D22354B88D007CC0A0 /* Main */,
 				025E91D12354B82F007CC0A0 /* DataBase */,
+				02512D0F2360915C00DF8A19 /* Favorite */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -576,6 +614,9 @@
 		027766D42357B6020042BFE8 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				02512CFF23608D5900DF8A19 /* empty.json */,
+				02512CFE23608D5900DF8A19 /* error.json */,
+				02512D0023608D5900DF8A19 /* favourite_app_icon.json */,
 				027766D52357B6210042BFE8 /* loader.json */,
 			);
 			path = Lottie;
@@ -824,6 +865,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				025E91DE2354C300007CC0A0 /* TabBar.storyboard in Resources */,
+				02512D0423608D5A00DF8A19 /* empty.json in Resources */,
 				026C96BE2357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				027766D62357B6210042BFE8 /* loader.json in Resources */,
 				02F2213D235911BA0033D2DE /* pakenham rg.ttf in Resources */,
@@ -831,8 +873,10 @@
 				023222FF235E407D00F00608 /* AmenitiesCollectionViewCell.xib in Resources */,
 				029D5B9F2352241D00ABF951 /* Assets.xcassets in Resources */,
 				026C96AC2357A384002C1CC4 /* Home.storyboard in Resources */,
+				02512D0123608D5A00DF8A19 /* error.json in Resources */,
 				02F22134235910E50033D2DE /* ElementTableViewCell.xib in Resources */,
 				026C963A235761B1002C1CC4 /* best_destinations.json in Resources */,
+				02512D0723608D5A00DF8A19 /* favourite_app_icon.json in Resources */,
 				0251A5252359075900105C1E /* HotelAndPackageList.storyboard in Resources */,
 				02596BF72354CA870027C9EE /* Favorites.storyboard in Resources */,
 				02A51D3B235A2EA100A339B0 /* Detail.storyboard in Resources */,
@@ -843,7 +887,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02512D0223608D5A00DF8A19 /* error.json in Resources */,
 				027766D72357B6210042BFE8 /* loader.json in Resources */,
+				02512D0823608D5A00DF8A19 /* favourite_app_icon.json in Resources */,
+				02512D0523608D5A00DF8A19 /* empty.json in Resources */,
 				02322300235E407D00F00608 /* AmenitiesCollectionViewCell.xib in Resources */,
 				026C96BF2357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				02596BF82354CA870027C9EE /* Favorites.storyboard in Resources */,
@@ -861,7 +908,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02512D0323608D5A00DF8A19 /* error.json in Resources */,
 				027766D82357B6210042BFE8 /* loader.json in Resources */,
+				02512D0923608D5A00DF8A19 /* favourite_app_icon.json in Resources */,
+				02512D0623608D5A00DF8A19 /* empty.json in Resources */,
 				02322301235E407D00F00608 /* AmenitiesCollectionViewCell.xib in Resources */,
 				026C96C02357A957002C1CC4 /* BestDestinationsCollectionViewCell.xib in Resources */,
 				02596BF92354CA870027C9EE /* Favorites.storyboard in Resources */,
@@ -1032,6 +1082,7 @@
 				026C968A2357744C002C1CC4 /* ResultsModel.swift in Sources */,
 				0251A51E2359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */,
 				02A51D43235A2EBE00A339B0 /* DetailViewController.swift in Sources */,
+				02512D0C23608EB500DF8A19 /* HapticAlert.swift in Sources */,
 				02BBA2532354C54E0072F0F9 /* TabBarPresenter.swift in Sources */,
 				026C96562357711F002C1CC4 /* CitiesModel.swift in Sources */,
 				029D5B932352241B00ABF951 /* AppDelegate.swift in Sources */,
@@ -1047,6 +1098,7 @@
 				026C966E235772D8002C1CC4 /* MetaModel.swift in Sources */,
 				026C96662357725A002C1CC4 /* GalleryModel.swift in Sources */,
 				029D5B9D2352241B00ABF951 /* GPSurb.xcdatamodeld in Sources */,
+				02512D11236091EC00DF8A19 /* FavoritePersistence.swift in Sources */,
 				027766CD2357ABA20042BFE8 /* UICollectionViewExtension.swift in Sources */,
 				026C964E235763C2002C1CC4 /* AddressModel.swift in Sources */,
 				026C967A23577370002C1CC4 /* PriceIntervalModel.swift in Sources */,
@@ -1090,6 +1142,7 @@
 				026C96672357725A002C1CC4 /* GalleryModel.swift in Sources */,
 				025E91D52354B8BB007CC0A0 /* PersistentManager.swift in Sources */,
 				026C96772357733F002C1CC4 /* PriceModel.swift in Sources */,
+				02512D12236091EC00DF8A19 /* FavoritePersistence.swift in Sources */,
 				026C966B2357729B002C1CC4 /* GeoLocationModel.swift in Sources */,
 				0251A5222359072900105C1E /* HotelAndPackageListViewController.swift in Sources */,
 				026C965B235771A4002C1CC4 /* CountriesModel.swift in Sources */,
@@ -1116,6 +1169,7 @@
 				02BBA2542354C54E0072F0F9 /* TabBarPresenter.swift in Sources */,
 				026C964723576302002C1CC4 /* BestDestinationModel.swift in Sources */,
 				026C968F2357748A002C1CC4 /* RoomsModel.swift in Sources */,
+				02512D0D23608EB500DF8A19 /* HapticAlert.swift in Sources */,
 				026C96BB2357A918002C1CC4 /* BestDestinationsCollectionViewCell.swift in Sources */,
 				0251A51F2359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */,
 			);
@@ -1142,6 +1196,7 @@
 				026C96682357725A002C1CC4 /* GalleryModel.swift in Sources */,
 				025E91D62354B8BB007CC0A0 /* PersistentManager.swift in Sources */,
 				026C96782357733F002C1CC4 /* PriceModel.swift in Sources */,
+				02512D13236091EC00DF8A19 /* FavoritePersistence.swift in Sources */,
 				026C966C2357729B002C1CC4 /* GeoLocationModel.swift in Sources */,
 				0251A5232359072900105C1E /* HotelAndPackageListViewController.swift in Sources */,
 				026C965C235771A4002C1CC4 /* CountriesModel.swift in Sources */,
@@ -1168,6 +1223,7 @@
 				02BBA2552354C54E0072F0F9 /* TabBarPresenter.swift in Sources */,
 				026C964823576302002C1CC4 /* BestDestinationModel.swift in Sources */,
 				026C96902357748A002C1CC4 /* RoomsModel.swift in Sources */,
+				02512D0E23608EB500DF8A19 /* HapticAlert.swift in Sources */,
 				026C96BC2357A918002C1CC4 /* BestDestinationsCollectionViewCell.swift in Sources */,
 				0251A5202359072900105C1E /* HotelAndPackageListPresenter.swift in Sources */,
 			);

@@ -21,13 +21,23 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S2T-2v-3hX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="154.5"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjS-F8-p8z" userLabel="ViewFavorite" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="245" y="79.5" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="9Au-t7-Ajk"/>
+                                            <constraint firstAttribute="width" constant="70" id="Igw-Aq-kCl"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="S2T-2v-3hX" secondAttribute="bottom" id="8RZ-hw-nev"/>
                                     <constraint firstAttribute="width" secondItem="bDV-SL-nDR" secondAttribute="height" multiplier="207:100" id="GNr-Pq-KBw"/>
                                     <constraint firstAttribute="trailing" secondItem="S2T-2v-3hX" secondAttribute="trailing" id="LlH-zP-fwU"/>
                                     <constraint firstItem="S2T-2v-3hX" firstAttribute="top" secondItem="bDV-SL-nDR" secondAttribute="top" id="Mwj-c2-9rk"/>
+                                    <constraint firstAttribute="bottom" secondItem="IjS-F8-p8z" secondAttribute="bottom" constant="5" id="Y80-82-Tex"/>
                                     <constraint firstItem="S2T-2v-3hX" firstAttribute="leading" secondItem="bDV-SL-nDR" secondAttribute="leading" id="mPv-YR-IJ5"/>
+                                    <constraint firstAttribute="trailing" secondItem="IjS-F8-p8z" secondAttribute="trailing" constant="5" id="tyu-vM-Gal"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwy-Ma-gbw" userLabel="ViewContent">
@@ -93,7 +103,7 @@
                                             <outlet property="delegate" destination="DxW-jg-ujL" id="buE-cY-0gU"/>
                                         </connections>
                                     </collectionView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gqw-vU-Cx5">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gqw-vU-Cx5">
                                         <rect key="frame" x="0.0" y="221" width="320" height="138.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -140,6 +150,7 @@
                         <outlet property="lblLocation" destination="3hc-zE-1he" id="y0f-nv-Cfx"/>
                         <outlet property="lblShortDescription" destination="hvP-FE-WOy" id="1SU-MZ-cbY"/>
                         <outlet property="txtViewDescription" destination="gqw-vU-Cx5" id="5UQ-qy-F9Q"/>
+                        <outlet property="viewFavorite" destination="IjS-F8-p8z" id="D54-cT-xFo"/>
                         <outlet property="viewStar" destination="HgX-wL-Uth" id="vcy-5z-y5O"/>
                     </connections>
                 </viewController>

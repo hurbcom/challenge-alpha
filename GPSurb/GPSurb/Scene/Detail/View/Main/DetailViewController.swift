@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import Cosmos
+import Lottie
 
 class DetailViewController: UIViewController {
     
@@ -19,13 +20,26 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var viewStar: CosmosView!
     @IBOutlet weak var txtViewDescription: UITextView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var viewFavorite: AnimationView!
     // MARK: CONSTANTS
     
     // MARK: VARIABLES
     private var presenter: DetailPresenter!
     public lazy var viewData: ResultViewData = ResultViewData()
-    
+    private var isFavorite = false
     // MARK: IBACTIONS
+    
+    @objc private func addAndRemoveFavorite() {
+        HapticAlert.hapticReturn(style: .medium)
+        guard !self.viewFavorite.isAnimationPlaying else { return }
+        self.presenter.addOrRemoveFavorite(viewData: self.viewData)
+        if self.isFavorite {
+            self.viewFavorite.stop()
+        } else {
+            self.viewFavorite.play()
+        }
+        self.isFavorite = !self.isFavorite
+    }
 }
 
 // MARK: - LIFE CYCLE -
@@ -36,6 +50,12 @@ extension DetailViewController {
         self.downloadImage(urlString: self.viewData.urlImageCard)
         self.registerNIB()
         self.setupView()
+        self.addGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.isFavoriteInDataBase()
     }
 }
 
@@ -85,5 +105,25 @@ extension DetailViewController {
         self.viewStar.isHidden = self.viewData.type == .package
         self.viewStar.rating = self.viewData.stars
         self.viewStar.text = "(\(self.viewData.stars))"
+        self.setupFavoriteView()
+    }
+    
+    private func setupFavoriteView() {
+        let animation = Animation.named("favourite_app_icon")
+        viewFavorite.animation = animation
+    }
+    
+    private func isFavoriteInDataBase() {
+        self.isFavorite = self.presenter.isExistFavorite(sku: self.viewData.sku)
+        if !self.isFavorite {
+            self.viewFavorite.stop()
+        } else {
+            self.viewFavorite.play()
+        }
+    }
+    
+    private func addGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.addAndRemoveFavorite))
+        self.viewFavorite.addGestureRecognizer(tap)
     }
 }
