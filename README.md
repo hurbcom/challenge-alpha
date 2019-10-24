@@ -40,6 +40,7 @@
 
 ## 2. O Projeto
 Arquitetura: **MVVM-C**
+Aviso: Ao olhar o historico de commits poderá ver que tem um "outro" contribuidor no projeto, isso se deve ao fato que sem querer ao codar em um outro computador meu, esqueci de verificar o config do git, logo esses 3 commits ficaram como autoria da minha conta antiga no GitHub, na qual não tenho mais acesso.
 
 A escolha resta arquitetura deve-se ao fato de ser bastante testável mas ainda ter um nível de simplicidade que pode ser rapidamente estruturado. Implementei um Coordinator pois isso é uma das coisas que falta no MVVM uma camada de routing.
 
