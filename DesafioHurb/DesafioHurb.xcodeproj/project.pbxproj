@@ -11,6 +11,7 @@
 		802CF50D235FD3E5007DCD03 /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF50C235FD3E5007DCD03 /* ApplicationService.swift */; };
 		802CF510235FD6F5007DCD03 /* StaticValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF50F235FD6F5007DCD03 /* StaticValues.swift */; };
 		802CF512235FE186007DCD03 /* StaticFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF511235FE186007DCD03 /* StaticFunctions.swift */; };
+		802CF52323614BAF007DCD03 /* HotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF52223614BAF007DCD03 /* HotelViewController.swift */; };
 		8061AFED235FCC7600690DE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061AFEC235FCC7600690DE4 /* AppDelegate.swift */; };
 		8061AFEF235FCC7600690DE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061AFEE235FCC7600690DE4 /* SceneDelegate.swift */; };
 		8061AFF4235FCC7600690DE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8061AFF2235FCC7600690DE4 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		802CF50C235FD3E5007DCD03 /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
 		802CF50F235FD6F5007DCD03 /* StaticValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticValues.swift; sourceTree = "<group>"; };
 		802CF511235FE186007DCD03 /* StaticFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFunctions.swift; sourceTree = "<group>"; };
+		802CF52223614BAF007DCD03 /* HotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewController.swift; sourceTree = "<group>"; };
 		8061AFE9235FCC7600690DE4 /* DesafioHurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioHurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8061AFEC235FCC7600690DE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8061AFEE235FCC7600690DE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				8061B003235FCC9800690DE4 /* HotelsViewController.swift */,
+				802CF52223614BAF007DCD03 /* HotelViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				802CF510235FD6F5007DCD03 /* StaticValues.swift in Sources */,
 				8061B004235FCC9800690DE4 /* HotelsViewController.swift in Sources */,
 				8061AFEF235FCC7600690DE4 /* SceneDelegate.swift in Sources */,
+				802CF52323614BAF007DCD03 /* HotelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
