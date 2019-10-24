@@ -34,9 +34,8 @@ struct AlphaNetworkManager: AlphaAPI {
             .request(.search(query: query, page: page))
             .filterSuccessfulStatusAndRedirectCodes()
             .map(HurbResponse.self).map { (res) in
-                os_log("RECEIVED DATA LOG:\n%@",
-                       log: Logger.networkingLog(),
-                       type: .info, "\(res)")
+                debugPrint("RECEIVED DATA LOG:")
+                dump(res)
                 return res.results
         }
     }
