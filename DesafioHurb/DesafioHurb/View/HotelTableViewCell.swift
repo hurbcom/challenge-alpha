@@ -76,20 +76,25 @@ class HotelTableViewCell: UITableViewCell {
             }
         }
         // Estrelas
-        switch hotel.stars {
-        case 1:
-            self.imageStars.image = UIImage(named: "stars1")
-        case 2:
-            self.imageStars.image = UIImage(named: "stars2")
-        case 3:
-            self.imageStars.image = UIImage(named: "stars3")
-        case 4:
-            self.imageStars.image = UIImage(named: "stars4")
-        case 5:
-            self.imageStars.image = UIImage(named: "stars5")
-        default:
-            self.imageStars.image = UIImage(named: "stars1")
+        if hotel.isPackage {
+            self.imageStars.image = nil
+        } else {
+            switch hotel.stars {
+            case 1:
+                self.imageStars.image = UIImage(named: "stars1")
+            case 2:
+                self.imageStars.image = UIImage(named: "stars2")
+            case 3:
+                self.imageStars.image = UIImage(named: "stars3")
+            case 4:
+                self.imageStars.image = UIImage(named: "stars4")
+            case 5:
+                self.imageStars.image = UIImage(named: "stars5")
+            default:
+                self.imageStars.image = UIImage(named: "stars1")
+            }
         }
+
     }
     
 }

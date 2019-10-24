@@ -90,4 +90,17 @@ class Hotel {
         }
         return result
     }
+    
+    func getAmenitiesString() -> String {
+        var result = ""
+        var index = 0
+        for amenity in self.amenities {
+            if index != 0 {
+                result += ", "
+            }
+            index += 1
+            result += amenity
+        }
+        return result
+    }
 }
