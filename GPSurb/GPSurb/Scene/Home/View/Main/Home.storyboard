@@ -36,7 +36,7 @@
             </objects>
             <point key="canvasLocation" x="-674" y="90"/>
         </scene>
-        <!--Best Destinations-->
+        <!--GPSurb-->
         <scene sceneID="wXa-ZT-II3">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="XSl-le-hPZ" customClass="HomeViewController" customModule="GPSurb" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,7 +102,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jpy-j4-ll6"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Best Destinations" id="O64-iG-Nxm">
+                    <navigationItem key="navigationItem" title="GPSurb" id="O64-iG-Nxm">
                         <barButtonItem key="backBarButtonItem" title=" " id="cFF-Pf-rQw"/>
                     </navigationItem>
                     <connections>

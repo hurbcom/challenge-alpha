@@ -15,7 +15,8 @@ struct FavoritesViewData {
 
 // MARK: - VIEW DELEGATE -
 protocol FavoritesViewDelegate: NSObjectProtocol {
-    
+    func showEmpty()
+    func setViewData(viewData: [ResultViewData])
 }
 
 // MARK: - PRESENTER CLASS -
@@ -23,6 +24,7 @@ class FavoritesPresenter {
     
     private weak var viewDelegate: FavoritesViewDelegate?
     private var viewData = FavoritesViewData()
+    private let dataBase = FavoritePersistence()
     
     init(viewDelegate: FavoritesViewDelegate) {
         self.viewDelegate = viewDelegate
@@ -31,7 +33,12 @@ class FavoritesPresenter {
 
 //SERVICE
 extension FavoritesPresenter {
-    
+    public func getFavoriteInDataBase() {
+        guard let viewData = self.dataBase.fetchFavoriteDataBase(), viewData.count > 0 else {
+            return
+        }
+        self.viewDelegate?.setViewData(viewData: viewData)
+    }
 }
 
 //AUX METHODS

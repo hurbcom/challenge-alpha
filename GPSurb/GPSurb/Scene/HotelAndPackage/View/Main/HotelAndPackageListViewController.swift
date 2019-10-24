@@ -19,7 +19,7 @@ class HotelAndPackageListViewController: UIViewController {
     private let segueDetail = "segueDetail"
     // MARK: VARIABLES
     private var presenter: HotelAndPackageListPresenter!
-    private lazy var viewData: HotelAndPackageListViewData = HotelAndPackageListViewData()
+    private lazy var viewData = HotelAndPackageListViewData()
     public var query = ""
     public var filter = TypeFilter.hotel
     public var page = 1

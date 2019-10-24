@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Fp-rB-ZI1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -7,17 +7,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites View Controller-->
+        <!--Favoritos-->
         <scene sceneID="9NB-T4-J4s">
             <objects>
                 <viewController id="k2b-Dm-VNc" customClass="FavoritesViewController" customModule="GPSurb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="63V-Tp-hhD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YNb-vz-HoM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="k2b-Dm-VNc" id="vMh-kK-EBR"/>
+                                    <outlet property="delegate" destination="k2b-Dm-VNc" id="pPg-xC-YQR"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YNb-vz-HoM" firstAttribute="top" secondItem="HMk-wZ-c44" secondAttribute="top" id="2hF-zW-Yqg"/>
+                            <constraint firstItem="YNb-vz-HoM" firstAttribute="leading" secondItem="HMk-wZ-c44" secondAttribute="leading" id="J8n-2w-kuW"/>
+                            <constraint firstAttribute="bottom" secondItem="YNb-vz-HoM" secondAttribute="bottom" id="Oun-X8-xXs"/>
+                            <constraint firstItem="HMk-wZ-c44" firstAttribute="trailing" secondItem="YNb-vz-HoM" secondAttribute="trailing" id="xFw-Rc-eay"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HMk-wZ-c44"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vlp-SV-GpC"/>
+                    <navigationItem key="navigationItem" title="Favoritos" id="vlp-SV-GpC"/>
+                    <connections>
+                        <outlet property="tableViewFavorite" destination="YNb-vz-HoM" id="dez-Ox-ovN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFq-JH-ONu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -31,6 +50,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l9M-Yf-X6d">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="PakenhamRg-Regular" family="Pakenham" pointSize="25"/>
+                            <color key="textColor" red="0.047058823530000002" green="0.93725490199999995" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="PakenhamRg-Regular" family="Pakenham" pointSize="25"/>
+                            <color key="textColor" red="0.047058823530000002" green="0.93725490199999995" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

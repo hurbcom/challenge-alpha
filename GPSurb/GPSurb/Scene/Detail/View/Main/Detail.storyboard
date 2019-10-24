@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detail View Controller-->
+        <!--Detalhes-->
         <scene sceneID="XmH-1J-poc">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="DxW-jg-ujL" customClass="DetailViewController" customModule="GPSurb" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yId-WF-73l"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eYn-ME-pwx"/>
+                    <navigationItem key="navigationItem" title="Detalhes" id="eYn-ME-pwx"/>
                     <connections>
                         <outlet property="collectionView" destination="YSK-sh-6Je" id="ucV-Wb-ffK"/>
                         <outlet property="imgHeader" destination="S2T-2v-3hX" id="G6U-3G-GVD"/>

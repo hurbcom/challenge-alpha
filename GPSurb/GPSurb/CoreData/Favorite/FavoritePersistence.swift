@@ -24,7 +24,7 @@ extension FavoritePersistence {
         }
     }
     
-    public func fetchMoviesDataBase() -> [ResultViewData]? {
+    public func fetchFavoriteDataBase() -> [ResultViewData]? {
         if let favoriteListDB = self.getFavoriteList(), favoriteListDB.count > 0 {
             return self.parseToViewData(favoriteDB: favoriteListDB)
         }
