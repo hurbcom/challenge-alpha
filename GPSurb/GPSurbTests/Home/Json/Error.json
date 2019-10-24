@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Rio de Janeiro - Brasil",
+        "imageName": "riodejaneiro",
+        "query": "rj"
+    }
+    {
+        "name": "Paris - França",
+        "imageName": "paris",
+        "query": "paris"
+    }
+]

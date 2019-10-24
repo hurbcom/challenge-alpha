@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class BestDestinationService: BaseService {
+open class HomeService: BaseService {
     open func getBestDestination() -> [BestDestinationModel]? {
         var formModel: [BestDestinationModel]?
         guard let file = Bundle.main.path(forResource: "best_destinations", ofType: ".json"),

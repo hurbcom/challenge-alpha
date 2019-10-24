@@ -33,9 +33,9 @@ class HomePresenter {
     
     private weak var viewDelegate: HomeViewDelegate?
     private var viewData = HomeViewData()
-    private let service: BestDestinationService
+    private let service: HomeService
     
-    init(viewDelegate: HomeViewDelegate, service: BestDestinationService) {
+    init(viewDelegate: HomeViewDelegate, service: HomeService) {
         self.viewDelegate = viewDelegate
         self.service = service
     }

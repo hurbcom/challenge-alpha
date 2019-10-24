@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter = HomePresenter(viewDelegate: self, service: BestDestinationService())
+        self.presenter = HomePresenter(viewDelegate: self, service: HomeService())
         self.registerNIB()
         self.presenter.getBestDestinations()
     }

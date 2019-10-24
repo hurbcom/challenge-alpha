@@ -17,6 +17,7 @@ public enum ErrorType: Error {
     case errorLocalBundle
     case errorData
     case errorGeneric
+    case notNetwork
 }
 
 open class BaseService: NSObject {

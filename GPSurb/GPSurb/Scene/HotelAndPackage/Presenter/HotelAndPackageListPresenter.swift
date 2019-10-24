@@ -57,6 +57,10 @@ class HotelAndPackageListPresenter {
 //SERVICE
 extension HotelAndPackageListPresenter {
     open func getOffers(query: String, filter: TypeFilter) {
+        guard Reachability.isConnectedToNetwork() else {
+            self.viewDelegate?.showError(.notNetwork)
+            return
+        }
         self.viewDelegate?.startLoading()
         self.service.getHotelAndPackage(query: query, filter: filter, page: self.viewData.currentPage) { (result) in
             switch result {
@@ -73,6 +77,9 @@ extension HotelAndPackageListPresenter {
     }
     
     open func getOffers(for page: Int, query: String, filter: TypeFilter) {
+        guard Reachability.isConnectedToNetwork() else {
+            return
+        }
         self.service.getHotelAndPackage(query: query, filter: filter, page: page) { (result) in
             switch result {
             case.success(let listModel):
