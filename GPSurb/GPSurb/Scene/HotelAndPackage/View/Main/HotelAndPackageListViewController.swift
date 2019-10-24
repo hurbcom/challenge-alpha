@@ -15,6 +15,7 @@ class HotelAndPackageListViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: AnimationView!
+    @IBOutlet weak var errorView: AnimationView!
     // MARK: CONSTANTS
     private let segueDetail = "segueDetail"
     // MARK: VARIABLES
@@ -29,6 +30,10 @@ class HotelAndPackageListViewController: UIViewController {
         let filter = sender.selectedSegmentIndex == 0 ? TypeFilter.hotel : TypeFilter.package
         self.presenter.getOffers(query: self.query, filter: filter)
     }
+    
+    @objc private func reload() {
+        self.presenter.getOffers(query: self.query, filter: filter)
+    }
 }
 
 // MARK: - LIFE CYCLE -
@@ -37,6 +42,7 @@ extension HotelAndPackageListViewController {
         super.viewDidLoad()
         self.presenter = HotelAndPackageListPresenter(viewDelegate: self, service: HotelPackageService())
         self.registerNIB()
+        self.addGesture()
         self.presenter.getOffers(query: self.query, filter: filter)
     }
 }
@@ -72,6 +78,7 @@ extension HotelAndPackageListViewController: HotelAndPackageListViewDelegate {
         UIView.animate(withDuration: 0.2) { [weak self] in
             self?.loadingView.isHidden = false
             self?.tableView.isHidden = true
+            self?.errorView.isHidden = true
             self?.loadingView.animation = Animation.named("loader")
             self?.loadingView.play()
             self?.loadingView.loopMode = .loop
@@ -81,17 +88,23 @@ extension HotelAndPackageListViewController: HotelAndPackageListViewDelegate {
     func stopLoading() {
         UIView.animate(withDuration: 0.2) { [weak self] in
             self?.loadingView.isHidden = true
-            self?.tableView.isHidden = false
             self?.loadingView.pause()
         }
     }
     
     func showError(_ error: ErrorType) {
-        print(error)
+        self.errorView.animation = Animation.named("error")
+        self.errorView.play()
+        self.errorView.loopMode = .loop
+        self.errorView.isHidden = false
+        self.loadingView.isHidden = true
+        self.tableView.isHidden = true
     }
     
     func setViewData(viewData: HotelAndPackageListViewData) {
         self.viewData = viewData
+        self.tableView.isHidden = false
+        self.errorView.isHidden = true
         self.tableView.reloadData()
     }
     
@@ -118,5 +131,10 @@ extension HotelAndPackageListViewController {
         if let viewController = segue.destination as? DetailViewController, let viewData = sender as? ResultViewData {
             viewController.viewData = viewData
         }
+    }
+    
+    private func addGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.reload))
+        self.errorView.addGestureRecognizer(tap)
     }
 }

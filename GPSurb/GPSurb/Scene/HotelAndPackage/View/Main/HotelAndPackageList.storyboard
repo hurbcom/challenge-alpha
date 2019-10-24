@@ -47,10 +47,31 @@
                                     <constraint firstAttribute="width" constant="150" id="qJL-cg-Iii"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kec-CK-pmP" userLabel="Error View" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="132" y="375" width="150" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toque para recarregar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsP-Ou-QH2">
+                                        <rect key="frame" x="0.5" y="185.5" width="144.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="763-DN-Hte"/>
+                                    <constraint firstAttribute="trailing" secondItem="xsP-Ou-QH2" secondAttribute="trailing" constant="5" id="R5L-cR-dXx"/>
+                                    <constraint firstAttribute="bottom" secondItem="xsP-Ou-QH2" secondAttribute="bottom" id="R6E-1d-JVT"/>
+                                    <constraint firstItem="xsP-Ou-QH2" firstAttribute="leading" secondItem="kec-CK-pmP" secondAttribute="leading" constant="0.5" id="az2-0q-fyb"/>
+                                    <constraint firstAttribute="height" constant="200" id="loH-yC-Upl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="kec-CK-pmP" firstAttribute="centerY" secondItem="L3i-Wf-l3e" secondAttribute="centerY" id="7p9-Yc-1tI"/>
                             <constraint firstItem="XDs-Ov-c2Q" firstAttribute="leading" secondItem="L3i-Wf-l3e" secondAttribute="leading" id="Aiq-AE-0FL"/>
+                            <constraint firstItem="kec-CK-pmP" firstAttribute="centerX" secondItem="L3i-Wf-l3e" secondAttribute="centerX" id="BnU-Hz-7L5"/>
                             <constraint firstAttribute="bottom" secondItem="XDs-Ov-c2Q" secondAttribute="bottom" id="M3k-Lu-Yq4"/>
                             <constraint firstItem="Xlm-ZU-huq" firstAttribute="centerY" secondItem="XDs-Ov-c2Q" secondAttribute="centerY" id="ZKx-LR-mDo"/>
                             <constraint firstItem="XDs-Ov-c2Q" firstAttribute="top" secondItem="EaN-Vd-EAu" secondAttribute="top" id="Zks-Dt-for"/>
@@ -76,6 +97,7 @@
                         </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="errorView" destination="kec-CK-pmP" id="hbh-kD-bZ9"/>
                         <outlet property="loadingView" destination="Xlm-ZU-huq" id="XVi-u3-abh"/>
                         <outlet property="segmentedControl" destination="9FG-Id-64V" id="8Bj-Je-w64"/>
                         <outlet property="tableView" destination="XDs-Ov-c2Q" id="2dS-gE-Ikn"/>

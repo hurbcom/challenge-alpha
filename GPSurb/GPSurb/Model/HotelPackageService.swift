@@ -27,6 +27,7 @@ open class HotelPackageService: BaseService {
                 do {
                     guard let data = response.data else { completion(.failure(.errorData)); return  }
                     let result = try JSONDecoder().decode(HURBListModel.self, from: data)
+                    try self.validation(model: result)
                     completion(.success(result))
                 } catch {
                     completion(.failure(.errorParsingJSON))
@@ -35,5 +36,9 @@ open class HotelPackageService: BaseService {
                 completion(.failure(.errorGeneric))
             }
         }
+    }
+    
+    private func validation(model: HURBListModel) throws {
+        guard let result = model.results, !result.isEmpty else { throw ErrorType.errorGeneric }
     }
 }

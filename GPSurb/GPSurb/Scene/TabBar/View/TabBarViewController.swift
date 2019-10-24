@@ -16,7 +16,7 @@ class TabBarViewController: UITabBarController {
     
     // MARK: VARIABLES
     private var presenter: TabBarPresenter!
-    private lazy var viewData: TabBarViewData = TabBarViewData()
+    private lazy var viewData = TabBarViewData()
     
     // MARK: IBACTIONS
 }
