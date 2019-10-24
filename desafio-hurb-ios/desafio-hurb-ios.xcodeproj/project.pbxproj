@@ -31,10 +31,21 @@
 		8074C2DE235EA13600BA6E2E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2DD235EA13600BA6E2E /* Endpoints.swift */; };
 		8074C2E0235EA17E00BA6E2E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2DF235EA17E00BA6E2E /* Services.swift */; };
 		8074C2E2235EA60000BA6E2E /* ViewStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074C2E1235EA60000BA6E2E /* ViewStatus.swift */; };
+		80B0008B23612460009C0C0A /* desafio_hurb_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B0008A23612460009C0C0A /* desafio_hurb_iosTests.swift */; };
 		80B7652A235EABAE00EBDB31 /* UIImageView+KF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B76529235EABAE00EBDB31 /* UIImageView+KF.swift */; };
 		80B7652C235F0F2F00EBDB31 /* HotelsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7652B235F0F2F00EBDB31 /* HotelsSorter.swift */; };
 		80B7652E235F190400EBDB31 /* ListHotelHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7652D235F190400EBDB31 /* ListHotelHeaderCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80B0008D23612460009C0C0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 806643C9235E83D200C79B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 806643D0235E83D200C79B50;
+			remoteInfo = "desafio-hurb-ios";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4573ECDC701FF8154ABA8A5E /* Pods-desafio-hurb-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-hurb-ios.release.xcconfig"; path = "Target Support Files/Pods-desafio-hurb-ios/Pods-desafio-hurb-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +74,9 @@
 		8074C2DD235EA13600BA6E2E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		8074C2DF235EA17E00BA6E2E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		8074C2E1235EA60000BA6E2E /* ViewStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatus.swift; sourceTree = "<group>"; };
+		80B0008823612460009C0C0A /* desafio-hurb-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "desafio-hurb-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B0008A23612460009C0C0A /* desafio_hurb_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_hurb_iosTests.swift; sourceTree = "<group>"; };
+		80B0008C23612460009C0C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B76529235EABAE00EBDB31 /* UIImageView+KF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+KF.swift"; sourceTree = "<group>"; };
 		80B7652B235F0F2F00EBDB31 /* HotelsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsSorter.swift; sourceTree = "<group>"; };
 		80B7652D235F190400EBDB31 /* ListHotelHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHotelHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -76,6 +90,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				31617D65CE53D39694AB9417 /* Pods_desafio_hurb_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B0008523612460009C0C0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				806643D3235E83D200C79B50 /* desafio-hurb-ios */,
+				80B0008923612460009C0C0A /* desafio-hurb-iosTests */,
 				806643D2235E83D200C79B50 /* Products */,
 				DB4182C8ED55945F787C497F /* Pods */,
 				D590DD2D4B2CB206AEE2CE0F /* Frameworks */,
@@ -114,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				806643D1235E83D200C79B50 /* desafio-hurb-ios.app */,
+				80B0008823612460009C0C0A /* desafio-hurb-iosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +168,15 @@
 				8074C2DF235EA17E00BA6E2E /* Services.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		80B0008923612460009C0C0A /* desafio-hurb-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				80B0008A23612460009C0C0A /* desafio_hurb_iosTests.swift */,
+				80B0008C23612460009C0C0A /* Info.plist */,
+			);
+			path = "desafio-hurb-iosTests";
 			sourceTree = "<group>";
 		};
 		80B7652F235FCFEC00EBDB31 /* Extensions */ = {
@@ -245,6 +277,24 @@
 			productReference = 806643D1235E83D200C79B50 /* desafio-hurb-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
+		80B0008723612460009C0C0A /* desafio-hurb-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B0009123612460009C0C0A /* Build configuration list for PBXNativeTarget "desafio-hurb-iosTests" */;
+			buildPhases = (
+				80B0008423612460009C0C0A /* Sources */,
+				80B0008523612460009C0C0A /* Frameworks */,
+				80B0008623612460009C0C0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80B0008E23612460009C0C0A /* PBXTargetDependency */,
+			);
+			name = "desafio-hurb-iosTests";
+			productName = "desafio-hurb-iosTests";
+			productReference = 80B0008823612460009C0C0A /* desafio-hurb-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -257,6 +307,10 @@
 				TargetAttributes = {
 					806643D0235E83D200C79B50 = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					80B0008723612460009C0C0A = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 806643D0235E83D200C79B50;
 					};
 				};
 			};
@@ -274,6 +328,7 @@
 			projectRoot = "";
 			targets = (
 				806643D0235E83D200C79B50 /* desafio-hurb-ios */,
+				80B0008723612460009C0C0A /* desafio-hurb-iosTests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,6 +343,13 @@
 				806643DE235E83D300C79B50 /* Assets.xcassets in Resources */,
 				806643DC235E83D200C79B50 /* Main.storyboard in Resources */,
 				806643F1235E885C00C79B50 /* ListHotelCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B0008623612460009C0C0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +426,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80B0008423612460009C0C0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B0008B23612460009C0C0A /* desafio_hurb_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80B0008E23612460009C0C0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 806643D0235E83D200C79B50 /* desafio-hurb-ios */;
+			targetProxy = 80B0008D23612460009C0C0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		806643DA235E83D200C79B50 /* Main.storyboard */ = {
@@ -538,6 +616,46 @@
 			};
 			name = Release;
 		};
+		80B0008F23612460009C0C0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R69LV7H7TK;
+				INFOPLIST_FILE = "desafio-hurb-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vba.desafio-hurb-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desafio-hurb-ios.app/desafio-hurb-ios";
+			};
+			name = Debug;
+		};
+		80B0009023612460009C0C0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R69LV7H7TK;
+				INFOPLIST_FILE = "desafio-hurb-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vba.desafio-hurb-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desafio-hurb-ios.app/desafio-hurb-ios";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -555,6 +673,15 @@
 			buildConfigurations = (
 				806643E6235E83D300C79B50 /* Debug */,
 				806643E7235E83D300C79B50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B0009123612460009C0C0A /* Build configuration list for PBXNativeTarget "desafio-hurb-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B0008F23612460009C0C0A /* Debug */,
+				80B0009023612460009C0C0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

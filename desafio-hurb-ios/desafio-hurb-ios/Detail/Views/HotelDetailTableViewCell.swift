@@ -26,21 +26,12 @@ class HotelDetailTableViewCell: UITableViewCell {
         self.hotelAdressLabel.text = hotel.fullAdress()
         self.hotelPriceLabel.text = hotel.price.inCurrency()
         self.hotelDescriptionLabel.text = hotel.smallDescription
-        self.hotelStarsLabel.text = hotelStars(from: hotel)
+        self.hotelStarsLabel.text = hotel.hotelStars()
     }
     
     func customize() {
         self.hotelPriceLabel.textColor = Theme.secondaryColor
         self.hotelAdressLabel.textColor = Theme.lightGrayColor
         self.hotelDescriptionLabel.textColor = Theme.lightGrayColor
-    }
-    
-    func hotelStars(from hotel: Hotel) -> String {
-        guard let stars = hotel.stars else { return "PACOTE" }
-        var text: String = ""
-        for _ in 1...stars {
-            text.append("⭐")
-        }
-        return text
     }
 }
