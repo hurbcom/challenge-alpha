@@ -27,6 +27,10 @@ extension FavoritesViewController {
         super.viewDidLoad()
         self.presenter = FavoritesPresenter(viewDelegate: self)
         self.registerNIB()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.presenter.getFavoriteInDataBase()
     }
 }
@@ -70,4 +74,9 @@ extension FavoritesViewController {
         self.tableViewFavorite.register(ElementTableViewCell.self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? DetailViewController, let viewData = sender as? ResultViewData {
+            viewController.viewData = viewData
+        }
+    }
 }

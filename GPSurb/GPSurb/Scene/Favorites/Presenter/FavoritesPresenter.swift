@@ -8,11 +8,6 @@
 
 import Foundation
 
-// MARK: - STRUCT VIEW DATA -
-struct FavoritesViewData {
-    
-}
-
 // MARK: - VIEW DELEGATE -
 protocol FavoritesViewDelegate: NSObjectProtocol {
     func showEmpty()
@@ -23,7 +18,6 @@ protocol FavoritesViewDelegate: NSObjectProtocol {
 class FavoritesPresenter {
     
     private weak var viewDelegate: FavoritesViewDelegate?
-    private var viewData = FavoritesViewData()
     private let dataBase = FavoritePersistence()
     
     init(viewDelegate: FavoritesViewDelegate) {

@@ -36,11 +36,22 @@
                     <navigationItem key="navigationItem" title="Favoritos" id="vlp-SV-GpC"/>
                     <connections>
                         <outlet property="tableViewFavorite" destination="YNb-vz-HoM" id="dez-Ox-ovN"/>
+                        <segue destination="n8Z-tp-LT3" kind="show" identifier="segueDetail" id="osa-EA-11R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFq-JH-ONu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="805.79710144927537" y="70.982142857142847"/>
+        </scene>
+        <!--DetailViewController-->
+        <scene sceneID="RXp-HN-pB1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" referencedIdentifier="DetailViewController" id="n8Z-tp-LT3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="poy-Av-2Y8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pSj-RZ-Jpd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713" y="-100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j5N-BH-9Pt">
@@ -50,6 +61,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l9M-Yf-X6d">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.047058823530000002" green="0.93725490199999995" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="PakenhamRg-Regular" family="Pakenham" pointSize="25"/>
                             <color key="textColor" red="0.047058823530000002" green="0.93725490199999995" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
     
     // MARK: VARIABLES
     private var presenter: DetailPresenter!
-    public lazy var viewData: ResultViewData = ResultViewData()
+    public lazy var viewData = ResultViewData()
     private var isFavorite = false
     // MARK: IBACTIONS
     
@@ -46,7 +46,7 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter = DetailPresenter(viewDelegate: self)
+        self.presenter = DetailPresenter()
         self.downloadImage(urlString: self.viewData.urlImageCard)
         self.registerNIB()
         self.setupView()
@@ -70,11 +70,6 @@ extension DetailViewController: UICollectionViewDataSource {
         cell.setupCell(description: self.viewData.amenities[indexPath.row])
         return cell
     }
-}
-
-// MARK: - DELEGATE PRESENTER -
-extension DetailViewController: DetailViewDelegate {
-
 }
 
 // MARK: - AUX METHODS -
