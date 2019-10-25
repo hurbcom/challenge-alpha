@@ -1,0 +1,3619 @@
+{
+    "meta": {
+        "count": 1365,
+        "offset": 0,
+        "query": "rj",
+        "warning": "results.price.current_price and results.price.old_price are deprecated",
+        "countWithAvailabilityInPage": 0,
+        "countHotel": 1365,
+        "countPackage": 0,
+        "countTicket": 0,
+        "countBustrip": 0,
+        "countDisney": 0
+    },
+    "filters": {
+        "amenities": [
+            {
+                "term": "Aparelho TV",
+                "filter": "amenity_aparelho_tv|1",
+                "count": 483
+            },
+            {
+                "term": "Ar-Condicionado",
+                "filter": "amenity_arcondicionado|1",
+                "count": 473
+            },
+            {
+                "term": "Ar-condicionado",
+                "filter": "amenity_arcondicionado|1",
+                "count": 390
+            },
+            {
+                "term": "Banheiro",
+                "filter": "amenity_banheiro|1",
+                "count": 520
+            },
+            {
+                "term": "Bar",
+                "filter": "amenity_bar|1",
+                "count": 379
+            },
+            {
+                "term": "Elevador",
+                "filter": "amenity_elevador|1",
+                "count": 181
+            },
+            {
+                "term": "Estacionamento (gratuito)",
+                "filter": "amenity_estacionamento_gratuito|1",
+                "count": 246
+            },
+            {
+                "term": "Estacionamento Gratuito",
+                "filter": "amenity_estacionamento_gratuito|1",
+                "count": 229
+            },
+            {
+                "term": "Free Wifi",
+                "filter": "amenity_free_wifi|1",
+                "count": 433
+            },
+            {
+                "term": "Frigobar",
+                "filter": "amenity_frigobar|1",
+                "count": 460
+            },
+            {
+                "term": "Internet Banda Larga",
+                "filter": "amenity_internet_banda_larga|1",
+                "count": 201
+            },
+            {
+                "term": "Internet WiFi",
+                "filter": "amenity_internet_wifi|1",
+                "count": 549
+            },
+            {
+                "term": "Jardim",
+                "filter": "amenity_jardim|1",
+                "count": 367
+            },
+            {
+                "term": "Lounge compartilhado / Sala de TV",
+                "filter": "amenity_lounge_compartilhado_sala_de_tv|1",
+                "count": 247
+            },
+            {
+                "term": "Piscina",
+                "filter": "amenity_piscina|1",
+                "count": 290
+            },
+            {
+                "term": "Piscina Exterior",
+                "filter": "amenity_piscina_exterior|1",
+                "count": 214
+            },
+            {
+                "term": "Piscina ao ar livre",
+                "filter": "amenity_piscina_ao_ar_livre|1",
+                "count": 216
+            },
+            {
+                "term": "Piscina ao ar livre (o ano inteiro)",
+                "filter": "amenity_piscina_ao_ar_livre_o_ano_inteiro|1",
+                "count": 211
+            },
+            {
+                "term": "Piso",
+                "filter": "amenity_piso|1",
+                "count": 198
+            },
+            {
+                "term": "Quartos não fumantes",
+                "filter": "amenity_quartos_nao_fumantes|1",
+                "count": 231
+            },
+            {
+                "term": "Quartos para famílias",
+                "filter": "amenity_quartos_para_familias|1",
+                "count": 299
+            },
+            {
+                "term": "Recepção 24 horas",
+                "filter": "amenity_recepcao_24_horas|1",
+                "count": 335
+            },
+            {
+                "term": "Restaurante",
+                "filter": "amenity_restaurante|1",
+                "count": 450
+            },
+            {
+                "term": "Sala de Reuniões",
+                "filter": "amenity_sala_de_reunioes|1",
+                "count": 251
+            },
+            {
+                "term": "Salas de Reuniões",
+                "filter": "amenity_salas_de_reunioes|1",
+                "count": 177
+            },
+            {
+                "term": "Serviço diário de limpeza",
+                "filter": "amenity_servico_diario_de_limpeza|1",
+                "count": 334
+            },
+            {
+                "term": "TV por cabo",
+                "filter": "amenity_tv_por_cabo|1",
+                "count": 294
+            },
+            {
+                "term": "Varanda / Sacada",
+                "filter": "amenity_varanda_sacada|1",
+                "count": 244
+            },
+            {
+                "term": "Ventilador",
+                "filter": "amenity_ventilador|1",
+                "count": 318
+            },
+            {
+                "term": "Wifi",
+                "filter": "amenity_wifi|1",
+                "count": 716
+            }
+        ],
+        "countries": [
+            {
+                "term": "Brasil",
+                "filter": "country_brasil|1",
+                "count": 1363
+            },
+            {
+                "term": "Estados Unidos",
+                "filter": "country_estados_unidos|1",
+                "count": 1
+            },
+            {
+                "term": "Macedonia",
+                "filter": "country_macedonia|1",
+                "count": 1
+            }
+        ],
+        "cities": [
+            {
+                "term": "Angra dos Reis",
+                "filter": "city_angra_dos_reis|1,state_rio_de_janeiro|1",
+                "count": 49
+            },
+            {
+                "term": "Araruama",
+                "filter": "city_araruama|1,state_rio_de_janeiro|1",
+                "count": 15
+            },
+            {
+                "term": "Armação dos Búzios",
+                "filter": "city_armacao_dos_buzios|1,state_rio_de_janeiro|1",
+                "count": 250
+            },
+            {
+                "term": "Arraial do Cabo",
+                "filter": "city_arraial_do_cabo|1,state_rio_de_janeiro|1",
+                "count": 82
+            },
+            {
+                "term": "Barra do Piraí",
+                "filter": "city_barra_do_pirai|1,state_rio_de_janeiro|1",
+                "count": 6
+            },
+            {
+                "term": "Cabo Frio",
+                "filter": "city_cabo_frio|1,state_rio_de_janeiro|1",
+                "count": 78
+            },
+            {
+                "term": "Campos dos Goytacazes",
+                "filter": "city_campos_dos_goytacazes|1,state_rio_de_janeiro|1",
+                "count": 15
+            },
+            {
+                "term": "Conservatória (Valença)",
+                "filter": "city_conservatoria_valenca|1,state_rio_de_janeiro|1",
+                "count": 9
+            },
+            {
+                "term": "Duque de Caxias",
+                "filter": "city_duque_de_caxias|1,state_rio_de_janeiro|1",
+                "count": 9
+            },
+            {
+                "term": "Engenheiro Paulo de Frontin",
+                "filter": "city_engenheiro_paulo_de_frontin|1,state_rio_de_janeiro|1",
+                "count": 5
+            },
+            {
+                "term": "Ilha Grande (Angra dos Reis)",
+                "filter": "city_ilha_grande_angra_dos_reis|1,state_rio_de_janeiro|1",
+                "count": 27
+            },
+            {
+                "term": "Ipiabas (Barra do Piraí)",
+                "filter": "city_ipiabas_barra_do_pirai|1,state_rio_de_janeiro|1",
+                "count": 4
+            },
+            {
+                "term": "Itaboraí",
+                "filter": "city_itaborai|1,state_rio_de_janeiro|1",
+                "count": 5
+            },
+            {
+                "term": "Itaguaí",
+                "filter": "city_itaguai|1,state_rio_de_janeiro|1",
+                "count": 12
+            },
+            {
+                "term": "Itatiaia",
+                "filter": "city_itatiaia|1,state_rio_de_janeiro|1",
+                "count": 36
+            },
+            {
+                "term": "Macaé",
+                "filter": "city_macae|1,state_rio_de_janeiro|1",
+                "count": 31
+            },
+            {
+                "term": "Mangaratiba",
+                "filter": "city_mangaratiba|1,state_rio_de_janeiro|1",
+                "count": 20
+            },
+            {
+                "term": "Maricá",
+                "filter": "city_marica|1,state_rio_de_janeiro|1",
+                "count": 12
+            },
+            {
+                "term": "Niterói",
+                "filter": "city_niteroi|1,state_rio_de_janeiro|1",
+                "count": 25
+            },
+            {
+                "term": "Nova Friburgo",
+                "filter": "city_nova_friburgo|1,state_rio_de_janeiro|1",
+                "count": 25
+            },
+            {
+                "term": "Paraty",
+                "filter": "city_paraty|1,state_rio_de_janeiro|1",
+                "count": 137
+            },
+            {
+                "term": "Penedo (Resende)",
+                "filter": "city_penedo_resende|1,state_rio_de_janeiro|1",
+                "count": 10
+            },
+            {
+                "term": "Petrópolis",
+                "filter": "city_petropolis|1,state_rio_de_janeiro|1",
+                "count": 39
+            },
+            {
+                "term": "Resende",
+                "filter": "city_resende|1,state_rio_de_janeiro|1",
+                "count": 10
+            },
+            {
+                "term": "Rio das Ostras",
+                "filter": "city_rio_das_ostras|1,state_rio_de_janeiro|1",
+                "count": 24
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "city_rio_de_janeiro|1,state_rio_de_janeiro|1",
+                "count": 293
+            },
+            {
+                "term": "Saquarema",
+                "filter": "city_saquarema|1,state_rio_de_janeiro|1",
+                "count": 20
+            },
+            {
+                "term": "Teresópolis",
+                "filter": "city_teresopolis|1,state_rio_de_janeiro|1",
+                "count": 23
+            },
+            {
+                "term": "Vassouras",
+                "filter": "city_vassouras|1,state_rio_de_janeiro|1",
+                "count": 6
+            },
+            {
+                "term": "Volta Redonda",
+                "filter": "city_volta_redonda|1,state_rio_de_janeiro|1",
+                "count": 5
+            }
+        ],
+        "prices": [
+            {
+                "min": 0,
+                "maxExclusive": 300,
+                "filter": "pricegroup_1|1",
+                "count": 1126
+            },
+            {
+                "min": 300,
+                "maxExclusive": 600,
+                "filter": "pricegroup_2|1",
+                "count": 188
+            },
+            {
+                "min": 600,
+                "maxExclusive": 900,
+                "filter": "pricegroup_3|1",
+                "count": 35
+            },
+            {
+                "min": 900,
+                "maxExclusive": 1200,
+                "filter": "pricegroup_4|1",
+                "count": 10
+            },
+            {
+                "min": 1200,
+                "maxExclusive": 1500,
+                "filter": "pricegroup_5|1",
+                "count": 3
+            },
+            {
+                "min": 1500,
+                "maxExclusive": 1800,
+                "filter": "pricegroup_6|1",
+                "count": 1
+            },
+            {
+                "min": 1800,
+                "maxExclusive": 2100,
+                "filter": "pricegroup_7|1",
+                "count": 1
+            },
+            {
+                "min": 2700,
+                "maxExclusive": 3000,
+                "filter": "pricegroup_10|1",
+                "count": 1
+            }
+        ],
+        "priceInterval": {
+            "min": 1,
+            "max": 545625,
+            "filterPattern": "price_[min|max]_[value]"
+        },
+        "productType": [
+            {
+                "term": "hotel",
+                "filter": "product_type_hotel|1",
+                "count": 1365
+            }
+        ],
+        "rooms": [
+            {
+                "term": "Apartamento Duplo",
+                "filter": "room_apartamento_duplo|1",
+                "count": 58
+            },
+            {
+                "term": "Apartamento Quádruplo",
+                "filter": "room_apartamento_quadruplo|1",
+                "count": 28
+            },
+            {
+                "term": "Apartamento Standard",
+                "filter": "room_apartamento_standard|1",
+                "count": 15
+            },
+            {
+                "term": "Apartamento Triplo",
+                "filter": "room_apartamento_triplo|1",
+                "count": 53
+            },
+            {
+                "term": "Apartamento triplo",
+                "filter": "room_apartamento_triplo|1",
+                "count": 12
+            },
+            {
+                "term": "Duplo Standard",
+                "filter": "room_duplo_standard|1",
+                "count": 18
+            },
+            {
+                "term": "Luxo",
+                "filter": "room_luxo|1",
+                "count": 21
+            },
+            {
+                "term": "Quarto Duplo",
+                "filter": "room_quarto_duplo|1",
+                "count": 124
+            },
+            {
+                "term": "Quarto Duplo Standard",
+                "filter": "room_quarto_duplo_standard|1",
+                "count": 56
+            },
+            {
+                "term": "Quarto Duplo Superior",
+                "filter": "room_quarto_duplo_superior|1",
+                "count": 15
+            },
+            {
+                "term": "Quarto Família",
+                "filter": "room_quarto_familia|1",
+                "count": 16
+            },
+            {
+                "term": "Quarto Individual",
+                "filter": "room_quarto_individual|1",
+                "count": 13
+            },
+            {
+                "term": "Quarto Quádruplo",
+                "filter": "room_quarto_quadruplo|1",
+                "count": 76
+            },
+            {
+                "term": "Quarto Quádruplo Standard",
+                "filter": "room_quarto_quadruplo_standard|1",
+                "count": 21
+            },
+            {
+                "term": "Quarto Triplo",
+                "filter": "room_quarto_triplo|1",
+                "count": 108
+            },
+            {
+                "term": "Quarto Triplo Standard",
+                "filter": "room_quarto_triplo_standard|1",
+                "count": 33
+            },
+            {
+                "term": "Quarto triplo",
+                "filter": "room_quarto_triplo|1",
+                "count": 13
+            },
+            {
+                "term": "SUPERIOR TWIN",
+                "filter": "room_superior_twin|1",
+                "count": 17
+            },
+            {
+                "term": "Standard",
+                "filter": "room_standard|1",
+                "count": 35
+            },
+            {
+                "term": "Standard Casal",
+                "filter": "room_standard_casal|1",
+                "count": 18
+            },
+            {
+                "term": "Standard Duplo",
+                "filter": "room_standard_duplo|1",
+                "count": 31
+            },
+            {
+                "term": "Standard Triplo",
+                "filter": "room_standard_triplo|1",
+                "count": 45
+            },
+            {
+                "term": "Standard Twin",
+                "filter": "room_standard_twin|1",
+                "count": 18
+            },
+            {
+                "term": "Superior",
+                "filter": "room_superior|1",
+                "count": 18
+            },
+            {
+                "term": "Suíte",
+                "filter": "room_suite|1",
+                "count": 21
+            },
+            {
+                "term": "Suíte Casal",
+                "filter": "room_suite_casal|1",
+                "count": 13
+            },
+            {
+                "term": "Suíte Dupla",
+                "filter": "room_suite_dupla|1",
+                "count": 32
+            },
+            {
+                "term": "Suíte Master",
+                "filter": "room_suite_master|1",
+                "count": 19
+            },
+            {
+                "term": "Suíte Standard",
+                "filter": "room_suite_standard|1",
+                "count": 19
+            },
+            {
+                "term": "Suíte Tripla",
+                "filter": "room_suite_tripla|1",
+                "count": 21
+            }
+        ],
+        "stars": [
+            {
+                "term": "1",
+                "filter": "stars_1|1",
+                "count": 19
+            },
+            {
+                "term": "2",
+                "filter": "stars_2|1",
+                "count": 101
+            },
+            {
+                "term": "3",
+                "filter": "stars_3|1",
+                "count": 916
+            },
+            {
+                "term": "4",
+                "filter": "stars_4|1",
+                "count": 271
+            },
+            {
+                "term": "5",
+                "filter": "stars_5|1",
+                "count": 56
+            },
+            {
+                "term": "6",
+                "filter": "stars_6|1",
+                "count": 1
+            }
+        ],
+        "states": [
+            {
+                "term": "Flórida",
+                "filter": "state_florida|1,country_estados_unidos|1",
+                "count": 1
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "state_rio_de_janeiro|1,country_brasil|1",
+                "count": 1362
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "state_rio_de_janeiro|1,country_macedonia|1",
+                "count": 1
+            },
+            {
+                "term": "Santa Catarina",
+                "filter": "state_santa_catarina|1,country_brasil|1",
+                "count": 1
+            }
+        ]
+    },
+    "results": [
+        {
+            "sku": "OMN-9924-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Patrimônio histórico da humanidade e símbolo da arquitetura brasileira, o icônico Hotel Nacional Rio de Janeiro, projetado por Oscar Niemeyer, está de volta e reabre suas portas como um verdadeiro resort em frente ao mar de São Conrado! A forma cilíndri",
+            "amenities": [
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Acesso direto à praia",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                }
+            ],
+            "id": "AT532028",
+            "price": {
+                "amount": 731.95,
+                "old_price": 731.95,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 731.95,
+                "total_price": 731.95,
+                "fee_extra": 0,
+                "sku": "OMN-9924-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 129.17,
+                        "amount_original": 129.17,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 731.95,
+                "amountPerDay": 731.95
+            },
+            "hu_free_cancellation": true,
+            "image": "http://media.omnibees.com/Images/9924/Property/476581.png",
+            "name": "Hotel Nacional Rio de Janeiro",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/hotel-nacional-rio-de-janeiro-OMN-9924",
+            "description": "Patrimônio histórico da humanidade e símbolo da arquitetura brasileira, o icônico Hotel Nacional Rio de Janeiro, projetado por Oscar Niemeyer, está de volta e reabre suas portas como um verdadeiro resort em frente ao mar de São Conrado! \r\n\r\nA forma cilíndrica do gênio Niemeyer, interage com o contorno das montanhas e com o formato das piscinas que assemelha-se a cauda de uma sereia, o que inspirou Alfredo Ceschiatti na obra de arte posicionada ao centro dos jardins de Burle Marx. A obra de arte localizada na fachada da piscina faz uma conexão perfeita entre a vista do mar e o prédio do hotel.\r\n\r\nO hotel possui localização estratégica e fácil acesso aos aeroportos e aos inúmeros pontos de diversão da Cidade Maravilhosa, sendo ideal para quem pretende passear e se divertir pela capital fluminense. Possui serviços e gastronomia que preserva a alma carioca. \r\n\r\nNo piso térreo oferece um amplo restaurante de culinária internacional com toques brasileiros, um incrível bar de piscina na frente mar, para snacks e petiscos, um aconchegante lobby bar contornado por pinéis do artista plástico Carybé, com espaço privativo de degustação de vinhos e espumantes, com lojas de conveniência, atendimento concierge, elegante adega com vista para o Mar de São Conrado, restaurante panorâmico que fissiona a culinária contemporânea com produtos brasileiros e um exclusivo e confortável SPA com moderno fitness center de vista deslumbrante para o mar. \r\n\r\nLocalizado entre a Pedra da Gávea e o Morro Dois Irmãos, ao lado do Gávea Golf Club e a poucos metros do Shopping Fashion Mall, na região nobre da zona sul carioca, os 125 mil metros quadrados deste imponente hotel teve estrutura e os 413 apartamentos, totalmente repaginados e voltados para o conforto e diversão da família, com serviços, equipe de recreação e atividades para todas as idades. \r\n\r\nTodos os apartamentos são finamente decorados, equipados com ar condicionado, frigobar, telefone, TV a cabo, entrada para hdmi, wi fi, máquina de café expresso, dock station, ferro e tábua de passar roupas e cofre eletrônico. São 4 tipos de apartamentos, com variações da vista, frente e parcial mar, ou montanha, com 1, 2 ou 3 ambientes. Esta variação nos permite acomodar com conforto toda a família.\r\n",
+            "stars": 5,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/9924/Property/476581.png"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/9924/Property/476573.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/9924/Property/476574.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/9924/Property/476575.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/9924/Property/476576.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22450221",
+                "street": "Avenida Niemeyer 769 ",
+                "street_name": "Avenida Niemeyer 769 ",
+                "streetName": "Avenida Niemeyer 769 ",
+                "address": "Avenida Niemeyer 769 ",
+                "fullAddress": "Avenida Niemeyer 769 ",
+                "full_address": "Avenida Niemeyer 769 ",
+                "neighborhood": "Sao Conrado",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -22.9977907,
+                    "lon": -43.2592792
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Telefone",
+                    "Cofre",
+                    "Frigobar",
+                    "Artigos para Banheiro",
+                    "Banheiro privado",
+                    "Serviço de Despertar"
+                ],
+                "name": "Luxo I Twin - Vista Montanha",
+                "image": "https://www.hurb.com/static/images/room-fallback.png",
+                "description": "Apartamento com fina decoração, duas camas de solteiro, enxoval de 400 fios Trussardi , amenities para banho , sofá cama para um adulto ou duas crianças, todos os apartamentos são equipados com: Smart Tv 49´, TV a cabo com canais HD , entrada hdmi, ar condicionado, frigobar, telefone, tábua e ferro de passar roupa, secador de cabelo, máquina de café Nespresso, dock station, e cofre eletronico. Nesta acomodação é possível adicionar uma cama de solteiro extra.\r"
+            }
+        },
+        {
+            "sku": "OMN-6025-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Orla recebeu o Certificado de Excelencia Tripadvisor 2017 e o score de 4.1/5.0 (Very Good) da TRUSTYOU, a maior plataforma de avaliações de hospedes do mundo, com 2763 reviews comprovados ( JUN/2017) Localizado na área mais exclusiva da Praia de Copac",
+            "amenities": [
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                }
+            ],
+            "id": "AT3459",
+            "price": {
+                "amount": 438.85,
+                "old_price": 413.84,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 438.85,
+                "total_price": 438.85,
+                "fee_extra": 0,
+                "sku": "OMN-6025-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 38.16,
+                        "amount_original": 38.16,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 413.84,
+                "amountPerDay": 438.85
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/3459/81266248_20181023160301.jpg",
+            "name": "Orla Copacabana",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/orla-copacabana-OMN-6025",
+            "description": "O Orla recebeu o Certificado de Excelencia Tripadvisor 2017 e o score de 4.1/5.0 (Very Good) da TRUSTYOU, a maior plataforma de avaliações de hospedes do mundo, com 2763 reviews comprovados ( JUN/2017) \r\n\r\nLocalizado na área mais exclusiva da Praia de Copacabana e a apenas 6 minutos a pé de Ipanema, oferecemos acesso WiFi Gratuito em todos os nossos aptos e áreas sociais.",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/3459/81266248_20181023160301.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6025/RoomTypes/196907.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6025/RoomTypes/196910.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6025/RoomTypes/196913.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/6025/Property/196179.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22070002",
+                "street": "Av Atlantica, 4122 Copacabana",
+                "street_name": "Av Atlantica, 4122 Copacabana",
+                "streetName": "Av Atlantica, 4122 Copacabana",
+                "address": "Av Atlantica, 4122 Copacabana",
+                "fullAddress": "Av Atlantica, 4122 Copacabana",
+                "full_address": "Av Atlantica, 4122 Copacabana",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -22.9851057,
+                    "lon": -43.1898113
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Serviço de Despertar",
+                    "Artigos para Banheiro",
+                    "Tv com controle Remoto",
+                    "Internet Wireless",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Frigobar",
+                    "Banheiro privado",
+                    "Telefone"
+                ],
+                "name": "STANDARD CASAL",
+                "image": "http://media.omnibees.com/Images/6025/RoomTypes/196905.jpg",
+                "description": "Este Apto oferece  silencioso ar condicionado tipo split ,  acesso WiFi cortesia, TV a cabo  (com possibilidade de ajustar idioma e legendas) ,  cofre eletrônico e minibar. As comodidades do banheiro incluem produtos de toalete de cortesia, secador de cabelo , espelho de maquiagem  e telefone."
+            }
+        },
+        {
+            "sku": "OMN-1743-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Mercure Angra dos Reis oferece uma vista maravilhosa das Ilhas Botinas, este hotel 4 estrelas está situado em uma propriedade ampla e privativa em Angra dos Reis. Dispõe de piscina ao ar livre, além de academia e restaurante.",
+            "amenities": [
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                }
+            ],
+            "id": "AT844",
+            "price": {
+                "amount": 303.88,
+                "old_price": 303.88,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 303.88,
+                "total_price": 303.88,
+                "fee_extra": 0,
+                "sku": "OMN-1743-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 12.66,
+                        "amount_original": 12.66,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 303.88,
+                "amountPerDay": 303.88
+            },
+            "hu_free_cancellation": false,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/844/mercure-angra-dos-reis-001_20181213115503.jpg",
+            "name": "Mercure Angra dos Reis",
+            "url": "https://www.hurb.com/hoteis/angra-dos-reis/mercure-angra-dos-reis-OMN-1743",
+            "description": "Localizado em Angra dos Reis, Rio de Janeiro, em uma região que conta com mais de 365 ilhas e centenas de lindas praias, o  hotel está estrategicamente localizado na entrada da cidade, junto a rodovia Rio Santos, ao lado da Marina Piratas e do Piratas Shopping. O centro da cidade fica a 7 minutos de carro e o Mercure Angra dos Reis oferece estacionamento privativo gratuito mediante pedido. \r\n\r\nO Mercure Angra tem 142 apartamentos, com a maior parte com vista para o mar, e distribuídos em 6 andares. O hotel oferece uma variedade de facilidades e serviços para garantir a satisfação dos hóspedes executivos e turistas: Pier de uso exclusivo do hóspede, Restaurante, Bar, Room Service 24hs, Sauna, Academia, Piscina adulto e infantil, Internet sem fio, Recepção 24hs, Serviço de despertar, Lavanderia e Segurança. ",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/844/mercure-angra-dos-reis-001_20181213115503.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1743/Property/21025.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1743/Property/25286.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1743/Property/25287.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1743/Property/25288.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "23907000",
+                "street": "Estrada das Marinas, 111 Praia do Jardim",
+                "street_name": "Estrada das Marinas, 111 Praia do Jardim",
+                "streetName": "Estrada das Marinas, 111 Praia do Jardim",
+                "address": "Estrada das Marinas, 111 Praia do Jardim",
+                "fullAddress": "Estrada das Marinas, 111 Praia do Jardim",
+                "full_address": "Estrada das Marinas, 111 Praia do Jardim",
+                "neighborhood": "Praia do Jardim",
+                "city": "Angra Dos Reis",
+                "id_city": 330010,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.00583,
+                    "lon": -44.29722
+                }
+            },
+            "tags": [
+                "Hoteis Corporativos - Rio de Janeiro"
+            ],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Artigos para Banheiro",
+                    "Banheiro privado",
+                    "Cofre",
+                    "Frigobar",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Internet Wireless"
+                ],
+                "name": "Apartamento Standard com 1  cama Casal",
+                "image": "http://media.omnibees.com/Images/1743/RoomTypes/95873.jpg",
+                "description": "Apartamento Standard com 20 m², com 1 cama de casal, ar condicionado, TV a cabo, free WIFI, cofre, telefone e minibar. Banheiros com telefone e secador de cabelo."
+            }
+        },
+        {
+            "sku": "OMN-3883-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Localizado na Barra da Tijuca, o Américas Barra Hotel & Eventos está próximo do maior Centro de Convenções da América Latina, Riocentro e belas praias da região.Os apartamentos possuem design moderno, destinado a quem procura praticidade e conforto em vi",
+            "amenities": [
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Estacionamento com manobrista",
+                    "category": "Opções de transporte"
+                }
+            ],
+            "id": "AT2023",
+            "price": {
+                "amount": 218.4,
+                "old_price": 201.76,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 218.4,
+                "total_price": 218.4,
+                "fee_extra": 0,
+                "sku": "OMN-3883-0-0-0-0-0-0",
+                "taxes": [],
+                "originalAmountPerDay": 201.76,
+                "amountPerDay": 218.4
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2023/americas-barra-hotel-001_20190103153231_20190107115103.jpg",
+            "name": "Américas Barra Hotel",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/americas-barra-hotel-OMN-3883",
+            "description": "O Américas Barra Hotel & Eventos possui apartamentos com design moderno, destinado a quem procura praticidade e conforto em viagens de negócios ou lazer.\r\nNo Americas Barra Hotel você encontrará quartos com ar-condicionado, TV de tela plana, telefone e frigobar. O hotel também dispõe de recepção 24 horas, piscina, academia, serviço de quarto, um bar e estacionamento (consultar valores direto no hotel).",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2023/americas-barra-hotel-001_20190103153231_20190107115103.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/3883/Property/113390.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/3883/Property/113391.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/3883/Property/113392.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/3883/Property/113394.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22621120",
+                "street": "Av. Das Américas, 10.500 Rio de Janeiro",
+                "street_name": "Av. Das Américas, 10.500 Rio de Janeiro",
+                "streetName": "Av. Das Américas, 10.500 Rio de Janeiro",
+                "address": "Av. Das Américas, 10.500 Rio de Janeiro",
+                "fullAddress": "Av. Das Américas, 10.500 Rio de Janeiro",
+                "full_address": "Av. Das Américas, 10.500 Rio de Janeiro",
+                "neighborhood": "Barra da Tijuca",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.00444,
+                    "lon": -43.31972
+                }
+            },
+            "tags": [
+                "hurb recomenda"
+            ],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Telefone",
+                    "Cofre",
+                    "Frigobar",
+                    "Artigos para Banheiro",
+                    "Banheiro privado",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Serviço de Despertar"
+                ],
+                "name": "Apartamento Master",
+                "image": "http://media.omnibees.com/Images/3883/RoomTypes/113451.jpg",
+                "description": "Apartamentos do 9° ao 12° andar, com area a partir de 22m², com vista para o mar e avenida das Américas. Fazem parte do Master Floor.\rAconchegantes, com balcão, oferecem  cama de casal. Ar condicionado, frigobar, TV e wi-fi.\r\r"
+            }
+        },
+        {
+            "sku": "OMN-4391-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O novo Windsor Marapendi Hotel está localizado bem em frente à belíssima praia da Barra da Tijuca e perto de tudo que este moderno bairro do Rio de Janeiro tem para oferecer.Desfrute de uma estada fantástica, admirando um dos melhores cenários do Rio, ne",
+            "amenities": [
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                }
+            ],
+            "id": "AT1735",
+            "price": {
+                "amount": 491.27,
+                "old_price": 491.27,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 491.27,
+                "total_price": 491.27,
+                "fee_extra": 0,
+                "sku": "OMN-4391-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 15.19,
+                        "amount_original": 15.19,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 491.27,
+                "amountPerDay": 491.27
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/1735/windsor-marapendi-hotel-001_20190625114859.jpg",
+            "name": "Windsor Marapendi Hotel",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/windsor-marapendi-hotel-OMN-4391",
+            "description": "O novo Windsor Marapendi Hotel está localizado bem em frente à belíssima praia da Barra da Tijuca e perto de tudo que este moderno bairro do Rio de Janeiro tem para oferecer.\r\nDesfrute de uma estada fantástica, admirando um dos melhores cenários do Rio, neste 5 estrelas que oferece muita diversão, entretenimento, gastronomia deliciosa e serviços impecáveis. O hotel oferece serviço de praia com toalhas, guarda-sois e cadeias. *Nosso serviço de praia é limitado ao espaço permitido pela prefeitura.\r\nA natureza envolve a Barra da Tijuca, com seus parques e reservas naturais, oferecendo muita diversão e atividades ao ar livre. A noite da Barra tambem é vibrante e diversificada em entretenimento com seus bares e restaurantes da moda e os melhores shopping centers da cidade.\r\n \r\nO Windsor Marapendi é um ótimo lugar para desfrutar de férias inesquecíveis com a família no Rio de Janeiro.\r\nO hotel é uma ótima opção tanto para turistas e viajantes a negócios, pois oferece instalações para eventos com amplas salas de reuniões e um business center completo.\r\n \r\nPosicionado em frente a Praia da Barra da Tijuca na altura do posto 7, o Windsor Marapendi Hotel está a 3,9km do principal Mall do bairro, o Barra Shopping.\r\nApenas 33,6 km do Aeroporto Internacional Tom Jobim, por meio da Transcarioca que interliga os bairros Barra da Tijuca e Ilha do Governador...",
+            "stars": 5,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/1735/windsor-marapendi-hotel-001_20190625114859.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/4391/Property/87542.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/4391/Property/87894.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/4391/Property/101021.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/4391/Property/101022.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22630012",
+                "street": "Av. Lúcio Costa, 5400 - Barra da Tijuca ",
+                "street_name": "Av. Lúcio Costa, 5400 - Barra da Tijuca ",
+                "streetName": "Av. Lúcio Costa, 5400 - Barra da Tijuca ",
+                "address": "Av. Lúcio Costa, 5400 - Barra da Tijuca ",
+                "fullAddress": "Av. Lúcio Costa, 5400 - Barra da Tijuca ",
+                "full_address": "Av. Lúcio Costa, 5400 - Barra da Tijuca ",
+                "neighborhood": "Barra da Tijuca",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.01667,
+                    "lon": -43.58889
+                }
+            },
+            "tags": [
+                "mais vendidos"
+            ],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Telefone",
+                    "Cofre",
+                    "Telefone com linha directa",
+                    "Frigobar",
+                    "Artigos para Banheiro",
+                    "Roupão de Banho",
+                    "Banheiro privado",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Tv com controle Remoto",
+                    "Serviço de Despertar"
+                ],
+                "name": "STANDARD DOUBLE",
+                "image": "http://media.omnibees.com/Images/4391/RoomTypes/176648.jpg",
+                "description": "Apartamento com cama de casal, amplo armário com prateleiras, mesa de trabalho, minibar, TV a cabo com canais internacionais, ar condicionado central, cofre eletrônico, despertador despertador, 2 linhas telefônicas, luz de leitura individual. Banheiro em granito com chuveiro e telefone, espelho de maquiagem, secador de cabelos, cesta de amenidades. Janelas anti-ruído."
+            }
+        },
+        {
+            "sku": "OMN-5320-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Em frente à praia da Barra da Tijuca, o Brisa Barra Hotel oferece excelência em atendimento e hospitalidade, destacando a vista para o mar de todos os apartamentos. A estrutura apresenta piscinas adulto e infantil, academia, saunas, jacuzzi, centro de con",
+            "amenities": [
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Garagem paga",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Aluguel de bicicletas",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento com manobrista",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Acesso direto à praia",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Centro de Conferências",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Auditório",
+                    "category": "Comodidades / Instalações para negócios"
+                }
+            ],
+            "id": "AT2830",
+            "price": {
+                "amount": 350,
+                "old_price": 332.5,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 350,
+                "total_price": 350,
+                "fee_extra": 0,
+                "sku": "OMN-5320-0-0-0-0-0-0",
+                "taxes": [],
+                "originalAmountPerDay": 332.5,
+                "amountPerDay": 350
+            },
+            "hu_free_cancellation": true,
+            "image": "http://media.omnibees.com/Images/5320/Property/134174.jpg",
+            "name": "Brisa Barra Hotel",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/brisa-barra-hotel-OMN-5320",
+            "description": "Em frente à praia da Barra da Tijuca, o Brisa Barra Hotel oferece excelência em atendimento e hospitalidade, destacando a vista para o mar de todos os apartamentos. A estrutura apresenta piscinas adulto e infantil, academia, saunas, jacuzzi, centro de convenções com capacidade para até 1.000 pessoas e um requintado restaurante com vista privilegiada - o Peregrino - onde também é servido o farto buffet de café da manhã. O WiFi gratuito está disponível em todas as áreas, e a propriedade fornece estacionamento cobrando uma taxa à parte. Além dessas facilidades, o hotel dispõe de serviço de praia gratuito. O hotel oferece aos hóspedes cadeiras, guarda-sóis e toalhas.\r \rO Brisa está localizado em um ponto estratégico para atender à demandas de lazer ou trabalho, próximo às sedes de grandes empresas e eventos (como o COB – Comitê Olímpico Brasileiro, Loreal, Empresas Oil&Gas), centros comerciais, terminal Alvorada e excelentes opções de praias e passeios recheados de belezas naturais. O Barra Shopping e o sofisticado Village Mall estão a apenas 6 km do Brisa Barra Hotel. O Parque Olímpico está a 10 km do Brisa Barra Hotel, e Praia do Pontal fica a apenas 13 km. Já o Aeroporto Santos Dumont está a 30,8 km, e o Aeroporto Internacional do Galeão fica a 33,8 km da propriedade. \r \rOs quartos no Brisa Barra são modernos e estão equipados com pisos antialérgicos em cor clara, TV’s planas, cofre e ar-condicionado. As acomodações também dispõem de varanda ou sacada com vista ao mar.\r \rO buffet de café da manhã diário inclui uma variedade de frutas da estação, pães e frios. Você também pode saborear especialidades nacionais e internacionais, além de uma seleção especial de bebidas no restaurante e bares do hotel.",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5320/Property/134174.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5320/RoomTypes/139410.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5320/RoomTypes/139418.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5320/Property/134175.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5320/Property/134181.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22620172",
+                "street": "Avenida Lucio Costa, 5.700 ",
+                "street_name": "Avenida Lucio Costa, 5.700 ",
+                "streetName": "Avenida Lucio Costa, 5.700 ",
+                "address": "Avenida Lucio Costa, 5.700 ",
+                "fullAddress": "Avenida Lucio Costa, 5.700 ",
+                "full_address": "Avenida Lucio Costa, 5.700 ",
+                "neighborhood": "Barra da Tijuca",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.0098355,
+                    "lon": -43.3539082
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Telefone",
+                    "Tv com controle Remoto",
+                    "Cofre para Computadores",
+                    "Internet Wireless",
+                    "Frigobar",
+                    "Banheiro privado",
+                    "Roupão de Banho",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Telefone com linha directa",
+                    "Leitor de DVD",
+                    "Serviço de Despertar",
+                    "Artigos para Banheiro",
+                    "Cofre"
+                ],
+                "name": "Vista lateral mar com varanda - Casal",
+                "image": "http://media.omnibees.com/Images/5320/RoomTypes/138044.jpg",
+                "description": "Desfrute deste quarto de 28m² com uma cama Queen size, TV à cabo 32’, mesa de trabalho, varanda privativa e vista lateral para o mar ."
+            }
+        },
+        {
+            "sku": "OMN-7718-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Localizado em Copacabana, o Hotel Biarritz o convida a descansar em acomodações equipadas com camas king-size e ar-conicionado.O hotel fica a apenas uma rua da Praia de Copacabana e a uma curta distância a pé da praia de Ipanema.Além dos quartos confort",
+            "amenities": [
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                }
+            ],
+            "id": "AT527592",
+            "price": {
+                "amount": 173.05,
+                "old_price": 144.21,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 173.05,
+                "total_price": 173.05,
+                "fee_extra": 0,
+                "sku": "OMN-7718-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 15.05,
+                        "amount_original": 15.05,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 144.21,
+                "amountPerDay": 173.05
+            },
+            "hu_free_cancellation": false,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/527592/184050497_20190408153040.jpg",
+            "name": "Biarritz By MN Hotéis",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/biarritz-by-mn-hoteis-OMN-7718",
+            "description": "Localizado em Copacabana, o Hotel Biarritz o convida a descansar em acomodações equipadas com camas king-size e ar-conicionado.\r\nO hotel fica a apenas uma rua da Praia de Copacabana e a uma curta distância a pé da praia de Ipanema.\r\nAlém dos quartos confortáveis, o Hotel Biarritz oferece um café-da-manhã de cortesia em estilo buffet e acesso à internet sem fio. \r\nCopacabana é uma ótima escolha para viajantes interessados em caminhadas na praia, passeios e praias com faixa de areia.",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/527592/184050497_20190408153040.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7718/Property/472553.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7718/Property/472546.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7718/Property/472547.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/7718/Property/472548.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22060030",
+                "street": "Rua Aires de Saldanha, 54 - Copacabana ",
+                "street_name": "Rua Aires de Saldanha, 54 - Copacabana ",
+                "streetName": "Rua Aires de Saldanha, 54 - Copacabana ",
+                "address": "Rua Aires de Saldanha, 54 - Copacabana ",
+                "fullAddress": "Rua Aires de Saldanha, 54 - Copacabana ",
+                "full_address": "Rua Aires de Saldanha, 54 - Copacabana ",
+                "neighborhood": "Copacabana",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -22.977377,
+                    "lon": -43.1907104
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Cofre",
+                    "Artigos para Banheiro",
+                    "Banheiro privado",
+                    "Televisão",
+                    "Frigobar"
+                ],
+                "name": "Superior ",
+                "image": "http://media.omnibees.com/Images/7718/RoomTypes/472619.jpg",
+                "description": "Este quarto dispõe de ar-condicionado, TV, frigobar e banheiro privativo."
+            }
+        },
+        {
+            "sku": "OMN-4867-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Quality Rio de Janeiro Barra da Tijuca está localizado a 5 minutos do centro de convenções Riocentro, com fácil acesso aos principais destinos da Barra da Tijuca como: Rio Arena, Barra Music, praia da Barra e mais",
+            "amenities": [
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Serviços de Aluguer de automóveis",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Fotocópias",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Auditório",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Buffet",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Mesa de Bilhar",
+                    "category": "Atividades"
+                }
+            ],
+            "id": "AT2652",
+            "price": {
+                "amount": 200.81,
+                "old_price": 200.81,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 200.81,
+                "total_price": 200.81,
+                "fee_extra": 0,
+                "sku": "OMN-4867-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 22.31,
+                        "amount_original": 22.31,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 200.81,
+                "amountPerDay": 200.81
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2652/quality-rio-de-janeiro-barra-da-tijuca-001_20180525171253.jpg",
+            "name": "Quality Rio de Janeiro Barra da Tijuca Atlantica",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/quality-rio-de-janeiro-barra-da-tijuca-atlantica-OMN-4867",
+            "description": "O Quality Rio de Janeiro Barra da Tijuca está localizado a 5 minutos do centro de convenções Riocentro, além de oferecer um espaço para reuniões e eventos para até 100 pessoas. \r\n\r\nCom fácil acesso aos principais destinos da Barra da Tijuca como: Rio Arena, Barra Music, Cidade do Rock e Parque Olímpico. O Quality Rio de Janeiro Barra da Tijuca também oferece uma excelente estrutura de lazer, com piscina e fitness center, além de exclusivos apartamentos para o seu conforto. \r\n\r\nReserve Quality Rio de Janeiro Barra da Tijuca no HU com o melhor preço!",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2652/quality-rio-de-janeiro-barra-da-tijuca-001_20180525171253.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/4867/Property/111284.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/4867/Property/111285.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/4867/Property/111286.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/4867/Property/111288.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22780160",
+                "street": "Avenida Salvador Allende, 500  ",
+                "street_name": "Avenida Salvador Allende, 500  ",
+                "streetName": "Avenida Salvador Allende, 500  ",
+                "address": "Avenida Salvador Allende, 500  ",
+                "fullAddress": "Avenida Salvador Allende, 500  ",
+                "full_address": "Avenida Salvador Allende, 500  ",
+                "neighborhood": "Jacarepagua",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -22.965598,
+                    "lon": -43.397086
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Internet Wireless",
+                    "Tv com controle Remoto",
+                    "Telefone",
+                    "Frigobar",
+                    "Banheiro privado",
+                    "Cofre",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Cofre para Computadores",
+                    "Artigos para Banheiro",
+                    "Telefone com linha directa",
+                    "Pay-TV",
+                    "Serviço de Despertar"
+                ],
+                "name": "SUPERIOR KING NÃO FUMANTE",
+                "image": "http://media.omnibees.com/Images/4867/RoomTypes/93686.png",
+                "description": "Localizados do 1º ao 10º andar, os apartamentos superiores possuem 32m² e são equipados com cofre digital, tábua e ferro de passar roupa, frigobar, chaleira elétrica, ar condicionado, varanda, internet wi-fi cortesia, room service 24 horas, TV LCD 42’’, Tv a cabo, banheiro com secador de cabelo e espelho de aumento, kit de amenities tropicália."
+            }
+        },
+        {
+            "sku": "OMN-8641-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "À beira-mar, em um tranquilo endereço na Praia do Recreio dos Bandeirantes, qualidade CDesign Hotel está presente no primeiro hotel design da cidade. Da fachada em forma de ondas ao serviço dedicado, você irá descansar, fazer bons negócios e voltar sempre",
+            "amenities": [
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Sala de Jogos",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Auditório",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Massagens a Pedido",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Estacionamento com manobrista",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Garagem paga",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Kids Club",
+                    "category": "Entretenimento e serviços para famílias"
+                }
+            ],
+            "id": "AT528992",
+            "price": {
+                "amount": 352.54,
+                "old_price": 323.25,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 352.54,
+                "total_price": 352.54,
+                "fee_extra": 0,
+                "sku": "OMN-8641-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 30.66,
+                        "amount_original": 30.66,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 323.25,
+                "amountPerDay": 352.54
+            },
+            "hu_free_cancellation": false,
+            "image": "http://media.omnibees.com/Images/8641/Property/379058.jpg",
+            "name": "CDesign Hotel",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/cdesign-hotel-OMN-8641",
+            "description": "O CDesign Hotel, antifgo Blue Tree Recreio, está localizado à beira-mar, a apenas 1,5 km da Praça do Pontal, oferecendo uma vista imperdível da praia do Recreio dos Bandeirantes. O Wi-Fi é gratuito em todas as áreas.\r\n\r\nTodos os quartos dispõem de ar-condicionado, TV de tela plana a cabo, cofre e frigobar. Os banheiros são privativos e incluem secador de cabelo e produtos de banho gratuitos, para seu maior conforto.\r\n\r\nVocê poderá desfrutar de uma refeição no restaurante do local. Além disso, o CDesign Hotel conta com recepção 24 horas.\r\n\r\nO CDesign Hotel Recreio fica a 10 km do Parque Olímpico da Barra e a 5 km da Prainha, bem como a 10 km do Centro de Convenções Riocentro e a 33 km do Aeroporto Internacional do Rio de Janeiro/Galeão.\r\n\r\nReserve o CDesign Hotel com o Hurb e tenha a melhor tarifa!",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8641/Property/379058.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8641/Property/379046.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8641/Property/379047.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8641/Property/379048.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8641/Property/379049.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22795125",
+                "street": "Avenida Lucio Costa 17360 ",
+                "street_name": "Avenida Lucio Costa 17360 ",
+                "streetName": "Avenida Lucio Costa 17360 ",
+                "address": "Avenida Lucio Costa 17360 ",
+                "fullAddress": "Avenida Lucio Costa 17360 ",
+                "full_address": "Avenida Lucio Costa 17360 ",
+                "neighborhood": "Recreio dos Bandeirantes",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.0270484,
+                    "lon": -43.4670827
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Frigobar",
+                    "Telefone com linha directa",
+                    "Tv com controle Remoto",
+                    "Cofre",
+                    "Artigos para Banheiro",
+                    "Telefone"
+                ],
+                "name": "Quarto Superior Casal",
+                "image": "http://media.omnibees.com/Images/8641/RoomTypes/379083.jpg",
+                "description": "Tamanho do quarto 25 m²\rEste quarto oferece frigobar, TV a cabo e ar-condicionado."
+            }
+        },
+        {
+            "sku": "OMN-5948-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Localizado em frente ao Aeroporto Santos Dumont, no Centro do Rio de Janeiro, o ibis Rio de Janeiro Santos Dumont é uma ótima opção de hospedagem econômica e confortável na Cidade Maravilhosa. O hotel oferece quartos com ar-condicionado, internet Wi-Fi gr",
+            "amenities": [
+                {
+                    "name": "Garagem paga",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Cyber Point",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                }
+            ],
+            "id": "AT524861",
+            "price": {
+                "amount": 190.92,
+                "old_price": 190.92,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 190.92,
+                "total_price": 190.92,
+                "fee_extra": 0,
+                "sku": "OMN-5948-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 7.95,
+                        "amount_original": 7.95,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 190.92,
+                "amountPerDay": 190.92
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/524861/ibis-rio-de-janeiro-santos-dumont-rio-de-janeiro-rj-001_20180327135230.jpg",
+            "name": "Hotel Ibis Rio de Janeiro Santos Dumont",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/hotel-ibis-rio-de-janeiro-santos-dumont-OMN-5948",
+            "description": "Localizado em frente ao Aeroporto Santos Dumont, no Centro do Rio de Janeiro, o ibis Rio de Janeiro Santos Dumont é uma ótima opção de hospedagem econômica e confortável na Cidade Maravilhosa. O hotel oferece quartos com ar-condicionado, internet Wi-Fi grátis e um completo buffet de café da manhã, com mais de 20 itens disponíveis para você começar bem o dia. O restaurante também oferece serviço de almoço e jantar. ",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/524861/ibis-rio-de-janeiro-santos-dumont-rio-de-janeiro-rj-001_20180327135230.jpg"
+                },
+                {
+                    "description": "Fachada",
+                    "url": "http://media.omnibees.com/Images/5948/Property/193142.jpg"
+                },
+                {
+                    "description": "Bar",
+                    "url": "http://media.omnibees.com/Images/5948/Property/193146.jpg"
+                },
+                {
+                    "description": "Lobby",
+                    "url": "http://media.omnibees.com/Images/5948/Property/193147.jpg"
+                },
+                {
+                    "description": "Business",
+                    "url": "http://media.omnibees.com/Images/5948/Property/193148.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "20020080",
+                "street": "Av. Mal. Câmara, 280 - Centro, Rio de Janeiro - RJ ",
+                "street_name": "Av. Mal. Câmara, 280 - Centro, Rio de Janeiro - RJ ",
+                "streetName": "Av. Mal. Câmara, 280 - Centro, Rio de Janeiro - RJ ",
+                "address": "Av. Mal. Câmara, 280 - Centro, Rio de Janeiro - RJ ",
+                "fullAddress": "Av. Mal. Câmara, 280 - Centro, Rio de Janeiro - RJ ",
+                "full_address": "Av. Mal. Câmara, 280 - Centro, Rio de Janeiro - RJ ",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -22.9085867,
+                    "lon": -43.1696046
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [],
+                "name": "Quarto padrão com 1 cama casal",
+                "image": "http://media.omnibees.com/Images/5948/RoomTypes/193143.jpg",
+                "description": "Moderno e convidativo, o novo quarto do ibis tem tudo que você precisa: um banheiro confortável, decoração moderna, piso de madeira, cama casal com edredom, Internet e TV tela plana com os melhores canais internacionais."
+            }
+        },
+        {
+            "sku": "OMN-1908-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Bourbon Barra Premium Residence está localizado na Barra da Tijuca, área de condomínios residenciais com ruas tranquilas e arborizadas que proporcionam uma agradável sensação de bem-estar. Está próximo ao centro de convenções Rio Centro e dos Shoppings ",
+            "amenities": [
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Fotocópias",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                }
+            ],
+            "id": "AT909",
+            "price": {
+                "amount": 256.37,
+                "old_price": 256.37,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 256.37,
+                "total_price": 256.37,
+                "fee_extra": 0,
+                "sku": "OMN-1908-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 22.29,
+                        "amount_original": 22.29,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 256.37,
+                "amountPerDay": 256.37
+            },
+            "hu_free_cancellation": true,
+            "image": "http://media.omnibees.com/Images/1908/Property/24945.jpg",
+            "name": "Bourbon Barra da Tijuca Residence",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/bourbon-barra-da-tijuca-residence-OMN-1908",
+            "description": "BALSA : Horário de funcionamento: 8:30 às 18:00h. Saídas programadas a cada 01 hora.  Horários devem ser consultados na recepção. Fechada para manutenção às segundas.  \r\n \r\nACADEMIA:  Horário de funcionamento: De segunda a sexta das 6h às 22h  /  Sábado das 8h às 18h  /  Domingos e feriados das 9h às 13h.\r\nEm alguns feriados/feriados prolongados a academia pode estar indisponível.\r\n\r\nPISCINA:  Horário de funcionamento: 8h às 19h. Fechada para manutenção às quartas-feiras.\r\n\r\n*** Transporte para shoppings próximos, saída na frente do Hotel. Não é necessário agendamento. Consultar horários na recepção.***\r\n\r\nO Bourbon Barra Premium Residence está localizado na Barra da Tijuca, área de condomínios residenciais com ruas tranquilas e arborizadas que proporcionam uma agradável sensação de bem-estar. Está próximo ao centro de convenções Rio Centro e dos Shoppings Rio Design e Barra Shopping. Tem fácil acesso ao Aeroporto Internacional Tom Jobim e ao Aeroporto Santos Dumont por meio da Linha Amarela. \r\n\r\nFacilidades para você\r\n- 178 apartamentos, divididos em Superior e Premier\r\n- Coffee Shop\r\n- Room Service\r\n- Business Center\r\n- Traslado para praia\r\n- Estacionamento com manobrista\r\n\r\nAproveite sua estada\r\n- Piscina \r\n- Fitness Center com personal trainers\r\n- Sala de ginástica\r\n- Lobby Bar\r\n\r\nA rede Bourbon é uma empresa livre de fumaça. É proibido fumar em qualquer área social ou apartamentos...",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/1908/Property/24945.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/909/bourbon-barra-premium-residence-barra-001_1_20170519123020.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/909/bourbon-barra-premium-residence-barra-001_10_20170519123034.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/909/bourbon-barra-premium-residence-barra-001_17_20170519123048.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/909/bourbon-barra-premium-residence-barra-001_21_20170519123113.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22793081",
+                "street": "Avenida Malibu, 1.355 ",
+                "street_name": "Avenida Malibu, 1.355 ",
+                "streetName": "Avenida Malibu, 1.355 ",
+                "address": "Avenida Malibu, 1.355 ",
+                "fullAddress": "Avenida Malibu, 1.355 ",
+                "full_address": "Avenida Malibu, 1.355 ",
+                "neighborhood": "Barra da Tijuca",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.00167,
+                    "lon": -43.39194
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Telefone",
+                    "Cofre",
+                    "Mini-Bar",
+                    "Leitor de DVD",
+                    "Televisão",
+                    "Banheiro privado",
+                    "Internet Wireless",
+                    "Frigobar",
+                    "Tv de tela Plano / Plasma / LCD"
+                ],
+                "name": "PREMIER CASAL",
+                "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/909/bourbon-barra-premium-residence-barra-001_7_20170519122850.jpg",
+                "description": "Suítes de 32m² com varanda, TV LCD, DVD, ducha especial, kit completo de amenities, cama king size com pillow top, ar-condicionado, acesso à Internet banda larga cortesia até 128 kb. Enxoval e móveis requintados."
+            }
+        },
+        {
+            "sku": "OMN-8690-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Monza Hotel dispõe de piscina ao ar livre e restaurante no Rio de Janeiro. A acomodação oferece Wi-Fi gratuito.Os quartos possuem ar-condicionado e frigobar. Todos incluem cafeteira e área para refeições com mesa. O banheiro privativo tem chuveiro e s",
+            "amenities": [
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                }
+            ],
+            "id": "AT529062",
+            "price": {
+                "amount": 228.64,
+                "old_price": 228.64,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 228.64,
+                "total_price": 228.64,
+                "fee_extra": 0,
+                "sku": "OMN-8690-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 37.22,
+                        "amount_original": 37.22,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 228.64,
+                "amountPerDay": 228.64
+            },
+            "hu_free_cancellation": false,
+            "image": "http://media.omnibees.com/Images/8690/Property/384173.jpg",
+            "name": "Hotel Monza",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/hotel-monza-OMN-8690",
+            "description": "O Monza Hotel dispõe de piscina ao ar livre e restaurante no Rio de Janeiro. A acomodação oferece Wi-Fi gratuito.\r\n\r\nOs quartos possuem ar-condicionado e frigobar. Todos incluem cafeteira e área para refeições com mesa. O banheiro privativo tem chuveiro e secador de cabelo. As comodidades adicionais incluem mesa de trabalho, cofre e roupa de cama.\r\n\r\nO Monza Hotel apresenta recepção 24 horas e bar. Você pode usufruir do depósito para bagagem, bem como dos serviços de lavanderia e de passar roupa.\r\n\r\nO hotel fica a 2,5 km do Centro de Convenções Riocentro, a 13,2 km do Estádio Olímpico Nilton Santos - Engenhão e a 13,4 km do Parque Nacional da Floresta da Tijuca. O Aeroporto Internacional do Rio de Janeiro - Galeão está a 23 km.",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8690/Property/384173.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8690/Property/384174.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8690/Property/384175.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8690/Property/384176.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8690/Property/384177.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22775040",
+                "street": "AV EMBAIXADOR ABELARDO BUENO 980 ",
+                "street_name": "AV EMBAIXADOR ABELARDO BUENO 980 ",
+                "streetName": "AV EMBAIXADOR ABELARDO BUENO 980 ",
+                "address": "AV EMBAIXADOR ABELARDO BUENO 980 ",
+                "fullAddress": "AV EMBAIXADOR ABELARDO BUENO 980 ",
+                "full_address": "AV EMBAIXADOR ABELARDO BUENO 980 ",
+                "neighborhood": "Jacarepagua",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -22.9730973,
+                    "lon": -43.3722574
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Artigos para Banheiro",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Cofre",
+                    "Frigobar",
+                    "Televisão",
+                    "Telefone IP",
+                    "Banheiro privado",
+                    "Telefone"
+                ],
+                "name": "Apto Luxo Individual ",
+                "image": "http://media.omnibees.com/Images/8690/RoomTypes/384211.jpg",
+                "description": "Tamanho do quarto 22 m²\rEste quarto duplo possui ar-condicionado e frigobar."
+            }
+        },
+        {
+            "sku": "OMN-8339-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Own Ipanema Visconti é uma propriedade 4 estrelas com uma localização excelente no centro do bairro de Ipanema, a apenas 250 metros da praia e perto de alguns dos melhores restaurantes e regiões de compras do Rio de Janeiro. Os quartos têm ar-condiciona",
+            "amenities": [
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                }
+            ],
+            "id": "AT528417",
+            "price": {
+                "amount": 371.8,
+                "old_price": 371.8,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 371.8,
+                "total_price": 371.8,
+                "fee_extra": 0,
+                "sku": "OMN-8339-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 50.7,
+                        "amount_original": 50.7,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 371.8,
+                "amountPerDay": 371.8
+            },
+            "hu_free_cancellation": false,
+            "image": "http://media.omnibees.com/Images/8339/Property/359720.jpg",
+            "name": "Own Ipanema Visconti",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/own-ipanema-visconti-OMN-8339",
+            "description": "O Own Ipanema Visconti é uma propriedade 4 estrelas com uma localização excelente no centro do bairro de Ipanema, a apenas 250 metros da praia e perto de alguns dos melhores restaurantes e regiões de compras do Rio de Janeiro. Os quartos têm ar-condicionado, TV de tela plana a cabo, frigobar e banheiro privativo.\r\n\r\nA propriedade oferece café da manhã farto e internet sem custo adicional. Além disso, você poderá usufruir gratuitamente da banheira de hidromassagem, sauna e academia. O Wi-Fi é gratuito.\r\n\r\nO Own Ipanema Visconti dispõe de restaurante, bar e café, onde você poderá saborear pratos regionais e internacionais, bem como o típico café nacional.\r\n\r\nO Own Ipanema Visconti fica a 2 km do Forte de Copacabana e a 2,4 km do Estadio de Remo da Lagoa. A propriedade está a 11,7 km do Aeroporto Santos Dumont e a 28,5 km do Aeroporto Internacional do Galeão.\r\n\r\nIpanema é uma ótima escolha para viajantes interessados em praias, vida noturna e caminhadas na praia.",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8339/Property/359720.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8339/Property/359715.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8339/Property/359716.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8339/Property/359717.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8339/Property/359718.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22420040",
+                "street": "Rua Prudente de Morais 1050 Ipanema Rio de Janeiro",
+                "street_name": "Rua Prudente de Morais 1050 Ipanema Rio de Janeiro",
+                "streetName": "Rua Prudente de Morais 1050 Ipanema Rio de Janeiro",
+                "address": "Rua Prudente de Morais 1050 Ipanema Rio de Janeiro",
+                "fullAddress": "Rua Prudente de Morais 1050 Ipanema Rio de Janeiro",
+                "full_address": "Rua Prudente de Morais 1050 Ipanema Rio de Janeiro",
+                "neighborhood": "Ipanema",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -22.985144,
+                    "lon": -43.20682
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Cofre",
+                    "Mini-Bar",
+                    "Artigos para Banheiro",
+                    "Tv de tela Plano / Plasma / LCD"
+                ],
+                "name": "JUNIOR ROOM QUEEN",
+                "image": "http://media.omnibees.com/Images/8339/RoomTypes/359729.jpg",
+                "description": "Descripcion de habitación pendiente."
+            }
+        },
+        {
+            "sku": "OMN-8709-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Localizado em ponto privilegiado da Barra da Tijuca a apenas 300m da melhor e maior praia do Rio de Janeiro,  próximo aos grandes centros gastronômicos, de entretenimento e comércio, torna-se particularmente atrativo para quem viaja a negócios ou lazer. E",
+            "amenities": [
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Fax",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de tv",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Garagem",
+                    "category": "Opções de transporte"
+                }
+            ],
+            "id": "AT529293",
+            "price": {
+                "amount": 204.25,
+                "old_price": 193.5,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 204.25,
+                "total_price": 204.25,
+                "fee_extra": 0,
+                "sku": "OMN-8709-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 33.25,
+                        "amount_original": 33.25,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 193.5,
+                "amountPerDay": 204.25
+            },
+            "hu_free_cancellation": false,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/529293/5ce70feadc9f9_entremares-barra-hotel_20190524121057.jpg",
+            "name": "Entremares Hotel",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/entremares-hotel-OMN-8709",
+            "description": "Localizado em ponto privilegiado da Barra da Tijuca a apenas 300m da melhor e maior praia do Rio de Janeiro,  próximo aos grandes centros gastronômicos, de entretenimento e comércio, torna-se particularmente atrativo para quem viaja a negócios ou lazer. Em um ambiente de conforto e bem estar com um atendimento personalizado você pode desfrutar de uma estadia perfeita .",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/529293/5ce70feadc9f9_entremares-barra-hotel_20190524121057.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8709/Property/386222.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8709/Property/386223.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8709/Property/386224.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8709/Property/386225.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22621180",
+                "street": "Av. Érico Veríssimo, 846  ",
+                "street_name": "Av. Érico Veríssimo, 846  ",
+                "streetName": "Av. Érico Veríssimo, 846  ",
+                "address": "Av. Érico Veríssimo, 846  ",
+                "fullAddress": "Av. Érico Veríssimo, 846  ",
+                "full_address": "Av. Érico Veríssimo, 846  ",
+                "neighborhood": "Barra da Tijuca",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.010029,
+                    "lon": -43.3088467
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Telefone",
+                    "Cofre",
+                    "Frigobar",
+                    "Banheiro privado",
+                    "Tv com controle Remoto"
+                ],
+                "name": "Quarto Duplo Standard",
+                "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/529293/5ce70fecec2a4_entremares-barra-hotel_20190524121120.jpg",
+                "description": "Tamanho do quarto 18 m²\r\rApartamento com cama casal. Com acesso gratuito à internet sem fio (Wi-Fi), este quarto com ar-condicionado oferece TV a cabo, frigobar e banheiro com secador de cabelo.\r"
+            }
+        },
+        {
+            "sku": "OMN-8516-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Hotel Doce Mar fica a 3 minutos a pé da praia da Armação. À apenas 70m da pitoresca Orla Bardot, o Hotel Doce Mar oferece piscina ao ar livre com serviço de bar, sauna à vapor e recepção 24 horas. O Wi-Fi e o estacionamento são gratuitos. As vagas no es",
+            "amenities": [
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                }
+            ],
+            "id": "AT529345",
+            "price": {
+                "amount": 220.2,
+                "old_price": 210.83,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 220.2,
+                "total_price": 220.2,
+                "fee_extra": 0,
+                "sku": "OMN-8516-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 30.03,
+                        "amount_original": 30.03,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 210.83,
+                "amountPerDay": 220.2
+            },
+            "hu_free_cancellation": false,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/529345/001_20190611093500.jpg",
+            "name": "Hotel Doce Mar",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/hotel-doce-mar-OMN-8516",
+            "description": "O Hotel Doce Mar fica a 3 minutos a pé da praia da Armação. À apenas 70m da pitoresca Orla Bardot, o Hotel Doce Mar oferece piscina ao ar livre com serviço de bar, sauna à vapor e recepção 24 horas. O Wi-Fi e o estacionamento são gratuitos. As vagas no estacionamento são limitadas.\r\nOs quartos dispõem de ar-condicionado split, TV LCD de 32″, telefone, frigobar, cofre e música ambiente. Incluem um banheiro espaçoso com box de vidro e pia em mármore .\r\nO buffet de café da manhã é servido diariamente das 08:00 às 11:00h, com uma variedade de frutas da estação, sucos, pães, croissant, frios e bolos.\r\nHá opções gastronômicas na animada Rua das Pedras, que está localizada a 300m de distância.",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/529345/001_20190611093500.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8516/Property/369974.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8516/Property/369975.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8516/Property/369976.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8516/Property/369977.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "28950000",
+                "street": "Alto do Humaitá, 4 ",
+                "street_name": "Alto do Humaitá, 4 ",
+                "streetName": "Alto do Humaitá, 4 ",
+                "address": "Alto do Humaitá, 4 ",
+                "fullAddress": "Alto do Humaitá, 4 ",
+                "full_address": "Alto do Humaitá, 4 ",
+                "neighborhood": "Humaitá",
+                "id_neighborhood": 12213,
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -22.7517139,
+                    "lon": -41.8854173
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Frigobar",
+                    "Televisão",
+                    "Cofre",
+                    "Telefone",
+                    "Banheiro privado",
+                    "Tv com controle Remoto"
+                ],
+                "name": "Quarto com Cama de Casal ou 2 de Solteiro",
+                "image": "http://media.omnibees.com/Images/8516/RoomTypes/406703.jpg",
+                "description": "Este quarto inclui ar-condicionado e banheiro espaçoso, com box de vidro, detalhes em granito . Dispõe de uma TV LCD de 32\", telefone, frigobar e cofre."
+            }
+        },
+        {
+            "sku": "NHU-5801-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Situada entre Angra dos Reis, a pousada Feitiço Caiçara localiza-se na Praia Vermelha e oferece café-da-manhã, piscina e estacionamento.",
+            "amenities": [
+                {
+                    "name": "Bilhar",
+                    "category": "Atividades"
+                },
+                {
+                    "name": "Canoagem",
+                    "category": "Atividades"
+                },
+                {
+                    "name": "Piscina ao ar livre",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina ao ar livre (o ano inteiro)",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Beira-mar",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Sauna",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Banho turco / Sauna a vapor",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Banheira de hidromassagem",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Recepção 24 horas",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Cofre",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Proibido fumar em todo o hotel",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Ar-condicionado",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Wifi",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Jardim",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Lounge compartilhado / Sala de TV",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Salão de jogos",
+                    "category": "Áreas comuns"
+                },
+                {
+                    "name": "Aparelho TV",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Ar-Condicionado",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Banheiro",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Cofre",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Frigobar",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Internet WiFi",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Sauna",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "TV por cabo",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Ventilador",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Varanda / Sacada",
+                    "category": "Acomodação"
+                },
+                {
+                    "name": "Estacionamento (gratuito)",
+                    "category": "Opções de transporte"
+                }
+            ],
+            "id": "AT5801",
+            "price": {
+                "amount": 220.52,
+                "old_price": 0,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 220.52,
+                "total_price": 220.52,
+                "fee_extra": 0,
+                "sku": "NHU-5801-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 35.9,
+                        "amount_original": 35.9,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 0,
+                "amountPerDay": 220.52
+            },
+            "hu_free_cancellation": true,
+            "image": "https://static.hotelurbano.com/reservas/prod0/5/5801/5d27796328e76_pousada-feitico-caicara.jpg",
+            "name": "Pousada Feitiço Caiçara",
+            "url": "https://www.hurb.com/hoteis/angra-dos-reis/pousada-feitico-caicara-5801",
+            "description": "Situada em Angra dos Reis, a pousada Feitiço Caiçara localiza-se na Praia Vermelha. OFERECE acomodações com lounge compartilhado, estacionamento privativo gratuito e jardim. OS QUARTOS possuem TV de tela plana com canais a cabo e banheiro privativo. A POUSADA POSSUIU vista para o jardim, piscina ao ar livre, recepção 24 horas e Wi-Fi gratuito em toda a propriedade.",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/5/5801/5d27796328e76_pousada-feitico-caicara.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/5/5801/5d277961e2c24_pousada-feitico-caicara.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/5/5801/5d2779643de7f_pousada-feitico-caicara.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/5/5801/5d27796531be4_pousada-feitico-caicara.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://static.hotelurbano.com/reservas/prod0/5/5801/5d27796644fea_pousada-feitico-caicara.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "23950-705",
+                "street": "Rodovia Procurador Haroldo Fernandes Duarte \"Rio-Santos\"",
+                "street_name": "Rodovia Procurador Haroldo Fernandes Duarte \"Rio-Santos\"",
+                "streetName": "Rodovia Procurador Haroldo Fernandes Duarte \"Rio-Santos\"",
+                "address": "Rodovia Procurador Haroldo Fernandes Duarte \"Rio-Santos\"",
+                "fullAddress": "Rodovia Procurador Haroldo Fernandes Duarte \"Rio-Santos\"",
+                "full_address": "Rodovia Procurador Haroldo Fernandes Duarte \"Rio-Santos\"",
+                "neighborhood": "Praia Vermelha (Mambucaba)",
+                "id_neighborhood": 43931,
+                "city": "Angra dos Reis",
+                "id_city": 6845,
+                "state": "Rio de Janeiro",
+                "id_state": 19,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.0294827,
+                    "lon": -44.5433544
+                }
+            },
+            "tags": [
+                "Costa Verde - RJ",
+                "Praias no Sudeste"
+            ],
+            "quantityDescriptors": {
+                "maxChildren": 1,
+                "maxAdults": 2,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Aparelho TV",
+                    "Ar-Condicionado",
+                    "Banheiro",
+                    "Cofre",
+                    "Frigobar",
+                    "Internet WiFi",
+                    "TV por cabo"
+                ],
+                "name": "Suite ao lado do bosque sem varanda",
+                "image": "https://static.hotelurbano.com/reservas/prodaccommodation/26440/57405a61af308_pousada-feitico-caicara.jpg",
+                "description": "Suite com janela e sem varanda ao lado do bosque, com tv a cabo,frigobar e internet wifi."
+            }
+        },
+        {
+            "sku": "OMN-5361-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Localizado à beira-mar, no coração da praia da Barra da Tijuca, o LSH Barra Hotel opera com o mesmo compromisso de serviço e atendimento de alto padrão assumido desde sua abertura, em Agosto de 2016. Seu posicionamento privilegiado, próximo à Praia do Pep",
+            "amenities": [
+                {
+                    "name": "Babá",
+                    "category": "Entretenimento e serviços para famílias"
+                },
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Massagens a Pedido",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Aluguel de bicicletas",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Estacionamento com manobrista",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Centro de Conferências",
+                    "category": "Comodidades / Instalações para negócios"
+                }
+            ],
+            "id": "AT2568",
+            "price": {
+                "amount": 802.06,
+                "old_price": 697.7,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 802.06,
+                "total_price": 802.06,
+                "fee_extra": 0,
+                "sku": "OMN-5361-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 130.57,
+                        "amount_original": 130.57,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 697.7,
+                "amountPerDay": 802.06
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2568/lsh-barra-hotel-004_20170925110646.jpg",
+            "name": "LSH Lifestyle Barra Hotel",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/lsh-lifestyle-barra-hotel-OMN-5361",
+            "description": "Luxo como estilo de vida.\r\n \r\nLocalizado de frente para a praia da Barra da Tijuca, próxima à mundialmente famosa praia do Pepê, o LSH Hotel foi inaugurado em 2016 e é um dos mais luxuosos hotéis do Rio de Janeiro.\r\n \r\nAproveite uma decoração moderna e um design fruto do trabalho de alguns dos mais renomados arquitetos do mundo, em quartos revestidos com o mais rico e exótico mármore turco, marcenaria italiana, torneiras importadas, revigorantes chuveiros rainshower e móveis com design exclusivo do hotel.\r\nTodas as habitações possuem uma espaçosa varanda privativa, muitas das quais com espetaculares vistas para o mar e para as montanhas, além de TV de LED de 50 polegadas, WiFi gratuito, macios lençóis de 300 fios de algodão, roupões de banho, chinelos e toiletries L'Occitane. Os hóspedes que procuram algo ainda mais exuberante, podem perder o fôlego nas piscinas particulares de nossas suítes de até 400 m2 com, salas, áreas de estar e vista frontal para o mar.\r\n \r\nNos arredores, à distância de poucos passos, toda a rica diversidade do polo gastronômico e da vida noturna do Jardim Oceânico estão à sua disposição, com uma infinidade de bares, restaurantes e clubs. Ou se preferir, saboreie dentro do hotel a culinária do Esplanada Grill, a mais premiada casa de carnes do Rio de Janeiro, que também assina nosso serviço de quarto.\r\n \r\nA um raio de 15 minutos de carro está o mais luxuoso centro de compras do Rio de Janeiro (Village Mall), além de casas de espetáculo, arenas de shows e esportivas, dois campos de Golf e tudo que o Rio de Janeiro tem a oferecer. Você também está a 10 minutos de caminhada da Estação de Metrô da Barra da Tijuca.\r\n \r\nA espaçosa área de eventos do hotel, com 4 salões ricamente acabados e com capacidade total de 560 pessoas tornam o hotel ideal para eventos especiais de todos os tamanhos.\r\n\r\nTaxa de Manobrista: R$ 30,00 + 5% Iss por estada. \r\n\r\n** Enquanto nossa Piscina Oficial se encontra em manutenção, estamos disponibilizando  -exclusivamente- a partir de 02/08/2019, nossa piscina do Rooftop Suíte para todos os nossos hóspedes usufruírem.\r\nSão 400m2 de uma estrutura linda e uma vista espetacular.**\r\n",
+            "stars": 5,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2568/lsh-barra-hotel-004_20170925110646.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5361/Property/161815.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2568/lsh-barra-hotel-003_20170925110640.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2568/lsh-barra-hotel-005_20170925110657.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2568/lsh-barra-hotel-006_20170925110709.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22620360",
+                "street": "Avenida Lucio Costa, 1996  ",
+                "street_name": "Avenida Lucio Costa, 1996  ",
+                "streetName": "Avenida Lucio Costa, 1996  ",
+                "address": "Avenida Lucio Costa, 1996  ",
+                "fullAddress": "Avenida Lucio Costa, 1996  ",
+                "full_address": "Avenida Lucio Costa, 1996  ",
+                "neighborhood": "Barra da Tijuca",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.0128746,
+                    "lon": -43.3167935
+                }
+            },
+            "tags": [
+                "Hoteis Corporativos - Rio de Janeiro"
+            ],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Tv com controle Remoto",
+                    "Banheiro privado",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Internet Wireless",
+                    "Serviço de Despertar",
+                    "Telefone",
+                    "Roupão de Banho",
+                    "Cofre para Computadores",
+                    "Frigobar",
+                    "Artigos para Banheiro"
+                ],
+                "name": "The Mountain King Room",
+                "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/2568/lsh-barra-hotel-023_20170925110338.jpg",
+                "description": "Quartos de 35m2 com cama king size, varanda com vista para montanha - Pedra da Gavea, cafeteira Nespresso, banheiro com reservado e ducha, ar condicionado e TV a cabo"
+            }
+        },
+        {
+            "sku": "OMN-1733-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Novotel Rio de Janeiro Leme é ideal para sua viagem de negócios ou turismo no Rio de Janeiro. Localizado no bairro do Leme, a apenas uma quadra do famoso calçadão da Praia de Copacabana, perto do Bondinho do Pão de Açúcar e a 9km do Aeroporto Santos Dum",
+            "amenities": [
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                }
+            ],
+            "id": "AT579",
+            "price": {
+                "amount": 334.51,
+                "old_price": 334.51,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 334.51,
+                "total_price": 334.51,
+                "fee_extra": 0,
+                "sku": "OMN-1733-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 54.46,
+                        "amount_original": 54.46,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 334.51,
+                "amountPerDay": 334.51
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/579/bhg-rio-leme-rio-de-janeiro-rj-001_20171103114912.png",
+            "name": "Novotel Rio de Janeiro Leme",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/novotel-rio-de-janeiro-leme-OMN-1733",
+            "description": "O Novotel Rio de Janeiro Leme é ideal para sua viagem de negócios ou turismo no Rio de Janeiro. Localizado no bairro do Leme, a apenas uma quadra do famoso calçadão da Praia de Copacabana, perto do Bondinho do Pão de Açúcar e a 9km do Aeroporto Santos Dumont, dispõe de apartamentos equipados com ar-condicionado, Wi-Fi grátis, tv a cabo e minibar. O hotel ainda conta com fitness center, piscina e o Grilled Bar, todos com vista privilegiada para o mar.",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/579/bhg-rio-leme-rio-de-janeiro-rj-001_20171103114912.png"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/579/bhg-rio-leme-rio-de-janeiro-rj-002_20171103114922.png"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/579/bhg-rio-leme-rio-de-janeiro-rj-003_20171103114934.png"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/579/bhg-rio-leme-rio-de-janeiro-rj-013_20171103114954.png"
+                },
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/579/bhg-rio-leme-rio-de-janeiro-rj-014_20171103115017.png"
+                }
+            ],
+            "address": {
+                "zipcode": "22010-010",
+                "street": "Rua Gustavo Sampaio, 320 Rio de Janeiro",
+                "street_name": "Rua Gustavo Sampaio, 320 Rio de Janeiro",
+                "streetName": "Rua Gustavo Sampaio, 320 Rio de Janeiro",
+                "address": "Rua Gustavo Sampaio, 320 Rio de Janeiro",
+                "fullAddress": "Rua Gustavo Sampaio, 320 Rio de Janeiro",
+                "full_address": "Rua Gustavo Sampaio, 320 Rio de Janeiro",
+                "neighborhood": "Leme",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -22.92,
+                    "lon": -43.33056
+                }
+            },
+            "tags": [
+                "Hoteis Corporativos - Rio de Janeiro"
+            ],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Televisão",
+                    "Internet Wireless",
+                    "Telefone",
+                    "Frigobar",
+                    "Banheiro privado",
+                    "Artigos para Banheiro",
+                    "Cofre"
+                ],
+                "name": "Apartamento Standard com 1 cama Queen",
+                "image": "http://media.omnibees.com/Images/1733/RoomTypes/84985.jpg",
+                "description": "Apartamentos standard estão equipados com ar condicionado, TV a cabo, free WIFI, cofre, telefone e mesa de trabalho. Banheiros com telefone e secador de cabelo."
+            }
+        },
+        {
+            "sku": "OMN-8234-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "Situado em Paraty, na região do estado do Rio de Janeiro, a 100 m do Centro Histórico de Paraty, a Pousada Aldeia Paratii apresenta piscina ao ar livre e jardim. A propriedade serve diariamente café da manhã continental e chá da tarde, ambos gratuitos.To",
+            "amenities": [
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Área reservada a fumantes",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Free Wifi",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Estacionamento Gratuito",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Garagem",
+                    "category": "Opções de transporte"
+                }
+            ],
+            "id": "AT528838",
+            "price": {
+                "amount": 243.6,
+                "old_price": 243.6,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 243.6,
+                "total_price": 243.6,
+                "fee_extra": 0,
+                "sku": "OMN-8234-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 21.18,
+                        "amount_original": 21.18,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 243.6,
+                "amountPerDay": 243.6
+            },
+            "hu_free_cancellation": false,
+            "image": "http://media.omnibees.com/Images/8234/Property/346519.jpg",
+            "name": "Pousada Aldeia Paratii",
+            "url": "https://www.hurb.com/hoteis/parati/pousada-aldeia-paratii-OMN-8234",
+            "description": "Situado em Paraty, na região do estado do Rio de Janeiro, a 100 m do Centro Histórico de Paraty, a Pousada Aldeia Paratii apresenta piscina ao ar livre e jardim. A propriedade serve diariamente café da manhã continental e chá da tarde, ambos gratuitos.\r\nTodos os quartos dispõem de ar-condicionado e TV. Também incluem banheiro privativo.\r\nVocê encontra uma loja de presentes na propriedade e um serviço de recepção 24 horas.\r\n\r\n",
+            "stars": 3,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8234/Property/346519.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8234/Property/346520.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8234/Property/346521.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8234/Property/346522.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/8234/Property/346523.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "23970000",
+                "street": "Alameda Princesa Isabel, 152 ",
+                "street_name": "Alameda Princesa Isabel, 152 ",
+                "streetName": "Alameda Princesa Isabel, 152 ",
+                "address": "Alameda Princesa Isabel, 152 ",
+                "fullAddress": "Alameda Princesa Isabel, 152 ",
+                "full_address": "Alameda Princesa Isabel, 152 ",
+                "city": "Parati",
+                "id_city": 7004,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.2152035,
+                    "lon": -44.7162402
+                }
+            },
+            "tags": [],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Frigobar",
+                    "Banheiro privado",
+                    "Televisão",
+                    "Artigos para Banheiro",
+                    "Pay-TV",
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Tv com controle Remoto"
+                ],
+                "name": "Duplo",
+                "image": "http://media.omnibees.com/Images/8234/RoomTypes/346529.jpg",
+                "description": "1 cama de casal \rEste quarto duplo dispõe de ar-condicionado, TV a cabo, ventilador de teto e frigobar."
+            }
+        },
+        {
+            "sku": "OMN-5705-0-0-0-0-0-0",
+            "isHotel": true,
+            "category": "hotel",
+            "smallDescription": "O Hotel Laghetto Stilo Barra Rio conta com sua própria estrutura que atende a todos os públicos, familiar, executivos para negócios e para atender grupos e eventos. Com uma piscina exterior disponível durante todo o ano, um centro de fitness e um centro d",
+            "amenities": [
+                {
+                    "name": "Serviços/Sala de Bagagem",
+                    "category": "Serviços de recepção"
+                },
+                {
+                    "name": "Lavandaria/Limpeza a seco",
+                    "category": "Serviços de limpeza / Lavanderia"
+                },
+                {
+                    "name": "Internet Banda Larga",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Elevador",
+                    "category": "Diversos"
+                },
+                {
+                    "name": "Fotocópias",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Salas de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Sala de Reuniões",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Auditório",
+                    "category": "Comodidades / Instalações para negócios"
+                },
+                {
+                    "name": "Bar",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Restaurante Publico",
+                    "category": "Comida / Bebida"
+                },
+                {
+                    "name": "Bar de Piscina",
+                    "category": "Opções de transporte"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Piscina Exterior",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Academia de ginástica gratuita",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Massagens a Pedido",
+                    "category": "Piscina e comodidades de bem-estar"
+                },
+                {
+                    "name": "Acesso direto à praia",
+                    "category": "Piscina e comodidades de bem-estar"
+                }
+            ],
+            "id": "AT3152",
+            "price": {
+                "amount": 285.6,
+                "old_price": 261.5,
+                "currency": "BRL",
+                "currency_original": "BRL",
+                "gain": 0,
+                "fee_extra_original": 0,
+                "gain_original": 0,
+                "tariff_policies": [],
+                "current_price": 285.6,
+                "total_price": 285.6,
+                "fee_extra": 0,
+                "sku": "OMN-5705-0-0-0-0-0-0",
+                "taxes": [
+                    {
+                        "type": "PER_ITEM_QUANTITY",
+                        "name": "Taxa de Reserva",
+                        "amount": 28.56,
+                        "amount_original": 28.56,
+                        "currency": "BRL",
+                        "currency_original": "BRL"
+                    }
+                ],
+                "originalAmountPerDay": 261.5,
+                "amountPerDay": 285.6
+            },
+            "hu_free_cancellation": true,
+            "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/3152/laghetto-stilo-barra-rio-003_20180905180241.jpg",
+            "name": "Laghetto Stilo Barra Rio",
+            "url": "https://www.hurb.com/hoteis/rio-de-janeiro/laghetto-stilo-barra-rio-OMN-5705",
+            "description": "O Hotel Laghetto Stilo Barra Rio conta com sua própria estrutura que atende a todos os públicos, familiar, executivos para negócios e para atender grupos e eventos. \r\nCom uma piscina exterior disponível durante todo o ano, um centro fitness e um centro de negócios, o Laghetto Stilo Barra é um hotel à beira-mar situado na Barra da Tijuca, no Rio de Janeiro. \r\nOs hóspedes podem desfrutar do bar e do restaurante no local. Dispõe de acesso Wi-Fi gratuito em todas as áreas. \r\nO Hotel possui também um centro de bem-estar e spa, incluindo uma sauna e uma banheira de hidromassagem. No local, os hóspedes beneficiam de uma recepção aberta 24 horas. \r\nEstacionamento pago: R$ 36,90/por dia.\r\nOBS: Para maiores informações sobre o serviço de praia, segue link com a lei que dispõe as diretrizes para o serviço: http://mail.camara.rj.gov.br/APL/Legislativos/scpro0711.nsf/bc2dfa6000b5ba5d03257acc006b0e96/cd8c7714bf84302b032576a20074f8dd?OpenDocument",
+            "stars": 4,
+            "gallery": [
+                {
+                    "description": "",
+                    "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/3152/laghetto-stilo-barra-rio-003_20180905180241.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5705/Property/288579.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5705/Property/288578.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5705/Property/288581.jpg"
+                },
+                {
+                    "description": "",
+                    "url": "http://media.omnibees.com/Images/5705/Property/288583.jpg"
+                }
+            ],
+            "address": {
+                "zipcode": "22630190",
+                "street": "R. Marcelo Roberto, 65  ",
+                "street_name": "R. Marcelo Roberto, 65  ",
+                "streetName": "R. Marcelo Roberto, 65  ",
+                "address": "R. Marcelo Roberto, 65  ",
+                "fullAddress": "R. Marcelo Roberto, 65  ",
+                "full_address": "R. Marcelo Roberto, 65  ",
+                "neighborhood": "Barra da Tijuca",
+                "city": "Rio De Janeiro",
+                "id_city": 330455,
+                "state": "Rio de Janeiro",
+                "id_state": 33,
+                "country": "Brasil",
+                "id_country": 1,
+                "countryAlfa2": "BR",
+                "country_alfa2": "BR",
+                "geoLocation": {
+                    "lat": -23.0096913,
+                    "lon": -43.3553743
+                }
+            },
+            "tags": [
+                "Hoteis Corporativos - Rio de Janeiro"
+            ],
+            "quantityDescriptors": {
+                "maxChildren": 10,
+                "maxAdults": 10,
+                "maxFreeChildrenAge": 17
+            },
+            "featuredItem": {
+                "amenities": [
+                    "Tv de tela Plano / Plasma / LCD",
+                    "Telefone",
+                    "Banheiro privado",
+                    "Cofre",
+                    "Frigobar",
+                    "Artigos para Banheiro",
+                    "Televisão",
+                    "Tv com controle Remoto",
+                    "Serviço de Despertar"
+                ],
+                "name": "Stilo",
+                "image": "http://media.omnibees.com/Images/5705/RoomTypes/173322.jpg",
+                "description": "Ar cond. | Frigobar | Cama Box | Cofre | Tv por assinatura | Piso frio | Secador de Cabelo |  220v | Aprox. 20m² "
+            }
+        }
+    ],
+    "pagination": {
+        "count": 69,
+        "firstPage": "http://searchapi/v2/search?q=rj&filters=is_hotel|1&page=1",
+        "nextPage": "http://searchapi/v2/search?q=rj&filters=is_hotel|1&page=2",
+        "previousPage": null,
+        "lastPage": "http://searchapi/v2/search?q=rj&filters=is_hotel|1&page=69"
+    }
+}

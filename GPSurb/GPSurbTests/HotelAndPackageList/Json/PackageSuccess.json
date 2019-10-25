@@ -1,0 +1,2028 @@
+{
+    "meta": {
+        "count": 41,
+        "offset": 0,
+        "query": "rj",
+        "warning": "results.price.current_price and results.price.old_price are deprecated",
+        "countWithAvailabilityInPage": 0,
+        "countHotel": 0,
+        "countPackage": 41,
+        "countTicket": 0,
+        "countBustrip": 0,
+        "countDisney": 0
+    },
+    "filters": {
+        "attributes": [
+            {
+                "term": "Academia",
+                "filter": "attribute_academia|1",
+                "count": 5
+            },
+            {
+                "term": "Acessibilidade",
+                "filter": "attribute_acessibilidade|1",
+                "count": 1
+            },
+            {
+                "term": "Almoço ou jantar",
+                "filter": "attribute_almoco_ou_jantar|1",
+                "count": 1
+            },
+            {
+                "term": "Aluguel de carro",
+                "filter": "attribute_aluguel_de_carro|1",
+                "count": 2
+            },
+            {
+                "term": "Apartamento",
+                "filter": "attribute_apartamento|1",
+                "count": 27
+            },
+            {
+                "term": "Atendimento Bilíngue",
+                "filter": "attribute_atendimento_bilingue|1",
+                "count": 3
+            },
+            {
+                "term": "Cabine",
+                "filter": "attribute_cabine|1",
+                "count": 7
+            },
+            {
+                "term": "Café da manhã",
+                "filter": "attribute_cafe_da_manha|1",
+                "count": 26
+            },
+            {
+                "term": "Camareira",
+                "filter": "attribute_camareira|1",
+                "count": 7
+            },
+            {
+                "term": "Cofre",
+                "filter": "attribute_cofre|1",
+                "count": 4
+            },
+            {
+                "term": "Com criança grátis",
+                "filter": "attribute_freechildren_yes|1",
+                "count": 34
+            },
+            {
+                "term": "Day-use",
+                "filter": "attribute_dayuse|1",
+                "count": 2
+            },
+            {
+                "term": "Estacionamento",
+                "filter": "attribute_estacionamento|1",
+                "count": 8
+            },
+            {
+                "term": "Festa",
+                "filter": "attribute_festa|1",
+                "count": 2
+            },
+            {
+                "term": "Grátis para criança",
+                "filter": "attribute_gratis_para_crianca|1",
+                "count": 6
+            },
+            {
+                "term": "Ingresso",
+                "filter": "attribute_ingresso|1",
+                "count": 3
+            },
+            {
+                "term": "Internet wireless",
+                "filter": "attribute_internet_wireless|1",
+                "count": 11
+            },
+            {
+                "term": "Massagem",
+                "filter": "attribute_massagem|1",
+                "count": 2
+            },
+            {
+                "term": "Passagem Aérea",
+                "filter": "attribute_passagem_aerea|1",
+                "count": 15
+            },
+            {
+                "term": "Passeio",
+                "filter": "attribute_passeio|1",
+                "count": 5
+            },
+            {
+                "term": "Passeio de barco",
+                "filter": "attribute_passeio_de_barco|1",
+                "count": 4
+            },
+            {
+                "term": "Pensão completa",
+                "filter": "attribute_pensao_completa|1",
+                "count": 7
+            },
+            {
+                "term": "Piscina",
+                "filter": "attribute_piscina|1",
+                "count": 13
+            },
+            {
+                "term": "Quadra de Tênis",
+                "filter": "attribute_quadra_de_tenis|1",
+                "count": 2
+            },
+            {
+                "term": "Recreação",
+                "filter": "attribute_recreacao|1",
+                "count": 2
+            },
+            {
+                "term": "Salão de jogos",
+                "filter": "attribute_salao_de_jogos|1",
+                "count": 5
+            },
+            {
+                "term": "Sauna",
+                "filter": "attribute_sauna|1",
+                "count": 4
+            },
+            {
+                "term": "Serviço de quarto",
+                "filter": "attribute_servico_de_quarto|1",
+                "count": 2
+            },
+            {
+                "term": "Vista para o mar",
+                "filter": "attribute_vista_para_o_mar|1",
+                "count": 2
+            },
+            {
+                "term": "Área de lazer",
+                "filter": "attribute_area_de_lazer|1",
+                "count": 6
+            }
+        ],
+        "countries": [
+            {
+                "term": "Argentina",
+                "filter": "country_argentina|1",
+                "count": 7
+            },
+            {
+                "term": "Brasil",
+                "filter": "country_brasil|1",
+                "count": 34
+            }
+        ],
+        "cities": [
+            {
+                "term": "Angra dos Reis",
+                "filter": "city_angra_dos_reis|1,state_rio_de_janeiro|1",
+                "count": 6
+            },
+            {
+                "term": "Armação dos Búzios",
+                "filter": "city_armacao_dos_buzios|1,state_rio_de_janeiro|1",
+                "count": 4
+            },
+            {
+                "term": "Arraial do Cabo",
+                "filter": "city_arraial_do_cabo|1,state_rio_de_janeiro|1",
+                "count": 3
+            },
+            {
+                "term": "Cabo Frio",
+                "filter": "city_cabo_frio|1,state_rio_de_janeiro|1",
+                "count": 3
+            },
+            {
+                "term": "Mangaratiba",
+                "filter": "city_mangaratiba|1,state_rio_de_janeiro|1",
+                "count": 1
+            },
+            {
+                "term": "Paraty",
+                "filter": "city_paraty|1,state_rio_de_janeiro|1",
+                "count": 2
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "city_rio_de_janeiro|1,state_rio_de_janeiro|1",
+                "count": 13
+            },
+            {
+                "term": "Rivadavia",
+                "filter": "city_rivadavia|1,state_buenos_aires|1",
+                "count": 7
+            },
+            {
+                "term": "Teresópolis",
+                "filter": "city_teresopolis|1,state_rio_de_janeiro|1",
+                "count": 2
+            }
+        ],
+        "departureCities": [
+            {
+                "term": "Belo Horizonte",
+                "filter": "departurecity_belo_horizonte|1",
+                "count": 15
+            },
+            {
+                "term": "Belém",
+                "filter": "departurecity_belem|1",
+                "count": 11
+            },
+            {
+                "term": "Brasília",
+                "filter": "departurecity_brasilia|1",
+                "count": 15
+            },
+            {
+                "term": "Curitiba",
+                "filter": "departurecity_curitiba|1",
+                "count": 15
+            },
+            {
+                "term": "Florianópolis",
+                "filter": "departurecity_florianopolis|1",
+                "count": 9
+            },
+            {
+                "term": "Porto Alegre",
+                "filter": "departurecity_porto_alegre|1",
+                "count": 15
+            },
+            {
+                "term": "Recife",
+                "filter": "departurecity_recife|1",
+                "count": 9
+            },
+            {
+                "term": "Salvador",
+                "filter": "departurecity_salvador|1",
+                "count": 15
+            },
+            {
+                "term": "São Paulo",
+                "filter": "departurecity_sao_paulo|1",
+                "count": 15
+            },
+            {
+                "term": "Vitória",
+                "filter": "departurecity_vitoria|1",
+                "count": 9
+            }
+        ],
+        "duration": [
+            {
+                "term": "1 diária",
+                "filter": "duration_1_diaria|1",
+                "count": 10
+            },
+            {
+                "term": "2 diárias",
+                "filter": "duration_2_diarias|1",
+                "count": 13
+            },
+            {
+                "term": "3 diárias",
+                "filter": "duration_3_diarias|1",
+                "count": 13
+            },
+            {
+                "term": "4 diárias",
+                "filter": "duration_4_diarias|1",
+                "count": 12
+            },
+            {
+                "term": "5 diárias",
+                "filter": "duration_5_diarias|1",
+                "count": 3
+            },
+            {
+                "term": "6 diárias",
+                "filter": "duration_6_diarias|1",
+                "count": 4
+            },
+            {
+                "term": "7 diárias",
+                "filter": "duration_7_diarias|1",
+                "count": 5
+            },
+            {
+                "term": "8 diárias",
+                "filter": "duration_8_diarias|1",
+                "count": 7
+            }
+        ],
+        "food": [
+            {
+                "term": "Almoço ou jantar",
+                "filter": "food_almoco_ou_jantar|1",
+                "count": 1
+            },
+            {
+                "term": "Café da manhã",
+                "filter": "food_cafe_da_manha|1",
+                "count": 26
+            },
+            {
+                "term": "Café da manhã, jantar",
+                "filter": "food_cafe_da_manha_jantar|1",
+                "count": 1
+            },
+            {
+                "term": "Pensão completa",
+                "filter": "food_pensao_completa|1",
+                "count": 7
+            }
+        ],
+        "people": [
+            {
+                "term": "1",
+                "filter": "total_people_1|1",
+                "count": 24
+            },
+            {
+                "term": "2",
+                "filter": "total_people_2|1",
+                "count": 15
+            },
+            {
+                "term": "3",
+                "filter": "total_people_3|1",
+                "count": 1
+            },
+            {
+                "term": "4",
+                "filter": "total_people_4|1",
+                "count": 1
+            }
+        ],
+        "prices": [
+            {
+                "min": 0,
+                "maxExclusive": 300,
+                "filter": "pricegroup_1|1",
+                "count": 9
+            },
+            {
+                "min": 300,
+                "maxExclusive": 600,
+                "filter": "pricegroup_2|1",
+                "count": 6
+            },
+            {
+                "min": 600,
+                "maxExclusive": 900,
+                "filter": "pricegroup_3|1",
+                "count": 2
+            },
+            {
+                "min": 900,
+                "maxExclusive": 1200,
+                "filter": "pricegroup_4|1",
+                "count": 2
+            },
+            {
+                "min": 1200,
+                "maxExclusive": 1500,
+                "filter": "pricegroup_5|1",
+                "count": 4
+            },
+            {
+                "min": 1500,
+                "maxExclusive": 1800,
+                "filter": "pricegroup_6|1",
+                "count": 5
+            },
+            {
+                "min": 1800,
+                "maxExclusive": 2100,
+                "filter": "pricegroup_7|1",
+                "count": 1
+            },
+            {
+                "min": 2700,
+                "maxExclusive": 3000,
+                "filter": "pricegroup_10|1",
+                "count": 12
+            }
+        ],
+        "priceInterval": {
+            "min": 4400,
+            "max": 867000,
+            "filterPattern": "price_[min|max]_[value]"
+        },
+        "productType": [
+            {
+                "term": "cruzeiro",
+                "filter": "product_type_cruzeiro|1",
+                "count": 7
+            },
+            {
+                "term": "hospedagem",
+                "filter": "product_type_hospedagem|1",
+                "count": 32
+            },
+            {
+                "term": "produto",
+                "filter": "product_type_produto|1",
+                "count": 2
+            }
+        ],
+        "regulation": [
+            {
+                "term": "accessibility_no",
+                "filter": "regulation_accessibility_no|1",
+                "count": 39
+            },
+            {
+                "term": "accessibility_yes",
+                "filter": "regulation_accessibility_yes|1",
+                "count": 2
+            },
+            {
+                "term": "child_no",
+                "filter": "regulation_child_no|1",
+                "count": 7
+            },
+            {
+                "term": "child_yes",
+                "filter": "regulation_child_yes|1",
+                "count": 34
+            },
+            {
+                "term": "extra_bed_no",
+                "filter": "regulation_extra_bed_no|1",
+                "count": 39
+            },
+            {
+                "term": "extra_bed_yes",
+                "filter": "regulation_extra_bed_yes|1",
+                "count": 2
+            },
+            {
+                "term": "internet_no",
+                "filter": "regulation_internet_no|1",
+                "count": 28
+            },
+            {
+                "term": "internet_yes",
+                "filter": "regulation_internet_yes|1",
+                "count": 13
+            },
+            {
+                "term": "parking_no",
+                "filter": "regulation_parking_no|1",
+                "count": 31
+            },
+            {
+                "term": "parking_yes",
+                "filter": "regulation_parking_yes|1",
+                "count": 10
+            }
+        ],
+        "states": [
+            {
+                "term": "Buenos Aires",
+                "filter": "state_buenos_aires|1,country_argentina|1",
+                "count": 7
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "state_rio_de_janeiro|1,country_brasil|1",
+                "count": 34
+            }
+        ]
+    },
+    "results": [
+        {
+            "sku": "LGPKG-851916-0",
+            "isPackage": true,
+            "name": "Pacote Rio de Janeiro - 2020",
+            "url": "https://www.hurb.com/pacote/rio-de-janeiro-pao-de-acucar-cristo-redentor-passeio-aereo-hotel/851916",
+            "smallDescription": "Parcele no Boleto",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo:&nbsp;Passagem a&eacute;rea da cidade de origem para a cidade do Rio de Janeiro e da cidade do Rio de Janeiro para a cidade de origem.\r\n\r\nHospedagem:&nbsp;No Rio de Janeiro no&nbsp;Ibis Copacabana Posto 5&nbsp;ou hotel de mesma categoria, padr&atilde;o 3 estrelas - com caf&eacute; da manh&atilde;.\r\n\r\nPasseio (opcional):&nbsp;P&atilde;o de A&ccedil;&uacute;car, Cristo Redentor, City Tour com Catedral Metropolitana, Escadaria Selar&oacute;n, Maracan&atilde; e Samb&oacute;dromo.&nbsp;De acordo com a op&ccedil;&atilde;o escolhida no momento da compra.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/09/30/13/24/rio_de_janeiro_capa.png"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/11/18/08/rio_de_janeiro_001__01_.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/11/18/08/rio_de_janeiro_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/11/18/08/rio_de_janeiro_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/11/18/08/rio_de_janeiro_003.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": -22.920158299821324,
+                    "lon": -43.4579963721119
+                }
+            },
+            "tags": [
+                "Boleto parcelado - Pacotes Nacional",
+                "Boleto Parcelado",
+                "Baixa temporada Boleto",
+                "Boleto 2020"
+            ],
+            "price": {
+                "oldPrice": 1818,
+                "currentPrice": 1818,
+                "sku": "LGPKG-851916-0",
+                "originalAmount": 1818,
+                "amountPerDay": 303,
+                "amount": 1818
+            },
+            "featuredItem": {
+                "description": "Standard duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "produto",
+            "quantityDescriptors": {
+                "nights": 6,
+                "maxPeople": 1
+            },
+            "id": "851916",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-858803-0",
+            "isPackage": true,
+            "name": "Pacote Hotel Fasano Rio de Janeiro",
+            "url": "https://www.hurb.com/pacote/hotel-fasano-rio-de-janeiro-passagem-aerea-hotel-massagem/858803",
+            "smallDescription": "Aéreo + Hotel + Massagem + Opção de Passeio",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo: Passagem a&eacute;rea de ida e volta da cidade de origem para Rio de Janeiro.\r\n\r\nHospedagem: Em Rio de Janeiro no Hotel Fasano - com caf&eacute; da manh&atilde;.\r\n\r\nPasseio:&nbsp;Passeio para o Cristo Redentor, Catedral Metropolitana, Escadaria Selar&oacute;n e P&ocirc;r do Sol no P&atilde;o de A&ccedil;&uacute;car.&nbsp;\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/13/11/50/hotel_fasano_rio_de_janeiro__capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/13/11/53/hotel_fasano_rio_de_janeiro_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/13/11/53/hotel_fasano_rio_de_janeiro_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/13/11/53/hotel_fasano_rio_de_janeiro_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/13/11/53/hotel_fasano_rio_de_janeiro_004.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": null,
+                    "lon": null
+                }
+            },
+            "tags": [
+                "Baixa temporada"
+            ],
+            "price": {
+                "oldPrice": 4372,
+                "currentPrice": 4372,
+                "sku": "LGPKG-858803-0",
+                "originalAmount": 4372,
+                "amountPerDay": 4372,
+                "amount": 4372
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo. ",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 1,
+                "maxPeople": 1
+            },
+            "id": "858803",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Massagem",
+                    "category": "Massagem"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-843851-0",
+            "isPackage": true,
+            "name": "Pacote Rio de Janeiro no Hotel Ibis Copacabana Posto 2",
+            "url": "https://www.hurb.com/pacote/rio-de-janeiro-aereo-hotel-passeio/843851",
+            "smallDescription": "Aéreo + hotel + opção de passeio",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo:&nbsp;Passagem a&eacute;rea da cidade de origem para a cidade do Rio de Janeiro e da cidade do Rio de Janeiro para a cidade de origem.\r\n\r\nHospedagem:&nbsp;No Rio de Janeiro no&nbsp;Ibis Copacabana Posto 2&nbsp;ou hotel de mesma categoria, padr&atilde;o 3 estrelas (com caf&eacute; da manh&atilde;).\r\n\r\nPasseio (opcional):&nbsp;P&atilde;o de A&ccedil;&uacute;car, Cristo Redentor (Van), City Tour com Catedral Metropolitana, Escadaria Selar&oacute;n, Maracan&atilde; (externo),&nbsp;Samb&oacute;dromo e Churrascaria Rod&iacute;zio.&nbsp;&nbsp;Inclui:&nbsp;transporte, ingressos, guia de turismo, almo&ccedil;o em churrascaria.&nbsp;N&atilde;o inclui:&nbsp;bebidas e sobremesas na churrascaria. De acordo com a op&ccedil;&atilde;o escolhida no momento da compra.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/07/31/19/46/ibis_copacabana_posto_2_capa.png"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/07/31/19/48/ibis_copacabana_posto_2_rio_de_janeiro_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/07/31/19/48/ibis_copacabana_posto_2_rio_de_janeiro_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/07/31/19/48/ibis_copacabana_posto_2_rio_de_janeiro_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/07/31/19/48/ibis_copacabana_posto_2_rio_de_janeiro_004.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": -22.920158299821324,
+                    "lon": -43.4579963721119
+                }
+            },
+            "tags": [
+                "pacotes 2019",
+                "Baixa temporada"
+            ],
+            "price": {
+                "oldPrice": 1727,
+                "currentPrice": 1727,
+                "sku": "LGPKG-843851-0",
+                "originalAmount": 1727,
+                "amountPerDay": 287.8333333333333,
+                "amount": 1727
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 6,
+                "maxPeople": 1
+            },
+            "id": "843851",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-866758-0",
+            "isPackage": true,
+            "name": "Pacote Rio de Janeiro - Carnaval 2020",
+            "url": "https://www.hurb.com/pacote/rio-de-janeiro-rj-passagem-aerea-hospedagem-carnaval/866758",
+            "smallDescription": "Passagem Aérea + Hospedagem com Café da Manhã",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo:&nbsp;Passagem a&eacute;rea da cidade de origem para a cidade do Rio de Janeiro e da cidade do Rio de Janeiro para a cidade de origem.\r\n\r\nHospedagem:&nbsp;No&nbsp;Rio de Janeiro&nbsp;no Hotel OK&nbsp;ou hotel de mesma categoria, padr&atilde;o 3 estrelas - com Caf&eacute; da Manh&atilde;.\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/10/11/16/25/rio_de_janeiro_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/10/11/16/25/carnaval_rio_de_janeiro_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/10/11/16/25/carnaval_rio_de_janeiro_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/10/11/16/25/carnaval_rio_de_janeiro_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/10/11/16/25/carnaval_rio_de_janeiro_004.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": -22.920158299821324,
+                    "lon": -43.4579963721119
+                }
+            },
+            "tags": [
+                "Pacotes de Carnaval"
+            ],
+            "price": {
+                "oldPrice": 2541,
+                "currentPrice": 2541,
+                "sku": "LGPKG-866758-0",
+                "originalAmount": 2541,
+                "amountPerDay": 635.25,
+                "amount": 2541
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 4,
+                "maxPeople": 1
+            },
+            "id": "866758",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-852301-0",
+            "isPackage": true,
+            "name": "Pacote Rio de Janeiro + Angra dos Reis - 2020",
+            "url": "https://www.hurb.com/pacote/rio-de-janeiro-angra-dos-reis-aereo-hotel-aluguel-de-carro/852301",
+            "smallDescription": "Parcele no Boleto",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo: Passagem a&eacute;rea da cidade de origem para Rio de Janeiro&nbsp;e de Rio de Janeiro para a cidade de origem.\r\n\r\nHospedagem:\r\n\r\nRio de Janeiro&nbsp;no Ibis Copacabana&nbsp;(Posto 5) ou hotel de mesma categoria, padr&atilde;o 3 estrelas - com caf&eacute; da manh&atilde;.\r\n\r\nAngra dos Reis&nbsp;na Pousada Ant&aacute;priss&nbsp;ou hotel de mesma categoria, padr&atilde;o 3 estrelas - com caf&eacute; da manh&atilde;.\r\n\r\nServi&ccedil;o (opcional):&nbsp;Aluguel&nbsp;de&nbsp;carro&nbsp;econ&ocirc;mico com KM Livre e seguro CDW (taxas n&atilde;o inclusas).&nbsp;De acordo com a op&ccedil;&atilde;o escolhida no momento da compra.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/02/27/17/16/Pacote_Rio_de_Janeiro___Angra_dos_Reis___ID_852301.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/12/50/angra_dos_reis_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/12/50/angra_dos_reis_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/12/50/angra_dos_reis_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/12/50/angra_dos_reis_004.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Angra dos Reis",
+                "geoLocation": {
+                    "lat": -23.008360000000003,
+                    "lon": -44.355382
+                }
+            },
+            "tags": [
+                "Boleto Parcelado",
+                "Boleto parcelado - Pacotes Nacional",
+                "Baixa temporada Boleto",
+                "Boleto 2020"
+            ],
+            "price": {
+                "oldPrice": 1998,
+                "currentPrice": 1998,
+                "sku": "LGPKG-852301-0",
+                "originalAmount": 1998,
+                "amountPerDay": 333,
+                "amount": 1998
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 6,
+                "maxPeople": 1
+            },
+            "id": "852301",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-843495-0",
+            "isPackage": true,
+            "name": "Pacote Rio de Janeiro no Ibis Copacabana Posto 5",
+            "url": "https://www.hurb.com/pacote/rio-de-janeiro-rj-aereo-hotel-passeio-city-tour/843495",
+            "smallDescription": "Aéreo + Hospedagem com Café da Manhã + Opção de Passeios",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo:&nbsp;Passagem a&eacute;rea da cidade de origem para a cidade do Rio de Janeiro e da cidade do Rio de Janeiro para a cidade de origem.\r\n\r\nHospedagem: Em&nbsp;Rio de Janeiro no&nbsp;Ibis Copacabana Posto 5 ou hotel de mesma categoria, padr&atilde;o 3 estrelas -&nbsp;com caf&eacute; da manh&atilde;.\r\n\r\nPasseio (opcional):&nbsp;P&atilde;o de A&ccedil;&uacute;car, Cristo Redentor, City Tour com Catedral Metropolitana, Escadaria Selar&oacute;n, Maracan&atilde; e Samb&oacute;dromo. De acordo com a op&ccedil;&atilde;o escolhida no momento da compra.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/08/06/10/22/ibis_copacabana_posto_5_capa_001.png"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/07/24/14/21/rio_de_janeiro_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/07/24/14/23/rio_de_janeiro_001__01_.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/07/24/14/23/rio_de_janeiro_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/07/24/14/23/rio_de_janeiro_002.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": -22.920158299821324,
+                    "lon": -43.4579963721119
+                }
+            },
+            "tags": [
+                "Nacional 2019",
+                "pacotes 2019",
+                "Baixa temporada"
+            ],
+            "price": {
+                "oldPrice": 1785,
+                "currentPrice": 1785,
+                "sku": "LGPKG-843495-0",
+                "originalAmount": 1785,
+                "amountPerDay": 297.5,
+                "amount": 1785
+            },
+            "featuredItem": {
+                "description": " Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 6,
+                "maxPeople": 1
+            },
+            "id": "843495",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-864383-0",
+            "isPackage": true,
+            "name": "Pacote Rio de Janeiro 2020 - Casal",
+            "url": "https://www.hurb.com/pacote/rio-de-janeiro-casal-passagem-aerea-hospedagem-cafe-da-manha-passeio-traslado/864383",
+            "smallDescription": "Aéreo + Hotel com Café da Manhã + Opção de Passeio",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo:&nbsp;Passagem a&eacute;rea de ida e volta da cidade de origem para a cidade do Rio de Janeiro.\r\n\r\nHospedagem:&nbsp;No&nbsp;Rio de Janeiro&nbsp;&nbsp;no CLH Suites Copacabana Domingos Ferreira ou hotel de mesma categoria, padr&atilde;o 3 estrelas&nbsp;- com caf&eacute; da manh&atilde;.\r\n\r\nServi&ccedil;o Opicional:&nbsp; Passeio de Meio dia no Rio -&nbsp; Cristo Redentor, Catedral Metropolitana, Escadaria Selar&oacute;n, Maracan&atilde; (parte externa)&nbsp;e Samb&oacute;dromo.&nbsp;\r\n\r\n*** Inclui Transporte, ingresso e guia tur&iacute;stico.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino,&nbsp;CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/15/15/05/capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/15/15/12/rio_de_janeiro_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/15/15/12/rio_de_janeiro_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/15/15/12/rio_de_janeiro_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/15/15/12/rio_de_janeiro_004.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": -22.920158299821324,
+                    "lon": -43.4579963721119
+                }
+            },
+            "tags": [
+                "Boleto 2020"
+            ],
+            "price": {
+                "oldPrice": 2370,
+                "currentPrice": 2370,
+                "sku": "LGPKG-864383-0",
+                "originalAmount": 2370,
+                "amountPerDay": 592.5,
+                "amount": 2370
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 4,
+                "maxPeople": 2
+            },
+            "id": "864383",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-858804-0",
+            "isPackage": true,
+            "name": "Pacote Belmond Copacabana Palace",
+            "url": "https://www.hurb.com/pacote/belmond-copacabana-palace-rio-de-janeiro-passagem-aerea-hospedagem-passeio/858804",
+            "smallDescription": "Passagem Aérea + Hospedagem +Passeio ao Cristo e Muito Mais",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo: Passagem a&eacute;rea de ida e volta da cidade de origem para a cidade do Rio de Janeiro.\r\n\r\nHospedagem: No Rio de Janeiro no Hotel Copacabana Palace -&nbsp;de acordo com a op&ccedil;&atilde;o escolhida no momento da compra.\r\n\r\nSuperior Vista Cidade - inclui caf&eacute; da manh&atilde;.\r\n\r\nDelux Vista Mar - inclui caf&eacute; da manh&atilde;&nbsp;.\r\n\r\nPasseio:&nbsp;Passeio para o Cristo Redentor, Catedral Metropolitana, Escadaria Selar&oacute;n e P&ocirc;r do Sol no P&atilde;o de A&ccedil;&uacute;car.&nbsp;\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/08/18/22/belmond_copacaban_palace_rio_de_janeiro_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/08/18/22/1015761_683093511743043_88591739_o.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/08/18/20/copacabana_palace_001___02.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/08/18/20/copacabana_palace_001___03.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/08/18/20/copacabana_palace_001___04.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": -22.965719812587537,
+                    "lon": -43.17573843383789
+                }
+            },
+            "tags": [
+                "Baixa temporada"
+            ],
+            "price": {
+                "oldPrice": 4332,
+                "currentPrice": 4332,
+                "sku": "LGPKG-858804-0",
+                "originalAmount": 4332,
+                "amountPerDay": 4332,
+                "amount": 4332
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo superior Vista Cidade ou Apartamento duplo superior Vista Cidade",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 1,
+                "maxPeople": 1
+            },
+            "id": "858804",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                },
+                {
+                    "name": "Passeio",
+                    "category": "Passeio"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-859167-0",
+            "isPackage": true,
+            "name": "Wyndham Rio de Janeiro Barra",
+            "url": "https://www.hurb.com/pacote/wyndham-rio-de-janeiro-barra-rj/859167",
+            "smallDescription": "Café da Manhã + Gratuidade para 01 Criança até 12 Anos",
+            "description": "",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/17/27/wyndhan_rio_de_janeiro_barra_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/17/29/wyndhan_rio_de_janeiro_barra_001___01.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/17/29/wyndhan_rio_de_janeiro_barra_001___02.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/17/29/wyndhan_rio_de_janeiro_barra_002.png"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/17/29/wyndhan_rio_de_janeiro_barra_003.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": -23.011177999999997,
+                    "lon": -43.326853
+                }
+            },
+            "tags": null,
+            "price": {
+                "oldPrice": 359,
+                "currentPrice": 359,
+                "sku": "LGPKG-859167-0",
+                "originalAmount": 359,
+                "amountPerDay": 359,
+                "amount": 359
+            },
+            "featuredItem": {
+                "description": "Quarto Classic Duplo.",
+                "hasInternet": true,
+                "hasParking": true
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 0,
+                "maxPeople": 2
+            },
+            "id": "859167",
+            "amenities": [
+                {
+                    "name": "Academia",
+                    "category": "Academia"
+                },
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Internet wireless",
+                    "category": "Internet"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-859163-0",
+            "isPackage": true,
+            "name": "Day Use no Wyndham Rio de Janeiro Barra",
+            "url": "https://www.hurb.com/pacote/day-use-no-wyndham-rio-de-janeiro-barra-rj/859163",
+            "smallDescription": "Gratuidade para 01 Criança até 12 Anos",
+            "description": "",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/16/18/wyndhan_rio_de_janeiro_barra_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/16/22/wyndhan_rio_de_janeiro_barra_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/16/22/wyndhan_rio_de_janeiro_barra_002.png"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/16/22/wyndhan_rio_de_janeiro_barra_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/21/16/22/wyndhan_rio_de_janeiro_barra_004.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": -23.011177999999997,
+                    "lon": -43.326853
+                }
+            },
+            "tags": null,
+            "price": {
+                "oldPrice": 326,
+                "currentPrice": 326,
+                "sku": "LGPKG-859163-0",
+                "originalAmount": 326,
+                "amountPerDay": 326,
+                "amount": 326
+            },
+            "featuredItem": {
+                "description": "Apartamento Classic Duplo.",
+                "hasInternet": true,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 0,
+                "maxPeople": 2
+            },
+            "id": "859163",
+            "amenities": [
+                {
+                    "name": "Day-use",
+                    "category": "Day-use"
+                },
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina"
+                },
+                {
+                    "name": "Internet",
+                    "category": "Internet"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-852122-0",
+            "isPackage": true,
+            "name": "Pacote Porto Real Resort - 2020",
+            "url": "https://www.hurb.com/pacote/porto-real-resort-mangaratiba-aereo-hotel-aluguel-de-carro/852122",
+            "smallDescription": "Parcele no Boleto",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo:&nbsp;Passagem&nbsp;a&eacute;rea da cidade de origem para o aeroporto do Rio de Janeiro e do aeroporto do Rio de Janeiro para a cidade de origem.\r\n\r\nHospedagem:&nbsp;Em&nbsp;Rio de Janeiro no&nbsp;Pacote Porto Real Resort&nbsp; - Meia Pens&atilde;o.\r\n\r\nServi&ccedil;o: Aluguel de carro.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/02/27/12/26/Pacote_Porto_Real_Resort___ID_852122.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/16/15/23/porto_real_resort_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/16/15/23/porto_real_resort_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/16/15/23/porto_real_resort_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/16/15/23/porto_real_resort_004.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Mangaratiba",
+                "geoLocation": {
+                    "lat": -23.036681495135912,
+                    "lon": -44.152476276237415
+                }
+            },
+            "tags": [
+                "Boleto parcelado - Pacotes Nacional",
+                "Baixa temporada Boleto",
+                "Boleto 2020"
+            ],
+            "price": {
+                "oldPrice": 3998,
+                "currentPrice": 3998,
+                "sku": "LGPKG-852122-0",
+                "originalAmount": 3998,
+                "amountPerDay": 1332.6666666666667,
+                "amount": 3998
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 3,
+                "maxPeople": 1
+            },
+            "id": "852122",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã, jantar",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Aluguel de carro",
+                    "category": "Aluguel de carro"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-850530-0",
+            "isPackage": true,
+            "name": "Best Western Rio Convention",
+            "url": "https://www.hurb.com/pacote/best-western-rio-convention-rio-de-janeiro/850530",
+            "smallDescription": "Opção de Núpcias + Dia da Noiva, Romântico ou Carioca",
+            "description": "O caf&eacute; da manh&atilde;, servido no restaurante das 06:00 h &agrave;s 10:00 h;\r\n\r\nEstacionamento cortesia.\r\n\r\n&nbsp;\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/12/13/12/30/Best_Western_Rio_Convention_1044x696px.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/12/13/12/33/best_western_rio_convention_001.png"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/12/13/12/33/best_western_rio_convention_002__01_.png"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/12/13/12/33/best_western_rio_convention_002__02_.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2018/12/13/12/33/best_western_rio_convention_002__03_.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": null,
+                    "lon": null
+                }
+            },
+            "tags": null,
+            "price": {
+                "oldPrice": 296,
+                "currentPrice": 296,
+                "sku": "LGPKG-850530-0",
+                "originalAmount": 296,
+                "amountPerDay": 296,
+                "amount": 296
+            },
+            "featuredItem": {
+                "description": "Apartamento.",
+                "hasInternet": true,
+                "hasParking": true
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 0,
+                "maxPeople": 2
+            },
+            "id": "850530",
+            "amenities": [
+                {
+                    "name": "Academia",
+                    "category": "Academia"
+                },
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Business center",
+                    "category": "Business Center"
+                },
+                {
+                    "name": "Estacionamento",
+                    "category": "Estacionamento"
+                },
+                {
+                    "name": "Internet wireless",
+                    "category": "Internet"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-852254-0",
+            "isPackage": true,
+            "name": "Pacote Búzios + Arraial do Cabo - 2020",
+            "url": "https://www.hurb.com/pacote/buzios-arraial-do-cabo-aereo-hotel-aluguel-de-carro/852254",
+            "smallDescription": "Parcele no Boleto",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo:&nbsp;Passagem a&eacute;rea da cidade de origem para Rio de Janeiro e do Rio de Janeiro para a cidade origem.\r\n\r\nHospedagem:&nbsp;\r\n\r\n- Em B&uacute;zios&nbsp;no Costa do Sol ou hotel de mesma categoria, padr&atilde;o 3 estrelas - com caf&eacute; da manh&atilde;.\r\n\r\n- Em Arraial&nbsp;na Pousada Para&iacute;so do Atl&acirc;ntico ou&nbsp;hotel de mesma categoria, padr&atilde;o 3 estrelas - com caf&eacute; da manh&atilde;.\r\n\r\nAluguel de carro:&nbsp;Aluguel&nbsp;de&nbsp;carro&nbsp;econ&ocirc;mico com KM Livre e seguro CDW (taxas n&atilde;o inclusas).\r\n\r\n**Para o aluguel do carro, &eacute; necess&aacute;rio que o viajante tenha, no m&iacute;nimo, 25 anos de idade e possuir CNH v&aacute;lida e definitiva. Taxas e impostos locais do aluguel de carro&nbsp;n&atilde;o&nbsp;est&atilde;o inclusas e dever&atilde;o ser pagas diretamente na locadora.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/02/27/18/08/Pacote_B__zios___Arraial_do_Cabo___ID_852254.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/10/20/armacao_dos_buzios_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/10/20/armacao_dos_buzios_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/10/20/armacao_dos_buzios_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/01/17/10/20/armacao_dos_buzios_004__01_.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Búzios",
+                "geoLocation": {
+                    "lat": -22.774787,
+                    "lon": -41.92319
+                }
+            },
+            "tags": [
+                "Boleto Parcelado",
+                "Boleto parcelado - Pacotes Nacional",
+                "Baixa temporada Boleto",
+                "Boleto 2020"
+            ],
+            "price": {
+                "oldPrice": 2718,
+                "currentPrice": 2718,
+                "sku": "LGPKG-852254-0",
+                "originalAmount": 2718,
+                "amountPerDay": 543.6,
+                "amount": 2718
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 5,
+                "maxPeople": 1
+            },
+            "id": "852254",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Aluguel de carro",
+                    "category": "Aluguel de carro"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-864426-0",
+            "isPackage": true,
+            "name": "Reveillón New´20 Sheraton Grand Rio Hotel & Resort",
+            "url": "https://www.hurb.com/pacote/ingresso-rio-de-janeiro-ano-novo-sheraton-grand-hotel-resort-festa-hospedagem-all-inclusive/864426",
+            "smallDescription": "Hospedagem + Ingresso para Festa Reveillón New´20",
+            "description": "\r\n\tEstacionamento: Cobrado a parte por 48,00 a di&aacute;ria\r\n\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/19/12/35/capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/19/13/03/sheraton_rio_grand_hotel_e_resort_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/19/13/03/sheraton_rio_grand_hotel_e_resort_002__01_.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/19/13/03/sheraton_rio_grand_hotel_e_resort_002__02_.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/08/19/13/03/sheraton_rio_grand_hotel_e_resort_002__04_.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": null,
+                    "lon": null
+                }
+            },
+            "tags": null,
+            "price": {
+                "oldPrice": 8670,
+                "currentPrice": 8670,
+                "sku": "LGPKG-864426-0",
+                "originalAmount": 8670,
+                "amountPerDay": 2890,
+                "amount": 8670
+            },
+            "featuredItem": {
+                "description": "Suite Luxo Vista Mar",
+                "hasInternet": true,
+                "hasParking": true
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 3,
+                "maxPeople": 1
+            },
+            "id": "864426",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Festa",
+                    "category": "Festa"
+                },
+                {
+                    "name": "Ingresso",
+                    "category": "Ingresso"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-861558-0",
+            "isPackage": true,
+            "name": "Rio Dream Weekend no Grand Mercure - Reveillon",
+            "url": "https://www.hurb.com/pacote/rio-dream-weekend-grand-mercure-barra-da-tijuca-feriado-reveillon-rio-de-janeiro/861558",
+            "smallDescription": "Early Check In ao Meio Dia e Late Check Out até as 18h",
+            "description": "O pacote inclui:\r\n\r\nHospedagem em hotel 5 estrelas + 10&nbsp;festas inclusas.\r\n\r\nSegue programa&ccedil;&atilde;o:\r\n\r\nDia 28/12 14h - Pool Party 22h - Carpe Vita 6h - Extended Party 12h - Fim das atividades.\r\n\r\nDia 29/12 14h - Day&#39;n Night Festa do Dom 6h - After Party 12h - Fim das atividades.\r\n\r\nDia 30/12 14h - Pool Party 22h - Main Event 6hh - Extended Party 12h - Fim das atividades.\r\n\r\nDia 31/12 14h - Pool Party 22h - Reveillon House Boutique 6hh - Extended Party 17h - Fim das atividades (Check Out 18h).\r\n\r\nEarly Check in a partir do meio dia do dia 28/12 Late check out at&eacute; as 18h do dia 01/01/2020.\r\n\r\nAtra&ccedil;o&otilde;es Confirmadas:\r\n\r\nChemical Surf (31/12) Dashdot (31/12) Bruno Be (28/12) Dubdisko (31/12) Glen (31/12) Dom (Residente).\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/10/17/13/58/RW_Capa_virada_de_lote.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/06/13/13/59/rio_dream_weekend_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/06/12/13/28/rio_dream_weekend_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/06/12/13/28/rio_dream_weekend_004.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/06/12/13/09/rio_dream_weekend_001__01_.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": null,
+                    "lon": null
+                }
+            },
+            "tags": [
+                "Pacotes Ano Novo"
+            ],
+            "price": {
+                "oldPrice": 3544,
+                "currentPrice": 3544,
+                "sku": "LGPKG-861558-0",
+                "originalAmount": 3544,
+                "amountPerDay": 1181.3333333333333,
+                "amount": 3544
+            },
+            "featuredItem": {
+                "description": "Apartamento Duplo.",
+                "hasInternet": true,
+                "hasParking": true
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 3,
+                "maxPeople": 2
+            },
+            "id": "861558",
+            "amenities": [
+                {
+                    "name": "Academia",
+                    "category": "Academia"
+                },
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Atendimento Bilíngue",
+                    "category": "Atendimento Bilíngue"
+                },
+                {
+                    "name": "Estacionamento",
+                    "category": "Estacionamento"
+                },
+                {
+                    "name": "Festa",
+                    "category": "Festa"
+                },
+                {
+                    "name": "Hotel 5 estrelas",
+                    "category": "Hotel"
+                },
+                {
+                    "name": "Ingresso",
+                    "category": "Ingresso"
+                },
+                {
+                    "name": "Internet wireless",
+                    "category": "Internet"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina"
+                },
+                {
+                    "name": "Sauna",
+                    "category": "Sauna"
+                },
+                {
+                    "name": "Serviço de praia",
+                    "category": "Serviço de praia"
+                },
+                {
+                    "name": "Camareira",
+                    "category": "Serviços"
+                },
+                {
+                    "name": "Show",
+                    "category": "Show"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-858988-0",
+            "isPackage": true,
+            "name": "Pacote Fasano Angra dos Reis",
+            "url": "https://www.hurb.com/pacote/fasano-angra-dos-reis-passagem-aerea-hospedagem-massagem/858988",
+            "smallDescription": "Passagem Aérea + Hospedagem + Massagem",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo: Passagem a&eacute;rea de ida e volta da cidade de origem para Rio de Janeiro.\r\n\r\nHospedagem: Em Rio de Janeiro no Hotel Fasano - com caf&eacute; da manh&atilde;.\r\n\r\nServi&ccedil;os opcionais:&nbsp;Traslado de ida e volta do aeroporto para o hotel, de acordo com a op&ccedil;&atilde;o escolhida no momento da compra.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/14/17/51/hotel_fasano_angra_dos_reis_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/14/17/55/hotel_fasano_angra_dos_reis_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/14/17/55/hotel_fasano_angra_dos_reis_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/14/17/55/hotel_fasano_angra_dos_reis_004.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/14/17/55/hotel_fasano_angra_dos_reis_005.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Angra dos Reis",
+                "geoLocation": {
+                    "lat": -22.9726896,
+                    "lon": -44.4381902
+                }
+            },
+            "tags": null,
+            "price": {
+                "oldPrice": 4252,
+                "currentPrice": 4252,
+                "sku": "LGPKG-858988-0",
+                "originalAmount": 4252,
+                "amountPerDay": 4252,
+                "amount": 4252
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 1,
+                "maxPeople": 1
+            },
+            "id": "858988",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Massagem",
+                    "category": "Massagem"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                },
+                {
+                    "name": "Traslado",
+                    "category": "Traslado"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-859962-0",
+            "isPackage": true,
+            "name": "Conheça a Ilha da Gigoia - O Pantanal Carioca",
+            "url": "https://www.hurb.com/pacote/ilha-da-gigoia-barra-da-tijuca-passeio-de-barco-caminhada-ecologica/859962",
+            "smallDescription": "Passeio de Barco + Caminhada na llha + Guia de Turismo",
+            "description": "Desconhecida da maioria dos cariocas, talvez por estar escondida atr&aacute;s dos grandes pr&eacute;dios da Barra da Tijuca, a Ilha da Gigoia oferece um ambiente pacato e buc&oacute;lico, que contrasta com a agita&ccedil;&atilde;o do restante do bairro. Durante esse passeio com dura&ccedil;&atilde;o m&eacute;dia de 3h voc&ecirc; poder&aacute; observar a fauna e flora t&iacute;picas de uma regi&atilde;o conhecida como o Pantanal Carioca. Animais como jacar&eacute;s, capivaras e p&aacute;ssaros diferentes poder&atilde;o ser apreciados de um ponto de vista &uacute;nico da cidade.\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/09/09/17/29/ilha_da_gigoia_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/09/09/17/31/ilha_da_gigoia_001__1_.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/09/09/17/31/ilha_da_gigoia_001__2_.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/09/09/17/31/ilha_da_gigoia_001__3_.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/09/09/17/31/ilha_da_gigoia_001__4_.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Rio de Janeiro",
+                "geoLocation": {
+                    "lat": null,
+                    "lon": null
+                }
+            },
+            "tags": null,
+            "price": {
+                "oldPrice": 125,
+                "currentPrice": 125,
+                "sku": "LGPKG-859962-0",
+                "originalAmount": 125,
+                "amountPerDay": 125,
+                "amount": 125
+            },
+            "featuredItem": {
+                "description": "Esta atividade não possui hospedagem.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 0,
+                "maxPeople": 2
+            },
+            "id": "859962",
+            "amenities": [
+                {
+                    "name": "Passeio",
+                    "category": "Passeio"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-856935-0",
+            "isPackage": true,
+            "name": "Pacote Búzios",
+            "url": "https://www.hurb.com/pacote/buzios-rio-de-janeiro-passagem-aerea-hospedagem-aluguel-de-carro-seguro/856935",
+            "smallDescription": "Aéreo + Hospedagem c/ café + Opção de Aluguel de carro",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo: Passagem a&eacute;rea de ida e volta da cidade de origem para o Rio de Janeiro.\r\n\r\nHospedagem: Em B&uacute;zios na Pousada HTL ou hotel de mesma categoria, padr&atilde;o 3 estrelas - com caf&eacute; da manh&atilde;.\r\n\r\nServi&ccedil;os opcionais: Aluguel de carro econ&ocirc;mico com KM Livre e Seguro B&aacute;sico, de acordo com a op&ccedil;&atilde;o escolhidfa no momento da compra.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/03/25/17/26/armacao_dos_buzios_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/03/25/17/27/armacao_dos_buzios_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/03/25/17/28/armacao_dos_buzios_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/03/25/17/28/armacao_dos_buzios_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/03/25/17/28/armacao_dos_buzios_004.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Búzios",
+                "geoLocation": {
+                    "lat": -22.958415,
+                    "lon": -43.303063
+                }
+            },
+            "tags": [
+                "Baixa temporada"
+            ],
+            "price": {
+                "oldPrice": 1270,
+                "currentPrice": 1270,
+                "sku": "LGPKG-856935-0",
+                "originalAmount": 1270,
+                "amountPerDay": 635,
+                "amount": 1270
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 2,
+                "maxPeople": 1
+            },
+            "id": "856935",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-859217-0",
+            "isPackage": true,
+            "name": "Pacote Cabo Frio",
+            "url": "https://www.hurb.com/pacote/cabo-frio-rio-de-janeiro-aereo-hospedagem-passeios/859217",
+            "smallDescription": "Aéreo + Hospedagem + Passeio a Praia do Forte e Muito Mais",
+            "description": "O pacote&nbsp;inclui:\r\n\r\nA&eacute;reo: Passagem a&eacute;rea de ida e volta da cidade de origem para o Rio de Janeiro.\r\n\r\nHospedagem: Em Cabo Frio na Pousada do Recanto ou hotel de mesma categoria, padr&atilde;o 3 estrelas&nbsp;&nbsp;-&nbsp;com caf&eacute; da manh&atilde;.\r\n\r\nServi&ccedil;os inclusos: Passeio de Full Day em Cabo Frio - Tour Panor&acirc;mico na Praia do Forte + Parada para banho na Ilha do Japon&ecirc;s + Tour de Compras na Rua dos Biqu&iacute;nis.\r\n\r\n&nbsp;\r\n\r\nCaso queira conferir nossas op&ccedil;&otilde;es de atividades no destino, CLIQUE AQUI!\r\n",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/22/15/07/cabo_frio_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/22/14/19/ilha_do_japones_cabo_frio_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/22/14/19/ilha_do_japones_cabo_frio_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/22/14/19/ilha_do_japones_cabo_frio_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/05/22/14/19/cabo_frio_001___01.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Cabo Frio",
+                "geoLocation": {
+                    "lat": -22.89156844059386,
+                    "lon": -42.03471996368728
+                }
+            },
+            "tags": null,
+            "price": {
+                "oldPrice": 1652,
+                "currentPrice": 1652,
+                "sku": "LGPKG-859217-0",
+                "originalAmount": 1652,
+                "amountPerDay": 550.6666666666666,
+                "amount": 1652
+            },
+            "featuredItem": {
+                "description": "Apartamento duplo.",
+                "hasInternet": false,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 3,
+                "maxPeople": 1
+            },
+            "id": "859217",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Passagem Aérea",
+                    "category": "Passagem aérea"
+                },
+                {
+                    "name": "Passeio",
+                    "category": "Passeio"
+                }
+            ]
+        },
+        {
+            "sku": "LGPKG-858228-0",
+            "isPackage": true,
+            "name": "Hotel La Plage",
+            "url": "https://www.hurb.com/pacote/hotel-la-plage-cabo-frio-rio-de-janeiro/858228",
+            "smallDescription": "Gratuidade para 1 Criança até 3 Anos",
+            "description": "",
+            "gallery": [
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/04/25/18/31/hotel_la_plage_cabo_frio_capa.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/04/25/18/40/hotel_la_plage_cabo_frio_001.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/04/25/18/40/hotel_la_plage_cabo_frio_002.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/04/25/18/40/hotel_la_plage_cabo_frio_003.jpg"
+                },
+                {
+                    "url": "https://s3.amazonaws.com/legado-prod/prod/ofertas/imagens/2019/04/25/18/40/hotel_la_plage_cabo_frio_004.jpg"
+                }
+            ],
+            "address": {
+                "country": "Brasil",
+                "state": "Rio de Janeiro",
+                "city": "Cabo Frio",
+                "geoLocation": {
+                    "lat": -22.862627,
+                    "lon": -41.98645
+                }
+            },
+            "tags": null,
+            "price": {
+                "oldPrice": 229,
+                "currentPrice": 229,
+                "sku": "LGPKG-858228-0",
+                "originalAmount": 229,
+                "amountPerDay": 229,
+                "amount": 229
+            },
+            "featuredItem": {
+                "description": "Apartamento Standard com ar-condicionado, frigobar, TV e telefone.",
+                "hasInternet": true,
+                "hasParking": false
+            },
+            "category": "hospedagem",
+            "quantityDescriptors": {
+                "nights": 1,
+                "maxPeople": 2
+            },
+            "id": "858228",
+            "amenities": [
+                {
+                    "name": "Apartamento",
+                    "category": "Acomodações"
+                },
+                {
+                    "name": "Café da manhã",
+                    "category": "Alimentação"
+                },
+                {
+                    "name": "Área de lazer",
+                    "category": "Area de lazer"
+                },
+                {
+                    "name": "Cofre",
+                    "category": "Cofre"
+                },
+                {
+                    "name": "Internet wireless",
+                    "category": "Internet"
+                },
+                {
+                    "name": "Piscina",
+                    "category": "Piscina"
+                },
+                {
+                    "name": "Salão de jogos",
+                    "category": "Salão de jogos"
+                },
+                {
+                    "name": "Sauna",
+                    "category": "Sauna"
+                },
+                {
+                    "name": "Camareira",
+                    "category": "Serviços"
+                },
+                {
+                    "name": "Grátis para criança",
+                    "category": "Vale criança"
+                }
+            ]
+        }
+    ],
+    "pagination": {
+        "count": 3,
+        "firstPage": "http://searchapi/v2/search?q=rj&filters=is_package,is_offer|1&page=1",
+        "nextPage": "http://searchapi/v2/search?q=rj&filters=is_package,is_offer|1&page=2",
+        "previousPage": null,
+        "lastPage": "http://searchapi/v2/search?q=rj&filters=is_package,is_offer|1&page=3"
+    }
+}

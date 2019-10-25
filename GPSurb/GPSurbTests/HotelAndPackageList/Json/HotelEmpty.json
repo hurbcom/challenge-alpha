@@ -1,0 +1,613 @@
+{
+    "meta": {
+        "count": 1365,
+        "offset": 0,
+        "query": "rj",
+        "warning": "results.price.current_price and results.price.old_price are deprecated",
+        "countWithAvailabilityInPage": 0,
+        "countHotel": 1365,
+        "countPackage": 0,
+        "countTicket": 0,
+        "countBustrip": 0,
+        "countDisney": 0
+    },
+    "filters": {
+        "amenities": [
+            {
+                "term": "Aparelho TV",
+                "filter": "amenity_aparelho_tv|1",
+                "count": 483
+            },
+            {
+                "term": "Ar-Condicionado",
+                "filter": "amenity_arcondicionado|1",
+                "count": 473
+            },
+            {
+                "term": "Ar-condicionado",
+                "filter": "amenity_arcondicionado|1",
+                "count": 390
+            },
+            {
+                "term": "Banheiro",
+                "filter": "amenity_banheiro|1",
+                "count": 520
+            },
+            {
+                "term": "Bar",
+                "filter": "amenity_bar|1",
+                "count": 379
+            },
+            {
+                "term": "Elevador",
+                "filter": "amenity_elevador|1",
+                "count": 181
+            },
+            {
+                "term": "Estacionamento (gratuito)",
+                "filter": "amenity_estacionamento_gratuito|1",
+                "count": 246
+            },
+            {
+                "term": "Estacionamento Gratuito",
+                "filter": "amenity_estacionamento_gratuito|1",
+                "count": 229
+            },
+            {
+                "term": "Free Wifi",
+                "filter": "amenity_free_wifi|1",
+                "count": 433
+            },
+            {
+                "term": "Frigobar",
+                "filter": "amenity_frigobar|1",
+                "count": 460
+            },
+            {
+                "term": "Internet Banda Larga",
+                "filter": "amenity_internet_banda_larga|1",
+                "count": 201
+            },
+            {
+                "term": "Internet WiFi",
+                "filter": "amenity_internet_wifi|1",
+                "count": 549
+            },
+            {
+                "term": "Jardim",
+                "filter": "amenity_jardim|1",
+                "count": 367
+            },
+            {
+                "term": "Lounge compartilhado / Sala de TV",
+                "filter": "amenity_lounge_compartilhado_sala_de_tv|1",
+                "count": 247
+            },
+            {
+                "term": "Piscina",
+                "filter": "amenity_piscina|1",
+                "count": 290
+            },
+            {
+                "term": "Piscina Exterior",
+                "filter": "amenity_piscina_exterior|1",
+                "count": 214
+            },
+            {
+                "term": "Piscina ao ar livre",
+                "filter": "amenity_piscina_ao_ar_livre|1",
+                "count": 216
+            },
+            {
+                "term": "Piscina ao ar livre (o ano inteiro)",
+                "filter": "amenity_piscina_ao_ar_livre_o_ano_inteiro|1",
+                "count": 211
+            },
+            {
+                "term": "Piso",
+                "filter": "amenity_piso|1",
+                "count": 198
+            },
+            {
+                "term": "Quartos não fumantes",
+                "filter": "amenity_quartos_nao_fumantes|1",
+                "count": 231
+            },
+            {
+                "term": "Quartos para famílias",
+                "filter": "amenity_quartos_para_familias|1",
+                "count": 299
+            },
+            {
+                "term": "Recepção 24 horas",
+                "filter": "amenity_recepcao_24_horas|1",
+                "count": 335
+            },
+            {
+                "term": "Restaurante",
+                "filter": "amenity_restaurante|1",
+                "count": 450
+            },
+            {
+                "term": "Sala de Reuniões",
+                "filter": "amenity_sala_de_reunioes|1",
+                "count": 251
+            },
+            {
+                "term": "Salas de Reuniões",
+                "filter": "amenity_salas_de_reunioes|1",
+                "count": 177
+            },
+            {
+                "term": "Serviço diário de limpeza",
+                "filter": "amenity_servico_diario_de_limpeza|1",
+                "count": 334
+            },
+            {
+                "term": "TV por cabo",
+                "filter": "amenity_tv_por_cabo|1",
+                "count": 294
+            },
+            {
+                "term": "Varanda / Sacada",
+                "filter": "amenity_varanda_sacada|1",
+                "count": 244
+            },
+            {
+                "term": "Ventilador",
+                "filter": "amenity_ventilador|1",
+                "count": 318
+            },
+            {
+                "term": "Wifi",
+                "filter": "amenity_wifi|1",
+                "count": 716
+            }
+        ],
+        "countries": [
+            {
+                "term": "Brasil",
+                "filter": "country_brasil|1",
+                "count": 1363
+            },
+            {
+                "term": "Estados Unidos",
+                "filter": "country_estados_unidos|1",
+                "count": 1
+            },
+            {
+                "term": "Macedonia",
+                "filter": "country_macedonia|1",
+                "count": 1
+            }
+        ],
+        "cities": [
+            {
+                "term": "Angra dos Reis",
+                "filter": "city_angra_dos_reis|1,state_rio_de_janeiro|1",
+                "count": 49
+            },
+            {
+                "term": "Araruama",
+                "filter": "city_araruama|1,state_rio_de_janeiro|1",
+                "count": 15
+            },
+            {
+                "term": "Armação dos Búzios",
+                "filter": "city_armacao_dos_buzios|1,state_rio_de_janeiro|1",
+                "count": 250
+            },
+            {
+                "term": "Arraial do Cabo",
+                "filter": "city_arraial_do_cabo|1,state_rio_de_janeiro|1",
+                "count": 82
+            },
+            {
+                "term": "Barra do Piraí",
+                "filter": "city_barra_do_pirai|1,state_rio_de_janeiro|1",
+                "count": 6
+            },
+            {
+                "term": "Cabo Frio",
+                "filter": "city_cabo_frio|1,state_rio_de_janeiro|1",
+                "count": 78
+            },
+            {
+                "term": "Campos dos Goytacazes",
+                "filter": "city_campos_dos_goytacazes|1,state_rio_de_janeiro|1",
+                "count": 15
+            },
+            {
+                "term": "Conservatória (Valença)",
+                "filter": "city_conservatoria_valenca|1,state_rio_de_janeiro|1",
+                "count": 9
+            },
+            {
+                "term": "Duque de Caxias",
+                "filter": "city_duque_de_caxias|1,state_rio_de_janeiro|1",
+                "count": 9
+            },
+            {
+                "term": "Engenheiro Paulo de Frontin",
+                "filter": "city_engenheiro_paulo_de_frontin|1,state_rio_de_janeiro|1",
+                "count": 5
+            },
+            {
+                "term": "Ilha Grande (Angra dos Reis)",
+                "filter": "city_ilha_grande_angra_dos_reis|1,state_rio_de_janeiro|1",
+                "count": 27
+            },
+            {
+                "term": "Ipiabas (Barra do Piraí)",
+                "filter": "city_ipiabas_barra_do_pirai|1,state_rio_de_janeiro|1",
+                "count": 4
+            },
+            {
+                "term": "Itaboraí",
+                "filter": "city_itaborai|1,state_rio_de_janeiro|1",
+                "count": 5
+            },
+            {
+                "term": "Itaguaí",
+                "filter": "city_itaguai|1,state_rio_de_janeiro|1",
+                "count": 12
+            },
+            {
+                "term": "Itatiaia",
+                "filter": "city_itatiaia|1,state_rio_de_janeiro|1",
+                "count": 36
+            },
+            {
+                "term": "Macaé",
+                "filter": "city_macae|1,state_rio_de_janeiro|1",
+                "count": 31
+            },
+            {
+                "term": "Mangaratiba",
+                "filter": "city_mangaratiba|1,state_rio_de_janeiro|1",
+                "count": 20
+            },
+            {
+                "term": "Maricá",
+                "filter": "city_marica|1,state_rio_de_janeiro|1",
+                "count": 12
+            },
+            {
+                "term": "Niterói",
+                "filter": "city_niteroi|1,state_rio_de_janeiro|1",
+                "count": 25
+            },
+            {
+                "term": "Nova Friburgo",
+                "filter": "city_nova_friburgo|1,state_rio_de_janeiro|1",
+                "count": 25
+            },
+            {
+                "term": "Paraty",
+                "filter": "city_paraty|1,state_rio_de_janeiro|1",
+                "count": 137
+            },
+            {
+                "term": "Penedo (Resende)",
+                "filter": "city_penedo_resende|1,state_rio_de_janeiro|1",
+                "count": 10
+            },
+            {
+                "term": "Petrópolis",
+                "filter": "city_petropolis|1,state_rio_de_janeiro|1",
+                "count": 39
+            },
+            {
+                "term": "Resende",
+                "filter": "city_resende|1,state_rio_de_janeiro|1",
+                "count": 10
+            },
+            {
+                "term": "Rio das Ostras",
+                "filter": "city_rio_das_ostras|1,state_rio_de_janeiro|1",
+                "count": 24
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "city_rio_de_janeiro|1,state_rio_de_janeiro|1",
+                "count": 293
+            },
+            {
+                "term": "Saquarema",
+                "filter": "city_saquarema|1,state_rio_de_janeiro|1",
+                "count": 20
+            },
+            {
+                "term": "Teresópolis",
+                "filter": "city_teresopolis|1,state_rio_de_janeiro|1",
+                "count": 23
+            },
+            {
+                "term": "Vassouras",
+                "filter": "city_vassouras|1,state_rio_de_janeiro|1",
+                "count": 6
+            },
+            {
+                "term": "Volta Redonda",
+                "filter": "city_volta_redonda|1,state_rio_de_janeiro|1",
+                "count": 5
+            }
+        ],
+        "prices": [
+            {
+                "min": 0,
+                "maxExclusive": 300,
+                "filter": "pricegroup_1|1",
+                "count": 1126
+            },
+            {
+                "min": 300,
+                "maxExclusive": 600,
+                "filter": "pricegroup_2|1",
+                "count": 188
+            },
+            {
+                "min": 600,
+                "maxExclusive": 900,
+                "filter": "pricegroup_3|1",
+                "count": 35
+            },
+            {
+                "min": 900,
+                "maxExclusive": 1200,
+                "filter": "pricegroup_4|1",
+                "count": 10
+            },
+            {
+                "min": 1200,
+                "maxExclusive": 1500,
+                "filter": "pricegroup_5|1",
+                "count": 3
+            },
+            {
+                "min": 1500,
+                "maxExclusive": 1800,
+                "filter": "pricegroup_6|1",
+                "count": 1
+            },
+            {
+                "min": 1800,
+                "maxExclusive": 2100,
+                "filter": "pricegroup_7|1",
+                "count": 1
+            },
+            {
+                "min": 2700,
+                "maxExclusive": 3000,
+                "filter": "pricegroup_10|1",
+                "count": 1
+            }
+        ],
+        "priceInterval": {
+            "min": 1,
+            "max": 545625,
+            "filterPattern": "price_[min|max]_[value]"
+        },
+        "productType": [
+            {
+                "term": "hotel",
+                "filter": "product_type_hotel|1",
+                "count": 1365
+            }
+        ],
+        "rooms": [
+            {
+                "term": "Apartamento Duplo",
+                "filter": "room_apartamento_duplo|1",
+                "count": 58
+            },
+            {
+                "term": "Apartamento Quádruplo",
+                "filter": "room_apartamento_quadruplo|1",
+                "count": 28
+            },
+            {
+                "term": "Apartamento Standard",
+                "filter": "room_apartamento_standard|1",
+                "count": 15
+            },
+            {
+                "term": "Apartamento Triplo",
+                "filter": "room_apartamento_triplo|1",
+                "count": 53
+            },
+            {
+                "term": "Apartamento triplo",
+                "filter": "room_apartamento_triplo|1",
+                "count": 12
+            },
+            {
+                "term": "Duplo Standard",
+                "filter": "room_duplo_standard|1",
+                "count": 18
+            },
+            {
+                "term": "Luxo",
+                "filter": "room_luxo|1",
+                "count": 21
+            },
+            {
+                "term": "Quarto Duplo",
+                "filter": "room_quarto_duplo|1",
+                "count": 124
+            },
+            {
+                "term": "Quarto Duplo Standard",
+                "filter": "room_quarto_duplo_standard|1",
+                "count": 56
+            },
+            {
+                "term": "Quarto Duplo Superior",
+                "filter": "room_quarto_duplo_superior|1",
+                "count": 15
+            },
+            {
+                "term": "Quarto Família",
+                "filter": "room_quarto_familia|1",
+                "count": 16
+            },
+            {
+                "term": "Quarto Individual",
+                "filter": "room_quarto_individual|1",
+                "count": 13
+            },
+            {
+                "term": "Quarto Quádruplo",
+                "filter": "room_quarto_quadruplo|1",
+                "count": 76
+            },
+            {
+                "term": "Quarto Quádruplo Standard",
+                "filter": "room_quarto_quadruplo_standard|1",
+                "count": 21
+            },
+            {
+                "term": "Quarto Triplo",
+                "filter": "room_quarto_triplo|1",
+                "count": 108
+            },
+            {
+                "term": "Quarto Triplo Standard",
+                "filter": "room_quarto_triplo_standard|1",
+                "count": 33
+            },
+            {
+                "term": "Quarto triplo",
+                "filter": "room_quarto_triplo|1",
+                "count": 13
+            },
+            {
+                "term": "SUPERIOR TWIN",
+                "filter": "room_superior_twin|1",
+                "count": 17
+            },
+            {
+                "term": "Standard",
+                "filter": "room_standard|1",
+                "count": 35
+            },
+            {
+                "term": "Standard Casal",
+                "filter": "room_standard_casal|1",
+                "count": 18
+            },
+            {
+                "term": "Standard Duplo",
+                "filter": "room_standard_duplo|1",
+                "count": 31
+            },
+            {
+                "term": "Standard Triplo",
+                "filter": "room_standard_triplo|1",
+                "count": 45
+            },
+            {
+                "term": "Standard Twin",
+                "filter": "room_standard_twin|1",
+                "count": 18
+            },
+            {
+                "term": "Superior",
+                "filter": "room_superior|1",
+                "count": 18
+            },
+            {
+                "term": "Suíte",
+                "filter": "room_suite|1",
+                "count": 21
+            },
+            {
+                "term": "Suíte Casal",
+                "filter": "room_suite_casal|1",
+                "count": 13
+            },
+            {
+                "term": "Suíte Dupla",
+                "filter": "room_suite_dupla|1",
+                "count": 32
+            },
+            {
+                "term": "Suíte Master",
+                "filter": "room_suite_master|1",
+                "count": 19
+            },
+            {
+                "term": "Suíte Standard",
+                "filter": "room_suite_standard|1",
+                "count": 19
+            },
+            {
+                "term": "Suíte Tripla",
+                "filter": "room_suite_tripla|1",
+                "count": 21
+            }
+        ],
+        "stars": [
+            {
+                "term": "1",
+                "filter": "stars_1|1",
+                "count": 19
+            },
+            {
+                "term": "2",
+                "filter": "stars_2|1",
+                "count": 101
+            },
+            {
+                "term": "3",
+                "filter": "stars_3|1",
+                "count": 916
+            },
+            {
+                "term": "4",
+                "filter": "stars_4|1",
+                "count": 271
+            },
+            {
+                "term": "5",
+                "filter": "stars_5|1",
+                "count": 56
+            },
+            {
+                "term": "6",
+                "filter": "stars_6|1",
+                "count": 1
+            }
+        ],
+        "states": [
+            {
+                "term": "Flórida",
+                "filter": "state_florida|1,country_estados_unidos|1",
+                "count": 1
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "state_rio_de_janeiro|1,country_brasil|1",
+                "count": 1362
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "state_rio_de_janeiro|1,country_macedonia|1",
+                "count": 1
+            },
+            {
+                "term": "Santa Catarina",
+                "filter": "state_santa_catarina|1,country_brasil|1",
+                "count": 1
+            }
+        ]
+    },
+    "results": [],
+    "pagination": {
+        "count": 69,
+        "firstPage": "http://searchapi/v2/search?q=rj&filters=is_hotel|1&page=1",
+        "nextPage": "http://searchapi/v2/search?q=rj&filters=is_hotel|1&page=2",
+        "previousPage": null,
+        "lastPage": "http://searchapi/v2/search?q=rj&filters=is_hotel|1&page=69"
+    }
+}

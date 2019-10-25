@@ -9,13 +9,6 @@
 import Foundation
 import GPSurb
 
-enum State {
-    case loading
-    case success
-    case error
-    case none
-}
-
 class HomeViewControllerMock: NSObject, HomeViewDelegate {
     var viewData: HomeViewData?
     var state = State.none

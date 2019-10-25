@@ -38,7 +38,7 @@ open class HotelPackageService: BaseService {
         }
     }
     
-    private func validation(model: HURBListModel) throws {
+    public func validation(model: HURBListModel) throws {
         guard let result = model.results, !result.isEmpty else { throw ErrorType.errorGeneric }
     }
 }

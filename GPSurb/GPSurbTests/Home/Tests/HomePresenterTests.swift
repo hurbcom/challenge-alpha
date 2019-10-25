@@ -12,7 +12,7 @@ import XCTest
 class HomePresenterTests: XCTestCase {
     
     func testSuccess() {
-        let service = HomeServiceMock(fileName: "Success")
+        let service = HomeServiceMock(fileName: "HomeSuccess")
         let controller = HomeViewControllerMock()
         let presenter = HomePresenter(viewDelegate: controller, service: service)
         presenter.getBestDestinations()
@@ -22,7 +22,7 @@ class HomePresenterTests: XCTestCase {
     }
     
     func testError() {
-        let service = HomeServiceMock(fileName: "Error")
+        let service = HomeServiceMock(fileName: "HomeError")
         let controller = HomeViewControllerMock()
         let presenter = HomePresenter(viewDelegate: controller, service: service)
         presenter.getBestDestinations()

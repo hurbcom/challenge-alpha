@@ -1,0 +1,509 @@
+{
+    "meta": {
+        "count": 41,
+        "offset": 0,
+        "query": "rj",
+        "warning": "results.price.current_price and results.price.old_price are deprecated",
+        "countWithAvailabilityInPage": 0,
+        "countHotel": 0,
+        "countPackage": 41,
+        "countTicket": 0,
+        "countBustrip": 0,
+        "countDisney": 0
+    },
+    "filters": {
+        "attributes": [
+            {
+                "term": "Academia",
+                "filter": "attribute_academia|1",
+                "count": 5
+            },
+            {
+                "term": "Acessibilidade",
+                "filter": "attribute_acessibilidade|1",
+                "count": 1
+            },
+            {
+                "term": "Almoço ou jantar",
+                "filter": "attribute_almoco_ou_jantar|1",
+                "count": 1
+            },
+            {
+                "term": "Aluguel de carro",
+                "filter": "attribute_aluguel_de_carro|1",
+                "count": 2
+            },
+            {
+                "term": "Apartamento",
+                "filter": "attribute_apartamento|1",
+                "count": 27
+            },
+            {
+                "term": "Atendimento Bilíngue",
+                "filter": "attribute_atendimento_bilingue|1",
+                "count": 3
+            },
+            {
+                "term": "Cabine",
+                "filter": "attribute_cabine|1",
+                "count": 7
+            },
+            {
+                "term": "Café da manhã",
+                "filter": "attribute_cafe_da_manha|1",
+                "count": 26
+            },
+            {
+                "term": "Camareira",
+                "filter": "attribute_camareira|1",
+                "count": 7
+            },
+            {
+                "term": "Cofre",
+                "filter": "attribute_cofre|1",
+                "count": 4
+            },
+            {
+                "term": "Com criança grátis",
+                "filter": "attribute_freechildren_yes|1",
+                "count": 34
+            },
+            {
+                "term": "Day-use",
+                "filter": "attribute_dayuse|1",
+                "count": 2
+            },
+            {
+                "term": "Estacionamento",
+                "filter": "attribute_estacionamento|1",
+                "count": 8
+            },
+            {
+                "term": "Festa",
+                "filter": "attribute_festa|1",
+                "count": 2
+            },
+            {
+                "term": "Grátis para criança",
+                "filter": "attribute_gratis_para_crianca|1",
+                "count": 6
+            },
+            {
+                "term": "Ingresso",
+                "filter": "attribute_ingresso|1",
+                "count": 3
+            },
+            {
+                "term": "Internet wireless",
+                "filter": "attribute_internet_wireless|1",
+                "count": 11
+            },
+            {
+                "term": "Massagem",
+                "filter": "attribute_massagem|1",
+                "count": 2
+            },
+            {
+                "term": "Passagem Aérea",
+                "filter": "attribute_passagem_aerea|1",
+                "count": 15
+            },
+            {
+                "term": "Passeio",
+                "filter": "attribute_passeio|1",
+                "count": 5
+            },
+            {
+                "term": "Passeio de barco",
+                "filter": "attribute_passeio_de_barco|1",
+                "count": 4
+            },
+            {
+                "term": "Pensão completa",
+                "filter": "attribute_pensao_completa|1",
+                "count": 7
+            },
+            {
+                "term": "Piscina",
+                "filter": "attribute_piscina|1",
+                "count": 13
+            },
+            {
+                "term": "Quadra de Tênis",
+                "filter": "attribute_quadra_de_tenis|1",
+                "count": 2
+            },
+            {
+                "term": "Recreação",
+                "filter": "attribute_recreacao|1",
+                "count": 2
+            },
+            {
+                "term": "Salão de jogos",
+                "filter": "attribute_salao_de_jogos|1",
+                "count": 5
+            },
+            {
+                "term": "Sauna",
+                "filter": "attribute_sauna|1",
+                "count": 4
+            },
+            {
+                "term": "Serviço de quarto",
+                "filter": "attribute_servico_de_quarto|1",
+                "count": 2
+            },
+            {
+                "term": "Vista para o mar",
+                "filter": "attribute_vista_para_o_mar|1",
+                "count": 2
+            },
+            {
+                "term": "Área de lazer",
+                "filter": "attribute_area_de_lazer|1",
+                "count": 6
+            }
+        ],
+        "countries": [
+            {
+                "term": "Argentina",
+                "filter": "country_argentina|1",
+                "count": 7
+            },
+            {
+                "term": "Brasil",
+                "filter": "country_brasil|1",
+                "count": 34
+            }
+        ],
+        "cities": [
+            {
+                "term": "Angra dos Reis",
+                "filter": "city_angra_dos_reis|1,state_rio_de_janeiro|1",
+                "count": 6
+            },
+            {
+                "term": "Armação dos Búzios",
+                "filter": "city_armacao_dos_buzios|1,state_rio_de_janeiro|1",
+                "count": 4
+            },
+            {
+                "term": "Arraial do Cabo",
+                "filter": "city_arraial_do_cabo|1,state_rio_de_janeiro|1",
+                "count": 3
+            },
+            {
+                "term": "Cabo Frio",
+                "filter": "city_cabo_frio|1,state_rio_de_janeiro|1",
+                "count": 3
+            },
+            {
+                "term": "Mangaratiba",
+                "filter": "city_mangaratiba|1,state_rio_de_janeiro|1",
+                "count": 1
+            },
+            {
+                "term": "Paraty",
+                "filter": "city_paraty|1,state_rio_de_janeiro|1",
+                "count": 2
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "city_rio_de_janeiro|1,state_rio_de_janeiro|1",
+                "count": 13
+            },
+            {
+                "term": "Rivadavia",
+                "filter": "city_rivadavia|1,state_buenos_aires|1",
+                "count": 7
+            },
+            {
+                "term": "Teresópolis",
+                "filter": "city_teresopolis|1,state_rio_de_janeiro|1",
+                "count": 2
+            }
+        ],
+        "departureCities": [
+            {
+                "term": "Belo Horizonte",
+                "filter": "departurecity_belo_horizonte|1",
+                "count": 15
+            },
+            {
+                "term": "Belém",
+                "filter": "departurecity_belem|1",
+                "count": 11
+            },
+            {
+                "term": "Brasília",
+                "filter": "departurecity_brasilia|1",
+                "count": 15
+            },
+            {
+                "term": "Curitiba",
+                "filter": "departurecity_curitiba|1",
+                "count": 15
+            },
+            {
+                "term": "Florianópolis",
+                "filter": "departurecity_florianopolis|1",
+                "count": 9
+            },
+            {
+                "term": "Porto Alegre",
+                "filter": "departurecity_porto_alegre|1",
+                "count": 15
+            },
+            {
+                "term": "Recife",
+                "filter": "departurecity_recife|1",
+                "count": 9
+            },
+            {
+                "term": "Salvador",
+                "filter": "departurecity_salvador|1",
+                "count": 15
+            },
+            {
+                "term": "São Paulo",
+                "filter": "departurecity_sao_paulo|1",
+                "count": 15
+            },
+            {
+                "term": "Vitória",
+                "filter": "departurecity_vitoria|1",
+                "count": 9
+            }
+        ],
+        "duration": [
+            {
+                "term": "1 diária",
+                "filter": "duration_1_diaria|1",
+                "count": 10
+            },
+            {
+                "term": "2 diárias",
+                "filter": "duration_2_diarias|1",
+                "count": 13
+            },
+            {
+                "term": "3 diárias",
+                "filter": "duration_3_diarias|1",
+                "count": 13
+            },
+            {
+                "term": "4 diárias",
+                "filter": "duration_4_diarias|1",
+                "count": 12
+            },
+            {
+                "term": "5 diárias",
+                "filter": "duration_5_diarias|1",
+                "count": 3
+            },
+            {
+                "term": "6 diárias",
+                "filter": "duration_6_diarias|1",
+                "count": 4
+            },
+            {
+                "term": "7 diárias",
+                "filter": "duration_7_diarias|1",
+                "count": 5
+            },
+            {
+                "term": "8 diárias",
+                "filter": "duration_8_diarias|1",
+                "count": 7
+            }
+        ],
+        "food": [
+            {
+                "term": "Almoço ou jantar",
+                "filter": "food_almoco_ou_jantar|1",
+                "count": 1
+            },
+            {
+                "term": "Café da manhã",
+                "filter": "food_cafe_da_manha|1",
+                "count": 26
+            },
+            {
+                "term": "Café da manhã, jantar",
+                "filter": "food_cafe_da_manha_jantar|1",
+                "count": 1
+            },
+            {
+                "term": "Pensão completa",
+                "filter": "food_pensao_completa|1",
+                "count": 7
+            }
+        ],
+        "people": [
+            {
+                "term": "1",
+                "filter": "total_people_1|1",
+                "count": 24
+            },
+            {
+                "term": "2",
+                "filter": "total_people_2|1",
+                "count": 15
+            },
+            {
+                "term": "3",
+                "filter": "total_people_3|1",
+                "count": 1
+            },
+            {
+                "term": "4",
+                "filter": "total_people_4|1",
+                "count": 1
+            }
+        ],
+        "prices": [
+            {
+                "min": 0,
+                "maxExclusive": 300,
+                "filter": "pricegroup_1|1",
+                "count": 9
+            },
+            {
+                "min": 300,
+                "maxExclusive": 600,
+                "filter": "pricegroup_2|1",
+                "count": 6
+            },
+            {
+                "min": 600,
+                "maxExclusive": 900,
+                "filter": "pricegroup_3|1",
+                "count": 2
+            },
+            {
+                "min": 900,
+                "maxExclusive": 1200,
+                "filter": "pricegroup_4|1",
+                "count": 2
+            },
+            {
+                "min": 1200,
+                "maxExclusive": 1500,
+                "filter": "pricegroup_5|1",
+                "count": 4
+            },
+            {
+                "min": 1500,
+                "maxExclusive": 1800,
+                "filter": "pricegroup_6|1",
+                "count": 5
+            },
+            {
+                "min": 1800,
+                "maxExclusive": 2100,
+                "filter": "pricegroup_7|1",
+                "count": 1
+            },
+            {
+                "min": 2700,
+                "maxExclusive": 3000,
+                "filter": "pricegroup_10|1",
+                "count": 12
+            }
+        ],
+        "priceInterval": {
+            "min": 4400,
+            "max": 867000,
+            "filterPattern": "price_[min|max]_[value]"
+        },
+        "productType": [
+            {
+                "term": "cruzeiro",
+                "filter": "product_type_cruzeiro|1",
+                "count": 7
+            },
+            {
+                "term": "hospedagem",
+                "filter": "product_type_hospedagem|1",
+                "count": 32
+            },
+            {
+                "term": "produto",
+                "filter": "product_type_produto|1",
+                "count": 2
+            }
+        ],
+        "regulation": [
+            {
+                "term": "accessibility_no",
+                "filter": "regulation_accessibility_no|1",
+                "count": 39
+            },
+            {
+                "term": "accessibility_yes",
+                "filter": "regulation_accessibility_yes|1",
+                "count": 2
+            },
+            {
+                "term": "child_no",
+                "filter": "regulation_child_no|1",
+                "count": 7
+            },
+            {
+                "term": "child_yes",
+                "filter": "regulation_child_yes|1",
+                "count": 34
+            },
+            {
+                "term": "extra_bed_no",
+                "filter": "regulation_extra_bed_no|1",
+                "count": 39
+            },
+            {
+                "term": "extra_bed_yes",
+                "filter": "regulation_extra_bed_yes|1",
+                "count": 2
+            },
+            {
+                "term": "internet_no",
+                "filter": "regulation_internet_no|1",
+                "count": 28
+            },
+            {
+                "term": "internet_yes",
+                "filter": "regulation_internet_yes|1",
+                "count": 13
+            },
+            {
+                "term": "parking_no",
+                "filter": "regulation_parking_no|1",
+                "count": 31
+            },
+            {
+                "term": "parking_yes",
+                "filter": "regulation_parking_yes|1",
+                "count": 10
+            }
+        ],
+        "states": [
+            {
+                "term": "Buenos Aires",
+                "filter": "state_buenos_aires|1,country_argentina|1",
+                "count": 7
+            },
+            {
+                "term": "Rio de Janeiro",
+                "filter": "state_rio_de_janeiro|1,country_brasil|1",
+                "count": 34
+            }
+        ]
+    },
+    "results": [],
+    "pagination": {
+        "count": 3,
+        "firstPage": "http://searchapi/v2/search?q=rj&filters=is_package,is_offer|1&page=1",
+        "nextPage": "http://searchapi/v2/search?q=rj&filters=is_package,is_offer|1&page=2",
+        "previousPage": null,
+        "lastPage": "http://searchapi/v2/search?q=rj&filters=is_package,is_offer|1&page=3"
+    }
+}
