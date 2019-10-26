@@ -13,7 +13,7 @@ class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     private var hotels = [[Hotel]]()
     private var packages = [Hotel]()
-    private var searchTerm: String?
+    public var searchTerm: String?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -43,6 +43,7 @@ class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.searchController.searchBar.delegate = self
         self.tableView.tableHeaderView = self.searchController.searchBar
         self.tableView.separatorStyle = .none
+
         // Visual
         self.navigationController?.navigationBar.barTintColor = blue
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -52,23 +53,27 @@ class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.searchController.searchBar.barTintColor = UIColor.white
         let textFieldInsideSearchBar = self.searchController.searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = UIColor.white
-        
     }
     
     func loadData() {
-        StaticFunctions.showActivityIndicatorView(onView: self.view)
+        DispatchQueue.main.async {
+            StaticFunctions.showActivityIndicatorView(onView: self.view)
+        }
         ApplicationService.sharedInstance.getHotelsAndPackages(searchText: self.searchTerm, pageIndex: 1) { (hotels: [[Hotel]], packages: [Hotel], error: String?) in
-            StaticFunctions.removeActivityIndicatorView()
             if let error = error {
                 DispatchQueue.main.async {
+                    StaticFunctions.removeActivityIndicatorView()
                     StaticFunctions.showSimpleAlert(controller: self, title: "Ops!", message: error)
                 }
-                
                 return
             }
+
             self.hotels = hotels
             self.packages = packages
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                StaticFunctions.removeActivityIndicatorView()
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -146,9 +151,9 @@ class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
         label.text = text
-        label.backgroundColor = red
+        label.backgroundColor = blue
         label.textColor = UIColor.white
-        label.font = UIFont(name: "Avenir-Black", size: 20)
+        label.font = UIFont(name: "Avenir", size: 18)
         label.padding = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 0)
         return label
     }
@@ -163,14 +168,16 @@ class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return 0
             }
         }
-        return 44
+        return 40
     }
     
     // MARK: Search bar delegate
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.searchTerm = nil
-        self.loadData()
+        if self.searchTerm != nil {
+            self.searchTerm = nil
+             self.loadData()
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -179,7 +186,23 @@ class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         self.loadData()
     }
+       
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      if  searchText.count == 0 {
+        self.searchTerm = nil
+        self.loadData()
+      }
+    }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        self.view.endEditing(true)
+        self.searchController.dismiss(animated: true) {
+            let controller = SearchViewController(controller: self)
+            self.present(controller, animated: true) {
+                
+            }
+        }
+    }
     
 }
 

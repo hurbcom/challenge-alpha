@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="DesafioHurb" customModuleProvider="target">
+            <connections>
+                <outlet property="label" destination="P2v-xa-R97" id="i8d-bP-pHv"/>
+                <outlet property="searchBar" destination="m9B-1R-aRd" id="Ip7-wu-PJ0"/>
+                <outlet property="tableView" destination="w9C-j6-Rgz" id="pEf-Uw-mi3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="m9B-1R-aRd">
+                    <rect key="frame" x="10" y="128" width="394" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="8eb-6X-ENl"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pesquisar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2v-xa-R97">
+                    <rect key="frame" x="10" y="74" width="394" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="OlQ-tj-3s6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w9C-j6-Rgz">
+                    <rect key="frame" x="10" y="182" width="394" height="714"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="m9B-1R-aRd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="1we-1y-m3V"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="m9B-1R-aRd" secondAttribute="trailing" constant="10" id="6XF-b5-jgh"/>
+                <constraint firstItem="P2v-xa-R97" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="7LD-fd-08v"/>
+                <constraint firstItem="m9B-1R-aRd" firstAttribute="top" secondItem="P2v-xa-R97" secondAttribute="bottom" constant="10" id="J2k-8h-8hO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="w9C-j6-Rgz" secondAttribute="trailing" constant="10" id="Xp8-rQ-9iz"/>
+                <constraint firstAttribute="bottom" secondItem="w9C-j6-Rgz" secondAttribute="bottom" id="YdK-aK-PUe"/>
+                <constraint firstItem="w9C-j6-Rgz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="f8N-rb-tzB"/>
+                <constraint firstItem="P2v-xa-R97" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="kTx-6L-LP0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P2v-xa-R97" secondAttribute="trailing" constant="10" id="oGC-xf-V93"/>
+                <constraint firstItem="w9C-j6-Rgz" firstAttribute="top" secondItem="m9B-1R-aRd" secondAttribute="bottom" constant="10" id="znD-k1-aMb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
+        </view>
+    </objects>
+</document>

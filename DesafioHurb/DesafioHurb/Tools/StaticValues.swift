@@ -16,7 +16,9 @@ let screenHeight = window.height
 // MARK: URLs & Mensagens
 
 let API_URL = "https://www.hurb.com/search/api"
+let API_SUGGESTIONS = "https://www.hurb.com/search/api/suggestion?q="
 let ERROR_SERVER_MESSAGE = "Erro interno no servidor! Tente novamente mais tarde"
+let ERROR_NO_CONNECTION = "Sem conexão com a internet!"
 
 // MARK: Colors
 

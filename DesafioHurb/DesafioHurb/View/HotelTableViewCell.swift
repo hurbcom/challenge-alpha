@@ -36,7 +36,12 @@ class HotelTableViewCell: UITableViewCell {
         self.hotelImageView.contentMode = .scaleAspectFill
         
         self.labelAddress.textColor = UIColor.black
+        self.labelAddress.adjustsFontSizeToFitWidth = true
+        self.labelAddress.minimumScaleFactor = 0.1
+        
         self.labelAmenities.textColor = UIColor.black
+        self.labelAmenities.adjustsFontSizeToFitWidth = true
+        self.labelAmenities.minimumScaleFactor = 0.1
         
         self.backgroundColor = UIColor.clear
         self.content.backgroundColor = UIColor.white

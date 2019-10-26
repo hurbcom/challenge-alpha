@@ -12,6 +12,8 @@
 		802CF510235FD6F5007DCD03 /* StaticValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF50F235FD6F5007DCD03 /* StaticValues.swift */; };
 		802CF512235FE186007DCD03 /* StaticFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF511235FE186007DCD03 /* StaticFunctions.swift */; };
 		802CF52323614BAF007DCD03 /* HotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF52223614BAF007DCD03 /* HotelViewController.swift */; };
+		802CF5262363EDB4007DCD03 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF5242363EDB4007DCD03 /* SearchViewController.swift */; };
+		802CF5272363EDB4007DCD03 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802CF5252363EDB4007DCD03 /* SearchViewController.xib */; };
 		8061AFED235FCC7600690DE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061AFEC235FCC7600690DE4 /* AppDelegate.swift */; };
 		8061AFEF235FCC7600690DE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061AFEE235FCC7600690DE4 /* SceneDelegate.swift */; };
 		8061AFF4235FCC7600690DE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8061AFF2235FCC7600690DE4 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		802CF50F235FD6F5007DCD03 /* StaticValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticValues.swift; sourceTree = "<group>"; };
 		802CF511235FE186007DCD03 /* StaticFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFunctions.swift; sourceTree = "<group>"; };
 		802CF52223614BAF007DCD03 /* HotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewController.swift; sourceTree = "<group>"; };
+		802CF5242363EDB4007DCD03 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		802CF5252363EDB4007DCD03 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		8061AFE9235FCC7600690DE4 /* DesafioHurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioHurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8061AFEC235FCC7600690DE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8061AFEE235FCC7600690DE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			children = (
 				8061B003235FCC9800690DE4 /* HotelsViewController.swift */,
 				802CF52223614BAF007DCD03 /* HotelViewController.swift */,
+				802CF5242363EDB4007DCD03 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 				8061AFF2235FCC7600690DE4 /* Main.storyboard */,
 				8061B009235FCCD300690DE4 /* HotelTableViewCell.swift */,
 				8061B00A235FCCD300690DE4 /* HotelTableViewCell.xib */,
+				802CF5252363EDB4007DCD03 /* SearchViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				8061AFFC235FCC7800690DE4 /* LaunchScreen.storyboard in Resources */,
 				8061AFF9235FCC7800690DE4 /* Assets.xcassets in Resources */,
 				8061B00C235FCCD300690DE4 /* HotelTableViewCell.xib in Resources */,
+				802CF5272363EDB4007DCD03 /* SearchViewController.xib in Resources */,
 				8061AFF4235FCC7600690DE4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8061B007235FCCA900690DE4 /* Hotel.swift in Sources */,
+				802CF5262363EDB4007DCD03 /* SearchViewController.swift in Sources */,
 				8061AFF7235FCC7600690DE4 /* DesafioHurb.xcdatamodeld in Sources */,
 				802CF512235FE186007DCD03 /* StaticFunctions.swift in Sources */,
 				8061B00B235FCCD300690DE4 /* HotelTableViewCell.swift in Sources */,
@@ -428,6 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7KY4TXQRJ;
 				INFOPLIST_FILE = DesafioHurb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,6 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7KY4TXQRJ;
 				INFOPLIST_FILE = DesafioHurb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

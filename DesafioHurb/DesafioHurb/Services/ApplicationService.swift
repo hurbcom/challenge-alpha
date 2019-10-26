@@ -40,7 +40,11 @@ class ApplicationService : NSObject {
             headers: nil, interceptor: nil).response { (response: AFDataResponse<Data?>) in
                 guard let data = response.data else {
                     let error = response.error
-                    print(error)
+                    if let errorString = error?.localizedDescription {
+                        if errorString.contains("Internet connection appears to be offline") {
+                            callback(result, ERROR_NO_CONNECTION)
+                        }
+                    }
                     callback(result, ERROR_SERVER_MESSAGE)
                     return
                 }
@@ -108,6 +112,55 @@ class ApplicationService : NSObject {
             categories.append(hotels1)
             
             callback(categories, packages, error)
+        }
+    }
+    
+    // MARK: Sugestions
+    
+    /** Método responsável por recuperar os hoteis da API */
+    func getSuggestionData(
+        searchText: String,
+        callback: @escaping((_ results: [String], _ error: String?)->())) {
+        // Instancia url
+        var url = "\(API_SUGGESTIONS)"
+        url += "?q=\(searchText)"
+        
+        // Instancia resultado
+        var results = [String]()
+        
+        let escapedAddress = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        
+        // Faz a request
+        AF.request(
+            escapedAddress!,
+            method: .get,
+            parameters: nil,
+            encoding: JSONEncoding.default,
+            headers: nil, interceptor: nil).response { (response: AFDataResponse<Data?>) in
+                guard let data = response.data else {
+                    let error = response.error
+                    print(error)
+                    callback(results, ERROR_SERVER_MESSAGE)
+                    return
+                }
+                // Transforma a resposta para dict
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any] else {
+                        callback(results, ERROR_SERVER_MESSAGE)
+                        return
+                    }
+                    if let suggestionsJson = json["suggestions"] as? [[String: Any]] {
+                        for suggestionJson in suggestionsJson {
+                            if let text = suggestionJson["text"] as? String {
+                                results.append(text)
+                            }
+                        }
+                    }
+                    callback(results, nil)
+                    
+                } catch {
+                    callback(results, ERROR_SERVER_MESSAGE)
+                }
         }
     }
     

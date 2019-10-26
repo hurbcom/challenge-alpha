@@ -8,13 +8,15 @@
 
 import UIKit
 
-class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     private var tableView: UITableView!
     private var hotel: Hotel!
     private var imageView: UIImageView!
     private var imageStarsView : UIImageView!
     let font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+    
+    let imageHeight = screenWidth/1.5
     
     init(hotel: Hotel) {
         super.init(nibName: nil, bundle: nil)
@@ -46,7 +48,8 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.view.addSubview(self.tableView)
         
         self.imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth/1.5))
-        self.imageView.contentMode = .scaleToFill
+        self.imageView.contentMode = .scaleAspectFill
+        self.imageView.clipsToBounds = true
         if let url = URL.init(string: self.hotel.imageUrl) {
             self.imageView.load.request(with: url)
         }
@@ -75,8 +78,9 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case 1:
             cell.textLabel?.text = self.hotel.name
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-            cell.backgroundColor = red
+            cell.backgroundColor = blue
             cell.textLabel?.textColor = UIColor.white
+            cell.textLabel?.numberOfLines = 2
         case 2:
             cell.textLabel?.text = "\(self.hotel.city), \(self.hotel.state)"
         case 3:
@@ -103,9 +107,9 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let row = indexPath.row
         switch row {
         case 0:
-            return screenWidth/1.5
+            return imageHeight
         case 1:
-            return 40
+            return self.heightForView(text: self.hotel.name, font: self.font, width: screenWidth - 20)
         case 3:
             return self.heightForView(text: self.hotel.getAmenitiesString(), font: self.font, width: screenWidth - 20)
         case 5:
@@ -148,5 +152,11 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    // MARK: Scroll view delegates
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        self.imageView.frame.origin.y = offset
+        self.imageView.frame.size.height = imageHeight - offset
+    }
 }
