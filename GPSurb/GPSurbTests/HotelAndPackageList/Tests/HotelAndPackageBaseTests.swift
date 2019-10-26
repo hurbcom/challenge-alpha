@@ -18,6 +18,8 @@ class HotelAndPackageBaseTests: XCTestCase {
     var validPage = 1
     var invalidPage = -1
     var nextPage = 2
+    var resultCount = 0
+    var serviceError = false
     var hotelPackageService = HotelPackageService()
     var hotelAndPackageViewControllerMock = HotelAndPackageViewControllerMock()
 }
