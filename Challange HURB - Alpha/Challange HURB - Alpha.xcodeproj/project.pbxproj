@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0823647A060020073B /* AppDelegate.swift */; };
+		F8FAFE0B23647A060020073B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0A23647A060020073B /* SceneDelegate.swift */; };
+		F8FAFE0D23647A060020073B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0C23647A060020073B /* ViewController.swift */; };
+		F8FAFE1023647A060020073B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE0E23647A060020073B /* Main.storyboard */; };
+		F8FAFE1223647A080020073B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE1123647A080020073B /* Assets.xcassets */; };
+		F8FAFE1523647A080020073B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE1323647A080020073B /* LaunchScreen.storyboard */; };
+		F8FAFE2023647A080020073B /* Challange_HURB___AlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE1F23647A080020073B /* Challange_HURB___AlphaTests.swift */; };
+		F8FAFE2B23647A080020073B /* Challange_HURB___AlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8FAFE1C23647A080020073B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8FAFDFD23647A060020073B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8FAFE0423647A060020073B;
+			remoteInfo = "Challange HURB - Alpha";
+		};
+		F8FAFE2723647A080020073B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8FAFDFD23647A060020073B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8FAFE0423647A060020073B;
+			remoteInfo = "Challange HURB - Alpha";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F8FAFE0523647A060020073B /* Challange HURB - Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challange HURB - Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8FAFE0823647A060020073B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F8FAFE0A23647A060020073B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F8FAFE0C23647A060020073B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8FAFE0F23647A060020073B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8FAFE1123647A080020073B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8FAFE1423647A080020073B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F8FAFE1623647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8FAFE1B23647A080020073B /* Challange HURB - AlphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challange HURB - AlphaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8FAFE1F23647A080020073B /* Challange_HURB___AlphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challange_HURB___AlphaTests.swift"; sourceTree = "<group>"; };
+		F8FAFE2123647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8FAFE2623647A080020073B /* Challange HURB - AlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challange HURB - AlphaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challange_HURB___AlphaUITests.swift"; sourceTree = "<group>"; };
+		F8FAFE2C23647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8FAFE0223647A060020073B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8FAFE1823647A080020073B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8FAFE2323647A080020073B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8FAFDFC23647A060020073B = {
+			isa = PBXGroup;
+			children = (
+				F8FAFE0723647A060020073B /* Challange HURB - Alpha */,
+				F8FAFE1E23647A080020073B /* Challange HURB - AlphaTests */,
+				F8FAFE2923647A080020073B /* Challange HURB - AlphaUITests */,
+				F8FAFE0623647A060020073B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8FAFE0623647A060020073B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8FAFE0523647A060020073B /* Challange HURB - Alpha.app */,
+				F8FAFE1B23647A080020073B /* Challange HURB - AlphaTests.xctest */,
+				F8FAFE2623647A080020073B /* Challange HURB - AlphaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8FAFE0723647A060020073B /* Challange HURB - Alpha */ = {
+			isa = PBXGroup;
+			children = (
+				F8FAFE0823647A060020073B /* AppDelegate.swift */,
+				F8FAFE0A23647A060020073B /* SceneDelegate.swift */,
+				F8FAFE0C23647A060020073B /* ViewController.swift */,
+				F8FAFE0E23647A060020073B /* Main.storyboard */,
+				F8FAFE1123647A080020073B /* Assets.xcassets */,
+				F8FAFE1323647A080020073B /* LaunchScreen.storyboard */,
+				F8FAFE1623647A080020073B /* Info.plist */,
+			);
+			path = "Challange HURB - Alpha";
+			sourceTree = "<group>";
+		};
+		F8FAFE1E23647A080020073B /* Challange HURB - AlphaTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8FAFE1F23647A080020073B /* Challange_HURB___AlphaTests.swift */,
+				F8FAFE2123647A080020073B /* Info.plist */,
+			);
+			path = "Challange HURB - AlphaTests";
+			sourceTree = "<group>";
+		};
+		F8FAFE2923647A080020073B /* Challange HURB - AlphaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */,
+				F8FAFE2C23647A080020073B /* Info.plist */,
+			);
+			path = "Challange HURB - AlphaUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8FAFE0423647A060020073B /* Challange HURB - Alpha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8FAFE2F23647A080020073B /* Build configuration list for PBXNativeTarget "Challange HURB - Alpha" */;
+			buildPhases = (
+				F8FAFE0123647A060020073B /* Sources */,
+				F8FAFE0223647A060020073B /* Frameworks */,
+				F8FAFE0323647A060020073B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Challange HURB - Alpha";
+			productName = "Challange HURB - Alpha";
+			productReference = F8FAFE0523647A060020073B /* Challange HURB - Alpha.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F8FAFE1A23647A080020073B /* Challange HURB - AlphaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8FAFE3223647A080020073B /* Build configuration list for PBXNativeTarget "Challange HURB - AlphaTests" */;
+			buildPhases = (
+				F8FAFE1723647A080020073B /* Sources */,
+				F8FAFE1823647A080020073B /* Frameworks */,
+				F8FAFE1923647A080020073B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8FAFE1D23647A080020073B /* PBXTargetDependency */,
+			);
+			name = "Challange HURB - AlphaTests";
+			productName = "Challange HURB - AlphaTests";
+			productReference = F8FAFE1B23647A080020073B /* Challange HURB - AlphaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F8FAFE2523647A080020073B /* Challange HURB - AlphaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8FAFE3523647A080020073B /* Build configuration list for PBXNativeTarget "Challange HURB - AlphaUITests" */;
+			buildPhases = (
+				F8FAFE2223647A080020073B /* Sources */,
+				F8FAFE2323647A080020073B /* Frameworks */,
+				F8FAFE2423647A080020073B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8FAFE2823647A080020073B /* PBXTargetDependency */,
+			);
+			name = "Challange HURB - AlphaUITests";
+			productName = "Challange HURB - AlphaUITests";
+			productReference = F8FAFE2623647A080020073B /* Challange HURB - AlphaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8FAFDFD23647A060020073B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Luiz Fernando Cunha Duarte";
+				TargetAttributes = {
+					F8FAFE0423647A060020073B = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					F8FAFE1A23647A080020073B = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = F8FAFE0423647A060020073B;
+					};
+					F8FAFE2523647A080020073B = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = F8FAFE0423647A060020073B;
+					};
+				};
+			};
+			buildConfigurationList = F8FAFE0023647A060020073B /* Build configuration list for PBXProject "Challange HURB - Alpha" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8FAFDFC23647A060020073B;
+			productRefGroup = F8FAFE0623647A060020073B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8FAFE0423647A060020073B /* Challange HURB - Alpha */,
+				F8FAFE1A23647A080020073B /* Challange HURB - AlphaTests */,
+				F8FAFE2523647A080020073B /* Challange HURB - AlphaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8FAFE0323647A060020073B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8FAFE1523647A080020073B /* LaunchScreen.storyboard in Resources */,
+				F8FAFE1223647A080020073B /* Assets.xcassets in Resources */,
+				F8FAFE1023647A060020073B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8FAFE1923647A080020073B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8FAFE2423647A080020073B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8FAFE0123647A060020073B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8FAFE0D23647A060020073B /* ViewController.swift in Sources */,
+				F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */,
+				F8FAFE0B23647A060020073B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8FAFE1723647A080020073B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8FAFE2023647A080020073B /* Challange_HURB___AlphaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8FAFE2223647A080020073B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8FAFE2B23647A080020073B /* Challange_HURB___AlphaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8FAFE1D23647A080020073B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8FAFE0423647A060020073B /* Challange HURB - Alpha */;
+			targetProxy = F8FAFE1C23647A080020073B /* PBXContainerItemProxy */;
+		};
+		F8FAFE2823647A080020073B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8FAFE0423647A060020073B /* Challange HURB - Alpha */;
+			targetProxy = F8FAFE2723647A080020073B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F8FAFE0E23647A060020073B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8FAFE0F23647A060020073B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F8FAFE1323647A080020073B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8FAFE1423647A080020073B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8FAFE2D23647A080020073B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F8FAFE2E23647A080020073B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8FAFE3023647A080020073B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 746BTXU7Z2;
+				INFOPLIST_FILE = "Challange HURB - Alpha/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "luiz.Challange-HURB---Alpha";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8FAFE3123647A080020073B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 746BTXU7Z2;
+				INFOPLIST_FILE = "Challange HURB - Alpha/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "luiz.Challange-HURB---Alpha";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F8FAFE3323647A080020073B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 746BTXU7Z2;
+				INFOPLIST_FILE = "Challange HURB - AlphaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "luiz.Challange-HURB---AlphaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Challange HURB - Alpha.app/Challange HURB - Alpha";
+			};
+			name = Debug;
+		};
+		F8FAFE3423647A080020073B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 746BTXU7Z2;
+				INFOPLIST_FILE = "Challange HURB - AlphaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "luiz.Challange-HURB---AlphaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Challange HURB - Alpha.app/Challange HURB - Alpha";
+			};
+			name = Release;
+		};
+		F8FAFE3623647A080020073B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 746BTXU7Z2;
+				INFOPLIST_FILE = "Challange HURB - AlphaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "luiz.Challange-HURB---AlphaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Challange HURB - Alpha";
+			};
+			name = Debug;
+		};
+		F8FAFE3723647A080020073B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 746BTXU7Z2;
+				INFOPLIST_FILE = "Challange HURB - AlphaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "luiz.Challange-HURB---AlphaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Challange HURB - Alpha";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8FAFE0023647A060020073B /* Build configuration list for PBXProject "Challange HURB - Alpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8FAFE2D23647A080020073B /* Debug */,
+				F8FAFE2E23647A080020073B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8FAFE2F23647A080020073B /* Build configuration list for PBXNativeTarget "Challange HURB - Alpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8FAFE3023647A080020073B /* Debug */,
+				F8FAFE3123647A080020073B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8FAFE3223647A080020073B /* Build configuration list for PBXNativeTarget "Challange HURB - AlphaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8FAFE3323647A080020073B /* Debug */,
+				F8FAFE3423647A080020073B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8FAFE3523647A080020073B /* Build configuration list for PBXNativeTarget "Challange HURB - AlphaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8FAFE3623647A080020073B /* Debug */,
+				F8FAFE3723647A080020073B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8FAFDFD23647A060020073B /* Project object */;
+}
