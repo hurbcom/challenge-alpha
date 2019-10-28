@@ -51,7 +51,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="DEK-89-tJv">
                                                 <rect key="frame" x="0.0" y="44" width="72" height="16"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ap" translatesAutoresizingMaskIntoConstraints="NO" id="oK5-H3-Yl8">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="oK5-H3-Yl8">
                                                         <rect key="frame" x="0.0" y="0.0" width="12" height="16"/>
                                                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <constraints>
@@ -69,7 +69,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="cHG-HH-7Rf">
                                                 <rect key="frame" x="0.0" y="63" width="81.5" height="16"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breakfast" translatesAutoresizingMaskIntoConstraints="NO" id="3m4-DZ-Pri">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="3m4-DZ-Pri">
                                                         <rect key="frame" x="0.0" y="0.0" width="12" height="16"/>
                                                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <constraints>
@@ -87,7 +87,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4jp-9z-dcm">
                                                 <rect key="frame" x="0.0" y="82" width="87" height="16"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplane" translatesAutoresizingMaskIntoConstraints="NO" id="CYr-k9-Uhs">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="CYr-k9-Uhs">
                                                         <rect key="frame" x="0.0" y="0.0" width="12" height="16"/>
                                                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <constraints>
@@ -267,9 +267,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="airplane" width="16" height="16"/>
-        <image name="ap" width="16" height="16"/>
-        <image name="breakfast" width="16" height="16"/>
         <image name="tick" width="16" height="16"/>
     </resources>
 </document>

@@ -23,19 +23,30 @@
                                     <outlet property="delegate" destination="k2b-Dm-VNc" id="pPg-xC-YQR"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3C-1m-lPj" userLabel="ViewEmpty" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="132" y="400" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="WLx-Ls-OIt"/>
+                                    <constraint firstAttribute="height" constant="150" id="seH-lW-FuB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="YNb-vz-HoM" firstAttribute="top" secondItem="HMk-wZ-c44" secondAttribute="top" id="2hF-zW-Yqg"/>
                             <constraint firstItem="YNb-vz-HoM" firstAttribute="leading" secondItem="HMk-wZ-c44" secondAttribute="leading" id="J8n-2w-kuW"/>
+                            <constraint firstItem="u3C-1m-lPj" firstAttribute="centerY" secondItem="HMk-wZ-c44" secondAttribute="centerY" id="LK3-wB-olY"/>
                             <constraint firstAttribute="bottom" secondItem="YNb-vz-HoM" secondAttribute="bottom" id="Oun-X8-xXs"/>
                             <constraint firstItem="HMk-wZ-c44" firstAttribute="trailing" secondItem="YNb-vz-HoM" secondAttribute="trailing" id="xFw-Rc-eay"/>
+                            <constraint firstItem="u3C-1m-lPj" firstAttribute="centerX" secondItem="HMk-wZ-c44" secondAttribute="centerX" id="y2c-G2-QZT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HMk-wZ-c44"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favoritos" id="vlp-SV-GpC"/>
                     <connections>
                         <outlet property="tableViewFavorite" destination="YNb-vz-HoM" id="dez-Ox-ovN"/>
+                        <outlet property="viewEmpty" destination="u3C-1m-lPj" id="PAH-zI-zpT"/>
                         <segue destination="n8Z-tp-LT3" kind="show" identifier="segueDetail" id="osa-EA-11R"/>
                     </connections>
                 </viewController>

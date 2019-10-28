@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Lottie
 
 class FavoritesViewController: UIViewController {
     
     // MARK: OUTLETS
     @IBOutlet weak var tableViewFavorite: UITableView!
-    
+    @IBOutlet weak var viewEmpty: AnimationView!
     // MARK: CONSTANTS
     private let segueDetail = "segueDetail"
     // MARK: VARIABLES
@@ -52,11 +53,12 @@ extension FavoritesViewController: UITableViewDataSource {
 // MARK: - DELEGATE PRESENTER -
 extension FavoritesViewController: FavoritesViewDelegate {
     func showEmpty() {
-        
+        self.showEmptyView()
     }
     
     func setViewData(viewData: [ResultViewData]) {
         self.viewData = viewData
+        self.viewEmpty.isHidden = true
         self.tableViewFavorite.reloadData()
     }
 }
@@ -72,6 +74,15 @@ extension FavoritesViewController: ElementDelegate {
 extension FavoritesViewController {
     private func registerNIB() {
         self.tableViewFavorite.register(ElementTableViewCell.self)
+    }
+    
+    private func showEmptyView() {
+        self.viewEmpty.animation = Animation.named("empty")
+        self.viewEmpty.play()
+        self.viewEmpty.loopMode = .loop
+        self.viewEmpty.isHidden = false
+        self.viewData.removeAll()
+        self.tableViewFavorite.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

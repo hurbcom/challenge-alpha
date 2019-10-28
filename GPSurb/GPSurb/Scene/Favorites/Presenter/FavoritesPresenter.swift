@@ -29,6 +29,7 @@ class FavoritesPresenter {
 extension FavoritesPresenter {
     public func getFavoriteInDataBase() {
         guard let viewData = self.dataBase.fetchFavoriteDataBase(), viewData.count > 0 else {
+            self.viewDelegate?.showEmpty()
             return
         }
         self.viewDelegate?.setViewData(viewData: viewData)
