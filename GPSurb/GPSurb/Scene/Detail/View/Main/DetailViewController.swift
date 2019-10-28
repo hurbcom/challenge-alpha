@@ -82,7 +82,7 @@ extension DetailViewController {
                self.imgHeader.kf.setImage(with: resource, placeholder: nil, options: [.transition(.fade(0.8)), .cacheOriginalImage, .processor(processor)], progressBlock: nil) { (result) in
                    switch result {
                    case .failure(_):
-                        self.imgHeader.image = UIImage(named: "")
+                        self.imgHeader.image = UIImage(named: "HUrb")
                    default: break
                    }
                }

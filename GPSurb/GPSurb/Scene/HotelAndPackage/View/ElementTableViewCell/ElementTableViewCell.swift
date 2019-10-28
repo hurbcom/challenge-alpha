@@ -95,7 +95,7 @@ extension ElementTableViewCell {
             self.cardImage.kf.setImage(with: resource, placeholder: nil, options: [.transition(.fade(0.8)), .cacheOriginalImage, .processor(processor)], progressBlock: nil) { (result) in
                 switch result {
                 case .failure(_):
-                     self.cardImage.image = UIImage(named: "")
+                     self.cardImage.image = UIImage(named: "HUrb")
                 default: break
                 }
             }
