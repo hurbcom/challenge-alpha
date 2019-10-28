@@ -32,6 +32,9 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.047058823529411764" green="0.93725490196078431" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstItem="TCx-46-L7m" firstAttribute="leading" secondItem="CAQ-7d-eQh" secondAttribute="leading" id="KAy-A4-Y3t"/>
                                     <constraint firstAttribute="trailing" secondItem="TCx-46-L7m" secondAttribute="trailing" id="Yr4-iw-9Rt"/>

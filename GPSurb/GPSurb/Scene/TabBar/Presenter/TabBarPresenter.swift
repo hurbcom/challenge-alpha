@@ -43,7 +43,7 @@ struct TabBarItem {
     var viewControllerIdentifier = IdentifierViewController.home
     var imageTabBar = TabBarImage()
     var accessibilityIdentifier: String {
-        return "\(self.name)-identifier"
+        return "\(self.name.rawValue)-identifier"
     }
 }
 

@@ -18,6 +18,7 @@ struct DestinatonViewData {
     var name = ""
     var image = UIImage()
     var query = ""
+    var accessibilityIdentifier = "home-cell-"
 }
 
 // MARK: - VIEW DELEGATE -

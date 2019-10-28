@@ -92,6 +92,9 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="home-view-identifier">
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="9bO-dd-wu2" firstAttribute="leading" secondItem="Jpy-j4-ll6" secondAttribute="leading" id="76Q-Qf-mey"/>
                             <constraint firstItem="E38-B9-GYD" firstAttribute="centerX" secondItem="Jpy-j4-ll6" secondAttribute="centerX" id="GEL-sq-ZGO"/>

@@ -26,6 +26,7 @@ extension BestDestinationsCollectionViewCell {
     func setupItem(viewData: DestinatonViewData) {
         self.nameLabel.text = viewData.name
         self.destinationImage.image = viewData.image
+        self.cardView.accessibilityIdentifier = viewData.accessibilityIdentifier + viewData.name
     }
     private func setupShadow() {
         self.cardView.layer.masksToBounds = false

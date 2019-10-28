@@ -68,6 +68,9 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="hotelAndPackage-view-identifier">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="kec-CK-pmP" firstAttribute="centerY" secondItem="L3i-Wf-l3e" secondAttribute="centerY" id="7p9-Yc-1tI"/>
                             <constraint firstItem="XDs-Ov-c2Q" firstAttribute="leading" secondItem="L3i-Wf-l3e" secondAttribute="leading" id="Aiq-AE-0FL"/>

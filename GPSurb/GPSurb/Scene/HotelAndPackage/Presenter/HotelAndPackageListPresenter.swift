@@ -29,6 +29,7 @@ struct ResultViewData {
     var description = ""
     var type = TypeFilter.hotel
     var stars = 0.0
+    var accessibilityIdentifier = ""
 }
 
 
@@ -119,6 +120,7 @@ extension HotelAndPackageListPresenter {
         viewData.description = model.description ?? ""
         viewData.type = model.isHotel ?? false ? TypeFilter.hotel : TypeFilter.package
         viewData.stars = Double(model.stars ?? 0)
+        viewData.accessibilityIdentifier = viewData.type == .hotel ? "hotel-cell-identifier" : "package-cell-identifier"
         return viewData
     }
 }

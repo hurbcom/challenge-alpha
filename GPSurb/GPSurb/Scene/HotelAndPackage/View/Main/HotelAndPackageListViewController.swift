@@ -44,6 +44,7 @@ extension HotelAndPackageListViewController {
         self.registerNIB()
         self.addGesture()
         self.presenter.getOffers(query: self.query, filter: filter)
+        self.setupView()
     }
 }
 
@@ -136,5 +137,11 @@ extension HotelAndPackageListViewController {
     private func addGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.reload))
         self.errorView.addGestureRecognizer(tap)
+    }
+    
+    private func setupView() {
+        self.segmentedControl.accessibilityIdentifier = "segment-identifier"
+        self.tableView.accessibilityIdentifier = "tableViewList-identifier"
+        self.errorView.accessibilityIdentifier = "errorView-identifier"
     }
 }

@@ -65,6 +65,7 @@ extension TabBarViewController {
         let attibutes = [NSAttributedString.Key.foregroundColor: UIColor.systemGreen,
                          NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)]
         item.setTitleTextAttributes(attibutes, for: .normal)
+        item.isAccessibilityElement = true
         item.accessibilityIdentifier = viewData.accessibilityIdentifier
         return item
     }

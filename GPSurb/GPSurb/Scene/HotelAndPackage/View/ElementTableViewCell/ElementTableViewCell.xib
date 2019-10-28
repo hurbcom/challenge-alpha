@@ -245,6 +245,9 @@
                     <constraint firstAttribute="trailing" secondItem="U7b-Xc-irh" secondAttribute="trailing" constant="10" id="v6b-G3-A4q"/>
                 </constraints>
             </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="hotel-cell-identifier">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cardImage" destination="U7o-DL-BnB" id="5B8-GH-2BV"/>

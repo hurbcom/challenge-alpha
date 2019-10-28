@@ -56,6 +56,8 @@ extension ElementTableViewCell {
         self.freeCancellationStackView.isHidden = !viewData.freeCancellation
         self.downloadImage(urlString: viewData.urlImageCard)
         self.setBenefits(benefits: viewData.amenities)
+        self.isAccessibilityElement = true
+        self.accessibilityIdentifier = viewData.accessibilityIdentifier
     }
     
     private func setBenefits(benefits: [String]) {

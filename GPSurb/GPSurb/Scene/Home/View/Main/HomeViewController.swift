@@ -31,6 +31,7 @@ extension HomeViewController {
         self.presenter = HomePresenter(viewDelegate: self, service: HomeService())
         self.registerNIB()
         self.presenter.getBestDestinations()
+        self.navigationController?.navigationItem.isAccessibilityElement = true
     }
 }
 
