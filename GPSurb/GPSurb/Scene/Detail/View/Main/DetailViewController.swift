@@ -101,6 +101,9 @@ extension DetailViewController {
         self.viewStar.rating = self.viewData.stars
         self.viewStar.text = "(\(self.viewData.stars))"
         self.setupFavoriteView()
+        if self.viewData.amenities.isEmpty {
+            self.collectionView.isHidden = true
+        }
     }
     
     private func setupFavoriteView() {
