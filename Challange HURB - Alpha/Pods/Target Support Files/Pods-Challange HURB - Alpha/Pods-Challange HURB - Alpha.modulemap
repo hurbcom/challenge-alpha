@@ -1,0 +1,6 @@
+framework module Pods_Challange_HURB___Alpha {
+  umbrella header "Pods-Challange HURB - Alpha-umbrella.h"
+
+  export *
+  module * { export * }
+}

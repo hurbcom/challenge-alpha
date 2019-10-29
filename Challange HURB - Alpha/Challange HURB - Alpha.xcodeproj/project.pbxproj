@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BE93FEB21DCA11B947BF25C /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8ED87C9FA52B4065B80015 /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework */; };
+		ECAFEE151FE2C6CE70ACDAE3 /* Pods_Challange_HURB___AlphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EC4FB5DB649A7EE878F97B /* Pods_Challange_HURB___AlphaTests.framework */; };
 		F86380B32364CD0A002A69FB /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380B22364CD0A002A69FB /* Response.swift */; };
 		F86380B52364CE05002A69FB /* EndpointTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380B42364CE05002A69FB /* EndpointTypeProtocol.swift */; };
 		F86380F72367CF52002A69FB /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F62367CF52002A69FB /* Experience.swift */; };
@@ -22,6 +24,7 @@
 		F8FAFE1523647A080020073B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE1323647A080020073B /* LaunchScreen.storyboard */; };
 		F8FAFE2023647A080020073B /* Challange_HURB___AlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE1F23647A080020073B /* Challange_HURB___AlphaTests.swift */; };
 		F8FAFE2B23647A080020073B /* Challange_HURB___AlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */; };
+		F94B52DA84DAF32372A0EAF0 /* Pods_Challange_HURB___Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5141604FAD72D2DE88296F /* Pods_Challange_HURB___Alpha.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0691A6B7CC9E491606A83A35 /* Pods-Challange HURB - Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha.release.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha/Pods-Challange HURB - Alpha.release.xcconfig"; sourceTree = "<group>"; };
+		10EBC11392A5315267816FCD /* Pods-Challange HURB - Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha/Pods-Challange HURB - Alpha.debug.xcconfig"; sourceTree = "<group>"; };
+		3A5141604FAD72D2DE88296F /* Pods_Challange_HURB___Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challange_HURB___Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40EC4FB5DB649A7EE878F97B /* Pods_Challange_HURB___AlphaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challange_HURB___AlphaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8ED87C9FA52B4065B80015 /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CAD2AE399AF1BC625E323B8 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A03318A49054510288AE261B /* Pods-Challange HURB - AlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - AlphaTests.release.xcconfig"; path = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.release.xcconfig"; sourceTree = "<group>"; };
+		B59E435EFE389E1D10CBAE54 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9C8410E1FF319FE7BA579B5 /* Pods-Challange HURB - AlphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - AlphaTests.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F86380B22364CD0A002A69FB /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		F86380B42364CE05002A69FB /* EndpointTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTypeProtocol.swift; sourceTree = "<group>"; };
 		F86380F62367CF52002A69FB /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
@@ -58,10 +70,10 @@
 		F8FAFE1423647A080020073B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8FAFE1623647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8FAFE1B23647A080020073B /* Challange HURB - AlphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challange HURB - AlphaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8FAFE1F23647A080020073B /* Challange_HURB___AlphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challange_HURB___AlphaTests.swift"; sourceTree = "<group>"; };
+		F8FAFE1F23647A080020073B /* Challange_HURB___AlphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challange_HURB___AlphaTests.swift; sourceTree = "<group>"; };
 		F8FAFE2123647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8FAFE2623647A080020073B /* Challange HURB - AlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challange HURB - AlphaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challange_HURB___AlphaUITests.swift"; sourceTree = "<group>"; };
+		F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challange_HURB___AlphaUITests.swift; sourceTree = "<group>"; };
 		F8FAFE2C23647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F94B52DA84DAF32372A0EAF0 /* Pods_Challange_HURB___Alpha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECAFEE151FE2C6CE70ACDAE3 /* Pods_Challange_HURB___AlphaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +98,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE93FEB21DCA11B947BF25C /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3441B5B6A2DF787D5F9739E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10EBC11392A5315267816FCD /* Pods-Challange HURB - Alpha.debug.xcconfig */,
+				0691A6B7CC9E491606A83A35 /* Pods-Challange HURB - Alpha.release.xcconfig */,
+				B59E435EFE389E1D10CBAE54 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */,
+				5CAD2AE399AF1BC625E323B8 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */,
+				D9C8410E1FF319FE7BA579B5 /* Pods-Challange HURB - AlphaTests.debug.xcconfig */,
+				A03318A49054510288AE261B /* Pods-Challange HURB - AlphaTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		51CDA32DEAED63D7C2215986 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A5141604FAD72D2DE88296F /* Pods_Challange_HURB___Alpha.framework */,
+				4A8ED87C9FA52B4065B80015 /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework */,
+				40EC4FB5DB649A7EE878F97B /* Pods_Challange_HURB___AlphaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F8FAFDFC23647A060020073B = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +136,8 @@
 				F8FAFE1E23647A080020073B /* Challange HURB - AlphaTests */,
 				F8FAFE2923647A080020073B /* Challange HURB - AlphaUITests */,
 				F8FAFE0623647A060020073B /* Products */,
+				3441B5B6A2DF787D5F9739E1 /* Pods */,
+				51CDA32DEAED63D7C2215986 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8FAFE2F23647A080020073B /* Build configuration list for PBXNativeTarget "Challange HURB - Alpha" */;
 			buildPhases = (
+				5A29D5D2D2643B7CEAC6FCD3 /* [CP] Check Pods Manifest.lock */,
 				F8FAFE0123647A060020073B /* Sources */,
 				F8FAFE0223647A060020073B /* Frameworks */,
 				F8FAFE0323647A060020073B /* Resources */,
+				5562B2213688282FB4907619 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,6 +248,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8FAFE3223647A080020073B /* Build configuration list for PBXNativeTarget "Challange HURB - AlphaTests" */;
 			buildPhases = (
+				06513D08FC0AA8E302DE351C /* [CP] Check Pods Manifest.lock */,
 				F8FAFE1723647A080020073B /* Sources */,
 				F8FAFE1823647A080020073B /* Frameworks */,
 				F8FAFE1923647A080020073B /* Resources */,
@@ -223,9 +267,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8FAFE3523647A080020073B /* Build configuration list for PBXNativeTarget "Challange HURB - AlphaUITests" */;
 			buildPhases = (
+				D7371FCE04B2A4FAB55248FF /* [CP] Check Pods Manifest.lock */,
 				F8FAFE2223647A080020073B /* Sources */,
 				F8FAFE2323647A080020073B /* Frameworks */,
 				F8FAFE2423647A080020073B /* Resources */,
+				EF3C6CCD0EDA5CDE851E87C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,6 +352,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06513D08FC0AA8E302DE351C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Challange HURB - AlphaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5562B2213688282FB4907619 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - Alpha/Pods-Challange HURB - Alpha-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - Alpha/Pods-Challange HURB - Alpha-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - Alpha/Pods-Challange HURB - Alpha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A29D5D2D2643B7CEAC6FCD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Challange HURB - Alpha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7371FCE04B2A4FAB55248FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF3C6CCD0EDA5CDE851E87C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F8FAFE0123647A060020073B /* Sources */ = {
@@ -492,6 +641,7 @@
 		};
 		F8FAFE3023647A080020073B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10EBC11392A5315267816FCD /* Pods-Challange HURB - Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -510,6 +660,7 @@
 		};
 		F8FAFE3123647A080020073B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0691A6B7CC9E491606A83A35 /* Pods-Challange HURB - Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +679,7 @@
 		};
 		F8FAFE3323647A080020073B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9C8410E1FF319FE7BA579B5 /* Pods-Challange HURB - AlphaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +702,7 @@
 		};
 		F8FAFE3423647A080020073B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A03318A49054510288AE261B /* Pods-Challange HURB - AlphaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -572,6 +725,7 @@
 		};
 		F8FAFE3623647A080020073B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B59E435EFE389E1D10CBAE54 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -592,6 +746,7 @@
 		};
 		F8FAFE3723647A080020073B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CAD2AE399AF1BC625E323B8 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
