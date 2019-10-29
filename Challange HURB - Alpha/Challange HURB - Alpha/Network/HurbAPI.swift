@@ -13,15 +13,21 @@ enum HurbAPI {
     case search(query: String, page: Int)
 }
 
-extension HurbAPI: EndpointType {
+extension HurbAPI: TargetType {
+    
+    
+    var headers: [String : String]? {
+        return ["Content-type": "application/json"]
+    }
+    
     var baseURL: URL {
         return URL(string: "https://www.hurb.com")!
     }
     
     var path: String {
         switch self {
-        case .search(let query, let page):
-            return "/search/api?q=\(query)&page=\(page)"
+        case .search:
+            return "/search/api"
         }
     }
     
@@ -35,7 +41,7 @@ extension HurbAPI: EndpointType {
         switch self {
         case .search(let query, let page):
             var parameters = [String: Any]()
-            parameters["query"] = query
+            parameters["q"] = query
             parameters["page"] = page
             return parameters
         }

@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		3BE93FEB21DCA11B947BF25C /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8ED87C9FA52B4065B80015 /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework */; };
 		ECAFEE151FE2C6CE70ACDAE3 /* Pods_Challange_HURB___AlphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EC4FB5DB649A7EE878F97B /* Pods_Challange_HURB___AlphaTests.framework */; };
-		F86380B32364CD0A002A69FB /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380B22364CD0A002A69FB /* Response.swift */; };
-		F86380B52364CE05002A69FB /* EndpointTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380B42364CE05002A69FB /* EndpointTypeProtocol.swift */; };
 		F86380F72367CF52002A69FB /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F62367CF52002A69FB /* Experience.swift */; };
 		F86380F92367D4BD002A69FB /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F82367D4BD002A69FB /* Adress.swift */; };
 		F86380FB2367D62C002A69FB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380FA2367D62C002A69FB /* Image.swift */; };
 		F86380FD2367D729002A69FB /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380FC2367D729002A69FB /* Price.swift */; };
 		F86380FF2367DAB3002A69FB /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380FE2367DAB3002A69FB /* APIResponse.swift */; };
 		F8638104236873C6002A69FB /* HurbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8638103236873C6002A69FB /* HurbAPI.swift */; };
+		F86381062368894A002A69FB /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86381052368894A002A69FB /* NetworkAdapter.swift */; };
 		F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0823647A060020073B /* AppDelegate.swift */; };
 		F8FAFE0B23647A060020073B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0A23647A060020073B /* SceneDelegate.swift */; };
 		F8FAFE0D23647A060020073B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0C23647A060020073B /* ViewController.swift */; };
@@ -55,14 +54,13 @@
 		A03318A49054510288AE261B /* Pods-Challange HURB - AlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - AlphaTests.release.xcconfig"; path = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.release.xcconfig"; sourceTree = "<group>"; };
 		B59E435EFE389E1D10CBAE54 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9C8410E1FF319FE7BA579B5 /* Pods-Challange HURB - AlphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - AlphaTests.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F86380B22364CD0A002A69FB /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		F86380B42364CE05002A69FB /* EndpointTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTypeProtocol.swift; sourceTree = "<group>"; };
 		F86380F62367CF52002A69FB /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		F86380F82367D4BD002A69FB /* Adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
 		F86380FA2367D62C002A69FB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F86380FC2367D729002A69FB /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		F86380FE2367DAB3002A69FB /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		F8638103236873C6002A69FB /* HurbAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAPI.swift; sourceTree = "<group>"; };
+		F86381052368894A002A69FB /* NetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
 		F8FAFE0523647A060020073B /* Challange HURB - Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challange HURB - Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FAFE0823647A060020073B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8FAFE0A23647A060020073B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,8 +188,7 @@
 		F8FAFE38236498BA0020073B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F86380B22364CD0A002A69FB /* Response.swift */,
-				F86380B42364CE05002A69FB /* EndpointTypeProtocol.swift */,
+				F86381052368894A002A69FB /* NetworkAdapter.swift */,
 				F8638103236873C6002A69FB /* HurbAPI.swift */,
 			);
 			path = Network;
@@ -463,14 +460,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F86380B52364CE05002A69FB /* EndpointTypeProtocol.swift in Sources */,
 				F86380FB2367D62C002A69FB /* Image.swift in Sources */,
 				F8FAFE0D23647A060020073B /* ViewController.swift in Sources */,
 				F86380FF2367DAB3002A69FB /* APIResponse.swift in Sources */,
 				F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */,
 				F86380F92367D4BD002A69FB /* Adress.swift in Sources */,
+				F86381062368894A002A69FB /* NetworkAdapter.swift in Sources */,
 				F86380FD2367D729002A69FB /* Price.swift in Sources */,
-				F86380B32364CD0A002A69FB /* Response.swift in Sources */,
 				F8FAFE0B23647A060020073B /* SceneDelegate.swift in Sources */,
 				F86380F72367CF52002A69FB /* Experience.swift in Sources */,
 				F8638104236873C6002A69FB /* HurbAPI.swift in Sources */,
