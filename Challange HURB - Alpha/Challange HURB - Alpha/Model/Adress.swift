@@ -10,8 +10,8 @@ import Foundation
 
 /// Represents the main data of the Experience adress
 struct Adress: Codable {
-    var zipcode: String
-    var street: String
+    var zipcode: String?
+    var street: String?
     var city: String
     var state: String
     var country: String

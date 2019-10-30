@@ -13,15 +13,15 @@ struct Experience: Codable {
     // MARK: - General attributes
     var id: String
     var name: String
-    var adress: Adress
+    var adress: Adress?
     var smallDescription: String
-    var completeDescription: String
+    var completeDescription: String?
     var url: URL
     var category: String
     var stars: Int?
     var image: URL?
     var gallery: [Image]
-    var price: [Price]
+    var price: Price
     var hasFreeCancellation: Bool?
     
     // MARK: - Specific attributes

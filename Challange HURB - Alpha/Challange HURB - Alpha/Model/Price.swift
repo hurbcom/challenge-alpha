@@ -11,8 +11,8 @@ import Foundation
 /// Represent the price of an Experience, storing its actual price, old price and currency
 struct Price: Codable {
     var currency: String
-    var oldPrice: Float
-    var price: Float
+    var oldPrice: Double?
+    var price: Double?
 
     /// Returns the price symbol according to the currency value
     func getPriceSymbol() -> String {
