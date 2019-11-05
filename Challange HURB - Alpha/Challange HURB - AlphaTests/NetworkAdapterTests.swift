@@ -18,15 +18,14 @@ class NetworkAdapterTests: XCTestCase {
     }
 
     func testExample() {
-        let expectation = XCTestExpectation(description: "Foi bom")
-        
-        
+        let expectation = XCTestExpectation(description: "Get api response")
+
         networkAdapter?.getAPIRespose(completion: { (apiResponse, error) in
             if let apiResponse = apiResponse {
                 dump(apiResponse)
                 expectation.fulfill()
             } else {
-                print(error)
+                debugPrint(error)
             }
         })
         wait(for: [expectation], timeout: 10.0)
