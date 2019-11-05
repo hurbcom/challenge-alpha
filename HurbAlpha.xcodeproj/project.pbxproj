@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5434D8E2371BD8400060333 /* HurbOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8D2371BD8400060333 /* HurbOffers.swift */; };
+		D5434D902371BDBD00060333 /* HurbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8F2371BDBD00060333 /* HurbCollectionViewCell.swift */; };
+		D5434D922371BDD300060333 /* HurbCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D912371BDD300060333 /* HurbCollectionView.swift */; };
+		D5434D952371BFD600060333 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D942371BFD600060333 /* NetworkManager.swift */; };
+		D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9EFF23707C21005120D2 /* AppDelegate.swift */; };
+		D58A9F0223707C21005120D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F0123707C21005120D2 /* SceneDelegate.swift */; };
+		D58A9F0423707C21005120D2 /* HurbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F0323707C21005120D2 /* HurbViewController.swift */; };
+		D58A9F0723707C21005120D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0523707C21005120D2 /* Main.storyboard */; };
+		D58A9F0923707C22005120D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0823707C22005120D2 /* Assets.xcassets */; };
+		D58A9F0C23707C22005120D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */; };
+		D58A9F1723707C22005120D2 /* HurbAlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F1623707C22005120D2 /* HurbAlphaTests.swift */; };
+		D58A9F2223707C22005120D2 /* HurbAlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F2123707C22005120D2 /* HurbAlphaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D58A9F1323707C22005120D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D58A9EF423707C21005120D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58A9EFB23707C21005120D2;
+			remoteInfo = HurbAlpha;
+		};
+		D58A9F1E23707C22005120D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D58A9EF423707C21005120D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58A9EFB23707C21005120D2;
+			remoteInfo = HurbAlpha;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5434D8D2371BD8400060333 /* HurbOffers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbOffers.swift; sourceTree = "<group>"; };
+		D5434D8F2371BDBD00060333 /* HurbCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbCollectionViewCell.swift; sourceTree = "<group>"; };
+		D5434D912371BDD300060333 /* HurbCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbCollectionView.swift; sourceTree = "<group>"; };
+		D5434D942371BFD600060333 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D58A9EFC23707C21005120D2 /* HurbAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58A9EFF23707C21005120D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D58A9F0123707C21005120D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D58A9F0323707C21005120D2 /* HurbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbViewController.swift; sourceTree = "<group>"; };
+		D58A9F0623707C21005120D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D58A9F0823707C22005120D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D58A9F0B23707C22005120D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D58A9F0D23707C22005120D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D58A9F1223707C22005120D2 /* HurbAlphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HurbAlphaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58A9F1623707C22005120D2 /* HurbAlphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaTests.swift; sourceTree = "<group>"; };
+		D58A9F1823707C22005120D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D58A9F1D23707C22005120D2 /* HurbAlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HurbAlphaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58A9F2123707C22005120D2 /* HurbAlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaUITests.swift; sourceTree = "<group>"; };
+		D58A9F2323707C22005120D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D58A9EF923707C21005120D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58A9F0F23707C22005120D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58A9F1A23707C22005120D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5434D8C2371BD3B00060333 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D58A9EFF23707C21005120D2 /* AppDelegate.swift */,
+				D58A9F0123707C21005120D2 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D5434D932371BF7900060333 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D5434D942371BFD600060333 /* NetworkManager.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		D58A9EF323707C21005120D2 = {
+			isa = PBXGroup;
+			children = (
+				D58A9EFE23707C21005120D2 /* HurbAlpha */,
+				D58A9F1523707C22005120D2 /* HurbAlphaTests */,
+				D58A9F2023707C22005120D2 /* HurbAlphaUITests */,
+				D58A9EFD23707C21005120D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D58A9EFD23707C21005120D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D58A9EFC23707C21005120D2 /* HurbAlpha.app */,
+				D58A9F1223707C22005120D2 /* HurbAlphaTests.xctest */,
+				D58A9F1D23707C22005120D2 /* HurbAlphaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D58A9EFE23707C21005120D2 /* HurbAlpha */ = {
+			isa = PBXGroup;
+			children = (
+				D5434D8C2371BD3B00060333 /* Application */,
+				D58A9F2F23707C43005120D2 /* Model */,
+				D58A9F3023707C49005120D2 /* View */,
+				D58A9F3123707C51005120D2 /* Controlller */,
+				D58A9F0523707C21005120D2 /* Main.storyboard */,
+				D58A9F0823707C22005120D2 /* Assets.xcassets */,
+				D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */,
+				D58A9F0D23707C22005120D2 /* Info.plist */,
+			);
+			path = HurbAlpha;
+			sourceTree = "<group>";
+		};
+		D58A9F1523707C22005120D2 /* HurbAlphaTests */ = {
+			isa = PBXGroup;
+			children = (
+				D58A9F1623707C22005120D2 /* HurbAlphaTests.swift */,
+				D58A9F1823707C22005120D2 /* Info.plist */,
+			);
+			path = HurbAlphaTests;
+			sourceTree = "<group>";
+		};
+		D58A9F2023707C22005120D2 /* HurbAlphaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D58A9F2123707C22005120D2 /* HurbAlphaUITests.swift */,
+				D58A9F2323707C22005120D2 /* Info.plist */,
+			);
+			path = HurbAlphaUITests;
+			sourceTree = "<group>";
+		};
+		D58A9F2F23707C43005120D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5434D932371BF7900060333 /* NetworkLayer */,
+				D5434D8D2371BD8400060333 /* HurbOffers.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D58A9F3023707C49005120D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5434D8F2371BDBD00060333 /* HurbCollectionViewCell.swift */,
+				D5434D912371BDD300060333 /* HurbCollectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D58A9F3123707C51005120D2 /* Controlller */ = {
+			isa = PBXGroup;
+			children = (
+				D58A9F0323707C21005120D2 /* HurbViewController.swift */,
+			);
+			path = Controlller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D58A9EFB23707C21005120D2 /* HurbAlpha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D58A9F2623707C22005120D2 /* Build configuration list for PBXNativeTarget "HurbAlpha" */;
+			buildPhases = (
+				D58A9EF823707C21005120D2 /* Sources */,
+				D58A9EF923707C21005120D2 /* Frameworks */,
+				D58A9EFA23707C21005120D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HurbAlpha;
+			productName = HurbAlpha;
+			productReference = D58A9EFC23707C21005120D2 /* HurbAlpha.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D58A9F1123707C22005120D2 /* HurbAlphaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D58A9F2923707C22005120D2 /* Build configuration list for PBXNativeTarget "HurbAlphaTests" */;
+			buildPhases = (
+				D58A9F0E23707C22005120D2 /* Sources */,
+				D58A9F0F23707C22005120D2 /* Frameworks */,
+				D58A9F1023707C22005120D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D58A9F1423707C22005120D2 /* PBXTargetDependency */,
+			);
+			name = HurbAlphaTests;
+			productName = HurbAlphaTests;
+			productReference = D58A9F1223707C22005120D2 /* HurbAlphaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D58A9F1C23707C22005120D2 /* HurbAlphaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D58A9F2C23707C22005120D2 /* Build configuration list for PBXNativeTarget "HurbAlphaUITests" */;
+			buildPhases = (
+				D58A9F1923707C22005120D2 /* Sources */,
+				D58A9F1A23707C22005120D2 /* Frameworks */,
+				D58A9F1B23707C22005120D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D58A9F1F23707C22005120D2 /* PBXTargetDependency */,
+			);
+			name = HurbAlphaUITests;
+			productName = HurbAlphaUITests;
+			productReference = D58A9F1D23707C22005120D2 /* HurbAlphaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D58A9EF423707C21005120D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Rodrigo Bukowitz";
+				TargetAttributes = {
+					D58A9EFB23707C21005120D2 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					D58A9F1123707C22005120D2 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = D58A9EFB23707C21005120D2;
+					};
+					D58A9F1C23707C22005120D2 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = D58A9EFB23707C21005120D2;
+					};
+				};
+			};
+			buildConfigurationList = D58A9EF723707C21005120D2 /* Build configuration list for PBXProject "HurbAlpha" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D58A9EF323707C21005120D2;
+			productRefGroup = D58A9EFD23707C21005120D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D58A9EFB23707C21005120D2 /* HurbAlpha */,
+				D58A9F1123707C22005120D2 /* HurbAlphaTests */,
+				D58A9F1C23707C22005120D2 /* HurbAlphaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D58A9EFA23707C21005120D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D58A9F0C23707C22005120D2 /* LaunchScreen.storyboard in Resources */,
+				D58A9F0923707C22005120D2 /* Assets.xcassets in Resources */,
+				D58A9F0723707C21005120D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58A9F1023707C22005120D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58A9F1B23707C22005120D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D58A9EF823707C21005120D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D58A9F0423707C21005120D2 /* HurbViewController.swift in Sources */,
+				D5434D922371BDD300060333 /* HurbCollectionView.swift in Sources */,
+				D5434D8E2371BD8400060333 /* HurbOffers.swift in Sources */,
+				D5434D952371BFD600060333 /* NetworkManager.swift in Sources */,
+				D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */,
+				D58A9F0223707C21005120D2 /* SceneDelegate.swift in Sources */,
+				D5434D902371BDBD00060333 /* HurbCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58A9F0E23707C22005120D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D58A9F1723707C22005120D2 /* HurbAlphaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58A9F1923707C22005120D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D58A9F2223707C22005120D2 /* HurbAlphaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D58A9F1423707C22005120D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58A9EFB23707C21005120D2 /* HurbAlpha */;
+			targetProxy = D58A9F1323707C22005120D2 /* PBXContainerItemProxy */;
+		};
+		D58A9F1F23707C22005120D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58A9EFB23707C21005120D2 /* HurbAlpha */;
+			targetProxy = D58A9F1E23707C22005120D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D58A9F0523707C21005120D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D58A9F0623707C21005120D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D58A9F0B23707C22005120D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D58A9F2423707C22005120D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D58A9F2523707C22005120D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D58A9F2723707C22005120D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8QJCLMUR75;
+				INFOPLIST_FILE = HurbAlpha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ex.appLegal.HurbAlpha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D58A9F2823707C22005120D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8QJCLMUR75;
+				INFOPLIST_FILE = HurbAlpha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ex.appLegal.HurbAlpha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D58A9F2A23707C22005120D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HurbAlphaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ex.appLegal.HurbAlphaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HurbAlpha.app/HurbAlpha";
+			};
+			name = Debug;
+		};
+		D58A9F2B23707C22005120D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HurbAlphaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ex.appLegal.HurbAlphaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HurbAlpha.app/HurbAlpha";
+			};
+			name = Release;
+		};
+		D58A9F2D23707C22005120D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HurbAlphaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ex.appLegal.HurbAlphaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HurbAlpha;
+			};
+			name = Debug;
+		};
+		D58A9F2E23707C22005120D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HurbAlphaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ex.appLegal.HurbAlphaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HurbAlpha;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D58A9EF723707C21005120D2 /* Build configuration list for PBXProject "HurbAlpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D58A9F2423707C22005120D2 /* Debug */,
+				D58A9F2523707C22005120D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D58A9F2623707C22005120D2 /* Build configuration list for PBXNativeTarget "HurbAlpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D58A9F2723707C22005120D2 /* Debug */,
+				D58A9F2823707C22005120D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D58A9F2923707C22005120D2 /* Build configuration list for PBXNativeTarget "HurbAlphaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D58A9F2A23707C22005120D2 /* Debug */,
+				D58A9F2B23707C22005120D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D58A9F2C23707C22005120D2 /* Build configuration list for PBXNativeTarget "HurbAlphaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D58A9F2D23707C22005120D2 /* Debug */,
+				D58A9F2E23707C22005120D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D58A9EF423707C21005120D2 /* Project object */;
+}
