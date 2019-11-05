@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,9 @@
 		D58A9F0C23707C22005120D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */; };
 		D58A9F1723707C22005120D2 /* HurbAlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F1623707C22005120D2 /* HurbAlphaTests.swift */; };
 		D58A9F2223707C22005120D2 /* HurbAlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F2123707C22005120D2 /* HurbAlphaUITests.swift */; };
+		D5D52EA02371DFAB00D86855 /* APIRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52E9F2371DFAB00D86855 /* APIRoot.swift */; };
+		D5D52EA22371DFDF00D86855 /* HurbOffersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52EA12371DFDF00D86855 /* HurbOffersAPI.swift */; };
+		D5D52EA42371DFF700D86855 /* HurbAlphaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52EA32371DFF700D86855 /* HurbAlphaAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		D58A9F1D23707C22005120D2 /* HurbAlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HurbAlphaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A9F2123707C22005120D2 /* HurbAlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaUITests.swift; sourceTree = "<group>"; };
 		D58A9F2323707C22005120D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5D52E9F2371DFAB00D86855 /* APIRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoot.swift; sourceTree = "<group>"; };
+		D5D52EA12371DFDF00D86855 /* HurbOffersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbOffersAPI.swift; sourceTree = "<group>"; };
+		D5D52EA32371DFF700D86855 /* HurbAlphaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaAPI.swift; sourceTree = "<group>"; };
 		D845641EDF99CF06B1DAEFE7 /* Pods_HurbAlphaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HurbAlphaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0DAC3BFECD05426DD30F15 /* Pods_HurbAlpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HurbAlpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3AFACFAD7C99527902E9B12 /* Pods-HurbAlpha-HurbAlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbAlpha-HurbAlphaUITests.debug.xcconfig"; path = "Target Support Files/Pods-HurbAlpha-HurbAlphaUITests/Pods-HurbAlpha-HurbAlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +115,6 @@
 				48F899236F4377F1E8D25958 /* Pods-HurbAlphaTests.debug.xcconfig */,
 				B1143C9437A822215C850A3F /* Pods-HurbAlphaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				D5434D942371BFD600060333 /* NetworkManager.swift */,
+				D5D52E9E2371DF8D00D86855 /* HurbAPI */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -198,8 +204,8 @@
 		D58A9F2F23707C43005120D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D5D52E9D2371DF7F00D86855 /* Offers */,
 				D5434D932371BF7900060333 /* NetworkLayer */,
-				D5434D8D2371BD8400060333 /* HurbOffers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +225,24 @@
 				D58A9F0323707C21005120D2 /* HurbViewController.swift */,
 			);
 			path = Controlller;
+			sourceTree = "<group>";
+		};
+		D5D52E9D2371DF7F00D86855 /* Offers */ = {
+			isa = PBXGroup;
+			children = (
+				D5434D8D2371BD8400060333 /* HurbOffers.swift */,
+			);
+			path = Offers;
+			sourceTree = "<group>";
+		};
+		D5D52E9E2371DF8D00D86855 /* HurbAPI */ = {
+			isa = PBXGroup;
+			children = (
+				D5D52E9F2371DFAB00D86855 /* APIRoot.swift */,
+				D5D52EA12371DFDF00D86855 /* HurbOffersAPI.swift */,
+				D5D52EA32371DFF700D86855 /* HurbAlphaAPI.swift */,
+			);
+			path = HurbAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,6 +487,9 @@
 				D58A9F0423707C21005120D2 /* HurbViewController.swift in Sources */,
 				D5434D922371BDD300060333 /* HurbCollectionView.swift in Sources */,
 				D5434D8E2371BD8400060333 /* HurbOffers.swift in Sources */,
+				D5D52EA22371DFDF00D86855 /* HurbOffersAPI.swift in Sources */,
+				D5D52EA42371DFF700D86855 /* HurbAlphaAPI.swift in Sources */,
+				D5D52EA02371DFAB00D86855 /* APIRoot.swift in Sources */,
 				D5434D952371BFD600060333 /* NetworkManager.swift in Sources */,
 				D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */,
 				D58A9F0223707C21005120D2 /* SceneDelegate.swift in Sources */,
@@ -680,6 +707,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8QJCLMUR75;
 				INFOPLIST_FILE = HurbAlphaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -702,6 +730,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8QJCLMUR75;
 				INFOPLIST_FILE = HurbAlphaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -723,6 +752,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8QJCLMUR75;
 				INFOPLIST_FILE = HurbAlphaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -743,6 +773,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8QJCLMUR75;
 				INFOPLIST_FILE = HurbAlphaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

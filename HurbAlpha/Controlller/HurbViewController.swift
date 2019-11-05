@@ -14,6 +14,18 @@ class HurbViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        netManager.state = .loading
+        netManager.getOffers(place: "buzios", page: 1) { [weak self] (offers, error) in
+            if let err = error {
+                debugPrint("An error has ocurred trying to get info ", err)
+                netManager.state = .error
+            }
+            guard let offers = offers else { return }
+            if netManager.enableLogs {
+                 dump(offers)
+            }
+            netManager.state = .ready
+        }
     }
 
 
