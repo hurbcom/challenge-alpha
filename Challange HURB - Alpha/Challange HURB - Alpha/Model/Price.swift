@@ -13,6 +13,7 @@ struct Price: Codable {
     var currency: String
     var oldPrice: Double?
     var price: Double?
+    var amount: Double
 
     /// Returns the price symbol according to the currency value
     func getPriceSymbol() -> String {
@@ -28,5 +29,6 @@ struct Price: Codable {
         case currency
         case oldPrice
         case price
+        case amount
     }
 }
