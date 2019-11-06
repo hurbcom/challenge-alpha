@@ -47,3 +47,19 @@ struct Experience: Codable {
     }
     
 }
+
+extension Experience: Equatable {
+    
+    static func == (lhs: Experience, rhs: Experience) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension Experience: Comparable {
+    
+    static func < (lhs: Experience, rhs: Experience) -> Bool {
+        guard let starsLeft = lhs.stars, let starsRight = rhs.stars else { return lhs.name < rhs.name }
+        if starsLeft == starsRight { return lhs.name < rhs.name }
+        return starsLeft < starsRight
+    }
+}
