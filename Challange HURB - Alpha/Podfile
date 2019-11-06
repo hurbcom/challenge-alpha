@@ -7,6 +7,8 @@ target 'Challange HURB - Alpha' do
 
   # Pods for Challange HURB - Alpha
   pod 'Moya', '~> 13.0'
+  pod 'Kingfisher', '~> 5.0'
+  pod 'SnapKit', '~> 5.0.0'
 
   target 'Challange HURB - AlphaTests' do
     inherit! :search_paths
