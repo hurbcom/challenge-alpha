@@ -16,8 +16,12 @@
 		F86380FF2367DAB3002A69FB /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380FE2367DAB3002A69FB /* APIResponse.swift */; };
 		F8638104236873C6002A69FB /* HurbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8638103236873C6002A69FB /* HurbAPI.swift */; };
 		F86381062368894A002A69FB /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86381052368894A002A69FB /* NetworkAdapter.swift */; };
+		F8C217802371E8EF00BAA261 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2177F2371E8EF00BAA261 /* DataManager.swift */; };
+		F8C21785237253F400BAA261 /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C21784237253F400BAA261 /* DataManagerTests.swift */; };
+		F8C21789237262CC00BAA261 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C21788237262CC00BAA261 /* MainCoordinator.swift */; };
+		F8C2178B237263C600BAA261 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2178A237263C600BAA261 /* Coordinator.swift */; };
+		F8C2178D237265B900BAA261 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */; };
 		F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0823647A060020073B /* AppDelegate.swift */; };
-		F8FAFE0B23647A060020073B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0A23647A060020073B /* SceneDelegate.swift */; };
 		F8FAFE0D23647A060020073B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0C23647A060020073B /* ViewController.swift */; };
 		F8FAFE1023647A060020073B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE0E23647A060020073B /* Main.storyboard */; };
 		F8FAFE1223647A080020073B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE1123647A080020073B /* Assets.xcassets */; };
@@ -61,9 +65,13 @@
 		F86380FE2367DAB3002A69FB /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		F8638103236873C6002A69FB /* HurbAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAPI.swift; sourceTree = "<group>"; };
 		F86381052368894A002A69FB /* NetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
+		F8C2177F2371E8EF00BAA261 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F8C21784237253F400BAA261 /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
+		F8C21788237262CC00BAA261 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		F8C2178A237263C600BAA261 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		F8FAFE0523647A060020073B /* Challange HURB - Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challange HURB - Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FAFE0823647A060020073B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8FAFE0A23647A060020073B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F8FAFE0C23647A060020073B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F8FAFE0F23647A060020073B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8FAFE1123647A080020073B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +136,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F8C217872372619200BAA261 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F8C21788237262CC00BAA261 /* MainCoordinator.swift */,
+				F8C2178A237263C600BAA261 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		F8FAFDFC23647A060020073B = {
 			isa = PBXGroup;
 			children = (
@@ -153,12 +170,12 @@
 		F8FAFE0723647A060020073B /* Challange HURB - Alpha */ = {
 			isa = PBXGroup;
 			children = (
+				F8C217872372619200BAA261 /* Coordinator */,
 				F8FAFE39236498D10020073B /* Model */,
 				F8FAFE3A236498DC0020073B /* View */,
 				F8FAFE3B236498EB0020073B /* Controller */,
 				F8FAFE38236498BA0020073B /* Network */,
 				F8FAFE0823647A060020073B /* AppDelegate.swift */,
-				F8FAFE0A23647A060020073B /* SceneDelegate.swift */,
 				F8FAFE0E23647A060020073B /* Main.storyboard */,
 				F8FAFE1323647A080020073B /* LaunchScreen.storyboard */,
 				F8FAFE1123647A080020073B /* Assets.xcassets */,
@@ -172,6 +189,7 @@
 			children = (
 				F8FAFE1F23647A080020073B /* NetworkAdapterTests.swift */,
 				F8FAFE2123647A080020073B /* Info.plist */,
+				F8C21784237253F400BAA261 /* DataManagerTests.swift */,
 			);
 			path = "Challange HURB - AlphaTests";
 			sourceTree = "<group>";
@@ -197,6 +215,7 @@
 		F8FAFE39236498D10020073B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F8C2177F2371E8EF00BAA261 /* DataManager.swift */,
 				F86380FE2367DAB3002A69FB /* APIResponse.swift */,
 				F86380F62367CF52002A69FB /* Experience.swift */,
 				F86380FA2367D62C002A69FB /* Image.swift */,
@@ -217,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				F8FAFE0C23647A060020073B /* ViewController.swift */,
+				F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -460,14 +480,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C2178D237265B900BAA261 /* StoryboardInitializable.swift in Sources */,
 				F86380FB2367D62C002A69FB /* Image.swift in Sources */,
+				F8C21789237262CC00BAA261 /* MainCoordinator.swift in Sources */,
+				F8C2178B237263C600BAA261 /* Coordinator.swift in Sources */,
 				F8FAFE0D23647A060020073B /* ViewController.swift in Sources */,
 				F86380FF2367DAB3002A69FB /* APIResponse.swift in Sources */,
 				F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */,
 				F86380F92367D4BD002A69FB /* Adress.swift in Sources */,
 				F86381062368894A002A69FB /* NetworkAdapter.swift in Sources */,
 				F86380FD2367D729002A69FB /* Price.swift in Sources */,
-				F8FAFE0B23647A060020073B /* SceneDelegate.swift in Sources */,
+				F8C217802371E8EF00BAA261 /* DataManager.swift in Sources */,
 				F86380F72367CF52002A69FB /* Experience.swift in Sources */,
 				F8638104236873C6002A69FB /* HurbAPI.swift in Sources */,
 			);
@@ -478,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8FAFE2023647A080020073B /* NetworkAdapterTests.swift in Sources */,
+				F8C21785237253F400BAA261 /* DataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
