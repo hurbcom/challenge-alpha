@@ -12,7 +12,6 @@
 		6D6DCD7FA26195713F712B63 /* Pods_HurbAlphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D845641EDF99CF06B1DAEFE7 /* Pods_HurbAlphaTests.framework */; };
 		D5434D8E2371BD8400060333 /* HurbOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8D2371BD8400060333 /* HurbOffers.swift */; };
 		D5434D902371BDBD00060333 /* HurbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8F2371BDBD00060333 /* HurbTableViewCell.swift */; };
-		D5434D922371BDD300060333 /* HurbTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D912371BDD300060333 /* HurbTableView.swift */; };
 		D5434D952371BFD600060333 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D942371BFD600060333 /* NetworkManager.swift */; };
 		D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9EFF23707C21005120D2 /* AppDelegate.swift */; };
 		D58A9F0223707C21005120D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F0123707C21005120D2 /* SceneDelegate.swift */; };
@@ -25,6 +24,10 @@
 		D58B63DC2372FA1B0019D9C7 /* GalleryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63DB2372FA1B0019D9C7 /* GalleryImage.swift */; };
 		D58B63DF2373111B0019D9C7 /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63DE2373111B0019D9C7 /* FeedDataSource.swift */; };
 		D58B63E1237311640019D9C7 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63E0237311640019D9C7 /* FeedSection.swift */; };
+		D58B63E323732E1B0019D9C7 /* FeedSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63E223732E1B0019D9C7 /* FeedSectionType.swift */; };
+		D58B63E523735EBC0019D9C7 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63E423735EBC0019D9C7 /* Address.swift */; };
+		D58B63E72373623B0019D9C7 /* Amenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63E62373623B0019D9C7 /* Amenities.swift */; };
+		D58B63E92373624B0019D9C7 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63E82373624B0019D9C7 /* Price.swift */; };
 		D5D52EA02371DFAB00D86855 /* APIRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52E9F2371DFAB00D86855 /* APIRoot.swift */; };
 		D5D52EA22371DFDF00D86855 /* HurbOffersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52EA12371DFDF00D86855 /* HurbOffersAPI.swift */; };
 		D5D52EA42371DFF700D86855 /* HurbAlphaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52EA32371DFF700D86855 /* HurbAlphaAPI.swift */; };
@@ -55,7 +58,6 @@
 		B1143C9437A822215C850A3F /* Pods-HurbAlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbAlphaTests.release.xcconfig"; path = "Target Support Files/Pods-HurbAlphaTests/Pods-HurbAlphaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D5434D8D2371BD8400060333 /* HurbOffers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbOffers.swift; sourceTree = "<group>"; };
 		D5434D8F2371BDBD00060333 /* HurbTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbTableViewCell.swift; sourceTree = "<group>"; };
-		D5434D912371BDD300060333 /* HurbTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbTableView.swift; sourceTree = "<group>"; };
 		D5434D942371BFD600060333 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D58A9EFC23707C21005120D2 /* HurbAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A9EFF23707C21005120D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,10 @@
 		D58B63DB2372FA1B0019D9C7 /* GalleryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImage.swift; sourceTree = "<group>"; };
 		D58B63DE2373111B0019D9C7 /* FeedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
 		D58B63E0237311640019D9C7 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
+		D58B63E223732E1B0019D9C7 /* FeedSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSectionType.swift; sourceTree = "<group>"; };
+		D58B63E423735EBC0019D9C7 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		D58B63E62373623B0019D9C7 /* Amenities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenities.swift; sourceTree = "<group>"; };
+		D58B63E82373624B0019D9C7 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		D5D52E9F2371DFAB00D86855 /* APIRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoot.swift; sourceTree = "<group>"; };
 		D5D52EA12371DFDF00D86855 /* HurbOffersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbOffersAPI.swift; sourceTree = "<group>"; };
 		D5D52EA32371DFF700D86855 /* HurbAlphaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaAPI.swift; sourceTree = "<group>"; };
@@ -215,6 +221,10 @@
 				D5434D8D2371BD8400060333 /* HurbOffers.swift */,
 				D58B63DB2372FA1B0019D9C7 /* GalleryImage.swift */,
 				D58B63E0237311640019D9C7 /* FeedSection.swift */,
+				D58B63E223732E1B0019D9C7 /* FeedSectionType.swift */,
+				D58B63E423735EBC0019D9C7 /* Address.swift */,
+				D58B63E62373623B0019D9C7 /* Amenities.swift */,
+				D58B63E82373624B0019D9C7 /* Price.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				D5434D8F2371BDBD00060333 /* HurbTableViewCell.swift */,
-				D5434D912371BDD300060333 /* HurbTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,13 +503,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58A9F0423707C21005120D2 /* HurbViewController.swift in Sources */,
-				D5434D922371BDD300060333 /* HurbTableView.swift in Sources */,
+				D58B63E323732E1B0019D9C7 /* FeedSectionType.swift in Sources */,
 				D58B63DF2373111B0019D9C7 /* FeedDataSource.swift in Sources */,
 				D58B63DC2372FA1B0019D9C7 /* GalleryImage.swift in Sources */,
 				D5434D8E2371BD8400060333 /* HurbOffers.swift in Sources */,
 				D5D52EA22371DFDF00D86855 /* HurbOffersAPI.swift in Sources */,
+				D58B63E523735EBC0019D9C7 /* Address.swift in Sources */,
 				D5D52EA42371DFF700D86855 /* HurbAlphaAPI.swift in Sources */,
 				D5D52EA02371DFAB00D86855 /* APIRoot.swift in Sources */,
+				D58B63E92373624B0019D9C7 /* Price.swift in Sources */,
+				D58B63E72373623B0019D9C7 /* Amenities.swift in Sources */,
 				D5434D952371BFD600060333 /* NetworkManager.swift in Sources */,
 				D58B63E1237311640019D9C7 /* FeedSection.swift in Sources */,
 				D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */,

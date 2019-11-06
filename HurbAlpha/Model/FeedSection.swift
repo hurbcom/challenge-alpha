@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum SectionType {
-    case package
-    case hotel
-}
-
-struct FeedSection {
+///Class that represents which section in the tableView 
+class FeedSection {
     var title: String
-    var type: SectionType
-    var items: [HurbOffers]
+    var cellData: FeedSectionType
+    
+    init(with title: String, cellData: FeedSectionType) {
+        self.title = title
+        self.cellData = cellData
+    }
 }

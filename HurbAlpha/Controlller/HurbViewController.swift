@@ -22,8 +22,10 @@ class HurbViewController: UIViewController {
     // MARK: - Views
     let feedTableview: UITableView = {
         let feed = UITableView()
-        feed.backgroundColor = UIColor.white
-        feed.register(HurbTableViewCell.self, forCellReuseIdentifier: "offers")
+        feed.backgroundColor = .white
+        feed.register(HurbTableViewCell.self, forCellReuseIdentifier: Identifiers.Hotel.rawValue)
+        feed.register(HurbTableViewCell.self, forCellReuseIdentifier: Identifiers.Package.rawValue)
+        feed.tableFooterView = UIView()
         return feed
     }()
     
@@ -42,7 +44,7 @@ class HurbViewController: UIViewController {
     /// This method loads all offers
     private func loadOffers() {
         netManager.state = .loading
-        netManager.getOffers(place: "buzios", page: 1) { [weak self] (offers, error) in
+        netManager.getOffers(place: "buzios", page: 2) { [weak self] (offers, error) in
             if let err = error {
                 debugPrint("An error has ocurred trying to get info ", err)
                 netManager.state = .error
@@ -50,9 +52,8 @@ class HurbViewController: UIViewController {
             guard let offers = offers else { return }
             
             /// make parse function to arrange rows
-            self?.currentDataSource = FeedDataSource(with: [
-                FeedSection(title: "Hotel", type: .hotel, items: offers)
-            ])
+            guard let sections = self?.mapRequestIntoSection(with: offers) else { return }
+            self?.currentDataSource = FeedDataSource(with: sections)
             
             if netManager.enableLogs {
                  dump(offers)
@@ -60,6 +61,41 @@ class HurbViewController: UIViewController {
             self?.showAllOffers(with: offers)
             netManager.state = .ready
         }
+    }
+    
+    func mapRequestIntoSection(with offers: [HurbOffers]) -> [FeedSection] {
+        var packages: [HurbOffers] = []
+        var stars: [Int: [HurbOffers]] = [:]
+        var sections: [FeedSection] = []
+        for item in offers {
+            if let _ = item.isPackage {
+                packages.append(item)
+                continue
+            }
+            // will be a hotel
+            if let star = item.stars {
+                if stars[star] == nil {
+                    stars[star] = [HurbOffers]()
+                }
+                stars[star]?.append(item)
+            }
+        }
+        // add packages if they exist
+        if !packages.isEmpty {
+            sections.append(FeedSection(with: "Packages", cellData: .Package(packages: packages)))
+        }
+        let starsSorted = stars.sorted {$0.0 > $1.0}
+        // add hotels sections by the star
+        for (key, value) in starsSorted {
+            if key == 1 {
+                sections.append(FeedSection(with: "\(key) Stars", cellData: .Hotel(hotels: value)))
+            }
+            else {
+                sections.append(FeedSection(with: "\(key) Stars", cellData: .Hotel(hotels: value)))
+            }
+        }
+        
+        return sections
     }
     
     // MARK: - View Methods
@@ -78,10 +114,7 @@ class HurbViewController: UIViewController {
         
         /// adding feedTabelViewConstraints with snapKit
         feedTableview.snp.makeConstraints{ (make) in
-            make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.width.equalToSuperview()
-            make.height.equalToSuperview()
+            make.top.left.bottom.right.equalTo(view.safeAreaLayoutGuide)
         }
         
     }
