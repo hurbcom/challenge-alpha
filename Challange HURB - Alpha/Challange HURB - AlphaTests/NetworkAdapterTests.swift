@@ -20,11 +20,12 @@ class NetworkAdapterTests: XCTestCase {
     func testExample() {
         let expectation = XCTestExpectation(description: "Get api response")
 
-        networkAdapter?.getAPIRespose(completion: { (apiResponse, error) in
-            if let apiResponse = apiResponse {
+        networkAdapter?.getAPIRespose(completion: { (result) in
+            switch result {
+            case .success(let apiResponse):
                 dump(apiResponse)
                 expectation.fulfill()
-            } else {
+            case .failure(let error):
                 debugPrint(error)
             }
         })
