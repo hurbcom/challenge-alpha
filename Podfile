@@ -8,6 +8,7 @@ target 'HurbAlpha' do
   # Pods for HurbAlpha
   pod 'Moya', '~> 13.0'
   pod 'Kingfisher'
+  pod 'SnapKit', '~> 5.0.0'
 
   target 'HurbAlphaTests' do
     inherit! :search_paths

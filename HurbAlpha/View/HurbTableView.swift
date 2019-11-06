@@ -9,6 +9,6 @@
 import UIKit
 
 /// Custom UICollectionView based on Hurb paterns for this aplication
-class HurbCollectionView: UICollectionView {
+class HurbCollectionView: UITableView {
     
 }

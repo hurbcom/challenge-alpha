@@ -6,11 +6,22 @@
 //  Copyright © 2019 Rodrigo Bukowitz. All rights reserved.
 //
 import Moya
+import os.log
 
-/**
- This class resolves all management that requires network conection
- OBS: This class is a singleton and can be acesses from wanywhere in the code
- */
+
+/// enum representing the state machine of the network
+enum NetworkState {
+    case loading
+    case ready
+    case error
+}
+
+/// in order to simplify the access  to the NetworkManager capabilities
+let netManager = NetworkManager.shared
+
+/// This class resolves all management that requires network conection
+///
+/// This class is a singleton and can be acesses from anywhere in the code
 class NetworkManager: HurbAlphaAPI {
     /// project pattern singleton
     static var shared = NetworkManager()
@@ -22,15 +33,17 @@ class NetworkManager: HurbAlphaAPI {
     internal var provider = MoyaProvider<HurbOffersAPI>()
     
     /// state machine of the network
-    var state: State = .loading {
+    var state: NetworkState = .loading {
         didSet {
             switch state {
             case .ready:
-                debugPrint("ready")
+                os_log(.info, "Ready")
+                
             case .loading:
-                debugPrint("loading")
+                os_log(.info, "Loading")
+                /// load all data
             case .error:
-                debugPrint("error")
+                os_log(.error, "Error")
             }
         }
     }
@@ -54,12 +67,3 @@ class NetworkManager: HurbAlphaAPI {
     }
 }
 
-/// in order to simplify the access  to the NetworkManager capabilities
-let netManager = NetworkManager.shared
-
-/// enum representing the state machine of the network
-enum State {
-    case loading
-    case ready
-    case error
-}

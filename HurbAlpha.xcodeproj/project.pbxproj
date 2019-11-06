@@ -11,8 +11,8 @@
 		2B5DF09B697F764C938A0067 /* Pods_HurbAlpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0DAC3BFECD05426DD30F15 /* Pods_HurbAlpha.framework */; };
 		6D6DCD7FA26195713F712B63 /* Pods_HurbAlphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D845641EDF99CF06B1DAEFE7 /* Pods_HurbAlphaTests.framework */; };
 		D5434D8E2371BD8400060333 /* HurbOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8D2371BD8400060333 /* HurbOffers.swift */; };
-		D5434D902371BDBD00060333 /* HurbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8F2371BDBD00060333 /* HurbCollectionViewCell.swift */; };
-		D5434D922371BDD300060333 /* HurbCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D912371BDD300060333 /* HurbCollectionView.swift */; };
+		D5434D902371BDBD00060333 /* HurbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8F2371BDBD00060333 /* HurbTableViewCell.swift */; };
+		D5434D922371BDD300060333 /* HurbTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D912371BDD300060333 /* HurbTableView.swift */; };
 		D5434D952371BFD600060333 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D942371BFD600060333 /* NetworkManager.swift */; };
 		D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9EFF23707C21005120D2 /* AppDelegate.swift */; };
 		D58A9F0223707C21005120D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F0123707C21005120D2 /* SceneDelegate.swift */; };
@@ -22,6 +22,9 @@
 		D58A9F0C23707C22005120D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */; };
 		D58A9F1723707C22005120D2 /* HurbAlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F1623707C22005120D2 /* HurbAlphaTests.swift */; };
 		D58A9F2223707C22005120D2 /* HurbAlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F2123707C22005120D2 /* HurbAlphaUITests.swift */; };
+		D58B63DC2372FA1B0019D9C7 /* GalleryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63DB2372FA1B0019D9C7 /* GalleryImage.swift */; };
+		D58B63DF2373111B0019D9C7 /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63DE2373111B0019D9C7 /* FeedDataSource.swift */; };
+		D58B63E1237311640019D9C7 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63E0237311640019D9C7 /* FeedSection.swift */; };
 		D5D52EA02371DFAB00D86855 /* APIRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52E9F2371DFAB00D86855 /* APIRoot.swift */; };
 		D5D52EA22371DFDF00D86855 /* HurbOffersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52EA12371DFDF00D86855 /* HurbOffersAPI.swift */; };
 		D5D52EA42371DFF700D86855 /* HurbAlphaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52EA32371DFF700D86855 /* HurbAlphaAPI.swift */; };
@@ -51,8 +54,8 @@
 		53F14DCD5AE28113CD379581 /* Pods-HurbAlpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbAlpha.debug.xcconfig"; path = "Target Support Files/Pods-HurbAlpha/Pods-HurbAlpha.debug.xcconfig"; sourceTree = "<group>"; };
 		B1143C9437A822215C850A3F /* Pods-HurbAlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbAlphaTests.release.xcconfig"; path = "Target Support Files/Pods-HurbAlphaTests/Pods-HurbAlphaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D5434D8D2371BD8400060333 /* HurbOffers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbOffers.swift; sourceTree = "<group>"; };
-		D5434D8F2371BDBD00060333 /* HurbCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbCollectionViewCell.swift; sourceTree = "<group>"; };
-		D5434D912371BDD300060333 /* HurbCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbCollectionView.swift; sourceTree = "<group>"; };
+		D5434D8F2371BDBD00060333 /* HurbTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbTableViewCell.swift; sourceTree = "<group>"; };
+		D5434D912371BDD300060333 /* HurbTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbTableView.swift; sourceTree = "<group>"; };
 		D5434D942371BFD600060333 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D58A9EFC23707C21005120D2 /* HurbAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A9EFF23707C21005120D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +71,9 @@
 		D58A9F1D23707C22005120D2 /* HurbAlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HurbAlphaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A9F2123707C22005120D2 /* HurbAlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaUITests.swift; sourceTree = "<group>"; };
 		D58A9F2323707C22005120D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D58B63DB2372FA1B0019D9C7 /* GalleryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImage.swift; sourceTree = "<group>"; };
+		D58B63DE2373111B0019D9C7 /* FeedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
+		D58B63E0237311640019D9C7 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
 		D5D52E9F2371DFAB00D86855 /* APIRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoot.swift; sourceTree = "<group>"; };
 		D5D52EA12371DFDF00D86855 /* HurbOffersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbOffersAPI.swift; sourceTree = "<group>"; };
 		D5D52EA32371DFF700D86855 /* HurbAlphaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaAPI.swift; sourceTree = "<group>"; };
@@ -171,10 +177,12 @@
 		D58A9EFE23707C21005120D2 /* HurbAlpha */ = {
 			isa = PBXGroup;
 			children = (
+				D58B63DD2373110D0019D9C7 /* DataSources */,
 				D5434D8C2371BD3B00060333 /* Application */,
 				D58A9F2F23707C43005120D2 /* Model */,
 				D58A9F3023707C49005120D2 /* View */,
 				D58A9F3123707C51005120D2 /* Controlller */,
+				D5434D932371BF7900060333 /* NetworkLayer */,
 				D58A9F0523707C21005120D2 /* Main.storyboard */,
 				D58A9F0823707C22005120D2 /* Assets.xcassets */,
 				D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */,
@@ -204,8 +212,9 @@
 		D58A9F2F23707C43005120D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D5D52E9D2371DF7F00D86855 /* Offers */,
-				D5434D932371BF7900060333 /* NetworkLayer */,
+				D5434D8D2371BD8400060333 /* HurbOffers.swift */,
+				D58B63DB2372FA1B0019D9C7 /* GalleryImage.swift */,
+				D58B63E0237311640019D9C7 /* FeedSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,8 +222,8 @@
 		D58A9F3023707C49005120D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D5434D8F2371BDBD00060333 /* HurbCollectionViewCell.swift */,
-				D5434D912371BDD300060333 /* HurbCollectionView.swift */,
+				D5434D8F2371BDBD00060333 /* HurbTableViewCell.swift */,
+				D5434D912371BDD300060333 /* HurbTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,12 +236,12 @@
 			path = Controlller;
 			sourceTree = "<group>";
 		};
-		D5D52E9D2371DF7F00D86855 /* Offers */ = {
+		D58B63DD2373110D0019D9C7 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				D5434D8D2371BD8400060333 /* HurbOffers.swift */,
+				D58B63DE2373111B0019D9C7 /* FeedDataSource.swift */,
 			);
-			path = Offers;
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		D5D52E9E2371DF8D00D86855 /* HurbAPI */ = {
@@ -485,15 +494,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58A9F0423707C21005120D2 /* HurbViewController.swift in Sources */,
-				D5434D922371BDD300060333 /* HurbCollectionView.swift in Sources */,
+				D5434D922371BDD300060333 /* HurbTableView.swift in Sources */,
+				D58B63DF2373111B0019D9C7 /* FeedDataSource.swift in Sources */,
+				D58B63DC2372FA1B0019D9C7 /* GalleryImage.swift in Sources */,
 				D5434D8E2371BD8400060333 /* HurbOffers.swift in Sources */,
 				D5D52EA22371DFDF00D86855 /* HurbOffersAPI.swift in Sources */,
 				D5D52EA42371DFF700D86855 /* HurbAlphaAPI.swift in Sources */,
 				D5D52EA02371DFAB00D86855 /* APIRoot.swift in Sources */,
 				D5434D952371BFD600060333 /* NetworkManager.swift in Sources */,
+				D58B63E1237311640019D9C7 /* FeedSection.swift in Sources */,
 				D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */,
 				D58A9F0223707C21005120D2 /* SceneDelegate.swift in Sources */,
-				D5434D902371BDBD00060333 /* HurbCollectionViewCell.swift in Sources */,
+				D5434D902371BDBD00060333 /* HurbTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
