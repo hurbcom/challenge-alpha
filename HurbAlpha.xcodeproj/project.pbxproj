@@ -14,9 +14,7 @@
 		D5434D902371BDBD00060333 /* HurbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8F2371BDBD00060333 /* HurbTableViewCell.swift */; };
 		D5434D952371BFD600060333 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D942371BFD600060333 /* NetworkManager.swift */; };
 		D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9EFF23707C21005120D2 /* AppDelegate.swift */; };
-		D58A9F0223707C21005120D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F0123707C21005120D2 /* SceneDelegate.swift */; };
 		D58A9F0423707C21005120D2 /* HurbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F0323707C21005120D2 /* HurbViewController.swift */; };
-		D58A9F0723707C21005120D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0523707C21005120D2 /* Main.storyboard */; };
 		D58A9F0923707C22005120D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0823707C22005120D2 /* Assets.xcassets */; };
 		D58A9F0C23707C22005120D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */; };
 		D58A9F1723707C22005120D2 /* HurbAlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F1623707C22005120D2 /* HurbAlphaTests.swift */; };
@@ -28,6 +26,7 @@
 		D58B63E523735EBC0019D9C7 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63E423735EBC0019D9C7 /* Address.swift */; };
 		D58B63E72373623B0019D9C7 /* Amenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63E62373623B0019D9C7 /* Amenities.swift */; };
 		D58B63E92373624B0019D9C7 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63E82373624B0019D9C7 /* Price.swift */; };
+		D58B63EB237367680019D9C7 /* HurbColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63EA237367680019D9C7 /* HurbColors.swift */; };
 		D5D52EA02371DFAB00D86855 /* APIRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52E9F2371DFAB00D86855 /* APIRoot.swift */; };
 		D5D52EA22371DFDF00D86855 /* HurbOffersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52EA12371DFDF00D86855 /* HurbOffersAPI.swift */; };
 		D5D52EA42371DFF700D86855 /* HurbAlphaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D52EA32371DFF700D86855 /* HurbAlphaAPI.swift */; };
@@ -61,9 +60,7 @@
 		D5434D942371BFD600060333 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D58A9EFC23707C21005120D2 /* HurbAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A9EFF23707C21005120D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D58A9F0123707C21005120D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D58A9F0323707C21005120D2 /* HurbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbViewController.swift; sourceTree = "<group>"; };
-		D58A9F0623707C21005120D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D58A9F0823707C22005120D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D58A9F0B23707C22005120D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D58A9F0D23707C22005120D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +77,7 @@
 		D58B63E423735EBC0019D9C7 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		D58B63E62373623B0019D9C7 /* Amenities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenities.swift; sourceTree = "<group>"; };
 		D58B63E82373624B0019D9C7 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		D58B63EA237367680019D9C7 /* HurbColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbColors.swift; sourceTree = "<group>"; };
 		D5D52E9F2371DFAB00D86855 /* APIRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoot.swift; sourceTree = "<group>"; };
 		D5D52EA12371DFDF00D86855 /* HurbOffersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbOffersAPI.swift; sourceTree = "<group>"; };
 		D5D52EA32371DFF700D86855 /* HurbAlphaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaAPI.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				D58A9EFF23707C21005120D2 /* AppDelegate.swift */,
-				D58A9F0123707C21005120D2 /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -183,15 +180,13 @@
 		D58A9EFE23707C21005120D2 /* HurbAlpha */ = {
 			isa = PBXGroup;
 			children = (
-				D58B63DD2373110D0019D9C7 /* DataSources */,
 				D5434D8C2371BD3B00060333 /* Application */,
-				D58A9F2F23707C43005120D2 /* Model */,
-				D58A9F3023707C49005120D2 /* View */,
 				D58A9F3123707C51005120D2 /* Controlller */,
+				D58B63DD2373110D0019D9C7 /* DataSources */,
+				D58A9F2F23707C43005120D2 /* Model */,
 				D5434D932371BF7900060333 /* NetworkLayer */,
-				D58A9F0523707C21005120D2 /* Main.storyboard */,
-				D58A9F0823707C22005120D2 /* Assets.xcassets */,
-				D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */,
+				D58B63EC23736C410019D9C7 /* Resources */,
+				D58A9F3023707C49005120D2 /* View */,
 				D58A9F0D23707C22005120D2 /* Info.plist */,
 			);
 			path = HurbAlpha;
@@ -225,6 +220,7 @@
 				D58B63E423735EBC0019D9C7 /* Address.swift */,
 				D58B63E62373623B0019D9C7 /* Amenities.swift */,
 				D58B63E82373624B0019D9C7 /* Price.swift */,
+				D58B63EA237367680019D9C7 /* HurbColors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +247,15 @@
 				D58B63DE2373111B0019D9C7 /* FeedDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		D58B63EC23736C410019D9C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */,
+				D58A9F0823707C22005120D2 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D5D52E9E2371DF8D00D86855 /* HurbAPI */ = {
@@ -374,7 +379,6 @@
 			files = (
 				D58A9F0C23707C22005120D2 /* LaunchScreen.storyboard in Resources */,
 				D58A9F0923707C22005120D2 /* Assets.xcassets in Resources */,
-				D58A9F0723707C21005120D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D58B63EB237367680019D9C7 /* HurbColors.swift in Sources */,
 				D58A9F0423707C21005120D2 /* HurbViewController.swift in Sources */,
 				D58B63E323732E1B0019D9C7 /* FeedSectionType.swift in Sources */,
 				D58B63DF2373111B0019D9C7 /* FeedDataSource.swift in Sources */,
@@ -516,7 +521,6 @@
 				D5434D952371BFD600060333 /* NetworkManager.swift in Sources */,
 				D58B63E1237311640019D9C7 /* FeedSection.swift in Sources */,
 				D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */,
-				D58A9F0223707C21005120D2 /* SceneDelegate.swift in Sources */,
 				D5434D902371BDBD00060333 /* HurbTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,14 +557,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D58A9F0523707C21005120D2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D58A9F0623707C21005120D2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

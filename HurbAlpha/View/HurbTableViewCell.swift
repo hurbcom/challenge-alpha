@@ -57,7 +57,7 @@ class HurbTableViewCell: UITableViewCell {
     var nameLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
         label.textAlignment = .left
         label.numberOfLines = 0
         return label
@@ -67,7 +67,7 @@ class HurbTableViewCell: UITableViewCell {
     var locationLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 13)
         label.textAlignment = .left
         label.numberOfLines = 0
         return label
@@ -97,7 +97,8 @@ class HurbTableViewCell: UITableViewCell {
         cellImageView.kf.setImage(with: comps.url)
         
         nameLabel.text = hotel.name
-        locationLabel.text = "\(hotel.address.city)/\(hotel.address.state)"
+        let locationText = "\(hotel.address.city)/\(hotel.address.state)"
+        locationLabel.text = locationText.uppercased()
         setupConstraintsForHotel()
     }
     
@@ -134,13 +135,13 @@ class HurbTableViewCell: UITableViewCell {
         
         locationLabel.snp.makeConstraints { (make) in
             make.top.equalTo(cellImageView.snp.bottom).offset(10)
-            make.leading.equalTo(cellImageView.snp.leading).offset(15)
+            make.leading.equalTo(cellImageView.snp.leading).offset(5)
             make.trailing.equalTo(cellImageView.snp.trailing).offset(-25)
         }
         
         nameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(locationLabel.snp.bottom).offset(10)
-            make.leading.equalTo(cellImageView.snp.leading).offset(15)
+            make.leading.equalTo(cellImageView.snp.leading).offset(5)
             make.trailing.equalTo(cellImageView.snp.trailing).offset(-25)
         }
         
@@ -152,14 +153,14 @@ class HurbTableViewCell: UITableViewCell {
         
         cellImageView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(10)
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(5)
             make.trailing.equalToSuperview().offset(-10)
             make.height.equalTo(180)
         }
         
         nameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(cellImageView.snp.bottom).offset(20)
-            make.leading.equalTo(cellImageView.snp.leading).offset(15)
+            make.leading.equalTo(cellImageView.snp.leading).offset(5)
             make.trailing.equalTo(cellImageView.snp.trailing).offset(-25)
         }
         
