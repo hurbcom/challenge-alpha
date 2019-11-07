@@ -23,6 +23,8 @@ class DataManager {
         experiences.lazy.filter({ ($0.isPackage ?? false) == true })
     }
     
+    var coordinatorComunicationDelegate: CoordinatorComunicationDelegate?
+    
     init() {
        getExperiences()
     }
@@ -32,10 +34,10 @@ class DataManager {
             switch result {
             case .success(let apiResponse):
                 self.experiences = apiResponse.results
+                //coordinatorComunicationDelegate?.coordinator
             case .failure(let error):
                 debugPrint("Error in the API query: \(error)")
-                // Error log
-                // Inform Coordinator
+                self.coordinatorComunicationDelegate?.coordinator?.instantiateView(for: .loadingError)
             }
         }
     }

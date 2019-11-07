@@ -21,6 +21,7 @@
 		F8C21789237262CC00BAA261 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C21788237262CC00BAA261 /* MainCoordinator.swift */; };
 		F8C2178B237263C600BAA261 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2178A237263C600BAA261 /* Coordinator.swift */; };
 		F8C2178D237265B900BAA261 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */; };
+		F8EC798E237464B40055A59C /* CoordinatorComunicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC798D237464B40055A59C /* CoordinatorComunicationDelegate.swift */; };
 		F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0823647A060020073B /* AppDelegate.swift */; };
 		F8FAFE0D23647A060020073B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0C23647A060020073B /* InitialViewController.swift */; };
 		F8FAFE1023647A060020073B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE0E23647A060020073B /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		F8C21788237262CC00BAA261 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F8C2178A237263C600BAA261 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
+		F8EC798D237464B40055A59C /* CoordinatorComunicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorComunicationDelegate.swift; sourceTree = "<group>"; };
 		F8FAFE0523647A060020073B /* Challange HURB - Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challange HURB - Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FAFE0823647A060020073B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8FAFE0C23647A060020073B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				F8FAFE1323647A080020073B /* LaunchScreen.storyboard */,
 				F8FAFE1123647A080020073B /* Assets.xcassets */,
 				F8FAFE1623647A080020073B /* Info.plist */,
+				F8EC798D237464B40055A59C /* CoordinatorComunicationDelegate.swift */,
 			);
 			path = "Challange HURB - Alpha";
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8EC798E237464B40055A59C /* CoordinatorComunicationDelegate.swift in Sources */,
 				F8C2178D237265B900BAA261 /* StoryboardInitializable.swift in Sources */,
 				F86380FB2367D62C002A69FB /* Image.swift in Sources */,
 				F8C21789237262CC00BAA261 /* MainCoordinator.swift in Sources */,
