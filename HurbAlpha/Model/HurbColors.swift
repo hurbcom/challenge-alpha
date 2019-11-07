@@ -15,4 +15,7 @@ extension UIColor {
     public class var hurbBlue: UIColor {
         return UIColor(named: "HurbBlue") ?? UIColor.blue
     }
+    public class var hurbOrange: UIColor {
+        return UIColor(named: "HurbOrange") ?? UIColor.orange
+    }
 }

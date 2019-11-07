@@ -9,6 +9,7 @@
 import UIKit
 import os.log
 
+/// Data source and delegate for the feedTableview that will be used in this appliction
 class FeedDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var sections: [FeedSection]
     
@@ -24,22 +25,24 @@ class FeedDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if section == 0 {
+        //apply header backgroundColor
+        if sections[section].title == "Packages"{
             view.tintColor = .hurbYellow
         } else {
-            let header = view as! UITableViewHeaderFooterView
-            header.textLabel?.textColor = .white
             view.tintColor = .hurbBlue
         }
+        
+        //apply header textColor
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = .white
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-
         return 40.0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  300.0
+        return  350.0
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -50,8 +53,8 @@ class FeedDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         let item: FeedSectionType = sections[section].cellData
         
         switch item {
-        case .Hotel(let hotels): return hotels.count
-        case .Package(let packages): return packages.count
+            case .Hotel(let hotels): return hotels.count
+            case .Package(let packages): return packages.count
         }
     }
     

@@ -23,7 +23,7 @@ extension Price {
     enum CodingKeys: String, CodingKey {
         case oldPriceHotel = "old_price"
         case oldPricePackage = "oldPrice"
-        case totalPrice
+        case totalPrice = "total_price"
         case currentPrice
     }
 }

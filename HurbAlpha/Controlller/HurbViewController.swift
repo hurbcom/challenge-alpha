@@ -13,18 +13,36 @@ class HurbViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .purple
+        self.view.backgroundColor = .hurbBlue
+        self.view.addSubview(loadingView)
+        loadingView.snp.makeConstraints{ (make) in
+            make.top.equalToSuperview().offset(0)
+            make.leading.equalToSuperview().offset(0)
+            make.trailing.equalToSuperview().offset(0)
+            make.bottom.equalToSuperview()
+        }
+        loadingView.startAnimating()
         //load all offers
         loadOffers()
         
     }
     
     // MARK: - Views
+    let loadingView: UIImageView =  {
+        let view =  UIImageView(frame: .zero)
+        view.contentMode = .scaleAspectFill
+        view.animationImages = [UIImage(imageLiteralResourceName: "alpha"),UIImage(imageLiteralResourceName: "alpha1"),UIImage(imageLiteralResourceName: "alpha2"),UIImage(imageLiteralResourceName: "alpha3")]
+        view.animationRepeatCount = 30
+        view.animationDuration = 1
+        return view
+    }()
+    
     let feedTableview: UITableView = {
         let feed = UITableView()
         feed.backgroundColor = .white
         feed.register(HurbTableViewCell.self, forCellReuseIdentifier: Identifiers.Hotel.rawValue)
         feed.register(HurbTableViewCell.self, forCellReuseIdentifier: Identifiers.Package.rawValue)
+        feed.separatorStyle = UITableViewCell.SeparatorStyle.none
         feed.tableFooterView = UIView()
         return feed
     }()
@@ -32,7 +50,7 @@ class HurbViewController: UIViewController {
     var currentDataSource: UITableViewDataSource? {
         didSet {
             self.feedTableview.dataSource = currentDataSource
-            self.feedTableview.delegate = currentDataSource as! UITableViewDelegate
+            self.feedTableview.delegate = currentDataSource as? UITableViewDelegate
             self.feedTableview.reloadData()
         }
     }
@@ -56,7 +74,7 @@ class HurbViewController: UIViewController {
             self?.currentDataSource = FeedDataSource(with: sections)
             
             if netManager.enableLogs {
-                 dump(offers)
+                dump(offers)
             }
             self?.showAllOffers(with: offers)
             netManager.state = .ready
@@ -102,14 +120,16 @@ class HurbViewController: UIViewController {
     /// display in a tableView all offers
     func showAllOffers(with offers : [HurbOffers] ) {
         self.view.backgroundColor = .white
-        /// add feed
+        //remove loading
+        loadingView.removeFromSuperview()
+        // add feed
         setFeedTableView()
         
     }
     
     /// prepare feedTableView for use
     func setFeedTableView() {
-    
+        
         view.addSubview(feedTableview)
         
         /// adding feedTabelViewConstraints with snapKit

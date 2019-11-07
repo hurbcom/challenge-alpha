@@ -42,11 +42,20 @@ class HurbTableViewCell: UITableViewCell {
         }
     }
     
+    var cardView: UIView = {
+        let view = UIView(frame: .zero)
+        view.contentMode = .scaleAspectFill
+        view.layer.cornerRadius = 10
+        view.backgroundColor = .white
+        view.clipsToBounds = true
+        
+        return view
+    }()
+    
     /// imageView that will be used in the cell
     var cellImageView: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.contentMode = .scaleAspectFill
-        view.clipsToBounds = true
         view.layer.cornerRadius = 10
         view.backgroundColor = .white
         view.clipsToBounds = true
@@ -73,13 +82,51 @@ class HurbTableViewCell: UITableViewCell {
         return label
     }()
     
+    /// Label describing the price
+    var pricePrefixLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textColor = .hurbOrange
+        // in this case that we only search around buzios
+        label.text = "R$"
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    /// Label describing the price
+    var priceLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textColor = .hurbOrange
+        label.font = UIFont.boldSystemFont(ofSize: 28)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
     // MARK: - Methods for the Cell
     func setupUI() {
         ///add all elements in the contentView of the cell
+        self.contentView.addSubview(cardView)
+        self.contentView.addSubview(pricePrefixLabel)
+        self.contentView.addSubview(priceLabel)
         self.contentView.addSubview(cellImageView)
         self.contentView.addSubview(nameLabel)
         self.contentView.addSubview(locationLabel)
         self.backgroundColor = .white
+    }
+    
+    // Add Shadows
+    func setUpShadows(){
+        // adding shadows
+        cardView.layer.shadowColor = UIColor.black.cgColor
+        cardView.layer.shadowOpacity = 0.4
+        cardView.layer.shadowOffset = .zero
+        cardView.layer.shadowRadius = 8
+        cardView.layer.masksToBounds = false
+        cardView.layer.shadowPath = UIBezierPath(rect: cardView.bounds).cgPath
+        cardView.layer.shouldRasterize = true
+        cardView.layer.rasterizationScale = UIScreen.main.scale
     }
     
     /**
@@ -98,8 +145,11 @@ class HurbTableViewCell: UITableViewCell {
         
         nameLabel.text = hotel.name
         let locationText = "\(hotel.address.city)/\(hotel.address.state)"
+        let priceText = "\(Int(hotel.price.totalPrice!))"
+        priceLabel.text = priceText
         locationLabel.text = locationText.uppercased()
         setupConstraintsForHotel()
+        setUpShadows()
     }
     
     /**
@@ -118,18 +168,27 @@ class HurbTableViewCell: UITableViewCell {
         }
         
         nameLabel.text = package.name
+        let priceText = "\(Int(package.price.currentPrice!))"
+        priceLabel.text = priceText
         setupConstraintsForPackage()
+        setUpShadows()
         
     }
     
     // MARK: - Constraints
     /// This method sets the constrainsts for the Hotels Cells using the SnapKit framework for a better usage with the constraint
     func setupConstraintsForHotel() {
-        
-        cellImageView.snp.makeConstraints { (make) in
+        cardView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(10)
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(320)
+        }
+        
+        cellImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(cardView.snp.top).offset(10)
+            make.leading.equalTo(cardView.snp.leading).offset(10)
+            make.trailing.equalTo(cardView.snp.trailing).offset(-10)
             make.height.equalTo(180)
         }
         
@@ -140,21 +199,39 @@ class HurbTableViewCell: UITableViewCell {
         }
         
         nameLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(locationLabel.snp.bottom).offset(10)
+            make.top.equalTo(locationLabel.snp.bottom).offset(5)
             make.leading.equalTo(cellImageView.snp.leading).offset(5)
             make.trailing.equalTo(cellImageView.snp.trailing).offset(-25)
         }
         
+        pricePrefixLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(nameLabel.snp.bottom).offset(38)
+            make.leading.equalTo(cellImageView.snp.leading).offset(5)
+            make.trailing.equalTo(cellImageView.snp.trailing).offset(-25)
+        }
+        
+        priceLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(nameLabel.snp.bottom).offset(25)
+            make.leading.equalTo(pricePrefixLabel.snp.leading).offset(20)
+            make.trailing.equalTo(pricePrefixLabel.snp.trailing).offset(0)
+        }
         
     }
     
     /// This method sets the constrainsts for the Packages Cells using the SnapKit framework for a better usage with the constraint
     func setupConstraintsForPackage() {
         
-        cellImageView.snp.makeConstraints { (make) in
+        cardView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(10)
-            make.leading.equalToSuperview().offset(5)
+            make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(320)
+        }
+        
+        cellImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(cardView.snp.top).offset(10)
+            make.leading.equalTo(cardView.snp.leading).offset(10)
+            make.trailing.equalTo(cardView.snp.trailing).offset(-10)
             make.height.equalTo(180)
         }
         
@@ -162,6 +239,18 @@ class HurbTableViewCell: UITableViewCell {
             make.top.equalTo(cellImageView.snp.bottom).offset(20)
             make.leading.equalTo(cellImageView.snp.leading).offset(5)
             make.trailing.equalTo(cellImageView.snp.trailing).offset(-25)
+        }
+        
+        pricePrefixLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(nameLabel.snp.bottom).offset(38)
+            make.leading.equalTo(cellImageView.snp.leading).offset(5)
+            make.trailing.equalTo(cellImageView.snp.trailing).offset(-25)
+        }
+        
+        priceLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(nameLabel.snp.bottom).offset(25)
+            make.leading.equalTo(pricePrefixLabel.snp.leading).offset(20)
+            make.trailing.equalTo(pricePrefixLabel.snp.trailing).offset(0)
         }
         
     }
