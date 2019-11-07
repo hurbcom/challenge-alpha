@@ -22,7 +22,7 @@
 		F8C2178B237263C600BAA261 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2178A237263C600BAA261 /* Coordinator.swift */; };
 		F8C2178D237265B900BAA261 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */; };
 		F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0823647A060020073B /* AppDelegate.swift */; };
-		F8FAFE0D23647A060020073B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0C23647A060020073B /* ViewController.swift */; };
+		F8FAFE0D23647A060020073B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0C23647A060020073B /* InitialViewController.swift */; };
 		F8FAFE1023647A060020073B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE0E23647A060020073B /* Main.storyboard */; };
 		F8FAFE1223647A080020073B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE1123647A080020073B /* Assets.xcassets */; };
 		F8FAFE1523647A080020073B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE1323647A080020073B /* LaunchScreen.storyboard */; };
@@ -51,9 +51,9 @@
 /* Begin PBXFileReference section */
 		0691A6B7CC9E491606A83A35 /* Pods-Challange HURB - Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha.release.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha/Pods-Challange HURB - Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		10EBC11392A5315267816FCD /* Pods-Challange HURB - Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha/Pods-Challange HURB - Alpha.debug.xcconfig"; sourceTree = "<group>"; };
-		3A5141604FAD72D2DE88296F /* Pods_Challange_HURB___Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challange_HURB___Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40EC4FB5DB649A7EE878F97B /* Pods_Challange_HURB___AlphaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challange_HURB___AlphaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A8ED87C9FA52B4065B80015 /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A5141604FAD72D2DE88296F /* Pods_Challange_HURB___Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Challange_HURB___Alpha.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40EC4FB5DB649A7EE878F97B /* Pods_Challange_HURB___AlphaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Challange_HURB___AlphaTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8ED87C9FA52B4065B80015 /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAD2AE399AF1BC625E323B8 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A03318A49054510288AE261B /* Pods-Challange HURB - AlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - AlphaTests.release.xcconfig"; path = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.release.xcconfig"; sourceTree = "<group>"; };
 		B59E435EFE389E1D10CBAE54 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		F8FAFE0523647A060020073B /* Challange HURB - Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challange HURB - Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FAFE0823647A060020073B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8FAFE0C23647A060020073B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8FAFE0C23647A060020073B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F8FAFE0F23647A060020073B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8FAFE1123647A080020073B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8FAFE1423647A080020073B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		F8FAFE1F23647A080020073B /* NetworkAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapterTests.swift; sourceTree = "<group>"; };
 		F8FAFE2123647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8FAFE2623647A080020073B /* Challange HURB - AlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challange HURB - AlphaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challange_HURB___AlphaUITests.swift; sourceTree = "<group>"; };
+		F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challange_HURB___AlphaUITests.swift"; sourceTree = "<group>"; };
 		F8FAFE2C23647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,7 +235,7 @@
 		F8FAFE3B236498EB0020073B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F8FAFE0C23647A060020073B /* ViewController.swift */,
+				F8FAFE0C23647A060020073B /* InitialViewController.swift */,
 				F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */,
 			);
 			path = Controller;
@@ -502,7 +502,7 @@
 				F86380FB2367D62C002A69FB /* Image.swift in Sources */,
 				F8C21789237262CC00BAA261 /* MainCoordinator.swift in Sources */,
 				F8C2178B237263C600BAA261 /* Coordinator.swift in Sources */,
-				F8FAFE0D23647A060020073B /* ViewController.swift in Sources */,
+				F8FAFE0D23647A060020073B /* InitialViewController.swift in Sources */,
 				F86380FF2367DAB3002A69FB /* APIResponse.swift in Sources */,
 				F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */,
 				F86380F92367D4BD002A69FB /* Adress.swift in Sources */,
