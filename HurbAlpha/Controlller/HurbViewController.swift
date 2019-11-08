@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+
 /// Custom UIViewController based on Hurb paterns for this aplication
 class HurbViewController: UIViewController {
     
