@@ -13,6 +13,7 @@
 		D5434D8E2371BD8400060333 /* HurbOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8D2371BD8400060333 /* HurbOffers.swift */; };
 		D5434D902371BDBD00060333 /* HurbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D8F2371BDBD00060333 /* HurbTableViewCell.swift */; };
 		D5434D952371BFD600060333 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5434D942371BFD600060333 /* NetworkManager.swift */; };
+		D585EFDA2375F36500073771 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D585EFD92375F36500073771 /* README.md */; };
 		D58A9F0023707C21005120D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9EFF23707C21005120D2 /* AppDelegate.swift */; };
 		D58A9F0423707C21005120D2 /* HurbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F0323707C21005120D2 /* HurbViewController.swift */; };
 		D58A9F0923707C22005120D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0823707C22005120D2 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		D5434D8D2371BD8400060333 /* HurbOffers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbOffers.swift; sourceTree = "<group>"; };
 		D5434D8F2371BDBD00060333 /* HurbTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbTableViewCell.swift; sourceTree = "<group>"; };
 		D5434D942371BFD600060333 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D585EFD92375F36500073771 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D58A9EFC23707C21005120D2 /* HurbAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A9EFF23707C21005120D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58A9F0323707C21005120D2 /* HurbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		D58A9EF323707C21005120D2 = {
 			isa = PBXGroup;
 			children = (
+				D585EFD92375F36500073771 /* README.md */,
 				D58A9EFE23707C21005120D2 /* HurbAlpha */,
 				D58A9F2023707C22005120D2 /* HurbAlphaUITests */,
 				D58A9F1523707C22005120D2 /* HurbAlphaTests */,
@@ -379,6 +382,7 @@
 			files = (
 				D58A9F0C23707C22005120D2 /* LaunchScreen.storyboard in Resources */,
 				D58A9F0923707C22005120D2 /* Assets.xcassets in Resources */,
+				D585EFDA2375F36500073771 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
