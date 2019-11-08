@@ -38,10 +38,10 @@ Também existem duas telas adicionais uma para o carregamento do aplicativo que 
 
 Dado o escopo do aplicativo foram feitos 2 testes , um na parte de UI  e um teste unitário na parte da camada de rede e tratamento de dados. 
 
-### 7.1. Unitários
+### 4.1. Unitários
 O teste relacionado a camada de rede verifica a consistencia de da camada de rede além de verificar se os dados que chegam estão da forma desejada. 
 
-### 7.2. UI
+### 4.2. UI
 O teste de UI tenta cobrir todas as possiveis interações que o usuário teria ao utilizar o app, movendo o o feed para cima e para baixo tanto quanto queria. 
 
 
