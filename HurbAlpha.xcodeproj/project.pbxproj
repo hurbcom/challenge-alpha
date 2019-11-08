@@ -17,7 +17,7 @@
 		D58A9F0423707C21005120D2 /* HurbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F0323707C21005120D2 /* HurbViewController.swift */; };
 		D58A9F0923707C22005120D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0823707C22005120D2 /* Assets.xcassets */; };
 		D58A9F0C23707C22005120D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58A9F0A23707C22005120D2 /* LaunchScreen.storyboard */; };
-		D58A9F1723707C22005120D2 /* HurbAlphaUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F1623707C22005120D2 /* HurbAlphaUnitTests.swift */; };
+		D58A9F1723707C22005120D2 /* HurbAlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F1623707C22005120D2 /* HurbAlphaTests.swift */; };
 		D58A9F2223707C22005120D2 /* HurbAlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A9F2123707C22005120D2 /* HurbAlphaUITests.swift */; };
 		D58B63DC2372FA1B0019D9C7 /* GalleryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63DB2372FA1B0019D9C7 /* GalleryImage.swift */; };
 		D58B63DF2373111B0019D9C7 /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58B63DE2373111B0019D9C7 /* FeedDataSource.swift */; };
@@ -65,7 +65,7 @@
 		D58A9F0B23707C22005120D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D58A9F0D23707C22005120D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D58A9F1223707C22005120D2 /* HurbAlphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HurbAlphaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D58A9F1623707C22005120D2 /* HurbAlphaUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaUnitTests.swift; sourceTree = "<group>"; };
+		D58A9F1623707C22005120D2 /* HurbAlphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaTests.swift; sourceTree = "<group>"; };
 		D58A9F1823707C22005120D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D58A9F1D23707C22005120D2 /* HurbAlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HurbAlphaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A9F2123707C22005120D2 /* HurbAlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAlphaUITests.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		D58A9F1523707C22005120D2 /* HurbAlphaTests */ = {
 			isa = PBXGroup;
 			children = (
-				D58A9F1623707C22005120D2 /* HurbAlphaUnitTests.swift */,
+				D58A9F1623707C22005120D2 /* HurbAlphaTests.swift */,
 				D58A9F1823707C22005120D2 /* Info.plist */,
 			);
 			path = HurbAlphaTests;
@@ -529,7 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D58A9F1723707C22005120D2 /* HurbAlphaUnitTests.swift in Sources */,
+				D58A9F1723707C22005120D2 /* HurbAlphaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
