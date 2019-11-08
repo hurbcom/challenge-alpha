@@ -21,7 +21,7 @@ Arquitetura: **MVC**
 Para uma melhor vizualização de todas as funcionalidades do aplicativo estou sempre realizando a busca de informações de :
 `GET https://www.hurb.com/search/api?q=buzios&page=2`
 
-Isso de deve ao fato de na pagina 1 de buzios não possuir a opcão de pacotes neesse atual momento. 
+Isso de deve ao fato de na pagina 1 de buzios não possuir a opção de pacotes nesse atual momento. 
 
 O aplicativo HurbAlpha permite que o usuário contemple hotéis e pacotes de viagens na localidade de Búzios RJ. Por meio da API do Hurb. 
 Por questões de escopo decidi usar a arquitetura **MVC**, a qual tenho já bastante familiaridade e possui rápida implementação. 
