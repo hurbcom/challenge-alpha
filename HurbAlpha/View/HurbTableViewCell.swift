@@ -263,15 +263,15 @@ class HurbTableViewCell: UITableViewCell {
         
         // contraints for the amenities
         var lastBottom: UIView = cellImageView
-        var firstOffSet = 60
+        var firstOffSet = 55
         for amenitie in amenitiesLabels {
             amenitie.snp.makeConstraints { (make) in
                 make.top.equalTo(lastBottom.snp.bottom).offset(firstOffSet)
-                make.leading.equalTo(cardView.snp.leading).offset(140)
+                make.leading.equalTo(cardView.snp.leading).offset(160)
                 make.trailing.equalTo(cardView.snp.trailing).offset(-5)
             }
             lastBottom = amenitie
-            firstOffSet = 10
+            firstOffSet = 5
         }
         
     }
@@ -313,23 +313,27 @@ class HurbTableViewCell: UITableViewCell {
         
         // contraints for the amenities
         var lastBottom: UIView = cellImageView
-        var firstOffSet = 60
+        var firstOffSet = 55
         for amenitie in amenitiesLabels {
             amenitie.snp.makeConstraints { (make) in
                 make.top.equalTo(lastBottom.snp.bottom).offset(firstOffSet)
-                make.leading.equalTo(cardView.snp.leading).offset(140)
+                make.leading.equalTo(cardView.snp.leading).offset(160)
                 make.trailing.equalTo(cardView.snp.trailing).offset(-5)
             }
             lastBottom = amenitie
-            firstOffSet = 10
+            firstOffSet = 5
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         hurbOffer = nil
-        nameLabel.text = ""
-        locationLabel.text = ""
+        nameLabel.text = nil
+        priceLabel.text = nil
+        locationLabel.text = nil
         cellImageView.image = nil
+        for amenitie in amenitiesLabels {
+            amenitie.text = nil
+        }
     }
 }

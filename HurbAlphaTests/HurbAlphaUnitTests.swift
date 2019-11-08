@@ -9,7 +9,7 @@
 import XCTest
 @testable import HurbAlpha
 
-class HurbAlphaTests: XCTestCase {
+class HurbAlphaUnitTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
