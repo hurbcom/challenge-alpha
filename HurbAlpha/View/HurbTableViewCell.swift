@@ -146,7 +146,7 @@ class HurbTableViewCell: UITableViewCell {
         cardView.layer.shadowColor = UIColor.black.cgColor
         cardView.layer.shadowOpacity = 0.4
         cardView.layer.shadowOffset = .zero
-        cardView.layer.shadowRadius = 8
+        cardView.layer.shadowRadius = 6
         cardView.layer.masksToBounds = false
         cardView.layer.shadowPath = UIBezierPath(rect: cardView.bounds).cgPath
         cardView.layer.shouldRasterize = true
@@ -280,9 +280,9 @@ class HurbTableViewCell: UITableViewCell {
     func setupConstraintsForPackage() {
         
         cardView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(10)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+            make.top.equalToSuperview().offset(15)
+            make.leading.equalToSuperview().offset(15)
+            make.trailing.equalToSuperview().offset(-15)
             make.height.equalTo(340)
         }
         

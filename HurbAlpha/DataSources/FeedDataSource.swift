@@ -26,7 +26,7 @@ class FeedDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         //apply header backgroundColor
-        if sections[section].title == "Packages"{
+        if sections[section].title == "Pacotes"{
             view.tintColor = .hurbYellow
         } else {
             view.tintColor = .hurbBlue

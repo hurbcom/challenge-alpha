@@ -14,20 +14,15 @@ class HurbViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .hurbBlue
-        self.view.addSubview(loadingView)
-        loadingView.snp.makeConstraints{ (make) in
-            make.top.equalToSuperview().offset(0)
-            make.leading.equalToSuperview().offset(0)
-            make.trailing.equalToSuperview().offset(0)
-            make.bottom.equalToSuperview()
-        }
-        loadingView.startAnimating()
+        //show loading animation
+        loadingAnimation()
         //load all offers
         loadOffers()
         
     }
     
     // MARK: - Views
+    /// loading view to represents the wainting for the API
     let loadingView: UIImageView =  {
         let view =  UIImageView(frame: .zero)
         view.contentMode = .scaleAspectFill
@@ -37,6 +32,17 @@ class HurbViewController: UIViewController {
         return view
     }()
     
+    /// Label that will represent fail when trying to make the request
+    let errorLabel: UILabel =  {
+        let label = UILabel(frame: .zero)
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textAlignment = .left
+        label.text = "Desculpe, infelizmente parece que um erro ocorreu :( \nConecte-se a internet e tente novamente..."
+        label.numberOfLines = 0
+        return label
+    }()
+    /// tableView that will be our main feed in the application
     let feedTableview: UITableView = {
         let feed = UITableView()
         feed.backgroundColor = .white
@@ -55,8 +61,6 @@ class HurbViewController: UIViewController {
         }
     }
     
-    
-    
     // MARK: - Network Methods
     
     /// This method loads all offers
@@ -66,6 +70,7 @@ class HurbViewController: UIViewController {
             if let err = error {
                 debugPrint("An error has ocurred trying to get info ", err)
                 netManager.state = .error
+                self?.setUpError()
             }
             guard let offers = offers else { return }
             
@@ -100,16 +105,21 @@ class HurbViewController: UIViewController {
         }
         // add packages if they exist
         if !packages.isEmpty {
-            sections.append(FeedSection(with: "Packages", cellData: .Package(packages: packages)))
+            sections.append(FeedSection(with: "Pacotes " + "📦", cellData: .Package(packages: packages)))
         }
         let starsSorted = stars.sorted {$0.0 > $1.0}
         // add hotels sections by the star
         for (key, value) in starsSorted {
             if key == 1 {
-                sections.append(FeedSection(with: "\(key) Stars", cellData: .Hotel(hotels: value)))
+                let title = "Hotéis " + "⭐️"
+                sections.append(FeedSection(with: title, cellData: .Hotel(hotels: value)))
             }
             else {
-                sections.append(FeedSection(with: "\(key) Stars", cellData: .Hotel(hotels: value)))
+                var title =  "Hotéis "
+                for _ in 0..<key {
+                    title += "⭐️"
+                }
+                sections.append(FeedSection(with: title, cellData: .Hotel(hotels: value)))
             }
         }
         
@@ -117,6 +127,31 @@ class HurbViewController: UIViewController {
     }
     
     // MARK: - View Methods
+    /// makes the loading animation when wainting to the informtion from the API
+    func loadingAnimation() {
+        self.view.addSubview(loadingView)
+        loadingView.snp.makeConstraints{ (make) in
+            make.top.equalToSuperview().offset(0)
+            make.leading.equalToSuperview().offset(0)
+            make.trailing.equalToSuperview().offset(0)
+            make.bottom.equalToSuperview()
+        }
+        loadingView.startAnimating()
+    }
+    
+    /// makes the error image appear when dont have internet conection
+    func setUpError() {
+        loadingView.stopAnimating()
+        self.view.addSubview(errorLabel)
+        errorLabel.snp.makeConstraints{ (make) in
+            make.top.equalToSuperview().offset(100)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(300)
+        }
+        
+    }
+    
     /// display in a tableView all offers
     func showAllOffers(with offers : [HurbOffers] ) {
         self.view.backgroundColor = .white
