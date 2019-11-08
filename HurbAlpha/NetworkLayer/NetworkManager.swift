@@ -27,7 +27,7 @@ class NetworkManager: HurbAlphaAPI {
     static var shared = NetworkManager()
     
     /// enable logs on the network enviroment
-    var enableLogs = true
+    var enableLogs = false
     
     /// moya provider
     internal var provider = MoyaProvider<HurbOffersAPI>()
@@ -37,13 +37,17 @@ class NetworkManager: HurbAlphaAPI {
         didSet {
             switch state {
             case .ready:
-                os_log(.info, "Ready")
-                
+                if enableLogs {
+                     os_log(.info, "Ready")
+                }
             case .loading:
-                os_log(.info, "Loading")
-                /// load all data
+                if enableLogs {
+                    os_log(.info, "Loading")
+                }
             case .error:
-                os_log(.error, "Error")
+                if enableLogs {
+                    os_log(.error, "Error")
+                }
             }
         }
     }

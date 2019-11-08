@@ -18,8 +18,8 @@
 ## 2. Aplicação HurbAlpha
 Arquitetura: **MVC**
 
-Para uma melhor vizualização de todas as funcionalidades do aplicativo estou sempre realizando a busca de informações de 
-**GET**  https://www.hurb.com/search/api?q=buzios&page=2
+Para uma melhor vizualização de todas as funcionalidades do aplicativo estou sempre realizando a busca de informações de :
+`GET https://www.hurb.com/search/api?q=buzios&page=2`
 
 Isso de deve ao fato de na pagina 1 de buzios não possuir a opcão de pacotes neesse atual momento. 
 
