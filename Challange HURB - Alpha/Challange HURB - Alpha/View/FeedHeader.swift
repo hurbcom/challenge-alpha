@@ -14,14 +14,14 @@ class FeedHeader: UITableViewHeaderFooterView {
     var starsNumberLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 28.0, weight: .semibold)
-        label.textColor = .white
+        label.textColor = #colorLiteral(red: 0.1396300793, green: 0.2136737406, blue: 0.4599552155, alpha: 1)
         return label
     }()
     
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(starsNumberLabel)
-        self.tintColor = #colorLiteral(red: 0.1396300793, green: 0.2136737406, blue: 0.4599552155, alpha: 1)
+        self.tintColor = .white
         setUpConstraints()
     }
     
