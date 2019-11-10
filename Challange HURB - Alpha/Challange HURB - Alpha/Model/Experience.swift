@@ -29,6 +29,7 @@ struct Experience: Codable {
     var isPackage: Bool?
     var isHotel: Bool?
     
+    // MARK: - Coding Keys
     enum CodingKeys: String, CodingKey {
         case id = "sku"
         case name
@@ -47,19 +48,18 @@ struct Experience: Codable {
     }
     
 }
+// MARK: - Extensions to conform to Comparable Protocol
 
 extension Experience: Equatable {
-    
     static func == (lhs: Experience, rhs: Experience) -> Bool {
         lhs.id == rhs.id
     }
 }
 
 extension Experience: Comparable {
-    
     static func < (lhs: Experience, rhs: Experience) -> Bool {
         guard let starsLeft = lhs.stars, let starsRight = rhs.stars else { return lhs.name < rhs.name }
-        if starsLeft == starsRight { return lhs.name < rhs.name }
+        if starsLeft == starsRight { return lhs.name > rhs.name }
         return starsLeft < starsRight
     }
 }
