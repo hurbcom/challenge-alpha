@@ -8,13 +8,19 @@
 
 import UIKit
 
+/// Responsible to provide data to the experiences Collection View
 class ExperiencesDataSource: NSObject {
+    
+    // MARK: - Properties
     var experiences: [Experience]
     
+    // MARK: - Methods
     init(experiences: [Experience]) {
         self.experiences = experiences
     }
 }
+
+    // MARK: - Extensions
 
 extension ExperiencesDataSource: UICollectionViewDataSource {
     
