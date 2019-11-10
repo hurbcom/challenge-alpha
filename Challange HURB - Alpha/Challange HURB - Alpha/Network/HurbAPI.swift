@@ -9,12 +9,12 @@
 import Foundation
 import Moya
 
+/// Responsible to prepare the query to API
 enum HurbAPI {
     case search(query: String, page: Int)
 }
 
 extension HurbAPI: TargetType {
-    
     
     var headers: [String : String]? {
         return ["Content-type": "application/json"]
