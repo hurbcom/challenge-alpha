@@ -8,8 +8,14 @@
 
 import Foundation
 
+/// The interface of the of the API`s  response
 struct APIResponse: Codable {
+    
+    // MARK: - Properties
+    
     var results: [Experience]
+    
+    // MARK: - Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case results
