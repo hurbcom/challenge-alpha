@@ -10,7 +10,9 @@ import Foundation
 
 /// Class resposible to treat the data received from the API
 class DataManager {
- 
+    
+    // MARK: - Properties
+    
     fileprivate var networkAdapter = NetworkAdapter()
     
     var experiences: [Experience] = []
@@ -25,16 +27,20 @@ class DataManager {
     
     var coordinatorComunicationDelegate: CoordinatorComunicationDelegate?
     
+    // MARK: - Initializer
+    
     init() {
        getExperiences()
     }
     
+    // MARK: - Methods
+    
+    /// Makes the request to API and "saves" the information in the experiences array
     private func getExperiences() {
         self.networkAdapter.getAPIRespose { (result) in
             switch result {
             case .success(let apiResponse):
                 self.experiences = apiResponse.results
-                dump(apiResponse.results)
                 self.coordinatorComunicationDelegate?.coordinator?.instantiateView(for: .feedPrepared)
             case .failure(let error):
                 debugPrint("Error in the API query: \(error)")
