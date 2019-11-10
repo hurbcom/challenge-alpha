@@ -9,6 +9,7 @@ target 'Challange HURB - Alpha' do
   pod 'Moya', '~> 13.0'
   pod 'Kingfisher', '~> 5.0'
   pod 'SnapKit', '~> 5.0.0'
+  pod "UPCarouselFlowLayout"
 
   target 'Challange HURB - AlphaTests' do
     inherit! :search_paths

@@ -10,11 +10,13 @@ PODS:
     - Result (~> 4.1)
   - Result (4.1.0)
   - SnapKit (5.0.1)
+  - UPCarouselFlowLayout (1.1.2)
 
 DEPENDENCIES:
   - Kingfisher (~> 5.0)
   - Moya (~> 13.0)
   - SnapKit (~> 5.0.0)
+  - UPCarouselFlowLayout
 
 SPEC REPOS:
   trunk:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - Moya
     - Result
     - SnapKit
+    - UPCarouselFlowLayout
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
 
-PODFILE CHECKSUM: 5dec8025e50c96258dd0313414b07af55796456f
+PODFILE CHECKSUM: a6e1cae831307b503888b354d988706835f75896
 
 COCOAPODS: 1.8.4

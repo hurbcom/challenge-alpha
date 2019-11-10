@@ -21,7 +21,6 @@ class DataManagerTests: XCTestCase {
     func testExample() {
         let hotels = dataManager?.hotels ?? []
         for i in 0 ..< hotels.count-1 {
-            print(hotels[i].stars)
             if hotels[i].stars! < hotels[i+1].stars! {
                 assert(false)
             }
