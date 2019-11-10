@@ -10,12 +10,15 @@ import Foundation
 
 /// Represents the main data of the Experience adress
 struct Address: Codable {
+    
+    // MARK: - Properties
     var zipcode: String?
     var street: String?
     var city: String
     var state: String
     var country: String
     
+    // MARK: - Coding Keys
     enum CodingKeys: String, CodingKey {
         case zipcode
         case street
