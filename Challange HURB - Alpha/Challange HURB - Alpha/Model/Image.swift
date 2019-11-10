@@ -8,9 +8,14 @@
 
 import Foundation
 
+/// Represents the experiences images
 struct Image: Codable {
+    // MARK: - Properties
+    
     var url: URL
     var description: String?
+    
+    // MARK: - Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case url
