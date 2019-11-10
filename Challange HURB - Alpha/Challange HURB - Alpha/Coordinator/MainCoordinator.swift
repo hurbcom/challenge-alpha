@@ -10,11 +10,14 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     
+    // MARK: - Properties
+    
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     var presentedViewController: UIViewController?
-    
     var dataManager = DataManager()
+    
+    // MARK: - Initializers
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -22,6 +25,9 @@ class MainCoordinator: Coordinator {
         self.dataManager.coordinatorComunicationDelegate = self
     }
     
+    // MARK: - Methods
+    
+    /// Responsible to instantiate the application`s initial view
     func start() {
         let startViewController = try! InitialViewController.initializeFromStoryboard()
         startViewController.coordinator = self
@@ -29,6 +35,7 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(startViewController, animated: false)
     }
     
+     /// Responsible to handle the change of the app state
     func instantiateView(for state: AppState) {
         switch state {
         case .loading:
@@ -39,7 +46,8 @@ class MainCoordinator: Coordinator {
             self.instatiateFeed()
         }
     }
-        
+    
+    /// Creates an popUpAlert informing that an error ocurred
     private func popUpAlert() {
         let alert = UIAlertController(title: "Erro de Conexão",
                                       message: "Não foi possível carregar as ofertas. Tente novemente mais tarde",
@@ -51,6 +59,7 @@ class MainCoordinator: Coordinator {
         presentedViewController.present(alert,animated: true)
     }
     
+    /// Instatiate FeedViewController
     private func instatiateFeed() {
         let feedViewController = try! FeedViewController.initializeFromStoryboard()
         feedViewController.coordinator = self
@@ -61,6 +70,8 @@ class MainCoordinator: Coordinator {
     }
     
 }
+
+    // MARK: - Extensions
 
 extension MainCoordinator: CoordinatorComunicationDelegate {
     var coordinator: MainCoordinator? {
