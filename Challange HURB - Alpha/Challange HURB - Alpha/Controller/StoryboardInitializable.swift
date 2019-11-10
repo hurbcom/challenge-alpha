@@ -8,19 +8,47 @@
 
 import UIKit
 
-protocol StoryboardInitializable {
-    static func instantiate() -> Self
+/// A type that can be initialized from a Storyboard
+protocol StoryboardInitializable where Self: UIViewController {
+    
+    /// A type representing errors thrown during an initialization from a Storyboard
+    associatedtype StoryboardInitializationError: Error
+    
+    /// The name of the Storyboard file
+    static var storyboardName: String { get }
+    
+    /// The ViewController indentifier in the Storyboard file
+    static var storyboardID: String { get }
+    
+    /**
+     Initializes a Storyboard named `storyboardName` and returns it's initial
+     View Controller
+     */
+    static func initializeFromStoryboard() throws -> Self
+    
 }
 
 extension StoryboardInitializable where Self: UIViewController {
-    static func instantiate() -> Self {
-        let fullName = NSStringFromClass(self)
+    
+    typealias StoryboardInitializationError = StoryboardError
+    
+    static func initializeFromStoryboard() throws -> Self {
         
-        let className = fullName.components(separatedBy: ".")[1]
-
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
-        // instantiate a view controller with that identifier, and force cast as the type that was requested
-        return storyboard.instantiateViewController(withIdentifier: className) as! Self
+        // Get the bundle for self
+        let bundle = Bundle(for: self)
+        // Check if the storyboard exists
+        // Use extension "storyboardc" to check for the compiled version of a storyboard
+        guard let _ = bundle.path(forResource: storyboardName, ofType: "storyboardc") else {
+            throw StoryboardInitializationError.noFile(fileName: storyboardName)
+        }
+        
+        let storyboard = UIStoryboard(name: storyboardName, bundle: bundle)
+        let viewController = storyboard.instantiateViewController(identifier: storyboardID)
+        
+        guard let vc = viewController as? Self else {
+            throw StoryboardInitializationError.badConfiguration(className: String(describing: Self.self))
+        }
+        
+        return vc
     }
 }
