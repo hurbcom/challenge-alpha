@@ -10,8 +10,10 @@ import UIKit
 import SnapKit
 import UPCarouselFlowLayout
 
+/// Resposible to show the collectionView of experiences
 class FeedTableViewCell: UITableViewCell {
-
+    
+    // MARK: - Properties
     var currentDataSource: ExperiencesDataSource? {
         didSet {
             self.hotelsCollectionView.dataSource = currentDataSource
@@ -34,6 +36,7 @@ class FeedTableViewCell: UITableViewCell {
         return view
     }()
     
+    // MARK: - Methods
     func setupUI() {
         self.contentView.addSubview(hotelsCollectionView)
         self.hotelsCollectionView.collectionViewLayout.invalidateLayout()
@@ -50,12 +53,18 @@ class FeedTableViewCell: UITableViewCell {
     }
 }
 
-extension FeedTableViewCell: UICollectionViewDelegateFlowLayout {
+// MARK: - Extensions
+extension FeedTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.contentView.bounds.size.width,
                       height: self.contentView.bounds.size.height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ExperienceCollectionViewCell else {
+            return
+        }
+    }
     
 }
