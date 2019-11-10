@@ -8,25 +8,9 @@
 
 import Moya
 
+/// Struct responsible to make the request to the API
 struct NetworkAdapter {
     private let provider = MoyaProvider<HurbAPI>()
-    
-//    func getAPIRespose(completion: @escaping (APIResponse?, Error?) -> Void) {
-//        provider.request(.search(query: "buzios", page: 1)) { result in
-//            switch result {
-//            case .failure(let error):
-//                completion(nil, error)
-//            case .success(let value):
-//                let decoder = JSONDecoder()
-//                do {
-//                    let apiResponse = try decoder.decode(APIResponse.self, from: value.data)
-//                    completion(apiResponse, nil)
-//                } catch let error {
-//                    completion(nil, error)
-//                }
-//            }
-//        }
-//    }
     
     func getAPIRespose(completion: @escaping (Result<APIResponse, Error>) -> Void) {
         provider.request(.search(query: "buzios", page: 1)) { result in
