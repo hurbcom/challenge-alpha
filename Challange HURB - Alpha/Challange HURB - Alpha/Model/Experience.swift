@@ -13,7 +13,7 @@ struct Experience: Codable {
     // MARK: - General attributes
     var id: String
     var name: String
-    var adress: Adress?
+    var address: Address
     var smallDescription: String
     var completeDescription: String?
     var url: URL
@@ -32,7 +32,7 @@ struct Experience: Codable {
     enum CodingKeys: String, CodingKey {
         case id = "sku"
         case name
-        case adress
+        case address
         case smallDescription
         case completeDescription = "description"
         case url

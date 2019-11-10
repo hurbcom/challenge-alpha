@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents the main data of the Experience adress
-struct Adress: Codable {
+struct Address: Codable {
     var zipcode: String?
     var street: String?
     var city: String
