@@ -9,7 +9,7 @@
 import UIKit
 
 class FeedViewController: UIViewController, StoryboardInitializable {
-    
+    // MARK: - Properties
     static var storyboardName: String = "FeedScreen"
     
     static var storyboardID: String = "FeedViewController"
@@ -40,12 +40,15 @@ class FeedViewController: UIViewController, StoryboardInitializable {
         return view
     }()
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         feedTableView.delegate = self
         self.view.addSubview(feedTableView)
         setUpConstraints()
     }
+    
+    // MARK: - Methods
     
     func setUpConstraints() {
         feedTableView.snp.makeConstraints { (make) in
@@ -58,6 +61,7 @@ class FeedViewController: UIViewController, StoryboardInitializable {
 
 }
 
+// MARK: - Extensions
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "FeedHeader") as? FeedHeader else {
