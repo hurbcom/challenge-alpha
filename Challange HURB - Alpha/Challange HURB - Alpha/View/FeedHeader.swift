@@ -9,8 +9,10 @@
 import UIKit
 import SnapKit
 
+/// HeaderView that indicates the type of the section data 
 class FeedHeader: UITableViewHeaderFooterView {
     
+    // MARK: - Properties
     var starsNumberLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 28.0, weight: .semibold)
@@ -18,6 +20,7 @@ class FeedHeader: UITableViewHeaderFooterView {
         return label
     }()
     
+    // MARK: - Initializers
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(starsNumberLabel)
@@ -29,6 +32,7 @@ class FeedHeader: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Methods
     func setUpConstraints() {
         starsNumberLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
