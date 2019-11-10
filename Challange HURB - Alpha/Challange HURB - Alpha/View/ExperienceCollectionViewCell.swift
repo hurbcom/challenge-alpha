@@ -10,7 +10,10 @@ import UIKit
 import Kingfisher
 import SnapKit
 
+/// Cell that presents the experiece data
 class ExperienceCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Properties
     var experience: Experience? {
         didSet {
             guard let experience = self.experience else { return }//fatalError("experienceCollectionViewCell - No experience was set")}
@@ -74,6 +77,8 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    // MARK: - Methods
+    
     func setUpUI() {
         self.contentView.addSubview(cardView)
         self.contentView.addSubview(experiencePicture)
@@ -117,6 +122,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Cell lifecycle
     override func prepareForReuse() {
         super.prepareForReuse()
         experience = nil

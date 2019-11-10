@@ -157,6 +157,7 @@
 		F8C217872372619200BAA261 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				F8EC798D237464B40055A59C /* CoordinatorComunicationDelegate.swift */,
 				F8C21788237262CC00BAA261 /* MainCoordinator.swift */,
 				F8C2178A237263C600BAA261 /* Coordinator.swift */,
 			);
@@ -203,7 +204,6 @@
 				F8FAFE3A236498DC0020073B /* View */,
 				F8FAFE3B236498EB0020073B /* Controller */,
 				F8FAFE38236498BA0020073B /* Network */,
-				F8EC798D237464B40055A59C /* CoordinatorComunicationDelegate.swift */,
 				F8FAFE0823647A060020073B /* AppDelegate.swift */,
 				F8FAFE0E23647A060020073B /* Main.storyboard */,
 				F8FAFE1323647A080020073B /* LaunchScreen.storyboard */,
