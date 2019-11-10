@@ -9,8 +9,9 @@
 import UIKit
 import SnapKit
 
+/// View presented while the request is made to the API
 class InitialViewController: UIViewController, StoryboardInitializable {
-    
+    // MARK: - Properties
     static var storyboardName: String = "Main"
     
     static var storyboardID: String = "InitialViewController"
@@ -24,6 +25,7 @@ class InitialViewController: UIViewController, StoryboardInitializable {
         return view
     }()
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
@@ -33,6 +35,7 @@ class InitialViewController: UIViewController, StoryboardInitializable {
         super.viewDidAppear(animated)
     }
     
+    // MARK: - Methods
     func setupSubviews() {
         self.view.addSubview(backgroundImage)
         setupConstraints()
