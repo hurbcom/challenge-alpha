@@ -10,18 +10,26 @@
 		3BE93FEB21DCA11B947BF25C /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8ED87C9FA52B4065B80015 /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework */; };
 		ECAFEE151FE2C6CE70ACDAE3 /* Pods_Challange_HURB___AlphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EC4FB5DB649A7EE878F97B /* Pods_Challange_HURB___AlphaTests.framework */; };
 		F86380F72367CF52002A69FB /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F62367CF52002A69FB /* Experience.swift */; };
-		F86380F92367D4BD002A69FB /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F82367D4BD002A69FB /* Adress.swift */; };
+		F86380F92367D4BD002A69FB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F82367D4BD002A69FB /* Address.swift */; };
 		F86380FB2367D62C002A69FB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380FA2367D62C002A69FB /* Image.swift */; };
 		F86380FD2367D729002A69FB /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380FC2367D729002A69FB /* Price.swift */; };
 		F86380FF2367DAB3002A69FB /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380FE2367DAB3002A69FB /* APIResponse.swift */; };
 		F8638104236873C6002A69FB /* HurbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8638103236873C6002A69FB /* HurbAPI.swift */; };
 		F86381062368894A002A69FB /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86381052368894A002A69FB /* NetworkAdapter.swift */; };
+		F88152862376F9AB00EF6019 /* FeedHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88152852376F9AB00EF6019 /* FeedHeader.swift */; };
+		F88152882376FE7C00EF6019 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88152872376FE7C00EF6019 /* FeedTableViewCell.swift */; };
+		F881528A237703BC00EF6019 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8815289237703BC00EF6019 /* FeedViewController.swift */; };
+		F881528C237711B800EF6019 /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881528B237711B800EF6019 /* FeedDataSource.swift */; };
+		F881528E2377925100EF6019 /* StoryboardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881528D2377925100EF6019 /* StoryboardError.swift */; };
+		F8815290237792BB00EF6019 /* FeedScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F881528F237792BB00EF6019 /* FeedScreen.storyboard */; };
 		F8C217802371E8EF00BAA261 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2177F2371E8EF00BAA261 /* DataManager.swift */; };
 		F8C21785237253F400BAA261 /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C21784237253F400BAA261 /* DataManagerTests.swift */; };
 		F8C21789237262CC00BAA261 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C21788237262CC00BAA261 /* MainCoordinator.swift */; };
 		F8C2178B237263C600BAA261 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2178A237263C600BAA261 /* Coordinator.swift */; };
 		F8C2178D237265B900BAA261 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */; };
 		F8EC798E237464B40055A59C /* CoordinatorComunicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC798D237464B40055A59C /* CoordinatorComunicationDelegate.swift */; };
+		F8EC79912374AEEF0055A59C /* HotelsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC79902374AEEF0055A59C /* HotelsDataSource.swift */; };
+		F8EC79932374B22A0055A59C /* HotelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC79922374B22A0055A59C /* HotelCollectionViewCell.swift */; };
 		F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0823647A060020073B /* AppDelegate.swift */; };
 		F8FAFE0D23647A060020073B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE0C23647A060020073B /* InitialViewController.swift */; };
 		F8FAFE1023647A060020073B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE0E23647A060020073B /* Main.storyboard */; };
@@ -60,18 +68,26 @@
 		B59E435EFE389E1D10CBAE54 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9C8410E1FF319FE7BA579B5 /* Pods-Challange HURB - AlphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - AlphaTests.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F86380F62367CF52002A69FB /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
-		F86380F82367D4BD002A69FB /* Adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
+		F86380F82367D4BD002A69FB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		F86380FA2367D62C002A69FB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F86380FC2367D729002A69FB /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		F86380FE2367DAB3002A69FB /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		F8638103236873C6002A69FB /* HurbAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAPI.swift; sourceTree = "<group>"; };
 		F86381052368894A002A69FB /* NetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
+		F88152852376F9AB00EF6019 /* FeedHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeader.swift; sourceTree = "<group>"; };
+		F88152872376FE7C00EF6019 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		F8815289237703BC00EF6019 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		F881528B237711B800EF6019 /* FeedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
+		F881528D2377925100EF6019 /* StoryboardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardError.swift; sourceTree = "<group>"; };
+		F881528F237792BB00EF6019 /* FeedScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedScreen.storyboard; sourceTree = "<group>"; };
 		F8C2177F2371E8EF00BAA261 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F8C21784237253F400BAA261 /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
 		F8C21788237262CC00BAA261 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F8C2178A237263C600BAA261 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		F8EC798D237464B40055A59C /* CoordinatorComunicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorComunicationDelegate.swift; sourceTree = "<group>"; };
+		F8EC79902374AEEF0055A59C /* HotelsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsDataSource.swift; sourceTree = "<group>"; };
+		F8EC79922374B22A0055A59C /* HotelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8FAFE0523647A060020073B /* Challange HURB - Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challange HURB - Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FAFE0823647A060020073B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8FAFE0C23647A060020073B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +163,15 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		F8EC798F2374AE7C0055A59C /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				F8EC79902374AEEF0055A59C /* HotelsDataSource.swift */,
+				F881528B237711B800EF6019 /* FeedDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
 		F8FAFDFC23647A060020073B = {
 			isa = PBXGroup;
 			children = (
@@ -172,17 +197,19 @@
 		F8FAFE0723647A060020073B /* Challange HURB - Alpha */ = {
 			isa = PBXGroup;
 			children = (
+				F8EC798F2374AE7C0055A59C /* DataSources */,
 				F8C217872372619200BAA261 /* Coordinator */,
 				F8FAFE39236498D10020073B /* Model */,
 				F8FAFE3A236498DC0020073B /* View */,
 				F8FAFE3B236498EB0020073B /* Controller */,
 				F8FAFE38236498BA0020073B /* Network */,
+				F8EC798D237464B40055A59C /* CoordinatorComunicationDelegate.swift */,
 				F8FAFE0823647A060020073B /* AppDelegate.swift */,
 				F8FAFE0E23647A060020073B /* Main.storyboard */,
 				F8FAFE1323647A080020073B /* LaunchScreen.storyboard */,
+				F881528F237792BB00EF6019 /* FeedScreen.storyboard */,
 				F8FAFE1123647A080020073B /* Assets.xcassets */,
 				F8FAFE1623647A080020073B /* Info.plist */,
-				F8EC798D237464B40055A59C /* CoordinatorComunicationDelegate.swift */,
 			);
 			path = "Challange HURB - Alpha";
 			sourceTree = "<group>";
@@ -222,7 +249,7 @@
 				F86380FE2367DAB3002A69FB /* APIResponse.swift */,
 				F86380F62367CF52002A69FB /* Experience.swift */,
 				F86380FA2367D62C002A69FB /* Image.swift */,
-				F86380F82367D4BD002A69FB /* Adress.swift */,
+				F86380F82367D4BD002A69FB /* Address.swift */,
 				F86380FC2367D729002A69FB /* Price.swift */,
 			);
 			path = Model;
@@ -231,6 +258,9 @@
 		F8FAFE3A236498DC0020073B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F8EC79922374B22A0055A59C /* HotelCollectionViewCell.swift */,
+				F88152852376F9AB00EF6019 /* FeedHeader.swift */,
+				F88152872376FE7C00EF6019 /* FeedTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,6 +270,8 @@
 			children = (
 				F8FAFE0C23647A060020073B /* InitialViewController.swift */,
 				F8C2178C237265B900BAA261 /* StoryboardInitializable.swift */,
+				F8815289237703BC00EF6019 /* FeedViewController.swift */,
+				F881528D2377925100EF6019 /* StoryboardError.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -354,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8815290237792BB00EF6019 /* FeedScreen.storyboard in Resources */,
 				F8FAFE1523647A080020073B /* LaunchScreen.storyboard in Resources */,
 				F8FAFE1223647A080020073B /* Assets.xcassets in Resources */,
 				F8FAFE1023647A060020073B /* Main.storyboard in Resources */,
@@ -503,14 +536,21 @@
 			files = (
 				F8EC798E237464B40055A59C /* CoordinatorComunicationDelegate.swift in Sources */,
 				F8C2178D237265B900BAA261 /* StoryboardInitializable.swift in Sources */,
+				F881528C237711B800EF6019 /* FeedDataSource.swift in Sources */,
 				F86380FB2367D62C002A69FB /* Image.swift in Sources */,
 				F8C21789237262CC00BAA261 /* MainCoordinator.swift in Sources */,
+				F881528A237703BC00EF6019 /* FeedViewController.swift in Sources */,
 				F8C2178B237263C600BAA261 /* Coordinator.swift in Sources */,
+				F881528E2377925100EF6019 /* StoryboardError.swift in Sources */,
+				F8EC79912374AEEF0055A59C /* HotelsDataSource.swift in Sources */,
+				F88152862376F9AB00EF6019 /* FeedHeader.swift in Sources */,
+				F88152882376FE7C00EF6019 /* FeedTableViewCell.swift in Sources */,
 				F8FAFE0D23647A060020073B /* InitialViewController.swift in Sources */,
 				F86380FF2367DAB3002A69FB /* APIResponse.swift in Sources */,
 				F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */,
-				F86380F92367D4BD002A69FB /* Adress.swift in Sources */,
+				F86380F92367D4BD002A69FB /* Address.swift in Sources */,
 				F86381062368894A002A69FB /* NetworkAdapter.swift in Sources */,
+				F8EC79932374B22A0055A59C /* HotelCollectionViewCell.swift in Sources */,
 				F86380FD2367D729002A69FB /* Price.swift in Sources */,
 				F8C217802371E8EF00BAA261 /* DataManager.swift in Sources */,
 				F86380F72367CF52002A69FB /* Experience.swift in Sources */,
