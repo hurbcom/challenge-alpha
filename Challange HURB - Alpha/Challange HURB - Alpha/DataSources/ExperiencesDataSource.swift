@@ -8,27 +8,26 @@
 
 import UIKit
 
-class HotelsDataSource: NSObject {
-    var hotels: [Experience]
+class ExperiencesDataSource: NSObject {
+    var experiences: [Experience]
     
-    init(hotels: [Experience]) {
-        self.hotels = hotels
+    init(experiences: [Experience]) {
+        self.experiences = experiences
     }
 }
 
-extension HotelsDataSource: UICollectionViewDataSource {
+extension ExperiencesDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        hotels.count
+        experiences.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hotelsCollectionViewCell", for: indexPath) as? HotelCollectionViewCell else {
-            debugPrint("Hotel Collection View Cell has no identifier")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "experiencesCollectionViewCell", for: indexPath) as? ExperienceCollectionViewCell else {
+            debugPrint("Experience Collection View Cell has no identifier")
             fatalError()
         }
-        print(hotels[indexPath.row].address)
-        cell.hotel = hotels[indexPath.row]
+        cell.experience = experiences[indexPath.row]
         cell.setUpUI()
         return cell
     }

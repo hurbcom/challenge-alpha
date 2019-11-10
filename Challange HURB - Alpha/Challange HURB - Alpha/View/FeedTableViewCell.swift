@@ -8,10 +8,11 @@
 
 import UIKit
 import SnapKit
+import UPCarouselFlowLayout
 
 class FeedTableViewCell: UITableViewCell {
 
-    var currentDataSource: HotelsDataSource? {
+    var currentDataSource: ExperiencesDataSource? {
         didSet {
             self.hotelsCollectionView.dataSource = currentDataSource
             self.hotelsCollectionView.delegate = self
@@ -20,18 +21,16 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     var hotelsCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = UPCarouselFlowLayout()
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width,
+                                 height: UIScreen.main.bounds.height/4)
         layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width,
-                                          height: UIScreen.main.bounds.height/4)
-        layout.minimumInteritemSpacing = 20
-        layout.minimumLineSpacing = 20
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = .clear
         view.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        view.register(HotelCollectionViewCell.self,
-                      forCellWithReuseIdentifier: "hotelsCollectionViewCell")
+        view.register(ExperienceCollectionViewCell.self,
+                      forCellWithReuseIdentifier: "experiencesCollectionViewCell")
         return view
     }()
     

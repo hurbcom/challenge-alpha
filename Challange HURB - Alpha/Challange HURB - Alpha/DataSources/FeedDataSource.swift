@@ -46,19 +46,18 @@ extension FeedDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedTableViewCell") as? FeedTableViewCell else {
+            fatalError("Feed table view cell could not be configured")
+        }
         if !packages.isEmpty && indexPath.section == 0 {
-            let cell = UITableViewCell()
-            return cell
+            cell.currentDataSource = ExperiencesDataSource(experiences: packages)
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedTableViewCell") as? FeedTableViewCell else {
-                fatalError("Feed table view cell could not be configured")
-            }
             let starIndex = packages.isEmpty ? indexPath.section : indexPath.section - 1
             let selectedStarHotels = hotels.filter({ ($0.stars) == hotelsStarsIndex[starIndex] })
-            cell.currentDataSource = HotelsDataSource(hotels: selectedStarHotels)
-            cell.setupUI()
-            return cell
+            cell.currentDataSource = ExperiencesDataSource(experiences: selectedStarHotels)
         }
+        cell.setupUI()
+        return cell
         
     }
     

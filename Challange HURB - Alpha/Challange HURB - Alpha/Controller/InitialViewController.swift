@@ -31,7 +31,6 @@ class InitialViewController: UIViewController, StoryboardInitializable {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("Apareceu")
     }
     
     func setupSubviews() {

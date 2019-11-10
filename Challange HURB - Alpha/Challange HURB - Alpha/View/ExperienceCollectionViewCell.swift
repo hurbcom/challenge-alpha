@@ -1,5 +1,5 @@
 //
-//  HotelCollectionViewCell.swift
+//  experienceCollectionViewCell.swift
 //  Challange HURB - Alpha
 //
 //  Created by Luiz Fernando Cunha Duarte on 07/11/19.
@@ -10,21 +10,21 @@ import UIKit
 import Kingfisher
 import SnapKit
 
-class HotelCollectionViewCell: UICollectionViewCell {
-    var hotel: Experience? {
+class ExperienceCollectionViewCell: UICollectionViewCell {
+    var experience: Experience? {
         didSet {
-            guard let hotel = self.hotel else { return }//fatalError("HotelCollectionViewCell - No hotel was set")}
-            hotelName.text = hotel.name
-            hotelAdress.text = "\(String(describing: hotel.address.city)) \(String(describing: hotel.address.state))"
-            hotelPrice.text = "\(hotel.price.getPriceSymbol()) \(hotel.price.amount)"
+            guard let experience = self.experience else { return }//fatalError("experienceCollectionViewCell - No experience was set")}
+            experienceName.text = experience.name
+            experienceAdress.text = "\(String(describing: experience.address.city)) \(String(describing: experience.address.state))"
+            experiencePrice.text = "\(experience.price.getPriceSymbol()) \(experience.price.amount)"
             
-            guard let imageURL = hotel.image else { return }
+            guard let imageURL = experience.image else { return }
             guard var urlComps = URLComponents(url: imageURL,resolvingAgainstBaseURL: false) else {
                 debugPrint("URLComponents could not transform URL")
                 return
             }
             urlComps.scheme = "https"
-            hotelPicture.kf.setImage(with: urlComps.url)
+            experiencePicture.kf.setImage(with: urlComps.url)
         }
     }
     
@@ -37,7 +37,7 @@ class HotelCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    let hotelPicture: UIImageView = {
+    let experiencePicture: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
@@ -47,7 +47,7 @@ class HotelCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    let hotelName: UILabel = {
+    let experienceName: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .black
@@ -56,7 +56,7 @@ class HotelCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let hotelAdress: UILabel = {
+    let experienceAdress: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 15, weight: .regular)
         label.textColor = .black
@@ -65,7 +65,7 @@ class HotelCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let hotelPrice: UILabel = {
+    let experiencePrice: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 20 , weight: .semibold)
         label.textColor = #colorLiteral(red: 0.9994023442, green: 0.4260467291, blue: 0.008425070904, alpha: 1)
@@ -76,10 +76,10 @@ class HotelCollectionViewCell: UICollectionViewCell {
     
     func setUpUI() {
         self.contentView.addSubview(cardView)
-        self.contentView.addSubview(hotelPicture)
-        self.contentView.addSubview(hotelName)
-        self.contentView.addSubview(hotelAdress)
-        self.contentView.addSubview(hotelPrice)
+        self.contentView.addSubview(experiencePicture)
+        self.contentView.addSubview(experienceName)
+        self.contentView.addSubview(experienceAdress)
+        self.contentView.addSubview(experiencePrice)
         setUpConstraits()
     }
     
@@ -91,39 +91,39 @@ class HotelCollectionViewCell: UICollectionViewCell {
             make.height.equalTo(0.9 * self.contentView.bounds.size.height)
         }
         
-        hotelPicture.snp.makeConstraints { (make) in
+        experiencePicture.snp.makeConstraints { (make) in
             make.top.equalTo(cardView.snp.top)
             make.centerX.equalToSuperview()
             make.width.equalTo(0.9 * self.contentView.bounds.size.width)
             make.height.equalTo(0.6 * self.contentView.bounds.size.height)
         }
         
-        hotelName.snp.makeConstraints { (make) in
-            make.top.equalTo(hotelPicture.snp.bottom).offset(10)
+        experienceName.snp.makeConstraints { (make) in
+            make.top.equalTo(experiencePicture.snp.bottom).offset(10)
             make.width.equalTo(0.8 * self.contentView.bounds.size.width)
-            make.left.equalTo(hotelPicture.snp.left).offset(10)
+            make.left.equalTo(experiencePicture.snp.left).offset(10)
         }
 
-        hotelAdress.snp.makeConstraints { (make) in
-            make.top.equalTo(hotelName.snp.bottom).offset(10)
+        experienceAdress.snp.makeConstraints { (make) in
+            make.top.equalTo(experienceName.snp.bottom).offset(10)
             make.width.equalTo(0.4 * self.contentView.bounds.size.width)
-            make.left.equalTo(hotelPicture.snp.left).offset(10)
+            make.left.equalTo(experiencePicture.snp.left).offset(10)
         }
 
-        hotelPrice.snp.makeConstraints { (make) in
-            make.top.equalTo(hotelName.snp.bottom).offset(10)
+        experiencePrice.snp.makeConstraints { (make) in
+            make.top.equalTo(experienceName.snp.bottom).offset(10)
             make.width.equalTo(0.8 * self.contentView.bounds.size.width)
-            make.right.equalTo(hotelPicture.snp.right).offset(-10)
+            make.right.equalTo(experiencePicture.snp.right).offset(-10)
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        hotel = nil
-        hotelName.text = nil
-        hotelPrice.text = nil
-        hotelAdress.text = nil
-        hotelPicture.image = nil
+        experience = nil
+        experienceName.text = nil
+        experiencePrice.text = nil
+        experienceAdress.text = nil
+        experiencePicture.image = nil
     }
     
 }
