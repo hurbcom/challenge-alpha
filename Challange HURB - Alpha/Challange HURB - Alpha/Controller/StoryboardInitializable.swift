@@ -11,6 +11,7 @@ import UIKit
 /// A type that can be initialized from a Storyboard
 protocol StoryboardInitializable where Self: UIViewController {
     
+    // MARK: - Properties
     /// A type representing errors thrown during an initialization from a Storyboard
     associatedtype StoryboardInitializationError: Error
     
@@ -20,6 +21,7 @@ protocol StoryboardInitializable where Self: UIViewController {
     /// The ViewController indentifier in the Storyboard file
     static var storyboardID: String { get }
     
+    // MARK: - Methods
     /**
      Initializes a Storyboard named `storyboardName` and returns it's initial
      View Controller
@@ -28,6 +30,7 @@ protocol StoryboardInitializable where Self: UIViewController {
     
 }
 
+// MARK: - Extension
 extension StoryboardInitializable where Self: UIViewController {
     
     typealias StoryboardInitializationError = StoryboardError
