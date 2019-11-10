@@ -10,10 +10,14 @@ import Foundation
 
 /// Represent the price of an Experience, storing its actual price, old price and currency
 struct Price: Codable {
+    // MARK: - Properties
+    
     var currency: String
     var oldPrice: Double?
     var price: Double?
     var amount: Double
+    
+    // MARK: - Methods
 
     /// Returns the price symbol according to the currency value
     func getPriceSymbol() -> String {
@@ -24,6 +28,8 @@ struct Price: Codable {
             return "$"
         }
     }
+    
+    // MARK: - Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case currency
