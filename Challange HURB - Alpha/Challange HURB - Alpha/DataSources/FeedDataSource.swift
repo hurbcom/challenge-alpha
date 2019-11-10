@@ -10,10 +10,12 @@ import UIKit
 
 class FeedDataSource: NSObject {
     
+    // MARK: - Properties
     private var hotels: [Experience]
     private var packages: [Experience]
     var hotelsStarsIndex: [Int] = []
     
+    // MARK: - Initializers
     init(hotels: [Experience], packages: [Experience]) {
         self.hotels = hotels
         self.packages = packages
@@ -21,6 +23,9 @@ class FeedDataSource: NSObject {
         getHotelsStarsIndex()
     }
     
+    // MARK: - Methods
+    
+    /// Gets the number and the type of the different hotels categories
     private func getHotelsStarsIndex() {
         for exp in hotels {
             guard let star = exp.stars else { continue }
@@ -35,6 +40,7 @@ class FeedDataSource: NSObject {
     }
 }
 
+// MARK: - Extensions
 extension FeedDataSource: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
