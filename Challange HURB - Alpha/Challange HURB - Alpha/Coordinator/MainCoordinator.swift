@@ -23,7 +23,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let startViewController = InitialViewController.instantiate()
+        let startViewController = try! InitialViewController.initializeFromStoryboard()
         startViewController.coordinator = self
         presentedViewController = startViewController
         navigationController.pushViewController(startViewController, animated: false)
@@ -36,7 +36,7 @@ class MainCoordinator: Coordinator {
         case .loadingError:
             self.popUpAlert()
         case .feedPrepared:
-            break
+            self.instatiateFeed()
         }
     }
         
@@ -49,6 +49,15 @@ class MainCoordinator: Coordinator {
                                       handler: nil))
         guard let presentedViewController = presentedViewController else { fatalError("Nenhuma view controller foi instaciada")}
         presentedViewController.present(alert,animated: true)
+    }
+    
+    private func instatiateFeed() {
+        let feedViewController = try! FeedViewController.initializeFromStoryboard()
+        feedViewController.coordinator = self
+        feedViewController.dataSource = FeedDataSource(hotels: dataManager.hotels,
+                                                       packages: dataManager.packages)
+        presentedViewController = feedViewController
+        navigationController.pushViewController(feedViewController, animated: true)
     }
     
 }

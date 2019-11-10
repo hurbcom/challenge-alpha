@@ -34,7 +34,8 @@ class DataManager {
             switch result {
             case .success(let apiResponse):
                 self.experiences = apiResponse.results
-                //coordinatorComunicationDelegate?.coordinator
+                dump(apiResponse.results)
+                self.coordinatorComunicationDelegate?.coordinator?.instantiateView(for: .feedPrepared)
             case .failure(let error):
                 debugPrint("Error in the API query: \(error)")
                 self.coordinatorComunicationDelegate?.coordinator?.instantiateView(for: .loadingError)

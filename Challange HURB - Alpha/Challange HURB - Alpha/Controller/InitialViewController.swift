@@ -10,7 +10,13 @@ import UIKit
 import SnapKit
 
 class InitialViewController: UIViewController, StoryboardInitializable {
+    
+    static var storyboardName: String = "Main"
+    
+    static var storyboardID: String = "InitialViewController"
+
     weak var coordinator: MainCoordinator?
+    
     private var backgroundImage: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.image = UIImage(named: "HurbLoadingScreen")
