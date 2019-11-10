@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Interface used to communication between controllers and the coordinator
 protocol CoordinatorComunicationDelegate: AnyObject {
+    // MARK: - Properties
     var coordinator: MainCoordinator? { get }
 }
