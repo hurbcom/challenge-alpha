@@ -11,14 +11,12 @@ import UIKit
 class MainCoordinator: Coordinator {
     
     // MARK: - Properties
-    
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     var presentedViewController: UIViewController?
     var dataManager = DataManager()
     
     // MARK: - Initializers
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.isNavigationBarHidden = true
@@ -26,9 +24,9 @@ class MainCoordinator: Coordinator {
     }
     
     // MARK: - Methods
-    
     /// Responsible to instantiate the application`s initial view
     func start() {
+        // swiftlint:disable:next force_try
         let startViewController = try! InitialViewController.initializeFromStoryboard()
         startViewController.coordinator = self
         presentedViewController = startViewController
@@ -55,12 +53,16 @@ class MainCoordinator: Coordinator {
         alert.addAction(UIAlertAction(title: "Ok",
                                       style: .default,
                                       handler: nil))
-        guard let presentedViewController = presentedViewController else { fatalError("Nenhuma view controller foi instaciada")}
-        presentedViewController.present(alert,animated: true)
+        guard let presentedViewController = presentedViewController else {
+            fatalError("Nenhuma view controller foi instaciada")
+            
+        }
+        presentedViewController.present(alert, animated: true)
     }
     
     /// Instatiate FeedViewController
     private func instatiateFeed() {
+        // swiftlint:disable:next force_try
         let feedViewController = try! FeedViewController.initializeFromStoryboard()
         feedViewController.coordinator = self
         feedViewController.dataSource = FeedDataSource(hotels: dataManager.hotels,
@@ -68,7 +70,6 @@ class MainCoordinator: Coordinator {
         presentedViewController = feedViewController
         navigationController.pushViewController(feedViewController, animated: true)
     }
-    
 }
 
     // MARK: - Extensions
@@ -79,6 +80,7 @@ extension MainCoordinator: CoordinatorComunicationDelegate {
     }
 }
 
+/// Represents the states of the app
 enum AppState {
-    case loading,loadingError,feedPrepared
+    case loading, loadingError, feedPrepared
 }

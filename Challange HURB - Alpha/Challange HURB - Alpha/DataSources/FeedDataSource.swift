@@ -64,7 +64,5 @@ extension FeedDataSource: UITableViewDataSource {
         }
         cell.setupUI()
         return cell
-        
     }
-    
 }

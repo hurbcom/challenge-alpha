@@ -288,6 +288,7 @@
 				F8FAFE0223647A060020073B /* Frameworks */,
 				F8FAFE0323647A060020073B /* Resources */,
 				5562B2213688282FB4907619 /* [CP] Embed Pods Frameworks */,
+				F88156CE2378F33200F5A7B4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -509,6 +510,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F88156CE2378F33200F5A7B4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
 		};
 		FE641C4220C10135CFA48C7F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

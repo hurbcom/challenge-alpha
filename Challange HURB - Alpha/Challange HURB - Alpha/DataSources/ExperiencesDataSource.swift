@@ -23,13 +23,13 @@ class ExperiencesDataSource: NSObject {
     // MARK: - Extensions
 
 extension ExperiencesDataSource: UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         experiences.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "experiencesCollectionViewCell", for: indexPath) as? ExperienceCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "experiencesCollectionViewCell",
+                                                            for: indexPath) as? ExperienceCollectionViewCell else {
             debugPrint("Experience Collection View Cell has no identifier")
             fatalError()
         }
@@ -37,6 +37,4 @@ extension ExperiencesDataSource: UICollectionViewDataSource {
         cell.setUpUI()
         return cell
     }
-    
-    
 }

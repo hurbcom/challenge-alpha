@@ -22,7 +22,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
             experiencePrice.text = "\(experience.price.getPriceSymbol()) \(experience.price.amount)"
             
             guard let imageURL = experience.image else { return }
-            guard var urlComps = URLComponents(url: imageURL,resolvingAgainstBaseURL: false) else {
+            guard var urlComps = URLComponents(url: imageURL, resolvingAgainstBaseURL: false) else {
                 debugPrint("URLComponents could not transform URL")
                 return
             }
@@ -131,5 +131,4 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         experienceAdress.text = nil
         experiencePicture.image = nil
     }
-    
 }

@@ -54,17 +54,10 @@ class FeedTableViewCell: UITableViewCell {
 }
 
 // MARK: - Extensions
-extension FeedTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension FeedTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.contentView.bounds.size.width,
                       height: self.contentView.bounds.size.height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? ExperienceCollectionViewCell else {
-            return
-        }
-    }
-    
 }

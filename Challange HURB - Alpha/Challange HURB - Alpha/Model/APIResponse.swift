@@ -12,7 +12,6 @@ import Foundation
 struct APIResponse: Codable {
     
     // MARK: - Properties
-    
     var results: [Experience]
     
     // MARK: - Coding Keys

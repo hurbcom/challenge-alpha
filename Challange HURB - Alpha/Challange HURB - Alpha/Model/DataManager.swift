@@ -25,10 +25,9 @@ class DataManager {
         experiences.lazy.filter({ ($0.isPackage ?? false) == true })
     }
     
-    var coordinatorComunicationDelegate: CoordinatorComunicationDelegate?
+    weak var coordinatorComunicationDelegate: CoordinatorComunicationDelegate?
     
     // MARK: - Initializer
-    
     init() {
        getExperiences()
     }
@@ -48,5 +47,4 @@ class DataManager {
             }
         }
     }
-    
 }

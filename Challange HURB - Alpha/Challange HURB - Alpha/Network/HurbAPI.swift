@@ -21,6 +21,7 @@ extension HurbAPI: TargetType {
     }
     
     var baseURL: URL {
+        // swiftlint:disable:next force_unwrapping
         return URL(string: "https://www.hurb.com")!
     }
     
@@ -65,5 +66,4 @@ extension HurbAPI: TargetType {
             return .requestPlain
         }
     }
-    
 }

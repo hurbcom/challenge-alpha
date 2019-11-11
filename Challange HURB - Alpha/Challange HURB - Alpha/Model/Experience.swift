@@ -25,7 +25,6 @@ struct Experience: Codable {
     var hasFreeCancellation: Bool?
     
     // MARK: - Specific attributes
-    
     var isPackage: Bool?
     var isHotel: Bool?
     

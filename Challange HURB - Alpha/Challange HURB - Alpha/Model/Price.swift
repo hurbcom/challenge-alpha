@@ -30,7 +30,6 @@ struct Price: Codable {
     }
     
     // MARK: - Coding Keys
-    
     enum CodingKeys: String, CodingKey {
         case currency
         case oldPrice

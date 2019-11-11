@@ -51,7 +51,6 @@ extension StoryboardInitializable where Self: UIViewController {
         guard let vc = viewController as? Self else {
             throw StoryboardInitializationError.badConfiguration(className: String(describing: Self.self))
         }
-        
         return vc
     }
 }

@@ -68,13 +68,15 @@ extension FeedViewController: UITableViewDelegate {
             fatalError("Feed View Controller: could not use header view")
         }
         guard dataSource != nil else { return header }
+        // swiftlint:disable:next force_unwrapping
         if dataSource!.hasPackages() && section == 0 {
             header.starsNumberLabel.text = String(describing: "Pacotes")
         } else {
+            // swiftlint:disable:next force_unwrapping
             let starsNumber = dataSource!.hasPackages() ? dataSource?.hotelsStarsIndex[(section - 1)] : dataSource?.hotelsStarsIndex[(section)]
+            // swiftlint:disable:next force_unwrapping
             header.starsNumberLabel.text = "\(starsNumber!) estrelas"
         }
         return header
     }
-    
 }
