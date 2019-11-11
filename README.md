@@ -29,9 +29,9 @@ Por questões de escopo decidi usar a arquitetura **MVC**, a qual tenho já bast
 A aplicação possui uma tela de carregamento para os dados obtidos da API, uma TableView customizada com as ofertas oferecidas pelo Hurb e uma tela de falha caso a aplicação não consiga obter os dados. 
 
 
-## 3. O Desing
+## 3. O Design
 
-Para o desing do aplicativo decidi utilizar padrões  próximos dos já encontradas nas demais aplicações do Hurb. 
+Para o design do aplicativo decidi utilizar padrões  próximos dos já encontradas nas demais aplicações do Hurb. 
 Por esse motivo o aplicativo se mantem fiel a palheta de cores usual do Hurb, e a organização das celulas também se da dessa forma, sempre valorizando o preço e o nome do Hotel ou Pacote da oferta. 
 
 ### 3.1. Feed
