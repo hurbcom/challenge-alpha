@@ -9,20 +9,28 @@ class DataManagerTests: XCTestCase {
     var dataManager: DataManager?
     
     override func setUp() {
-        self.dataManager = DataManager()
+        self.dataManager = DataManager(state: .test)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
+    override func tearDown() { }
+    
+    /// Checks if the DataManager receives the hotels and returns then in order
+    func testCheckHotelsOrder() {
         let hotels = dataManager?.hotels ?? []
-        
+        if hotels.isEmpty {
+            assertionFailure()
+        }
         for index in 0 ..< hotels.count-1 {
             if hotels[index].stars! < hotels[index+1].stars! {
-                assert(false)
+                assertionFailure()
             }
+        }
+    }
+    
+    /// Checks if the DataManager receives the Package existent in the HurbSample
+    func testPackages() {
+        if dataManager?.packages.count != 1 {
+            assertionFailure()
         }
     }
 
