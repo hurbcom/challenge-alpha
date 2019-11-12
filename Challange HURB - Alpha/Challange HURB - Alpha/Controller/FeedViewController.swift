@@ -21,7 +21,7 @@ class FeedViewController: UIViewController, StoryboardInitializable {
         }
     }
     
-    var coordinator: MainCoordinator?
+    weak var coordinator: MainCoordinator?
     
     var feedTableView: UITableView = {
         let view = UITableView()
