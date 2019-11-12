@@ -44,7 +44,7 @@ class FeedDataSource: NSObject {
 extension FeedDataSource: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        packages.isEmpty ? hotelsStarsIndex.count : hotelsStarsIndex.count
+        packages.isEmpty ? hotelsStarsIndex.count : hotelsStarsIndex.count + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
