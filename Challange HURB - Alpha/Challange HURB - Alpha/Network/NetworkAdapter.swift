@@ -12,8 +12,8 @@ import Moya
 struct NetworkAdapter {
     private let provider = MoyaProvider<HurbAPI>()
     
-    func getAPIRespose(completion: @escaping (Result<APIResponse, Error>) -> Void) {
-        provider.request(.search(query: "buzios", page: 1)) { result in
+    func getAPIRespose(query: String, page: Int, completion: @escaping (Result<APIResponse, Error>) -> Void) {
+        provider.request(.search(query: query, page: page)) { result in
             switch result {
             case .failure(let error):
                 completion(.failure(error))

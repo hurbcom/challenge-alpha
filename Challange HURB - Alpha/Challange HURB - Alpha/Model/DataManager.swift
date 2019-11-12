@@ -36,7 +36,7 @@ class DataManager {
     
     /// Makes the request to API and "saves" the information in the experiences array
     private func getExperiences() {
-        self.networkAdapter.getAPIRespose { (result) in
+        self.networkAdapter.getAPIRespose(query: "buzios", page: 2) { (result) in
             switch result {
             case .success(let apiResponse):
                 self.experiences = apiResponse.results
