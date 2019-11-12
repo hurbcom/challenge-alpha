@@ -11,10 +11,8 @@ import Foundation
 /// Represent the price of an Experience, storing its actual price, old price and currency
 struct Price: Codable {
     // MARK: - Properties
-    
-    var currency: String
+    var currency: String?
     var oldPrice: Double?
-    var price: Double?
     var amount: Double
     
     // MARK: - Methods
@@ -24,16 +22,17 @@ struct Price: Codable {
         switch self.currency {
         case "BRL":
             return "R$"
-        default:
+        case "USD":
             return "$"
+        default:
+            return "R$"
         }
     }
     
     // MARK: - Coding Keys
     enum CodingKeys: String, CodingKey {
         case currency
-        case oldPrice
-        case price
+        case oldPrice = "old_price"
         case amount
     }
 }
