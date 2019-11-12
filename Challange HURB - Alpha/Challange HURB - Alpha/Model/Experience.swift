@@ -11,9 +11,10 @@ import Foundation
 struct Experience: Codable {
     
     // MARK: - General attributes
-    var id: String
+    var sku: String
     var name: String
     var address: Address
+    var amenities: [Amenity]
     var smallDescription: String
     var completeDescription: String?
     var url: URL
@@ -30,9 +31,10 @@ struct Experience: Codable {
     
     // MARK: - Coding Keys
     enum CodingKeys: String, CodingKey {
-        case id = "sku"
+        case sku
         case name
         case address
+        case amenities
         case smallDescription
         case completeDescription = "description"
         case url
@@ -51,7 +53,7 @@ struct Experience: Codable {
 
 extension Experience: Equatable {
     static func == (lhs: Experience, rhs: Experience) -> Bool {
-        lhs.id == rhs.id
+        lhs.sku == rhs.sku
     }
 }
 
