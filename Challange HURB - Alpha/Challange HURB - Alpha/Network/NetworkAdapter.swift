@@ -11,10 +11,19 @@ import Moya
 /// Struct responsible to make the request to the API
 struct NetworkAdapter {
     // MARK: - Properties
-    private let provider = MoyaProvider<HurbAPI>()
+    private let provider: MoyaProvider<HurbAPI>
+    
+    // MARK: - Initializers
+    init(state: NetworkAdapterState) {
+        switch state {
+        case .test:
+            provider = MoyaProvider<HurbAPI>(stubClosure: MoyaProvider.immediatelyStub)
+        case .production:
+            provider = MoyaProvider<HurbAPI>(plugins: [NetworkLoggerPlugin()])
+        }
+    }
     
     // MARK: - Methods
-    
     
     /// Function responsible to make the query to the HurbAPI and handle the data received
     /// - Parameter query: Name of the place to be searched
@@ -36,5 +45,9 @@ struct NetworkAdapter {
             }
         }
     }
-    
+}
+
+/// The state of the networkAdapter
+enum NetworkAdapterState {
+    case test, production
 }
