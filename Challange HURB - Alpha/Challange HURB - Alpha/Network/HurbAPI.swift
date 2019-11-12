@@ -28,7 +28,7 @@ extension HurbAPI: TargetType {
     var path: String {
         switch self {
         case .search:
-            return "/search/api?"
+            return "/search/api"
         }
     }
     
