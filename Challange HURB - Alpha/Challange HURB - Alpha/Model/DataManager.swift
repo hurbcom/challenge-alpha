@@ -14,7 +14,7 @@ class DataManager {
     
     // MARK: - Properties
     
-    fileprivate var networkAdapter = NetworkAdapter()
+    fileprivate var networkAdapter: NetworkAdapter?
     
     var experiences: [Experience] = []
     
@@ -29,15 +29,21 @@ class DataManager {
     weak var coordinatorComunicationDelegate: CoordinatorComunicationDelegate?
     
     // MARK: - Initializer
-    init() {
-       getExperiences()
+    init(state: DataManagerState) {
+        switch state {
+        case .test:
+            networkAdapter = NetworkAdapter(state: .test)
+        case .production:
+            networkAdapter = NetworkAdapter(state: .production)
+        }
+        getExperiences()
     }
     
     // MARK: - Methods
     
     /// Makes the request to API and "saves" the information in the experiences array
     private func getExperiences() {
-        self.networkAdapter.getAPIRespose(query: "buzios", page: 2) { (result) in
+        self.networkAdapter!.getAPIRespose(query: "buzios", page: 2) { (result) in
             switch result {
             case .success(let apiResponse):
                 os_log(.info, "Query made successfully")
@@ -51,4 +57,8 @@ class DataManager {
             }
         }
     }
+}
+
+enum DataManagerState {
+    case test, production
 }
