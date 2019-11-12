@@ -3,27 +3,27 @@
 import XCTest
 
 class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
-
+    
+    var app: XCUIApplication!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        app = XCUIApplication()
         app.launch()
+    }
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    override func tearDown() {}
+    
+    /// Tests the scroll in the feed and in feed cells
+    func feedFlowTest() {
+        let firstCell = app.tables["feedTableView"].cells["Experience[0, 0]"]
+        self.waitForElementToAppear(element: firstCell)
+        firstCell.swipeLeft()
+        firstCell.swipeUp()
+        app.tables["feedTableView"].cells["Experience[1, 0]"].swipeLeft()
+        app.tables["feedTableView"].cells["Experience[1, 0]"].swipeLeft()
+        app.tables["feedTableView"].cells["Experience[1, 0]"].swipeUp()
+        app.tables["feedTableView"].cells["Experience[2, 0]"].swipeLeft()
     }
 
     func testLaunchPerformance() {
@@ -31,6 +31,25 @@ class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
             // This measures how long it takes to launch your application.
             measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
                 XCUIApplication().launch()
+            }
+        }
+    }
+    
+    // Extracted from (https://stackoverflow.com/a/33855219/12138335)
+    func waitForElementToAppear(element: XCUIElement,
+                                timeout: TimeInterval = 10,
+                                file: String = #file,
+                                line: UInt = #line) {
+        
+        let existsPredicate = NSPredicate(format: "exists == true")
+
+        expectation(for: existsPredicate,
+                    evaluatedWith: element, handler: nil)
+
+        waitForExpectations(timeout: timeout) { (error) -> Void in
+            if (error != nil) {
+                let message = "Failed to find \(element) after \(timeout) seconds."
+                self.recordFailure(withDescription: message, inFile: file, atLine: Int(line), expected: true)
             }
         }
     }
