@@ -53,6 +53,14 @@ extension HurbAPI: TargetType {
     }
     
     var sampleData: Data {
+        var dataUrl: URL?
+        switch self {
+        case .search: dataUrl = Bundle.main.url(forResource: "HurbSample", withExtension: "json")
+        }
+        if let url = dataUrl, let data = try? Data(contentsOf: url) {
+            debugPrint(data)
+            return data
+        }
         return Data()
     }
     
