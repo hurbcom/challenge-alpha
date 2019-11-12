@@ -2,7 +2,7 @@
 
 import XCTest
 
-class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
+class FeedUITests: XCTestCase {
     
     var app: XCUIApplication!
     
@@ -15,7 +15,7 @@ class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
     override func tearDown() {}
     
     /// Tests the scroll in the feed and in feed cells
-    func feedFlowTest() {
+    func testfeedFlow() {
         let firstCell = app.tables["feedTableView"].cells["Experience[0, 0]"]
         self.waitForElementToAppear(element: firstCell)
         firstCell.swipeLeft()

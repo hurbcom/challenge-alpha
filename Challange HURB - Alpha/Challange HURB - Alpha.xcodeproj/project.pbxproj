@@ -39,7 +39,7 @@
 		F8FAFE1223647A080020073B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE1123647A080020073B /* Assets.xcassets */; };
 		F8FAFE1523647A080020073B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FAFE1323647A080020073B /* LaunchScreen.storyboard */; };
 		F8FAFE2023647A080020073B /* NetworkAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE1F23647A080020073B /* NetworkAdapterTests.swift */; };
-		F8FAFE2B23647A080020073B /* Challange_HURB___AlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */; };
+		F8FAFE2B23647A080020073B /* FeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFE2A23647A080020073B /* FeedUITests.swift */; };
 		F94B52DA84DAF32372A0EAF0 /* Pods_Challange_HURB___Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5141604FAD72D2DE88296F /* Pods_Challange_HURB___Alpha.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,7 +105,7 @@
 		F8FAFE1F23647A080020073B /* NetworkAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapterTests.swift; sourceTree = "<group>"; };
 		F8FAFE2123647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8FAFE2623647A080020073B /* Challange HURB - AlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challange HURB - AlphaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challange_HURB___AlphaUITests.swift"; sourceTree = "<group>"; };
+		F8FAFE2A23647A080020073B /* FeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUITests.swift; sourceTree = "<group>"; };
 		F8FAFE2C23647A080020073B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,7 +250,7 @@
 		F8FAFE2923647A080020073B /* Challange HURB - AlphaUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F8FAFE2A23647A080020073B /* Challange_HURB___AlphaUITests.swift */,
+				F8FAFE2A23647A080020073B /* FeedUITests.swift */,
 				F8FAFE2C23647A080020073B /* Info.plist */,
 			);
 			path = "Challange HURB - AlphaUITests";
@@ -601,7 +601,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8FAFE2B23647A080020073B /* Challange_HURB___AlphaUITests.swift in Sources */,
+				F8FAFE2B23647A080020073B /* FeedUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
