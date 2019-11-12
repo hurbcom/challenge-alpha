@@ -9,9 +9,7 @@ class DataManagerTests: XCTestCase {
     var dataManager: DataManager?
     
     override func setUp() {
-        let expectation = XCTestExpectation(description: "Get api response")
         self.dataManager = DataManager()
-        wait(for: [expectation], timeout: 10.0)
     }
 
     override func tearDown() {

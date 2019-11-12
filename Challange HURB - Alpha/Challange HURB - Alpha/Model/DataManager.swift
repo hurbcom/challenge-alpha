@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 /// Class resposible to treat the data received from the API
 class DataManager {
@@ -39,10 +40,13 @@ class DataManager {
         self.networkAdapter.getAPIRespose(query: "buzios", page: 2) { (result) in
             switch result {
             case .success(let apiResponse):
+                os_log(.info, "Query made successfully")
+                dump(apiResponse)
                 self.experiences = apiResponse.results
                 self.coordinatorComunicationDelegate?.coordinator?.instantiateView(for: .feedPrepared)
             case .failure(let error):
-                debugPrint("Error in the API query: \(error)")
+                os_log(.error, "Error in the API query:")
+                dump(error)
                 self.coordinatorComunicationDelegate?.coordinator?.instantiateView(for: .loadingError)
             }
         }

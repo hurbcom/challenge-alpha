@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 /// Responsible to provide data to the experiences Collection View
 class ExperiencesDataSource: NSObject {
@@ -30,7 +31,7 @@ extension ExperiencesDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "experiencesCollectionViewCell",
                                                             for: indexPath) as? ExperienceCollectionViewCell else {
-            debugPrint("Experience Collection View Cell has no identifier")
+            os_log(.error, "Experience Collection View Cell has no identifier")
             fatalError()
         }
         cell.experience = experiences[indexPath.row]
