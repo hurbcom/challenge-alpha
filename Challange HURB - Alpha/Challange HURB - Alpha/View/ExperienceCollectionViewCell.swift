@@ -21,13 +21,20 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
             experienceAdress.text = "\(String(describing: experience.address.city)) \(String(describing: experience.address.state))"
             experiencePrice.text = "\(experience.price.getPriceSymbol()) \(experience.price.amount)"
             
-            guard let imageURL = experience.image else { return }
+            let imageURL: URL
+            if experience.image != nil {
+                imageURL = experience.image!
+            } else {
+                imageURL = experience.gallery[0].url
+            }
+            
             guard var urlComps = URLComponents(url: imageURL, resolvingAgainstBaseURL: false) else {
                 debugPrint("URLComponents could not transform URL")
                 return
             }
             urlComps.scheme = "https"
             experiencePicture.kf.setImage(with: urlComps.url)
+            experienceAmenities.text = experience.amenities[0].name
         }
     }
     
@@ -44,9 +51,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         let view = UIImageView(frame: .zero)
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
-        view.layer.cornerRadius = 12
         view.backgroundColor = .gray
-        view.clipsToBounds = true
         return view
     }()
     
@@ -77,14 +82,41 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    let experienceAmenities: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = .systemFont(ofSize: 20 , weight: .bold)
+        label.textColor = #colorLiteral(red: 0.00358197093, green: 0.2135199308, blue: 0.4757859707, alpha: 1)
+        label.textAlignment = .left
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    let experieceAmenitiesBackground: UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .white
+        view.alpha = 0.8
+        return view
+    }()
+    
+    // MARK: - View Methods
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        experiencePicture.roundCorners(corners: [.topLeft, .topRight],
+                                       radius: 12)
+    }
+    
     // MARK: - Methods
     
     func setUpUI() {
+        super.layoutSubviews()
         self.contentView.addSubview(cardView)
         self.contentView.addSubview(experiencePicture)
         self.contentView.addSubview(experienceName)
         self.contentView.addSubview(experienceAdress)
         self.contentView.addSubview(experiencePrice)
+        self.contentView.addSubview(experieceAmenitiesBackground)
+        self.contentView.addSubview(experienceAmenities)
         setUpConstraits()
     }
     
@@ -101,6 +133,19 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
             make.centerX.equalToSuperview()
             make.width.equalTo(0.9 * self.contentView.bounds.size.width)
             make.height.equalTo(0.6 * self.contentView.bounds.size.height)
+        }
+        
+        experienceAmenities.snp.makeConstraints { (make) in
+            make.bottom.equalTo(experiencePicture.snp.bottom).offset(-10)
+            make.width.equalTo(0.8 * self.contentView.bounds.size.width)
+            make.left.equalTo(experiencePicture.snp.left).offset(10)
+        }
+        
+        experieceAmenitiesBackground.snp.makeConstraints { (make) in
+            make.bottom.equalTo(experiencePicture.snp.bottom)
+            make.top.equalTo(experienceAmenities.snp.top).offset(-10)
+            make.width.equalTo(experiencePicture.snp.width)
+            make.centerX.equalTo(experiencePicture.snp.centerX)
         }
         
         experienceName.snp.makeConstraints { (make) in
@@ -130,5 +175,6 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         experiencePrice.text = nil
         experienceAdress.text = nil
         experiencePicture.image = nil
+        experienceAmenities.text = nil
     }
 }
