@@ -10,8 +10,16 @@ import Moya
 
 /// Struct responsible to make the request to the API
 struct NetworkAdapter {
+    // MARK: - Properties
     private let provider = MoyaProvider<HurbAPI>()
     
+    // MARK: - Methods
+    
+    
+    /// Function responsible to make the query to the HurbAPI and handle the data received
+    /// - Parameter query: Name of the place to be searched
+    /// - Parameter page: Page from which the results will be returned
+    /// - Parameter completion: A Result type returned from the query which can or an APIReponse or an Error
     func getAPIRespose(query: String, page: Int, completion: @escaping (Result<APIResponse, Error>) -> Void) {
         provider.request(.search(query: query, page: page)) { result in
             switch result {
