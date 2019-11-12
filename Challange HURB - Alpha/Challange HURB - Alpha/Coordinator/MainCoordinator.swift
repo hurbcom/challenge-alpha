@@ -14,7 +14,7 @@ class MainCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     var presentedViewController: UIViewController?
-    var dataManager = DataManager()
+    var dataManager = DataManager(state: .production)
     
     // MARK: - Initializers
     init(navigationController: UINavigationController) {

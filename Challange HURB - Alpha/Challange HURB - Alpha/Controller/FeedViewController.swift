@@ -37,6 +37,7 @@ class FeedViewController: UIViewController, StoryboardInitializable {
         view.estimatedSectionHeaderHeight = UIScreen.main.bounds.height/10
         view.layoutMargins = .zero
         view.accessibilityIdentifier = "feedTableView"
+        view.isAccessibilityElement = true
         return view
     }()
     

@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import SnapKit
+import os.log
 
 /// Cell that presents the experiece data
 class ExperienceCollectionViewCell: UICollectionViewCell {
@@ -28,8 +29,13 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
                 imageURL = experience.gallery[0].url
             }
             
+            /*
+                This isn`t the best practice, but some urls that come from the api do not conform
+                with the HTTPS network protocol and to make apps safer Apple demands that all queries
+                made by apps in production use HTTPS protocol.
+            */
             guard var urlComps = URLComponents(url: imageURL, resolvingAgainstBaseURL: false) else {
-                debugPrint("URLComponents could not transform URL")
+                os_log(.fault, "URLComponents could not transform URL")
                 return
             }
             urlComps.scheme = "https"
@@ -38,7 +44,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    let cardView: UIView = {
+    private let cardView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .clear
         view.layer.borderColor = UIColor.black.cgColor
@@ -47,7 +53,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    let experiencePicture: UIImageView = {
+    private let experiencePicture: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
@@ -55,7 +61,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    let experienceName: UILabel = {
+    private let experienceName: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .black
@@ -64,7 +70,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let experienceAdress: UILabel = {
+    private let experienceAdress: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 15, weight: .regular)
         label.textColor = .black
@@ -73,7 +79,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let experiencePrice: UILabel = {
+    private let experiencePrice: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 20 , weight: .semibold)
         label.textColor = #colorLiteral(red: 0.9994023442, green: 0.4260467291, blue: 0.008425070904, alpha: 1)
@@ -82,7 +88,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let experienceAmenities: UILabel = {
+    private let experienceAmenities: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 20 , weight: .bold)
         label.textColor = #colorLiteral(red: 0.00358197093, green: 0.2135199308, blue: 0.4757859707, alpha: 1)
@@ -91,7 +97,7 @@ class ExperienceCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let experieceAmenitiesBackground: UIView = {
+    private let experieceAmenitiesBackground: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .white
         view.alpha = 0.8
