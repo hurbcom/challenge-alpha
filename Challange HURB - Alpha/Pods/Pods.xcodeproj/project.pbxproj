@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00F607629BEB6122B8E16F515D864901 /* Pods-Challange HURB - AlphaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD86B8F32FB87A4A2E67F2D2EF969B59 /* Pods-Challange HURB - AlphaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01C550A53C9E2047C83F8E85BBB558E6 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1CCF991F073C6EE47C045BD5F75676 /* ConstraintLayoutSupportDSL.swift */; };
 		0252FF16489DFF471BB6864A8A06E418 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E73B97D6CB1DCAB10B2A80BC947B50 /* Endpoint.swift */; };
 		039EAFE7935113805F3FC21BF1B7C9D5 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AD205774E5FA6325066D0F937F6D39 /* LayoutConstraint.swift */; };
@@ -16,14 +15,13 @@
 		09759A3CD181CC07D8E69462D2E9424C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC67432025676DE424F1F0C16E2CCAFC /* CFNetwork.framework */; };
 		0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575F9713CE0175CF2176688675321C2 /* ParameterEncoding.swift */; };
 		0EC51E75E5A2E84968EF87F9DAF677AD /* UPCarouselFlowLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9562E5020EAFC4298D9E5807DE1839C7 /* UPCarouselFlowLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F6D92A4EF7FAF0C65EA473F690C72AD /* Pods-Challange HURB - Alpha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87688AE10F8408324A98F771AADE15B0 /* Pods-Challange HURB - Alpha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F6D92A4EF7FAF0C65EA473F690C72AD /* Pods-Challange HURB - Alpha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F4DD4B15B1D7C5C9202A0B5EA102CF /* Pods-Challange HURB - Alpha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		128D1E56E7D0AE33889C27DE819EF206 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225AA686FA5F0D5E28E69E8AA0CA7996 /* NetworkLoggerPlugin.swift */; };
 		12CF358D9B6EB251C35889DF475B61B8 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEE0A84F1FB17FA72593C6B19EDA47 /* MultipartFormData.swift */; };
 		132E0F619E4338E5D1B27E4C72076B3F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917C95B4E8CE839F334DEA39D7C44592 /* Notifications.swift */; };
 		13A5B98D0668CF084BD5D7C84F1BA9CB /* Result-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3ACFF757117F94C32FB0AF4E9023CF0 /* Result-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13E2F768F1990279B8EF824B662EACDF /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399296DAB541F2888DDCC8A3AC4C472 /* AnyEncodable.swift */; };
 		14672662061590430AF4801C432020A6 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEDD34C04D872629CD5C5D41EC248F1 /* SessionDelegate.swift */; };
-		149D23905AFF3C34D715966E245E1861 /* Pods-Challange HURB - AlphaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A578498213AEA9B6B2948D16EB62B /* Pods-Challange HURB - AlphaTests-dummy.m */; };
 		171CFEBFD0A93CFF6DC40E85EBF3BF8A /* CacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42687F173AEBB6F3328EE436B7EBCA2 /* CacheSerializer.swift */; };
 		1945CD5D63A1C164AEAAA9A33E85571E /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E707F3FDCF1605D633E9593EC2A3644 /* Alamofire-dummy.m */; };
 		1956E392D500F3CD899D39A5F805736D /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CF6F2240D7FB912CD5D47A9CE0E8F9 /* Typealiases.swift */; };
@@ -46,7 +44,7 @@
 		3BFC243AB9BD579969F0D5756560BCAA /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2834206342D74E6E6F438AF90E22E84 /* Constraint.swift */; };
 		3C52CE0A60C1071B0A1586B57CC4E2FD /* KingfisherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBE6CFE9780E5A2150D6B814C1B082E /* KingfisherError.swift */; };
 		3E5285F4F36EAD77ECABBFB7F36BB1BB /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9CA391A612FBDCBD1F76251769FFA3 /* ConstraintView+Extensions.swift */; };
-		3ECC7531D247A98EF7D1173BC0036446 /* Pods-Challange HURB - Alpha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7574295BB35D1796196BFB35DDDAD0 /* Pods-Challange HURB - Alpha-dummy.m */; };
+		3ECC7531D247A98EF7D1173BC0036446 /* Pods-Challange HURB - Alpha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E6056538990017858658480640D57D /* Pods-Challange HURB - Alpha-dummy.m */; };
 		432848A52E6A7EC1F084299032907A29 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1D2E3E1A3EB321782EBAEC431FDB6 /* ImageTransition.swift */; };
 		447FCEA8BB2DFACD60B6B8ECECC027B9 /* CallbackQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03991CDE1604BCABD4E32B8DAB85C8 /* CallbackQueue.swift */; };
 		456986BE6E640307E83E2E3107E085DD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C300E10C32D0CAF1467283DB25778F5 /* Result.swift */; };
@@ -65,11 +63,13 @@
 		5AD5EE0D42721F7E45DAEB5D7D9FA3C4 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6363C10C847828E487F7008FCC9EF1B0 /* ExtensionHelpers.swift */; };
 		5CA745D6F24598B881ED85918BBE6697 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392506DB288FB92F1A0EF552DE206203 /* Indicator.swift */; };
 		5E5D3B0114F9E3B9A224CE0CFEF953B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC59536DE08F6605890B386E918F6A22 /* Foundation.framework */; };
+		5EAD6693A6064C7AB322AC12504E6A9B /* Pods-Challange HURB - AlphaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DBC039D308204BD2EFE4834184B8A /* Pods-Challange HURB - AlphaTests-dummy.m */; };
 		62AD7D42C96A04828EEA3CC151AA5E38 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBCC75406D6ED38DEE4A61B7C30B50 /* RedirectHandler.swift */; };
 		63C2BA763C69F183DDB32456D7201543 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54360A13CEE416B943326DA7F27EAC /* Filter.swift */; };
 		64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4B1B00433FE078987A543BAFF4C5DB /* Result.swift */; };
 		6804393EA55473086BC9AC4FE08F33F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC59536DE08F6605890B386E918F6A22 /* Foundation.framework */; };
 		686FF933FB5A33BA7A11CF986A916A06 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51ED658A6BEA3BA23DED03F77960CCF /* Placeholder.swift */; };
+		69968951F771CB17BEB639D71A76E999 /* Pods-Challange HURB - AlphaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6EDC73BAE9C2816CF5B795BB5C5D42A /* Pods-Challange HURB - AlphaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69CCBEEDFCA6D743D80026568D961919 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F550D4ED9C4CD63911DE14B0E3B52 /* ConstraintMakerExtendable.swift */; };
 		69E3A06BBDFDC7D06A9D4BDC4E895E73 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE673A857D364D921E79C642A5A995 /* ConstraintRelatableTarget.swift */; };
 		6E0EB9E7FAAEDBB7A73ECF3095F69C4A /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA95C78D07879A3D3A97E88B5323C2 /* UILayoutSupport+Extensions.swift */; };
@@ -113,12 +113,11 @@
 		AB8B45111A4E958CF8D633D8C6231689 /* ImageProgressive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE5256D8E18DB3A0A1B240F210A867 /* ImageProgressive.swift */; };
 		AC35C9341C4BB156BB26FDD237EE3721 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AE9C206D6076470269C910618DC32 /* ConstraintDirectionalInsets.swift */; };
 		AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF386D58B62F3F2D69B487099D78D1 /* TaskDelegate.swift */; };
-		B1C47DCF397AD5EA3F220B262D5D7C7B /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E63CF975EC42C6F0A96F4543A6199EC /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m */; };
+		B1C47DCF397AD5EA3F220B262D5D7C7B /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E71671874FDF2D7B266DAF8825697DB /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m */; };
 		B2D8F9D8B91DE8C26D5C2355F1FB941A /* KingfisherOptionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E85EBB800D8509CD8024DDD2516A28 /* KingfisherOptionsInfo.swift */; };
 		B599696DFEF6B2A5ECF528F4E5BB1846 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C18F587A8650EE84CB7B9886EDFCA7 /* ConstraintDescription.swift */; };
 		B780B272106411CBE258BB60FFC45410 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6FC78A4C1B4C5B6370753C929688C /* Debugging.swift */; };
 		BA57F907BCB58E9C84B4D57403799DBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC59536DE08F6605890B386E918F6A22 /* Foundation.framework */; };
-		BA875EC25D32E7E03F804552C479A9F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC59536DE08F6605890B386E918F6A22 /* Foundation.framework */; };
 		BE1E457D99F0F42F1E4AB22A369C066E /* UPCarouselFlowLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F48BF7716E0064ACAD0A849EBBE09F /* UPCarouselFlowLayout-dummy.m */; };
 		BECA67DFB5E0984DFAEFCB775C31972E /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0CDB2252F86A27D80140603F56557 /* ConstraintView.swift */; };
 		BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1868BDB5992BA1D4E48849194A3EA /* Alamofire.swift */; };
@@ -134,7 +133,7 @@
 		CB579AD7C5B14D4055AB3FB9609A7B36 /* MoyaProvider+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6FE572A81B2194A23CA8957F95106 /* MoyaProvider+Defaults.swift */; };
 		CD698D8D49A0DB3669D8D58B4571268E /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24679E3CCCD8867ADD8F0B56E67B5461 /* ImageProcessor.swift */; };
 		CDD42E25D201469CAFEA9E6181525FA8 /* RequestModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2538C55C5405765CE18D8181025D6456 /* RequestModifier.swift */; };
-		CDD59A2EF1F4723C26521DBE943D2D4F /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EB1C7B13F526A9FF5A87B742A7B4732 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDD59A2EF1F4723C26521DBE943D2D4F /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8E14CD7C74E8B58814E8EE0C49607C6 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE62FEABA57B2B53EABF8C7DCCC6B2C4 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0CAB904A21D14C32E087A7F806745C /* ConstraintRelation.swift */; };
 		D0508A5E7A4DF1129A99994EFC3AACEE /* SessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68FAEE6666FA20382E7204DF2459DC /* SessionDataTask.swift */; };
 		D1B4079BB427AA2EA1955C02EA34E7EC /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D33FB02C0AE6084572EE37A7DF0F91 /* ImageCache.swift */; };
@@ -153,6 +152,7 @@
 		E7D7D875688EDFBCB8F4C2C1F4F5B5E5 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9EC91C0F6F92BD237C91DFDD94E497 /* String+MD5.swift */; };
 		E8F2429683B3015CBD39CE883770BCA7 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3DD6440228CEC354153412D222426 /* ConstraintPriorityTarget.swift */; };
 		E9A970BC24EA15832F248EA020072746 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE02165A4B90834DE36367C4C94FD3 /* LayoutConstraintItem.swift */; };
+		E9B1FA8E074CA7F3310DCE04F1341738 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC59536DE08F6605890B386E918F6A22 /* Foundation.framework */; };
 		EB1726F5E0D0EEBA20E4528B1E37A8FA /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D4B7DD6B2BE10300D6D91EB38CA86 /* ConstraintViewDSL.swift */; };
 		EE1B0D5721427A3C61624E1EF975BCE2 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9A614F13413F7456BECC8BD996D71 /* Cancellable.swift */; };
 		EE3E1A291F930C1C8E9E60150ACAF01D /* ValidationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A022CF483DC4F57AFC1C55F7DE3B1 /* ValidationType.swift */; };
@@ -184,19 +184,19 @@
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
 		};
+		13625E1CEA859C37BF6735866A37945B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00371915C170F16A77FA09048AA16F0A;
+			remoteInfo = "Pods-Challange HURB - Alpha";
+		};
 		1C98D6507EBF399DBE3DD3854C56C4E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
-		};
-		289473E50D3D2D5526D274B2AFFBC575 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E163AC315AD24CFBD60C178D602BFC83;
-			remoteInfo = Result;
 		};
 		42834D63BA8B811D1F410C77089B2D97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -233,13 +233,6 @@
 			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
 			remoteInfo = SnapKit;
 		};
-		75426BF713A099CD07DCCCE1AF85A52D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 00371915C170F16A77FA09048AA16F0A;
-			remoteInfo = "Pods-Challange HURB - Alpha";
-		};
 		7B41C1163D71880D6A03D9AA34AEAA65 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -268,20 +261,6 @@
 			remoteGlobalIDString = E163AC315AD24CFBD60C178D602BFC83;
 			remoteInfo = Result;
 		};
-		A824E82D0B4161428E87433B0EBC9D89 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17F9141D333DA1A7BE5937F227221070;
-			remoteInfo = Moya;
-		};
-		D14F38583BA6783F984FF92BFF855ED8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
-		};
 		D6C24F269A6ECC1FC614DC3700379119 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -299,11 +278,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01F07E5004F8B2C2C29F933AA8A3E8A3 /* Pods-Challange HURB - Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - Alpha.debug.xcconfig"; sourceTree = "<group>"; };
+		001E8AFA65AF6278DE0A7A45C2D28210 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks.sh"; sourceTree = "<group>"; };
 		02523E70271F06338158522F047897C6 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		0306D66BA10364E78C45259B27A42E2A /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
 		03EAEBA26BC28D05FE00435570794260 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
-		043B4EA00F1C92399418317DB700124D /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		043C381A378862BF0D6C4E4D132E4067 /* MoyaProvider+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MoyaProvider+Internal.swift"; path = "Sources/Moya/MoyaProvider+Internal.swift"; sourceTree = "<group>"; };
 		0461B3F80FC05957690727254D64DB36 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Result.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B2408C1D1A2283970FCC8DED2BDEF5 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
@@ -312,18 +290,15 @@
 		09A3F44C528BB64BC4411715F0E1D399 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		0AAE02165A4B90834DE36367C4C94FD3 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		0BBE6CFE9780E5A2150D6B814C1B082E /* KingfisherError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherError.swift; path = Sources/General/KingfisherError.swift; sourceTree = "<group>"; };
-		0E79010BC47756E7D26F0CCADE5333E8 /* Pods-Challange HURB - AlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - AlphaTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F4B1B00433FE078987A543BAFF4C5DB /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		12D3DD6440228CEC354153412D222426 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		136A9CA392A912432CAB922F2E8580B1 /* MultiTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiTarget.swift; path = Sources/Moya/MultiTarget.swift; sourceTree = "<group>"; };
 		172BE0B7D8572C86EECEA5B604FA9136 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
-		17A9BF0F94FE1AE08C6CFA7E98F0F615 /* Pods-Challange HURB - Alpha-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - Alpha-acknowledgements.plist"; sourceTree = "<group>"; };
 		17F1868BDB5992BA1D4E48849194A3EA /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		1A5E5E5D799216F07850D2C4C1B84B77 /* Pods-Challange HURB - Alpha-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Challange HURB - Alpha-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1A639A172AC410E804DCC3A1FDB57129 /* URL+Moya.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+Moya.swift"; path = "Sources/Moya/URL+Moya.swift"; sourceTree = "<group>"; };
-		1ABE2967438A77BB6DCB0EC6EDAE3D38 /* Pods-Challange HURB - AlphaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - AlphaTests-Info.plist"; sourceTree = "<group>"; };
 		1BD732529BCDB8FF8B5E0E62AD28971B /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
 		1C300E10C32D0CAF1467283DB25778F5 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Result/Result.swift; sourceTree = "<group>"; };
-		1CADCF63EF7B68DEA10A8C74A369447A /* Pods-Challange HURB - AlphaTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Challange HURB - AlphaTests-frameworks.sh"; sourceTree = "<group>"; };
 		1CC9A614F13413F7456BECC8BD996D71 /* Cancellable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cancellable.swift; path = Sources/Moya/Cancellable.swift; sourceTree = "<group>"; };
 		1EA6FE572A81B2194A23CA8957F95106 /* MoyaProvider+Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MoyaProvider+Defaults.swift"; path = "Sources/Moya/MoyaProvider+Defaults.swift"; sourceTree = "<group>"; };
 		1FAB77B861B7FBEE273A6BECD22FF43A /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
@@ -331,19 +306,19 @@
 		20C4CBEB6F76294F47EC2893B9819EB2 /* ImageDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDataProvider.swift; path = Sources/General/ImageSource/ImageDataProvider.swift; sourceTree = "<group>"; };
 		225AA686FA5F0D5E28E69E8AA0CA7996 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkLoggerPlugin.swift; path = Sources/Moya/Plugins/NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		22C18F587A8650EE84CB7B9886EDFCA7 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
+		23473890276E392997108B439D989B1E /* Pods-Challange HURB - Alpha.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Challange HURB - Alpha.modulemap"; sourceTree = "<group>"; };
 		23A7F5AF10A18B0608A53007411C8471 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		24679E3CCCD8867ADD8F0B56E67B5461 /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/Image/ImageProcessor.swift; sourceTree = "<group>"; };
 		249B74EB2B55768E4AA7928E89298CFA /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		249D076FFABF8D0605DDF7ED283C6C47 /* WKInterfaceImage+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WKInterfaceImage+Kingfisher.swift"; path = "Sources/Extensions/WKInterfaceImage+Kingfisher.swift"; sourceTree = "<group>"; };
-		250289E0E78E6CA369796986501AC50A /* Pods-Challange HURB - AlphaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Challange HURB - AlphaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2538C55C5405765CE18D8181025D6456 /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/Networking/RequestModifier.swift; sourceTree = "<group>"; };
-		2698D164BEEF30543BF3BCB00EAC6D42 /* Pods-Challange HURB - AlphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - AlphaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		28170C33A8365BF3ECF2BF9AEB1D5F9B /* URLRequest+Encoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Encoding.swift"; path = "Sources/Moya/URLRequest+Encoding.swift"; sourceTree = "<group>"; };
 		2A864AEAED09D249A889E965F8940343 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
 		2C0016FE38DDE107B85539870C6CE38D /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		2C9CA391A612FBDCBD1F76251769FFA3 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
 		2D64D38A8CC693F7DA3E9B9ACD2FAE57 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		2D9AFE4F0945CFE102CAECE032CA5871 /* Result-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Result-Info.plist"; sourceTree = "<group>"; };
+		2E71671874FDF2D7B266DAF8825697DB /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m"; sourceTree = "<group>"; };
 		308819860F525BA160D8448B3968BC21 /* Task.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Task.swift; path = Sources/Moya/Task.swift; sourceTree = "<group>"; };
 		308ACAA7A3F9807D65DFBD326C152133 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EE2C8C53D73C468F2ADABE97773051 /* Moya+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Moya+Alamofire.swift"; path = "Sources/Moya/Moya+Alamofire.swift"; sourceTree = "<group>"; };
@@ -364,31 +339,33 @@
 		3FC3A54F3B2395122629C9C512529C80 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
 		40066D940DD4BC5BCF1CC1BF06D12232 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		4127F7626500443DDA76A95FB575A499 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
-		41B66F06148BDB8F5B2F38F2D1819FC8 /* Pods-Challange HURB - AlphaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Challange HURB - AlphaTests.modulemap"; sourceTree = "<group>"; };
 		42BA27228C4E038BF41AF4A19D991901 /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C1B566AAC5BFD84583F76FD54CFC12 /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/Networking/ImageDownloader.swift; sourceTree = "<group>"; };
+		43A0F86BAD20BF2B5C0F6903A00FB018 /* Pods-Challange HURB - Alpha-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - Alpha-Info.plist"; sourceTree = "<group>"; };
 		4575F9713CE0175CF2176688675321C2 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		46AD205774E5FA6325066D0F937F6D39 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		46C16A2D2FAA7F19778B389E1DE179AB /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		47BB685B4039B2F52D5CC5C62C36D68E /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/Views/AnimatedImageView.swift; sourceTree = "<group>"; };
+		4C4DBC039D308204BD2EFE4834184B8A /* Pods-Challange HURB - AlphaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Challange HURB - AlphaTests-dummy.m"; sourceTree = "<group>"; };
 		4D03991CDE1604BCABD4E32B8DAB85C8 /* CallbackQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CallbackQueue.swift; path = Sources/Utility/CallbackQueue.swift; sourceTree = "<group>"; };
-		4D510838861D5956F10B0BC11A41E01A /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.modulemap"; sourceTree = "<group>"; };
 		4D68FAEE6666FA20382E7204DF2459DC /* SessionDataTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDataTask.swift; path = Sources/Networking/SessionDataTask.swift; sourceTree = "<group>"; };
 		4E76E0D7E1051191919F4520C17444B8 /* TargetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TargetType.swift; path = Sources/Moya/TargetType.swift; sourceTree = "<group>"; };
 		506A661148703DA1B88B5255C0017646 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		510ED49BBC2F32906461EB2A4E55498C /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.modulemap"; sourceTree = "<group>"; };
 		52BA95C78D07879A3D3A97E88B5323C2 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		55B2A7A62C656B6B20EFB2EC958ACE23 /* ImageModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageModifier.swift; path = Sources/Networking/ImageModifier.swift; sourceTree = "<group>"; };
 		55F654917D7E1B74DD17E438E0277F22 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
 		5744CE62E3CF1094A4A492322D0BCAD3 /* Source.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Source.swift; path = Sources/General/ImageSource/Source.swift; sourceTree = "<group>"; };
-		5BCE71B8D2663627611754E694606D1C /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-Info.plist"; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E40F64E3AD1B51999D10400639490CF /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
+		5EBCE8E3B06E1B47D1C8165D7B4BE66A /* Pods-Challange HURB - Alpha-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Challange HURB - Alpha-frameworks.sh"; sourceTree = "<group>"; };
 		60ABE34FB51EB50A7D9CADCF30D7EAFB /* NSButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSButton+Kingfisher.swift"; path = "Sources/Extensions/NSButton+Kingfisher.swift"; sourceTree = "<group>"; };
 		6159E25A8E0E42F0711A5CBFEB082843 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		622149AF3E0D8A8870FBA38C799895A1 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Utility/Box.swift; sourceTree = "<group>"; };
 		6363C10C847828E487F7008FCC9EF1B0 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionHelpers.swift; path = Sources/Utility/ExtensionHelpers.swift; sourceTree = "<group>"; };
 		6494E69862E0D3EAB7D3A9B426E8E830 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		64D0CDB2252F86A27D80140603F56557 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
+		64EEC606E0520107BB38A8ABECF864F0 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-Info.plist"; sourceTree = "<group>"; };
 		66C997EE4A7875C91C57DD1764B7FF39 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
 		67CB5A54D57AA24302849D52ED2C8B37 /* UPCarouselFlowLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UPCarouselFlowLayout-Info.plist"; sourceTree = "<group>"; };
 		69094B6E56FA251435068751837610F3 /* Moya-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Moya-dummy.m"; sourceTree = "<group>"; };
@@ -401,16 +378,15 @@
 		6F7F173AC3A8FEC8BACFF7610D7E40E8 /* MoyaProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoyaProvider.swift; path = Sources/Moya/MoyaProvider.swift; sourceTree = "<group>"; };
 		709BE8B450555D56BBD705C8D20D37CD /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		71C4E50E04C62C1C3CBE04D460FD59B5 /* ImageFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFormat.swift; path = Sources/Image/ImageFormat.swift; sourceTree = "<group>"; };
+		72605B20956357C6E20404F7BB05B8F7 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		74004C8702333F111991476CF303F70A /* Pods-Challange HURB - AlphaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Challange HURB - AlphaTests.modulemap"; sourceTree = "<group>"; };
+		746E4F0E082E3A5E3699A4F9EA3FC896 /* Pods-Challange HURB - AlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - AlphaTests.release.xcconfig"; sourceTree = "<group>"; };
 		774AE3C2F73A5311CECF036602616369 /* UPCarouselFlowLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UPCarouselFlowLayout.xcconfig; sourceTree = "<group>"; };
 		77DE5256D8E18DB3A0A1B240F210A867 /* ImageProgressive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProgressive.swift; path = Sources/Image/ImageProgressive.swift; sourceTree = "<group>"; };
 		78B7C7E5969B2D8FFD2A7CB600EC8ABA /* AuthenticationChallengeResponsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationChallengeResponsable.swift; path = Sources/Networking/AuthenticationChallengeResponsable.swift; sourceTree = "<group>"; };
-		7E63CF975EC42C6F0A96F4543A6199EC /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m"; sourceTree = "<group>"; };
-		805A578498213AEA9B6B2948D16EB62B /* Pods-Challange HURB - AlphaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Challange HURB - AlphaTests-dummy.m"; sourceTree = "<group>"; };
-		82F3CDBCE38A37DA2D7E71304002FC50 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		83AE24F5E16DD25DF8D25E3627794376 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		85FC54A369D0AD39A594E342E5E58D8D /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/General/Deprecated.swift; sourceTree = "<group>"; };
 		860CE34984C9CA65C90B511AF41BB6DC /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		87688AE10F8408324A98F771AADE15B0 /* Pods-Challange HURB - Alpha-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Challange HURB - Alpha-umbrella.h"; sourceTree = "<group>"; };
+		89782CAED784E18EA66751B516F4205F /* Pods-Challange HURB - Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		8C9EC91C0F6F92BD237C91DFDD94E497 /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/Utility/String+MD5.swift"; sourceTree = "<group>"; };
 		8D0CAB904A21D14C32E087A7F806745C /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		8E3324DC6040448381C320BC9A1FF722 /* UPCarouselFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UPCarouselFlowLayout.h; path = UPCarouselFlowLayout/UPCarouselFlowLayout.h; sourceTree = "<group>"; };
@@ -433,77 +409,79 @@
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DADA8C2E50749B739095873F94D9273 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		9E73140968CB8542062D6953A95FA713 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		9EB1C7B13F526A9FF5A87B742A7B4732 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h"; sourceTree = "<group>"; };
 		9F86B2A4FBFF59701F50BD5A35947672 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		A004444CC7C625F5DDE263F346A7FF10 /* Pods-Challange HURB - Alpha.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Challange HURB - Alpha.modulemap"; sourceTree = "<group>"; };
-		A15BC68B389308DE1607268788C15EB2 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A26959D1A8CACD4AA45DFF358E735182 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kingfisher.modulemap; sourceTree = "<group>"; };
-		A270F3C0BC37AF2FE91FBD4861F9C438 /* Pods-Challange HURB - Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		A2834206342D74E6E6F438AF90E22E84 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		A3ACFF757117F94C32FB0AF4E9023CF0 /* Result-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Result-umbrella.h"; sourceTree = "<group>"; };
+		A96C11CE75F601495AEB7A40853E826E /* Pods-Challange HURB - AlphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - AlphaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9DAA6927A34E7B9C4CD5D4A879E91ED /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UPCarouselFlowLayout.swift; path = UPCarouselFlowLayout/UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		A9F48BF7716E0064ACAD0A849EBBE09F /* UPCarouselFlowLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UPCarouselFlowLayout-dummy.m"; sourceTree = "<group>"; };
 		AD0950D2D28F67E97537A0F736160538 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		AD5DC6FA2DF8FDA3B0F187F841DFEA5C /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		B35C48EF8CA50E236B0208EFCB3ABC6B /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		B36704870961385E45DDADF8C3B7BDF5 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
+		B3ED893BDC00A98360AB143EAEF5F7A9 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4EF82C8F5AF8DC395E6DCED673DA505 /* DiskStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = Sources/Cache/DiskStorage.swift; sourceTree = "<group>"; };
 		B639CD9FB26EA98CA36C39CD82CEEC72 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		B859DA515C9750E39D16CFCF88B1E8C8 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image/Image.swift; sourceTree = "<group>"; };
+		B9F4DD4B15B1D7C5C9202A0B5EA102CF /* Pods-Challange HURB - Alpha-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Challange HURB - Alpha-umbrella.h"; sourceTree = "<group>"; };
 		BBAEE0A84F1FB17FA72593C6B19EDA47 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Sources/Moya/MultipartFormData.swift; sourceTree = "<group>"; };
 		BC67432025676DE424F1F0C16E2CCAFC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		BCDB96C505174825CC81DBE1376E6571 /* Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Sources/Cache/Storage.swift; sourceTree = "<group>"; };
-		C109041406CD99DE28FD638D82CA6994 /* Pods-Challange HURB - Alpha-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Challange HURB - Alpha-frameworks.sh"; sourceTree = "<group>"; };
-		C178A2F2B33C575F455E78EFF51EF41E /* Pods-Challange HURB - AlphaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - AlphaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C0CAF245318631CC420AC4D4E92B3C56 /* Pods-Challange HURB - AlphaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - AlphaTests-Info.plist"; sourceTree = "<group>"; };
 		C1CF6F2240D7FB912CD5D47A9CE0E8F9 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
 		C313BED23098A35A4BBA47DC6AC8510F /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		C3BBCC75406D6ED38DEE4A61B7C30B50 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Sources/Networking/RedirectHandler.swift; sourceTree = "<group>"; };
+		C3C95A5C19CE953EF080D7EADF85B007 /* Pods-Challange HURB - Alpha-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - Alpha-acknowledgements.plist"; sourceTree = "<group>"; };
 		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51ED658A6BEA3BA23DED03F77960CCF /* Placeholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Placeholder.swift; path = Sources/Image/Placeholder.swift; sourceTree = "<group>"; };
 		C542F803D5FC095E9E573E6480384F50 /* Plugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Plugin.swift; path = Sources/Moya/Plugin.swift; sourceTree = "<group>"; };
 		C63AB127843515E8EB4B326F7C2825A3 /* Moya-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Moya-umbrella.h"; sourceTree = "<group>"; };
 		C736C5530FFEF35B1A3BC85820904FE6 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
 		C8A6DD2FB88CBC194145DD259946BF76 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		C9FBAE0EF8972E6228C285718D4E64A4 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CB4D0B3F57030B3A82D3C8A9612EA89D /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
 		CC7BECEE1E2094B8DD3E575002D2C349 /* Moya.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Moya.xcconfig; sourceTree = "<group>"; };
 		CE38372EF46848427E214F2FC2BCA786 /* Runtime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Sources/Utility/Runtime.swift; sourceTree = "<group>"; };
 		CE46695203A4485EA61C45550EB5FF19 /* Moya.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Moya.modulemap; sourceTree = "<group>"; };
 		D0A5D257F33BE2117F46FA5F0017948D /* ResultProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultProtocol.swift; path = Result/ResultProtocol.swift; sourceTree = "<group>"; };
 		D0D6FC78A4C1B4C5B6370753C929688C /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
-		D3F5757C27693A3D28B47068E6642C9D /* Pods-Challange HURB - Alpha-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - Alpha-Info.plist"; sourceTree = "<group>"; };
+		D2E6056538990017858658480640D57D /* Pods-Challange HURB - Alpha-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Challange HURB - Alpha-dummy.m"; sourceTree = "<group>"; };
 		D4C0473C17E63FDB25F94FBD55856C92 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		D5597C933A9B7683655CF1B8AE751DEE /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
+		D6EDC73BAE9C2816CF5B795BB5C5D42A /* Pods-Challange HURB - AlphaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Challange HURB - AlphaTests-umbrella.h"; sourceTree = "<group>"; };
 		DAD846348A71F1A1410571D3A3E725C1 /* ImageDownloaderDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloaderDelegate.swift; path = Sources/Networking/ImageDownloaderDelegate.swift; sourceTree = "<group>"; };
 		DBA42F0F87F2BCC17DBD9F8ACB765885 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		DC59536DE08F6605890B386E918F6A22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DDEDD34C04D872629CD5C5D41EC248F1 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Sources/Networking/SessionDelegate.swift; sourceTree = "<group>"; };
-		DE2A0CF968B50BB71BD8FC41BDB0AC1A /* Pods-Challange HURB - Alpha-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Challange HURB - Alpha-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DE5BC6F8A9A6E253998ED2B85D3BA0F2 /* NetworkActivityPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkActivityPlugin.swift; path = Sources/Moya/Plugins/NetworkActivityPlugin.swift; sourceTree = "<group>"; };
 		E0CD37DACE79A45F340EB212D9B8D2CF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E73B97D6CB1DCAB10B2A80BC947B50 /* Endpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Sources/Moya/Endpoint.swift; sourceTree = "<group>"; };
+		E1FDCC8A01817E357258D1242A72EBF2 /* Pods-Challange HURB - Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		E2E85EBB800D8509CD8024DDD2516A28 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/General/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
 		E34E493EB587B2F810941970897D8178 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		E399296DAB541F2888DDCC8A3AC4C472 /* AnyEncodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyEncodable.swift; path = Sources/Moya/AnyEncodable.swift; sourceTree = "<group>"; };
 		E47EF7E06B574F43C8F981A2D41D6A8E /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Utility/Result.swift; sourceTree = "<group>"; };
 		E495820D47BC37F3B30621B73B0B3022 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		E4AFF392D747D99CD828902B03B42F7B /* Pods_Challange_HURB___Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Challange_HURB___Alpha.framework; path = "Pods-Challange HURB - Alpha.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9037BE7AAC48C611A777008E63DD7A1 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EA54360A13CEE416B943326DA7F27EAC /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Image/Filter.swift; sourceTree = "<group>"; };
 		EAAE673A857D364D921E79C642A5A995 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
 		ED2AE9C206D6076470269C910618DC32 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Source/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		ED729BCE8B5508E5A174F9D1C66D2EB0 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/General/ImageSource/Resource.swift; sourceTree = "<group>"; };
-		ED7574295BB35D1796196BFB35DDDAD0 /* Pods-Challange HURB - Alpha-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Challange HURB - Alpha-dummy.m"; sourceTree = "<group>"; };
 		EDEDE9B84DD97EC6786EB6DEC1D0776D /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Moya/Image.swift; sourceTree = "<group>"; };
+		EF8A5399500985B651EE85E4885E4279 /* Pods-Challange HURB - AlphaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Challange HURB - AlphaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EFA2D9D8B7A5A6B3AC4BEA48841172E3 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		F1BA417165E6D0DF21D61EFA3A2E7193 /* GIFAnimatedImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GIFAnimatedImage.swift; path = Sources/Image/GIFAnimatedImage.swift; sourceTree = "<group>"; };
 		F3B0B696888F7F05161DC5EFC2B92FD0 /* UPCarouselFlowLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UPCarouselFlowLayout-prefix.pch"; sourceTree = "<group>"; };
 		F42687F173AEBB6F3328EE436B7EBCA2 /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/Cache/CacheSerializer.swift; sourceTree = "<group>"; };
 		F52AA6807B1C79F1D09A9FD8FAF8A3A5 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
-		F5B13A18CE0D194D3A994280EFF88516 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks.sh"; sourceTree = "<group>"; };
 		F69579E3D46028B2251C7D336FC8B670 /* UPCarouselFlowLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UPCarouselFlowLayout.modulemap; sourceTree = "<group>"; };
+		F6F752A0B92EFC5CC311B0F3DB712F4C /* Pods-Challange HURB - AlphaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Challange HURB - AlphaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F8E14CD7C74E8B58814E8EE0C49607C6 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h"; sourceTree = "<group>"; };
 		FA0A022CF483DC4F57AFC1C55F7DE3B1 /* ValidationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationType.swift; path = Sources/Moya/ValidationType.swift; sourceTree = "<group>"; };
 		FC1CCF991F073C6EE47C045BD5F75676 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		FCC1D2E3E1A3EB321782EBAEC431FDB6 /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Sources/Image/ImageTransition.swift; sourceTree = "<group>"; };
-		FD86B8F32FB87A4A2E67F2D2EF969B59 /* Pods-Challange HURB - AlphaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Challange HURB - AlphaTests-umbrella.h"; sourceTree = "<group>"; };
 		FE30BFFB94EAC0A530E3A52C96FDAC75 /* NoError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoError.swift; path = Result/NoError.swift; sourceTree = "<group>"; };
 		FF881D35A8383D21FACDB67B991CF95E /* MoyaError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoyaError.swift; path = Sources/Moya/MoyaError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -569,14 +547,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8F3EEE0E59BB479DF3144252E98D94C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BA875EC25D32E7E03F804552C479A9F4 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EA063D7796C7ECF43CD0E0C6C2A4AF0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -585,26 +555,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB8B581574F3CAA9080A891AC5AD67BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9B1FA8E074CA7F3310DCE04F1341738 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2698145A195F37CDFE83AC4DD231B78E /* Pods-Challange HURB - AlphaTests */ = {
-			isa = PBXGroup;
-			children = (
-				41B66F06148BDB8F5B2F38F2D1819FC8 /* Pods-Challange HURB - AlphaTests.modulemap */,
-				250289E0E78E6CA369796986501AC50A /* Pods-Challange HURB - AlphaTests-acknowledgements.markdown */,
-				C178A2F2B33C575F455E78EFF51EF41E /* Pods-Challange HURB - AlphaTests-acknowledgements.plist */,
-				805A578498213AEA9B6B2948D16EB62B /* Pods-Challange HURB - AlphaTests-dummy.m */,
-				1CADCF63EF7B68DEA10A8C74A369447A /* Pods-Challange HURB - AlphaTests-frameworks.sh */,
-				1ABE2967438A77BB6DCB0EC6EDAE3D38 /* Pods-Challange HURB - AlphaTests-Info.plist */,
-				FD86B8F32FB87A4A2E67F2D2EF969B59 /* Pods-Challange HURB - AlphaTests-umbrella.h */,
-				2698D164BEEF30543BF3BCB00EAC6D42 /* Pods-Challange HURB - AlphaTests.debug.xcconfig */,
-				0E79010BC47756E7D26F0CCADE5333E8 /* Pods-Challange HURB - AlphaTests.release.xcconfig */,
-			);
-			name = "Pods-Challange HURB - AlphaTests";
-			path = "Target Support Files/Pods-Challange HURB - AlphaTests";
-			sourceTree = "<group>";
-		};
 		37552924B51661FB9A907E22E6869F50 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,16 +589,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4D5D374E09E34662E4AB2C1ACD9CF083 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				71B23619BEA1AA08746A13D53ED92552 /* Pods-Challange HURB - Alpha */,
-				E4E025E0DF88DB5556BB8CD3D72BFA6F /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests */,
-				2698145A195F37CDFE83AC4DD231B78E /* Pods-Challange HURB - AlphaTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		4E6B97A3E7F0BA9D26A165DE80669FCE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,23 +601,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SnapKit";
-			sourceTree = "<group>";
-		};
-		71B23619BEA1AA08746A13D53ED92552 /* Pods-Challange HURB - Alpha */ = {
-			isa = PBXGroup;
-			children = (
-				A004444CC7C625F5DDE263F346A7FF10 /* Pods-Challange HURB - Alpha.modulemap */,
-				DE2A0CF968B50BB71BD8FC41BDB0AC1A /* Pods-Challange HURB - Alpha-acknowledgements.markdown */,
-				17A9BF0F94FE1AE08C6CFA7E98F0F615 /* Pods-Challange HURB - Alpha-acknowledgements.plist */,
-				ED7574295BB35D1796196BFB35DDDAD0 /* Pods-Challange HURB - Alpha-dummy.m */,
-				C109041406CD99DE28FD638D82CA6994 /* Pods-Challange HURB - Alpha-frameworks.sh */,
-				D3F5757C27693A3D28B47068E6642C9D /* Pods-Challange HURB - Alpha-Info.plist */,
-				87688AE10F8408324A98F771AADE15B0 /* Pods-Challange HURB - Alpha-umbrella.h */,
-				01F07E5004F8B2C2C29F933AA8A3E8A3 /* Pods-Challange HURB - Alpha.debug.xcconfig */,
-				A270F3C0BC37AF2FE91FBD4861F9C438 /* Pods-Challange HURB - Alpha.release.xcconfig */,
-			);
-			name = "Pods-Challange HURB - Alpha";
-			path = "Target Support Files/Pods-Challange HURB - Alpha";
 			sourceTree = "<group>";
 		};
 		74D813410AF584063C2062F9703C9FF6 /* Core */ = {
@@ -731,6 +665,16 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		8C89B98121F5A34C00BD70CB706F1369 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAE8A13D62365B1077B23F793366D767 /* Pods-Challange HURB - Alpha */,
+				AD1BD990D05AC2C66E29FD5CC9C073F6 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests */,
+				B9D99A73BA8E34914832DB33CA6F2DE5 /* Pods-Challange HURB - AlphaTests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		9196A174B07C64874C61D240E63B800E /* Moya */ = {
@@ -837,6 +781,39 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		AD1BD990D05AC2C66E29FD5CC9C073F6 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				510ED49BBC2F32906461EB2A4E55498C /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.modulemap */,
+				C9FBAE0EF8972E6228C285718D4E64A4 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.markdown */,
+				72605B20956357C6E20404F7BB05B8F7 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.plist */,
+				2E71671874FDF2D7B266DAF8825697DB /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m */,
+				001E8AFA65AF6278DE0A7A45C2D28210 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks.sh */,
+				64EEC606E0520107BB38A8ABECF864F0 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-Info.plist */,
+				F8E14CD7C74E8B58814E8EE0C49607C6 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h */,
+				B3ED893BDC00A98360AB143EAEF5F7A9 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */,
+				E9037BE7AAC48C611A777008E63DD7A1 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */,
+			);
+			name = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests";
+			path = "Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests";
+			sourceTree = "<group>";
+		};
+		B9D99A73BA8E34914832DB33CA6F2DE5 /* Pods-Challange HURB - AlphaTests */ = {
+			isa = PBXGroup;
+			children = (
+				74004C8702333F111991476CF303F70A /* Pods-Challange HURB - AlphaTests.modulemap */,
+				EF8A5399500985B651EE85E4885E4279 /* Pods-Challange HURB - AlphaTests-acknowledgements.markdown */,
+				F6F752A0B92EFC5CC311B0F3DB712F4C /* Pods-Challange HURB - AlphaTests-acknowledgements.plist */,
+				4C4DBC039D308204BD2EFE4834184B8A /* Pods-Challange HURB - AlphaTests-dummy.m */,
+				C0CAF245318631CC420AC4D4E92B3C56 /* Pods-Challange HURB - AlphaTests-Info.plist */,
+				D6EDC73BAE9C2816CF5B795BB5C5D42A /* Pods-Challange HURB - AlphaTests-umbrella.h */,
+				A96C11CE75F601495AEB7A40853E826E /* Pods-Challange HURB - AlphaTests.debug.xcconfig */,
+				746E4F0E082E3A5E3699A4F9EA3FC896 /* Pods-Challange HURB - AlphaTests.release.xcconfig */,
+			);
+			name = "Pods-Challange HURB - AlphaTests";
+			path = "Target Support Files/Pods-Challange HURB - AlphaTests";
+			sourceTree = "<group>";
+		};
 		BC2C22EDD6EE813FD3122B36D2F622B3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,7 +851,7 @@
 				D5EB278B353E270A4324FF8555E6D0EF /* Frameworks */,
 				46D675ADFB0791F07F5AAB9AFDC106FA /* Pods */,
 				C63F27F32587EC9692D57380CE238FA8 /* Products */,
-				4D5D374E09E34662E4AB2C1ACD9CF083 /* Targets Support Files */,
+				8C89B98121F5A34C00BD70CB706F1369 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -900,23 +877,6 @@
 				37552924B51661FB9A907E22E6869F50 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E4E025E0DF88DB5556BB8CD3D72BFA6F /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4D510838861D5956F10B0BC11A41E01A /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.modulemap */,
-				043B4EA00F1C92399418317DB700124D /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.markdown */,
-				82F3CDBCE38A37DA2D7E71304002FC50 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-acknowledgements.plist */,
-				7E63CF975EC42C6F0A96F4543A6199EC /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-dummy.m */,
-				F5B13A18CE0D194D3A994280EFF88516 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks.sh */,
-				5BCE71B8D2663627611754E694606D1C /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-Info.plist */,
-				9EB1C7B13F526A9FF5A87B742A7B4732 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-umbrella.h */,
-				A15BC68B389308DE1607268788C15EB2 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */,
-				83AE24F5E16DD25DF8D25E3627794376 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */,
-			);
-			name = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests";
-			path = "Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests";
 			sourceTree = "<group>";
 		};
 		EB9560A5266D16A43B89D7DB7DF90316 /* Support Files */ = {
@@ -992,6 +952,23 @@
 			path = "../Target Support Files/Moya";
 			sourceTree = "<group>";
 		};
+		FAE8A13D62365B1077B23F793366D767 /* Pods-Challange HURB - Alpha */ = {
+			isa = PBXGroup;
+			children = (
+				23473890276E392997108B439D989B1E /* Pods-Challange HURB - Alpha.modulemap */,
+				1A5E5E5D799216F07850D2C4C1B84B77 /* Pods-Challange HURB - Alpha-acknowledgements.markdown */,
+				C3C95A5C19CE953EF080D7EADF85B007 /* Pods-Challange HURB - Alpha-acknowledgements.plist */,
+				D2E6056538990017858658480640D57D /* Pods-Challange HURB - Alpha-dummy.m */,
+				5EBCE8E3B06E1B47D1C8165D7B4BE66A /* Pods-Challange HURB - Alpha-frameworks.sh */,
+				43A0F86BAD20BF2B5C0F6903A00FB018 /* Pods-Challange HURB - Alpha-Info.plist */,
+				B9F4DD4B15B1D7C5C9202A0B5EA102CF /* Pods-Challange HURB - Alpha-umbrella.h */,
+				89782CAED784E18EA66751B516F4205F /* Pods-Challange HURB - Alpha.debug.xcconfig */,
+				E1FDCC8A01817E357258D1242A72EBF2 /* Pods-Challange HURB - Alpha.release.xcconfig */,
+			);
+			name = "Pods-Challange HURB - Alpha";
+			path = "Target Support Files/Pods-Challange HURB - Alpha";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1044,19 +1021,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B17899346AC780888A1FDA07681553A3 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00F607629BEB6122B8E16F515D864901 /* Pods-Challange HURB - AlphaTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D17FD0F83761363261CD2285A9E969D8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0F6D92A4EF7FAF0C65EA473F690C72AD /* Pods-Challange HURB - Alpha-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE6AC72EA386A2B92E25D27E61B2E35 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69968951F771CB17BEB639D71A76E999 /* Pods-Challange HURB - AlphaTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1178,20 +1155,17 @@
 		};
 		D2A9B5DAA7066696F134B68EC681476E /* Pods-Challange HURB - AlphaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54EAED2D289ECB89A0CDD65B4887DDCC /* Build configuration list for PBXNativeTarget "Pods-Challange HURB - AlphaTests" */;
+			buildConfigurationList = BC05D2DB222A45EF9EB68D348376826E /* Build configuration list for PBXNativeTarget "Pods-Challange HURB - AlphaTests" */;
 			buildPhases = (
-				B17899346AC780888A1FDA07681553A3 /* Headers */,
-				420CA85E15508013836297920876545E /* Sources */,
-				B8F3EEE0E59BB479DF3144252E98D94C /* Frameworks */,
-				ABC62E91E8F378F844DE04CB5DF9211C /* Resources */,
+				DBE6AC72EA386A2B92E25D27E61B2E35 /* Headers */,
+				1848C8D8938AE4993EC24BED2B6DFB70 /* Sources */,
+				EB8B581574F3CAA9080A891AC5AD67BB /* Frameworks */,
+				1CE0ECA8A5EB567FCD2EF0C2191C6647 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C5B50F1071174679DC7AE47F4071391C /* PBXTargetDependency */,
-				226FE8B27D0B0D63F98E9BA9531DE220 /* PBXTargetDependency */,
-				78D41EB538E808BC7EF286F29AD84F7F /* PBXTargetDependency */,
-				A16DC28D49270124500AE8CA4562ABA6 /* PBXTargetDependency */,
+				9BFE89A44CB6737898806697AED0EA25 /* PBXTargetDependency */,
 			);
 			name = "Pods-Challange HURB - AlphaTests";
 			productName = "Pods-Challange HURB - AlphaTests";
@@ -1288,6 +1262,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1CE0ECA8A5EB567FCD2EF0C2191C6647 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2B291B0C694F1D88D7943C5030F3FA54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1344,13 +1325,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABC62E91E8F378F844DE04CB5DF9211C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1359,6 +1333,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ECC7531D247A98EF7D1173BC0036446 /* Pods-Challange HURB - Alpha-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1848C8D8938AE4993EC24BED2B6DFB70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EAD6693A6064C7AB322AC12504E6A9B /* Pods-Challange HURB - AlphaTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1384,14 +1366,6 @@
 				AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */,
 				933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */,
 				53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		420CA85E15508013836297920876545E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				149D23905AFF3C34D715966E245E1861 /* Pods-Challange HURB - AlphaTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1568,12 +1542,6 @@
 			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
 			targetProxy = 696EDA1259EF24269CBCBD53A9D7B659 /* PBXContainerItemProxy */;
 		};
-		226FE8B27D0B0D63F98E9BA9531DE220 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Moya;
-			target = 17F9141D333DA1A7BE5937F227221070 /* Moya */;
-			targetProxy = A824E82D0B4161428E87433B0EBC9D89 /* PBXContainerItemProxy */;
-		};
 		26B42FBE09989DB5F176EF1D84D2BBB3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Result;
@@ -1610,29 +1578,23 @@
 			target = 17F9141D333DA1A7BE5937F227221070 /* Moya */;
 			targetProxy = 639ED9D562848D397AB3C799C3C21D59 /* PBXContainerItemProxy */;
 		};
-		78D41EB538E808BC7EF286F29AD84F7F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Challange HURB - Alpha";
-			target = 00371915C170F16A77FA09048AA16F0A /* Pods-Challange HURB - Alpha */;
-			targetProxy = 75426BF713A099CD07DCCCE1AF85A52D /* PBXContainerItemProxy */;
-		};
 		993969960ADA5442B9019095998AC6FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = 1C98D6507EBF399DBE3DD3854C56C4E8 /* PBXContainerItemProxy */;
 		};
+		9BFE89A44CB6737898806697AED0EA25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Challange HURB - Alpha";
+			target = 00371915C170F16A77FA09048AA16F0A /* Pods-Challange HURB - Alpha */;
+			targetProxy = 13625E1CEA859C37BF6735866A37945B /* PBXContainerItemProxy */;
+		};
 		9CC55585254AC1BFA4FB7024604385A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = 049C14F9998685298AEA2C318D0ED9A4 /* PBXContainerItemProxy */;
-		};
-		A16DC28D49270124500AE8CA4562ABA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Result;
-			target = E163AC315AD24CFBD60C178D602BFC83 /* Result */;
-			targetProxy = 289473E50D3D2D5526D274B2AFFBC575 /* PBXContainerItemProxy */;
 		};
 		B42AB0923D2AFCF103528421EA6D9941 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1645,12 +1607,6 @@
 			name = Kingfisher;
 			target = E8022D22FAA6690B5E1C379C1BCE1491 /* Kingfisher */;
 			targetProxy = 7B41C1163D71880D6A03D9AA34AEAA65 /* PBXContainerItemProxy */;
-		};
-		C5B50F1071174679DC7AE47F4071391C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = D14F38583BA6783F984FF92BFF855ED8 /* PBXContainerItemProxy */;
 		};
 		CED88003B20B5FD97B8F7B6FAF93DCCE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1764,6 +1720,45 @@
 			};
 			name = Release;
 		};
+		178BD572DAA7D4B1607D38DFB2AA0B7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 746E4F0E082E3A5E3699A4F9EA3FC896 /* Pods-Challange HURB - AlphaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		18C9B60F08E00F0CCC1BFD86045296B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92FFFDF194653EB462F5767284F15AC8 /* Result.xcconfig */;
@@ -1829,6 +1824,44 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		36DF1AD918DBEB20BFF21EA8D986F92E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A96C11CE75F601495AEB7A40853E826E /* Pods-Challange HURB - AlphaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2013,47 +2046,9 @@
 			};
 			name = Debug;
 		};
-		7712D2ADDD89E458BA93EB26526B8195 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2698D164BEEF30543BF3BCB00EAC6D42 /* Pods-Challange HURB - AlphaTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		7B798A542CE8F0655B5803308566EFCE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A270F3C0BC37AF2FE91FBD4861F9C438 /* Pods-Challange HURB - Alpha.release.xcconfig */;
+			baseConfigurationReference = E1FDCC8A01817E357258D1242A72EBF2 /* Pods-Challange HURB - Alpha.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2092,7 +2087,7 @@
 		};
 		B46C74D0CE72D23BB22D611254D70AD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A15BC68B389308DE1607268788C15EB2 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */;
+			baseConfigurationReference = B3ED893BDC00A98360AB143EAEF5F7A9 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2201,7 +2196,7 @@
 		};
 		E13C74222891FE8F2DBEB1C15CF79FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01F07E5004F8B2C2C29F933AA8A3E8A3 /* Pods-Challange HURB - Alpha.debug.xcconfig */;
+			baseConfigurationReference = 89782CAED784E18EA66751B516F4205F /* Pods-Challange HURB - Alpha.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2338,48 +2333,9 @@
 			};
 			name = Release;
 		};
-		F15BF3461AD20599C300CE93CE5FD54C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E79010BC47756E7D26F0CCADE5333E8 /* Pods-Challange HURB - AlphaTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		F798379A404FC37B4B3B7090D36C5580 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83AE24F5E16DD25DF8D25E3627794376 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */;
+			baseConfigurationReference = E9037BE7AAC48C611A777008E63DD7A1 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2473,15 +2429,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		54EAED2D289ECB89A0CDD65B4887DDCC /* Build configuration list for PBXNativeTarget "Pods-Challange HURB - AlphaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7712D2ADDD89E458BA93EB26526B8195 /* Debug */,
-				F15BF3461AD20599C300CE93CE5FD54C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		759EF008C2948A7728D77F84E91209EA /* Build configuration list for PBXNativeTarget "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2514,6 +2461,15 @@
 			buildConfigurations = (
 				18C9B60F08E00F0CCC1BFD86045296B5 /* Debug */,
 				D8EFF6194C0B361A174BB899D28B595B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC05D2DB222A45EF9EB68D348376826E /* Build configuration list for PBXNativeTarget "Pods-Challange HURB - AlphaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36DF1AD918DBEB20BFF21EA8D986F92E /* Debug */,
+				178BD572DAA7D4B1607D38DFB2AA0B7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

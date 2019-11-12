@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3BE93FEB21DCA11B947BF25C /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8ED87C9FA52B4065B80015 /* Pods_Challange_HURB___Alpha_Challange_HURB___AlphaUITests.framework */; };
 		ECAFEE151FE2C6CE70ACDAE3 /* Pods_Challange_HURB___AlphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EC4FB5DB649A7EE878F97B /* Pods_Challange_HURB___AlphaTests.framework */; };
+		F8475323237A10C400290C92 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8475322237A10C400290C92 /* Amenity.swift */; };
+		F8475328237AE39000290C92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8475327237AE39000290C92 /* UIView.swift */; };
+		F847532A237B30B200290C92 /* HurbSample.json in Resources */ = {isa = PBXBuildFile; fileRef = F8475329237B30B200290C92 /* HurbSample.json */; };
 		F86380F72367CF52002A69FB /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F62367CF52002A69FB /* Experience.swift */; };
 		F86380F92367D4BD002A69FB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F82367D4BD002A69FB /* Address.swift */; };
 		F86380FB2367D62C002A69FB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380FA2367D62C002A69FB /* Image.swift */; };
@@ -67,6 +70,9 @@
 		A03318A49054510288AE261B /* Pods-Challange HURB - AlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - AlphaTests.release.xcconfig"; path = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.release.xcconfig"; sourceTree = "<group>"; };
 		B59E435EFE389E1D10CBAE54 /* Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9C8410E1FF319FE7BA579B5 /* Pods-Challange HURB - AlphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challange HURB - AlphaTests.debug.xcconfig"; path = "Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8475322237A10C400290C92 /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
+		F8475327237AE39000290C92 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		F8475329237B30B200290C92 /* HurbSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HurbSample.json; sourceTree = "<group>"; };
 		F86380F62367CF52002A69FB /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		F86380F82367D4BD002A69FB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		F86380FA2367D62C002A69FB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -154,6 +160,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F8475326237AE37D00290C92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F8475327237AE39000290C92 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F88156CF2378FAFB00F5A7B4 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				F8475329237B30B200290C92 /* HurbSample.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		F8C217872372619200BAA261 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +220,7 @@
 		F8FAFE0723647A060020073B /* Challange HURB - Alpha */ = {
 			isa = PBXGroup;
 			children = (
+				F8475326237AE37D00290C92 /* Extensions */,
 				F8EC798F2374AE7C0055A59C /* DataSources */,
 				F8C217872372619200BAA261 /* Coordinator */,
 				F8FAFE39236498D10020073B /* Model */,
@@ -218,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				F8FAFE1F23647A080020073B /* NetworkAdapterTests.swift */,
-				F8FAFE2123647A080020073B /* Info.plist */,
 				F8C21784237253F400BAA261 /* DataManagerTests.swift */,
+				F8FAFE2123647A080020073B /* Info.plist */,
 			);
 			path = "Challange HURB - AlphaTests";
 			sourceTree = "<group>";
@@ -236,6 +259,7 @@
 		F8FAFE38236498BA0020073B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F88156CF2378FAFB00F5A7B4 /* Stubs */,
 				F86381052368894A002A69FB /* NetworkAdapter.swift */,
 				F8638103236873C6002A69FB /* HurbAPI.swift */,
 			);
@@ -251,6 +275,7 @@
 				F86380FA2367D62C002A69FB /* Image.swift */,
 				F86380F82367D4BD002A69FB /* Address.swift */,
 				F86380FC2367D729002A69FB /* Price.swift */,
+				F8475322237A10C400290C92 /* Amenity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,10 +310,10 @@
 			buildPhases = (
 				5A29D5D2D2643B7CEAC6FCD3 /* [CP] Check Pods Manifest.lock */,
 				F8FAFE0123647A060020073B /* Sources */,
+				F88156CE2378F33200F5A7B4 /* Swift Lint */,
 				F8FAFE0223647A060020073B /* Frameworks */,
 				F8FAFE0323647A060020073B /* Resources */,
 				5562B2213688282FB4907619 /* [CP] Embed Pods Frameworks */,
-				F88156CE2378F33200F5A7B4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -307,7 +332,6 @@
 				F8FAFE1723647A080020073B /* Sources */,
 				F8FAFE1823647A080020073B /* Frameworks */,
 				F8FAFE1923647A080020073B /* Resources */,
-				FE641C4220C10135CFA48C7F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8815290237792BB00EF6019 /* FeedScreen.storyboard in Resources */,
+				F847532A237B30B200290C92 /* HurbSample.json in Resources */,
 				F8FAFE1523647A080020073B /* LaunchScreen.storyboard in Resources */,
 				F8FAFE1223647A080020073B /* Assets.xcassets in Resources */,
 				F8FAFE1023647A060020073B /* Main.storyboard in Resources */,
@@ -511,7 +536,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests/Pods-Challange HURB - Alpha-Challange HURB - AlphaUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F88156CE2378F33200F5A7B4 /* ShellScript */ = {
+		F88156CE2378F33200F5A7B4 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -520,6 +545,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Swift Lint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -528,23 +554,6 @@
 			shellPath = /bin/sh;
 			shellScript = "
 ";
-		};
-		FE641C4220C10135CFA48C7F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Challange HURB - AlphaTests/Pods-Challange HURB - AlphaTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -560,6 +569,7 @@
 				F8C21789237262CC00BAA261 /* MainCoordinator.swift in Sources */,
 				F881528A237703BC00EF6019 /* FeedViewController.swift in Sources */,
 				F8C2178B237263C600BAA261 /* Coordinator.swift in Sources */,
+				F8475328237AE39000290C92 /* UIView.swift in Sources */,
 				F881528E2377925100EF6019 /* StoryboardError.swift in Sources */,
 				F8EC79912374AEEF0055A59C /* ExperiencesDataSource.swift in Sources */,
 				F88152862376F9AB00EF6019 /* FeedHeader.swift in Sources */,
@@ -568,6 +578,7 @@
 				F86380FF2367DAB3002A69FB /* APIResponse.swift in Sources */,
 				F8FAFE0923647A060020073B /* AppDelegate.swift in Sources */,
 				F86380F92367D4BD002A69FB /* Address.swift in Sources */,
+				F8475323237A10C400290C92 /* Amenity.swift in Sources */,
 				F86381062368894A002A69FB /* NetworkAdapter.swift in Sources */,
 				F8EC79932374B22A0055A59C /* ExperienceCollectionViewCell.swift in Sources */,
 				F86380FD2367D729002A69FB /* Price.swift in Sources */,

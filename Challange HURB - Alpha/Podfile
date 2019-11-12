@@ -14,12 +14,10 @@ target 'Challange HURB - Alpha' do
   target 'Challange HURB - AlphaTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Moya', '~> 13.0'
   end
 
   target 'Challange HURB - AlphaUITests' do
     # Pods for testing
-    pod 'Moya', '~> 13.0'
   end
 
 end
