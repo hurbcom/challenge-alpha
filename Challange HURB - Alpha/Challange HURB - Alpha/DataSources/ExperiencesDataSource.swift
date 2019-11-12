@@ -34,6 +34,8 @@ extension ExperiencesDataSource: UICollectionViewDataSource {
             fatalError()
         }
         cell.experience = experiences[indexPath.row]
+        cell.accessibilityIdentifier = "Experience\(indexPath)"
+        cell.isAccessibilityElement = true
         cell.setUpUI()
         return cell
     }

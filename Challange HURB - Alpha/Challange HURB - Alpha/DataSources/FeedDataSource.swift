@@ -62,6 +62,8 @@ extension FeedDataSource: UITableViewDataSource {
             let selectedStarHotels = hotels.filter({ ($0.stars) == hotelsStarsIndex[starIndex] })
             cell.currentDataSource = ExperiencesDataSource(experiences: selectedStarHotels)
         }
+        cell.accessibilityIdentifier = "Experience\(indexPath)"
+        cell.isAccessibilityElement = true
         cell.setupUI()
         return cell
     }
