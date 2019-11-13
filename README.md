@@ -35,7 +35,7 @@ Para as escolhas do design do app decidi me inspirar no app iOS da Hurb e també
 Desse modo, decidi estruturar o feed como uma tableView. A primeira secção dessa exibe os pacotes se existirem e as demais exibem os hotéis agrupados pelo número de estrelas. A exibição dos hotéis e pacotes é feita com uma collectionView com scroll horizontal.
 
 <p align="center">
-    <img src="AppDesign/appDemo.png" alt="appDemo" />
+    <img src="AppDesign/appDemo.png" width="150" height="350" alt="appDemo" />
 </p>
 
 ## 4. Testes
