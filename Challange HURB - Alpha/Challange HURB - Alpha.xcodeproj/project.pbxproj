@@ -12,7 +12,6 @@
 		F8475323237A10C400290C92 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8475322237A10C400290C92 /* Amenity.swift */; };
 		F8475328237AE39000290C92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8475327237AE39000290C92 /* UIView.swift */; };
 		F847532A237B30B200290C92 /* HurbSample.json in Resources */ = {isa = PBXBuildFile; fileRef = F8475329237B30B200290C92 /* HurbSample.json */; };
-		F847532C237B472000290C92 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F847532B237B472000290C92 /* README.md */; };
 		F86380F72367CF52002A69FB /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F62367CF52002A69FB /* Experience.swift */; };
 		F86380F92367D4BD002A69FB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380F82367D4BD002A69FB /* Address.swift */; };
 		F86380FB2367D62C002A69FB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86380FA2367D62C002A69FB /* Image.swift */; };
@@ -74,7 +73,6 @@
 		F8475322237A10C400290C92 /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
 		F8475327237AE39000290C92 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F8475329237B30B200290C92 /* HurbSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HurbSample.json; sourceTree = "<group>"; };
-		F847532B237B472000290C92 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		F86380F62367CF52002A69FB /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		F86380F82367D4BD002A69FB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		F86380FA2367D62C002A69FB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 		F8FAFE0723647A060020073B /* Challange HURB - Alpha */ = {
 			isa = PBXGroup;
 			children = (
-				F847532B237B472000290C92 /* README.md */,
 				F8475326237AE37D00290C92 /* Extensions */,
 				F8EC798F2374AE7C0055A59C /* DataSources */,
 				F8C217872372619200BAA261 /* Coordinator */,
@@ -414,7 +411,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F847532C237B472000290C92 /* README.md in Resources */,
 				F8815290237792BB00EF6019 /* FeedScreen.storyboard in Resources */,
 				F847532A237B30B200290C92 /* HurbSample.json in Resources */,
 				F8FAFE1523647A080020073B /* LaunchScreen.storyboard in Resources */,
