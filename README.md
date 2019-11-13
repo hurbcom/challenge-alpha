@@ -1,2 +1,0 @@
-# challenge-alpha
-Desafio mobile
