@@ -7,7 +7,7 @@ target 'hurb-challenge-alpha' do
 
   # Pods for hurb-challenge-alpha
   pod 'SwiftLint'
-
+  pod 'Kingfisher/SwiftUI'
   target 'hurb-challenge-alphaTests' do
     inherit! :search_paths
     # Pods for testing
