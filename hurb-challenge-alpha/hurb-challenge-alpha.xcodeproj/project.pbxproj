@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		88BD51DB7AD526C5D758E4F8 /* Pods_hurb_challenge_alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5089FF6414A315E08E705B /* Pods_hurb_challenge_alpha.framework */; };
+		BB4E29AE23B578F20069FDC7 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29A823B578F20069FDC7 /* Suggestion.swift */; };
+		BB4E29AF23B578F20069FDC7 /* Amenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29A923B578F20069FDC7 /* Amenities.swift */; };
+		BB4E29B023B578F20069FDC7 /* Accommodation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29AA23B578F20069FDC7 /* Accommodation.swift */; };
+		BB4E29B123B578F20069FDC7 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29AB23B578F20069FDC7 /* Address.swift */; };
+		BB4E29B223B578F20069FDC7 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29AC23B578F20069FDC7 /* Price.swift */; };
+		BB4E29B323B578F20069FDC7 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29AD23B578F20069FDC7 /* Gallery.swift */; };
 		BB4E79D223B5759E00B25034 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79D123B5759E00B25034 /* AppDelegate.swift */; };
 		BB4E79D423B5759E00B25034 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79D323B5759E00B25034 /* SceneDelegate.swift */; };
 		BB4E79D623B5759E00B25034 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79D523B5759E00B25034 /* ContentView.swift */; };
@@ -46,6 +52,12 @@
 		9AF0BFF39A4476DD5BF64D52 /* Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.release.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests/Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AF5089FF6414A315E08E705B /* Pods_hurb_challenge_alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hurb_challenge_alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5988A009ADD84B5374D33B2 /* Pods-hurb-challenge-alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alpha.debug.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alpha/Pods-hurb-challenge-alpha.debug.xcconfig"; sourceTree = "<group>"; };
+		BB4E29A823B578F20069FDC7 /* Suggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		BB4E29A923B578F20069FDC7 /* Amenities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amenities.swift; sourceTree = "<group>"; };
+		BB4E29AA23B578F20069FDC7 /* Accommodation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accommodation.swift; sourceTree = "<group>"; };
+		BB4E29AB23B578F20069FDC7 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		BB4E29AC23B578F20069FDC7 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		BB4E29AD23B578F20069FDC7 /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		BB4E79CE23B5759E00B25034 /* hurb-challenge-alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hurb-challenge-alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4E79D123B5759E00B25034 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB4E79D323B5759E00B25034 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +113,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB4E29A623B578A20069FDC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB4E29AA23B578F20069FDC7 /* Accommodation.swift */,
+				BB4E29AB23B578F20069FDC7 /* Address.swift */,
+				BB4E29A923B578F20069FDC7 /* Amenities.swift */,
+				BB4E29AD23B578F20069FDC7 /* Gallery.swift */,
+				BB4E29AC23B578F20069FDC7 /* Price.swift */,
+				BB4E29A823B578F20069FDC7 /* Suggestion.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB4E29A723B578B30069FDC7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		BB4E79C523B5759E00B25034 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +158,8 @@
 		BB4E79D023B5759E00B25034 /* hurb-challenge-alpha */ = {
 			isa = PBXGroup;
 			children = (
+				BB4E29A723B578B30069FDC7 /* Service */,
+				BB4E29A623B578A20069FDC7 /* Model */,
 				BB4E79D123B5759E00B25034 /* AppDelegate.swift */,
 				BB4E79D323B5759E00B25034 /* SceneDelegate.swift */,
 				BB4E79D523B5759E00B25034 /* ContentView.swift */,
@@ -434,8 +468,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB4E79D223B5759E00B25034 /* AppDelegate.swift in Sources */,
+				BB4E29B323B578F20069FDC7 /* Gallery.swift in Sources */,
+				BB4E29B223B578F20069FDC7 /* Price.swift in Sources */,
 				BB4E79D423B5759E00B25034 /* SceneDelegate.swift in Sources */,
+				BB4E29B023B578F20069FDC7 /* Accommodation.swift in Sources */,
 				BB4E79D623B5759E00B25034 /* ContentView.swift in Sources */,
+				BB4E29AE23B578F20069FDC7 /* Suggestion.swift in Sources */,
+				BB4E29AF23B578F20069FDC7 /* Amenities.swift in Sources */,
+				BB4E29B123B578F20069FDC7 /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
