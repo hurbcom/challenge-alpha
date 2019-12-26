@@ -1,0 +1,729 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88BD51DB7AD526C5D758E4F8 /* Pods_hurb_challenge_alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5089FF6414A315E08E705B /* Pods_hurb_challenge_alpha.framework */; };
+		BB4E79D223B5759E00B25034 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79D123B5759E00B25034 /* AppDelegate.swift */; };
+		BB4E79D423B5759E00B25034 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79D323B5759E00B25034 /* SceneDelegate.swift */; };
+		BB4E79D623B5759E00B25034 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79D523B5759E00B25034 /* ContentView.swift */; };
+		BB4E79D823B5759F00B25034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4E79D723B5759F00B25034 /* Assets.xcassets */; };
+		BB4E79DB23B5759F00B25034 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4E79DA23B5759F00B25034 /* Preview Assets.xcassets */; };
+		BB4E79DE23B5759F00B25034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4E79DC23B5759F00B25034 /* LaunchScreen.storyboard */; };
+		BB4E79E923B5759F00B25034 /* hurb_challenge_alphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79E823B5759F00B25034 /* hurb_challenge_alphaTests.swift */; };
+		BB4E79F423B5759F00B25034 /* hurb_challenge_alphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79F323B5759F00B25034 /* hurb_challenge_alphaUITests.swift */; };
+		DCF86675771A96E62A05290F /* Pods_hurb_challenge_alphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C48F5F4D15F8B23152AD1C /* Pods_hurb_challenge_alphaTests.framework */; };
+		EDD08466F4B86A815C962DB4 /* Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64812BB5CBC9459D1CC755CC /* Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB4E79E523B5759F00B25034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB4E79C623B5759E00B25034 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB4E79CD23B5759E00B25034;
+			remoteInfo = "hurb-challenge-alpha";
+		};
+		BB4E79F023B5759F00B25034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB4E79C623B5759E00B25034 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB4E79CD23B5759E00B25034;
+			remoteInfo = "hurb-challenge-alpha";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D69A2EC476E93E3ADCBFC9E /* Pods-hurb-challenge-alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alpha.release.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alpha/Pods-hurb-challenge-alpha.release.xcconfig"; sourceTree = "<group>"; };
+		64812BB5CBC9459D1CC755CC /* Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74C48F5F4D15F8B23152AD1C /* Pods_hurb_challenge_alphaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hurb_challenge_alphaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8222841A7CC4EBB634B5D84A /* Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.debug.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests/Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8EA706974E0F8126F9EFCE5B /* Pods-hurb-challenge-alphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alphaTests.debug.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alphaTests/Pods-hurb-challenge-alphaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9AF0BFF39A4476DD5BF64D52 /* Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.release.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests/Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AF5089FF6414A315E08E705B /* Pods_hurb_challenge_alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hurb_challenge_alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5988A009ADD84B5374D33B2 /* Pods-hurb-challenge-alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alpha.debug.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alpha/Pods-hurb-challenge-alpha.debug.xcconfig"; sourceTree = "<group>"; };
+		BB4E79CE23B5759E00B25034 /* hurb-challenge-alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hurb-challenge-alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB4E79D123B5759E00B25034 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB4E79D323B5759E00B25034 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BB4E79D523B5759E00B25034 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB4E79D723B5759F00B25034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB4E79DA23B5759F00B25034 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BB4E79DD23B5759F00B25034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB4E79DF23B5759F00B25034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB4E79E423B5759F00B25034 /* hurb-challenge-alphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hurb-challenge-alphaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB4E79E823B5759F00B25034 /* hurb_challenge_alphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hurb_challenge_alphaTests.swift; sourceTree = "<group>"; };
+		BB4E79EA23B5759F00B25034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB4E79EF23B5759F00B25034 /* hurb-challenge-alphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hurb-challenge-alphaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB4E79F323B5759F00B25034 /* hurb_challenge_alphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hurb_challenge_alphaUITests.swift; sourceTree = "<group>"; };
+		BB4E79F523B5759F00B25034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCAFE7E2FC079D3B141819E6 /* Pods-hurb-challenge-alphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alphaTests.release.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alphaTests/Pods-hurb-challenge-alphaTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB4E79CB23B5759E00B25034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BD51DB7AD526C5D758E4F8 /* Pods_hurb_challenge_alpha.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4E79E123B5759F00B25034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCF86675771A96E62A05290F /* Pods_hurb_challenge_alphaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4E79EC23B5759F00B25034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDD08466F4B86A815C962DB4 /* Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B61647EFB5F4E53AFA66D057 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF5089FF6414A315E08E705B /* Pods_hurb_challenge_alpha.framework */,
+				64812BB5CBC9459D1CC755CC /* Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework */,
+				74C48F5F4D15F8B23152AD1C /* Pods_hurb_challenge_alphaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB4E79C523B5759E00B25034 = {
+			isa = PBXGroup;
+			children = (
+				BB4E79D023B5759E00B25034 /* hurb-challenge-alpha */,
+				BB4E79E723B5759F00B25034 /* hurb-challenge-alphaTests */,
+				BB4E79F223B5759F00B25034 /* hurb-challenge-alphaUITests */,
+				BB4E79CF23B5759E00B25034 /* Products */,
+				CD6DAD94B90218D68A1B5187 /* Pods */,
+				B61647EFB5F4E53AFA66D057 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BB4E79CF23B5759E00B25034 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB4E79CE23B5759E00B25034 /* hurb-challenge-alpha.app */,
+				BB4E79E423B5759F00B25034 /* hurb-challenge-alphaTests.xctest */,
+				BB4E79EF23B5759F00B25034 /* hurb-challenge-alphaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB4E79D023B5759E00B25034 /* hurb-challenge-alpha */ = {
+			isa = PBXGroup;
+			children = (
+				BB4E79D123B5759E00B25034 /* AppDelegate.swift */,
+				BB4E79D323B5759E00B25034 /* SceneDelegate.swift */,
+				BB4E79D523B5759E00B25034 /* ContentView.swift */,
+				BB4E79D723B5759F00B25034 /* Assets.xcassets */,
+				BB4E79DC23B5759F00B25034 /* LaunchScreen.storyboard */,
+				BB4E79DF23B5759F00B25034 /* Info.plist */,
+				BB4E79D923B5759F00B25034 /* Preview Content */,
+			);
+			path = "hurb-challenge-alpha";
+			sourceTree = "<group>";
+		};
+		BB4E79D923B5759F00B25034 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BB4E79DA23B5759F00B25034 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BB4E79E723B5759F00B25034 /* hurb-challenge-alphaTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB4E79E823B5759F00B25034 /* hurb_challenge_alphaTests.swift */,
+				BB4E79EA23B5759F00B25034 /* Info.plist */,
+			);
+			path = "hurb-challenge-alphaTests";
+			sourceTree = "<group>";
+		};
+		BB4E79F223B5759F00B25034 /* hurb-challenge-alphaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB4E79F323B5759F00B25034 /* hurb_challenge_alphaUITests.swift */,
+				BB4E79F523B5759F00B25034 /* Info.plist */,
+			);
+			path = "hurb-challenge-alphaUITests";
+			sourceTree = "<group>";
+		};
+		CD6DAD94B90218D68A1B5187 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5988A009ADD84B5374D33B2 /* Pods-hurb-challenge-alpha.debug.xcconfig */,
+				1D69A2EC476E93E3ADCBFC9E /* Pods-hurb-challenge-alpha.release.xcconfig */,
+				8222841A7CC4EBB634B5D84A /* Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.debug.xcconfig */,
+				9AF0BFF39A4476DD5BF64D52 /* Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.release.xcconfig */,
+				8EA706974E0F8126F9EFCE5B /* Pods-hurb-challenge-alphaTests.debug.xcconfig */,
+				DCAFE7E2FC079D3B141819E6 /* Pods-hurb-challenge-alphaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB4E79CD23B5759E00B25034 /* hurb-challenge-alpha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB4E79F823B5759F00B25034 /* Build configuration list for PBXNativeTarget "hurb-challenge-alpha" */;
+			buildPhases = (
+				CDBA9D0574F5E560E34111AE /* [CP] Check Pods Manifest.lock */,
+				BB4E79CA23B5759E00B25034 /* Sources */,
+				BB4E79CB23B5759E00B25034 /* Frameworks */,
+				BB4E79CC23B5759E00B25034 /* Resources */,
+				BB4E7A0123B5765000B25034 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hurb-challenge-alpha";
+			productName = "hurb-challenge-alpha";
+			productReference = BB4E79CE23B5759E00B25034 /* hurb-challenge-alpha.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB4E79E323B5759F00B25034 /* hurb-challenge-alphaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB4E79FB23B5759F00B25034 /* Build configuration list for PBXNativeTarget "hurb-challenge-alphaTests" */;
+			buildPhases = (
+				34EA51DB5B5E9137A226B0D4 /* [CP] Check Pods Manifest.lock */,
+				BB4E79E023B5759F00B25034 /* Sources */,
+				BB4E79E123B5759F00B25034 /* Frameworks */,
+				BB4E79E223B5759F00B25034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB4E79E623B5759F00B25034 /* PBXTargetDependency */,
+			);
+			name = "hurb-challenge-alphaTests";
+			productName = "hurb-challenge-alphaTests";
+			productReference = BB4E79E423B5759F00B25034 /* hurb-challenge-alphaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BB4E79EE23B5759F00B25034 /* hurb-challenge-alphaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB4E79FE23B5759F00B25034 /* Build configuration list for PBXNativeTarget "hurb-challenge-alphaUITests" */;
+			buildPhases = (
+				515A03389EE17843169E6917 /* [CP] Check Pods Manifest.lock */,
+				BB4E79EB23B5759F00B25034 /* Sources */,
+				BB4E79EC23B5759F00B25034 /* Frameworks */,
+				BB4E79ED23B5759F00B25034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB4E79F123B5759F00B25034 /* PBXTargetDependency */,
+			);
+			name = "hurb-challenge-alphaUITests";
+			productName = "hurb-challenge-alphaUITests";
+			productReference = BB4E79EF23B5759F00B25034 /* hurb-challenge-alphaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB4E79C623B5759E00B25034 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Hannah ";
+				TargetAttributes = {
+					BB4E79CD23B5759E00B25034 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					BB4E79E323B5759F00B25034 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = BB4E79CD23B5759E00B25034;
+					};
+					BB4E79EE23B5759F00B25034 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = BB4E79CD23B5759E00B25034;
+					};
+				};
+			};
+			buildConfigurationList = BB4E79C923B5759E00B25034 /* Build configuration list for PBXProject "hurb-challenge-alpha" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB4E79C523B5759E00B25034;
+			productRefGroup = BB4E79CF23B5759E00B25034 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB4E79CD23B5759E00B25034 /* hurb-challenge-alpha */,
+				BB4E79E323B5759F00B25034 /* hurb-challenge-alphaTests */,
+				BB4E79EE23B5759F00B25034 /* hurb-challenge-alphaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB4E79CC23B5759E00B25034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4E79DE23B5759F00B25034 /* LaunchScreen.storyboard in Resources */,
+				BB4E79DB23B5759F00B25034 /* Preview Assets.xcassets in Resources */,
+				BB4E79D823B5759F00B25034 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4E79E223B5759F00B25034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4E79ED23B5759F00B25034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34EA51DB5B5E9137A226B0D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hurb-challenge-alphaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		515A03389EE17843169E6917 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB4E7A0123B5765000B25034 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		CDBA9D0574F5E560E34111AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hurb-challenge-alpha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB4E79CA23B5759E00B25034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4E79D223B5759E00B25034 /* AppDelegate.swift in Sources */,
+				BB4E79D423B5759E00B25034 /* SceneDelegate.swift in Sources */,
+				BB4E79D623B5759E00B25034 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4E79E023B5759F00B25034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4E79E923B5759F00B25034 /* hurb_challenge_alphaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4E79EB23B5759F00B25034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4E79F423B5759F00B25034 /* hurb_challenge_alphaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB4E79E623B5759F00B25034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB4E79CD23B5759E00B25034 /* hurb-challenge-alpha */;
+			targetProxy = BB4E79E523B5759F00B25034 /* PBXContainerItemProxy */;
+		};
+		BB4E79F123B5759F00B25034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB4E79CD23B5759E00B25034 /* hurb-challenge-alpha */;
+			targetProxy = BB4E79F023B5759F00B25034 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BB4E79DC23B5759F00B25034 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB4E79DD23B5759F00B25034 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB4E79F623B5759F00B25034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB4E79F723B5759F00B25034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB4E79F923B5759F00B25034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5988A009ADD84B5374D33B2 /* Pods-hurb-challenge-alpha.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"hurb-challenge-alpha/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "hurb-challenge-alpha/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hurb.hurb-challenge-alpha";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB4E79FA23B5759F00B25034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D69A2EC476E93E3ADCBFC9E /* Pods-hurb-challenge-alpha.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"hurb-challenge-alpha/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "hurb-challenge-alpha/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hurb.hurb-challenge-alpha";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BB4E79FC23B5759F00B25034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EA706974E0F8126F9EFCE5B /* Pods-hurb-challenge-alphaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "hurb-challenge-alphaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hurb.hurb-challenge-alphaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hurb-challenge-alpha.app/hurb-challenge-alpha";
+			};
+			name = Debug;
+		};
+		BB4E79FD23B5759F00B25034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCAFE7E2FC079D3B141819E6 /* Pods-hurb-challenge-alphaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "hurb-challenge-alphaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hurb.hurb-challenge-alphaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hurb-challenge-alpha.app/hurb-challenge-alpha";
+			};
+			name = Release;
+		};
+		BB4E79FF23B5759F00B25034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8222841A7CC4EBB634B5D84A /* Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "hurb-challenge-alphaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hurb.hurb-challenge-alphaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "hurb-challenge-alpha";
+			};
+			name = Debug;
+		};
+		BB4E7A0023B5759F00B25034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AF0BFF39A4476DD5BF64D52 /* Pods-hurb-challenge-alpha-hurb-challenge-alphaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "hurb-challenge-alphaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hurb.hurb-challenge-alphaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "hurb-challenge-alpha";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB4E79C923B5759E00B25034 /* Build configuration list for PBXProject "hurb-challenge-alpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB4E79F623B5759F00B25034 /* Debug */,
+				BB4E79F723B5759F00B25034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB4E79F823B5759F00B25034 /* Build configuration list for PBXNativeTarget "hurb-challenge-alpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB4E79F923B5759F00B25034 /* Debug */,
+				BB4E79FA23B5759F00B25034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB4E79FB23B5759F00B25034 /* Build configuration list for PBXNativeTarget "hurb-challenge-alphaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB4E79FC23B5759F00B25034 /* Debug */,
+				BB4E79FD23B5759F00B25034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB4E79FE23B5759F00B25034 /* Build configuration list for PBXNativeTarget "hurb-challenge-alphaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB4E79FF23B5759F00B25034 /* Debug */,
+				BB4E7A0023B5759F00B25034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB4E79C623B5759E00B25034 /* Project object */;
+}

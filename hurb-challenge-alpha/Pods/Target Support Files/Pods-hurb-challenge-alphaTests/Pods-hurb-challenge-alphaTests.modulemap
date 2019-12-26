@@ -1,0 +1,6 @@
+framework module Pods_hurb_challenge_alphaTests {
+  umbrella header "Pods-hurb-challenge-alphaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

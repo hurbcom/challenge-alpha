@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests : NSObject
+@end
+@implementation PodsDummy_Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests
+@end
