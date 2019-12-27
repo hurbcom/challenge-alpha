@@ -13,4 +13,15 @@ struct Addres: Decodable {
     let street: String?
     let city: String?
     let state: String?
+    let geoLocation: GeoLocation?
+}
+
+struct GeoLocation: Decodable {
+    let latitude: Double?
+    let longitude: Double?
+
+    private enum CodingKeys: String, CodingKey {
+           case latitude = "lat"
+           case longitude = "lon"
+        }
 }

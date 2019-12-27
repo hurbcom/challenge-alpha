@@ -13,10 +13,10 @@ class HotelDetailViewModel: ObservableObject {
     @Published var smallDescription = String()
     @Published var urlImage = String()
     @Published var name = String()
-    @Published var street = String()
-    @Published var city = String()
-    @Published var state = String()
+    @Published var adress = String()
     @Published var amenities = [Amenities]()
+    @Published var latitude = Double()
+    @Published var longitude = Double()
     
     init(hotel: Accommodation) {
         self.hotel = hotel
@@ -25,10 +25,11 @@ class HotelDetailViewModel: ObservableObject {
         self.getAdress()
         self.getUrlImage()
         self.getAmenities()
+        self.getGeolocation()
     }
     
     // MARK: - Methods
-       /// init name value
+    /// init name value
     fileprivate func getName() {
         
         if let name = self.hotel.name {
@@ -44,18 +45,33 @@ class HotelDetailViewModel: ObservableObject {
         }
     }
     // MARK: - Methods
+    /// init Geolocation value
+    fileprivate func getGeolocation() {
+        
+        if let geolocation = self.hotel.address?.geoLocation {
+            if let latitude = geolocation.latitude {
+                if let longitude = geolocation.longitude {
+                    self.latitude = latitude
+                    self.longitude = longitude
+                }
+            }
+            
+        }
+    }
+    // MARK: - Methods
     /// init adress value
     fileprivate func getAdress() {
-        
+        var adress = String()
         if let street = self.hotel.address?.street {
-            self.street = street
+            adress += " " + street
         }
         if let city = self.hotel.address?.city {
-            self.city = city
+            adress += " - " + city
         }
         if let state = self.hotel.address?.state {
-            self.state = state
+            adress += ", " + state
         }
+        self.adress = adress
     }
     // MARK: - Methods
     /// init description value

@@ -40,7 +40,6 @@ class APITests: XCTestCase {
                         httpHeaderFields: target.headers)
     }
     
-    
     func testGetAccommodationsSuccessReturnsAccommodations() {
         
         provider = MoyaProvider<HurbAPI>(endpointClosure: customEndpointClosure, stubClosure: MoyaProvider.immediatelyStub)

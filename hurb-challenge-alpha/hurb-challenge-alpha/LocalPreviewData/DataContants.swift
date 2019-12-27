@@ -20,10 +20,12 @@ class DataContants {
        image: "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/463/hotel-ville-la-plage-001_24_20170328174038.jpg",
        name: "kskskd", stars: 2, amenities: [Amenities(name: "Sala de tv",
        category: "Áreas comuns")], huFreeCancellation: true,
-       price: Price(amount: 393.83, oldPrice: 393.83, currency: "BRL"), address: Addres(
+       price: Price(amount: 393.83, oldPrice: 393.83, currency: "BRL"),
+       address: Addres(
             zipcode: "28950000",
             street: "Rua: 01,Quadra: B, Lote: 39.  Joao Fernandes - Búzios - RJ",
             city: "Armação dos Búzios",
-            state: "Rio de Janeiro"),
+            state: "Rio de Janeiro",
+            geoLocation: GeoLocation(latitude: -22.790146, longitude: -41.926743)),
        gallery: [Gallery(url: "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/463/hotel-ville-la-plage-001_24_20170328174038.jpg")])
 }

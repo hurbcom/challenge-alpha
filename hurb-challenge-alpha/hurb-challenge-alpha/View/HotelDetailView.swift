@@ -27,7 +27,7 @@ struct HotelDetailView: View {
                     .blur(radius: 10)
                 HStack {
                     VStack(alignment: .leading, spacing: 8) {
-
+                        
                         Text(self.hotelDetailVM.name)
                             .font(.title).foregroundColor(Color.white)
                     }.padding(.leading)
@@ -36,11 +36,11 @@ struct HotelDetailView: View {
                 }
             }.frame(width: targetSize.width, height: targetSize.height)
             VStack(alignment: .leading) {
-                    Text(self.hotelDetailVM.smallDescription)
-                        .font(.body)
-                        .foregroundColor(.primary)
-                        .lineLimit(nil)
-                        .lineSpacing(12).padding()
+                Text(self.hotelDetailVM.smallDescription)
+                    .font(.body)
+                    .foregroundColor(.primary)
+                    .lineLimit(nil)
+                    .lineSpacing(12).padding()
             }
             HStack {
                 Text("Local").font(.title)
@@ -49,10 +49,13 @@ struct HotelDetailView: View {
                 Spacer()
             }
             VStack {
-                Text(self.hotelDetailVM.street)
-                    .multilineTextAlignment(.center)
-                Text(self.hotelDetailVM.city)
-                Text(self.hotelDetailVM.state)
+                MapView(latitude: self.hotelDetailVM.latitude, longitude: self.hotelDetailVM.longitude, name: self.hotelDetailVM.name)
+                HStack {
+                    Text(self.hotelDetailVM.adress)
+                        .multilineTextAlignment(.leading).padding()
+                    
+                    Spacer()
+                }
                 
             }
             
@@ -69,7 +72,6 @@ struct HotelDetailView: View {
                     }
                 }
             })
-            
             Spacer()
         }.edgesIgnoringSafeArea(.top)
             .navigationBarHidden(true)

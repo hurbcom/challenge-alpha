@@ -25,19 +25,21 @@ class HotelDetailTest: XCTestCase {
         XCTAssertEqual(hotel.name, hotelDetailVM.name)
     }
     
-    func testCityHotelDetail() {
-        XCTAssertEqual(hotel.address?.city, hotelDetailVM.city)
-    }
-    func testStateHotelDetail() {
-        XCTAssertEqual(hotel.address?.state, hotelDetailVM.state)
-    }
-    
-    func testStreetHotelDetail() {
-        XCTAssertEqual(hotel.address?.street, hotelDetailVM.street)
-    }
-    
     func testDescriptionHotelDetail() {
         XCTAssertEqual(hotel.smallDescription, hotelDetailVM.smallDescription)
+    }
+    func testAddressHotelDetail() {
+     var adress = String()
+            if let street = self.hotel.address?.street {
+                adress += " " + street
+            }
+            if let city = self.hotel.address?.city {
+                adress += " - " + city
+            }
+            if let state = self.hotel.address?.state {
+                adress += ", " + state
+            }
+            XCTAssertEqual(adress, hotelDetailVM.adress)
     }
     
     func testGetImageHotelDetail() {
