@@ -47,5 +47,3 @@ extension HurbAPI: TargetType {
         return URL(string: "https://www.hurb.com")!
     }
 }
-
-

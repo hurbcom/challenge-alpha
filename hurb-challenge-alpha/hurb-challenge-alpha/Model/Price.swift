@@ -13,7 +13,6 @@ struct Price: Decodable {
     let oldPrice: Double?
     let currency: String?
     
-    
     //protocol rename property keys
     private enum CodingKeys: String, CodingKey {
         case amount
