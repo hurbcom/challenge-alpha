@@ -11,8 +11,11 @@ import Moya
 ///class responsible for managing API requests
 class APIService {
     
-    var provider = MoyaProvider<HurbAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])
-    
+    private let provider: MoyaProvider<HurbAPI>
+
+       init(provider: MoyaProvider<HurbAPI> = MoyaProvider<HurbAPI>()) {
+           self.provider = provider
+       }
     // MARK: - Methods
     
     ///  Function responsible for HurbAPI search for hotels and packages and handling received data

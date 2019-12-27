@@ -1,0 +1,56 @@
+{
+  "suggestions": [
+    {
+      "text": "Armação dos Búzios, Rio de Janeiro, Brasil",
+      "suggestionType": "city",
+      "country": "Brasil",
+      "state": "Rio de Janeiro",
+      "city": "Armação dos Búzios",
+      "filter": "city_armacao_dos_buzios|1,state_rio_de_janeiro|1",
+      "url": ""
+    },
+    {
+      "text": "Buzios Beach Resort, Armação dos Búzios",
+      "suggestionType": "hotel",
+      "country": "Brasil",
+      "state": "Rio de Janeiro",
+      "city": "Armação dos Búzios",
+      "sku": "OMN-5252-0-0-0-0-0-0",
+      "filter": "hotel_OMN-5252|1,is_hotel|1",
+      "url": ""
+    },
+    {
+      "text": "Pousada Dos Búzios, Armação dos Búzios",
+      "suggestionType": "hotel",
+      "country": "Brasil",
+      "state": "Rio de Janeiro",
+      "city": "Armação dos Búzios",
+      "sku": "OMN-2363-0-0-0-0-0-0",
+      "filter": "hotel_OMN-2363|1,is_hotel|1",
+      "url": ""
+    },
+    {
+      "text": "PortoBay Búzios Hotel Boutique, Armação dos Búzios",
+      "suggestionType": "hotel",
+      "country": "Brasil",
+      "state": "Rio de Janeiro",
+      "city": "Armação dos Búzios",
+      "sku": "OMN-1607-0-0-0-0-0-0",
+      "filter": "hotel_OMN-1607|1,is_hotel|1",
+      "url": ""
+    },
+    {
+      "text": "Rio Búzios Beach Hotel, Armação dos Búzios",
+      "suggestionType": "hotel",
+      "country": "Brasil",
+      "state": "Rio de Janeiro",
+      "city": "Armação dos Búzios",
+      "sku": "OMN-6533-0-0-0-0-0-0",
+      "filter": "hotel_OMN-6533|1,is_hotel|1",
+      "url": ""
+    }
+  ],
+  "total": 5,
+  "search": "buzios",
+  "packages": []
+}
