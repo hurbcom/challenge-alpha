@@ -24,7 +24,7 @@ struct Accommodation: Identifiable, Decodable {
     let isHotel: Bool?
     let isPackage: Bool?
     let smallDescription: String?
-    let description: String
+    let description: String?
     let image: String?
     let name: String?
     let stars: Int?
