@@ -43,6 +43,7 @@
 		BBDA782723B64B3500544635 /* HurbAPIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA782623B64B3500544635 /* HurbAPIExtension.swift */; };
 		BBDA782923B64C0100544635 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA782823B64C0100544635 /* APITests.swift */; };
 		BBDA782B23B64FA300544635 /* Suggestions.json in Resources */ = {isa = PBXBuildFile; fileRef = BBDA782A23B64FA300544635 /* Suggestions.json */; };
+		BBDA782D23B658EE00544635 /* HotelCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA782C23B658EE00544635 /* HotelCellTest.swift */; };
 		DCF86675771A96E62A05290F /* Pods_hurb_challenge_alphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C48F5F4D15F8B23152AD1C /* Pods_hurb_challenge_alphaTests.framework */; };
 		EDD08466F4B86A815C962DB4 /* Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64812BB5CBC9459D1CC755CC /* Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,7 @@
 		BBDA782623B64B3500544635 /* HurbAPIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAPIExtension.swift; sourceTree = "<group>"; };
 		BBDA782823B64C0100544635 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		BBDA782A23B64FA300544635 /* Suggestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Suggestions.json; sourceTree = "<group>"; };
+		BBDA782C23B658EE00544635 /* HotelCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCellTest.swift; sourceTree = "<group>"; };
 		DCAFE7E2FC079D3B141819E6 /* Pods-hurb-challenge-alphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alphaTests.release.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alphaTests/Pods-hurb-challenge-alphaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,6 +288,7 @@
 				BB4E79E823B5759F00B25034 /* hurb_challenge_alphaTests.swift */,
 				BB4E79EA23B5759F00B25034 /* Info.plist */,
 				BBDA782823B64C0100544635 /* APITests.swift */,
+				BBDA782C23B658EE00544635 /* HotelCellTest.swift */,
 			);
 			path = "hurb-challenge-alphaTests";
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 			files = (
 				BB4E79E923B5759F00B25034 /* hurb_challenge_alphaTests.swift in Sources */,
 				BBDA782723B64B3500544635 /* HurbAPIExtension.swift in Sources */,
+				BBDA782D23B658EE00544635 /* HotelCellTest.swift in Sources */,
 				BBDA782923B64C0100544635 /* APITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
