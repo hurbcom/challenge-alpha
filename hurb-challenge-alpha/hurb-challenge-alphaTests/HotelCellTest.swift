@@ -5,12 +5,11 @@
     //  Created by Hannah  on 27/12/2019.
     //  Copyright © 2019 Hannah . All rights reserved.
     //
-
     import XCTest
     @testable import hurb_challenge_alpha
-
+    
     class HotelCellTest: XCTestCase {
-
+        
         var hotel: Accommodation!
         var hotelCellVM: HotelCellViewModel!
         
@@ -48,18 +47,18 @@
         }
         
         func testDiscountHotelCell() {
-          if let price = self.hotel.price {
-                    let oldPrice = price.oldPrice
-                    let currentPrice = price.amount
-                    if let oldPrice = oldPrice {
-                        if let currentPrice = currentPrice {
-                            if oldPrice > currentPrice {
-                                let fractionalProgress = ((oldPrice - currentPrice) / oldPrice) * 100
-                                let formatString = "- " + String(Int(fractionalProgress)) + "%"
-                                XCTAssertEqual(formatString, hotelCellVM.discount)
-                            }
+            if let price = self.hotel.price {
+                let oldPrice = price.oldPrice
+                let currentPrice = price.amount
+                if let oldPrice = oldPrice {
+                    if let currentPrice = currentPrice {
+                        if oldPrice > currentPrice {
+                            let fractionalProgress = ((oldPrice - currentPrice) / oldPrice) * 100
+                            let formatString = "- " + String(Int(fractionalProgress)) + "%"
+                            XCTAssertEqual(formatString, hotelCellVM.discount)
                         }
                     }
                 }
+            }
         }
     }
