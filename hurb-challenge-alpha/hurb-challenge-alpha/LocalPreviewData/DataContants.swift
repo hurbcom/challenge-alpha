@@ -27,5 +27,6 @@ class DataContants {
             city: "Armação dos Búzios",
             state: "Rio de Janeiro",
             geoLocation: GeoLocation(latitude: -22.790146, longitude: -41.926743)),
-       gallery: [Gallery(url: "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/463/hotel-ville-la-plage-001_24_20170328174038.jpg")])
+       gallery: [Gallery(url: "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/463/hotel-ville-la-plage-001_24_20170328174038.jpg")],
+       url: "https://www.hurb.com/hoteis/armacao-dos-buzios/house-residencia-OMN-7082")
 }

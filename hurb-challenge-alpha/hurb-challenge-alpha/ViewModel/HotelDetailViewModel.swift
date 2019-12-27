@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 class HotelDetailViewModel: ObservableObject {
     
     @Published var hotel: Accommodation
@@ -14,9 +16,10 @@ class HotelDetailViewModel: ObservableObject {
     @Published var urlImage = String()
     @Published var name = String()
     @Published var adress = String()
+    @Published var price = String()
     @Published var amenities = [Amenities]()
-    @Published var latitude = Double()
-    @Published var longitude = Double()
+    @Published var latitude = 0.0
+    @Published var longitude = 0.0
     
     init(hotel: Accommodation) {
         self.hotel = hotel
@@ -26,6 +29,7 @@ class HotelDetailViewModel: ObservableObject {
         self.getUrlImage()
         self.getAmenities()
         self.getGeolocation()
+        self.loadPrice()
     }
     
     // MARK: - Methods
@@ -36,6 +40,28 @@ class HotelDetailViewModel: ObservableObject {
             self.name = name
         }
     }
+    // MARK: - Methods
+       /// load string price and currency
+       fileprivate func loadPrice() {
+           
+           if let price = self.hotel.price {
+               let currentPrice = price.amount
+               if let currentPrice = currentPrice {
+                   let priceString = String(Int(currentPrice))
+                   self.price = priceString
+               }
+           }
+       }
+    
+    // MARK: - Methods
+       /// init name value
+    func openURL() {
+           if let url = self.hotel.url {
+                guard let url = URL(string: url) else { return }
+                UIApplication.shared.open(url)
+           }
+       }
+    
     // MARK: - Methods
     /// init amenities value
     fileprivate func getAmenities() {

@@ -26,7 +26,7 @@ class HotelListViewModel: ObservableObject {
     fileprivate func fetchHotelList() {
         
         let randomPage = Int.random(in: 1..<18)
-
+        print("PAGE----------------------", randomPage)
         let apiService = APIService()
         apiService.getAccommodations(query: "buzios", page: randomPage) { (accommodation, error) in
             self.isLoading = false
