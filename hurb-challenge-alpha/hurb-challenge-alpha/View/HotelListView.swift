@@ -20,23 +20,28 @@ struct HotelListView: View {
     var body: some View {
         
             ZStack {
-                List {
+                ScrollView {
                     ForEach(hotelListVM.hotelsGroup) { grupo in
-                        Section(header: HStack {
-                            SectionHeaderView(stars: grupo.stars)
-                            Spacer()
-                        }
-                        .background(Color.init(hex: "#143A7B"))
-                        .listRowInsets(EdgeInsets(
-                            top: 0,
-                            leading: 0,
-                            bottom: 0,
-                            trailing: 0))
-                        ) {
+                        VStack{
+                             SectionHeaderView(stars: grupo.stars).background(Color.init(hex: "#143A7B"))
                             HotelRowView(hotels: grupo.value)
-                        }
+
+                        }.frame(height: 370)
+//                        Section(header: HStack {
+//                            SectionHeaderView(stars: grupo.stars)
+//                            Spacer()
+//                        }
+//                        .background(Color.init(hex: "#143A7B"))
+//                        .listRowInsets(EdgeInsets(
+//                            top: 0,
+//                            leading: 0,
+//                            bottom: 0,
+//                            trailing: 0))
+//                        ) {
+//                            HotelRowView(hotels: grupo.value)
+//                        }
                     }
-                }.environment(\.defaultMinListRowHeight, 350)
+                }
                 ActivityIndicatorView(show: self.hotelListVM.isLoading)
                 ErrorMensage(show: self.hotelListVM.showMsgError)
             }
@@ -79,3 +84,4 @@ struct HotelListView_Previews: PreviewProvider {
         HotelListView()
     }
 }
+ 

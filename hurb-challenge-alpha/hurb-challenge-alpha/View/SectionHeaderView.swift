@@ -18,15 +18,20 @@ struct SectionHeaderView: View {
        }
     
     var body: some View {
-        HStack(spacing: 20) {
-            Text(self.sectionVM.title).font(.headline)
-                .foregroundColor(Color.white)
-                .foregroundColor(.secondary)
-                .padding(.leading, 15.0)
-            ForEach((0..<self.sectionVM.stars!), id: \.self) {_ in
-                Image(systemName: "star.fill").foregroundColor(Color.yellow)
-               }
-        }.frame( height: 50, alignment: .trailing)
+        
+        VStack {
+            HStack(spacing: 20) {
+                Text(self.sectionVM.title).font(.headline)
+                    .foregroundColor(Color.white)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.leading)
+                    .padding(.leading, 15.0)
+                ForEach((0..<self.sectionVM.stars!), id: \.self) {_ in
+                    Image(systemName: "star.fill").foregroundColor(Color.yellow)
+                   }
+                Spacer()
+            }.frame( height: 50, alignment: .trailing)
+        }.frame(maxWidth: .infinity)
         }
     }
 

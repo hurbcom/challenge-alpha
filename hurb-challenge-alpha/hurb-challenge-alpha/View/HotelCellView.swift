@@ -21,14 +21,14 @@ struct HotelCellView: View {
         
         ZStack {
             RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(Color.white).shadow(color: .gray, radius: 1, x: 0, y: 0).padding(2)
+                .fill(Color.white).shadow(color: .gray, radius: 1, x: 0, y: 0)
             
-            VStack(alignment: .leading, spacing: 16.0) {
+            VStack(alignment: .leading, spacing: 0) {
                 VStack {
                     CustomImageView(url: self.cellVM.urlImage) .overlay(
                         DiscountView(text: self.cellVM.discount),
                         alignment: .topTrailing)
-                }.cornerRadius(10).padding(EdgeInsets(top: 0, leading: 1, bottom: 0, trailing: 1))
+                }
                 
                 VStack(alignment: .leading, spacing: 5.0) {
                     Text(self.cellVM.name)
