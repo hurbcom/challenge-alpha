@@ -16,8 +16,10 @@ struct HotelRowView: View {
         ScrollView(.horizontal, content: {
             HStack(spacing: 10) {
                 ForEach(hotels, content: { item in
+                      NavigationLink(destination: HotelDetailView(hotel: item)) {
                     HotelCellView(hotel: item).frame(width: 247.05, height: 280)
                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 20, trailing: 10))
+                         }.buttonStyle(PlainButtonStyle())
                 })
             }
         })
