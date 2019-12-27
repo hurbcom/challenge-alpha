@@ -48,6 +48,8 @@ struct HotelCellView: View {
             }
         }
     }
+    
+    /// View responsible for displaying prices
     struct PriceView: View {
         var price: String
         var body: some View {
@@ -67,7 +69,7 @@ struct HotelCellView: View {
             }
         }
     }
-    
+    /// View responsible for displaying cancelation information
      struct CancellationView: View {
             var isCancellation: Bool
             var body: some View {
@@ -84,7 +86,8 @@ struct HotelCellView: View {
             }
         }
     }
-    
+
+    /// View responsible for displaying discount
     struct DiscountView: View {
         var text: String
         var body: some View {
