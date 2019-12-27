@@ -25,8 +25,10 @@ class HotelListViewModel: ObservableObject {
     /// load date from api
     fileprivate func fetchHotelList() {
         
+        let randomPage = Int.random(in: 1..<18)
+
         let apiService = APIService()
-        apiService.getAccommodations(query: "buzios", page: 1) { (accommodation, error) in
+        apiService.getAccommodations(query: "buzios", page: randomPage) { (accommodation, error) in
             self.isLoading = false
             if let error = error {
                 self.showMsgError = true
