@@ -14,39 +14,39 @@ import XCTest
 class HotelDetailTest: XCTestCase {
     
     var hotel: Accommodation!
-    var hotelCellVM: HotelDetailViewModel!
+    var hotelDetailVM: HotelDetailViewModel!
     
     override func setUp() {
         hotel = DataContants.sharedInstance.hotelModelTest
-        hotelCellVM = HotelDetailViewModel(hotel: hotel)
+        hotelDetailVM = HotelDetailViewModel(hotel: hotel)
     }
     
     func testNameHotelDetail() {
-        XCTAssertEqual(hotel.name, hotelCellVM.name)
+        XCTAssertEqual(hotel.name, hotelDetailVM.name)
     }
     
     func testCityHotelDetail() {
-        XCTAssertEqual(hotel.address?.city, hotelCellVM.city)
+        XCTAssertEqual(hotel.address?.city, hotelDetailVM.city)
     }
     func testStateHotelDetail() {
-        XCTAssertEqual(hotel.address?.state, hotelCellVM.state)
+        XCTAssertEqual(hotel.address?.state, hotelDetailVM.state)
     }
     
     func testStreetHotelDetail() {
-        XCTAssertEqual(hotel.address?.street, hotelCellVM.street)
+        XCTAssertEqual(hotel.address?.street, hotelDetailVM.street)
     }
     
     func testDescriptionHotelDetail() {
-        XCTAssertEqual(hotel.smallDescription, hotelCellVM.smallDescription)
+        XCTAssertEqual(hotel.smallDescription, hotelDetailVM.smallDescription)
     }
     
     func testGetImageHotelDetail() {
         if let image = hotel.image {
-            XCTAssertEqual(image, hotelCellVM.urlImage)
+            XCTAssertEqual(image, hotelDetailVM.urlImage)
         } else {
             if !hotel.gallery!.isEmpty {
                 if let image = hotel.gallery?.first?.url {
-                    XCTAssertEqual(image, hotelCellVM.urlImage)
+                    XCTAssertEqual(image, hotelDetailVM.urlImage)
                 }
             }
         }
