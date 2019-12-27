@@ -25,6 +25,10 @@ struct MapView: UIViewRepresentable {
         let region = MKCoordinateRegion(center: self.geolocation, span: span)
         uiView.setRegion(region, animated: true)
         
+        uiView.isZoomEnabled = false;
+        uiView.isScrollEnabled = false;
+        uiView.isUserInteractionEnabled = false;
+        
         let annotation = MKPointAnnotation()
         annotation.coordinate = self.geolocation
         annotation.title = self.name

@@ -54,7 +54,7 @@ class HotelDetailViewModel: ObservableObject {
        }
     
     // MARK: - Methods
-       /// init name value
+    ///  openURLSIte
     func openURL() {
            if let url = self.hotel.url {
                 guard let url = URL(string: url) else { return }
