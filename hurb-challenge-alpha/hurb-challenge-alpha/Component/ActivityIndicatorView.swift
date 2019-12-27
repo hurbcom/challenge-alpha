@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+
+/// class responsability load my custom activity indicator
 struct ActivityIndicator: View {
 
   @State private var isAnimating: Bool = false
