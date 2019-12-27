@@ -23,7 +23,7 @@ class HotelListViewModel: ObservableObject {
     fileprivate func fetchHotelList() {
         
         let apiService = APIService()
-        apiService.getAccommodations(query: "buzios", page: 3) { (accommodation, error) in
+        apiService.getAccommodations(query: "buzios", page: 1) { (accommodation, error) in
             self.isLoading = false
             if let error = error {
                 self.showMsgError = true
@@ -46,14 +46,17 @@ class HotelListViewModel: ObservableObject {
         let sectionsStars = grouped.map({ AccommodationGroup(stars: $0.key, value: $0.value) })
 
         // filtering and grouping packages
-        let filtesPackage = accommodation.filter { $0.isPackage != nil }
-        let acGroup = AccommodationGroup(stars: 0, value: filtesPackage)
-        
-        //create list agroup accommodation
         var listAccommodation = [AccommodationGroup]()
+
+        let filtesPackage = accommodation.filter { $0.isPackage != nil }
+        if !filtesPackage.isEmpty {
+            
+            //create list agroup accommodation
+            let acGroup = AccommodationGroup(stars: 0, value: filtesPackage)
+            listAccommodation.append(acGroup)
+        }
     
         //merge list hotels and packeges
-        listAccommodation.append(acGroup)
         listAccommodation.append(contentsOf: sectionsStars)
         
         self.hotelsGroup = listAccommodation
