@@ -10,7 +10,7 @@ import Foundation
 
 class HotelListViewModel: ObservableObject {
     
-    @Published var hotelsGroup = [AccommodationGroup]()
+    @Published var hotels = [AccommodationGroup]()
     @Published var isLoading = true
     @Published var showMsgError = false
 
@@ -26,7 +26,7 @@ class HotelListViewModel: ObservableObject {
     fileprivate func fetchHotelList() {
         
         let apiService = APIService()
-        apiService.getAccommodations(query: "buzios", page: 3) { (accommodation, error) in
+        apiService.getAccommodations(query: "buzios", page: 1) { (accommodation, error) in
             self.isLoading = false
             if let error = error {
                 self.showMsgError = true
@@ -62,6 +62,6 @@ class HotelListViewModel: ObservableObject {
         //merge list hotels and packeges
         listAccommodation.append(contentsOf: sectionsStars)
         
-        self.hotelsGroup = listAccommodation
+        self.hotels = listAccommodation
     }
 }

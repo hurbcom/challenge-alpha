@@ -20,7 +20,7 @@ struct HotelListView: View {
         
             ZStack {
                 ScrollView {
-                    ForEach(hotelListVM.hotelsGroup) { grupo in
+                    ForEach(hotelListVM.hotels) { grupo in
                         VStack {
                              SectionHeaderView(stars: grupo.stars).background(Color.init(hex: "#143A7B"))
                             HotelRowView(hotels: grupo.value)
