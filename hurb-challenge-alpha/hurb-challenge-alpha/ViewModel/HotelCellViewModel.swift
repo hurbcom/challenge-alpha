@@ -25,6 +25,7 @@ class HotelCellViewModel: ObservableObject {
         self.getUrlImage()
         self.getCity()
         self.getName()
+        self.getFreeCancelation()
     }
     
     // MARK: - Methods
