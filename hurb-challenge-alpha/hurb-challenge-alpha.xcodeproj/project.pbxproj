@@ -37,13 +37,13 @@
 		BB4E79D823B5759F00B25034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4E79D723B5759F00B25034 /* Assets.xcassets */; };
 		BB4E79DB23B5759F00B25034 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4E79DA23B5759F00B25034 /* Preview Assets.xcassets */; };
 		BB4E79DE23B5759F00B25034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4E79DC23B5759F00B25034 /* LaunchScreen.storyboard */; };
-		BB4E79E923B5759F00B25034 /* hurb_challenge_alphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79E823B5759F00B25034 /* hurb_challenge_alphaTests.swift */; };
 		BB4E79F423B5759F00B25034 /* hurb_challenge_alphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79F323B5759F00B25034 /* hurb_challenge_alphaUITests.swift */; };
 		BBDA782423B64A7D00544635 /* Accommodations.json in Resources */ = {isa = PBXBuildFile; fileRef = BBDA782323B64A7D00544635 /* Accommodations.json */; };
 		BBDA782723B64B3500544635 /* HurbAPIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA782623B64B3500544635 /* HurbAPIExtension.swift */; };
 		BBDA782923B64C0100544635 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA782823B64C0100544635 /* APITests.swift */; };
 		BBDA782B23B64FA300544635 /* Suggestions.json in Resources */ = {isa = PBXBuildFile; fileRef = BBDA782A23B64FA300544635 /* Suggestions.json */; };
 		BBDA782D23B658EE00544635 /* HotelCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA782C23B658EE00544635 /* HotelCellTest.swift */; };
+		BBDA782F23B6720900544635 /* SectionHeaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA782E23B6720900544635 /* SectionHeaderTest.swift */; };
 		DCF86675771A96E62A05290F /* Pods_hurb_challenge_alphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C48F5F4D15F8B23152AD1C /* Pods_hurb_challenge_alphaTests.framework */; };
 		EDD08466F4B86A815C962DB4 /* Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64812BB5CBC9459D1CC755CC /* Pods_hurb_challenge_alpha_hurb_challenge_alphaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -106,7 +106,6 @@
 		BB4E79DD23B5759F00B25034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB4E79DF23B5759F00B25034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4E79E423B5759F00B25034 /* hurb-challenge-alphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hurb-challenge-alphaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB4E79E823B5759F00B25034 /* hurb_challenge_alphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hurb_challenge_alphaTests.swift; sourceTree = "<group>"; };
 		BB4E79EA23B5759F00B25034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4E79EF23B5759F00B25034 /* hurb-challenge-alphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hurb-challenge-alphaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4E79F323B5759F00B25034 /* hurb_challenge_alphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hurb_challenge_alphaUITests.swift; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		BBDA782823B64C0100544635 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		BBDA782A23B64FA300544635 /* Suggestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Suggestions.json; sourceTree = "<group>"; };
 		BBDA782C23B658EE00544635 /* HotelCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCellTest.swift; sourceTree = "<group>"; };
+		BBDA782E23B6720900544635 /* SectionHeaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderTest.swift; sourceTree = "<group>"; };
 		DCAFE7E2FC079D3B141819E6 /* Pods-hurb-challenge-alphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hurb-challenge-alphaTests.release.xcconfig"; path = "Target Support Files/Pods-hurb-challenge-alphaTests/Pods-hurb-challenge-alphaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -285,10 +285,10 @@
 			children = (
 				BBDA782523B64B0900544635 /* Extensions */,
 				BBDA782223B64A5600544635 /* Stubs */,
-				BB4E79E823B5759F00B25034 /* hurb_challenge_alphaTests.swift */,
 				BB4E79EA23B5759F00B25034 /* Info.plist */,
 				BBDA782823B64C0100544635 /* APITests.swift */,
 				BBDA782C23B658EE00544635 /* HotelCellTest.swift */,
+				BBDA782E23B6720900544635 /* SectionHeaderTest.swift */,
 			);
 			path = "hurb-challenge-alphaTests";
 			sourceTree = "<group>";
@@ -624,7 +624,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB4E79E923B5759F00B25034 /* hurb_challenge_alphaTests.swift in Sources */,
+				BBDA782F23B6720900544635 /* SectionHeaderTest.swift in Sources */,
 				BBDA782723B64B3500544635 /* HurbAPIExtension.swift in Sources */,
 				BBDA782D23B658EE00544635 /* HotelCellTest.swift in Sources */,
 				BBDA782923B64C0100544635 /* APITests.swift in Sources */,
