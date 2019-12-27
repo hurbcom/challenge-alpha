@@ -15,6 +15,7 @@
 		BB4E29B223B578F20069FDC7 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29AC23B578F20069FDC7 /* Price.swift */; };
 		BB4E29B323B578F20069FDC7 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29AD23B578F20069FDC7 /* Gallery.swift */; };
 		BB4E29B723B57AA80069FDC7 /* HurbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29B623B57AA80069FDC7 /* HurbAPI.swift */; };
+		BB4E29B923B57F8C0069FDC7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E29B823B57F8C0069FDC7 /* APIService.swift */; };
 		BB4E79D223B5759E00B25034 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79D123B5759E00B25034 /* AppDelegate.swift */; };
 		BB4E79D423B5759E00B25034 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79D323B5759E00B25034 /* SceneDelegate.swift */; };
 		BB4E79D623B5759E00B25034 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E79D523B5759E00B25034 /* ContentView.swift */; };
@@ -60,6 +61,7 @@
 		BB4E29AC23B578F20069FDC7 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		BB4E29AD23B578F20069FDC7 /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		BB4E29B623B57AA80069FDC7 /* HurbAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbAPI.swift; sourceTree = "<group>"; };
+		BB4E29B823B57F8C0069FDC7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		BB4E79CE23B5759E00B25034 /* hurb-challenge-alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hurb-challenge-alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4E79D123B5759E00B25034 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB4E79D323B5759E00B25034 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4E29B623B57AA80069FDC7 /* HurbAPI.swift */,
+				BB4E29B823B57F8C0069FDC7 /* APIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				BB4E29B323B578F20069FDC7 /* Gallery.swift in Sources */,
 				BB4E29B223B578F20069FDC7 /* Price.swift in Sources */,
 				BB4E79D423B5759E00B25034 /* SceneDelegate.swift in Sources */,
+				BB4E29B923B57F8C0069FDC7 /* APIService.swift in Sources */,
 				BB4E29B023B578F20069FDC7 /* Accommodation.swift in Sources */,
 				BB4E79D623B5759E00B25034 /* ContentView.swift in Sources */,
 				BB4E29AE23B578F20069FDC7 /* Suggestion.swift in Sources */,
