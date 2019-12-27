@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 /// class responsible for displaying amenities data
 struct AmenitiesCellView: View {
     
