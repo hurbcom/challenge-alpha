@@ -31,16 +31,18 @@ struct HotelCellView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 5.0) {
-                    Text(self.cellVM.name)
-                        .font(.headline)
-                        .fontWeight(.black)
-                        .foregroundColor(.primary)
-                        .lineLimit(2)
-                    Text(self.cellVM.city)
+                    VStack(alignment: .leading, spacing: 5.0) {
+                        Text(self.cellVM.name)
+                            .font(.headline)
+                            .fontWeight(.black)
+                            .foregroundColor(.primary)
+                            .lineLimit(2)
+                        Text(self.cellVM.city)
                         .font(.headline)
                         .lineLimit(1)
                         .foregroundColor(.secondary)
                         .frame(height: 30, alignment: .top)
+                    }.frame(height: 90)
                     CancellationView(isCancellation: self.cellVM.huFreeCancellation)
                     PriceView(price: self.cellVM.price)
                 }.frame(height: 130)
@@ -82,7 +84,7 @@ struct HotelCellView: View {
                                           .lineLimit(1)
                         
                     }
-                }
+                }.frame(height: 20)
                 
             }
         }
