@@ -9,12 +9,14 @@
 import SwiftUI
 //class load navigation bar
 struct HomePageView: View {
+    var networkManager = APIService()
+     
     var body: some View {
-        
-        NavigationView {
-            HotelListView().navigationBarTitle(Text("Búzios"))
-        }
-    }
+           NavigationView {
+               HotelListView(networkManager: self.networkManager).navigationBarTitle(Text("Búzios"))
+           }
+
+       }
 }
 
 struct HomePageView_Previews: PreviewProvider {

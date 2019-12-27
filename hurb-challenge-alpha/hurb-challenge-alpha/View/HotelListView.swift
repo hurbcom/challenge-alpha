@@ -11,35 +11,21 @@ import SwiftUI
 ///class responsible for displaying a list grouped by hotels and packages
 struct HotelListView: View {
     
-    @ObservedObject var hotelListVM = HotelListViewModel()
-    
-    /// remove separator from list
-    init() {
-        UITableView.appearance().separatorStyle = .none
+    @ObservedObject var hotelListVM: HotelListViewModel
+
+     init(networkManager: APIService) {
+           self.hotelListVM = HotelListViewModel(networkManager: networkManager)
     }
     var body: some View {
         
             ZStack {
                 ScrollView {
                     ForEach(hotelListVM.hotelsGroup) { grupo in
-                        VStack{
+                        VStack {
                              SectionHeaderView(stars: grupo.stars).background(Color.init(hex: "#143A7B"))
                             HotelRowView(hotels: grupo.value)
 
                         }.frame(height: 370)
-//                        Section(header: HStack {
-//                            SectionHeaderView(stars: grupo.stars)
-//                            Spacer()
-//                        }
-//                        .background(Color.init(hex: "#143A7B"))
-//                        .listRowInsets(EdgeInsets(
-//                            top: 0,
-//                            leading: 0,
-//                            bottom: 0,
-//                            trailing: 0))
-//                        ) {
-//                            HotelRowView(hotels: grupo.value)
-//                        }
                     }
                 }
                 ActivityIndicatorView(show: self.hotelListVM.isLoading)
@@ -75,13 +61,12 @@ struct ErrorMensage: View {
                 
             }
         }
-        
     }
 }
 
 struct HotelListView_Previews: PreviewProvider {
     static var previews: some View {
-        HotelListView()
+        HotelListView(networkManager: APIService())
     }
 }
  

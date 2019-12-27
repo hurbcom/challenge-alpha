@@ -14,9 +14,12 @@ class HotelListViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var showMsgError = false
 
-    init() {
-        fetchHotelList()
-    }
+      let networkManager: APIService
+     
+     init(networkManager: APIService) {
+         self.networkManager = networkManager
+         fetchHotelList()
+     }
     
     // MARK: - Methods
     /// load date from api
