@@ -33,6 +33,7 @@ struct Accommodation: Identifiable, Decodable {
     let price: Price?
     let address: Addres?
     let gallery: [Gallery]?
+    let url: String?
     
     //protocol rename property keys
     private enum CodingKeys: String, CodingKey {
@@ -49,5 +50,6 @@ struct Accommodation: Identifiable, Decodable {
         case price
         case address
         case gallery
+        case url
     }
 }
