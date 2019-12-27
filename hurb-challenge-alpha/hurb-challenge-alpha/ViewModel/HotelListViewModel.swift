@@ -36,7 +36,12 @@ class HotelListViewModel: ObservableObject {
                 return
             }
             dump(accommodation)
-            self.groupValues(accommodation: accommodation!)
+            if let hotels = accommodation {
+                if hotels.isEmpty {
+                    self.showMsgError = true
+                }
+            self.groupValues(accommodation: hotels)
+            }
         }
 
     }
