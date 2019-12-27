@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// class responsible for display information hotel or package in list
 struct HotelCellView: View {
     
     @ObservedObject var cellVM: HotelCellViewModel

@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// class responsible for the horizontal scroll of the cells
 struct HotelRowView: View {
     var hotels: [Accommodation]
     
