@@ -13,7 +13,7 @@
         -   [5.1.2. Moya](#512-moya)
         -   [5.1.4. Kingfisher](#514-kingfisher)
 -   [6. Vulnerabilidades](#6-vulnerabilidades)
-    -   [6.1. Falta do protocolo HTTPS](#61-protocolo-de-rede-usado-por-algumas-imagens)
+    -   [6.1. Falta do protocolo HTTPS](#61-Falta-do-protocolo-HTTPS)
 
 ## 2. O Projeto
 
@@ -23,9 +23,9 @@ O Projeto foi desenvolvido utilizando o framework SwiftUI que possibilita o dese
 
 A arquitetura adotada foi o MVVM pois proporciona um baixo acoplamento e favorece a execução de testes. Sua caracteristica principal é a separação de toda regra de negócio da camada de exibição.
 
-Para consulta dos hoteis e pacotes foi utilizadado o end-point `GET https://www.hurb.com/search/api?q=buzios&page=PAGE` onde o parametro page é um número aleatório entre 1 e 17. Isso possibilita a execução de todos os cenários possíveis de acordo com o retorno de dados da API.
+Para consulta dos hoteis e pacotes foi utilizadado o end-point `GET https://www.hurb.com/search/api?q=buzios&page=PAGE` onde o parametro PAGE é um número aleatório entre 1 e 17. Isso possibilita a execução de todos os cenários possíveis de acordo com o retorno de dados da API.
 
-A Aplicação é composta de uma listagem de hoteis e pacotes. Eles são atrupados entre a classificação das estrelas e os pacotes que são exibidos de maneira separada. Há uma rolagem horizontal dentro das categorias possibitilando selecionar os hoteis e pacotes. É possivel selecionar um hotel ou pacote e exibir mais detalhes sobre a acomodação como endereço, preço, mapa do local, comodidades além da abertura da página do site do HURB.
+A Aplicação é composta de uma listagem de hoteis e pacotes. Eles são atrupados entre a classificação das estrelas e os pacotes, que são exibidos de maneira separada. Há uma rolagem horizontal dentro das categorias possibitilando selecionar os hoteis e pacotes. É possivel selecionar um hotel ou pacote e exibir mais detalhes sobre a acomodação como endereço, preço, mapa do local, comodidades além da abertura da página do site do HURB.
 
 ## 3. Design
 
@@ -44,8 +44,6 @@ Desing simplista utilizando os guidelines e componentes da Apple com a palheta d
 
 Foram implementados testes em todas as requisições de rede além das propriedades presentes em todos os ViewModels, garantindo assim a integridade da aplicação.
 
-Para garantir que as principais funcionalidades do app fossem supridas e o app funcionasse conforme o esperado, preparei testes para o NetworkAdapter e o Data Manager. Desse modo, pude garantir a consistência das informações recebidas da API e como elas são tratadas pelo app.
-
 ## 5. Dependências
 
 ### 5.1. CocoaPods
@@ -58,7 +56,7 @@ O Projeto foi desenvolvido utilizando o SwiftLint que garante a padronização d
 
 As requisiçoes foram implemtadas utilizando o Moya pois o mesmo oferece uma grande abstração das requisições, inspirada no conceito de encapsular solicitações de rede de maneira segura, tipicamente usando enumerações, que fornece confiança ao trabalhar com a camada de rede. o Moya tem como um grande benefício a facilidade de executar testes nas requisições.
 
-#### 5.1.3. [Kingfisher](https://github.com/SnapKit/Kingfisher)
+#### 5.1.3. [Kingfisher](https://github.com/onevcat/Kingfisher)
 
 Ferramanta que auxilia o carregamentpo imagens de maneira asyncrona e implementa recussos de cache.
 
