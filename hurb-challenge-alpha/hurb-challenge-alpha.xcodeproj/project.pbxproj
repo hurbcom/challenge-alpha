@@ -101,7 +101,7 @@
 		BB4E29DC23B58AD80069FDC7 /* DataContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContants.swift; sourceTree = "<group>"; };
 		BB4E29DF23B594350069FDC7 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		BB4E29E123B59D7F0069FDC7 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
-		BB4E79CE23B5759E00B25034 /* hurb-challenge-alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hurb-challenge-alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB4E79CE23B5759E00B25034 /* challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4E79D123B5759E00B25034 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB4E79D323B5759E00B25034 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BB4E79D723B5759F00B25034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 		BB4E79CF23B5759E00B25034 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB4E79CE23B5759E00B25034 /* hurb-challenge-alpha.app */,
+				BB4E79CE23B5759E00B25034 /* challenge.app */,
 				BB4E79E423B5759F00B25034 /* hurb-challenge-alphaTests.xctest */,
 				BB4E79EF23B5759F00B25034 /* hurb-challenge-alphaUITests.xctest */,
 			);
@@ -361,7 +361,7 @@
 			);
 			name = "hurb-challenge-alpha";
 			productName = "hurb-challenge-alpha";
-			productReference = BB4E79CE23B5759E00B25034 /* hurb-challenge-alpha.app */;
+			productReference = BB4E79CE23B5759E00B25034 /* challenge.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BB4E79E323B5759F00B25034 /* hurb-challenge-alphaTests */ = {
@@ -806,7 +806,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hurb.hurb-challenge-alpha";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = challenge;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -826,7 +826,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hurb.hurb-challenge-alpha";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = challenge;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
