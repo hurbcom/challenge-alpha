@@ -21,9 +21,9 @@ Arquitetura: **MVVM**
 
 O Projeto foi desenvolvido utilizando o framework SwiftUI que possibilita o desenvolvimento de interfaces de maneira declarativa além de oferecer suporte a visualização do layot em tempo real.
 
-A arquitetura adotada foi o MVVM pois proporciona um baixo acoplamento e favorece a execução de testes pois toda a regra de negócio encontra-se separada a view.
+A arquitetura adotada foi o MVVM pois proporciona um baixo acoplamento e favorece a execução de testes. Sua caracteristica principal é a separação de toda regra de negócio da camada de exibição.
 
-Para consulta dos hoteis e pacotes foi utilizadado o end-point `GET https://www.hurb.com/search/api?q=buzios&page=PAGE` onde o parametro page é um número aleatório entre 1 e 17. Isso possibilita a execução de todos os cenários possíveis de acordo com o retorno de dado da API.
+Para consulta dos hoteis e pacotes foi utilizadado o end-point `GET https://www.hurb.com/search/api?q=buzios&page=PAGE` onde o parametro page é um número aleatório entre 1 e 17. Isso possibilita a execução de todos os cenários possíveis de acordo com o retorno de dados da API.
 
 A Aplicação é composta de uma listagem de hoteis e pacotes. Eles são atrupados entre a classificação das estrelas e os pacotes que são exibidos de maneira separada. Há uma rolagem horizontal dentro das categorias possibitilando selecionar os hoteis e pacotes. É possivel selecionar um hotel ou pacote e exibir mais detalhes sobre a acomodação como endereço, preço, mapa do local, comodidades além da abertura da página do site do HURB.
 
