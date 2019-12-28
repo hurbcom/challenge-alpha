@@ -33,8 +33,8 @@ Desing simplista utilizando os guidelines e componentes da Apple com a palheta d
 
 <p align="center">
     <img src="screen/home.png" width="150" height="350" alt="screen" />
+    <img src="screen/detalhe_1.png" width="150" height="350" alt="screen" />
     <img src="screen/detalhe_2.png" width="150" height="350" alt="screen" />
-    <img src="screen/detalhe_3.png" width="150" height="350" alt="screen" />
 
 </p>
 
