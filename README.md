@@ -19,7 +19,7 @@
 
 Arquitetura: **MVVM**
 
-O Projeto foi desenvolvido utilizando o framework SwiftUI que possibilita o desenvolvimento de interfaces de maneira declarativa além de oferecer suporte a visualização do layot em tempo real.
+O Projeto foi desenvolvido utilizando o framework SwiftUI que possibilita o desenvolvimento de interfaces de maneira declarativa além de oferecer suporte a visualização do layot em tempo real. O SwiftUI ofeece suporte nativo para implementação do paradigma da programação reativa.
 
 A arquitetura adotada foi o MVVM pois proporciona um baixo acoplamento e favorece a execução de testes. Sua caracteristica principal é a separação de toda regra de negócio da camada de exibição.
 
@@ -58,7 +58,7 @@ As requisiçoes foram implemtadas utilizando o Moya pois o mesmo oferece uma gra
 
 #### 5.1.3. [Kingfisher](https://github.com/onevcat/Kingfisher)
 
-Ferramanta que auxilia o carregamentpo imagens de maneira asyncrona e implementa recussos de cache.
+Ferramanta que auxilia o carregamentpo imagens de maneira assíncrona e implementa recussos de cache.
 
 ## 6. Vulnerabilidades
 
