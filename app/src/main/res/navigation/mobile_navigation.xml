@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_hotels">
+
+    <fragment
+        android:id="@+id/navigation_hotels"
+        android:name="com.example.challenge_alpha.ui.hotels.HotelsFragment"
+        android:label="@string/title_hotels"
+        tools:layout="@layout/fragment_hotels">
+        <action
+            android:id="@+id/hotels_to_results"
+            app:destination="@+id/navigation_results">
+            <argument
+                android:name="queryString"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_results"
+        android:name="com.example.challenge_alpha.ui.results.ResultsFragment"
+        android:label="@string/title_results"
+        tools:layout="@layout/fragment_results">
+
+        <argument
+            android:name="queryString"
+            app:argType="string"
+            app:nullable="false"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_packages"
+        android:name="com.example.challenge_alpha.ui.packages.PackagesFragment"
+        android:label="@string/title_packages"
+        tools:layout="@layout/fragment_packages" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.challenge_alpha.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
