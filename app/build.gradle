@@ -19,7 +19,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.challenge_alpha"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode versionMajor * 1000000 + versionMinor * 1000 + buildNum
         versionName String.valueOf(versionMajor) + "." + String.valueOf(versionMinor) + "." + String.valueOf(buildNum)
@@ -81,7 +81,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-rc03"
 
     // Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3"
 
     //firebase
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'

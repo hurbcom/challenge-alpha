@@ -5,6 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_hotels">
 
+
     <fragment
         android:id="@+id/navigation_hotels"
         android:name="com.example.challenge_alpha.ui.hotels.HotelsFragment"
@@ -25,12 +26,33 @@
         android:name="com.example.challenge_alpha.ui.results.ResultsFragment"
         android:label="@string/title_results"
         tools:layout="@layout/fragment_results">
-
         <argument
             android:name="queryString"
             app:argType="string"
-            app:nullable="false"
-            />
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/results_to_resultDetail"
+            app:destination="@+id/navigation_resultDetail">
+            <argument
+                android:name="selectedResult"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_resultDetail"
+        android:name="com.example.challenge_alpha.ui.resultDetail.ResultDetailFragment"
+        android:label="@string/title_resultDetail"
+        tools:layout="@layout/fragment_resultdetail">
+
+        <argument
+            android:name="selectedResult"
+            app:argType="string"
+            app:nullable="false" />
 
     </fragment>
 

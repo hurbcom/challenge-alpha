@@ -79,6 +79,7 @@
         android:text="Amenidade 1"
         android:textAlignment="viewStart"
         android:gravity="start"
+        android:visibility="gone"
         />
 
     <TextView
@@ -91,6 +92,7 @@
         android:text="Amenidade 2"
         android:textAlignment="viewStart"
         android:gravity="start"
+        android:visibility="gone"
         />
 
     <TextView
@@ -103,6 +105,7 @@
         android:text="Amenidade 3"
         android:textAlignment="viewStart"
         android:gravity="start"
+        android:visibility="gone"
         />
 
 

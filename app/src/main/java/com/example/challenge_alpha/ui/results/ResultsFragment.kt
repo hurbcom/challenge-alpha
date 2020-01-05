@@ -34,21 +34,14 @@ class ResultsFragment : Fragment() {
 
         resultsViewModel.search(args.queryString)
 
-
         recyclerResult = root.findViewById(R.id.recyclerResult)
         recyclerResult.layoutManager = LinearLayoutManager(root.context)
         val adapter = ResultsAdapter()
         recyclerResult.adapter = adapter
 
-
         resultsViewModel.resultDetailLive.observe(this, Observer {
-            Log.d(TAG, "HOTELS $it")
+            Log.d(TAG, "HOTELS ${it}")
             adapter.submitList(it)
-            resultsViewModel.progressBar(false)
-        })
-
-        resultsViewModel.errorLive.observe(this, Observer {
-            Log.d(TAG, "Error $it")
             resultsViewModel.progressBar(false)
         })
 

@@ -2,6 +2,7 @@
     <string name="app_name">Challenge-alpha</string>
     <string name="title_hotels">Hotéis</string>
     <string name="title_results">Resultados</string>
+    <string name="title_resultDetail">Hotel/Pacote</string>
     <string name="title_packages">Pacotes</string>
     <string name="title_profile">Perfil</string>
     <string name="search_hint">Qual é a sua próxima viagem?</string>

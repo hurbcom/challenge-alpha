@@ -8,10 +8,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.model.ResultDetail
+import com.example.challenge_alpha.ui.hotels.HotelsFragmentDirections
 
 class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -30,12 +33,12 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     init {
         view.setOnClickListener {
-            /*
-            repo?.url?.let { url ->
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                view.context.startActivity(intent)
-            }
-            */
+
+            val navController = findNavController(it)
+
+            val action = ResultsFragmentDirections.resultsToResultDetail(resultDetails!!.sku)
+            navController.navigate(action)
+
         }
 
     }
@@ -54,18 +57,29 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private fun loadData(result: ResultDetail) {
         this.resultDetails = result
 
+
         nameHotel.text = result.name
         cityHotel.text = result.address?.city
         stateHotel.text = result.address?.state
         priceHotel.text = result.price.amount.toString()
-        starsHotel.rating = result.stars?: 0f
+        starsHotel.rating = if (result.stars == null) {
+            starsHotel.visibility = View.INVISIBLE
+            0f
+        } else result.stars!!
 
-/*
-        amenities1.text = result.amenities[0].name
-        amenities2.text = result.amenities[1].name
-        amenities3.text = result.amenities[2].name
 
- */
+        amenities1.text = result.amenities.getOrNull(0)?.name.let {
+            amenities1.visibility = View.VISIBLE
+            it
+        }
+        amenities2.text = result.amenities.getOrNull(1)?.name.let {
+            amenities2.visibility = View.VISIBLE
+            it
+        }
+        amenities3.text = result.amenities.getOrNull(2)?.name.let {
+            amenities3.visibility = View.VISIBLE
+            it
+        }
 
         imageHotel.load(result.image)
 

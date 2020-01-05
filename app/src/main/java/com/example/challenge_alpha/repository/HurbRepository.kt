@@ -4,52 +4,30 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.challenge_alpha.api.HurbResponse
 import com.example.challenge_alpha.api.HurbService
-import com.example.challenge_alpha.api.hurbCall
+import com.example.challenge_alpha.db.ResultDetailDao
 import com.example.challenge_alpha.model.Filters
 import com.example.challenge_alpha.model.Header
 import com.example.challenge_alpha.model.ResultDetail
+import com.example.challenge_alpha.model.ResultDetailAmenities
+import retrofit2.Retrofit
 
 private const val TAG = "HurbCall"
 
-class HurbRepository(private val call: HurbService) {
+class HurbRepository(
+    private val call: HurbService
+) {
 
     private var lastRequestedPage = 1
 
-    val networkErrors = MutableLiveData<String>()
-    val resultDetailLive = MutableLiveData<List<ResultDetail>>()
-    val filterLive = MutableLiveData<Filters>()
-    val headerLive = MutableLiveData<Header>()
-
-    private var isRequestInProgress = false
-
-    fun search(query: String) {
+    suspend fun search(query: String): HurbResponse {
 
         Log.d(TAG, "New query: $query")
-        lastRequestedPage = 1
-        request(query)
+        val response = call.searchRepos(query, lastRequestedPage)
+        lastRequestedPage++
+        return response
+
+
     }
 
-    fun requestMore(query: String) {
-        request(query)
-    }
 
-    private fun request(query: String) {
-        if (isRequestInProgress) return
-
-        isRequestInProgress = true
-        hurbCall(call, query, lastRequestedPage, { resultDetail, filter, header ->
-
-            resultDetailLive.value = resultDetail
-            filterLive.postValue(filter)
-            headerLive.postValue(header)
-
-            isRequestInProgress = false
-
-        }, { error ->
-
-            networkErrors.postValue(error)
-            isRequestInProgress = false
-
-        })
-    }
 }
