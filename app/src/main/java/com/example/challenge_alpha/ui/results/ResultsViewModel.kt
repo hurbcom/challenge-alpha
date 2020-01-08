@@ -4,48 +4,64 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.challenge_alpha.api.HurbService
-import com.example.challenge_alpha.db.ResultDetailDataBase
-import com.example.challenge_alpha.db.ResultDetailRelation
+import com.example.challenge_alpha.db.resultDetail.ResultDetailDataBase
+import com.example.challenge_alpha.model.DBType
 import com.example.challenge_alpha.model.ResultDetail
-import com.example.challenge_alpha.model.ResultDetailAmenities
 import com.example.challenge_alpha.repository.HurbRepository
-import com.example.challenge_alpha.repository.ResultRepository
+import com.example.challenge_alpha.repository.ResultDetailRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
-class ResultsViewModel(application: Application) : AndroidViewModel(application) {
+class ResultsViewModel(
+    private val hurbRepository: HurbRepository,
+    private val queryString: String
+) : ViewModel() {
 
-    val TAG = "resultsDB"
-
-    val resultDetailDao = ResultDetailDataBase.getInstance(application).resultDetailDao()
-    val resultRepository = ResultRepository(resultDetailDao)
-    private val hurbRepository = HurbRepository(HurbService.create())
-
-    private val queryString = MutableLiveData<String>()
-    private var searchComplete = false
 
     private val _progressBar = MutableLiveData<Boolean>(true)
     val progressBar: LiveData<Boolean> = _progressBar
 
-    private val _resultDetailLive = MutableLiveData<List<ResultDetail>>()
-    val resultDetailLive : LiveData<List<ResultDetail>> = _resultDetailLive
 
+    val resultsDetailLive = hurbRepository.searchResult
+    /*
+    val resultsDetailLive = Transformations.map(_resultsDetailLive) { result ->
+        val sorted = result.data?.resultDetail?.sortedBy { it.stars }
+        sorted.let { list ->
+            for (stars in 1..5) {
+                list?.firstOrNull { it.stars == stars.toFloat() }?.recyclerTitle = true
+            }
+        }
+        sorted
+    }
+
+     */
+
+
+    init {
+
+        hurbRepository.search(queryString)
+
+    }
+
+/*
     fun search(query: String) = viewModelScope.launch(Dispatchers.IO) {
-        if (searchComplete) return@launch
 
         queryString.postValue(query)
         val response = hurbRepository.search(query)
-        _resultDetailLive.postValue(response.resultDetail.sortedByDescending { it.stars })
-
-        response.resultDetail.forEach {
-            resultRepository.insertDetail(it)
-            resultRepository.insertAmenities(it.amenities.map { list ->
-                ResultDetailAmenities(it.sku, list.name, list.category)
-            })
+        val sorted = response.resultDetail.sortedByDescending { it.stars }
+        sorted.let { list ->
+            for (stars in 1..5) {
+                list.firstOrNull { it.stars == stars.toFloat() }?.recyclerTitle = true
+            }
         }
-        searchComplete = true
+
+        Log.d(TAG, "$sorted")
+
+        _resultDetailLive.postValue(sorted)
+        resultRepository.insertDetail(response)
     }
+
+ */
 
 
     fun progressBar(visible: Boolean) {

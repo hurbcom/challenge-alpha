@@ -1,5 +1,6 @@
 package com.example.challenge_alpha.ui.resultDetail
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,21 +17,22 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.challenge_alpha.R
 
-class ResultDetailFragment : Fragment() {
+class ResultDetailFragment : Fragment(), View.OnClickListener {
 
     private lateinit var resultDetailViewModel: ResultDetailViewModel
     private val args: ResultDetailFragmentArgs by navArgs()
-    private val TAG = "HurbCall"
+    private lateinit var favoriteButton: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        resultDetailViewModel = ViewModelProvider(this).get(ResultDetailViewModel::class.java)
-
         val root = inflater.inflate(R.layout.fragment_resultdetail, container, false)
+        resultDetailViewModel = ViewModelProvider(this, Injection.provideViewModelFactory(root.context, args.selectedResult)).get(ResultDetailViewModel::class.java)
 
+
+        setListener(root)
 
         val name: TextView = root.findViewById(R.id.name_detail)
         val stars: RatingBar = root.findViewById(R.id.stars_detail)
@@ -47,7 +49,6 @@ class ResultDetailFragment : Fragment() {
 
         amenities.adapter = amenitiesAdapter
 
-        resultDetailViewModel.getResult(args.selectedResult)
         resultDetailViewModel.getResult.observe(this, Observer {
             name.text = it.resultDetail?.name
             stars.rating = it.resultDetail?.stars!!
@@ -57,8 +58,54 @@ class ResultDetailFragment : Fragment() {
             amenitiesAdapter.submitList(it.resultDetailAmenities)
         })
 
+        resultDetailViewModel.isFavorited.observe(this, Observer {
+            favoriteButton.isSelected = it
+        })
+
+
+
 
         return root
+    }
+
+    private fun setListener(view: View) {
+        favoriteButton = view.findViewById(R.id.favorite_detail)
+        favoriteButton.setOnClickListener(this)
+        val shareButton = view.findViewById<ImageView>(R.id.share_detail)
+        shareButton.setOnClickListener(this)
+
+    }
+
+    override fun onClick(view: View) {
+
+        when (view.id) {
+            R.id.favorite_detail -> {
+                if (favoriteButton.isSelected) {
+                    resultDetailViewModel.deleteFavorite()
+                } else {
+                    resultDetailViewModel.insertFavorite()
+                }
+
+
+            }
+            R.id.share_detail -> {
+
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(
+                        Intent.EXTRA_TEXT,
+                        resultDetailViewModel.getResult.value?.resultDetail?.url
+                    )
+                    type = "text/plain"
+                }
+                startActivity(
+                    sendIntent
+                )
+
+
+            }
+        }
+
     }
 
 }

@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -13,6 +15,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge_alpha.R
+import com.example.challenge_alpha.api.Result
 
 class ResultsFragment : Fragment() {
 
@@ -27,27 +30,56 @@ class ResultsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        resultsViewModel = ViewModelProvider(this).get(ResultsViewModel::class.java)
 
         val root = inflater.inflate(R.layout.fragment_results, container, false)
-        progressBar = root.findViewById(R.id.indeterminateBar)
+        resultsViewModel = ViewModelProvider(
+            this,
+            Injection.provideViewModelFactory(root.context, args.queryString)
+        ).get(ResultsViewModel::class.java)
 
-        resultsViewModel.search(args.queryString)
+        progressBar = root.findViewById(R.id.indeterminateBar)
 
         recyclerResult = root.findViewById(R.id.recyclerResult)
         recyclerResult.layoutManager = LinearLayoutManager(root.context)
         val adapter = ResultsAdapter()
         recyclerResult.adapter = adapter
 
-        resultsViewModel.resultDetailLive.observe(this, Observer {
-            Log.d(TAG, "HOTELS ${it}")
-            adapter.submitList(it)
-            resultsViewModel.progressBar(false)
+        resultsViewModel.resultsDetailLive.observe(this, Observer { result ->
+
+            when (result.status) {
+                Result.Status.SUCCESS -> {
+                    val sorted = result?.data?.resultDetail?.sortedByDescending { list -> list.stars }
+                    sorted.let { List ->
+                        for (stars in 1..5) {
+                            List?.firstOrNull { it.stars == stars.toFloat() }?.recyclerTitle = true
+                        }
+                    }
+
+                    val teste = sorted?.filter {it.recyclerTitle}?.map { it.name }
+                    Log.d("estrelas", "$teste")
+
+
+                    result.data.let { adapter.submitList(sorted) }
+                    resultsViewModel.progressBar(false)
+                }
+                Result.Status.LOADING -> {
+                    resultsViewModel.progressBar(true)
+                }
+                Result.Status.ERROR -> {
+                    resultsViewModel.progressBar(false)
+                    Toast.makeText(
+                        root.context,
+                        "Aconteceu algo de errado, por favor tente novamente",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+
+
         })
 
         resultsViewModel.progressBar.observe(this, Observer { isLoading ->
             progressBar(isLoading)
-
         })
 
         return root
@@ -62,5 +94,6 @@ class ResultsFragment : Fragment() {
         }
 
     }
+
 
 }

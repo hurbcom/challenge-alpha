@@ -1,21 +1,12 @@
 package com.example.challenge_alpha.ui.resultDetail
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RatingBar
 import android.widget.TextView
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
 import com.example.challenge_alpha.R
-import com.example.challenge_alpha.model.ResultDetail
 import com.example.challenge_alpha.model.ResultDetailAmenities
-import com.example.challenge_alpha.ui.hotels.HotelsFragmentDirections
 
 class AmenitiesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

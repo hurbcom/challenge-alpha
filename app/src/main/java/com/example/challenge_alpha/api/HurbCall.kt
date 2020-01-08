@@ -14,13 +14,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+
 interface HurbService {
 
     @GET("search/api?")
     suspend fun searchRepos(
         @Query("q") query: String,
         @Query("page") page: Int
-    ): HurbResponse
+    ): Response<HurbResponse>
 
     companion object {
         private const val BASE_URL = "https://www.hurb.com/"

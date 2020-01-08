@@ -1,7 +1,5 @@
 package com.example.challenge_alpha.ui.results
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +7,14 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.model.ResultDetail
-import com.example.challenge_alpha.ui.hotels.HotelsFragmentDirections
 
 class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+    private val recyclerTitle: TextView = itemView.findViewById(R.id.title_hotel)
     private val imageHotel: ImageView = itemView.findViewById(R.id.image_hotel)
     private val nameHotel: TextView = itemView.findViewById(R.id.name_hotel)
     private val starsHotel: RatingBar = itemView.findViewById(R.id.stars_hotel)
@@ -57,6 +54,12 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private fun loadData(result: ResultDetail) {
         this.resultDetails = result
 
+        recyclerTitle.text = result.recyclerTitle.let { isTitle ->
+            if (isTitle) {
+                recyclerTitle.visibility = View.VISIBLE
+            }
+            "${result.stars?.toInt().toString()} Estrelas"
+        }
 
         nameHotel.text = result.name
         cityHotel.text = result.address?.city
