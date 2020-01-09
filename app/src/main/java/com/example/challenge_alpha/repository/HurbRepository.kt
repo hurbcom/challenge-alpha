@@ -7,10 +7,13 @@ import androidx.lifecycle.map
 import com.example.challenge_alpha.api.*
 import kotlinx.coroutines.Dispatchers
 import retrofit2.Response
+import javax.inject.Inject
+import javax.inject.Singleton
 
 private const val TAG = "HurbCall"
 
-class HurbRepository(
+@Singleton
+class HurbRepository @Inject constructor(
     private val call: HurbService,
     private val save: ResultDetailRepository
 ) {

@@ -1,5 +1,7 @@
 package com.example.challenge_alpha.ui.results
 
+import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +10,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
+import com.bumptech.glide.Glide
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.model.ResultDetail
 
@@ -84,7 +86,15 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             it
         }
 
-        imageHotel.load(result.image)
+        //imageHotel.load(result.image)
+        val imageDisplay : String? = result.image?: result.gallery[0].url
+        Glide.with(itemView)
+            .load(imageDisplay)
+            .centerCrop()
+            .placeholder(R.drawable.ic_home)
+            .error(R.drawable.ic_favorite)
+            .fallback(R.drawable.ic_home)
+            .into(imageHotel)
 
     }
 

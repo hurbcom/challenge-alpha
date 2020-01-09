@@ -1,5 +1,6 @@
 package com.example.challenge_alpha.ui.results
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,18 +9,31 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.api.Result
+import com.example.challenge_alpha.di.Injectable
+import com.example.challenge_alpha.di.injector
+import com.example.challenge_alpha.di.viewModel
+import javax.inject.Inject
 
-class ResultsFragment : Fragment() {
+class ResultsFragment : Fragment(), Injectable {
 
-    private lateinit var resultsViewModel: ResultsViewModel
+
+
+    private val resultsViewModel by viewModel(this) {
+        injector.resultsViewModelFactory.create(args.queryString)
+    }
+
     private lateinit var progressBar: ProgressBar
     private val args: ResultsFragmentArgs by navArgs()
     private lateinit var recyclerResult: RecyclerView
@@ -32,10 +46,7 @@ class ResultsFragment : Fragment() {
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_results, container, false)
-        resultsViewModel = ViewModelProvider(
-            this,
-            Injection.provideViewModelFactory(root.context, args.queryString)
-        ).get(ResultsViewModel::class.java)
+        Log.d(TAG, args.queryString)
 
         progressBar = root.findViewById(R.id.indeterminateBar)
 
@@ -48,14 +59,15 @@ class ResultsFragment : Fragment() {
 
             when (result.status) {
                 Result.Status.SUCCESS -> {
-                    val sorted = result?.data?.resultDetail?.sortedByDescending { list -> list.stars }
+                    val sorted =
+                        result?.data?.resultDetail?.sortedByDescending { list -> list.stars }
                     sorted.let { List ->
                         for (stars in 1..5) {
                             List?.firstOrNull { it.stars == stars.toFloat() }?.recyclerTitle = true
                         }
                     }
 
-                    val teste = sorted?.filter {it.recyclerTitle}?.map { it.name }
+                    val teste = sorted?.filter { it.recyclerTitle }?.map { it.name }
                     Log.d("estrelas", "$teste")
 
 
@@ -83,6 +95,11 @@ class ResultsFragment : Fragment() {
         })
 
         return root
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
     }
 
     private fun progressBar(visible: Boolean) {

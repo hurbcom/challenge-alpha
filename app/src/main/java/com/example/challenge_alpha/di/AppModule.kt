@@ -4,15 +4,18 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.challenge_alpha.ChallengeApplication
+import com.example.challenge_alpha.api.HurbService
 import com.example.challenge_alpha.db.favorites.FavoritesDataBase
 import com.example.challenge_alpha.db.lastSeen.LastSeenDataBase
 import com.example.challenge_alpha.db.resultDetail.ResultDetailDataBase
+import com.example.challenge_alpha.ui.resultDetail.ResultDetailViewModel
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module (includes = [ViewModelModule::class])
+@Module(includes = [ViewModelModule::class])
 class AppModule {
+
 
     @Singleton
     @Provides
@@ -37,4 +40,8 @@ class AppModule {
     @Singleton
     @Provides
     fun provideResultDetailDao(db: ResultDetailDataBase) = db.resultDetailDao()
+
+    @Singleton
+    @Provides
+    fun provideRetroFit() = HurbService.create()
 }

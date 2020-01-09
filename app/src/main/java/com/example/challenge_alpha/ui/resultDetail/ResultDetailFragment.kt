@@ -1,5 +1,6 @@
 package com.example.challenge_alpha.ui.resultDetail
 
+import android.app.Application
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -15,11 +16,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.challenge_alpha.ChallengeApplication
 import com.example.challenge_alpha.R
+import com.example.challenge_alpha.di.*
+import javax.inject.Inject
 
-class ResultDetailFragment : Fragment(), View.OnClickListener {
+class ResultDetailFragment : Fragment(), View.OnClickListener, Injectable {
 
-    private lateinit var resultDetailViewModel: ResultDetailViewModel
+
+    private val resultDetailViewModel by viewModel(this) {
+        injector.resultDetailViewModelFactory.create(args.selectedResult)
+    }
     private val args: ResultDetailFragmentArgs by navArgs()
     private lateinit var favoriteButton: ImageView
 
@@ -29,8 +36,6 @@ class ResultDetailFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_resultdetail, container, false)
-        resultDetailViewModel = ViewModelProvider(this, Injection.provideViewModelFactory(root.context, args.selectedResult)).get(ResultDetailViewModel::class.java)
-
 
         setListener(root)
 
@@ -61,8 +66,6 @@ class ResultDetailFragment : Fragment(), View.OnClickListener {
         resultDetailViewModel.isFavorited.observe(this, Observer {
             favoriteButton.isSelected = it
         })
-
-
 
 
         return root

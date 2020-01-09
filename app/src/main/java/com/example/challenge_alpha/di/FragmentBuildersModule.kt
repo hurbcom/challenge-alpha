@@ -15,7 +15,6 @@ abstract class FragmentBuildersModule {
     @ContributesAndroidInjector
     abstract fun contributeFavoritesFragment(): FavoritesFragment
 
-    /*
     @ContributesAndroidInjector
     abstract fun contributeHomeFragment(): HomeFragment
 
@@ -24,6 +23,6 @@ abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract fun contributeResultsFragment(): ResultsFragment
-    
-     */
+
+
 }

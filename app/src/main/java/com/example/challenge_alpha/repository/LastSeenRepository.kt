@@ -6,8 +6,11 @@ import com.example.challenge_alpha.db.favorites.FavoritesDao
 import com.example.challenge_alpha.db.lastSeen.LastSeenDao
 import com.example.challenge_alpha.model.*
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class LastSeenRepository(private val lastSeenDao: LastSeenDao) {
+@Singleton
+class LastSeenRepository @Inject constructor(private val lastSeenDao: LastSeenDao) {
 
     fun getLastSeen() = lastSeenDao.getAllDesc()
 

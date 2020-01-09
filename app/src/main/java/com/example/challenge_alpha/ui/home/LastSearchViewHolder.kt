@@ -59,7 +59,9 @@ class LastSearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             0f
         } else result.resultDetail?.stars!!
 
-        imageHotel.load(result.resultDetail?.image)
+
+        val imageDisplay : String? = result.resultDetail?.image?: result.resultDetailGallery[0].url
+        imageHotel.load(imageDisplay)
 
 
     }

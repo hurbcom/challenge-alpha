@@ -1,11 +1,10 @@
 package com.example.challenge_alpha.ui.home
 
+
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -18,12 +17,13 @@ import com.example.challenge_alpha.R
 import com.example.challenge_alpha.di.Injectable
 import javax.inject.Inject
 
-class HomeFragment : Fragment(), View.OnClickListener, Injectable {
+
+class HomeFragment : Fragment(), Injectable {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var homeViewModel: HomeViewModel
-    private lateinit var searchInput: EditText
+    private lateinit var searchView: SearchView
     private lateinit var _context: Context
     private val TAG = "HurbCall"
 
@@ -36,10 +36,8 @@ class HomeFragment : Fragment(), View.OnClickListener, Injectable {
         _context = root.context
 
         homeViewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
-        searchInput = root.findViewById(R.id.search_input)
-        searchInput.setText(homeViewModel.queryString.value)
 
-        setListener(root)
+        setHasOptionsMenu(true)
 
         lastSeen(root)
         lastSearched(root)
@@ -47,35 +45,43 @@ class HomeFragment : Fragment(), View.OnClickListener, Injectable {
         return root
     }
 
-    private fun setListener(view: View) {
-        val searchButton = view.findViewById<Button>(R.id.search_button)
-        searchButton.setOnClickListener(this)
-
-    }
-
-    override fun onClick(view: View) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
 
         val navController = findNavController()
 
-        when (view.id) {
-            R.id.search_button -> {
-                searchInput.text.trim().let {
-                    if (it.isNotEmpty()) {
-                        homeViewModel.search(it.toString())
-                        val action = HomeFragmentDirections.hotelsToResults(it.toString())
-                        navController.navigate(action)
-                    } else {
-                        Toast.makeText(
-                            _context,
-                            getString(R.string.search_error),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+        val searchItem = menu.findItem(R.id.action_search)
+        searchView = searchItem.actionView as SearchView
+        searchView.isIconified = false
+        searchView.isIconifiedByDefault = false
+        searchView.maxWidth = Int.MAX_VALUE
+        searchView.queryHint = getString(R.string.search_hint)
+        searchView.clearFocus()
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+
+                if (query!!.isNotEmpty()) {
+                    homeViewModel.search(query.toString())
+                    Log.d(TAG, query.toString())
+                    val action = HomeFragmentDirections.hotelsToResults(query.toString())
+                    navController.navigate(action)
+                } else {
+                    Toast.makeText(
+                        _context,
+                        getString(R.string.search_error),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
+                return false
             }
 
-        }
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                return false
+            }
+        })
 
     }
 

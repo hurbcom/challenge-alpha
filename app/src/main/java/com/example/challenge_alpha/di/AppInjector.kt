@@ -17,7 +17,7 @@ import dagger.android.support.AndroidSupportInjection
 object AppInjector {
 
     fun init(application: ChallengeApplication) {
-        DaggerAppComponent.builder().application(application)
+       DaggerAppComponent.builder().application(application)
             .build().inject(application)
         application
             .registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {

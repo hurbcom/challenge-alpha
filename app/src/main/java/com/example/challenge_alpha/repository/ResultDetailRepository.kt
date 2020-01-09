@@ -5,8 +5,11 @@ import com.example.challenge_alpha.db.resultDetail.ResultDetailDao
 import com.example.challenge_alpha.db.ResultDetailRelation
 import com.example.challenge_alpha.model.*
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class ResultDetailRepository(private val resultDetailDao: ResultDetailDao) {
+@Singleton
+class ResultDetailRepository @Inject constructor(private val resultDetailDao: ResultDetailDao) {
 
     fun getResult(sku: String) = resultDetailDao.getResult(sku)
 

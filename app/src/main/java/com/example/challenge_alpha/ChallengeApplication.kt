@@ -4,12 +4,14 @@ import android.app.Application
 import android.util.Log
 import com.example.challenge_alpha.di.AppComponent
 import com.example.challenge_alpha.di.AppInjector
+import com.example.challenge_alpha.di.DaggerAppComponent
+import com.example.challenge_alpha.di.DaggerComponentProvider
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
-open class ChallengeApplication : Application(), HasAndroidInjector {
+open class ChallengeApplication : Application(), DaggerComponentProvider, HasAndroidInjector {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
@@ -24,4 +26,12 @@ open class ChallengeApplication : Application(), HasAndroidInjector {
     }
 
     override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
+
+    override val component: AppComponent
+        get() = DaggerAppComponent
+            .builder()
+            .application(this)
+            .build()
+
+
 }
