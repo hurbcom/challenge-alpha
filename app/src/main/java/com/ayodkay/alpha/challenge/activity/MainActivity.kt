@@ -1,4 +1,4 @@
-package com.ayodkay.alpha.challenge.activitiy
+package com.ayodkay.alpha.challenge.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
