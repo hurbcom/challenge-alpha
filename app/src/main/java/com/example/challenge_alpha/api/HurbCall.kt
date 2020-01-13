@@ -17,8 +17,13 @@ import retrofit2.http.Query
 
 interface HurbService {
 
+    @GET("search/api/suggestion")
+    suspend fun suggestion(
+        @Query("q") suggestion: String
+    ): Response<HurbSuggestions>
+
     @GET("search/api?")
-    suspend fun searchRepos(
+    suspend fun search(
         @Query("q") query: String,
         @Query("page") page: Int
     ): Response<HurbResponse>
@@ -28,7 +33,7 @@ interface HurbService {
 
         fun create(): HurbService {
             val logger = HttpLoggingInterceptor()
-            logger.level = HttpLoggingInterceptor.Level.BASIC
+            logger.level = HttpLoggingInterceptor.Level.BODY
 
             val client = OkHttpClient.Builder()
                 .addInterceptor(logger)

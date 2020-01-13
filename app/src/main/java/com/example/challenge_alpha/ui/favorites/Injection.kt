@@ -2,13 +2,8 @@ package com.example.challenge_alpha.ui.favorites
 
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
-import com.example.challenge_alpha.db.favorites.FavoritesDataBase
-import com.example.challenge_alpha.db.lastSeen.LastSeenDataBase
-import com.example.challenge_alpha.db.resultDetail.ResultDetailDataBase
+import com.example.challenge_alpha.data.favorites.FavoritesDataBase
 import com.example.challenge_alpha.repository.FavoritesRepository
-import com.example.challenge_alpha.repository.LastSeenRepository
-import com.example.challenge_alpha.repository.ResultDetailRepository
-import java.util.concurrent.Executors
 
 object Injection {
 

@@ -15,6 +15,7 @@ class AmenitiesAdapter : ListAdapter<ResultDetailAmenities, RecyclerView.ViewHol
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        holder.setIsRecyclable(false)
         val repoItem = getItem(position)
         if (repoItem != null) {
             (holder as AmenitiesViewHolder).bind(repoItem)

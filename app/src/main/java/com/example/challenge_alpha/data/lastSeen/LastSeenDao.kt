@@ -1,8 +1,8 @@
-package com.example.challenge_alpha.db.lastSeen
+package com.example.challenge_alpha.data.lastSeen
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.challenge_alpha.db.ResultDetailRelation
+import com.example.challenge_alpha.data.ResultDetailRelation
 import com.example.challenge_alpha.model.*
 
 @Dao

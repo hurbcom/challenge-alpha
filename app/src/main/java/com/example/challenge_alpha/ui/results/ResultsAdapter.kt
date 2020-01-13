@@ -15,10 +15,11 @@ class ResultsAdapter : ListAdapter<ResultDetail, RecyclerView.ViewHolder>(REPO_C
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        holder.setIsRecyclable(false)
         val repoItem = getItem(position)
 
         if (repoItem != null) {
-            (holder as ResultsViewHolder).bind(repoItem)
+            (holder as ResultsViewHolder).bind(repoItem, holder)
         }
     }
 

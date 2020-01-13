@@ -1,12 +1,16 @@
 package com.example.challenge_alpha.ui.home
 
 
+import android.app.SearchManager
 import android.content.Context
+import android.database.Cursor
+import android.database.MatrixCursor
 import android.os.Bundle
+import android.provider.BaseColumns
 import android.util.Log
 import android.view.*
-import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -16,6 +20,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.di.Injectable
 import javax.inject.Inject
+import android.widget.AutoCompleteTextView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
+import androidx.cursoradapter.widget.CursorAdapter
+import androidx.cursoradapter.widget.SimpleCursorAdapter
+import com.example.challenge_alpha.api.Result
 
 
 class HomeFragment : Fragment(), Injectable {
@@ -24,8 +35,8 @@ class HomeFragment : Fragment(), Injectable {
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var searchView: SearchView
+    private lateinit var searchViewRecycler: RecyclerView
     private lateinit var _context: Context
-    private val TAG = "HurbCall"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,7 +47,7 @@ class HomeFragment : Fragment(), Injectable {
         _context = root.context
 
         homeViewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
-
+        searchViewRecycler = root.findViewById(R.id.searchView_recycler)
         setHasOptionsMenu(true)
 
         lastSeen(root)
@@ -53,17 +64,24 @@ class HomeFragment : Fragment(), Injectable {
         val searchItem = menu.findItem(R.id.action_search)
         searchView = searchItem.actionView as SearchView
         searchView.isIconified = false
-        searchView.isIconifiedByDefault = false
         searchView.maxWidth = Int.MAX_VALUE
         searchView.queryHint = getString(R.string.search_hint)
         searchView.clearFocus()
+
+
+        val searchViewAdapter = SearchViewAdapter()
+
+        val layoutLanguage = LinearLayoutManager(_context)
+        searchViewRecycler.layoutManager = layoutLanguage
+
+        searchViewRecycler.adapter = searchViewAdapter
+
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
 
                 if (query!!.isNotEmpty()) {
                     homeViewModel.search(query.toString())
-                    Log.d(TAG, query.toString())
                     val action = HomeFragmentDirections.hotelsToResults(query.toString())
                     navController.navigate(action)
                 } else {
@@ -77,7 +95,31 @@ class HomeFragment : Fragment(), Injectable {
                 return false
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
+            override fun onQueryTextChange(suggestion: String): Boolean {
+
+
+                if (suggestion.count() > 2) {
+                    homeViewModel.searchSuggestion(suggestion)
+                }
+
+                homeViewModel.getSuggetion.observe(this@HomeFragment, Observer { result ->
+
+                    when (result.status) {
+                        Result.Status.SUCCESS -> {
+                            if (suggestion.count() > 2) {
+                                searchViewAdapter.submitList(result.data?.suggestions)
+                            } else {
+                                searchViewAdapter.submitList(emptyList())
+                            }
+
+                        }
+                        else -> {
+
+                        }
+                    }
+
+
+                })
 
                 return false
             }
@@ -91,17 +133,16 @@ class HomeFragment : Fragment(), Injectable {
         val lastSeenTitle: TextView = view.findViewById(R.id.lastSeen_title)
         val lastSeenAdapter = LastSeenAdapter()
 
-        val layoutHorizontalLanguage =
+        val layoutHorizontal =
             GridLayoutManager(_context, 1, LinearLayoutManager.HORIZONTAL, false)
 
 
-        lastSeen.layoutManager = layoutHorizontalLanguage
+        lastSeen.layoutManager = layoutHorizontal
 
         lastSeen.adapter = lastSeenAdapter
 
 
         homeViewModel.getLastSeen.observe(this, Observer {
-            Log.d(TAG + "seen", "${it.firstOrNull()}")
             if (it.isNotEmpty()) {
                 lastSeen.visibility = View.VISIBLE
                 lastSeenTitle.visibility = View.VISIBLE
@@ -117,11 +158,11 @@ class HomeFragment : Fragment(), Injectable {
         val lastSearch: RecyclerView = view.findViewById(R.id.lastSearch_display)
         val lastSearchTitle: TextView = view.findViewById(R.id.lastsearch_title)
 
-        val layoutHorizontalLanguage =
+        val layoutHorizontal =
             GridLayoutManager(_context, 1, LinearLayoutManager.HORIZONTAL, false)
 
 
-        lastSearch.layoutManager = layoutHorizontalLanguage
+        lastSearch.layoutManager = layoutHorizontal
 
         val lastSearchAdapter = LastSearchAdapter()
 
@@ -129,7 +170,6 @@ class HomeFragment : Fragment(), Injectable {
 
 
         homeViewModel.getLastSearched.observe(this, Observer {
-            Log.d(TAG + "searched", "$it")
             if (it.isNotEmpty()) {
                 lastSearchTitle.visibility = View.VISIBLE
                 lastSearch.visibility = View.VISIBLE

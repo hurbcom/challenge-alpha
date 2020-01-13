@@ -1,21 +1,16 @@
 package com.example.challenge_alpha.di
 
 import android.app.Application
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.example.challenge_alpha.ChallengeApplication
 import com.example.challenge_alpha.api.HurbService
-import com.example.challenge_alpha.db.favorites.FavoritesDataBase
-import com.example.challenge_alpha.db.lastSeen.LastSeenDataBase
-import com.example.challenge_alpha.db.resultDetail.ResultDetailDataBase
-import com.example.challenge_alpha.ui.resultDetail.ResultDetailViewModel
+import com.example.challenge_alpha.data.favorites.FavoritesDataBase
+import com.example.challenge_alpha.data.lastSeen.LastSeenDataBase
+import com.example.challenge_alpha.data.resultDetail.ResultDetailDataBase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
 @Module(includes = [ViewModelModule::class])
 class AppModule {
-
 
     @Singleton
     @Provides

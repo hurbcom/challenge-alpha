@@ -4,8 +4,8 @@
     xmlns:Android="http://schemas.android.com/tools">
     <item
         android:id="@+id/action_search"
-        android:icon="@drawable/ic_favorite_select"
         android:title="Search"
-        app:actionViewClass="android.widget.SearchView"
+        android:icon="@android:drawable/ic_menu_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always" />
 </menu>

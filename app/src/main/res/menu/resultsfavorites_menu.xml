@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/isFavorited"
+        android:icon="@drawable/ic_favorite"
+        android:checkable="true"
+        android:title="@string/bar_favorite"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_share"
+        android:title="@string/bar_share"
+        app:showAsAction="ifRoom"/>
+
+</menu>

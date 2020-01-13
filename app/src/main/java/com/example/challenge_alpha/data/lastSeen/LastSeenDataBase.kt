@@ -1,15 +1,14 @@
-package com.example.challenge_alpha.db.lastSeen
+package com.example.challenge_alpha.data.lastSeen
 
 import android.content.Context
 import androidx.room.*
-import com.example.challenge_alpha.db.DateLongConverter
-import com.example.challenge_alpha.db.ListStringConverter
-import com.example.challenge_alpha.db.resultDetail.ResultDetailDao
+import com.example.challenge_alpha.data.DateLongConverter
+import com.example.challenge_alpha.data.ListStringConverter
 import com.example.challenge_alpha.model.*
 
 @Database(
     entities = [ResultDetail::class, ResultDetailAmenities::class, ResultDetailGallery::class, ResultDetailTaxes::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(ListStringConverter::class, DateLongConverter::class)

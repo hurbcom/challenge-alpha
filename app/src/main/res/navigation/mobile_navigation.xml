@@ -9,7 +9,6 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.challenge_alpha.ui.home.HomeFragment"
-        android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/hotels_to_results"
@@ -32,8 +31,8 @@
     <fragment
         android:id="@+id/navigation_results"
         android:name="com.example.challenge_alpha.ui.results.ResultsFragment"
-        android:label="@string/title_results"
-        tools:layout="@layout/fragment_results">
+        tools:layout="@layout/fragment_results"
+        android:label="Resultados">
         <argument
             android:name="queryString"
             app:argType="string"
@@ -54,7 +53,7 @@
     <fragment
         android:id="@+id/navigation_resultDetail"
         android:name="com.example.challenge_alpha.ui.resultDetail.ResultDetailFragment"
-        android:label="@string/title_resultDetail"
+        android:label=" "
         tools:layout="@layout/fragment_resultdetail">
 
         <argument
@@ -67,8 +66,8 @@
     <fragment
         android:id="@+id/navigation_favorites"
         android:name="com.example.challenge_alpha.ui.favorites.FavoritesFragment"
-        android:label="@string/title_favorites"
-        tools:layout="@layout/fragment_favorites">
+        tools:layout="@layout/fragment_favorites"
+        android:label="Favoritos">
         <action
             android:id="@+id/favorites_to_resultDetail"
             app:destination="@+id/navigation_resultDetail">

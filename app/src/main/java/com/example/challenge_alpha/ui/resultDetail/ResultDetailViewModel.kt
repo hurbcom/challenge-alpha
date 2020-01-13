@@ -1,18 +1,9 @@
 package com.example.challenge_alpha.ui.resultDetail
 
-import android.app.Application
-import android.util.Log
 import androidx.lifecycle.*
-import com.example.challenge_alpha.db.favorites.FavoritesDataBase
-import com.example.challenge_alpha.db.resultDetail.ResultDetailDataBase
-import com.example.challenge_alpha.db.ResultDetailRelation
-import com.example.challenge_alpha.db.lastSeen.LastSeenDao
-import com.example.challenge_alpha.db.lastSeen.LastSeenDataBase
-import com.example.challenge_alpha.model.DBType
 import com.example.challenge_alpha.repository.FavoritesRepository
 import com.example.challenge_alpha.repository.LastSeenRepository
 import com.example.challenge_alpha.repository.ResultDetailRepository
-import com.example.challenge_alpha.ui.results.ResultsViewModel
 import com.squareup.inject.assisted.Assisted
 import com.squareup.inject.assisted.AssistedInject
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.example.challenge_alpha.db
+package com.example.challenge_alpha.data
 
 import androidx.room.Embedded
 import androidx.room.Relation

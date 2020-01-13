@@ -29,7 +29,6 @@ import javax.inject.Inject
 class ResultsFragment : Fragment(), Injectable {
 
 
-
     private val resultsViewModel by viewModel(this) {
         injector.resultsViewModelFactory.create(args.queryString)
     }
@@ -37,7 +36,6 @@ class ResultsFragment : Fragment(), Injectable {
     private lateinit var progressBar: ProgressBar
     private val args: ResultsFragmentArgs by navArgs()
     private lateinit var recyclerResult: RecyclerView
-    private val TAG = "HurbCall"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,7 +44,6 @@ class ResultsFragment : Fragment(), Injectable {
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_results, container, false)
-        Log.d(TAG, args.queryString)
 
         progressBar = root.findViewById(R.id.indeterminateBar)
 
@@ -65,10 +62,8 @@ class ResultsFragment : Fragment(), Injectable {
                         for (stars in 1..5) {
                             List?.firstOrNull { it.stars == stars.toFloat() }?.recyclerTitle = true
                         }
+                        List?.firstOrNull { !it.hotelIs }?.recyclerTitle = true
                     }
-
-                    val teste = sorted?.filter { it.recyclerTitle }?.map { it.name }
-                    Log.d("estrelas", "$teste")
 
 
                     result.data.let { adapter.submitList(sorted) }
@@ -81,7 +76,7 @@ class ResultsFragment : Fragment(), Injectable {
                     resultsViewModel.progressBar(false)
                     Toast.makeText(
                         root.context,
-                        "Aconteceu algo de errado, por favor tente novamente",
+                        getString(R.string.results_error),
                         Toast.LENGTH_LONG
                     ).show()
                 }
@@ -97,10 +92,6 @@ class ResultsFragment : Fragment(), Injectable {
         return root
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-    }
 
     private fun progressBar(visible: Boolean) {
 

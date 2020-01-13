@@ -36,7 +36,6 @@ data class ResultDetail(
     var timestamp: Date = Date(0)
 )
 
-enum class DBType { LastSeen, Searched, Favorites }
 
 @Entity(
     foreignKeys = [ForeignKey(

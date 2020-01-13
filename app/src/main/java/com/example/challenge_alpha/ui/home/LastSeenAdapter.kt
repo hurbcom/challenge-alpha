@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.challenge_alpha.db.ResultDetailRelation
+import com.example.challenge_alpha.data.ResultDetailRelation
 
 class LastSeenAdapter : ListAdapter<ResultDetailRelation, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
 
@@ -14,6 +14,7 @@ class LastSeenAdapter : ListAdapter<ResultDetailRelation, RecyclerView.ViewHolde
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        holder.setIsRecyclable(false)
         val repoItem = getItem(position)
         if (repoItem != null) {
             (holder as LastSeenViewHolder).bind(repoItem)

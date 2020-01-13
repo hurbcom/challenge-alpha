@@ -18,18 +18,20 @@ class AmenitiesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(result: ResultDetailAmenities?) {
 
-        if (result == null) {
-
-        } else {
+        if (result != null) {
             loadData(result)
         }
+
 
     }
 
     private fun loadData(result: ResultDetailAmenities) {
         this.resultDetailAmenities = result
 
-        amenities.text = result.name
+        amenities.text = itemView.context.resources.getString(
+            R.string.amenities_result,
+            result.name
+        )
 
 
     }

@@ -4,8 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.challenge_alpha.db.ResultDetailRelation
-import com.example.challenge_alpha.model.ResultDetail
+import com.example.challenge_alpha.data.ResultDetailRelation
 
 class FavoritesAdapter : ListAdapter<ResultDetailRelation, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
 
@@ -15,6 +14,7 @@ class FavoritesAdapter : ListAdapter<ResultDetailRelation, RecyclerView.ViewHold
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        holder.setIsRecyclable(false)
         val repoItem = getItem(position)
         if (repoItem != null) {
             (holder as FavoritesViewHolder).bind(repoItem)

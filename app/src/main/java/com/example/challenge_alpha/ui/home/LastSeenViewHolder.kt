@@ -1,26 +1,36 @@
 package com.example.challenge_alpha.ui.home
 
+import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RatingBar
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.example.challenge_alpha.R
-import com.example.challenge_alpha.db.ResultDetailRelation
+import com.example.challenge_alpha.data.ResultDetailRelation
+import java.text.NumberFormat
+import java.util.*
 
 class LastSeenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-
-    private val imageHotel: ImageView = itemView.findViewById(R.id.image_hotel)
-    private val nameHotel: TextView = itemView.findViewById(R.id.name_hotel)
-    private val starsHotel: RatingBar = itemView.findViewById(R.id.stars_hotel)
-    private val cityHotel: TextView = itemView.findViewById(R.id.city_hotel)
-    private val stateHotel: TextView = itemView.findViewById(R.id.state_hotel)
-    private val priceHotel: TextView = itemView.findViewById(R.id.price_hotel)
+    private val cardViewDisplay: CardView = itemView.findViewById(R.id.cardview_display)
+    private val imageDisplay: ImageView = itemView.findViewById(R.id.image_display)
+    private val constraintDisplay: ConstraintLayout = itemView.findViewById(R.id.constraint_display)
+    private val nameDisplay: TextView = itemView.findViewById(R.id.name_display)
+    private val starsDisplay: ImageView = itemView.findViewById(R.id.stars_display)
+    private val starsTextDisplay: TextView = itemView.findViewById(R.id.starsText_display)
+    private val locationDisplay: TextView = itemView.findViewById(R.id.location_display)
+    private val priceDisplay: TextView = itemView.findViewById(R.id.price_display)
 
     private var resultDetail: ResultDetailRelation? = null
 
@@ -29,7 +39,8 @@ class LastSeenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
             val navController = findNavController(it)
 
-            val action = HomeFragmentDirections.hotelsToResultDetail(resultDetail!!.resultDetail!!.sku)
+            val action =
+                HomeFragmentDirections.hotelsToResultDetail(resultDetail!!.resultDetail!!.sku)
             navController.navigate(action)
 
         }
@@ -50,20 +61,68 @@ class LastSeenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private fun loadData(result: ResultDetailRelation) {
         this.resultDetail = result
 
-        nameHotel.text = result.resultDetail?.name
-        cityHotel.text = result.resultDetail?.address?.city
-        stateHotel.text = result.resultDetail?.address?.state
-        priceHotel.text = result.resultDetail?.price?.amount.toString()
-        starsHotel.rating = if (result.resultDetail?.stars == null) {
-            starsHotel.visibility = View.INVISIBLE
-            0f
-        } else result.resultDetail?.stars!!
+        nameDisplay.text = result.resultDetail?.name
+        locationDisplay.text = itemView.context.resources.getString(
+            R.string.location_display,
+            result.resultDetail?.address?.city,
+            result.resultDetail?.address?.state
+        )
 
-        val imageDisplay : String? = result.resultDetail?.image?: result.resultDetailGallery[0].url
-        imageHotel.load(imageDisplay)
+        val priceFormat = NumberFormat.getCurrencyInstance(Locale.getDefault())
+        priceFormat.currency = Currency.getInstance(result.resultDetail?.price?.currency?: "BRL")
+        val priceResult = priceFormat.format(result.resultDetail?.price?.amount)
 
+        priceDisplay.text = priceResult
+
+
+        starsTextDisplay.text = if (result.resultDetail?.stars == null) {
+            starsDisplay.visibility = View.INVISIBLE
+            starsTextDisplay.visibility = View.INVISIBLE
+            "5"
+        } else result.resultDetail?.stars!!.toInt().toString()
+
+
+        val imageLoad: String? =
+            result.resultDetail?.image ?: result.resultDetailGallery.firstOrNull()?.url
+        Glide.with(itemView)
+            .load(imageLoad)
+            .fitCenter()
+            .centerCrop()
+            .placeholder(R.drawable.ic_refresh)
+            .error(
+                Glide.with(cardViewDisplay)
+                    .load(result.resultDetailGallery.firstOrNull()?.url)
+                    .error(R.drawable.ic_sync_problem)
+                    .listener(object : RequestListener<Drawable> {
+                        override fun onLoadFailed(
+                            p0: GlideException?,
+                            p1: Any?,
+                            p2: Target<Drawable>?,
+                            p3: Boolean
+                        ): Boolean {
+                            Log.d("glideTest", "$p0")
+                            constraintDisplay.visibility = View.INVISIBLE
+
+                            return false
+                        }
+
+                        override fun onResourceReady(
+                            resource: Drawable?,
+                            model: Any?,
+                            target: Target<Drawable>?,
+                            dataSource: DataSource?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+
+                            return false
+                        }
+                    })
+            )
+            .fallback(R.drawable.ic_sync_problem)
+            .into(imageDisplay)
 
     }
+
 
     companion object {
         fun create(parent: ViewGroup): LastSeenViewHolder {

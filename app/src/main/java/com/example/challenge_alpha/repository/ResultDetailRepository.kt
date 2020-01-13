@@ -1,10 +1,8 @@
 package com.example.challenge_alpha.repository
 
 import com.example.challenge_alpha.api.HurbResponse
-import com.example.challenge_alpha.db.resultDetail.ResultDetailDao
-import com.example.challenge_alpha.db.ResultDetailRelation
+import com.example.challenge_alpha.data.resultDetail.ResultDetailDao
 import com.example.challenge_alpha.model.*
-import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
