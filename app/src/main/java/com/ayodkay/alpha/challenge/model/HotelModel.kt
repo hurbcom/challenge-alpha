@@ -9,6 +9,6 @@ data class HotelModel(
     val city :String,
     val state:String,
     val country:String,
-    val star:Int,
+    val star:String,
     val hu_free_cancellation:Boolean
 )
