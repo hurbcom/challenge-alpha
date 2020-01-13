@@ -10,7 +10,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="56dp"
         app:cardBackgroundColor="@color/colorPrimary">
 
         <RelativeLayout
@@ -32,10 +32,47 @@
 
     </androidx.cardview.widget.CardView>
 
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:chipSpacing="10dp"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:chipIcon="@drawable/ic_star"
+            app:chipIconVisible="true"
+            android:text="3" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:chipIcon="@drawable/ic_star"
+            app:chipIconVisible="true"
+            android:text="4" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:chipIconVisible="true"
+            app:chipIcon="@drawable/ic_star"
+            android:text="5" />
+
+    </com.google.android.material.chip.ChipGroup>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/hotel_recycle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
         tools:listitem="@layout/hotel_card" />
 
 </LinearLayout>
