@@ -2,6 +2,13 @@ package com.example.challenge_alpha.model
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * A classe [Suggestions] define o retorno de uma busca por sugestões no servidor.
+ *
+ * A classe [HurbSuggestions] agrupa os dados de sugestão recebidos do servidor através do retrofit
+ * [HurbCall]
+ *
+ */
 
 data class Suggestions(
     @field:SerializedName("text") val text: String? = null,

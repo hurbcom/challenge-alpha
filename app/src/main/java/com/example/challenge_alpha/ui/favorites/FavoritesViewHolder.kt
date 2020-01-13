@@ -25,17 +25,17 @@ class FavoritesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val starsResults: RatingBar = itemView.findViewById(R.id.stars_results)
     private val priceResults: TextView = itemView.findViewById(R.id.price_results)
     private val divider: View = itemView.findViewById(R.id.divider)
-    val amenities: RecyclerView = itemView.findViewById(R.id.recyclerAmenities_results)
+    private val amenities: RecyclerView = itemView.findViewById(R.id.recyclerAmenities_results)
 
 
-    private var resultDetails: ResultDetailRelation? = null
+    private var resultFavorites: ResultDetailRelation? = null
 
     init {
         view.setOnClickListener {
 
             val navController = findNavController(it)
 
-            val action = FavoritesFragmentDirections.favoritesToResultDetail(resultDetails?.resultDetail?.sku!!)
+            val action = FavoritesFragmentDirections.favoritesToResultDetail(resultFavorites?.resultDetail?.sku!!)
             navController.navigate(action)
 
         }
@@ -51,33 +51,33 @@ class FavoritesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     }
 
-    private fun loadData(result: ResultDetailRelation) {
-        this.resultDetails = result
+    private fun loadData(favorites: ResultDetailRelation) {
+        this.resultFavorites = favorites
 
-        nameResults.text = result.resultDetail?.name
+        nameResults.text = favorites.resultDetail?.name
         locationResults.text = itemView.context.resources.getString(
             R.string.location_display,
-            result.resultDetail?.address?.city,
-            result.resultDetail?.address?.state
+            favorites.resultDetail?.address?.city,
+            favorites.resultDetail?.address?.state
         )
 
         val priceFormat = NumberFormat.getCurrencyInstance(Locale.getDefault())
-        priceFormat.currency = Currency.getInstance(result.resultDetail?.price?.currency?: "BRL")
-        val priceResult = priceFormat.format(result.resultDetail?.price?.amount)
+        priceFormat.currency = Currency.getInstance(favorites.resultDetail?.price?.currency?: "BRL")
+        val priceResult = priceFormat.format(favorites.resultDetail?.price?.amount)
 
         priceResults.text = priceResult
 
 
-        starsResults.rating = if (result.resultDetail?.stars == null) {
+        starsResults.rating = if (favorites.resultDetail?.stars == null) {
             starsResults.visibility = View.GONE
             5f
         } else {
             starsResults.visibility = View.VISIBLE
-            result.resultDetail?.stars!!
+            favorites.resultDetail?.stars!!
         }
 
 
-        if (!result.resultDetailAmenities.isNullOrEmpty()) {
+        if (!favorites.resultDetailAmenities.isNullOrEmpty()) {
 
             amenities.visibility = View.VISIBLE
             divider.visibility = View.VISIBLE
@@ -90,12 +90,13 @@ class FavoritesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             amenities.adapter = amenitiesAdapter
             amenities.hasFixedSize()
 
-            amenitiesAdapter.submitList(result.resultDetailAmenities.take(3))
+            amenitiesAdapter.submitList(favorites.resultDetailAmenities.take(4))
 
         }
 
+
         val imageLoad: String? =
-            result.resultDetail?.image ?: result.resultDetailGallery.firstOrNull()?.url
+            favorites.resultDetail?.image ?: favorites.resultDetailGallery.firstOrNull()?.url
         Glide.with(itemView)
             .load(imageLoad)
             .fitCenter()

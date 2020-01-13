@@ -1,38 +1,42 @@
 package com.example.challenge_alpha.ui.resultDetail
 
-import android.app.Application
-import android.content.ClipData
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.*
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.RatingBar
+import android.widget.TextView
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
-import com.example.challenge_alpha.ChallengeApplication
 import com.example.challenge_alpha.R
-import com.example.challenge_alpha.di.*
+import com.example.challenge_alpha.di.Injectable
+import com.example.challenge_alpha.di.injector
+import com.example.challenge_alpha.di.viewModel
 import com.ms.square.android.expandabletextview.ExpandableTextView
 import java.text.NumberFormat
 import java.util.*
-import javax.inject.Inject
 
-class ResultDetailFragment : Fragment(), View.OnClickListener, Injectable {
+/**
+ * Fragmento responsável por mostrar com detalhes as informações do hotel/pacote.
+ * A classe [displayDetail] tem toda a configuração da view.
+ * A toolbar está configurada para lidar com favoritos e ação de compartilhamento.
+ */
+
+class ResultDetailFragment : Fragment(), Injectable {
 
 
     private val resultDetailViewModel by viewModel(this) {
         injector.resultDetailViewModelFactory.create(args.selectedResult)
     }
     private val args: ResultDetailFragmentArgs by navArgs()
-    // private lateinit var favoriteButton: ImageView
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,17 +45,26 @@ class ResultDetailFragment : Fragment(), View.OnClickListener, Injectable {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_resultdetail, container, false)
 
-        setListener(root)
+        displayDetail(root)
+        setHasOptionsMenu(true)
 
-        val name: TextView = root.findViewById(R.id.name_detail)
-        val stars: RatingBar = root.findViewById(R.id.stars_detail)
-        val city: TextView = root.findViewById(R.id.city_detail)
-        val price: TextView = root.findViewById(R.id.price_detail)
-        val amenitiesTitle: TextView = root.findViewById(R.id.amenitiesTitle_detail)
-        val imageGallery: ImageView = root.findViewById(R.id.recyclerGallery_detail)
-        val expandableTextView: ExpandableTextView = root.findViewById(R.id.description_detail)
+        return root
+    }
 
-        val amenities: RecyclerView = root.findViewById(R.id.recyclerAmenities_detail)
+    /**
+     * Configuração da view.
+     */
+    private fun displayDetail(view: View) {
+
+        val name: TextView = view.findViewById(R.id.name_detail)
+        val stars: RatingBar = view.findViewById(R.id.stars_detail)
+        val city: TextView = view.findViewById(R.id.city_detail)
+        val price: TextView = view.findViewById(R.id.price_detail)
+        val amenitiesTitle: TextView = view.findViewById(R.id.amenitiesTitle_detail)
+        val imageGallery: ImageView = view.findViewById(R.id.recyclerGallery_detail)
+        val expandableTextView: ExpandableTextView = view.findViewById(R.id.description_detail)
+
+        val amenities: RecyclerView = view.findViewById(R.id.recyclerAmenities_detail)
         val layoutHorizontal =
             StaggeredGridLayoutManager(2, LinearLayout.VERTICAL)
         amenities.layoutManager = layoutHorizontal
@@ -97,11 +110,11 @@ class ResultDetailFragment : Fragment(), View.OnClickListener, Injectable {
                 .into(imageGallery)
 
         })
-        setHasOptionsMenu(true)
-
-        return root
     }
 
+    /**
+     * Configuração da toolbar.
+     */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.resultsfavorites_menu, menu)
 
@@ -157,50 +170,5 @@ class ResultDetailFragment : Fragment(), View.OnClickListener, Injectable {
         }
     }
 
-    private fun setListener(view: View) {
-        /*
-        favoriteButton = view.findViewById(R.id.favorite_detail)
-        favoriteButton.setOnClickListener(this)
-        val shareButton = view.findViewById<ImageView>(R.id.share_detail)
-        shareButton.setOnClickListener(this)
-
-         */
-
-    }
-
-    override fun onClick(view: View) {
-
-        /*
-        when (view.id) {
-            R.id.favorite_detail -> {
-                if (favoriteButton.isSelected) {
-                    resultDetailViewModel.deleteFavorite()
-                } else {
-                    resultDetailViewModel.insertFavorite()
-                }
-
-
-            }
-            R.id.share_detail -> {
-
-                val sendIntent: Intent = Intent().apply {
-                    action = Intent.ACTION_SEND
-                    putExtra(
-                        Intent.EXTRA_TEXT,
-                        resultDetailViewModel.getResult.value?.resultDetail?.url
-                    )
-                    type = "text/plain"
-                }
-                startActivity(
-                    sendIntent
-                )
-
-
-            }
-        }
-
-         */
-
-    }
 
 }

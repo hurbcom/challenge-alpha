@@ -2,6 +2,13 @@ package com.example.challenge_alpha.model
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * A classe [Filters] define os dados de filtro recebidos do servidor.
+ *
+ * A classe [HurbResponse] agrupa todos os dados recebidos no JSON do servidor através do retrofit
+ * [HurbCall]
+ *
+ */
 data class Filters(
     @SerializedName("amenities") val amenities: List<FilterDescription> = emptyList(),
     @SerializedName("attributes") val attributes: List<FilterDescription> = emptyList(),

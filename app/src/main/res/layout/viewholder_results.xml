@@ -120,60 +120,6 @@
                 app:layout_constraintTop_toBottomOf="@id/divider"
                 app:layout_constraintStart_toStartOf="parent"
                 />
-
-            <TextView
-                android:id="@+id/amenities1_results"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="start"
-                android:text="Amenidade 1"
-                android:textAlignment="viewStart"
-                android:theme="@style/Results"
-                android:visibility="gone"
-                android:maxLines="2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/amenities2_results"/>
-
-            <TextView
-                android:id="@+id/amenities2_results"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="start"
-                android:text="Amenidade 2"
-                android:textAlignment="viewStart"
-                android:theme="@style/Results"
-                android:visibility="gone"
-                android:maxLines="2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/amenities1_results"
-                app:layout_constraintEnd_toStartOf="@id/amenities3_results"
-                app:layout_constraintTop_toBottomOf="@id/divider" />
-
-            <TextView
-                android:id="@+id/amenities3_results"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="start"
-                android:text="Amenidade 3"
-                android:textAlignment="viewStart"
-                android:theme="@style/Results"
-                android:maxLines="2"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/amenities2_results"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 

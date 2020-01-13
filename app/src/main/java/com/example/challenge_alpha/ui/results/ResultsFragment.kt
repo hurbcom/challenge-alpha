@@ -2,20 +2,13 @@ package com.example.challenge_alpha.ui.results
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,8 +17,11 @@ import com.example.challenge_alpha.api.Result
 import com.example.challenge_alpha.di.Injectable
 import com.example.challenge_alpha.di.injector
 import com.example.challenge_alpha.di.viewModel
-import javax.inject.Inject
 
+/**
+ * Fragmento responsável por mostrar os resultados das pesquisas feitas pelo usuário.
+ * [resultsRecycler] é responsável por configurar a recyclerview com os resultados.
+ */
 class ResultsFragment : Fragment(), Injectable {
 
 
@@ -35,7 +31,7 @@ class ResultsFragment : Fragment(), Injectable {
 
     private lateinit var progressBar: ProgressBar
     private val args: ResultsFragmentArgs by navArgs()
-    private lateinit var recyclerResult: RecyclerView
+    private lateinit var _context: Context
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,11 +40,23 @@ class ResultsFragment : Fragment(), Injectable {
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_results, container, false)
+        _context = root.context
 
         progressBar = root.findViewById(R.id.indeterminateBar)
 
-        recyclerResult = root.findViewById(R.id.recyclerResult)
-        recyclerResult.layoutManager = LinearLayoutManager(root.context)
+        resultsRecycler(root)
+
+        resultsViewModel.progressBar.observe(this, Observer { isLoading ->
+            progressBar(isLoading)
+        })
+
+        return root
+    }
+
+    private fun resultsRecycler(view: View) {
+
+        val recyclerResult: RecyclerView = view.findViewById(R.id.recyclerResult)
+        recyclerResult.layoutManager = LinearLayoutManager(_context)
         val adapter = ResultsAdapter()
         recyclerResult.adapter = adapter
 
@@ -65,7 +73,6 @@ class ResultsFragment : Fragment(), Injectable {
                         List?.firstOrNull { !it.hotelIs }?.recyclerTitle = true
                     }
 
-
                     result.data.let { adapter.submitList(sorted) }
                     resultsViewModel.progressBar(false)
                 }
@@ -75,7 +82,7 @@ class ResultsFragment : Fragment(), Injectable {
                 Result.Status.ERROR -> {
                     resultsViewModel.progressBar(false)
                     Toast.makeText(
-                        root.context,
+                        _context,
                         getString(R.string.results_error),
                         Toast.LENGTH_LONG
                     ).show()
@@ -85,13 +92,7 @@ class ResultsFragment : Fragment(), Injectable {
 
         })
 
-        resultsViewModel.progressBar.observe(this, Observer { isLoading ->
-            progressBar(isLoading)
-        })
-
-        return root
     }
-
 
     private fun progressBar(visible: Boolean) {
 

@@ -4,7 +4,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.challenge_alpha.model.ResultDetail
 import com.example.challenge_alpha.model.ResultDetailAmenities
 
 class AmenitiesAdapter : ListAdapter<ResultDetailAmenities, RecyclerView.ViewHolder>(REPO_COMPARATOR) {

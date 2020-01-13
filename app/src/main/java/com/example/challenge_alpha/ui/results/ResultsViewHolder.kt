@@ -1,7 +1,5 @@
 package com.example.challenge_alpha.ui.results
 
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +8,6 @@ import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.navigation.Navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
@@ -29,7 +26,7 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val starsResults: RatingBar = itemView.findViewById(R.id.stars_results)
     private val priceResults: TextView = itemView.findViewById(R.id.price_results)
     private val divider: View = itemView.findViewById(R.id.divider)
-    val amenities: RecyclerView = itemView.findViewById(R.id.recyclerAmenities_results)
+    private val amenities: RecyclerView = itemView.findViewById(R.id.recyclerAmenities_results)
 
     private var resultDetails: ResultDetail? = null
 
@@ -46,7 +43,7 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     }
 
 
-    fun bind(result: ResultDetail?, holder: RecyclerView.ViewHolder) {
+    fun bind(result: ResultDetail?) {
 
         if (result != null) {
             loadData(result)
@@ -62,7 +59,7 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             if (isTitle) {
                 recyclerTitle.visibility = View.VISIBLE
                 if (result.stars?.toInt() != null) {
-                    "${result.stars?.toInt()} Estrelas"
+                    "${result.stars.toInt()} Estrelas"
                 } else {
                     "Pacotes"
                 }
@@ -81,8 +78,8 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         )
 
         val priceFormat = NumberFormat.getCurrencyInstance(Locale.getDefault())
-        priceFormat.currency = Currency.getInstance(result.price.currency ?: "BRL")
-        val priceResult = priceFormat.format(result.price.amount)
+        priceFormat.currency = Currency.getInstance(result.price?.currency ?: "BRL")
+        val priceResult = priceFormat.format(result.price?.amount)
 
         priceResults.text = priceResult
 
@@ -93,7 +90,7 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             5f
         } else {
             starsResults.visibility = View.VISIBLE
-            result.stars!!
+            result.stars
         }
 
         if (!result.amenities.isNullOrEmpty()) {
@@ -109,13 +106,13 @@ class ResultsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             amenities.adapter = amenitiesAdapter
             amenities.hasFixedSize()
 
-            amenitiesAdapter.submitList(result.amenities.take(3))
+            amenitiesAdapter.submitList(result.amenities.take(4))
 
         }
 
 
         val imageLoad: String? =
-            result.image ?: result.gallery.firstOrNull()?.url
+            result.image ?: result.gallery?.firstOrNull()?.url
         Glide.with(itemView)
             .load(imageLoad)
             .fitCenter()

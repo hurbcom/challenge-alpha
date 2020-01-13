@@ -1,20 +1,20 @@
 package com.example.challenge_alpha.ui.home
 
 import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.data.ResultDetailRelation
@@ -25,7 +25,6 @@ class LastSeenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val cardViewDisplay: CardView = itemView.findViewById(R.id.cardview_display)
     private val imageDisplay: ImageView = itemView.findViewById(R.id.image_display)
-    private val constraintDisplay: ConstraintLayout = itemView.findViewById(R.id.constraint_display)
     private val nameDisplay: TextView = itemView.findViewById(R.id.name_display)
     private val starsDisplay: ImageView = itemView.findViewById(R.id.stars_display)
     private val starsTextDisplay: TextView = itemView.findViewById(R.id.starsText_display)
@@ -50,9 +49,7 @@ class LastSeenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(result: ResultDetailRelation?) {
 
-        if (result == null) {
-
-        } else {
+        if (result != null) {
             loadData(result)
         }
 
@@ -69,7 +66,7 @@ class LastSeenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         )
 
         val priceFormat = NumberFormat.getCurrencyInstance(Locale.getDefault())
-        priceFormat.currency = Currency.getInstance(result.resultDetail?.price?.currency?: "BRL")
+        priceFormat.currency = Currency.getInstance(result.resultDetail?.price?.currency ?: "BRL")
         val priceResult = priceFormat.format(result.resultDetail?.price?.amount)
 
         priceDisplay.text = priceResult
@@ -92,7 +89,6 @@ class LastSeenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             .error(
                 Glide.with(cardViewDisplay)
                     .load(result.resultDetailGallery.firstOrNull()?.url)
-                    .error(R.drawable.ic_sync_problem)
                     .listener(object : RequestListener<Drawable> {
                         override fun onLoadFailed(
                             p0: GlideException?,
@@ -100,8 +96,31 @@ class LastSeenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                             p2: Target<Drawable>?,
                             p3: Boolean
                         ): Boolean {
-                            Log.d("glideTest", "$p0")
-                            constraintDisplay.visibility = View.INVISIBLE
+
+                            nameDisplay.setTextColor(
+                                ContextCompat.getColor(
+                                    itemView.context,
+                                    R.color.colorPrimary
+                                )
+                            )
+                            priceDisplay.setTextColor(
+                                ContextCompat.getColor(
+                                    itemView.context,
+                                    R.color.colorPrimary
+                                )
+                            )
+                            locationDisplay.setTextColor(
+                                ContextCompat.getColor(
+                                    itemView.context,
+                                    R.color.colorPrimary
+                                )
+                            )
+                            starsTextDisplay.setTextColor(
+                                ContextCompat.getColor(
+                                    itemView.context,
+                                    R.color.colorPrimary
+                                )
+                            )
 
                             return false
                         }
@@ -118,7 +137,6 @@ class LastSeenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                         }
                     })
             )
-            .fallback(R.drawable.ic_sync_problem)
             .into(imageDisplay)
 
     }

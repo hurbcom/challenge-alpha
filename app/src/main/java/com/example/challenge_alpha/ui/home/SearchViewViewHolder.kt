@@ -33,9 +33,7 @@ class SearchViewViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(result: Suggestions?) {
 
-        if (result == null) {
-
-        } else {
+        if (result != null) {
             loadData(result)
         }
 

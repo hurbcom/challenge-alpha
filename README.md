@@ -1,103 +1,56 @@
-# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Desafio Alpha
 
-Crie um aplicativo para dispositivo móvel (**Swift**, **Kotlin**, **React Native**, **Flutter**) que consuma o JSON exposto pela API de busca e apresente as informações em uma listagem. Você é livre para utiliar bibliotecas de terceiros.
 
-**Atenção**: a apresentação em forma de listagem é apenas o requisito mínimo do desafio. Sinta-se livre para construir a sua solução. Exemplo: implementação de uma barra de busca com sugestões, detalhes de um certo produto, etc.
+## Challenge-Alpha Hurb
 
-Queremos ver o **máximo da sua capacidade técnica**! Quem decide o limite é você.
+Projeto feito em resposta ao desafio Alpha da Hurb. A idéia do projeto é desenvolver um aplicativo que utilize a API disponibilizada pela Hurb para retornar ao usuário os valores da busca feita no aplicativo. Entre outros requisitos mínimos, o resultado da busca
+deve retornar em ordem descrescente em classificação (estrelas), e agrupado de acordo com a classificação.
 
-## API
+## Como utilizar
 
-A URL a seguir entrega a listagem de resultados para a cidade de Búzios como um documento JSON.
+A forma mais fácil para rodar a aplicação, é clonar/download/forkar esse repositório e com Android Studio instalar o aplicativo em um emulador ou aparelho físico.
 
-O documento contem um nó chamado `results` o qual tem os hotéis do Rio de Janeiro que você precisará exibir.
+## O que foi adicionado ao desafio
 
-**URL:**
+Além dos requisitos mínimos, a aplicação foi desenvolvida com algumas funcionalidades extras.
 
-`GET https://www.hurb.com/search/api?q=buzios&page=1` (Obrigatória)
+-   Os usuários tem a opção de favoritar os hotéis e/ou pacotes.
+-   É possível compartilhar os hotéis e/ou pacotes.
+-   No fragmento inicial os usuários tem o histórico de visualizações em ordem descrescente de visita.
+-   Também no fragmento inicial os usuários tem uma lista de últimas buscas que apresenta uma lista randômica de entradas de acordo com o histórico de buscas do usuário.
+-   A partir de qualquer tela o usuário pode acessar os hotéis/pacotes com mais detalhes clicando na view.
+-   A tela pode ser rotacionada em qualquer fragmento sem perda de informação
+-   Como sugerido no desafio, ao digitar uma busca, a partir do terceiro caracter, o aplicativo retorna uma lista de sugestões de busca de acordo com o retorno da Api.
+-   Embora não seja possível fazer buscas offline, o usuário tem acesso aos últimos vistos, últimas buscas e favoritos.
 
-`GET https://www.hurb.com/search/api/suggestion?q=buzios` (Opcional)
+## Bibliotecas de destaque
 
-## Requisitos Mínimos
+-   **Jetpack Navigations**
+-   **ViewModel**
+-   **Kotlin Coroutines**
+-   **Room**
+-   **Dagger2**
+-   **Assisted inject**
+-   **Retrofit2**
+-   **Glide**
 
--   Forkar esse desafio e criar o seu projeto (ou workspace) usando a sua versão desse repositório, tão logo acabe o desafio, submeta um _pull request_.
-    -   Caso você tenha algum motivo para não submeter um _pull request_, crie um repositório privado no Github, faça todo desafio na branch **master** e não se esqueça de preencher o arquivo `pull-request.txt`. Tão logo termine seu desenvolvimento, adicione como colaborador o usuário `automator-hurb` no seu repositório e o deixe disponível por pelo menos 30 dias. **Não adicione o `automator-hurb` antes do término do desenvolvimento.**
-    -   Caso você tenha algum problema para criar o repositório privado, ao término do desafio preencha o arquivo chamado `pull-request.txt`, comprima a pasta do projeto - incluindo a pasta `.git` - e nos envie por email.
--   Faça chamadas assíncronas para a API e emita um log dos dados recebidos.
 
--   Ler o resultado do JSON e colocar numa lista chamada `Hotels`.
+## O que ficou a desejar
 
--   Exibir os itens de `Hotels` numa UITableView ou UICollectionView (como no iOS, por exemplo). Cada célula vai representar um ítem de `Hotels`e deve mostrar seu nome, preço, cidade, estado, uma foto e três amenidades.
+-   Os testes estão incompletos. Com apenas 6 meses de carreira na área, os 10 dias não foram o suficiente para adicionar todos os teste que eu gostaria.
+-   O design ficou usável mas acredito que pode melhorar muito.
+-   A solução não tem scroll infinito nos resultados. Acredito que é um feature obrigatória em um aplicativo do tipo, no entanto não encontrei uma forma visual agradável de manter o agrupamento das entradas e ao mesmo tempo fazer o load de mais conteúdo.
+-   O fragmento com os detalhes dos hotéis/pacote está com poucos detalhes sobre o produto, embora toda informação passada pela API esteja disponível.
+-   Faltou adicionar um filtro no fragmento de resultados. Acredito ser uma funcionalidade indispensável, no entanto, não descobri o comando para a API retornar valores filtrados e o filtro acabaria sem muita funcionalidade.
+-   Faltou tratamento de erro para localidades diferentes da de Buzios. Por exemplo, Japão retorna muitas entradas sem cidade, entre outras que eu não tive tempo de observar.
+-   Por falta de suporte do Room a alguns tipos de objeto, tive que fazer uma relation no banco para facilitar a busca de dados, no entanto, pela limitação do Room, não era possível manter a relation e utilizar mais de uma chave primária nas tabelas. 
+Por isso, optei por criar 3 bancos distintos para salvar resultados/últimas buscas, favoritos, últimos vistos, o que poderia ser reduzido caso fosse possível utilizar mais de uma chave primária, garantindo a não repetição de entradas.
 
--   Agrupar as células (usando um título para separá-las) pela quantidade de estrelas. Caso não exista estrelas, agrupe em _Pacotes_. Veja os exemplos de resposta para [hoteis](examples/hotel.json) e [pacotes](examples/package.json)
 
-    -   Deve estar ordena descrentemente pela quantidade de estrelas.
+## Notas finais
 
--   Ter testes para o código criado
+Muito obrigado pela oportunidade de participar do processo/desafio. Foi muito divertido explorar um pouco da Api que vocês disponibilizaram e um pouco das nuances do negócio.
 
-## Critério de avaliação
+Como eu mencionei anteriormente, não tenho muita experiência na área, e por isso, ficaria extremamente grato se esse processo tiver um feedback quanto ao código - me dediquei bastante ao processo, e embora tenha feito o meu melhor, acredito que alguns pontos
+possam ser melhorados, ainda que, eu não saiba com precisão quais.
 
--   **Organização do código**: Separação de módulos, view e model, back-end e front-end
 
--   **Clareza**: O README explica de forma resumida qual é o problema e como pode rodar a aplicação?
-
--   **Assertividade**: A aplicação está fazendo o que é esperado? Se tem algo faltando, o README explica o porquê?
-
--   **Legibilidade do código** (incluindo comentários)
-
--   **Segurança**: Existe alguma vulnerabilidade clara?
-
--   **Cobertura de testes** (Não esperamos cobertura completa)
-
--   **Histórico de commits** (estrutura e qualidade)
-
--   **UX**: A interface é de fácil uso e auto-explicativa? A API é intuitiva?
-
--   **Escolhas técnicas**: A escolha das bibliotecas, banco de dados, arquitetura, etc, é a melhor escolha para a aplicação?
-
--   **"Algo a mais"**: Foi adicionada alguma feature não descrita nos requisitos mínimos? Ela foi bem executada? Traz alguma inovação interessante?
-
-## Dúvidas
-
-Quaisquer dúvidas que você venha a ter, consulte as [_issues_](https://github.com/HurbCom/challenge-alpha/issues) para ver se alguém já não a fez e caso você não ache sua resposta, abra você mesmo uma nova issue!
-
-Boa sorte e boa viagem! ;)
-
-**Exemplo da tabulação:**
-**(Você pode alterar o layout conforme quiser)**
-
-<table>
-<tr>
-<td>*3 estrelas*</td>
-</tr>
-<tr>
-<td>
-<table>
-<tr><td>Barra Flat</td></tr>
-<tr><td>Locação direto da Rio Apart Hoteis, não fazendo parte da administração da rede hoteleira que funciona no mesmo prédio. Troca de toalhas de 3 em 3 dias. Sem café da manhã incluso. Terá acesso normal a todas as áreas comuns do Prédio.</td></tr>
-<tr><td>Barra Flat 2</td>`</tr>
-<tr><td>Locação direto da Rio Apart Hoteis, não fazendo parte da administração da rede hoteleira que funciona no mesmo prédio. Troca de toalhas de 3 em 3 dias. Sem café da manhã incluso. Terá acesso normal a todas as áreas comuns do Prédio.</td></tr>
-</table>
-</td>
-</tr>
-<tr>
-<td>*Pacotes*</td>
-</tr>
-<tr>
-<td>
-<table>
-<tr><td>Pacote Rio de Janeiro: Carnaval 2018</td></tr>
-<tr><td>O pacote&nbsp;inclui: &nbsp;
-
-Aéreo: Passagem aérea de ida e volta de São Paulo para Rio de Janeiro.
-
-Hospedagem: no Rio de Janeiro no Rios Presidente Hotel, Copacabana Mar Hotel, Augusto`s Copacabana Hotel ou similar (com café da manhã</td></tr>
-
-</table>
-</td>
-</tr>
-</table>
-
-<p align="center">
-  <img src="ca.jpg" alt="Challange accepted" />
-</p>

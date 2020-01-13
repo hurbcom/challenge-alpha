@@ -1,6 +1,5 @@
 package com.example.challenge_alpha.ui.results
 
-import android.util.Log
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -19,7 +18,7 @@ class ResultsAdapter : ListAdapter<ResultDetail, RecyclerView.ViewHolder>(REPO_C
         val repoItem = getItem(position)
 
         if (repoItem != null) {
-            (holder as ResultsViewHolder).bind(repoItem, holder)
+            (holder as ResultsViewHolder).bind(repoItem)
         }
     }
 

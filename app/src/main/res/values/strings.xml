@@ -1,11 +1,8 @@
 <resources>
     <string name="app_name">Challenge-alpha</string>
     <string name="title_home">Início</string>
-    <string name="title_results">Resultados</string>
-    <string name="title_resultDetail">Hotel/Pacote</string>
     <string name="title_favorites">Favoritos</string>
     <string name="search_hint">Qual é a sua próxima viagem?</string>
-    <string name="search_button">Buscar</string>
     <string name="search_error">"Por favor, preencha um destino"</string>
 
     <string name="bar_favorite">Favoritar</string>
@@ -14,5 +11,7 @@
     <string name="location_display">%1$s, %2$s</string>
     <string name="amenities_result">● %1$s</string>
     <string name="results_error">Aconteceu algo de errado, por favor tente novamente</string>
+    <string name="home_lastSearches">Últimas buscas</string>
+    <string name="home_lastSeen">Últimos vistos</string>
 
 </resources>

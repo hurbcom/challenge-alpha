@@ -6,6 +6,9 @@ import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * classe responsável pela obtenção/inserção de últimos vistos
+ */
 @Singleton
 class LastSeenRepository @Inject constructor(private val lastSeenDao: LastSeenDao) {
 

@@ -21,10 +21,6 @@ class FavoritesAdapter : ListAdapter<ResultDetailRelation, RecyclerView.ViewHold
         }
     }
 
-    override fun getItemViewType(position: Int): Int {
-
-        return super.getItemViewType(position)
-    }
 
     companion object {
         private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<ResultDetailRelation>() {

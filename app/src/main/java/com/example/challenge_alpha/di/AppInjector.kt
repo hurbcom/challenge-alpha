@@ -11,9 +11,7 @@ import dagger.android.AndroidInjection
 import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
 
-/**
- * Helper class to automatically inject fragments if they implement [Injectable].
- */
+
 object AppInjector {
 
     fun init(application: ChallengeApplication) {

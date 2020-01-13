@@ -1,7 +1,6 @@
 package com.example.challenge_alpha
 
 import android.app.Application
-import android.util.Log
 import com.example.challenge_alpha.di.AppComponent
 import com.example.challenge_alpha.di.AppInjector
 import com.example.challenge_alpha.di.DaggerAppComponent
@@ -11,6 +10,9 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
+/**
+ * Configuração da aplicação para dependency injection (dagger2)
+ */
 open class ChallengeApplication : Application(), DaggerComponentProvider, HasAndroidInjector {
 
     @Inject

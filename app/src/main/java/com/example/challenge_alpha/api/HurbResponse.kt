@@ -1,13 +1,10 @@
 package com.example.challenge_alpha.api
 
-import androidx.lifecycle.LiveData
 import com.example.challenge_alpha.model.Filters
 import com.example.challenge_alpha.model.Header
 import com.example.challenge_alpha.model.Pagination
 import com.example.challenge_alpha.model.ResultDetail
 import com.google.gson.annotations.SerializedName
-import okhttp3.ResponseBody
-import java.lang.Exception
 
 // Data class para as respostas da API
 class HurbResponse (

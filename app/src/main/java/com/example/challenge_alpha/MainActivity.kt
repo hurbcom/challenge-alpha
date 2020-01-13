@@ -1,24 +1,16 @@
 package com.example.challenge_alpha
 
-import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
-import androidx.activity.viewModels
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.challenge_alpha.di.injector
-import com.example.challenge_alpha.ui.results.ResultsViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -43,6 +35,11 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+
+        /**
+         * Listener configurado para alterar a visibilidade da bottom navigation view, e para alterar a cor da toolbar.
+         * A troca de cor é feita para ter uma toolbar transparent (com overlay) no [ResultDetailFragment]
+         */
         navController.addOnDestinationChangedListener{ _, destination, _ ->
 
             when (destination.id) {
@@ -62,7 +59,6 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
                     nav_view.visibility = View.GONE
                     supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, android.R.color.transparent)))
                 }
-
 
             }
         }

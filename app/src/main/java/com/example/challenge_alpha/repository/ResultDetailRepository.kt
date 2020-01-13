@@ -6,6 +6,9 @@ import com.example.challenge_alpha.model.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * classe responsável pela obtenção/inserção de últimas buscas e armazenamento geral de resultados.
+ */
 @Singleton
 class ResultDetailRepository @Inject constructor(private val resultDetailDao: ResultDetailDao) {
 
@@ -17,13 +20,13 @@ class ResultDetailRepository @Inject constructor(private val resultDetailDao: Re
 
         response.resultDetail.forEach {
             resultDetailDao.insertDetail(it)
-            resultDetailDao.insertAmenities(it.amenities.map { list ->
+            resultDetailDao.insertAmenities(it.amenities!!.map { list ->
                 ResultDetailAmenities(it.sku, list.name, list.category)
             })
-            resultDetailDao.insertGallery(it.gallery.map { list ->
+            resultDetailDao.insertGallery(it.gallery!!.map { list ->
                 ResultDetailGallery(it.sku, list.description, list.url)
             })
-            it.price.taxes?.map { list ->
+            it.price!!.taxes?.map { list ->
                 ResultDetailTaxes(
                     it.sku,
                     list.type,

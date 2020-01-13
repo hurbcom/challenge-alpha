@@ -6,6 +6,9 @@ import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * classe responsável pela obtenção/inserção de favoritos
+ */
 @Singleton
 class FavoritesRepository @Inject constructor(private val favoritesDao: FavoritesDao) {
 
@@ -27,6 +30,9 @@ class FavoritesRepository @Inject constructor(private val favoritesDao: Favorite
         favoritesDao.insertAmenities(detailRelation.resultDetailAmenities)
         favoritesDao.insertGallery(detailRelation.resultDetailGallery)
         favoritesDao.insertTaxes(detailRelation.resultDetailTaxes)
+
+
+        ResultDetailRelation()
     }
 
 }

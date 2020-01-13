@@ -12,6 +12,10 @@ import dagger.Module
 import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 
+/**
+ * Configuração do dagger2. [AppModule] contém toda configuração para injeção de dependência dos repositórios, Dao, DataBase, ViewModel.
+ */
+
 @Singleton
 @Component(modules = [AppModule::class, AndroidInjectionModule::class, MainActivityModule::class, ViewModelAssistedFactoriesModule::class])
 interface AppComponent {

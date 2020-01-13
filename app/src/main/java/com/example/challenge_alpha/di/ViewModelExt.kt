@@ -1,3 +1,5 @@
+@file:Suppress("UNCHECKED_CAST")
+
 package com.example.challenge_alpha.di
 
 import androidx.fragment.app.Fragment

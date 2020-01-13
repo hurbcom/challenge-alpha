@@ -1,6 +1,5 @@
 package com.example.challenge_alpha.di
 
-import android.app.Activity
 import androidx.fragment.app.Fragment
 
 interface DaggerComponentProvider {
