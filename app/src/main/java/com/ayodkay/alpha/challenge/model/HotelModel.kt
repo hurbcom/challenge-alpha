@@ -4,7 +4,7 @@ data class HotelModel(
     val name:String,
     val price: String,
     val images:ArrayList<ArrayList<String>>,
-    val amenities:ArrayList<ArrayList<Address>>? = null,
+    val amenities:ArrayList<ArrayList<Amenities>>? = null,
     val descriptions: Descriptions,
     val address: Address,
     val star:String,

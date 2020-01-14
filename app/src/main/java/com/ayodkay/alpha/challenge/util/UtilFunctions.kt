@@ -1,13 +1,18 @@
 package com.ayodkay.alpha.challenge.util
 
 import android.content.Context
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import com.ayodkay.alpha.challenge.database.HotelsDataViewModel
 import com.ayodkay.alpha.challenge.model.Address
 import com.ayodkay.alpha.challenge.model.Amenities
 import com.ayodkay.alpha.challenge.model.Descriptions
 import com.ayodkay.alpha.challenge.model.HotelModel
 import org.json.JSONObject
+import kotlin.coroutines.coroutineContext
 
-class UtilFunctions{
+class UtilFunctions internal constructor(private val context: Context){
 
     fun handleJson(response: JSONObject): ArrayList<HotelModel> {
 
@@ -164,6 +169,87 @@ class UtilFunctions{
 
 
         return hotels
+    }
+
+    fun handleDatabase(hotelData: HotelsDataViewModel,owner: LifecycleOwner,hotelName:String):HotelModel{
+        var hotels: HotelModel? = null
+
+        var name: String
+        val amenities: ArrayList<ArrayList<Amenities>> = arrayListOf(  )
+        val image: ArrayList<ArrayList<String>> = arrayListOf(  )
+        var price:String? = null
+        var descriptions: Descriptions
+        var stars: String
+        var huFreeCancellation: Boolean
+        var address :Address? = null
+
+        hotelData.allHotels.observe(owner, Observer {values->
+            val result = values.hotelsJson.getJSONArray("results")
+
+            for (results_loop in 0 until result.length()) {
+                val res = result.getJSONObject(results_loop)
+                name = res.getString("name")
+
+                if (name == hotelName){
+                    val description = res.getString("description")
+                    val smallDescription = res.getString("smallDescription")
+                    descriptions = Descriptions(smallDescription,description)
+
+                    stars = res.getInt("stars").toString()
+                    huFreeCancellation = res.getBoolean("hu_free_cancellation")
+
+                    val am = res.getJSONArray("amenities")
+                    val amenitiesList = arrayListOf<Amenities>()
+                    for (amenities_loop in 0 until am.length()) {
+                        val am_res = am.getJSONObject(amenities_loop)
+                        val name = am_res.getString("name")
+                        val category = am_res.getString("category")
+
+                        amenitiesList.add(Amenities(name, category))
+
+                    }
+                    amenities.add(amenitiesList)
+
+                    val gallery = res.getJSONArray("gallery")
+                    val imageList = arrayListOf<String>()
+                    for (gallery_loop in 0 until gallery.length()) {
+
+                        val galleryLoopResult = gallery.getJSONObject(gallery_loop)
+                        val url  = galleryLoopResult.getString("url")
+
+                        imageList.add(url)
+
+
+                    }
+                    image.add(imageList)
+                    val pr = res.getJSONObject("price")
+                    for (price_loop in 0 until pr.length()) {
+                        price = pr.getString("amount")
+
+                    }
+                    val ad = res.getJSONObject("address")
+
+                    for (address_loop in 0 until ad.length()) {
+                        val zipcode = ad.getString("zipcode")
+                        val addresss = ad.getString("full_address")
+                        val city = ad.getString("city")
+                        val state = ad.getString("state")
+                        val country = ad.getString("country")
+
+
+                        address = Address(zipcode,addresss,city, state, country)
+
+                    }
+
+                    hotels = HotelModel(
+                        name,price!!,image, amenities,descriptions,address!!,stars,huFreeCancellation)
+                }else{
+                    continue
+                }
+            }
+        })
+
+        return hotels!!
     }
 
 }

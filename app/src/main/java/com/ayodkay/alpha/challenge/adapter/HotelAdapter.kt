@@ -60,7 +60,9 @@ class HotelAdapter internal constructor(
 
 
         holder.itemView.setOnClickListener {
-            context.startActivity(Intent(context,HotelDetails::class.java))
+            context.startActivity(Intent(context,HotelDetails::class.java).apply {
+                putExtra("hotelName",hotels.name)
+            })
         }
 
     }

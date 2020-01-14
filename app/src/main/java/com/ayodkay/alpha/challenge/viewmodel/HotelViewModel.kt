@@ -32,7 +32,8 @@ class HotelViewModel: ViewModel() {
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
             Response.Listener { response ->
-                hotelsJson?.value = response
+                hotelsJson?.value = response!!
+
             },
             Response.ErrorListener { error ->
                 Log.d("volley response", error.toString())
