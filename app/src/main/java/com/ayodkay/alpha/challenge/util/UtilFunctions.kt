@@ -1,27 +1,26 @@
 package com.ayodkay.alpha.challenge.util
 
 import android.content.Context
+import com.ayodkay.alpha.challenge.model.Address
+import com.ayodkay.alpha.challenge.model.Amenities
+import com.ayodkay.alpha.challenge.model.Descriptions
 import com.ayodkay.alpha.challenge.model.HotelModel
 import org.json.JSONObject
 
-class UtilFunctions internal constructor(private val context: Context){
+class UtilFunctions{
 
     fun handleJson(response: JSONObject): ArrayList<HotelModel> {
 
         val hotels: ArrayList<HotelModel> = arrayListOf()
 
         var name: String
-        var amenities: String
+        var amenities: ArrayList<ArrayList<Amenities>> = arrayListOf(  )
         val image: ArrayList<ArrayList<String>> = arrayListOf(  )
         var price:String? = null
-        var description: String
-        var address :String? = null
-        var city: String? = null
-        var state:String? = null
-        var country:String? = null
+        var descriptions: Descriptions
         var stars: String
-        var smallDescription: String
         var huFreeCancellation: Boolean
+        var address :Address? = null
 
 
         val result = response.getJSONArray("results")
@@ -29,8 +28,10 @@ class UtilFunctions internal constructor(private val context: Context){
         for (results_loop in 0 until result.length()) {
             val res = result.getJSONObject(results_loop)
             name = res.getString("name")
-            description = res.getString("description")
-            smallDescription = res.getString("smallDescription")
+
+            val description = res.getString("description")
+            val smallDescription = res.getString("smallDescription")
+            descriptions = Descriptions(smallDescription,description)
             stars = res.getInt("stars").toString()
             huFreeCancellation = res.getBoolean("hu_free_cancellation")
 
@@ -65,15 +66,19 @@ class UtilFunctions internal constructor(private val context: Context){
 
             for (address_loop in 0 until ad.length()) {
                 val zipcode = ad.getString("zipcode")
-                address = ad.getString("full_address")
-                city = ad.getString("city")
-                state = ad.getString("state")
-                country = ad.getString("country")
+                val addresss = ad.getString("full_address")
+                val city = ad.getString("city")
+                val state = ad.getString("state")
+                val country = ad.getString("country")
+
+
+                address = Address(zipcode,addresss,city, state, country)
 
             }
 
             hotels.add(
-                HotelModel(name,price!!,image,smallDescription,address!!,city!!,state!!,country!!,stars,huFreeCancellation)
+                HotelModel(
+                    name,price!!,image, null,descriptions,address!!,stars,huFreeCancellation)
             )
         }
 
@@ -84,17 +89,13 @@ class UtilFunctions internal constructor(private val context: Context){
         val hotels: ArrayList<HotelModel> = arrayListOf()
 
         var name: String
-        var amenities: String
+        var amenities: ArrayList<ArrayList<Amenities>> = arrayListOf(  )
         val image: ArrayList<ArrayList<String>> = arrayListOf(  )
         var price:String? = null
-        var description: String
-        var address :String? = null
-        var city: String? = null
-        var state:String? = null
-        var country:String? = null
+        var descriptions: Descriptions
         var stars: String
-        var smallDescription: String
         var huFreeCancellation: Boolean
+        var address :Address? = null
 
 
         val result = response.getJSONArray("results")
@@ -105,8 +106,9 @@ class UtilFunctions internal constructor(private val context: Context){
 
             if (star == stars){
                 name = res.getString("name")
-                description = res.getString("description")
-                smallDescription = res.getString("smallDescription")
+                val description = res.getString("description")
+                val smallDescription = res.getString("smallDescription")
+                descriptions = Descriptions(smallDescription,description)
 
                 huFreeCancellation = res.getBoolean("hu_free_cancellation")
 
@@ -141,15 +143,19 @@ class UtilFunctions internal constructor(private val context: Context){
 
                 for (address_loop in 0 until ad.length()) {
                     val zipcode = ad.getString("zipcode")
-                    address = ad.getString("full_address")
-                    city = ad.getString("city")
-                    state = ad.getString("state")
-                    country = ad.getString("country")
+                    val addresss = ad.getString("full_address")
+                    val city = ad.getString("city")
+                    val state = ad.getString("state")
+                    val country = ad.getString("country")
+
+
+                    address = Address(zipcode,addresss,city, state, country)
 
                 }
 
                 hotels.add(
-                    HotelModel(name,price!!,image,smallDescription,address!!,city!!,state!!,country!!,stars,huFreeCancellation)
+                    HotelModel(
+                        name,price!!,image, null,descriptions,address!!,stars,huFreeCancellation)
                 )
             }else{
                 continue

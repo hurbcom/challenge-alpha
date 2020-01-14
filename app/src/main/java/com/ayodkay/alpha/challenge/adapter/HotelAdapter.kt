@@ -1,6 +1,7 @@
 package com.ayodkay.alpha.challenge.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ayodkay.alpha.challenge.R
+import com.ayodkay.alpha.challenge.activity.HotelDetails
 import com.ayodkay.alpha.challenge.model.HotelModel
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
@@ -50,11 +52,16 @@ class HotelAdapter internal constructor(
         }
 
 
-
         holder.hotelPrice.text = "R$ ${hotels.price}"
-        holder.star.text = hotels.star.toString()
-        holder.hotelLocation.text = hotels.city
-        holder.smallDescription.text = hotels.smallDescription
+        holder.star.text = hotels.star
+        holder.hotelLocation.text = hotels.address.city
+        holder.smallDescription.text = hotels.descriptions.smallDescriptions
+
+
+
+        holder.itemView.setOnClickListener {
+            context.startActivity(Intent(context,HotelDetails::class.java))
+        }
 
     }
 }

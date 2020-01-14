@@ -15,7 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.HotelDetails"></activity>
+
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAQ-hsfDJtI618LENh52rVJ0_ZzcFiN0rE"/>
+        <activity android:name=".activity.HotelDetails">
+
+        </activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

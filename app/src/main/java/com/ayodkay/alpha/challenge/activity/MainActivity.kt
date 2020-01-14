@@ -11,6 +11,7 @@ import com.ayodkay.alpha.challenge.adapter.HotelAdapter
 import com.ayodkay.alpha.challenge.util.UtilFunctions
 import com.ayodkay.alpha.challenge.viewmodel.HotelViewModel
 import com.google.android.material.chip.Chip
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         hotelModel = ViewModelProviders.of(this).get(HotelViewModel::class.java)
 
         hotelModel.getHotels().observe(this, Observer {
-            val adapter = HotelAdapter(this, UtilFunctions(this).handleJson(it))
+            val adapter = HotelAdapter(this, UtilFunctions().handleJson(it))
             hotel_recycle.adapter = adapter
         })
 
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
                 "view all"->{
                     hotelModel.getHotels().observe(this, Observer {
-                        val adapter = HotelAdapter(this, UtilFunctions(this).handleJson(it))
+                        val adapter = HotelAdapter(this, UtilFunctions().handleJson(it))
                         hotel_recycle.adapter = adapter
 
                     })
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
                 "3"->{
                     hotelModel.getHotels().observe(this, Observer {
-                        val adapter = HotelAdapter(this, UtilFunctions(this).handleStarJson(it,chipStar))
+                        val adapter = HotelAdapter(this, UtilFunctions().handleStarJson(it,chipStar))
                         hotel_recycle.adapter = adapter
 
                     })
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
                 "4"->{
                     hotelModel.getHotels().observe(this, Observer {
-                        val adapter = HotelAdapter(this, UtilFunctions(this).handleStarJson(it,chipStar))
+                        val adapter = HotelAdapter(this, UtilFunctions().handleStarJson(it,chipStar))
                         hotel_recycle.adapter = adapter
 
                     })
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
                 "5"->{
                     hotelModel.getHotels().observe(this, Observer {
-                        val adapter = HotelAdapter(this, UtilFunctions(this).handleStarJson(it,chipStar))
+                        val adapter = HotelAdapter(this, UtilFunctions().handleStarJson(it,chipStar))
                         hotel_recycle.adapter = adapter
 
                     })

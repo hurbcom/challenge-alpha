@@ -8,9 +8,8 @@ import android.widget.TextView
 import com.ayodkay.alpha.challenge.R
 import com.smarteist.autoimageslider.SliderViewAdapter
 import com.squareup.picasso.Picasso
-import java.text.FieldPosition
 
-class SliderAdapter(private val name: String, private val imageList : ArrayList<ArrayList<String>>,private val currentPosition: Int) :
+class SliderAdapter(private val name: String, private val imageList : ArrayList<ArrayList<String>>,private val currentPosition: Int? = null) :
     SliderViewAdapter<SliderAdapter.SliderAdapterVH>() {
 
 
@@ -26,32 +25,40 @@ class SliderAdapter(private val name: String, private val imageList : ArrayList<
     ) {
 
         viewHolder.textViewDescription.text = name
-        when (position) {
-            0 -> Picasso
-                .get()
-                .load(imageList[currentPosition][position])
-                .into(viewHolder.imageViewBackground)
-            1 -> Picasso
-                .get()
-                .load(imageList[currentPosition][position])
-                .into(viewHolder.imageViewBackground)
-            2 -> Picasso
-                .get()
-                .load(imageList[currentPosition][position])
-                .into(viewHolder.imageViewBackground)
-            3 -> Picasso
-                .get()
-                .load(imageList[currentPosition][position])
-                .into(viewHolder.imageViewBackground)
+        if (currentPosition != null){
+            when (position) {
+                0 -> Picasso
+                    .get()
+                    .load(imageList[currentPosition][position])
+                    .error(R.drawable.ic_launcher_background)
+                    .into(viewHolder.imageViewBackground)
+                1 -> Picasso
+                    .get()
+                    .load(imageList[currentPosition][position])
+                    .error(R.drawable.ic_launcher_background)
+                    .into(viewHolder.imageViewBackground)
+                2 -> Picasso
+                    .get()
+                    .load(imageList[currentPosition][position])
+                    .error(R.drawable.ic_launcher_background)
+                    .into(viewHolder.imageViewBackground)
+                3 -> Picasso
+                    .get()
+                    .load(imageList[currentPosition][position])
+                    .error(R.drawable.ic_launcher_background)
+                    .into(viewHolder.imageViewBackground)
 
-            4 -> Picasso
-                .get()
-                .load(imageList[currentPosition][position])
-                .into(viewHolder.imageViewBackground)
+                4 -> Picasso
+                    .get()
+                    .load(imageList[currentPosition][position])
+                    .error(R.drawable.ic_launcher_background)
+                    .into(viewHolder.imageViewBackground)
+            }
         }
     }
 
-    override fun getCount(): Int { //slider view count could be dynamic size
+    override fun getCount(): Int {
+        //slider view count could be dynamic size
         return 5
     }
 
