@@ -8,10 +8,10 @@ import org.json.JSONObject
 interface HotelsDao {
 
     @Query("SELECT * FROM hotel_table")
-    fun getAll(): LiveData<Hotels>
+    fun getAll(): LiveData<List<Hotels>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(hotels: Hotels)
+    suspend fun insert(hotels: List<Hotels>)
 
     @Query("DELETE FROM hotel_table")
     suspend fun nukeTable()

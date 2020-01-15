@@ -14,7 +14,7 @@ class HotelsDataViewModel(application: Application) : AndroidViewModel(applicati
     // - We can put an observer on the data (instead of polling for changes) and only update the
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
-    val allHotels: LiveData<Hotels>
+    val allHotels: LiveData<List<Hotels>>
 
     init {
         val hotelsDao = HotelsDatabase.getDatabase(application, viewModelScope).hotelsDao()
@@ -25,7 +25,7 @@ class HotelsDataViewModel(application: Application) : AndroidViewModel(applicati
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */
-    fun insert(hotels: Hotels) = viewModelScope.launch {
+    fun insert(hotels: List<Hotels>) = viewModelScope.launch {
         repository.insert(hotels)
     }
 

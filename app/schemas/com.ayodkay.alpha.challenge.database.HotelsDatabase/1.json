@@ -2,22 +2,58 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "82d766f567b53aa8a549bebd02e5bb53",
+    "identityHash": "52bb4363ac50753fdafa90be597cbf21",
     "entities": [
       {
         "tableName": "hotel_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`json` TEXT NOT NULL, PRIMARY KEY(`json`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `price` TEXT NOT NULL, `huFreeCancellation` INTEGER NOT NULL, `details` TEXT NOT NULL, `address` TEXT NOT NULL, `images` TEXT NOT NULL, `amenities` TEXT NOT NULL, PRIMARY KEY(`name`))",
         "fields": [
           {
-            "fieldPath": "hotelsJson",
-            "columnName": "json",
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "huFreeCancellation",
+            "columnName": "huFreeCancellation",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "details",
+            "columnName": "details",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "images",
+            "columnName": "images",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "amenities",
+            "columnName": "amenities",
             "affinity": "TEXT",
             "notNull": true
           }
         ],
         "primaryKey": {
           "columnNames": [
-            "json"
+            "name"
           ],
           "autoGenerate": false
         },
@@ -28,7 +64,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '82d766f567b53aa8a549bebd02e5bb53')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '52bb4363ac50753fdafa90be597cbf21')"
     ]
   }
 }

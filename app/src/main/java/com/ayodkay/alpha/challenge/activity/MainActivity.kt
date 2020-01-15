@@ -32,10 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         hotelModel.getHotels().observe(this, Observer {hotels->
             val adapter = HotelAdapter(this, UtilFunctions(this).handleJson(hotels))
-
-            if (hotels != null){
-                hotelData.insert(Hotels(hotels))
-            }
+            hotelData.insert(UtilFunctions(this).handleJsonToData(hotels))
             hotel_recycle.adapter = adapter
         })
 

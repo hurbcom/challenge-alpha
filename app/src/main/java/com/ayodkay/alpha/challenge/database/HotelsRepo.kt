@@ -5,9 +5,9 @@ import org.json.JSONObject
 
 class HotelsRepo(private val hotelsDao: HotelsDao) {
 
-    val allHotels: LiveData<Hotels> = hotelsDao.getAll()
+    val allHotels: LiveData<List<Hotels>> = hotelsDao.getAll()
 
-    suspend fun insert(hotels: Hotels){
+    suspend fun insert(hotels: List<Hotels>){
         hotelsDao.insert(hotels)
     }
 
