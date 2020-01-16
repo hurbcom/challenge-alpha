@@ -18,7 +18,7 @@
 
 
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAQ-hsfDJtI618LENh52rVJ0_ZzcFiN0rE"/>
+            android:value="AIzaSyCjCYD2ndzWn0cESfDSX4IymVR84DEcnXk"/>
         <activity android:name=".activity.HotelDetails">
 
         </activity>

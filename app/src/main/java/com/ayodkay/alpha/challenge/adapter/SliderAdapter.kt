@@ -1,19 +1,31 @@
 package com.ayodkay.alpha.challenge.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.ayodkay.alpha.challenge.App
+import com.ayodkay.alpha.challenge.App.Companion.appContext
 import com.ayodkay.alpha.challenge.R
 import com.smarteist.autoimageslider.SliderViewAdapter
+import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
+import okhttp3.OkHttpClient
+import okhttp3.Protocol
+import java.util.*
+import kotlin.collections.ArrayList
+
 
 class SliderAdapter(private val name: String, private val imageList : ArrayList<ArrayList<String>>,private val currentPosition: Int? = null) :
     SliderViewAdapter<SliderAdapter.SliderAdapterVH>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup): SliderAdapterVH {
+    @SuppressLint("InflateParams")
+    override fun onCreateViewHolder(
+        parent: ViewGroup): SliderAdapterVH 
+    {
         val inflate: View = LayoutInflater.from(parent.context)
                 .inflate(R.layout.image_slider_layout_item, null)
         return SliderAdapterVH(inflate)
@@ -21,8 +33,8 @@ class SliderAdapter(private val name: String, private val imageList : ArrayList<
 
     override fun onBindViewHolder(
         viewHolder: SliderAdapterVH,
-        position: Int
-    ) {
+        position: Int)
+    {
 
         viewHolder.textViewDescription.text = name
         if (currentPosition != null){
@@ -63,7 +75,8 @@ class SliderAdapter(private val name: String, private val imageList : ArrayList<
     }
 
     inner class SliderAdapterVH(itemView: View) :
-        ViewHolder(itemView) {
+        ViewHolder(itemView) 
+    {
         var imageViewBackground: ImageView = itemView.findViewById(R.id.iv_auto_image_slider)
         var textViewDescription: TextView = itemView.findViewById(R.id.tv_auto_image_slider)
 

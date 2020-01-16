@@ -13,18 +13,21 @@ import kotlinx.coroutines.launch
 
 @Database(entities = [Hotels::class], version = 1)
 @TypeConverters(Converters::class)
-abstract class HotelsDatabase : RoomDatabase() {
+abstract class HotelsDatabase : RoomDatabase()
+{
 
     abstract fun hotelsDao(): HotelsDao
 
-    companion object {
+    companion object
+    {
         @Volatile
         private var INSTANCE: HotelsDatabase? = null
 
         fun getDatabase(
             context: Context,
             scope: CoroutineScope
-        ): HotelsDatabase {
+        ): HotelsDatabase
+        {
             return INSTANCE
 
 
@@ -50,12 +53,14 @@ abstract class HotelsDatabase : RoomDatabase() {
 
         private class HotelDatabaseCallback(
             private val scope: CoroutineScope
-        ) : RoomDatabase.Callback() {
+        ) : RoomDatabase.Callback()
+        {
             /**
              * Override the onOpen method to populate the database.
              * For this sample, we clear the database every time it is created or opened.
              */
-            override fun onOpen(db: SupportSQLiteDatabase) {
+            override fun onOpen(db: SupportSQLiteDatabase)
+            {
                 super.onOpen(db)
                 // If you want to keep the data through app restarts,
                 // comment out the following line.

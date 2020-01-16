@@ -1,6 +1,6 @@
 package com.ayodkay.alpha.challenge.viewmodel
 
-import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,7 +16,8 @@ class HotelViewModel: ViewModel() {
 
     private var hotelsJson: MutableLiveData<JSONObject>? = null
 
-    fun getHotels(): LiveData<JSONObject> {
+    fun getHotels(): LiveData<JSONObject>
+    {
         if (hotelsJson == null) {
             hotelsJson = MutableLiveData()
             loadHotels()
@@ -24,19 +25,23 @@ class HotelViewModel: ViewModel() {
         return hotelsJson!!
     }
 
-
-    private fun loadHotels(){
+    // Do an asynchronous operation to fetch hotels.
+    private fun loadHotels()
+    {
         val queue = Volley.newRequestQueue(appContext)
         val url = "https://www.hurb.com/search/api?q=buzios&page=1"
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
-            Response.Listener { response ->
+            Response.Listener
+            { response ->
                 hotelsJson?.value = response!!
 
             },
-            Response.ErrorListener { error ->
-                Log.d("volley response", error.toString())
+
+            Response.ErrorListener
+            { error ->
+                Toast.makeText(appContext,error.message,Toast.LENGTH_LONG).show()
             }
         )
         queue.add(jsonObjectRequest)

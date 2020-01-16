@@ -1,8 +1,10 @@
 package com.ayodkay.alpha.challenge.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
-import org.json.JSONObject
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 
 @Dao
 interface HotelsDao {

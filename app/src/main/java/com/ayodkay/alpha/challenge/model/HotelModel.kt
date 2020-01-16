@@ -1,6 +1,7 @@
 package com.ayodkay.alpha.challenge.model
 
 data class HotelModel(
+    val id:Int,
     val name:String,
     val price: String,
     val images:ArrayList<ArrayList<String>>,

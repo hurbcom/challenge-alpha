@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Alpha Challenge</string>
+    <string name="more_details">more details</string>
+    <string name="view_all">view all</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="todo">TODO</string>
+    <string name="amenities">Amenities</string>
 </resources>

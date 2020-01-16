@@ -5,7 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 
 class HotelsDataViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -16,7 +15,8 @@ class HotelsDataViewModel(application: Application) : AndroidViewModel(applicati
     // - Repository is completely separated from the UI through the ViewModel.
     val allHotels: LiveData<List<Hotels>>
 
-    init {
+    init
+    {
         val hotelsDao = HotelsDatabase.getDatabase(application, viewModelScope).hotelsDao()
         repository = HotelsRepo(hotelsDao)
         allHotels = repository.allHotels
@@ -25,7 +25,7 @@ class HotelsDataViewModel(application: Application) : AndroidViewModel(applicati
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */
-    fun insert(hotels: List<Hotels>) = viewModelScope.launch {
+    fun insert(hotels: List<Hotels>) = viewModelScope.launch{
         repository.insert(hotels)
     }
 
