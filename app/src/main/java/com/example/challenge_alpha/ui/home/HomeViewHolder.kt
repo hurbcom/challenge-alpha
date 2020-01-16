@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.getColor
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -17,12 +19,15 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.data.ResultDetailRelation
+import com.example.challenge_alpha.model.ResultDetail
+import com.example.challenge_alpha.ui.results.ResultsViewHolder
 import java.text.NumberFormat
 import java.util.*
 
-class LastSearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class HomeViewHolder(private val binding: ViewDataBinding) :
+    RecyclerView.ViewHolder(binding.root) {
 
-
+/*
     private val cardViewDisplay: CardView = itemView.findViewById(R.id.cardview_display)
     private val imageDisplay: ImageView = itemView.findViewById(R.id.image_display)
     private val nameDisplay: TextView = itemView.findViewById(R.id.name_display)
@@ -33,7 +38,10 @@ class LastSearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private var resultDetail: ResultDetailRelation? = null
 
+ */
+
     init {
+        /*
         view.setOnClickListener {
 
             val navController = findNavController(it)
@@ -44,17 +52,20 @@ class LastSearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         }
 
+         */
+
     }
 
 
     fun bind(result: ResultDetailRelation?) {
 
         if (result != null) {
-            loadData(result)
+            binding.setVariable(com.example.challenge_alpha.BR.result, result)
+            binding.executePendingBindings()
         }
 
     }
-
+/*
     private fun loadData(result: ResultDetailRelation) {
         this.resultDetail = result
 
@@ -143,11 +154,17 @@ class LastSearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     }
 
+ */
+
     companion object {
-        fun create(parent: ViewGroup): LastSearchViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.viewholder_horizontal, parent, false)
-            return LastSearchViewHolder(view)
+        fun create(parent: ViewGroup, viewType: Int): HomeViewHolder {
+            val binding = DataBindingUtil.inflate<ViewDataBinding>(
+                LayoutInflater.from(parent.context),
+                viewType,
+                parent,
+                false
+            )
+            return HomeViewHolder(binding)
         }
     }
 }

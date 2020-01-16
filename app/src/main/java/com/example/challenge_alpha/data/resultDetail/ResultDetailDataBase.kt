@@ -8,7 +8,7 @@ import com.example.challenge_alpha.model.*
 
 @Database(
     entities = [ResultDetail::class, ResultDetailAmenities::class, ResultDetailGallery::class, ResultDetailTaxes::class],
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 @TypeConverters(ListStringConverter::class, DateLongConverter::class)

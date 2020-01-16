@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:home="http://schemas.android.com/tools"
+    xmlns:alpha="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.challenge_alpha.ui.home.HomeViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?android:attr/actionBarSize">
@@ -38,6 +48,7 @@
                 android:text="@string/home_lastSeen"
                 android:theme="@style/Titles"
                 android:visibility="gone"
+                alpha:setVisibilityGoneOnNull="@{viewmodel.getLastSeen}"
                 app:layout_constraintBottom_toTopOf="@id/lastSeen_display"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -49,21 +60,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:visibility="invisible"
+                android:visibility="gone"
+                home:recyclerLastSeen="@{viewmodel.getLastSeen}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/lastsearch_title"
                 app:layout_constraintTop_toBottomOf="@id/lastSeen_title" />
 
             <TextView
                 android:id="@+id/lastsearch_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="@string/home_lastSearches"
                 android:theme="@style/Titles"
                 android:visibility="gone"
+                alpha:setVisibilityGoneOnNull="@{viewmodel.getLastSearched}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/lastSearch_display"
                 app:layout_constraintTop_toBottomOf="@id/lastSeen_display" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -73,6 +87,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:visibility="gone"
+                home:recyclerLastSearch="@{viewmodel.getLastSearched}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lastsearch_title" />
@@ -82,3 +97,4 @@
     </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

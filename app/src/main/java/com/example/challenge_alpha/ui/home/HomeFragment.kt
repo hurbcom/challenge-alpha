@@ -7,6 +7,7 @@ import android.view.*
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -16,6 +17,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.api.Result
+import com.example.challenge_alpha.databinding.FragmentHomeBinding
+import com.example.challenge_alpha.databinding.FragmentResultsBinding
 import com.example.challenge_alpha.di.Injectable
 import javax.inject.Inject
 
@@ -41,19 +44,20 @@ class HomeFragment : Fragment(), Injectable {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        homeViewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
+
+        val binding: FragmentHomeBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+        binding.lifecycleOwner = this
+        binding.viewmodel = homeViewModel
+
+        val root = binding.root
         _context = root.context
 
-        homeViewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
+
         searchViewRecycler = root.findViewById(R.id.searchView_recycler)
 
         setHasOptionsMenu(true)
-
-        /**
-         * Classes responsáveis pelas recyclerviews dos últimos vistos e últimas buscas presentes no [HomeFragment]
-         */
-        lastSeenRecycler(root)
-        lastSearchedRecycler(root)
 
         return root
     }
@@ -129,59 +133,6 @@ class HomeFragment : Fragment(), Injectable {
                 })
 
                 return false
-            }
-        })
-
-    }
-
-
-    private fun lastSeenRecycler(view: View) {
-
-        val lastSeen: RecyclerView = view.findViewById(R.id.lastSeen_display)
-        val lastSeenTitle: TextView = view.findViewById(R.id.lastSeen_title)
-        val lastSeenAdapter = LastSeenAdapter()
-
-        val layoutHorizontal =
-            GridLayoutManager(_context, 1, LinearLayoutManager.HORIZONTAL, false)
-
-
-        lastSeen.layoutManager = layoutHorizontal
-
-        lastSeen.adapter = lastSeenAdapter
-
-
-        homeViewModel.getLastSeen.observe(this, Observer {
-            if (it.isNotEmpty()) {
-                lastSeen.visibility = View.VISIBLE
-                lastSeenTitle.visibility = View.VISIBLE
-                lastSeenAdapter.submitList(it)
-            }
-
-        })
-
-    }
-
-    private fun lastSearchedRecycler(view: View) {
-
-        val lastSearch: RecyclerView = view.findViewById(R.id.lastSearch_display)
-        val lastSearchTitle: TextView = view.findViewById(R.id.lastsearch_title)
-
-        val layoutHorizontal =
-            GridLayoutManager(_context, 1, LinearLayoutManager.HORIZONTAL, false)
-
-
-        lastSearch.layoutManager = layoutHorizontal
-
-        val lastSearchAdapter = LastSearchAdapter()
-
-        lastSearch.adapter = lastSearchAdapter
-
-
-        homeViewModel.getLastSearched.observe(this, Observer {
-            if (it.isNotEmpty()) {
-                lastSearchTitle.visibility = View.VISIBLE
-                lastSearch.visibility = View.VISIBLE
-                lastSearchAdapter.submitList(it)
             }
         })
 

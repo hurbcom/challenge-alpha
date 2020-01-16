@@ -4,13 +4,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.challenge_alpha.R
 import com.example.challenge_alpha.data.ResultDetailRelation
 
 class FavoritesAdapter : ListAdapter<ResultDetailRelation, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return FavoritesViewHolder.create(parent)
+        return FavoritesViewHolder.create(parent, viewType)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -20,6 +21,8 @@ class FavoritesAdapter : ListAdapter<ResultDetailRelation, RecyclerView.ViewHold
             (holder as FavoritesViewHolder).bind(repoItem)
         }
     }
+
+    override fun getItemViewType(position: Int) = R.layout.viewholder_favorites
 
 
     companion object {

@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge_alpha.R
+import com.example.challenge_alpha.databinding.FragmentFavoritesBinding
+import com.example.challenge_alpha.databinding.FragmentHomeBinding
 import com.example.challenge_alpha.di.Injectable
 import javax.inject.Inject
 
@@ -26,10 +29,16 @@ class FavoritesFragment : Fragment(), Injectable {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_favorites, container, false)
         favoritesViewModel = ViewModelProvider(this, viewModelFactory).get(FavoritesViewModel::class.java)
 
-        favoritesRecycler(root)
+        val binding: FragmentFavoritesBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_favorites, container, false)
+        binding.lifecycleOwner = this
+        binding.viewmodel = favoritesViewModel
+
+        val root = binding.root
+
+   //     favoritesRecycler(root)
 
         return root
     }

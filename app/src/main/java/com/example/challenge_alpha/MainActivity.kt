@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.challenge_alpha.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -21,16 +23,20 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
-    private lateinit var appBarConfiguration : AppBarConfiguration
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
-        appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_home, R.id.navigation_favorites))
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_favorites
+            )
+        )
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
@@ -40,24 +46,52 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
          * Listener configurado para alterar a visibilidade da bottom navigation view, e para alterar a cor da toolbar.
          * A troca de cor é feita para ter uma toolbar transparent (com overlay) no [ResultDetailFragment]
          */
-        navController.addOnDestinationChangedListener{ _, destination, _ ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
 
             when (destination.id) {
                 R.id.navigation_home -> {
                     nav_view.visibility = View.VISIBLE
-                    supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.colorPrimary)))
+                    supportActionBar?.setBackgroundDrawable(
+                        ColorDrawable(
+                            ContextCompat.getColor(
+                                this,
+                                R.color.colorPrimary
+                            )
+                        )
+                    )
                 }
                 R.id.navigation_favorites -> {
                     nav_view.visibility = View.VISIBLE
-                    supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.colorPrimary)))
+                    supportActionBar?.setBackgroundDrawable(
+                        ColorDrawable(
+                            ContextCompat.getColor(
+                                this,
+                                R.color.colorPrimary
+                            )
+                        )
+                    )
                 }
                 R.id.navigation_results -> {
                     nav_view.visibility = View.GONE
-                    supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.colorPrimary)))
+                    supportActionBar?.setBackgroundDrawable(
+                        ColorDrawable(
+                            ContextCompat.getColor(
+                                this,
+                                R.color.colorPrimary
+                            )
+                        )
+                    )
                 }
-                R.id.navigation_resultDetail ->  {
+                R.id.navigation_resultDetail -> {
                     nav_view.visibility = View.GONE
-                    supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, android.R.color.transparent)))
+                    supportActionBar?.setBackgroundDrawable(
+                        ColorDrawable(
+                            ContextCompat.getColor(
+                                this,
+                                android.R.color.transparent
+                            )
+                        )
+                    )
                 }
 
             }
@@ -71,7 +105,6 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
 
 
     override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
-
 
 
 }

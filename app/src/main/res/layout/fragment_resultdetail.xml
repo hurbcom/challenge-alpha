@@ -1,151 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:resultDetail="http://schemas.android.com/tools"
+    xmlns:alpha="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.challenge_alpha.ui.resultDetail.ResultDetailViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-        <ImageView
-            android:id="@+id/recyclerGallery_detail"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/name_detail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:gravity="start"
-            android:maxLines="4"
-            android:text="Nome do Hotel"
-            android:textAlignment="viewStart"
-            android:theme="@style/Results"
-            app:layout_constraintEnd_toStartOf="@id/stars_detail"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recyclerGallery_detail" />
-
-        <androidx.appcompat.widget.AppCompatRatingBar
-            android:id="@+id/stars_detail"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/price_detail" />
-
-        <TextView
-            android:id="@+id/city_detail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:gravity="start"
-            android:maxLines="4"
-            android:text="Cidade"
-            android:textAlignment="viewStart"
-            android:theme="@style/Results_medium"
-            app:layout_constraintEnd_toStartOf="@id/stars_detail"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name_detail" />
+            android:layout_height="wrap_content">
 
 
-        <TextView
-            android:id="@+id/price_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="500"
-            android:theme="@style/Results"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/name_detail"
-            app:layout_constraintTop_toBottomOf="@id/recyclerGallery_detail" />
-
-
-        <TextView
-            android:id="@+id/amenitiesTitle_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:gravity="start"
-            android:text="Amenidades"
-            android:textAlignment="viewStart"
-            android:theme="@style/Results_medium"
-            android:visibility="invisible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description_detail"
-            tools:layout_editor_absoluteY="344dp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerAmenities_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:paddingStart="15dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/amenitiesTitle_detail" />
-
-
-        <TextView
-            android:id="@+id/descriptionTitle_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
-            android:gravity="start"
-            android:text="Descrição"
-            android:textAlignment="viewStart"
-            android:theme="@style/Results_medium"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/city_detail"/>
-
-        <com.ms.square.android.expandabletextview.ExpandableTextView
-            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/description_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/descriptionTitle_detail"
-            expandableTextView:animDuration="200"
-            expandableTextView:maxCollapsedLines="4">
+            <ImageView
+                android:id="@+id/recyclerGallery_detail"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                resultDetail:backupImageLoading="@{viewmodel.getResult.resultDetailGallery[0]}"
+                resultDetail:imageLoading="@{viewmodel.getResult.resultDetail.image}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/expandable_text"
+                android:id="@+id/name_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="start"
+                android:maxLines="4"
+                android:text="@{viewmodel.getResult.resultDetail.name}"
+                android:textAlignment="viewStart"
+                android:theme="@style/Results"
+                app:layout_constraintEnd_toStartOf="@id/stars_detail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerGallery_detail" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/stars_detail"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_detail"
+                alpha:ratingFormat="@{viewmodel.getResult.resultDetail.stars}" />
+
+            <TextView
+                android:id="@+id/city_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="start"
+                android:maxLines="4"
+                android:text="@{viewmodel.getResult.resultDetail.address.city}"
+                android:textAlignment="viewStart"
+                android:theme="@style/Results_medium"
+                app:layout_constraintEnd_toStartOf="@id/stars_detail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_detail" />
+
+
+            <TextView
+                android:id="@+id/price_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:theme="@style/Results"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/name_detail"
+                app:layout_constraintTop_toBottomOf="@id/recyclerGallery_detail"
+                alpha:priceFormat="@{viewmodel.getResult.resultDetail.price}" />
+
+
+            <TextView
+                android:id="@+id/amenitiesTitle_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="start"
+                android:text="Amenidades"
+                android:textAlignment="viewStart"
+                android:theme="@style/Results_medium"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_detail"
+                alpha:setVisibilityOnNull="@{viewmodel.getResult.resultDetailAmenities}"
+                tools:layout_editor_absoluteY="344dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerAmenities_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="start"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:paddingTop="15dp"
-                android:textAlignment="viewStart"
-                android:theme="@style/LongText" />
+                android:layout_marginTop="5dp"
+                android:paddingStart="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amenitiesTitle_detail"
+                resultDetail:recyclerAmenities="@{viewmodel.getResult.resultDetailAmenities}" />
 
-            <ImageButton
-                android:id="@id/expand_collapse"
+
+            <TextView
+                android:id="@+id/descriptionTitle_detail"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="25dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right|bottom"
-                android:background="@android:color/transparent"/>
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:gravity="start"
+                android:text="Descrição"
+                android:textAlignment="viewStart"
+                android:theme="@style/Results_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/city_detail" />
 
-        </com.ms.square.android.expandabletextview.ExpandableTextView>
+            <com.ms.square.android.expandabletextview.ExpandableTextView xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/description_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewmodel.getResult.resultDetail.description.trim()}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/descriptionTitle_detail"
+                expandableTextView:animDuration="200"
+                expandableTextView:maxCollapsedLines="4">
+
+                <TextView
+                    android:id="@+id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="20dp"
+                    android:textAlignment="viewStart"
+                    android:theme="@style/LongText" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@android:color/transparent" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -33,6 +33,7 @@
         <item name="fontFamily">@font/robotobold</item>
     </style>
 
+
     <style name="Results">
         <item name="android:textSize">15.5sp</item>
         <item name="android:textColor">@color/dark</item>

@@ -10,7 +10,7 @@ apply plugin: 'kotlin-kapt'
 
 ext {
     versionMajor = 0
-    versionMinor = 5
+    versionMinor = 6
     buildNum = 0
 }
 
@@ -24,6 +24,10 @@ android {
         versionCode versionMajor * 1000000 + versionMinor * 1000 + buildNum
         versionName String.valueOf(versionMajor) + "." + String.valueOf(versionMinor) + "." + String.valueOf(buildNum)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled true
     }
 
     kotlinOptions {

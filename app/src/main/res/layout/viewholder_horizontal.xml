@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:alpha="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:home="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.challenge_alpha.ui.home.BindingAdaptersKt" />
+        <variable
+            name="result"
+            type="com.example.challenge_alpha.data.ResultDetailRelation" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -12,6 +24,7 @@
         android:layout_height="350dp"
         android:layout_marginEnd="10dp"
         app:cardCornerRadius="10dp"
+        android:onClick="@{view -> BindingAdaptersKt.navigate(view, result.resultDetail.sku)}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,6 +38,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            home:imageLoading="@{result.resultDetail.image}"
+            home:backupImageLoading="@{result.resultDetailGallery.get(0)}"
+            home:imageVisibilityOnNameDisplay="@{nameDisplay}"
+            home:imageVisibilityOnPriceDisplay="@{priceDisplay}"
+            home:imageVisibilityOnLocationDisplay="@{locationDisplay}"
+            home:imageVisibilityOnStarsTextDisplay="@{starsTextDisplay}"
+            home:imageVisibilityOnStarsDisplay="@{starsDisplay}"
             />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,7 +62,7 @@
                 android:layout_marginBottom="15dp"
                 android:gravity="start"
                 android:maxLines="4"
-                android:text="Nome do Hotel"
+                android:text="@{result.resultDetail.name}"
                 android:textAlignment="viewStart"
                 android:theme="@style/Display"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -55,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="3dp"
                 android:layout_marginBottom="7dp"
-                android:text="5"
+                alpha:floatFormatString="@{result.resultDetail.stars}"
                 android:theme="@style/Display"
                 app:layout_constraintBottom_toTopOf="@id/price_display"
                 app:layout_constraintEnd_toStartOf="@id/stars_display" />
@@ -67,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="5dp"
+                android:visibility="invisible"
                 android:src="@drawable/ic_star"
                 app:layout_constraintBottom_toTopOf="@id/price_display"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -79,7 +100,7 @@
                 android:layout_marginTop="15dp"
                 android:gravity="start"
                 android:maxLines="4"
-                android:text="Cidade"
+                android:text="@{@string/location_display(result.resultDetail.address.city, result.resultDetail.address.state)}"
                 android:textAlignment="viewStart"
                 android:theme="@style/Display"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="15dp"
-                android:text="Preço"
+                alpha:priceFormat="@{result.resultDetail.price}"
                 android:textAlignment="viewStart"
                 android:theme="@style/Display"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -102,3 +123,4 @@
     </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
