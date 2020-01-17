@@ -2,7 +2,8 @@ package com.example.challenge_alpha.ui.favorites
 
 
 import android.view.View
-import android.widget.*
+import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.databinding.BindingAdapter
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,14 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
 import com.example.challenge_alpha.R
-import com.example.challenge_alpha.api.HurbResponse
-import com.example.challenge_alpha.model.ResultDetail
+import com.example.challenge_alpha.data.ResultDetailRelation
 import com.example.challenge_alpha.model.ResultDetailAmenities
 import com.example.challenge_alpha.model.ResultDetailGallery
 import com.example.challenge_alpha.ui.resultDetail.AmenitiesAdapter
-import com.example.challenge_alpha.api.Result
-import com.example.challenge_alpha.data.ResultDetailRelation
-import com.example.challenge_alpha.ui.results.ResultsFragmentDirections
 
 
 @BindingAdapter("favorites:imageLoading", "favorites:backupImageLoading")

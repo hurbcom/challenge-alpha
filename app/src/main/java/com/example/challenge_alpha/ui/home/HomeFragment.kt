@@ -4,7 +4,6 @@ package com.example.challenge_alpha.ui.home
 import android.content.Context
 import android.os.Bundle
 import android.view.*
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
@@ -12,13 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.api.Result
 import com.example.challenge_alpha.databinding.FragmentHomeBinding
-import com.example.challenge_alpha.databinding.FragmentResultsBinding
 import com.example.challenge_alpha.di.Injectable
 import javax.inject.Inject
 
@@ -53,7 +50,6 @@ class HomeFragment : Fragment(), Injectable {
 
         val root = binding.root
         _context = root.context
-
 
         searchViewRecycler = root.findViewById(R.id.searchView_recycler)
 

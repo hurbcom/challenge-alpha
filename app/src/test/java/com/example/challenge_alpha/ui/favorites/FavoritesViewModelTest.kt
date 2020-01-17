@@ -3,9 +3,7 @@ package com.example.challenge_alpha.ui.favorites
 
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.challenge_alpha.di.viewModel
 import com.example.challenge_alpha.repository.FavoritesRepository
-import junit.framework.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

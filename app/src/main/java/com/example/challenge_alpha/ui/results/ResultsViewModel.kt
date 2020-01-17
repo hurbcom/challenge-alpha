@@ -25,9 +25,6 @@ class ResultsViewModel @AssistedInject constructor(
         fun create(queryString: String): ResultsViewModel
     }
 
-    private val _progressBar = MutableLiveData<Boolean>(true)
-    val progressBar: LiveData<Boolean> = _progressBar
-
 
     val resultsDetailLive = hurbRepository.searchResult
 
@@ -39,7 +36,4 @@ class ResultsViewModel @AssistedInject constructor(
     }
 
 
-    fun progressBar(visible: Boolean) {
-        _progressBar.value = visible
-    }
 }

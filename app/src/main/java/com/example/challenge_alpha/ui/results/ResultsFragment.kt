@@ -1,21 +1,13 @@
 package com.example.challenge_alpha.ui.results
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge_alpha.R
-import com.example.challenge_alpha.api.Result
-import com.example.challenge_alpha.databinding.FragmentResultdetailBinding
 import com.example.challenge_alpha.databinding.FragmentResultsBinding
 import com.example.challenge_alpha.di.Injectable
 import com.example.challenge_alpha.di.injector
@@ -47,10 +39,8 @@ class ResultsFragment : Fragment(), Injectable {
         binding.lifecycleOwner = this
         binding.viewmodel = resultsViewModel
 
-        val root = binding.root
 
-
-        return root
+        return binding.root
     }
 
 

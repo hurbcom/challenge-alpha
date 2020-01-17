@@ -1,17 +1,10 @@
 package com.example.challenge_alpha.ui
 
 import android.view.View
-import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.challenge_alpha.R
-import com.example.challenge_alpha.model.ResultDetailAmenities
-import com.example.challenge_alpha.model.ResultDetailGallery
 import com.example.challenge_alpha.model.ResultDetailPrice
-import com.example.challenge_alpha.ui.resultDetail.AmenitiesAdapter
 import java.text.NumberFormat
 import java.util.*
 

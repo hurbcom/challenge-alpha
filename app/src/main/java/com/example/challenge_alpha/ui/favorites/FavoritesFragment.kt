@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge_alpha.R
 import com.example.challenge_alpha.databinding.FragmentFavoritesBinding
-import com.example.challenge_alpha.databinding.FragmentHomeBinding
 import com.example.challenge_alpha.di.Injectable
 import javax.inject.Inject
 
@@ -36,11 +35,9 @@ class FavoritesFragment : Fragment(), Injectable {
         binding.lifecycleOwner = this
         binding.viewmodel = favoritesViewModel
 
-        val root = binding.root
+        //     favoritesRecycler(root)
 
-   //     favoritesRecycler(root)
-
-        return root
+        return binding.root
     }
 
     private fun favoritesRecycler(view: View) {
