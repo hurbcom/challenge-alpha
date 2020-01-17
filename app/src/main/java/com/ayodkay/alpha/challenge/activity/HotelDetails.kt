@@ -1,8 +1,10 @@
 package com.ayodkay.alpha.challenge.activity
 
+//import com.ayodkay.alpha.challenge.R
+
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Handler
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -10,7 +12,10 @@ import androidx.lifecycle.ViewModelProviders
 import com.ayodkay.alpha.challenge.R
 import com.ayodkay.alpha.challenge.adapter.SliderAdapter
 import com.ayodkay.alpha.challenge.database.HotelsDataViewModel
-import com.google.android.gms.maps.*
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.smarteist.autoimageslider.IndicatorAnimations
@@ -18,11 +23,13 @@ import com.smarteist.autoimageslider.SliderAnimations
 import kotlinx.android.synthetic.main.activity_hotel_details.*
 
 
-class HotelDetails : AppCompatActivity(){
+class HotelDetails : AppCompatActivity(),OnMapReadyCallback{
 
     private lateinit var googleMap: GoogleMap
     private lateinit var hotelData: HotelsDataViewModel
-    private lateinit var geoLocation :LatLng
+
+    private var lon:Double = 0.0
+    private var lat:Double = 0.0
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +42,13 @@ class HotelDetails : AppCompatActivity(){
 
         //get the position of the item clicked
         val position = intent.extras?.get("position") as Int
+        lon = intent.extras?.get("lon") as Double
+        lat = intent.extras?.get("lat") as Double
+
+
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map_view) as SupportMapFragment?
+        mapFragment!!.getMapAsync(this)
 
         hotelData = ViewModelProviders.of(this).get(HotelsDataViewModel::class.java)
 
@@ -44,25 +58,6 @@ class HotelDetails : AppCompatActivity(){
             location_address.text = hotelData[position].address.address
             first_amenity.text = hotelData[position].amenities[position][0].name
 
-            geoLocation = LatLng(hotelData[position].address.lat,hotelData[position].address.lon)
-
-            Handler().postDelayed({
-                map_view.apply {
-                    onCreate(Bundle.EMPTY)
-                    getMapAsync {
-                        googleMap = it
-                        googleMap.apply {
-                            addMarker(MarkerOptions().position(geoLocation)
-                                .title(hotelData[position].name))
-                            moveCamera(CameraUpdateFactory.newLatLngZoom(geoLocation,12.0f))
-                            uiSettings.apply {
-                                isScrollGesturesEnabled = false
-                            }
-                        }
-                    }
-                    MapsInitializer.initialize(this@HotelDetails)
-                }
-            },3000)
 
             if (hotelData[position].huFreeCancellation){
                 second_amenity.text = "Free Cancellation"
@@ -93,5 +88,18 @@ class HotelDetails : AppCompatActivity(){
             }
 
         })
+    }
+
+    override fun onMapReady(googleMap: GoogleMap?) {
+        val location = LatLng(lon, lat)
+        googleMap!!.apply {
+            addMarker(MarkerOptions().position(location))
+            moveCamera(CameraUpdateFactory.newLatLngZoom(location,14.0f))
+
+            uiSettings.apply {
+                setAllGesturesEnabled(false)
+            }
+
+        }
     }
 }

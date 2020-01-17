@@ -67,6 +67,8 @@ class HotelAdapter internal constructor(
         holder.itemView.setOnClickListener {
             context.startActivity(Intent(context,HotelDetails::class.java).apply {
                 putExtra("position",hotels.id)
+                putExtra("lon",hotels.address.lon)
+                putExtra("lat",hotels.address.lat)
             })
         }
 

@@ -17,11 +17,14 @@ class UtilFunctions{
 
         var name: String
         val image: ArrayList<ArrayList<String>> = arrayListOf(  )
-        var price:String? = null
+        var price:String
         var descriptions: Descriptions
         var stars: String
         var huFreeCancellation: Boolean
-        var address :Address? = null
+        var address :Address
+
+        var lon: Double
+        var lat: Double
 
 
         val result = response.getJSONArray("results")
@@ -53,39 +56,25 @@ class UtilFunctions{
             image.add(imageList)
 
             val pr = res.getJSONObject("price")
-            for (price_loop in 0 until pr.length())
-            {
-                price = pr.getString("amount")
-
-            }
+            price = pr.getString("amount")
 
             val ad = res.getJSONObject("address")
+            val zipcode = ad.getString("zipcode")
+            val addresss = ad.getString("full_address")
+            val city = ad.getString("city")
+            val state = ad.getString("state")
+            val country = ad.getString("country")
 
-            for (address_loop in 0 until ad.length())
-            {
-                val zipcode = ad.getString("zipcode")
-                val addresss = ad.getString("full_address")
-                val city = ad.getString("city")
-                val state = ad.getString("state")
-                val country = ad.getString("country")
+            val geoLocation = ad.getJSONObject("geoLocation")
+            lon = geoLocation.getString("lon").toDouble()
+            lat = geoLocation.getString("lat").toDouble()
 
-                val geoLocation = ad.getJSONObject("geoLocation")
+            address = Address(zipcode,addresss,city, state, country,lon,lat)
 
-                for (geoLocation_loop in 0 until geoLocation.length())
-                {
-                    val lon = geoLocation.getString("lon").toDouble()
-                    val lat = geoLocation.getString("lat").toDouble()
-
-                    address = Address(zipcode,addresss,city, state, country,lon,lat)
-                }
-
-
-
-            }
 
             hotels.add(
                 HotelModel(
-                    results_loop,name,price!!,image, null,descriptions,address!!,stars,
+                    results_loop,name,price,image, null,descriptions,address!!,stars,
                     huFreeCancellation)
             )
         }
