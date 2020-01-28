@@ -2,6 +2,7 @@ package com.example.challenge_alpha.repository
 
 import com.example.challenge_alpha.data.ResultDetailRelation
 import com.example.challenge_alpha.data.lastSeen.LastSeenDao
+import com.example.challenge_alpha.testing.OpenForTesting
 import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -9,6 +10,7 @@ import javax.inject.Singleton
 /**
  * classe responsável pela obtenção/inserção de últimos vistos
  */
+@OpenForTesting
 @Singleton
 class LastSeenRepository @Inject constructor(private val lastSeenDao: LastSeenDao) {
 

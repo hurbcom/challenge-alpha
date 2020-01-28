@@ -2,6 +2,7 @@ package com.example.challenge_alpha.repository
 
 import com.example.challenge_alpha.data.ResultDetailRelation
 import com.example.challenge_alpha.data.favorites.FavoritesDao
+import com.example.challenge_alpha.testing.OpenForTesting
 import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -9,6 +10,7 @@ import javax.inject.Singleton
 /**
  * classe responsável pela obtenção/inserção de favoritos
  */
+@OpenForTesting
 @Singleton
 class FavoritesRepository @Inject constructor(private val favoritesDao: FavoritesDao) {
 
@@ -30,9 +32,6 @@ class FavoritesRepository @Inject constructor(private val favoritesDao: Favorite
         favoritesDao.insertAmenities(detailRelation.resultDetailAmenities)
         favoritesDao.insertGallery(detailRelation.resultDetailGallery)
         favoritesDao.insertTaxes(detailRelation.resultDetailTaxes)
-
-
-        ResultDetailRelation()
     }
 
 }

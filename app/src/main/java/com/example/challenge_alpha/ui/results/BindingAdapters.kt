@@ -33,11 +33,10 @@ fun imageLoading(view: ImageView, imageUrl: String?, backupImageLoading: ResultD
         .fallback(R.drawable.ic_sync_problem)
         .into(view)
 
-
 }
 
 @BindingAdapter("results:recyclerResults", "results:progressBar")
-fun setRecyclerViewResults(recyclerView: RecyclerView, result: Result<HurbResponse>?, progressBar: ProgressBar) {
+fun setRecyclerViewResults(recyclerView: RecyclerView, result: Result<HurbResponse>, progressBar: ProgressBar) {
 
     if (recyclerView.layoutManager == null) {
 
@@ -46,7 +45,7 @@ fun setRecyclerViewResults(recyclerView: RecyclerView, result: Result<HurbRespon
         recyclerView.adapter = adapter
     }
 
-    when (result?.status) {
+    when (result.status) {
         Result.Status.SUCCESS -> {
             val sorted =
                 result.data?.resultDetail?.sortedByDescending { list -> list.stars }

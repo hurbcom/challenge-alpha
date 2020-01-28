@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -46,7 +47,8 @@ class HomeFragment : Fragment(), Injectable {
         val binding: FragmentHomeBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         binding.lifecycleOwner = this
-        binding.viewmodel = homeViewModel
+        binding.lastSeen = homeViewModel.getLastSeen()
+        binding.lastSearched = homeViewModel.getLastSearched()
 
         val root = binding.root
         _context = root.context
@@ -57,7 +59,6 @@ class HomeFragment : Fragment(), Injectable {
 
         return root
     }
-
 
 
     /**
@@ -109,7 +110,7 @@ class HomeFragment : Fragment(), Injectable {
                     homeViewModel.searchSuggestion(suggestion)
                 }
 
-                homeViewModel.getSuggetion.observe(this@HomeFragment, Observer { result ->
+                homeViewModel.getSuggetion().observe(this@HomeFragment, Observer { result ->
 
                     when (result.status) {
                         Result.Status.SUCCESS -> {

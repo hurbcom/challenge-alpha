@@ -4,13 +4,14 @@ import com.example.challenge_alpha.api.GetResult.getResult
 import com.example.challenge_alpha.api.GetResult.resultLiveData
 import com.example.challenge_alpha.api.GetResult.suggestionsLiveData
 import com.example.challenge_alpha.api.HurbService
+import com.example.challenge_alpha.testing.OpenForTesting
 import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
  * classe responsável pela obtenção de dados nos servidores Hurb.
  */
-
+@OpenForTesting
 @Singleton
 class HurbRepository @Inject constructor(
     private val call: HurbService,

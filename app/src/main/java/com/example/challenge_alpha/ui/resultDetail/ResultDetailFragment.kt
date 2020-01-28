@@ -14,12 +14,14 @@ import com.example.challenge_alpha.databinding.FragmentResultdetailBinding
 import com.example.challenge_alpha.di.Injectable
 import com.example.challenge_alpha.di.injector
 import com.example.challenge_alpha.di.viewModel
+import com.example.challenge_alpha.testing.OpenForTesting
 
 /**
  * Fragmento responsável por mostrar com detalhes as informações do hotel/pacote.
  * A classe [displayDetail] tem toda a configuração da view.
  * A toolbar está configurada para lidar com favoritos e ação de compartilhamento.
  */
+
 
 class ResultDetailFragment : Fragment(), Injectable {
 
@@ -39,7 +41,7 @@ class ResultDetailFragment : Fragment(), Injectable {
         val binding: FragmentResultdetailBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_resultdetail, container, false)
         binding.lifecycleOwner = this
-        binding.viewmodel = resultDetailViewModel
+        binding.resultDetail = resultDetailViewModel.getResult()
 
         setHasOptionsMenu(true)
 
@@ -55,7 +57,7 @@ class ResultDetailFragment : Fragment(), Injectable {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.resultsfavorites_menu, menu)
 
-        resultDetailViewModel.isFavorited.observe(this, Observer {
+        resultDetailViewModel.isFavorited().observe(this, Observer {
             Log.d("menuTag", "$it")
 
             if (it) {
@@ -91,7 +93,7 @@ class ResultDetailFragment : Fragment(), Injectable {
                 action = Intent.ACTION_SEND
                 putExtra(
                     Intent.EXTRA_TEXT,
-                    resultDetailViewModel.getResult.value?.resultDetail?.url
+                    resultDetailViewModel.getResult().value?.resultDetail?.url
                 )
                 type = "text/plain"
             }

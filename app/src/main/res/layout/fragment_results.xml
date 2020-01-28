@@ -5,21 +5,28 @@
     xmlns:results="http://schemas.android.com/tools">
 
     <data>
+        <import type="androidx.lifecycle.LiveData"/>
+
+        <import type="java.util.List" />
+
+        <import type="com.example.challenge_alpha.api.HurbResponse"/>
+
         <variable
-            name="viewmodel"
-            type="com.example.challenge_alpha.ui.results.ResultsViewModel" />
+            name="results"
+            type="LiveData&lt;com.example.challenge_alpha.api.Result&lt;HurbResponse>>"/>
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?android:attr/actionBarSize">
+    android:paddingTop="?android:attr/actionBarSize"
+    android:id="@+id/fragment_results">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerResult"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        results:recyclerResults="@{viewmodel.resultsDetailLive}"
+        results:recyclerResults="@{results}"
         results:progressBar="@{indeterminateBar}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

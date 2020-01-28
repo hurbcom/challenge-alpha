@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.challenge_alpha.repository.FavoritesRepository
 import com.example.challenge_alpha.repository.LastSeenRepository
 import com.example.challenge_alpha.repository.ResultDetailRepository
+import com.example.challenge_alpha.testing.OpenForTesting
 import com.squareup.inject.assisted.Assisted
 import com.squareup.inject.assisted.AssistedInject
 import kotlinx.coroutines.launch
@@ -20,11 +21,12 @@ import kotlinx.coroutines.launch
  * de [isFavorited], que busca do Room através do [FavoritesRepository]
  *
  */
+@OpenForTesting
 class ResultDetailViewModel @AssistedInject constructor(
-    lastSeenRepository: LastSeenRepository,
+    private val lastSeenRepository: LastSeenRepository,
     private val favoritesRepository: FavoritesRepository,
-    resultDetailRepository: ResultDetailRepository,
-    @Assisted sku: String
+    private val resultDetailRepository: ResultDetailRepository,
+    @Assisted private val sku: String
 ) : ViewModel() {
 
 
@@ -33,24 +35,24 @@ class ResultDetailViewModel @AssistedInject constructor(
         fun create(sku: String): ResultDetailViewModel
     }
 
-    private val _getResult = resultDetailRepository.getResult(sku)
-    val getResult = Transformations.map(_getResult) {
+    private fun isFavoritedLive() = favoritesRepository.isFavorited(sku)
+    fun isFavorited () = Transformations.map(isFavoritedLive()) { !it?.sku.isNullOrEmpty() }
+
+    private fun getResultLive() = resultDetailRepository.getResult(sku)
+    fun getResult() = Transformations.map(getResultLive()) {
         viewModelScope.launch {
             lastSeenRepository.insertDetailRelation(it)
         }
         it
     }
 
-    private val _isFavorited = favoritesRepository.isFavorited(sku)
-    val isFavorited = Transformations.map(_isFavorited) { !it?.sku.isNullOrEmpty() }
-
 
     fun insertFavorite() = viewModelScope.launch {
-        favoritesRepository.insertFavorite(getResult.value!!)
+        favoritesRepository.insertFavorite(getResultLive().value!!)
     }
 
     fun deleteFavorite() = viewModelScope.launch {
-        favoritesRepository.deleteFavorite(getResult.value?.resultDetail?.sku!!)
+        favoritesRepository.deleteFavorite(getResultLive().value?.resultDetail?.sku!!)
     }
 
 }

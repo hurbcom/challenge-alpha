@@ -7,14 +7,21 @@
     xmlns:alpha="http://schemas.android.com/tools">
 
     <data>
+
+        <import type="androidx.lifecycle.LiveData"/>
+
+        <import type="com.example.challenge_alpha.data.ResultDetailRelation"/>
+
         <variable
-            name="viewmodel"
-            type="com.example.challenge_alpha.ui.resultDetail.ResultDetailViewModel" />
+            name="resultDetail"
+            type="LiveData&lt;ResultDetailRelation>" />
+
     </data>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_resultDetail">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,8 +32,8 @@
                 android:id="@+id/recyclerGallery_detail"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                resultDetail:backupImageLoading="@{viewmodel.getResult.resultDetailGallery[0]}"
-                resultDetail:imageLoading="@{viewmodel.getResult.resultDetail.image}"
+                resultDetail:backupImageLoading="@{resultDetail.resultDetailGallery[0]}"
+                resultDetail:imageLoading="@{resultDetail.resultDetail.image}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +47,7 @@
                 android:layout_marginEnd="20dp"
                 android:gravity="start"
                 android:maxLines="4"
-                android:text="@{viewmodel.getResult.resultDetail.name}"
+                android:text="@{resultDetail.resultDetail.name}"
                 android:textAlignment="viewStart"
                 android:theme="@style/Results"
                 app:layout_constraintEnd_toStartOf="@id/stars_detail"
@@ -56,7 +63,7 @@
                 android:layout_marginEnd="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/price_detail"
-                alpha:ratingFormat="@{viewmodel.getResult.resultDetail.stars}" />
+                alpha:ratingFormat="@{resultDetail.resultDetail.stars}" />
 
             <TextView
                 android:id="@+id/city_detail"
@@ -67,7 +74,7 @@
                 android:layout_marginEnd="20dp"
                 android:gravity="start"
                 android:maxLines="4"
-                android:text="@{viewmodel.getResult.resultDetail.address.city}"
+                android:text="@{resultDetail.resultDetail.address.city}"
                 android:textAlignment="viewStart"
                 android:theme="@style/Results_medium"
                 app:layout_constraintEnd_toStartOf="@id/stars_detail"
@@ -84,7 +91,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/name_detail"
                 app:layout_constraintTop_toBottomOf="@id/recyclerGallery_detail"
-                alpha:priceFormat="@{viewmodel.getResult.resultDetail.price}" />
+                alpha:priceFormat="@{resultDetail.resultDetail.price}" />
 
 
             <TextView
@@ -100,7 +107,7 @@
                 android:visibility="invisible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/description_detail"
-                alpha:setVisibilityOnNull="@{viewmodel.getResult.resultDetailAmenities}"
+                alpha:setVisibilityOnNull="@{resultDetail.resultDetailAmenities}"
                 tools:layout_editor_absoluteY="344dp" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -114,7 +121,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/amenitiesTitle_detail"
-                resultDetail:recyclerAmenities="@{viewmodel.getResult.resultDetailAmenities}" />
+                resultDetail:recyclerAmenities="@{resultDetail.resultDetailAmenities}" />
 
 
             <TextView
@@ -134,7 +141,7 @@
                 android:id="@+id/description_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{viewmodel.getResult.resultDetail.description.trim()}"
+                android:text="@{resultDetail.resultDetail.description.trim()}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/descriptionTitle_detail"
                 expandableTextView:animDuration="200"

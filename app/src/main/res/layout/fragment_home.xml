@@ -5,15 +5,28 @@
     xmlns:alpha="http://schemas.android.com/tools">
 
     <data>
+
+        <import type="androidx.lifecycle.LiveData"/>
+
+        <import type="java.util.List" />
+
+        <import type="com.example.challenge_alpha.data.ResultDetailRelation"/>
+
         <variable
-            name="viewmodel"
-            type="com.example.challenge_alpha.ui.home.HomeViewModel" />
+            name="lastSeen"
+            type="LiveData&lt;List&lt;ResultDetailRelation>>" />
+
+        <variable
+            name="lastSearched"
+            type="LiveData&lt;List&lt;ResultDetailRelation>>" />
+
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?android:attr/actionBarSize">
+    android:paddingTop="?android:attr/actionBarSize"
+    android:id="@+id/fragment_home">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -49,7 +62,7 @@
                 android:text="@string/home_lastSeen"
                 android:theme="@style/Titles"
                 android:visibility="gone"
-                alpha:setVisibilityGoneOnNull="@{viewmodel.getLastSeen}"
+                alpha:setVisibilityGoneOnNull="@{lastSeen}"
                 app:layout_constraintBottom_toTopOf="@id/lastSeen_display"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +75,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:visibility="gone"
-                home:recyclerLastSeen="@{viewmodel.getLastSeen}"
+                home:recyclerLastSeen="@{lastSeen}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/lastsearch_title"
@@ -75,7 +88,7 @@
                 android:text="@string/home_lastSearches"
                 android:theme="@style/Titles"
                 android:visibility="gone"
-                alpha:setVisibilityGoneOnNull="@{viewmodel.getLastSearched}"
+                alpha:setVisibilityGoneOnNull="@{lastSearched}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/lastSearch_display"
@@ -88,7 +101,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:visibility="gone"
-                home:recyclerLastSearch="@{viewmodel.getLastSearched}"
+                home:recyclerLastSearch="@{lastSearched}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lastsearch_title" />

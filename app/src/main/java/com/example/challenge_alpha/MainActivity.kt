@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
         navView.setupWithNavController(navController)
 
 
+
+
         /**
          * Listener configurado para alterar a visibilidade da bottom navigation view, e para alterar a cor da toolbar.
          * A troca de cor é feita para ter uma toolbar transparent (com overlay) no [ResultDetailFragment]

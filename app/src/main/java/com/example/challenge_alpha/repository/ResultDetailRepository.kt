@@ -3,12 +3,14 @@ package com.example.challenge_alpha.repository
 import com.example.challenge_alpha.api.HurbResponse
 import com.example.challenge_alpha.data.resultDetail.ResultDetailDao
 import com.example.challenge_alpha.model.*
+import com.example.challenge_alpha.testing.OpenForTesting
 import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
  * classe responsável pela obtenção/inserção de últimas buscas e armazenamento geral de resultados.
  */
+@OpenForTesting
 @Singleton
 class ResultDetailRepository @Inject constructor(private val resultDetailDao: ResultDetailDao) {
 

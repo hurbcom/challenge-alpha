@@ -5,21 +5,30 @@
     xmlns:favorites="http://schemas.android.com/tools">
 
     <data>
+
+        <import type="androidx.lifecycle.LiveData"/>
+
+        <import type="java.util.List" />
+
+        <import type="com.example.challenge_alpha.data.ResultDetailRelation"/>
+
         <variable
-            name="viewmodel"
-            type="com.example.challenge_alpha.ui.favorites.FavoritesViewModel" />
+            name="favorites"
+            type="LiveData&lt;List&lt;ResultDetailRelation>>" />
+
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?android:attr/actionBarSize">
+    android:paddingTop="?android:attr/actionBarSize"
+    android:id="@+id/fragment_favorites">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerFavorite"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        favorites:recyclerFavorites="@{viewmodel.getFavorites}"
+        favorites:recyclerFavorites="@{favorites}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

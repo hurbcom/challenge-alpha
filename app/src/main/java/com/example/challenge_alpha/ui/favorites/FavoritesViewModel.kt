@@ -2,6 +2,7 @@ package com.example.challenge_alpha.ui.favorites
 
 import androidx.lifecycle.ViewModel
 import com.example.challenge_alpha.repository.FavoritesRepository
+import com.example.challenge_alpha.testing.OpenForTesting
 import javax.inject.Inject
 
 /**
@@ -9,8 +10,10 @@ import javax.inject.Inject
  * as informações são obtidas do [FavoritesRepository] e o fragmento obtêm os dados através de
  * um Observer em [getFavorites]
  */
-class FavoritesViewModel @Inject constructor(favoritesRepository :FavoritesRepository) : ViewModel() {
+@OpenForTesting
+class FavoritesViewModel @Inject constructor(private val favoritesRepository: FavoritesRepository) :
+    ViewModel() {
 
-    val getFavorites= favoritesRepository.getFavorites()
+    fun getFavorites() = favoritesRepository.getFavorites()
 
 }

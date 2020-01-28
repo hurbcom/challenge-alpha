@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import com.example.challenge_alpha.repository.HurbRepository
 import com.example.challenge_alpha.repository.LastSeenRepository
 import com.example.challenge_alpha.repository.ResultDetailRepository
+import com.example.challenge_alpha.testing.OpenForTesting
 import javax.inject.Inject
 
 /**
@@ -20,25 +21,25 @@ import javax.inject.Inject
  * As sugestões são obtidas de acordo com o dado populado em [_suggestionString] através da
  * transformation [getSuggetion] que está sendo observada pelo fragmento [HomeFragment].
  */
+@OpenForTesting
 class HomeViewModel @Inject constructor(
-    lastSeenRepository: LastSeenRepository,
-    resultDetailRepository: ResultDetailRepository,
+    private val lastSeenRepository: LastSeenRepository,
+    private val resultDetailRepository: ResultDetailRepository,
     private val hurbRepository: HurbRepository
 ) : ViewModel() {
 
 
-    val getLastSeen = lastSeenRepository.getLastSeen()
+    fun getLastSeen () = lastSeenRepository.getLastSeen()
 
-    val getLastSearched = resultDetailRepository.getSearch()
+    fun getLastSearched () = resultDetailRepository.getSearch()
 
     private val _queryString = MutableLiveData<String>()
     val queryString: LiveData<String> = _queryString
 
     private val _suggestionString = MutableLiveData<String>()
-    val getSuggetion  = Transformations.switchMap(_suggestionString) {
+    fun getSuggetion()  = Transformations.switchMap(_suggestionString) {
         hurbRepository.suggestionSearch(it)
     }
-
 
     fun search(query: String) {
         _queryString.postValue(query)

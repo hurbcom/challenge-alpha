@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
 import com.example.challenge_alpha.R
+
 import com.example.challenge_alpha.data.ResultDetailRelation
 import com.example.challenge_alpha.model.ResultDetailAmenities
 import com.example.challenge_alpha.model.ResultDetailGallery

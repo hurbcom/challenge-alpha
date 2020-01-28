@@ -16,7 +16,7 @@ class HomeViewHolder(private val binding: ViewDataBinding) :
 
         if (result != null) {
             binding.setVariable(com.example.challenge_alpha.BR.result, result)
-            binding.executePendingBindings()
+//            binding.executePendingBindings()
         }
 
     }

@@ -37,7 +37,7 @@ class ResultsFragment : Fragment(), Injectable {
         val binding: FragmentResultsBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_results, container, false)
         binding.lifecycleOwner = this
-        binding.viewmodel = resultsViewModel
+        binding.results = resultsViewModel.resultsDetailLive()
 
 
         return binding.root
