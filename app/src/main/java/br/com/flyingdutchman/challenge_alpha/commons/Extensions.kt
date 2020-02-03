@@ -1,4 +1,4 @@
-package br.com.flyingdutchman.challenge_alpha
+package br.com.flyingdutchman.challenge_alpha.commons
 
 import android.graphics.Typeface
 import android.text.Spannable
@@ -55,10 +55,16 @@ fun size(size: Float, s: CharSequence) =
     span(s, RelativeSizeSpan(size))
 
 fun color(color: Int, s: CharSequence) =
-    span(s, ForegroundColorSpan(color))
+    span(
+        s,
+        ForegroundColorSpan(color)
+    )
 
 fun background(color: Int, s: CharSequence) =
-    span(s, BackgroundColorSpan(color))
+    span(
+        s,
+        BackgroundColorSpan(color)
+    )
 
 fun url(url: String, s: CharSequence) =
     span(s, URLSpan(url))

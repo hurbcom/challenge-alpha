@@ -1,4 +1,4 @@
-package br.com.flyingdutchman.challenge_alpha
+package br.com.flyingdutchman.challenge_alpha.ui
 
 import androidx.recyclerview.widget.DiffUtil
 

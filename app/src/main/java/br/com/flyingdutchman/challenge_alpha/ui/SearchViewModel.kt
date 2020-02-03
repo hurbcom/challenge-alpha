@@ -1,6 +1,7 @@
-package br.com.flyingdutchman.challenge_alpha
+package br.com.flyingdutchman.challenge_alpha.ui
 
 import androidx.lifecycle.*
+import br.com.flyingdutchman.challenge_alpha.commons.SingleLiveEvent
 import br.com.flyingdutchman.challenge_alpha.data.HurbRepository
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
@@ -26,21 +27,30 @@ class SearchViewModel(
             .subscribe(
                 {
                     loading.value = false
-                    success.value = SingleLiveEvent(it.map { result ->
-                        Result(
-                            result.id,
-                            result.name,
-                            result.url,
-                            result.description,
-                            result.shortDescription,
-                            result.gallery
-                        )
-                    })
+                    success.value =
+                        SingleLiveEvent(
+                            it.map { result ->
+                                Result(
+                                    result.id,
+                                    result.name,
+                                    result.url,
+                                    result.description,
+                                    result.shortDescription,
+                                    result.gallery,
+                                    result.freeCancelation,
+                                    result.currentPrice,
+                                    result.oldPrice,
+                                    result.rating,
+                                    result.city
+                                )
+                            })
                 },
                 {
                     loading.value = false
                     error.value =
-                        SingleLiveEvent(it)
+                        SingleLiveEvent(
+                            it
+                        )
                 }
             )
             .apply {

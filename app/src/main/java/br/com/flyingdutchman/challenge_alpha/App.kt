@@ -1,6 +1,10 @@
 package br.com.flyingdutchman.challenge_alpha
 
 import android.app.Application
+import br.com.flyingdutchman.challenge_alpha.di.apiModule
+import br.com.flyingdutchman.challenge_alpha.di.netModule
+import br.com.flyingdutchman.challenge_alpha.di.repositoryModule
+import br.com.flyingdutchman.challenge_alpha.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -23,7 +27,12 @@ class App : Application() {
         startKoin {
             androidContext(this@App)
             androidLogger(if (BuildConfig.DEBUG) Level.DEBUG else Level.INFO)
-            modules(listOf(viewModelModule, repositoryModule, netModule, apiModule))
+            modules(listOf(
+                viewModelModule,
+                repositoryModule,
+                netModule,
+                apiModule
+            ))
         }
     }
 }

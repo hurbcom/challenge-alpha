@@ -1,4 +1,4 @@
-package br.com.flyingdutchman.challenge_alpha
+package br.com.flyingdutchman.challenge_alpha.commons
 
 open class SingleLiveEvent<out T>(private val content: T) {
 

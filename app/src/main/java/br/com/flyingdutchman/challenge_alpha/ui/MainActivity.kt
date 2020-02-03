@@ -1,9 +1,11 @@
-package br.com.flyingdutchman.challenge_alpha
+package br.com.flyingdutchman.challenge_alpha.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import br.com.flyingdutchman.challenge_alpha.R
+import br.com.flyingdutchman.challenge_alpha.commons.*
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

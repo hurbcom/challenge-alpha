@@ -1,4 +1,4 @@
-package br.com.flyingdutchman.challenge_alpha
+package br.com.flyingdutchman.challenge_alpha.commons
 
 import android.graphics.Rect
 import android.view.View

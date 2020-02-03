@@ -9,7 +9,7 @@ data class PriceX(
     val amountPerDay: Double,
     @SerializedName("currentPrice")
     val currentPrice: Double,
-    @SerializedName("oldPrice")
+    @SerializedName("old_price")
     val oldPrice: Double,
     @SerializedName("originalAmount")
     val originalAmount: Double,

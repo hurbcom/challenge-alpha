@@ -1,12 +1,14 @@
-package br.com.flyingdutchman.challenge_alpha
+package br.com.flyingdutchman.challenge_alpha.di
 
 import android.app.Application
 import android.content.Context
 import br.com.flyingdutchman.challenge_alpha.App.Companion.IO_SCHEDULER
 import br.com.flyingdutchman.challenge_alpha.App.Companion.MAIN_SCHEDULER
+import br.com.flyingdutchman.challenge_alpha.BuildConfig
 import br.com.flyingdutchman.challenge_alpha.data.HurbRepository
 import br.com.flyingdutchman.challenge_alpha.data.network.HurbApi
 import br.com.flyingdutchman.challenge_alpha.data.network.ResultRemoteEntityMapper
+import br.com.flyingdutchman.challenge_alpha.ui.SearchViewModel
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -31,7 +33,13 @@ import java.util.concurrent.TimeUnit
 
 val viewModelModule = module {
 
-    viewModel { SearchViewModel(get(), get(), get(named(MAIN_SCHEDULER))) }
+    viewModel {
+        SearchViewModel(
+            get(),
+            get(),
+            get(named(MAIN_SCHEDULER))
+        )
+    }
 }
 
 

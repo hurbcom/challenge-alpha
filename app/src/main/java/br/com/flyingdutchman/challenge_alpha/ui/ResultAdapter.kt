@@ -1,10 +1,15 @@
-package br.com.flyingdutchman.challenge_alpha
+package br.com.flyingdutchman.challenge_alpha.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import br.com.flyingdutchman.challenge_alpha.R
+import br.com.flyingdutchman.challenge_alpha.commons.color
+import br.com.flyingdutchman.challenge_alpha.commons.show
+import br.com.flyingdutchman.challenge_alpha.commons.spannable
+import br.com.flyingdutchman.challenge_alpha.commons.strike
 import coil.api.load
 import kotlinx.android.synthetic.main.result_item.view.*
 
@@ -35,7 +40,12 @@ class ResultAdapter(private val action: (Result) -> Unit? = {}) :
     override fun getItemCount(): Int = items.size
 
     fun updateItems(results: List<Result>) {
-        val result = DiffUtil.calculateDiff(SearchResultDiffUtils(results, items))
+        val result = DiffUtil.calculateDiff(
+            SearchResultDiffUtils(
+                results,
+                items
+            )
+        )
         items.clear()
         items.addAll(results)
         result.dispatchUpdatesTo(this)
@@ -51,7 +61,34 @@ class ResultAdapter(private val action: (Result) -> Unit? = {}) :
                 )
             }
             itemView.result_name.text = item.name
-            itemView.result_shot_description.text = item.shortDescription
+            itemView.result_city.text = item.city
+
+            if (item.freeCancelation) {
+                itemView.result_free_cancellation.show()
+                itemView.result_free_cancellation.text =
+                    spannable {
+                        color(
+                            itemView.resources.getColor(R.color.hurb_green),
+                            itemView.resources.getString(R.string.free_cancellation)
+                        )
+                    }
+            }
+
+            itemView.result_old_price.text =
+                spannable {
+                    strike(item.oldPrice)
+                }
+
+            itemView.result_price.text =
+                spannable {
+                    color(
+                        itemView.resources.getColor(R.color.hurb_orange),
+                        item.currentPrice
+                    )
+                }
+
+            itemView.result_rating.rating = item.rating.toFloat()
+
         }
     }
 

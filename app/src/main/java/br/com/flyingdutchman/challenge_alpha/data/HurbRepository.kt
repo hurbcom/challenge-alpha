@@ -16,8 +16,12 @@ class HurbRepository(
         return api
             .fetchHotels(filters = "is_hotel|")
             .subscribeOn(ioScheduler)
-            .map {
-                resultMapper.mapFromRemote(it.results)
+            .map { apiResponse ->
+                resultMapper
+                    .mapFromRemote(apiResponse.results)
+                    .sortedByDescending {
+                        it.rating
+                    }
             }
     }
 

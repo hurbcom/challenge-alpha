@@ -7,6 +7,11 @@ data class ResultData(
     var name: String,
     var url: String,
     var description: String,
-    var shortDescription:String,
-    var gallery:List<ImageUrl>
+    var shortDescription: String,
+    var gallery: List<ImageUrl>,
+    var freeCancelation: Boolean,
+    var currentPrice: String,
+    var oldPrice: String,
+    var rating: Int,
+    var city: String
 )

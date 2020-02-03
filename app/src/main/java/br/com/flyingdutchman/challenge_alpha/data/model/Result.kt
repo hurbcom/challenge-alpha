@@ -20,6 +20,8 @@ data class Result(
     val id: String,
     @SerializedName("isPackage")
     val isPackage: Boolean,
+    @SerializedName("isHotel")
+    val isHotel: Boolean,
     @SerializedName("name")
     val name: String,
     @SerializedName("price")
@@ -33,5 +35,9 @@ data class Result(
     @SerializedName("tags")
     val tags: List<String>,
     @SerializedName("url")
-    val url: String
+    val url: String,
+    @SerializedName("hu_free_cancellation")
+    val freeCancelation: Boolean,
+    @SerializedName("stars")
+    val stars: Int
 )
