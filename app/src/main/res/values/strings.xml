@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">challenge-alpha</string>
+    <string name="app_name">Hurb Challenge</string>
     <string name="generic_error">Error ocurred</string>
     <string name="free_cancellation" type="id">Cancelamento Grátis!</string>
+    <string name="menu_favorite">favourite</string>
+    <string name="menu_share">share</string>
+    <string name="menu_change_layout">List</string>
 
 </resources>

@@ -4,29 +4,45 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.flyingdutchman.challenge_alpha.R
-import br.com.flyingdutchman.challenge_alpha.commons.color
-import br.com.flyingdutchman.challenge_alpha.commons.show
-import br.com.flyingdutchman.challenge_alpha.commons.spannable
-import br.com.flyingdutchman.challenge_alpha.commons.strike
+import br.com.flyingdutchman.challenge_alpha.commons.*
 import coil.api.load
-import kotlinx.android.synthetic.main.result_item.view.*
+import kotlinx.android.synthetic.main.result_grid_item.view.*
 
-class ResultAdapter(private val action: (Result) -> Unit? = {}) :
-    RecyclerView.Adapter<ResultAdapter.ViewHolder>() {
+class SearchResultAdapter(
+    private val action: (Result) -> Unit? = {},
+    private val layoutManager: GridLayoutManager? = null
+) :
+    RecyclerView.Adapter<SearchResultAdapter.ViewHolder>() {
 
     private var items: MutableList<Result> = mutableListOf()
 
+    companion object {
+        const val GRID_ITEM_TYPE = 1
+        const val LIST_ITEM_TYPE = 0
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
-        ViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.result_item,
-                parent,
-                false
+        when (viewType) {
+            LIST_ITEM_TYPE -> ViewHolder(
+                LayoutInflater.from(parent.context).inflate(
+                    R.layout.result_list_item,
+                    parent,
+                    false
+                )
             )
-        )
+            else -> ViewHolder(
+                LayoutInflater.from(parent.context).inflate(
+                    R.layout.result_grid_item,
+                    parent,
+                    false
+                )
+            )
+        }
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val result = items[position]
@@ -38,6 +54,11 @@ class ResultAdapter(private val action: (Result) -> Unit? = {}) :
     }
 
     override fun getItemCount(): Int = items.size
+
+    override fun getItemViewType(position: Int): Int {
+        return if (layoutManager?.spanCount == 1) LIST_ITEM_TYPE
+        else GRID_ITEM_TYPE
+    }
 
     fun updateItems(results: List<Result>) {
         val result = DiffUtil.calculateDiff(
@@ -74,10 +95,15 @@ class ResultAdapter(private val action: (Result) -> Unit? = {}) :
                     }
             }
 
-            itemView.result_old_price.text =
-                spannable {
-                    strike(item.oldPrice)
-                }
+            if (item.oldPrice == item.currentPrice) {
+                itemView.result_old_price.hide()
+            }else {
+                itemView.result_old_price.show()
+                itemView.result_old_price.text =
+                    spannable {
+                        strike(item.oldPrice)
+                    }
+            }
 
             itemView.result_price.text =
                 spannable {

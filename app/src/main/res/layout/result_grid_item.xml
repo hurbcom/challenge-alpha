@@ -62,7 +62,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="16dp"
             android:rating="4"
             android:theme="@style/RatingBar"
             app:layout_constraintStart_toStartOf="parent"

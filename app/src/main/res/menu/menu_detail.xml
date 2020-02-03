@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.flying.dutchman.offers_challenge.ui.detail.OfferDetailActivity">
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/state_vector_favourite_btn"
+        android:orderInCategory="100"
+        android:title="@string/menu_favorite"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/ic_share"
+        android:orderInCategory="200"
+        android:title="@string/menu_share"
+        app:showAsAction="ifRoom" />
+</menu>

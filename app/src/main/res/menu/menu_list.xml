@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.flying.dutchman.offers_challenge.ui.detail.OfferDetailActivity">
+    <item
+        android:id="@+id/action_change_layout"
+        android:orderInCategory="100"
+        android:title="@string/menu_change_layout"
+        app:showAsAction="ifRoom" />
+
+</menu>

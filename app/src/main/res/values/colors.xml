@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">@color/hurb_dark_blue</color>
-    <color name="colorPrimaryDark">#00003f</color>
+    <color name="colorPrimaryDark">#00003b</color>
     <color name="colorAccent">@color/hurb_orange</color>
 
     <color name="hurb_green">#3CA63B</color>
     <color name="hurb_orange">#F6570A</color>
-    <color name="hurb_dark_blue">#0F276A</color>
+    <color name="hurb_dark_blue">#013088</color>
     <color name="hurb_rating_yellow">#F79A09</color>
 
 
