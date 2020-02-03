@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">challenge-alpha</string>
+    <string name="generic_error">Error ocurred</string>
 </resources>
