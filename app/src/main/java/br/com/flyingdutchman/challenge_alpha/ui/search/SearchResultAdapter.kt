@@ -8,17 +8,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.flyingdutchman.challenge_alpha.R
 import br.com.flyingdutchman.challenge_alpha.commons.*
-import br.com.flyingdutchman.challenge_alpha.ui.Result
+import br.com.flyingdutchman.challenge_alpha.ui.search.model.SearchResult
 import coil.api.load
 import kotlinx.android.synthetic.main.result_grid_item.view.*
 
 class SearchResultAdapter(
-    private val action: (Result) -> Unit? = {},
+    private val action: (SearchResult) -> Unit? = {},
     private val layoutManager: GridLayoutManager? = null
 ) :
     RecyclerView.Adapter<SearchResultAdapter.ViewHolder>() {
 
-    private var items: MutableList<Result> = mutableListOf()
+    private var items: MutableList<SearchResult> = mutableListOf()
 
     companion object {
         const val GRID_ITEM_TYPE = 1
@@ -61,22 +61,22 @@ class SearchResultAdapter(
         else GRID_ITEM_TYPE
     }
 
-    fun updateItems(results: List<Result>) {
+    fun updateItems(searchResults: List<SearchResult>) {
         val result = DiffUtil.calculateDiff(
             SearchResultDiffUtils(
-                results,
+                searchResults,
                 items
             )
         )
         items.clear()
-        items.addAll(results)
+        items.addAll(searchResults)
         result.dispatchUpdatesTo(this)
     }
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(item: Result) {
+        fun bind(item: SearchResult) {
             itemView.result_thumb.load(item.gallery[0].url) {
                 placeholder(
                     android.R.color.darker_gray

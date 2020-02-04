@@ -1,11 +1,11 @@
 package br.com.flyingdutchman.challenge_alpha.ui.search
 
 import androidx.recyclerview.widget.DiffUtil
-import br.com.flyingdutchman.challenge_alpha.ui.Result
+import br.com.flyingdutchman.challenge_alpha.ui.search.model.SearchResult
 
 class SearchResultDiffUtils(
-    private val results: List<Result>,
-    private val items: MutableList<Result>
+    private val searchResults: List<SearchResult>,
+    private val items: MutableList<SearchResult>
 ) :
     DiffUtil.Callback() {
 
@@ -14,18 +14,18 @@ class SearchResultDiffUtils(
     }
 
     override fun getNewListSize(): Int {
-        return results.size
+        return searchResults.size
     }
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        val freshItem = results[newItemPosition]
+        val freshItem = searchResults[newItemPosition]
         val oldItem = items[oldItemPosition]
         return freshItem.id == oldItem.id
     }
 
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        val freshItem = results[newItemPosition]
+        val freshItem = searchResults[newItemPosition]
         val oldItem = items[oldItemPosition]
         return freshItem.name == oldItem.name &&
             freshItem.url == oldItem.url &&

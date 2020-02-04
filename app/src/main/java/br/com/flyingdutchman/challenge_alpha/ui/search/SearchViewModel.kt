@@ -5,7 +5,8 @@ import br.com.flyingdutchman.challenge_alpha.data.GroupedResultData
 import br.com.flyingdutchman.challenge_alpha.commons.SingleLiveEvent
 import br.com.flyingdutchman.challenge_alpha.data.HurbRepository
 import br.com.flyingdutchman.challenge_alpha.data.ResultData
-import br.com.flyingdutchman.challenge_alpha.ui.Result
+import br.com.flyingdutchman.challenge_alpha.ui.search.model.RailsSearchResults
+import br.com.flyingdutchman.challenge_alpha.ui.search.model.SearchResult
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
 
@@ -17,8 +18,8 @@ class SearchViewModel(
 
     val loading = MutableLiveData<Boolean>()
     val error = MutableLiveData<SingleLiveEvent<Throwable>>()
-    val success = MutableLiveData<SingleLiveEvent<List<Result>>>()
-    val successRails = MutableLiveData<SingleLiveEvent<List<GroupedResultData>>>()
+    val success = MutableLiveData<SingleLiveEvent<List<SearchResult>>>()
+    val successRails = MutableLiveData<SingleLiveEvent<List<RailsSearchResults>>>()
 
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -26,22 +27,21 @@ class SearchViewModel(
         repository.getAllTypeGroupedResults()
             .observeOn(mainScheduler)
             .subscribe(
-            {
-                successRails.value = SingleLiveEvent(it)
-                loading.value = false
-            },
-            {
-                error.value =
-                    SingleLiveEvent(
-                        it
-                    )
-                loading.value = false
-            }
-        )
+                {
+                    successRails.value = SingleLiveEvent(mapToRailsUiModel(it))
+                    loading.value = false
+                },
+                {
+                    error.value =
+                        SingleLiveEvent(
+                            it
+                        )
+                    loading.value = false
+                }
+            )
             .apply {
                 compositeDisposable.add(this)
             }
-
     }
 
 
@@ -56,7 +56,7 @@ class SearchViewModel(
                 {
                     success.value =
                         SingleLiveEvent(
-                            mapToUiModel(it)
+                            mapToSearchResultsUiModel(it)
                         )
                     loading.value = false
                 },
@@ -78,9 +78,18 @@ class SearchViewModel(
         compositeDisposable.clear()
     }
 
-    private fun mapToUiModel(it: List<ResultData>): List<Result> {
+    private fun mapToRailsUiModel(it: List<GroupedResultData>): List<RailsSearchResults> {
+        return it.map {
+            RailsSearchResults(
+                it.name,
+                mapToSearchResultsUiModel(it.results)
+            )
+        }
+    }
+
+    private fun mapToSearchResultsUiModel(it: List<ResultData>): List<SearchResult> {
         return it.map { result ->
-            Result(
+            SearchResult(
                 result.id,
                 result.name,
                 result.url,
@@ -91,8 +100,10 @@ class SearchViewModel(
                 result.currentPrice,
                 result.oldPrice,
                 result.rating,
-                result.city
+                result.city,
+                result.amenities
             )
         }
     }
+
 }

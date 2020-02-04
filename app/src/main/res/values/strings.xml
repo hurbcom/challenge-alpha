@@ -5,5 +5,5 @@
     <string name="menu_favorite">favourite</string>
     <string name="menu_share">share</string>
     <string name="menu_change_layout">List</string>
-
+    <string name="details_contents_label">O que está incluso</string>
 </resources>

@@ -10,4 +10,15 @@
         <item name="android:windowBackground">@drawable/layer_list_branded</item>
 
     </style>
+
+    <style name="Theme.Detail" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true
+        </item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true
+        </item>
+
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+    </style>
 </resources>

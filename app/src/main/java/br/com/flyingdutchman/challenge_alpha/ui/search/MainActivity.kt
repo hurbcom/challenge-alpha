@@ -1,7 +1,6 @@
 package br.com.flyingdutchman.challenge_alpha.ui.search
 
 import android.os.Bundle
-import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,7 +9,7 @@ import br.com.flyingdutchman.challenge_alpha.commons.SingleLiveEvent
 import br.com.flyingdutchman.challenge_alpha.commons.hide
 import br.com.flyingdutchman.challenge_alpha.commons.show
 import br.com.flyingdutchman.challenge_alpha.commons.snackBar
-import br.com.flyingdutchman.challenge_alpha.data.GroupedResultData
+import br.com.flyingdutchman.challenge_alpha.ui.search.model.RailsSearchResults
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -46,14 +45,6 @@ class MainActivity : AppCompatActivity() {
         setupRecyclerView()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.menu_list, menu)
-
-        return true
-    }
-
-
     private fun setupRecyclerView() {
         activity_results_recycler_view
             .apply {
@@ -64,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    private fun handleRailsSuccess(it: SingleLiveEvent<List<GroupedResultData>>?) {
+    private fun handleRailsSuccess(it: SingleLiveEvent<List<RailsSearchResults>>?) {
         it?.getContentIfNotHandled()?.let { list ->
             activity_results_recycler_view.show()
             activity_results_recycler_view.adapter =

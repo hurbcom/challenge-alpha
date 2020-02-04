@@ -9,6 +9,7 @@ import android.text.style.*
 import android.view.View
 import androidx.core.content.ContextCompat
 import br.com.flyingdutchman.challenge_alpha.App
+import br.com.flyingdutchman.challenge_alpha.data.model.Amenity
 import com.google.android.material.snackbar.Snackbar
 import java.text.DecimalFormat
 import java.util.*
@@ -21,6 +22,12 @@ fun Double.formatForBrazilianCurrency(): String {
 
 fun Double.formatDecimal(): String {
     return String.format("%.0f", this)
+}
+
+fun List<Amenity>.formatAmenities(): String {
+    return joinToString(separator = " + ") {
+        it.name
+    }
 }
 
 

@@ -1,5 +1,6 @@
 package br.com.flyingdutchman.challenge_alpha.data.network
 
+import br.com.flyingdutchman.challenge_alpha.commons.formatAmenities
 import br.com.flyingdutchman.challenge_alpha.data.model.ImageUrl
 import br.com.flyingdutchman.challenge_alpha.data.model.Result
 import br.com.flyingdutchman.challenge_alpha.data.ResultData
@@ -24,7 +25,8 @@ class ResultRemoteEntityMapper() :
                 it.price.amount.formatForBrazilianCurrency(),
                 it.price.oldPrice.formatForBrazilianCurrency(),
                 if (it.stars > 0) it.stars else 1, // Use this in order to easiest the process of grouping packages which has no stars at all
-                it.address.city
+                it.address.city,
+                it.amenities.formatAmenities()
             )
         }
 

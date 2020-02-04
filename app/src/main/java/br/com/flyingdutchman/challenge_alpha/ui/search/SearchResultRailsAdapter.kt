@@ -10,14 +10,15 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.flyingdutchman.challenge_alpha.App
 import br.com.flyingdutchman.challenge_alpha.R
 import br.com.flyingdutchman.challenge_alpha.commons.*
-import br.com.flyingdutchman.challenge_alpha.data.GroupedResultData
-import br.com.flyingdutchman.challenge_alpha.data.ResultData
+import br.com.flyingdutchman.challenge_alpha.ui.detail.DetailsActivity
+import br.com.flyingdutchman.challenge_alpha.ui.search.model.RailsSearchResults
+import br.com.flyingdutchman.challenge_alpha.ui.search.model.SearchResult
 import coil.api.load
 import kotlinx.android.synthetic.main.result_grid_item.view.*
 import kotlinx.android.synthetic.main.result_rails_item.view.*
 
 
-class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
+class SearchResultRailsAdapter(private val items: List<RailsSearchResults>) :
     RecyclerView.Adapter<SearchResultRailsAdapter.RailsViewHolder>() {
 
     private val viewPool = RecyclerView.RecycledViewPool()
@@ -50,7 +51,7 @@ class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
 
         var pool: RecyclerView.RecycledViewPool? = null
 
-        fun bind(item: GroupedResultData) {
+        fun bind(item: RailsSearchResults) {
 
             val title = if (item.name != "1") "${item.name} Estrelas" else "Pacotes"
             val startDrawable = App.instance.getDrawable(
@@ -64,7 +65,7 @@ class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
             setupInnerRecycler(item)
         }
 
-        private fun setupInnerRecycler(item: GroupedResultData) {
+        private fun setupInnerRecycler(item: RailsSearchResults) {
             itemView.search_result_rails_recycler_view.apply {
                 pool?.let { setRecycledViewPool(pool) }
 
@@ -83,12 +84,19 @@ class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
                 isNestedScrollingEnabled = false
                 fixNestedScrolling()
 
-                adapter = InnerAdapter(item.results)
+                adapter = InnerAdapter(item.searchResults) {
+                    itemView.context.startActivity(
+                        DetailsActivity.createIntent(
+                            itemView.context,
+                            it
+                        )
+                    )
+                }
             }
         }
 
         private fun setupStartDecorationToRailsTitle(
-            item: GroupedResultData,
+            item: RailsSearchResults,
             startDrawable: Drawable?
         ) {
             if (item.name != "1") {
@@ -127,7 +135,10 @@ class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
         }
     }
 
-    class InnerAdapter(private var items: List<ResultData> = mutableListOf()) :
+    class InnerAdapter(
+        private var items: List<SearchResult> = mutableListOf(),
+        private val action: (SearchResult) -> Unit? = {}
+    ) :
         RecyclerView.Adapter<InnerCardViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InnerCardViewHolder =
@@ -142,6 +153,10 @@ class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
         override fun onBindViewHolder(holder: InnerCardViewHolder, position: Int) {
             val result = items[position]
             holder.bind(result)
+
+            holder.itemView.custom_view_result_content_root.setOnClickListener {
+                action.invoke(result)
+            }
         }
 
 
@@ -149,7 +164,7 @@ class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
     }
 
     class InnerCardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: ResultData) {
+        fun bind(item: SearchResult) {
 
             itemView.result_thumb.load(item.gallery[0].url) {
                 placeholder(
@@ -164,7 +179,7 @@ class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
             bindPrice(item)
         }
 
-        private fun bindFreeCancellation(item: ResultData) {
+        private fun bindFreeCancellation(item: SearchResult) {
             if (item.freeCancelation) {
                 itemView.result_free_cancellation.show()
                 itemView.result_free_cancellation.text =
@@ -177,7 +192,7 @@ class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
             }
         }
 
-        private fun bindPrice(item: ResultData) {
+        private fun bindPrice(item: SearchResult) {
             itemView.result_price.text =
                 spannable {
                     color(
@@ -193,7 +208,7 @@ class SearchResultRailsAdapter(private val items: List<GroupedResultData>) :
             }
         }
 
-        private fun bindOldPrice(item: ResultData) {
+        private fun bindOldPrice(item: SearchResult) {
             if (item.oldPrice == item.currentPrice ||
                 item.oldPrice.contains("0,00")
             ) {

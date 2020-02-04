@@ -13,5 +13,6 @@ data class ResultData(
     var currentPrice: String,
     var oldPrice: String,
     var rating: Int,
-    var city: String
+    var city: String,
+    var amenities:String
 )
