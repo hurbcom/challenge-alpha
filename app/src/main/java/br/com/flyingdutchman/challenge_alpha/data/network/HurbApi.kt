@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface HurbApi{
 
     @GET("api?")
-    fun fetchHotels(
+    fun search(
         @Query("q") q: String = "buzios",
         @Query("page") page: Int = 1,
         @Query(encoded = true, value = "filters") filters: String

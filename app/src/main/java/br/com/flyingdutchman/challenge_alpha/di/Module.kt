@@ -8,7 +8,7 @@ import br.com.flyingdutchman.challenge_alpha.BuildConfig
 import br.com.flyingdutchman.challenge_alpha.data.HurbRepository
 import br.com.flyingdutchman.challenge_alpha.data.network.HurbApi
 import br.com.flyingdutchman.challenge_alpha.data.network.ResultRemoteEntityMapper
-import br.com.flyingdutchman.challenge_alpha.ui.SearchViewModel
+import br.com.flyingdutchman.challenge_alpha.ui.search.SearchViewModel
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

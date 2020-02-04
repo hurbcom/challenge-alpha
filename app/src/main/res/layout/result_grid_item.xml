@@ -2,26 +2,27 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
     app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/custom_view_result_content_root"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
         android:focusable="true">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/result_thumb"
-            android:layout_width="match_parent"
+            android:layout_width="160dp"
             android:layout_height="160dp"
-            android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/backgrounds/scenic"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
@@ -46,7 +47,7 @@
             android:id="@+id/result_name"
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="36dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"

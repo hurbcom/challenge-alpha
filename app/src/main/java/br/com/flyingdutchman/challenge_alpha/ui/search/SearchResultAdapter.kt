@@ -1,4 +1,4 @@
-package br.com.flyingdutchman.challenge_alpha.ui
+package br.com.flyingdutchman.challenge_alpha.ui.search
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.flyingdutchman.challenge_alpha.R
 import br.com.flyingdutchman.challenge_alpha.commons.*
+import br.com.flyingdutchman.challenge_alpha.ui.Result
 import coil.api.load
 import kotlinx.android.synthetic.main.result_grid_item.view.*
 

@@ -16,6 +16,9 @@ android {
 
         buildConfigField 'String', 'REST_SERVER', '"https://www.hurb.com/search/"'
 
+        vectorDrawables.useSupportLibrary = true
+        resConfigs("pt_BR")
+
     }
     buildTypes {
         release {
@@ -45,6 +48,8 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
+
 
     //ImageLoader
     implementation("io.coil-kt:coil:0.6.1")

@@ -1,9 +1,11 @@
-package br.com.flyingdutchman.challenge_alpha.ui
+package br.com.flyingdutchman.challenge_alpha.ui.search
 
 import androidx.lifecycle.*
+import br.com.flyingdutchman.challenge_alpha.data.GroupedResultData
 import br.com.flyingdutchman.challenge_alpha.commons.SingleLiveEvent
 import br.com.flyingdutchman.challenge_alpha.data.HurbRepository
 import br.com.flyingdutchman.challenge_alpha.data.ResultData
+import br.com.flyingdutchman.challenge_alpha.ui.Result
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
 
@@ -16,9 +18,34 @@ class SearchViewModel(
     val loading = MutableLiveData<Boolean>()
     val error = MutableLiveData<SingleLiveEvent<Throwable>>()
     val success = MutableLiveData<SingleLiveEvent<List<Result>>>()
+    val successRails = MutableLiveData<SingleLiveEvent<List<GroupedResultData>>>()
+
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun loadResults() {
+    fun loadAllTypesResults() {
+        repository.getAllTypeGroupedResults()
+            .observeOn(mainScheduler)
+            .subscribe(
+            {
+                successRails.value = SingleLiveEvent(it)
+                loading.value = false
+            },
+            {
+                error.value =
+                    SingleLiveEvent(
+                        it
+                    )
+                loading.value = false
+            }
+        )
+            .apply {
+                compositeDisposable.add(this)
+            }
+
+    }
+
+
+    fun loadHotelsSearchResults() {
         repository
             .getHotels()
             .observeOn(mainScheduler)

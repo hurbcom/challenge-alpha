@@ -23,7 +23,7 @@ class ResultRemoteEntityMapper() :
                 it.freeCancelation,
                 it.price.amount.formatForBrazilianCurrency(),
                 it.price.oldPrice.formatForBrazilianCurrency(),
-                it.stars,
+                if (it.stars > 0) it.stars else 1, // Use this in order to easiest the process of grouping packages which has no stars at all
                 it.address.city
             )
         }

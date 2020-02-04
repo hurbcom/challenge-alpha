@@ -1,11 +1,14 @@
 package br.com.flyingdutchman.challenge_alpha.commons
 
 import android.graphics.Typeface
+import android.graphics.drawable.Drawable
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.TextUtils
 import android.text.style.*
 import android.view.View
+import androidx.core.content.ContextCompat
+import br.com.flyingdutchman.challenge_alpha.App
 import com.google.android.material.snackbar.Snackbar
 import java.text.DecimalFormat
 import java.util.*
@@ -68,6 +71,9 @@ fun background(color: Int, s: CharSequence) =
 
 fun url(url: String, s: CharSequence) =
     span(s, URLSpan(url))
+
+fun image(drawable: Drawable, s: CharSequence) =
+    span(s, ImageSpan(drawable))
 
 
 fun View.snackBar(

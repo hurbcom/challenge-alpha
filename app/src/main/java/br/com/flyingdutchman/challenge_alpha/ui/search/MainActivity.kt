@@ -1,31 +1,20 @@
-package br.com.flyingdutchman.challenge_alpha.ui
+package br.com.flyingdutchman.challenge_alpha.ui.search
 
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.flyingdutchman.challenge_alpha.R
-import br.com.flyingdutchman.challenge_alpha.commons.*
+import br.com.flyingdutchman.challenge_alpha.commons.SingleLiveEvent
+import br.com.flyingdutchman.challenge_alpha.commons.hide
+import br.com.flyingdutchman.challenge_alpha.commons.show
+import br.com.flyingdutchman.challenge_alpha.commons.snackBar
+import br.com.flyingdutchman.challenge_alpha.data.GroupedResultData
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
-
-
-    private val gridLayoutManager by lazy {
-        GridLayoutManager(this@MainActivity, 2, GridLayoutManager.VERTICAL, false)
-    }
-
-    private val adapter by lazy {
-        SearchResultAdapter(
-            {
-
-            },
-            gridLayoutManager
-        )
-    }
 
     private val viewModel: SearchViewModel by viewModel()
 
@@ -37,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         lifecycle.addObserver(viewModel)
 
-        viewModel.success.observe(this, Observer {
-            handleSuccess(it)
+        viewModel.successRails.observe(this, Observer {
+            handleRailsSuccess(it)
         })
 
         viewModel.error.observe(this, Observer {
@@ -64,51 +53,34 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            R.id.action_change_layout -> {
-                if (gridLayoutManager.spanCount == 1) {
-                    gridLayoutManager.spanCount = 2
-                    item.title = "list"
-                } else {
-                    gridLayoutManager.spanCount = 1
-                    item.title = "grid"
-                }
-                adapter.notifyItemRangeChanged(0, adapter.itemCount)
-            }
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
-
 
     private fun setupRecyclerView() {
         activity_results_recycler_view
             .apply {
-                layoutManager = gridLayoutManager
-                addItemDecoration(
-                    SpacesItemDecoration(
-                        resources.getDimension(R.dimen.card_margin).toInt()
-                    )
-                )
+
+                layoutManager =
+                    LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
                 setHasFixedSize(true)
-                adapter = this@MainActivity.adapter
             }
     }
 
-    private fun handleSuccess(it: SingleLiveEvent<List<Result>>?) {
-        it?.getContentIfNotHandled()?.let {
+    private fun handleRailsSuccess(it: SingleLiveEvent<List<GroupedResultData>>?) {
+        it?.getContentIfNotHandled()?.let { list ->
             activity_results_recycler_view.show()
-            adapter.updateItems(it)
+            activity_results_recycler_view.adapter =
+                SearchResultRailsAdapter(
+                    list
+                )
         }
     }
+
 
     private fun handleError(it: SingleLiveEvent<Throwable>?) {
         it?.getContentIfNotHandled()?.let {
             activity_results_recycler_view.hide()
             activity_search_results_content_root
                 .snackBar(getString(R.string.generic_error)) {
-                    viewModel.loadResults()
+                    viewModel.loadAllTypesResults()
                 }
                 .show()
         }

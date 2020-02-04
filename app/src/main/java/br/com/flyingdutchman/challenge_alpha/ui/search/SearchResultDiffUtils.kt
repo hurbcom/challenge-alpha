@@ -1,6 +1,7 @@
-package br.com.flyingdutchman.challenge_alpha.ui
+package br.com.flyingdutchman.challenge_alpha.ui.search
 
 import androidx.recyclerview.widget.DiffUtil
+import br.com.flyingdutchman.challenge_alpha.ui.Result
 
 class SearchResultDiffUtils(
     private val results: List<Result>,
