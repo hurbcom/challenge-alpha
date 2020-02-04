@@ -144,6 +144,8 @@ class DetailsActivity : AppCompatActivity() {
                 details_rating.show()
                 details_description.show()
 
+                details_description.text = searchResult.description
+
             } else {
                 details_contents_label.text =
                     resources.getString(R.string.details_package_contents_label)
