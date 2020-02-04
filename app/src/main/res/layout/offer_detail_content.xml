@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ellipsize="end"
-        android:maxLines="5"
+        android:maxLines="3"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/details_rating"
         app:layout_constraintTop_toBottomOf="@+id/details_rating"
@@ -83,7 +83,7 @@
         style="@style/TextAppearance.AppCompat.Headline"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +103,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/details_contents_label"
-        style="@style/TextAppearance.AppCompat.Headline"
+        style="@style/TextAppearance.AppCompat.Subhead"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -126,6 +126,7 @@
         app:drawableTint="@color/hurb_green"
         app:layout_constraintBottom_toBottomOf="@+id/details_contents_label"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/details_contents_label"
         app:layout_constraintTop_toTopOf="@+id/details_contents_label"
         tools:text="Cancelamento Gratis!" />
 

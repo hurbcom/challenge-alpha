@@ -5,6 +5,7 @@ import br.com.flyingdutchman.challenge_alpha.data.model.ImageUrl
 import br.com.flyingdutchman.challenge_alpha.data.model.Result
 import br.com.flyingdutchman.challenge_alpha.data.ResultData
 import br.com.flyingdutchman.challenge_alpha.commons.formatForBrazilianCurrency
+import br.com.flyingdutchman.challenge_alpha.data.model.Gallery
 
 class ResultRemoteEntityMapper() :
     RemoteEntityMapper<List<Result>, List<ResultData>> {
@@ -17,9 +18,9 @@ class ResultRemoteEntityMapper() :
                 it.description,
                 it.smallDescription,
                 it.gallery.map { image ->
-                    ImageUrl(
-                        image.url
-                    )
+
+                    val url = ensureHttpsDueToAndroidP(image)
+                    ImageUrl(url)
                 },
                 it.freeCancelation,
                 it.price.amount.formatForBrazilianCurrency(),
@@ -31,5 +32,10 @@ class ResultRemoteEntityMapper() :
             )
         }
 
+    }
+
+    private fun ensureHttpsDueToAndroidP(image: Gallery): String {
+        var url = image.url
+        return url.replace("http://", "https://")
     }
 }
