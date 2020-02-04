@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.result_grid_item.view.*
 import kotlinx.android.synthetic.main.result_rails_item.view.*
 
 
-class SearchResultRailsAdapter(private val items: List<RailsSearchResults>) :
+class SearchResultRailsAdapter(val items: List<RailsSearchResults>) :
     RecyclerView.Adapter<SearchResultRailsAdapter.RailsViewHolder>() {
 
     private val viewPool = RecyclerView.RecycledViewPool()

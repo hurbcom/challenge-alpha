@@ -2,11 +2,14 @@ package br.com.flyingdutchman.challenge_alpha.ui.detail
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
+import androidx.core.view.ViewCompat
 import br.com.flyingdutchman.challenge_alpha.App
 import br.com.flyingdutchman.challenge_alpha.R
 import br.com.flyingdutchman.challenge_alpha.commons.color
@@ -16,14 +19,13 @@ import br.com.flyingdutchman.challenge_alpha.commons.spannable
 import br.com.flyingdutchman.challenge_alpha.ui.search.model.SearchResult
 import coil.api.load
 import com.google.android.material.appbar.AppBarLayout
+import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.include_toolbar_collapsing_offer_detail.*
 import kotlinx.android.synthetic.main.offer_detail_content.*
-import kotlinx.android.synthetic.main.result_rails_item.view.*
 import kotlin.math.abs
 
 class DetailsActivity : AppCompatActivity() {
     var isShow = false
-
     var searchResult: SearchResult? = null
 
     companion object {
@@ -90,6 +92,18 @@ class DetailsActivity : AppCompatActivity() {
                         toolbar.title = it.city
                         toolbar_layout.title = it.city
                         details_city.hide()
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            window.statusBarColor = resources.getColor(R.color.colorPrimary)
+                        }
+
+                        ViewCompat.setOnApplyWindowInsetsListener(
+                            details_activity_coordinator_layout
+                        ) { v, insets ->
+                            (app_bar.layoutParams as ViewGroup.MarginLayoutParams).topMargin =
+                                insets.systemWindowInsetTop
+                            insets.consumeSystemWindowInsets()
+                        }
                     }
                 }
             } else {
@@ -98,6 +112,10 @@ class DetailsActivity : AppCompatActivity() {
                     toolbar.title = ""
                     toolbar_layout.title = ""
                     details_city.show()
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        window.statusBarColor = resources.getColor(android.R.color.transparent)
+                    }
                 }
             }
         })
@@ -113,11 +131,28 @@ class DetailsActivity : AppCompatActivity() {
             }
             details_city.text = searchResult.city
             details_name.text = searchResult.name
-            details_amenities.text = "Hospedagem com ${searchResult.amenities}"
 
             val checkDrawable = App.instance.getDrawable(
                 R.drawable.ic_check_black_24dp
             )
+
+            if (searchResult.isHotel) {
+                details_contents_label.text =
+                    resources.getString(R.string.details_hotel_contents_label)
+
+                details_amenities.hide()
+                details_rating.show()
+                details_description.show()
+
+            } else {
+                details_contents_label.text =
+                    resources.getString(R.string.details_package_contents_label)
+                details_amenities.text = "Hospedagem com ${searchResult.amenities}"
+
+                details_rating.hide()
+                details_description.hide()
+                details_amenities.show()
+            }
 
             details_free_cancellation.text =
                 spannable {
@@ -138,7 +173,7 @@ class DetailsActivity : AppCompatActivity() {
                 )
             }
         } ?: run {
-
+            //Show Custom View Empty State
         }
     }
 

@@ -16,7 +16,8 @@ data class SearchResult(
     var oldPrice: String,
     var rating: Int,
     var city: String,
-    var amenities: String
+    var amenities: String,
+    var isHotel: Boolean
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
@@ -30,7 +31,8 @@ data class SearchResult(
         parcel.readString(),
         parcel.readInt(),
         parcel.readString(),
-        parcel.readString()
+        parcel.readString(),
+        parcel.readByte() != 0.toByte()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -46,6 +48,7 @@ data class SearchResult(
         parcel.writeInt(rating)
         parcel.writeString(city)
         parcel.writeString(amenities)
+        parcel.writeByte(if (isHotel) 1 else 0)
     }
 
     override fun describeContents(): Int {
@@ -61,5 +64,4 @@ data class SearchResult(
             return arrayOfNulls(size)
         }
     }
-
 }

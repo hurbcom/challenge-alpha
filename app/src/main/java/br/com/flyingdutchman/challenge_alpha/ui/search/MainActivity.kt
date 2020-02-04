@@ -9,6 +9,8 @@ import br.com.flyingdutchman.challenge_alpha.commons.SingleLiveEvent
 import br.com.flyingdutchman.challenge_alpha.commons.hide
 import br.com.flyingdutchman.challenge_alpha.commons.show
 import br.com.flyingdutchman.challenge_alpha.commons.snackBar
+import br.com.flyingdutchman.challenge_alpha.ui.detail.DetailsActivity
+import br.com.flyingdutchman.challenge_alpha.ui.detail.DetailsActivity.Companion.SEARCH_RESULT
 import br.com.flyingdutchman.challenge_alpha.ui.search.model.RailsSearchResults
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -17,13 +19,25 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: SearchViewModel by viewModel()
 
+    private lateinit var adapter: SearchResultRailsAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
 
         setContentView(R.layout.activity_main)
 
-        lifecycle.addObserver(viewModel)
+        savedInstanceState?.let {
+            if (it.containsKey(SEARCH_RESULT)) {
+                adapter =
+                    SearchResultRailsAdapter(savedInstanceState.getParcelableArrayList(SEARCH_RESULT))
+
+                activity_results_recycler_view.adapter = adapter
+            }
+        } ?: run {
+            lifecycle.addObserver(viewModel)
+        }
+
 
         viewModel.successRails.observe(this, Observer {
             handleRailsSuccess(it)
@@ -45,6 +59,16 @@ class MainActivity : AppCompatActivity() {
         setupRecyclerView()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        if (::adapter.isInitialized && adapter.items.isNotEmpty()) outState.putParcelableArrayList(
+            SEARCH_RESULT,
+            adapter.items as ArrayList
+        )
+
+        super.onSaveInstanceState(outState)
+    }
+
+
     private fun setupRecyclerView() {
         activity_results_recycler_view
             .apply {
@@ -58,10 +82,9 @@ class MainActivity : AppCompatActivity() {
     private fun handleRailsSuccess(it: SingleLiveEvent<List<RailsSearchResults>>?) {
         it?.getContentIfNotHandled()?.let { list ->
             activity_results_recycler_view.show()
-            activity_results_recycler_view.adapter =
-                SearchResultRailsAdapter(
-                    list
-                )
+            adapter = SearchResultRailsAdapter(list)
+            activity_results_recycler_view.adapter = adapter
+
         }
     }
 

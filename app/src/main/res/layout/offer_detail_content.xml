@@ -45,6 +45,31 @@
         app:layout_constraintTop_toBottomOf="@+id/details_name"
         tools:text="Hospedagem com Café da Manhã + Aluguel de Carro" />
 
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/details_rating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:rating="4"
+        android:theme="@style/RatingBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_description"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/details_rating"
+        app:layout_constraintTop_toBottomOf="@+id/details_rating"
+        tools:text="@tools:sample/lorem/random" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -62,7 +87,7 @@
         android:layout_marginEnd="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details_amenities"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
         tools:text="R$399" />
 
     <View
@@ -83,11 +108,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/details_contents_label"
+        android:text="@string/details_package_contents_label"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider_1"
-        tools:text="@string/details_contents_label" />
+        tools:text="@string/details_package_contents_label" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/details_free_cancellation"
@@ -115,6 +140,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details_contents_label" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="187dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

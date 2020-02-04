@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:id="@+id/details_activity_coordinator_layout"
     tools:context=".ui.detail.DetailsActivity">
 
     <include layout="@layout/include_toolbar_collapsing_offer_detail" />

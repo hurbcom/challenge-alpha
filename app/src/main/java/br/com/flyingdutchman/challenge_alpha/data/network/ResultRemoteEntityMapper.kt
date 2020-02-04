@@ -26,7 +26,8 @@ class ResultRemoteEntityMapper() :
                 it.price.oldPrice.formatForBrazilianCurrency(),
                 if (it.stars > 0) it.stars else 1, // Use this in order to easiest the process of grouping packages which has no stars at all
                 it.address.city,
-                it.amenities.formatAmenities()
+                it.amenities.formatAmenities(),
+                it.isHotel
             )
         }
 

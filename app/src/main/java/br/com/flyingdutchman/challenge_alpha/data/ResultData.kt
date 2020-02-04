@@ -14,5 +14,6 @@ data class ResultData(
     var oldPrice: String,
     var rating: Int,
     var city: String,
-    var amenities:String
+    var amenities:String,
+    var isHotel:Boolean
 )

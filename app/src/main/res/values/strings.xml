@@ -5,5 +5,7 @@
     <string name="menu_favorite">favourite</string>
     <string name="menu_share">share</string>
     <string name="menu_change_layout">List</string>
-    <string name="details_contents_label">O que está incluso</string>
+    <string name="details_package_contents_label">O que está incluso</string>
+    <string name="details_hotel_contents_label">Data e hóspedes</string>
+
 </resources>

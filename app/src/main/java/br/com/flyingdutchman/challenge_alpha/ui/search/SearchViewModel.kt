@@ -101,7 +101,8 @@ class SearchViewModel(
                 result.oldPrice,
                 result.rating,
                 result.city,
-                result.amenities
+                result.amenities,
+                result.isHotel
             )
         }
     }
