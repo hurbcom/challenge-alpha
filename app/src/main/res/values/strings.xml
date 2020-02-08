@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">hu</string>
+    <string name="error_message">Houve um erro ao tentar carregar os dados.</string>
+    <string name="ok_title">OK</string>
+    <string name="cancel_title">Cancelar</string>
+    <string name="yes_title">Sim</string>
+    <string name="no_title">Não</string>
+    <string name="start_at">A partir de</string>
+    <string name="free_cancel">Cancelamento grátis!</string>
+</resources>
