@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:scrollIndicators="bottom">
+
+        <ImageButton
+            android:id="@+id/btn_fechar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_fechar_white_24dp"
+            android:background="@null"
+            android:scaleType="fitStart" />
+
+        <SearchView
+            android:id="@+id/buscar_hotel"
+            android:queryHint="Pesquise um hotel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#FFF"
+            android:background="@drawable/edit_text_background"
+            android:queryBackground="@drawable/edit_text_background_transparente"
+            android:iconifiedByDefault="false"
+            android:focusable="true">
+        </SearchView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="2dp"
+        android:scrollIndicators="bottom">
+
+        <ListView
+            android:id="@+id/listViewBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"/>
+
+    </RelativeLayout>
+</LinearLayout>

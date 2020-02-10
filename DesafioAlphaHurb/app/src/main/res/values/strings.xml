@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">D-alpha hurb</string>
+    <string name="title_hoteis">Hoteis</string>
+    <string name="title_pacotes">Pacotes</string>
+    <string name="title_info">Sobre</string>
+    <string name="versao">1.0</string>
+    <string name="desenvolvido">Desenvolvido por</string>
+    <string name="desenvolvidor">Cassio Silva</string>
+</resources>

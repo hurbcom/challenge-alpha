@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/desafioapha" />
+
+    <TextView
+        android:id="@+id/nm_versao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        android:textColor="#808080"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/nm_desenvolvido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        android:textColor="#808080"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/nm_desenvolvedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
+        android:textColor="#808080"
+        android:textSize="14sp"/>
+
+</LinearLayout>

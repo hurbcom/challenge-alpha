@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.br.iptv_android_v2.activities.MainActivity">
+    <item
+        android:id="@+id/buscar"
+        android:orderInCategory="100"
+        android:title="Buscar"
+        android:icon="@drawable/ic_buscar_white_24dp"
+        app:showAsAction="always" />
+</menu>
