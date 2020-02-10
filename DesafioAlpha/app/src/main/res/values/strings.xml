@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DesafioAlpha</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="descricaoImagem">Challenge Accepted</string>
+    <string name="foto">Foto</string>
+    <string name="filtro">Filtrar</string>
+</resources>
