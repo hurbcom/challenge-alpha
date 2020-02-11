@@ -5,33 +5,33 @@ import com.google.gson.annotations.SerializedName
 
 data class Filters(
     @SerializedName("amenities")
-    val amenities: List<Amenity_Filter>,
+    val amenities: ArrayList<Amenity_Filter>,
     @SerializedName("attributes")
-    val attributes: List<Attribute>,
+    val attributes: ArrayList<Attribute>,
     @SerializedName("cities")
-    val cities: List<City>,
+    val cities: ArrayList<City>,
     @SerializedName("countries")
-    val countries: List<Country>,
+    val countries: ArrayList<Country>,
     @SerializedName("departureCities")
-    val departureCities: List<DepartureCity>,
+    val departureCities: ArrayList<DepartureCity>,
     @SerializedName("duration")
-    val duration: List<Duration>,
+    val duration: ArrayList<Duration>,
     @SerializedName("food")
-    val food: List<Food>,
+    val food: ArrayList<Food>,
     @SerializedName("people")
-    val people: List<People>,
+    val people: ArrayList<People>,
     @SerializedName("priceInterval")
     val priceInterval: PriceInterval,
     @SerializedName("prices")
-    val prices: List<Price>,
+    val prices: ArrayList<Price>,
     @SerializedName("productType")
-    val productType: List<ProductType>,
+    val productType: ArrayList<ProductType>,
     @SerializedName("regulation")
-    val regulation: List<Regulation>,
+    val regulation: ArrayList<Regulation>,
     @SerializedName("rooms")
-    val rooms: List<Room>,
+    val rooms: ArrayList<Room>,
     @SerializedName("stars")
-    val stars: List<Star>,
+    val stars: ArrayList<Star>,
     @SerializedName("states")
-    val states: List<State>
+    val states: ArrayList<State>
 )

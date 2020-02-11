@@ -1,37 +1,48 @@
 package br.com.rvvaranda.hu.Service
 
 import br.com.rvvaranda.hu.BuildConfig
-import okhttp3.*
-import java.util.*
+import com.google.gson.GsonBuilder
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class APIService() {
 
-    companion object {
+object APIService {
 
-       const val baseUrl = BuildConfig.URI
+    val baseUrl = BuildConfig.URI
 
-        val client = OkHttpClient.Builder()
+
+    val apiInstance: APIClient = Retrofit.Builder().run {
+        val gsonBuilder = GsonBuilder()
+            .enableComplexMapKeySerialization()
+            .setPrettyPrinting()
+            .create()
+
+        baseUrl(baseUrl)
+        addConverterFactory(GsonConverterFactory.create(gsonBuilder))
+        client(confgClient())
+        build()
+    }.create(APIClient::class.java)
+
+
+    fun confgClient(): OkHttpClient {
+
+        val interceptador = Interceptor{ chain ->
+            val original = chain.request()
+            val requestBuilder = original.newBuilder()
+            val request = requestBuilder.build()
+            chain.proceed(request)
+        }
+
+        return OkHttpClient.Builder()
+            .addInterceptor(interceptador)
+            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .connectTimeout(60, TimeUnit.SECONDS)
             .readTimeout(60, TimeUnit.SECONDS)
             .writeTimeout(120, TimeUnit.SECONDS)
             .build()
-
-
-        fun get(endPoint: String, callback: Callback): Call {
-
-            val url = String.format(Locale.getDefault(), "%s/%s",
-                baseUrl, endPoint)
-
-            val request = Request.Builder()
-                .url(url)
-                .get()
-                .build()
-
-            val call = client.newCall(request)
-            call.enqueue(callback)
-
-            return call
-        }
     }
 }

@@ -3,7 +3,7 @@ package br.com.rvvaranda.hu.Model
 
 import com.google.gson.annotations.SerializedName
 
-data class PriceX(
+data class PriceFilter(
     @SerializedName("amount")
     val amount: Double,
     @SerializedName("amountPerDay")
@@ -29,9 +29,9 @@ data class PriceX(
     @SerializedName("sku")
     val sku: String,
     @SerializedName("tariff_policies")
-    val tariffPolicies: List<Any>,
+    val tariffPolicies: ArrayList<Any>,
     @SerializedName("taxes")
-    val taxes: List<Taxe>,
+    val taxes: ArrayList<Taxe>,
     @SerializedName("total_price")
     val totalPrice: Double
 )

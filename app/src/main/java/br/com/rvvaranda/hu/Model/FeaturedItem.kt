@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class FeaturedItem(
     @SerializedName("amenities")
-    val amenities: List<String>,
+    val amenities: ArrayList<String>,
     @SerializedName("description")
     val description: String,
     @SerializedName("image")

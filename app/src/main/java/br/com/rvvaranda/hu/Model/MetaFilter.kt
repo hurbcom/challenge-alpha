@@ -3,7 +3,7 @@ package br.com.rvvaranda.hu.Model
 
 import com.google.gson.annotations.SerializedName
 
-data class MetaX(
+data class MetaFilter(
     @SerializedName("count")
     val count: Int,
     @SerializedName("countBustrip")
