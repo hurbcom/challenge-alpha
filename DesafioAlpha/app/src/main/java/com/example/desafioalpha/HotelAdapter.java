@@ -21,6 +21,8 @@ import java.net.URL;
 import java.util.Comparator;
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class HotelAdapter extends ArrayAdapter<Hotels>  {   //BaseAdapter {
     private final Context ctx;
     private final List<Hotels> hotel;
@@ -119,10 +121,8 @@ public class HotelAdapter extends ArrayAdapter<Hotels>  {   //BaseAdapter {
             TextView amenidadeNome2 = (TextView) view.findViewById(R.id.amenidadeNome2);
             TextView amenidadeCategoria2 = (TextView) view.findViewById(R.id.amenidadeCategoria2);
 
-
             Glide.with(ctx)
                     .load(hotel1.foto)                     // Set image url
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)   // Cache for image
                     .into(img);
 
             nome.setText(hotel1.nome);
