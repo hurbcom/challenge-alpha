@@ -6,14 +6,16 @@
     android:background="#E4E0C2"
     android:divider="?android:dividerHorizontal"
     android:orientation="horizontal"
-    android:showDividers="middle">
+    android:showDividers="middle"
+    android:layout_marginStart="5dp">
     <!-- Foto do Hotel -->
     <ImageView
         android:id="@+id/foto"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/foto"
         android:scaleType="fitXY" />
 
@@ -24,12 +26,13 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="8dp"
         android:layout_toRightOf="@id/foto"
         android:textColor="#3F51B5"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/foto" />
 
     <!-- Cidade do Hotel -->
     <TextView
@@ -41,7 +44,9 @@
         android:layout_marginTop="18dp"
         android:layout_marginRight="8dp"
         android:layout_toRightOf="@id/foto"
-        android:textColor="#3F51B5" />
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/foto" />
 
     <!-- Preço do Hotel -->
     <TextView
@@ -53,7 +58,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:layout_toRightOf="@id/foto"
-        android:textColor="#3F51B5" />
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/foto" />
 
     <!-- Estado -->
     <TextView
@@ -65,7 +72,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:layout_toRightOf="@id/foto"
-        android:textColor="#3F51B5" />
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/foto" />
 
     <!-- Estrelas -->
     <TextView
@@ -78,10 +87,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:layout_toRightOf="@id/foto"
-        android:capitalize="words"
         android:textColor="#9C27B0"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/foto"
+        android:layout_alignParentEnd="true" />
 
     <!-- Amenidades -->
     <TextView
@@ -89,59 +99,71 @@
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/foto"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
-        android:textColor="#3F51B5" />
+        android:layout_marginLeft="40dp"
+        android:layout_toEndOf="@id/amenidadeNome"
+        android:layout_toRightOf="@id/amenidadeNome"
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp" />
 
     <TextView
         android:id="@+id/amenidadeCategoria1"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/amenidadeCategoria"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="8dp"
-        android:textColor="#3F51B5" />
+        android:layout_marginLeft="40dp"
+        android:layout_toEndOf="@id/amenidadeNome1"
+        android:layout_toRightOf="@id/amenidadeNome1"
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp" />
 
     <TextView
         android:id="@+id/amenidadeCategoria2"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/amenidadeCategoria1"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="8dp"
-        android:textColor="#3F51B5" />
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@id/amenidadeNome2"
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/amenidadeNome2"
+        android:layout_marginStart="10dp" />
 
     <TextView
         android:id="@+id/amenidadeNome"
-        android:layout_width="100dp"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/foto"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
-        android:textColor="#3F51B5" />
+        android:textStyle="bold"
+        android:textColor="#3F51B5"
+        android:layout_marginStart="5dp" />
 
     <TextView
         android:id="@+id/amenidadeNome1"
-        android:layout_width="100dp"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/amenidadeNome"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:textColor="#3F51B5" />
+        android:textStyle="bold"
+        android:textColor="#3F51B5"
+        android:layout_marginStart="5dp" />
 
     <TextView
         android:id="@+id/amenidadeNome2"
-        android:layout_width="100dp"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/amenidadeNome1"
+        android:textStyle="bold"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:textColor="#3F51B5" />
+        android:textColor="#3F51B5"
+        android:layout_marginStart="5dp" />
 
 </RelativeLayout>

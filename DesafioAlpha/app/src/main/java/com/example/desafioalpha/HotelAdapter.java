@@ -3,6 +3,7 @@ package com.example.desafioalpha;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,6 +80,7 @@ public class HotelAdapter extends ArrayAdapter<Hotels>  {   //BaseAdapter {
 
         int itemViewType = getItemViewType(position);
 
+
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -98,44 +100,104 @@ public class HotelAdapter extends ArrayAdapter<Hotels>  {   //BaseAdapter {
         //Atualiza o valor das views
         Hotels hotel1 = hotel.get(position);
 
-        //Verifica se é separador
-        if (itemViewType == ITEM_VIEW_TYPE_SEPARATOR) {
-            // If separator
+        if (hotel1.stars > 0) {
 
-            TextView separadorView = (TextView) view.findViewById(R.id.separator);
-            separadorView.setText("Estrelas: " + hotel1.stars);
+            //Verifica se é separador
+            if (itemViewType == ITEM_VIEW_TYPE_SEPARATOR) {
+                // If separator
 
-        } else {
+                ImageView imgS1 = (ImageView) view.findViewById(R.id.imgSeparator1);
+                ImageView imgS2 = (ImageView) view.findViewById(R.id.imgSeparator2);
+                ImageView imgS3 = (ImageView) view.findViewById(R.id.imgSeparator3);
+                ImageView imgS4 = (ImageView) view.findViewById(R.id.imgSeparator4);
+                ImageView imgS5 = (ImageView) view.findViewById(R.id.imgSeparator5);
+                TextView separadorView = (TextView) view.findViewById(R.id.separator);
 
-            //Faz findviewbyid das views
-            ImageView img = (ImageView) view.findViewById(R.id.foto);
-            TextView nome = (TextView) view.findViewById(R.id.nome);
-            TextView cidade = (TextView) view.findViewById(R.id.cidade);
-            TextView preco = (TextView) view.findViewById(R.id.preco);
-            TextView estado = (TextView) view.findViewById(R.id.estado);
-            TextView stars = (TextView) view.findViewById(R.id.stars);
-            TextView amenidadeNome = (TextView) view.findViewById(R.id.amenidadeNome);
-            TextView amenidadeCategoria = (TextView) view.findViewById(R.id.amenidadeCategoria);
-            TextView amenidadeNome1 = (TextView) view.findViewById(R.id.amenidadeNome1);
-            TextView amenidadeCategoria1 = (TextView) view.findViewById(R.id.amenidadeCategoria1);
-            TextView amenidadeNome2 = (TextView) view.findViewById(R.id.amenidadeNome2);
-            TextView amenidadeCategoria2 = (TextView) view.findViewById(R.id.amenidadeCategoria2);
+                separadorView.setText("");
+                switch (hotel1.stars) {
+                    case 0: {
+                        imgS1.setVisibility(View.GONE);
+                        imgS2.setVisibility(View.GONE);
+                        imgS3.setVisibility(View.GONE);
+                        imgS4.setVisibility(View.GONE);
+                        imgS5.setVisibility(View.GONE);
+                        separadorView.setText("SEM ESTRELAS");
+                        break;
+                    }
+                    case 1: {
+                        imgS1.setVisibility(View.VISIBLE);
+                        imgS2.setVisibility(View.GONE);
+                        imgS3.setVisibility(View.GONE);
+                        imgS4.setVisibility(View.GONE);
+                        imgS5.setVisibility(View.GONE);
+                        break;
+                    }
+                    case 2: {
+                        imgS1.setVisibility(View.VISIBLE);
+                        imgS2.setVisibility(View.VISIBLE);
+                        imgS3.setVisibility(View.GONE);
+                        imgS4.setVisibility(View.GONE);
+                        imgS5.setVisibility(View.GONE);
+                        break;
+                    }
+                    case 3: {
+                        imgS1.setVisibility(View.VISIBLE);
+                        imgS2.setVisibility(View.VISIBLE);
+                        imgS3.setVisibility(View.VISIBLE);
+                        imgS4.setVisibility(View.GONE);
+                        imgS5.setVisibility(View.GONE);
+                        break;
+                    }
+                    case 4: {
+                        imgS1.setVisibility(View.VISIBLE);
+                        imgS2.setVisibility(View.VISIBLE);
+                        imgS3.setVisibility(View.VISIBLE);
+                        imgS4.setVisibility(View.VISIBLE);
+                        imgS5.setVisibility(View.GONE);
+                        break;
+                    }
+                    case 5: {
+                        imgS1.setVisibility(View.VISIBLE);
+                        imgS2.setVisibility(View.VISIBLE);
+                        imgS3.setVisibility(View.VISIBLE);
+                        imgS4.setVisibility(View.VISIBLE);
+                        imgS5.setVisibility(View.VISIBLE);
+                        break;
+                    }
+                }
 
-            Glide.with(ctx)
-                    .load(hotel1.foto)                     // Set image url
-                    .into(img);
+            } else {
 
-            nome.setText(hotel1.nome);
-            cidade.setText(hotel1.cidade);
-            preco.setText(hotel1.preco);
-            estado.setText(hotel1.estado);
-            stars.setText("Estrelas: " + hotel1.stars);
-            amenidadeNome.setText(hotel1.amenidadeName[0]);
-            amenidadeCategoria.setText(hotel1.amenidadeCategoria[0]);
-            amenidadeNome1.setText(hotel1.amenidadeName[1]);
-            amenidadeCategoria1.setText(hotel1.amenidadeCategoria[1]);
-            amenidadeNome2.setText(hotel1.amenidadeName[2]);
-            amenidadeCategoria2.setText(hotel1.amenidadeCategoria[2]);
+                //Faz findviewbyid das views
+                ImageView img = (ImageView) view.findViewById(R.id.foto);
+                TextView nome = (TextView) view.findViewById(R.id.nome);
+                TextView cidade = (TextView) view.findViewById(R.id.cidade);
+                TextView preco = (TextView) view.findViewById(R.id.preco);
+                TextView estado = (TextView) view.findViewById(R.id.estado);
+                TextView stars = (TextView) view.findViewById(R.id.stars);
+                TextView amenidadeNome = (TextView) view.findViewById(R.id.amenidadeNome);
+                TextView amenidadeCategoria = (TextView) view.findViewById(R.id.amenidadeCategoria);
+                TextView amenidadeNome1 = (TextView) view.findViewById(R.id.amenidadeNome1);
+                TextView amenidadeCategoria1 = (TextView) view.findViewById(R.id.amenidadeCategoria1);
+                TextView amenidadeNome2 = (TextView) view.findViewById(R.id.amenidadeNome2);
+                TextView amenidadeCategoria2 = (TextView) view.findViewById(R.id.amenidadeCategoria2);
+
+                Glide.with(ctx)
+                        .load(hotel1.foto)                     // Set image url
+                        .into(img);
+
+                nome.setText(hotel1.nome);
+                cidade.setText(hotel1.cidade);
+                preco.setText(hotel1.preco);
+                estado.setText(hotel1.estado);
+
+                amenidadeNome.setText(hotel1.amenidadeName[0]);
+                amenidadeCategoria.setText(hotel1.amenidadeCategoria[0]);
+                amenidadeNome1.setText(hotel1.amenidadeName[1]);
+                amenidadeCategoria1.setText(hotel1.amenidadeCategoria[1]);
+                amenidadeNome2.setText(hotel1.amenidadeName[2]);
+                amenidadeCategoria2.setText(hotel1.amenidadeCategoria[2]);
+            }
         }
 
         //retorna a view do hotel

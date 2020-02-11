@@ -4,4 +4,5 @@
     <string name="descricaoImagem">Challenge Accepted</string>
     <string name="foto">Foto</string>
     <string name="filtro">Filtrar</string>
+    <string name="imagemSeparator">Estrelas</string>
 </resources>

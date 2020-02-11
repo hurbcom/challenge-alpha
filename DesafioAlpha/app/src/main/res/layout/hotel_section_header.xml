@@ -1,17 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
 android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/separator"
         style="?android:listSeparatorTextViewStyle"
         android:layout_width="fill_parent"
-        android:layout_height="80dp"
-        android:background="#A5E4EC"
-        android:text="New Text"
+        android:layout_height="60dp"
+        android:background="#F1ECBC"
         android:textSize="24sp"
         android:textStyle="bold" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imgSeparator1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFEB3B"
+        android:contentDescription="@string/imagemSeparator"
+        app:srcCompat="@drawable/estreladourada"
+        android:layout_marginStart="8dp" />
+
+    <ImageView
+        android:id="@+id/imgSeparator2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/imgSeparator1"
+        android:layout_toRightOf="@id/imgSeparator1"
+        android:background="#FFEB3B"
+        android:contentDescription="@string/imagemSeparator"
+        app:srcCompat="@drawable/estreladourada" />
+
+    <ImageView
+        android:id="@+id/imgSeparator3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/imgSeparator2"
+        android:layout_toRightOf="@id/imgSeparator2"
+        android:background="#FFEB3B"
+        android:contentDescription="@string/imagemSeparator"
+        app:srcCompat="@drawable/estreladourada" />
+
+    <ImageView
+        android:id="@+id/imgSeparator4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/imgSeparator3"
+        android:layout_toRightOf="@id/imgSeparator3"
+        android:background="#FFEB3B"
+        android:contentDescription="@string/imagemSeparator"
+        app:srcCompat="@drawable/estreladourada" />
+
+    <ImageView
+        android:id="@+id/imgSeparator5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/imgSeparator4"
+        android:layout_toRightOf="@id/imgSeparator4"
+        android:background="#FFEB3B"
+        android:contentDescription="@string/imagemSeparator"
+        app:srcCompat="@drawable/estreladourada" />
+
+</RelativeLayout>

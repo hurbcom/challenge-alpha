@@ -87,7 +87,7 @@ public class Dados {
                                     currency = " ";
                                 }
                                 if (preco != null) {
-                                    preco = preco  + " " + currency;
+                                    preco = "R$ " + preco  + " " + currency;
                                 }
 
                                 //Percorre objeto address para buscar a cidade
