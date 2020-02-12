@@ -28,7 +28,7 @@ class ResultsViewModel @AssistedInject constructor(
     }
 
 
-    fun resultsDetailLive() = hurbRepository.searchResult
+    fun resultsDetailLive() = hurbRepository.searchResult()
 
 
     init {

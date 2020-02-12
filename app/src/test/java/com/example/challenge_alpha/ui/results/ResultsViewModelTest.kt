@@ -21,12 +21,9 @@ import kotlinx.coroutines.ObsoleteCoroutinesApi
 import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
+import org.junit.*
 
 import org.junit.Assert.*
-import org.junit.Rule
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import org.mockito.Mockito
@@ -42,8 +39,6 @@ class ResultsViewModelTest {
     @JvmField
     val instantExecutorRule = InstantTaskExecutorRule()
 
-    private val mainThreadSurrogate = newSingleThreadContext("UI thread")
-
     private val hurbRepository: HurbRepository =
         Mockito.mock(HurbRepository::class.java)
     private lateinit var resultsViewModel: ResultsViewModel
@@ -56,17 +51,9 @@ class ResultsViewModelTest {
             hurbRepository,
             sku
         )
-
-        Dispatchers.setMain(mainThreadSurrogate)
     }
 
 
-    @After
-    fun tearDown() {
-        Dispatchers.resetMain()
-        mainThreadSurrogate.close()
-
-    }
 
 
     private fun insertReturn() {
@@ -75,7 +62,7 @@ class ResultsViewModelTest {
             MutableLiveData(Result.success(HurbResponse(resultDetail = listOf(ResultDetail(sku)))))
         val liveResult: LiveData<Result<HurbResponse>> = result
 
-        Mockito.`when`(hurbRepository.searchResult).thenReturn(liveResult)
+        Mockito.`when`(hurbRepository.searchResult()).thenReturn(liveResult)
     }
 
     @Test
@@ -84,7 +71,7 @@ class ResultsViewModelTest {
         insertReturn()
 
         resultsViewModel.resultsDetailLive()
-        verify(hurbRepository).searchResult
+        verify(hurbRepository).searchResult()
     }
 
 

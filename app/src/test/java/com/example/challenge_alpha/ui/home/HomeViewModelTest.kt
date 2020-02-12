@@ -13,6 +13,7 @@ import com.example.challenge_alpha.repository.HurbRepository
 import com.example.challenge_alpha.repository.LastSeenRepository
 import com.example.challenge_alpha.repository.ResultDetailRepository
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

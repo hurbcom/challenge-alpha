@@ -16,6 +16,8 @@ import com.example.challenge_alpha.model.ResultDetailAmenities
 import com.example.challenge_alpha.model.ResultDetailGallery
 import com.example.challenge_alpha.ui.resultDetail.AmenitiesAdapter
 import com.example.challenge_alpha.api.Result
+import com.example.challenge_alpha.utils.recyclerTitle
+import com.example.challenge_alpha.utils.toastLong
 
 
 @BindingAdapter("results:imageLoading", "results:backupImageLoading")
@@ -36,7 +38,11 @@ fun imageLoading(view: ImageView, imageUrl: String?, backupImageLoading: ResultD
 }
 
 @BindingAdapter("results:recyclerResults", "results:progressBar")
-fun setRecyclerViewResults(recyclerView: RecyclerView, result: Result<HurbResponse>, progressBar: ProgressBar) {
+fun setRecyclerViewResults(
+    recyclerView: RecyclerView,
+    result: Result<HurbResponse>?,
+    progressBar: ProgressBar
+) {
 
     if (recyclerView.layoutManager == null) {
 
@@ -45,7 +51,7 @@ fun setRecyclerViewResults(recyclerView: RecyclerView, result: Result<HurbRespon
         recyclerView.adapter = adapter
     }
 
-    when (result.status) {
+    when (result?.status) {
         Result.Status.SUCCESS -> {
             val sorted =
                 result.data?.resultDetail?.sortedByDescending { list -> list.stars }
@@ -64,11 +70,7 @@ fun setRecyclerViewResults(recyclerView: RecyclerView, result: Result<HurbRespon
         }
         Result.Status.ERROR -> {
             progressBar.visibility = View.GONE
-            Toast.makeText(
-                recyclerView.context,
-                recyclerView.context.getString(R.string.results_error),
-                Toast.LENGTH_LONG
-            ).show()
+            recyclerView.context.toastLong(recyclerView.context.getString(R.string.results_error))
         }
     }
 
@@ -94,26 +96,14 @@ fun setRecyclerViewAmenities(recyclerView: RecyclerView, data: List<ResultDetail
 
 
 @BindingAdapter("results:title")
-fun setTitle(view: TextView, result: ResultDetail) {
+fun setTitle(view: TextView, result: ResultDetail?) {
 
-    view.text = result.recyclerTitle.let { isTitle ->
-        if (isTitle) {
-            view.visibility = View.VISIBLE
-            if (result.stars?.toInt() != null) {
-                "${result.stars.toInt()} Estrelas"
-            } else {
-                "Pacotes"
-            }
-
-        } else {
-            view.visibility = View.GONE
-            "Estrelas"
-        }
-    }
+    result?.recyclerTitle(view)
 
 }
 
-fun navigate (view: View, sku: String) {
+fun navigate(view: View, sku: String) {
 
-    Navigation.findNavController(view).navigate(ResultsFragmentDirections.resultsToResultDetail(sku))
+    Navigation.findNavController(view)
+        .navigate(ResultsFragmentDirections.resultsToResultDetail(sku))
 }

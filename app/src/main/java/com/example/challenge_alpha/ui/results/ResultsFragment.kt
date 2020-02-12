@@ -39,7 +39,6 @@ class ResultsFragment : Fragment(), Injectable {
         binding.lifecycleOwner = this
         binding.results = resultsViewModel.resultsDetailLive()
 
-
         return binding.root
     }
 

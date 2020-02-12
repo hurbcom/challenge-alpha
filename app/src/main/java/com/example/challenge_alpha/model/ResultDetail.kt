@@ -49,11 +49,14 @@ data class ResultDetail(
 
     @Ignore
     @field:SerializedName("amenities")
-    val amenities: List<ResultDetailAmenities>? = null
+    var amenities: List<ResultDetailAmenities>? = emptyList()
 
     @Ignore
     @field:SerializedName("gallery")
-    val gallery: List<ResultDetailGallery>? = null
+    var gallery: List<ResultDetailGallery>? = emptyList()
+
+
+
 }
 
 
@@ -83,7 +86,7 @@ data class ResultDetailPrice(
 ) {
     @Ignore
     @field:SerializedName("taxes")
-    val taxes: List<ResultDetailTaxes>? = null
+    var taxes: List<ResultDetailTaxes>? = emptyList()
 }
 
 @Entity(

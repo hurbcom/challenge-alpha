@@ -1,0 +1,56 @@
+{
+  "suggestions": [
+    {
+      "text": "Aarhus, Midtjylland, Dinamarca",
+      "suggestionType": "city",
+      "country": "Dinamarca",
+      "state": "Midtjylland",
+      "city": "Aarhus",
+      "filter": "city_aarhus|1,state_midtjylland|1",
+      "url": ""
+    },
+    {
+      "text": "Aar Hotel & Spa, Epirus",
+      "suggestionType": "hotel",
+      "country": "Grécia",
+      "state": "Epirus",
+      "city": "",
+      "sku": "JNP-JP265797-0-0-0-0-0-0",
+      "filter": "hotel_JNP-JP265797|1,is_hotel|1",
+      "url": ""
+    },
+    {
+      "text": "Aarøsund Badehotel, Syddanmark",
+      "suggestionType": "hotel",
+      "country": "Dinamarca",
+      "state": "Syddanmark",
+      "city": "",
+      "sku": "JNP-JP925349-0-0-0-0-0-0",
+      "filter": "hotel_JNP-JP925349|1,is_hotel|1",
+      "url": ""
+    },
+    {
+      "text": "Hotel Aaron, Veneto",
+      "suggestionType": "hotel",
+      "country": "Itália",
+      "state": "Veneto",
+      "city": "",
+      "sku": "JNP-JP061186-0-0-0-0-0-0",
+      "filter": "hotel_JNP-JP061186|1,is_hotel|1",
+      "url": ""
+    },
+    {
+      "text": "Aarhus Guldsmeden, Aarhus",
+      "suggestionType": "hotel",
+      "country": "Dinamarca",
+      "state": "Midtjylland",
+      "city": "Aarhus",
+      "sku": "JNP-JP768852-0-0-0-0-0-0",
+      "filter": "hotel_JNP-JP768852|1,is_hotel|1",
+      "url": ""
+    }
+  ],
+  "total": 5,
+  "search": "Aar",
+  "packages": []
+}

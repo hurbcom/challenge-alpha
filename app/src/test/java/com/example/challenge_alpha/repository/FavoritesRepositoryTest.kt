@@ -43,17 +43,8 @@ class FavoritesRepositoryTest {
     @Test
     fun isFavorited() {
 
-        `when`(favoritesDao.isFavorited("123")).thenReturn(MutableLiveData())
-
-        Assert.assertEquals(null, favoritesRepository.isFavorited("123").value)
-
-        val favorite = MutableLiveData(ResultDetail("123"))
-        val liveFavorite: LiveData<ResultDetail?> = favorite
-        `when`(favoritesDao.isFavorited("123")).thenReturn(liveFavorite)
-
-        Assert.assertEquals(ResultDetail("123"), favoritesRepository.isFavorited("123").value)
-
-        verify(favoritesDao, times(2)).isFavorited("123")
+        favoritesRepository.isFavorited("123")
+        verify(favoritesDao).isFavorited("123")
         verifyNoMoreInteractions(favoritesDao)
 
     }
@@ -61,32 +52,8 @@ class FavoritesRepositoryTest {
     @Test
     fun getFavorites() {
 
-        `when`(favoritesDao.getAllDesc()).thenReturn(MutableLiveData())
-
-        Assert.assertEquals(null, favoritesRepository.getFavorites().value)
-
-        val favorite = MutableLiveData(
-            listOf(
-                ResultDetailRelation().apply {
-                    resultDetail = ResultDetail("123", timestamp = Date(50))
-                    resultDetailAmenities = listOf(ResultDetailAmenities("123"))
-                    resultDetailGallery = listOf(ResultDetailGallery("123"))
-                    resultDetailTaxes = listOf(ResultDetailTaxes("123"))
-                },
-                ResultDetailRelation().apply {
-                    resultDetail = ResultDetail("abc", timestamp = Date(100))
-                    resultDetailAmenities = listOf(ResultDetailAmenities("abc"))
-                    resultDetailGallery = listOf(ResultDetailGallery("abc"))
-                    resultDetailTaxes = listOf(ResultDetailTaxes("abc"))
-                }).sortedByDescending { it.resultDetail?.timestamp }
-        )
-        val liveFavorite: LiveData<List<ResultDetailRelation>> = favorite
-        `when`(favoritesDao.getAllDesc()).thenReturn(liveFavorite)
-
-        Assert.assertEquals("abc", favoritesRepository.getFavorites().value?.firstOrNull()?.resultDetail?.sku)
-        Assert.assertEquals(2, favoritesRepository.getFavorites().value?.size)
-
-        verify(favoritesDao, times(3)).getAllDesc()
+        favoritesRepository.getFavorites()
+        verify(favoritesDao).getAllDesc()
         verifyNoMoreInteractions(favoritesDao)
 
     }

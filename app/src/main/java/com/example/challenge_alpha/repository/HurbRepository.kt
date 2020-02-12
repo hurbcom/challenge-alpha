@@ -5,6 +5,7 @@ import com.example.challenge_alpha.api.GetResult.resultLiveData
 import com.example.challenge_alpha.api.GetResult.suggestionsLiveData
 import com.example.challenge_alpha.api.HurbService
 import com.example.challenge_alpha.testing.OpenForTesting
+import okio.Source
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -25,11 +26,12 @@ class HurbRepository @Inject constructor(
         query = queryString
     }
 
-    val searchResult = resultLiveData(
+    fun searchResult() = resultLiveData(
         networkCall = { getResult { call.search(query, lastRequestedPage) } },
         saveSearched = { save.insertDetail(it) })
 
     fun suggestionSearch(suggestion: String) = suggestionsLiveData(
         networkCall = {  getResult { call.suggestion(suggestion) } })
+
 
 }

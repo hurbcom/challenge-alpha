@@ -17,10 +17,7 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runBlockingTest
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.CoreMatchers.notNullValue
-import org.junit.Assert
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
+import org.junit.*
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import org.mockito.Mock
@@ -42,20 +39,6 @@ class FavoritesViewModelTest {
     @Before
     fun before() {
         favoritesViewModel = FavoritesViewModel(favoritesRepository)
-
-    }
-
-    private fun insertFavorite() {
-
-        val favorite = MutableLiveData(listOf(ResultDetailRelation().apply {
-            resultDetail = ResultDetail("123")
-            resultDetailAmenities = listOf(ResultDetailAmenities("123"))
-            resultDetailGallery = listOf(ResultDetailGallery("123"))
-            resultDetailTaxes = listOf(ResultDetailTaxes("123"))
-        }))
-        val liveFavorite: LiveData<List<ResultDetailRelation>> = favorite
-
-        `when`(favoritesRepository.getFavorites()).thenReturn(liveFavorite)
 
     }
 

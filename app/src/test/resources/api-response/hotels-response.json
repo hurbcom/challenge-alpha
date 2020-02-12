@@ -1,0 +1,485 @@
+{
+  "meta": {
+    "count": 1,
+    "offset": 0,
+    "query": "Aardvark",
+    "warning": "results.price.current_price and results.price.old_price are deprecated",
+    "countWithAvailabilityInPage": 0,
+    "countHotel": 1,
+    "countPackage": 0,
+    "countTicket": 0,
+    "countBustrip": 0,
+    "countDisney": 0
+  },
+  "filters": {
+    "amenities": [
+      {
+        "term": "Amenidade de banho",
+        "filter": "amenity_amenidade_de_banho|1",
+        "count": 1
+      },
+      {
+        "term": "Aparelho TV",
+        "filter": "amenity_aparelho_tv|1",
+        "count": 1
+      },
+      {
+        "term": "Aquecimento",
+        "filter": "amenity_aquecimento|1",
+        "count": 1
+      },
+      {
+        "term": "Ar-Condicionado",
+        "filter": "amenity_arcondicionado|1",
+        "count": 1
+      },
+      {
+        "term": "Balcão de turismo",
+        "filter": "amenity_balcao_de_turismo|1",
+        "count": 1
+      },
+      {
+        "term": "Banheiro",
+        "filter": "amenity_banheiro|1",
+        "count": 1
+      },
+      {
+        "term": "Bar",
+        "filter": "amenity_bar|1",
+        "count": 1
+      },
+      {
+        "term": "Berço",
+        "filter": "amenity_berco|1",
+        "count": 1
+      },
+      {
+        "term": "Check-in / Check-out expressos",
+        "filter": "amenity_checkin_checkout_expressos|1",
+        "count": 1
+      },
+      {
+        "term": "DVD",
+        "filter": "amenity_dvd|1",
+        "count": 1
+      },
+      {
+        "term": "Depósito de bagagens",
+        "filter": "amenity_deposito_de_bagagens|1",
+        "count": 1
+      },
+      {
+        "term": "Estacionamento (gratuito)",
+        "filter": "amenity_estacionamento_gratuito|1",
+        "count": 1
+      },
+      {
+        "term": "Frigobar",
+        "filter": "amenity_frigobar|1",
+        "count": 1
+      },
+      {
+        "term": "Internet WiFi",
+        "filter": "amenity_internet_wifi|1",
+        "count": 1
+      },
+      {
+        "term": "Jornais",
+        "filter": "amenity_jornais|1",
+        "count": 1
+      },
+      {
+        "term": "Lounge compartilhado / Sala de TV",
+        "filter": "amenity_lounge_compartilhado_sala_de_tv|1",
+        "count": 1
+      },
+      {
+        "term": "Piso",
+        "filter": "amenity_piso|1",
+        "count": 1
+      },
+      {
+        "term": "Quartos para famílias",
+        "filter": "amenity_quartos_para_familias|1",
+        "count": 1
+      },
+      {
+        "term": "Recepção 24 horas",
+        "filter": "amenity_recepcao_24_horas|1",
+        "count": 1
+      },
+      {
+        "term": "Salão de jogos",
+        "filter": "amenity_salao_de_jogos|1",
+        "count": 1
+      },
+      {
+        "term": "Secador de cabelo",
+        "filter": "amenity_secador_de_cabelo|1",
+        "count": 1
+      },
+      {
+        "term": "Serviço de concierge",
+        "filter": "amenity_servico_de_concierge|1",
+        "count": 1
+      },
+      {
+        "term": "Serviço de translado (custo adicional)",
+        "filter": "amenity_servico_de_translado_custo_adicional|1",
+        "count": 1
+      },
+      {
+        "term": "Serviço diário de limpeza",
+        "filter": "amenity_servico_diario_de_limpeza|1",
+        "count": 1
+      },
+      {
+        "term": "Sofá-cama",
+        "filter": "amenity_sofacama|1",
+        "count": 1
+      },
+      {
+        "term": "TV por cabo",
+        "filter": "amenity_tv_por_cabo|1",
+        "count": 1
+      },
+      {
+        "term": "Telefone",
+        "filter": "amenity_telefone|1",
+        "count": 1
+      },
+      {
+        "term": "Translado aeroporto (custo adicional)",
+        "filter": "amenity_translado_aeroporto_custo_adicional|1",
+        "count": 1
+      },
+      {
+        "term": "Varanda / Sacada",
+        "filter": "amenity_varanda_sacada|1",
+        "count": 1
+      },
+      {
+        "term": "Ventilador",
+        "filter": "amenity_ventilador|1",
+        "count": 1
+      }
+    ],
+    "countries": [
+      {
+        "term": "Brasil",
+        "filter": "country_brasil|1",
+        "count": 1
+      }
+    ],
+    "cities": [
+      {
+        "term": "Gramado",
+        "filter": "city_gramado|1,state_rio_grande_do_sul|1",
+        "count": 1
+      }
+    ],
+    "prices": [
+      {
+        "min": 0,
+        "maxExclusive": 300,
+        "filter": "pricegroup_1|1",
+        "count": 1
+      }
+    ],
+    "priceInterval": {
+      "min": 18168,
+      "max": 18168,
+      "filterPattern": "price_[min|max]_[value]"
+    },
+    "productType": [
+      {
+        "term": "hotel",
+        "filter": "product_type_hotel|1",
+        "count": 1
+      }
+    ],
+    "rooms": [
+      {
+        "term": "Standard Duplo",
+        "filter": "room_standard_duplo|1",
+        "count": 1
+      },
+      {
+        "term": "Standard Duplo - Criança Free até 11 anos",
+        "filter": "room_standard_duplo_crianca_free_ate_11_anos|1",
+        "count": 1
+      }
+    ],
+    "stars": [
+      {
+        "term": "3",
+        "filter": "stars_3|1",
+        "count": 1
+      }
+    ],
+    "states": [
+      {
+        "term": "Rio Grande do Sul",
+        "filter": "state_rio_grande_do_sul|1,country_brasil|1",
+        "count": 1
+      }
+    ]
+  },
+  "results": [
+    {
+      "sku": "NHU-7987-0-0-0-0",
+      "isHotel": true,
+      "category": "hotel",
+      "smallDescription": "A Pousada Aardvark Inn está situada em Gramado, Rio Grande do Sul.",
+      "amenities": [
+        {
+          "name": "Bar",
+          "category": "Comida / Bebida"
+        },
+        {
+          "name": "Translado aeroporto (custo adicional)",
+          "category": "Opções de transporte"
+        },
+        {
+          "name": "Serviço de translado (custo adicional)",
+          "category": "Opções de transporte"
+        },
+        {
+          "name": "Estacionamento (gratuito)",
+          "category": "Opções de transporte"
+        },
+        {
+          "name": "Serviço diário de limpeza",
+          "category": "Serviços de limpeza / Lavanderia"
+        },
+        {
+          "name": "Recepção 24 horas",
+          "category": "Serviços de recepção"
+        },
+        {
+          "name": "Check-in / Check-out expressos",
+          "category": "Serviços de recepção"
+        },
+        {
+          "name": "Serviço de concierge",
+          "category": "Serviços de recepção"
+        },
+        {
+          "name": "Balcão de turismo",
+          "category": "Serviços de recepção"
+        },
+        {
+          "name": "Depósito de bagagens",
+          "category": "Serviços de recepção"
+        },
+        {
+          "name": "Jornais",
+          "category": "Serviços de recepção"
+        },
+        {
+          "name": "Quartos para famílias",
+          "category": "Diversos"
+        },
+        {
+          "name": "Wifi",
+          "category": "Diversos"
+        },
+        {
+          "name": "Lounge compartilhado / Sala de TV",
+          "category": "Áreas comuns"
+        },
+        {
+          "name": "Salão de jogos",
+          "category": "Áreas comuns"
+        },
+        {
+          "name": "Amenidade de banho",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Aparelho TV",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Aquecimento",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Ar-Condicionado",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Banheiro",
+          "category": "Acomodação"
+        },
+        {
+          "name": "DVD",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Frigobar",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Internet WiFi",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Piso",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Secador de cabelo",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Sofá-cama",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Telefone",
+          "category": "Acomodação"
+        },
+        {
+          "name": "TV por cabo",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Ventilador",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Varanda / Sacada",
+          "category": "Acomodação"
+        },
+        {
+          "name": "Berço",
+          "category": "Acomodação"
+        }
+      ],
+      "id": "AT7987",
+      "price": {
+        "amount": 363.35,
+        "old_price": 0,
+        "currency": "BRL",
+        "currency_original": "BRL",
+        "gain": 0,
+        "fee_extra_original": 0,
+        "gain_original": 0,
+        "tariff_policies": [],
+        "current_price": 363.35,
+        "total_price": 363.35,
+        "fee_extra": 0,
+        "sku": "NHU-7987-0-0-0-0",
+        "taxes": [
+          {
+            "type": "PER_ITEM_QUANTITY",
+            "name": "Taxa de Reserva",
+            "amount": 59.15,
+            "amount_original": 59.15,
+            "currency": "BRL",
+            "currency_original": "BRL"
+          }
+        ],
+        "originalAmountPerDay": 0,
+        "amountPerDay": 363.35
+      },
+      "hu_free_cancellation": true,
+      "image": "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5cf6fa3c_pousada-aardvark-inn.jpg",
+      "name": "Pousada Aardvark Inn",
+      "url": "https://www.hurb.com/hoteis/gramado/pousada-aardvark-inn-7987",
+      "description": "Venha curtir um friozinho e conhecer a cidade de Gramado! A Pousada Aardvark Inn te espera para proporcionar uma estadia incrível \\o/\r\nNAS PROXIMIDADES: Localizada a apenas 600m do centro da cidade, a Pousada Aardvark Inn fica a 8 minutos de carro do Mini Mundo, a 10 minutos do Parque do Lago Negro, a 8 minutos da Aldeia do Papai Noel, a 13 minutos do Parque Temático Snowland e a 1 hora e 45 minutos do Aeroporto Internacional de Porto Alegre.\r\nIDEAL PARA: Ideal para fazer uma viagem romântica ou uma viagem inesquecível com a sua família!\r\nCOMODIDADES: A propriedade oferece bar, translado para o aeroporto (custo adicional), serviço de translado (custo adicional), serviço diário de limpeza, recepção 24 horas, serviço de concierge e WIFI.\r\nREFEIÇÃO: Um delicioso café da manhã está incluso na sua estadia \\o/\r\nPETS: Animais de estimação não são permitidos.\r\nACOMODAÇÕES: As acomodações da Pousada Aardvark Inn são espaçosas e confortáveis, além de contarem com banheiro privativo, ar-condicionado, televisão e frigobar.\r\nCOMO CHEGAR: Avião+ transfer; carro; ônibus saindo de Porto Alegre, Florianópolis, Canela, entre outros.\r\n",
+      "stars": 3,
+      "gallery": [
+        {
+          "description": "",
+          "url": "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5cf6fa3c_pousada-aardvark-inn.jpg"
+        },
+        {
+          "description": "",
+          "url": "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5d8bfd46_pousada-aardvark-inn.jpg"
+        },
+        {
+          "description": "",
+          "url": "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5d9d8607_pousada-aardvark-inn.jpg"
+        },
+        {
+          "description": "",
+          "url": "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5daf12af_pousada-aardvark-inn.jpg"
+        },
+        {
+          "description": "",
+          "url": "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5dc107ee_pousada-aardvark-inn.jpg"
+        }
+      ],
+      "address": {
+        "zipcode": "95670000",
+        "street": "Rua Mestre, 18",
+        "street_name": "Rua Mestre, 18",
+        "streetName": "Rua Mestre, 18",
+        "address": "Rua Mestre, 18",
+        "fullAddress": "Rua Mestre, 18",
+        "full_address": "Rua Mestre, 18",
+        "neighborhood": "Centro",
+        "id_atlas_neighborhood": null,
+        "id_neighborhood": 31745,
+        "city": "Gramado",
+        "id_atlas_city": null,
+        "id_city": 7744,
+        "state": "Rio Grande do Sul",
+        "id_atlas_state": null,
+        "id_state": 23,
+        "country": "Brasil",
+        "id_atlas_country": null,
+        "id_country": 1,
+        "countryAlfa2": "BR",
+        "country_alfa2": "BR",
+        "geoLocation": {
+          "lat": -29.372076,
+          "lon": -50.882776
+        }
+      },
+      "tags": [
+        "Serra Gaúcha",
+        "Hotéis Serra Gaúcha",
+        "Inverno - Rio Grande do Sul",
+        "Inverno - Serra Gaúcha",
+        "10 Hoteis Baratos em Gramado",
+        "Top Destinos - Hoteis",
+        "Arruma as Malas e Vai"
+      ],
+      "quantityDescriptors": {
+        "maxChildren": 1,
+        "maxAdults": 2,
+        "maxFreeChildrenAge": 17
+      },
+      "featuredItem": {
+        "amenities": [
+          "Amenidade de banho",
+          "Aparelho TV",
+          "Aquecimento",
+          "Ar-Condicionado",
+          "Banheiro",
+          "DVD",
+          "Frigobar",
+          "Internet WiFi",
+          "Piso",
+          "Secador de cabelo",
+          "Serviço de despertador",
+          "Telefone",
+          "TV por cabo"
+        ],
+        "name": "Standard Duplo",
+        "image": "https://static.hotelurbano.com/reservas/prodaccommodation/30607/58c8470703a3d_pousada-aardvark-inn.jpg",
+        "description": "Acomodação com frigobar, calefação central, televisores LCD com TV a Cabo e DVD, secador de cabelo, roupas de cama em algodão, toalhas King size, ducha pressurizada com aquecimento central, sabonetes e shampoos com aroma do campo, facilidade de bebidas quentes. \nObs: 1 criança até 2 anos grátis por acomodação. Será disponível um berço para a criança na gratuidade como cortesia."
+      }
+    }
+  ],
+  "pagination": {
+    "count": 1,
+    "firstPage": "http://searchapi/v2/search?q=Aardvark&page=1",
+    "nextPage": null,
+    "previousPage": null,
+    "lastPage": "http://searchapi/v2/search?q=Aardvark&page=1"
+  }
+}

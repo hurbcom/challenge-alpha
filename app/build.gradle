@@ -17,7 +17,7 @@ allOpen {
 ext {
     versionMajor = 0
     versionMinor = 6
-    buildNum = 1
+    buildNum = 2
 }
 
 android {
@@ -30,13 +30,11 @@ android {
         versionCode versionMajor * 1000000 + versionMinor * 1000 + buildNum
         versionName String.valueOf(versionMajor) + "." + String.valueOf(versionMinor) + "." + String.valueOf(buildNum)
         testInstrumentationRunner "com.example.challenge_alpha.util.ChallengeAlphaTestRunner"
-        //testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     dataBinding {
         enabled true
     }
-
 
     kotlinOptions {
         jvmTarget = '1.8'
@@ -64,10 +62,10 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
 
     //Navigation
-    implementation 'androidx.navigation:navigation-fragment:2.1.0'
-    implementation 'androidx.navigation:navigation-ui:2.1.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.0'
+    implementation 'androidx.navigation:navigation-ui:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.0'
 
 
     //room
@@ -92,6 +90,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.7.1"
     implementation "com.squareup.retrofit2:retrofit-mock:2.6.2"
     implementation "com.squareup.okhttp3:logging-interceptor:4.3.0"
+    implementation "com.squareup.okio:okio:2.4.3"
 
 
     //Glide
@@ -111,6 +110,7 @@ dependencies {
 
     //Tests
     testImplementation 'org.mockito:mockito-core:2.28.2'
+    testImplementation "com.squareup.okhttp3:mockwebserver:4.3.0"
     testImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.12.1'
     testImplementation 'junit:junit:4.13'
     testImplementation 'androidx.test.ext:junit:1.1.1'

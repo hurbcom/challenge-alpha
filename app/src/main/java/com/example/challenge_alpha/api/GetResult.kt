@@ -22,7 +22,6 @@ object GetResult {
 
         }
 
-
     fun <T> resultLiveData(
         networkCall: suspend () -> Result<T>,
         saveSearched: suspend (T) -> Unit

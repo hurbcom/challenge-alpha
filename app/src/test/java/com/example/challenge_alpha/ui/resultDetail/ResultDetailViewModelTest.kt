@@ -51,7 +51,7 @@ class ResultDetailViewModelTest {
             sku
         )
 
-   Dispatchers.setMain(mainThreadSurrogate)
+        Dispatchers.setMain(mainThreadSurrogate)
 
     }
 
@@ -110,7 +110,7 @@ class ResultDetailViewModelTest {
 
         insertReturn()
 
-        resultDetailViewModel.isFavorited().observeForever{
+        resultDetailViewModel.isFavorited().observeForever {
             Assert.assertEquals(true, it)
         }
 
@@ -124,7 +124,7 @@ class ResultDetailViewModelTest {
         insertReturn()
 
         resultDetailViewModel.insertFavorite()
-        resultDetailViewModel.getResult().observeForever{
+        resultDetailViewModel.getResult().observeForever {
             runBlockingTest {
                 verify(favoritesRepository).insertFavorite(it)
             }
@@ -139,8 +139,8 @@ class ResultDetailViewModelTest {
         insertReturn()
 
         resultDetailViewModel.deleteFavorite()
-        resultDetailViewModel.getResult().observeForever{
-            runBlockingTest {
+        resultDetailViewModel.getResult().observeForever {
+            runBlocking {
 
                 verify(favoritesRepository).deleteFavorite(it.resultDetail?.sku!!)
             }

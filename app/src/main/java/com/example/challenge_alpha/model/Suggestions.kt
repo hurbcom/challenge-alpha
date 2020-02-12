@@ -17,6 +17,6 @@ data class Suggestions(
     @field:SerializedName("state") val state: String? = null,
     @field:SerializedName("city") val city: String? = null,
     @field:SerializedName("sku") val sku: String? = null,
-    @field:SerializedName("filter") val filter: String,
+    @field:SerializedName("filter") val filter: String? = null,
     @field:SerializedName("url") val url: String? = null
 )
