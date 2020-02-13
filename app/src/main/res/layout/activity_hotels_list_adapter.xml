@@ -38,11 +38,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="105pt"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:src="@drawable/hurb_bg"/>
+                    android:src="@drawable/hurb_bg" />
 
                 <LinearLayout
                         android:id="@+id/linearInfo"
@@ -107,7 +110,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginStart="4pt"
-                                            android:layout_marginEnd="2pt"
+                                            android:layout_marginEnd="8dp"
                                             android:textSize="12sp"
                                             android:textAlignment="textEnd"
                                             android:text="@string/start_at" />

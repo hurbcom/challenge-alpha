@@ -27,7 +27,7 @@ data class Hotel(
     @SerializedName("name")
     val name: String,
     @SerializedName("price")
-    val price: PriceFilter,
+    val price: Price,
     @SerializedName("quantityDescriptors")
     val quantityDescriptors: QuantityDescriptors,
     @SerializedName("sku")
@@ -40,4 +40,6 @@ data class Hotel(
     val tags: List<Any>,
     @SerializedName("url")
     val url: String
+
+
 )

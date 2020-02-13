@@ -42,4 +42,6 @@ data class Address(
     val streetName: String,
     @SerializedName("zipcode")
     val zipcode: String
+
+
 )

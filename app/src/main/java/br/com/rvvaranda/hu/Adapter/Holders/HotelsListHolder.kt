@@ -10,6 +10,7 @@ import br.com.rvvaranda.hu.UI.HotelDetailActivity
 import br.com.rvvaranda.hu.Model.Hotel
 import br.com.rvvaranda.hu.R
 import com.google.gson.Gson
+import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_hotels_list_adapter.view.*
 
@@ -47,7 +48,7 @@ class HotelsListHolder(itemView: View) :
 
             view.tvOldPrice.visibility = View.GONE
             view.tvFreeCancel.visibility = View.GONE
-            view.ratingBar.visibility = View.GONE
+            view.ratingBar.visibility =  View.GONE
 
 
             view.tvHotelName.text = hotel.name
@@ -63,6 +64,11 @@ class HotelsListHolder(itemView: View) :
 
             if (hotel.huFreeCancellation) {
                 view.tvFreeCancel.visibility = View.VISIBLE
+            }
+
+            if(hotel.stars > 0) {
+                view.ratingBar.visibility = View.VISIBLE
+                view.ratingBar.rating = hotel.stars.toFloat()
             }
 
             Picasso.get().load(hotel.image)
@@ -83,24 +89,20 @@ class HotelsListHolder(itemView: View) :
     }
 
     private fun showTitle(stars: Int) {
-        if (stars > 0) {
+
+        if(HotelsListAdapter.currentStar != stars) {
             if (HotelsListAdapter.currentStar == 0) {
                 HotelsListAdapter.currentStar = stars
-                view.groupTitle.text = "$stars Estrelas"
+                view.groupTitle.text = if (stars > 0) "$stars Estrelas" else "Pacotes"
                 view.groupTitle.visibility = View.VISIBLE
             } else {
                 if (HotelsListAdapter.currentStar != stars) {
                     HotelsListAdapter.currentStar = stars
-                    view.groupTitle.text = "$stars Estrelas"
+                    view.groupTitle.text = if (stars > 0) "$stars Estrelas" else "Pacotes"
                     view.groupTitle.visibility = View.VISIBLE
                 }
             }
-        } else {
-            if (view.groupTitle.visibility == View.GONE) {
-                HotelsListAdapter.currentStar = 0
-                view.groupTitle.text = "Pacotes"
-                view.groupTitle.visibility = View.VISIBLE
-            }
         }
+
     }
 }
