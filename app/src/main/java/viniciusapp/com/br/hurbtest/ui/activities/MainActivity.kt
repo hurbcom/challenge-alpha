@@ -15,7 +15,7 @@ import viniciusapp.com.br.hurbtest.ui.adapters.HotelAdapter
 class MainActivity : BaseActivity() {
     private lateinit var progressBar: ProgressBar
     private lateinit var viewModel: MainViewModel
-    var searchCity: String = ""
+    var searchCity : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
