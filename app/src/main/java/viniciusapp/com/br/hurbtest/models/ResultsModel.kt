@@ -19,7 +19,7 @@ data class ResultsModel(
     @field:SerializedName("price")
     var price: PriceModel? = null,
     @field:SerializedName("hu_free_cancellation")
-    var hu_free_cancellation: String? = null,
+    var hu_free_cancellation: Boolean? = null,
     @field:SerializedName("image")
     var image: String? = null,
     @field:SerializedName("name")

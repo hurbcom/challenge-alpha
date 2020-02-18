@@ -8,7 +8,7 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/sdvImageGalleryHotelDetail"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="324dp"
         android:layout_gravity="center">
     </com.facebook.drawee.view.SimpleDraweeView>
 
@@ -19,7 +19,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="4dp"
         tools:listitem="@layout/list_image_hotels"
-        tools:itemCount="5">
+        tools:itemCount="10">
     </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

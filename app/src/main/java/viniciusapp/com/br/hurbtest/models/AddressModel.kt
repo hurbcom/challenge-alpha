@@ -47,4 +47,4 @@ data class AddressModel(
     @field:SerializedName("country_alfa2")
     var country_alfa2: String? = null
 
-): Serializable
+) : Serializable

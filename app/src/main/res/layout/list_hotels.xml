@@ -24,11 +24,10 @@
 
             <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/sdvImageHotel"
-                    android:layout_width="128dp"
-                    android:layout_height="128dp"
-                    android:layout_centerVertical="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
                     android:padding="4dp"
-                    android:background="@color/lightGrey">
+                    android:background="@color/white">
 
             </com.facebook.drawee.view.SimpleDraweeView>
 
@@ -36,33 +35,38 @@
                     android:id="@+id/relativeInfoHotel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/sdvImageHotel"
-                    android:layout_marginStart="8dp"
+                    android:layout_below="@id/sdvImageHotel"
+                    android:layout_marginStart="16dp"
                     android:layout_centerInParent="true">
 
                 <TextView
                         android:id="@+id/txtNameHotel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLines="2"
                         tools:text="nome do hotel"
-                        android:textSize="14sp"/>
+                        android:fontFamily="@font/montserratsemibold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
 
                 <TextView
                         android:id="@+id/txtPriceHotel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txtNameHotel"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="8dp"
                         tools:text="preço do hotel"
-                        android:textSize="12sp"/>
+                        android:fontFamily="@font/montserratsemibold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/txtCityHotel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txtPriceHotel"
+                    android:layout_below="@id/txtNameHotel"
                     tools:text="cidade do hotel"
-                    android:textSize="12sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/txtStateHotel"
@@ -70,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/txtCityHotel"
                     tools:text="estado do hotel"
-                    android:textSize="12sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/txtAmenitiesHotel"
@@ -78,12 +82,14 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/txtStateHotel"
                     tools:text="sala de tv, sala de jogos, banheira"
-                    android:textSize="12sp"/>
+                    android:fontFamily="@font/montserratsemibold"
+                    android:textSize="16sp"/>
 
                 <ImageView
                     android:id="@+id/imvStars"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:layout_below="@+id/txtAmenitiesHotel"
                     android:src="@drawable/ic_star">
                 </ImageView>
@@ -98,8 +104,24 @@
                     android:layout_alignBottom="@+id/imvStars"
                     android:gravity="center"
                     tools:text="5 Estrelas"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="12sp"/>
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/txtHuFreeCancellationHotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtPriceHotel"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@id/txtStarHotel"
+                    android:layout_alignBottom="@id/txtStarHotel"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/huFreeCancellationLabel"
+                    android:fontFamily="@font/montserratsemibold"
+                    android:textColor="@color/green"
+                    android:textSize="14sp"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
         </RelativeLayout>

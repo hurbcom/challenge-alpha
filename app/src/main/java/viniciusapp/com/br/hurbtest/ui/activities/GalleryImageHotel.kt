@@ -15,9 +15,10 @@ class GalleryImageHotel: BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gallery_image_hotel)
 
+        // recebendo o obj da tela anterior.
         hotelGalleryDetail = intent.getSerializableExtra("imageHotel") as ArrayList<GalleryModel>
-        initComponents(hotelGalleryDetail)
 
+        initComponents(hotelGalleryDetail)
     }
 
     private fun initComponents(gallery: List<GalleryModel>) {
@@ -27,11 +28,9 @@ class GalleryImageHotel: BaseActivity() {
 
         recycler.layoutManager = LinearLayoutManager(applicationContext, RecyclerView.HORIZONTAL, false)
         recycler.adapter = ImageGalleryAdapter(gallery, object : ImageGalleryAdapter.Listener{
-
             override fun onClick(url: String) {
                 sdvImageHotelDetail.setImageURI(url)
             }
         })
     }
-
 }

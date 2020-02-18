@@ -24,8 +24,8 @@ class MainViewModel: ViewModel() {
             .subscribe({
                 hotels -> hotelsLiveData.value = hotels.results
             }, {
-                errorLiveData.value = "Erro Genérico"
-                Log.d("Erro Genérico", it.message!!)
+                errorLiveData.value = "Resultado não encontrado, por favor tente novamente mais tarde"
+                Log.d("Error", it.message!!)
             }).apply { compositeDisposable.add(this) }
     }
 

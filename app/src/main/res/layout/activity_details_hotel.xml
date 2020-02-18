@@ -9,7 +9,7 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/sdvImageHotelDetail"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="256dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -20,68 +20,80 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/sdvImageHotelDetail"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_centerInParent="true">
 
-<!--        <TextView-->
-<!--            android:id="@+id/txtNameHotel"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:maxLines="2"-->
-<!--            tools:text="nome do hotel"-->
-<!--            android:textSize="14sp"/>-->
+        <TextView
+            android:id="@+id/txtCityHotelDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="cidade do hotel"
+            android:textColor="@color/grey"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"/>
 
-<!--        <TextView-->
-<!--            android:id="@+id/txtPriceHotel"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/txtNameHotel"-->
-<!--            tools:text="preço do hotel"-->
-<!--            android:textSize="12sp"/>-->
+        <TextView
+            android:id="@+id/txtNameHotelDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="nome do hotel"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/txtCityHotelDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/montserratsemibold"
+            android:textSize="24sp"/>
 
-<!--        <TextView-->
-<!--            android:id="@+id/txtCityHotel"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/txtPriceHotel"-->
-<!--            tools:text="cidade do hotel"-->
-<!--            android:textSize="12sp"/>-->
+        <TextView
+            android:id="@+id/txtDescriptionHotelDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="descrição do hotel"
+            app:layout_constraintTop_toBottomOf="@+id/txtNameHotelDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/montserratsemibold"
+            android:textSize="16sp"/>
 
-<!--        <TextView-->
-<!--            android:id="@+id/txtStateHotel"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/txtCityHotel"-->
-<!--            tools:text="estado do hotel"-->
-<!--            android:textSize="12sp"/>-->
+        <TextView
+            android:id="@+id/txtAmenitiesHotelDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="sala de tv, sala de jogos, banheira"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescriptionHotelDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/montserratsemibold"
+            android:textSize="16sp"/>
 
-<!--        <TextView-->
-<!--            android:id="@+id/txtAmenitiesHotel"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/txtStateHotel"-->
-<!--            tools:text="sala de tv, sala de jogos, banheira"-->
-<!--            android:textSize="12sp"/>-->
+        <TextView
+            android:id="@+id/txtOfferHotelDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/offerLabel"
+            app:layout_constraintTop_toBottomOf="@+id/txtAmenitiesHotelDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/darkBlue"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserratsemibold"
+            android:textSize="16sp"/>
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imvStars"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/txtAmenitiesHotel"-->
-<!--            android:src="@drawable/ic_star">-->
-<!--        </ImageView>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/txtStarHotel"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/txtAmenitiesHotel"-->
-<!--            android:layout_toEndOf="@+id/imvStars"-->
-<!--            android:layout_alignTop="@+id/imvStars"-->
-<!--            android:layout_alignBottom="@+id/imvStars"-->
-<!--            android:gravity="center"-->
-<!--            tools:text="5 Estrelas"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="12sp"/>-->
+        <TextView
+            android:id="@+id/txtPriceHotelDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txtAmenitiesHotelDetail"
+            app:layout_constraintBottom_toBottomOf="@+id/txtOfferHotelDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="preço do hotel"
+            android:textColor="@color/black"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserratsemibold"
+            android:textSize="16sp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

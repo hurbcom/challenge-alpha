@@ -37,8 +37,8 @@ class MainActivity : BaseActivity() {
         )
 
         imbSearch.setOnClickListener {
-            searchCity = edtSearch.text.toString()
-            callHotels()
+            // metodo que aplica a busca de acordo com o que o usuario digitou.
+            searchHotels()
         }
     }
 
@@ -62,5 +62,11 @@ class MainActivity : BaseActivity() {
 
     private fun loadingList(loading: Boolean, progressBar: ProgressBar) {
         progressBar.visibility = if (loading) View.VISIBLE else View.GONE
+    }
+
+    private fun searchHotels() {
+        searchCity = edtSearch.text.toString()
+        // metodo que efetua a request pra API e retorna a lista de hoteis.
+        callHotels()
     }
 }

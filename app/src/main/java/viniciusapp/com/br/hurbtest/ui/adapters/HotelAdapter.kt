@@ -40,16 +40,24 @@ class HotelAdapter(private var context: Context, private val items: List<Results
             val txtStateHotel = itemView.findViewById<TextView>(R.id.txtStateHotel)
             val txtAmenitiesHotel = itemView.findViewById<TextView>(R.id.txtAmenitiesHotel)
             val txtStarHotel = itemView.findViewById<TextView>(R.id.txtStarHotel)
+            val txtFreeCancellation = itemView.findViewById<TextView>(R.id.txtHuFreeCancellationHotel)
 
+            // elvis operator caso nao tenha dados no objeto.
             txtNameHotel.text = item.nameHotel ?: "No Name"
             txtPriceHotel.text = MonetaryFormatter.format(item.price?.amountPerDay) ?: "No Price"
             txtCityHotel.text = item.address?.city ?: "No City"
             txtStateHotel.text = item.address?.state ?: "No State"
             txtStarHotel.text = item.stars ?: "No Stars"
 
+            if(item.hu_free_cancellation == true) {
+                txtFreeCancellation.visibility = View.VISIBLE
+            }
+
+            // carregando/exibindo a imagem do hotel.
             val uriPath = item.image
             sdvImageHotel.setImageURI(uriPath)
 
+            // condição para trazer somente 3 amenidades na tela inicial.
             if(!item.amenities.isNullOrEmpty()) {
                 val sbAmenities: StringBuilder = StringBuilder()
                 for((index, amenity) in item.amenities!!.withIndex()) {
@@ -64,6 +72,7 @@ class HotelAdapter(private var context: Context, private val items: List<Results
                 txtAmenitiesHotel.text = sbAmenities.toString()
             }
 
+            // evento de click para a tela de detalhes, com o objeto sendo passado via Intent.
             cdvListHotel.setOnClickListener {
                 val i = Intent(context, HotelDetailsActivity::class.java)
                 i.putExtra("hotelDetail", item)

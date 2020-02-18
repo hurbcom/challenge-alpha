@@ -33,4 +33,4 @@ data class PriceModel(
     @field:SerializedName("amountPerDay")
     var amountPerDay: Double? = null
 
-): Serializable
+) : Serializable

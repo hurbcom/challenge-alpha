@@ -8,4 +8,4 @@ data class AmenitiesModel(
     var name: String? = null,
     @field:SerializedName("category")
     var category: String? = null
-): Serializable
+) : Serializable

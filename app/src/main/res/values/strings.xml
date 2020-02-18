@@ -1,4 +1,16 @@
 <resources>
-    <string name="app_name">HurbTest</string>
+    <string name="app_name">Hurb Hotels</string>
+
+    --------- Splash Screen Activity --------
+    <string name="devName">Designed by A.Vinicius</string>
+
+    --------- Main Activity ----------
     <string name="hurbHotels">Hurb Hotels</string>
+    <string name="hurbHintSearch">Pesquise um destino ou hotel</string>
+
+    --------- Hotel Adapter ----------
+    <string name="huFreeCancellationLabel">Cancelamento Grátis!</string>
+
+    --------- Hotel Details Activity ----------
+    <string name="offerLabel">Garanta já sua reserva! por apenas:</string>
 </resources>

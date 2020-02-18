@@ -9,4 +9,4 @@ data class GalleryModel(
     @field:SerializedName("url")
     var url: String? = null
 
-): Serializable
+) : Serializable

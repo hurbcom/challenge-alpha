@@ -16,4 +16,4 @@ data class TaxesModel(
     var currency: String? = null,
     @field:SerializedName("currency_original")
     var currency_original: String? = null
-): Serializable
+) : Serializable
