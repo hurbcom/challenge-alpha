@@ -1,3 +1,3 @@
-Your name: ___
-Your Github homepage: ___
-Original challenge URL: http://github.com/hurbcom/challenge-___
+Your name: Ariel Vinicius (ViniciusApp or ViniciusCyber)
+Your Github homepage: https://github.com/ViniciusApp?tab=repositories
+Original challenge URL: http://github.com/hurbcom/challenge-alpha
