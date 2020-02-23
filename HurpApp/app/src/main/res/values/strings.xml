@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hotéis</string>
+    <string name="city_name">Nome da cidade</string>
+    <string name="state_name">Nome do Estado</string>
+    <string name="money">R$ 4.000,00</string>
+    <string name="empty">Sem resultados</string>
+    <string name="failed">Algo deu errado!</string>
+</resources>

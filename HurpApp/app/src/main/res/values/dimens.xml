@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_wide">10dp</dimen>
+    <dimen name="box_text_size">24sp</dimen>
+    <dimen name="cardview_height">300dp</dimen>
+    <dimen name="card_view_image">180dp</dimen>
+    <dimen name="icon_dimen">20dp</dimen>
+    <dimen name="text_size_item">18sp</dimen>
+    <dimen name="text_size_price">30sp</dimen>
+</resources>

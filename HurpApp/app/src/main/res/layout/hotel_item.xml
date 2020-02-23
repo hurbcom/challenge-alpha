@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="hotel"
+            type="app.recrutamento.android.challengealpha.model.hotel.Hotel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cardview_height"
+        android:layout_margin="@dimen/margin_wide"
+        android:elevation="@dimen/margin_wide">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgHotel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_view_image"
+                imageUrl="@{hotel.image}"
+                android:scaleType="fitXY"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtHotelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:maxLength="30"
+                android:text="@{hotel.name}"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_item"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel" />
+
+            <TextView
+                android:id="@+id/txtCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:maxLength="20"
+                android:text="@{hotel.address.city}"
+                android:textSize="@dimen/text_size_item"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtHotelName" />
+
+            <TextView
+                android:id="@+id/txtState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:maxLength="25"
+                android:text="@{hotel.address.state}"
+                android:textSize="@dimen/text_size_item"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/txtCity"
+                app:layout_constraintTop_toBottomOf="@+id/txtHotelName" />
+
+
+            <ImageView
+                android:id="@+id/amenityOne"
+                android:layout_width="@dimen/icon_dimen"
+                android:layout_height="@dimen/icon_dimen"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:src="@drawable/ic_car"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCity" />
+
+            <ImageView
+                android:id="@+id/amenityTwo"
+                android:layout_width="@dimen/icon_dimen"
+                android:layout_height="@dimen/icon_dimen"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:src="@drawable/ic_wifi"
+                app:layout_constraintStart_toEndOf="@id/amenityOne"
+                app:layout_constraintTop_toBottomOf="@+id/txtCity" />
+
+            <ImageView
+                android:id="@+id/amenityThree"
+                android:layout_width="@dimen/icon_dimen"
+                android:layout_height="@dimen/icon_dimen"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:src="@drawable/ic_laundry"
+                app:layout_constraintStart_toEndOf="@id/amenityTwo"
+                app:layout_constraintTop_toBottomOf="@+id/txtCity" />
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:text="@{`R$ ` + hotel.price.currentPrice.toString()}"
+                android:textColor="@color/colorSecondary"
+                android:textSize="@dimen/text_size_price"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtState" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
