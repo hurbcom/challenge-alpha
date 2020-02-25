@@ -7,11 +7,12 @@
         <variable
             name="hotel"
             type="app.recrutamento.android.challengealpha.model.hotel.Hotel" />
+
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/cardview_height"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_wide"
         android:elevation="@dimen/margin_wide">
 
@@ -69,36 +70,93 @@
                 app:layout_constraintStart_toEndOf="@id/txtCity"
                 app:layout_constraintTop_toBottomOf="@+id/txtHotelName" />
 
+            <RatingBar
+                android:id="@+id/ratingBar"
+                app:layout_constraintTop_toBottomOf="@id/txtState"
+                android:layout_width="wrap_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:rating="@{hotel.stars}"
+                app:layout_constraintStart_toStartOf="parent"
+                android:numStars="5"/>
 
             <ImageView
                 android:id="@+id/amenityOne"
                 android:layout_width="@dimen/icon_dimen"
                 android:layout_height="@dimen/icon_dimen"
                 android:layout_marginStart="@dimen/margin_wide"
-                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
                 android:src="@drawable/ic_car"
+                imageUrl="@{hotel.amenities.size() > 0 ? hotel.amenities.get(0) : null}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtCity" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
             <ImageView
                 android:id="@+id/amenityTwo"
                 android:layout_width="@dimen/icon_dimen"
                 android:layout_height="@dimen/icon_dimen"
                 android:layout_marginStart="@dimen/margin_wide"
-                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
                 android:src="@drawable/ic_wifi"
+                imageUrl="@{hotel.amenities.size() > 1 ? hotel.amenities.get(1) : null}"
                 app:layout_constraintStart_toEndOf="@id/amenityOne"
-                app:layout_constraintTop_toBottomOf="@+id/txtCity" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
             <ImageView
                 android:id="@+id/amenityThree"
                 android:layout_width="@dimen/icon_dimen"
                 android:layout_height="@dimen/icon_dimen"
                 android:layout_marginStart="@dimen/margin_wide"
-                android:layout_marginTop="@dimen/margin_wide"
                 android:src="@drawable/ic_laundry"
+                android:layout_marginBottom="@dimen/margin_wide"
+                app:layout_constraintBottom_toBottomOf="parent"
+                imageUrl="@{hotel.amenities.size() > 2 ? hotel.amenities.get(2) : null}"
                 app:layout_constraintStart_toEndOf="@id/amenityTwo"
-                app:layout_constraintTop_toBottomOf="@+id/txtCity" />
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+
+            <TextView
+                android:id="@+id/amenityOneName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:textSize="12sp"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:text="@{hotel.amenities.size() > 0 ? hotel.amenities.get(0).name : null}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amenityOne" />
+
+            <TextView
+                android:id="@+id/amenityTwoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:text="@{hotel.amenities.size() > 1 ? hotel.amenities.get(1).name : null}"
+                app:layout_constraintStart_toEndOf="@id/amenityOneName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amenityTwo" />
+
+            <TextView
+                android:id="@+id/amenityThreeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:textSize="12sp"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@{hotel.amenities.size() > 2 ? hotel.amenities.get(2).name : null}"
+                app:layout_constraintStart_toEndOf="@id/amenityTwoName"
+                app:layout_constraintTop_toBottomOf="@+id/amenityThree" />
 
             <TextView
                 android:id="@+id/txtPrice"

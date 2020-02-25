@@ -1,21 +1,17 @@
 package app.recrutamento.android.challengealpha.ui.hotellist
 
 import android.app.Application
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.recrutamento.android.challengealpha.R
 import app.recrutamento.android.challengealpha.model.hotel.Hotel
 import app.recrutamento.android.challengealpha.repository.HotelRepository
-import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import java.util.concurrent.TimeUnit
+import timber.log.Timber
 
 class HotelListViewModel(
     private val repository: HotelRepository,
@@ -27,20 +23,24 @@ class HotelListViewModel(
     val message = ObservableField<String>()
     private var myJob: Job? = null
 
-    fun load(local: String, pageNumber: String){
+    fun load(local: String, pageNumber: String, numberStars: String) {
         loading.set(true)
         message.set("")
 
         myJob = viewModelScope.launch {
             repository.listAllHotels(local, pageNumber, { items ->
-                hotel.postValue(items.toMutableList())
+
+                items.forEach { Timber.d(it.toString()) }
 
                 if (items.isEmpty()) {
                     message.set(application.getString(R.string.empty))
                 }
+
+                searchAndSort(items, numberStars)
+
                 loading.set(false)
-                items.sortByDescending { it.stars }
-                items.addAll(items)
+                message.set("")
+
             }, {
                 message.set(application.getString(R.string.failed))
                 loading.set(false)
@@ -48,5 +48,18 @@ class HotelListViewModel(
         }
     }
 
+    private fun searchAndSort(items: MutableList<Hotel>, numberStars: String) {
+        var hotels = ArrayList<Hotel>()
+
+        if (numberStars.isEmpty())
+            hotels.addAll(items)
+
+        if (numberStars.isNotEmpty())
+            hotels.addAll(items.filter { it.stars == numberStars.toInt() })
+
+        hotels.sortByDescending { it.stars }
+
+        hotel.postValue(hotels.toMutableList())
+    }
 }
 

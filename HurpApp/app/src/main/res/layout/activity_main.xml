@@ -5,11 +5,33 @@
     android:layout_height="match_parent"
     tools:context=".ui.activities.MainActivity">
 
-    <include android:id="@+id/toolbar" layout="@layout/toolbar" />
-    
+    <include android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/txtSubtitle"
+        android:text="@string/amenities_list"
+        android:layout_below="@id/toolbar"
+        android:layout_width="wrap_content"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginStart="@dimen/margin_wide"
+        android:layout_marginTop="18dp"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:layout_below="@id/toolbar"
+        android:layout_width="50dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_grid_off"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_alignParentEnd="true"
+        android:layout_height="50dp"/>
+
     <FrameLayout
         android:id="@+id/content_frame"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/txtSubtitle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="8dp"

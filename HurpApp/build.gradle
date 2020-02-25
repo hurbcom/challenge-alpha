@@ -17,6 +17,9 @@ buildscript {
     ext.espresso_core_version = '3.2.0'
     ext.lifecycle_version = "2.2.0"
     ext.lottie_version="2.7.0"
+    ext.timber_version = "4.7.1"
+    ext.paging_version = "1.0.1"
+    ext.clans_version = "1.6.4"
 
     repositories {
         google()

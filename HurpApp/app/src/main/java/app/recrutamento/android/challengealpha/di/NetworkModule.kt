@@ -1,6 +1,5 @@
 package app.recrutamento.android.challengealpha.di
 
-import android.util.Log
 import app.recrutamento.android.challengealpha.repository.api.HotelApiService
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -10,6 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import timber.log.Timber
 
 
 val networkModule = module {
@@ -17,7 +17,9 @@ val networkModule = module {
         .setLenient()
         .create()
     factory<Interceptor> {
-        HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { Log.d("API", it) })
+        HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
+            Timber.tag("OKHttp").d(it)
+        })
             .setLevel(HttpLoggingInterceptor.Level.HEADERS)
     }
 
@@ -32,6 +34,6 @@ val networkModule = module {
             .build()
     }
 
-    factory{ get<Retrofit>().create(HotelApiService::class.java) }
+    factory { get<Retrofit>().create(HotelApiService::class.java) }
 
 }

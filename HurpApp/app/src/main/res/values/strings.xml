@@ -5,4 +5,5 @@
     <string name="money">R$ 4.000,00</string>
     <string name="empty">Sem resultados</string>
     <string name="failed">Algo deu errado!</string>
+    <string name="amenities_list">Lista de Legendas</string>
 </resources>

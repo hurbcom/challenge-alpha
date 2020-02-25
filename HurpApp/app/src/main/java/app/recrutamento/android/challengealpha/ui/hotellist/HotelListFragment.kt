@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import app.recrutamento.android.challengealpha.R
 import app.recrutamento.android.challengealpha.adapters.HotelAdapter
 import app.recrutamento.android.challengealpha.adapters.general.BindingAdapters
 import app.recrutamento.android.challengealpha.databinding.HotelListFragmentBinding
@@ -16,9 +18,14 @@ import app.recrutamento.android.challengealpha.model.hotel.Hotel
 import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*
 
-class HotelListFragment : Fragment() {
+class HotelListFragment : Fragment(), SearchView.OnQueryTextListener, View.OnClickListener {
 
     val vm: HotelListViewModel by viewModel()
+    lateinit var searchView: SearchView
+    var localText: String = ""
+    lateinit var optStarFive: com.github.clans.fab.FloatingActionButton
+    lateinit var optStarFour: com.github.clans.fab.FloatingActionButton
+    lateinit var optStarThree: com.github.clans.fab.FloatingActionButton
 
     companion object {
         fun newInstance(): HotelListFragment {
@@ -44,8 +51,24 @@ class HotelListFragment : Fragment() {
             )
         )
 
+        searchView = binding.searchView as SearchView
+        optStarFive = binding.optStarFive
+        optStarFour = binding.optStarFour
+        optStarThree = binding.optStarThree
+        optStarFive.setOnClickListener(this)
+        optStarFour.setOnClickListener(this)
+        optStarThree.setOnClickListener(this)
+
+        searchView.setOnQueryTextListener(this)
+        searchView.isIconifiedByDefault = false
+
         val observer =
-            Observer<MutableList<Hotel>> { t -> BindingAdapters.setItems(binding.recyclerView, t!!.toMutableList()) }
+            Observer<MutableList<Hotel>> { t ->
+                BindingAdapters.setItems(
+                    binding.recyclerView,
+                    t!!.toMutableList()
+                )
+            }
 
         vm.hotel.observe(viewLifecycleOwner, observer)
 
@@ -54,6 +77,27 @@ class HotelListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        vm.load("buzios","1")
+        localText = "buzios"
+        vm.load("buzios", "1","")
     }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        return false
+    }
+
+    override fun onQueryTextChange(local: String): Boolean {
+        localText = local
+        vm.load(local, "1","")
+        return false
+    }
+
+    override fun onClick(v: View?) {
+
+        when (v!!.id) {
+            R.id.optStarFive -> vm.load(localText, "1","5")
+            R.id.optStarFour -> vm.load(localText, "1","4")
+            R.id.optStarThree -> vm.load(localText, "1","3")
+        }
+    }
+
 }
