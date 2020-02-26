@@ -1,7 +1,7 @@
 package app.recrutamento.android.challengealpha.di
 
 import app.recrutamento.android.challengealpha.repository.HotelRepository
-import app.recrutamento.android.challengealpha.repository.remotedata.HotelRemoteDataSource
+import app.recrutamento.android.challengealpha.repository.api.remotedata.HotelRemoteDataSource
 import org.koin.dsl.module.module
 
 val repositoryModule = module {

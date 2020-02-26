@@ -1,7 +1,7 @@
 package app.recrutamento.android.challengealpha.repository
 
 import app.recrutamento.android.challengealpha.model.hotel.Hotel
-import app.recrutamento.android.challengealpha.repository.remotedata.HotelRemoteDataSource
+import app.recrutamento.android.challengealpha.repository.api.remotedata.HotelRemoteDataSource
 
 class HotelRepository(private val hotelRemoteDataSource: HotelRemoteDataSource) {
 

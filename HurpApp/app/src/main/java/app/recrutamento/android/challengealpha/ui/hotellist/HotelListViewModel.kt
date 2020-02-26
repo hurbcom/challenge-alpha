@@ -61,5 +61,6 @@ class HotelListViewModel(
 
         hotel.postValue(hotels.toMutableList())
     }
+
 }
 

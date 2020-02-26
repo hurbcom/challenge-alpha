@@ -1,13 +1,14 @@
-package app.recrutamento.android.challengealpha.repository.remotedata
+package app.recrutamento.android.challengealpha.repository.api.remotedata
 
 import androidx.paging.PageKeyedDataSource
 import app.recrutamento.android.challengealpha.model.hotel.Hotel
 import app.recrutamento.android.challengealpha.repository.api.HotelApiService
-import app.recrutamento.android.challengealpha.repository.api.remotedata.HotelDataSource
 import kotlinx.coroutines.*
+import timber.log.Timber
+import java.lang.Exception
 
 open class HotelRemoteDataSource(
-    val hotelApiService: HotelApiService
+    private val hotelApiService: HotelApiService
 ) :
     HotelDataSource,PageKeyedDataSource<Int, Hotel?>() {
 
@@ -19,20 +20,24 @@ open class HotelRemoteDataSource(
         success: (MutableList<Hotel>) -> Unit,
         failure: () -> Unit
     ) {
-
         myJob = CoroutineScope(Dispatchers.Main).launch {
-            val result = hotelApiService.listHotel(local, pageNumber).await()
+            try {
+                val result = hotelApiService.listHotel(local, pageNumber).await()
 
-            withContext(Dispatchers.Main) {
-                val itens = result.body()?.results
-                if (result.isSuccessful) {
-                    if (itens!!.isEmpty()) {
+                withContext(Dispatchers.Main) {
+                    val itens = result.body()?.results
+                    if (result.isSuccessful) {
+                        if (itens!!.isEmpty()) {
+                            failure()
+                        }
+                        success(itens)
+                    } else {
                         failure()
                     }
-                    success(itens)
-                } else {
-                    failure()
                 }
+            }catch (ex: Exception){
+                Timber.e(ex)
+                failure()
             }
         }
     }
@@ -51,6 +56,4 @@ open class HotelRemoteDataSource(
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Hotel?>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
-
 }

@@ -4,6 +4,7 @@
 
     <data>
 
+        <import type="android.view.View"/>
         <variable
             name="hotel"
             type="app.recrutamento.android.challengealpha.model.hotel.Hotel" />
@@ -88,8 +89,8 @@
                 android:layout_height="@dimen/icon_dimen"
                 android:layout_marginStart="@dimen/margin_wide"
                 android:layout_marginBottom="@dimen/margin_wide"
-                android:src="@drawable/ic_car"
                 imageUrl="@{hotel.amenities.size() > 0 ? hotel.amenities.get(0) : null}"
+                android:visibility="@{hotel.amenities.size() > 0 ? View.VISIBLE : View.GONE}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
@@ -100,7 +101,7 @@
                 android:layout_height="@dimen/icon_dimen"
                 android:layout_marginStart="@dimen/margin_wide"
                 android:layout_marginBottom="@dimen/margin_wide"
-                android:src="@drawable/ic_wifi"
+                android:visibility="@{hotel.amenities.size() > 1 ? View.VISIBLE : View.GONE}"
                 imageUrl="@{hotel.amenities.size() > 1 ? hotel.amenities.get(1) : null}"
                 app:layout_constraintStart_toEndOf="@id/amenityOne"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -111,13 +112,12 @@
                 android:layout_width="@dimen/icon_dimen"
                 android:layout_height="@dimen/icon_dimen"
                 android:layout_marginStart="@dimen/margin_wide"
-                android:src="@drawable/ic_laundry"
+                android:visibility="@{hotel.amenities.size() > 2 ? View.VISIBLE : View.GONE}"
                 android:layout_marginBottom="@dimen/margin_wide"
                 app:layout_constraintBottom_toBottomOf="parent"
                 imageUrl="@{hotel.amenities.size() > 2 ? hotel.amenities.get(2) : null}"
                 app:layout_constraintStart_toEndOf="@id/amenityTwo"
                 app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
-
 
             <TextView
                 android:id="@+id/amenityOneName"

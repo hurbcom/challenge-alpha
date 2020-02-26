@@ -6,6 +6,10 @@
     <dimen name="card_view_image">180dp</dimen>
     <dimen name="icon_dimen">20dp</dimen>
     <dimen name="text_size_item">18sp</dimen>
+    <dimen name="text_size_item_grid">12sp</dimen>
     <dimen name="text_size_price">30sp</dimen>
     <dimen name="margin_min_dimen">5dp</dimen>
+    <dimen name="grid_dimen">200dp</dimen>
+    <dimen name="grid_dimen_height">200</dimen>
+    <dimen name="image_size_grid">140dp</dimen>
 </resources>
