@@ -71,7 +71,8 @@ dependencies {
     testImplementation "androidx.arch.core:core-testing:$archTestingVersion"
     implementation "android.arch.persistence.room:runtime:1.1.1"
     kapt "android.arch.persistence.room:compiler:1.1.1"
-    androidTestImplementation 'org.mockito:mockito-android:2.24.5'
-    testImplementation 'org.mockito:mockito-core:2.24.5'
+    testImplementation "org.mockito:mockito-core:$mockito_core_version"
+    androidTestImplementation "org.mockito:mockito-android:$mockito_android_version"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version"
 
 }

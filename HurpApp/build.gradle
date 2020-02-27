@@ -25,7 +25,9 @@ buildscript {
     ext.androidXTestCoreVersion = '1.2.0'
     ext.robolectricVersion = '4.3.1'
     ext.archTestingVersion = '2.0.0'
-
+    ext.mockito_core_version = '2.22.0'
+    ext.mockito_android_version = '2.22.0'
+    ext.mockito_kotlin_version = '2.0.0-RC2'
 
     repositories {
         google()

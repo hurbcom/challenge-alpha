@@ -106,7 +106,7 @@ class HotelListFragment : Fragment(), SearchView.OnQueryTextListener, View.OnCli
     override fun onStart() {
         super.onStart()
         localText = "buzios"
-        vm.load("buzios", "1", "", isGridLayout)
+        vm.load("buzios", "1", "")
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
@@ -116,16 +116,16 @@ class HotelListFragment : Fragment(), SearchView.OnQueryTextListener, View.OnCli
     override fun onQueryTextChange(local: String): Boolean {
         localText = local
         if (!localText.isEmpty())
-            vm.load(local, "1", "", isGridLayout)
+            vm.load(local, "1", "")
         return false
     }
 
     override fun onClick(v: View?) {
 
         when (v!!.id) {
-            R.id.optStarFive -> vm.load(localText, "1", "5", isGridLayout)
-            R.id.optStarFour -> vm.load(localText, "1", "4", isGridLayout)
-            R.id.optStarThree -> vm.load(localText, "1", "3", isGridLayout)
+            R.id.optStarFive -> vm.load(localText, "1", "5")
+            R.id.optStarFour -> vm.load(localText, "1", "4")
+            R.id.optStarThree -> vm.load(localText, "1", "3")
         }
     }
 
