@@ -27,6 +27,10 @@ android {
     dataBinding {
         enabled = true
     }
+
+    testOptions.unitTests {
+        includeAndroidResources = true
+    }
 }
 
 dependencies {
@@ -56,5 +60,18 @@ dependencies {
     implementation "com.jakewharton.timber:timber:$timber_version"
     implementation "android.arch.paging:runtime:$paging_version"
     implementation "com.github.clans:fab:$clans_version"
+
+
+    testImplementation "org.hamcrest:hamcrest-all:$hamcrestVersion"
+    testImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
+    testImplementation "androidx.test:core-ktx:$androidXTestCoreVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation "androidx.arch.core:core-testing:$archTestingVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$archTestingVersion"
+    testImplementation "androidx.arch.core:core-testing:$archTestingVersion"
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+    androidTestImplementation 'org.mockito:mockito-android:2.24.5'
+    testImplementation 'org.mockito:mockito-core:2.24.5'
 
 }

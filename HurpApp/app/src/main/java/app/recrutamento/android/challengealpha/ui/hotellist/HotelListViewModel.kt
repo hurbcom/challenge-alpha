@@ -23,7 +23,7 @@ class HotelListViewModel(
     val message = ObservableField<String>()
     private var myJob: Job? = null
 
-    fun load(local: String, pageNumber: String, numberStars: String) {
+    fun load(local: String, pageNumber: String, numberStars: String, isGridLayout: Boolean) {
         loading.set(true)
         message.set("")
 
@@ -46,9 +46,10 @@ class HotelListViewModel(
                 loading.set(false)
             })
         }
+
     }
 
-    private fun searchAndSort(items: MutableList<Hotel>, numberStars: String) {
+    fun searchAndSort(items: MutableList<Hotel>, numberStars: String): MutableList<Hotel> {
         var hotels = ArrayList<Hotel>()
 
         if (numberStars.isEmpty())
@@ -60,6 +61,8 @@ class HotelListViewModel(
         hotels.sortByDescending { it.stars }
 
         hotel.postValue(hotels.toMutableList())
+
+        return hotels.toMutableList()
     }
 
 }
