@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/MaximaSistemas/novo/pedido-venda/pedidodevendas/src/main/java/portalexecutivosales/android/BLL/Pedidos.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/MaximaSistemas/novo/pedido-venda/pedidodevendas/src/main/java/portalexecutivosales/android/fragments/FiltroDeProdutosLegendasFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/MaximaSistemas/novo/pedido-venda/pedidodevendas/src/main/java/portalexecutivosales/android/utilities/UtilitiesManipulacaoPedido.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/MaximaSistemas/novo/pedido-vendaordil/gradle.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/MaximaSistemas/novo/pedido-vendaordil/pedidodevendas/src/main/java/portalexecutivosales/android/BLL/Produtos.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/app/recrutamento/android/challengealpha/ui/activities/HotelListFragmentTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/app/recrutamento/android/challengealpha/ui/activities/MainActivityClass.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/app/recrutamento/android/challengealpha/ui/activities/SearchCity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/app/recrutamento/android/challengealpha/ui/hotellist/HotelListFragmentTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/app/recrutamento/android/challengealpha/adapters/SubtitleAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/app/recrutamento/android/challengealpha/adapters/general/BindingAdapters.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/app/recrutamento/android/challengealpha/model/CategoryAmenitySubtitle.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/app/recrutamento/android/challengealpha/repository/api/remotedata/HotelRemoteDataSource.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/app/recrutamento/android/challengealpha/ui/activities/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/app/recrutamento/android/challengealpha/ui/hotellist/HotelListFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/app/recrutamento/android/challengealpha/ui/hotellist/HotelListViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/hotel_item_grid.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/subtitle_item.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/subtitle_list.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/app/recrutamento/android/challengealpha/HotelMock.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/app/recrutamento/android/challengealpha/Mock.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/app/recrutamento/android/challengealpha/repository/api/remotedata/HotelRemoteDataSourceTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/app/recrutamento/android/challengealpha/ui/activities/MainActivityTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/app/recrutamento/android/challengealpha/ui/hotellist/HotelListViewModelTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/gradle.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
