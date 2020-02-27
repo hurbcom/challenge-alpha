@@ -20,9 +20,4 @@ class BindingAdapters {
         }
     }
 
-    @BindingAdapter("imageUrl")
-    fun bindImage(imageView: ImageView, url: String?) {
-        Picasso.get().load(url).into(imageView)
-    }
-
 }

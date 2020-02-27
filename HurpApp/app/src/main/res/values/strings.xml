@@ -6,4 +6,5 @@
     <string name="empty">Sem resultados</string>
     <string name="failed">Algo deu errado!</string>
     <string name="amenities_list">Lista de Legendas</string>
+    <string name="subtitle">Legenda qualquer aqui</string>
 </resources>

@@ -9,16 +9,15 @@ import org.junit.Assert.assertThat
 import org.junit.Test
 import org.koin.test.KoinTest
 
-class HotelListViewModelTest : KoinTest{
+class HotelListViewModelTest : KoinTest {
 
-    private val hotelDataSource:HotelRemoteDataSource = mock()
-    private val repository:HotelRepository = HotelRepository(hotelDataSource)
+    private val hotelDataSource: HotelRemoteDataSource = mock()
+    private val repository: HotelRepository = HotelRepository(hotelDataSource)
     private val hotelListViewModel = HotelListViewModel(repository, mock())
 
     @Test
-    fun searchAndSort_threeStars_loading(){
-        val hotelsSorted = hotelListViewModel.searchAndSort(HotelMock.hotelList,"3")
-        assertThat(hotelsSorted,`is` (HotelMock.HotelListFilteredThreeStars))
+    fun searchAndSort_threeStars_loading() {
+        val hotelsSorted = hotelListViewModel.searchAndSort(HotelMock.hotelList, "3")
+        assertThat(hotelsSorted, `is`(HotelMock.HotelListFilteredThreeStars))
     }
-
 }

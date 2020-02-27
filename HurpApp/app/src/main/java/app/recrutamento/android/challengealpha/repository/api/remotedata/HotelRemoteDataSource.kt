@@ -9,8 +9,7 @@ import java.lang.Exception
 
 open class HotelRemoteDataSource(
     private val hotelApiService: HotelApiService
-) :
-    HotelDataSource,PageKeyedDataSource<Int, Hotel?>() {
+) : HotelDataSource {
 
     private var myJob: Job? = null
 
@@ -35,25 +34,10 @@ open class HotelRemoteDataSource(
                         failure()
                     }
                 }
-            }catch (ex: Exception){
+            } catch (ex: Exception) {
                 Timber.e(ex)
                 failure()
             }
         }
-    }
-
-    override fun loadInitial(
-        params: LoadInitialParams<Int>,
-        callback: LoadInitialCallback<Int, Hotel?>
-    ) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Hotel?>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Hotel?>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

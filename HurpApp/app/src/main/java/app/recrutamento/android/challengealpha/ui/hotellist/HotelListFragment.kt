@@ -20,7 +20,6 @@ import app.recrutamento.android.challengealpha.model.hotel.Hotel
 import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*
 
-
 class HotelListFragment : Fragment(), SearchView.OnQueryTextListener, View.OnClickListener {
 
     val vm: HotelListViewModel by viewModel()

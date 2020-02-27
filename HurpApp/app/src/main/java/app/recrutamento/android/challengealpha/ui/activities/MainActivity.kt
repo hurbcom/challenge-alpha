@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(){
         navigateToFragment(R.id.content_frame, HotelListFragment.newInstance(), "MainActivity")
     }
 
-    private fun changeToListOrGrid() {
+    fun changeToListOrGrid() {
         var bundle = Bundle()
         if(!isGridMode){
             img_grid_on_off.setImageDrawable(getDrawable(R.drawable.ic_grid_on))
