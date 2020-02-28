@@ -1,5 +1,8 @@
 package com.hurb.challengealpha.api
 
+import com.hurb.challengealpha.model.SearchResponse
+import com.hurb.challengealpha.model.SuggestionResponse
+import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -12,10 +15,13 @@ interface HurbApi {
     }
 
     @GET
-    fun search(@Query(QUERY_PARAM) q: String, @Query(PAGE_PARAM) page: Int)
+    fun search(
+        @Query(QUERY_PARAM) q: String,
+        @Query(PAGE_PARAM) page: Int
+    ): Observable<SearchResponse>
 
     @GET("suggestion")
-    fun suggestion(@Query(QUERY_PARAM) q: String)
+    fun suggestion(@Query(QUERY_PARAM) q: String): Observable<SuggestionResponse>
 
 
 }
