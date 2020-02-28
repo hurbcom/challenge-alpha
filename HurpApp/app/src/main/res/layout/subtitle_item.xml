@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/txtSubtitle"
-        android:text="@string/subtitle"
+        android:id="@+id/txtWashing"
+        android:text="@string/washing_cleaning"
         android:layout_width="wrap_content"
         android:layout_marginTop="@dimen/margin_wide"
         android:layout_marginStart="@dimen/margin_wide"
@@ -16,16 +16,250 @@
         android:layout_height="wrap_content" />
 
     <ImageView
-        android:id="@+id/amenityIcon"
-        android:src="@drawable/ic_car"
+        android:id="@+id/imgWashing"
+        android:src="@drawable/ic_cleaning_services"
         android:layout_width="@dimen/icon_dimen"
         android:layout_height="@dimen/icon_dimen"
         android:layout_marginTop="@dimen/margin_wide"
-        app:layout_constraintStart_toEndOf="@id/txtSubtitle"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="@dimen/margin_wide"
+        android:layout_marginEnd="@dimen/margin_wide"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginBottom="@dimen/margin_wide"/>
+
+    <TextView
+        android:id="@+id/txtGeneral"
+        android:text="@string/all"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/txtWashing"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgGeneral"
+        android:src="@drawable/ic_several"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/txtWashing"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+    <TextView
+        android:id="@+id/txtCommom"
+        android:text="@string/commom_area"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgGeneral"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgCommom"
+        android:src="@drawable/ic_commom_area"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgGeneral"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+
+    <TextView
+        android:id="@+id/txtFood"
+        android:text="@string/food"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgCommom"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgFood"
+        android:src="@drawable/ic_restaurant"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgCommom"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+
+    <TextView
+        android:id="@+id/txtBussiness"
+        android:text="@string/commom"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgFood"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgBussiness"
+        android:src="@drawable/ic_bussiness_room"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgFood"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+    <TextView
+        android:id="@+id/txtBus"
+        android:text="@string/transport"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgBussiness"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgBus"
+        android:src="@drawable/ic_bus"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgBussiness"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+    <TextView
+        android:id="@+id/txtPool"
+        android:text="@string/pool"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgBus"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgPool"
+        android:src="@drawable/ic_swimmer"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgBus"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+    <TextView
+        android:id="@+id/txtStore"
+        android:text="@string/store"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgPool"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgStore"
+        android:src="@drawable/ic_store"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgPool"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+    <TextView
+        android:id="@+id/txtReception"
+        android:text="@string/reception"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgStore"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgReception"
+        android:src="@drawable/ic_reception"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgStore"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+    <TextView
+        android:id="@+id/txtFamily"
+        android:text="@string/family"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgReception"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgFamily"
+        android:src="@drawable/ic_family"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgReception"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+    <TextView
+        android:id="@+id/txtTask"
+        android:text="@string/activity"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgFamily"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgTask"
+        android:src="@drawable/ic_activity"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgFamily"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+    <TextView
+        android:id="@+id/txtGeral"
+        android:text="@string/general"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgTask"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgGeral"
+        android:src="@drawable/ic_general_amenity"
+        android:layout_width="@dimen/icon_dimen"
+        android:layout_height="@dimen/icon_dimen"
+        android:layout_marginTop="@dimen/margin_wide"
+        app:layout_constraintTop_toBottomOf="@id/imgTask"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginBottom="@dimen/margin_wide"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

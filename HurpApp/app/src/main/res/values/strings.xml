@@ -7,4 +7,16 @@
     <string name="failed">Algo deu errado!</string>
     <string name="amenities_list">Lista de Legendas</string>
     <string name="subtitle">Legenda qualquer aqui</string>
+    <string name="washing_cleaning">Serviços de limpeza / Lavanderia</string>
+    <string name="general">Geral</string>
+    <string name="activity">Atividades</string>
+    <string name="family">Entretenimento e serviços para famílias</string>
+    <string name="reception">Serviços de recepção</string>
+    <string name="store">Lojas</string>
+    <string name="pool">Piscina e comodidades de bem-estar</string>
+    <string name="transport">Opções de transporte</string>
+    <string name="commom">Comodidades / Instalações para negócios</string>
+    <string name="food">Comida / Bebida</string>
+    <string name="commom_area">Áreas comuns</string>
+    <string name="all">Diversos</string>
 </resources>

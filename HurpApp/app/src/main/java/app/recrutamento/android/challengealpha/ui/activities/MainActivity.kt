@@ -1,5 +1,6 @@
 package app.recrutamento.android.challengealpha.ui.activities
 
+import android.app.Dialog
 import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Bundle
@@ -43,23 +44,11 @@ class MainActivity : AppCompatActivity(){
 
     fun withItems() {
 
-        val items = arrayOf(AmenityIcon.toString())
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("List of Items")
-
-            .setItems(items, null)
-
-        builder.setNegativeButton("CANCEL", null)
-        builder.setIcon(resources.getDrawable(R.drawable.ic_subtitle_icon, theme))
-
-        val alertDialog = builder.create()
-
-        alertDialog.show()
-
-        val button = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE)
-        button.setBackgroundColor(Color.BLACK)
-        button.setPadding(0, 0, 20, 0)
-        button.setTextColor(Color.WHITE)
+        val dialog = Dialog(this,R.style.Theme_AppCompat_Light_Dialog_Alert)
+        dialog.setContentView(R.layout.subtitle_item)
+        dialog.setTitle("Lista de Legendas")
+        dialog.show()
+        
     }
 
 }
