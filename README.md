@@ -9,13 +9,13 @@ Koin - para injeção de dependência;
 Coroutines - chamadas assíncronas ao servidor;
 MVVM - arquitetura do projeto;
 Livedata - atualizações dos dados que são enviados para View;
-Android Binding - para realizar o binding dos dados da view com o modelo
-Timber - para gerenciamento de Logs
-Junit - para testes unitários
-Hamcrest como estrutura de asserção
-Roboletric
-Espresso
-Mockito
+Android Binding - para realizar o binding dos dados da view com o modelo;
+Timber - para gerenciamento de Logs;
+Junit - para testes unitários;
+Hamcrest como estrutura de asserção;
+Roboletric;
+Espresso;
+Mockito;
 
 ## Requisitos Mínimos
 
@@ -53,6 +53,7 @@ estão abaixo.
 </p>
 
 Creio que no geral o layout ficou bom e intuitivo.
+No mais é isso, espero que gostem!
 
 <p align="center">
   <img src="pics/meme.png" alt="Challange done" />
