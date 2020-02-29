@@ -35,7 +35,7 @@ class ResultRemoteEntityMapper() :
     }
 
     private fun ensureHttpsDueToAndroidP(image: Gallery): String {
-        var url = image.url
+        val url = image.url
         return url.replace("http://", "https://")
     }
 }

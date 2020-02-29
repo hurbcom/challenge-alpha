@@ -101,3 +101,12 @@ Hospedagem: no Rio de Janeiro no Rios Presidente Hotel, Copacabana Mar Hotel, Au
 <p align="center">
   <img src="ca.jpg" alt="Challange accepted" />
 </p>
+
+## Screenshots
+<img src="./screenshots/splash.png" width="200" />
+<img src="./screenshots/five_stars_rails.png" width="200"/>
+<img src="./screenshots/four_stars_rails.png" width="200"/>
+<img src="./screenshots/three_stars_rails.png" width="200"/>
+<img src="./screenshots/packages_rails.png" width="200"/>
+<img src="./screenshots/hotel_details.png" width="200"/>
+<img src="./screenshots/package_details.png" width="200"/>

@@ -9,7 +9,6 @@ import br.com.flyingdutchman.challenge_alpha.commons.SingleLiveEvent
 import br.com.flyingdutchman.challenge_alpha.commons.hide
 import br.com.flyingdutchman.challenge_alpha.commons.show
 import br.com.flyingdutchman.challenge_alpha.commons.snackBar
-import br.com.flyingdutchman.challenge_alpha.ui.detail.DetailsActivity
 import br.com.flyingdutchman.challenge_alpha.ui.detail.DetailsActivity.Companion.SEARCH_RESULT
 import br.com.flyingdutchman.challenge_alpha.ui.search.model.RailsSearchResults
 import kotlinx.android.synthetic.main.activity_main.*
