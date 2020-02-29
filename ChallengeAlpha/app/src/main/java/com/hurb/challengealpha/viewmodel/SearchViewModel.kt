@@ -16,7 +16,7 @@ class SearchViewModel : ViewModel() {
     private val disposable = CompositeDisposable()
     private var page: Int = 1
 
-    fun isLoading(): LiveData<Boolean>? {
+    fun isLoading(): LiveData<Boolean> {
         return isLoading
     }
 

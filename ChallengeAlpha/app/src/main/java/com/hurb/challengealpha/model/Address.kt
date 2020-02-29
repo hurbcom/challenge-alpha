@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Address(
 
-    @SerializedName("zipcode") val zipcode: Int,
+    @SerializedName("zipcode") val zipcode: String,
     @SerializedName("street") val street: String,
     @SerializedName("street_name") val street_name: String,
     @SerializedName("streetName") val streetName: String,
