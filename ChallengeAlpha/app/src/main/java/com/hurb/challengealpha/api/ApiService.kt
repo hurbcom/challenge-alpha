@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val gson: Gson = GsonBuilder().create()
 
-fun getApi(): HurbApi = Retrofit.Builder()
+val api: HurbApi = Retrofit.Builder()
     .baseUrl(HurbApi.API_URL)
     .client(OkHttpClient.Builder().build())
     .addConverterFactory(GsonConverterFactory.create(gson))

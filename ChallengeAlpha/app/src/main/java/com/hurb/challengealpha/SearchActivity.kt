@@ -2,15 +2,15 @@ package com.hurb.challengealpha
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.hurb.challengealpha.databinding.ActivityMainBinding
+import com.hurb.challengealpha.databinding.ActivitySearchBinding
 
-class MainActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivitySearchBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
     }
