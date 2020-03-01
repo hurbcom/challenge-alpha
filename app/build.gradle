@@ -1,0 +1,135 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply from: "$project.rootDir/tools/script-git-version.gradle"
+
+apply from: "$project.rootDir/tools/script-lint.gradle"
+
+def keyProperties = new Properties()
+try {
+    def propsFile = rootProject.file('keystore/keystore.properties')
+    keyProperties.load(new FileInputStream(propsFile))
+} catch (ignored) {
+
+    keyProperties['storeFile'] = '~'
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.barreto.projecthurb"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode gitVersionCode
+        versionName gitVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storePassword 'android'
+            storeFile rootProject.file('debug.keystore')
+        }
+        release {
+            keyAlias keyProperties['keyAlias']
+            keyPassword keyProperties['keyPassword']
+            storePassword keyProperties['storePassword']
+            storeFile file(keyProperties['storeFile'])
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            applicationIdSuffix ".debug"
+            signingConfig signingConfigs.debug
+            matchingFallbacks = ['debug']
+
+            versionNameSuffix "-dbg-" + gitBranchName
+        }
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext
+
+    implementation project(":domain")
+    implementation project(":data")
+
+    // Core Language
+    implementation dependencies.kotlin.stdlibJdk8
+    implementation dependencies.kotlin.reflect
+
+    // AndroidX Support
+    implementation dependencies.androidx.support
+    implementation dependencies.androidx.appcompat
+    implementation dependencies.androidx.recyclerview
+    implementation dependencies.androidx.supportAnnotations
+    implementation dependencies.androidx.supportDesign
+    implementation dependencies.androidx.constraintLayout
+    implementation dependencies.androidx.playServiceVision
+    implementation dependencies.androidx.exifInterface
+
+    // RX
+    implementation dependencies.rx.java
+    implementation dependencies.rx.kotlin
+    implementation dependencies.rx.android
+    implementation dependencies.rx.logger
+
+    // Room
+    implementation dependencies.androidxRoom.runtime
+    kapt dependencies.androidxRoom.compiler
+
+    // Network API
+    implementation dependencies.http.json
+
+    // Dependence injection
+    implementation dependencies.koin.core
+    implementation dependencies.koin.android
+    implementation dependencies.koin.viewModel
+    implementation dependencies.koin.scope
+    implementation dependencies.koin.ext
+
+    // Log
+    implementation dependencies.timber.core
+
+    // Picasso
+    implementation dependencies.picasso.core
+
+    // Unit Tests
+    testImplementation project(path: ':domain', configuration: 'testOutput')
+    testImplementation dependencies.testLibraries.junit
+    testImplementation dependencies.kotlin.test
+    testImplementation dependencies.koin.test
+
+    // Instrumented Tests
+    implementation dependencies.testLibraries.espressoIdling
+    androidTestImplementation dependencies.testLibraries.runner
+    androidTestImplementation dependencies.testLibraries.rules
+    androidTestImplementation(dependencies.testLibraries.espressoCore, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation dependencies.testLibraries.espressoWeb
+}

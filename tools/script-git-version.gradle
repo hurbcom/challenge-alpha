@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.ajoberstar:grgit:2.2.0'
+    }
+}
+
+import org.ajoberstar.grgit.Grgit
+
+/**
+ * git.describe()
+ *
+ * Find the most recent tag that is reachable from HEAD. If the tag points to the commit,
+ * then only the tag is shown. Otherwise, it suffixes the tag name with the number of additional
+ * commits on top of the tagged object and the abbreviated object name of the most recent commit.
+ *
+ * More info: https://git-scm.com/docs/git-describe
+ */
+
+ext {
+    git = Grgit.open(currentDir: projectDir)
+
+//    gitVersionCode = git.tag.list().size()
+
+//    gitVersionName = git.describe()
+//    gitVersionCode = git.log().size()
+//    gitVersionCodeTime = git.head().time
+//    gitBranchName = git.branch.current.name
+
+    gitVersionName = "1.0"
+    gitVersionCode = 1
+    gitBranchName = "develop"
+
+    //gitTest = git.head().abbreviatedId // commit id
+}
+
+task printVersion() {
+    println("Version Name: $gitVersionName")
+    println("Version Code: $gitVersionCode")
+//    println("Version Code Time: $gitVersionCodeTime")
+    println("Branch name: $gitBranchName")
+}

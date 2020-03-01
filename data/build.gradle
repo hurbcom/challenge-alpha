@@ -1,0 +1,67 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/java'
+        test.java.srcDirs += 'src/test/java'
+        androidTest.java.srcDirs += 'src/androidTest/java'
+    }
+
+}
+
+dependencies {
+    def dependencies = rootProject.ext
+
+    // Core Product
+    implementation project(':domain')
+
+    // AndroidX Support
+    implementation dependencies.androidx.supportAnnotations
+
+    // DataBase
+    implementation dependencies.androidxRoom.runtime
+    kapt dependencies.androidxRoom.compiler
+
+    // Network API
+    api dependencies.http.client
+    implementation dependencies.http.logging
+    implementation dependencies.http.json
+    implementation dependencies.http.rest
+    implementation dependencies.http.restJsonConverter
+    implementation dependencies.http.restRxAdapter
+
+    // RX
+    implementation dependencies.rx.java
+    implementation dependencies.rx.kotlin
+
+    // Log
+    implementation dependencies.timber.core
+
+    // Unit Tests
+    testImplementation project(path: ':domain', configuration: 'testOutput')
+    testImplementation dependencies.testLibraries.junit
+    testImplementation dependencies.testLibraries.mockk
+
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation dependencies.testLibraries.runner
+    androidTestImplementation dependencies.testLibraries.rules
+}
+

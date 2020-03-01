@@ -1,0 +1,31 @@
+apply plugin: 'kotlin'
+
+task jarTest(type: Jar) {
+    from sourceSets.test.output
+    classifier = 'test'
+}
+
+configurations {
+    testOutput
+}
+
+artifacts {
+    testOutput jarTest
+}
+
+dependencies {
+    def dependencies = rootProject.ext
+
+    // Core Language
+    implementation dependencies.kotlin.stdlib
+
+    // RX
+    implementation dependencies.rx.java
+    implementation dependencies.rx.kotlin
+
+    // Unit Tests
+    testImplementation dependencies.testLibraries.junit
+    testImplementation dependencies.testLibraries.mockk
+
+    implementation dependencies.http.json
+}
