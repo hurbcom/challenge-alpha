@@ -7,6 +7,7 @@ import com.barreto.android.domain.base.BaseListModel
 import com.barreto.android.domain.base.toSingleError
 import com.barreto.android.domain.content.IContentRepository
 import com.barreto.android.domain.content.model.ContentItem
+import io.reactivex.Completable
 import io.reactivex.Single
 
 class ContentRepository(
@@ -25,4 +26,20 @@ class ContentRepository(
             .onErrorResumeNext { it.toSingleError(parseRemoteError(it), it.message) }
     }
 
+    override fun getContentItem(contentItemId: String): Single<ContentItem> {
+        return localData.getContentItem(contentItemId)
+            .onErrorResumeNext { it.toSingleError() }
+    }
+
+    override fun getFavoriteContentList(): Single<List<ContentItem>> {
+        return localData.getFavoriteContentList()
+    }
+
+    override fun addContentItem(contentItem: ContentItem): Completable {
+        return localData.insertContentItem(contentItem)
+    }
+
+    override fun deleteContentItem(contentItem: ContentItem): Completable {
+        return localData.removeContentItem(contentItem)
+    }
 }
