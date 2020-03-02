@@ -15,8 +15,10 @@ import com.barreto.android.domain.content.model.ContentItem
 import com.barreto.android.presentation.base.adapter.PagedAdapter
 import com.barreto.android.presentation.base.view.PagedListLayout
 import com.barreto.android.presentation.content.ContentViewModel
+import com.barreto.android.presentation.content.ItemActivity
 import com.barreto.android.presentation.content.adapter.ListAdapter
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.addTo
 import org.koin.android.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
@@ -51,6 +53,20 @@ class MainActivity : AppCompatActivity() {
         adapter.loadMoreListener = object : PagedAdapter.ILoadMoreListener {
             override fun onLoadMore() = viewModel.loadMore()
         }
+
+        adapter.getNotifyItemClick().subscribe {
+            val pos = it.first
+            val item = it.second
+
+            startActivity(
+                ItemActivity.buildIntent(
+                    this@MainActivity,
+                    item,
+                    item.name
+                )
+            )
+
+        }.addTo(disposable)
 
         initialize()
     }
