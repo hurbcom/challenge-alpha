@@ -5,13 +5,13 @@ Projeto desenvolvido em `Kotlin` para o atender ao desafio challenge alpha da Hu
 
 ## Requisitos Atendidos
 
--   Arauitetura utilizada `MVVM`
+-   Arauitetura utilizada `MVVM`.
 
 -   Chamada para api `GET https://www.hurb.com/search/api?q=buzios&page=1` usando `Retrofit2`.
 
 -   Ler o resultado do JSON e colocar numa lista.
     
-    -   Framework para o mapping do JSON `Moshi`
+    -   Framework para o mapping do JSON `Moshi`.
 
 -   Exibição dos itens em forma de lista. Cada card vai representa um ítem do retorno de `results` e mostra seu nome, preço, uma foto e pequena descrição.
 
@@ -23,25 +23,27 @@ Projeto desenvolvido em `Kotlin` para o atender ao desafio challenge alpha da Hu
     
 -   Tela de erro para o caso de não haver conexão.
     
--   Implementaçao de uma lista de favoritos 
+-   Implementaçao de uma lista de favoritos.
 
     -   Ordenada em ordem decrescente pela quantidade de estrelas.
     
-    -   Utilização do `Room` para amazenamento dos itens
+    -   Utilização do `Room` para amazenamento dos itens.
+    
+-   Implementação de menu com `DrawerLayout` and `NavigationView`.
     
 -   Implementação de uma tela com detalhes do Item.
 
-    -   Contem uma imagem, Tiulo, descrição, preço e quantidade de estelas
+    -   Contem uma imagem, Titulo, descrição, preço e quantidade de estelas.
 
--   Implementação de busca usando `SearchView`
+-   Implementação de busca usando `SearchView`.
 
--   Layouts com Constraint Layout
+-   Layouts com Constraint Layout.
 
--   Log dos dados recebidos `Okhttp3`
+-   Log dos dados recebidos `Okhttp3`.
 
--   Framework de injeção de dependência `koin
+-   Framework de injeção de dependência `koin`.
 
--   Architecture Components utilizados `Navigation, LiveData, Room, ViewModel`
+-   Architecture Components utilizados `Navigation, LiveData, Room, ViewModel`.
 
 
 <p align="center">
