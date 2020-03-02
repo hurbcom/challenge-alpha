@@ -9,15 +9,11 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.Observer
-import com.barreto.android.domain.base.Event
-import com.barreto.android.domain.content.model.ContentItem
 import com.barreto.android.R
-import com.barreto.android.presentation.MainActivity
+import com.barreto.android.domain.content.model.ContentItem
+import com.barreto.android.presentation.base.BaseNavigationActivity
 import com.squareup.picasso.Picasso
 import io.reactivex.disposables.CompositeDisposable
-import org.koin.android.viewmodel.ext.android.viewModel
-import timber.log.Timber
 import java.text.NumberFormat
 
 class ItemActivity : AppCompatActivity() {
@@ -45,7 +41,7 @@ class ItemActivity : AppCompatActivity() {
     private fun initialize() {
         titleText.text = contentItem.name
         descText.text = contentItem.description
-        contentItem.price?.let {price ->
+        contentItem.price?.let { price ->
             priceText.text = NumberFormat.getCurrencyInstance().format(price)
         }
 
@@ -63,7 +59,8 @@ class ItemActivity : AppCompatActivity() {
     private fun buildToolbar() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        title = intent.getStringExtra(MainActivity.TOOLBAR_TITLE) ?: getString(R.string.app_name)
+        title = intent.getStringExtra(BaseNavigationActivity.TOOLBAR_TITLE)
+            ?: getString(R.string.app_name)
         contentItem = intent.getSerializableExtra(CONTENT_ITEM) as ContentItem
     }
 
@@ -96,7 +93,7 @@ class ItemActivity : AppCompatActivity() {
             return Intent(context, ItemActivity::class.java)
                 .apply {
                     putExtra(CONTENT_ITEM, contentItem)
-                    putExtra(MainActivity.TOOLBAR_TITLE, title)
+                    putExtra(BaseNavigationActivity.TOOLBAR_TITLE, title)
                 }
         }
     }

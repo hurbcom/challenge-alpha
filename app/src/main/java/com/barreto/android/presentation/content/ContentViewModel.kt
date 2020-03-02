@@ -3,15 +3,19 @@ package com.barreto.android.presentation.content
 import androidx.lifecycle.MutableLiveData
 import com.barreto.android.domain.base.Event
 import com.barreto.android.domain.content.model.ContentItem
-import com.barreto.android.domain.content.usecase.GetContentListUseCase
+import com.barreto.android.domain.content.usecase.*
 import com.barreto.android.domain.util.ISchedulerProvider
 import com.barreto.android.presentation.base.BaseViewModel
 import io.reactivex.rxkotlin.addTo
 
 class ContentViewModel(
     scheduler: ISchedulerProvider,
-    private val getContentListUseCase: GetContentListUseCase
-) : BaseViewModel(scheduler) {
+    private val getContentListUseCase: GetContentListUseCase,
+    private val addContentItemUseCase: AddContentItemUseCase,
+    private val deleteContentItemUseCase: DeleteContentItemUseCase,
+    private val getFavoriteContentListUseCase: GetFavoriteContentListUseCase,
+    private val getContentItemUseCase: GetContentItemUseCase
+    ) : BaseViewModel(scheduler) {
 
     private var currentPage: Int = 1
     private var totalItemCount: Int = 0
@@ -25,6 +29,10 @@ class ContentViewModel(
     val total = MutableLiveData<Int>().apply { value = 0 }
 
     val contentList = MutableLiveData<Event<List<ContentItem>>>().apply { value = Event.idle() }
+
+    val favoriteList = MutableLiveData<Event<List<ContentItem>>>().apply { value = Event.idle() }
+
+    val favorite = MutableLiveData<Event<Boolean>>().apply { value = Event.idle() }
 
     val content = MutableLiveData<Event<ContentItem>>().apply { value = Event.idle() }
 
@@ -91,4 +99,63 @@ class ContentViewModel(
         }
     }
 
+    fun getFavoriteList() {
+
+        getFavoriteContentListUseCase.execute()
+            .subscribeOn(scheduler.backgroundThread())
+            .observeOn(scheduler.mainThread())
+            .subscribe {
+                when (it) {
+                    is Event.Data -> favoriteList.postValue(Event.data(it.data))
+                    is Event.Loading -> favoriteList.postValue(it)
+                    is Event.Error -> favoriteList.postValue(it)
+                }
+            }
+            .addTo(disposables)
+    }
+
+    fun addFavoriteList(contentItem: ContentItem) {
+
+        addContentItemUseCase.execute(contentItem)
+            .subscribeOn(scheduler.backgroundThread())
+            .observeOn(scheduler.mainThread())
+            .subscribe {
+                when (it) {
+                    is Event.Data -> favorite.postValue(it)
+                    is Event.Loading -> favorite.postValue(it)
+                    is Event.Error -> favorite.postValue(it)
+                }
+            }
+            .addTo(disposables)
+    }
+
+    fun deleteFavoriteList(contentItem: ContentItem) {
+
+        deleteContentItemUseCase.execute(contentItem)
+            .subscribeOn(scheduler.backgroundThread())
+            .observeOn(scheduler.mainThread())
+            .subscribe {
+                when (it) {
+                    is Event.Data -> favorite.postValue(it)
+                    is Event.Loading -> favorite.postValue(it)
+                    is Event.Error -> favorite.postValue(it)
+                }
+            }
+            .addTo(disposables)
+    }
+
+    fun getContentItem(contentItemId: String) {
+
+        getContentItemUseCase.execute(contentItemId)
+            .subscribeOn(scheduler.backgroundThread())
+            .observeOn(scheduler.mainThread())
+            .subscribe {
+                when (it) {
+                    is Event.Data -> content.postValue(Event.data(it.data))
+                    is Event.Loading -> content.postValue(it)
+                    is Event.Error -> content.postValue(it)
+                }
+            }
+            .addTo(disposables)
+    }
 }

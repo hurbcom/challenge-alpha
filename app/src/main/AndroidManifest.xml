@@ -21,6 +21,7 @@
         </activity>
 
         <activity android:name="com.barreto.android.presentation.content.ItemActivity" />
+        <activity android:name="com.barreto.android.presentation.content.FavoritesActivity" />
 
     </application>
 

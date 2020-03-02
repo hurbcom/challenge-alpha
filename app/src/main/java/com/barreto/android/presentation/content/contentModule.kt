@@ -9,7 +9,7 @@ import com.barreto.android.data.content.remote.api.IContentApiClient
 import com.barreto.android.data.provider.RemoteClientFactory
 import com.barreto.android.di.REMOTE_CLIENT_FACTORY
 import com.barreto.android.domain.content.IContentRepository
-import com.barreto.android.domain.content.usecase.GetContentListUseCase
+import com.barreto.android.domain.content.usecase.*
 import org.koin.android.experimental.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -22,6 +22,14 @@ val contentModule = module {
     viewModel<ContentViewModel>()
 
     factory<GetContentListUseCase>()
+
+    factory<GetContentItemUseCase>()
+
+    factory<GetFavoriteContentListUseCase>()
+
+    factory<AddContentItemUseCase>()
+
+    factory<DeleteContentItemUseCase>()
 
     singleBy<IContentRepository, ContentRepository>()
 

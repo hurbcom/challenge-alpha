@@ -12,6 +12,7 @@ import io.reactivex.subjects.PublishSubject
 class ListAdapter : PagedAdapter<ContentItem, ListViewHolder>(DIFF_CALLBACK) {
 
     private val notifyClick: PublishSubject<Pair<Int, ContentItem>> = PublishSubject.create()
+    private val notifyFavoriteClick: PublishSubject<ContentItem> = PublishSubject.create()
 
     override fun createItemView(parent: ViewGroup): ListViewHolder {
 
@@ -20,6 +21,9 @@ class ListAdapter : PagedAdapter<ContentItem, ListViewHolder>(DIFF_CALLBACK) {
         ).apply {
             getItemClickObservable().subscribe {
                 notifyClick.onNext(Pair(adapterPosition, it))
+            }
+            getFavoriteItemClickObservable().subscribe {
+                notifyFavoriteClick.onNext(it)
             }
         }
     }
@@ -43,6 +47,10 @@ class ListAdapter : PagedAdapter<ContentItem, ListViewHolder>(DIFF_CALLBACK) {
 
     fun getNotifyItemClick(): Observable<Pair<Int, ContentItem>> {
         return notifyClick
+    }
+
+    fun getNotifyFavoriteItemClick(): Observable<ContentItem> {
+        return notifyFavoriteClick
     }
 
     private companion object {

@@ -5,7 +5,7 @@ import com.barreto.android.domain.content.IContentRepository
 import com.barreto.android.domain.content.model.ContentItem
 import io.reactivex.Observable
 
-class GetContentItemListUseCase(
+class GetFavoriteContentListUseCase(
     private val repository: IContentRepository
 ) {
 

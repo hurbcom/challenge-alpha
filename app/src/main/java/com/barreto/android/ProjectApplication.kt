@@ -2,6 +2,7 @@ package com.barreto.android
 
 import android.app.Application
 import com.barreto.android.di.appModule
+import com.barreto.android.di.databaseModule
 import com.barreto.android.di.networkModule
 import com.barreto.android.presentation.content.contentModule
 //import com.google.firebase.FirebaseApp
@@ -21,6 +22,7 @@ class ProjectApplication : Application() {
             modules(
                 listOf(
                     appModule,
+                    databaseModule,
                     networkModule,
                     contentModule
                 )

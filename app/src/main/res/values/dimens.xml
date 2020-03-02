@@ -15,4 +15,7 @@
     <!-- Radius -->
     <dimen name="radius_mini">@dimen/spacing_xmini</dimen>
 
+    <!-- Menu -->
+    <dimen name="height_header_menu_default">150dp</dimen>
+
 </resources>

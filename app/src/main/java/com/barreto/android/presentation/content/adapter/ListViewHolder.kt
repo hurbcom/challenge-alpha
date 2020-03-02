@@ -8,6 +8,7 @@ import com.barreto.android.R
 import com.barreto.android.presentation.base.adapter.BaseViewHolder
 import com.squareup.picasso.Picasso
 import io.reactivex.Observable
+import io.reactivex.subjects.PublishSubject
 import java.text.NumberFormat
 
 class ListViewHolder(view: View) : BaseViewHolder<ContentItem>(view) {
@@ -18,6 +19,8 @@ class ListViewHolder(view: View) : BaseViewHolder<ContentItem>(view) {
     private val priceText by lazy { itemView.findViewById<TextView>(R.id.priceText) }
     private val thumbnail by lazy { itemView.findViewById<ImageView>(R.id.thumbnail) }
 
+    val notifyFavoriteItemClick: PublishSubject<ContentItem> = PublishSubject.create()
+
     private var showHeader: Boolean = false
 
     init {
@@ -25,6 +28,13 @@ class ListViewHolder(view: View) : BaseViewHolder<ContentItem>(view) {
             currentItem?.run {
                 notifyItemClick.onNext(this)
             }
+        }
+
+        itemView.setOnLongClickListener {
+            currentItem?.run {
+                notifyFavoriteItemClick.onNext(this)
+            }
+            true
         }
     }
 
@@ -66,5 +76,9 @@ class ListViewHolder(view: View) : BaseViewHolder<ContentItem>(view) {
 
     fun getItemClickObservable(): Observable<ContentItem> {
         return notifyItemClick
+    }
+
+    fun getFavoriteItemClickObservable(): Observable<ContentItem> {
+        return notifyFavoriteItemClick
     }
 }
