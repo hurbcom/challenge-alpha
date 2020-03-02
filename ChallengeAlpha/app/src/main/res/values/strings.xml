@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Challenge Alpha</string>
+    <string name="hotel_image_content_description">Imagem de hotel</string>
+    <string name="search_content_description">Pesquisar</string>
+    <string name="search_edit_text_hint">Busque algo (ex: Búzios)</string>
+    <string name="price_unit_hotel_text_view">1 diária de</string>
+    <string name="price_unit_package_or_ticket_text_view">Um valor de</string>
+    <string name="cancel_text_view">Cancelamento grátis</string>
+    <string name="tax_text_view">%1$s Taxas | Em até %2$dx</string>
+    <string name="without_tax_text_view">Sem</string>
+    <string name="plus_tax_text_view">+</string>
+    <string name="nothing_here">Nada foi encontrado</string>
+    <string name="search">Buscar</string>
+    <string name="type_something_snackbar">É necessário buscar alguma coisa</string>
 </resources>

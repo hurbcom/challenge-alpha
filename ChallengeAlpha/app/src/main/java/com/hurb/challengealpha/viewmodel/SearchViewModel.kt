@@ -14,52 +14,58 @@ class SearchViewModel : ViewModel() {
     private val search: MutableLiveData<List<Result>> = MutableLiveData()
     private val isLoading = MutableLiveData<Boolean>()
     private val disposable = CompositeDisposable()
-    private var page: Int = 1
+    private var count = 0
+    private var page = 1
+    private var q = "buzios"
 
     fun isLoading(): LiveData<Boolean> {
         return isLoading
     }
 
-    fun getSearch(q: String): MutableLiveData<List<Result>> {
+    fun getSearch(): MutableLiveData<List<Result>> {
         if (search.value == null) {
             loadSearch(q)
         }
         return search
     }
 
-    private fun loadSearch(q: String) {
+    fun loadSearch(q: String) {
+        this.q = q
+        page = 1
         disposable.add(
             api.search(q, page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ response ->
-                    search.postValue(response.results)
-                    isLoading.postValue(false)
+                    count = response.pagination.count
+                    search.value = response.results
+                    isLoading.value = false
                 }, {
-                    search.postValue(null)
-                    isLoading.postValue(false)
+                    count = 0
+                    search.value = null
+                    isLoading.value = false
                 })
         )
-        isLoading.postValue(true)
+        isLoading.value = true
     }
 
-    fun loadMore(q: String) {
+    fun loadMore() {
         val results: MutableList<Result> = search.value as MutableList<Result>
         page += 1
-        disposable.add(
-            api.search(q, page)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ response ->
-                    results.addAll(response.results)
-                    search.postValue(results)
-                }, {
-                    search.postValue(results)
-                    page -= 1
-                })
-        )
+        if (page <= count) {
+            disposable.add(
+                api.search(q, page)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({ response ->
+                        count = response.pagination.count
+                        results.addAll(response.results)
+                        search.value = results
+                    }, {
+                    })
+            )
+        }
     }
-
 
     override fun onCleared() {
         super.onCleared()

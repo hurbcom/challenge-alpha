@@ -6,6 +6,8 @@ data class Result(
 
     @SerializedName("sku") val sku: String,
     @SerializedName("isHotel") val isHotel: Boolean,
+    @SerializedName("isPackage") val isPackage: Boolean,
+    @SerializedName("isTicket") val isTicket: Boolean,
     @SerializedName("category") val category: String,
     @SerializedName("smallDescription") val smallDescription: String,
     @SerializedName("amenities") val amenities: List<Amenity>,
