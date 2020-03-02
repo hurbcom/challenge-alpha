@@ -22,7 +22,9 @@ class ContentItemApi(
 
     var isPackage: Boolean? = null,
 
-    var smallDescription: String = ""
+    var smallDescription: String = "",
+
+    var price: Price? = null
 
 ) {
 
@@ -37,7 +39,13 @@ class ContentItemApi(
             stars ?: 0,
             isHotel ?: false,
             isPackage ?: false,
-            smallDescription
+            smallDescription,
+            price?.amount
         )
     }
 }
+
+class Price (
+
+    var amount: Float? = null
+)

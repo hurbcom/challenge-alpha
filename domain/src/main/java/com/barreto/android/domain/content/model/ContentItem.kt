@@ -20,6 +20,8 @@ data class ContentItem(
 
         var isPackage: Boolean = false,
 
-        var smallDescription: String = ""
+        var smallDescription: String = "",
+
+        var price: Float? = null
 
 ) : Serializable
