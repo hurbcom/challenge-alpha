@@ -10,4 +10,6 @@
     <color name="color_grey_light">#dddddd</color>
     <color name="color_grey_lightest">#ececec</color>
 
+    <color name="color_yellow">#FDD835</color>
+
 </resources>

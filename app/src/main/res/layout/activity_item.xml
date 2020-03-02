@@ -29,29 +29,35 @@
 
     <TextView
         android:id="@+id/titleText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_mini"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_xmini"
         android:ellipsize="end"
         android:fontFamily="sans-serif"
         android:maxLines="1"
         android:textColor="@color/color_grey_darkest"
         android:textSize="@dimen/font_xlarge"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/priceText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/thumbnail"
-        card_view:text="Titulo 1" />
+        card_view:text="Titulo Titulo Titulo Titulo Titulo Titulo Titulo 1" />
 
     <TextView
         android:id="@+id/priceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_mini"
+        android:layout_marginStart="@dimen/spacing_xmini"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_small"
         android:fontFamily="sans-serif"
         android:textColor="@color/color_grey_darkest"
         android:textSize="@dimen/font_xlarge"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/titleText"
         app:layout_constraintTop_toBottomOf="@id/thumbnail"
         card_view:text="R$ 100,00" />
 
@@ -60,22 +66,23 @@
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_mini"
+        android:layout_margin="@dimen/spacing_small"
         android:isIndicator="true"
         android:numStars="5"
         android:stepSize="0.1"
         android:theme="@style/RatingBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText" />
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        card_view:rating="3" />
 
     <TextView
         android:id="@+id/descText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_mini"
-        android:layout_marginTop="@dimen/spacing_small"
-        android:layout_marginEnd="@dimen/spacing_mini"
-        android:layout_marginBottom="@dimen/spacing_mini"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginEnd="@dimen/spacing_small"
+        android:layout_marginBottom="@dimen/spacing_small"
         android:fontFamily="sans-serif"
         android:textColor="@color/color_grey_darkest"
         android:textSize="@dimen/font_normal"
