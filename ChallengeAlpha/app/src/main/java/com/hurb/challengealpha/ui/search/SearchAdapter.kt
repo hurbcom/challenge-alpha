@@ -1,4 +1,4 @@
-package com.hurb.challengealpha
+package com.hurb.challengealpha.ui.search
 
 import android.content.Context
 import android.graphics.Paint
@@ -9,6 +9,8 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.hurb.challengealpha.glide.GlideApp
+import com.hurb.challengealpha.R
 import com.hurb.challengealpha.model.Result
 import com.hurb.challengealpha.util.getCurrencySymbol
 
@@ -58,14 +60,14 @@ class SearchAdapter(
         }
         val image: String = if (result.isHotel) result.image else result.gallery[0].url
         GlideApp.with(context).load(image).into(holder.hotelImageView)
-        val currency_original = if (result.isHotel) result.price.currency_original
+        val currencyOriginal = if (result.isHotel) result.price.currency_original
         else "BRL"
         val currency = if (result.isHotel) result.price.currency else "BRL"
         if (result.price.old_price != 0.0 && result.price.old_price !=
             result.price.current_price
         ) {
             val oldPrice =
-                "${getCurrencySymbol(currency_original)} ${result.price.old_price}"
+                "${getCurrencySymbol(currencyOriginal)} ${result.price.old_price}"
             holder.oldPriceTextView.text = oldPrice
             holder.oldPriceTextView.paintFlags = holder.oldPriceTextView.paintFlags or
                 Paint.STRIKE_THRU_TEXT_FLAG

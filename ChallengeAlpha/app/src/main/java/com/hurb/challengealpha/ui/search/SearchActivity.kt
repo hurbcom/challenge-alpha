@@ -1,23 +1,29 @@
-package com.hurb.challengealpha
+package com.hurb.challengealpha.ui.search
 
 import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.test.espresso.IdlingResource
+import com.example.android.testing.espresso.IdlingResourceSample.IdlingResource.SimpleIdlingResource
 import com.google.android.material.snackbar.Snackbar
+import com.hurb.challengealpha.R
 import com.hurb.challengealpha.databinding.ActivitySearchBinding
 import com.hurb.challengealpha.viewmodel.SearchViewModel
 
 
-class SearchActivity : AppCompatActivity(), OnLastItemHandler {
+class SearchActivity : AppCompatActivity(),
+    OnLastItemHandler {
 
     private lateinit var binding: ActivitySearchBinding
     private val adapter = SearchAdapter(this, this)
+    private var mIdlingResource: SimpleIdlingResource = SimpleIdlingResource()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,17 +47,19 @@ class SearchActivity : AppCompatActivity(), OnLastItemHandler {
         })
         model.isLoading().observe(this, Observer { isLoading ->
             if (isLoading) {
+                mIdlingResource.setIdleState(false)
                 binding.loadingPb.visibility = View.VISIBLE
                 binding.contentLl.visibility = View.GONE
             } else {
                 binding.loadingPb.visibility = View.GONE
                 binding.contentLl.visibility = View.VISIBLE
+                mIdlingResource.setIdleState(true)
             }
         })
         binding.searchBt.setOnClickListener { v ->
             onSearchClick(v)
         }
-        binding.searchEt.setOnEditorActionListener { v, actionId, event ->
+        binding.searchEt.setOnEditorActionListener { v, actionId, _ ->
             return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_SEARCH -> {
                     onSearchClick(v)
@@ -64,7 +72,6 @@ class SearchActivity : AppCompatActivity(), OnLastItemHandler {
             binding.searchEt.text.clear()
         }
     }
-
 
     private fun updateUi() {
         val layoutManager = GridLayoutManager(this, 2)
@@ -91,5 +98,10 @@ class SearchActivity : AppCompatActivity(), OnLastItemHandler {
     override fun onLastItem() {
         val model = ViewModelProvider(this).get(SearchViewModel::class.java)
         model.loadMore()
+    }
+
+    @VisibleForTesting
+    fun getIdlingResource(): IdlingResource {
+        return mIdlingResource
     }
 }
