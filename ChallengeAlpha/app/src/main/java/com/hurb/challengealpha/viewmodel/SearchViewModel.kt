@@ -18,10 +18,13 @@ class SearchViewModel : ViewModel() {
     private var page = 1
     private var q = "buzios"
 
+    //Updates when loading content
     fun isLoading(): LiveData<Boolean> {
         return isLoading
     }
 
+    //Returns current value when it isn't null (ex: after configuration changes).
+    // Otherwise loads a new search
     fun getSearch(): MutableLiveData<List<Result>> {
         if (search.value == null) {
             loadSearch(q)
@@ -29,6 +32,7 @@ class SearchViewModel : ViewModel() {
         return search
     }
 
+    //Loads first page of search and updates search value and loading
     fun loadSearch(q: String) {
         this.q = q
         page = 1
@@ -49,6 +53,7 @@ class SearchViewModel : ViewModel() {
         isLoading.value = true
     }
 
+    //Increments page number, updates search value and loading
     fun loadMore() {
         val results: MutableList<Result> = search.value as MutableList<Result>
         page += 1
@@ -67,6 +72,7 @@ class SearchViewModel : ViewModel() {
         }
     }
 
+    //Disposes any observables running when app is finished
     override fun onCleared() {
         super.onCleared()
         disposable.dispose()

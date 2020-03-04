@@ -1,24 +1,9 @@
-/*
- * Copyright 2016, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-package com.example.android.testing.espresso.IdlingResourceSample.IdlingResource
+package com.hurb.challengealpha.idlingresource
 
 import androidx.test.espresso.IdlingResource
 import java.util.concurrent.atomic.AtomicBoolean
 
-
+//Communicates between activity and testing when resources are ready to be tested
 class SimpleIdlingResource : IdlingResource {
     @Volatile
     private var mCallback: IdlingResource.ResourceCallback? = null
@@ -29,6 +14,7 @@ class SimpleIdlingResource : IdlingResource {
         return this.javaClass.name
     }
 
+    //Called to verify if is idle and available for testing
     override fun isIdleNow(): Boolean {
         return mIsIdleNow.get()
     }
@@ -37,6 +23,7 @@ class SimpleIdlingResource : IdlingResource {
         mCallback = callback
     }
 
+    //Sets idle state (false when loading and true when resources are ready)
     fun setIdleState(isIdleNow: Boolean) {
         mIsIdleNow.set(isIdleNow)
         if (isIdleNow && mCallback != null) {

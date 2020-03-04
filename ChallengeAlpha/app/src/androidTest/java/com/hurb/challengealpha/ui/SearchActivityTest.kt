@@ -27,6 +27,7 @@ class SearchActivityTest {
     private var mIdlingResource: IdlingResource? = null
     private val editTextString = "Buzios"
 
+    //Adds idling resource
     @Before
     fun registerIdlingResource() {
         val activityScenario =
@@ -37,6 +38,7 @@ class SearchActivityTest {
         }
     }
 
+    //Removes idling resource
     @After
     fun unregisterIdlingResource() {
         if (mIdlingResource != null) {
@@ -44,6 +46,7 @@ class SearchActivityTest {
         }
     }
 
+    //Tests if EditText works
     @Test
     fun testEditText() {
         onView(withId(R.id.search_et)).perform(typeText(editTextString))
@@ -51,6 +54,7 @@ class SearchActivityTest {
         onView(withId(R.id.search_et)).check(matches(ViewMatchers.withText(editTextString)))
     }
 
+    //Tests if clear Button removes text in EditText
     @Test
     fun testClearButton() {
         onView(withId(R.id.search_et)).perform(typeText(editTextString))

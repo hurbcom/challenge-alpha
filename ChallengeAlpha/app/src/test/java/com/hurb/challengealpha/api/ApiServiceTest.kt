@@ -21,6 +21,7 @@ class ApiServiceTest {
 
     private lateinit var api: HurbApi
 
+    //Sets up mocked web server to intercept response in test
     @Before
     fun setup() {
         mockWebServer.start()
@@ -34,11 +35,13 @@ class ApiServiceTest {
             .create(HurbApi::class.java)
     }
 
+    //Shuts down mocked web server
     @After
     fun teardown() {
         mockWebServer.shutdown()
     }
 
+    //Tests api call with mocked response
     @Test
     fun testSearch() {
         val classLoader = javaClass.classLoader

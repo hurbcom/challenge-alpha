@@ -11,10 +11,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.test.espresso.IdlingResource
-import com.example.android.testing.espresso.IdlingResourceSample.IdlingResource.SimpleIdlingResource
 import com.google.android.material.snackbar.Snackbar
 import com.hurb.challengealpha.R
 import com.hurb.challengealpha.databinding.ActivitySearchBinding
+import com.hurb.challengealpha.idlingresource.SimpleIdlingResource
 import com.hurb.challengealpha.viewmodel.SearchViewModel
 
 
@@ -33,6 +33,8 @@ class SearchActivity : AppCompatActivity(),
         updateUi()
 
         val model = ViewModelProvider(this).get(SearchViewModel::class.java)
+
+        //Updates adapter when data is posted to view model
         model.getSearch().observe(this, Observer { results ->
             if (results == null || results.isEmpty()) {
                 binding.emptyFl.visibility = View.VISIBLE
@@ -45,6 +47,8 @@ class SearchActivity : AppCompatActivity(),
             }
             adapter.notifyDataSetChanged()
         })
+
+        //Updates progress bar when view model is loading
         model.isLoading().observe(this, Observer { isLoading ->
             if (isLoading) {
                 mIdlingResource.setIdleState(false)
@@ -56,9 +60,13 @@ class SearchActivity : AppCompatActivity(),
                 mIdlingResource.setIdleState(true)
             }
         })
+
+
         binding.searchBt.setOnClickListener { v ->
             onSearchClick(v)
         }
+
+        //Allows search when pressing "Enter" on keyboard
         binding.searchEt.setOnEditorActionListener { v, actionId, _ ->
             return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_SEARCH -> {
@@ -68,17 +76,20 @@ class SearchActivity : AppCompatActivity(),
                 else -> false
             }
         }
+
         binding.clearBt.setOnClickListener {
             binding.searchEt.text.clear()
         }
     }
 
+    //Prepares recyclerview for data
     private fun updateUi() {
         val layoutManager = GridLayoutManager(this, 2)
         binding.searchRv.layoutManager = layoutManager
         binding.searchRv.adapter = adapter
     }
 
+    //Loads a new search
     private fun onSearchClick(view: View) {
         val query = binding.searchEt.text.toString()
         if (query.isEmpty() || query.isBlank()) {
@@ -95,6 +106,7 @@ class SearchActivity : AppCompatActivity(),
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
+    //Called from adapter when it is on last item
     override fun onLastItem() {
         val model = ViewModelProvider(this).get(SearchViewModel::class.java)
         model.loadMore()

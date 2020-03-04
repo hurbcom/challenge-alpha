@@ -9,8 +9,8 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.hurb.challengealpha.glide.GlideApp
 import com.hurb.challengealpha.R
+import com.hurb.challengealpha.glide.GlideApp
 import com.hurb.challengealpha.model.Result
 import com.hurb.challengealpha.util.getCurrencySymbol
 
@@ -46,6 +46,7 @@ class SearchAdapter(
         return results.size
     }
 
+    //Binds multiple categories based on attribute (hotel, package or ticket)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (position >= (itemCount - 1) && itemCount != 0) {
             onLastItemHandler.onLastItem()
