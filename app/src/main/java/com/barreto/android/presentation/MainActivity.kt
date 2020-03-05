@@ -5,7 +5,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.widget.ImageView
 import android.widget.SearchView
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import com.barreto.android.R
@@ -24,7 +27,9 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import org.koin.android.viewmodel.ext.android.viewModel
 import timber.log.Timber
+import java.io.Serializable
 
+@Suppress("UNCHECKED_CAST")
 class MainActivity : BaseNavigationActivity() {
 
     private var contentList: List<ContentItem> = emptyList()
@@ -37,12 +42,14 @@ class MainActivity : BaseNavigationActivity() {
 
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
     private val contentListView by lazy { findViewById<PagedListLayout>(R.id.content_list_view) }
+    private val listBreadcrumbText by lazy { findViewById<TextView>(R.id.listBreadcrumbText) }
     private var queryText = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        restoreInstanceState(savedInstanceState)
         buildToolbar()
 
         contentListView?.setOnRefreshListener {
@@ -78,6 +85,38 @@ class MainActivity : BaseNavigationActivity() {
         initialize()
     }
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        outState?.putInt(SAVE_INSTANCE_TOTAL, totalItems)
+        outState?.putString(SAVE_INSTANCE_QUERY_TEXT, queryText)
+        outState?.putSerializable(SAVE_INSTANCE_LIST, contentList as Serializable)
+
+        outState?.putParcelable(
+            SAVE_INSTANCE_RECYCLER_LAYOUT,
+            contentListView.getRecyclerView().layoutManager?.onSaveInstanceState()
+        )
+    }
+
+    private fun restoreInstanceState(savedInstanceState: Bundle?) {
+
+        // Restore UI state from the savedInstanceState.
+        // This bundle has also been passed to onCreate.
+        totalItems = savedInstanceState?.getInt(SAVE_INSTANCE_TOTAL) ?: 0
+        queryText = savedInstanceState?.getString(SAVE_INSTANCE_QUERY_TEXT) ?: ""
+        contentList = savedInstanceState?.getSerializable(SAVE_INSTANCE_LIST)?.let {
+            it as List<ContentItem>
+        } ?: emptyList()
+
+
+        contentListView.getRecyclerView().layoutManager?.onRestoreInstanceState(
+            savedInstanceState?.getParcelable(SAVE_INSTANCE_RECYCLER_LAYOUT)
+        )
+    }
+
     private fun initialize() {
         viewModel.hasNextPage.observe(this, Observer { adapter.loadEnable = (it == true) })
         viewModel.error.observe(this, Observer { showError(it) })
@@ -87,10 +126,8 @@ class MainActivity : BaseNavigationActivity() {
     }
 
     private fun buildToolbar() {
-        setSupportActionBar(toolbar)
-        title = intent.getStringExtra(TOOLBAR_TITLE) ?: getString(R.string.app_name)
-
         startMenu(ITEM_1)
+        title = intent.getStringExtra(TOOLBAR_TITLE) ?: getString(R.string.app_name)
     }
 
     override fun onDestroy() {
@@ -125,9 +162,12 @@ class MainActivity : BaseNavigationActivity() {
 
     private fun onContentsEvent(event: Event<List<ContentItem>>?) {
 
+        listBreadcrumbText.visibility = View.GONE
         when (event) {
             is Event.Idle -> viewModel.getContentList()
             is Event.Data -> {
+                listBreadcrumbText.visibility = View.VISIBLE
+                listBreadcrumbText.text = String.format(getString(R.string.list_breadcrumb), totalItems)
                 contentList = event.data
                 contentListView.isRefreshing = false
                 if (event.data.isNullOrEmpty()) {
@@ -180,6 +220,14 @@ class MainActivity : BaseNavigationActivity() {
             maxWidth = Integer.MAX_VALUE
             queryHint = getString(R.string.search)
 
+            setIconifiedByDefault(true)
+
+            queryText.takeIf { it.isNotBlank() }?.let {
+                this.onActionViewExpanded()
+                this.setQuery(it, false)
+                this.clearFocus()
+            }
+
             setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String): Boolean {
                     clearFocus()
@@ -204,6 +252,10 @@ class MainActivity : BaseNavigationActivity() {
     }
 
     companion object {
+        const val SAVE_INSTANCE_TOTAL = "Total"
+        const val SAVE_INSTANCE_QUERY_TEXT = "QueryText"
+        const val SAVE_INSTANCE_LIST = "ContentList"
+        const val SAVE_INSTANCE_RECYCLER_LAYOUT = "RecyclerLayout"
 
         fun buildIntent(
             context: Context,

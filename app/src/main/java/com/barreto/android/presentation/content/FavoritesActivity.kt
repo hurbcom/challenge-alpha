@@ -3,6 +3,8 @@ package com.barreto.android.presentation.content
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import com.barreto.android.R
@@ -22,6 +24,7 @@ class FavoritesActivity : BaseNavigationActivity() {
     private var undo: Boolean = false
     private var contentList: List<ContentItem> = emptyList()
     private var contentItem: ContentItem = ContentItem()
+    private var totalItems = 0
 
     private val viewModel by viewModel<ContentViewModel>()
 
@@ -30,6 +33,7 @@ class FavoritesActivity : BaseNavigationActivity() {
 
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
     private val contentListView by lazy { findViewById<PagedListLayout>(R.id.content_list_view) }
+    private val listBreadcrumbText by lazy { findViewById<TextView>(R.id.listBreadcrumbText) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,15 +74,14 @@ class FavoritesActivity : BaseNavigationActivity() {
     }
 
     private fun initialize() {
+        viewModel.total.observe(this, Observer { totalItems = it ?: 0 })
         viewModel.favoriteList.observe(this, Observer { onContentsEvent(it) })
         viewModel.favorite.observe(this, Observer { onFavoriteEvent(it) })
     }
 
     private fun buildToolbar() {
-        setSupportActionBar(toolbar)
-        title = intent.getStringExtra(TOOLBAR_TITLE) ?: getString(R.string.app_name)
-
         startMenu(ITEM_2)
+        title = intent.getStringExtra(TOOLBAR_TITLE) ?: getString(R.string.app_name)
     }
 
     override fun onDestroy() {
@@ -116,9 +119,12 @@ class FavoritesActivity : BaseNavigationActivity() {
 
     private fun onContentsEvent(event: Event<List<ContentItem>>?) {
 
+        listBreadcrumbText.visibility = View.GONE
         when (event) {
             is Event.Idle -> viewModel.getFavoriteList()
             is Event.Data -> {
+                listBreadcrumbText.visibility = View.VISIBLE
+                listBreadcrumbText.text = String.format(getString(R.string.list_breadcrumb), totalItems)
                 contentList = event.data
                 contentListView.isRefreshing = false
                 if (event.data.isNullOrEmpty()) {

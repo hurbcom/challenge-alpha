@@ -106,7 +106,10 @@ class ContentViewModel(
             .observeOn(scheduler.mainThread())
             .subscribe {
                 when (it) {
-                    is Event.Data -> favoriteList.postValue(Event.data(it.data))
+                    is Event.Data -> {
+                        total.value = it.data.size
+                        favoriteList.postValue(Event.data(it.data))
+                    }
                     is Event.Loading -> favoriteList.postValue(it)
                     is Event.Error -> favoriteList.postValue(it)
                 }
