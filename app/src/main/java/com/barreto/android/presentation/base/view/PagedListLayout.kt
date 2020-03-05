@@ -36,8 +36,10 @@ class PagedListLayout : SwipeRefreshLayout {
     init {
         val layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
 
+        recyclerView.itemAnimator = null
         recyclerView.setHasFixedSize(true)
-        recyclerView.takeIf { it.layoutManager == null }.apply { layoutManager = LinearLayoutManager(context) }
+        recyclerView.takeIf { it.layoutManager == null }
+            .apply { layoutManager = LinearLayoutManager(context) }
         feedbackView.visibility = View.GONE
 
         content.addView(recyclerView, layoutParams)
@@ -60,7 +62,12 @@ class PagedListLayout : SwipeRefreshLayout {
         super.setRefreshing(refreshing)
     }
 
-    fun showFeedbackStatus(imageResource: Int = R.drawable.ic_search_black_24dp, feedbackTitle: String, feedbackMessage: String, action: (() -> Unit)? = null) {
+    fun showFeedbackStatus(
+        imageResource: Int = R.drawable.ic_error_black_24dp,
+        feedbackTitle: String,
+        feedbackMessage: String,
+        action: (() -> Unit)? = null
+    ) {
 
         feedbackView.setErrorImage(imageResource)
         feedbackView.setErrorTitle(feedbackTitle)
@@ -71,10 +78,12 @@ class PagedListLayout : SwipeRefreshLayout {
         recyclerView.visibility = View.GONE
     }
 
-    fun showFeedbackStatus(imageResource: Int = R.drawable.ic_search_black_24dp,
-            feedbackTitle: Int,
-            feedbackMessage: Int = 0,
-            action: (() -> Unit)? = null) {
+    fun showFeedbackStatus(
+        imageResource: Int = R.drawable.ic_error_black_24dp,
+        feedbackTitle: Int,
+        feedbackMessage: Int = 0,
+        action: (() -> Unit)? = null
+    ) {
 
         feedbackView.setErrorImage(imageResource)
         feedbackView.setErrorTitle(feedbackTitle)

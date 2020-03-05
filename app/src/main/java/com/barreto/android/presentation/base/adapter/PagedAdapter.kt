@@ -8,11 +8,13 @@ import com.barreto.android.R
 import io.reactivex.disposables.CompositeDisposable
 
 abstract class PagedAdapter<T, VH : BaseViewHolder<T>>(
-        diffCallback: DiffUtil.ItemCallback<T>
+    diffCallback: DiffUtil.ItemCallback<T>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val helper: AsyncListDiffer<T> = AsyncListDiffer(AdapterListUpdateCallback(this),
-            AsyncDifferConfig.Builder(diffCallback).build())
+    private val helper: AsyncListDiffer<T> = AsyncListDiffer(
+        AdapterListUpdateCallback(this),
+        AsyncDifferConfig.Builder(diffCallback).build()
+    )
 
     protected val disposable = CompositeDisposable()
 
@@ -21,23 +23,29 @@ abstract class PagedAdapter<T, VH : BaseViewHolder<T>>(
     protected var errorState: Boolean = false
 
     var loadEnable: Boolean = true
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     var loadMoreListener: ILoadMoreListener? = null
+
 
     private var scrollListener = object : RecyclerView.OnScrollListener() {
 
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
 
             recyclerView.layoutManager?.also {
-                val firstVisibleItemPosition = (it as LinearLayoutManager).findFirstVisibleItemPosition()
+                val firstVisibleItemPosition =
+                    (it as LinearLayoutManager).findFirstVisibleItemPosition()
 
                 if (
-                        !loading &&
-                        loadEnable &&
-                        ((it.childCount + firstVisibleItemPosition) >= (it.itemCount - 5))
+                    !loading &&
+                    loadEnable &&
+                    ((it.childCount + firstVisibleItemPosition) >= (it.itemCount - 2))
                 ) {
                     loading = true
-                    loadMoreListener?.onLoadMore()
+                    recyclerView.post { loadMoreListener?.onLoadMore() }
                 }
             }
         }
@@ -80,7 +88,7 @@ abstract class PagedAdapter<T, VH : BaseViewHolder<T>>(
     override fun getItemViewType(position: Int): Int {
 
         return position.takeIf { it > helper.currentList.size - 1 }
-                ?.let { if (errorState) ERROR_VIEW else LOADING_VIEW } ?: ITEM_VIEW
+            ?.let { if (errorState) ERROR_VIEW else LOADING_VIEW } ?: ITEM_VIEW
     }
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
@@ -88,10 +96,10 @@ abstract class PagedAdapter<T, VH : BaseViewHolder<T>>(
         super.onAttachedToRecyclerView(recyclerView)
         recyclerView.addOnScrollListener(scrollListener)
         (recyclerView.layoutManager as? GridLayoutManager)
-                ?.also {
-                    this.spanSizeManager.spanCount = it.spanCount
-                    it.spanSizeLookup = this.spanSizeManager
-                }
+            ?.also {
+                this.spanSizeManager.spanCount = it.spanCount
+                it.spanSizeLookup = this.spanSizeManager
+            }
     }
 
     override fun onDetachedFromRecyclerView(recyclerView: RecyclerView) {
@@ -134,8 +142,8 @@ abstract class PagedAdapter<T, VH : BaseViewHolder<T>>(
     protected open fun createErrorView(parent: ViewGroup): RecyclerView.ViewHolder {
 
         val view = LayoutInflater
-                .from(parent.context)
-                .inflate(R.layout.error_view_holder, parent, false)
+            .from(parent.context)
+            .inflate(R.layout.error_view_holder, parent, false)
 
         view.findViewById<Button>(R.id.try_again_button).setOnClickListener {
             this@PagedAdapter.errorState = false
@@ -149,8 +157,8 @@ abstract class PagedAdapter<T, VH : BaseViewHolder<T>>(
     protected open fun createLoadingView(parent: ViewGroup): RecyclerView.ViewHolder {
 
         val view = LayoutInflater
-                .from(parent.context)
-                .inflate(R.layout.loading_view_holder, parent, false)
+            .from(parent.context)
+            .inflate(R.layout.loading_view_holder, parent, false)
         return object : RecyclerView.ViewHolder(view) {}
     }
 
