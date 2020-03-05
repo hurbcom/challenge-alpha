@@ -43,7 +43,8 @@ class SearchActivity : AppCompatActivity(),
             } else {
                 binding.emptyFl.visibility = View.GONE
                 binding.searchRv.visibility = View.VISIBLE
-                adapter.results = results.toMutableList()
+                adapter.results =
+                    results.sortedByDescending { if (it.isHotel) it.stars else 0 }.toMutableList()
             }
             adapter.notifyDataSetChanged()
         })
