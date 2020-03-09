@@ -47,7 +47,7 @@ class AppMenuView : NavigationView {
             .placeholder(R.drawable.ic_android_white_24dp)
             .fit()
             .tag("placholder")
-            .into(headerView.findViewById<ImageView>(R.id.imgView))
+            .into(headerView.findViewById<ImageView>(R.id.logoView))
 
         headerView.findViewById<AppCompatTextView>(R.id.textUsername).text =
             String.format("Olá, %s!", "Usuario")

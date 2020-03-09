@@ -6,7 +6,7 @@
             android:id="@+id/menu_search"
             appcompat:actionViewClass="android.widget.SearchView"
             android:icon="@drawable/ic_search_white_24dp"
-            android:title="Buscar"
+            android:title="@string/search_title"
             appcompat:showAsAction="ifRoom" />
 
 </menu>

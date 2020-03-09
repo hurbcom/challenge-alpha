@@ -2,7 +2,7 @@
 
 Projeto desenvolvido em `Kotlin` para o atender ao desafio challenge alpha da Hurb.
 
-
+----
 ## Requisitos Atendidos
 
 -   Arauitetura utilizada `MVVM`.
@@ -15,7 +15,7 @@ Projeto desenvolvido em `Kotlin` para o atender ao desafio challenge alpha da Hu
 
 -   Exibição dos itens em forma de lista. Cada card vai representa um ítem do retorno de `results` e mostra seu nome, preço, uma foto e pequena descrição.
 
-    -   Listagem com reresh e paginação.
+    -   Listagem com refresh e paginação.
     
     -   Agrupamento das células (usando um título para separá-las) pela quantidade de estrelas. Caso não exista estrelas, agrupe em _Pacotes_.
     
@@ -45,7 +45,7 @@ Projeto desenvolvido em `Kotlin` para o atender ao desafio challenge alpha da Hu
 
 -   Architecture Components utilizados `Navigation, LiveData, Room, ViewModel`.
 
-
+----
 <p align="center">
   <img src="ca.jpg" alt="Challange accepted" />
 </p>

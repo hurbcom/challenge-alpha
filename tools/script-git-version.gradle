@@ -22,23 +22,19 @@ import org.ajoberstar.grgit.Grgit
 ext {
     git = Grgit.open(currentDir: projectDir)
 
-//    gitVersionCode = git.tag.list().size()
+    gitVersionInfo = git.describe(match: ["[0-9]*\\.[0-9]*\\.[0-9]*"]).split("-") as List
+    gitVersionName = gitVersionInfo.remove(0)
+    gitVersionInfo = gitVersionInfo.join("-")
 
-//    gitVersionName = git.describe()
-//    gitVersionCode = git.log().size()
-//    gitVersionCodeTime = git.head().time
-//    gitBranchName = git.branch.current.name
-
-    gitVersionName = "1.0"
-    gitVersionCode = 1
-    gitBranchName = "develop"
-
-    //gitTest = git.head().abbreviatedId // commit id
+    gitVersionCode = git.log().size()
+    gitVersionCodeTime = git.head().time
+    gitBranchName = git.branch.current.name
 }
 
 task printVersion() {
     println("Version Name: $gitVersionName")
     println("Version Code: $gitVersionCode")
-//    println("Version Code Time: $gitVersionCodeTime")
+    println("Version Info: $gitVersionInfo" )
+    println("Version Code Time: $gitVersionCodeTime")
     println("Branch name: $gitBranchName")
 }

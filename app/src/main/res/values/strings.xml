@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ProjectHurb</string>
 
     <string name="try_again">Tentar novamente</string>
@@ -12,7 +12,10 @@
     <!-- CONTENT DESCRIPTION-->
     <string name="desc_error">Icone de erro</string>
     <string name="desc_thumbnail">Thumbnail</string>
+    <string name="desc_header_menu_logo">Logo</string>
+    <string name="desc_header_menu_background">Background boas vindas</string>
 
-    <string name="search">Buscar...</string>
+    <string name="search_title">Buscar</string>
+    <string name="search" tools:ignore="TypographyEllipsis">Buscar...</string>
 
 </resources>

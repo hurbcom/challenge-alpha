@@ -8,23 +8,25 @@
     android:minHeight="@dimen/height_header_menu_default">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/bgHeaderView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="@dimen/height_header_menu_default"
         android:background="@drawable/bg_header"
+        android:contentDescription="@string/desc_header_menu_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgView"
+        android:id="@+id/logoView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/bg_header_image_rounded"
         android:padding="@dimen/spacing_xmini"
+        android:contentDescription="@string/desc_header_menu_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +41,7 @@
         android:textSize="@dimen/font_normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgView"
+        app:layout_constraintTop_toBottomOf="@id/logoView"
         tools:text="name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
