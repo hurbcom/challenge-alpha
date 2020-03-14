@@ -1,34 +1,17 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native'
-import { api } from './src/conexao/api'
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import Router from './src/Route'
+import { store, persistor } from './src/redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
 
-var page = 1
-
-export default class extends React.Component {
-  constructor(){
-    super()
-
-    this.state = {
-      hotels: []
-    }
-  }
-
-  componentDidMount = () => {api.get(`?q=buzios&page=${page}`).then(dados=>console.log(dados))}
-
-  render(){
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
+export default class App extends Component {
+  render() {
+    return(
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+              <Router />
+          </PersistGate>
+        </Provider>
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-}); 
