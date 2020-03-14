@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import ListHotels from './screens/Hotels/HotelList'
 import ListPackages from './screens/Packages/index'
 import { Ionicons } from '@expo/vector-icons'
+import {rosa} from './paleta/colors' 
 
 const Tab = createBottomTabNavigator()
 
@@ -27,8 +28,8 @@ export default function App() {
           },
         })}
         tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'gray',
+          activeTintColor: rosa,
+          inactiveTintColor: rosa,
         }}>
         <Tab.Screen name="Hotéis" component={ListHotels} />
         <Tab.Screen name="Pacotes" component={ListPackages} />

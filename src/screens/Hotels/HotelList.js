@@ -1,24 +1,23 @@
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, Modal, FlatList} from 'react-native'
+import { StyleSheet, View, SafeAreaView, Modal, FlatList, Text} from 'react-native'
 import { api } from '../../connection/fetch'
 import { connect } from 'react-redux'
 import { set_hotels } from '../../redux/action/hotelAction'
 import Loading from '../../components/Loading'
 import HotelItem from './HotelItem'
 
-var page = 1
-
 class Hotels extends React.Component {
   constructor() {
     super()
     this.state = {
-      showLoading:true
+      showLoading:true, 
+      page: 1
     }
   }
 
   componentDidMount = () => {
     //carrega lista de hoteis
-    api.get(`?q=Rio de Janeiro&page=${page}`).then(dados=>{
+    api.get(`?q=buzios&page=${this.state.page}&sort=stars`).then(dados=>{
         this.props.onSetHotels(dados.results)
         this.setState({showLoading:false})
       }
@@ -33,6 +32,7 @@ class Hotels extends React.Component {
           </Modal>
 
           <SafeAreaView style={styles.container}>
+            <Text style={styles.title}>Hotéis</Text>
             <FlatList
               data={this.props.Hotels}
               renderItem={({ item }) => (<HotelItem item={item}/>)}
@@ -47,8 +47,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  title: {
+    marginTop: 20, 
+    marginLeft: 10,
+    marginBottom: 20, 
+    fontSize: 40,
+    fontWeight: 'bold',
   },
 }); 
 
