@@ -7,8 +7,8 @@ import Loading from '../../components/Loading'
 import HotelItem from './HotelItem'
 
 class Hotels extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       showLoading:true, 
       page: 1
@@ -32,10 +32,10 @@ class Hotels extends React.Component {
           </Modal>
 
           <SafeAreaView style={styles.container}>
-            <Text style={styles.title}>Hotéis</Text>
+            {/* <Text style={styles.title}>Hotéis</Text> */}
             <FlatList
               data={this.props.Hotels}
-              renderItem={({ item }) => (<HotelItem item={item}/>)}
+              renderItem={({ item }) => (<HotelItem navigation={this.props.navigation} item={item}/>)}
               keyExtractor={item => item.id}/>
           </SafeAreaView>
       </View>

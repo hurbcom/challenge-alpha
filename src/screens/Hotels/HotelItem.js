@@ -5,12 +5,16 @@ import { maskMoney } from '../../components/MaskMoney'
 import {rosa} from '../../paleta/colors' 
 
 export default class HotelItem extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
   render(){
 
-    const { item } = this.props
+    const { item, navigation } = this.props
 
     return (
-      <TouchableOpacity onPress={()=>this.props.navigation.navigate('IndicadorDetalhadoScreen')}>
+      <TouchableOpacity onPress={()=>navigation.navigate('Detalhes')}>
         <Card style={styles.container}>    
             <Card.Cover source={{ uri: item.gallery[0].url }} />
             <Card.Content>
