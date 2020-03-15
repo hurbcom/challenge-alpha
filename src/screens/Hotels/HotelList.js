@@ -11,17 +11,32 @@ class Hotels extends React.Component {
     super(props)
     this.state = {
       showLoading:true, 
+      laodingFlat: true, 
       page: 1
     }
   }
 
   componentDidMount = () => {
-    //carrega lista de hoteis
-    api.get(`?q=buzios&page=${this.state.page}&sort=stars`).then(dados=>{
-        this.props.onSetHotels(dados.results)
-        this.setState({showLoading:false})
-      }
-    )
+    this.setState({laodingFlat:true}, ()=>{
+      //carrega lista de hoteis
+      api.get(`?q=buzios&page=${this.state.page}&sort=stars`).then(dados=>{
+         // var array = this.props.Hotels.concat(dados.results)
+          this.props.onSetHotels(dados.results)
+          this.setState({showLoading:false, laodingFlat: false})
+        }
+      )
+    })
+  }
+
+  loadMoreHotels = () => {
+    this.setState({page: (this.state.page+1)}, ()=>{
+        this.componentDidMount()
+    })
+  }
+
+  renderFooter = () => {
+    if (!this.state.laodingFlat) return null
+    return (<Loading/>);
   }
 
   render(){
@@ -32,11 +47,16 @@ class Hotels extends React.Component {
           </Modal>
 
           <SafeAreaView style={styles.container}>
-            {/* <Text style={styles.title}>Hotéis</Text> */}
             <FlatList
               data={this.props.Hotels}
+              keyExtractor={(index) => String(index)}
               renderItem={({ item }) => (<HotelItem navigation={this.props.navigation} item={item}/>)}
-              keyExtractor={item => item.id}/>
+              keyExtractor={item => item.id}
+              ListFooterComponent={this.renderFooter()}
+            //  onEndReached={this.loadMoreHotels.bind(this)}
+            //  onEndReachedThreshold={0.5}
+            //  initialNumToRender={20}
+              />
           </SafeAreaView>
       </View>
     );
@@ -47,14 +67,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  title: {
-    marginTop: 20, 
-    marginLeft: 10,
-    marginBottom: 20, 
-    fontSize: 40,
-    fontWeight: 'bold',
-  },
+  }
 }); 
 
 const mapStateToProps = ({ hotelRdc }) => {

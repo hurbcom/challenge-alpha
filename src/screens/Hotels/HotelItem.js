@@ -14,17 +14,16 @@ export default class HotelItem extends React.Component {
     const { item, navigation } = this.props
 
     return (
-      <TouchableOpacity onPress={()=>navigation.navigate('Detalhes')}>
+      <TouchableOpacity key={item.id} onPress={()=>navigation.navigate('Detalhes', {
+          item:item
+      })}>
         <Card style={styles.container}>    
-            <Card.Cover source={{ uri: item.gallery[0].url }} />
+            <Card.Cover source={{ uri: item.image }} />
             <Card.Content>
                 <Title>{item.name}</Title>
                 <Paragraph>{`${item.address.city}, ${item.address.state} - ${item.address.country}`}</Paragraph>
                 <View style={styles.viewPrice}><Paragraph style={styles.price}>{maskMoney(item.price.amount)}</Paragraph></View>
             </Card.Content>
-            {/* <Card.Actions>
-                <Button>Ok</Button>
-            </Card.Actions> */}
         </Card>
       </TouchableOpacity>
     )

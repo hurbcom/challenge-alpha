@@ -2,7 +2,7 @@ import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import ListHotels from './screens/Hotels/HotelList'
-import ListPackages from './screens/Packages/index'
+import ListFavorites from './screens/Favorites/index'
 import { Ionicons } from '@expo/vector-icons'
 import {rosa} from './paleta/colors' 
 import { createStackNavigator } from '@react-navigation/stack'
@@ -21,10 +21,10 @@ function HotelstackScreen() {
 
 const SettingsStack = createStackNavigator();
 
-function PackageStackScreen() {
+function FavoritesStackScreen() {
   return (
     <SettingsStack.Navigator>
-      <SettingsStack.Screen name="Pacotes" component={ListPackages} />
+      <SettingsStack.Screen name="Pacotes" component={ListFavorites} />
       <SettingsStack.Screen name="Detalhes" component={Details} />
     </SettingsStack.Navigator>
   );
@@ -40,7 +40,7 @@ export default function App() {
             let iconName
 
             if (route.name === 'Hotéis') iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline'
-            else if (route.name === 'Pacotes') iconName = focused ? 'ios-list-box' : 'ios-list'
+            else if (route.name === 'Favoritos') iconName = focused ? 'ios-list-box' : 'ios-list'
 
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />
@@ -48,7 +48,7 @@ export default function App() {
         })}
         tabBarOptions={{activeTintColor: rosa, inactiveTintColor: rosa}}> 
         <Tab.Screen name="Hotéis" component={HotelstackScreen} />
-        <Tab.Screen name="Pacotes" component={PackageStackScreen} />
+        <Tab.Screen name="Favoritos" component={FavoritesStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
