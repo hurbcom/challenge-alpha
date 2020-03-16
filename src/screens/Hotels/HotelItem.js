@@ -21,8 +21,8 @@ export default class HotelItem extends React.Component {
             <Card.Cover source={{ uri: item.image }} />
             <Card.Content>
                 <Title>{item.name}</Title>
-                <Paragraph>{`${item.address.city}, ${item.address.state} - ${item.address.country}`}</Paragraph>
-                <View style={styles.viewPrice}><Paragraph style={styles.price}>{maskMoney(item.price.amount)}</Paragraph></View>
+                <Paragraph>{item.address ? `${item.address.city}, ${item.address.state} - ${item.address.country}` : '-'}</Paragraph>
+                <View style={styles.viewPrice}><Paragraph style={styles.price}>{item.price ? maskMoney(item.price.amount) : '-'}</Paragraph></View>
             </Card.Content>
         </Card>
       </TouchableOpacity>

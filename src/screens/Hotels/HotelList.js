@@ -12,31 +12,51 @@ class Hotels extends React.Component {
     this.state = {
       showLoading:true, 
       laodingFlat: true, 
-      page: 1
+      page: 1,
     }
   }
 
   componentDidMount = () => {
+    this.loadHotels()
+  }
+
+  //agrupa por estrelas ou pacotes
+  groupStarsPackages = () => {
+    let grupos = []
+
+    for(let i=5; i>=1; i--) {
+      let hotel = this.props.Hotels.filter(hotel => hotel.stars === i)
+      if(hotel.length > 0) grupos.push({ hotel, title: `${i} estrelas`})
+    }
+
+    let packages = this.props.hotels.filter(hotel => hotel.stars === null)
+    if(packages.length > 0) grupos.push({ data: packages, title: 'Pacotes'})
+
+    return grupos
+  }
+
+  //carrega lista de hoteis
+  loadHotels = () => {
     this.setState({laodingFlat:true}, ()=>{
-      //carrega lista de hoteis
       api.get(`?q=buzios&page=${this.state.page}&sort=stars`).then(dados=>{
-         // var array = this.props.Hotels.concat(dados.results)
-          this.props.onSetHotels(dados.results)
+          this.props.onSetHotels(this.props.Hotels.concat(dados.results))
           this.setState({showLoading:false, laodingFlat: false})
         }
       )
     })
   }
 
+  //seta proxima página
   loadMoreHotels = () => {
     this.setState({page: (this.state.page+1)}, ()=>{
-        this.componentDidMount()
+        this.loadHotels()
     })
   }
 
+  //loading do scroll infinito
   renderFooter = () => {
     if (!this.state.laodingFlat) return null
-    return (<Loading/>);
+    return (<Loading transparent/>);
   }
 
   render(){
@@ -49,14 +69,11 @@ class Hotels extends React.Component {
           <SafeAreaView style={styles.container}>
             <FlatList
               data={this.props.Hotels}
-              keyExtractor={(index) => String(index)}
               renderItem={({ item }) => (<HotelItem navigation={this.props.navigation} item={item}/>)}
               keyExtractor={item => item.id}
-              ListFooterComponent={this.renderFooter()}
-            //  onEndReached={this.loadMoreHotels.bind(this)}
-            //  onEndReachedThreshold={0.5}
-            //  initialNumToRender={20}
-              />
+              ListFooterComponent={this.renderFooter}
+              onEndReachedThreshold={0.01}
+              onEndReached={this.loadMoreHotels}/>
           </SafeAreaView>
       </View>
     );

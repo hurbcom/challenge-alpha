@@ -8,7 +8,8 @@ const reducers = combineReducers({hotelRdc: hotelReducer})
 
 const persistConfig = {
     key: 'root',
-    storage: AsyncStorage
+    storage: AsyncStorage,
+    blacklist: ['hotelRdc']
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
