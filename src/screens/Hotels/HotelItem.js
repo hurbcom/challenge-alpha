@@ -33,8 +33,7 @@ export default class HotelItem extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      marginTop: 10,
-      marginBottom: 10
+      marginBottom: 20
     },
     price: {
       fontSize: 20,
