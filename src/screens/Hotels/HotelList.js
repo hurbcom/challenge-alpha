@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, Modal, SectionList, Text} from 'react-native'
+import { StyleSheet, View, SafeAreaView, Modal, SectionList, Text, TouchableOpacity, TextInput, Button} from 'react-native'
 import { api } from '../../connection/fetch'
 import { connect } from 'react-redux'
 import { set_hotels } from '../../redux/action/hotelAction'
 import Loading from '../../components/Loading'
 import HotelItem from './HotelItem'
-import { azul } from '../../paleta/colors'
+import { rosa, azul } from '../../paleta/colors'
+import { MaterialIcons } from '@expo/vector-icons'
+import Alert from "react-native-modal"
 
 class Hotels extends React.Component {
   constructor(props) {
@@ -14,6 +16,9 @@ class Hotels extends React.Component {
       showLoading:true, 
       loadingFlat: true, 
       page: 1,
+      showBusca: false,
+      textBusca: '',
+      busca: 'buzios'
     }
   }
 
@@ -39,7 +44,7 @@ class Hotels extends React.Component {
   //carrega lista de hoteis
   loadHotels = () => {
     this.setState({loadingFlat:true}, ()=>{
-      api.get(`?q=buzios&page=${this.state.page}&sort=stars`).then(dados=>{
+      api.get(`?q=${this.state.busca}&page=${this.state.page}&sort=stars`).then(dados=>{
           this.props.onSetHotels(this.props.Hotels.concat(dados.results))
           this.setState({showLoading:false, loadingFlat: false})
         }
@@ -52,28 +57,44 @@ class Hotels extends React.Component {
 
   //loading do scroll infinito
   renderFooter = () => {
-    if (!this.state.loadingFlat) return null
+    if (!this.state.loadingFlat || this.state.showLoading) return null
     return (<Loading transparent/>)
+  }
+
+  //setar campo de busca
+  atualizaCampoBusca = (texto) => {this.setState({textBusca: texto})}
+
+  //pesquisa pelo parâmetro do usuário
+  buscar = () => {
+    this.props.onSetHotels([])
+    this.setState({page: 1, showBusca: false}, ()=>{this.loadHotels()})
   }
 
   render(){
     return (
       <View style={styles.container}>
-          <Modal animationType="fade" transparent={true} visible={this.state.showLoading}>
-            <Loading />
-          </Modal>
+            <Modal animationType="fade" transparent={true} visible={this.state.showLoading}><Loading /></Modal> 
+            
+          <Alert onSwipeComplete={this.close}  style={styles.modalBusca} isVisible={this.state.showBusca}>
+                <View>
+                  <TextInput onChangeText={text => this.atualizaCampoBusca(text)} value={this.state.textBusca} />
+                  <Button title="Buscar" onPress={() => Alert.alert('Button with adjusted color pressed')}></Button>
+                </View>
+          </Alert>
 
           <SafeAreaView style={styles.container}>
                 <SectionList
                   ListFooterComponent={this.renderFooter}
-                //  onEndReachedThreshold={0.01}
                   onEndReached={this.loadMoreHotels}
                   sections={this.groupStarsPackages()}
                   keyExtractor={(item, index) => item + index}
                   renderItem={({ item }) => <HotelItem navigation={this.props.navigation} item={item}/>}
-                  renderSectionHeader={({ section: {titulo} }) => ( <Text style={styles.badge}>{titulo}</Text>)}
-                />
+                  renderSectionHeader={({ section: {titulo} }) => ( <Text style={styles.badge}>{titulo}</Text>)}/>
           </SafeAreaView>
+
+          <TouchableOpacity activeOpacity={.7}  style={styles.fab} onPress={()=>this.setState({showBusca: true})}>
+              <MaterialIcons name={'search'} size={28} color={'#fff'} />
+          </TouchableOpacity>
       </View>
     );
   }
@@ -87,11 +108,29 @@ const styles = StyleSheet.create({
   badge: {
     backgroundColor: azul,
     color: '#fff',
-    borderRadius: 20,
     textAlign: 'center',
     padding: 10,
     fontSize: 22
-  }
+  }, 
+  fab:{
+    position: "absolute",
+    backgroundColor: rosa,
+    width:50, 
+    height: 50,
+    borderRadius: 50,
+    bottom: 10, 
+    right: 10, 
+    alignItems: 'center', 
+    justifyContent: 'center'
+  },
+  modalBusca: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    justifyContent: 'flex-end',
+    margin: 0,
+  },
 }); 
 
 const mapStateToProps = ({ hotelRdc }) => {
