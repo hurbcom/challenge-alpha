@@ -7,7 +7,6 @@ import Loading from '../../components/Loading'
 import HotelItem from './HotelItem'
 import { rosa, azul } from '../../paleta/colors'
 import { MaterialIcons } from '@expo/vector-icons'
-import Alert from "react-native-modal"
 
 class Hotels extends React.Component {
   constructor(props) {
@@ -73,15 +72,8 @@ class Hotels extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-            <Modal animationType="fade" transparent={true} visible={this.state.showLoading}><Loading /></Modal> 
+          <Modal animationType="fade" transparent={true} visible={this.state.showLoading}><Loading /></Modal> 
             
-          <Alert onSwipeComplete={this.close}  style={styles.modalBusca} isVisible={this.state.showBusca}>
-                <View>
-                  <TextInput onChangeText={text => this.atualizaCampoBusca(text)} value={this.state.textBusca} />
-                  <Button title="Buscar" onPress={() => Alert.alert('Button with adjusted color pressed')}></Button>
-                </View>
-          </Alert>
-
           <SafeAreaView style={styles.container}>
                 <SectionList
                   ListFooterComponent={this.renderFooter}

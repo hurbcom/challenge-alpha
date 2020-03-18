@@ -24,7 +24,7 @@ const SettingsStack = createStackNavigator();
 function FavoritesStackScreen() {
   return (
     <SettingsStack.Navigator>
-      <SettingsStack.Screen name="Pacotes" component={ListFavorites} />
+      <SettingsStack.Screen name="Favoritos" component={ListFavorites} />
       <SettingsStack.Screen name="Detalhes" component={Details} />
     </SettingsStack.Navigator>
   );

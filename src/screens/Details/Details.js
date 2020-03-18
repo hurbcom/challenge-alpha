@@ -1,16 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, Linking, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, Linking, TouchableOpacity, Modal} from 'react-native'
 import Carousel from 'react-native-snap-carousel'
 import { Card, Title,Paragraph } from 'react-native-paper'
 import { Ionicons, Feather } from '@expo/vector-icons'
-import { azul, rosa } from '../../paleta/colors'
+import { azul, rosa, amarelo } from '../../paleta/colors'
 import ReadMore from 'react-native-read-more-text'
 import { maskMoney } from '../../components/MaskMoney'
+import Loading from '../../components/Loading'
+import Stars from 'react-native-stars'
+
+
 
 export default class Packages extends React.Component {
   constructor(props){
     super(props)
+
+    this.state = {loading: true}
+
   }
+
+  componentDidMount = () => {setTimeout(() => {this.setState({loading:false})}, 3000)}
 
   //seta imagem da galeria
   renderImagem ({item, index}) {
@@ -49,24 +58,34 @@ export default class Packages extends React.Component {
   }
 
   render(){
-
     const { item } = this.props.route.params
+
     return (
-      <View>
+      <View >
+
+        <Modal animationType="fade" transparent={true} visible={this.state.loading}><Loading /></Modal>
         <ScrollView>
             <Carousel ref={(c) => { this._carousel = c; }} data={item.gallery} layout={'stack'} renderItem={this.renderImagem} sliderWidth={400} itemWidth={400}/> 
+            
             
             <View style={styles.textLocal}>
                 <Text >{item.address.city}, {item.address.state}</Text>
             </View>
 
+            <View style={{position: 'absolute', left: 5, top: 5}}>
+              {item.stars  && 
+                <Stars display={item.stars} spacing={12} count={5} starSize={32} backingColor={amarelo}  half={false}
+                  fullStar={<Ionicons name="ios-star" size={22} color={amarelo} />} emptyStar={<Ionicons name="ios-star-outline" size={32} color={amarelo} />}
+                /> 
+              }
+            </View>
+
             <TouchableOpacity style={{position: 'absolute', right: 5, top: 5}} onPress={()=> this.shareSocial(item.url)}>
-                <Feather name={'share'} size={36} color={'#fff'} />
+                <Feather name={'share'} size={32} color={'#fff'} />
             </TouchableOpacity>
 
             <View style={styles.viewRow}>
               <Text style={styles.title}>{item.name}</Text> 
-              <View style={styles.viewPrice}><Paragraph style={styles.price}>{item.price ? maskMoney(item.price.amount) : '-'}</Paragraph></View>
             </View>
            
             <Carousel ref={(c) => { this._carousel = c; }} data={item.amenities} layout={'default'} renderItem={this.renderComodidades} sliderWidth={400} itemWidth={160}/> 
@@ -76,8 +95,12 @@ export default class Packages extends React.Component {
                   <Text style={styles.textDescription}>{item.description}</Text>
               </ReadMore>
             </View>
-            
         </ScrollView>
+        
+        <View style={styles.viewPrice}>
+          <Paragraph style={styles.price}>{item.price ? maskMoney(item.price.amount) : '-'}</Paragraph>
+        </View>
+
       </View>
     );
   }
@@ -87,15 +110,20 @@ const styles = StyleSheet.create({
   container: {
     height: 140
   },
-  viewPrice: {
-    flex: 1, 
-    flexDirection: 'row-reverse'
-  },
   price: {
-    fontSize: 21,
+    fontSize: 23,
     marginTop:10,
-    color: rosa,
+    paddingRight: 10,
+    paddingTop: 5, 
+    paddingBottom: 5,
+    textAlign: 'right',
+    color: '#fff',
     fontWeight: 'bold',
+  },
+  viewPrice: {
+    bottom:40, 
+    backgroundColor: azul,
+    zIndex: 9999
   },
   title: {
     fontSize: 30,
@@ -106,8 +134,9 @@ const styles = StyleSheet.create({
   },
   viewDescription: {
     margin:10, 
+    marginBottom: 60,
     backgroundColor: '#fff', 
-    borderRadius: 20, 
+    borderRadius: 10, 
     padding: 10
   },
   textLocal: {
