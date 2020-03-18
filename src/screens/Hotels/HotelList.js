@@ -1,12 +1,14 @@
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, Modal, SectionList, Text, TouchableOpacity, TextInput, Button} from 'react-native'
+import { StyleSheet, View, SafeAreaView, SectionList, Text, TouchableOpacity} from 'react-native'
 import { api } from '../../connection/fetch'
 import { connect } from 'react-redux'
 import { set_hotels } from '../../redux/action/hotelAction'
 import Loading from '../../components/Loading'
 import HotelItem from './HotelItem'
 import { rosa, azul } from '../../paleta/colors'
-import { MaterialIcons } from '@expo/vector-icons'
+import { MaterialIcons, Ionicons } from '@expo/vector-icons'
+import Modal from 'react-native-modal'
+import { Button } from 'react-native-elements'
 
 class Hotels extends React.Component {
   constructor(props) {
@@ -70,10 +72,26 @@ class Hotels extends React.Component {
   }
 
   render(){
+    const suggestions = [
+      {text: 'Banana', value: '1'},
+      {text: 'Apple', value: '2'}
+    ]
+
     return (
       <View style={styles.container}>
-          <Modal animationType="fade" transparent={true} visible={this.state.showLoading}><Loading /></Modal> 
-            
+
+          {this.state.showLoading && <Loading />}
+          
+          <Modal isVisible={this.state.showBusca}>
+            <View style={{ padding: 10, borderRadius: 5, alignSelf: 'center', backgroundColor: 'white', width: '90%' }}>
+                <TouchableOpacity onPress={()=>this.setState({showBusca: false, textBusca: ''})} style={{ flexDirection: 'row-reverse'}}><Ionicons name={'md-close'} size={28} color={'gray'} /></TouchableOpacity>
+                <View style={{padding:10}}>
+                  <Button buttonStyle={{ backgroundColor: rosa, marginTop: 20 }} /*iconRight={true} icon={<MaterialIcons name={'search'} size={28} color={'#fff'} />} */title="Buscar" />
+                </View>
+               
+            </View>
+          </Modal>
+
           <SafeAreaView style={styles.container}>
                 <SectionList
                   ListFooterComponent={this.renderFooter}

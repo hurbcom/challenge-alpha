@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
       marginBottom: 20
     },
     price: {
-      fontSize: 20,
+      fontSize: 21,
       marginTop:10,
       color: rosa,
       fontWeight: 'bold',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, Linking, TouchableOpacity, Modal} from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, Linking, TouchableOpacity} from 'react-native'
 import Carousel from 'react-native-snap-carousel'
 import { Card, Title,Paragraph } from 'react-native-paper'
 import { Ionicons, Feather } from '@expo/vector-icons'
@@ -63,7 +63,8 @@ export default class Packages extends React.Component {
     return (
       <View >
 
-        <Modal animationType="fade" transparent={true} visible={this.state.loading}><Loading /></Modal>
+        {this.state.loading && <Loading />}
+        
         <ScrollView>
             <Carousel ref={(c) => { this._carousel = c; }} data={item.gallery} layout={'stack'} renderItem={this.renderImagem} sliderWidth={400} itemWidth={400}/> 
             
