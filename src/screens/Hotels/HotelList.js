@@ -9,6 +9,7 @@ import { rosa, azul } from '../../paleta/colors'
 import { MaterialIcons, Ionicons } from '@expo/vector-icons'
 import Modal from 'react-native-modal'
 import { Button } from 'react-native-elements'
+import Autocomplete from 'react-native-autocomplete-input'
 
 class Hotels extends React.Component {
   constructor(props) {
@@ -19,7 +20,9 @@ class Hotels extends React.Component {
       page: 1,
       showBusca: false,
       textBusca: '',
-      busca: 'buzios'
+      busca: 'buzios', 
+      listaSuggestion: [],
+      hideResult: false,
     }
   }
 
@@ -67,28 +70,41 @@ class Hotels extends React.Component {
 
   //pesquisa pelo parâmetro do usuário
   buscar = () => {
-    this.props.onSetHotels([])
-    this.setState({page: 1, showBusca: false}, ()=>{this.loadHotels()})
+    this.setState({showLoading: true, busca: this.state.textBusca, textBusca: ''}, ()=>{
+      this.props.onSetHotels([])
+      this.setState({page: 1, showBusca: false}, ()=>{this.loadHotels()})
+    })
+  }
+
+  //carrega suggestions de acordo com busca do usuário
+  carregaSuggestions = (suggestion) => {
+    api.get(`/suggestion?q=${suggestion}`).then(dados=>{
+        var array = []
+        dados.suggestions.forEach((e)=> {
+            array.push(e.text)
+        })
+        console.log(array)
+        this.setState({listaSuggestion: array, hideResult: false})
+      })
   }
 
   render(){
-    const suggestions = [
-      {text: 'Banana', value: '1'},
-      {text: 'Apple', value: '2'}
-    ]
+    const { listaSuggestion, showBusca, textBusca, showLoading, hideResult } = this.state
+
 
     return (
       <View style={styles.container}>
 
-          {this.state.showLoading && <Loading />}
+          {showLoading && <Loading />}
           
-          <Modal isVisible={this.state.showBusca}>
-            <View style={{ padding: 10, borderRadius: 5, alignSelf: 'center', backgroundColor: 'white', width: '90%' }}>
+          <Modal isVisible={showBusca}>
+            <View style={styles.viewBusca}>
                 <TouchableOpacity onPress={()=>this.setState({showBusca: false, textBusca: ''})} style={{ flexDirection: 'row-reverse'}}><Ionicons name={'md-close'} size={28} color={'gray'} /></TouchableOpacity>
-                <View style={{padding:10}}>
-                  <Button buttonStyle={{ backgroundColor: rosa, marginTop: 20 }} /*iconRight={true} icon={<MaterialIcons name={'search'} size={28} color={'#fff'} />} */title="Buscar" />
+                
+                <View style={{padding:10, flex: 1, flexDirection: 'column', justifyContent: 'space-between'}}>
+                    <Autocomplete hideResults={hideResult} data={listaSuggestion} defaultValue={textBusca} onChangeText={text => this.carregaSuggestions(text)} renderItem={({ item, i }) => (<TouchableOpacity onPress={() => this.setState({ textBusca: item, hideResult: true })}><Text style={{padding: 15}}>{item}</Text></TouchableOpacity>)}/>
+                    <Button buttonStyle={{backgroundColor: rosa}} onPress={this.buscar.bind(this)} title="Buscar" />
                 </View>
-               
             </View>
           </Modal>
 
@@ -133,13 +149,13 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'center'
   },
-  modalBusca: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-    justifyContent: 'flex-end',
-    margin: 0,
+  viewBusca: {
+    padding: 10, 
+    borderRadius: 5, 
+    alignSelf: 'center', 
+    backgroundColor: 'white', 
+    width: '90%', 
+    height: '30%'
   },
 }); 
 

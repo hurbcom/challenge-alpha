@@ -75,7 +75,7 @@ export default class Packages extends React.Component {
 
             <View style={{position: 'absolute', left: 5, top: 5}}>
               {item.stars  && 
-                <Stars display={item.stars} spacing={12} count={5} starSize={32} backingColor={amarelo}  half={false}
+                <Stars display={item.stars} spacing={12} count={item.stars} starSize={32} backingColor={amarelo}  half={false}
                   fullStar={<Ionicons name="ios-star" size={22} color={amarelo} />} emptyStar={<Ionicons name="ios-star-outline" size={32} color={amarelo} />}
                 /> 
               }
