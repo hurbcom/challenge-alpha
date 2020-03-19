@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { StyleSheet, View, SafeAreaView, SectionList, Text, TouchableOpacity} from 'react-native'
 import { api } from '../../connection/fetch'
 import { connect } from 'react-redux'
@@ -79,7 +79,7 @@ class Hotels extends React.Component {
   //carrega suggestions de acordo com busca do usuário
   carregaSuggestions = (suggestion) => {
     api.get(`/suggestion?q=${suggestion}`).then(dados=>{
-        var array = []
+        let array = []
         dados.suggestions.forEach((e)=> {
             array.push(e.text)
         })
@@ -90,7 +90,6 @@ class Hotels extends React.Component {
 
   render(){
     const { listaSuggestion, showBusca, textBusca, showLoading, hideResult } = this.state
-
 
     return (
       <View style={styles.container}>

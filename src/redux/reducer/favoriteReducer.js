@@ -1,13 +1,13 @@
-import { SET_HOTELS, SET_FAVORITES } from '../actionTypes'
+import { SET_FAVORITES } from '../actionTypes'
 
-const initialState = {hotels: [], favorites: []}
+const initialState = {favorites: []}
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_HOTELS:
+        case SET_FAVORITES:
             return {
                 ...state, 
-                hotels: action.payload
+                favorites: action.payload
             }
         default:
             return state

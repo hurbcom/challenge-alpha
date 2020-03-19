@@ -1,1 +1,2 @@
 export const SET_HOTELS = 'SET_HOTELS'
+export const SET_FAVORITES = 'SET_FAVORITES'
