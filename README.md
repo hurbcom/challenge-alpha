@@ -23,7 +23,9 @@
 <h5>COMO USAR</h5>
   <ul>
     <li>Baixe o aplicativo 'Expo' na sua Play Store ou App Store (de acordo com sua plataforma).</li>
-    <li>Dentro da pasta challenge-alpha rode o comando yarn i para que as dependências sejam instaladas.</li>
+    <li><b>Opção 1:</b>Caso sua plataforma seja Android você pode entrar neste link: https://expo.io/@loureirojuliana/challenge-alpha</li>
+    <li>E em seguida, mire a câmera do seu celular para o QRCODE localizado no canto direito da sua tela</li>
+    <li><b>Opção 2:</b>Dentro da pasta challenge-alpha rode o comando yarn i para que as dependências sejam instaladas.</li>
     <li>Em seguida, rode o comando expo start.</li>
     <li>Por fim, com o seu smartphone aponte para o QR Code gerado para que o app seja inicializado!</li>
   </ul>
