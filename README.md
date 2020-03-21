@@ -20,6 +20,10 @@
   </ul>
 </span>
 
+<p align="center">
+  <img src="./assets/app_challenge.gif"" alt="App challenge" />
+</p>
+
 <h5>COMO USAR</h5>
   <ul>
     <li>Baixe o aplicativo 'Expo' na sua Play Store ou App Store (de acordo com sua plataforma).</li>
