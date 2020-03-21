@@ -39,7 +39,7 @@ class HotelItem extends React.Component {
                 <Title>{item.name}</Title>
                 <Paragraph>{item.address ? `${item.address.city}, ${item.address.state} - ${item.address.country}` : '-'}</Paragraph>
                 <View style={styles.viewRow}>
-                  <TouchableOpacity onPress={()=>this.addFavorite(item)}><MaterialIcons name={this.isFavorite(item) ? 'favorite' : 'favorite-border'} size={28} color={rosa} /></TouchableOpacity>
+                  <TouchableOpacity onPress={()=>this.addFavorite(item)}><MaterialIcons name={this.isFavorite(item) ? 'favorite' : 'favorite-border'} size={32} color={rosa} /></TouchableOpacity>
                   <Paragraph style={styles.price}>{item.price ? maskMoney(item.price.amount) : '-'}</Paragraph>
                 </View>
             </Card.Content>

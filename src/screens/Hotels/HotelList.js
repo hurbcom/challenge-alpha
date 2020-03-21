@@ -10,6 +10,7 @@ import { MaterialIcons, Ionicons } from '@expo/vector-icons'
 import Modal from 'react-native-modal'
 import { Button } from 'react-native-elements'
 import Autocomplete from 'react-native-autocomplete-input'
+import {groupStarsPackages} from '../../components/GroupByStars'
 
 class Hotels extends React.Component {
   constructor(props) {
@@ -28,21 +29,6 @@ class Hotels extends React.Component {
 
   componentDidMount = () => {
     this.loadHotels()
-  }
-
-  //agrupa por estrelas ou pacotes
-  groupStarsPackages = () => {
-    let grupos = []
-
-    for(let i=5; i>=1; i--) {
-      let hotels = this.props.Hotels.filter(hotel => hotel.stars === i)
-      if(hotels.length > 0) grupos.push({ data: hotels, titulo: `${i} estrelas`})
-    }
-
-    let packages = this.props.Hotels.filter(pack => pack.stars === null)
-    if(packages.length > 0) grupos.push({ data: packages, titulo: 'Pacotes'})
-
-    return grupos
   }
 
   //carrega lista de hoteis
@@ -111,7 +97,7 @@ class Hotels extends React.Component {
                 <SectionList
                   ListFooterComponent={this.renderFooter}
                   onEndReached={this.loadMoreHotels}
-                  sections={this.groupStarsPackages()}
+                  sections={groupStarsPackages(this.props.Hotels)}
                   keyExtractor={(item, index) => item + index}
                   renderItem={({ item }) => <HotelItem navigation={this.props.navigation} item={item}/>}
                   renderSectionHeader={({ section: {titulo} }) => ( <Text style={styles.badge}>{titulo}</Text>)}/>

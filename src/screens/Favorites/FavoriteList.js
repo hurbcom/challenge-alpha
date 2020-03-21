@@ -5,25 +5,11 @@ import { rosa, azul } from '../../paleta/colors'
 import HotelItem from '../Hotels/HotelItem'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { set_favorites } from '../../redux/action/favoriteAction'
+import {groupStarsPackages} from '../../components/GroupByStars'
 
 class Favorites extends React.Component {
   constructor(props) {
     super(props)
-  }
-
-  //agrupa por estrelas ou pacotes
-  groupStarsPackages = () => {
-    let grupos = []
-
-    for(let i=5; i>=1; i--) {
-      let favoritesHotels = this.props.Favorites.filter(hotel => hotel.stars === i)
-      if(favoritesHotels.length > 0) grupos.push({ data: favoritesHotels, titulo: `${i} estrelas`})
-    }
-
-    let favoritesPackages = this.props.Favorites.filter(pack => pack.stars === null)
-    if(favoritesPackages.length > 0) grupos.push({ data: favoritesPackages, titulo: 'Pacotes'})
-
-    return grupos
   }
 
   render(){
@@ -31,9 +17,7 @@ class Favorites extends React.Component {
       <View style={styles.container}>
           <SafeAreaView style={styles.container}>
               <SectionList
-                ListFooterComponent={this.renderFooter}
-                onEndReached={this.loadMoreHotels}
-                sections={this.groupStarsPackages()}
+                sections={groupStarsPackages(this.props.Favorites)}
                 keyExtractor={(item, index) => item + index}
                 renderItem={({ item }) => <HotelItem navigation={this.props.navigation} item={item}/>}
                 renderSectionHeader={({ section: {titulo} }) => ( <Text style={styles.badge}>{titulo}</Text>)}/>

@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.5",
@@ -15,6 +16,8 @@
     "@react-navigation/native": "^5.0.9",
     "@react-navigation/stack": "^5.1.1",
     "expo": "~36.0.0",
+    "jest": "^25.1.0",
+    "jest-cli": "^25.1.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
@@ -34,12 +37,13 @@
     "react-native-web": "~0.11.7",
     "react-navigation-stack": "^2.2.3",
     "react-redux": "^7.2.0",
+    "react-test-renderer": "^16.13.1",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "~8.0.0",
-    "@babel/core": "^7.0.0"
+    "@babel/core": "^7.0.0",
+    "babel-preset-expo": "~8.0.0"
   },
   "private": true
 }
