@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
     flex: 1;
@@ -40,12 +41,12 @@ export const UITableView = styled.View`
     margin-top: 10px;
     flex-direction: row;
     border-radius: 4px;
-    max-height: 120px;
+    max-height: 200px;
 `;
 
 export const HotelHeadImage = styled.Image`
     width: 80px;
-    height: 80px;
+    height: 100%;
     background: #d8d8d8;
 `;
 export const HotelGalleryImage = styled.Image`
@@ -55,7 +56,7 @@ export const HotelGalleryImage = styled.Image`
 `;
 export const HotelImagesView = styled.View`
     height: 100%;
-    max-height: 120px;
+    max-height: 180px;
     width: 100%;
     max-width: 80px;
     background: #d8d8d8;
@@ -85,10 +86,11 @@ export const HotelDescriptionText = styled.Text.attrs({
     text-align: right;
 `;
 export const HotelPriceText = styled.Text`
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 55%;
     margin-top: auto;
     font-weight: bold;
+    color: #daa520;
 `;
 export const HotelDetailView = styled.View`
     width: 72%;
@@ -103,13 +105,32 @@ export const LogoImage = styled.Image`
     height: 35px;
 `;
 export const HotelStarsText = styled.Text``;
-export const HotelStarsView = styled.View`
-    flex-direction: row;
+export const HotelAmenitiesView = styled.View`
+    flex-direction: column;
     margin-left: 6px;
     margin-top: 4px;
 `;
-export const SafeAreaView = styled.View`
+export const SectionHeaderText = styled.Text`
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+`;
+export const HotelAmenitiesText = styled.Text.attrs({
+    numberOfLines: 1,
+})``;
+
+export const SectionHeaderView = styled.View`
     flex-direction: row;
-    margin-left: 6px;
-    margin-top: 4px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+`;
+export const SubmitButton = styled(RectButton)`
+    align-items: center;
+    justify-content: center;
+    background: #7159c1;
+    height: 100%;
+    width: 50px;
+    border-radius: 4px;
 `;

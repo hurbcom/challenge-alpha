@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SectionList, FlatList, ActivityIndicator, Text } from 'react-native';
+import { SectionList, ActivityIndicator, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import logo from '../../assets/logo.png';
 import {
@@ -16,13 +16,16 @@ import {
     HotelPriceText,
     HotelDescriptionText,
     HotelStarsText,
-    HotelStarsView,
+    SectionHeaderText,
+    HotelAmenitiesText,
+    HotelAmenitiesView,
     HotelGalleryView,
+    SectionHeaderView,
     HotelDetailView,
     LoadingView,
     LogoImage,
     HeaderView,
-    SafeAreaView,
+    SubmitButton,
 } from './styles';
 import api from '../../services/api';
 
@@ -33,7 +36,8 @@ export default function Home() {
     const [hotels3Stars, setHotels3Stars] = useState([]);
     const [hotels2Stars, setHotels2Stars] = useState([]);
     const [hotels1Stars, setHotels1Stars] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [packet, sePacket] = useState([]);
+    const [loading, setLoading] = useState(null);
 
     async function loadHotels() {
         setLoading(true);
@@ -44,33 +48,13 @@ export default function Home() {
             },
         });
         setHotels(response.data.results);
-        setHotels5Stars({
-            title: '5 Stars',
-            data: hotels.filter(hotel => hotel.stars === 5),
-        });
-        setHotels4Stars({
-            title: '4 Stars',
-            data: hotels.filter(hotel => hotel.stars === 4),
-        });
-        setHotels3Stars({
-            title: '3 Stars',
-            data: hotels.filter(hotel => hotel.stars === 3),
-        });
-        setHotels2Stars({
-            title: '2 Stars',
-            data: hotels.filter(hotel => hotel.stars === 2),
-        });
-        setHotels1Stars({
-            title: '1 Stars',
-            data: hotels.filter(hotel => hotel.stars === 1),
-        });
-
-        console.tron.log(hotels);
-        console.tron.log(hotels5Stars);
-        console.tron.log(hotels4Stars);
-        console.tron.log(hotels3Stars);
-        console.tron.log(hotels2Stars);
-        console.tron.log(hotels1Stars);
+        console.tron.log(response.data);
+        setHotels5Stars(hotels.filter(hotel => hotel.stars === 5));
+        setHotels4Stars(hotels.filter(hotel => hotel.stars === 4));
+        setHotels3Stars(hotels.filter(hotel => hotel.stars === 3));
+        setHotels2Stars(hotels.filter(hotel => hotel.stars === 2));
+        setHotels1Stars(hotels.filter(hotel => hotel.stars === 1));
+        sePacket(hotels.filter(hotel => hotel.stars === 0));
         setLoading(false);
     }
 
@@ -87,21 +71,50 @@ export default function Home() {
             <InputView>
                 <Icon name="search" color="#2E2E2E" size={40} />
                 <SearchInput placeholder="Vai para onde?" />
+                <SubmitButton>
+                    <Icon
+                        name="keyboard-arrow-right"
+                        color="#2E2E2E"
+                        size={40}
+                    />
+                </SubmitButton>
             </InputView>
 
-            <FlatList
-                data={hotels.sort(function orderByStars(a, b) {
-                    if (a.stars > b.stars) {
-                        return -1;
-                    }
-                    if (a.stars < b.stars) {
-                        return 1;
-                    }
-                    // a must be equal to b
-                    return 0;
-                })}
-                keyExtrator={hotel => String(hotel.id)}
+            <SectionList
+                sections={[
+                    {
+                        title: '5',
+                        data: hotels5Stars,
+                    },
+                    {
+                        title: '4',
+                        data: hotels4Stars,
+                    },
+                    {
+                        title: '3',
+                        data: hotels3Stars,
+                    },
+                    {
+                        title: '2',
+                        data: hotels2Stars,
+                    },
+                    {
+                        title: '1',
+                        data: hotels1Stars,
+                    },
+                ]}
+                keyExtrator={item => item.id}
                 showsVerticalScrollIndicator={false}
+                renderSectionHeader={({ section }) =>
+                    loading || (
+                        <SectionHeaderView>
+                            <SectionHeaderText>
+                                {section.title}
+                            </SectionHeaderText>
+                            <Icon name="star" color="#daa520" size={25} />
+                        </SectionHeaderView>
+                    )
+                }
                 renderItem={({ item: hotel }) =>
                     loading ? (
                         <LoadingView>
@@ -113,39 +126,64 @@ export default function Home() {
                                 <HotelHeadImage
                                     source={{ uri: `${hotel.image}` }}
                                 />
-                                <HotelGalleryView>
-                                    <HotelGalleryImage
-                                        source={{
-                                            uri: `${hotel.gallery[1].url}`,
-                                        }}
-                                    />
-                                    <HotelGalleryImage
-                                        source={{
-                                            uri: `${hotel.gallery[2].url}`,
-                                        }}
-                                    />
-                                </HotelGalleryView>
                             </HotelImagesView>
                             <HotelDetailView>
                                 <HotelLocationText>
                                     {`${hotel.address.city}/ ${hotel.address.state}`}
                                 </HotelLocationText>
-                                <HotelNameText> {hotel.name}</HotelNameText>
+                                <HotelNameText>{hotel.name}</HotelNameText>
                                 <HotelDescriptionText>
                                     {hotel.smallDescription}
                                 </HotelDescriptionText>
-                                <HotelStarsView>
-                                    <HotelStarsText>
-                                        {hotel.stars}
-                                    </HotelStarsText>
-                                    <Icon
-                                        name="star"
-                                        color="#daa520"
-                                        size={15}
-                                    />
-                                </HotelStarsView>
+                                <HotelAmenitiesView>
+                                    <HotelAmenitiesText>
+                                        {hotel.amenities[0] ? (
+                                            <>
+                                                <Icon
+                                                    name="check"
+                                                    color="#2E2E2E"
+                                                    size={10}
+                                                />
+                                                <HotelAmenitiesText>
+                                                    {hotel.amenities[0].name}
+                                                </HotelAmenitiesText>
+                                            </>
+                                        ) : null}
+                                    </HotelAmenitiesText>
+                                    <HotelAmenitiesText>
+                                        {hotel.amenities[1] ? (
+                                            <>
+                                                <Icon
+                                                    name="check"
+                                                    color="#2E2E2E"
+                                                    size={10}
+                                                />
+                                                <HotelAmenitiesText>
+                                                    {hotel.amenities[1].name}
+                                                </HotelAmenitiesText>
+                                            </>
+                                        ) : null}
+                                    </HotelAmenitiesText>
+                                    <HotelAmenitiesText>
+                                        {hotel.amenities[2] ? (
+                                            <>
+                                                <Icon
+                                                    name="check"
+                                                    color="#2E2E2E"
+                                                    size={10}
+                                                />
+                                                <HotelAmenitiesText>
+                                                    {hotel.amenities[2].name}
+                                                </HotelAmenitiesText>
+                                            </>
+                                        ) : null}
+                                    </HotelAmenitiesText>
+                                </HotelAmenitiesView>
                                 <HotelPriceText>
-                                    {hotel.price.amount}
+                                    {Intl.NumberFormat('pt-BR', {
+                                        style: 'currency',
+                                        currency: 'BRL',
+                                    }).format(hotel.price.amount)}
                                 </HotelPriceText>
                             </HotelDetailView>
                         </UITableView>
