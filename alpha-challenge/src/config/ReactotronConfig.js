@@ -10,4 +10,6 @@ if (__DEV__) {
         .connect();
 
     tron.clear();
+
+    console.tron = tron;
 }
