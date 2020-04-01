@@ -70,11 +70,13 @@ export const HotelLocationText = styled.Text`
     font-weight: bold;
     font-size: 14px;
     margin-left: 4px;
+    margin-top: 4px;
 `;
 export const HotelNameText = styled.Text.attrs({
     numberOfLines: 1,
 })`
     font-size: 18px;
+    margin-left: 4px;
 `;
 export const HotelDescriptionText = styled.Text.attrs({
     numberOfLines: 2,
