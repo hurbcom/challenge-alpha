@@ -1,17 +1,35 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
+import {
+    NavigationContainer,
+    DefaultTheme,
+    DarkTheme,
+} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Home from './pages/Home';
+import HotelSearchList from './pages/HotelSearchList';
+import HotelDetails from './pages/HotelDetails';
 
 const AppStack = createStackNavigator();
 
 export default function Routes() {
+    const scheme = useColorScheme(); // captura a preferencia do tema do sistema do usuário(Darkmode);
     return (
-        <NavigationContainer>
-            <AppStack.Navigator screenOptions={{ headerShown: false }}>
-                <AppStack.Screen name="Home" component={Home} />
-            </AppStack.Navigator>
-        </NavigationContainer>
+        <AppearanceProvider>
+            <NavigationContainer
+                theme={scheme === 'dark' ? DarkTheme : DefaultTheme}
+            >
+                <AppStack.Navigator screenOptions={{ headerShown: false }}>
+                    <AppStack.Screen
+                        name="HotelSearchList"
+                        component={HotelSearchList}
+                    />
+                    <AppStack.Screen
+                        name="HotelDetails"
+                        component={HotelDetails}
+                    />
+                </AppStack.Navigator>
+            </NavigationContainer>
+        </AppearanceProvider>
     );
 }

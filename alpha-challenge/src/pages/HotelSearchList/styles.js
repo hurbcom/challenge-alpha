@@ -10,10 +10,11 @@ export const Container = styled.View`
 `;
 
 export const InputView = styled.View`
-    background: #a4a4a4;
+    background: #e6e6e6;
     flex-direction: row;
     align-items: center;
-    margin-top: 10px;
+    justify-content: space-between;
+    margin-top: 15px;
     width: 100%;
     height: 50px;
     border-radius: 4px;
@@ -25,7 +26,7 @@ export const HeaderView = styled.View`
 `;
 export const SearchInput = styled.TextInput`
     margin-left: 5px;
-    background: #a4a4a4;
+    background: #e6e6e6;
     height: 50px;
     width: 70%;
     border-radius: 5px;
@@ -33,33 +34,35 @@ export const SearchInput = styled.TextInput`
 
 export const Title = styled.Text`
     font-weight: bold;
-    font-size: 20px;
+    font-size: 26px;
 `;
 
 export const UITableView = styled.View`
-    background: #d8d8d8;
+    background: #ffffff;
     margin-top: 10px;
     flex-direction: row;
     border-radius: 4px;
-    max-height: 200px;
+    max-height: 160px;
+    border-bottom-width: 1px;
+    border-bottom-color: #e6e6e6;
 `;
 
 export const HotelHeadImage = styled.Image`
     width: 80px;
     height: 100%;
-    background: #d8d8d8;
+    background: #ffffff;
 `;
 export const HotelGalleryImage = styled.Image`
     width: 40px;
     height: 40px;
-    background: #d8d8d8;
+    background: #ffffff;
 `;
 export const HotelImagesView = styled.View`
     height: 100%;
     max-height: 180px;
     width: 100%;
     max-width: 80px;
-    background: #d8d8d8;
+    background: #fafafa;
 `;
 
 export const HotelGalleryView = styled.View`
@@ -68,24 +71,24 @@ export const HotelGalleryView = styled.View`
 
 export const HotelLocationText = styled.Text`
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     margin-left: 4px;
     margin-top: 4px;
 `;
 export const HotelNameText = styled.Text.attrs({
     numberOfLines: 1,
 })`
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 4px;
 `;
 export const HotelDescriptionText = styled.Text.attrs({
     numberOfLines: 2,
 })`
     color: #999;
-    font-size: 12px;
+    font-size: 10px;
     margin-top: 6px;
     margin-left: 4px;
-    text-align: right;
+    text-align: left;
 `;
 export const HotelPriceText = styled.Text`
     font-size: 16px;
@@ -96,6 +99,7 @@ export const HotelPriceText = styled.Text`
 `;
 export const HotelDetailView = styled.View`
     width: 72%;
+    padding-left: 10px;
 `;
 export const LoadingView = styled.View`
     height: 80%;
@@ -116,11 +120,13 @@ export const SectionHeaderText = styled.Text`
     align-items: center;
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 `;
 export const HotelAmenitiesText = styled.Text.attrs({
     numberOfLines: 1,
-})``;
+})`
+    font-size: 10px;
+`;
 
 export const SectionHeaderView = styled.View`
     flex-direction: row;
@@ -131,8 +137,8 @@ export const SectionHeaderView = styled.View`
 export const SubmitButton = styled(RectButton)`
     align-items: center;
     justify-content: center;
-    background: #7159c1;
+    background: #166dff;
     height: 100%;
-    width: 50px;
+    width: 60px;
     border-radius: 4px;
 `;
