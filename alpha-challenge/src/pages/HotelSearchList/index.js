@@ -6,8 +6,10 @@ import Header from '../../components/header';
 import {
     Container,
     SearchInput,
-    InputView,
+    PaginationButton,
     SubmitButton,
+    HotelHeadImage,
+    InputView,
     HotelImagesView,
     HotelAmenitiesView,
     HotelDetailView,
@@ -15,22 +17,20 @@ import {
     HotelListView,
     UITableView,
     LoadingView,
-    HotelHeadImage,
+    PaginationView,
     HotelLocationText,
     HotelNameText,
     HotelPriceText,
     HotelDescriptionText,
     HotelAmenitiesText,
     SectionHeaderText,
-    PaginationButton,
     PaginationText,
-    PaginationView,
 } from './styles';
 import api from '../../services/api';
 
 export default function HotelSearchList() {
     const [hotels, setHotels] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false); // variavel para auxiliar o loading dos componentes
     const [pagination, setPagination] = useState({
         total: 2,
         count: 1,
@@ -40,7 +40,7 @@ export default function HotelSearchList() {
     const navigation = useNavigation();
 
     function navigateToHotelDetails(hotel) {
-        navigation.navigate('HotelDetails', { hotel });
+        navigation.navigate('HotelDetails', { hotel }); // chama a pagina hotelDetails e passa o hotel em questão.
     }
 
     async function loadHotels(locationName, page = 1) {

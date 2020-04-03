@@ -40,6 +40,7 @@ export default function HotelDetails() {
     const message = `Olá, estou com algumas duvidas sobre o ${hotel.name}, poderia me ajudar? `;
 
     function sendMail() {
+        // função para enviar e-mail
         MailComposer.composeAsync({
             subject: 'Duvida',
             recipients: ['contato@hurb.com'],
@@ -47,11 +48,12 @@ export default function HotelDetails() {
         });
     }
     function sendWhatsapp() {
+        // função para enviar whatsapp
         Linking.openURL(`whatsapp://send?phone=+5521969189874&text=${message}`);
     }
 
     async function loadSuggestions() {
-        setLoading(true);
+        setLoading(true); // auxilia o loading da galeria imagens
         try {
             setSecondImage(hotel.gallery[1].url);
             setGalleryImage1(hotel.gallery[2].url);
@@ -140,7 +142,7 @@ export default function HotelDetails() {
                     <DescritionText> {hotel.description} </DescritionText>
                 </DetailsView>
                 <ContactHelpView>
-                    <ContactHelpText> Ficou alguma duvida?</ContactHelpText>
+                    <ContactHelpText> Ficou alguma duvida? </ContactHelpText>
                     <ContactView>
                         <TouchOpacityButton onPress={() => sendMail()}>
                             <ContactButton>E-mail</ContactButton>
