@@ -65,7 +65,7 @@ export default function HotelSearchList() {
             });
             console.log(response.data); // foi solicitado um log pelo desafio dos dados recebidos pela API
         } catch (err) {
-           console.log('Error na busca');
+            console.log('Error na busca');
         } finally {
             setLoading(false);
         }
@@ -256,9 +256,8 @@ export default function HotelSearchList() {
                                 />
                             </PaginationButton>
                         ) : null}
-                        {pagination.count >= 1 ? (
+                        {pagination.count > 1 ? (
                             <>
-                                <PaginationText />
                                 <PaginationText>
                                     {pagination.count}
                                 </PaginationText>
