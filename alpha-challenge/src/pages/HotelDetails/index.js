@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Linking } from 'react-native';
+import * as MailComposer from 'expo-mail-composer';
 import { useRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Header from '../../components/header';
+import NoImgLogo from '../../assets/hurbLogo.jpg';
 import {
     Container,
     HeadImage,
     GalleryImage,
     ImagesView,
     ContactView,
-    ContactText,
+    ContactButton,
     HotelView,
     GaleryView,
     SecondImage,
@@ -22,27 +24,45 @@ import {
     AmenitiesText,
     CancelView,
     CancelText,
+    NameText,
+    ContactHelpText,
+    LoadingIndicator,
+    ContactHelpView,
 } from './styles';
-import api from '../../services/suggestionsApi';
 
 export default function HotelDetails() {
     const route = useRoute();
-    const [suggestions, setSuggestions] = useState([]);
-
+    const [secondImage, setSecondImage] = useState(NoImgLogo);
+    const [galleryImage1, setGalleryImage1] = useState(NoImgLogo);
+    const [galleryImage2, setGalleryImage2] = useState(NoImgLogo);
     const { hotel } = route.params;
+    const [loading, setLoading] = useState(false);
+    const message = `Olá, estou com algumas duvidas sobre o ${hotel.name}, poderia me ajudar? `;
 
-    async function loadSuggestions(locationName) {
-        const response = await api.get('', {
-            params: {
-                q: `${locationName}`,
-            },
+    function sendMail() {
+        MailComposer.composeAsync({
+            subject: 'Duvida',
+            recipients: ['contato@hurb.com'],
+            body: message,
         });
-        setSuggestions(response.data.suggestions);
-        console.tron.log(suggestions);
+    }
+    function sendWhatsapp() {
+        Linking.openURL(`whatsapp://send?phone=+5521969189874&text=${message}`);
+    }
+
+    async function loadSuggestions() {
+        setLoading(true);
+        try {
+            setSecondImage(hotel.gallery[1].url);
+            setGalleryImage1(hotel.gallery[2].url);
+            setGalleryImage2(hotel.gallery[3].url);
+        } finally {
+            setLoading(false);
+        }
     }
 
     useEffect(() => {
-        loadSuggestions(hotel.address.city);
+        loadSuggestions();
     }, []);
 
     return (
@@ -52,10 +72,40 @@ export default function HotelDetails() {
                 <ImagesView>
                     <HeadImage source={{ uri: `${hotel.image}` }} />
                     <SecondView>
-                        <SecondImage source={{ uri: `${hotel.image}` }} />
+                        {loading ? (
+                            <LoadingIndicator color="#0101DF" size="large" />
+                        ) : (
+                            <SecondImage source={{ uri: `${secondImage}` }} />
+                        )}
                         <GaleryView>
-                            <GalleryImage source={{ uri: `${hotel.image}` }} />
-                            <GalleryImage source={{ uri: `${hotel.image}` }} />
+                            {loading ? (
+                                <LoadingIndicator
+                                    color="#0101DF"
+                                    size="large"
+                                />
+                            ) : (
+                                <GalleryImage
+                                    source={
+                                        {
+                                            uri: `${galleryImage1}`,
+                                        } || NoImgLogo
+                                    }
+                                />
+                            )}
+                            {loading ? (
+                                <LoadingIndicator
+                                    color="#0101DF"
+                                    size="large"
+                                />
+                            ) : (
+                                <GalleryImage
+                                    source={
+                                        {
+                                            uri: `${galleryImage2}`,
+                                        } || NoImgLogo
+                                    }
+                                />
+                            )}
                         </GaleryView>
                     </SecondView>
                 </ImagesView>
@@ -67,7 +117,7 @@ export default function HotelDetails() {
                         renderItem={({ item: amenities }) => (
                             <AmenitiesFlatListView>
                                 <Icon name="check" color="#166DFF" size={12} />
-                                <AmenitiesText>{amenities.name} </AmenitiesText>
+                                <AmenitiesText> {amenities.name}</AmenitiesText>
                             </AmenitiesFlatListView>
                         )}
                     />
@@ -86,16 +136,20 @@ export default function HotelDetails() {
                     ) : null}
                 </AmenitiesView>
                 <DetailsView>
+                    <NameText>{hotel.name}</NameText>
                     <DescritionText> {hotel.description} </DescritionText>
                 </DetailsView>
-                <ContactView>
-                    <TouchOpacityButton>
-                        <ContactText>E-mail</ContactText>
-                    </TouchOpacityButton>
-                    <TouchOpacityButton>
-                        <ContactText>Whattsapp</ContactText>
-                    </TouchOpacityButton>
-                </ContactView>
+                <ContactHelpView>
+                    <ContactHelpText> Ficou alguma duvida?</ContactHelpText>
+                    <ContactView>
+                        <TouchOpacityButton onPress={() => sendMail()}>
+                            <ContactButton>E-mail</ContactButton>
+                        </TouchOpacityButton>
+                        <TouchOpacityButton onPress={() => sendWhatsapp()}>
+                            <ContactButton>Whattsapp</ContactButton>
+                        </TouchOpacityButton>
+                    </ContactView>
+                </ContactHelpView>
             </HotelView>
         </Container>
     );

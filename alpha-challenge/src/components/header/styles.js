@@ -17,6 +17,8 @@ export const HeaderView = styled.View`
 export const Title = styled.Text`
     font-weight: bold;
     font-size: 26px;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
 `;
 
 export const LogoImage = styled.Image`

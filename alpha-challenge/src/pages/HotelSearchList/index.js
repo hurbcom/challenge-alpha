@@ -46,7 +46,6 @@ export default function HotelSearchList() {
             });
             setHotels(response.data.results);
             console.log(response.data); // foi solicitado um log pelo desafio dos dados recebidos pela API
-            console.tron.log(hotels);
         } finally {
             setLoading(false);
         }

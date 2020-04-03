@@ -91,7 +91,7 @@ export const HotelDescriptionText = styled.Text.attrs({
     text-align: left;
 `;
 export const HotelPriceText = styled.Text`
-    font-size: 16px;
+    font-size: 20px;
     margin-left: 55%;
     margin-top: auto;
     font-weight: bold;
