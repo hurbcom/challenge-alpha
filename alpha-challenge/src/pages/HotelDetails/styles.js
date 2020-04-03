@@ -75,6 +75,7 @@ export const DescritionText = styled.Text.attrs({
     border-bottom-width: 1px;
     border-bottom-color: #e6e6e6;
     color: #919393;
+    text-align: justify;
 `;
 export const AmenitiesView = styled.View`
     flex-direction: row;

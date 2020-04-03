@@ -7,6 +7,7 @@ export const Container = styled.View`
     background: #fff;
     padding: 14px;
     margin-top: 20px;
+    max-height: 100%;
 `;
 
 export const InputView = styled.View`
@@ -19,11 +20,7 @@ export const InputView = styled.View`
     height: 50px;
     border-radius: 4px;
 `;
-export const HeaderView = styled.View`
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-`;
+
 export const SearchInput = styled.TextInput`
     margin-left: 5px;
     background: #e6e6e6;
@@ -65,10 +62,6 @@ export const HotelImagesView = styled.View`
     background: #fafafa;
 `;
 
-export const HotelGalleryView = styled.View`
-    flex-direction: row;
-`;
-
 export const HotelLocationText = styled.Text`
     font-weight: bold;
     font-size: 12px;
@@ -88,7 +81,7 @@ export const HotelDescriptionText = styled.Text.attrs({
     font-size: 10px;
     margin-top: 6px;
     margin-left: 4px;
-    text-align: left;
+    text-align: justify;
 `;
 export const HotelPriceText = styled.Text`
     font-size: 20px;
@@ -141,4 +134,24 @@ export const SubmitButton = styled(RectButton)`
     height: 100%;
     width: 60px;
     border-radius: 4px;
+`;
+export const HotelListView = styled.View`
+    max-height: 85%;
+`;
+export const PaginationText = styled.Text`
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom-width: 1px;
+    border-bottom-color: #166dff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+`;
+export const PaginationButton = styled.TouchableOpacity`
+    margin-top: 5px;
+    margin-bottom: 5px;
+`;
+export const PaginationView = styled.View`
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
 `;
