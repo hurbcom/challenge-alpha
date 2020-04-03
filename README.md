@@ -1,7 +1,7 @@
 # <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Desafio Alpha
 
-<img src="./alpha-challenge/src/assets/ex1.jpg" alt="Challange accepted" />
-<img src="./alpha-challenge/src/assets/ex2.jpg" alt="Challange accepted" />
+Preview:<br>
+<img src="./alpha-challenge/src/assets/ex1.jpg" alt="Challange accepted" width="100" height="250" />
 
 
 ## funcionalidade
