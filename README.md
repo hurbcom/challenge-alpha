@@ -13,12 +13,12 @@ informações como preço, descrição, localização e etc.
 
 Ao clicar no Card, você vê mais detalhadamente o hotel e pode entrar em contato.
 
-OBS: Foram desenvolvidas algumas funcionalidades a mais como:
--busca da api de qualquer localidade.
--paginação da lista.
--Botão de ajuda integrado ao Whatsapp ou E-mail.
--Pagina mais detalhada do hotel.
--Suporte e detectação da preferencia de temas do usuário(DarkTheme, LighTheme).
+OBS: Foram desenvolvidas algumas funcionalidades a mais como:<br>
+-busca da api de qualquer localidade.<br>
+-paginação da lista.<br>
+-Botão de ajuda integrado ao Whatsapp ou E-mail.<br>
+-Pagina mais detalhada do hotel.<br>
+-Suporte e detectação da preferencia de temas do usuário(DarkTheme, LighTheme).<br>
 -Cada "Card" é clicavel, levando a uma pagina com mais detalhes.
 
 <br>
