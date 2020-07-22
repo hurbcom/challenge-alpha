@@ -12,31 +12,85 @@ final class SearchViewController: BaseViewController {
     
     // MARK: Properties
     let viewModel = SearchViewModel()
-    var searchResult: SearchResult?
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    // MARK: Outlets
+    @IBOutlet weak var tableView: UITableView! {
+        didSet{
+            tableView.register(UINib(nibName: ProductCardCell().identifier, bundle: nil), forCellReuseIdentifier: ProductCardCell().identifier)
+            tableView.dataSource = self
+            tableView.delegate = self
+        }
+    }
     
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         
         bindEvents()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-                
-        viewModel.searchFrom(term: "fortaleza", page: "1")
+        configureSearchController()
+        
+        //viewModel.searchFrom(term: "gramado", page: "1")
     }
     
     // MARK: Helpers
     func bindEvents() {
-        viewModel.didSuccess = { [weak self] searchResult in
-            self?.searchResult = searchResult
-            print("##> SearchResult: \(searchResult.results?.compactMap({ $0.sku }))")
+        viewModel.didSuccess = { [weak self] in
+            print("==> SearchResult: \(String(describing: self?.viewModel.searchResult?.results?.compactMap({ $0.sku })))")
+            self?.reloadTable()
         }
         
         viewModel.didError = { error in
-            print("##> Error: \(error)")
+            print("==> Error: \(error)")
         }
     }
+    
+    private func reloadTable() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func configureSearchController() {
+        navigationItem.searchController = self.searchController
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Pesquisar..."
+        searchController.searchBar.delegate = self
+    }
+}
+
+// MARK: Extensions
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //Sugestions...
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let term = searchBar.text else {return}
+        print("==> TERM: \(term)")
+        viewModel.searchFrom(term: term, page: "1")
+    }
+}
+
+extension SearchViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.searchResult?.results?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let card = viewModel.searchResult?.results?[indexPath.row] else {return UITableViewCell()}
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: ProductCardCell().identifier) as? ProductCardCell {
+            cell.setup(with: card)
+            
+            return cell
+        }
+        return UITableViewCell()
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
 }

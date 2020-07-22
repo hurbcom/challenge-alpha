@@ -12,13 +12,15 @@ class SearchViewModel {
     
     private let service = SearchService()
     
-    var didSuccess: ((SearchResult) -> ())?
+    var searchResult: SearchResult?
+    var didSuccess: (() -> ())?
     var didError: ((String) -> ())?
     
     
     func searchFrom(term: String, page: String) {
-        service.search(term, page: page, success: { [weak self] result in
-            self?.didSuccess?(result)
+        service.search(term, page: page, success: { [weak self] searchResult in
+            self?.searchResult = searchResult
+            self?.didSuccess?()
         }) { [weak self] error in
             self?.didError?(error)
         }

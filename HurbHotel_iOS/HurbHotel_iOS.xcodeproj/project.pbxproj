@@ -29,6 +29,10 @@
 		BDCADBA424C7FCFE0073FCE0 /* Amenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADBA324C7FCFE0073FCE0 /* Amenities.swift */; };
 		BDCADBA624C7FD540073FCE0 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADBA524C7FD540073FCE0 /* Gallery.swift */; };
 		BDCADBA824C7FE3B0073FCE0 /* FeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADBA724C7FE3B0073FCE0 /* FeatureItem.swift */; };
+		BDCADBB024C80C210073FCE0 /* ProductCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADBAE24C80C210073FCE0 /* ProductCardCell.swift */; };
+		BDCADBB124C80C210073FCE0 /* ProductCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDCADBAF24C80C210073FCE0 /* ProductCardCell.xib */; };
+		BDCADBB324C8193D0073FCE0 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADBB224C8193D0073FCE0 /* UIImageView+Extensions.swift */; };
+		BDCADBB524C81BEC0073FCE0 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADBB424C81BEC0073FCE0 /* UITableViewCell+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,10 @@
 		BDCADBA324C7FCFE0073FCE0 /* Amenities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenities.swift; sourceTree = "<group>"; };
 		BDCADBA524C7FD540073FCE0 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		BDCADBA724C7FE3B0073FCE0 /* FeatureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureItem.swift; sourceTree = "<group>"; };
+		BDCADBAE24C80C210073FCE0 /* ProductCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardCell.swift; sourceTree = "<group>"; };
+		BDCADBAF24C80C210073FCE0 /* ProductCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCardCell.xib; sourceTree = "<group>"; };
+		BDCADBB224C8193D0073FCE0 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		BDCADBB424C81BEC0073FCE0 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +127,8 @@
 		BDCADB7724C7A6F50073FCE0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				BDCADB8324C7DE5D0073FCE0 /* Packages */,
 				BDCADB7824C7A75C0073FCE0 /* Base */,
+				BDCADB8324C7DE5D0073FCE0 /* Packages */,
 				BDCADB7B24C7ABD50073FCE0 /* Search */,
 			);
 			path = Scenes;
@@ -140,6 +148,7 @@
 			children = (
 				BDCADB8D24C7E8210073FCE0 /* Service */,
 				BDCADB8C24C7E81C0073FCE0 /* Model */,
+				BDCADBA924C80A5A0073FCE0 /* View */,
 				BDCADB7C24C7ABF30073FCE0 /* SearchViewController.swift */,
 				BDCADB8124C7B23B0073FCE0 /* SearchViewController.storyboard */,
 				BDCADB8A24C7E8180073FCE0 /* SearchViewModel.swift */,
@@ -151,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				BDCADB7F24C7AC330073FCE0 /* UIViewController+Extensions.swift */,
+				BDCADBB224C8193D0073FCE0 /* UIImageView+Extensions.swift */,
+				BDCADBB424C81BEC0073FCE0 /* UITableViewCell+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,6 +220,15 @@
 				BDCADBA724C7FE3B0073FCE0 /* FeatureItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BDCADBA924C80A5A0073FCE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BDCADBAE24C80C210073FCE0 /* ProductCardCell.swift */,
+				BDCADBAF24C80C210073FCE0 /* ProductCardCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +294,7 @@
 				BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */,
 				BDCADB8724C7DE920073FCE0 /* PackagesViewController.storyboard in Resources */,
 				BDCADB8224C7B23B0073FCE0 /* SearchViewController.storyboard in Resources */,
+				BDCADBB124C80C210073FCE0 /* ProductCardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +308,9 @@
 				BDCADBA624C7FD540073FCE0 /* Gallery.swift in Sources */,
 				BDCADB9224C7ED020073FCE0 /* SearchService.swift in Sources */,
 				BDCADB8024C7AC330073FCE0 /* UIViewController+Extensions.swift in Sources */,
+				BDCADBB024C80C210073FCE0 /* ProductCardCell.swift in Sources */,
 				BDCADB9624C7EF530073FCE0 /* SearchResult.swift in Sources */,
+				BDCADBB324C8193D0073FCE0 /* UIImageView+Extensions.swift in Sources */,
 				BDCADB8B24C7E8180073FCE0 /* SearchViewModel.swift in Sources */,
 				BDCADB9024C7E8560073FCE0 /* Network.swift in Sources */,
 				BDCADB7D24C7ABF30073FCE0 /* SearchViewController.swift in Sources */,
@@ -300,6 +323,7 @@
 				BDCADB7A24C7A7780073FCE0 /* BaseTabbarViewController.swift in Sources */,
 				BDCADB8924C7DED10073FCE0 /* BaseViewController.swift in Sources */,
 				BDCADBA824C7FE3B0073FCE0 /* FeatureItem.swift in Sources */,
+				BDCADBB524C81BEC0073FCE0 /* UITableViewCell+Extensions.swift in Sources */,
 				BDCADB9E24C7F0EF0073FCE0 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
