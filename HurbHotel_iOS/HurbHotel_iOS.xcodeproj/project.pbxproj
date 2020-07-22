@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,9 +33,11 @@
 		BDCADBB124C80C210073FCE0 /* ProductCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDCADBAF24C80C210073FCE0 /* ProductCardCell.xib */; };
 		BDCADBB324C8193D0073FCE0 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADBB224C8193D0073FCE0 /* UIImageView+Extensions.swift */; };
 		BDCADBB524C81BEC0073FCE0 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADBB424C81BEC0073FCE0 /* UITableViewCell+Extensions.swift */; };
+		D88CEE97BADF5B35B046F01F /* Pods_HurbHotel_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C433867D184DA044BAF6850E /* Pods_HurbHotel_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E8C7DC7DEC944FD0419BBF0 /* Pods-HurbHotel_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbHotel_iOS.release.xcconfig"; path = "Target Support Files/Pods-HurbHotel_iOS/Pods-HurbHotel_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BDCADB5E24C7A45B0073FCE0 /* HurbHotel_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbHotel_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCADB6824C7A45B0073FCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,8 @@
 		BDCADBAF24C80C210073FCE0 /* ProductCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCardCell.xib; sourceTree = "<group>"; };
 		BDCADBB224C8193D0073FCE0 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		BDCADBB424C81BEC0073FCE0 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		BEE86B7FA7F4C33E8340B2AB /* Pods-HurbHotel_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbHotel_iOS.debug.xcconfig"; path = "Target Support Files/Pods-HurbHotel_iOS/Pods-HurbHotel_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C433867D184DA044BAF6850E /* Pods_HurbHotel_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HurbHotel_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,17 +75,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D88CEE97BADF5B35B046F01F /* Pods_HurbHotel_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26A9CED1BD07E9FB58940C3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEE86B7FA7F4C33E8340B2AB /* Pods-HurbHotel_iOS.debug.xcconfig */,
+				9E8C7DC7DEC944FD0419BBF0 /* Pods-HurbHotel_iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		425F2B239A2EED23BF4F3A3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C433867D184DA044BAF6850E /* Pods_HurbHotel_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BDCADB5524C7A45B0073FCE0 = {
 			isa = PBXGroup;
 			children = (
 				BDCADB6024C7A45B0073FCE0 /* HurbHotel_iOS */,
 				BDCADB5F24C7A45B0073FCE0 /* Products */,
+				26A9CED1BD07E9FB58940C3E /* Pods */,
+				425F2B239A2EED23BF4F3A3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDCADB7224C7A45C0073FCE0 /* Build configuration list for PBXNativeTarget "HurbHotel_iOS" */;
 			buildPhases = (
+				0B71FCF6AC6E190D043F4DB2 /* [CP] Check Pods Manifest.lock */,
 				BDCADB5A24C7A45B0073FCE0 /* Sources */,
 				BDCADB5B24C7A45B0073FCE0 /* Frameworks */,
 				BDCADB5C24C7A45B0073FCE0 /* Resources */,
+				C2D72524C95CDDF26533FD2C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,6 +325,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B71FCF6AC6E190D043F4DB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HurbHotel_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2D72524C95CDDF26533FD2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HurbHotel_iOS/Pods-HurbHotel_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HurbHotel_iOS/Pods-HurbHotel_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HurbHotel_iOS/Pods-HurbHotel_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BDCADB5A24C7A45B0073FCE0 /* Sources */ = {
@@ -400,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -454,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -466,6 +534,7 @@
 		};
 		BDCADB7324C7A45C0073FCE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEE86B7FA7F4C33E8340B2AB /* Pods-HurbHotel_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -485,6 +554,7 @@
 		};
 		BDCADB7424C7A45C0073FCE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E8C7DC7DEC944FD0419BBF0 /* Pods-HurbHotel_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
