@@ -1,5 +1,5 @@
 //
-//  Filter.swift
+//  Gallery.swift
 //  HurbHotel_iOS
 //
 //  Created by Helio Junior on 22/07/20.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-struct Filter: Decodable {
-    let count: Int
-    let filter: String
-    let term: String
+struct Gallery: Decodable {
+    let url: String?
 }

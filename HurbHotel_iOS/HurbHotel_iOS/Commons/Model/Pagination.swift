@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Pagination {
+struct Pagination: Decodable {
     let count: Int?
 }

@@ -11,20 +11,20 @@ import Foundation
 struct Product: Decodable {
     let id: String
     let sku: String
-    let address: String?
-    let amenities: String?
-    let category: String?
-    let description: String?
-    let featuredItem: String?
-    let gallery: String?
-    let hu_free_cancellation: Bool
-    let image: String?
-    let isHotel: Bool
-    let name: String?
-    let price: String?
-    let quantityDescriptors: String?
-    let smallDescription: String?
-    let stars: Int?
-    let tags: String?
     let url: String?
+    let image: String?
+    let description: String?
+    let smallDescription: String?
+    let name: String?
+    let amenities: [Amenities]?
+    let price: Price?
+    let category: String?
+    let featuredItem: FeatureItem?
+    let stars: Int?
+    let gallery: [Gallery]?
+    let hu_free_cancellation: Bool
+    let isHotel: Bool
+    //let address: String?
+    //let quantityDescriptors: String?
+    //let tags: String?
 }

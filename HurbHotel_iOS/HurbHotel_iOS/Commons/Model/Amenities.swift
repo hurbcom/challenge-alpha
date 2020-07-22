@@ -1,5 +1,5 @@
 //
-//  SearchResult.swift
+//  Amenities.swift
 //  HurbHotel_iOS
 //
 //  Created by Helio Junior on 22/07/20.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct SearchResult: Decodable {
-    let filters: Filters?
-    let pagination: Pagination?
-    let results: [Product]?
+struct Amenities: Decodable {
+    let name: String?
+    let category: String?
 }
