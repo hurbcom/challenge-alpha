@@ -29,8 +29,9 @@ class HighlightVerticalCell: UITableViewCell {
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 20
-        let width = (bounds.width / 2) - 20
+        let width = (UIScreen.main.bounds.width * 0.35)
         layout.itemSize = CGSize(width: width, height: 250)
+
         
         collectionView.isScrollEnabled = false
         collectionView.setCollectionViewLayout(layout, animated: true)
@@ -40,7 +41,6 @@ class HighlightVerticalCell: UITableViewCell {
     // MARK: Setup
     func setup() {
         let height: CGFloat = collectionView.collectionViewLayout.collectionViewContentSize.height
-        print("==> Height: \(height)")
         heightCollection.constant = height
         collectionView.layoutIfNeeded()
         collectionView.reloadData()
