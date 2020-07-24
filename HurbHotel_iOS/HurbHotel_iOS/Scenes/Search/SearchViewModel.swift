@@ -22,6 +22,7 @@ class SearchViewModel {
             self?.searchResult = searchResult
             self?.didSuccess?()
         }) { [weak self] error in
+            self?.searchResult = nil
             self?.didError?(error)
         }
     }

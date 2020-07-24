@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD2DA08724C8C20E00E5B656 /* SearchNotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DA08624C8C20E00E5B656 /* SearchNotFoundView.swift */; };
+		BD2DA08924C8C22B00E5B656 /* SearchNotFoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD2DA08824C8C22B00E5B656 /* SearchNotFoundView.xib */; };
 		BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */; };
 		BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6724C7A45B0073FCE0 /* Main.storyboard */; };
 		BDCADB6B24C7A45C0073FCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6A24C7A45C0073FCE0 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		9E8C7DC7DEC944FD0419BBF0 /* Pods-HurbHotel_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbHotel_iOS.release.xcconfig"; path = "Target Support Files/Pods-HurbHotel_iOS/Pods-HurbHotel_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		BD2DA08624C8C20E00E5B656 /* SearchNotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNotFoundView.swift; sourceTree = "<group>"; };
+		BD2DA08824C8C22B00E5B656 /* SearchNotFoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchNotFoundView.xib; sourceTree = "<group>"; };
 		BDCADB5E24C7A45B0073FCE0 /* HurbHotel_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbHotel_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCADB6824C7A45B0073FCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 			children = (
 				BDCADBAE24C80C210073FCE0 /* ProductCardCell.swift */,
 				BDCADBAF24C80C210073FCE0 /* ProductCardCell.xib */,
+				BD2DA08624C8C20E00E5B656 /* SearchNotFoundView.swift */,
+				BD2DA08824C8C22B00E5B656 /* SearchNotFoundView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				BDCADB8724C7DE920073FCE0 /* PackagesViewController.storyboard in Resources */,
 				BDCADB8224C7B23B0073FCE0 /* SearchViewController.storyboard in Resources */,
 				BDCADBB124C80C210073FCE0 /* ProductCardCell.xib in Resources */,
+				BD2DA08924C8C22B00E5B656 /* SearchNotFoundView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +393,7 @@
 				BDCADBA224C7FBEA0073FCE0 /* Price.swift in Sources */,
 				BDCADBA424C7FCFE0073FCE0 /* Amenities.swift in Sources */,
 				BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */,
+				BD2DA08724C8C20E00E5B656 /* SearchNotFoundView.swift in Sources */,
 				BDCADB8524C7DE8B0073FCE0 /* PackagesViewController.swift in Sources */,
 				BDCADB9C24C7F0910073FCE0 /* Pagination.swift in Sources */,
 				BDCADB7A24C7A7780073FCE0 /* BaseTabbarViewController.swift in Sources */,

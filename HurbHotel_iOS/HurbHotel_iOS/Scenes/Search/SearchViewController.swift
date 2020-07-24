@@ -13,6 +13,11 @@ final class SearchViewController: BaseViewController {
     // MARK: Properties
     let viewModel = SearchViewModel()
     let searchController = UISearchController(searchResultsController: nil)
+    var termSearch: String? {
+        didSet{
+            self.navigationItem.title = termSearch != nil ? termSearch : "Perquisar"
+        }
+    }
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView! {
@@ -21,6 +26,10 @@ final class SearchViewController: BaseViewController {
             tableView.dataSource = self
             tableView.delegate = self
         }
+    }
+    
+    deinit {
+        print("==> Tela Search Morreu!!!")
     }
     
     // MARK: Overrides
@@ -33,21 +42,49 @@ final class SearchViewController: BaseViewController {
         //viewModel.searchFrom(term: "gramado", page: "1")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        print("==> Re-exibindo tela de Pesquisa!")
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
     // MARK: Helpers
     func bindEvents() {
         viewModel.didSuccess = { [weak self] in
-            print("==> SearchResult: \(String(describing: self?.viewModel.searchResult?.results?.compactMap({ $0.sku })))")
-            self?.reloadTable()
+            print("==> SearchResult: \(self?.viewModel.searchResult?.results?.count ?? 0)))")
+            if self?.viewModel.searchResult?.results?.isEmpty ?? true {
+                self?.notFoundResult()
+            } else {
+                self?.loadResults()
+            }
         }
         
-        viewModel.didError = { error in
+        viewModel.didError = { [weak self] error in
             print("==> Error: \(error)")
+            self?.notFoundResult()
         }
     }
     
-    private func reloadTable() {
+    private func notFoundResult() {
         DispatchQueue.main.async {
+            self.closeLoading()
+            self.tableView.isHidden = false
             self.tableView.reloadData()
+            self.tableView.backgroundView = SearchNotFoundView().instanceFromNib()
+        }
+    }
+    
+    private func loadResults() {
+        DispatchQueue.main.async {
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+            self.tableView.backgroundView = nil
+            self.closeLoading()
         }
     }
     
@@ -68,8 +105,16 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let term = searchBar.text else {return}
-        print("==> TERM: \(term)")
+        termSearch = term
+        self.becomeFirstResponder()
+        showLoading()
+        tableView.isHidden = true
         viewModel.searchFrom(term: term, page: "1")
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.becomeFirstResponder()
+        termSearch = nil
     }
 }
 

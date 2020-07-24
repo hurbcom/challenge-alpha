@@ -17,8 +17,8 @@ class BaseTabbarViewController: UITabBarController {
         let otherVC = buildTabbarItem(PackagesViewController().instantiate(), title: "Outro", image: "icHighlight")
         
         viewControllers = [
-            searchVC,
-            otherVC
+            otherVC,
+            searchVC
         ]
         
         selectedIndex = 0
@@ -31,8 +31,7 @@ class BaseTabbarViewController: UITabBarController {
         viewController.navigationItem.title = title
         viewController.tabBarItem.title = title
         if let image = image {
-            let imageIcon = UIImage(named: image)
-            viewController.tabBarItem.image = imageIcon
+            viewController.tabBarItem.image = UIImage(named: image)
         }
         return navController
     }

@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductCardCell: UITableViewCell {
     
     // MARK: Properties
-    var isFavorited = false
+    private var product: Product!
+    private var isFavorited = false
     
     // MARK: Outlets
     @IBOutlet private weak var vwCard: UIView!
@@ -34,6 +36,8 @@ class ProductCardCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
         
+        vwCard.layer.borderWidth = 0.2
+        vwCard.layer.borderColor = UIColor.lightGray.cgColor
         vwCard.layer.cornerRadius = 8
     }
     
@@ -44,25 +48,32 @@ class ProductCardCell: UITableViewCell {
     
     // MARK: Setup
     func setup(with product: Product) {
-        setTitleAndDescription(product)
-        setInfoValues(product)
+        self.product = product
+        setTitleAndDescription()
+        setImage()
+        setInfoValues()
         setAnimatedFavorite()
     }
     
     // MARK: Actions
     @IBAction func handlerFavorite(_ sender: Any) {
-        //Adicionei o botão de favoritos porque acho que é interessante ter ele na lista de resultados.
+        //Adicionei o botão de favoritos porque acho interessante ter ele na lista de resultados.
         //Mas, implementei apenas a animação do botão.
         isFavorited.toggle()
         setAnimatedFavorite()
     }
     
     // MARK: Helpers
-    private func setTitleAndDescription(_ product: Product) {
+    private func setTitleAndDescription() {
         lblDescription.text = product.smallDescription
     }
     
-    private func setInfoValues(_ product: Product) {
+    private func setImage() {
+        guard let image = product.image, let url = URL(string: image) else {return}
+        ivProduct.kf.setImage(with: url)
+    }
+    
+    private func setInfoValues() {
         let price: Double = product.price?.total_price ?? 0
         let oldPrice: Double = product.price?.old_price ?? 0
         lblOldPrice.text = oldPrice.description

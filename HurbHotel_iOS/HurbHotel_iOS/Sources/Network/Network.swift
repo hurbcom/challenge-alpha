@@ -17,6 +17,7 @@ let BASE_URL = "https://www.hurb.com"
 class Network {
     
     static func get(url: URL, completion: @escaping (Data?, Error?) -> Void) {
+        print("==> Request GET: \(url.absoluteString)")
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let err = error {
                 completion(nil, err)
