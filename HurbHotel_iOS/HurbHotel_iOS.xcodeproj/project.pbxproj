@@ -19,6 +19,11 @@
 		BDAF17F324CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17F124CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift */; };
 		BDAF17F424CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDAF17F224CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib */; };
 		BDAF17F624CAAFA10085A0AD /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17F524CAAFA10085A0AD /* UICollectionViewCell+Extensions.swift */; };
+		BDAF17F924CAB6480085A0AD /* HighlightVerticalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17F724CAB6480085A0AD /* HighlightVerticalCell.swift */; };
+		BDAF17FA24CAB6480085A0AD /* HighlightVerticalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDAF17F824CAB6480085A0AD /* HighlightVerticalCell.xib */; };
+		BDAF17FD24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17FB24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift */; };
+		BDAF17FE24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDAF17FC24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib */; };
+		BDAF180124CAB8450085A0AD /* Highlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF180024CAB8450085A0AD /* Highlights.swift */; };
 		BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */; };
 		BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6724C7A45B0073FCE0 /* Main.storyboard */; };
 		BDCADB6B24C7A45C0073FCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6A24C7A45C0073FCE0 /* Assets.xcassets */; };
@@ -60,6 +65,11 @@
 		BDAF17F124CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDAF17F224CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardHorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
 		BDAF17F524CAAFA10085A0AD /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		BDAF17F724CAB6480085A0AD /* HighlightVerticalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightVerticalCell.swift; sourceTree = "<group>"; };
+		BDAF17F824CAB6480085A0AD /* HighlightVerticalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightVerticalCell.xib; sourceTree = "<group>"; };
+		BDAF17FB24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVerticalCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDAF17FC24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardVerticalCollectionViewCell.xib; sourceTree = "<group>"; };
+		BDAF180024CAB8450085A0AD /* Highlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlights.swift; sourceTree = "<group>"; };
 		BDCADB5E24C7A45B0073FCE0 /* HurbHotel_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbHotel_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCADB6824C7A45B0073FCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +132,7 @@
 		BDAF17DF24CA9E9F0085A0AD /* Highlights */ = {
 			isa = PBXGroup;
 			children = (
+				BDAF17FF24CAB8300085A0AD /* Model */,
 				BDAF17E524CAA0660085A0AD /* Service */,
 				BDAF17E424CAA0600085A0AD /* View */,
 				BDAF17E624CAA0810085A0AD /* HighlightsViewModel.swift */,
@@ -138,6 +149,10 @@
 				BDAF17EB24CAA3930085A0AD /* HighlightHorizontalCell.xib */,
 				BDAF17F124CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift */,
 				BDAF17F224CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib */,
+				BDAF17F724CAB6480085A0AD /* HighlightVerticalCell.swift */,
+				BDAF17F824CAB6480085A0AD /* HighlightVerticalCell.xib */,
+				BDAF17FB24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift */,
+				BDAF17FC24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +171,14 @@
 				BDAF17EF24CAACB30085A0AD /* SnappingLayout.swift */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		BDAF17FF24CAB8300085A0AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BDAF180024CAB8450085A0AD /* Highlights.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BDCADB5524C7A45B0073FCE0 = {
@@ -369,12 +392,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDAF17FA24CAB6480085A0AD /* HighlightVerticalCell.xib in Resources */,
 				BDCADB6E24C7A45C0073FCE0 /* LaunchScreen.storyboard in Resources */,
 				BDCADB6B24C7A45C0073FCE0 /* Assets.xcassets in Resources */,
 				BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */,
 				BDCADB8224C7B23B0073FCE0 /* SearchViewController.storyboard in Resources */,
 				BDAF17F424CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib in Resources */,
 				BDCADBB124C80C210073FCE0 /* ProductCardCell.xib in Resources */,
+				BDAF17FE24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib in Resources */,
 				BD2DA08924C8C22B00E5B656 /* SearchNotFoundView.xib in Resources */,
 				BDAF17ED24CAA3930085A0AD /* HighlightHorizontalCell.xib in Resources */,
 				BDAF17E324CA9EC40085A0AD /* HighlightsViewController.storyboard in Resources */,
@@ -438,14 +463,17 @@
 				BDCADB9624C7EF530073FCE0 /* SearchResult.swift in Sources */,
 				BDCADBB324C8193D0073FCE0 /* UIImageView+Extensions.swift in Sources */,
 				BDAF17F324CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift in Sources */,
+				BDAF180124CAB8450085A0AD /* Highlights.swift in Sources */,
 				BDCADB8B24C7E8180073FCE0 /* SearchViewModel.swift in Sources */,
 				BDAF17E724CAA0810085A0AD /* HighlightsViewModel.swift in Sources */,
 				BDAF17E124CA9EBE0085A0AD /* HighlightsViewController.swift in Sources */,
 				BDCADB9024C7E8560073FCE0 /* Network.swift in Sources */,
+				BDAF17F924CAB6480085A0AD /* HighlightVerticalCell.swift in Sources */,
 				BDCADB7D24C7ABF30073FCE0 /* SearchViewController.swift in Sources */,
 				BDCADBA024C7F6B10073FCE0 /* Filters.swift in Sources */,
 				BDCADBA224C7FBEA0073FCE0 /* Price.swift in Sources */,
 				BDCADBA424C7FCFE0073FCE0 /* Amenities.swift in Sources */,
+				BDAF17FD24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift in Sources */,
 				BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */,
 				BDAF17F024CAACB30085A0AD /* SnappingLayout.swift in Sources */,
 				BD2DA08724C8C20E00E5B656 /* SearchNotFoundView.swift in Sources */,

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HighlightVerticalCell" id="KGk-i7-Jjw" customClass="HighlightVerticalCell" customModule="HurbHotel_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="oGC-Es-oL9">
+                        <rect key="frame" x="15" y="15" width="290" height="66"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Lua de mel?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4L-CK-o43">
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="25.5"/>
+                                <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Temos algumas sugestões para tornar esse momento mais especial, confira:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nS3-LN-KI3">
+                                <rect key="frame" x="0.0" y="28.5" width="290" height="37.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRM-ob-cJc">
+                        <rect key="frame" x="0.0" y="91" width="320" height="189"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="89N-ix-bCC">
+                                <rect key="frame" x="15" y="0.0" width="290" height="189"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="999" constant="200" id="ATC-sh-PPc"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9tI-uw-fLH">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="89N-ix-bCC" firstAttribute="leading" secondItem="bRM-ob-cJc" secondAttribute="leading" constant="15" id="1EX-HK-z2Q"/>
+                            <constraint firstItem="89N-ix-bCC" firstAttribute="top" secondItem="bRM-ob-cJc" secondAttribute="top" id="61R-jR-rwm"/>
+                            <constraint firstAttribute="bottom" secondItem="89N-ix-bCC" secondAttribute="bottom" id="P30-jK-TVV"/>
+                            <constraint firstAttribute="trailing" secondItem="89N-ix-bCC" secondAttribute="trailing" constant="15" id="nvP-Om-3yI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bRM-ob-cJc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JA5-UW-PzW"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bRM-ob-cJc" secondAttribute="bottom" constant="20" id="OI0-Nq-wk2"/>
+                    <constraint firstItem="oGC-Es-oL9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Wxb-Kp-wIY"/>
+                    <constraint firstItem="oGC-Es-oL9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Yor-0x-pDe"/>
+                    <constraint firstAttribute="trailing" secondItem="oGC-Es-oL9" secondAttribute="trailing" constant="15" id="Zxp-M8-unr"/>
+                    <constraint firstItem="bRM-ob-cJc" firstAttribute="top" secondItem="oGC-Es-oL9" secondAttribute="bottom" constant="10" id="ndG-ee-0AL"/>
+                    <constraint firstAttribute="trailing" secondItem="bRM-ob-cJc" secondAttribute="trailing" id="uJ0-zF-V8d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="89N-ix-bCC" id="mnt-HR-E5m"/>
+                <outlet property="heightCollection" destination="ATC-sh-PPc" id="u3q-03-mnA"/>
+                <outlet property="lblSubtitle" destination="nS3-LN-KI3" id="fQe-bP-hA0"/>
+                <outlet property="lblTitle" destination="k4L-CK-o43" id="CWM-lw-5kN"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </tableViewCell>
+    </objects>
+</document>
