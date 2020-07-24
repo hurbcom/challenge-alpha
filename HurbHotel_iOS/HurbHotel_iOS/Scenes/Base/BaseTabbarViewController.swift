@@ -14,7 +14,7 @@ class BaseTabbarViewController: UITabBarController {
         super.viewDidLoad()
         
         let searchVC = buildTabbarItem(SearchViewController().instantiate(), title: "Pesquisar", image: "icSearch")
-        let otherVC = buildTabbarItem(PackagesViewController().instantiate(), title: "Outro", image: "icHighlight")
+        let otherVC = buildTabbarItem(HighlightsViewController().instantiate(), title: "Destaques", image: "icHighlight")
         
         viewControllers = [
             otherVC,

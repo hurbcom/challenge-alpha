@@ -8,15 +8,15 @@
 
 import Foundation
 
-class SearchViewModel {
+final class SearchViewModel {
     
-    private let service = SearchService()
-    
+    // MARK: Properties
     var searchResult: SearchResult?
     var didSuccess: (() -> ())?
     var didError: ((String) -> ())?
+    private let service = SearchService()
     
-    
+    // MARK: Methods
     func searchFrom(term: String, page: String) {
         service.search(term, page: page, success: { [weak self] searchResult in
             self?.searchResult = searchResult

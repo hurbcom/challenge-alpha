@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		BD2DA08724C8C20E00E5B656 /* SearchNotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DA08624C8C20E00E5B656 /* SearchNotFoundView.swift */; };
 		BD2DA08924C8C22B00E5B656 /* SearchNotFoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD2DA08824C8C22B00E5B656 /* SearchNotFoundView.xib */; };
+		BDAF17E124CA9EBE0085A0AD /* HighlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17E024CA9EBE0085A0AD /* HighlightsViewController.swift */; };
+		BDAF17E324CA9EC40085A0AD /* HighlightsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDAF17E224CA9EC40085A0AD /* HighlightsViewController.storyboard */; };
+		BDAF17E724CAA0810085A0AD /* HighlightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17E624CAA0810085A0AD /* HighlightsViewModel.swift */; };
+		BDAF17E924CAA0B60085A0AD /* HighlightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17E824CAA0B60085A0AD /* HighlightsService.swift */; };
+		BDAF17EC24CAA3930085A0AD /* HighlightHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17EA24CAA3930085A0AD /* HighlightHorizontalCell.swift */; };
+		BDAF17ED24CAA3930085A0AD /* HighlightHorizontalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDAF17EB24CAA3930085A0AD /* HighlightHorizontalCell.xib */; };
 		BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */; };
 		BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6724C7A45B0073FCE0 /* Main.storyboard */; };
 		BDCADB6B24C7A45C0073FCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6A24C7A45C0073FCE0 /* Assets.xcassets */; };
@@ -17,8 +23,6 @@
 		BDCADB7D24C7ABF30073FCE0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB7C24C7ABF30073FCE0 /* SearchViewController.swift */; };
 		BDCADB8024C7AC330073FCE0 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB7F24C7AC330073FCE0 /* UIViewController+Extensions.swift */; };
 		BDCADB8224C7B23B0073FCE0 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB8124C7B23B0073FCE0 /* SearchViewController.storyboard */; };
-		BDCADB8524C7DE8B0073FCE0 /* PackagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB8424C7DE8B0073FCE0 /* PackagesViewController.swift */; };
-		BDCADB8724C7DE920073FCE0 /* PackagesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB8624C7DE920073FCE0 /* PackagesViewController.storyboard */; };
 		BDCADB8924C7DED10073FCE0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB8824C7DED10073FCE0 /* BaseViewController.swift */; };
 		BDCADB8B24C7E8180073FCE0 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB8A24C7E8180073FCE0 /* SearchViewModel.swift */; };
 		BDCADB9024C7E8560073FCE0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB8F24C7E8560073FCE0 /* Network.swift */; };
@@ -42,6 +46,12 @@
 		9E8C7DC7DEC944FD0419BBF0 /* Pods-HurbHotel_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HurbHotel_iOS.release.xcconfig"; path = "Target Support Files/Pods-HurbHotel_iOS/Pods-HurbHotel_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD2DA08624C8C20E00E5B656 /* SearchNotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNotFoundView.swift; sourceTree = "<group>"; };
 		BD2DA08824C8C22B00E5B656 /* SearchNotFoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchNotFoundView.xib; sourceTree = "<group>"; };
+		BDAF17E024CA9EBE0085A0AD /* HighlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewController.swift; sourceTree = "<group>"; };
+		BDAF17E224CA9EC40085A0AD /* HighlightsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HighlightsViewController.storyboard; sourceTree = "<group>"; };
+		BDAF17E624CAA0810085A0AD /* HighlightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewModel.swift; sourceTree = "<group>"; };
+		BDAF17E824CAA0B60085A0AD /* HighlightsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsService.swift; sourceTree = "<group>"; };
+		BDAF17EA24CAA3930085A0AD /* HighlightHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightHorizontalCell.swift; sourceTree = "<group>"; };
+		BDAF17EB24CAA3930085A0AD /* HighlightHorizontalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightHorizontalCell.xib; sourceTree = "<group>"; };
 		BDCADB5E24C7A45B0073FCE0 /* HurbHotel_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbHotel_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCADB6824C7A45B0073FCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,8 +62,6 @@
 		BDCADB7C24C7ABF30073FCE0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BDCADB7F24C7AC330073FCE0 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		BDCADB8124C7B23B0073FCE0 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
-		BDCADB8424C7DE8B0073FCE0 /* PackagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewController.swift; sourceTree = "<group>"; };
-		BDCADB8624C7DE920073FCE0 /* PackagesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PackagesViewController.storyboard; sourceTree = "<group>"; };
 		BDCADB8824C7DED10073FCE0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BDCADB8A24C7E8180073FCE0 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		BDCADB8F24C7E8560073FCE0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -101,6 +109,35 @@
 				C433867D184DA044BAF6850E /* Pods_HurbHotel_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDAF17DF24CA9E9F0085A0AD /* Highlights */ = {
+			isa = PBXGroup;
+			children = (
+				BDAF17E524CAA0660085A0AD /* Service */,
+				BDAF17E424CAA0600085A0AD /* View */,
+				BDAF17E624CAA0810085A0AD /* HighlightsViewModel.swift */,
+				BDAF17E024CA9EBE0085A0AD /* HighlightsViewController.swift */,
+				BDAF17E224CA9EC40085A0AD /* HighlightsViewController.storyboard */,
+			);
+			path = Highlights;
+			sourceTree = "<group>";
+		};
+		BDAF17E424CAA0600085A0AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BDAF17EA24CAA3930085A0AD /* HighlightHorizontalCell.swift */,
+				BDAF17EB24CAA3930085A0AD /* HighlightHorizontalCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BDAF17E524CAA0660085A0AD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BDAF17E824CAA0B60085A0AD /* HighlightsService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		BDCADB5524C7A45B0073FCE0 = {
@@ -156,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				BDCADB7824C7A75C0073FCE0 /* Base */,
-				BDCADB8324C7DE5D0073FCE0 /* Packages */,
+				BDAF17DF24CA9E9F0085A0AD /* Highlights */,
 				BDCADB7B24C7ABD50073FCE0 /* Search */,
 			);
 			path = Scenes;
@@ -177,9 +214,9 @@
 				BDCADB8D24C7E8210073FCE0 /* Service */,
 				BDCADB8C24C7E81C0073FCE0 /* Model */,
 				BDCADBA924C80A5A0073FCE0 /* View */,
+				BDCADB8A24C7E8180073FCE0 /* SearchViewModel.swift */,
 				BDCADB7C24C7ABF30073FCE0 /* SearchViewController.swift */,
 				BDCADB8124C7B23B0073FCE0 /* SearchViewController.storyboard */,
-				BDCADB8A24C7E8180073FCE0 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -192,15 +229,6 @@
 				BDCADBB424C81BEC0073FCE0 /* UITableViewCell+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		BDCADB8324C7DE5D0073FCE0 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				BDCADB8424C7DE8B0073FCE0 /* PackagesViewController.swift */,
-				BDCADB8624C7DE920073FCE0 /* PackagesViewController.storyboard */,
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 		BDCADB8C24C7E81C0073FCE0 /* Model */ = {
@@ -324,10 +352,11 @@
 				BDCADB6E24C7A45C0073FCE0 /* LaunchScreen.storyboard in Resources */,
 				BDCADB6B24C7A45C0073FCE0 /* Assets.xcassets in Resources */,
 				BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */,
-				BDCADB8724C7DE920073FCE0 /* PackagesViewController.storyboard in Resources */,
 				BDCADB8224C7B23B0073FCE0 /* SearchViewController.storyboard in Resources */,
 				BDCADBB124C80C210073FCE0 /* ProductCardCell.xib in Resources */,
 				BD2DA08924C8C22B00E5B656 /* SearchNotFoundView.xib in Resources */,
+				BDAF17ED24CAA3930085A0AD /* HighlightHorizontalCell.xib in Resources */,
+				BDAF17E324CA9EC40085A0AD /* HighlightsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +416,8 @@
 				BDCADB9624C7EF530073FCE0 /* SearchResult.swift in Sources */,
 				BDCADBB324C8193D0073FCE0 /* UIImageView+Extensions.swift in Sources */,
 				BDCADB8B24C7E8180073FCE0 /* SearchViewModel.swift in Sources */,
+				BDAF17E724CAA0810085A0AD /* HighlightsViewModel.swift in Sources */,
+				BDAF17E124CA9EBE0085A0AD /* HighlightsViewController.swift in Sources */,
 				BDCADB9024C7E8560073FCE0 /* Network.swift in Sources */,
 				BDCADB7D24C7ABF30073FCE0 /* SearchViewController.swift in Sources */,
 				BDCADBA024C7F6B10073FCE0 /* Filters.swift in Sources */,
@@ -394,12 +425,13 @@
 				BDCADBA424C7FCFE0073FCE0 /* Amenities.swift in Sources */,
 				BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */,
 				BD2DA08724C8C20E00E5B656 /* SearchNotFoundView.swift in Sources */,
-				BDCADB8524C7DE8B0073FCE0 /* PackagesViewController.swift in Sources */,
 				BDCADB9C24C7F0910073FCE0 /* Pagination.swift in Sources */,
 				BDCADB7A24C7A7780073FCE0 /* BaseTabbarViewController.swift in Sources */,
+				BDAF17EC24CAA3930085A0AD /* HighlightHorizontalCell.swift in Sources */,
 				BDCADB8924C7DED10073FCE0 /* BaseViewController.swift in Sources */,
 				BDCADBA824C7FE3B0073FCE0 /* FeatureItem.swift in Sources */,
 				BDCADBB524C81BEC0073FCE0 /* UITableViewCell+Extensions.swift in Sources */,
+				BDAF17E924CAA0B60085A0AD /* HighlightsService.swift in Sources */,
 				BDCADB9E24C7F0EF0073FCE0 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
