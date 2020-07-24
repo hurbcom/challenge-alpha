@@ -24,6 +24,8 @@
 		BDAF17FD24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17FB24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift */; };
 		BDAF17FE24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDAF17FC24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib */; };
 		BDAF180124CAB8450085A0AD /* Highlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF180024CAB8450085A0AD /* Highlights.swift */; };
+		BDAF180324CB84540085A0AD /* HighlightsNotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF180224CB84540085A0AD /* HighlightsNotFoundView.swift */; };
+		BDAF180524CB84A00085A0AD /* HighlightsNotFoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDAF180424CB84A00085A0AD /* HighlightsNotFoundView.xib */; };
 		BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */; };
 		BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6724C7A45B0073FCE0 /* Main.storyboard */; };
 		BDCADB6B24C7A45C0073FCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6A24C7A45C0073FCE0 /* Assets.xcassets */; };
@@ -70,6 +72,8 @@
 		BDAF17FB24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVerticalCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDAF17FC24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardVerticalCollectionViewCell.xib; sourceTree = "<group>"; };
 		BDAF180024CAB8450085A0AD /* Highlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlights.swift; sourceTree = "<group>"; };
+		BDAF180224CB84540085A0AD /* HighlightsNotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsNotFoundView.swift; sourceTree = "<group>"; };
+		BDAF180424CB84A00085A0AD /* HighlightsNotFoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightsNotFoundView.xib; sourceTree = "<group>"; };
 		BDCADB5E24C7A45B0073FCE0 /* HurbHotel_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbHotel_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCADB6824C7A45B0073FCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				BDAF17F824CAB6480085A0AD /* HighlightVerticalCell.xib */,
 				BDAF17FB24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift */,
 				BDAF17FC24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib */,
+				BDAF180224CB84540085A0AD /* HighlightsNotFoundView.swift */,
+				BDAF180424CB84A00085A0AD /* HighlightsNotFoundView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 				BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */,
 				BDCADB8224C7B23B0073FCE0 /* SearchViewController.storyboard in Resources */,
 				BDAF17F424CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib in Resources */,
+				BDAF180524CB84A00085A0AD /* HighlightsNotFoundView.xib in Resources */,
 				BDCADBB124C80C210073FCE0 /* ProductCardCell.xib in Resources */,
 				BDAF17FE24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib in Resources */,
 				BD2DA08924C8C22B00E5B656 /* SearchNotFoundView.xib in Resources */,
@@ -472,6 +479,7 @@
 				BDCADB7D24C7ABF30073FCE0 /* SearchViewController.swift in Sources */,
 				BDCADBA024C7F6B10073FCE0 /* Filters.swift in Sources */,
 				BDCADBA224C7FBEA0073FCE0 /* Price.swift in Sources */,
+				BDAF180324CB84540085A0AD /* HighlightsNotFoundView.swift in Sources */,
 				BDCADBA424C7FCFE0073FCE0 /* Amenities.swift in Sources */,
 				BDAF17FD24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.swift in Sources */,
 				BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */,

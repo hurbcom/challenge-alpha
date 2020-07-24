@@ -23,7 +23,10 @@ final class HighlightsService {
             }
 
             do {
-                guard let data = data else { return }
+                guard let data = data else {
+                    failure("not found!")
+                    return
+                }
                 let result = try JSONDecoder().decode(Highlights.self, from: data)
                 success(result)
             } catch let err {

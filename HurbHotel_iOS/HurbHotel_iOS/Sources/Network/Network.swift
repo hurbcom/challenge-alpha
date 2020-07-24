@@ -24,6 +24,12 @@ class Network {
                 return
             }
             
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                completion(nil, nil)
+                return
+            }
+            
             completion(data, nil)
         }.resume()
     }

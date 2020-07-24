@@ -18,6 +18,7 @@ final class HighlightsViewController: BaseViewController {
         case marriage
         case luxury
     }
+    let viewHighlightsNotFound = HighlightsNotFoundView().instanceFromNib()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView! {
@@ -33,6 +34,7 @@ final class HighlightsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        showLoading()
         viewModel.fetchHighlights()
         bindEvents()
     }
@@ -41,12 +43,18 @@ final class HighlightsViewController: BaseViewController {
     private func bindEvents() {
         viewModel.shouldReloadData = { [weak self] in
             DispatchQueue.main.async {
+                self?.closeLoading()
                 self?.tableView.reloadData()
             }
         }
         
-        viewModel.didFailure = { error in
-            print("==> Error: \(error ?? "")")
+        viewModel.didFailure = { [weak self] error in
+            debugPrint("==> Error: \(error ?? "")")
+            self?.viewModel.highlights = nil
+            DispatchQueue.main.async {
+                self?.closeLoading()
+                self?.tableView.backgroundView = self?.viewHighlightsNotFound
+            }
         }
     }
 }

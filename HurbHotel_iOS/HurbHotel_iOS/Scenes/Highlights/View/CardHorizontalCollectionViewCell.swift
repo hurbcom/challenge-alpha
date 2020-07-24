@@ -27,8 +27,8 @@ class CardHorizontalCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         ivCard.image = nil
+        lblTitle.text = nil
     }
 
     // MARK: Setup

@@ -18,6 +18,7 @@ final class SearchViewController: BaseViewController {
             self.navigationItem.title = termSearch != nil ? termSearch : "Perquisar"
         }
     }
+    let viewSearchNotFound = SearchNotFoundView().instanceFromNib()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView! {
@@ -28,25 +29,12 @@ final class SearchViewController: BaseViewController {
         }
     }
     
-    deinit {
-        print("==> Tela Search Morreu!!!")
-    }
-    
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         
         bindEvents()
         configureSearchController()
-        
-        //viewModel.searchFrom(term: "gramado", page: "1")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        print("==> Re-exibindo tela de Pesquisa!")
     }
     
     override var canBecomeFirstResponder: Bool {
@@ -56,7 +44,6 @@ final class SearchViewController: BaseViewController {
     // MARK: Helpers
     func bindEvents() {
         viewModel.didSuccess = { [weak self] in
-            print("==> SearchResult: \(self?.viewModel.searchResult?.results?.count ?? 0)))")
             if self?.viewModel.searchResult?.results?.isEmpty ?? true {
                 self?.notFoundResult()
             } else {
@@ -65,7 +52,7 @@ final class SearchViewController: BaseViewController {
         }
         
         viewModel.didError = { [weak self] error in
-            print("==> Error: \(error)")
+            debugPrint("==> Error: \(error)")
             self?.notFoundResult()
         }
     }
@@ -75,7 +62,7 @@ final class SearchViewController: BaseViewController {
             self.closeLoading()
             self.tableView.isHidden = false
             self.tableView.reloadData()
-            self.tableView.backgroundView = SearchNotFoundView().instanceFromNib()
+            self.tableView.backgroundView = self.viewSearchNotFound
         }
     }
     

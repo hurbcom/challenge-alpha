@@ -21,6 +21,10 @@ struct Highlights: Decodable {
         struct Card: Decodable {
             let imageUrl: String?
             let title: String?
+            let discount: String?
+            let value: String?
+            let dailys: Int?
+            let peoples: Int?
         }
     }
 }

@@ -77,17 +77,11 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dEb-sh-VZH">
-                                <rect key="frame" x="5" y="165" width="150" height="29.5"/>
+                                <rect key="frame" x="5" y="165" width="150" height="15.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noronha + Recife 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g4-18-Fmd">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="14.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3b-0P-NRC">
-                                        <rect key="frame" x="0.0" y="16.5" width="150" height="13"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noronha + Recife 2021" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g4-18-Fmd">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -200,7 +194,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="PaX-gG-QTh">
-                                <rect key="frame" x="86" y="202.5" width="69" height="32"/>
+                                <rect key="frame" x="86" y="188.5" width="69" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A partir de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbp-iC-45u">
                                         <rect key="frame" x="0.0" y="0.0" width="69" height="12"/>
@@ -217,18 +211,18 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6TP-dV-ho6">
-                                <rect key="frame" x="5" y="202.5" width="45" height="26.5"/>
+                                <rect key="frame" x="5" y="188.5" width="41" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 diárias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gc-r9-SNS">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="13.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="12"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 pessoa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4e-X2-7Ea">
-                                        <rect key="frame" x="0.0" y="13.5" width="45" height="13"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="12" width="41" height="12"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -239,6 +233,7 @@
                             <constraint firstItem="mRg-b5-cLh" firstAttribute="top" secondItem="JwC-bS-NPE" secondAttribute="bottom" id="2Wj-Ao-uu1"/>
                             <constraint firstItem="JwC-bS-NPE" firstAttribute="top" secondItem="IG7-t5-LTx" secondAttribute="top" id="3oI-6T-LmX"/>
                             <constraint firstItem="PaX-gG-QTh" firstAttribute="top" secondItem="dEb-sh-VZH" secondAttribute="bottom" constant="8" id="AR5-TV-HOU"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PaX-gG-QTh" secondAttribute="bottom" constant="8" id="AXB-VH-njb"/>
                             <constraint firstItem="dEb-sh-VZH" firstAttribute="top" secondItem="mRg-b5-cLh" secondAttribute="bottom" constant="5" id="CJN-9O-SIc"/>
                             <constraint firstAttribute="trailing" secondItem="PaX-gG-QTh" secondAttribute="trailing" constant="5" id="KMl-nO-JK2"/>
                             <constraint firstItem="6TP-dV-ho6" firstAttribute="leading" secondItem="IG7-t5-LTx" secondAttribute="leading" constant="5" id="OFQ-ZL-MfS"/>
@@ -263,6 +258,11 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="ivCard" destination="xd8-pL-6sj" id="mS0-cA-Jds"/>
+                <outlet property="lblDailys" destination="2gc-r9-SNS" id="ZWR-PP-aqO"/>
+                <outlet property="lblDiscount" destination="pqP-RI-9in" id="PEv-6f-V0C"/>
+                <outlet property="lblPeoples" destination="i4e-X2-7Ea" id="EKs-kd-6kT"/>
+                <outlet property="lblTitle" destination="4g4-18-Fmd" id="Qky-95-fyx"/>
+                <outlet property="lblValue" destination="CCF-3u-mgi" id="m0O-ws-jrv"/>
                 <outlet property="vwCard" destination="IG7-t5-LTx" id="bxi-9n-pNy"/>
             </connections>
             <point key="canvasLocation" x="118.84057971014494" y="144.64285714285714"/>
