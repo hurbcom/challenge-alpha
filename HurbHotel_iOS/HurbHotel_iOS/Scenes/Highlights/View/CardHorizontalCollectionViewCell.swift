@@ -14,6 +14,7 @@ class CardHorizontalCollectionViewCell: UICollectionViewCell {
     // MARK: Outlets
     @IBOutlet weak var vwCard: UIView!
     @IBOutlet weak var ivCard: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
     
     // MARK: Overrides
     override func awakeFromNib() {
@@ -32,6 +33,7 @@ class CardHorizontalCollectionViewCell: UICollectionViewCell {
 
     // MARK: Setup
     func setup(with card: Highlights.Section.Card) {
+        lblTitle.text = card.title
         
         if let imageUrl = card.imageUrl, let url = URL(string: imageUrl) {
             ivCard.kf.setImage(with: url)
