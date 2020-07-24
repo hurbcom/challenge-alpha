@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		1C31B22D3AFB99A8DE104BFA /* Pods_Hurb_AlphaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC3FD3BC772708BFF29925B3 /* Pods_Hurb_AlphaTests.framework */; };
 		785925A586558F993C114E17 /* Pods_Hurb_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7CCBAA8FEC12FBF181AA67 /* Pods_Hurb_Alpha.framework */; };
+		AF01526A24CB7CCD00E6FF29 /* NetworkBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01526924CB7CCD00E6FF29 /* NetworkBaseService.swift */; };
+		AF01526C24CB7DD500E6FF29 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01526B24CB7DD500E6FF29 /* BaseModel.swift */; };
+		AF01526E24CB7E2200E6FF29 /* Mirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01526D24CB7E2200E6FF29 /* Mirror.swift */; };
+		AF01527024CB7EA200E6FF29 /* NetworkDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01526F24CB7EA200E6FF29 /* NetworkDispatch.swift */; };
+		AF01527224CB7EBA00E6FF29 /* NetworkEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01527124CB7EBA00E6FF29 /* NetworkEncoding.swift */; };
+		AF01527424CB7EDA00E6FF29 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01527324CB7EDA00E6FF29 /* NetworkProtocol.swift */; };
+		AF01527624CB7EEE00E6FF29 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01527524CB7EEE00E6FF29 /* NetworkService.swift */; };
+		AF01527924CB7FA100E6FF29 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01527824CB7FA100E6FF29 /* Log.swift */; };
+		AF01527B24CB812F00E6FF29 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01527A24CB812F00E6FF29 /* Data.swift */; };
+		AF01527F24CB82AD00E6FF29 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01527E24CB82AD00E6FF29 /* NSError.swift */; };
+		AF01528124CB82E800E6FF29 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01528024CB82E800E6FF29 /* Int.swift */; };
+		AF01528324CB889B00E6FF29 /* HotelsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01528224CB889B00E6FF29 /* HotelsService.swift */; };
+		AF01528524CB8BA000E6FF29 /* Hotels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01528424CB8BA000E6FF29 /* Hotels.swift */; };
 		AF4AA66024CA3B2C0027BE87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA65F24CA3B2C0027BE87 /* AppDelegate.swift */; };
 		AF4AA66924CA3B2E0027BE87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA66824CA3B2E0027BE87 /* Assets.xcassets */; };
 		AF4AA66C24CA3B2E0027BE87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA66A24CA3B2E0027BE87 /* LaunchScreen.storyboard */; };
@@ -21,6 +34,8 @@
 		AF4AA69624CA43D70027BE87 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA69524CA43D70027BE87 /* Coordinator.swift */; };
 		AF4AA69A24CA612F0027BE87 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA69924CA612F0027BE87 /* UIColor.swift */; };
 		AF4AA69D24CA61F40027BE87 /* HANavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA69C24CA61F40027BE87 /* HANavBar.swift */; };
+		AF4AA6A024CA65D40027BE87 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA69F24CA65D40027BE87 /* Environment.swift */; };
+		AF4AA6A224CA66150027BE87 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA6A124CA66150027BE87 /* Development.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +53,19 @@
 		6F2F6B10323491E2FF51EDD2 /* Pods-Hurb Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb Alpha.release.xcconfig"; path = "Target Support Files/Pods-Hurb Alpha/Pods-Hurb Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		831ACAF67A0ACE9DD8C0D344 /* Pods-Hurb AlphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb AlphaTests.debug.xcconfig"; path = "Target Support Files/Pods-Hurb AlphaTests/Pods-Hurb AlphaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACA703E7758D53347DB8319F /* Pods-Hurb AlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb AlphaTests.release.xcconfig"; path = "Target Support Files/Pods-Hurb AlphaTests/Pods-Hurb AlphaTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF01526924CB7CCD00E6FF29 /* NetworkBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBaseService.swift; sourceTree = "<group>"; };
+		AF01526B24CB7DD500E6FF29 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		AF01526D24CB7E2200E6FF29 /* Mirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mirror.swift; sourceTree = "<group>"; };
+		AF01526F24CB7EA200E6FF29 /* NetworkDispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatch.swift; sourceTree = "<group>"; };
+		AF01527124CB7EBA00E6FF29 /* NetworkEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEncoding.swift; sourceTree = "<group>"; };
+		AF01527324CB7EDA00E6FF29 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		AF01527524CB7EEE00E6FF29 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AF01527824CB7FA100E6FF29 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		AF01527A24CB812F00E6FF29 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		AF01527E24CB82AD00E6FF29 /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
+		AF01528024CB82E800E6FF29 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		AF01528224CB889B00E6FF29 /* HotelsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsService.swift; sourceTree = "<group>"; };
+		AF01528424CB8BA000E6FF29 /* Hotels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotels.swift; sourceTree = "<group>"; };
 		AF4AA65C24CA3B2C0027BE87 /* Hurb Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hurb Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4AA65F24CA3B2C0027BE87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF4AA66824CA3B2E0027BE87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +82,8 @@
 		AF4AA69524CA43D70027BE87 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AF4AA69924CA612F0027BE87 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AF4AA69C24CA61F40027BE87 /* HANavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HANavBar.swift; sourceTree = "<group>"; };
+		AF4AA69F24CA65D40027BE87 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		AF4AA6A124CA66150027BE87 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		BC3FD3BC772708BFF29925B3 /* Pods_Hurb_AlphaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hurb_AlphaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7CCBAA8FEC12FBF181AA67 /* Pods_Hurb_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hurb_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +117,53 @@
 				ACA703E7758D53347DB8319F /* Pods-Hurb AlphaTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AF01526724CB7CB500E6FF29 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AF01526924CB7CCD00E6FF29 /* NetworkBaseService.swift */,
+				AF01526F24CB7EA200E6FF29 /* NetworkDispatch.swift */,
+				AF01527124CB7EBA00E6FF29 /* NetworkEncoding.swift */,
+				AF01527324CB7EDA00E6FF29 /* NetworkProtocol.swift */,
+				AF01527524CB7EEE00E6FF29 /* NetworkService.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AF01526824CB7CBB00E6FF29 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AF01528224CB889B00E6FF29 /* HotelsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AF01527724CB7F5400E6FF29 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AF01527824CB7FA100E6FF29 /* Log.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AF01527C24CB829900E6FF29 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				AF01526D24CB7E2200E6FF29 /* Mirror.swift */,
+				AF01527A24CB812F00E6FF29 /* Data.swift */,
+				AF01527E24CB82AD00E6FF29 /* NSError.swift */,
+				AF01528024CB82E800E6FF29 /* Int.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		AF01527D24CB829D00E6FF29 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				AF4AA69924CA612F0027BE87 /* UIColor.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		AF4AA65324CA3B2B0027BE87 = {
@@ -147,6 +224,8 @@
 		AF4AA68224CA41AD0027BE87 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AF01526B24CB7DD500E6FF29 /* BaseModel.swift */,
+				AF01528424CB8BA000E6FF29 /* Hotels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +242,8 @@
 		AF4AA68424CA41C60027BE87 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AF01526824CB7CBB00E6FF29 /* Services */,
+				AF01526724CB7CB500E6FF29 /* Base */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -220,6 +301,8 @@
 		AF4AA69724CA44080027BE87 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AF01527724CB7F5400E6FF29 /* Helpers */,
+				AF4AA69E24CA65AA0027BE87 /* Config */,
 				AF4AA69824CA61250027BE87 /* Extensions */,
 			);
 			path = Utils;
@@ -228,7 +311,8 @@
 		AF4AA69824CA61250027BE87 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AF4AA69924CA612F0027BE87 /* UIColor.swift */,
+				AF01527D24CB829D00E6FF29 /* UIKit */,
+				AF01527C24CB829900E6FF29 /* Foundation */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -239,6 +323,15 @@
 				AF4AA69C24CA61F40027BE87 /* HANavBar.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AF4AA69E24CA65AA0027BE87 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				AF4AA69F24CA65D40027BE87 /* Environment.swift */,
+				AF4AA6A124CA66150027BE87 /* Development.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		EE987C2ACA1A22199CFA5C46 /* Frameworks */ = {
@@ -334,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4AA6A224CA66150027BE87 /* Development.xcconfig in Resources */,
 				AF4AA66C24CA3B2E0027BE87 /* LaunchScreen.storyboard in Resources */,
 				AF4AA66924CA3B2E0027BE87 /* Assets.xcassets in Resources */,
 			);
@@ -419,13 +513,27 @@
 			files = (
 				AF4AA69D24CA61F40027BE87 /* HANavBar.swift in Sources */,
 				AF4AA69624CA43D70027BE87 /* Coordinator.swift in Sources */,
+				AF01527924CB7FA100E6FF29 /* Log.swift in Sources */,
+				AF01528124CB82E800E6FF29 /* Int.swift in Sources */,
 				AF4AA69024CA432B0027BE87 /* BaseViewController.swift in Sources */,
+				AF01527224CB7EBA00E6FF29 /* NetworkEncoding.swift in Sources */,
 				AF4AA69224CA438C0027BE87 /* RootViewCoordinator.swift in Sources */,
+				AF01527624CB7EEE00E6FF29 /* NetworkService.swift in Sources */,
 				AF4AA66024CA3B2C0027BE87 /* AppDelegate.swift in Sources */,
 				AF4AA68C24CA42A70027BE87 /* HomeViewModel.swift in Sources */,
+				AF01526C24CB7DD500E6FF29 /* BaseModel.swift in Sources */,
 				AF4AA69A24CA612F0027BE87 /* UIColor.swift in Sources */,
+				AF01528324CB889B00E6FF29 /* HotelsService.swift in Sources */,
+				AF01527024CB7EA200E6FF29 /* NetworkDispatch.swift in Sources */,
+				AF01528524CB8BA000E6FF29 /* Hotels.swift in Sources */,
 				AF4AA68A24CA429E0027BE87 /* HomeViewController.swift in Sources */,
+				AF01526A24CB7CCD00E6FF29 /* NetworkBaseService.swift in Sources */,
+				AF01527424CB7EDA00E6FF29 /* NetworkProtocol.swift in Sources */,
+				AF01526E24CB7E2200E6FF29 /* Mirror.swift in Sources */,
+				AF01527B24CB812F00E6FF29 /* Data.swift in Sources */,
 				AF4AA69424CA43B40027BE87 /* AppCoordinator.swift in Sources */,
+				AF4AA6A024CA65D40027BE87 /* Environment.swift in Sources */,
+				AF01527F24CB82AD00E6FF29 /* NSError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +569,7 @@
 /* Begin XCBuildConfiguration section */
 		AF4AA67924CA3B2E0027BE87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF4AA6A124CA66150027BE87 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -521,6 +630,7 @@
 		};
 		AF4AA67A24CA3B2E0027BE87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF4AA6A124CA66150027BE87 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

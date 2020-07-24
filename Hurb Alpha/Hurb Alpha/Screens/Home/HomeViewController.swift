@@ -14,14 +14,26 @@ class HomeViewController: BaseViewController {
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init()
+        configureLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
+}
+
+private extension HomeViewController {
+    func configureLayout() {
+        view.backgroundColor = .white
+        //TODO: remove api test
+        HotelsService.getHotels(query: "buzios") { result in
+            switch result {
+            case .failure(let error, _):
+                print(error)
+            case .success(let hotels, _):
+                print("opa")
+            }
+        }
+        
     }
 }
