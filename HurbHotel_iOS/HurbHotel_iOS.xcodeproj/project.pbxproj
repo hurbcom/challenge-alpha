@@ -15,6 +15,10 @@
 		BDAF17E924CAA0B60085A0AD /* HighlightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17E824CAA0B60085A0AD /* HighlightsService.swift */; };
 		BDAF17EC24CAA3930085A0AD /* HighlightHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17EA24CAA3930085A0AD /* HighlightHorizontalCell.swift */; };
 		BDAF17ED24CAA3930085A0AD /* HighlightHorizontalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDAF17EB24CAA3930085A0AD /* HighlightHorizontalCell.xib */; };
+		BDAF17F024CAACB30085A0AD /* SnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17EF24CAACB30085A0AD /* SnappingLayout.swift */; };
+		BDAF17F324CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17F124CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift */; };
+		BDAF17F424CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDAF17F224CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib */; };
+		BDAF17F624CAAFA10085A0AD /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17F524CAAFA10085A0AD /* UICollectionViewCell+Extensions.swift */; };
 		BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */; };
 		BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6724C7A45B0073FCE0 /* Main.storyboard */; };
 		BDCADB6B24C7A45C0073FCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDCADB6A24C7A45C0073FCE0 /* Assets.xcassets */; };
@@ -52,6 +56,10 @@
 		BDAF17E824CAA0B60085A0AD /* HighlightsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsService.swift; sourceTree = "<group>"; };
 		BDAF17EA24CAA3930085A0AD /* HighlightHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightHorizontalCell.swift; sourceTree = "<group>"; };
 		BDAF17EB24CAA3930085A0AD /* HighlightHorizontalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightHorizontalCell.xib; sourceTree = "<group>"; };
+		BDAF17EF24CAACB30085A0AD /* SnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappingLayout.swift; sourceTree = "<group>"; };
+		BDAF17F124CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDAF17F224CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardHorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
+		BDAF17F524CAAFA10085A0AD /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		BDCADB5E24C7A45B0073FCE0 /* HurbHotel_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HurbHotel_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCADB6824C7A45B0073FCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +136,8 @@
 			children = (
 				BDAF17EA24CAA3930085A0AD /* HighlightHorizontalCell.swift */,
 				BDAF17EB24CAA3930085A0AD /* HighlightHorizontalCell.xib */,
+				BDAF17F124CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift */,
+				BDAF17F224CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +148,14 @@
 				BDAF17E824CAA0B60085A0AD /* HighlightsService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BDAF17EE24CAAC750085A0AD /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				BDAF17EF24CAACB30085A0AD /* SnappingLayout.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		BDCADB5524C7A45B0073FCE0 = {
@@ -172,6 +190,7 @@
 		BDCADB7524C7A6DD0073FCE0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BDAF17EE24CAAC750085A0AD /* Library */,
 				BDCADB8E24C7E8450073FCE0 /* Network */,
 				BDCADB6124C7A45B0073FCE0 /* AppDelegate.swift */,
 			);
@@ -227,6 +246,7 @@
 				BDCADB7F24C7AC330073FCE0 /* UIViewController+Extensions.swift */,
 				BDCADBB224C8193D0073FCE0 /* UIImageView+Extensions.swift */,
 				BDCADBB424C81BEC0073FCE0 /* UITableViewCell+Extensions.swift */,
+				BDAF17F524CAAFA10085A0AD /* UICollectionViewCell+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,6 +373,7 @@
 				BDCADB6B24C7A45C0073FCE0 /* Assets.xcassets in Resources */,
 				BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */,
 				BDCADB8224C7B23B0073FCE0 /* SearchViewController.storyboard in Resources */,
+				BDAF17F424CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib in Resources */,
 				BDCADBB124C80C210073FCE0 /* ProductCardCell.xib in Resources */,
 				BD2DA08924C8C22B00E5B656 /* SearchNotFoundView.xib in Resources */,
 				BDAF17ED24CAA3930085A0AD /* HighlightHorizontalCell.xib in Resources */,
@@ -413,8 +434,10 @@
 				BDCADB9224C7ED020073FCE0 /* SearchService.swift in Sources */,
 				BDCADB8024C7AC330073FCE0 /* UIViewController+Extensions.swift in Sources */,
 				BDCADBB024C80C210073FCE0 /* ProductCardCell.swift in Sources */,
+				BDAF17F624CAAFA10085A0AD /* UICollectionViewCell+Extensions.swift in Sources */,
 				BDCADB9624C7EF530073FCE0 /* SearchResult.swift in Sources */,
 				BDCADBB324C8193D0073FCE0 /* UIImageView+Extensions.swift in Sources */,
+				BDAF17F324CAAD000085A0AD /* CardHorizontalCollectionViewCell.swift in Sources */,
 				BDCADB8B24C7E8180073FCE0 /* SearchViewModel.swift in Sources */,
 				BDAF17E724CAA0810085A0AD /* HighlightsViewModel.swift in Sources */,
 				BDAF17E124CA9EBE0085A0AD /* HighlightsViewController.swift in Sources */,
@@ -424,6 +447,7 @@
 				BDCADBA224C7FBEA0073FCE0 /* Price.swift in Sources */,
 				BDCADBA424C7FCFE0073FCE0 /* Amenities.swift in Sources */,
 				BDCADB6224C7A45B0073FCE0 /* AppDelegate.swift in Sources */,
+				BDAF17F024CAACB30085A0AD /* SnappingLayout.swift in Sources */,
 				BD2DA08724C8C20E00E5B656 /* SearchNotFoundView.swift in Sources */,
 				BDCADB9C24C7F0910073FCE0 /* Pagination.swift in Sources */,
 				BDCADB7A24C7A7780073FCE0 /* BaseTabbarViewController.swift in Sources */,

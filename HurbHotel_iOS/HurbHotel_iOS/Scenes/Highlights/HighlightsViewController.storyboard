@@ -11,12 +11,12 @@
         <!--Highlights View Controller-->
         <scene sceneID="hur-Mi-Xb5">
             <objects>
-                <viewController storyboardIdentifier="HighlightsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XOs-JJ-xHl" customClass="HighlightsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HighlightsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XOs-JJ-xHl" customClass="HighlightsViewController" customModule="HurbHotel_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pmF-Kd-phm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dGe-h8-hiO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dGe-h8-hiO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -31,7 +31,7 @@
                         <viewLayoutGuide key="safeArea" id="8OD-ad-E3S"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="dGe-h8-hiO" id="6Au-Ov-Uef"/>
+                        <outlet property="tableView" destination="dGe-h8-hiO" id="qQL-lK-zas"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RW8-FI-smb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
