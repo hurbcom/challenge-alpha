@@ -10,9 +10,9 @@ import Foundation
 
 final class HighlightsService {
     
-    func search(_ term: String, page: String, success: @escaping (SearchResult) -> (), failure: @escaping (String) -> ()) {
+    func fetchHighlights(success: @escaping (Highlights) -> (), failure: @escaping (String) -> ()) {
         
-        guard let url = URL(string: String(format: "%@/search/api?q=%@&page=%@", BASE_URL, term, page)) else {
+        guard let url = URL(string: "https://demo9346999.mockable.io/hurbHotel/hightlights") else {
             failure("URL inválida!")
             return
         }
@@ -24,7 +24,7 @@ final class HighlightsService {
 
             do {
                 guard let data = data else { return }
-                let result = try JSONDecoder().decode(SearchResult.self, from: data)
+                let result = try JSONDecoder().decode(Highlights.self, from: data)
                 success(result)
             } catch let err {
                 failure(err.localizedDescription)

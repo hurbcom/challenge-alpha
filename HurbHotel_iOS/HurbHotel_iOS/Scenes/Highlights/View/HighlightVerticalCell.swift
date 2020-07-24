@@ -9,6 +9,9 @@
 import UIKit
 
 class HighlightVerticalCell: UITableViewCell {
+    
+    // MARK: Properties
+    private var cards: [Highlights.Section.Card] = []
 
     // MARK: Outlets
     @IBOutlet weak var lblTitle: UILabel!
@@ -29,19 +32,32 @@ class HighlightVerticalCell: UITableViewCell {
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 20
-        let width = (UIScreen.main.bounds.width * 0.35)
+        let width = (UIScreen.main.bounds.width * 0.40)
         layout.itemSize = CGSize(width: width, height: 250)
 
-        
-        collectionView.isScrollEnabled = false
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.reloadData()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        lblTitle.text = nil
+        lblSubtitle.text = nil
+        cards = []
+    }
 
     // MARK: Setup
-    func setup() {
-        let height: CGFloat = collectionView.collectionViewLayout.collectionViewContentSize.height
-        heightCollection.constant = height
+    func setup(with section: Highlights.Section) {
+        lblTitle.text = section.title
+        lblSubtitle.text = section.subtitle
+        cards = section.cards ?? []
+        
+        ///Calculando a altura da collectionView, com base no numero de Cards.
+        var numberLines: Int = cards.count / 2
+        numberLines += (cards.count % 2) == 0 ? 0 : 1
+        let heightForLine = 270
+        heightCollection.constant = CGFloat(numberLines * heightForLine)
         collectionView.layoutIfNeeded()
         collectionView.reloadData()
     }
@@ -50,13 +66,14 @@ class HighlightVerticalCell: UITableViewCell {
 // MARK: Extensions
 extension HighlightVerticalCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let card = cards[indexPath.item]
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardVerticalCollectionViewCell().identifier, for: indexPath) as? CardVerticalCollectionViewCell {
-            
+            cell.setup(with: card)
             return cell
         }
         

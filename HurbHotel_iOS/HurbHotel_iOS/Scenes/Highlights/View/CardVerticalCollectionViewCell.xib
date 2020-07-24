@@ -262,6 +262,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="ivCard" destination="xd8-pL-6sj" id="mS0-cA-Jds"/>
                 <outlet property="vwCard" destination="IG7-t5-LTx" id="bxi-9n-pNy"/>
             </connections>
             <point key="canvasLocation" x="118.84057971014494" y="144.64285714285714"/>

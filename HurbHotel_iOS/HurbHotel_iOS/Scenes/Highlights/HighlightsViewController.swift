@@ -11,10 +11,11 @@ import UIKit
 final class HighlightsViewController: BaseViewController {
     
     // MARK: Properties
+    let viewModel = HighlightsViewModel()
     private enum Sections: Int, CaseIterable {
         case opportunity
-        case marriage
         case vacation
+        case marriage
         case luxury
     }
     
@@ -31,6 +32,22 @@ final class HighlightsViewController: BaseViewController {
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.fetchHighlights()
+        bindEvents()
+    }
+    
+    // MARK: Helpers
+    private func bindEvents() {
+        viewModel.shouldReloadData = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+        
+        viewModel.didFailure = { error in
+            print("==> Error: \(error ?? "")")
+        }
     }
 }
 
@@ -41,33 +58,51 @@ extension HighlightsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let section = Sections(rawValue: section) else { return 0 }
+        switch section {
+        case .opportunity:
+            return viewModel.highlights?.opportunity != nil ? 1 : 0
+        case .vacation:
+            return viewModel.highlights?.vacation != nil ? 1 : 0
+        case .marriage:
+            return viewModel.highlights?.marriage != nil ? 1 : 0
+        case .luxury:
+            return viewModel.highlights?.luxury != nil ? 1 : 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let section = Sections(rawValue: indexPath.section) else { return UITableViewCell() }
         
         switch section {
-        case .opportunity, .luxury:
-            return buildHighlightHorizontalCell(tableView, indexPath: indexPath)
-        case .marriage, .vacation:
-            return buildHighlightVerticalCell(tableView, indexPath: indexPath)
+        case .opportunity:
+            guard let section = viewModel.highlights?.opportunity else {return UITableViewCell()}
+            return buildHighlightHorizontalCell(tableView, indexPath: indexPath, section: section)
+        case .vacation:
+            guard let section = viewModel.highlights?.vacation else {return UITableViewCell()}
+            return buildHighlightVerticalCell(tableView, indexPath: indexPath, section: section)
+        case .marriage:
+            guard let section = viewModel.highlights?.marriage else {return UITableViewCell()}
+            return buildHighlightVerticalCell(tableView, indexPath: indexPath, section: section)
+        case .luxury:
+            guard let section = viewModel.highlights?.luxury else {return UITableViewCell()}
+            return buildHighlightHorizontalCell(tableView, indexPath: indexPath, section: section)
         }
     }
     
-    private func buildHighlightHorizontalCell(_ tableView: UITableView, indexPath: IndexPath) -> HighlightHorizontalCell {
+    private func buildHighlightHorizontalCell(_ tableView: UITableView, indexPath: IndexPath, section: Highlights.Section) -> HighlightHorizontalCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HighlightHorizontalCell().identifier, for: indexPath) as? HighlightHorizontalCell else {
             return HighlightHorizontalCell()
         }
-        cell.setup()
+        cell.setup(with: section)
         return cell
     }
     
-    private func buildHighlightVerticalCell(_ tableView: UITableView, indexPath: IndexPath) -> HighlightVerticalCell {
+    private func buildHighlightVerticalCell(_ tableView: UITableView, indexPath: IndexPath, section: Highlights.Section) -> HighlightVerticalCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HighlightVerticalCell().identifier, for: indexPath) as? HighlightVerticalCell else {
             return HighlightVerticalCell()
         }
-        cell.setup()
+        cell.setup(with: section)
         return cell
     }
 }

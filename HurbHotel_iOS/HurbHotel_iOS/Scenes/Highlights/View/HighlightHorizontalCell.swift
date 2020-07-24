@@ -9,6 +9,9 @@
 import UIKit
 
 class HighlightHorizontalCell: UITableViewCell {
+    
+    // MARK: Properties
+    private var cards: [Highlights.Section.Card] = []
 
     // MARK: Outlets
     @IBOutlet weak var lblTitle: UILabel!
@@ -21,7 +24,6 @@ class HighlightHorizontalCell: UITableViewCell {
             collectionView.reloadData()
         }
     }
-    
     
     // MARK: Overrides
     override func awakeFromNib() {
@@ -37,25 +39,36 @@ class HighlightHorizontalCell: UITableViewCell {
         collectionView.reloadData()
     }
     
-    // MARK: Setup
-    func setup() {
+    override func prepareForReuse() {
+        super.prepareForReuse()
         
+        lblTitle.text = nil
+        lblSubtitle.text = nil
+        cards = []
+    }
+    
+    // MARK: Setup
+    func setup(with section: Highlights.Section) {
+        lblTitle.text = section.title
+        lblSubtitle.text = section.subtitle
+        cards = section.cards ?? []
+        collectionView.reloadData()
     }
 }
 
 // MARK: Extensions
 extension HighlightHorizontalCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let card = cards[indexPath.item]
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardHorizontalCollectionViewCell().identifier, for: indexPath) as? CardHorizontalCollectionViewCell {
-            
+            cell.setup(with: card)
             return cell
         }
-        
         return UICollectionViewCell()
     }
 }

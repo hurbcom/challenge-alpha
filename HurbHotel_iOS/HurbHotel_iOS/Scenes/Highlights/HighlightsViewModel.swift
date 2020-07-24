@@ -12,6 +12,17 @@ final class HighlightsViewModel {
     
     // MARK: Properties
     private let service = HighlightsService()
+    var highlights: Highlights?
+    var shouldReloadData: (() -> ())?
+    var didFailure: ((String?) -> ())?
     
     // MARK: Methods
+    func fetchHighlights() {
+        service.fetchHighlights(success: { [weak self] highlights in
+            self?.highlights = highlights
+            self?.shouldReloadData?()
+        }) { [weak self] error in
+            self?.didFailure?(error)
+        }
+    }
 }

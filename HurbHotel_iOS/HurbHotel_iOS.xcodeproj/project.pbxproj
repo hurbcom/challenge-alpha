@@ -132,8 +132,8 @@
 		BDAF17DF24CA9E9F0085A0AD /* Highlights */ = {
 			isa = PBXGroup;
 			children = (
-				BDAF17FF24CAB8300085A0AD /* Model */,
 				BDAF17E524CAA0660085A0AD /* Service */,
+				BDAF17FF24CAB8300085A0AD /* Model */,
 				BDAF17E424CAA0600085A0AD /* View */,
 				BDAF17E624CAA0810085A0AD /* HighlightsViewModel.swift */,
 				BDAF17E024CA9EBE0085A0AD /* HighlightsViewController.swift */,

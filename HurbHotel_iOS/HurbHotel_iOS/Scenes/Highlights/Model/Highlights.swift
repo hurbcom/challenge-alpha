@@ -8,8 +8,19 @@
 
 import Foundation
 struct Highlights: Decodable {
-    let opportunity: String?
-    let marriage: String?
-    let vacation: String?
-    let luxury: String?
+    let opportunity: Section?
+    let vacation: Section?
+    let marriage: Section?
+    let luxury: Section?
+    
+    struct Section: Decodable {
+        let title: String?
+        let subtitle: String?
+        let cards: [Card]?
+        
+        struct Card: Decodable {
+            let imageUrl: String?
+            let title: String?
+        }
+    }
 }
