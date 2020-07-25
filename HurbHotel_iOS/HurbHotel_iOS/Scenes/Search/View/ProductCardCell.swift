@@ -65,6 +65,7 @@ class ProductCardCell: UITableViewCell {
     
     // MARK: Helpers
     private func setTitleAndDescription() {
+        lblTitle.text = product.name
         lblDescription.text = product.smallDescription
     }
     
@@ -76,8 +77,8 @@ class ProductCardCell: UITableViewCell {
     private func setInfoValues() {
         let price: Double = product.price?.total_price ?? 0
         let oldPrice: Double = product.price?.old_price ?? 0
-        lblOldPrice.text = oldPrice.description
-        lblPrice.text = price.description
+        lblOldPrice.text = "R$ \(oldPrice)"
+        lblPrice.text = "R$ \(price)"
         let isHiddingOldPrice = (price == oldPrice) || oldPrice == 0
         lblOldPrice.isHidden = isHiddingOldPrice
     }

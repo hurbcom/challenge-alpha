@@ -13,12 +13,8 @@ final class SearchViewController: BaseViewController {
     // MARK: Properties
     let viewModel = SearchViewModel()
     let searchController = UISearchController(searchResultsController: nil)
-    var termSearch: String? {
-        didSet{
-            self.navigationItem.title = termSearch != nil ? termSearch : "Perquisar"
-        }
-    }
     let viewSearchNotFound = SearchNotFoundView().instanceFromNib()
+    var viewSearchSuggestions: SearchSuggestionsView = SearchSuggestionsView.fromNib()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView! {
@@ -44,7 +40,8 @@ final class SearchViewController: BaseViewController {
     // MARK: Helpers
     func bindEvents() {
         viewModel.didSuccess = { [weak self] in
-            if self?.viewModel.searchResult?.results?.isEmpty ?? true {
+            self?.closeLoading()
+            if self?.viewModel.products.isEmpty ?? true {
                 self?.notFoundResult()
             } else {
                 self?.loadResults()
@@ -53,13 +50,28 @@ final class SearchViewController: BaseViewController {
         
         viewModel.didError = { [weak self] error in
             debugPrint("==> Error: \(error)")
+            self?.closeLoading()
+        }
+        
+        viewModel.notFound = { [weak self] in
+            self?.closeLoading()
             self?.notFoundResult()
+        }
+        
+        viewModel.didReturnSuggestions = { [weak self] suggestions in
+            DispatchQueue.main.async {
+                self?.viewSearchSuggestions.setup(with: suggestions.suggestions)
+            }
+        }
+        
+        viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
+            self?.becomeFirstResponder()
+            self?.viewModel.newSearchFrom(term: suggestion.city)
         }
     }
     
     private func notFoundResult() {
         DispatchQueue.main.async {
-            self.closeLoading()
             self.tableView.isHidden = false
             self.tableView.reloadData()
             self.tableView.backgroundView = self.viewSearchNotFound
@@ -71,7 +83,6 @@ final class SearchViewController: BaseViewController {
             self.tableView.isHidden = false
             self.tableView.reloadData()
             self.tableView.backgroundView = nil
-            self.closeLoading()
         }
     }
     
@@ -87,42 +98,51 @@ final class SearchViewController: BaseViewController {
 // MARK: Extensions
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //Sugestions...
+        viewModel.getSuggestions(term: searchText)
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        tableView.isHidden = true
+        tableView.backgroundView = viewSearchSuggestions
+        return true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        tableView.backgroundView = nil
+        tableView.isHidden = false
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let term = searchBar.text else {return}
-        termSearch = term
         self.becomeFirstResponder()
         showLoading()
         tableView.isHidden = true
-        viewModel.searchFrom(term: term, page: "1")
+        viewModel.newSearchFrom(term: searchBar.text)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.becomeFirstResponder()
-        termSearch = nil
     }
 }
 
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.searchResult?.results?.count ?? 0
+        return viewModel.products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let card = viewModel.searchResult?.results?[indexPath.row] else {return UITableViewCell()}
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: ProductCardCell().identifier) as? ProductCardCell {
-            cell.setup(with: card)
-            
-            return cell
-        }
-        return UITableViewCell()
+        let card = viewModel.products[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductCardCell().identifier) as? ProductCardCell else {return UITableViewCell()}
+        cell.setup(with: card)
+        return cell
     }
 }
 
 extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row > (viewModel.products.count - 3) {
+            showLoading()
+            viewModel.paginationSearch()
+        }
+    }
 }

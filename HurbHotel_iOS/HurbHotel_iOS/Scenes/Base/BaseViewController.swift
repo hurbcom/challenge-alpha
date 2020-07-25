@@ -38,6 +38,8 @@ class BaseViewController: UIViewController {
     }
     
     func closeLoading() {
-        activityIndicatorView.stopAnimating()
+        DispatchQueue.main.async {
+            self.activityIndicatorView.stopAnimating()
+        }
     }
 }

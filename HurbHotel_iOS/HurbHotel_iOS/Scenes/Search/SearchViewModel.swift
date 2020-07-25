@@ -11,19 +11,48 @@ import Foundation
 final class SearchViewModel {
     
     // MARK: Properties
-    var searchResult: SearchResult?
+    private let service = SearchService()
+    var filters: Filters?
+    var products: [Product] = []
+    private var maxPagination = 1
+    private var pagination: Int = 1
+    private var termSearch: String?
     var didSuccess: (() -> ())?
     var didError: ((String) -> ())?
-    private let service = SearchService()
+    var notFound: (() -> ())?
+    var didReturnSuggestions: ((Suggestions) -> ())?
     
     // MARK: Methods
-    func searchFrom(term: String, page: String) {
-        service.search(term, page: page, success: { [weak self] searchResult in
-            self?.searchResult = searchResult
+    func paginationSearch() {
+        guard maxPagination > pagination else {return}
+        pagination += 1
+        service.search(termSearch, page: pagination.description, success: { [weak self] searchResult in
+            self?.products.append(contentsOf: searchResult.results ?? [])
             self?.didSuccess?()
         }) { [weak self] error in
-            self?.searchResult = nil
             self?.didError?(error)
+        }
+    }
+    
+    func newSearchFrom(term: String?) {
+        pagination = 1
+        termSearch = term
+        service.search(term, page: pagination.description, success: { [weak self] searchResult in
+            self?.maxPagination = searchResult.pagination?.count ?? 1
+            self?.products = searchResult.results ?? []
+            self?.filters = searchResult.filters
+            self?.didSuccess?()
+        }) { [weak self] error in
+            self?.products = []
+            self?.notFound?()
+        }
+    }
+    
+    func getSuggestions(term: String?) {
+        service.getSuggestions(term, success: { [weak self] suggestions in
+            self?.didReturnSuggestions?(suggestions)
+        }) { error in
+            debugPrint("==> Error: \(error)")
         }
     }
 }
