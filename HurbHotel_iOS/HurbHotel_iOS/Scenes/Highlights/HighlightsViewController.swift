@@ -57,6 +57,11 @@ final class HighlightsViewController: BaseViewController {
             }
         }
     }
+    
+    private func openDetail() {
+        let viewController = DetailViewController.builder()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: Extensions
@@ -103,6 +108,9 @@ extension HighlightsViewController: UITableViewDataSource {
             return HighlightHorizontalCell()
         }
         cell.setup(with: section)
+        cell.onClickCard = { [weak self] _ in
+            self?.openDetail()
+        }
         return cell
     }
     
@@ -111,6 +119,9 @@ extension HighlightsViewController: UITableViewDataSource {
             return HighlightVerticalCell()
         }
         cell.setup(with: section)
+        cell.onClickCard = { [weak self] _ in
+            self?.openDetail()
+        }
         return cell
     }
 }

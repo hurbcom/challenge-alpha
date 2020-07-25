@@ -18,7 +18,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="0.2966609589041096" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2nz-g1-mk9">
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2nz-g1-mk9">
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                     <color key="color" red="0.1176470588" green="0.2274509804" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>

@@ -12,6 +12,7 @@ class HighlightHorizontalCell: UITableViewCell {
     
     // MARK: Properties
     private var cards: [Highlights.Section.Card] = []
+    var onClickCard: ((Highlights.Section.Card) -> ())?
 
     // MARK: Outlets
     @IBOutlet weak var lblTitle: UILabel!
@@ -35,13 +36,11 @@ class HighlightHorizontalCell: UITableViewCell {
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         collectionView.decelerationRate = .fast
-        
         collectionView.reloadData()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         lblTitle.text = nil
         lblSubtitle.text = nil
         cards = []
@@ -76,5 +75,10 @@ extension HighlightHorizontalCell: UICollectionViewDataSource {
 extension HighlightHorizontalCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: bounds.width - 40, height: 220)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let card = cards[indexPath.item]
+        onClickCard?(card)
     }
 }

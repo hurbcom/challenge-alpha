@@ -12,6 +12,7 @@ class HighlightVerticalCell: UITableViewCell {
     
     // MARK: Properties
     private var cards: [Highlights.Section.Card] = []
+    var onClickCard: ((Highlights.Section.Card) -> ())?
 
     // MARK: Outlets
     @IBOutlet weak var lblTitle: UILabel!
@@ -21,6 +22,7 @@ class HighlightVerticalCell: UITableViewCell {
         didSet{
             collectionView.register(UINib(nibName: CardVerticalCollectionViewCell().identifier, bundle: nil), forCellWithReuseIdentifier: CardVerticalCollectionViewCell().identifier)
             collectionView.dataSource = self
+            collectionView.delegate = self
             collectionView.reloadData()
         }
     }
@@ -41,7 +43,6 @@ class HighlightVerticalCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         lblTitle.text = nil
         lblSubtitle.text = nil
         cards = []
@@ -78,5 +79,12 @@ extension HighlightVerticalCell: UICollectionViewDataSource {
         }
         
         return UICollectionViewCell()
+    }
+}
+
+extension HighlightVerticalCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let card = cards[indexPath.item]
+        onClickCard?(card)
     }
 }

@@ -13,6 +13,8 @@
 		BD59ACFF24CBDCF90072FA42 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACFE24CBDCF90072FA42 /* Suggestions.swift */; };
 		BD59AD0224CBF7B90072FA42 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59AD0124CBF7B90072FA42 /* LoadingView.swift */; };
 		BD59AD0424CBF7CF0072FA42 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD59AD0324CBF7CF0072FA42 /* LoadingView.xib */; };
+		BD59AD0724CC050F0072FA42 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59AD0624CC050F0072FA42 /* DetailViewController.swift */; };
+		BD59AD0924CC052B0072FA42 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD59AD0824CC052B0072FA42 /* DetailViewController.storyboard */; };
 		BDAF17E124CA9EBE0085A0AD /* HighlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17E024CA9EBE0085A0AD /* HighlightsViewController.swift */; };
 		BDAF17E324CA9EC40085A0AD /* HighlightsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDAF17E224CA9EC40085A0AD /* HighlightsViewController.storyboard */; };
 		BDAF17E724CAA0810085A0AD /* HighlightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF17E624CAA0810085A0AD /* HighlightsViewModel.swift */; };
@@ -67,6 +69,8 @@
 		BD59ACFE24CBDCF90072FA42 /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		BD59AD0124CBF7B90072FA42 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BD59AD0324CBF7CF0072FA42 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		BD59AD0624CC050F0072FA42 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BD59AD0824CC052B0072FA42 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
 		BDAF17E024CA9EBE0085A0AD /* HighlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewController.swift; sourceTree = "<group>"; };
 		BDAF17E224CA9EC40085A0AD /* HighlightsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HighlightsViewController.storyboard; sourceTree = "<group>"; };
 		BDAF17E624CAA0810085A0AD /* HighlightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewModel.swift; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 				BD59AD0324CBF7CF0072FA42 /* LoadingView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BD59AD0524CC04F00072FA42 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BD59AD0624CC050F0072FA42 /* DetailViewController.swift */,
+				BD59AD0824CC052B0072FA42 /* DetailViewController.storyboard */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		BDAF17DF24CA9E9F0085A0AD /* Highlights */ = {
@@ -264,6 +277,7 @@
 				BDCADB7824C7A75C0073FCE0 /* Base */,
 				BDAF17DF24CA9E9F0085A0AD /* Highlights */,
 				BDCADB7B24C7ABD50073FCE0 /* Search */,
+				BD59AD0524CC04F00072FA42 /* Detail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -431,6 +445,7 @@
 				BDCADB6924C7A45B0073FCE0 /* Main.storyboard in Resources */,
 				BDCADB8224C7B23B0073FCE0 /* SearchViewController.storyboard in Resources */,
 				BDAF17F424CAAD000085A0AD /* CardHorizontalCollectionViewCell.xib in Resources */,
+				BD59AD0924CC052B0072FA42 /* DetailViewController.storyboard in Resources */,
 				BDAF180524CB84A00085A0AD /* HighlightsNotFoundView.xib in Resources */,
 				BDCADBB124C80C210073FCE0 /* ProductCardCell.xib in Resources */,
 				BDAF17FE24CAB6DE0085A0AD /* CardVerticalCollectionViewCell.xib in Resources */,
@@ -517,6 +532,7 @@
 				BD2DA08724C8C20E00E5B656 /* SearchNotFoundView.swift in Sources */,
 				BDCADB9C24C7F0910073FCE0 /* Pagination.swift in Sources */,
 				BDCADB7A24C7A7780073FCE0 /* BaseTabbarViewController.swift in Sources */,
+				BD59AD0724CC050F0072FA42 /* DetailViewController.swift in Sources */,
 				BDAF17EC24CAA3930085A0AD /* HighlightHorizontalCell.swift in Sources */,
 				BDCADB8924C7DED10073FCE0 /* BaseViewController.swift in Sources */,
 				BDCADBA824C7FE3B0073FCE0 /* FeatureItem.swift in Sources */,

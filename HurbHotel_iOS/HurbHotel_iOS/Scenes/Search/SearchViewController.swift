@@ -78,11 +78,11 @@ final class SearchViewController: BaseViewController {
         
         ///Quando é clicado em uma Sugestão.
         viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
-            debugPrint("==> selected suggestion: \(suggestion)")
             self?.becomeFirstResponder()
             var term = suggestion.city
-            if term == nil { term = suggestion.state }
-            if term == nil { term = suggestion.text }
+            if term?.isEmpty ?? true { term = suggestion.state }
+            if term?.isEmpty ?? true { term = suggestion.text }
+            debugPrint("==> Suggestion TERM: \(term ?? "?")")
             self?.viewModel.newSearchFrom(term: term?.replacingOccurrences(of: " ", with: "_"))
         }
     }
@@ -113,17 +113,15 @@ final class SearchViewController: BaseViewController {
 // MARK: Extensions
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.getSuggestions(term: searchText)
+        viewModel.getSuggestions(term: searchText.replacingOccurrences(of: " ", with: "_"))
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-//        tableView.backgroundView = viewSearchSuggestions
         viewSearchSuggestions.isHidden = false
         return true
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        tableView.backgroundView = nil
         viewSearchSuggestions.isHidden = true
     }
     
@@ -158,5 +156,10 @@ extension SearchViewController: UITableViewDelegate {
             showLoading()
             viewModel.paginationSearch()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = DetailViewController.builder()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
