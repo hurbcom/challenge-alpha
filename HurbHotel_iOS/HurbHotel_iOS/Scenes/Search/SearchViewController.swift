@@ -13,7 +13,7 @@ final class SearchViewController: BaseViewController {
     // MARK: Properties
     let viewModel = SearchViewModel()
     let searchController = UISearchController(searchResultsController: nil)
-    let viewSearchNotFound = SearchNotFoundView().instanceFromNib()
+    let viewSearchNotFound: SearchNotFoundView = SearchNotFoundView.fromNib()
     var viewSearchSuggestions: SearchSuggestionsView = SearchSuggestionsView.fromNib()
     
     // MARK: Outlets
@@ -31,14 +31,23 @@ final class SearchViewController: BaseViewController {
         
         bindEvents()
         configureSearchController()
+        configureSugestionView()
     }
     
     override var canBecomeFirstResponder: Bool {
         return true
     }
     
+    private func configureSugestionView() {
+        viewSearchSuggestions.isHidden = true
+        viewSearchSuggestions.frame = view.bounds
+        view.addSubview(viewSearchSuggestions)
+        viewSearchSuggestions.bringSubviewToFront(view)
+    }
+    
     // MARK: Helpers
     func bindEvents() {
+        ///Retorno da chamada de Busca
         viewModel.didSuccess = { [weak self] in
             self?.closeLoading()
             if self?.viewModel.products.isEmpty ?? true {
@@ -48,31 +57,38 @@ final class SearchViewController: BaseViewController {
             }
         }
         
+        ///Qualquer erro após fazer uma chamada.
         viewModel.didError = { [weak self] error in
             debugPrint("==> Error: \(error)")
             self?.closeLoading()
         }
         
+        ///Quando a chamada de Busca não encontra nada.
         viewModel.notFound = { [weak self] in
             self?.closeLoading()
             self?.notFoundResult()
         }
         
+        ///Retorno da chamada de sugestões.
         viewModel.didReturnSuggestions = { [weak self] suggestions in
             DispatchQueue.main.async {
                 self?.viewSearchSuggestions.setup(with: suggestions.suggestions)
             }
         }
         
+        ///Quando é clicado em uma Sugestão.
         viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
+            debugPrint("==> selected suggestion: \(suggestion)")
             self?.becomeFirstResponder()
-            self?.viewModel.newSearchFrom(term: suggestion.city)
+            var term = suggestion.city
+            if term == nil { term = suggestion.state }
+            if term == nil { term = suggestion.text }
+            self?.viewModel.newSearchFrom(term: term?.replacingOccurrences(of: " ", with: "_"))
         }
     }
     
     private func notFoundResult() {
         DispatchQueue.main.async {
-            self.tableView.isHidden = false
             self.tableView.reloadData()
             self.tableView.backgroundView = self.viewSearchNotFound
         }
@@ -80,7 +96,6 @@ final class SearchViewController: BaseViewController {
     
     private func loadResults() {
         DispatchQueue.main.async {
-            self.tableView.isHidden = false
             self.tableView.reloadData()
             self.tableView.backgroundView = nil
         }
@@ -102,20 +117,19 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        tableView.isHidden = true
-        tableView.backgroundView = viewSearchSuggestions
+//        tableView.backgroundView = viewSearchSuggestions
+        viewSearchSuggestions.isHidden = false
         return true
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        tableView.backgroundView = nil
-        tableView.isHidden = false
+//        tableView.backgroundView = nil
+        viewSearchSuggestions.isHidden = true
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.becomeFirstResponder()
         showLoading()
-        tableView.isHidden = true
         viewModel.newSearchFrom(term: searchBar.text)
     }
     

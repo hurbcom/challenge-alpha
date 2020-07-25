@@ -8,8 +8,4 @@
 
 import UIKit
 
-class SearchNotFoundView: UIView {
-    func instanceFromNib() -> UIView {
-        return UINib(nibName: String(describing: Self.self), bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
-    }
-}
+class SearchNotFoundView: UIView {}

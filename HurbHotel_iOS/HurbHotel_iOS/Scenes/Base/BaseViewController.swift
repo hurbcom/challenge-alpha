@@ -10,36 +10,31 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    var activityIndicatorView: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView()
-        ai.color = .blue
-        ai.startAnimating()
-        ai.hidesWhenStopped = true
-        return ai
-    }()
+    private let loadingView: LoadingView = LoadingView.fromNib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(activityIndicatorView)
-        configureActivityIndicatorView()
+        configureLoadingView()
     }
-    
-    //Helpers
-    func configureActivityIndicatorView() {
-        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        closeLoading()
+}
+
+// MARK: LoadingView
+extension BaseViewController {
+    private func configureLoadingView() {
+        loadingView.isHidden = true
+        loadingView.frame = view.bounds
+        view.addSubview(loadingView)
+        loadingView.bringSubviewToFront(view)
     }
     
     func showLoading() {
-        activityIndicatorView.startAnimating()
+        loadingView.isHidden = false
     }
     
     func closeLoading() {
         DispatchQueue.main.async {
-            self.activityIndicatorView.stopAnimating()
+            self.loadingView.isHidden = true
         }
     }
 }

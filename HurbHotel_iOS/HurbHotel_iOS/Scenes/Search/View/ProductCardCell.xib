@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="290" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORTALEZA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsb-Bt-Ktr">
-                                        <rect key="frame" x="10" y="8" width="86" height="20"/>
+                                        <rect key="frame" x="10" y="8" width="225" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="YX8-LJ-MhU"/>
                                         </constraints>
@@ -77,6 +77,7 @@
                                     <constraint firstItem="vCN-Ps-oYL" firstAttribute="top" secondItem="vsb-Bt-Ktr" secondAttribute="bottom" constant="5" id="LjK-rT-8iY"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vCN-Ps-oYL" secondAttribute="bottom" constant="8" id="XEo-wN-Uvr"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="XPt-HY-OM6"/>
+                                    <constraint firstItem="3ce-sy-Y4s" firstAttribute="leading" secondItem="vsb-Bt-Ktr" secondAttribute="trailing" constant="10" id="XgY-2R-glM"/>
                                     <constraint firstItem="vCN-Ps-oYL" firstAttribute="leading" secondItem="in1-mn-wsU" secondAttribute="leading" constant="10" id="qOS-2p-Sqb"/>
                                     <constraint firstAttribute="trailing" secondItem="3ce-sy-Y4s" secondAttribute="trailing" constant="10" id="yUA-BQ-GBv"/>
                                 </constraints>
@@ -297,7 +298,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.4959332191780822" alpha="0.77627354452054798" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.40772153253424659" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="u7r-mf-ZqS" firstAttribute="leading" secondItem="12Z-vj-gdF" secondAttribute="leading" id="06C-1T-RSh"/>
                                             <constraint firstAttribute="trailing" secondItem="u7r-mf-ZqS" secondAttribute="trailing" id="Hrq-KJ-l0P"/>

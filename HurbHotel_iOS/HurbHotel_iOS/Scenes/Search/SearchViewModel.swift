@@ -24,7 +24,10 @@ final class SearchViewModel {
     
     // MARK: Methods
     func paginationSearch() {
-        guard maxPagination > pagination else {return}
+        guard maxPagination > pagination else {
+            self.didError?("limite de paginação!")
+            return
+        }
         pagination += 1
         service.search(termSearch, page: pagination.description, success: { [weak self] searchResult in
             self?.products.append(contentsOf: searchResult.results ?? [])

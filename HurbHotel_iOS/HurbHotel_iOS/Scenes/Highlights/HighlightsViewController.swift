@@ -18,7 +18,7 @@ final class HighlightsViewController: BaseViewController {
         case marriage
         case luxury
     }
-    let viewHighlightsNotFound = HighlightsNotFoundView().instanceFromNib()
+    let viewHighlightsNotFound: HighlightsNotFoundView = HighlightsNotFoundView.fromNib()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView! {
