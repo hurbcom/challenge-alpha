@@ -16,7 +16,7 @@ final class SearchViewModel {
     var products: [Product] = []
     private var maxPagination = 1
     private var pagination: Int = 1
-    private var termSearch: String?
+    var termSearch: String?
     var didSuccess: (() -> ())?
     var didError: ((String) -> ())?
     var notFound: (() -> ())?

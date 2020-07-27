@@ -82,8 +82,8 @@ final class SearchViewController: BaseViewController {
             var term = suggestion.city
             if term?.isEmpty ?? true { term = suggestion.state }
             if term?.isEmpty ?? true { term = suggestion.text }
-            debugPrint("==> Suggestion TERM: \(term ?? "?")")
             self?.viewModel.newSearchFrom(term: term?.replacingOccurrences(of: " ", with: "_"))
+            self?.searchController.searchBar.text = self?.viewModel.termSearch
         }
     }
     
@@ -159,7 +159,8 @@ extension SearchViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = DetailViewController.builder()
+        let card = viewModel.products[indexPath.row]
+        let viewController = DetailViewController.builder(title: card.name ?? "")
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

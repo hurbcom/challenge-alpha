@@ -16,12 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-p9-mrN">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-p9-mrN">
                                 <rect key="frame" x="20" y="74" width="374" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">Sr. Avaliador,
+                                        <string key="content">Sr. Avaliador,
 
 Eu poderia me estender muito mais no desenvolvimento deste App para teste, porem Eu acredito que já tenha demostrado o suficiente para comprovar minhas habilidades.
 
@@ -41,7 +41,7 @@ Enfim, esses são os pontos que consigo levantar agora.
 Queria poder ter construído a tela de Filtro e a tela de Detalhes, mas fica pra próxima.
 Investi algo em torno de umas 20 horas nesse projeto-teste, entre: Desenvolvimento + UX/UI.
 
-Queria deixar registrado aqui que me interessei bastante pelo projeto da Hurb, pelo seguimento e os desafios que espero encontrar.</mutableString>
+Queria deixar registrado aqui que me interessei bastante pelo projeto da Hurb, pelo seguimento e os desafios que espero encontrar.</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica-Light"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica-Light"/>

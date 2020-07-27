@@ -58,8 +58,8 @@ final class HighlightsViewController: BaseViewController {
         }
     }
     
-    private func openDetail() {
-        let viewController = DetailViewController.builder()
+    private func openDetail(_ card: Highlights.Section.Card) {
+        let viewController = DetailViewController.builder(title: card.title ?? "")
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -108,8 +108,8 @@ extension HighlightsViewController: UITableViewDataSource {
             return HighlightHorizontalCell()
         }
         cell.setup(with: section)
-        cell.onClickCard = { [weak self] _ in
-            self?.openDetail()
+        cell.onClickCard = { [weak self] card in
+            self?.openDetail(card)
         }
         return cell
     }
@@ -119,8 +119,8 @@ extension HighlightsViewController: UITableViewDataSource {
             return HighlightVerticalCell()
         }
         cell.setup(with: section)
-        cell.onClickCard = { [weak self] _ in
-            self?.openDetail()
+        cell.onClickCard = { [weak self] card in
+            self?.openDetail(card)
         }
         return cell
     }

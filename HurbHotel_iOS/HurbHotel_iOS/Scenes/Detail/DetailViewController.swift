@@ -15,8 +15,9 @@ final class DetailViewController: UIViewController {
     }
     
     // MARK: Builder
-    class func builder() -> DetailViewController {
+    class func builder(title: String) -> DetailViewController {
         let viewController = DetailViewController().instantiate() as! DetailViewController
+        viewController.title = title
         return viewController
     }
 }
