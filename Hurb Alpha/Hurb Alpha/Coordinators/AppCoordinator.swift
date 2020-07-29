@@ -38,7 +38,8 @@ public class AppCoordinator: RootViewCoordinator {
         
     /// Starts the coordinator
     public func start() {
-        let viewModel = HomeViewModel()
+        let service = HotelsService()
+        let viewModel = HomeViewModel(hotelsService: service)
         let home = HomeViewController(viewModel: viewModel)
         navigationController.pushViewController(home, animated: false)
     }

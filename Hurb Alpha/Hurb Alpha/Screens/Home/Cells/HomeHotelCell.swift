@@ -104,7 +104,6 @@ private extension HomeHotelCell {
         amenittiesLabel.createConstraints(contentView) { maker in
             maker.leading.trailing.equalTo(addressLabel)
             maker.top.equalTo(addressLabel.snp.bottom).offset(3)
-//            maker.bottom.greaterThanOrEqualToSuperview().inset(5).priority(.low)
         }
         
         priceLabel.createConstraints(contentView) { maker in
@@ -118,8 +117,8 @@ private extension HomeHotelCell {
             let state = state,
             !state.isEmpty {
             addressLabel.isHidden = false
-            let address = "\(city), \(state)"
-            addressLabel.text = address
+            let text = "\(city), \(state)"
+            addressLabel.text = text
         } else {
             addressLabel.isHidden = true
         }
@@ -139,7 +138,7 @@ private extension HomeHotelCell {
     func configurePrice(price: Double?) {
         if let price = price {
             priceLabel.isHidden = false
-            let text = "R$ \(price)"
+            let text = String(format: "R$ %.2f", price)
             priceLabel.text = text
         } else {
             priceLabel.isHidden = true

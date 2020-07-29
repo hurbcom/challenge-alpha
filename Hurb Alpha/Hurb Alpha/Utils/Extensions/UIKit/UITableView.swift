@@ -15,9 +15,17 @@ public extension UITableView {
         self.register(T.self, forCellReuseIdentifier: T.defaultIdentifier)
     }
     
+    func registerHeaderFooter<T: UITableViewHeaderFooterView>(cellClass: T.Type) {
+        self.register(T.self, forHeaderFooterViewReuseIdentifier: T.defaultIdentifier)
+    }
+    
     /** Shortcut: Dequeue a cell with his default Class Name. Example: MyCustomCell.self */
     func dequeue<T: UITableViewCell>(cellClass: T.Type, indexPath: IndexPath) -> T {
         return self.dequeue(withIdentifier: cellClass.defaultIdentifier, indexPath: indexPath)
+    }
+    
+    func dequeue<T: UITableViewHeaderFooterView>(cellClass: T.Type) -> T {
+        return self.dequeueReusableHeaderFooterView(withIdentifier: cellClass.defaultIdentifier) as! T
     }
     
     /** Dequeue a cell with automatic casting */

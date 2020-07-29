@@ -9,11 +9,14 @@
 import Foundation
 import PromiseKit
 
-class HotelsService: NetworkBaseService {
-    
+protocol IHotelService {
     typealias HotelsHandler = (NetworkResult<QueryResult, NetworkError, Int>) -> Void
     
-    static func getHotels(query: String, page: Int, handler: @escaping HotelsHandler) {
+    func getHotels(query: String, page: Int, handler: @escaping HotelsHandler)
+}
+
+class HotelsService: NetworkBaseService, IHotelService {
+    func getHotels(query: String, page: Int, handler: @escaping HotelsHandler) {
         let path = ""
         let parameters: [String: Any] = ["q": query, "page": page]
         let service = NetworkService(api: .hurbApi, path: path, parameters: parameters)

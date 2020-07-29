@@ -15,3 +15,10 @@ public extension UITableViewCell {
         return String(describing: self)
     }
 }
+
+public extension UITableViewHeaderFooterView {
+    
+    static var defaultIdentifier: String {
+        return String(describing: self)
+    }
+}

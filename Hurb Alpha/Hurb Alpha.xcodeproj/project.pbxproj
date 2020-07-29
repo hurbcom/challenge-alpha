@@ -35,6 +35,7 @@
 		AF4AA69D24CA61F40027BE87 /* HANavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA69C24CA61F40027BE87 /* HANavBar.swift */; };
 		AF4AA6A024CA65D40027BE87 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA69F24CA65D40027BE87 /* Environment.swift */; };
 		AF4AA6A224CA66150027BE87 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA6A124CA66150027BE87 /* Development.xcconfig */; };
+		AF69E26324D217EC002E7C2D /* HomeHotelHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69E26224D217EC002E7C2D /* HomeHotelHeader.swift */; };
 		AF9A13ED24D0D74F00F882ED /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A13EC24D0D74F00F882ED /* UIView.swift */; };
 		AF9A13F024D0D80400F882ED /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A13EF24D0D80300F882ED /* UITableViewCell.swift */; };
 		AF9A13F224D0D81B00F882ED /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A13F124D0D81B00F882ED /* UITableView.swift */; };
@@ -89,6 +90,7 @@
 		AF4AA69C24CA61F40027BE87 /* HANavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HANavBar.swift; sourceTree = "<group>"; };
 		AF4AA69F24CA65D40027BE87 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		AF4AA6A124CA66150027BE87 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		AF69E26224D217EC002E7C2D /* HomeHotelHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHotelHeader.swift; sourceTree = "<group>"; };
 		AF9A13EC24D0D74F00F882ED /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		AF9A13EF24D0D80300F882ED /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		AF9A13F124D0D81B00F882ED /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -174,11 +176,11 @@
 			isa = PBXGroup;
 			children = (
 				AF4AA69924CA612F0027BE87 /* UIColor.swift */,
-				AF9A13EC24D0D74F00F882ED /* UIView.swift */,
-				AF9A13EF24D0D80300F882ED /* UITableViewCell.swift */,
-				AF9A13F124D0D81B00F882ED /* UITableView.swift */,
-				AF9A13F524D0E63600F882ED /* UISearchBar.swift */,
 				AF9A13F924D0EA7D00F882ED /* UIImageView.swift */,
+				AF9A13F524D0E63600F882ED /* UISearchBar.swift */,
+				AF9A13F124D0D81B00F882ED /* UITableView.swift */,
+				AF9A13EF24D0D80300F882ED /* UITableViewCell.swift */,
+				AF9A13EC24D0D74F00F882ED /* UIView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -356,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				AF9A13F324D0D88D00F882ED /* HomeHotelCell.swift */,
+				AF69E26224D217EC002E7C2D /* HomeHotelHeader.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				AF01528124CB82E800E6FF29 /* Int.swift in Sources */,
 				AF4AA69024CA432B0027BE87 /* BaseViewController.swift in Sources */,
 				AF9A13F624D0E63600F882ED /* UISearchBar.swift in Sources */,
+				AF69E26324D217EC002E7C2D /* HomeHotelHeader.swift in Sources */,
 				AF9A13FD24D1000000F882ED /* EmptyView.swift in Sources */,
 				AF01527224CB7EBA00E6FF29 /* NetworkEncoding.swift in Sources */,
 				AF4AA69224CA438C0027BE87 /* RootViewCoordinator.swift in Sources */,

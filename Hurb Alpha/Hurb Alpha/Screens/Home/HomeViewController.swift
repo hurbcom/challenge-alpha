@@ -34,6 +34,7 @@ class HomeViewController: BaseViewController {
         table.delegate = self
         table.dataSource = self
         table.registerCell(cellClass: HomeHotelCell.self)
+        table.registerHeaderFooter(cellClass: HomeHotelHeader.self)
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .primaryColor
         refreshControl.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
@@ -111,8 +112,19 @@ extension HomeViewController: UISearchBarDelegate {
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel.numberOfSections()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfRows()
+        viewModel.numberOfRowsIn(section)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeue(cellClass: HomeHotelHeader.self)
+        let rating = viewModel.ratingAt(section)
+        header.configure(stars: rating)
+        return header
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
