@@ -9,7 +9,7 @@
 import Foundation
 
 enum HomeViewModelAction {
-    case reload, failure(error: Error), empty
+    case reload, failure(error: Error, code: Int), empty
 }
 
 protocol HomeViewModelDelegate: class {
@@ -75,14 +75,18 @@ private extension HomeViewModel {
         } else {
             page = page + 1
         }
-        guard let searchQuery = searchQuery, !endOfPage, !isLoading else { return }
+        guard let searchQuery = searchQuery, !endOfPage, !isLoading else {
+            let error = HAError.invalidQuery
+            delegate?.didSelectAction(.failure(error: error, code: error.code))
+            return
+        }
         
         isLoading = true
         hotelsService.getHotels(query: searchQuery, page: page) { result in
             self.isLoading = false
             switch result {
-            case .failure(let error, _):
-                self.delegate?.didSelectAction(.failure(error: error))
+            case .failure(let error, let code):
+                self.delegate?.didSelectAction(.failure(error: error, code: code))
             case .success(let result, _):
                 if let hotels = result.results {
                     if hotels.isEmpty {
@@ -128,8 +132,8 @@ private extension HomeViewModel {
         }
         
         self.hotels.sort { (first, second) -> Bool in
-            let firstRating = first.rating ?? 1000
-            let secondRating = second.rating ?? 1000
+            let firstRating = first.rating ?? -1
+            let secondRating = second.rating ?? -1
             return firstRating > secondRating
         }
     }

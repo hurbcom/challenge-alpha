@@ -94,8 +94,10 @@ extension HomeViewController: HomeViewModelDelegate {
             showNoResults()
         case .reload:
             prepareShowResults()
-        case .failure(let error):
-            showError(error: error)
+        case .failure(let error, let code):
+            if code != HAError.invalidQuery.code {
+                showError(error: error)
+            }
         }
     }
 }

@@ -24,7 +24,6 @@
 		AF4AA66024CA3B2C0027BE87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA65F24CA3B2C0027BE87 /* AppDelegate.swift */; };
 		AF4AA66924CA3B2E0027BE87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA66824CA3B2E0027BE87 /* Assets.xcassets */; };
 		AF4AA66C24CA3B2E0027BE87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA66A24CA3B2E0027BE87 /* LaunchScreen.storyboard */; };
-		AF4AA67724CA3B2E0027BE87 /* Hurb_AlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA67624CA3B2E0027BE87 /* Hurb_AlphaTests.swift */; };
 		AF4AA68A24CA429E0027BE87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA68924CA429E0027BE87 /* HomeViewController.swift */; };
 		AF4AA68C24CA42A70027BE87 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA68B24CA42A70027BE87 /* HomeViewModel.swift */; };
 		AF4AA69024CA432B0027BE87 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA68F24CA432B0027BE87 /* BaseViewController.swift */; };
@@ -36,6 +35,8 @@
 		AF4AA6A024CA65D40027BE87 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AA69F24CA65D40027BE87 /* Environment.swift */; };
 		AF4AA6A224CA66150027BE87 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA6A124CA66150027BE87 /* Development.xcconfig */; };
 		AF69E26324D217EC002E7C2D /* HomeHotelHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69E26224D217EC002E7C2D /* HomeHotelHeader.swift */; };
+		AF8A22C824D36924000DC40B /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8A22C724D36924000DC40B /* HomeViewModelTest.swift */; };
+		AF8A22CA24D373F2000DC40B /* HAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8A22C924D373F2000DC40B /* HAError.swift */; };
 		AF9A13ED24D0D74F00F882ED /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A13EC24D0D74F00F882ED /* UIView.swift */; };
 		AF9A13F024D0D80400F882ED /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A13EF24D0D80300F882ED /* UITableViewCell.swift */; };
 		AF9A13F224D0D81B00F882ED /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A13F124D0D81B00F882ED /* UITableView.swift */; };
@@ -78,7 +79,6 @@
 		AF4AA66B24CA3B2E0027BE87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF4AA66D24CA3B2E0027BE87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF4AA67224CA3B2E0027BE87 /* Hurb AlphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb AlphaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF4AA67624CA3B2E0027BE87 /* Hurb_AlphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_AlphaTests.swift; sourceTree = "<group>"; };
 		AF4AA67824CA3B2E0027BE87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF4AA68924CA429E0027BE87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AF4AA68B24CA42A70027BE87 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -91,6 +91,8 @@
 		AF4AA69F24CA65D40027BE87 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		AF4AA6A124CA66150027BE87 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		AF69E26224D217EC002E7C2D /* HomeHotelHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHotelHeader.swift; sourceTree = "<group>"; };
+		AF8A22C724D36924000DC40B /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		AF8A22C924D373F2000DC40B /* HAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAError.swift; sourceTree = "<group>"; };
 		AF9A13EC24D0D74F00F882ED /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		AF9A13EF24D0D80300F882ED /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		AF9A13F124D0D81B00F882ED /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				AF01527824CB7FA100E6FF29 /* Log.swift */,
+				AF8A22C924D373F2000DC40B /* HAError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -208,14 +211,14 @@
 		AF4AA65E24CA3B2C0027BE87 /* Hurb Alpha */ = {
 			isa = PBXGroup;
 			children = (
-				AF4AA69B24CA61AA0027BE87 /* Views */,
-				AF4AA69724CA44080027BE87 /* Utils */,
-				AF4AA68824CA41F70027BE87 /* Core */,
-				AF4AA68524CA41E10027BE87 /* Resources */,
-				AF4AA68424CA41C60027BE87 /* Network */,
-				AF4AA68324CA41B20027BE87 /* Screens */,
-				AF4AA68224CA41AD0027BE87 /* Models */,
 				AF4AA68124CA41A00027BE87 /* Coordinators */,
+				AF4AA68824CA41F70027BE87 /* Core */,
+				AF4AA68224CA41AD0027BE87 /* Models */,
+				AF4AA68424CA41C60027BE87 /* Network */,
+				AF4AA68524CA41E10027BE87 /* Resources */,
+				AF4AA68324CA41B20027BE87 /* Screens */,
+				AF4AA69724CA44080027BE87 /* Utils */,
+				AF4AA69B24CA61AA0027BE87 /* Views */,
 				AF4AA66D24CA3B2E0027BE87 /* Info.plist */,
 			);
 			path = "Hurb Alpha";
@@ -224,7 +227,7 @@
 		AF4AA67524CA3B2E0027BE87 /* Hurb AlphaTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF4AA67624CA3B2E0027BE87 /* Hurb_AlphaTests.swift */,
+				AF8A22C624D3690C000DC40B /* TestViewModels */,
 				AF4AA67824CA3B2E0027BE87 /* Info.plist */,
 			);
 			path = "Hurb AlphaTests";
@@ -352,6 +355,14 @@
 				AF4AA6A124CA66150027BE87 /* Development.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		AF8A22C624D3690C000DC40B /* TestViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AF8A22C724D36924000DC40B /* HomeViewModelTest.swift */,
+			);
+			path = TestViewModels;
 			sourceTree = "<group>";
 		};
 		AF9A13EE24D0D7E800F882ED /* Cells */ = {
@@ -547,6 +558,7 @@
 				AF4AA69024CA432B0027BE87 /* BaseViewController.swift in Sources */,
 				AF9A13F624D0E63600F882ED /* UISearchBar.swift in Sources */,
 				AF69E26324D217EC002E7C2D /* HomeHotelHeader.swift in Sources */,
+				AF8A22CA24D373F2000DC40B /* HAError.swift in Sources */,
 				AF9A13FD24D1000000F882ED /* EmptyView.swift in Sources */,
 				AF01527224CB7EBA00E6FF29 /* NetworkEncoding.swift in Sources */,
 				AF4AA69224CA438C0027BE87 /* RootViewCoordinator.swift in Sources */,
@@ -577,7 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF4AA67724CA3B2E0027BE87 /* Hurb_AlphaTests.swift in Sources */,
+				AF8A22C824D36924000DC40B /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
