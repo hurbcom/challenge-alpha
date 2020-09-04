@@ -1,0 +1,795 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25D9038D44CDC887776E83C3 /* Pods_DesafioHurbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DC7026374E60F0791C2E25 /* Pods_DesafioHurbTests.framework */; };
+		A639B0CAB2309620179B39E8 /* Pods_DesafioHurb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416288B30540C4F6A0FD7828 /* Pods_DesafioHurb.framework */; };
+		B49EDFC02502AC2300EBD888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49EDFBF2502AC2300EBD888 /* AppDelegate.swift */; };
+		B49EDFC92502AC2400EBD888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49EDFC82502AC2400EBD888 /* Assets.xcassets */; };
+		B49EDFCC2502AC2400EBD888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49EDFCA2502AC2400EBD888 /* LaunchScreen.storyboard */; };
+		B49EDFD72502AC2400EBD888 /* DesafioHurbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49EDFD62502AC2400EBD888 /* DesafioHurbTests.swift */; };
+		B49EDFE22502AC2400EBD888 /* DesafioHurbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49EDFE12502AC2400EBD888 /* DesafioHurbUITests.swift */; };
+		B4C7C5DE2502BC3900712C2A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5D82502BC3900712C2A /* HomeRouter.swift */; };
+		B4C7C5DF2502BC3900712C2A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5D92502BC3900712C2A /* HomeViewController.swift */; };
+		B4C7C5E02502BC3900712C2A /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5DA2502BC3900712C2A /* HomeBuilder.swift */; };
+		B4C7C5E12502BC3900712C2A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5DB2502BC3900712C2A /* HomeInteractor.swift */; };
+		B4C7C5E22502BC3900712C2A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5DC2502BC3900712C2A /* HomeViewModel.swift */; };
+		B4C7C5E32502BC3900712C2A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C7C5DD2502BC3900712C2A /* HomeViewController.xib */; };
+		B4C7C5E62502BC8500712C2A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5E52502BC8500712C2A /* BaseViewController.swift */; };
+		EF1C45BFABF990F73F6ADEEF /* Pods_DesafioHurb_DesafioHurbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3F8772E8BB3E4DCE08AEC4 /* Pods_DesafioHurb_DesafioHurbUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B49EDFD32502AC2400EBD888 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B49EDFB42502AC2300EBD888 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B49EDFBB2502AC2300EBD888;
+			remoteInfo = DesafioHurb;
+		};
+		B49EDFDE2502AC2400EBD888 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B49EDFB42502AC2300EBD888 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B49EDFBB2502AC2300EBD888;
+			remoteInfo = DesafioHurb;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0983307AF07BB27373848AE0 /* Pods-DesafioHurbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioHurbTests.release.xcconfig"; path = "Target Support Files/Pods-DesafioHurbTests/Pods-DesafioHurbTests.release.xcconfig"; sourceTree = "<group>"; };
+		14DC7026374E60F0791C2E25 /* Pods_DesafioHurbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioHurbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		202D296A8B8952DD3A0B9A4B /* Pods-DesafioHurbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioHurbTests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioHurbTests/Pods-DesafioHurbTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C3F8772E8BB3E4DCE08AEC4 /* Pods_DesafioHurb_DesafioHurbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioHurb_DesafioHurbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B770EF4974403BDB54EC172 /* Pods-DesafioHurb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioHurb.release.xcconfig"; path = "Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb.release.xcconfig"; sourceTree = "<group>"; };
+		416288B30540C4F6A0FD7828 /* Pods_DesafioHurb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioHurb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		898289DAC1C2EF7B05754400 /* Pods-DesafioHurb-DesafioHurbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioHurb-DesafioHurbUITests.release.xcconfig"; path = "Target Support Files/Pods-DesafioHurb-DesafioHurbUITests/Pods-DesafioHurb-DesafioHurbUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A4997233C2BC31B25A5C7FFD /* Pods-DesafioHurb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioHurb.debug.xcconfig"; path = "Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb.debug.xcconfig"; sourceTree = "<group>"; };
+		B49EDFBC2502AC2300EBD888 /* DesafioHurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioHurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49EDFBF2502AC2300EBD888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B49EDFC82502AC2400EBD888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B49EDFCB2502AC2400EBD888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B49EDFCD2502AC2400EBD888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B49EDFD22502AC2400EBD888 /* DesafioHurbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioHurbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49EDFD62502AC2400EBD888 /* DesafioHurbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioHurbTests.swift; sourceTree = "<group>"; };
+		B49EDFD82502AC2400EBD888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B49EDFDD2502AC2400EBD888 /* DesafioHurbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioHurbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49EDFE12502AC2400EBD888 /* DesafioHurbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioHurbUITests.swift; sourceTree = "<group>"; };
+		B49EDFE32502AC2400EBD888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4C7C5D82502BC3900712C2A /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		B4C7C5D92502BC3900712C2A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B4C7C5DA2502BC3900712C2A /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		B4C7C5DB2502BC3900712C2A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		B4C7C5DC2502BC3900712C2A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B4C7C5DD2502BC3900712C2A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		B4C7C5E52502BC8500712C2A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F51FA7A8ECF860E83784653D /* Pods-DesafioHurb-DesafioHurbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioHurb-DesafioHurbUITests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioHurb-DesafioHurbUITests/Pods-DesafioHurb-DesafioHurbUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B49EDFB92502AC2300EBD888 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A639B0CAB2309620179B39E8 /* Pods_DesafioHurb.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49EDFCF2502AC2400EBD888 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25D9038D44CDC887776E83C3 /* Pods_DesafioHurbTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49EDFDA2502AC2400EBD888 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF1C45BFABF990F73F6ADEEF /* Pods_DesafioHurb_DesafioHurbUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56F5F01B7B882EE62B31A146 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4997233C2BC31B25A5C7FFD /* Pods-DesafioHurb.debug.xcconfig */,
+				3B770EF4974403BDB54EC172 /* Pods-DesafioHurb.release.xcconfig */,
+				F51FA7A8ECF860E83784653D /* Pods-DesafioHurb-DesafioHurbUITests.debug.xcconfig */,
+				898289DAC1C2EF7B05754400 /* Pods-DesafioHurb-DesafioHurbUITests.release.xcconfig */,
+				202D296A8B8952DD3A0B9A4B /* Pods-DesafioHurbTests.debug.xcconfig */,
+				0983307AF07BB27373848AE0 /* Pods-DesafioHurbTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B49EDFB32502AC2300EBD888 = {
+			isa = PBXGroup;
+			children = (
+				B49EDFBE2502AC2300EBD888 /* DesafioHurb */,
+				B49EDFD52502AC2400EBD888 /* DesafioHurbTests */,
+				B49EDFE02502AC2400EBD888 /* DesafioHurbUITests */,
+				B49EDFBD2502AC2300EBD888 /* Products */,
+				56F5F01B7B882EE62B31A146 /* Pods */,
+				B56A9F0035D5D353C325DB0F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B49EDFBD2502AC2300EBD888 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B49EDFBC2502AC2300EBD888 /* DesafioHurb.app */,
+				B49EDFD22502AC2400EBD888 /* DesafioHurbTests.xctest */,
+				B49EDFDD2502AC2400EBD888 /* DesafioHurbUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B49EDFBE2502AC2300EBD888 /* DesafioHurb */ = {
+			isa = PBXGroup;
+			children = (
+				B4C7C5E42502BC6900712C2A /* Views */,
+				B49EDFF12502B4A900EBD888 /* Aplication */,
+				B49EDFF02502B49200EBD888 /* SuportFiles */,
+				B49EDFEF2502B47A00EBD888 /* Scenes */,
+			);
+			path = DesafioHurb;
+			sourceTree = "<group>";
+		};
+		B49EDFD52502AC2400EBD888 /* DesafioHurbTests */ = {
+			isa = PBXGroup;
+			children = (
+				B49EDFD62502AC2400EBD888 /* DesafioHurbTests.swift */,
+				B49EDFD82502AC2400EBD888 /* Info.plist */,
+			);
+			path = DesafioHurbTests;
+			sourceTree = "<group>";
+		};
+		B49EDFE02502AC2400EBD888 /* DesafioHurbUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B49EDFE12502AC2400EBD888 /* DesafioHurbUITests.swift */,
+				B49EDFE32502AC2400EBD888 /* Info.plist */,
+			);
+			path = DesafioHurbUITests;
+			sourceTree = "<group>";
+		};
+		B49EDFEF2502B47A00EBD888 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B49EDFF22502B6E000EBD888 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B49EDFF02502B49200EBD888 /* SuportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B49EDFC82502AC2400EBD888 /* Assets.xcassets */,
+				B49EDFCA2502AC2400EBD888 /* LaunchScreen.storyboard */,
+				B49EDFCD2502AC2400EBD888 /* Info.plist */,
+			);
+			path = SuportFiles;
+			sourceTree = "<group>";
+		};
+		B49EDFF12502B4A900EBD888 /* Aplication */ = {
+			isa = PBXGroup;
+			children = (
+				B49EDFBF2502AC2300EBD888 /* AppDelegate.swift */,
+			);
+			path = Aplication;
+			sourceTree = "<group>";
+		};
+		B49EDFF22502B6E000EBD888 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B4C7C5D82502BC3900712C2A /* HomeRouter.swift */,
+				B4C7C5D92502BC3900712C2A /* HomeViewController.swift */,
+				B4C7C5DA2502BC3900712C2A /* HomeBuilder.swift */,
+				B4C7C5DB2502BC3900712C2A /* HomeInteractor.swift */,
+				B4C7C5DC2502BC3900712C2A /* HomeViewModel.swift */,
+				B4C7C5DD2502BC3900712C2A /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B4C7C5E42502BC6900712C2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4C7C5E52502BC8500712C2A /* BaseViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B56A9F0035D5D353C325DB0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				416288B30540C4F6A0FD7828 /* Pods_DesafioHurb.framework */,
+				2C3F8772E8BB3E4DCE08AEC4 /* Pods_DesafioHurb_DesafioHurbUITests.framework */,
+				14DC7026374E60F0791C2E25 /* Pods_DesafioHurbTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B49EDFBB2502AC2300EBD888 /* DesafioHurb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B49EDFE62502AC2400EBD888 /* Build configuration list for PBXNativeTarget "DesafioHurb" */;
+			buildPhases = (
+				32A36822BADE62508AF854E8 /* [CP] Check Pods Manifest.lock */,
+				B49EDFB82502AC2300EBD888 /* Sources */,
+				B49EDFB92502AC2300EBD888 /* Frameworks */,
+				B49EDFBA2502AC2300EBD888 /* Resources */,
+				113DC2271F679AE9C741554C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesafioHurb;
+			productName = DesafioHurb;
+			productReference = B49EDFBC2502AC2300EBD888 /* DesafioHurb.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B49EDFD12502AC2400EBD888 /* DesafioHurbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B49EDFE92502AC2400EBD888 /* Build configuration list for PBXNativeTarget "DesafioHurbTests" */;
+			buildPhases = (
+				D7C2006E1F79D87ED3CAF5B2 /* [CP] Check Pods Manifest.lock */,
+				B49EDFCE2502AC2400EBD888 /* Sources */,
+				B49EDFCF2502AC2400EBD888 /* Frameworks */,
+				B49EDFD02502AC2400EBD888 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B49EDFD42502AC2400EBD888 /* PBXTargetDependency */,
+			);
+			name = DesafioHurbTests;
+			productName = DesafioHurbTests;
+			productReference = B49EDFD22502AC2400EBD888 /* DesafioHurbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B49EDFDC2502AC2400EBD888 /* DesafioHurbUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B49EDFEC2502AC2400EBD888 /* Build configuration list for PBXNativeTarget "DesafioHurbUITests" */;
+			buildPhases = (
+				1F56C8A678FD87EF17E3E081 /* [CP] Check Pods Manifest.lock */,
+				B49EDFD92502AC2400EBD888 /* Sources */,
+				B49EDFDA2502AC2400EBD888 /* Frameworks */,
+				B49EDFDB2502AC2400EBD888 /* Resources */,
+				775BA28234E44BC3E8BAF272 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B49EDFDF2502AC2400EBD888 /* PBXTargetDependency */,
+			);
+			name = DesafioHurbUITests;
+			productName = DesafioHurbUITests;
+			productReference = B49EDFDD2502AC2400EBD888 /* DesafioHurbUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B49EDFB42502AC2300EBD888 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Edson Aparecido Guido";
+				TargetAttributes = {
+					B49EDFBB2502AC2300EBD888 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					B49EDFD12502AC2400EBD888 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = B49EDFBB2502AC2300EBD888;
+					};
+					B49EDFDC2502AC2400EBD888 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = B49EDFBB2502AC2300EBD888;
+					};
+				};
+			};
+			buildConfigurationList = B49EDFB72502AC2300EBD888 /* Build configuration list for PBXProject "DesafioHurb" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B49EDFB32502AC2300EBD888;
+			productRefGroup = B49EDFBD2502AC2300EBD888 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B49EDFBB2502AC2300EBD888 /* DesafioHurb */,
+				B49EDFD12502AC2400EBD888 /* DesafioHurbTests */,
+				B49EDFDC2502AC2400EBD888 /* DesafioHurbUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B49EDFBA2502AC2300EBD888 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49EDFCC2502AC2400EBD888 /* LaunchScreen.storyboard in Resources */,
+				B49EDFC92502AC2400EBD888 /* Assets.xcassets in Resources */,
+				B4C7C5E32502BC3900712C2A /* HomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49EDFD02502AC2400EBD888 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49EDFDB2502AC2400EBD888 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		113DC2271F679AE9C741554C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb/Pods-DesafioHurb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F56C8A678FD87EF17E3E081 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioHurb-DesafioHurbUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32A36822BADE62508AF854E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioHurb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		775BA28234E44BC3E8BAF272 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb-DesafioHurbUITests/Pods-DesafioHurb-DesafioHurbUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb-DesafioHurbUITests/Pods-DesafioHurb-DesafioHurbUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb-DesafioHurbUITests/Pods-DesafioHurb-DesafioHurbUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7C2006E1F79D87ED3CAF5B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioHurbTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B49EDFB82502AC2300EBD888 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4C7C5E02502BC3900712C2A /* HomeBuilder.swift in Sources */,
+				B4C7C5E22502BC3900712C2A /* HomeViewModel.swift in Sources */,
+				B49EDFC02502AC2300EBD888 /* AppDelegate.swift in Sources */,
+				B4C7C5DE2502BC3900712C2A /* HomeRouter.swift in Sources */,
+				B4C7C5E12502BC3900712C2A /* HomeInteractor.swift in Sources */,
+				B4C7C5E62502BC8500712C2A /* BaseViewController.swift in Sources */,
+				B4C7C5DF2502BC3900712C2A /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49EDFCE2502AC2400EBD888 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49EDFD72502AC2400EBD888 /* DesafioHurbTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49EDFD92502AC2400EBD888 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49EDFE22502AC2400EBD888 /* DesafioHurbUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B49EDFD42502AC2400EBD888 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B49EDFBB2502AC2300EBD888 /* DesafioHurb */;
+			targetProxy = B49EDFD32502AC2400EBD888 /* PBXContainerItemProxy */;
+		};
+		B49EDFDF2502AC2400EBD888 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B49EDFBB2502AC2300EBD888 /* DesafioHurb */;
+			targetProxy = B49EDFDE2502AC2400EBD888 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B49EDFCA2502AC2400EBD888 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B49EDFCB2502AC2400EBD888 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B49EDFE42502AC2400EBD888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B49EDFE52502AC2400EBD888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B49EDFE72502AC2400EBD888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4997233C2BC31B25A5C7FFD /* Pods-DesafioHurb.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MWMD8C75F2;
+				INFOPLIST_FILE = DesafioHurb/SuportFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.edson.guido.DesafioHurb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B49EDFE82502AC2400EBD888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B770EF4974403BDB54EC172 /* Pods-DesafioHurb.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MWMD8C75F2;
+				INFOPLIST_FILE = DesafioHurb/SuportFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.edson.guido.DesafioHurb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B49EDFEA2502AC2400EBD888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 202D296A8B8952DD3A0B9A4B /* Pods-DesafioHurbTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DesafioHurbTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.edson.guido.DesafioHurbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesafioHurb.app/DesafioHurb";
+			};
+			name = Debug;
+		};
+		B49EDFEB2502AC2400EBD888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0983307AF07BB27373848AE0 /* Pods-DesafioHurbTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DesafioHurbTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.edson.guido.DesafioHurbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesafioHurb.app/DesafioHurb";
+			};
+			name = Release;
+		};
+		B49EDFED2502AC2400EBD888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F51FA7A8ECF860E83784653D /* Pods-DesafioHurb-DesafioHurbUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DesafioHurbUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.edson.guido.DesafioHurbUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DesafioHurb;
+			};
+			name = Debug;
+		};
+		B49EDFEE2502AC2400EBD888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 898289DAC1C2EF7B05754400 /* Pods-DesafioHurb-DesafioHurbUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DesafioHurbUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.edson.guido.DesafioHurbUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DesafioHurb;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B49EDFB72502AC2300EBD888 /* Build configuration list for PBXProject "DesafioHurb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49EDFE42502AC2400EBD888 /* Debug */,
+				B49EDFE52502AC2400EBD888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B49EDFE62502AC2400EBD888 /* Build configuration list for PBXNativeTarget "DesafioHurb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49EDFE72502AC2400EBD888 /* Debug */,
+				B49EDFE82502AC2400EBD888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B49EDFE92502AC2400EBD888 /* Build configuration list for PBXNativeTarget "DesafioHurbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49EDFEA2502AC2400EBD888 /* Debug */,
+				B49EDFEB2502AC2400EBD888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B49EDFEC2502AC2400EBD888 /* Build configuration list for PBXNativeTarget "DesafioHurbUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49EDFED2502AC2400EBD888 /* Debug */,
+				B49EDFEE2502AC2400EBD888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B49EDFB42502AC2300EBD888 /* Project object */;
+}
