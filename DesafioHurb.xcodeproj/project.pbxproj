@@ -14,6 +14,11 @@
 		B49EDFCC2502AC2400EBD888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49EDFCA2502AC2400EBD888 /* LaunchScreen.storyboard */; };
 		B49EDFD72502AC2400EBD888 /* DesafioHurbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49EDFD62502AC2400EBD888 /* DesafioHurbTests.swift */; };
 		B49EDFE22502AC2400EBD888 /* DesafioHurbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49EDFE12502AC2400EBD888 /* DesafioHurbUITests.swift */; };
+		B4AA1D662502D12C003DDFBE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA1D652502D12C003DDFBE /* Model.swift */; };
+		B4B3BFE22502CA8300409A0A /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3BFE12502CA8300409A0A /* NibLoadable.swift */; };
+		B4B3BFE52502CBBD00409A0A /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3BFE42502CBBD00409A0A /* Builder.swift */; };
+		B4B3BFE72502CC0C00409A0A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3BFE62502CC0C00409A0A /* Router.swift */; };
+		B4BC316325040989003DBC20 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC316225040989003DBC20 /* ErrorTracker.swift */; };
 		B4C7C5DE2502BC3900712C2A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5D82502BC3900712C2A /* HomeRouter.swift */; };
 		B4C7C5DF2502BC3900712C2A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5D92502BC3900712C2A /* HomeViewController.swift */; };
 		B4C7C5E02502BC3900712C2A /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5DA2502BC3900712C2A /* HomeBuilder.swift */; };
@@ -21,6 +26,9 @@
 		B4C7C5E22502BC3900712C2A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5DC2502BC3900712C2A /* HomeViewModel.swift */; };
 		B4C7C5E32502BC3900712C2A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C7C5DD2502BC3900712C2A /* HomeViewController.xib */; };
 		B4C7C5E62502BC8500712C2A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7C5E52502BC8500712C2A /* BaseViewController.swift */; };
+		B4D329F52502C3910064BFB2 /* HotelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D329F32502C3910064BFB2 /* HotelViewCell.swift */; };
+		B4D329F62502C3910064BFB2 /* HotelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D329F42502C3910064BFB2 /* HotelViewCell.xib */; };
+		B4D329FA2502C5DA0064BFB2 /* FetchHotelsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D329F92502C5DA0064BFB2 /* FetchHotelsUseCase.swift */; };
 		EF1C45BFABF990F73F6ADEEF /* Pods_DesafioHurb_DesafioHurbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3F8772E8BB3E4DCE08AEC4 /* Pods_DesafioHurb_DesafioHurbUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +69,11 @@
 		B49EDFDD2502AC2400EBD888 /* DesafioHurbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioHurbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49EDFE12502AC2400EBD888 /* DesafioHurbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioHurbUITests.swift; sourceTree = "<group>"; };
 		B49EDFE32502AC2400EBD888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4AA1D652502D12C003DDFBE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B4B3BFE12502CA8300409A0A /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		B4B3BFE42502CBBD00409A0A /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		B4B3BFE62502CC0C00409A0A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		B4BC316225040989003DBC20 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
 		B4C7C5D82502BC3900712C2A /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		B4C7C5D92502BC3900712C2A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B4C7C5DA2502BC3900712C2A /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
@@ -68,6 +81,9 @@
 		B4C7C5DC2502BC3900712C2A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B4C7C5DD2502BC3900712C2A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B4C7C5E52502BC8500712C2A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B4D329F32502C3910064BFB2 /* HotelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewCell.swift; sourceTree = "<group>"; };
+		B4D329F42502C3910064BFB2 /* HotelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelViewCell.xib; sourceTree = "<group>"; };
+		B4D329F92502C5DA0064BFB2 /* FetchHotelsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHotelsUseCase.swift; sourceTree = "<group>"; };
 		F51FA7A8ECF860E83784653D /* Pods-DesafioHurb-DesafioHurbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioHurb-DesafioHurbUITests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioHurb-DesafioHurbUITests/Pods-DesafioHurb-DesafioHurbUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +153,8 @@
 		B49EDFBE2502AC2300EBD888 /* DesafioHurb */ = {
 			isa = PBXGroup;
 			children = (
+				B4B3BFE32502CBB000409A0A /* MVVM */,
+				B4D329F72502C49F0064BFB2 /* Domain */,
 				B4C7C5E42502BC6900712C2A /* Views */,
 				B49EDFF12502B4A900EBD888 /* Aplication */,
 				B49EDFF02502B49200EBD888 /* SuportFiles */,
@@ -192,6 +210,7 @@
 		B49EDFF22502B6E000EBD888 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B4D329F22502C30D0064BFB2 /* Cell */,
 				B4C7C5D82502BC3900712C2A /* HomeRouter.swift */,
 				B4C7C5D92502BC3900712C2A /* HomeViewController.swift */,
 				B4C7C5DA2502BC3900712C2A /* HomeBuilder.swift */,
@@ -202,12 +221,49 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		B4B3BFE32502CBB000409A0A /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				B4B3BFE42502CBBD00409A0A /* Builder.swift */,
+				B4B3BFE62502CC0C00409A0A /* Router.swift */,
+				B4BC316225040989003DBC20 /* ErrorTracker.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
 		B4C7C5E42502BC6900712C2A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				B4C7C5E52502BC8500712C2A /* BaseViewController.swift */,
+				B4B3BFE12502CA8300409A0A /* NibLoadable.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B4D329F22502C30D0064BFB2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B4D329F32502C3910064BFB2 /* HotelViewCell.swift */,
+				B4D329F42502C3910064BFB2 /* HotelViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B4D329F72502C49F0064BFB2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B4D329F82502C5380064BFB2 /* UseCases */,
+				B4AA1D652502D12C003DDFBE /* Model.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B4D329F82502C5380064BFB2 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				B4D329F92502C5DA0064BFB2 /* FetchHotelsUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		B56A9F0035D5D353C325DB0F /* Frameworks */ = {
@@ -232,6 +288,7 @@
 				B49EDFB92502AC2300EBD888 /* Frameworks */,
 				B49EDFBA2502AC2300EBD888 /* Resources */,
 				113DC2271F679AE9C741554C /* [CP] Embed Pods Frameworks */,
+				B4B3BFE02502C9A600409A0A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -330,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49EDFCC2502AC2400EBD888 /* LaunchScreen.storyboard in Resources */,
+				B4D329F62502C3910064BFB2 /* HotelViewCell.xib in Resources */,
 				B49EDFC92502AC2400EBD888 /* Assets.xcassets in Resources */,
 				B4C7C5E32502BC3900712C2A /* HomeViewController.xib in Resources */,
 			);
@@ -430,6 +488,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioHurb-DesafioHurbUITests/Pods-DesafioHurb-DesafioHurbUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B4B3BFE02502C9A600409A0A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		D7C2006E1F79D87ED3CAF5B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,8 +537,15 @@
 				B4C7C5E02502BC3900712C2A /* HomeBuilder.swift in Sources */,
 				B4C7C5E22502BC3900712C2A /* HomeViewModel.swift in Sources */,
 				B49EDFC02502AC2300EBD888 /* AppDelegate.swift in Sources */,
+				B4B3BFE52502CBBD00409A0A /* Builder.swift in Sources */,
+				B4B3BFE72502CC0C00409A0A /* Router.swift in Sources */,
+				B4B3BFE22502CA8300409A0A /* NibLoadable.swift in Sources */,
+				B4AA1D662502D12C003DDFBE /* Model.swift in Sources */,
+				B4BC316325040989003DBC20 /* ErrorTracker.swift in Sources */,
 				B4C7C5DE2502BC3900712C2A /* HomeRouter.swift in Sources */,
 				B4C7C5E12502BC3900712C2A /* HomeInteractor.swift in Sources */,
+				B4D329FA2502C5DA0064BFB2 /* FetchHotelsUseCase.swift in Sources */,
+				B4D329F52502C3910064BFB2 /* HotelViewCell.swift in Sources */,
 				B4C7C5E62502BC8500712C2A /* BaseViewController.swift in Sources */,
 				B4C7C5DF2502BC3900712C2A /* HomeViewController.swift in Sources */,
 			);

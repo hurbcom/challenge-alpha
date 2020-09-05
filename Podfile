@@ -6,9 +6,11 @@ target 'DesafioHurb' do
   use_frameworks!
 
   # Pods for DesafioHurb
+  pod 'SwiftLint'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'IGListKit'
+  pod 'Alamofire'
 
   target 'DesafioHurbTests' do
     inherit! :search_paths

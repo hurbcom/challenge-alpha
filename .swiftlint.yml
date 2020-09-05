@@ -1,0 +1,88 @@
+excluded:
+    - Pods/
+
+disabled_rules:
+    - type_name
+    - line_length
+    - identifier_name
+    - force_cast
+    - force_try
+    - file_length
+    - function_body_length
+    - nesting
+    - trailing_whitespace
+    - todo
+    - valid_ibinspectable
+    - xctfail_message
+    - implicit_getter
+
+analyzer_rules:
+    - unused_import
+    - unused_declaration
+
+number_separator:
+    minimum_length: 7
+
+opt_in_rules:
+    - anyobject_protocol
+    - array_init
+    - closure_spacing
+    - collection_alignment
+    - contains_over_first_not_nil    
+    - empty_string
+    - explicit_init
+    - fallthrough
+    - first_where
+    - identical_operands
+    - joined_default_parameter
+    - lower_acl_than_parent
+    - nimble_operator
+    - number_separator
+    - operator_usage_whitespace
+    - overridden_super_call
+    - pattern_matching_keywords
+    - private_action
+    - private_outlet    
+    - prohibited_super_call    
+    - quick_discouraged_focused_test
+    - quick_discouraged_pending_test
+    - redundant_nil_coalescing
+    - redundant_type_annotation
+    - single_test_class
+    - sorted_first_last
+    - static_operator
+    - untyped_error_in_catch
+    - vertical_parameter_alignment_on_call
+    - yoda_condition    
+    - empty_count
+
+function_parameter_count:
+    warning: 7
+    error: 10
+
+type_body_length:
+        warning: 400
+        error: 400
+
+large_tuple:
+        warning: 3
+        error: 4
+
+custom_rules:
+    double_space: # from https://github.com/IBM-Swift/Package-Builder
+      include: "*.swift"
+      name: "Double space"
+      regex: '([a-z,A-Z] \s+)'
+      message: "Double space between keywords"
+      match_kinds: keyword
+      severity: warning
+    comments_space: # from https://github.com/brandenr/swiftlintconfig
+      name: "Space After Comment"
+      regex: '(^ *//\w+)'
+      message: "There should be a space after //"
+      severity: warning
+    unnecessary_type: # from https://github.com/brandenr/swiftlintconfig
+      name: "Unnecessary Type"
+      regex: '[ a-zA-Z0-9]*(?:let|var) [ a-zA-Z0-9]*: ([a-zA-Z0-9]*)[ ]*= \1'
+      message: "Type Definition Not Needed"
+      severity: warning

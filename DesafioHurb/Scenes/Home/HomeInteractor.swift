@@ -8,8 +8,18 @@
 
 import RxSwift
 
-protocol HomeInteractable: AnyObject {
-}
+protocol HomeInteractable: AnyObject, FetchHotelsUseCase {}
 
 final class HomeInteractor: HomeInteractable {
+    
+    private let fetchHotelsUseCase: FetchHotelsUseCase
+    
+    init(fetchHotelsUseCase: FetchHotelsUseCase) {
+        self.fetchHotelsUseCase = fetchHotelsUseCase
+    }
+    
+    func fetchHotels() -> Single<FetchHotelsResponse> {
+        fetchHotelsUseCase.fetchHotels()
+    }
+    
 }

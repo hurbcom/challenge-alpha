@@ -14,7 +14,7 @@ protocol HomeBuildable: AnyObject {
 
 final class HomeBuilder: Builder, HomeBuildable {
     func build() -> UIViewController {
-        let interactor = HomeInteractor()
+        let interactor = HomeInteractor(fetchHotelsUseCase: FetchHotelsUseCaseImpl())
         let viewModel = HomeViewModel(interactor: interactor)
         let router = HomeRouter()
         let viewController = HomeViewController(withViewModel: viewModel, router: router)
