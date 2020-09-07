@@ -99,7 +99,7 @@ struct Address: Codable {
     let zipcode, addressFullAddress, street, addressStreetName: String?
     let streetName, address, fullAddress, neighborhood: String?
     let idAtlasNeighborhood, idNeighborhood: String?
-    let city: City
+    let city: String
     let idAtlasCity: Int?
     let idCity: Int?
     let state: State
@@ -136,11 +136,6 @@ struct Address: Codable {
 
 enum CountryAlfa2: String, Codable {
     case br = "BR"
-}
-
-enum City: String, Codable {
-    case armaçãoDOSBúzios = "Armação dos Búzios"
-    case búzios = "Búzios"
 }
 
 enum Country: String, Codable {

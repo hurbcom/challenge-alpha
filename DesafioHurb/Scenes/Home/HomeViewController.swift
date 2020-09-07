@@ -9,11 +9,26 @@
 import RxCocoa
 import RxSwift
 import UIKit
+import IGListKit
 
 final class HomeViewController: BaseViewController {
     
     private let viewModel: HomeViewModelType
     private let router: HomeRouting
+    
+    @IBOutlet private var collectionView: UICollectionView!
+    
+    private lazy var adapter: ListAdapter = {
+        let listAdpater = ListAdapter(
+            updater: ListAdapterUpdater(),
+            viewController: self
+        )
+        listAdpater.collectionView = collectionView
+        listAdpater.dataSource = self
+        return listAdpater
+    }()
+    
+    private var hotels = [DiffableBox<HotelDisplay>]()
     
     init(withViewModel viewModel: HomeViewModelType, router: HomeRouting) {
         self.viewModel = viewModel
@@ -25,9 +40,18 @@ final class HomeViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        viewModel.input.fetchData.onNext(())
+    override func prepare() {
+        super.prepare()
+        prepareCollectionView()
+    }
+    
+    private func prepareCollectionView() {
+        collectionView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        collectionView.collectionViewLayout = ListCollectionViewLayout(
+            stickyHeaders: false,
+            topContentInset: 0,
+            stretchToEdge: true
+        )
     }
     
     override func bindViewModel() {
@@ -42,8 +66,31 @@ final class HomeViewController: BaseViewController {
         viewModel.output.hotels
             .drive(onNext: { [weak self] hotels in
                 guard let self = self else { return }
-                print(hotels)
+                self.hotels = hotels.map { DiffableBox(value: $0, identifier: $0.id as NSObjectProtocol) }
+                self.adapter.performUpdates(animated: true)
             })
             .disposed(by: disposeBag)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.input.fetchData.onNext(())
+    }
+}
+
+extension HomeViewController: ListAdapterDataSource {
+    
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return hotels
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        return HotelSectionController(didSelectItem: { index in
+            self.viewModel.input.selectHotel.onNext(index)
+        })
+    }
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return nil
     }
 }

@@ -14,8 +14,11 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepare()
         bindViewModel()
     }
+    
+    func prepare() {}
     
     func bindViewModel() {}
 }

@@ -43,9 +43,7 @@ protocol FetchHotelsUseCase {
 
 final class FetchHotelsUseCaseImpl: FetchHotelsUseCase {
     
-    private let urlRequest = "https://www.hurb.com/search/api?q=buzios&page=1"
-    
-    private let disposeBag = DisposeBag()
+    private let urlRequest = "https://www.hurb.com/search/api?q=buzios"
     
     func fetchHotels() -> Single<FetchHotelsResponse> {
         

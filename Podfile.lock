@@ -3,6 +3,9 @@ PODS:
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
+  - Kingfisher (5.15.0):
+    - Kingfisher/Core (= 5.15.0)
+  - Kingfisher/Core (5.15.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -14,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - IGListKit
+  - Kingfisher
   - RxCocoa
   - RxSwift
   - SwiftLint
@@ -23,6 +27,7 @@ SPEC REPOS:
     - Alamofire
     - IGListDiffKit
     - IGListKit
+    - Kingfisher
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -32,11 +37,12 @@ SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
+  Kingfisher: 1acb67597a520c2d0310677e66d6e0af455ef757
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftLint: bbfed21bf4451dcbd0f5cdbee44a18e06cf91b12
 
-PODFILE CHECKSUM: 4a74a1ac565286155083139d4e4dd7f34777f7a5
+PODFILE CHECKSUM: ed3001708b115ac7154296fcd7cc4707c4f14e79
 
 COCOAPODS: 1.9.3

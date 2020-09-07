@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="DesafioHurb" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="z79-LL-4xJ" id="XsV-Qr-fE8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

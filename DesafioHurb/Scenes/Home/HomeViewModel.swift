@@ -11,11 +11,12 @@ import RxSwift
 
 protocol HomeViewModelInput: AnyObject {
     var fetchData: PublishSubject<Void> { get }
+    var selectHotel: PublishSubject<Int> { get }
 }
 
 protocol HomeViewModelOutput: AnyObject {
     var error: Driver<Error> { get }
-    var hotels: Driver<[Hotel]> { get }
+    var hotels: Driver<[HotelDisplay]> { get }
 }
 
 protocol HomeViewModelType: AnyObject {
@@ -25,7 +26,7 @@ protocol HomeViewModelType: AnyObject {
 
 final class HomeViewModel: HomeViewModelType, HomeViewModelInput, HomeViewModelOutput {
     let error: Driver<Error>
-    let hotels: Driver<[Hotel]>
+    let hotels: Driver<[HotelDisplay]>
     
     init(interactor: HomeInteractable) {
         let errorTracker = PublishSubject<Error>()
@@ -43,10 +44,11 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInput, HomeViewModelO
         }
         
         hotels = fetchHotelsResponse
-            .map { $0.results }
+            .map { $0.results.map(HotelDisplay.init) }
     }
     
     let fetchData: PublishSubject<Void> = PublishSubject()
+    let selectHotel: PublishSubject<Int> = PublishSubject()
     
     var input: HomeViewModelInput { return self }
     var output: HomeViewModelOutput { return self }

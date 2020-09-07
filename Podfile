@@ -11,6 +11,7 @@ target 'DesafioHurb' do
   pod 'RxCocoa'
   pod 'IGListKit'
   pod 'Alamofire'
+  pod 'Kingfisher'
 
   target 'DesafioHurbTests' do
     inherit! :search_paths
