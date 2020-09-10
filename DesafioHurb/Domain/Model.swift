@@ -177,7 +177,7 @@ struct FeaturedItem: Codable {
 }
 
 // MARK: - Gallery
-struct Gallery: Codable {
+struct Gallery: Codable, Equatable {
     let galleryDescription: String?
     let url: String
     let roomID: String?

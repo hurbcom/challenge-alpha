@@ -46,6 +46,7 @@ final class HomeViewController: BaseViewController {
     }
     
     private func prepareCollectionView() {
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         collectionView.collectionViewLayout = ListCollectionViewLayout(
             stickyHeaders: false,
@@ -68,6 +69,12 @@ final class HomeViewController: BaseViewController {
                 guard let self = self else { return }
                 self.hotels = hotels.map { DiffableBox(value: $0, identifier: $0.id as NSObjectProtocol) }
                 self.adapter.performUpdates(animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.selectedHotel
+            .drive(onNext: { [weak self] hotel in
+                self?.router.navigateToDetail(hotel: hotel)
             })
             .disposed(by: disposeBag)
     }

@@ -17,6 +17,7 @@ protocol HomeViewModelInput: AnyObject {
 protocol HomeViewModelOutput: AnyObject {
     var error: Driver<Error> { get }
     var hotels: Driver<[HotelDisplay]> { get }
+    var selectedHotel: Driver<Hotel> { get }
 }
 
 protocol HomeViewModelType: AnyObject {
@@ -27,6 +28,7 @@ protocol HomeViewModelType: AnyObject {
 final class HomeViewModel: HomeViewModelType, HomeViewModelInput, HomeViewModelOutput {
     let error: Driver<Error>
     let hotels: Driver<[HotelDisplay]>
+    let selectedHotel: Driver<Hotel>
     
     init(interactor: HomeInteractable) {
         let errorTracker = PublishSubject<Error>()
@@ -45,6 +47,13 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInput, HomeViewModelO
         
         hotels = fetchHotelsResponse
             .map { $0.results.map(HotelDisplay.init) }
+        
+        selectedHotel = selectHotel.asDriver(onErrorDriveWith: Driver.empty())
+            .withLatestFrom(fetchHotelsResponse) { (index: $0, fetchHotelsResponse:$1) }
+            .map { index, fetchHotelsResponse in
+                fetchHotelsResponse.results[index]
+        }
+        
     }
     
     let fetchData: PublishSubject<Void> = PublishSubject()

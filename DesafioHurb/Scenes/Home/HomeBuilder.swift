@@ -16,7 +16,7 @@ final class HomeBuilder: Builder, HomeBuildable {
     func build() -> UIViewController {
         let interactor = HomeInteractor(fetchHotelsUseCase: FetchHotelsUseCaseImpl())
         let viewModel = HomeViewModel(interactor: interactor)
-        let router = HomeRouter()
+        let router = HomeRouter(detailBuilder: DetailBuilder())
         let viewController = HomeViewController(withViewModel: viewModel, router: router)
         router.viewController = viewController
 
