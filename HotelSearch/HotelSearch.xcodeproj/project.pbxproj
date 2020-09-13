@@ -10,6 +10,7 @@
 		FC1BAB26250E78A100B0C1E2 /* HotelSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1BAB1C250E78A000B0C1E2 /* HotelSearch.framework */; };
 		FC1BAB39250E795400B0C1E2 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB38250E795400B0C1E2 /* Hotel.swift */; };
 		FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB3A250E7C6600B0C1E2 /* HotelSearcher.swift */; };
+		FC1BAB3D250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		FC1BAB2C250E78A100B0C1E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1BAB38250E795400B0C1E2 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		FC1BAB3A250E7C6600B0C1E2 /* HotelSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearcher.swift; sourceTree = "<group>"; };
+		FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				FC1BAB2C250E78A100B0C1E2 /* Info.plist */,
+				FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */,
 			);
 			path = HotelSearchTests;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 					};
 					FC1BAB24250E78A100B0C1E2 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -212,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC1BAB3D250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = HotelSearchTests/Info.plist;
@@ -408,6 +414,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.tulioParreiras.HotelSearchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -416,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = HotelSearchTests/Info.plist;
