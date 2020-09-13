@@ -86,10 +86,13 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     func test_searchHotel_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
         
-        expect(sut, toCompleteWith: .failure(RemoteHotelSearcher.Error.invalidData), when: {
-            let emptyListJson = makeHotelsJSON([])
-            client.complete(withStatusCode: 199, data: emptyListJson)
-        })
+        let samples = [199, 201, 300, 400, 500]
+        samples.enumerated().forEach { index, code in
+            expect(sut, toCompleteWith: .failure(RemoteHotelSearcher.Error.invalidData), when: {
+                let emptyListJson = makeHotelsJSON([])
+                client.complete(withStatusCode: code, data: emptyListJson, at: index)
+            })
+        }
     }
     
     // MARK: Helpers
