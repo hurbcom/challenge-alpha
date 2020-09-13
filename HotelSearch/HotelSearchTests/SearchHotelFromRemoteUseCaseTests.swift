@@ -35,20 +35,26 @@ final class HTTPClientSpy {
 class SearchHotelFromRemoteUseCaseTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() {
-        let client = HTTPClientSpy()
-        let _ = RemoteHotelSearcher(url: URL(string: "https://any-url.com")!, client: client)
+        let (_, client) = makeSUT()
         
         XCTAssertTrue(client.requestedURLs.isEmpty)
     }
     
     func test_searchHotel_requestsDataFromURL() {
         let url = URL(string: "https://any-url.com")!
-        let client = HTTPClientSpy()
-        let sut = RemoteHotelSearcher(url: url, client: client)
+        let (sut, client) = makeSUT(url: url)
         
         sut.searchHotel(with: "")
         
         XCTAssertEqual(client.requestedURLs, [url])
+    }
+    
+    // MARK: Helpers
+    
+    private func makeSUT(url: URL = URL(string: "https://any-url.com")!) -> (sut: RemoteHotelSearcher, client: HTTPClientSpy) {
+        let client = HTTPClientSpy()
+        let sut = RemoteHotelSearcher(url: url, client: client)
+        return (sut, client)
     }
 
 }
