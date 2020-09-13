@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC1BAB26250E78A100B0C1E2 /* HotelSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1BAB1C250E78A000B0C1E2 /* HotelSearch.framework */; };
 		FC1BAB39250E795400B0C1E2 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB38250E795400B0C1E2 /* Hotel.swift */; };
+		FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB3A250E7C6600B0C1E2 /* HotelSearcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		FC1BAB25250E78A100B0C1E2 /* HotelSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1BAB2C250E78A100B0C1E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1BAB38250E795400B0C1E2 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		FC1BAB3A250E7C6600B0C1E2 /* HotelSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				FC1BAB38250E795400B0C1E2 /* Hotel.swift */,
+				FC1BAB3A250E7C6600B0C1E2 /* HotelSearcher.swift */,
 			);
 			path = "HotelSearch Feature";
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1BAB39250E795400B0C1E2 /* Hotel.swift in Sources */,
+				FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
