@@ -32,12 +32,6 @@ final class RemoteHotelSearcher {
     
 }
 
-protocol HTTPClient {
-    typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
-    
-    func get(from url: URL, completion: @escaping (Result) -> Void)
-}
-
 final class HTTPClientSpy: HTTPClient {
     private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
     
