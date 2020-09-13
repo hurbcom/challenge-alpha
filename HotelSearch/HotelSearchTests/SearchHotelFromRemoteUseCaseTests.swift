@@ -95,6 +95,15 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         }
     }
     
+    func test_searchHotel_deliversErrorOn200HTTPResponseWithInvalidJSON() {
+        let (sut, client) = makeSUT()
+        
+        expect(sut, toCompleteWith: .failure(RemoteHotelSearcher.Error.invalidData), when: {
+            let invalidJSON = Data("invalid json".utf8)
+            client.complete(withStatusCode: 200, data: invalidJSON)
+        })
+    }
+    
     // MARK: Helpers
     
     private func makeSUT(url: URL = URL(string: "https://any-url.com")!) -> (sut: RemoteHotelSearcher, client: HTTPClientSpy) {
