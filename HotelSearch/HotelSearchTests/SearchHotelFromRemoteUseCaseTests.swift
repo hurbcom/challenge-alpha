@@ -10,35 +10,15 @@ import XCTest
 
 import HotelSearch
 
-final class RemoteHotelSearcher {
+final class HotelMapper {
     
-    typealias Result = Swift.Result<[Hotel], Error>
+    private init() { }
     
-    private let url: URL
-    private let client: HTTPClientSpy
-    
-    public enum Error: Swift.Error {
-        case invalidData
-    }
-    
-    init(url: URL, client: HTTPClientSpy) {
-        self.url = url
-        self.client = client
-    }
-    
-    func searchHotel(with searchText: String, competion: @escaping (Result) -> Void) {
-        self.client.get(from: url) { result in
-            switch result {
-            case let .success((data, response)):
-                if let root = try? JSONDecoder().decode(Root.self, from: data), response.statusCode == 200 {
-                    competion(.success(root.hotels.compactMap { $0.item }))
-                } else {
-                    competion(.failure(.invalidData))
-                }
-            case .failure:
-                competion(.failure(.invalidData))
-            }
+    static func map(_ data: Data, from response: HTTPURLResponse) throws -> [Hotel] {
+        guard response.statusCode == 200, let root = try? JSONDecoder().decode(Root.self, from: data) else {
+            throw RemoteHotelSearcher.Error.invalidData
         }
+        return root.hotels.map { $0.item }
     }
     
     struct Root: Decodable {
@@ -121,6 +101,37 @@ final class RemoteHotelSearcher {
         }
     }
 
+    
+}
+
+final class RemoteHotelSearcher {
+    
+    typealias Result = Swift.Result<[Hotel], Swift.Error>
+    
+    private let url: URL
+    private let client: HTTPClientSpy
+    
+    public enum Error: Swift.Error {
+        case invalidData
+    }
+    
+    init(url: URL, client: HTTPClientSpy) {
+        self.url = url
+        self.client = client
+    }
+    
+    func searchHotel(with searchText: String, competion: @escaping (Result) -> Void) {
+        self.client.get(from: url) { result in
+            switch result {
+            case let .success((data, response)):
+                competion(Result {
+                    try HotelMapper.map(data, from: response)
+                })
+            case .failure:
+                competion(.failure(RemoteHotelSearcher.Error.invalidData))
+            }
+        }
+    }
     
 }
 
