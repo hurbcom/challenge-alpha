@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Hotel {
+public struct Hotel: Hashable {
     public let amenities: [Amenity]
     public let category: String
     public let description: String
@@ -42,7 +42,7 @@ public struct Hotel {
     }
 }
 
-public struct Amenity {
+public struct Amenity: Hashable {
     public let count: Int
     public let filter: String
     public let term: String
@@ -54,7 +54,7 @@ public struct Amenity {
     }
 }
 
-public struct HotelImage {
+public struct HotelImage: Hashable {
     public let description: String
     public let roomId: String?
     public let url: URL
@@ -66,7 +66,7 @@ public struct HotelImage {
     }
 }
 
-public struct HotelPrice {
+public struct HotelPrice: Hashable {
     public let amount: Double
     public let amountPerDay: Double
     public let currency: String
@@ -78,7 +78,7 @@ public struct HotelPrice {
     }
 }
 
-public struct QuantityDescriptor {
+public struct QuantityDescriptor: Hashable {
     public let maxAdults: Int
     public let maxChildren: Int
     public let maxFreeChildrenAge: Int
