@@ -28,9 +28,99 @@ final class RemoteHotelSearcher {
     
     func searchHotel(with searchText: String, competion: @escaping (Result) -> Void) {
         self.client.get(from: url) { result in
-            competion(.failure(.invalidData))
+            switch result {
+            case let .success((data, response)):
+                if let root = try? JSONDecoder().decode(Root.self, from: data), response.statusCode == 200 {
+                    competion(.success(root.hotels.compactMap { $0.item }))
+                } else {
+                    competion(.failure(.invalidData))
+                }
+            case .failure:
+                competion(.failure(.invalidData))
+            }
         }
     }
+    
+    struct Root: Decodable {
+        let hotels: [RemoteHotelItem]
+        
+        enum CodingKeys: String, CodingKey {
+            case hotels = "result"
+        }
+    }
+    
+    struct RemoteHotelItem: Decodable {
+        let amenities: [RemoteAmenityItem]
+        let category: String
+        let description: String
+        let gallery: [RemoteHotelImageItem]
+        let id: Int
+        let image: URL
+        let isHotel: Bool
+        let name: String
+        let price: RemoteHotelPriceItem
+        let quantityDescriptors: RemoteQuantityDescriptorItem
+        let smallDescription: String
+        let star: Int
+        let tags: [String]
+        let url: URL
+        
+        var item: Hotel {
+            return Hotel(amenities: amenities.map { $0.item },
+                         category: category,
+                         description: description,
+                         gallery: gallery.compactMap { $0.item },
+                         id: id,
+                         image: image,
+                         isHotel: isHotel,
+                         name: name,
+                         price: price.item,
+                         quantityDescriptors: quantityDescriptors.item,
+                         smallDescription: smallDescription,
+                         star: star,
+                         tags: tags,
+                         url: url)
+        }
+    }
+
+    struct RemoteAmenityItem: Decodable {
+        let category: String
+        let name: String
+        
+        var item: Amenity {
+            return Amenity(category: category, name: name)
+        }
+    }
+
+    struct RemoteHotelImageItem: Decodable {
+        let description: String
+        let url: URL
+        
+        var item: HotelImage {
+            return HotelImage(description: description, url: url)
+        }
+    }
+
+    struct RemoteHotelPriceItem: Decodable {
+        let amount: Double
+        let amountPerDay: Double
+        let currency: String
+        
+        var item: HotelPrice {
+            return HotelPrice(amount: amount, amountPerDay: amountPerDay, currency: currency)
+        }
+    }
+
+    struct RemoteQuantityDescriptorItem: Decodable {
+        let maxAdults: Int
+        let maxChildren: Int
+        let maxFreeChildrenAge: Int
+        
+        var item: QuantityDescriptor {
+            return QuantityDescriptor(maxAdults: maxAdults, maxChildren: maxChildren, maxFreeChildrenAge: maxFreeChildrenAge)
+        }
+    }
+
     
 }
 
@@ -101,6 +191,15 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         expect(sut, toCompleteWith: .failure(RemoteHotelSearcher.Error.invalidData), when: {
             let invalidJSON = Data("invalid json".utf8)
             client.complete(withStatusCode: 200, data: invalidJSON)
+        })
+    }
+    
+    func test_searchHotel_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() {
+        let (sut, client) = makeSUT()
+        
+        expect(sut, toCompleteWith: .success([]), when: {
+            let emptyListJson = makeHotelsJSON([])
+            client.complete(withStatusCode: 200, data: emptyListJson)
         })
     }
     

@@ -43,25 +43,21 @@ public struct Hotel: Hashable {
 }
 
 public struct Amenity: Hashable {
-    public let count: Int
-    public let filter: String
-    public let term: String
+    public let category: String
+    public let name: String
     
-    public init(count: Int, filter: String, term: String) {
-        self.count = count
-        self.filter = filter
-        self.term = term
+    public init(category: String, name: String) {
+        self.category = category
+        self.name = name
     }
 }
 
 public struct HotelImage: Hashable {
     public let description: String
-    public let roomId: String?
     public let url: URL
     
-    public init(description: String, roomId: String?, url: URL) {
+    public init(description: String, url: URL) {
         self.description = description
-        self.roomId = roomId
         self.url = url
     }
 }
