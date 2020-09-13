@@ -12,6 +12,8 @@ import HotelSearch
 
 final class RemoteHotelSearcher {
     
+    typealias Result = Swift.Result<[Hotel], Error>
+    
     private let url: URL
     private let client: HTTPClientSpy
     
@@ -24,7 +26,7 @@ final class RemoteHotelSearcher {
         self.client = client
     }
     
-    func searchHotel(with searchText: String, competion: @escaping (Result<[Hotel], Error>) -> Void) {
+    func searchHotel(with searchText: String, competion: @escaping (Result) -> Void) {
         self.client.get(from: url) { result in
             competion(.failure(.invalidData))
         }
@@ -84,21 +86,10 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     func test_searchHotel_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
         
-        let exp = expectation(description: "Wait for search completion")
-        
-        sut.searchHotel(with: "") { receivedResult in
-            switch receivedResult {
-            case .success:
-                XCTFail("Expected to receive error, got \(receivedResult) instead")
-            case .failure: break
-            }
-            exp.fulfill()
-        }
-        
-        let emptyListJson = makeHotelsJSON([])
-        client.complete(withStatusCode: 199, data: emptyListJson)
-        
-        wait(for: [exp], timeout: 1.0)
+        expect(sut, toCompleteWith: .failure(RemoteHotelSearcher.Error.invalidData), when: {
+            let emptyListJson = makeHotelsJSON([])
+            client.complete(withStatusCode: 199, data: emptyListJson)
+        })
     }
     
     // MARK: Helpers
@@ -112,6 +103,29 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     private func makeHotelsJSON(_ items: [[String: Any]]) -> Data {
         let json = ["result": items]
         return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    private func expect(_ sut: RemoteHotelSearcher, toCompleteWith expectedResult: RemoteHotelSearcher.Result, when action: () -> Void) {
+        
+        let exp = expectation(description: "Wait for search completion")
+        
+        sut.searchHotel(with: "") { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedItems), .success(expectedItems)):
+                XCTAssertEqual(receivedItems, expectedItems)
+                
+            case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
+                XCTAssertEqual(receivedError, expectedError)
+                
+            default:
+                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead")
+            }
+            exp.fulfill()
+        }
+        
+        action()
+        
+        wait(for: [exp], timeout: 1.0)
     }
 
 }
