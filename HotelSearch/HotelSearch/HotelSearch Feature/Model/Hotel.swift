@@ -51,13 +51,3 @@ public struct Amenity: Hashable {
         self.name = name
     }
 }
-
-public struct HotelImage: Hashable {
-    public let description: String
-    public let url: URL
-    
-    public init(description: String, url: URL) {
-        self.description = description
-        self.url = url
-    }
-}
