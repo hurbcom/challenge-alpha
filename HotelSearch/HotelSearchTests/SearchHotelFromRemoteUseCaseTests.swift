@@ -105,18 +105,18 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         
     }
     
-    func test_searchHotel_deliversNoResultAfterSUTInstanceHasBeenDeallocated() {
+    func test_searchHotel_deliversNoSearchResultAfterSUTInstanceHasBeenDeallocated() {
         let url = URL(string: "https://any-url.com")!
         let client = HTTPClientSpy()
         var sut: RemoteHotelSearcher? = RemoteHotelSearcher(url: url, client: client)
         
-        var capturedResults = [RemoteHotelSearcher.Result]()
-        sut?.searchHotel(with: "", competion: { capturedResults.append($0) })
+        var capturedSearchResults = [RemoteHotelSearcher.SearchResult]()
+        sut?.searchHotel(with: "", completion: { capturedSearchResults.append($0) })
         
         sut = nil
         client.complete(withStatusCode: 200, data: makeItemsJSON([]))
         
-        XCTAssertTrue(capturedResults.isEmpty)
+        XCTAssertTrue(capturedSearchResults.isEmpty)
     }
     
     // MARK: Helpers
@@ -127,20 +127,20 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         return (sut, client)
     }
     
-    private func expect(_ sut: RemoteHotelSearcher, toCompleteWith expectedResult: RemoteHotelSearcher.Result, when action: () -> Void) {
+    private func expect(_ sut: RemoteHotelSearcher, toCompleteWith expectedSearchResult: RemoteHotelSearcher.SearchResult, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         
         let exp = expectation(description: "Wait for search completion")
         
-        sut.searchHotel(with: "") { receivedResult in
-            switch (receivedResult, expectedResult) {
+        sut.searchHotel(with: "") { receivedSearchResult in
+            switch (receivedSearchResult, expectedSearchResult) {
             case let (.success(receivedItems), .success(expectedItems)):
-                XCTAssertEqual(receivedItems, expectedItems)
+                XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
                 
             case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
-                XCTAssertEqual(receivedError, expectedError)
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
                 
             default:
-                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead")
+                XCTFail("Expected SearchResult \(expectedSearchResult) got \(receivedSearchResult) instead", file: file, line: line)
             }
             exp.fulfill()
         }

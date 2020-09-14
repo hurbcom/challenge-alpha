@@ -8,9 +8,9 @@
 
 import Foundation
 
-final public class RemoteHotelSearcher {
+final public class RemoteHotelSearcher: HotelSearcher {
     
-    public typealias Result = Swift.Result<[Hotel], Swift.Error>
+    public typealias SearchResult = HotelSearcher.SearchResult
     
     private let url: URL
     private let client: HTTPClient
@@ -24,16 +24,16 @@ final public class RemoteHotelSearcher {
         self.client = client
     }
     
-    public func searchHotel(with searchText: String, competion: @escaping (RemoteHotelSearcher.Result) -> Void) {
+    public func searchHotel(with searchText: String, completion: @escaping (RemoteHotelSearcher.SearchResult) -> Void) {
         self.client.get(from: url) { [weak self] result in
             guard self != nil else { return }
             switch result {
             case let .success((data, response)):
-                competion(Result {
+                completion(Result {
                     try HotelMapper.map(data, from: response)
                 })
             case .failure:
-                competion(.failure(RemoteHotelSearcher.Error.invalidData))
+                completion(.failure(RemoteHotelSearcher.Error.invalidData))
             }
         }
     }

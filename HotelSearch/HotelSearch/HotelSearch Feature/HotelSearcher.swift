@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol HotelSearcher {
+public protocol HotelSearcher {
     typealias SearchResult = Swift.Result<[Hotel], Error>
     
     func searchHotel(with searchText: String, completion: @escaping (SearchResult) -> Void)
