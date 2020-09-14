@@ -41,12 +41,3 @@ struct RemoteHotelItem: Decodable {
                      url: url)
     }
 }
-
-struct RemoteAmenityItem: Decodable {
-    let category: String
-    let name: String
-    
-    var item: Amenity {
-        return Amenity(category: category, name: name)
-    }
-}

@@ -19,6 +19,7 @@
 		FC1BAB4F250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB4E250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift */; };
 		FC1BAB51250F810900B0C1E2 /* RemoteHotelPriceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB50250F810900B0C1E2 /* RemoteHotelPriceItem.swift */; };
 		FC1BAB53250F812300B0C1E2 /* RemoteHotelImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB52250F812300B0C1E2 /* RemoteHotelImageItem.swift */; };
+		FC1BAB55250F813E00B0C1E2 /* RemoteAmenityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB54250F813E00B0C1E2 /* RemoteAmenityItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		FC1BAB4E250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteQuantityDescriptorItem.swift; sourceTree = "<group>"; };
 		FC1BAB50250F810900B0C1E2 /* RemoteHotelPriceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHotelPriceItem.swift; sourceTree = "<group>"; };
 		FC1BAB52250F812300B0C1E2 /* RemoteHotelImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHotelImageItem.swift; sourceTree = "<group>"; };
+		FC1BAB54250F813E00B0C1E2 /* RemoteAmenityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAmenityItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				FC1BAB4E250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift */,
 				FC1BAB50250F810900B0C1E2 /* RemoteHotelPriceItem.swift */,
 				FC1BAB52250F812300B0C1E2 /* RemoteHotelImageItem.swift */,
+				FC1BAB54250F813E00B0C1E2 /* RemoteAmenityItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				FC1BAB53250F812300B0C1E2 /* RemoteHotelImageItem.swift in Sources */,
 				FC1BAB4D250F80AE00B0C1E2 /* RemoteHotelItem.swift in Sources */,
 				FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */,
+				FC1BAB55250F813E00B0C1E2 /* RemoteAmenityItem.swift in Sources */,
 				FC1BAB40250EC2F700B0C1E2 /* HTTPClient.swift in Sources */,
 				FC1BAB4F250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift in Sources */,
 				FC1BAB51250F810900B0C1E2 /* RemoteHotelPriceItem.swift in Sources */,
