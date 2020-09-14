@@ -109,13 +109,13 @@ final class RemoteHotelSearcher {
     typealias Result = Swift.Result<[Hotel], Swift.Error>
     
     private let url: URL
-    private let client: HTTPClientSpy
+    private let client: HTTPClient
     
     public enum Error: Swift.Error {
         case invalidData
     }
     
-    init(url: URL, client: HTTPClientSpy) {
+    init(url: URL, client: HTTPClient) {
         self.url = url
         self.client = client
     }
