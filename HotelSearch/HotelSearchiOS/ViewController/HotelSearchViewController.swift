@@ -12,17 +12,19 @@ import HotelSearch
 
 final public class HotelSearchViewModel {
     
-    var text: String = "buzios"
+    var text: String = ""
     
     private let hotelSearcher: HotelSearcher
+    private let searchSuffix = "&page="
+    private var currentPage = 1
     
     public init(hotelSearcher: HotelSearcher) {
         self.hotelSearcher = hotelSearcher
     }
     
     func searchHotel() {
-        let searchText = self.text + "&page=1"
-        self.hotelSearcher.searchHotel(with: searchText) { [weak self] result in
+        let searchText = self.text + self.searchSuffix + String(describing: self.currentPage)
+        self.hotelSearcher.searchHotel(with: searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? searchText) { [weak self] result in
             switch result {
             case let .success(hotels):
                 print(hotels)
@@ -66,6 +68,23 @@ final public class HotelSearchViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupUI()
     }
 
+}
+
+private extension HotelSearchViewController {
+    
+    // MARK: - Setup
+    
+    func setupUI() {
+        self.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    // MARK: - Objc methods
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        self.viewModel.text = textField.text ?? ""
+    }
+    
 }
