@@ -78,6 +78,8 @@ private extension HotelSearchViewController {
     // MARK: - Setup
     
     func setupUI() {
+        self.viewInput.layer.cornerRadius = 4
+        
         self.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     

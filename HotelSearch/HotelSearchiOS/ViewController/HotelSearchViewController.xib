@@ -27,10 +27,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-ec-5Kw">
                             <rect key="frame" x="16" y="16" width="343" height="44"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KKi-XR-kIB">
+                                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KKi-XR-kIB">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxa-yL-Ew5">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxa-yL-Ew5">
                                             <rect key="frame" x="0.0" y="0.0" width="36" height="44"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xAS-pe-aEB">
@@ -41,7 +41,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="xAS-pe-aEB" secondAttribute="bottom" constant="8" id="Fve-Xi-Nx8"/>
                                                 <constraint firstItem="xAS-pe-aEB" firstAttribute="leading" secondItem="Oxa-yL-Ew5" secondAttribute="leading" constant="8" id="UXf-VU-0nh"/>
@@ -49,13 +49,15 @@
                                                 <constraint firstItem="xAS-pe-aEB" firstAttribute="top" secondItem="Oxa-yL-Ew5" secondAttribute="top" constant="8" id="vkQ-90-W6L"/>
                                             </constraints>
                                         </view>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Pesquise um destino ou hotel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E95-yV-d7w">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Pesquise um destino ou hotel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E95-yV-d7w">
                                             <rect key="frame" x="44" y="0.0" width="247" height="44"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSu-S2-jhT">
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSu-S2-jhT">
                                             <rect key="frame" x="299" y="0.0" width="44" height="44"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="TSu-S2-jhT" secondAttribute="height" id="M50-Ep-Si3"/>
                                             </constraints>
