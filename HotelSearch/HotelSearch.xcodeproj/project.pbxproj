@@ -13,6 +13,8 @@
 		FC1BAB3D250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */; };
 		FC1BAB40250EC2F700B0C1E2 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB3F250EC2F700B0C1E2 /* HTTPClient.swift */; };
 		FC1BAB42250ECA8900B0C1E2 /* hotel.json in Resources */ = {isa = PBXBuildFile; fileRef = FC1BAB41250ECA8900B0C1E2 /* hotel.json */; };
+		FC1BAB44250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB43250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift */; };
+		FC1BAB46250F7EBF00B0C1E2 /* HotelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB45250F7EBF00B0C1E2 /* HotelMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		FC1BAB3F250EC2F700B0C1E2 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FC1BAB41250ECA8900B0C1E2 /* hotel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hotel.json; path = ../../examples/hotel.json; sourceTree = "<group>"; };
+		FC1BAB43250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHotelSearcher.swift; sourceTree = "<group>"; };
+		FC1BAB45250F7EBF00B0C1E2 /* HotelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,8 @@
 		FC1BAB1E250E78A000B0C1E2 /* HotelSearch */ = {
 			isa = PBXGroup;
 			children = (
-				FC1BAB3E250EC2C400B0C1E2 /* HotelSearch API */,
 				FC1BAB37250E792800B0C1E2 /* HotelSearch Feature */,
+				FC1BAB3E250EC2C400B0C1E2 /* HotelSearch API */,
 				FC1BAB20250E78A000B0C1E2 /* Info.plist */,
 			);
 			path = HotelSearch;
@@ -107,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				FC1BAB3F250EC2F700B0C1E2 /* HTTPClient.swift */,
+				FC1BAB43250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift */,
+				FC1BAB45250F7EBF00B0C1E2 /* HotelMapper.swift */,
 			);
 			path = "HotelSearch API";
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1BAB39250E795400B0C1E2 /* Hotel.swift in Sources */,
+				FC1BAB46250F7EBF00B0C1E2 /* HotelMapper.swift in Sources */,
+				FC1BAB44250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift in Sources */,
 				FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */,
 				FC1BAB40250EC2F700B0C1E2 /* HTTPClient.swift in Sources */,
 			);
