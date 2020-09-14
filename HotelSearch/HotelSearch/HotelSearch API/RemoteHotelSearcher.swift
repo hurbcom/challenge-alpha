@@ -16,6 +16,7 @@ final public class RemoteHotelSearcher: HotelSearcher {
     private let client: HTTPClient
     
     public enum Error: Swift.Error {
+        case connectivity
         case invalidData
     }
     
@@ -33,7 +34,7 @@ final public class RemoteHotelSearcher: HotelSearcher {
                     try HotelMapper.map(data, from: response)
                 })
             case .failure:
-                completion(.failure(RemoteHotelSearcher.Error.invalidData))
+                completion(.failure(RemoteHotelSearcher.Error.connectivity))
             }
         }
     }

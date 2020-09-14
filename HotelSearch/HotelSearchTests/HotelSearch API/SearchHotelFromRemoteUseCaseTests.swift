@@ -37,6 +37,15 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         XCTAssertEqual(client.requestedURLs, [url, url])
     }
     
+    func test_searchHotel_deliversErrorOnClientError() {
+        let (sut, client) = makeSUT()
+        
+        expect(sut, toCompleteWith: .failure(RemoteHotelSearcher.Error.connectivity), when: {
+            let clientError = NSError(domain: "Test", code: 0)
+            client.complete(with: clientError)
+        })
+    }
+    
     func test_searchHotel_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
         
@@ -142,10 +151,10 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     }
     
     private func makeItem(
-        amenities: [Amenity] = [],
+        amenities: [Amenity] = [Amenity(category: "a category", name: "a name")],
         category: String,
         description: String,
-        gallery: [HotelImage] = [],
+        gallery: [HotelImage] = [HotelImage(description: "a description", url: URL(string: "https://a-url.com")!)],
         id: Int,
         image: URL,
         isHotel: Bool,

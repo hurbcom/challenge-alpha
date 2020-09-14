@@ -21,6 +21,10 @@ final class HTTPClientSpy: HTTPClient {
         messages.append((url, completion))
     }
     
+    func complete(with error: Error, at index: Int = 0) {
+        messages[index].completion(.failure(error))
+    }
+    
     func complete(withStatusCode code: Int, data: Data, at index: Int = 0) {
         let response = HTTPURLResponse(
             url: requestedURLs[index],
