@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HotelSearch/HotelSearch.xcodeproj">
+      location = "group:hurb-test/../HotelSearch/HotelSearch.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:hurb-test/hurb-test.xcodeproj">
+      location = "group:hurb-test/hurb-test.xcodeproj">
    </FileRef>
 </Workspace>
