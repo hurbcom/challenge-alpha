@@ -10,15 +10,6 @@ import Foundation
 
 final public class HotelMapper {
     
-    private init() { }
-    
-    public static func map(_ data: Data, from response: HTTPURLResponse) throws -> [Hotel] {
-        guard response.statusCode == 200, let root = try? JSONDecoder().decode(Root.self, from: data) else {
-            throw RemoteHotelSearcher.Error.invalidData
-        }
-        return root.hotels.map { $0.item }
-    }
-    
     struct Root: Decodable {
         let hotels: [RemoteHotelItem]
         
@@ -27,77 +18,13 @@ final public class HotelMapper {
         }
     }
     
-    struct RemoteHotelItem: Decodable {
-        let amenities: [RemoteAmenityItem]
-        let category: String
-        let description: String
-        let gallery: [RemoteHotelImageItem]
-        let id: Int
-        let image: URL
-        let isHotel: Bool
-        let name: String
-        let price: RemoteHotelPriceItem
-        let quantityDescriptors: RemoteQuantityDescriptorItem
-        let smallDescription: String
-        let star: Int
-        let tags: [String]
-        let url: URL
-        
-        var item: Hotel {
-            return Hotel(amenities: amenities.map { $0.item },
-                         category: category,
-                         description: description,
-                         gallery: gallery.compactMap { $0.item },
-                         id: id,
-                         image: image,
-                         isHotel: isHotel,
-                         name: name,
-                         price: price.item,
-                         quantityDescriptors: quantityDescriptors.item,
-                         smallDescription: smallDescription,
-                         star: star,
-                         tags: tags,
-                         url: url)
+    private init() { }
+    
+    public static func map(_ data: Data, from response: HTTPURLResponse) throws -> [Hotel] {
+        guard response.statusCode == 200, let root = try? JSONDecoder().decode(Root.self, from: data) else {
+            throw RemoteHotelSearcher.Error.invalidData
         }
+        return root.hotels.map { $0.item }
     }
-
-    struct RemoteAmenityItem: Decodable {
-        let category: String
-        let name: String
-        
-        var item: Amenity {
-            return Amenity(category: category, name: name)
-        }
-    }
-
-    struct RemoteHotelImageItem: Decodable {
-        let description: String
-        let url: URL
-        
-        var item: HotelImage {
-            return HotelImage(description: description, url: url)
-        }
-    }
-
-    struct RemoteHotelPriceItem: Decodable {
-        let amount: Double
-        let amountPerDay: Double
-        let currency: String
-        
-        var item: HotelPrice {
-            return HotelPrice(amount: amount, amountPerDay: amountPerDay, currency: currency)
-        }
-    }
-
-    struct RemoteQuantityDescriptorItem: Decodable {
-        let maxAdults: Int
-        let maxChildren: Int
-        let maxFreeChildrenAge: Int
-        
-        var item: QuantityDescriptor {
-            return QuantityDescriptor(maxAdults: maxAdults, maxChildren: maxChildren, maxFreeChildrenAge: maxFreeChildrenAge)
-        }
-    }
-
     
 }
