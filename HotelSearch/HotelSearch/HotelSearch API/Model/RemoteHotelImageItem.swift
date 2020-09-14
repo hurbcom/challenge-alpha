@@ -9,8 +9,8 @@
 import Foundation
 
 struct RemoteHotelImageItem: Decodable {
-    let description: String
-    let url: URL
+    let description: String?
+    let url: URL?
     
     var item: HotelImage {
         return HotelImage(description: description, url: url)

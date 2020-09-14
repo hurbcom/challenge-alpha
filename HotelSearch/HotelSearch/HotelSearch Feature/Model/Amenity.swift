@@ -9,10 +9,10 @@
 import Foundation
 
 public struct Amenity: Hashable {
-    public let category: String
-    public let name: String
+    public let category: String?
+    public let name: String?
     
-    public init(category: String, name: String) {
+    public init(category: String?, name: String?) {
         self.category = category
         self.name = name
     }

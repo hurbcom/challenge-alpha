@@ -9,9 +9,9 @@
 import Foundation
 
 struct RemoteHotelPriceItem: Decodable {
-    let amount: Double
-    let amountPerDay: Double
-    let currency: String
+    let amount: Double?
+    let amountPerDay: Double?
+    let currency: String?
     
     var item: HotelPrice {
         return HotelPrice(amount: amount, amountPerDay: amountPerDay, currency: currency)

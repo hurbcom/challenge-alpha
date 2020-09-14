@@ -9,32 +9,32 @@
 import Foundation
 
 struct RemoteHotelItem: Decodable {
-    let amenities: [RemoteAmenityItem]
-    let category: String
-    let description: String
-    let gallery: [RemoteHotelImageItem]
-    let id: Int
-    let image: URL
-    let isHotel: Bool
-    let name: String
-    let price: RemoteHotelPriceItem
-    let quantityDescriptors: RemoteQuantityDescriptorItem
-    let smallDescription: String
-    let star: Int
-    let tags: [String]
-    let url: URL
+    let amenities: [RemoteAmenityItem]?
+    let category: String?
+    let description: String?
+    let gallery: [RemoteHotelImageItem]?
+    let id: String?
+    let image: URL?
+    let isHotel: Bool?
+    let name: String?
+    let price: RemoteHotelPriceItem?
+    let quantityDescriptors: RemoteQuantityDescriptorItem?
+    let smallDescription: String?
+    let star: Int?
+    let tags: [String]?
+    let url: URL?
     
     var item: Hotel {
-        return Hotel(amenities: amenities.map { $0.item },
+        return Hotel(amenities: amenities?.compactMap { $0.item },
                      category: category,
                      description: description,
-                     gallery: gallery.compactMap { $0.item },
+                     gallery: gallery?.compactMap { $0.item },
                      id: id,
                      image: image,
                      isHotel: isHotel,
                      name: name,
-                     price: price.item,
-                     quantityDescriptors: quantityDescriptors.item,
+                     price: price?.item,
+                     quantityDescriptors: quantityDescriptors?.item,
                      smallDescription: smallDescription,
                      star: star,
                      tags: tags,

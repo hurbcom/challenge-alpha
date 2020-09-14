@@ -89,9 +89,9 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     func test_searchHotel_deliversItemsOn200HTTPResponseWithJSONItems() {
         let (sut, client) = makeSUT()
         
-        let item1 = makeItem(category: "a category", description: "a description", id: 1, image: URL(string: "https://a-image-url.com")!, isHotel: true, name: "a name", smallDescription: "a small description", star: 1, url: URL(string: "https://a-url.com")!)
+        let item1 = makeItem(category: "a category", description: "a description", id: "1", image: URL(string: "https://a-image-url.com")!, isHotel: true, name: "a name", smallDescription: "a small description", star: 1, url: URL(string: "https://a-url.com")!)
         
-        let item2 = makeItem(category: "another category", description: "another description", id: 2, image: URL(string: "https://another-image-url.com")!, isHotel: false, name: "another name", smallDescription: "another small description", star: 2, url: URL(string: "https://another-url.com")!)
+        let item2 = makeItem(category: "another category", description: "another description", id: "2", image: URL(string: "https://another-image-url.com")!, isHotel: false, name: "another name", smallDescription: "another small description", star: 2, url: URL(string: "https://another-url.com")!)
         
         let items = [item1.model, item2.model]
         
@@ -159,7 +159,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    private func makeItemsJSON(_ items: [[String: Any]]) -> Data {
+    private func makeItemsJSON(_ items: [[String: Any?]]) -> Data {
         let json = ["results": items]
         return try! JSONSerialization.data(withJSONObject: json)
     }
@@ -169,7 +169,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         category: String,
         description: String,
         gallery: [HotelImage] = [HotelImage(description: "a description", url: URL(string: "https://a-url.com")!)],
-        id: Int,
+        id: String,
         image: URL,
         isHotel: Bool,
         name: String,
@@ -178,7 +178,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         smallDescription: String,
         star: Int,
         tags: [String] = [],
-        url: URL) -> (model: Hotel, json: [String: Any]) {
+        url: URL) -> (model: Hotel, json: [String: Any?]) {
         let item = Hotel(amenities: amenities, category: category, description: description, gallery: gallery, id: id, image: image, isHotel: isHotel, name: name, price: price, quantityDescriptors: quantityDescriptors, smallDescription: smallDescription, star: star, tags: tags, url: url)
         
         return (item, item.json)
@@ -187,46 +187,46 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
 }
 
 private extension Hotel {
-    var json: [String: Any] {
+    var json: [String: Any?] {
         return [
-            "amenities": amenities.map{ $0.json },
+            "amenities": amenities?.compactMap{ $0.json },
             "category": category,
             "description": description,
-            "gallery": gallery.map{ $0.json },
+            "gallery": gallery?.compactMap{ $0.json },
             "id": id,
-            "image": image.absoluteString,
+            "image": image?.absoluteString,
             "isHotel": isHotel,
             "name": name,
-            "price": price.json,
-            "quantityDescriptors": quantityDescriptors.json,
+            "price": price?.json,
+            "quantityDescriptors": quantityDescriptors?.json,
             "smallDescription": smallDescription,
             "star": star,
             "tags": tags,
-            "url": url.absoluteString
+            "url": url?.absoluteString
         ]
     }
 }
 
 private extension Amenity {
-    var json: [String: Any] {
+    var json: [String: Any?] {
         return ["category": category,"name": name]
     }
 }
 
 private extension HotelImage {
-    var json: [String: Any] {
-        return ["description": description, "url": url.absoluteString]
+    var json: [String: Any?] {
+        return ["description": description, "url": url?.absoluteString]
     }
 }
 
 private extension HotelPrice {
-    var json: [String: Any] {
+    var json: [String: Any?] {
         return ["amount": amount, "amountPerDay": amountPerDay, "currency": currency]
     }
 }
 
 private extension QuantityDescriptor {
-    var json: [String: Any] {
+    var json: [String: Any?] {
         return ["maxAdults": maxAdults, "maxChildren": maxChildren, "maxFreeChildrenAge": maxFreeChildrenAge]
     }
 }

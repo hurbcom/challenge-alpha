@@ -9,11 +9,11 @@
 import Foundation
 
 public struct HotelPrice: Hashable {
-    public let amount: Double
-    public let amountPerDay: Double
-    public let currency: String
+    public let amount: Double?
+    public let amountPerDay: Double?
+    public let currency: String?
     
-    public init(amount: Double, amountPerDay: Double, currency: String) {
+    public init(amount: Double?, amountPerDay: Double?, currency: String?) {
         self.amount = amount
         self.amountPerDay = amountPerDay
         self.currency = currency

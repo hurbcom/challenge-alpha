@@ -9,11 +9,11 @@
 import Foundation
 
 public struct QuantityDescriptor: Hashable {
-    public let maxAdults: Int
-    public let maxChildren: Int
-    public let maxFreeChildrenAge: Int
+    public let maxAdults: Int?
+    public let maxChildren: Int?
+    public let maxFreeChildrenAge: Int?
     
-    public init(maxAdults: Int, maxChildren: Int, maxFreeChildrenAge: Int) {
+    public init(maxAdults: Int?, maxChildren: Int?, maxFreeChildrenAge: Int?) {
         self.maxAdults = maxAdults
         self.maxChildren = maxChildren
         self.maxFreeChildrenAge = maxFreeChildrenAge

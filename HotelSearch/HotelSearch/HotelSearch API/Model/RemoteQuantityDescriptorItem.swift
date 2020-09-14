@@ -9,9 +9,9 @@
 import Foundation
 
 struct RemoteQuantityDescriptorItem: Decodable {
-    let maxAdults: Int
-    let maxChildren: Int
-    let maxFreeChildrenAge: Int
+    let maxAdults: Int?
+    let maxChildren: Int?
+    let maxFreeChildrenAge: Int?
     
     var item: QuantityDescriptor {
         return QuantityDescriptor(maxAdults: maxAdults, maxChildren: maxChildren, maxFreeChildrenAge: maxFreeChildrenAge)

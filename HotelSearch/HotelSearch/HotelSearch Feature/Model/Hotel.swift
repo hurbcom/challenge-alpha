@@ -9,22 +9,37 @@
 import Foundation
 
 public struct Hotel: Hashable {
-    public let amenities: [Amenity]
-    public let category: String
-    public let description: String
-    public let gallery: [HotelImage]
-    public let id: Int
-    public let image: URL
-    public let isHotel: Bool
-    public let name: String
-    public let price: HotelPrice
-    public let quantityDescriptors: QuantityDescriptor
-    public let smallDescription: String
-    public let star: Int
-    public let tags: [String]
-    public let url: URL
+    public let amenities: [Amenity]?
+    public let category: String?
+    public let description: String?
+    public let gallery: [HotelImage]?
+    public let id: String?
+    public let image: URL?
+    public let isHotel: Bool?
+    public let name: String?
+    public let price: HotelPrice?
+    public let quantityDescriptors: QuantityDescriptor?
+    public let smallDescription: String?
+    public let star: Int?
+    public let tags: [String]?
+    public let url: URL?
     
-    public init(amenities: [Amenity], category: String, description: String, gallery: [HotelImage], id: Int, image: URL, isHotel: Bool, name: String, price: HotelPrice, quantityDescriptors: QuantityDescriptor, smallDescription: String, star: Int, tags: [String], url: URL) {
+    public init(
+        amenities: [Amenity]?,
+        category: String?,
+        description: String?,
+        gallery: [HotelImage]?,
+        id: String?,
+        image: URL?,
+        isHotel: Bool?,
+        name: String?,
+        price: HotelPrice?,
+        quantityDescriptors: QuantityDescriptor?,
+        smallDescription: String?,
+        star: Int?,
+        tags: [String]?,
+        url: URL?) {
+        
         self.amenities = amenities
         self.category = category
         self.description = description
