@@ -27,6 +27,16 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         XCTAssertEqual(client.requestedURLs, [url])
     }
     
+    func test_searchHotel_requestsURLWithSearchTextInsertion() {
+        let url = URL(string: "https://any-url.com/")!
+        let (sut, client) = makeSUT(url: url)
+        
+        let searchText = "test"
+        sut.searchHotel(with: searchText, completion: { _ in })
+        
+        XCTAssertEqual(client.requestedURLs, [URL(string: url.absoluteString + searchText)!])
+    }
+    
     func test_searchHotelTwice_requestsDataFromURLTwice() {
         let url = URL(string: "https://any-url.com")!
         let (sut, client) = makeSUT(url: url)

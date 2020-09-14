@@ -26,7 +26,8 @@ final public class RemoteHotelSearcher: HotelSearcher {
     }
     
     public func searchHotel(with searchText: String, completion: @escaping (RemoteHotelSearcher.SearchResult) -> Void) {
-        self.client.get(from: url) { [weak self] result in
+        let finalURL = URL(string: url.absoluteString + searchText)!
+        self.client.get(from: finalURL) { [weak self] result in
             guard self != nil else { return }
             switch result {
             case let .success((data, response)):
