@@ -10,6 +10,21 @@ import UIKit
 
 final public class HotelSearchViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var inputView: UIView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var btnSearch: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    // MARK: - IBActions
+    
+    @IBAction func btnSearchAction(_ sender: UIButton) {
+        
+    }
+    
+    // MARK: - Life Cycle
+    
     public init() {
         super.init(nibName: nil, bundle: Bundle(for: HotelSearchViewController.self))
     }

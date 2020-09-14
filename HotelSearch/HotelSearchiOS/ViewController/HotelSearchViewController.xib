@@ -9,6 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelSearchViewController" customModule="HotelSearchiOS" customModuleProvider="target">
             <connections>
+                <outlet property="btnSearch" destination="TSu-S2-jhT" id="6BK-BT-Nhc"/>
+                <outlet property="collectionView" destination="vwf-C7-itH" id="keH-IV-Kmk"/>
+                <outlet property="inputView" destination="fqN-ec-5Kw" id="A9h-LR-ZqT"/>
+                <outlet property="textField" destination="E95-yV-d7w" id="3en-21-aog"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,6 +61,9 @@
                                             </constraints>
                                             <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="chevron.right.square.fill" catalog="system"/>
+                                            <connections>
+                                                <action selector="btnSearchAction:" destination="-1" eventType="touchUpInside" id="nO7-Cx-SzM"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
