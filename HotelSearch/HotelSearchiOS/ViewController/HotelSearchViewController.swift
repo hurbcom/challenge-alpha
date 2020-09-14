@@ -10,7 +10,14 @@ import UIKit
 
 import HotelSearch
 
+public protocol HotelSearchView: class {
+    func display(_ model: [Hotel])
+    func displayError(_ error: String)
+}
+
 final public class HotelSearchViewModel {
+    
+    weak public var hotelSearchView: HotelSearchView?
     
     var text: String = ""
     
@@ -25,11 +32,14 @@ final public class HotelSearchViewModel {
     func searchHotel() {
         let searchText = self.text + self.searchSuffix + String(describing: self.currentPage)
         self.hotelSearcher.searchHotel(with: searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? searchText) { [weak self] result in
-            switch result {
-            case let .success(hotels):
-                print(hotels)
-            case let .failure(error):
-                print(error)
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                switch result {
+                case let .success(hotels):
+                    self.hotelSearchView?.display(hotels)
+                case let .failure(error):
+                    self.hotelSearchView?.displayError(error.localizedDescription)
+                }
             }
         }
     }
@@ -71,6 +81,18 @@ final public class HotelSearchViewController: UIViewController {
         self.setupUI()
     }
 
+}
+
+extension HotelSearchViewController: HotelSearchView {
+    
+    public func display(_ model: [Hotel]) {
+        print(model)
+    }
+    
+    public func displayError(_ error: String) {
+        print(error)
+    }
+    
 }
 
 private extension HotelSearchViewController {
