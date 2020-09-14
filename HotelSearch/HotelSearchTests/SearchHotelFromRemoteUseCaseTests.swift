@@ -121,7 +121,8 @@ final class RemoteHotelSearcher {
     }
     
     func searchHotel(with searchText: String, competion: @escaping (Result) -> Void) {
-        self.client.get(from: url) { result in
+        self.client.get(from: url) { [weak self] result in
+            guard self != nil else { return }
             switch result {
             case let .success((data, response)):
                 competion(Result {
@@ -228,6 +229,20 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
             client.complete(withStatusCode: 200, data: json)
         })
         
+    }
+    
+    func test_searchHotel_deliversNoResultAfterSUTInstanceHasBeenDeallocated() {
+        let url = URL(string: "https://any-url.com")!
+        let client = HTTPClientSpy()
+        var sut: RemoteHotelSearcher? = RemoteHotelSearcher(url: url, client: client)
+        
+        var capturedResults = [RemoteHotelSearcher.Result]()
+        sut?.searchHotel(with: "", competion: { capturedResults.append($0) })
+        
+        sut = nil
+        client.complete(withStatusCode: 200, data: makeItemsJSON([]))
+        
+        XCTAssertTrue(capturedResults.isEmpty)
     }
     
     // MARK: Helpers
