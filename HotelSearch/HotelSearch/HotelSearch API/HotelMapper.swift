@@ -14,7 +14,7 @@ final public class HotelMapper {
         let hotels: [RemoteHotelItem]
         
         enum CodingKeys: String, CodingKey {
-            case hotels = "result"
+            case hotels = "results"
         }
     }
     

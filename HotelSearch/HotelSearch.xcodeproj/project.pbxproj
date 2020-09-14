@@ -28,6 +28,7 @@
 		FC7449FD250F8A2F0048DCEE /* HotelSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7449FB250F8A2F0048DCEE /* HotelSearchViewController.swift */; };
 		FC7449FE250F8A2F0048DCEE /* HotelSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7449FC250F8A2F0048DCEE /* HotelSearchViewController.xib */; };
 		FCC5454B2510191B0048CF72 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5454A2510191B0048CF72 /* URLSessionHTTPClient.swift */; };
+		FCC5455C25101C250048CF72 /* HotelSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1BAB1C250E78A000B0C1E2 /* HotelSearch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FC74496A250F876B0048DCEE;
 			remoteInfo = HotelSearchiOS;
+		};
+		FCC5455E25101C250048CF72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC1BAB13250E78A000B0C1E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC1BAB1B250E78A000B0C1E2;
+			remoteInfo = HotelSearch;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -97,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC5455C25101C250048CF72 /* HotelSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +128,7 @@
 				FC74496C250F876B0048DCEE /* HotelSearchiOS */,
 				FC744977250F876C0048DCEE /* HotelSearchiOSTests */,
 				FC1BAB1D250E78A000B0C1E2 /* Products */,
+				FCC5455B25101C250048CF72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +250,13 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		FCC5455B25101C250048CF72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -308,6 +325,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FCC5455F25101C250048CF72 /* PBXTargetDependency */,
 			);
 			name = HotelSearchiOS;
 			productName = HotelSearchiOS;
@@ -471,6 +489,11 @@
 			isa = PBXTargetDependency;
 			target = FC74496A250F876B0048DCEE /* HotelSearchiOS */;
 			targetProxy = FC744975250F876C0048DCEE /* PBXContainerItemProxy */;
+		};
+		FCC5455F25101C250048CF72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC1BAB1B250E78A000B0C1E2 /* HotelSearch */;
+			targetProxy = FCC5455E25101C250048CF72 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

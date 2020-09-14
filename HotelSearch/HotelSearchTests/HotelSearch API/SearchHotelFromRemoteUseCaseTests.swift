@@ -160,7 +160,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     }
     
     private func makeItemsJSON(_ items: [[String: Any]]) -> Data {
-        let json = ["result": items]
+        let json = ["results": items]
         return try! JSONSerialization.data(withJSONObject: json)
     }
     
