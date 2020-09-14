@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:HotelSearch/HotelSearch.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "container:hurb-test/hurb-test.xcodeproj">
+   </FileRef>
+</Workspace>
