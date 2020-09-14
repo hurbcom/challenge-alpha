@@ -23,6 +23,7 @@
 		FC1BAB58250F81A500B0C1E2 /* QuantityDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB57250F81A500B0C1E2 /* QuantityDescriptor.swift */; };
 		FC1BAB5A250F81D600B0C1E2 /* HotelPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB59250F81D600B0C1E2 /* HotelPrice.swift */; };
 		FC1BAB5C250F81F800B0C1E2 /* HotelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB5B250F81F800B0C1E2 /* HotelImage.swift */; };
+		FC1BAB5E250F821100B0C1E2 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB5D250F821100B0C1E2 /* Amenity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		FC1BAB57250F81A500B0C1E2 /* QuantityDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityDescriptor.swift; sourceTree = "<group>"; };
 		FC1BAB59250F81D600B0C1E2 /* HotelPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelPrice.swift; sourceTree = "<group>"; };
 		FC1BAB5B250F81F800B0C1E2 /* HotelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelImage.swift; sourceTree = "<group>"; };
+		FC1BAB5D250F821100B0C1E2 /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,10 +167,11 @@
 		FC1BAB56250F819900B0C1E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FC1BAB5D250F821100B0C1E2 /* Amenity.swift */,
 				FC1BAB38250E795400B0C1E2 /* Hotel.swift */,
-				FC1BAB57250F81A500B0C1E2 /* QuantityDescriptor.swift */,
-				FC1BAB59250F81D600B0C1E2 /* HotelPrice.swift */,
 				FC1BAB5B250F81F800B0C1E2 /* HotelImage.swift */,
+				FC1BAB59250F81D600B0C1E2 /* HotelPrice.swift */,
+				FC1BAB57250F81A500B0C1E2 /* QuantityDescriptor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				FC1BAB44250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift in Sources */,
 				FC1BAB5C250F81F800B0C1E2 /* HotelImage.swift in Sources */,
 				FC1BAB53250F812300B0C1E2 /* RemoteHotelImageItem.swift in Sources */,
+				FC1BAB5E250F821100B0C1E2 /* Amenity.swift in Sources */,
 				FC1BAB58250F81A500B0C1E2 /* QuantityDescriptor.swift in Sources */,
 				FC1BAB4D250F80AE00B0C1E2 /* RemoteHotelItem.swift in Sources */,
 				FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */,
