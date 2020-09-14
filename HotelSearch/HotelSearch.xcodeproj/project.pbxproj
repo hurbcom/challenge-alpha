@@ -16,6 +16,7 @@
 		FC1BAB46250F7EBF00B0C1E2 /* HotelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB45250F7EBF00B0C1E2 /* HotelMapper.swift */; };
 		FC1BAB4A250F805100B0C1E2 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB49250F805100B0C1E2 /* HTTPClientSpy.swift */; };
 		FC1BAB4D250F80AE00B0C1E2 /* RemoteHotelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB4C250F80AE00B0C1E2 /* RemoteHotelItem.swift */; };
+		FC1BAB4F250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB4E250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		FC1BAB45250F7EBF00B0C1E2 /* HotelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMapper.swift; sourceTree = "<group>"; };
 		FC1BAB49250F805100B0C1E2 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		FC1BAB4C250F80AE00B0C1E2 /* RemoteHotelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHotelItem.swift; sourceTree = "<group>"; };
+		FC1BAB4E250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteQuantityDescriptorItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				FC1BAB4C250F80AE00B0C1E2 /* RemoteHotelItem.swift */,
+				FC1BAB4E250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				FC1BAB4D250F80AE00B0C1E2 /* RemoteHotelItem.swift in Sources */,
 				FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */,
 				FC1BAB40250EC2F700B0C1E2 /* HTTPClient.swift in Sources */,
+				FC1BAB4F250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -69,13 +69,3 @@ struct RemoteHotelPriceItem: Decodable {
         return HotelPrice(amount: amount, amountPerDay: amountPerDay, currency: currency)
     }
 }
-
-struct RemoteQuantityDescriptorItem: Decodable {
-    let maxAdults: Int
-    let maxChildren: Int
-    let maxFreeChildrenAge: Int
-    
-    var item: QuantityDescriptor {
-        return QuantityDescriptor(maxAdults: maxAdults, maxChildren: maxChildren, maxFreeChildrenAge: maxFreeChildrenAge)
-    }
-}
