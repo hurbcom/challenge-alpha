@@ -40,7 +40,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     func test_searchHotel_deliversErrorOnClientError() {
         let (sut, client) = makeSUT()
         
-        expect(sut, toCompleteWith: .failure(RemoteHotelSearcher.Error.connectivity), when: {
+        expect(sut, toCompleteWith: failure(.connectivity), when: {
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError)
         })
@@ -51,7 +51,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         
         let samples = [199, 201, 300, 400, 500]
         samples.enumerated().forEach { index, code in
-            expect(sut, toCompleteWith: .failure(RemoteHotelSearcher.Error.invalidData), when: {
+            expect(sut, toCompleteWith: failure(.invalidData), when: {
                 let emptyListJson = makeItemsJSON([])
                 client.complete(withStatusCode: code, data: emptyListJson, at: index)
             })
@@ -61,7 +61,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     func test_searchHotel_deliversErrorOn200HTTPResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
         
-        expect(sut, toCompleteWith: .failure(RemoteHotelSearcher.Error.invalidData), when: {
+        expect(sut, toCompleteWith: failure(.invalidData), when: {
             let invalidJSON = Data("invalid json".utf8)
             client.complete(withStatusCode: 200, data: invalidJSON)
         })
@@ -114,6 +114,10 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         trackForMemoryLeaks(client)
         trackForMemoryLeaks(sut)
         return (sut, client)
+    }
+    
+    private func failure(_ error: RemoteHotelSearcher.Error) -> RemoteHotelSearcher.SearchResult {
+        return .failure(error)
     }
     
     private func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
