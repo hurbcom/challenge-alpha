@@ -124,7 +124,15 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     private func makeSUT(url: URL = URL(string: "https://any-url.com")!) -> (sut: RemoteHotelSearcher, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteHotelSearcher(url: url, client: client)
+        trackForMemoryLeaks(client)
+        trackForMemoryLeaks(sut)
         return (sut, client)
+    }
+    
+    private func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
+        }
     }
     
     private func expect(_ sut: RemoteHotelSearcher, toCompleteWith expectedSearchResult: RemoteHotelSearcher.SearchResult, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
