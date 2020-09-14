@@ -25,6 +25,8 @@
 		FC1BAB5C250F81F800B0C1E2 /* HotelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB5B250F81F800B0C1E2 /* HotelImage.swift */; };
 		FC1BAB5E250F821100B0C1E2 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB5D250F821100B0C1E2 /* Amenity.swift */; };
 		FC744974250F876C0048DCEE /* HotelSearchiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC74496B250F876B0048DCEE /* HotelSearchiOS.framework */; };
+		FC7449FD250F8A2F0048DCEE /* HotelSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7449FB250F8A2F0048DCEE /* HotelSearchViewController.swift */; };
+		FC7449FE250F8A2F0048DCEE /* HotelSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7449FC250F8A2F0048DCEE /* HotelSearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		FC74496E250F876C0048DCEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC744973250F876C0048DCEE /* HotelSearchiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelSearchiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC74497A250F876C0048DCEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC7449FB250F8A2F0048DCEE /* HotelSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchViewController.swift; sourceTree = "<group>"; };
+		FC7449FC250F8A2F0048DCEE /* HotelSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelSearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,7 @@
 		FC74496C250F876B0048DCEE /* HotelSearchiOS */ = {
 			isa = PBXGroup;
 			children = (
+				FC7449FA250F8A110048DCEE /* ViewController */,
 				FC74496E250F876C0048DCEE /* Info.plist */,
 			);
 			path = HotelSearchiOS;
@@ -221,6 +226,15 @@
 				FC74497A250F876C0048DCEE /* Info.plist */,
 			);
 			path = HotelSearchiOSTests;
+			sourceTree = "<group>";
+		};
+		FC7449FA250F8A110048DCEE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FC7449FB250F8A2F0048DCEE /* HotelSearchViewController.swift */,
+				FC7449FC250F8A2F0048DCEE /* HotelSearchViewController.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +349,7 @@
 					};
 					FC74496A250F876B0048DCEE = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					FC744972250F876C0048DCEE = {
 						CreatedOnToolsVersion = 11.6;
@@ -381,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7449FE250F8A2F0048DCEE /* HotelSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7449FD250F8A2F0048DCEE /* HotelSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +689,7 @@
 		FC74497D250F876C0048DCEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -689,6 +707,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -697,6 +716,7 @@
 		FC74497E250F876C0048DCEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -723,6 +743,7 @@
 		FC744980250F876C0048DCEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HotelSearchiOSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -742,6 +763,7 @@
 		FC744981250F876C0048DCEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HotelSearchiOSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
