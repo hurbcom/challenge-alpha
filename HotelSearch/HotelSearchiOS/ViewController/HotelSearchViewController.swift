@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HotelSearchViewController: UIViewController {
+final public class HotelSearchViewController: UIViewController {
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
     }
 

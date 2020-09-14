@@ -11,6 +11,10 @@
 		FC7449CD250F88E70048DCEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7449CC250F88E70048DCEE /* SceneDelegate.swift */; };
 		FC7449D4250F88EA0048DCEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7449D3250F88EA0048DCEE /* Assets.xcassets */; };
 		FC7449D7250F88EA0048DCEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC7449D5250F88EA0048DCEE /* LaunchScreen.storyboard */; };
+		FC744A02250F8A6D0048DCEE /* HotelSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC744A00250F8A6D0048DCEE /* HotelSearch.framework */; };
+		FC744A03250F8A6D0048DCEE /* HotelSearch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC744A00250F8A6D0048DCEE /* HotelSearch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC744A04250F8A6D0048DCEE /* HotelSearchiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */; };
+		FC744A05250F8A6D0048DCEE /* HotelSearchiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FC744A06250F8A6D0048DCEE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FC744A03250F8A6D0048DCEE /* HotelSearch.framework in Embed Frameworks */,
+				FC744A05250F8A6D0048DCEE /* HotelSearchiOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FC7449C7250F88E70048DCEE /* hurb-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hurb-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7449CA250F88E70048DCEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +60,8 @@
 		FC7449E3250F88EA0048DCEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC7449E8250F88EA0048DCEE /* hurb-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hurb-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7449EE250F88EA0048DCEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC744A00250F8A6D0048DCEE /* HotelSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HotelSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HotelSearchiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC744A02250F8A6D0048DCEE /* HotelSearch.framework in Frameworks */,
+				FC744A04250F8A6D0048DCEE /* HotelSearchiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +98,7 @@
 				FC7449E0250F88EA0048DCEE /* hurb-testTests */,
 				FC7449EB250F88EA0048DCEE /* hurb-testUITests */,
 				FC7449C8250F88E70048DCEE /* Products */,
+				FC7449FF250F8A6D0048DCEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +140,15 @@
 			path = "hurb-testUITests";
 			sourceTree = "<group>";
 		};
+		FC7449FF250F8A6D0048DCEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC744A00250F8A6D0048DCEE /* HotelSearch.framework */,
+				FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,6 +159,7 @@
 				FC7449C3250F88E70048DCEE /* Sources */,
 				FC7449C4250F88E70048DCEE /* Frameworks */,
 				FC7449C5250F88E70048DCEE /* Resources */,
+				FC744A06250F8A6D0048DCEE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
