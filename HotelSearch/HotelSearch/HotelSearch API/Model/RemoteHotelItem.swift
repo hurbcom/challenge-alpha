@@ -50,12 +50,3 @@ struct RemoteAmenityItem: Decodable {
         return Amenity(category: category, name: name)
     }
 }
-
-struct RemoteHotelImageItem: Decodable {
-    let description: String
-    let url: URL
-    
-    var item: HotelImage {
-        return HotelImage(description: description, url: url)
-    }
-}
