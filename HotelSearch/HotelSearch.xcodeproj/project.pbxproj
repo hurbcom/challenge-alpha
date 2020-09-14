@@ -20,6 +20,7 @@
 		FC1BAB51250F810900B0C1E2 /* RemoteHotelPriceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB50250F810900B0C1E2 /* RemoteHotelPriceItem.swift */; };
 		FC1BAB53250F812300B0C1E2 /* RemoteHotelImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB52250F812300B0C1E2 /* RemoteHotelImageItem.swift */; };
 		FC1BAB55250F813E00B0C1E2 /* RemoteAmenityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB54250F813E00B0C1E2 /* RemoteAmenityItem.swift */; };
+		FC1BAB58250F81A500B0C1E2 /* QuantityDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB57250F81A500B0C1E2 /* QuantityDescriptor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FC1BAB50250F810900B0C1E2 /* RemoteHotelPriceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHotelPriceItem.swift; sourceTree = "<group>"; };
 		FC1BAB52250F812300B0C1E2 /* RemoteHotelImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHotelImageItem.swift; sourceTree = "<group>"; };
 		FC1BAB54250F813E00B0C1E2 /* RemoteAmenityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAmenityItem.swift; sourceTree = "<group>"; };
+		FC1BAB57250F81A500B0C1E2 /* QuantityDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityDescriptor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +112,7 @@
 		FC1BAB37250E792800B0C1E2 /* HotelSearch Feature */ = {
 			isa = PBXGroup;
 			children = (
-				FC1BAB38250E795400B0C1E2 /* Hotel.swift */,
+				FC1BAB56250F819900B0C1E2 /* Model */,
 				FC1BAB3A250E7C6600B0C1E2 /* HotelSearcher.swift */,
 			);
 			path = "HotelSearch Feature";
@@ -152,6 +154,15 @@
 				FC1BAB50250F810900B0C1E2 /* RemoteHotelPriceItem.swift */,
 				FC1BAB52250F812300B0C1E2 /* RemoteHotelImageItem.swift */,
 				FC1BAB54250F813E00B0C1E2 /* RemoteAmenityItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC1BAB56250F819900B0C1E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC1BAB38250E795400B0C1E2 /* Hotel.swift */,
+				FC1BAB57250F81A500B0C1E2 /* QuantityDescriptor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +281,7 @@
 				FC1BAB46250F7EBF00B0C1E2 /* HotelMapper.swift in Sources */,
 				FC1BAB44250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift in Sources */,
 				FC1BAB53250F812300B0C1E2 /* RemoteHotelImageItem.swift in Sources */,
+				FC1BAB58250F81A500B0C1E2 /* QuantityDescriptor.swift in Sources */,
 				FC1BAB4D250F80AE00B0C1E2 /* RemoteHotelItem.swift in Sources */,
 				FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */,
 				FC1BAB55250F813E00B0C1E2 /* RemoteAmenityItem.swift in Sources */,

@@ -73,15 +73,3 @@ public struct HotelPrice: Hashable {
         self.currency = currency
     }
 }
-
-public struct QuantityDescriptor: Hashable {
-    public let maxAdults: Int
-    public let maxChildren: Int
-    public let maxFreeChildrenAge: Int
-    
-    public init(maxAdults: Int, maxChildren: Int, maxFreeChildrenAge: Int) {
-        self.maxAdults = maxAdults
-        self.maxChildren = maxChildren
-        self.maxFreeChildrenAge = maxFreeChildrenAge
-    }
-}
