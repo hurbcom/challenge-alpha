@@ -12,9 +12,9 @@
 		FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB3A250E7C6600B0C1E2 /* HotelSearcher.swift */; };
 		FC1BAB3D250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */; };
 		FC1BAB40250EC2F700B0C1E2 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB3F250EC2F700B0C1E2 /* HTTPClient.swift */; };
-		FC1BAB42250ECA8900B0C1E2 /* hotel.json in Resources */ = {isa = PBXBuildFile; fileRef = FC1BAB41250ECA8900B0C1E2 /* hotel.json */; };
 		FC1BAB44250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB43250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift */; };
 		FC1BAB46250F7EBF00B0C1E2 /* HotelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB45250F7EBF00B0C1E2 /* HotelMapper.swift */; };
+		FC1BAB4A250F805100B0C1E2 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB49250F805100B0C1E2 /* HTTPClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +36,9 @@
 		FC1BAB3A250E7C6600B0C1E2 /* HotelSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearcher.swift; sourceTree = "<group>"; };
 		FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		FC1BAB3F250EC2F700B0C1E2 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		FC1BAB41250ECA8900B0C1E2 /* hotel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hotel.json; path = ../../examples/hotel.json; sourceTree = "<group>"; };
 		FC1BAB43250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHotelSearcher.swift; sourceTree = "<group>"; };
 		FC1BAB45250F7EBF00B0C1E2 /* HotelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMapper.swift; sourceTree = "<group>"; };
+		FC1BAB49250F805100B0C1E2 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +91,8 @@
 		FC1BAB29250E78A100B0C1E2 /* HotelSearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				FC1BAB47250F802500B0C1E2 /* HotelSearch API */,
 				FC1BAB2C250E78A100B0C1E2 /* Info.plist */,
-				FC1BAB41250ECA8900B0C1E2 /* hotel.json */,
-				FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */,
 			);
 			path = HotelSearchTests;
 			sourceTree = "<group>";
@@ -115,6 +114,23 @@
 				FC1BAB45250F7EBF00B0C1E2 /* HotelMapper.swift */,
 			);
 			path = "HotelSearch API";
+			sourceTree = "<group>";
+		};
+		FC1BAB47250F802500B0C1E2 /* HotelSearch API */ = {
+			isa = PBXGroup;
+			children = (
+				FC1BAB48250F804900B0C1E2 /* Helpers */,
+				FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */,
+			);
+			path = "HotelSearch API";
+			sourceTree = "<group>";
+		};
+		FC1BAB48250F804900B0C1E2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC1BAB49250F805100B0C1E2 /* HTTPClientSpy.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC1BAB42250ECA8900B0C1E2 /* hotel.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1BAB3D250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift in Sources */,
+				FC1BAB4A250F805100B0C1E2 /* HTTPClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
