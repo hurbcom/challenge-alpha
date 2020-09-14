@@ -27,6 +27,7 @@
 		FC744974250F876C0048DCEE /* HotelSearchiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC74496B250F876B0048DCEE /* HotelSearchiOS.framework */; };
 		FC7449FD250F8A2F0048DCEE /* HotelSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7449FB250F8A2F0048DCEE /* HotelSearchViewController.swift */; };
 		FC7449FE250F8A2F0048DCEE /* HotelSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7449FC250F8A2F0048DCEE /* HotelSearchViewController.xib */; };
+		FCC5454B2510191B0048CF72 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5454A2510191B0048CF72 /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		FC74497A250F876C0048DCEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC7449FB250F8A2F0048DCEE /* HotelSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchViewController.swift; sourceTree = "<group>"; };
 		FC7449FC250F8A2F0048DCEE /* HotelSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelSearchViewController.xib; sourceTree = "<group>"; };
+		FCC5454A2510191B0048CF72 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				FC1BAB3F250EC2F700B0C1E2 /* HTTPClient.swift */,
 				FC1BAB43250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift */,
 				FC1BAB45250F7EBF00B0C1E2 /* HotelMapper.swift */,
+				FCC5454A2510191B0048CF72 /* URLSessionHTTPClient.swift */,
 			);
 			path = "HotelSearch API";
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				FC1BAB3B250E7C6600B0C1E2 /* HotelSearcher.swift in Sources */,
 				FC1BAB55250F813E00B0C1E2 /* RemoteAmenityItem.swift in Sources */,
 				FC1BAB40250EC2F700B0C1E2 /* HTTPClient.swift in Sources */,
+				FCC5454B2510191B0048CF72 /* URLSessionHTTPClient.swift in Sources */,
 				FC1BAB4F250F80ED00B0C1E2 /* RemoteQuantityDescriptorItem.swift in Sources */,
 				FC1BAB5A250F81D600B0C1E2 /* HotelPrice.swift in Sources */,
 				FC1BAB51250F810900B0C1E2 /* RemoteHotelPriceItem.swift in Sources */,
