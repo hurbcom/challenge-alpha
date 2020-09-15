@@ -24,10 +24,21 @@ class HotelCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.setupUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+}
+
+private extension HotelCell {
+
+    // MARK: - Setup
+    
+    func setupUI() {
+        [self.imvBackground, self.viewBlur].forEach { $0.layer.cornerRadius = 6 }
     }
     
 }
