@@ -94,12 +94,9 @@ final public class HotelSearchViewModel {
     }
     
     public func searchHotel() {
-        self.hotels.removeAll()
         let searchText = self.text + self.searchSuffix + String(describing: self.currentPage)
-        self.imagesData.removeAll()
-        self.imageLoadTasks.removeAll()
+        self.cleanPreviousHotelsStates()
         self.hotelSearchView?.displayLoading(true)
-        self.hotelSearchView?.display([])
         self.hotelSearcher.searchHotel(with: searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? searchText) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
@@ -113,6 +110,13 @@ final public class HotelSearchViewModel {
                 self.hotelSearchView?.displayLoading(false)
             }
         }
+    }
+    
+    private func cleanPreviousHotelsStates() {
+        self.hotels.removeAll()
+        self.imagesData.removeAll()
+        self.imageLoadTasks.removeAll()
+        self.hotelSearchView?.display([])
     }
     
     public func loadImage(at index: Int) {
@@ -196,6 +200,8 @@ private extension HotelSearchViewController {
         self.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         self.tableView.register(UINib(nibName: String(describing: HotelCell.self), bundle: Bundle(for: HotelCell.self)), forCellReuseIdentifier: String(describing: HotelCell.self))
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 200
         self.tableView.dataSource = self
         self.tableView.prefetchDataSource = self
         self.tableView.delegate = self
