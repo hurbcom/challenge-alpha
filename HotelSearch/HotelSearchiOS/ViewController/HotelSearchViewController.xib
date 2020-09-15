@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelSearchViewController" customModule="HotelSearchiOS" customModuleProvider="target">
             <connections>
                 <outlet property="btnSearch" destination="TSu-S2-jhT" id="6BK-BT-Nhc"/>
+                <outlet property="spinner" destination="hp9-4I-xhT" id="VvA-oZ-Crm"/>
                 <outlet property="tableView" destination="uWW-ZX-NhG" id="A7x-bZ-fz3"/>
                 <outlet property="textField" destination="E95-yV-d7w" id="3en-21-aog"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -93,6 +94,9 @@
                     <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hp9-4I-xhT">
+                    <rect key="frame" x="169" y="353" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -100,8 +104,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1CF-MW-4v3" secondAttribute="trailing" id="Kcv-cE-lO7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uWW-ZX-NhG" secondAttribute="trailing" id="YYU-Hb-VG3"/>
                 <constraint firstItem="1CF-MW-4v3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ytk-SN-PLk"/>
+                <constraint firstItem="hp9-4I-xhT" firstAttribute="centerY" secondItem="uWW-ZX-NhG" secondAttribute="centerY" id="eAr-in-sqN"/>
                 <constraint firstItem="1CF-MW-4v3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="g8P-Wb-MQE"/>
                 <constraint firstItem="uWW-ZX-NhG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mW2-Tm-76f"/>
+                <constraint firstItem="hp9-4I-xhT" firstAttribute="centerX" secondItem="uWW-ZX-NhG" secondAttribute="centerX" id="mYn-Fj-fYJ"/>
                 <constraint firstAttribute="bottom" secondItem="uWW-ZX-NhG" secondAttribute="bottom" id="tTi-Bs-gHj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

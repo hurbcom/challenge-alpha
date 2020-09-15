@@ -13,6 +13,7 @@ import HotelSearch
 public protocol HotelSearchView: class {
     func display(_ model: [Hotel])
     func displayError(_ error: String)
+    func displayLoading(_ isLoading: Bool)
 }
 
 final public class HotelSearchViewModel {
@@ -31,6 +32,7 @@ final public class HotelSearchViewModel {
     
     func searchHotel() {
         let searchText = self.text + self.searchSuffix + String(describing: self.currentPage)
+        self.hotelSearchView?.displayLoading(true)
         self.hotelSearcher.searchHotel(with: searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? searchText) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
@@ -40,6 +42,7 @@ final public class HotelSearchViewModel {
                 case let .failure(error):
                     self.hotelSearchView?.displayError(error.localizedDescription)
                 }
+                self.hotelSearchView?.displayLoading(false)
             }
         }
     }
@@ -54,6 +57,7 @@ final public class HotelSearchViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     // MARK: - IBActions
     
@@ -118,6 +122,11 @@ extension HotelSearchViewController: HotelSearchView {
     
     public func displayError(_ error: String) {
         print(error)
+    }
+    
+    public func displayLoading(_ isLoading: Bool) {
+        isLoading ? self.spinner.startAnimating() : self.spinner.stopAnimating()
+        self.tableView.isHidden = isLoading
     }
     
 }
