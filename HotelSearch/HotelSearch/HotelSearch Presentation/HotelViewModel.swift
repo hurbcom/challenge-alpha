@@ -25,7 +25,9 @@ final public class HotelViewModel {
     }
     public var amenities: String? {
         let amenitiesArr = self.hotel.amenities
-        return amenitiesArr?.compactMap({ $0.name }).prefix(upTo: 3).reduce(into: "", { (result, text) in
+        let amenitiesCount = amenitiesArr?.count ?? 0
+        let prefixCount = amenitiesCount >= 3 ? 3 : amenitiesCount
+        return amenitiesArr?.compactMap({ $0.name }).prefix(upTo: prefixCount).reduce(into: "", { (result, text) in
             result += text == amenitiesArr?.first?.name ? text : " | \(text)"
         })
     }

@@ -94,8 +94,12 @@ final public class HotelSearchViewModel {
     }
     
     public func searchHotel() {
+        self.hotels.removeAll()
         let searchText = self.text + self.searchSuffix + String(describing: self.currentPage)
+        self.imagesData.removeAll()
+        self.imageLoadTasks.removeAll()
         self.hotelSearchView?.displayLoading(true)
+        self.hotelSearchView?.display([])
         self.hotelSearcher.searchHotel(with: searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? searchText) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
@@ -113,8 +117,10 @@ final public class HotelSearchViewModel {
     
     public func loadImage(at index: Int) {
         guard self.hotels.count > index else { return }
+        guard self.imagesData[index] == nil else { return }
         let hotel = self.hotels[index]
         guard let url = hotel.image ?? hotel.gallery?.first?.url else { return }
+        self.hotelSearchView?.displayImageLoading(true, for: index)
         self.imageLoadTasks[index] = self.imageDataLoader.loadImageData(from: url) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
@@ -125,6 +131,7 @@ final public class HotelSearchViewModel {
                 case let .failure(error):
                     print(error)
                 }
+                self.hotelSearchView?.displayImageLoading(false, for: index)
             }
         }
     }
@@ -219,9 +226,20 @@ extension HotelSearchViewController: HotelSearchView {
     }
     
     public func displayImageData(_ data: Data, for index: Int) {
-        if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? HotelCell, self.tableView.visibleCells.contains(cell) {
-            cell.imvBackground.image = UIImage(data: data)
+        self.visibleHotelCell(for: index)?.imvBackground.setImageAnimated(UIImage(data: data))
+    }
+    
+    public func displayImageLoading(_ isLoading: Bool, for index: Int) {
+        self.visibleHotelCell(for: index)?.imageContainer.isShimmering = isLoading
+    }
+    
+    private func visibleHotelCell(for index: Int) -> HotelCell? {
+        let indexPath = IndexPath(row: index, section: 0)
+        guard self.tableView.indexPathsForVisibleRows?.contains(indexPath) == true else { return nil }
+        if let cell = self.tableView.cellForRow(at: indexPath) as? HotelCell, self.tableView.visibleCells.contains(cell) {
+            return cell
         }
+        return nil
     }
     
 }
@@ -237,9 +255,11 @@ extension HotelSearchViewController: UITableViewDataSource {
         cell.viewModel = self.hotels[indexPath.row]
         let data = self.viewModel.imagesData[indexPath.row]
         if let data = data {
-            cell.imvBackground.image = UIImage(data: data)
+            cell.imvBackground.setImageAnimated(UIImage(data: data))
+            cell.imageContainer.isShimmering = false
         } else {
-            cell.imvBackground.image = nil
+            cell.imvBackground.setImageAnimated(nil)
+            cell.imageContainer.isShimmering = true
             self.viewModel.loadImage(at: indexPath.row)
         }
         return cell
