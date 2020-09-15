@@ -10,12 +10,6 @@ import UIKit
 
 import HotelSearch
 
-public protocol HotelSearchView: class {
-    func display(_ model: [HotelViewModel])
-    func displayError(_ error: String)
-    func displayLoading(_ isLoading: Bool)
-}
-
 final public class HotelSearchViewModel {
     
     weak public var hotelSearchView: HotelSearchView?
