@@ -81,7 +81,7 @@ final public class HotelSearchViewModel {
     public var imagesData = [Int: Data]()
     
     private var hotels = [Hotel]()
-    private var imageLoadTaks = [Int: ImageDataLoaderTask]()
+    private var imageLoadTasks = [Int: ImageDataLoaderTask]()
     
     private let hotelSearcher: HotelSearcher
     private let imageDataLoader: ImageDataLoader
@@ -115,7 +115,7 @@ final public class HotelSearchViewModel {
         guard self.hotels.count > index else { return }
         let hotel = self.hotels[index]
         guard let url = hotel.image ?? hotel.gallery?.first?.url else { return }
-        self.imageLoadTaks[index] = self.imageDataLoader.loadImageData(from: url) { [weak self] result in
+        self.imageLoadTasks[index] = self.imageDataLoader.loadImageData(from: url) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {
@@ -127,6 +127,11 @@ final public class HotelSearchViewModel {
                 }
             }
         }
+    }
+    
+    public func cancelImageLoad(at index: Int) {
+        self.imageLoadTasks[index]?.cancel()
+        self.imageLoadTasks[index] = nil
     }
     
 }
@@ -185,6 +190,7 @@ private extension HotelSearchViewController {
         
         self.tableView.register(UINib(nibName: String(describing: HotelCell.self), bundle: Bundle(for: HotelCell.self)), forCellReuseIdentifier: String(describing: HotelCell.self))
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.separatorStyle = .none
     }
     
@@ -236,6 +242,14 @@ extension HotelSearchViewController: UITableViewDataSource {
             self.viewModel.loadImage(at: indexPath.row)
         }
         return cell
+    }
+    
+}
+
+extension HotelSearchViewController: UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.viewModel.cancelImageLoad(at: indexPath.row)
     }
     
 }
