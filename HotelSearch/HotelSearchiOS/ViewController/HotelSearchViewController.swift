@@ -11,9 +11,43 @@ import UIKit
 import HotelSearch
 
 public protocol HotelSearchView: class {
-    func display(_ model: [Hotel])
+    func display(_ model: [HotelViewModel])
     func displayError(_ error: String)
     func displayLoading(_ isLoading: Bool)
+}
+
+final public class HotelViewModel {
+    
+    let hotel: Hotel
+    
+    public var name: String? {
+        return self.hotel.name
+    }
+    public var location: String? {
+        let address = self.hotel.address
+        let addressFields = [address?.city, address?.state]
+        return addressFields.compactMap({ $0 }).reduce(into: "", ({
+            result, text in
+            result += text == addressFields.first ? text : " - \(text)"
+        }))
+    }
+    public var amenities: String? {
+        let amenitiesArr = self.hotel.amenities
+        return amenitiesArr?.compactMap({ $0.name }).prefix(upTo: 3).reduce(into: "", { (result, text) in
+            result += text == amenitiesArr?.first?.name ? text : " | \(text)"
+        })
+    }
+    public var price: String? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "pt-BR")
+        return formatter.string(from: NSNumber(value: self.hotel.price?.amountPerDay ?? 0))
+    }
+    
+    init(hotel: Hotel) {
+        self.hotel = hotel
+    }
+    
 }
 
 final public class HotelSearchViewModel {
@@ -38,7 +72,7 @@ final public class HotelSearchViewModel {
                 guard let self = self else { return }
                 switch result {
                 case let .success(hotels):
-                    self.hotelSearchView?.display(hotels)
+                    self.hotelSearchView?.display(hotels.map { HotelViewModel(hotel: $0)})
                 case let .failure(error):
                     self.hotelSearchView?.displayError(error.localizedDescription)
                 }
@@ -68,7 +102,7 @@ final public class HotelSearchViewController: UIViewController {
     // MARK: - Properties
     
     private let viewModel: HotelSearchViewModel
-    private var model = [Hotel]() {
+    private var hotels = [HotelViewModel]() {
         didSet {
             self.tableView.reloadData()
         }
@@ -116,8 +150,8 @@ private extension HotelSearchViewController {
 
 extension HotelSearchViewController: HotelSearchView {
     
-    public func display(_ model: [Hotel]) {
-        self.model = model
+    public func display(_ hotels: [HotelViewModel]) {
+        self.hotels = hotels
     }
     
     public func displayError(_ error: String) {
@@ -134,11 +168,12 @@ extension HotelSearchViewController: HotelSearchView {
 extension HotelSearchViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.model.count
+        return self.hotels.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HotelCell.self), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HotelCell.self), for: indexPath) as! HotelCell
+        cell.viewModel = self.hotels[indexPath.row]
         return cell
     }
     

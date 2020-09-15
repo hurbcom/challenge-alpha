@@ -8,6 +8,8 @@
 
 import UIKit
 
+import HotelSearch
+
 class HotelCell: UITableViewCell {
 
     // MARK: - IBOutlets
@@ -19,6 +21,17 @@ class HotelCell: UITableViewCell {
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var lblAmenities: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
+
+    // MARK: - Properties
+    
+    var viewModel: HotelViewModel? {
+        didSet {
+            self.lblName.text = self.viewModel?.name
+            self.lblLocation.text = self.viewModel?.location
+            self.lblAmenities.text = self.viewModel?.amenities
+            self.lblPrice.text = self.viewModel?.price
+        }
+    }
 
     // MARK: - Life Cycle
     
