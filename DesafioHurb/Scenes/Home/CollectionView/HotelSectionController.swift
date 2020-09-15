@@ -9,10 +9,10 @@
 import IGListKit
 
 final class HotelSectionController: ListSectionController {
-    private var didSelectItem: (Int) -> Void
+    private var didSelectItem: (String) -> Void
     private var hotel: HotelDisplay?
 
-    init(didSelectItem: @escaping (Int) -> Void) {
+    init(didSelectItem: @escaping (String) -> Void) {
         self.didSelectItem = didSelectItem
         super.init()
         self.inset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -44,6 +44,7 @@ final class HotelSectionController: ListSectionController {
 
     override func didSelectItem(at index: Int) {
         super.didSelectItem(at: index)
-        didSelectItem(section)
+        guard let id = hotel?.id else { return }
+        didSelectItem(id)
     }
 }

@@ -19,7 +19,7 @@ final class DetailViewController: BaseViewController {
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var starImage: UIImageView!
     @IBOutlet private var smallDescriptionLabel: UILabel!
-    @IBOutlet private var moreLabel: UILabel!
+    @IBOutlet private var showMoreLabel: UILabel!
     @IBOutlet private var originalAmountPerDayLabel: UILabel!
     @IBOutlet private var amountPerDayLabel: UILabel!
     @IBOutlet private var paymentCondition: UILabel!
@@ -53,6 +53,13 @@ final class DetailViewController: BaseViewController {
     
     override func prepare() {
         super.prepare()
+        prepareCollectionView()
+        showMoreLabel.text = "Ver mais"
+        dateLabel.text = "Horário:"
+        periodLabel.text = "Entrada 14h| Saída 12h"
+    }
+    
+    private func prepareCollectionView() {
         collectionView.showsHorizontalScrollIndicator = false
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
@@ -68,6 +75,7 @@ final class DetailViewController: BaseViewController {
             .drive(onNext: { [weak self] hotelDisplay in
                 self?.cityLabel.text = hotelDisplay.city
                 self?.nameLabel.text = hotelDisplay.name
+                self?.starImage.image = hotelDisplay.ratingImage
                 self?.smallDescriptionLabel.text = hotelDisplay.smallDescription
                 self?.originalAmountPerDayLabel.attributedText = hotelDisplay.originalAmountPerDay
                 self?.amountPerDayLabel.text = hotelDisplay.amountPerDay

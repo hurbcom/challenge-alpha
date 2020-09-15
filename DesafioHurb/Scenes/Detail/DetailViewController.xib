@@ -13,11 +13,11 @@
                 <outlet property="cityLabel" destination="7Ni-zP-kUV" id="n1g-83-W20"/>
                 <outlet property="collectionView" destination="6RO-Tv-zys" id="VDQ-rv-Rvs"/>
                 <outlet property="dateLabel" destination="i6e-7v-KyG" id="ymw-tI-aSW"/>
-                <outlet property="moreLabel" destination="nQi-dE-g8Y" id="Ppw-sD-0Kp"/>
                 <outlet property="nameLabel" destination="QDC-Ph-hOP" id="ijA-Au-lph"/>
                 <outlet property="originalAmountPerDayLabel" destination="dbn-LS-mTH" id="7aX-jr-U3L"/>
                 <outlet property="paymentCondition" destination="Cxy-j0-qgF" id="Q0k-L9-jaa"/>
                 <outlet property="periodLabel" destination="l1P-pD-MFE" id="YXb-f0-s2j"/>
+                <outlet property="showMoreLabel" destination="nQi-dE-g8Y" id="Ppw-sD-0Kp"/>
                 <outlet property="smallDescriptionLabel" destination="Vdi-HB-kDh" id="KtC-s0-gxg"/>
                 <outlet property="starImage" destination="HRB-db-xDb" id="7EM-rc-33q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -68,7 +68,7 @@
                                                 <constraint firstAttribute="height" constant="18" id="1W7-5h-PuG"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdi-HB-kDh">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdi-HB-kDh">
                                             <rect key="frame" x="8" y="84" width="398" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                             <nil key="textColor"/>

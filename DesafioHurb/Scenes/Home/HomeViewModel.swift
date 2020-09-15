@@ -11,12 +11,13 @@ import RxSwift
 
 protocol HomeViewModelInput: AnyObject {
     var fetchData: PublishSubject<Void> { get }
-    var selectHotel: PublishSubject<Int> { get }
+    var fetchNextPage: PublishSubject<Void> { get }
+    var selectHotel: PublishSubject<String> { get }
 }
 
 protocol HomeViewModelOutput: AnyObject {
     var error: Driver<Error> { get }
-    var hotels: Driver<[HotelDisplay]> { get }
+    var hotelsPackages: Driver<HotelsPackagesDisplay> { get }
     var selectedHotel: Driver<Hotel> { get }
 }
 
@@ -26,40 +27,84 @@ protocol HomeViewModelType: AnyObject {
 }
 
 final class HomeViewModel: HomeViewModelType, HomeViewModelInput, HomeViewModelOutput {
+    
     let error: Driver<Error>
-    let hotels: Driver<[HotelDisplay]>
+    let hotelsPackages: Driver<HotelsPackagesDisplay>
     let selectedHotel: Driver<Hotel>
     
     init(interactor: HomeInteractable) {
-        let errorTracker = PublishSubject<Error>()
+        let errorTracker = ErrorTracker()
         
-        error = errorTracker.asDriver(onErrorDriveWith: Driver.empty())
+        error = errorTracker.asDriver()
         
-        let fetchHotelsResponse = fetchData
-            .asDriver(onErrorJustReturn: ())
+        let triggerNextPage = fetchNextPage.asObservable()
+        
+        let hotelsResponse = fetchData.asDriver(onErrorJustReturn: ())
             .flatMap { _ in
-                interactor.fetchHotels()
-                    .asDriver(onErrorRecover: { err in
-                        errorTracker.onNext(err)
-                        return Driver.empty()
-                    })
+                fetchHotels(
+                    interactor: interactor,
+                    errorTracker: errorTracker,
+                    trigger: triggerNextPage
+                )
         }
         
-        hotels = fetchHotelsResponse
-            .map { $0.results.map(HotelDisplay.init) }
+        hotelsPackages = hotelsResponse
+            .map { data in
+                let packages = data.filter { ($0.isPackage ?? false) }.map(HotelDisplay.init)
+                let hotels = data.filter { !($0.isPackage ?? false) }
+                let hotelsOne = hotels.filter { ($0.stars ?? 1 == 1) }.map(HotelDisplay.init)
+                let hotelsTwo = hotels.filter { ($0.stars ?? 1 == 2) }.map(HotelDisplay.init)
+                let hotelsThree = hotels.filter { ($0.stars ?? 1 == 3) }.map(HotelDisplay.init)
+                let hotelsFour = hotels.filter { ($0.stars ?? 1 == 4) }.map(HotelDisplay.init)
+                let hotelsFive = hotels.filter { ($0.stars ?? 1 == 5) }.map(HotelDisplay.init)
+                return HotelsPackagesDisplay(count: data.count,
+                                             packages: packages,
+                                             hotelsOneStar: hotelsOne,
+                                             hotelsTwoStar: hotelsTwo,
+                                             hotelsThreeStar: hotelsThree,
+                                             hotelsFourStar: hotelsFour,
+                                             hotelsFiveStar: hotelsFive)
+        }
         
         selectedHotel = selectHotel.asDriver(onErrorDriveWith: Driver.empty())
-            .withLatestFrom(fetchHotelsResponse) { (index: $0, fetchHotelsResponse:$1) }
-            .map { index, fetchHotelsResponse in
-                fetchHotelsResponse.results[index]
+            .withLatestFrom(hotelsResponse) { (id: $0, fetchHotelsResponse:$1) }
+            .map { id, hotelsResponse in
+                hotelsResponse.first(where: { $0.id == id })
         }
+        .compactMap { $0 }
         
     }
     
     let fetchData: PublishSubject<Void> = PublishSubject()
-    let selectHotel: PublishSubject<Int> = PublishSubject()
+    let fetchNextPage: PublishSubject<Void> = PublishSubject()
+    let selectHotel: PublishSubject<String> = PublishSubject()
+    let selectFilter: PublishSubject<Void> = PublishSubject()
     
     var input: HomeViewModelInput { return self }
     var output: HomeViewModelOutput { return self }
     
+}
+
+private func fetchHotels(
+    interactor: HomeInteractable,
+    errorTracker: ErrorTracker,
+    trigger: Observable<Void>
+) -> Driver<[Hotel]> {
+    let make = { (previousResult: FetchHotelsResponse?) -> Observable<FetchHotelsResponse> in
+        
+        let nextPage = (previousResult?.pagination.nextPageNumber ?? 1)
+        
+        return interactor.fetchHotels(page: nextPage)
+            .asObservable()
+    }
+    
+    let hasNext = { (fetchHotelsResponse: FetchHotelsResponse) -> Bool in
+        fetchHotelsResponse.pagination.nextPageNumber ?? 0 <= fetchHotelsResponse.pagination.lastPageNumber ?? 0
+    }
+    
+    return Observable.page(make: make, while: hasNext, when: trigger)
+        .map { $0.results.sorted(by: { ($0.stars ?? 0) > ($1.stars ?? 0) }) }
+        .scan([], accumulator: +)
+        .trackError(errorTracker)
+        .asDriver(onErrorDriveWith: Driver.empty())
 }

@@ -1,25 +1,42 @@
 //
-//  HotelDetailDisplay.swift
+//  HotelDisplay.swift
 //  DesafioHurb
 //
-//  Created by Edson Aparecido Guido on 08/09/20.
+//  Created by Edson Aparecido Guido on 07/09/20.
 //  Copyright © 2020 Edson Aparecido Guido. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
-struct HotelDetailDisplay {
+struct HotelDisplay: Equatable {
     let id: String
     let image: URL?
     let city: String
     let name: String
-    let smallDescription: String
-    let resultDescription: String
+    let stars: Int?
     let originalAmountPerDay: NSAttributedString?
     let amountPerDay: String
     let condition: String
     let cancelationFree: String
-    let gallery: [Gallery]
+    
+    var ratingImage: UIImage {
+        guard let stars = stars else { return UIImage() }
+        switch stars {
+        case 1:
+            return UIImage(named: "ic_star_one")!
+        case 2:
+            return UIImage(named: "ic_star_two")!
+        case 3:
+            return UIImage(named: "ic_star_three")!
+        case 4:
+            return UIImage(named: "ic_star_four")!
+        case 5:
+            return UIImage(named: "ic_star_five")!
+        default:
+            return UIImage()
+        }
+    }
     
     init(hotel: Hotel) {
         id = hotel.id
@@ -30,28 +47,29 @@ struct HotelDetailDisplay {
         }
         city = hotel.address.city
         name = hotel.name
-        smallDescription = hotel.smallDescription
-        resultDescription = hotel.resultDescription
+        stars = hotel.stars
         if let originalAmountPerDay = hotel.price.originalAmountPerDay {
-            self.originalAmountPerDay = HotelDetailDisplay.formatOriginalAmountPerDay(value: originalAmountPerDay)
+            self.originalAmountPerDay = HotelDisplay.formatOriginalAmountPerDay(value: originalAmountPerDay)
         } else {
             self.originalAmountPerDay = NSAttributedString(string: " ")
         }
         amountPerDay = hotel.price.amountPerDay.currencyFormatted()
-        condition = "+ Taxas em até 12x"
+        condition = "em até 12x"
         cancelationFree = (hotel.huFreeCancellation ?? false) ? "Cancelamento grátis!":" "
-        gallery = hotel.gallery
     }
     
     private static func formatOriginalAmountPerDay(value: Double) -> NSAttributedString {
-        let description = value.currencyFormatted()
+        let valueFormatted = value.currencyFormatted()
+        let description = "Diárias de \(valueFormatted)"
         let attributedString = NSMutableAttributedString(string: description)
+        let valueRange = description.count - valueFormatted.count
         attributedString.addAttribute(
             .strikethroughStyle,
             value: 2,
-            range: NSRange(location: 0, length: description.count)
+            range: NSRange(location: valueRange, length: valueFormatted.count)
         )
         
         return attributedString
     }
+    
 }

@@ -18,8 +18,8 @@ final class HomeInteractor: HomeInteractable {
         self.fetchHotelsUseCase = fetchHotelsUseCase
     }
     
-    func fetchHotels() -> Single<FetchHotelsResponse> {
-        fetchHotelsUseCase.fetchHotels()
+    func fetchHotels(page: Int) -> Single<FetchHotelsResponse> {
+        fetchHotelsUseCase.fetchHotels(page: page)
     }
     
 }

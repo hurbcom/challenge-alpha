@@ -28,6 +28,7 @@ class HotelViewCell: UICollectionViewCell, NibLoadable {
         prepareImageView()
         prepareCitylabel()
         prepareNameLabel()
+        prepareStarView()
         prepareOriginalAmountPerDayLabel()
         prepareAmountPerDayLabel()
         prepareConditionLabel()
@@ -47,6 +48,11 @@ class HotelViewCell: UICollectionViewCell, NibLoadable {
     private func prepareCitylabel() {
         citylabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         citylabel.lineBreakMode = .byTruncatingTail
+    }
+    
+    private func prepareStarView() {
+        starView.layer.cornerRadius = 8.0
+        starView.clipsToBounds = true
     }
     
     private func prepareNameLabel() {
@@ -93,6 +99,7 @@ class HotelViewCell: UICollectionViewCell, NibLoadable {
         imageView.kf.setImage(with: hotel.image)
         citylabel.text = hotel.city
         nameLabel.text = hotel.name
+        starView.image = hotel.ratingImage
         originalAmountPerDayLabel.attributedText = hotel.originalAmountPerDay
         amountPerDayLabel.text = hotel.amountPerDay
         conditionLabel.text = hotel.condition
