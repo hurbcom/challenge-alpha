@@ -165,6 +165,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     }
     
     private func makeItem(
+        address: Address = Address(city: "a city", country: "a country", state: "a state", street: "a street", zipcode: "a zipcode"),
         amenities: [Amenity] = [Amenity(category: "a category", name: "a name")],
         category: String,
         description: String,
@@ -179,7 +180,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         star: Int,
         tags: [String] = [],
         url: URL) -> (model: Hotel, json: [String: Any?]) {
-        let item = Hotel(amenities: amenities, category: category, description: description, gallery: gallery, id: id, image: image, isHotel: isHotel, name: name, price: price, quantityDescriptors: quantityDescriptors, smallDescription: smallDescription, star: star, tags: tags, url: url)
+        let item = Hotel(address: address, amenities: amenities, category: category, description: description, gallery: gallery, id: id, image: image, isHotel: isHotel, name: name, price: price, quantityDescriptors: quantityDescriptors, smallDescription: smallDescription, star: star, tags: tags, url: url)
         
         return (item, item.json)
     }
@@ -189,6 +190,7 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
 private extension Hotel {
     var json: [String: Any?] {
         return [
+            "address": address?.json,
             "amenities": amenities?.compactMap{ $0.json },
             "category": category,
             "description": description,
@@ -204,6 +206,12 @@ private extension Hotel {
             "tags": tags,
             "url": url?.absoluteString
         ]
+    }
+}
+
+private extension Address {
+    var json: [String: Any?] {
+        return ["city": city, "country": country, "state": state, "street": street, "zipcode": zipcode]
     }
 }
 

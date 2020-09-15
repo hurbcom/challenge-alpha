@@ -9,6 +9,7 @@
 import Foundation
 
 struct RemoteHotelItem: Decodable {
+    let address: RemoteAddressItem?
     let amenities: [RemoteAmenityItem]?
     let category: String?
     let description: String?
@@ -25,7 +26,8 @@ struct RemoteHotelItem: Decodable {
     let url: URL?
     
     var item: Hotel {
-        return Hotel(amenities: amenities?.compactMap { $0.item },
+        return Hotel(address: address?.item,
+                     amenities: amenities?.compactMap { $0.item },
                      category: category,
                      description: description,
                      gallery: gallery?.compactMap { $0.item },

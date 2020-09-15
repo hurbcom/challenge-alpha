@@ -9,6 +9,7 @@
 import Foundation
 
 public struct Hotel: Hashable {
+    public let address: Address?
     public let amenities: [Amenity]?
     public let category: String?
     public let description: String?
@@ -25,6 +26,7 @@ public struct Hotel: Hashable {
     public let url: URL?
     
     public init(
+        address: Address?,
         amenities: [Amenity]?,
         category: String?,
         description: String?,
@@ -40,6 +42,7 @@ public struct Hotel: Hashable {
         tags: [String]?,
         url: URL?) {
         
+        self.address = address
         self.amenities = amenities
         self.category = category
         self.description = description
