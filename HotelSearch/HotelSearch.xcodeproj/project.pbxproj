@@ -26,6 +26,7 @@
 		FC1BAB5E250F821100B0C1E2 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BAB5D250F821100B0C1E2 /* Amenity.swift */; };
 		FC5BDB3B251155B000C36953 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BDB3A251155B000C36953 /* Address.swift */; };
 		FC5BDB3D251156E200C36953 /* RemoteAddressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BDB3C251156E200C36953 /* RemoteAddressItem.swift */; };
+		FC5BDB4025115E3600C36953 /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BDB3F25115E3600C36953 /* HotelViewModel.swift */; };
 		FC744974250F876C0048DCEE /* HotelSearchiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC74496B250F876B0048DCEE /* HotelSearchiOS.framework */; };
 		FC7449FD250F8A2F0048DCEE /* HotelSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7449FB250F8A2F0048DCEE /* HotelSearchViewController.swift */; };
 		FC7449FE250F8A2F0048DCEE /* HotelSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7449FC250F8A2F0048DCEE /* HotelSearchViewController.xib */; };
@@ -82,6 +83,7 @@
 		FC1BAB5D250F821100B0C1E2 /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
 		FC5BDB3A251155B000C36953 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		FC5BDB3C251156E200C36953 /* RemoteAddressItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddressItem.swift; sourceTree = "<group>"; };
+		FC5BDB3F25115E3600C36953 /* HotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewModel.swift; sourceTree = "<group>"; };
 		FC74496B250F876B0048DCEE /* HotelSearchiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HotelSearchiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC74496E250F876C0048DCEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC744973250F876C0048DCEE /* HotelSearchiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelSearchiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 			children = (
 				FC1BAB37250E792800B0C1E2 /* HotelSearch Feature */,
 				FC1BAB3E250EC2C400B0C1E2 /* HotelSearch API */,
+				FC5BDB3E25115A5D00C36953 /* HotelSearch Presentation */,
 				FC1BAB20250E78A000B0C1E2 /* Info.plist */,
 			);
 			path = HotelSearch;
@@ -232,6 +235,14 @@
 				FC1BAB57250F81A500B0C1E2 /* QuantityDescriptor.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FC5BDB3E25115A5D00C36953 /* HotelSearch Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FC5BDB3F25115E3600C36953 /* HotelViewModel.swift */,
+			);
+			path = "HotelSearch Presentation";
 			sourceTree = "<group>";
 		};
 		FC74496C250F876B0048DCEE /* HotelSearchiOS */ = {
@@ -461,6 +472,7 @@
 				FC1BAB44250F7E8C00B0C1E2 /* RemoteHotelSearcher.swift in Sources */,
 				FC1BAB5C250F81F800B0C1E2 /* HotelImage.swift in Sources */,
 				FC1BAB53250F812300B0C1E2 /* RemoteHotelImageItem.swift in Sources */,
+				FC5BDB4025115E3600C36953 /* HotelViewModel.swift in Sources */,
 				FC1BAB5E250F821100B0C1E2 /* Amenity.swift in Sources */,
 				FC1BAB58250F81A500B0C1E2 /* QuantityDescriptor.swift in Sources */,
 				FC5BDB3D251156E200C36953 /* RemoteAddressItem.swift in Sources */,
