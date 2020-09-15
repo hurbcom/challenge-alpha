@@ -86,6 +86,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imvBackground" destination="6ln-tz-sRX" id="FLl-wa-9se"/>
+                <outlet property="lblAmenities" destination="Mg7-OT-EwW" id="QuG-kU-tj1"/>
+                <outlet property="lblLocation" destination="MhY-Jz-gB2" id="7Ql-aR-9kT"/>
+                <outlet property="lblName" destination="duE-HB-9r1" id="0LX-nX-Mt5"/>
+                <outlet property="lblPrice" destination="yKS-PI-8z0" id="b36-eO-mf4"/>
+                <outlet property="stackView" destination="VYk-Fi-btj" id="q9X-5h-8Xg"/>
+                <outlet property="viewBlur" destination="AdZ-dU-81T" id="d8i-Eq-eZz"/>
+            </connections>
             <point key="canvasLocation" x="198.55072463768118" y="270.87053571428572"/>
         </tableViewCell>
     </objects>

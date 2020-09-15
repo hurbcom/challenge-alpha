@@ -10,6 +10,18 @@ import UIKit
 
 class HotelCell: UITableViewCell {
 
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var imvBackground: UIImageView!
+    @IBOutlet weak var viewBlur: UIView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var lblAmenities: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
+
+    // MARK: - Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
