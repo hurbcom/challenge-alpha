@@ -190,6 +190,7 @@ private extension HotelSearchViewController {
         
         self.tableView.register(UINib(nibName: String(describing: HotelCell.self), bundle: Bundle(for: HotelCell.self)), forCellReuseIdentifier: String(describing: HotelCell.self))
         self.tableView.dataSource = self
+        self.tableView.prefetchDataSource = self
         self.tableView.delegate = self
         self.tableView.separatorStyle = .none
     }
@@ -250,6 +251,22 @@ extension HotelSearchViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         self.viewModel.cancelImageLoad(at: indexPath.row)
+    }
+    
+}
+
+extension HotelSearchViewController: UITableViewDataSourcePrefetching {
+    
+    public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach {
+            self.viewModel.loadImage(at: $0.row)
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach {
+            self.viewModel.cancelImageLoad(at: $0.row)
+        }
     }
     
 }
