@@ -53,7 +53,7 @@ final public class HotelSearchViewController: UIViewController {
     @IBOutlet weak var viewInput: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var btnSearch: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - IBActions
     
@@ -64,6 +64,11 @@ final public class HotelSearchViewController: UIViewController {
     // MARK: - Properties
     
     private let viewModel: HotelSearchViewModel
+    private var model = [Hotel]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     // MARK: - Life Cycle
     
@@ -83,18 +88,6 @@ final public class HotelSearchViewController: UIViewController {
 
 }
 
-extension HotelSearchViewController: HotelSearchView {
-    
-    public func display(_ model: [Hotel]) {
-        print(model)
-    }
-    
-    public func displayError(_ error: String) {
-        print(error)
-    }
-    
-}
-
 private extension HotelSearchViewController {
     
     // MARK: - Setup
@@ -103,12 +96,41 @@ private extension HotelSearchViewController {
         self.viewInput.layer.cornerRadius = 4
         
         self.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        self.tableView.register(UINib(nibName: String(describing: HotelCell.self), bundle: Bundle(for: HotelCell.self)), forCellReuseIdentifier: String(describing: HotelCell.self))
+        self.tableView.dataSource = self
+        self.tableView.separatorStyle = .none
     }
     
     // MARK: - Objc methods
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         self.viewModel.text = textField.text ?? ""
+    }
+    
+}
+
+extension HotelSearchViewController: HotelSearchView {
+    
+    public func display(_ model: [Hotel]) {
+        self.model = model
+    }
+    
+    public func displayError(_ error: String) {
+        print(error)
+    }
+    
+}
+
+extension HotelSearchViewController: UITableViewDataSource {
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.model.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HotelCell.self), for: indexPath)
+        return cell
     }
     
 }

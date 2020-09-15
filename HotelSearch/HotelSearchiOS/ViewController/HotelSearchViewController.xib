@@ -10,7 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelSearchViewController" customModule="HotelSearchiOS" customModuleProvider="target">
             <connections>
                 <outlet property="btnSearch" destination="TSu-S2-jhT" id="6BK-BT-Nhc"/>
-                <outlet property="collectionView" destination="vwf-C7-itH" id="keH-IV-Kmk"/>
+                <outlet property="tableView" destination="uWW-ZX-NhG" id="A7x-bZ-fz3"/>
                 <outlet property="textField" destination="E95-yV-d7w" id="3en-21-aog"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewInput" destination="fqN-ec-5Kw" id="A9h-LR-ZqT"/>
@@ -53,7 +53,7 @@
                                             <rect key="frame" x="44" y="0.0" width="247" height="44"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         </textField>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSu-S2-jhT">
                                             <rect key="frame" x="299" y="0.0" width="44" height="44"/>
@@ -89,26 +89,20 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="6Sn-jB-RUi"/>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vwf-C7-itH">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uWW-ZX-NhG">
                     <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ue5-1W-Xuk">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="vwf-C7-itH" secondAttribute="trailing" id="3EO-ZU-lTh"/>
-                <constraint firstAttribute="bottom" secondItem="vwf-C7-itH" secondAttribute="bottom" id="Dc7-eo-8VB"/>
+                <constraint firstItem="uWW-ZX-NhG" firstAttribute="top" secondItem="1CF-MW-4v3" secondAttribute="bottom" id="EqX-Kw-shW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1CF-MW-4v3" secondAttribute="trailing" id="Kcv-cE-lO7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uWW-ZX-NhG" secondAttribute="trailing" id="YYU-Hb-VG3"/>
                 <constraint firstItem="1CF-MW-4v3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ytk-SN-PLk"/>
-                <constraint firstItem="vwf-C7-itH" firstAttribute="top" secondItem="1CF-MW-4v3" secondAttribute="bottom" id="aX0-dx-bVQ"/>
                 <constraint firstItem="1CF-MW-4v3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="g8P-Wb-MQE"/>
-                <constraint firstItem="vwf-C7-itH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sgC-Nu-vRA"/>
+                <constraint firstItem="uWW-ZX-NhG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mW2-Tm-76f"/>
+                <constraint firstAttribute="bottom" secondItem="uWW-ZX-NhG" secondAttribute="bottom" id="tTi-Bs-gHj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="140" y="147.97601199400302"/>

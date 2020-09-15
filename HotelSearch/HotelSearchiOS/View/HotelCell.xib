@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HotelCell" rowHeight="153" id="KGk-i7-Jjw" customClass="HotelCell" customModule="HotelSearchiOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiB-fs-xTm">
+                        <rect key="frame" x="16" y="8" width="288" height="144"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ln-tz-sRX">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6ln-tz-sRX" secondAttribute="height" multiplier="2" id="57f-pl-BDC"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdZ-dU-81T">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="144"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VYk-Fi-btj">
+                                <rect key="frame" x="109" y="6" width="173" height="62"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duE-HB-9r1">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhY-Jz-gB2">
+                                        <rect key="frame" x="0.0" y="23" width="173" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg7-OT-EwW">
+                                        <rect key="frame" x="0.0" y="45" width="173" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="753" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKS-PI-8z0">
+                                <rect key="frame" x="240" y="74" width="42" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="AdZ-dU-81T" secondAttribute="bottom" id="0G7-US-dpr"/>
+                            <constraint firstAttribute="trailing" secondItem="yKS-PI-8z0" secondAttribute="trailing" constant="6" id="7gj-HU-Pjr"/>
+                            <constraint firstAttribute="bottom" secondItem="6ln-tz-sRX" secondAttribute="bottom" id="Bfb-27-Mve"/>
+                            <constraint firstAttribute="trailing" secondItem="6ln-tz-sRX" secondAttribute="trailing" id="Brn-ef-rTh"/>
+                            <constraint firstAttribute="trailing" secondItem="VYk-Fi-btj" secondAttribute="trailing" constant="6" id="DVs-dC-H6b"/>
+                            <constraint firstItem="VYk-Fi-btj" firstAttribute="top" secondItem="aiB-fs-xTm" secondAttribute="top" constant="6" id="LG7-OZ-ur6"/>
+                            <constraint firstAttribute="bottom" secondItem="yKS-PI-8z0" secondAttribute="bottom" constant="6" id="NXU-O6-VS0"/>
+                            <constraint firstItem="VYk-Fi-btj" firstAttribute="width" secondItem="aiB-fs-xTm" secondAttribute="width" multiplier="0.6" id="Tsb-iH-Hqc"/>
+                            <constraint firstItem="yKS-PI-8z0" firstAttribute="top" secondItem="VYk-Fi-btj" secondAttribute="bottom" priority="999" constant="6" id="XNZ-Tq-QOY"/>
+                            <constraint firstItem="AdZ-dU-81T" firstAttribute="top" secondItem="aiB-fs-xTm" secondAttribute="top" id="dOC-mf-4RI"/>
+                            <constraint firstAttribute="trailing" secondItem="AdZ-dU-81T" secondAttribute="trailing" id="j9o-sS-Slw"/>
+                            <constraint firstItem="AdZ-dU-81T" firstAttribute="leading" secondItem="aiB-fs-xTm" secondAttribute="leading" id="lDy-mR-QT9"/>
+                            <constraint firstItem="6ln-tz-sRX" firstAttribute="top" secondItem="aiB-fs-xTm" secondAttribute="top" id="rvx-EM-VQl"/>
+                            <constraint firstItem="6ln-tz-sRX" firstAttribute="leading" secondItem="aiB-fs-xTm" secondAttribute="leading" id="uI0-KU-X2T"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aiB-fs-xTm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="1cW-e9-9uU"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aiB-fs-xTm" secondAttribute="bottom" priority="999" constant="8" id="2bI-Q2-fCR"/>
+                    <constraint firstItem="aiB-fs-xTm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="EGE-VQ-e3F"/>
+                    <constraint firstAttribute="trailing" secondItem="aiB-fs-xTm" secondAttribute="trailing" constant="16" id="y1W-hf-gRO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="198.55072463768118" y="270.87053571428572"/>
+        </tableViewCell>
+    </objects>
+</document>

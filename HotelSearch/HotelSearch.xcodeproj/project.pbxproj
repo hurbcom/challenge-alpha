@@ -29,6 +29,8 @@
 		FC7449FE250F8A2F0048DCEE /* HotelSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7449FC250F8A2F0048DCEE /* HotelSearchViewController.xib */; };
 		FCC5454B2510191B0048CF72 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5454A2510191B0048CF72 /* URLSessionHTTPClient.swift */; };
 		FCC5455C25101C250048CF72 /* HotelSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1BAB1C250E78A000B0C1E2 /* HotelSearch.framework */; };
+		FCC5456825102D360048CF72 /* HotelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5456625102D360048CF72 /* HotelCell.swift */; };
+		FCC5456925102D360048CF72 /* HotelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC5456725102D360048CF72 /* HotelCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		FC7449FB250F8A2F0048DCEE /* HotelSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchViewController.swift; sourceTree = "<group>"; };
 		FC7449FC250F8A2F0048DCEE /* HotelSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelSearchViewController.xib; sourceTree = "<group>"; };
 		FCC5454A2510191B0048CF72 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		FCC5456625102D360048CF72 /* HotelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCell.swift; sourceTree = "<group>"; };
+		FCC5456725102D360048CF72 /* HotelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,7 @@
 		FC74496C250F876B0048DCEE /* HotelSearchiOS */ = {
 			isa = PBXGroup;
 			children = (
+				FCC545612510224E0048CF72 /* View */,
 				FC7449FA250F8A110048DCEE /* ViewController */,
 				FC74496E250F876C0048DCEE /* Info.plist */,
 			);
@@ -255,6 +260,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCC545612510224E0048CF72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCC5456625102D360048CF72 /* HotelCell.swift */,
+				FCC5456725102D360048CF72 /* HotelCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC5456925102D360048CF72 /* HotelCell.xib in Resources */,
 				FC7449FE250F8A2F0048DCEE /* HotelSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC5456825102D360048CF72 /* HotelCell.swift in Sources */,
 				FC7449FD250F8A2F0048DCEE /* HotelSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
