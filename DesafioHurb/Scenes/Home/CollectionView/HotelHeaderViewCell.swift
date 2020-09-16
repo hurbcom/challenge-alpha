@@ -12,19 +12,22 @@ class HotelHeaderViewCell: UICollectionViewCell, NibLoadable {
     
     static let defaultHeight = CGFloat(32)
     
-    @IBOutlet private var iconView: UIImageView!
+    @IBOutlet private var containerView: UIView!
+    @IBOutlet private var titleLabel: UILabel!
+    
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        containerView.layer.cornerRadius = 4.0
+        containerView.clipsToBounds = true
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        iconView.image = nil
+        titleLabel.text = ""
     }
     
     func setup(hotelHeader: HotelHeaderDisplay) {
-        if let icon = hotelHeader.icon {
-            iconView.isHidden = false
-            iconView.image = icon
-            return
-        }
+        titleLabel.text = hotelHeader.title
     }
-
+    
 }

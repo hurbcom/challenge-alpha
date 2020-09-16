@@ -9,7 +9,5 @@
 import UIKit
 
 struct HotelHeaderDisplay: Equatable {
-    let id: String
-    let icon: UIImage?
-    let title: String?
+    let title: String
 }

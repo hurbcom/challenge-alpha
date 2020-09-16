@@ -213,9 +213,6 @@
 		B4138FDE2508693100744D09 /* Collectionview */ = {
 			isa = PBXGroup;
 			children = (
-				B4A8B1DA250D6290000268B2 /* LoadingSectionController.swift */,
-				B4A8B1DB250D6290000268B2 /* LoadingViewCell.swift */,
-				B4A8B1D9250D6290000268B2 /* LoadingViewCell.xib */,
 				B4C2B1632509954D0030AF6C /* HotelImageViewCell.swift */,
 				B4C2B1642509954D0030AF6C /* HotelImageViewCell.xib */,
 				B4C2B1692509A69B0030AF6C /* HotelImageSectionController.swift */,
@@ -376,6 +373,9 @@
 		B4D329F22502C30D0064BFB2 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				B4A8B1DA250D6290000268B2 /* LoadingSectionController.swift */,
+				B4A8B1DB250D6290000268B2 /* LoadingViewCell.swift */,
+				B4A8B1D9250D6290000268B2 /* LoadingViewCell.xib */,
 				B4D329F32502C3910064BFB2 /* HotelViewCell.swift */,
 				B4D329F42502C3910064BFB2 /* HotelViewCell.xib */,
 				B4D87C6A2506777600F79790 /* HotelSectionController.swift */,

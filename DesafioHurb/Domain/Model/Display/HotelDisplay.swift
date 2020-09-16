@@ -12,13 +12,14 @@ import Foundation
 struct HotelDisplay: Equatable {
     let id: String
     let image: URL?
-    let city: String
+    let address: String
     let name: String
     let stars: Int?
     let originalAmountPerDay: NSAttributedString?
     let amountPerDay: String
     let condition: String
     let cancelationFree: String
+    let amenities: [String ]
     
     var ratingImage: UIImage {
         guard let stars = stars else { return UIImage() }
@@ -45,7 +46,7 @@ struct HotelDisplay: Equatable {
         } else {
             image = nil
         }
-        city = hotel.address.city
+        address = "\(hotel.address.city)/\(hotel.address.state)"
         name = hotel.name
         stars = hotel.stars
         if let originalAmountPerDay = hotel.price.originalAmountPerDay {
@@ -56,6 +57,7 @@ struct HotelDisplay: Equatable {
         amountPerDay = hotel.price.amountPerDay.currencyFormatted()
         condition = "em até 12x"
         cancelationFree = (hotel.huFreeCancellation ?? false) ? "Cancelamento grátis!":" "
+        amenities = hotel.amenities.prefix(3).map { $0.name }
     }
     
     private static func formatOriginalAmountPerDay(value: Double) -> NSAttributedString {

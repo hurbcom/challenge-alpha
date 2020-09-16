@@ -18,7 +18,7 @@ final class DetailViewController: BaseViewController {
     @IBOutlet private var cityLabel: UILabel!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var starImage: UIImageView!
-    @IBOutlet private var smallDescriptionLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
     @IBOutlet private var showMoreLabel: UILabel!
     @IBOutlet private var originalAmountPerDayLabel: UILabel!
     @IBOutlet private var amountPerDayLabel: UILabel!
@@ -76,7 +76,7 @@ final class DetailViewController: BaseViewController {
                 self?.cityLabel.text = hotelDisplay.city
                 self?.nameLabel.text = hotelDisplay.name
                 self?.starImage.image = hotelDisplay.ratingImage
-                self?.smallDescriptionLabel.text = hotelDisplay.smallDescription
+                self?.descriptionLabel.text = hotelDisplay.resultDescription
                 self?.originalAmountPerDayLabel.attributedText = hotelDisplay.originalAmountPerDay
                 self?.amountPerDayLabel.text = hotelDisplay.amountPerDay
                 self?.paymentCondition.text = hotelDisplay.condition

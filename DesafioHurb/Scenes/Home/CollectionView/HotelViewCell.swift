@@ -11,11 +11,12 @@ import Kingfisher
 
 class HotelViewCell: UICollectionViewCell, NibLoadable {
     
-    static let defaultHeight = CGFloat(286)
+    static let defaultHeight = CGFloat(327)
     
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var citylabel: UILabel!
     @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var amenitiesLabel: UILabel!
     @IBOutlet private var starView: UIImageView!
     @IBOutlet private var originalAmountPerDayLabel: UILabel!
     @IBOutlet private var amountPerDayLabel: UILabel!
@@ -28,6 +29,7 @@ class HotelViewCell: UICollectionViewCell, NibLoadable {
         prepareImageView()
         prepareCitylabel()
         prepareNameLabel()
+        prepareAmenitieslabel()
         prepareStarView()
         prepareOriginalAmountPerDayLabel()
         prepareAmountPerDayLabel()
@@ -46,8 +48,12 @@ class HotelViewCell: UICollectionViewCell, NibLoadable {
     }
     
     private func prepareCitylabel() {
-        citylabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        citylabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         citylabel.lineBreakMode = .byTruncatingTail
+    }
+    
+    private func prepareAmenitieslabel() {
+        amenitiesLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
     }
     
     private func prepareStarView() {
@@ -56,7 +62,7 @@ class HotelViewCell: UICollectionViewCell, NibLoadable {
     }
     
     private func prepareNameLabel() {
-        nameLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        nameLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         nameLabel.lineBreakMode = .byTruncatingTail
     }
     
@@ -97,8 +103,9 @@ class HotelViewCell: UICollectionViewCell, NibLoadable {
     
     func setup(hotel: HotelDisplay) {
         imageView.kf.setImage(with: hotel.image)
-        citylabel.text = hotel.city
+        citylabel.text = hotel.address
         nameLabel.text = hotel.name
+        amenitiesLabel.text = hotel.amenities.reduce("", { $0 == "" ? $1 : $0 + "\n" + $1 })
         starView.image = hotel.ratingImage
         originalAmountPerDayLabel.attributedText = hotel.originalAmountPerDay
         amountPerDayLabel.text = hotel.amountPerDay

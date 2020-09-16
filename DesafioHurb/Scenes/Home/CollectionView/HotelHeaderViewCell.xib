@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,20 +17,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="400" height="32"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tb0-wd-rrV">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Wb-gI-HyT">
                         <rect key="frame" x="8" y="0.0" width="384" height="32"/>
-                    </imageView>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggq-xJ-Oz5">
+                                <rect key="frame" x="0.0" y="0.0" width="384" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ggq-xJ-Oz5" firstAttribute="leading" secondItem="8Wb-gI-HyT" secondAttribute="leading" id="HMY-Fy-bP6"/>
+                            <constraint firstItem="Ggq-xJ-Oz5" firstAttribute="top" secondItem="8Wb-gI-HyT" secondAttribute="top" id="Hc8-9d-j2D"/>
+                            <constraint firstAttribute="trailing" secondItem="Ggq-xJ-Oz5" secondAttribute="trailing" id="nh0-KA-08N"/>
+                            <constraint firstAttribute="bottom" secondItem="Ggq-xJ-Oz5" secondAttribute="bottom" id="vNa-U6-9kz"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Tb0-wd-rrV" secondAttribute="bottom" id="Ktq-KB-GqS"/>
-                <constraint firstAttribute="trailing" secondItem="Tb0-wd-rrV" secondAttribute="trailing" constant="8" id="Xer-gt-ftG"/>
-                <constraint firstItem="Tb0-wd-rrV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ZhZ-hp-TbW"/>
-                <constraint firstItem="Tb0-wd-rrV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="j7V-DF-faF"/>
+                <constraint firstAttribute="bottom" secondItem="8Wb-gI-HyT" secondAttribute="bottom" id="65Q-M9-wPU"/>
+                <constraint firstItem="8Wb-gI-HyT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TPO-fK-KWx"/>
+                <constraint firstAttribute="trailing" secondItem="8Wb-gI-HyT" secondAttribute="trailing" constant="8" id="gJD-LW-VTI"/>
+                <constraint firstItem="8Wb-gI-HyT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="xCW-gF-aJ1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="iconView" destination="Tb0-wd-rrV" id="bNw-s9-5G2"/>
+                <outlet property="containerView" destination="8Wb-gI-HyT" id="Xno-av-val"/>
+                <outlet property="titleLabel" destination="Ggq-xJ-Oz5" id="Gnb-XS-NwL"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </collectionViewCell>

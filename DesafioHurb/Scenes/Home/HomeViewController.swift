@@ -15,12 +15,12 @@ final class HomeViewController: BaseViewController {
     
     enum Constants {
         static let loading = "LOADING"
-        static let packages = "PACKAGES"
-        static let oneStar = "ONE_STAR"
-        static let twoStar = "TWO_STAR"
-        static let threeStar = "THREE_STAR"
-        static let fourStar = "FOUR_STAR"
-        static let fiveStar = "FIVE_STAR"
+        static let packages = "Pacotes"
+        static let oneStar = "Uma estrela"
+        static let twoStar = "Duas estrelas"
+        static let threeStar = "Três estrelas"
+        static let fourStar = "Quatro estrelas"
+        static let fiveStar = "Cinco estrelas"
     }
     
     private let viewModel: HomeViewModelType
@@ -128,43 +128,43 @@ extension HomeViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         var items: [ListDiffable] = []
         if !packages.isEmpty {
-//            items.append(DiffableBox(
-//                value: HotelHeaderDisplay(id: Constants.packages, icon: nil, title: "Pacotes"),
-//                identifier: Constants.packages as NSObjectProtocol)
-//            )
+            items.append(DiffableBox(
+                value: HotelHeaderDisplay(title: Constants.packages),
+                identifier: Constants.packages as NSObjectProtocol)
+            )
             items.append(contentsOf: packages)
         }
         if !hotelsFiveStar.isEmpty {
             items.append(DiffableBox(
-                value: HotelHeaderDisplay(id: Constants.fiveStar, icon: UIImage(named: "ic_star_five"), title: nil),
+                value: HotelHeaderDisplay(title: Constants.fiveStar),
                 identifier: Constants.fiveStar as NSObjectProtocol)
             )
             items.append(contentsOf: hotelsFiveStar)
         }
         if !hotelsFourStar.isEmpty {
             items.append(DiffableBox(
-                value: HotelHeaderDisplay(id: Constants.fourStar, icon: UIImage(named: "ic_star_four"), title: nil),
+                value: HotelHeaderDisplay(title: Constants.fourStar),
                 identifier: Constants.fourStar as NSObjectProtocol)
             )
             items.append(contentsOf: hotelsFourStar)
         }
         if !hotelsThreeStar.isEmpty {
             items.append(DiffableBox(
-                value: HotelHeaderDisplay(id: Constants.threeStar, icon: UIImage(named: "ic_star_three"), title: nil),
+                value: HotelHeaderDisplay(title: Constants.threeStar),
                 identifier: Constants.threeStar as NSObjectProtocol)
             )
             items.append(contentsOf: hotelsThreeStar)
         }
         if !hotelsTwoStar.isEmpty {
             items.append(DiffableBox(
-                value: HotelHeaderDisplay(id: Constants.twoStar, icon: UIImage(named: "ic_star_two"), title: nil),
+                value: HotelHeaderDisplay(title: Constants.twoStar),
                 identifier: Constants.twoStar as NSObjectProtocol)
             )
             items.append(contentsOf: hotelsTwoStar)
         }
         if !hotelsOneStar.isEmpty {
             items.append(DiffableBox(
-                value: HotelHeaderDisplay(id: Constants.oneStar, icon: UIImage(named: "ic_star_one"), title: nil),
+                value: HotelHeaderDisplay(title: Constants.oneStar),
                 identifier: Constants.oneStar as NSObjectProtocol)
             )
             items.append(contentsOf: hotelsOneStar)
@@ -188,7 +188,7 @@ extension HomeViewController: ListAdapterDataSource {
         case is String:
             return LoadingSectionController(cellHeight: HotelViewCell.defaultHeight)
         default:
-            fatalError("Section Controllers error, section type not identified")
+            fatalError()
         }
     }
     
