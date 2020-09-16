@@ -21,7 +21,7 @@ struct RemoteHotelItem: Decodable {
     let price: RemoteHotelPriceItem?
     let quantityDescriptors: RemoteQuantityDescriptorItem?
     let smallDescription: String?
-    let star: Int?
+    let stars: Int?
     let tags: [String]?
     let url: URL?
     
@@ -38,7 +38,7 @@ struct RemoteHotelItem: Decodable {
                      price: price?.item,
                      quantityDescriptors: quantityDescriptors?.item,
                      smallDescription: smallDescription,
-                     star: star,
+                     stars: stars,
                      tags: tags,
                      url: url)
     }

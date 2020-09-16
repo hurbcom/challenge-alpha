@@ -89,9 +89,9 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
     func test_searchHotel_deliversItemsOn200HTTPResponseWithJSONItems() {
         let (sut, client) = makeSUT()
         
-        let item1 = makeItem(category: "a category", description: "a description", id: "1", image: URL(string: "https://a-image-url.com")!, isHotel: true, name: "a name", smallDescription: "a small description", star: 1, url: URL(string: "https://a-url.com")!)
+        let item1 = makeItem(category: "a category", description: "a description", id: "1", image: URL(string: "https://a-image-url.com")!, isHotel: true, name: "a name", smallDescription: "a small description", stars: 1, url: URL(string: "https://a-url.com")!)
         
-        let item2 = makeItem(category: "another category", description: "another description", id: "2", image: URL(string: "https://another-image-url.com")!, isHotel: false, name: "another name", smallDescription: "another small description", star: 2, url: URL(string: "https://another-url.com")!)
+        let item2 = makeItem(category: "another category", description: "another description", id: "2", image: URL(string: "https://another-image-url.com")!, isHotel: false, name: "another name", smallDescription: "another small description", stars: 2, url: URL(string: "https://another-url.com")!)
         
         let items = [item1.model, item2.model]
         
@@ -177,10 +177,10 @@ class SearchHotelFromRemoteUseCaseTests: XCTestCase {
         price: HotelPrice = HotelPrice(amount: 12.34, amountPerDay: 43.21, currency: "a currency"),
         quantityDescriptors: QuantityDescriptor = QuantityDescriptor(maxAdults: 5, maxChildren: 6, maxFreeChildrenAge: 7),
         smallDescription: String,
-        star: Int,
+        stars: Int,
         tags: [String] = [],
         url: URL) -> (model: Hotel, json: [String: Any?]) {
-        let item = Hotel(address: address, amenities: amenities, category: category, description: description, gallery: gallery, id: id, image: image, isHotel: isHotel, name: name, price: price, quantityDescriptors: quantityDescriptors, smallDescription: smallDescription, star: star, tags: tags, url: url)
+        let item = Hotel(address: address, amenities: amenities, category: category, description: description, gallery: gallery, id: id, image: image, isHotel: isHotel, name: name, price: price, quantityDescriptors: quantityDescriptors, smallDescription: smallDescription, stars: stars, tags: tags, url: url)
         
         return (item, item.json)
     }
@@ -202,7 +202,7 @@ private extension Hotel {
             "price": price?.json,
             "quantityDescriptors": quantityDescriptors?.json,
             "smallDescription": smallDescription,
-            "star": star,
+            "stars": stars,
             "tags": tags,
             "url": url?.absoluteString
         ]

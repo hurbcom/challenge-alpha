@@ -9,9 +9,9 @@
 import Foundation
 
 public protocol HotelSearchView: class {
-    func display(_ model: [HotelViewModel])
+    func display(_ model: [[HotelViewModel]])
     func displayError(_ error: String)
     func displayLoading(_ isLoading: Bool)
-    func displayImageData(_ data: Data, for index: Int)
-    func displayImageLoading(_ isLoading: Bool, for index: Int)
+    func displayImageData(_ data: Data, for index: Int, section: Int)
+    func displayImageLoading(_ isLoading: Bool, for index: Int, section: Int)
 }

@@ -80,8 +80,7 @@ final public class HotelSearchViewModel {
     
     public var imagesData = [Int: Data]()
     
-    private var hotels = [Hotel]()
-    private var imageLoadTasks = [Int: ImageDataLoaderTask]()
+    private var hotels = [[Hotel]]()
     
     private let hotelSearcher: HotelSearcher
     private let imageDataLoader: ImageDataLoader
@@ -102,8 +101,7 @@ final public class HotelSearchViewModel {
                 guard let self = self else { return }
                 switch result {
                 case let .success(hotels):
-                    self.hotels = hotels
-                    self.hotelSearchView?.display(hotels.map { HotelViewModel(hotel: $0)})
+                    self.mapHotels(hotels)
                 case let .failure(error):
                     self.hotelSearchView?.displayError(error.localizedDescription)
                 }
@@ -112,37 +110,40 @@ final public class HotelSearchViewModel {
         }
     }
     
+    private func mapHotels(_ hotels: [Hotel]) {
+        let sortedHotels = hotels.sorted(by: { ($0.stars ?? -1) > ($1.stars ?? -1)})
+        let mappedHotels = sortedHotels.map { hotel in return sortedHotels.filter { $0.stars == hotel.stars} }
+        let mappedHotelsWithoutDuplications = NSOrderedSet(array: mappedHotels).array as! [[Hotel]]
+        self.hotels = mappedHotelsWithoutDuplications
+        let viewModel = self.hotels.compactMap { $0.compactMap { HotelViewModel(hotel: $0) }}
+        self.hotelSearchView?.display(viewModel)
+    }
+    
     private func cleanPreviousHotelsStates() {
         self.hotels.removeAll()
         self.imagesData.removeAll()
-        self.imageLoadTasks.removeAll()
         self.hotelSearchView?.display([])
     }
     
-    public func loadImage(at index: Int) {
-        guard self.hotels.count > index else { return }
-        guard self.imagesData[index] == nil else { return }
-        let hotel = self.hotels[index]
-        guard let url = hotel.image ?? hotel.gallery?.first?.url else { return }
-        self.hotelSearchView?.displayImageLoading(true, for: index)
-        self.imageLoadTasks[index] = self.imageDataLoader.loadImageData(from: url) { [weak self] result in
+    public func loadImage(at index: Int, section: Int) -> ImageDataLoaderTask? {
+        guard self.hotels.count > index else { return nil }
+        guard self.imagesData[index] == nil else { return nil }
+        let hotel = self.hotels[section][index]
+        guard let url = hotel.image ?? hotel.gallery?.first?.url else { return nil }
+        self.hotelSearchView?.displayImageLoading(true, for: index, section: section)
+        return self.imageDataLoader.loadImageData(from: url) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {
                 case let .success(data):
                     self.imagesData[index] = data
-                    self.hotelSearchView?.displayImageData(data, for: index)
+                    self.hotelSearchView?.displayImageData(data, for: index, section: section)
                 case let .failure(error):
                     print(error)
                 }
-                self.hotelSearchView?.displayImageLoading(false, for: index)
+                self.hotelSearchView?.displayImageLoading(false, for: index, section: section)
             }
         }
-    }
-    
-    public func cancelImageLoad(at index: Int) {
-        self.imageLoadTasks[index]?.cancel()
-        self.imageLoadTasks[index] = nil
     }
     
 }
@@ -165,12 +166,18 @@ final public class HotelSearchViewController: UIViewController {
     
     // MARK: - Properties
     
-    private let viewModel: HotelSearchViewModel
-    private var hotels = [HotelViewModel]() {
+    private var groupedHotels = [[HotelViewModel]]() {
         didSet {
             self.tableView.reloadData()
         }
     }
+    private let viewModel: HotelSearchViewModel
+    private var hotels = [[HotelViewModel]]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    private var imageLoadTasks = [IndexPath: ImageDataLoaderTask]()
     
     // MARK: - Life Cycle
     
@@ -214,11 +221,20 @@ private extension HotelSearchViewController {
         self.viewModel.text = textField.text ?? ""
     }
     
+    func loadImage(at indexPath: IndexPath) {
+        self.imageLoadTasks[indexPath] = self.viewModel.loadImage(at: indexPath.row, section: indexPath.section)
+    }
+    
+    func cancelImageLoad(at indexPath: IndexPath) {
+        self.imageLoadTasks[indexPath]?.cancel()
+        self.imageLoadTasks[indexPath] = nil
+    }
+    
 }
 
 extension HotelSearchViewController: HotelSearchView {
     
-    public func display(_ hotels: [HotelViewModel]) {
+    public func display(_ hotels: [[HotelViewModel]]) {
         self.hotels = hotels
     }
     
@@ -231,16 +247,15 @@ extension HotelSearchViewController: HotelSearchView {
         self.tableView.isHidden = isLoading
     }
     
-    public func displayImageData(_ data: Data, for index: Int) {
-        self.visibleHotelCell(for: index)?.imvBackground.setImageAnimated(UIImage(data: data))
+    public func displayImageData(_ data: Data, for index: Int, section: Int) {
+        self.visibleHotelCell(for: IndexPath(row: index, section: section))?.imvBackground.setImageAnimated(UIImage(data: data))
     }
     
-    public func displayImageLoading(_ isLoading: Bool, for index: Int) {
-        self.visibleHotelCell(for: index)?.imageContainer.isShimmering = isLoading
+    public func displayImageLoading(_ isLoading: Bool, for index: Int, section: Int) {
+        self.visibleHotelCell(for: IndexPath(row: index, section: section))?.imageContainer.isShimmering = isLoading
     }
     
-    private func visibleHotelCell(for index: Int) -> HotelCell? {
-        let indexPath = IndexPath(row: index, section: 0)
+    private func visibleHotelCell(for indexPath: IndexPath) -> HotelCell? {
         guard self.tableView.indexPathsForVisibleRows?.contains(indexPath) == true else { return nil }
         if let cell = self.tableView.cellForRow(at: indexPath) as? HotelCell, self.tableView.visibleCells.contains(cell) {
             return cell
@@ -252,13 +267,17 @@ extension HotelSearchViewController: HotelSearchView {
 
 extension HotelSearchViewController: UITableViewDataSource {
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return self.hotels.count
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.hotels[section].count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HotelCell.self), for: indexPath) as! HotelCell
-        cell.viewModel = self.hotels[indexPath.row]
+        cell.viewModel = self.hotels[indexPath.section][indexPath.row]
         let data = self.viewModel.imagesData[indexPath.row]
         if let data = data {
             cell.imvBackground.setImageAnimated(UIImage(data: data))
@@ -266,7 +285,7 @@ extension HotelSearchViewController: UITableViewDataSource {
         } else {
             cell.imvBackground.setImageAnimated(nil)
             cell.imageContainer.isShimmering = true
-            self.viewModel.loadImage(at: indexPath.row)
+            self.loadImage(at: indexPath)
         }
         return cell
     }
@@ -276,7 +295,7 @@ extension HotelSearchViewController: UITableViewDataSource {
 extension HotelSearchViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.viewModel.cancelImageLoad(at: indexPath.row)
+        self.cancelImageLoad(at: indexPath)
     }
     
 }
@@ -285,13 +304,13 @@ extension HotelSearchViewController: UITableViewDataSourcePrefetching {
     
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach {
-            self.viewModel.loadImage(at: $0.row)
+            self.loadImage(at: $0)
         }
     }
     
     public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach {
-            self.viewModel.cancelImageLoad(at: $0.row)
+            self.cancelImageLoad(at: $0)
         }
     }
     

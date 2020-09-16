@@ -21,7 +21,7 @@ public struct Hotel: Hashable {
     public let price: HotelPrice?
     public let quantityDescriptors: QuantityDescriptor?
     public let smallDescription: String?
-    public let star: Int?
+    public let stars: Int?
     public let tags: [String]?
     public let url: URL?
     
@@ -38,7 +38,7 @@ public struct Hotel: Hashable {
         price: HotelPrice?,
         quantityDescriptors: QuantityDescriptor?,
         smallDescription: String?,
-        star: Int?,
+        stars: Int?,
         tags: [String]?,
         url: URL?) {
         
@@ -54,7 +54,7 @@ public struct Hotel: Hashable {
         self.price = price
         self.quantityDescriptors = quantityDescriptors
         self.smallDescription = smallDescription
-        self.star = star
+        self.stars = stars
         self.tags = tags
         self.url = url
     }

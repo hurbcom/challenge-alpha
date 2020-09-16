@@ -12,6 +12,9 @@ final public class HotelViewModel {
     
     let hotel: Hotel
     
+    public var stars: Int? {
+        return self.hotel.stars
+    }
     public var name: String? {
         return self.hotel.name
     }
