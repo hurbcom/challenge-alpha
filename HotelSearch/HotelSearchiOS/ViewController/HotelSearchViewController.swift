@@ -294,6 +294,14 @@ extension HotelSearchViewController: UITableViewDataSource {
 
 extension HotelSearchViewController: UITableViewDelegate {
     
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
+    }
+    
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return HeaderView(stars: self.hotels[section].first?.stars)
+    }
+    
     public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         self.cancelImageLoad(at: indexPath)
     }
