@@ -19,7 +19,6 @@ final class DetailViewController: BaseViewController {
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var starImage: UIImageView!
     @IBOutlet private var descriptionLabel: UILabel!
-    @IBOutlet private var showMoreLabel: UILabel!
     @IBOutlet private var originalAmountPerDayLabel: UILabel!
     @IBOutlet private var amountPerDayLabel: UILabel!
     @IBOutlet private var paymentCondition: UILabel!
@@ -53,8 +52,8 @@ final class DetailViewController: BaseViewController {
     
     override func prepare() {
         super.prepare()
+        title = "Dados do Hotel"
         prepareCollectionView()
-        showMoreLabel.text = "Ver mais"
         dateLabel.text = "Horário:"
         periodLabel.text = "Entrada 14h| Saída 12h"
     }
@@ -103,7 +102,7 @@ final class DetailViewController: BaseViewController {
         let newImageView = UIImageView()
         newImageView.kf.setImage(with: imgeUrl)
         newImageView.frame = UIScreen.main.bounds
-        newImageView.backgroundColor = .black
+        newImageView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
         newImageView.contentMode = .scaleAspectFit
         newImageView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))

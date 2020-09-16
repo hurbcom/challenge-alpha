@@ -9,7 +9,7 @@
 import RxSwift
 import Alamofire
 
-enum CustomError: String, Error {
+enum ParseError: String, Error {
     case notFound
     case parseError
     
@@ -24,15 +24,28 @@ enum CustomError: String, Error {
 }
 
 enum NetWorkError: Int, Error {
+    case unknow = 0
+    case badRequest = 400
     case unAuthorized = 401
+    case forbidden = 403
     case notFound = 404
+    case timeout = 408
     
     var localizedDescription: String {
         switch self {
+        case .unknow:
+            return "Algo deu errado, verifique sua conexão e tente novamente."
+        case .badRequest:
+            return "Requisição incorreta."
         case .unAuthorized:
             return "Sem autorização para efetuar a operação solicitada, tente novamente"
+        case .forbidden:
+            return "Solicitação não permitida."
         case .notFound:
             return "O recurso solicitado não foi encontrado, tente novamente."
+        case .timeout:
+            return "O tempo limite da operação foi atingido."
+            
         }
     }
 }
@@ -59,7 +72,7 @@ final class FetchHotelsUseCaseImpl: FetchHotelsUseCase {
                     switch response.result {
                     case .success:
                         guard let data = response.data else {
-                            return completion(.error(response.error ?? CustomError.notFound))
+                            return completion(.error(response.error ?? ParseError.notFound))
                         }
                         do {
                             let salePoint = try JSONDecoder().decode(FetchHotelsResponse.self, from: data)

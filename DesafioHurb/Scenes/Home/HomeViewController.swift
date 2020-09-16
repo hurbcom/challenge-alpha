@@ -86,10 +86,7 @@ final class HomeViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         viewModel.output.error
-            .drive(onNext: { [weak self] error in
-                guard let self = self else { return }
-                print(error)
-            })
+            .drive(error)
             .disposed(by: disposeBag)
         
         viewModel.output.hotelsPackages
