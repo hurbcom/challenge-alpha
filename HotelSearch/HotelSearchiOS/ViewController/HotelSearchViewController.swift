@@ -65,9 +65,12 @@ private extension HotelSearchViewController {
     
     func setupUI() {
         self.viewInput.layer.cornerRadius = 4
-        
+        self.textField.delegate = self
         self.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
+        self.setupTable()
+    }
+    
+    func setupTable() {
         self.tableView.register(UINib(nibName: String(describing: HotelCell.self), bundle: Bundle(for: HotelCell.self)), forCellReuseIdentifier: String(describing: HotelCell.self))
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 200
@@ -93,6 +96,8 @@ private extension HotelSearchViewController {
     }
     
 }
+
+// MARK: - Hotel Search View
 
 extension HotelSearchViewController: HotelSearchView {
     
@@ -127,6 +132,8 @@ extension HotelSearchViewController: HotelSearchView {
     
 }
 
+// MARK: - Table View Data Source
+
 extension HotelSearchViewController: UITableViewDataSource {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -154,6 +161,8 @@ extension HotelSearchViewController: UITableViewDataSource {
     
 }
 
+// MARK: - Table View Delegate
+
 extension HotelSearchViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -170,6 +179,8 @@ extension HotelSearchViewController: UITableViewDelegate {
     
 }
 
+// MARK: - Table View Prefetch
+
 extension HotelSearchViewController: UITableViewDataSourcePrefetching {
     
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
@@ -182,6 +193,17 @@ extension HotelSearchViewController: UITableViewDataSourcePrefetching {
         indexPaths.forEach {
             self.cancelImageLoad(at: $0)
         }
+    }
+    
+}
+
+// MARK: - Text Field Delegate
+
+extension HotelSearchViewController: UITextFieldDelegate {
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.viewModel.searchHotel()
+        return textField.resignFirstResponder()
     }
     
 }
