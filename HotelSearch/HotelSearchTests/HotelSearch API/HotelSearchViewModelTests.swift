@@ -32,6 +32,19 @@ class HotelSearchViewModelTests: XCTestCase {
         ])
     }
     
+    func test_didFinishSearchingHotel_displayHotelsAndStopLoading() {
+        let spy = ViewSpy()
+        let sut = HotelSearchViewModel(hotelSearcher: spy, imageDataLoader: spy)
+        sut.hotelSearchView = spy
+        let hotel = Hotel(address: nil, amenities: nil, category: "a category", description: "a description", gallery: nil, id: "1", image: nil, isHotel: nil, name: "a name", price: nil, quantityDescriptors: nil, smallDescription: nil, stars: 5, tags: nil, url: nil)
+        sut.didFinishSearchingHotels(with: [hotel])
+        
+        XCTAssertEqual(spy.messages, [
+            .display(model: [[HotelViewModel(hotel: hotel)]]),
+            .display(loading: false)
+        ])
+    }
+    
     // MARK: Helpers
     
     final class ViewSpy: HotelSearchView, HotelSearcher, ImageDataLoader {

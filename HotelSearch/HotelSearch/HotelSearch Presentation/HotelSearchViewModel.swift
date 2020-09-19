@@ -42,13 +42,18 @@ final public class HotelSearchViewModel {
                 guard let self = self else { return }
                 switch result {
                 case let .success(hotels):
-                    self.mapHotels(hotels)
+                    self.didFinishSearchingHotels(with: hotels)
                 case let .failure(error):
                     self.hotelSearchView?.displayError(error.localizedDescription)
+                    self.hotelSearchView?.displayLoading(false)
                 }
-                self.hotelSearchView?.displayLoading(false)
             }
         }
+    }
+    
+    public func didFinishSearchingHotels(with hotels: [Hotel]) {
+        self.mapHotels(hotels)
+        self.hotelSearchView?.displayLoading(false)
     }
     
     private func mapHotels(_ hotels: [Hotel]) {
