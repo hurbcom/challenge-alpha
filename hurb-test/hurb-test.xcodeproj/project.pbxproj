@@ -17,6 +17,7 @@
 		FC744A05250F8A6D0048DCEE /* HotelSearchiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FCE9E35D25166D4D00E94082 /* HotelSearchUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E35C25166D4D00E94082 /* HotelSearchUIComposer.swift */; };
 		FCE9E3612516BEB000E94082 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E3602516BEB000E94082 /* MainQueueDispatchDecorator.swift */; };
+		FCE9E36F2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E36E2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HotelSearchiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE9E35C25166D4D00E94082 /* HotelSearchUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchUIComposer.swift; sourceTree = "<group>"; };
 		FCE9E3602516BEB000E94082 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
+		FCE9E36E2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchUIIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7449E3250F88EA0048DCEE /* Info.plist */,
+				FCE9E36E2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift */,
 			);
 			path = "hurb-testTests";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 					};
 					FC7449DC250F88EA0048DCEE = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 						TestTargetID = FC7449C6250F88E70048DCEE;
 					};
 					FC7449E7250F88EA0048DCEE = {
@@ -297,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE9E36F2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +494,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "hurb-testTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -499,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.tulioParreiras.hurb-testTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hurb-test.app/hurb-test";
@@ -510,6 +517,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "hurb-testTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
