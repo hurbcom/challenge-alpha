@@ -99,6 +99,31 @@ class HotelSearchViewModelTests: XCTestCase {
         ])
     }
     
+    func test_didFinishLoadingImageWithError_stopsLoading() {
+        let (sut, spy) = makeSUT()
+        
+        let hotel1 = makeHotel(category: "a category", description: "a description", id: "1", image: URL(string: "https://a-url.com")!, name: "a name", stars: 5)
+        let hotel2 = makeHotel(image: URL(string: "https://any-url.com")!, stars: 3)
+        sut.searchHotel()
+        spy.completeHotelSearchWith(.success([hotel1, hotel2]))
+        let index = 0
+        let section = 1
+        _ = sut.loadImage(at: index, section: section)
+        spy.completeImageLoadWith(.failure(NSError(domain: "", code: 0)))
+        
+        XCTAssertEqual(spy.messages, [
+            .display(model: []),
+            .display(loading: true),
+            .display(model: [
+                [HotelViewModel(hotel: hotel1)],
+                [HotelViewModel(hotel: hotel2)]
+            ]),
+            .display(loading: false),
+            .display(imageLoading: true, index: index, section: section),
+            .display(imageLoading: false, index: index, section: section)
+        ])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> (sut: HotelSearchViewModel, spy: ViewSpy) {
