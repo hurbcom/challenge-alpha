@@ -13,17 +13,13 @@ import HotelSearch
 class HotelSearchViewModelTests: XCTestCase {
 
     func test_init_doesNotSendMessagesToView() {
-        let spy = ViewSpy()
-        let sut = HotelSearchViewModel(hotelSearcher: spy, imageDataLoader: spy)
-        sut.hotelSearchView = spy
+        let (_, spy) = makeSUT()
         
         XCTAssertTrue(spy.messages.isEmpty)
     }
     
     func test_didStartSearchingHotel_startLoadingAndClearModels() {
-        let spy = ViewSpy()
-        let sut = HotelSearchViewModel(hotelSearcher: spy, imageDataLoader: spy)
-        sut.hotelSearchView = spy
+        let (sut, spy) = makeSUT()
         sut.searchHotel()
         
         XCTAssertEqual(spy.messages, [
@@ -33,9 +29,7 @@ class HotelSearchViewModelTests: XCTestCase {
     }
     
     func test_didFinishSearchingHotel_displayHotelsAndStopLoading() {
-        let spy = ViewSpy()
-        let sut = HotelSearchViewModel(hotelSearcher: spy, imageDataLoader: spy)
-        sut.hotelSearchView = spy
+        let (sut, spy) = makeSUT()
         let hotel = Hotel(address: nil, amenities: nil, category: "a category", description: "a description", gallery: nil, id: "1", image: nil, isHotel: nil, name: "a name", price: nil, quantityDescriptors: nil, smallDescription: nil, stars: 5, tags: nil, url: nil)
         sut.didFinishSearchingHotels(with: [hotel])
         
@@ -45,7 +39,14 @@ class HotelSearchViewModelTests: XCTestCase {
         ])
     }
     
-    // MARK: Helpers
+    // MARK: - Helpers
+    
+    private func makeSUT() -> (sut: HotelSearchViewModel, spy: ViewSpy) {
+        let spy = ViewSpy()
+        let sut = HotelSearchViewModel(hotelSearcher: spy, imageDataLoader: spy)
+        sut.hotelSearchView = spy
+        return (sut, spy)
+    }
     
     final class ViewSpy: HotelSearchView, HotelSearcher, ImageDataLoader {
         
