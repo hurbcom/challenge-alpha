@@ -44,8 +44,7 @@ final public class HotelSearchViewModel {
                 case let .success(hotels):
                     self.didFinishSearchingHotels(with: hotels)
                 case let .failure(error):
-                    self.hotelSearchView?.displayError(error.localizedDescription)
-                    self.hotelSearchView?.displayLoading(false)
+                    self.didFinishSearchingHotels(with: error)
                 }
             }
         }
@@ -63,6 +62,11 @@ final public class HotelSearchViewModel {
         self.hotels = mappedHotelsWithoutDuplications
         let viewModel = self.hotels.compactMap { $0.compactMap { HotelViewModel(hotel: $0) }}
         self.hotelSearchView?.display(viewModel)
+    }
+    
+    public func didFinishSearchingHotels(with error: Error) {
+        self.hotelSearchView?.displayError(error.localizedDescription)
+        self.hotelSearchView?.displayLoading(false)
     }
     
     private func cleanPreviousHotelsStates() {
