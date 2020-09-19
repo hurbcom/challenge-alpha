@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Filter: Codable {
+struct Filter: Codable, Equatable {
     let term, filter: String
     let count: Int
 }

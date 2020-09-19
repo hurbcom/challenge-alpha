@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Pagination: Codable {
+struct Pagination: Codable, Equatable {
     let count: Int
     let previousPage: String?
     var previousPageNumber: Int? {

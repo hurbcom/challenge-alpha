@@ -8,7 +8,10 @@
 
 import Foundation
 
-struct QuantityDescriptors: Codable {
-    let maxChildren, maxAdults, maxFreeChildrenAge, nights: Int?
+struct QuantityDescriptors: Codable, Equatable {
+    let maxChildren: Int?
+    let maxAdults: Int?
+    let maxFreeChildrenAge: Int?
+    let nights: Int?
     let maxPeople: Int?
 }

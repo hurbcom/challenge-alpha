@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PriceInterval: Codable {
+struct PriceInterval: Codable, Equatable {
     let min: Int
     let max: Int
     let filterPattern: String

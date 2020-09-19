@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Amenity: Codable {
+struct Amenity: Codable, Equatable {
     let name: String
     let category: String
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Tax: Codable {
+struct Tax: Codable, Equatable {
     let type: String
     let name: String
     let amount: Double

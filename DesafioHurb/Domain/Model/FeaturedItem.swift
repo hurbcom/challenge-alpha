@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FeaturedItem: Codable {
+struct FeaturedItem: Codable, Equatable {
     let amenities: [String]?
     let name: String?
     let image: String?

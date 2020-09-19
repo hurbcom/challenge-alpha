@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FetchHotelsResponse: Codable {
+struct FetchHotelsResponse: Codable, Equatable {
     let meta: Meta
     let filters: Filters
     let results: [Hotel]

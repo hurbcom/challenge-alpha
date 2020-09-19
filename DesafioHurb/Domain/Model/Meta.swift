@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Meta: Codable {
+struct Meta: Codable, Equatable {
     let count: Int
     let offset: Int
     let query: String

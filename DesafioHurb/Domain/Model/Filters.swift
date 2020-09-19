@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Filters: Codable {
+struct Filters: Codable, Equatable {
     let amenities: [Filter]
     let attributes: [Filter]
     let countries: [Filter]

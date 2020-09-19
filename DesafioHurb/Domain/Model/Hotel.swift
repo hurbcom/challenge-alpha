@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Hotel: Codable {
+struct Hotel: Codable, Equatable {
     let sku: String
     let isHotel: Bool?
     let category: String

@@ -46,32 +46,19 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInput, HomeViewModelO
                     errorTracker: errorTracker,
                     trigger: triggerNextPage
                 )
-        }
+            }
         
         hotelsPackages = hotelsResponse
             .map { data in
-                let packages = data.filter { ($0.isPackage ?? false) }.map(HotelDisplay.init)
-                let hotels = data.filter { !($0.isPackage ?? false) }
-                let hotelsOne = hotels.filter { ($0.stars ?? 1 == 1) }.map(HotelDisplay.init)
-                let hotelsTwo = hotels.filter { ($0.stars ?? 1 == 2) }.map(HotelDisplay.init)
-                let hotelsThree = hotels.filter { ($0.stars ?? 1 == 3) }.map(HotelDisplay.init)
-                let hotelsFour = hotels.filter { ($0.stars ?? 1 == 4) }.map(HotelDisplay.init)
-                let hotelsFive = hotels.filter { ($0.stars ?? 1 == 5) }.map(HotelDisplay.init)
-                return HotelsPackagesDisplay(count: data.count,
-                                             packages: packages,
-                                             hotelsOneStar: hotelsOne,
-                                             hotelsTwoStar: hotelsTwo,
-                                             hotelsThreeStar: hotelsThree,
-                                             hotelsFourStar: hotelsFour,
-                                             hotelsFiveStar: hotelsFive)
-        }
+                HotelsPackagesDisplay(data: data)
+            }
         
         selectedHotel = selectHotel.asDriver(onErrorDriveWith: Driver.empty())
             .withLatestFrom(hotelsResponse) { (id: $0, fetchHotelsResponse:$1) }
             .map { id, hotelsResponse in
                 hotelsResponse.first(where: { $0.id == id })
-        }
-        .compactMap { $0 }
+            }
+            .compactMap { $0 }
         
     }
     

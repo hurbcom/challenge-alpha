@@ -13,6 +13,8 @@ import IGListKit
 
 final class HomeViewController: BaseViewController {
     
+    @IBOutlet private var collectionView: UICollectionView!
+    
     enum Constants {
         static let loading = "LOADING"
         static let packages = "Pacotes"
@@ -25,8 +27,6 @@ final class HomeViewController: BaseViewController {
     
     private let viewModel: HomeViewModelType
     private let router: HomeRouting
-    
-    @IBOutlet private var collectionView: UICollectionView!
     
     private lazy var adapter: ListAdapter = {
         let listAdpater = ListAdapter(

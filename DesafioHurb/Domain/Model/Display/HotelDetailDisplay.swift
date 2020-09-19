@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct HotelDetailDisplay {
+struct HotelDetailDisplay: Equatable {
     let id: String
     let image: URL?
     let city: String

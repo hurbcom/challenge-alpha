@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Address: Codable {
+struct Address: Codable, Equatable {
     let zipcode: String?
     let addressFullAddress: String?
     let street: String?

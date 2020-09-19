@@ -21,5 +21,5 @@ final class HomeInteractor: HomeInteractable {
     func fetchHotels(page: Int) -> Single<FetchHotelsResponse> {
         fetchHotelsUseCase.fetchHotels(page: page)
     }
-    
+
 }
