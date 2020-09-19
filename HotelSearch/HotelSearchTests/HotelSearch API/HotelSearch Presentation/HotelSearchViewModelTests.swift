@@ -126,10 +126,12 @@ class HotelSearchViewModelTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT() -> (sut: HotelSearchViewModel, spy: ViewSpy) {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: HotelSearchViewModel, spy: ViewSpy) {
         let spy = ViewSpy()
         let sut = HotelSearchViewModel(hotelSearcher: spy, imageDataLoader: spy)
         sut.hotelSearchView = spy
+        trackForMemoryLeaks(sut, file: file, line: line)
+        trackForMemoryLeaks(spy, file: file, line: line)
         return (sut, spy)
     }
     
