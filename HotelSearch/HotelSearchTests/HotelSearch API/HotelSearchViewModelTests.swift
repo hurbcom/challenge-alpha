@@ -13,10 +13,23 @@ import HotelSearch
 class HotelSearchViewModelTests: XCTestCase {
 
     func test_init_doesNotSendMessagesToView() {
-        let view = ViewSpy()
-        let _ = HotelSearchViewModel(hotelSearcher: view, imageDataLoader: view)
+        let spy = ViewSpy()
+        let sut = HotelSearchViewModel(hotelSearcher: spy, imageDataLoader: spy)
+        sut.hotelSearchView = spy
         
-        XCTAssertTrue(view.messages.isEmpty)
+        XCTAssertTrue(spy.messages.isEmpty)
+    }
+    
+    func test_didStartSearchingHotel_startLoadingAndClearModels() {
+        let spy = ViewSpy()
+        let sut = HotelSearchViewModel(hotelSearcher: spy, imageDataLoader: spy)
+        sut.hotelSearchView = spy
+        sut.searchHotel()
+        
+        XCTAssertEqual(spy.messages, [
+            .display(model: []),
+            .display(loading: true)
+        ])
     }
     
     // MARK: Helpers
