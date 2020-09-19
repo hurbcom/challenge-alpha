@@ -72,6 +72,33 @@ class HotelSearchViewModelTests: XCTestCase {
         XCTAssertTrue(spy.messages.isEmpty)
     }
     
+    func test_didFinishLoadingImage_displayImageDataForIndexAndSection() {
+        let (sut, spy) = makeSUT()
+        
+        let hotel1 = makeHotel(category: "a category", description: "a description", id: "1", image: URL(string: "https://a-url.com")!, name: "a name", stars: 5)
+        let hotel2 = makeHotel(image: URL(string: "https://any-url.com")!, stars: 3)
+        sut.searchHotel()
+        spy.completeHotelSearchWith(.success([hotel1, hotel2]))
+        let index = 0
+        let section = 1
+        _ = sut.loadImage(at: index, section: section)
+        let data = Data("any data".utf8)
+        spy.completeImageLoadWith(.success(data))
+        
+        XCTAssertEqual(spy.messages, [
+            .display(model: []),
+            .display(loading: true),
+            .display(model: [
+                [HotelViewModel(hotel: hotel1)],
+                [HotelViewModel(hotel: hotel2)]
+            ]),
+            .display(loading: false),
+            .display(imageLoading: true, index: index, section: section),
+            .display(imageData: data, index: index, section: section),
+            .display(imageLoading: false, index: index, section: section)
+        ])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> (sut: HotelSearchViewModel, spy: ViewSpy) {
@@ -81,8 +108,8 @@ class HotelSearchViewModelTests: XCTestCase {
         return (sut, spy)
     }
     
-    private func makeHotel(category: String? = nil, description: String? = nil, id: String? = nil, name: String? = nil, stars: Int? = nil) -> Hotel {
-        return Hotel(address: nil, amenities: nil, category: category, description: description, gallery: nil, id: id, image: nil, isHotel: nil, name: name, price: nil, quantityDescriptors: nil, smallDescription: nil, stars: stars, tags: nil, url: nil)
+    private func makeHotel(category: String? = nil, description: String? = nil, id: String? = nil, image: URL? = nil, name: String? = nil, stars: Int? = nil) -> Hotel {
+        return Hotel(address: nil, amenities: nil, category: category, description: description, gallery: nil, id: id, image: image, isHotel: nil, name: name, price: nil, quantityDescriptors: nil, smallDescription: nil, stars: stars, tags: nil, url: nil)
     }
     
     final class ViewSpy: HotelSearchView, HotelSearcher, ImageDataLoader {
@@ -93,8 +120,8 @@ class HotelSearchViewModelTests: XCTestCase {
             case display(model: [[HotelViewModel]])
             case display(error: String)
             case display(loading: Bool)
-            case display(imageData: Data)
-            case display(imageLoading: Bool)
+            case display(imageData: Data, index: Int, section: Int)
+            case display(imageLoading: Bool, index: Int, section: Int)
         }
         
         private(set) var messages = Set<Message>()
@@ -112,11 +139,11 @@ class HotelSearchViewModelTests: XCTestCase {
         }
         
         func displayImageData(_ data: Data, for index: Int, section: Int) {
-            messages.insert(.display(imageData: data))
+            messages.insert(.display(imageData: data, index: index, section: section))
         }
         
         func displayImageLoading(_ isLoading: Bool, for index: Int, section: Int) {
-            messages.insert(.display(imageLoading: isLoading))
+            messages.insert(.display(imageLoading: isLoading, index: index, section: section))
         }
         
         // MARK: - Hotel Searcher
@@ -133,12 +160,19 @@ class HotelSearchViewModelTests: XCTestCase {
         
         // MARK: - Image Data Loader
         
+        private var imageLoadCompletions = [(ImageDataLoader.Result) -> Void]()
+        
         private struct MockTask: ImageDataLoaderTask {
             func cancel() { }
         }
         
         func loadImageData(from url: URL, completion: @escaping (ImageDataLoader.Result) -> Void) -> ImageDataLoaderTask {
+            self.imageLoadCompletions.append(completion)
             return MockTask()
+        }
+        
+        func completeImageLoadWith(_ result: ImageDataLoader.Result, at index: Int = 0) {
+            self.imageLoadCompletions[index](result)
         }
         
     }
