@@ -102,6 +102,19 @@ class LoadImageFromRemoteUseCaseTests: XCTestCase {
         XCTAssertTrue(received.isEmpty, "Expected no received results after cancelling task")
     }
     
+    func test_loadImageDataFromURL_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+        let client = HTTPClientSpy()
+        var sut: RemoteImageDataLoader? = RemoteImageDataLoader(client: client)
+        
+        var capturedResults = [ImageDataLoader.Result]()
+        _ = sut?.loadImageData(from: anyURL()) { capturedResults.append($0) }
+        
+        sut = nil
+        client.complete(withStatusCode: 200, data: anyData())
+        
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> (sut: RemoteImageDataLoader, client: HTTPClientSpy) {
