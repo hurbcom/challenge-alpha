@@ -75,8 +75,7 @@ class HotelSearchViewModelTests: XCTestCase {
     func test_didFinishLoadingImage_displayImageDataForIndexAndSection() {
         let (sut, spy) = makeSUT()
         
-        let hotel1 = makeHotel(category: "a category", description: "a description", id: "1", image: URL(string: "https://a-url.com")!, name: "a name", stars: 5)
-        let hotel2 = makeHotel(image: URL(string: "https://any-url.com")!, stars: 3)
+        let (hotel1, hotel2) = anyHotels()
         sut.searchHotel()
         spy.completeHotelSearchWith(.success([hotel1, hotel2]))
         let index = 0
@@ -102,8 +101,7 @@ class HotelSearchViewModelTests: XCTestCase {
     func test_didFinishLoadingImageWithError_stopsLoading() {
         let (sut, spy) = makeSUT()
         
-        let hotel1 = makeHotel(category: "a category", description: "a description", id: "1", image: URL(string: "https://a-url.com")!, name: "a name", stars: 5)
-        let hotel2 = makeHotel(image: URL(string: "https://any-url.com")!, stars: 3)
+        let (hotel1, hotel2) = anyHotels()
         sut.searchHotel()
         spy.completeHotelSearchWith(.success([hotel1, hotel2]))
         let index = 0
@@ -137,6 +135,12 @@ class HotelSearchViewModelTests: XCTestCase {
     
     private func makeHotel(category: String? = nil, description: String? = nil, id: String? = nil, image: URL? = nil, name: String? = nil, stars: Int? = nil) -> Hotel {
         return Hotel(address: nil, amenities: nil, category: category, description: description, gallery: nil, id: id, image: image, isHotel: nil, name: name, price: nil, quantityDescriptors: nil, smallDescription: nil, stars: stars, tags: nil, url: nil)
+    }
+    
+    private func anyHotels() -> (hotel1: Hotel, hotel2: Hotel) {
+        let hotel1 = makeHotel(category: "a category", description: "a description", id: "1", image: URL(string: "https://a-url.com")!, name: "a name", stars: 5)
+        let hotel2 = makeHotel(image: URL(string: "https://any-url.com")!, stars: 3)
+        return (hotel1, hotel2)
     }
 
 }
