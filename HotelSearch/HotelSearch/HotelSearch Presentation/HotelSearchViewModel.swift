@@ -34,9 +34,8 @@ final public class HotelSearchViewModel {
     // MARK: - Hotel Search
     
     public func searchHotel() {
+        self.didStartSearchingHotel()
         let searchText = self.text + self.searchSuffix + String(describing: self.currentPage)
-        self.cleanPreviousHotelsStates()
-        self.hotelSearchView?.displayLoading(true)
         self.hotelSearcher.searchHotel(with: searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? searchText) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -46,6 +45,11 @@ final public class HotelSearchViewModel {
                 self.didFinishSearchingHotels(with: error)
             }
         }
+    }
+    
+    private func didStartSearchingHotel() {
+        self.cleanPreviousHotelsStates()
+        self.hotelSearchView?.displayLoading(true)
     }
     
     private func didFinishSearchingHotels(with hotels: [Hotel]) {
@@ -76,22 +80,39 @@ final public class HotelSearchViewModel {
     // MARK: - Image Load
     
     public func loadImage(at index: Int, section: Int) -> ImageDataLoaderTask? {
-        guard self.hotels.count > index else { return nil }
-        guard self.imagesData[index] == nil else { return nil }
-        let hotel = self.hotels[section][index]
-        guard let url = hotel.image ?? hotel.gallery?.first?.url else { return nil }
-        self.hotelSearchView?.displayImageLoading(true, for: index, section: section)
+        guard let url = self.getURL(forImageAt: index, section: section) else { return nil }
+        self.didStartLoadingImage(at: index, section: section)
         return self.imageDataLoader.loadImageData(from: url) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(data):
-                self.imagesData[index] = data
-                self.hotelSearchView?.displayImageData(data, for: index, section: section)
+                self.didFinishLoadingImage(with: data, at: index, section: section)
             case let .failure(error):
-                print(error)
+                self.didFinishLoadingImage(with: error, at: index, section: section)
             }
-            self.hotelSearchView?.displayImageLoading(false, for: index, section: section)
         }
+    }
+    
+    private func getURL(forImageAt index: Int, section: Int) -> URL? {
+        guard self.hotels.count > index else { return nil }
+        guard self.imagesData[index] == nil else { return nil }
+        let hotel = self.hotels[section][index]
+        guard let url = hotel.image ?? hotel.gallery?.first?.url else { return nil }
+        return url
+    }
+    
+    private func didStartLoadingImage(at index: Int, section: Int) {
+        self.hotelSearchView?.displayImageLoading(true, for: index, section: section)
+    }
+    
+    private func didFinishLoadingImage(with data: Data, at index: Int, section: Int) {
+        self.imagesData[index] = data
+        self.hotelSearchView?.displayImageData(data, for: index, section: section)
+        self.hotelSearchView?.displayImageLoading(false, for: index, section: section)
+    }
+    
+    private func didFinishLoadingImage(with error: Error, at index: Int, section: Int) {
+        self.hotelSearchView?.displayImageLoading(false, for: index, section: section)
     }
     
 }
