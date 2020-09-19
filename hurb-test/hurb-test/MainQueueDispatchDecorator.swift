@@ -34,3 +34,13 @@ extension MainQueueDispatchDecorator: HotelSearcher where T == HotelSearcher {
     }
     
 }
+
+extension MainQueueDispatchDecorator: ImageDataLoader where T == ImageDataLoader {
+    
+    func loadImageData(from url: URL, completion: @escaping (ImageDataLoader.Result) -> Void) -> ImageDataLoaderTask {
+        decoratee.loadImageData(from: url) { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+    
+}

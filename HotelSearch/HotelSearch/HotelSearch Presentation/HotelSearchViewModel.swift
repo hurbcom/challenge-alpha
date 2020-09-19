@@ -82,17 +82,15 @@ final public class HotelSearchViewModel {
         guard let url = hotel.image ?? hotel.gallery?.first?.url else { return nil }
         self.hotelSearchView?.displayImageLoading(true, for: index, section: section)
         return self.imageDataLoader.loadImageData(from: url) { [weak self] result in
-            DispatchQueue.main.async {
-                guard let self = self else { return }
-                switch result {
-                case let .success(data):
-                    self.imagesData[index] = data
-                    self.hotelSearchView?.displayImageData(data, for: index, section: section)
-                case let .failure(error):
-                    print(error)
-                }
-                self.hotelSearchView?.displayImageLoading(false, for: index, section: section)
+            guard let self = self else { return }
+            switch result {
+            case let .success(data):
+                self.imagesData[index] = data
+                self.hotelSearchView?.displayImageData(data, for: index, section: section)
+            case let .failure(error):
+                print(error)
             }
+            self.hotelSearchView?.displayImageLoading(false, for: index, section: section)
         }
     }
     
