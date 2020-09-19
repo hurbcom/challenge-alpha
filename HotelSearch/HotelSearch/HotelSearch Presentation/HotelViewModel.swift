@@ -8,8 +8,7 @@
 
 import Foundation
 
-final public class HotelViewModel {
-    
+final public class HotelViewModel: Hashable {
     let hotel: Hotel
     
     public var stars: Int? {
@@ -43,6 +42,14 @@ final public class HotelViewModel {
     
     public init(hotel: Hotel) {
         self.hotel = hotel
+    }
+    
+    public static func == (lhs: HotelViewModel, rhs: HotelViewModel) -> Bool {
+        return lhs.hotel == rhs.hotel
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(hotel)
     }
     
 }
