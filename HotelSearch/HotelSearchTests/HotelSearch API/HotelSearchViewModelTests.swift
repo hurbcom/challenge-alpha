@@ -39,6 +39,25 @@ class HotelSearchViewModelTests: XCTestCase {
         ])
     }
     
+    func test_didFinishSearchingHotel_displayHotelsGrouppedByStars() {
+        let (sut, spy) = makeSUT()
+        let hotel1 = makeHotel(category: "a category", description: "a description", id: "1", name: "a name", stars: 5)
+        let hotel2 = makeHotel(stars: 3)
+        let hotel3 = makeHotel(stars: 2)
+        let hotel4 = makeHotel(stars: nil)
+        sut.didFinishSearchingHotels(with: [hotel4, hotel2, hotel3, hotel1])
+        
+        XCTAssertEqual(spy.messages, [
+            .display(model: [
+                [HotelViewModel(hotel: hotel1)],
+                [HotelViewModel(hotel: hotel2)],
+                [HotelViewModel(hotel: hotel3)],
+                [HotelViewModel(hotel: hotel4)]
+            ]),
+            .display(loading: false)
+        ])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> (sut: HotelSearchViewModel, spy: ViewSpy) {
