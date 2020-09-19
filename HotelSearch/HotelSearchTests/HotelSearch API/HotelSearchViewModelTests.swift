@@ -65,6 +65,13 @@ class HotelSearchViewModelTests: XCTestCase {
         ])
     }
     
+    func test_imageLoad_doesNotSendMessagesToViewOnEmptyHotels() {
+        let (sut, spy) = makeSUT()
+        
+        _ = sut.loadImage(at: 0, section: 0)
+        XCTAssertTrue(spy.messages.isEmpty)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> (sut: HotelSearchViewModel, spy: ViewSpy) {
