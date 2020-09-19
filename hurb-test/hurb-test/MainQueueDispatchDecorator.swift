@@ -8,6 +8,8 @@
 
 import Foundation
 
+import HotelSearch
+
 final class MainQueueDispatchDecorator<T> {
     private let decoratee: T
     
@@ -23,3 +25,12 @@ final class MainQueueDispatchDecorator<T> {
     }
 }
 
+extension MainQueueDispatchDecorator: HotelSearcher where T == HotelSearcher {
+    
+    func searchHotel(with searchText: String, completion: @escaping (SearchResult) -> Void) {
+        decoratee.searchHotel(with: searchText) { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+    
+}

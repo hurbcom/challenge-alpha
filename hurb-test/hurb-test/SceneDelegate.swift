@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let hotelSearcher = RemoteHotelSearcher(url: URL(string: "https://www.hurb.com/search/api?q=")!, client: URLSessionHTTPClient(session: .shared))
         let imageDataLoader = RemoteImageDataLoader(client: URLSessionHTTPClient(session: .shared))
-        let controller = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: hotelSearcher, imageDataLoader: imageDataLoader)
+        let controller = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: MainQueueDispatchDecorator(decoratee: hotelSearcher), imageDataLoader: imageDataLoader)
         window.rootViewController = controller
         window.makeKeyAndVisible()
         self.window = window
