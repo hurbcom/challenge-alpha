@@ -53,10 +53,13 @@ class HotelSearchViewModelTests: XCTestCase {
     func test_didFinishSearchingHotelWithError_displaysErrorMessageAndStopsLoading() {
         let (sut, spy) = makeSUT()
         
+        sut.searchHotel()
         let error = NSError(domain: "", code: 0)
-        sut.didFinishSearchingHotels(with: error)
+        spy.completeHotelSearchWith(.failure(error))
         
         XCTAssertEqual(spy.messages, [
+            .display(model: []),
+            .display(loading: true),
             .display(error: error.localizedDescription),
             .display(loading: false)
         ])

@@ -62,7 +62,7 @@ final public class HotelSearchViewModel {
         self.hotelSearchView?.display(viewModel)
     }
     
-    public func didFinishSearchingHotels(with error: Error) {
+    private func didFinishSearchingHotels(with error: Error) {
         self.hotelSearchView?.displayError(error.localizedDescription)
         self.hotelSearchView?.displayLoading(false)
     }
