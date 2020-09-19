@@ -25,6 +25,14 @@ class HotelCell: UITableViewCell {
 
     // MARK: - Properties
     
+    var imageData: Data? {
+        didSet {
+            let isDataNil = self.imageData == nil
+            self.imageContainer.isShimmering = isDataNil
+            self.imvBackground.setImageAnimated(isDataNil ? nil : UIImage(data: self.imageData!))
+        }
+    }
+    
     var viewModel: HotelViewModel? {
         didSet {
             self.lblName.text = self.viewModel?.name

@@ -73,7 +73,7 @@ private extension HotelSearchViewController {
     func setupTable() {
         self.tableView.register(UINib(nibName: String(describing: HotelCell.self), bundle: Bundle(for: HotelCell.self)), forCellReuseIdentifier: String(describing: HotelCell.self))
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 200
+        self.tableView.estimatedRowHeight = 160
         self.tableView.dataSource = self
         self.tableView.prefetchDataSource = self
         self.tableView.delegate = self
@@ -147,13 +147,9 @@ extension HotelSearchViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HotelCell.self), for: indexPath) as! HotelCell
         cell.viewModel = self.hotels[indexPath.section][indexPath.row]
-        let data = self.viewModel.imagesData[indexPath.row]
-        if let data = data {
-            cell.imvBackground.setImageAnimated(UIImage(data: data))
-            cell.imageContainer.isShimmering = false
-        } else {
-            cell.imvBackground.setImageAnimated(nil)
-            cell.imageContainer.isShimmering = true
+        let imageData = self.viewModel.imagesData[indexPath.row]
+        cell.imageData = imageData
+        if imageData == nil {
             self.loadImage(at: indexPath)
         }
         return cell
