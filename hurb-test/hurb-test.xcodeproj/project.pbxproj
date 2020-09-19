@@ -16,6 +16,7 @@
 		FC744A04250F8A6D0048DCEE /* HotelSearchiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */; };
 		FC744A05250F8A6D0048DCEE /* HotelSearchiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FCE9E35D25166D4D00E94082 /* HotelSearchUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E35C25166D4D00E94082 /* HotelSearchUIComposer.swift */; };
+		FCE9E3612516BEB000E94082 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E3602516BEB000E94082 /* MainQueueDispatchDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		FC744A00250F8A6D0048DCEE /* HotelSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HotelSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HotelSearchiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE9E35C25166D4D00E94082 /* HotelSearchUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchUIComposer.swift; sourceTree = "<group>"; };
+		FCE9E3602516BEB000E94082 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				FC7449D3250F88EA0048DCEE /* Assets.xcassets */,
 				FC7449D5250F88EA0048DCEE /* LaunchScreen.storyboard */,
 				FC7449D8250F88EA0048DCEE /* Info.plist */,
+				FCE9E3602516BEB000E94082 /* MainQueueDispatchDecorator.swift */,
 			);
 			path = "hurb-test";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE9E3612516BEB000E94082 /* MainQueueDispatchDecorator.swift in Sources */,
 				FCE9E35D25166D4D00E94082 /* HotelSearchUIComposer.swift in Sources */,
 				FC7449CB250F88E70048DCEE /* AppDelegate.swift in Sources */,
 				FC7449CD250F88E70048DCEE /* SceneDelegate.swift in Sources */,
