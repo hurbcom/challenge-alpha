@@ -26,8 +26,42 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FC7449DC250F88EA0048DCEE"
+               BuildableName = "hurb-testTests.xctest"
+               BlueprintName = "hurb-testTests"
+               ReferencedContainer = "container:hurb-test.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FC1BAB24250E78A100B0C1E2"
+               BuildableName = "HotelSearchTests.xctest"
+               BlueprintName = "HotelSearchTests"
+               ReferencedContainer = "container:../HotelSearch/HotelSearch.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FC744972250F876C0048DCEE"
+               BuildableName = "HotelSearchiOSTests.xctest"
+               BlueprintName = "HotelSearchiOSTests"
+               ReferencedContainer = "container:../HotelSearch/HotelSearch.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
