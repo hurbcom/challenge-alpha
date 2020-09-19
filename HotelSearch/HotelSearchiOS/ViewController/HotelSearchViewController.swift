@@ -14,11 +14,11 @@ final public class HotelSearchViewController: UIViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var viewInput: UIView!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var btnSearch: UIButton!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet private(set) public weak var viewInput: UIView!
+    @IBOutlet private(set) public weak var textField: UITextField!
+    @IBOutlet private(set) public weak var btnSearch: UIButton!
+    @IBOutlet private(set) public weak var tableView: UITableView!
+    @IBOutlet private(set) public weak var spinner: UIActivityIndicatorView!
     
     // MARK: - IBActions
     
