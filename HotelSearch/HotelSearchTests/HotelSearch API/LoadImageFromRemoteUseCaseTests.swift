@@ -46,6 +46,18 @@ class LoadImageFromRemoteUseCaseTests: XCTestCase {
         })
     }
     
+    func test_loadImageDataFromURL_deliversInvalidDataErrorOnNon200HTTPResponse() {
+        let (sut, client) = makeSUT()
+        
+        let samples = [199, 201, 300, 400, 500]
+        
+        samples.enumerated().forEach { index, code in
+            expect(sut, toCompleteWith: .failure(RemoteImageDataLoader.Error.invalidData), when: {
+                client.complete(withStatusCode: code, data: anyData(), at: index)
+            })
+        }
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> (sut: RemoteImageDataLoader, client: HTTPClientSpy) {
@@ -79,6 +91,10 @@ class LoadImageFromRemoteUseCaseTests: XCTestCase {
         action()
         
         wait(for: [exp], timeout: 1.0)
+    }
+
+    private func anyData() -> Data {
+        return Data("any data".utf8)
     }
 
 }
