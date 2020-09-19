@@ -185,7 +185,9 @@
 		FC1BAB29250E78A100B0C1E2 /* HotelSearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				FCE9E36A2516CA4F00E94082 /* Helpers */,
 				FC1BAB47250F802500B0C1E2 /* HotelSearch API */,
+				FCE9E3642516C5A300E94082 /* HotelSearch Presentation */,
 				FC1BAB2C250E78A100B0C1E2 /* Info.plist */,
 			);
 			path = HotelSearchTests;
@@ -217,9 +219,8 @@
 		FC1BAB47250F802500B0C1E2 /* HotelSearch API */ = {
 			isa = PBXGroup;
 			children = (
-				FCE9E3642516C5A300E94082 /* HotelSearch Presentation */,
-				FC1BAB48250F804900B0C1E2 /* Helpers */,
 				FC1BAB3C250E7CE800B0C1E2 /* SearchHotelFromRemoteUseCaseTests.swift */,
+				FC1BAB48250F804900B0C1E2 /* Helpers */,
 			);
 			path = "HotelSearch API";
 			sourceTree = "<group>";
@@ -228,8 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				FC1BAB49250F805100B0C1E2 /* HTTPClientSpy.swift */,
-				FCE9E3622516C42F00E94082 /* ViewSpy.swift */,
-				FCE9E3652516C66200E94082 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -317,10 +316,27 @@
 		FCE9E3642516C5A300E94082 /* HotelSearch Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FCE9E36B2516CA5D00E94082 /* Helpers */,
 				FCE9E35E25166E5000E94082 /* HotelSearchViewModelTests.swift */,
 				FCE9E3672516C77000E94082 /* HotelViewModelTests.swift */,
 			);
 			path = "HotelSearch Presentation";
+			sourceTree = "<group>";
+		};
+		FCE9E36A2516CA4F00E94082 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FCE9E3652516C66200E94082 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FCE9E36B2516CA5D00E94082 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FCE9E3622516C42F00E94082 /* ViewSpy.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
