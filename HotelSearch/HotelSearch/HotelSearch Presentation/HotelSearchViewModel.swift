@@ -38,19 +38,17 @@ final public class HotelSearchViewModel {
         self.cleanPreviousHotelsStates()
         self.hotelSearchView?.displayLoading(true)
         self.hotelSearcher.searchHotel(with: searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? searchText) { [weak self] result in
-            DispatchQueue.main.async {
-                guard let self = self else { return }
-                switch result {
-                case let .success(hotels):
-                    self.didFinishSearchingHotels(with: hotels)
-                case let .failure(error):
-                    self.didFinishSearchingHotels(with: error)
-                }
+            guard let self = self else { return }
+            switch result {
+            case let .success(hotels):
+                self.didFinishSearchingHotels(with: hotels)
+            case let .failure(error):
+                self.didFinishSearchingHotels(with: error)
             }
         }
     }
     
-    public func didFinishSearchingHotels(with hotels: [Hotel]) {
+    private func didFinishSearchingHotels(with hotels: [Hotel]) {
         self.mapHotels(hotels)
         self.hotelSearchView?.displayLoading(false)
     }

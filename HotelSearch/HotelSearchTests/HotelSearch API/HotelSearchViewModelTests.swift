@@ -28,26 +28,18 @@ class HotelSearchViewModelTests: XCTestCase {
         ])
     }
     
-    func test_didFinishSearchingHotel_displayHotelsAndStopLoading() {
-        let (sut, spy) = makeSUT()
-        let hotel = makeHotel(category: "a category", description: "a description", id: "1", name: "a name", stars: 5)
-        sut.didFinishSearchingHotels(with: [hotel])
-        
-        XCTAssertEqual(spy.messages, [
-            .display(model: [[HotelViewModel(hotel: hotel)]]),
-            .display(loading: false)
-        ])
-    }
-    
     func test_didFinishSearchingHotel_displayHotelsGrouppedByStars() {
         let (sut, spy) = makeSUT()
         let hotel1 = makeHotel(category: "a category", description: "a description", id: "1", name: "a name", stars: 5)
         let hotel2 = makeHotel(stars: 3)
         let hotel3 = makeHotel(stars: 2)
         let hotel4 = makeHotel(stars: nil)
-        sut.didFinishSearchingHotels(with: [hotel4, hotel2, hotel3, hotel1])
+        sut.searchHotel()
+        spy.completeHotelSearchWith(.success([hotel4, hotel2, hotel3, hotel1]))
         
         XCTAssertEqual(spy.messages, [
+            .display(model: []),
+            .display(loading: true),
             .display(model: [
                 [HotelViewModel(hotel: hotel1)],
                 [HotelViewModel(hotel: hotel2)],
@@ -119,8 +111,14 @@ class HotelSearchViewModelTests: XCTestCase {
         
         // MARK: - Hotel Searcher
         
+        private var searchCompletions = [(HotelSearcher.SearchResult) -> Void]()
+        
         func searchHotel(with searchText: String, completion: @escaping (SearchResult) -> Void) {
-            
+            self.searchCompletions.append(completion)
+        }
+        
+        func completeHotelSearchWith(_ result: HotelSearcher.SearchResult, at index: Int = 0) {
+            self.searchCompletions[index](result)
         }
         
         // MARK: - Image Data Loader
