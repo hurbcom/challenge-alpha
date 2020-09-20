@@ -107,24 +107,47 @@ class HotelSearchUIIntegrationTests: XCTestCase {
     }
     
     func test_hotelCellImageLoadingIndicator_isVisibleWhileLoadingImage() {
-        let (sut, loader) = makeSUT()
+        let (sut, spy) = makeSUT()
         
         sut.loadViewIfNeeded()
         sut.simulateHotelSearch()
-        loader.completeHotelSearch(with: [makeItem(stars: 1), makeItem(stars: 1)])
+        spy.completeHotelSearch(with: [makeItem(), makeItem()])
         
         let view0 = sut.simulateHotelCellVisible(at: 0, section: 0)
         let view1 = sut.simulateHotelCellVisible(at: 1, section: 0)
         XCTAssertEqual(view0?.isShowingImageLoadingIndicator, true, "Expected loading indicator for first view while loading first image")
         XCTAssertEqual(view1?.isShowingImageLoadingIndicator, true, "Expected loading indicator for second view while loading second image")
         
-        loader.completeImageLoading(at: 0)
+        spy.completeImageLoading(at: 0)
         XCTAssertEqual(view0?.isShowingImageLoadingIndicator, false, "Expected no loading indicator for first view once first image loading completes successfully")
         XCTAssertEqual(view1?.isShowingImageLoadingIndicator, true, "Expected no loading indicator state change for second view once first image loading completes successfully")
         
-        loader.completeImageLoadingWithError(at: 1)
+        spy.completeImageLoadingWithError(at: 1)
         XCTAssertEqual(view0?.isShowingImageLoadingIndicator, false, "Expected no loading indicator state change for first view once second image loading completes with error")
         XCTAssertEqual(view1?.isShowingImageLoadingIndicator, false, "Expected no loading indicator for second view once second image loading completes with error")
+    }
+    
+    func test_hotelCell_rendersImageLoadedFromURL() {
+        let (sut, spy) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [makeItem(), makeItem()])
+        
+        let view0 = sut.simulateHotelCellVisible(at: 0, section: 0)
+        let view1 = sut.simulateHotelCellVisible(at: 1, section: 0)
+        XCTAssertEqual(view0?.renderedImage, .none, "Expected no image for first view while loading first image")
+        XCTAssertEqual(view1?.renderedImage, .none, "Expected no image for second view while loading second image")
+        
+        let imageData0 = UIImage.make(withColor: .red).pngData()!
+        spy.completeImageLoading(with: imageData0, at: 0)
+        XCTAssertEqual(view0?.renderedImage, imageData0, "Expected image for first view once first image loading completes successfully")
+        XCTAssertEqual(view1?.renderedImage, .none, "Expected no image state change for second view once first image loading completes successfully")
+        
+        let imageData1 = UIImage.make(withColor: .blue).pngData()!
+        spy.completeImageLoading(with: imageData1, at: 1)
+        XCTAssertEqual(view0?.renderedImage, imageData0, "Expected no image state change for first view once second image loading completes successfully")
+        XCTAssertEqual(view1?.renderedImage, imageData1, "Expected image for second view once second image loading completes successfully")
     }
     
     // MARK: - Helpers
@@ -150,7 +173,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         price: HotelPrice = HotelPrice(amount: 12.34, amountPerDay: 43.21, currency: "a currency"),
         quantityDescriptors: QuantityDescriptor = QuantityDescriptor(maxAdults: 5, maxChildren: 6, maxFreeChildrenAge: 7),
         smallDescription: String? = nil,
-        stars: Int,
+        stars: Int = 5,
         tags: [String] = [],
         url: URL? = nil) -> Hotel {
         return Hotel(address: address, amenities: amenities, category: category, description: description, gallery: gallery, id: id, image: image, isHotel: isHotel, name: name, price: price, quantityDescriptors: quantityDescriptors, smallDescription: smallDescription, stars: stars, tags: tags, url: url)
@@ -293,7 +316,11 @@ extension HotelCell {
     }
     
     var isShowingImageLoadingIndicator: Bool {
-        return imageContainer.isShimmering
+        return self.imageContainer.isShimmering
+    }
+    
+    var renderedImage: Data? {
+        return self.imvBackground.image?.pngData()
     }
     
 }
@@ -302,5 +329,19 @@ extension UIView {
     func enforceLayoutCycle() {
         layoutIfNeeded()
         RunLoop.current.run(until: Date())
+    }
+}
+
+
+extension UIImage {
+    static func make(withColor color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()!
+        context.setFillColor(color.cgColor)
+        context.fill(rect)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
     }
 }
