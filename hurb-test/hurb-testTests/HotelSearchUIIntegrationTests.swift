@@ -24,7 +24,20 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         XCTAssertEqual(spy.searchHotelCallCount, 1)
     }
     
-    // MARK: - 
+    func test_loadingHotelIndicator_isVisibleWhileSearchingHotel() {
+        let spy = Spy()
+        let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        sut.loadViewIfNeeded()
+        XCTAssertFalse(sut.isShowingLoadingIndicator)
+        
+        sut.simulateHotelSearch()
+        XCTAssertTrue(sut.isShowingLoadingIndicator)
+        
+        spy.completeHotelSearch()
+        XCTAssertFalse(sut.isShowingLoadingIndicator)
+    }
+    
+    // MARK: - Helpers
     
     private class Spy: HotelSearcher, ImageDataLoader {
         
@@ -35,8 +48,12 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         
         // MARK: - Hotel Searcher
         
-        func searchHotel(with searchText: String, completion: @escaping (SearchResult) -> Void) {
+        func searchHotel(with searchText: String, completion: @escaping (HotelSearcher.SearchResult) -> Void) {
             self.searchCompletions.append(completion)
+        }
+        
+        func completeHotelSearch(with hotels: [Hotel] = [], at index: Int = 0) {
+            self.searchCompletions[index](.success(hotels))
         }
         
         // MARK: - Image Data Loader
@@ -54,6 +71,10 @@ class HotelSearchUIIntegrationTests: XCTestCase {
 }
 
 extension HotelSearchViewController {
+    
+    var isShowingLoadingIndicator: Bool {
+        return self.spinner.isAnimating
+    }
     
     func simulateHotelSearch() {
         self.btnSearch.sendActions(for: .touchUpInside)
