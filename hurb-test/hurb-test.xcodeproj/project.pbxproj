@@ -26,6 +26,7 @@
 		FCE9E37C2517AF2B00E94082 /* HotelCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E37B2517AF2B00E94082 /* HotelCell+TestHelpers.swift */; };
 		FCE9E37E2517AF5700E94082 /* HotelSearchViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E37D2517AF5700E94082 /* HotelSearchViewController+TestHelpers.swift */; };
 		FCE9E3802517AF8500E94082 /* Spy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E37F2517AF8500E94082 /* Spy.swift */; };
+		FCE9E3822517AFB200E94082 /* HotelSearchUIIntegrationTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E3812517AFB200E94082 /* HotelSearchUIIntegrationTests+Assertions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		FCE9E37B2517AF2B00E94082 /* HotelCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HotelCell+TestHelpers.swift"; sourceTree = "<group>"; };
 		FCE9E37D2517AF5700E94082 /* HotelSearchViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HotelSearchViewController+TestHelpers.swift"; sourceTree = "<group>"; };
 		FCE9E37F2517AF8500E94082 /* Spy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spy.swift; sourceTree = "<group>"; };
+		FCE9E3812517AFB200E94082 /* HotelSearchUIIntegrationTests+Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HotelSearchUIIntegrationTests+Assertions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				FCE9E37B2517AF2B00E94082 /* HotelCell+TestHelpers.swift */,
 				FCE9E37D2517AF5700E94082 /* HotelSearchViewController+TestHelpers.swift */,
 				FCE9E37F2517AF8500E94082 /* Spy.swift */,
+				FCE9E3812517AFB200E94082 /* HotelSearchUIIntegrationTests+Assertions.swift */,
 				FCE9E3772517AEE100E94082 /* UIView+TestHelpers.swift */,
 			);
 			path = Helper;
@@ -339,6 +342,7 @@
 				FCE9E37A2517AF0500E94082 /* HeaderView+TestHelpers.swift in Sources */,
 				FCE9E3782517AEE100E94082 /* UIView+TestHelpers.swift in Sources */,
 				FCE9E37E2517AF5700E94082 /* HotelSearchViewController+TestHelpers.swift in Sources */,
+				FCE9E3822517AFB200E94082 /* HotelSearchUIIntegrationTests+Assertions.swift in Sources */,
 				FCE9E3762517AEB000E94082 /* UIImage+TestHelpers.swift in Sources */,
 				FCE9E37C2517AF2B00E94082 /* HotelCell+TestHelpers.swift in Sources */,
 				FCE9E3802517AF8500E94082 /* Spy.swift in Sources */,
