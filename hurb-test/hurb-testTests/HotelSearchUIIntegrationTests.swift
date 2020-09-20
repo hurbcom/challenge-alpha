@@ -196,6 +196,19 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         XCTAssertNil(view?.renderedImage, "Expected no rendered image when an image load finishes after the view is not visible anymore")
     }
     
+    func test_searchHotelCompletion_dispatchesFromBackgroundToMainThread() {
+        let (sut, spy) = makeSUT()
+        sut.loadViewIfNeeded()
+        sut.simulateHotelSearch()
+
+        let exp = expectation(description: "Wait for background queue")
+        DispatchQueue.global().async {
+            spy.completeHotelSearch(at: 0)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1.0)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: HotelSearchViewController, spy: Spy) {

@@ -16,7 +16,7 @@ final class HotelSearchUIComposer {
     private init() { }
     
     static func hotelSearchComposedWith(hotelSearcher: HotelSearcher, imageDataLoader: ImageDataLoader) -> HotelSearchViewController {
-        let viewModel = HotelSearchViewModel(hotelSearcher: hotelSearcher, imageDataLoader: imageDataLoader)
+        let viewModel = HotelSearchViewModel(hotelSearcher: MainQueueDispatchDecorator(decoratee: hotelSearcher), imageDataLoader: MainQueueDispatchDecorator(decoratee: imageDataLoader))
         let controller = HotelSearchViewController(viewModel: viewModel)
         viewModel.hotelSearchView = controller
         return controller
