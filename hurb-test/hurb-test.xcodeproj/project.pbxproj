@@ -18,6 +18,7 @@
 		FCE9E35D25166D4D00E94082 /* HotelSearchUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E35C25166D4D00E94082 /* HotelSearchUIComposer.swift */; };
 		FCE9E3612516BEB000E94082 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E3602516BEB000E94082 /* MainQueueDispatchDecorator.swift */; };
 		FCE9E36F2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E36E2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift */; };
+		FCE9E3722517A17E00E94082 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E3712517A17E00E94082 /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		FCE9E35C25166D4D00E94082 /* HotelSearchUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchUIComposer.swift; sourceTree = "<group>"; };
 		FCE9E3602516BEB000E94082 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		FCE9E36E2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchUIIntegrationTests.swift; sourceTree = "<group>"; };
+		FCE9E3712517A17E00E94082 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		FC7449E0250F88EA0048DCEE /* hurb-testTests */ = {
 			isa = PBXGroup;
 			children = (
+				FCE9E3702517A17200E94082 /* Helper */,
 				FC7449E3250F88EA0048DCEE /* Info.plist */,
 				FCE9E36E2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift */,
 			);
@@ -156,6 +159,14 @@
 				FC744A01250F8A6D0048DCEE /* HotelSearchiOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCE9E3702517A17200E94082 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FCE9E3712517A17E00E94082 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCE9E36F2516CF6200E94082 /* HotelSearchUIIntegrationTests.swift in Sources */,
+				FCE9E3722517A17E00E94082 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -91,9 +91,11 @@ class HotelSearchUIIntegrationTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT() -> (sut: HotelSearchViewController, spy: Spy) {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: HotelSearchViewController, spy: Spy) {
         let spy = Spy()
         let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        trackForMemoryLeaks(spy, file: file, line: line)
         return (sut, spy)
     }
     
