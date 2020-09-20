@@ -85,6 +85,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         let hotel1 = makeItem(name: "another name", stars: 4)
         let hotel2 = makeItem(address: Address(city: "city", country: nil, state: "state", street: nil, zipcode: nil), name: "a new name", stars: 4)
         let hotel3 = makeItem(amenities: [Amenity(category: nil, name: "amenity"), Amenity(category: nil, name: "a amenity")], stars: 3)
+        let hotel4 = makeItem(amenities: [Amenity(category: nil, name: "amenity"), Amenity(category: nil, name: "a amenity")], stars: nil)
         let (sut, spy) = makeSUT()
         
         sut.loadViewIfNeeded()
@@ -95,8 +96,8 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         assertThat(sut, isRenderingHeadersFor: [[hotel0]])
         
         sut.simulateHotelSearch()
-        spy.completeHotelSearch(with: [hotel0, hotel1, hotel2, hotel3], at: 1)
-        assertThat(sut, isRenderingHeadersFor: [[hotel0, hotel1, hotel2], [hotel3]])
+        spy.completeHotelSearch(with: [hotel0, hotel1, hotel2, hotel3, hotel4], at: 1)
+        assertThat(sut, isRenderingHeadersFor: [[hotel0, hotel1, hotel2], [hotel3], [hotel4]])
     }
 
     func test_hotelCell_loadsImageURLWhenVisible() {
@@ -275,7 +276,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         price: HotelPrice = HotelPrice(amount: 12.34, amountPerDay: 43.21, currency: "a currency"),
         quantityDescriptors: QuantityDescriptor = QuantityDescriptor(maxAdults: 5, maxChildren: 6, maxFreeChildrenAge: 7),
         smallDescription: String? = nil,
-        stars: Int = 5,
+        stars: Int? = 5,
         tags: [String] = [],
         url: URL? = nil) -> Hotel {
         return Hotel(address: address, amenities: amenities, category: category, description: description, gallery: gallery, id: id, image: image, isHotel: isHotel, name: name, price: price, quantityDescriptors: quantityDescriptors, smallDescription: smallDescription, stars: stars, tags: tags, url: url)
