@@ -12,7 +12,7 @@ final public class HeaderView: UIView {
     
     // MARK: - UI Components
     
-    private(set) lazy var stackView: UIStackView = {
+    private(set) public lazy var stackView: UIStackView = {
         let imageViews: [UIImageView] = (0 ..< (self.stars ?? 0)).compactMap { _ in
             let imageView = UIImageView(image: UIImage(systemName: "star.fill"))
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ final public class HeaderView: UIView {
         return stackView
     }()
     
-    private(set) lazy var label: UILabel = {
+    private(set) public lazy var label: UILabel = {
         let label = UILabel()
         label.text = "N/A"
         label.textColor = .systemGray

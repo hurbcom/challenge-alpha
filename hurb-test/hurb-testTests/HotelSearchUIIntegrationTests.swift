@@ -70,6 +70,25 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         spy.completeHotelSearch(with: [], at: 1)
         assertThat(sut, isRendering: [])
     }
+    
+    func test_searchHotelCompletion_rendersSuccessfullyTableHeaders() {
+        let hotel0 = makeItem(name: "a name", stars: 4)
+        let hotel1 = makeItem(name: "another name", stars: 4)
+        let hotel2 = makeItem(address: Address(city: "city", country: nil, state: "state", street: nil, zipcode: nil), name: "a new name", stars: 4)
+        let hotel3 = makeItem(amenities: [Amenity(category: nil, name: "amenity"), Amenity(category: nil, name: "a amenity")], stars: 3)
+        let (sut, spy) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        assertThat(sut, isRendering: [])
+        
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [hotel0])
+        assertThat(sut, isRenderingHeadersFor: [[hotel0]])
+        
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [hotel0, hotel1, hotel2, hotel3], at: 1)
+        assertThat(sut, isRenderingHeadersFor: [[hotel0, hotel1, hotel2], [hotel3]])
+    }
 
     func test_hotelCell_loadsImageURLWhenVisible() {
         let hotel0 = makeItem(image: URL(string: "http://url-0.com")!, stars: 5)
@@ -259,7 +278,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         hotels.enumerated().forEach { section, hotelArr in
             XCTAssertEqual(hotelArr.count, sut.numberOfRenderedHotelCells(inSection: section))
             hotelArr.enumerated().forEach { index, hotel in
-                assertThat(sut, hasViewConfiguredFor: hotel, at: index, section: section)
+                assertThat(sut, hasViewConfiguredFor: hotel, at: index, section: section, file: file, line: line)
             }
         }
     }
@@ -279,6 +298,29 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         XCTAssertEqual(cell.isShowingLocation, shouldLocationBeVisible, file: file, line: line)
         XCTAssertEqual(cell.isShowingAmenities, shouldAmenitiesBeVisible, file: file, line: line)
         XCTAssertEqual(cell.isShowingPrice, shouldPriceBeVisible, file: file, line: line)
+    }
+    
+    func assertThat(_ sut: HotelSearchViewController, isRenderingHeadersFor hotels: [[Hotel]], file: StaticString = #file, line: UInt = #line) {
+        sut.view.enforceLayoutCycle()
+        
+        hotels.enumerated().forEach { section, hotelArr in
+            assertThat(sut, hasHeaderConfiguredFor: hotelArr, at: section, file: file, line: line)
+        }
+    }
+    
+    func assertThat(_ sut: HotelSearchViewController, hasHeaderConfiguredFor hotels: [Hotel], at section: Int, file: StaticString = #file, line: UInt = #line) {
+        let header = sut.headerView(at: section)
+        
+        guard let view = header as? HeaderView else {
+            return XCTFail("Expected \(HeaderView.self) instance, got \(String(describing: header)) instead", file: file, line: line)
+        }
+        
+        hotels.forEach { hotel in
+            XCTAssertEqual(hotel.stars ?? 0, view.starsCount)
+            let shouldHaveStars = (hotel.stars ?? 0) > 0
+            XCTAssertEqual(shouldHaveStars, view.isShowingStars)
+            XCTAssertNotEqual(shouldHaveStars, view.isShowingNoneMessage)
+        }
     }
 
     private func anyImageData() -> Data {
@@ -357,6 +399,14 @@ extension HotelSearchViewController {
         return ds?.tableView(tableView, cellForRowAt: index)
     }
     
+    func headerView(at section: Int) -> UIView? {
+        guard tableView.numberOfSections > section else {
+            return nil
+        }
+        let delegate = tableView.delegate
+        return delegate?.tableView?(tableView, viewForHeaderInSection: section)
+    }
+    
     @discardableResult
     func simulateHotelCellVisible(at row: Int, section: Int) -> HotelCell? {
         return hotelCell(at: row, section: section) as? HotelCell
@@ -413,6 +463,22 @@ extension HotelCell {
     
     var renderedImage: Data? {
         return self.imvBackground.image?.pngData()
+    }
+    
+}
+
+extension HeaderView {
+    
+    var starsCount: Int {
+        return self.stackView.arrangedSubviews.count
+    }
+    
+    var isShowingNoneMessage: Bool {
+        return self.label.superview != nil
+    }
+    
+    var isShowingStars: Bool {
+        return self.stackView.superview != nil
     }
     
 }
