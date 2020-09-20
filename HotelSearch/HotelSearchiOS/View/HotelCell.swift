@@ -10,18 +10,18 @@ import UIKit
 
 import HotelSearch
 
-class HotelCell: UITableViewCell {
+final public class HotelCell: UITableViewCell {
 
     // MARK: - IBOutlets
     
-    @IBOutlet weak var imageContainer: UIView!
-    @IBOutlet weak var imvBackground: UIImageView!
-    @IBOutlet weak var viewBlur: UIView!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblLocation: UILabel!
-    @IBOutlet weak var lblAmenities: UILabel!
-    @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet private(set) public weak var imageContainer: UIView!
+    @IBOutlet private(set) public weak var imvBackground: UIImageView!
+    @IBOutlet private(set) public weak var viewBlur: UIView!
+    @IBOutlet private(set) public weak var stackView: UIStackView!
+    @IBOutlet private(set) public weak var lblName: UILabel!
+    @IBOutlet private(set) public weak var lblLocation: UILabel!
+    @IBOutlet private(set) public weak var lblAmenities: UILabel!
+    @IBOutlet private(set) public weak var lblPrice: UILabel!
 
     // MARK: - Properties
     
@@ -44,12 +44,12 @@ class HotelCell: UITableViewCell {
 
     // MARK: - Life Cycle
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         self.setupUI()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
