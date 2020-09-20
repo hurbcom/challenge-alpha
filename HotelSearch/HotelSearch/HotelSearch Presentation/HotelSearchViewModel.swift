@@ -15,7 +15,7 @@ final public class HotelSearchViewModel {
     weak public var hotelSearchView: HotelSearchView?
     public var text: String = ""
     
-    public var imagesData = [Int: Data]()
+    public var imagesData = [[Int: Int]: Data]()
     
     private var hotels = [[Hotel]]()
     
@@ -94,8 +94,8 @@ final public class HotelSearchViewModel {
     }
     
     private func getURL(forImageAt index: Int, section: Int) -> URL? {
-        guard self.hotels.count > index else { return nil }
-        guard self.imagesData[index] == nil else { return nil }
+        guard self.hotels.count > section else { return nil }
+        guard self.imagesData[[section: index]] == nil else { return nil }
         let hotel = self.hotels[section][index]
         guard let url = hotel.image ?? hotel.gallery?.first?.url else { return nil }
         return url
@@ -106,7 +106,7 @@ final public class HotelSearchViewModel {
     }
     
     private func didFinishLoadingImage(with data: Data, at index: Int, section: Int) {
-        self.imagesData[index] = data
+        self.imagesData[[section: index]] = data
         self.hotelSearchView?.displayImageData(data, for: index, section: section)
         self.hotelSearchView?.displayImageLoading(false, for: index, section: section)
     }

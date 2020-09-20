@@ -40,6 +40,7 @@ final public class HotelSearchViewController: UIViewController {
         }
     }
     private var imageLoadTasks = [IndexPath: ImageDataLoaderTask]()
+    private var hotelCells = [IndexPath: HotelCell]()
     
     // MARK: - Life Cycle
     
@@ -87,6 +88,7 @@ private extension HotelSearchViewController {
     }
     
     func loadImage(at indexPath: IndexPath) {
+//        guard self.imageLoadTasks[indexPath] == nil else { return }
         self.imageLoadTasks[indexPath] = self.viewModel.loadImage(at: indexPath.row, section: indexPath.section)
     }
     
@@ -123,11 +125,7 @@ extension HotelSearchViewController: HotelSearchView {
     }
     
     private func visibleHotelCell(for indexPath: IndexPath) -> HotelCell? {
-        guard self.tableView.indexPathsForVisibleRows?.contains(indexPath) == true else { return nil }
-        if let cell = self.tableView.cellForRow(at: indexPath) as? HotelCell, self.tableView.visibleCells.contains(cell) {
-            return cell
-        }
-        return nil
+        return self.hotelCells[indexPath]
     }
     
 }
@@ -147,11 +145,12 @@ extension HotelSearchViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HotelCell.self), for: indexPath) as! HotelCell
         cell.viewModel = self.hotels[indexPath.section][indexPath.row]
-        let imageData = self.viewModel.imagesData[indexPath.row]
+        let imageData = self.viewModel.imagesData[[indexPath.section: indexPath.row]]
         cell.imageData = imageData
         if imageData == nil {
             self.loadImage(at: indexPath)
         }
+        self.hotelCells[indexPath] = cell
         return cell
     }
     
@@ -170,6 +169,7 @@ extension HotelSearchViewController: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.hotelCells[indexPath] = nil
         self.cancelImageLoad(at: indexPath)
     }
     

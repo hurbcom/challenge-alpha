@@ -74,6 +74,25 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         spy.completeHotelSearch(with: [], at: 1)
         assertThat(sut, isRendering: [])
     }
+
+    func test_hotelCell_loadsImageURLWhenVisible() {
+        let hotel0 = makeItem(image: URL(string: "http://url-0.com")!, stars: 5)
+        let hotel1 = makeItem(image: URL(string: "http://url-1.com")!, stars: 5)
+        let spy = Spy()
+        let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        
+        sut.loadViewIfNeeded()
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [hotel0, hotel1])
+        
+        XCTAssertEqual(spy.loadedImageURLs, [], "Expected no image URL requests until views become visible")
+
+        sut.simulateHotelCellVisible(at: 0, section: 0)
+        XCTAssertEqual(spy.loadedImageURLs, [hotel0.image], "Expected first image URL request once first view becomes visible")
+        
+        sut.simulateHotelCellVisible(at: 1, section: 0)
+        XCTAssertEqual(spy.loadedImageURLs, [hotel0.image, hotel1.image], "Expected second image URL request once second view also becomes visible")
+    }
     
     // MARK: - Helpers
     
@@ -100,7 +119,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         sut.view.enforceLayoutCycle()
         
         hotels.enumerated().forEach { section, hotelArr in
-            XCTAssertEqual(hotelArr.count, sut.numberOfRenderedHotelCells(inSction: section))
+            XCTAssertEqual(hotelArr.count, sut.numberOfRenderedHotelCells(inSection: section))
             hotelArr.enumerated().forEach { index, hotel in
                 assertThat(sut, hasViewConfiguredFor: hotel, at: index, section: section)
             }
@@ -143,11 +162,14 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         
         // MARK: - Image Data Loader
         
+        var loadedImageURLs = [URL]()
+        
         private struct MockTask: ImageDataLoaderTask {
             func cancel() { }
         }
         
         func loadImageData(from url: URL, completion: @escaping (ImageDataLoader.Result) -> Void) -> ImageDataLoaderTask {
+            self.loadedImageURLs.append(url)
             return MockTask()
         }
         
@@ -165,17 +187,22 @@ extension HotelSearchViewController {
         self.btnSearch.sendActions(for: .touchUpInside)
     }
     
-    func numberOfRenderedHotelCells(inSction section: Int = 0) -> Int {
+    func numberOfRenderedHotelCells(inSection section: Int = 0) -> Int {
         return tableView.numberOfRows(inSection: section)
     }
     
     func hotelCell(at row: Int, section: Int) -> UITableViewCell? {
-        guard numberOfRenderedHotelCells(inSction: section) > row else {
+        guard numberOfRenderedHotelCells(inSection: section) > row else {
             return nil
         }
         let ds = tableView.dataSource
         let index = IndexPath(row: row, section: section)
         return ds?.tableView(tableView, cellForRowAt: index)
+    }
+    
+    @discardableResult
+    func simulateHotelCellVisible(at index: Int, section: Int) -> HotelCell? {
+        return hotelCell(at: index, section: section) as? HotelCell
     }
     
 }
