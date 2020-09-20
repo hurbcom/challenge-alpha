@@ -149,6 +149,23 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         XCTAssertEqual(view0?.renderedImage, imageData0, "Expected no image state change for first view once second image loading completes successfully")
         XCTAssertEqual(view1?.renderedImage, imageData1, "Expected image for second view once second image loading completes successfully")
     }
+
+    func test_hotelCell_preloadsImageURLWhenNearVisible() {
+        let hotel0 = makeItem(image: URL(string: "http://url-0.com")!, stars: 5)
+        let hotel1 = makeItem(image: URL(string: "http://url-1.com")!, stars: 5)
+        let (sut, spy) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [hotel0, hotel1])
+        XCTAssertEqual(spy.loadedImageURLs, [], "Expected no image URL requests until image is near visible")
+        
+        sut.simulateFeedImageViewNearVisible(at: 0, section: 0)
+        XCTAssertEqual(spy.loadedImageURLs, [hotel0.image], "Expected first image URL request once first image is near visible")
+        
+        sut.simulateFeedImageViewNearVisible(at: 1, section: 0)
+        XCTAssertEqual(spy.loadedImageURLs, [hotel0.image, hotel1.image], "Expected second image URL request once second image is near visible")
+    }
     
     // MARK: - Helpers
     
@@ -280,19 +297,25 @@ extension HotelSearchViewController {
     }
     
     @discardableResult
-    func simulateHotelCellVisible(at index: Int, section: Int) -> HotelCell? {
-        return hotelCell(at: index, section: section) as? HotelCell
+    func simulateHotelCellVisible(at row: Int, section: Int) -> HotelCell? {
+        return hotelCell(at: row, section: section) as? HotelCell
     }
     
     @discardableResult
-    func simulateHotelCellNotVisible(at index: Int, section: Int) -> HotelCell? {
-        let view = simulateHotelCellVisible(at: index, section: section)
+    func simulateHotelCellNotVisible(at row: Int, section: Int) -> HotelCell? {
+        let view = simulateHotelCellVisible(at: row, section: section)
         
         let delegate = tableView.delegate
-        let index = IndexPath(row: index, section: section)
+        let index = IndexPath(row: row, section: section)
         delegate?.tableView?(tableView, didEndDisplaying: view!, forRowAt: index)
         
         return view
+    }
+    
+    func simulateFeedImageViewNearVisible(at row: Int, section: Int) {
+        let ds = tableView.prefetchDataSource
+        let index = IndexPath(row: row, section: section)
+        ds?.tableView(tableView, prefetchRowsAt: [index])
     }
     
 }
