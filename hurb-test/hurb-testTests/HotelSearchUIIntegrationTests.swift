@@ -56,6 +56,24 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         spy.completeHotelSearch(with: [hotel0, hotel1, hotel2, hotel3], at: 1)
         assertThat(sut, isRendering: [[hotel0, hotel1, hotel2], [hotel3]])
     }
+
+    func test_searchHotelCompletion_rendersSuccessfullyLoadedEmptyHotelsAfterNonEmptyHotels() {
+        let hotel0 = makeItem(stars: 3)
+        let hotel1 = makeItem(stars: 3)
+        let spy = Spy()
+        let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        
+        sut.loadViewIfNeeded()
+        assertThat(sut, isRendering: [])
+
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [hotel0, hotel1])
+        assertThat(sut, isRendering: [[hotel0, hotel1]])
+        
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [], at: 1)
+        assertThat(sut, isRendering: [])
+    }
     
     // MARK: - Helpers
     
