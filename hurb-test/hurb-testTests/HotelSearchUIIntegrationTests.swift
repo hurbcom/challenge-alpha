@@ -160,11 +160,28 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         spy.completeHotelSearch(with: [hotel0, hotel1])
         XCTAssertEqual(spy.loadedImageURLs, [], "Expected no image URL requests until image is near visible")
         
-        sut.simulateFeedImageViewNearVisible(at: 0, section: 0)
+        sut.simulateHotelCellNearVisible(at: 0, section: 0)
         XCTAssertEqual(spy.loadedImageURLs, [hotel0.image], "Expected first image URL request once first image is near visible")
         
-        sut.simulateFeedImageViewNearVisible(at: 1, section: 0)
+        sut.simulateHotelCellNearVisible(at: 1, section: 0)
         XCTAssertEqual(spy.loadedImageURLs, [hotel0.image, hotel1.image], "Expected second image URL request once second image is near visible")
+    }
+    
+    func test_hotelCell_cancelsImageURLPreloadingWhenNotNearVisibleAnymore() {
+        let hotel0 = makeItem(image: URL(string: "http://url-0.com")!, stars: 5)
+        let hotel1 = makeItem(image: URL(string: "http://url-1.com")!, stars: 5)
+        let (sut, spy) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [hotel0, hotel1])
+        XCTAssertEqual(spy.cancelledImageURLs, [], "Expected no cancelled image URL requests until image is not near visible")
+        
+        sut.simulateHotelCellNotNearVisible(at: 0, section: 0)
+        XCTAssertEqual(spy.cancelledImageURLs, [hotel0.image], "Expected first cancelled image URL request once first image is not near visible anymore")
+        
+        sut.simulateHotelCellNotNearVisible(at: 1, section: 0)
+        XCTAssertEqual(spy.cancelledImageURLs, [hotel0.image, hotel1.image], "Expected second cancelled image URL request once second image is not near visible anymore")
     }
     
     // MARK: - Helpers
@@ -312,10 +329,18 @@ extension HotelSearchViewController {
         return view
     }
     
-    func simulateFeedImageViewNearVisible(at row: Int, section: Int) {
+    func simulateHotelCellNearVisible(at row: Int, section: Int) {
         let ds = tableView.prefetchDataSource
         let index = IndexPath(row: row, section: section)
         ds?.tableView(tableView, prefetchRowsAt: [index])
+    }
+    
+    func simulateHotelCellNotNearVisible(at row: Int, section: Int) {
+        simulateHotelCellNearVisible(at: row, section: section)
+        
+        let ds = tableView.prefetchDataSource
+        let index = IndexPath(row: row, section: section)
+        ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
     }
     
 }
