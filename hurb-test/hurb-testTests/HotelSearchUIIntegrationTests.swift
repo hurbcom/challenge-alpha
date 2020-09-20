@@ -184,6 +184,18 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         XCTAssertEqual(spy.cancelledImageURLs, [hotel0.image, hotel1.image], "Expected second cancelled image URL request once second image is not near visible anymore")
     }
     
+    func test_hotelCell_doesNotRenderLoadedImageWhenNotVisibleAnymore() {
+        let (sut, spy) = makeSUT()
+        sut.loadViewIfNeeded()
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [makeItem()])
+
+        let view = sut.simulateHotelCellNotVisible(at: 0, section: 0)
+        spy.completeImageLoading(with: UIImage.make(withColor: .red).pngData()!)
+        
+        XCTAssertNil(view?.renderedImage, "Expected no rendered image when an image load finishes after the view is not visible anymore")
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: HotelSearchViewController, spy: Spy) {
