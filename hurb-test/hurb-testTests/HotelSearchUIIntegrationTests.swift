@@ -15,8 +15,7 @@ import HotelSearchiOS
 class HotelSearchUIIntegrationTests: XCTestCase {
 
     func test_searchHotelActions_requestSearchFromLoader() {
-        let spy = Spy()
-        let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        let (sut, spy) = makeSUT()
         sut.loadViewIfNeeded()
         
         XCTAssertEqual(spy.searchHotelCallCount, 0)
@@ -25,8 +24,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
     }
     
     func test_loadingHotelIndicator_isVisibleWhileSearchingHotels() {
-        let spy = Spy()
-        let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        let (sut, spy) = makeSUT()
         sut.loadViewIfNeeded()
         XCTAssertFalse(sut.isShowingLoadingIndicator)
         
@@ -42,8 +40,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         let hotel1 = makeItem(name: "another name", stars: 4)
         let hotel2 = makeItem(address: Address(city: "city", country: nil, state: "state", street: nil, zipcode: nil), name: "a new name", stars: 4)
         let hotel3 = makeItem(amenities: [Amenity(category: nil, name: "amenity"), Amenity(category: nil, name: "a amenity")], stars: 3)
-        let spy = Spy()
-        let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        let (sut, spy) = makeSUT()
         
         sut.loadViewIfNeeded()
         assertThat(sut, isRendering: [])
@@ -60,8 +57,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
     func test_searchHotelCompletion_rendersSuccessfullyLoadedEmptyHotelsAfterNonEmptyHotels() {
         let hotel0 = makeItem(stars: 3)
         let hotel1 = makeItem(stars: 3)
-        let spy = Spy()
-        let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        let (sut, spy) = makeSUT()
         
         sut.loadViewIfNeeded()
         assertThat(sut, isRendering: [])
@@ -78,8 +74,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
     func test_hotelCell_loadsImageURLWhenVisible() {
         let hotel0 = makeItem(image: URL(string: "http://url-0.com")!, stars: 5)
         let hotel1 = makeItem(image: URL(string: "http://url-1.com")!, stars: 5)
-        let spy = Spy()
-        let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        let (sut, spy) = makeSUT()
         
         sut.loadViewIfNeeded()
         sut.simulateHotelSearch()
@@ -95,6 +90,12 @@ class HotelSearchUIIntegrationTests: XCTestCase {
     }
     
     // MARK: - Helpers
+    
+    private func makeSUT() -> (sut: HotelSearchViewController, spy: Spy) {
+        let spy = Spy()
+        let sut = HotelSearchUIComposer.hotelSearchComposedWith(hotelSearcher: spy, imageDataLoader: spy)
+        return (sut, spy)
+    }
     
     private func makeItem(
         address: Address = Address(city: "a city", country: "a country", state: "a state", street: "a street", zipcode: "a zipcode"),
