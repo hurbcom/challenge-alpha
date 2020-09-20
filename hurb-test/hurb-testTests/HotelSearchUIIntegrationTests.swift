@@ -480,19 +480,3 @@ extension HotelCell {
     }
     
 }
-
-extension HeaderView {
-    
-    var starsCount: Int {
-        return self.stackView.arrangedSubviews.count
-    }
-    
-    var isShowingNoneMessage: Bool {
-        return self.label.superview != nil
-    }
-    
-    var isShowingStars: Bool {
-        return self.stackView.superview != nil
-    }
-    
-}
