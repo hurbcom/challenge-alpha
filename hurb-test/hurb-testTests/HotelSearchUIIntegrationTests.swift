@@ -106,6 +106,27 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         XCTAssertEqual(spy.cancelledImageURLs, [hotel0.image, hotel1.image], "Expected two cancelled image URL requests once second image is also not visible anymore")
     }
     
+    func test_hotelCellImageLoadingIndicator_isVisibleWhileLoadingImage() {
+        let (sut, loader) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        sut.simulateHotelSearch()
+        loader.completeHotelSearch(with: [makeItem(stars: 1), makeItem(stars: 1)])
+        
+        let view0 = sut.simulateHotelCellVisible(at: 0, section: 0)
+        let view1 = sut.simulateHotelCellVisible(at: 1, section: 0)
+        XCTAssertEqual(view0?.isShowingImageLoadingIndicator, true, "Expected loading indicator for first view while loading first image")
+        XCTAssertEqual(view1?.isShowingImageLoadingIndicator, true, "Expected loading indicator for second view while loading second image")
+        
+        loader.completeImageLoading(at: 0)
+        XCTAssertEqual(view0?.isShowingImageLoadingIndicator, false, "Expected no loading indicator for first view once first image loading completes successfully")
+        XCTAssertEqual(view1?.isShowingImageLoadingIndicator, true, "Expected no loading indicator state change for second view once first image loading completes successfully")
+        
+        loader.completeImageLoadingWithError(at: 1)
+        XCTAssertEqual(view0?.isShowingImageLoadingIndicator, false, "Expected no loading indicator state change for first view once second image loading completes with error")
+        XCTAssertEqual(view1?.isShowingImageLoadingIndicator, false, "Expected no loading indicator for second view once second image loading completes with error")
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: HotelSearchViewController, spy: Spy) {
@@ -182,7 +203,11 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         
         // MARK: - Image Data Loader
         
-        var loadedImageURLs = [URL]()
+        private var imageRequests = [(url: URL, completion: (ImageDataLoader.Result) -> Void)]()
+        
+        var loadedImageURLs: [URL] {
+            return self.imageRequests.map { $0.url }
+        }
         var cancelledImageURLs = [URL]()
         
         private struct MockTask: ImageDataLoaderTask {
@@ -191,8 +216,17 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         }
         
         func loadImageData(from url: URL, completion: @escaping (ImageDataLoader.Result) -> Void) -> ImageDataLoaderTask {
-            self.loadedImageURLs.append(url)
+            self.imageRequests.append((url, completion))
             return MockTask { [weak self] in self?.cancelledImageURLs.append(url) }
+        }
+        
+        func completeImageLoading(with imageData: Data = Data(), at index: Int = 0) {
+            imageRequests[index].completion(.success(imageData))
+        }
+        
+        func completeImageLoadingWithError(at index: Int = 0) {
+            let error = NSError(domain: "an error", code: 0)
+            imageRequests[index].completion(.failure(error))
         }
         
     }
@@ -245,14 +279,21 @@ extension HotelCell {
     var isShowingName: Bool {
         return self.lblName.text != nil
     }
+    
     var isShowingLocation: Bool {
         return self.lblLocation.text != nil
     }
+    
     var isShowingAmenities: Bool {
         return self.lblAmenities.text != nil
     }
+    
     var isShowingPrice: Bool {
         return self.lblPrice.text != nil
+    }
+    
+    var isShowingImageLoadingIndicator: Bool {
+        return imageContainer.isShimmering
     }
     
 }
