@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import HotelSearchiOS
 @testable import hurb_test
 
 class SceneDelegateTests: XCTestCase {
@@ -20,6 +21,17 @@ class SceneDelegateTests: XCTestCase {
         
         XCTAssertTrue(window.isKeyWindow, "Expected window to be key window")
         XCTAssertFalse(window.isHidden, "Expected window to be visible")
+    }
+
+    func test_configureWindow_configuresRootViewController() {
+        let sut = SceneDelegate()
+        sut.window = UIWindow()
+        
+        sut.configureWindow()
+        
+        let root = sut.window?.rootViewController
+        
+        XCTAssertTrue(root is HotelSearchViewController, "Expected a hotel search controller as root, got \(String(describing: root)) instead")
     }
 
 }
