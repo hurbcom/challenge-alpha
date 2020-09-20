@@ -89,6 +89,23 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         XCTAssertEqual(spy.loadedImageURLs, [hotel0.image, hotel1.image], "Expected second image URL request once second view also becomes visible")
     }
     
+    func test_hotelCell_cancelsImageLoadingWhenNotVisibleAnymore() {
+        let hotel0 = makeItem(image: URL(string: "http://url-0.com")!, stars: 5)
+        let hotel1 = makeItem(image: URL(string: "http://url-1.com")!, stars: 5)
+        let (sut, spy) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [hotel0, hotel1])
+        XCTAssertEqual(spy.cancelledImageURLs, [], "Expected no cancelled image URL requests until image is not visible")
+        
+        sut.simulateHotelCellNotVisible(at: 0, section: 0)
+        XCTAssertEqual(spy.cancelledImageURLs, [hotel0.image], "Expected one cancelled image URL request once first image is not visible anymore")
+        
+        sut.simulateHotelCellNotVisible(at: 1, section: 0)
+        XCTAssertEqual(spy.cancelledImageURLs, [hotel0.image, hotel1.image], "Expected two cancelled image URL requests once second image is also not visible anymore")
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: HotelSearchViewController, spy: Spy) {
@@ -166,14 +183,16 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         // MARK: - Image Data Loader
         
         var loadedImageURLs = [URL]()
+        var cancelledImageURLs = [URL]()
         
         private struct MockTask: ImageDataLoaderTask {
-            func cancel() { }
+            var completion: (() -> Void)
+            func cancel() { self.completion() }
         }
         
         func loadImageData(from url: URL, completion: @escaping (ImageDataLoader.Result) -> Void) -> ImageDataLoaderTask {
             self.loadedImageURLs.append(url)
-            return MockTask()
+            return MockTask { [weak self] in self?.cancelledImageURLs.append(url) }
         }
         
     }
@@ -206,6 +225,17 @@ extension HotelSearchViewController {
     @discardableResult
     func simulateHotelCellVisible(at index: Int, section: Int) -> HotelCell? {
         return hotelCell(at: index, section: section) as? HotelCell
+    }
+    
+    @discardableResult
+    func simulateHotelCellNotVisible(at index: Int, section: Int) -> HotelCell? {
+        let view = simulateHotelCellVisible(at: index, section: section)
+        
+        let delegate = tableView.delegate
+        let index = IndexPath(row: index, section: section)
+        delegate?.tableView?(tableView, didEndDisplaying: view!, forRowAt: index)
+        
+        return view
     }
     
 }
