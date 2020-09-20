@@ -452,31 +452,3 @@ extension HotelSearchViewController {
     }
     
 }
-
-extension HotelCell {
-    
-    var isShowingName: Bool {
-        return self.lblName.text != nil
-    }
-    
-    var isShowingLocation: Bool {
-        return self.lblLocation.text != nil
-    }
-    
-    var isShowingAmenities: Bool {
-        return self.lblAmenities.text != nil
-    }
-    
-    var isShowingPrice: Bool {
-        return self.lblPrice.text != nil
-    }
-    
-    var isShowingImageLoadingIndicator: Bool {
-        return self.imageContainer.isShimmering
-    }
-    
-    var renderedImage: Data? {
-        return self.imvBackground.image?.pngData()
-    }
-    
-}
