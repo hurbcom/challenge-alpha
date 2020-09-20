@@ -191,7 +191,7 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         spy.completeHotelSearch(with: [makeItem()])
 
         let view = sut.simulateHotelCellNotVisible(at: 0, section: 0)
-        spy.completeImageLoading(with: UIImage.make(withColor: .red).pngData()!)
+        spy.completeImageLoading(with: self.anyImageData())
         
         XCTAssertNil(view?.renderedImage, "Expected no rendered image when an image load finishes after the view is not visible anymore")
     }
@@ -204,6 +204,21 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         let exp = expectation(description: "Wait for background queue")
         DispatchQueue.global().async {
             spy.completeHotelSearch(at: 0)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_loadImageDataCompletion_dispatchesFromBackgroundToMainThread() {
+        let (sut, spy) = makeSUT()
+        sut.loadViewIfNeeded()
+        sut.simulateHotelSearch()
+        spy.completeHotelSearch(with: [makeItem()])
+        _ = sut.simulateHotelCellVisible(at: 0, section: 0)
+        
+        let exp = expectation(description: "Wait for background queue")
+        DispatchQueue.global().async {
+            spy.completeImageLoading(with: self.anyImageData(), at: 0)
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1.0)
@@ -264,6 +279,10 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         XCTAssertEqual(cell.isShowingLocation, shouldLocationBeVisible, file: file, line: line)
         XCTAssertEqual(cell.isShowingAmenities, shouldAmenitiesBeVisible, file: file, line: line)
         XCTAssertEqual(cell.isShowingPrice, shouldPriceBeVisible, file: file, line: line)
+    }
+
+    private func anyImageData() -> Data {
+        return UIImage.make(withColor: .red).pngData()!
     }
     
     private class Spy: HotelSearcher, ImageDataLoader {
