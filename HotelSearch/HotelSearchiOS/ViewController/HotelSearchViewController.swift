@@ -28,11 +28,6 @@ final public class HotelSearchViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var groupedHotels = [[HotelViewModel]]() {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
     private let viewModel: HotelSearchViewModel
     private var hotels = [[HotelViewModel]]() {
         didSet {
@@ -88,7 +83,6 @@ private extension HotelSearchViewController {
     }
     
     func loadImage(at indexPath: IndexPath) {
-//        guard self.imageLoadTasks[indexPath] == nil else { return }
         self.imageLoadTasks[indexPath] = self.viewModel.loadImage(at: indexPath.row, section: indexPath.section)
     }
     

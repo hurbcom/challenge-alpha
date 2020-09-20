@@ -23,6 +23,15 @@ class HotelSearchUIIntegrationTests: XCTestCase {
         XCTAssertEqual(spy.searchHotelCallCount, 1)
     }
     
+    func test_searchHotelActions_requestSearchAfterTextInputReturnEvent() {
+        let (sut, spy) = makeSUT()
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(spy.searchHotelCallCount, 0)
+        sut.simulateTextInputReturn()
+        XCTAssertEqual(spy.searchHotelCallCount, 1)
+    }
+    
     func test_loadingHotelIndicator_isVisibleWhileSearchingHotels() {
         let (sut, spy) = makeSUT()
         sut.loadViewIfNeeded()
@@ -384,6 +393,10 @@ extension HotelSearchViewController {
     
     func simulateHotelSearch() {
         self.btnSearch.sendActions(for: .touchUpInside)
+    }
+    
+    func simulateTextInputReturn() {
+        self.textField.delegate?.textFieldShouldReturn?(self.textField)
     }
     
     func numberOfRenderedHotelCells(inSection section: Int = 0) -> Int {
