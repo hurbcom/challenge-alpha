@@ -45,6 +45,7 @@
 		FCE9E3682516C77000E94082 /* HotelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E3672516C77000E94082 /* HotelViewModelTests.swift */; };
 		FCE9E36D2516CAB300E94082 /* LoadImageFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E36C2516CAB300E94082 /* LoadImageFromRemoteUseCaseTests.swift */; };
 		FCE9E3852517B4BA00E94082 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E3842517B4BA00E94082 /* UIView+Shimmering.swift */; };
+		FCE9E3872517B4E100E94082 /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE9E3862517B4E100E94082 /* UIImageView+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		FCE9E3672516C77000E94082 /* HotelViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewModelTests.swift; sourceTree = "<group>"; };
 		FCE9E36C2516CAB300E94082 /* LoadImageFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		FCE9E3842517B4BA00E94082 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
+		FCE9E3862517B4E100E94082 /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE9E3842517B4BA00E94082 /* UIView+Shimmering.swift */,
+				FCE9E3862517B4E100E94082 /* UIImageView+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				FCC5456825102D360048CF72 /* HotelCell.swift in Sources */,
 				FCE9E3852517B4BA00E94082 /* UIView+Shimmering.swift in Sources */,
 				FC7575242512BD080044235A /* HeaderView.swift in Sources */,
+				FCE9E3872517B4E100E94082 /* UIImageView+Helpers.swift in Sources */,
 				FC7449FD250F8A2F0048DCEE /* HotelSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
