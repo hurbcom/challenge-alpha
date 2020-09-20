@@ -496,10 +496,3 @@ extension HeaderView {
     }
     
 }
-
-extension UIView {
-    func enforceLayoutCycle() {
-        layoutIfNeeded()
-        RunLoop.current.run(until: Date())
-    }
-}
