@@ -14,11 +14,7 @@ final public class HeaderView: UIView {
     
     private(set) public lazy var stackView: UIStackView = {
         let imageViews: [UIImageView] = (0 ..< (self.stars ?? 0)).compactMap { _ in
-            let imageView = UIImageView(image: UIImage(systemName: "star.fill"))
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor).isActive = true
-            imageView.tintColor = #colorLiteral(red: 1, green: 0.9215686275, blue: 0, alpha: 1)
-            return imageView
+            return self.makeImageView()
         }
         let stackView = UIStackView(arrangedSubviews: imageViews)
         stackView.axis = .horizontal
@@ -82,6 +78,14 @@ private extension HeaderView {
             self.label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             self.label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16)
         ])
+    }
+    
+    func makeImageView() -> UIImageView {
+        let imageView = UIImageView(image: UIImage(systemName: "star.fill"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor).isActive = true
+        imageView.tintColor = #colorLiteral(red: 1, green: 0.9215686275, blue: 0, alpha: 1)
+        return imageView
     }
     
 }
