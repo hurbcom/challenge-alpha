@@ -139,13 +139,13 @@
 		FC7449C9250F88E70048DCEE /* hurb-test */ = {
 			isa = PBXGroup;
 			children = (
+				FC7449D8250F88EA0048DCEE /* Info.plist */,
 				FC7449CA250F88E70048DCEE /* AppDelegate.swift */,
-				FC7449CC250F88E70048DCEE /* SceneDelegate.swift */,
 				FCE9E35C25166D4D00E94082 /* HotelSearchUIComposer.swift */,
+				FCE9E3602516BEB000E94082 /* MainQueueDispatchDecorator.swift */,
+				FC7449CC250F88E70048DCEE /* SceneDelegate.swift */,
 				FC7449D3250F88EA0048DCEE /* Assets.xcassets */,
 				FC7449D5250F88EA0048DCEE /* LaunchScreen.storyboard */,
-				FC7449D8250F88EA0048DCEE /* Info.plist */,
-				FCE9E3602516BEB000E94082 /* MainQueueDispatchDecorator.swift */,
 			);
 			path = "hurb-test";
 			sourceTree = "<group>";
@@ -181,14 +181,14 @@
 		FCE9E3702517A17200E94082 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				FCE9E3712517A17E00E94082 /* XCTestCase+MemoryLeakTracking.swift */,
-				FCE9E3752517AEB000E94082 /* UIImage+TestHelpers.swift */,
 				FCE9E3792517AF0500E94082 /* HeaderView+TestHelpers.swift */,
 				FCE9E37B2517AF2B00E94082 /* HotelCell+TestHelpers.swift */,
+				FCE9E3812517AFB200E94082 /* HotelSearchUIIntegrationTests+Assertions.swift */,
 				FCE9E37D2517AF5700E94082 /* HotelSearchViewController+TestHelpers.swift */,
 				FCE9E37F2517AF8500E94082 /* Spy.swift */,
-				FCE9E3812517AFB200E94082 /* HotelSearchUIIntegrationTests+Assertions.swift */,
+				FCE9E3752517AEB000E94082 /* UIImage+TestHelpers.swift */,
 				FCE9E3772517AEE100E94082 /* UIView+TestHelpers.swift */,
+				FCE9E3712517A17E00E94082 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
