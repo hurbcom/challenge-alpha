@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,11 @@
 		73F691D02522BBFC005EC947 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691CF2522BBFC005EC947 /* HomeTableViewCell.swift */; };
 		73F691D22522BC18005EC947 /* HotelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691D12522BC18005EC947 /* HotelDetailViewController.swift */; };
 		73F691D42522BC2A005EC947 /* HotelDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691D32522BC2A005EC947 /* HotelDetailViewModel.swift */; };
+		73F691D82522C975005EC947 /* EncodeDecodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691D72522C975005EC947 /* EncodeDecodeHelper.swift */; };
+		73F691DA2522CA4D005EC947 /* Hotels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691D92522CA4D005EC947 /* Hotels.swift */; };
+		73F691DC2522CA71005EC947 /* HotelsResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691DB2522CA71005EC947 /* HotelsResults.swift */; };
+		73F691DE2522CAC2005EC947 /* HotelAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691DD2522CAC2005EC947 /* HotelAddress.swift */; };
+		73F691E02522CAF5005EC947 /* HotelPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691DF2522CAF5005EC947 /* HotelPrice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +52,7 @@
 		038C0223A9A91B9A3D286677 /* Pods-Challenge-ios-Challenge-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge-ios-Challenge-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-Challenge-ios-Challenge-iosUITests/Pods-Challenge-ios-Challenge-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		30A50D4F4E0A961BD045395D /* Pods-Challenge-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge-iosTests.release.xcconfig"; path = "Target Support Files/Pods-Challenge-iosTests/Pods-Challenge-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		67933166DA44AB3A63DBD818 /* Pods-Challenge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge-ios.debug.xcconfig"; path = "Target Support Files/Pods-Challenge-ios/Pods-Challenge-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		73F691762522B329005EC947 /* Challenge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73F691762522B329005EC947 /* Hotéis Búzios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hotéis Búzios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F691792522B329005EC947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F6917B2522B329005EC947 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		73F691802522B329005EC947 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +70,11 @@
 		73F691CF2522BBFC005EC947 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		73F691D12522BC18005EC947 /* HotelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailViewController.swift; sourceTree = "<group>"; };
 		73F691D32522BC2A005EC947 /* HotelDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailViewModel.swift; sourceTree = "<group>"; };
+		73F691D72522C975005EC947 /* EncodeDecodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeDecodeHelper.swift; sourceTree = "<group>"; };
+		73F691D92522CA4D005EC947 /* Hotels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotels.swift; sourceTree = "<group>"; };
+		73F691DB2522CA71005EC947 /* HotelsResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsResults.swift; sourceTree = "<group>"; };
+		73F691DD2522CAC2005EC947 /* HotelAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAddress.swift; sourceTree = "<group>"; };
+		73F691DF2522CAF5005EC947 /* HotelPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelPrice.swift; sourceTree = "<group>"; };
 		92AEE67E738780787ACB6EB9 /* Pods_Challenge_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challenge_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE7FD11B04E9866021E3B43 /* Pods-Challenge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge-ios.release.xcconfig"; path = "Target Support Files/Pods-Challenge-ios/Pods-Challenge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		BDDD36C27B97411A342A8E8F /* Pods-Challenge-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-Challenge-iosTests/Pods-Challenge-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +134,7 @@
 		73F691772522B329005EC947 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73F691762522B329005EC947 /* Challenge-ios.app */,
+				73F691762522B329005EC947 /* Hotéis Búzios.app */,
 				73F6918C2522B330005EC947 /* Challenge-iosTests.xctest */,
 				73F691972522B330005EC947 /* Challenge-iosUITests.xctest */,
 			);
@@ -261,6 +271,7 @@
 		73F691B42522B867005EC947 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				73F691D72522C975005EC947 /* EncodeDecodeHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -268,6 +279,10 @@
 		73F691B52522BAE4005EC947 /* General Model */ = {
 			isa = PBXGroup;
 			children = (
+				73F691D92522CA4D005EC947 /* Hotels.swift */,
+				73F691DB2522CA71005EC947 /* HotelsResults.swift */,
+				73F691DD2522CAC2005EC947 /* HotelAddress.swift */,
+				73F691DF2522CAF5005EC947 /* HotelPrice.swift */,
 			);
 			path = "General Model";
 			sourceTree = "<group>";
@@ -289,7 +304,6 @@
 				BDDD36C27B97411A342A8E8F /* Pods-Challenge-iosTests.debug.xcconfig */,
 				30A50D4F4E0A961BD045395D /* Pods-Challenge-iosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -312,7 +326,7 @@
 			);
 			name = "Challenge-ios";
 			productName = "Challenge-ios";
-			productReference = 73F691762522B329005EC947 /* Challenge-ios.app */;
+			productReference = 73F691762522B329005EC947 /* Hotéis Búzios.app */;
 			productType = "com.apple.product-type.application";
 		};
 		73F6918B2522B330005EC947 /* Challenge-iosTests */ = {
@@ -550,9 +564,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F691DA2522CA4D005EC947 /* Hotels.swift in Sources */,
+				73F691E02522CAF5005EC947 /* HotelPrice.swift in Sources */,
 				73F691D22522BC18005EC947 /* HotelDetailViewController.swift in Sources */,
 				73F6917A2522B329005EC947 /* AppDelegate.swift in Sources */,
 				73F691D02522BBFC005EC947 /* HomeTableViewCell.swift in Sources */,
+				73F691DC2522CA71005EC947 /* HotelsResults.swift in Sources */,
+				73F691D82522C975005EC947 /* EncodeDecodeHelper.swift in Sources */,
+				73F691DE2522CAC2005EC947 /* HotelAddress.swift in Sources */,
 				73F691D42522BC2A005EC947 /* HotelDetailViewModel.swift in Sources */,
 				73F6917C2522B329005EC947 /* SceneDelegate.swift in Sources */,
 				73F691CC2522BB68005EC947 /* HomeViewController.swift in Sources */,
@@ -740,7 +759,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Andre-Dias.Challenge-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Hotéis Búzios";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -759,7 +778,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Andre-Dias.Challenge-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Hotéis Búzios";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
