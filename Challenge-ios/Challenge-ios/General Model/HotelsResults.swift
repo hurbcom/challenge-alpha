@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Result
-struct Result: Codable {
+struct HotelsResults: Codable {
     let sku: String
     let isHotel: Bool?
     let category: Category
@@ -26,24 +26,48 @@ struct Result: Codable {
     let gallery: [Gallery]
     let address: Address
     let tags: [String]
-    let quantityDescriptors: QuantityDescriptors
     let featuredItem: FeaturedItem
-    let isPackage: Bool?
-    let startDate, endDate: String?
-    let hasAvailability: Bool?
 
     enum CodingKeys: String, CodingKey {
         case sku, isHotel, category, smallDescription, amenities, id, price
-        case huFreeCancellation
+        case huFreeCancellation = "hu_free_cancellation"
         case image, name, url
-        case resultDescription
-        case stars, gallery, address, tags, quantityDescriptors, featuredItem, isPackage, startDate, endDate, hasAvailability
+        case resultDescription = "description"
+        case stars, gallery, address, tags, featuredItem
+    }
+    
+    init(from decoder: Decoder) throws {
+        let codingValue = try decoder.container(keyedBy: CodingKeys.self)
+        sku = try codingValue.decode(String.self, forKey: .sku)
+        isHotel = try codingValue.decode(Bool.self, forKey: .isHotel)
+        category = try codingValue.decode(Category.self, forKey: .category)
+        smallDescription = try codingValue.decode(String.self, forKey: .smallDescription)
+        amenities = try codingValue.decode([ResultAmenity].self, forKey: .amenities)
+        id = try codingValue.decode(String.self, forKey: .id)
+        price = try codingValue.decode(ResultPrice.self, forKey: .price)
+        huFreeCancellation = try codingValue.decode(Bool.self, forKey: .huFreeCancellation)
+        image = try codingValue.decode(String.self, forKey: .image)
+        name = try codingValue.decode(String.self, forKey: .name)
+        url = try codingValue.decode(String.self, forKey: .url)
+        resultDescription = try codingValue.decode(String.self, forKey: .resultDescription)
+        stars = try codingValue.decode(Int.self, forKey: .stars)
+        gallery = try codingValue.decode([Gallery].self, forKey: .gallery)
+        address = try codingValue.decode(Address.self, forKey: .address)
+        tags = try codingValue.decode([String].self, forKey: .tags)
+        featuredItem = try codingValue.decode(FeaturedItem.self, forKey: .featuredItem)
+    
     }
 }
 
 // MARK: - ResultAmenity
 struct ResultAmenity: Codable {
     let name, category: String
+    
+    init(from decoder: Decoder) throws {
+        let codingValue = try decoder.container(keyedBy: CodingKeys.self)
+        name = try codingValue.decode(String.self, forKey: .name)
+        category = try codingValue.decode(String.self, forKey: .category)
+    }
 }
 
 enum Category: String, Codable {
@@ -57,12 +81,18 @@ struct FeaturedItem: Codable {
     let name: String?
     let image: String?
     let featuredItemDescription: String
-    let hasInternet, hasParking: Bool?
 
     enum CodingKeys: String, CodingKey {
         case amenities, name, image
-        case featuredItemDescription
-        case hasInternet, hasParking
+        case featuredItemDescription = "description"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let codingValue = try decoder.container(keyedBy: CodingKeys.self)
+        amenities = try codingValue.decode([String].self, forKey: .amenities)
+        name = try codingValue.decode(String.self, forKey: .name)
+        image = try codingValue.decode(String.self, forKey: .image)
+        featuredItemDescription = try codingValue.decode(String.self, forKey: .featuredItemDescription)
     }
 }
 
@@ -72,13 +102,13 @@ struct Gallery: Codable {
     let url: String
 
     enum CodingKeys: String, CodingKey {
-        case galleryDescription
+        case galleryDescription = "description"
         case url
     }
-}
-
-// MARK: - QuantityDescriptors
-struct QuantityDescriptors: Codable {
-    let maxChildren, maxAdults, maxFreeChildrenAge, nights: Int?
-    let maxPeople: Int?
+    
+    init(from decoder: Decoder) throws {
+        let codingValue = try decoder.container(keyedBy: CodingKeys.self)
+        galleryDescription = try codingValue.decode(String.self, forKey: .galleryDescription)
+        url = try codingValue.decode(String.self, forKey: .url)
+    }
 }
