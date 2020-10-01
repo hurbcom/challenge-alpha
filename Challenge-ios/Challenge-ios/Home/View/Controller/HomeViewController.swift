@@ -11,7 +11,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bottomActivityIndicator: UIActivityIndicatorView!
     var hotels: [HotelsResults] = [HotelsResults]()
@@ -28,23 +28,28 @@ class HomeViewController: UIViewController {
         
         self.homeViewModel.getBaseHotels(page: self.page)
         
-        self.setupCollectionView()
+        self.setupTableView()
         self.setupView()
         
     
     }
     
-    func setupCollectionView() {
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+    func setupTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     func setupView() {
        self.activityIndicator.startAnimating()
-    self.bottomActivityIndicator.isHidden = true
-       self.collectionView.isHidden = true
-       self.collectionView.reloadData()
-       self.collectionView.layoutIfNeeded()
+        self.bottomActivityIndicator.isHidden = true
+ 
+        self.tableView.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+     
+        self.tableView.sectionHeaderHeight = 40
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 250, right: 0)
+        self.tableView.isHidden = true
+       self.tableView.reloadData()
+       self.tableView.layoutIfNeeded()
    }
     
     func getMoreHotels() {
@@ -52,52 +57,97 @@ class HomeViewController: UIViewController {
         self.bottomActivityIndicator.isHidden = false
         self.bottomActivityIndicator.startAnimating()
         self.homeViewModel.getBaseHotels(page: self.page)
-        self.collectionView.reloadData()
+        self.tableView.reloadData()
     }
     
     
 }
 
 
-extension HomeViewController:  UICollectionViewDataSource {
+extension HomeViewController:  UITableViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.homeViewModel.numberOfCells
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.homeViewModel.numberOfSections
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-        if let hotels = self.homeViewModel?.returnHotels() {
-            cell.homeCollectionViewCellViewModel = HomeCollectionCellViewModel(hotels[indexPath.row])
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        switch section {
+            case 0:
+                return self.homeViewModel.numberOfFiveStarsHotel()
+            case 1:
+                return self.homeViewModel.numberOfFourStarsHotel()
+            case 2:
+                return self.homeViewModel.numberOfThreeStarsHotel()
+            default:
+                return self.homeViewModel.numberOfCells()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var hotels = [HotelsResults]()
+        switch indexPath.section {
+            case 0:
+                hotels = self.homeViewModel.getFiveStarsHotel()
+            case 1:
+                hotels = self.homeViewModel.getFourStarsHotel()
+            case 2:
+                hotels = self.homeViewModel.getThreeStarsHotel()
+            default:
+                hotels = self.homeViewModel.returnAllHotels()
+        }
+ 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+        cell.homeTableViewCellViewModel = HomeTableCellViewModel(hotels[indexPath.row])
+        return cell
             
            
-            if indexPath.row == (hotels.count - 1) {
-                self.getMoreHotels()
-            }
-            
-        }
-        
-        return cell
+//            if indexPath.row == (hotels.count - 1) {
+//                self.getMoreHotels()
+//            }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        headerView.backgroundColor = .white
+
+        let label = UILabel()
+        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+       if section == 0 {
+            label.text = "Hoteis 5 estrelas"
+        } else if section == 1 {
+            label.text = "Hoteis 4 estrelas"
+        } else if section == 2 {
+            label.text = "Hoteis 3 estrelas"
+        }
+
+        headerView.addSubview(label)
+
+        return headerView
+
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 280.0
+    }
+}
+
+
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let gameDetail = storyboard.instantiateViewController(withIdentifier: "GameDetailViewController") as!
 //        GameDetailViewController
 //        let cellGames = self.topGamesViewModel?.returnGames() ?? [Game]()
 //        gameDetail.setupVC(game: cellGames[indexPath.row])
 //        self.navigationController?.show(gameDetail, sender: self)
-        
-        print("clicou")
+//
+//        print("clicou")
     }
-}
-
-
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:(collectionView.frame.width/2), height: 250)
-    }
 }
 
 
@@ -108,9 +158,9 @@ extension HomeViewController: HotelsViewModelDelegate {
     }
     
     func didFinishFetchingHotels() {
-        self.collectionView.reloadData()
+        self.tableView.reloadData()
         self.activityIndicator.stopAnimating()
-        self.collectionView.isHidden = false
+        self.tableView.isHidden = false
         self.bottomActivityIndicator.stopAnimating()
         self.bottomActivityIndicator.isHidden = true
     }

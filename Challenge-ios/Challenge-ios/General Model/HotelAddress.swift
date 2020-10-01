@@ -13,7 +13,8 @@ struct Address: Codable {
     let zipcode, street: String?
 //    var neighborhood: String?
     let streetName, address, fullAddress: String?
-    let city: City
+    let state: String?
+    let city: String
     let geoLocation: GeoLocation
 
     enum CodingKeys: String, CodingKey {
@@ -21,6 +22,7 @@ struct Address: Codable {
         case street
         case streetName = "street_name"
         case address, fullAddress
+        case state
 //        case neighborhood = "neighborhood"
         case city
         case geoLocation
@@ -34,14 +36,10 @@ struct Address: Codable {
         address = try codingValue.decode(String.self, forKey: .address)
         fullAddress = try codingValue.decode(String.self, forKey: .fullAddress)
 //        neighborhood = try codingValue.decode(String.self, forKey: .neighborhood)
-        city = try codingValue.decode(City.self, forKey: .city)
+        city = try codingValue.decode(String.self, forKey: .city)
+        state = try codingValue.decode(String.self, forKey: .state)
         geoLocation = try codingValue.decode(GeoLocation.self, forKey: .geoLocation)
       }
-}
-
-enum City: String, Codable {
-    case armaçãodosBúzios = "Armação dos Búzios"
-    case búzios = "Búzios"
 }
 
 // MARK: - GeoLocation
