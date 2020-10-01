@@ -20,7 +20,7 @@ class HomeViewModel {
     
     // MARK: Váriaveis
     private var hotelsArray = [HotelsResults]()
-    let numberOfSections = 3
+    let numberOfSections = Constants.numberOfSections
     var homeViewModelDelegate: HotelsViewModelDelegate?
     
     
@@ -78,8 +78,7 @@ class HomeViewModel {
             }
         }
            
-        return threeStarsArray
-    }
+        return threeStarsArray     }
     
     //MARK: Retorna Hoteis de acordo com o numero de estrelas
     
@@ -119,7 +118,7 @@ class HomeViewModel {
         return self.hotelsArray
     }
     
-    
+              
 }
 
 
@@ -133,5 +132,6 @@ class HomeViewModel {
 //            }
 //        }
 //        let sortedArray = Array(starsArray.sorted().reversed())
-//        return sortedArray
+//        return sortedArray99
+
 //    }

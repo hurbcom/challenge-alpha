@@ -14,7 +14,7 @@ class BaseAPI: NSObject {
         return BaseAPI()
     }()
     
-    let baseURL = "https://www.hurb.com/search/api?q=buzios"
+    let baseURL = Constants.baseURL
     
     private func getURL(_ urlSufix: String) -> String {
         let url: String = self.baseURL + urlSufix
@@ -24,6 +24,7 @@ class BaseAPI: NSObject {
     public func getBaseHotels(atPage: Int) -> String {
         return getURL("&page=\(atPage)")
     }
+    
 
 }
 

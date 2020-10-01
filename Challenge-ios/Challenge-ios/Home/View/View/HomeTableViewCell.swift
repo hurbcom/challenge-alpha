@@ -11,6 +11,8 @@ import Kingfisher
 
 class HomeTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var amenitiesText: UILabel!
+    @IBOutlet var starViewArray: [UIImageView]!
     @IBOutlet weak var cancelText: UILabel!
     @IBOutlet weak var installmentsText: UILabel!
     @IBOutlet weak var priceHotel: UILabel!
@@ -38,37 +40,87 @@ class HomeTableViewCell: UITableViewCell {
  
     func setup(hotelViewModel: HomeTableCellViewModel) {
         self.hotelImage.kf.setImage(with: hotelViewModel.hotelImageURL)
-        self.hotelName.text = hotelViewModel.hotelName
-        self.cityName.text = hotelViewModel.hotelAddress
-        
+        self.setupName(string: hotelViewModel.hotelName)
+        self.setupCityName(string: hotelViewModel.hotelAddress)
+        self.setupStars(quantity: hotelViewModel.stars)
+        self.setupPrice(string: hotelViewModel.hotelPrice)
+        self.setupAmenities(string: hotelViewModel.amenities)
         self.setupView()
         self.setupFixedLabels()
-       
+        
+      
     }
     
-    func setupFixedLabels() {
-        self.installmentsText.text = "+ Taxas | Em até 12x"
-        
-        
-        self.cancelText.text = "Cancelamento Grátis"
+    private func setupStars(quantity: Int) {
+        for (index, element) in self.starViewArray.enumerated() {
+            if index >= quantity {
+                element.isHidden = true
+            } else {
+                element.isHidden = false
+            }
+        }
     }
     
-    func setupView() {
-        self.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+    private func setupName(string: String) {
+        let nameString = string
+        let nameAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 15.0)!]
+        self.hotelName.attributedText = NSAttributedString(string: nameString, attributes: nameAttributes)
+    }
+    
+    private func setupCityName(string: String) {
+        let cityString = string
+        let cityAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 13.0)!]
+        self.cityName.attributedText = NSAttributedString(string: cityString, attributes: cityAttributes)
+    }
+    
+    private func setupAmenities(string: String) {
+        let amenitiesString = string
+        let amenitiesAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
+        self.amenitiesText.attributedText = NSAttributedString(string: amenitiesString, attributes: amenitiesAttributes)
+    }
+
+    private func setupPrice(string: String) {
+        let priceString = string
+        let priceAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: Colors.orangePrice,
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 18.0)!]
+        self.priceHotel.attributedText = NSAttributedString(string: priceString, attributes: priceAttributes)
+    }
+    
+    private func setupFixedLabels() {
+        let installmentsString = Constants.installmentsText
+        let installmentsAttributes: [NSAttributedString.Key : Any] = [
+                   NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
+        self.installmentsText.attributedText = NSAttributedString(string: installmentsString, attributes: installmentsAttributes)
+        
+        let cancelString = Constants.freeCancelText
+        let cancelAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: Colors.greenCancel,
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
+        self.cancelText.attributedText = NSAttributedString(string: cancelString, attributes: cancelAttributes)
+    }
+    
+    private func setupView() {
+        self.backgroundColor = Colors.backgroundGray
         self.boxView.backgroundColor = .white
         self.boxView.layer.cornerRadius = 10
         self.hotelImage.layer.masksToBounds = true
     }
     
-    func drawShadow() {
-    //        layer.masksToBounds = false
+    private func drawShadow() {
         self.boxView.layer.shadowColor = UIColor.black.cgColor
-        self.boxView.layer.shadowOpacity = 0.5
-        self.boxView.layer.shadowOffset = CGSize(width: -0.7, height: 0.7)
+        self.boxView.layer.shadowOpacity = 0.3
+        self.boxView.layer.shadowOffset = CGSize(width: -0.3, height: 0.3)
         self.boxView.layer.shadowRadius = 5
     }
     
-    func roundCornersInImage(corners: UIRectCorner) {
+    private func roundCornersInImage(corners: UIRectCorner) {
         let path = UIBezierPath(roundedRect:self.hotelImage.bounds, byRoundingCorners:corners, cornerRadii: CGSize(width: 10, height: 10))
         let maskLayer = CAShapeLayer()
 

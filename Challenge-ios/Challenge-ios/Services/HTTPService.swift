@@ -22,10 +22,10 @@ class HttpService: NSObject{
 
                 debugPrint(response.value)
 
-                if let result = (response.value as? [String : AnyObject])?["results"] as? [[String : AnyObject]] {
+                if let result = (response.value as? [String : AnyObject])?[Constants.nodeResult] as? [[String : AnyObject]] {
                     var hotelArray = [[String : AnyObject]]()
                     for item in result {
-                        if (item["isHotel"] as? Bool) == true {
+                        if (item[Constants.nodeIsHotel] as? Bool) == true {
                             hotelArray.append(item)
                         }
                     }
