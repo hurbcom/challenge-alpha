@@ -16,6 +16,7 @@ class HomePackagesTableCellViewModel {
     var packagePrice: String = ""
     var amenities: String = ""
     var quantityDescriptors: String = ""
+    var smallDescription: String = ""
 
     init(_ packageModel: PackageResults) {
         self.configPackageImage(model: packageModel)
@@ -24,6 +25,7 @@ class HomePackagesTableCellViewModel {
         self.configPackagePrice(model: packageModel)
         self.configHotelAmenities(model: packageModel)
         self.configPackageQuantityDescriptor(model: packageModel)
+        self.configPackageSmallDescription(model: packageModel)
 
     }
     
@@ -88,7 +90,12 @@ class HomePackagesTableCellViewModel {
             
             self.quantityDescriptors = "\(nightsString), \(maxPeopleString)"
         }
+    }
+    
+    private func configPackageSmallDescription(model: PackageResults) {
+        self.smallDescription = model.smallDescription
      }
+    
 }
 
 

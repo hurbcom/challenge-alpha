@@ -30,7 +30,7 @@ extension HomeViewController: UITableViewDelegate {
         
         let attributes: [NSAttributedString.Key : Any] = [
                   NSAttributedString.Key.foregroundColor: UIColor.black,
-                  NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 16.0)!]
+                  NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 16.0)!]
         label.attributedText = NSAttributedString(string: labelString, attributes: attributes)
 
         headerView.addSubview(label)

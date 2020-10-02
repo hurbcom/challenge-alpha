@@ -19,6 +19,8 @@ final class HomeCoordinator: Coordinator {
     
     func start() {
         let homeViewController = HomeViewController.instantiate()
+        let homeViewModel = HomeViewModel()
+        homeViewController.homeViewModel = homeViewModel
         self.naviagtionController.setViewControllers([homeViewController], animated: false)
     }
 

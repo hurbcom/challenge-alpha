@@ -44,8 +44,10 @@ class HomePackageTableViewCell: UITableViewCell {
         self.packageImage.kf.setImage(with: packageViewModel.packageImageURL)
         self.setupName(string: packageViewModel.packageName)
         self.setupCityName(string: packageViewModel.packageDestination)
+        self.setupSmallDescription(string: packageViewModel.smallDescription)
         self.setupPrice(string: packageViewModel.packagePrice)
         self.setupAmenities(string: packageViewModel.amenities)
+        self.setupQuantityDescriptor(string: packageViewModel.quantityDescriptors)
         self.setupView()
         self.setupFixedLabels()
         
@@ -56,7 +58,7 @@ class HomePackageTableViewCell: UITableViewCell {
         let nameString = string
         let nameAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 15.0)!]
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 16.0)!]
         self.packageName.attributedText = NSAttributedString(string: nameString, attributes: nameAttributes)
     }
     
@@ -64,8 +66,16 @@ class HomePackageTableViewCell: UITableViewCell {
         let cityString = string
         let cityAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 13.0)!]
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 13.0)!]
         self.cityName.attributedText = NSAttributedString(string: cityString, attributes: cityAttributes)
+    }
+    
+    private func setupSmallDescription(string: String) {
+        let cityString = string
+        let cityAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 14.0)!]
+        self.smallDescription.attributedText = NSAttributedString(string: cityString, attributes: cityAttributes)
     }
     
     private func setupAmenities(string: String) {
@@ -74,6 +84,14 @@ class HomePackageTableViewCell: UITableViewCell {
             NSAttributedString.Key.foregroundColor: UIColor.black,
             NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
         self.amenitiesText.attributedText = NSAttributedString(string: amenitiesString, attributes: amenitiesAttributes)
+    }
+    
+    private func setupQuantityDescriptor(string: String) {
+        let amenitiesString = string
+        let amenitiesAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
+        self.quantityDescriptor.attributedText = NSAttributedString(string: amenitiesString, attributes: amenitiesAttributes)
     }
 
     private func setupPrice(string: String) {
@@ -85,16 +103,22 @@ class HomePackageTableViewCell: UITableViewCell {
     }
     
     private func setupFixedLabels() {
-        let installmentsString = Constants.installmentsText
-        let installmentsAttributes: [NSAttributedString.Key : Any] = [
+        let priceSupportString = Constants.priceSupportText
+        let priceSupportAttributes: [NSAttributedString.Key : Any] = [
                    NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.priceSupportText.attributedText = NSAttributedString(string: installmentsString, attributes: installmentsAttributes)
+        self.priceSupportText.attributedText = NSAttributedString(string: priceSupportString, attributes: priceSupportAttributes)
         
         let cancelString = Constants.freeCancelText
         let cancelAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.foregroundColor: Colors.greenCancel,
             NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
         self.cancelText.attributedText = NSAttributedString(string: cancelString, attributes: cancelAttributes)
+        
+        let taxFreeString = Constants.taxFreeText
+        let taxFreeAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: Colors.greenCancel,
+            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
+        self.taxFreeText.attributedText = NSAttributedString(string: taxFreeString, attributes: taxFreeAttributes)
     }
     
     private func setupView() {

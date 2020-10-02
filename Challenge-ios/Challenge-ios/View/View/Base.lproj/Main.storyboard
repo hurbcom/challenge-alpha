@@ -251,7 +251,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvZ-hv-ABH">
-                                                            <rect key="frame" x="15" y="202.5" width="33" height="15"/>
+                                                            <rect key="frame" x="15" y="202.5" width="361" height="15"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -281,7 +281,9 @@
                                                         <constraint firstItem="Kv3-ao-2bc" firstAttribute="leading" secondItem="wBO-ER-Sy9" secondAttribute="leading" constant="15" id="87E-Tb-JfM"/>
                                                         <constraint firstItem="mIe-OF-U2F" firstAttribute="leading" secondItem="wBO-ER-Sy9" secondAttribute="leading" constant="15" id="BY4-Ia-mnI"/>
                                                         <constraint firstAttribute="bottom" secondItem="aW8-g5-fD2" secondAttribute="bottom" constant="10" id="CSj-gX-Ssg"/>
+                                                        <constraint firstAttribute="bottom" secondItem="KqD-Ht-sdl" secondAttribute="bottom" constant="7.5" id="CVe-8d-OMn"/>
                                                         <constraint firstAttribute="trailing" secondItem="gyk-wt-Qwo" secondAttribute="trailing" id="DDX-QT-zeD"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ZvZ-hv-ABH" secondAttribute="trailing" constant="8" id="FTr-dS-EGb"/>
                                                         <constraint firstItem="Kv3-ao-2bc" firstAttribute="top" secondItem="gyk-wt-Qwo" secondAttribute="bottom" constant="10" id="G7K-Yg-Zcu"/>
                                                         <constraint firstAttribute="trailing" secondItem="t9O-lR-oc2" secondAttribute="trailing" constant="15" id="Re5-X6-UQl"/>
                                                         <constraint firstItem="oaq-5d-PDU" firstAttribute="top" secondItem="KYc-HM-PZQ" secondAttribute="bottom" constant="5" id="TBm-k0-3vb"/>

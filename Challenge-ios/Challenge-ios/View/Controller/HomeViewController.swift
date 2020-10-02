@@ -25,10 +25,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.homeViewModel = HomeViewModel()
         self.homeViewModel.homeViewModelDelegate = self
-        
         self.homeViewModel.getBaseHotels(page: self.page)
         
         self.setupNavigation()
@@ -37,9 +34,10 @@ class HomeViewController: UIViewController {
     }
     
     func setupNavigation() {
-        navigationItem.title = "Hotéis Búzios"
+        navigationItem.title = Constants.appNavigationTitle
         navigationController?.navigationBar.barTintColor = Colors.hurbBackgroundBlue
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white,
+                                                                   NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 18.0)!]
     }
     
     func setupTableView() {

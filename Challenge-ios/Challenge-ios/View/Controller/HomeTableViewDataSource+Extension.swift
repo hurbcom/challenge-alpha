@@ -63,7 +63,12 @@ extension HomeViewController:  UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(Constants.cellHeight)
+        switch indexPath.section {
+            case 3:
+                return CGFloat(Constants.cellPackageHeight)
+            default:
+                return CGFloat(Constants.cellHotelHeight)
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
