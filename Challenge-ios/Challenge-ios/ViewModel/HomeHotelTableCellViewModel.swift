@@ -9,22 +9,14 @@
 import Foundation
 
 
-class HomeTableCellViewModel {
+class HomeHotelTableCellViewModel {
     
     var hotelImageURL: URL?
     var hotelName: String = ""
     var hotelAddress: String = ""
-    var stars: Int = 3
     var hotelPrice: String = ""
     var amenities: String = ""
-    
-    lazy var currencyFormatter: NumberFormatter = {
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.locale = Locale.init(identifier: "pt_BR")
-        currencyFormatter.numberStyle = .currency
-        return currencyFormatter
-    }()
-   
+    var stars: Int = Constants.numberOfStars
    
     init(_ hotelModel: HotelsResults) {
         self.configHotelImage(model: hotelModel)
@@ -37,7 +29,8 @@ class HomeTableCellViewModel {
     }
     
     private func configHotelImage(model: HotelsResults) {
-        if let hotelImage = model.image {
+        let hotelImage = model.image
+        if !hotelImage.isEmpty {
             if let url = URL(string: hotelImage) {
                 self.hotelImageURL = url
             }
@@ -49,25 +42,21 @@ class HomeTableCellViewModel {
     }
     
     private func configHotelAddress(model: HotelsResults) {
-        if let state = model.address.state {
-            self.hotelAddress = "\(model.address.city) / \(state)"
-        } else {
-            self.hotelAddress = model.address.city
-        }
+        if let address = model.address {
+            self.hotelAddress = "\(address.city) / \( address.state)"
+        } 
     }
     
     private func configHotelPrice(model: HotelsResults) {
-        if let price = model.price.currentPrice {
-            if let formattedValue = currencyFormatter.string(from: price as NSNumber) {
+        if let price = model.price?.currentPrice {
+            if let formattedValue = GenericSingleton.shared.currencyFormatter.string(from: price as NSNumber) {
                 self.hotelPrice = formattedValue
             }
         }
     }
     
     private func configHotelStars(model: HotelsResults) {
-        if let stars = model.stars {
-            self.stars = stars
-        }
+        self.stars = model.stars
     }
     
     private func configHotelAmenities(model: HotelsResults) {

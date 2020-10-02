@@ -1,28 +1,30 @@
 //
-//  HomeTableViewCell.swift
+//  HomePackageTableViewCell.swift
 //  Challenge-ios
 //
-//  Created by Andre Dias on 30/09/20.
+//  Created by Andre Dias on 02/10/20.
 //  Copyright © 2020 Andre Dias. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
-class HomeTableViewCell: UITableViewCell {
+class HomePackageTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var taxFreeText: UILabel!
+    @IBOutlet weak var quantityDescriptor: UILabel!
+    @IBOutlet weak var smallDescription: UILabel!
     @IBOutlet weak var amenitiesText: UILabel!
-    @IBOutlet var starViewArray: [UIImageView]!
     @IBOutlet weak var cancelText: UILabel!
-    @IBOutlet weak var installmentsText: UILabel!
-    @IBOutlet weak var priceHotel: UILabel!
+    @IBOutlet weak var priceSupportText: UILabel!
+    @IBOutlet weak var pricePackage: UILabel!
     @IBOutlet weak var boxView: UIView!
-    @IBOutlet weak var hotelImage: UIImageView!
-    @IBOutlet weak var hotelName: UILabel!
+    @IBOutlet weak var packageImage: UIImageView!
+    @IBOutlet weak var packageName: UILabel!
     @IBOutlet weak var cityName: UILabel!
-    var homeTableViewCellViewModel: HomeTableCellViewModel! {
+    var homePackagesTableCellViewModel: HomePackagesTableCellViewModel! {
         didSet {
-            self.setup(hotelViewModel: homeTableViewCellViewModel)
+            self.setup(packageViewModel: homePackagesTableCellViewModel)
         }
     }
 
@@ -38,35 +40,24 @@ class HomeTableViewCell: UITableViewCell {
         self.drawShadow()
     }
  
-    func setup(hotelViewModel: HomeTableCellViewModel) {
-        self.hotelImage.kf.setImage(with: hotelViewModel.hotelImageURL)
-        self.setupName(string: hotelViewModel.hotelName)
-        self.setupCityName(string: hotelViewModel.hotelAddress)
-        self.setupStars(quantity: hotelViewModel.stars)
-        self.setupPrice(string: hotelViewModel.hotelPrice)
-        self.setupAmenities(string: hotelViewModel.amenities)
+    func setup(packageViewModel: HomePackagesTableCellViewModel) {
+        self.packageImage.kf.setImage(with: packageViewModel.packageImageURL)
+        self.setupName(string: packageViewModel.packageName)
+        self.setupCityName(string: packageViewModel.packageDestination)
+        self.setupPrice(string: packageViewModel.packagePrice)
+        self.setupAmenities(string: packageViewModel.amenities)
         self.setupView()
         self.setupFixedLabels()
         
       
     }
-    
-    private func setupStars(quantity: Int) {
-        for (index, element) in self.starViewArray.enumerated() {
-            if index >= quantity {
-                element.isHidden = true
-            } else {
-                element.isHidden = false
-            }
-        }
-    }
-    
+
     private func setupName(string: String) {
         let nameString = string
         let nameAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.foregroundColor: UIColor.black,
             NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 15.0)!]
-        self.hotelName.attributedText = NSAttributedString(string: nameString, attributes: nameAttributes)
+        self.packageName.attributedText = NSAttributedString(string: nameString, attributes: nameAttributes)
     }
     
     private func setupCityName(string: String) {
@@ -90,14 +81,14 @@ class HomeTableViewCell: UITableViewCell {
         let priceAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.foregroundColor: Colors.orangePrice,
             NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 18.0)!]
-        self.priceHotel.attributedText = NSAttributedString(string: priceString, attributes: priceAttributes)
+        self.pricePackage.attributedText = NSAttributedString(string: priceString, attributes: priceAttributes)
     }
     
     private func setupFixedLabels() {
         let installmentsString = Constants.installmentsText
         let installmentsAttributes: [NSAttributedString.Key : Any] = [
                    NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.installmentsText.attributedText = NSAttributedString(string: installmentsString, attributes: installmentsAttributes)
+        self.priceSupportText.attributedText = NSAttributedString(string: installmentsString, attributes: installmentsAttributes)
         
         let cancelString = Constants.freeCancelText
         let cancelAttributes: [NSAttributedString.Key : Any] = [
@@ -110,7 +101,7 @@ class HomeTableViewCell: UITableViewCell {
         self.backgroundColor = Colors.backgroundGray
         self.boxView.backgroundColor = .white
         self.boxView.layer.cornerRadius = 10
-        self.hotelImage.layer.masksToBounds = true
+        self.packageImage.layer.masksToBounds = true
     }
     
     private func drawShadow() {
@@ -121,14 +112,15 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     private func roundCornersInImage(corners: UIRectCorner) {
-        let path = UIBezierPath(roundedRect:self.hotelImage.bounds, byRoundingCorners:corners, cornerRadii: CGSize(width: 10, height: 10))
+        let path = UIBezierPath(roundedRect:self.packageImage.bounds, byRoundingCorners:corners, cornerRadii: CGSize(width: 10, height: 10))
         let maskLayer = CAShapeLayer()
 
         maskLayer.path = path.cgPath
-        self.hotelImage.layer.mask = maskLayer
+        self.packageImage.layer.mask = maskLayer
     }
     
 }
+
 
 
 

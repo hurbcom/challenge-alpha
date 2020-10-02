@@ -11,10 +11,6 @@ import UIKit
 
 extension HomeViewController: HotelsViewModelDelegate {
     
-    func getCompletionHotels(_ hotels: [HotelsResults]) {
-        self.hotels = hotels
-    }
-    
     func didFinishFetchingHotels() {
         self.tableView.reloadData()
         
@@ -23,10 +19,5 @@ extension HomeViewController: HotelsViewModelDelegate {
             self.backgroundViewWithLogo.backgroundColor = .white
             self.tableView.isHidden = false
         }
-       
-       
     }
-    
-    
-    
 }

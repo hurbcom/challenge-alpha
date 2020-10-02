@@ -16,8 +16,6 @@ extension HomeViewController: UITableViewDelegate {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
         headerView.backgroundColor = .white
         var labelString = ""
-      
-        
         let label = UILabel()
         label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
        if section == 0 {
@@ -26,6 +24,8 @@ extension HomeViewController: UITableViewDelegate {
             labelString = Constants.fourStarsHotelsText
         } else if section == 2 {
             labelString = Constants.threeStarsHotelsText
+        } else if section == 3 {
+            labelString = Constants.packagesText
         }
         
         let attributes: [NSAttributedString.Key : Any] = [

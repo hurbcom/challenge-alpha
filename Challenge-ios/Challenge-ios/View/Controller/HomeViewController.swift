@@ -13,11 +13,15 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var backgroundViewWithLogo: UIView!
     @IBOutlet weak var tableView: UITableView!
-    var hotels: [HotelsResults] = [HotelsResults]()
     var indexPathRow: Int?
     var homeViewModel: HomeViewModel!
     var page: Int = Constants.page
     
+    static func instantiate() -> HomeViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let controller = storyboard.instantiateViewController(withIdentifier: Constants.homeViewControllerIdentifier) as! HomeViewController
+        return controller
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +31,15 @@ class HomeViewController: UIViewController {
         
         self.homeViewModel.getBaseHotels(page: self.page)
         
+        self.setupNavigation()
         self.setupTableView()
         self.setupView()
-        
+    }
     
+    func setupNavigation() {
+        navigationItem.title = "Hotéis Búzios"
+        navigationController?.navigationBar.barTintColor = Colors.hurbBackgroundBlue
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     func setupTableView() {
@@ -42,7 +51,7 @@ class HomeViewController: UIViewController {
         self.tableView.backgroundColor = Colors.backgroundGray
      
         self.tableView.sectionHeaderHeight = 40
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 330, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         self.tableView.isHidden = true
         self.view.backgroundColor = Colors.hurbBackgroundBlue
          self.backgroundViewWithLogo.backgroundColor = Colors.hurbBackgroundBlue

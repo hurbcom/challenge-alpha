@@ -25,32 +25,43 @@ extension HomeViewController:  UITableViewDataSource {
                 return self.homeViewModel.numberOfFourStarsHotel()
             case 2:
                 return self.homeViewModel.numberOfThreeStarsHotel()
+            case 3:
+                return self.homeViewModel.numberOfPackages()
             default:
-                return self.homeViewModel.numberOfCells()
+                return self.homeViewModel.numberOfHotelsCells()
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let hotelCell = tableView.dequeueReusableCell(withIdentifier: Constants.cellHotelIdentifier) as! HomeHotelsTableViewCell
+        let packageCell = tableView.dequeueReusableCell(withIdentifier: Constants.cellPackageIdentifier) as! HomePackageTableViewCell
         
         var hotels = [HotelsResults]()
+        var packages = [PackageResults]()
         switch indexPath.section {
             case 0:
                 hotels = self.homeViewModel.getFiveStarsHotel()
+                hotelCell.homeHotelTableCellViewModel = HomeHotelTableCellViewModel(hotels[indexPath.row])
+                return hotelCell
             case 1:
                 hotels = self.homeViewModel.getFourStarsHotel()
+                hotelCell.homeHotelTableCellViewModel = HomeHotelTableCellViewModel(hotels[indexPath.row])
+                return hotelCell
             case 2:
                 hotels = self.homeViewModel.getThreeStarsHotel()
+                hotelCell.homeHotelTableCellViewModel = HomeHotelTableCellViewModel(hotels[indexPath.row])
+                return hotelCell
+            case 3:
+                packages = self.homeViewModel.getPackages()
+                packageCell.homePackagesTableCellViewModel = HomePackagesTableCellViewModel(packages[indexPath.row])
+                return packageCell
             default:
                 hotels = self.homeViewModel.returnAllHotels()
+                hotelCell.homeHotelTableCellViewModel = HomeHotelTableCellViewModel(hotels[indexPath.row])
+                return hotelCell
         }
- 
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! HomeTableViewCell
-        cell.homeTableViewCellViewModel = HomeTableCellViewModel(hotels[indexPath.row])
-        return cell
-        
     }
 
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(Constants.cellHeight)
     }

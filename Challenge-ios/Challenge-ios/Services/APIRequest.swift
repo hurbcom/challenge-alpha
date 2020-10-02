@@ -13,10 +13,10 @@ class APIRequest: HttpService {
     }()
     
     // MARK: - Methods Services
-    func getBaseHotels(atPage page: Int, completion: (([HotelsResults]) -> Void)!) {
+    func getBaseHotels(atPage page: Int, completion: (([HotelsResults], [PackageResults]) -> Void)!) {
         
-        self.doGet(url: (BaseAPI.shared.getBaseHotels(atPage: page))) { (data) in
-            completion(data)
+        self.doGet(url: (BaseAPI.shared.getBaseHotels(atPage: page))) { (hotels, packages)  in
+            completion(hotels, packages)
         }
     }
 }

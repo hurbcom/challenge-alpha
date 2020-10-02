@@ -16,25 +16,33 @@ struct Constants {
     static let baseURL = "https://www.hurb.com/search/api?q=buzios"
     static let nodeResult = "results"
     static let nodeIsHotel = "isHotel"
+    static let nodeIsPackage = "isPackage"
 
     //MARK: HomeViewModel Constants
     
-    static let numberOfSections = 3
+    static let numberOfSections = 4
     
     //MARK: HomeTableViewCell Constants
     
     static let installmentsText = "+ Taxas | Em até 12x"
     static let freeCancelText = "Cancelamento Grátis"
     
+    //MARK: HomeTableCellViewModel Constants
+    
+    static let numberOfStars = 3
+    
     //MARK: HomeViewController Constants
     
     static let page = 1
-    static let cellIdentifier = "HomeTableViewCell"
+    static let homeViewControllerIdentifier = "HomeViewController"
+    static let cellHotelIdentifier = "HomeHotelsTableViewCell"
+    static let cellPackageIdentifier = "HomePackageTableViewCell"
     static let cellHeight = 320.0
     static let fiveStarsHotelsText = "Hotéis 5 estrelas"
     static let fourStarsHotelsText = "Hotéis 4 estrelas"
     static let threeStarsHotelsText = "Hotéis 3 estrelas"
-    
+    static let packagesText = "Pacotes"
+
 }
 
 struct Fonts {
