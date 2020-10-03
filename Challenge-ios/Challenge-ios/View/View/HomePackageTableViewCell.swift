@@ -55,70 +55,53 @@ class HomePackageTableViewCell: UITableViewCell {
     }
 
     private func setupName(string: String) {
-        let nameString = string
-        let nameAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 16.0)!]
-        self.packageName.attributedText = NSAttributedString(string: nameString, attributes: nameAttributes)
+        self.packageName.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                                 font: UIFont(name: Fonts.montserratRegular, size: 16.0)!,
+                                                                 string: string)
     }
     
     private func setupCityName(string: String) {
-        let cityString = string
-        let cityAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 13.0)!]
-        self.cityName.attributedText = NSAttributedString(string: cityString, attributes: cityAttributes)
+        self.cityName.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                              font: UIFont(name: Fonts.montserratBold, size: 13.0)!,
+                                                              string: string)
     }
     
     private func setupSmallDescription(string: String) {
-        let cityString = string
-        let cityAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 14.0)!]
-        self.smallDescription.attributedText = NSAttributedString(string: cityString, attributes: cityAttributes)
+        self.smallDescription.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                                      font: UIFont(name: Fonts.montserratRegular, size: 14.0)!,
+                                                                      string: string)
     }
     
     private func setupAmenities(string: String) {
-        let amenitiesString = string
-        let amenitiesAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.amenitiesText.attributedText = NSAttributedString(string: amenitiesString, attributes: amenitiesAttributes)
+        self.amenitiesText.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                                   font: UIFont(name: Fonts.montserratRegular, size: 12.0)!,
+                                                                   string: string)
     }
     
     private func setupQuantityDescriptor(string: String) {
-        let amenitiesString = string
-        let amenitiesAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.quantityDescriptor.attributedText = NSAttributedString(string: amenitiesString, attributes: amenitiesAttributes)
+        self.quantityDescriptor.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                                        font: UIFont(name: Fonts.montserratRegular, size: 12.0)!,
+                                                                        string: string)
     }
 
     private func setupPrice(string: String) {
-        let priceString = string
-        let priceAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: Colors.orangePrice,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 18.0)!]
-        self.pricePackage.attributedText = NSAttributedString(string: priceString, attributes: priceAttributes)
+        self.pricePackage.attributedText = GenericSingleton.shared.setAtributtedText(color: Colors.orangePrice,
+                                                                  font: UIFont(name: Fonts.montserratBold, size: 18.0)!,
+                                                                  string: string)
     }
     
     private func setupFixedLabels() {
-        let priceSupportString = Constants.priceSupportText
-        let priceSupportAttributes: [NSAttributedString.Key : Any] = [
-                   NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.priceSupportText.attributedText = NSAttributedString(string: priceSupportString, attributes: priceSupportAttributes)
+        self.priceSupportText.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                                      font: UIFont(name: Fonts.montserratRegular, size: 12.0)!,
+                                                                      string: Constants.priceSupportText)
+       
+        self.cancelText.attributedText = GenericSingleton.shared.setAtributtedText(color: Colors.greenCancel,
+                                                                font: UIFont(name: Fonts.montserratRegular, size: 12.0)!,
+                                                                string: Constants.freeCancelText)
         
-        let cancelString = Constants.freeCancelText
-        let cancelAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: Colors.greenCancel,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.cancelText.attributedText = NSAttributedString(string: cancelString, attributes: cancelAttributes)
-        
-        let taxFreeString = Constants.taxFreeText
-        let taxFreeAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: Colors.greenCancel,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.taxFreeText.attributedText = NSAttributedString(string: taxFreeString, attributes: taxFreeAttributes)
+        self.taxFreeText.attributedText = GenericSingleton.shared.setAtributtedText(color: Colors.greenCancel,
+                                                                font: UIFont(name: Fonts.montserratRegular, size: 12.0)!,
+                                                                string: Constants.taxFreeText)
     }
     
     private func setupView() {

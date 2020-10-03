@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class GenericSingleton: NSObject {
     
@@ -20,4 +21,12 @@ class GenericSingleton: NSObject {
         currencyFormatter.numberStyle = .currency
         return currencyFormatter
     }()
+    
+    
+    func setAtributtedText(color: UIColor, font: UIFont, string: String) -> NSAttributedString {
+        let attributes: [NSAttributedString.Key : Any] = [
+                  NSAttributedString.Key.foregroundColor: color,
+                  NSAttributedString.Key.font: font]
+         return NSAttributedString(string: string, attributes: attributes)
+    }
 }

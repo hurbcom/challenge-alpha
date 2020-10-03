@@ -44,7 +44,7 @@ struct Constants {
     static let cellHotelIdentifier = "HomeHotelsTableViewCell"
     static let cellPackageIdentifier = "HomePackageTableViewCell"
     static let cellHotelHeight = 320.0
-    static let cellPackageHeight = 380.0
+    static let cellPackageHeight = 390.0
     static let fiveStarsHotelsText = "Hotéis 5 estrelas"
     static let fourStarsHotelsText = "Hotéis 4 estrelas"
     static let threeStarsHotelsText = "Hotéis 3 estrelas"
