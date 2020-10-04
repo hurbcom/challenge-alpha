@@ -3,32 +3,20 @@ PODS:
   - Kingfisher (5.15.3):
     - Kingfisher/Core (= 5.15.3)
   - Kingfisher/Core (5.15.3)
-  - Nimble (8.1.2)
-  - Quick (3.0.0)
-  - ReachabilitySwift (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
-  - Nimble
-  - Quick
-  - ReachabilitySwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
-    - Nimble
-    - Quick
-    - ReachabilitySwift
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Kingfisher: 2fef2f4d9e809285aff7f6195b5290520904f3fa
-  Nimble: 3864815b4703c7ebffba875973c70e854489fbae
-  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
-  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: 2e717ffeccf851d7b6e0f7a95166113ec57a134d
+PODFILE CHECKSUM: d477a8c866013032c7bf0697b71d2e63a13e10c5
 
 COCOAPODS: 1.8.4

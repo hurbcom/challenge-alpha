@@ -8,16 +8,5 @@ target 'Challenge-ios' do
   # Pods for Challenge-ios
   pod 'Alamofire'
   pod 'Kingfisher'
-  pod 'ReachabilitySwift'
-
-  target 'Challenge-iosTests' do
-    inherit! :search_paths
-    
-    pod 'Quick'
-    pod 'Nimble'
-  end
-
-  target 'Challenge-iosUITests' do
-    # Pods for testing
-  end
+  
 end
