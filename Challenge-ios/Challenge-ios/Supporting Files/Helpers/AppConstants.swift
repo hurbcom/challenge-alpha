@@ -13,7 +13,7 @@ struct Constants {
     
     //MARK: API Constants
     
-    static let baseURL = "https://www.hurb.com/search/api?q=buzios"
+    static let baseURL = "https://www.hurb.com/search/api?q=buzios&page=1"
     static let nodeResult = "results"
     static let nodeIsHotel = "isHotel"
     static let nodeIsPackage = "isPackage"
@@ -39,12 +39,11 @@ struct Constants {
     //MARK: HomeViewController Constants
     
     static let appNavigationTitle = "Hotéis Búzios"
-    static let page = 1
     static let homeViewControllerIdentifier = "HomeViewController"
     static let cellHotelIdentifier = "HomeHotelsTableViewCell"
     static let cellPackageIdentifier = "HomePackageTableViewCell"
-    static let cellHotelHeight = 320.0
-    static let cellPackageHeight = 390.0
+    static let cellHotelHeight = CGFloat(320.0)
+    static let cellPackageHeight = CGFloat(390.0)
     static let fiveStarsHotelsText = "Hotéis 5 estrelas"
     static let fourStarsHotelsText = "Hotéis 4 estrelas"
     static let threeStarsHotelsText = "Hotéis 3 estrelas"

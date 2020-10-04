@@ -15,7 +15,7 @@ class GenericSingleton: NSObject {
         return GenericSingleton()
     }()
 
-   let currencyFormatter: NumberFormatter = {
+    let currencyFormatter: NumberFormatter = {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.locale = Locale.init(identifier: "pt_BR")
         currencyFormatter.numberStyle = .currency

@@ -11,7 +11,7 @@ import Alamofire
 
 class HttpService: NSObject{
     
-    func doGet(url:String, completion:@escaping (([HotelsResults], [PackageResults]) -> Void)) {
+    func doGet(url:String, completion: @escaping (_ hotels: [HotelsResults]?, _ packages: [PackageResults]?, _ error: String?) ->()) {
    
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         AF.request(url, method: .get, parameters: nil, headers: nil).responseJSON { response in
@@ -30,9 +30,10 @@ class HttpService: NSObject{
                     packages = packageResult
                 }
                 
-                completion(hotels, packages)
+                completion(hotels, packages, nil)
             case .failure(let error):
                 print("Error \(error.localizedDescription)")
+                completion(nil, nil, error.localizedDescription)
 
             }
             

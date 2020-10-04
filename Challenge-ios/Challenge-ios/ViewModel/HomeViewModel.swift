@@ -11,38 +11,42 @@ import Foundation
 // MARK: Protocolo de delegate
 protocol HotelsViewModelDelegate {
     func didFinishFetchingHotels()
+    func errorMessage(error: String)
 }
 
 
 class HomeViewModel {
     
-    
     // MARK: Váriaveis
     private var hotelsArray = [HotelsResults]()
     private var packagesArray = [PackageResults]()
+    private(set) var numberOfFiveStarsHotels: Int = 0
     let numberOfSections = Constants.numberOfSections
     var homeViewModelDelegate: HotelsViewModelDelegate?
-    
+    var apiRequest: APIServiceProtocol?
     
     // MARK: Chamada API de hoteis
-    func getBaseHotels(page: Int) {
-        DispatchQueue.main.async {
-            APIRequest.shared.getBaseHotels(atPage: page) { (hotelsResult, packagesResult) in
-                
-                if hotelsResult.count > 0 {
-                    for hotel in hotelsResult {
-                        self.hotelsArray.append(hotel)
+    func getHotelsAndPackages(request: APIServiceProtocol) {
+        request.getHotelsAndPackages { (hotelsResult, packagesResult, error) in
+            
+            if error == nil {
+                if let hotels = hotelsResult, let packages = packagesResult {
+                    if hotels.count > 0 {
+                        for hotel in hotels {
+                            self.hotelsArray.append(hotel)
+                        }
                     }
-                    
-                }
-                
-                if packagesResult.count > 0 {
-                    for package in packagesResult {
-                        self.packagesArray.append(package)
+                    if packages.count > 0 {
+                        for package in packages {
+                            self.packagesArray.append(package)
+                        }
                     }
                 }
-                
                 self.homeViewModelDelegate?.didFinishFetchingHotels()
+            } else {
+                if let error = error {
+                    self.homeViewModelDelegate?.errorMessage(error: error)
+                }
             }
         }
     }

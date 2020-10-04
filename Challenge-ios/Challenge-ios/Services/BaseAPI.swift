@@ -14,17 +14,6 @@ class BaseAPI: NSObject {
         return BaseAPI()
     }()
     
-    let baseURL = Constants.baseURL
-    
-    private func getURL(_ urlSufix: String) -> String {
-        let url: String = self.baseURL + urlSufix
-        return url
-    }
-    
-    public func getBaseHotels(atPage: Int) -> String {
-        return getURL("&page=\(atPage)")
-    }
-    
-
+    private(set) var baseURL = Constants.baseURL
 }
 

@@ -20,4 +20,14 @@ extension HomeViewController: HotelsViewModelDelegate {
             self.tableView.isHidden = false
         }
     }
+    
+    func errorMessage(error: String) {
+        let alert = UIAlertController(title: "Erro", message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.dismiss(animated: false, completion: nil)
+            UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+        }))
+
+        self.present(alert, animated: true)
+    }
 }

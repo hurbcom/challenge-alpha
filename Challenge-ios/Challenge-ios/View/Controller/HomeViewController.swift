@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var indexPathRow: Int?
     var homeViewModel: HomeViewModel!
-    var page: Int = Constants.page
     
     static func instantiate() -> HomeViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
@@ -26,7 +25,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.homeViewModel.homeViewModelDelegate = self
-        self.homeViewModel.getBaseHotels(page: self.page)
+        let apiRequest = APIRequest()
+        self.homeViewModel.getHotelsAndPackages(request: apiRequest)
         
         self.setupNavigation()
         self.setupTableView()

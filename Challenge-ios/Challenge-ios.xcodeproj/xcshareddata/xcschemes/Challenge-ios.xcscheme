@@ -26,38 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73F6918B2522B330005EC947"
-               BuildableName = "Challenge-iosTests.xctest"
-               BlueprintName = "Challenge-iosTests"
-               ReferencedContainer = "container:Challenge-ios.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73F691962522B330005EC947"
-               BuildableName = "Challenge-iosUITests.xctest"
-               BlueprintName = "Challenge-iosUITests"
-               ReferencedContainer = "container:Challenge-ios.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7375770F252810DF0046703E"
-               BuildableName = "Hote&#x301;is Bu&#x301;ziosTests.xctest"
-               BlueprintName = "Hot&#xe9;is B&#xfa;ziosTests"
-               ReferencedContainer = "container:Challenge-ios.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference

@@ -26,6 +26,9 @@
 		737900C82527CB2D00E0BEEA /* HomePackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737900C72527CB2D00E0BEEA /* HomePackageTableViewCell.swift */; };
 		737900CB2527DC3F00E0BEEA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737900CA2527DC3F00E0BEEA /* AppCoordinator.swift */; };
 		737900CD2527DDF400E0BEEA /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737900CC2527DDF400E0BEEA /* HomeCoordinator.swift */; };
+		73CA2FBD25291EAD00E2C79F /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA2FBC25291EAD00E2C79F /* HomeViewModelTests.swift */; };
+		73CA2FC22529205800E2C79F /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA2FC12529205800E2C79F /* StubGenerator.swift */; };
+		73CA2FC42529287700E2C79F /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA2FC32529287700E2C79F /* MockAPIService.swift */; };
 		73F6917A2522B329005EC947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691792522B329005EC947 /* AppDelegate.swift */; };
 		73F691812522B329005EC947 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F6917F2522B329005EC947 /* Main.storyboard */; };
 		73F691832522B32F005EC947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F691822522B32F005EC947 /* Assets.xcassets */; };
@@ -84,6 +87,9 @@
 		737900C72527CB2D00E0BEEA /* HomePackageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePackageTableViewCell.swift; sourceTree = "<group>"; };
 		737900CA2527DC3F00E0BEEA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		737900CC2527DDF400E0BEEA /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		73CA2FBC25291EAD00E2C79F /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		73CA2FC12529205800E2C79F /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
+		73CA2FC32529287700E2C79F /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
 		73F691762522B329005EC947 /* Hotéis Búzios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hotéis Búzios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F691792522B329005EC947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F691802522B329005EC947 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +140,8 @@
 		7375771F252811940046703E /* Hoteis Buzios Tests */ = {
 			isa = PBXGroup;
 			children = (
+				73CA2FBE2529200F00E2C79F /* Stubs */,
+				73CA2FBB252912E100E2C79F /* Mocks */,
 				7375773525281EEC0046703E /* View */,
 				7375773425281EE60046703E /* ViewModel */,
 				7375773325281ED00046703E /* Model */,
@@ -164,6 +172,7 @@
 		7375773425281EE60046703E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				73CA2FBC25291EAD00E2C79F /* HomeViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -231,6 +240,22 @@
 				737900CC2527DDF400E0BEEA /* HomeCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		73CA2FBB252912E100E2C79F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				73CA2FC32529287700E2C79F /* MockAPIService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		73CA2FBE2529200F00E2C79F /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				73CA2FC12529205800E2C79F /* StubGenerator.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 		73F6916D2522B329005EC947 = {
@@ -313,8 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				73F691E1252383E3005EC947 /* BaseAPI.swift */,
-				73F691E525238614005EC947 /* APIRequest.swift */,
 				73F691E32523856F005EC947 /* HTTPService.swift */,
+				73F691E525238614005EC947 /* APIRequest.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -511,9 +536,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CA2FC42529287700E2C79F /* MockAPIService.swift in Sources */,
 				73757729252811A90046703E /* HomeViewControllerTests.swift in Sources */,
+				73CA2FC22529205800E2C79F /* StubGenerator.swift in Sources */,
 				7375772F25281E6E0046703E /* PackageResultsTests.swift in Sources */,
 				7375772B252812D40046703E /* HotelsResultsTests.swift in Sources */,
+				73CA2FBD25291EAD00E2C79F /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
