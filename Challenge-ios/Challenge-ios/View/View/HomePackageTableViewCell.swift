@@ -11,6 +11,7 @@ import Kingfisher
 
 class HomePackageTableViewCell: UITableViewCell {
     
+    //MARK: Variaveis
     @IBOutlet weak var taxFreeText: UILabel!
     @IBOutlet weak var quantityDescriptor: UILabel!
     @IBOutlet weak var smallDescription: UILabel!
@@ -28,6 +29,7 @@ class HomePackageTableViewCell: UITableViewCell {
         }
     }
 
+    //MARK: Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
        
@@ -40,6 +42,7 @@ class HomePackageTableViewCell: UITableViewCell {
         self.drawShadow()
     }
  
+    //MARK: Métodos
     func setup(packageViewModel: HomePackagesTableCellViewModel) {
         self.packageImage.kf.setImage(with: packageViewModel.packageImageURL)
         self.setupName(string: packageViewModel.packageName)
@@ -50,8 +53,7 @@ class HomePackageTableViewCell: UITableViewCell {
         self.setupQuantityDescriptor(string: packageViewModel.quantityDescriptors)
         self.setupView()
         self.setupFixedLabels()
-        
-      
+        self.applyAccessibility(packageViewModel)
     }
 
     private func setupName(string: String) {

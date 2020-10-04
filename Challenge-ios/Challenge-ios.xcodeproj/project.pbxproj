@@ -26,9 +26,14 @@
 		737900C82527CB2D00E0BEEA /* HomePackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737900C72527CB2D00E0BEEA /* HomePackageTableViewCell.swift */; };
 		737900CB2527DC3F00E0BEEA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737900CA2527DC3F00E0BEEA /* AppCoordinator.swift */; };
 		737900CD2527DDF400E0BEEA /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737900CC2527DDF400E0BEEA /* HomeCoordinator.swift */; };
+		737DBF60252A642D00F74051 /* HomeHotelCellAccessibility+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DBF5F252A642D00F74051 /* HomeHotelCellAccessibility+Extension.swift */; };
+		737DBF62252A693D00F74051 /* HomePackageCellAccessibility+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DBF61252A693D00F74051 /* HomePackageCellAccessibility+Extension.swift */; };
+		737DBF6A252A6ED700F74051 /* Hoteis_Buzios_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DBF69252A6ED700F74051 /* Hoteis_Buzios_UITests.swift */; };
 		73CA2FBD25291EAD00E2C79F /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA2FBC25291EAD00E2C79F /* HomeViewModelTests.swift */; };
 		73CA2FC22529205800E2C79F /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA2FC12529205800E2C79F /* StubGenerator.swift */; };
 		73CA2FC42529287700E2C79F /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA2FC32529287700E2C79F /* MockAPIService.swift */; };
+		73CA2FC8252A55DB00E2C79F /* HomeHotelTableCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA2FC7252A55DB00E2C79F /* HomeHotelTableCellViewModelTests.swift */; };
+		73CA2FCA252A55F700E2C79F /* HomePackagesTableCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA2FC9252A55F700E2C79F /* HomePackagesTableCellViewModelTests.swift */; };
 		73F6917A2522B329005EC947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F691792522B329005EC947 /* AppDelegate.swift */; };
 		73F691812522B329005EC947 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F6917F2522B329005EC947 /* Main.storyboard */; };
 		73F691832522B32F005EC947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F691822522B32F005EC947 /* Assets.xcassets */; };
@@ -53,6 +58,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		73757723252811940046703E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73F6916E2522B329005EC947 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73F691752522B329005EC947;
+			remoteInfo = "Challenge-ios";
+		};
+		737DBF6C252A6ED700F74051 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 73F6916E2522B329005EC947 /* Project object */;
 			proxyType = 1;
@@ -87,9 +99,16 @@
 		737900C72527CB2D00E0BEEA /* HomePackageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePackageTableViewCell.swift; sourceTree = "<group>"; };
 		737900CA2527DC3F00E0BEEA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		737900CC2527DDF400E0BEEA /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		737DBF5F252A642D00F74051 /* HomeHotelCellAccessibility+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeHotelCellAccessibility+Extension.swift"; sourceTree = "<group>"; };
+		737DBF61252A693D00F74051 /* HomePackageCellAccessibility+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePackageCellAccessibility+Extension.swift"; sourceTree = "<group>"; };
+		737DBF67252A6ED700F74051 /* Hoteis Buzios UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hoteis Buzios UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		737DBF69252A6ED700F74051 /* Hoteis_Buzios_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hoteis_Buzios_UITests.swift; sourceTree = "<group>"; };
+		737DBF6B252A6ED700F74051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CA2FBC25291EAD00E2C79F /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		73CA2FC12529205800E2C79F /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
 		73CA2FC32529287700E2C79F /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
+		73CA2FC7252A55DB00E2C79F /* HomeHotelTableCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHotelTableCellViewModelTests.swift; sourceTree = "<group>"; };
+		73CA2FC9252A55F700E2C79F /* HomePackagesTableCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePackagesTableCellViewModelTests.swift; sourceTree = "<group>"; };
 		73F691762522B329005EC947 /* Hotéis Búzios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hotéis Búzios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F691792522B329005EC947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F691802522B329005EC947 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +145,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		737DBF64252A6ED700F74051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73F691732522B329005EC947 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,8 +166,6 @@
 		7375771F252811940046703E /* Hoteis Buzios Tests */ = {
 			isa = PBXGroup;
 			children = (
-				73CA2FBE2529200F00E2C79F /* Stubs */,
-				73CA2FBB252912E100E2C79F /* Mocks */,
 				7375773525281EEC0046703E /* View */,
 				7375773425281EE60046703E /* ViewModel */,
 				7375773325281ED00046703E /* Model */,
@@ -154,6 +178,8 @@
 		7375773225281EBC0046703E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				73CA2FBE2529200F00E2C79F /* Stubs */,
+				73CA2FBB252912E100E2C79F /* Mocks */,
 				7375772C2528130A0046703E /* HotelsResultsJsonResponse.json */,
 				7375773025281EB70046703E /* PackageResultsJsonResponse.json */,
 			);
@@ -173,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				73CA2FBC25291EAD00E2C79F /* HomeViewModelTests.swift */,
+				73CA2FC7252A55DB00E2C79F /* HomeHotelTableCellViewModelTests.swift */,
+				73CA2FC9252A55F700E2C79F /* HomePackagesTableCellViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -242,6 +270,15 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		737DBF68252A6ED700F74051 /* Hoteis Buzios UITests */ = {
+			isa = PBXGroup;
+			children = (
+				737DBF69252A6ED700F74051 /* Hoteis_Buzios_UITests.swift */,
+				737DBF6B252A6ED700F74051 /* Info.plist */,
+			);
+			path = "Hoteis Buzios UITests";
+			sourceTree = "<group>";
+		};
 		73CA2FBB252912E100E2C79F /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +300,7 @@
 			children = (
 				73F691782522B329005EC947 /* Challenge-ios */,
 				7375771F252811940046703E /* Hoteis Buzios Tests */,
+				737DBF68252A6ED700F74051 /* Hoteis Buzios UITests */,
 				73F691772522B329005EC947 /* Products */,
 				819C8CF93195B8CD29E0922A /* Pods */,
 				E1D30DEC1E64975959F3B232 /* Frameworks */,
@@ -274,6 +312,7 @@
 			children = (
 				73F691762522B329005EC947 /* Hotéis Búzios.app */,
 				7375771E252811940046703E /* Hoteis Buzios Tests.xctest */,
+				737DBF67252A6ED700F74051 /* Hoteis Buzios UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,6 +347,8 @@
 				73F6917F2522B329005EC947 /* Main.storyboard */,
 				737900C12527BFBB00E0BEEA /* HomeHotelsTableViewCell.swift */,
 				737900C72527CB2D00E0BEEA /* HomePackageTableViewCell.swift */,
+				737DBF5F252A642D00F74051 /* HomeHotelCellAccessibility+Extension.swift */,
+				737DBF61252A693D00F74051 /* HomePackageCellAccessibility+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -402,6 +443,24 @@
 			productReference = 7375771E252811940046703E /* Hoteis Buzios Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		737DBF66252A6ED700F74051 /* Hoteis Buzios UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 737DBF6E252A6ED700F74051 /* Build configuration list for PBXNativeTarget "Hoteis Buzios UITests" */;
+			buildPhases = (
+				737DBF63252A6ED700F74051 /* Sources */,
+				737DBF64252A6ED700F74051 /* Frameworks */,
+				737DBF65252A6ED700F74051 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				737DBF6D252A6ED700F74051 /* PBXTargetDependency */,
+			);
+			name = "Hoteis Buzios UITests";
+			productName = "Hoteis Buzios UITests";
+			productReference = 737DBF67252A6ED700F74051 /* Hoteis Buzios UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		73F691752522B329005EC947 /* Challenge-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73F691A02522B330005EC947 /* Build configuration list for PBXNativeTarget "Challenge-ios" */;
@@ -436,6 +495,10 @@
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = 73F691752522B329005EC947;
 					};
+					737DBF66252A6ED700F74051 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 73F691752522B329005EC947;
+					};
 					73F691752522B329005EC947 = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -456,6 +519,7 @@
 			targets = (
 				73F691752522B329005EC947 /* Challenge-ios */,
 				7375771D252811940046703E /* Hoteis Buzios Tests */,
+				737DBF66252A6ED700F74051 /* Hoteis Buzios UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -467,6 +531,13 @@
 			files = (
 				7375773125281EB70046703E /* PackageResultsJsonResponse.json in Resources */,
 				7375772D2528130A0046703E /* HotelsResultsJsonResponse.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		737DBF65252A6ED700F74051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,9 +610,19 @@
 				73CA2FC42529287700E2C79F /* MockAPIService.swift in Sources */,
 				73757729252811A90046703E /* HomeViewControllerTests.swift in Sources */,
 				73CA2FC22529205800E2C79F /* StubGenerator.swift in Sources */,
+				73CA2FCA252A55F700E2C79F /* HomePackagesTableCellViewModelTests.swift in Sources */,
 				7375772F25281E6E0046703E /* PackageResultsTests.swift in Sources */,
 				7375772B252812D40046703E /* HotelsResultsTests.swift in Sources */,
+				73CA2FC8252A55DB00E2C79F /* HomeHotelTableCellViewModelTests.swift in Sources */,
 				73CA2FBD25291EAD00E2C79F /* HomeViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		737DBF63252A6ED700F74051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				737DBF6A252A6ED700F74051 /* Hoteis_Buzios_UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +640,7 @@
 				737900C42527C0C500E0BEEA /* HomePackagesTableCellViewModel.swift in Sources */,
 				73F691E42523856F005EC947 /* HTTPService.swift in Sources */,
 				737900C22527BFBB00E0BEEA /* HomeHotelsTableViewCell.swift in Sources */,
+				737DBF60252A642D00F74051 /* HomeHotelCellAccessibility+Extension.swift in Sources */,
 				737900B4252680EF00E0BEEA /* HomeViewModelDelegate+Extension.swift in Sources */,
 				73F691DC2522CA71005EC947 /* HotelsResults.swift in Sources */,
 				73F691DE2522CAC2005EC947 /* HotelAddress.swift in Sources */,
@@ -567,6 +649,7 @@
 				737900C02527AF1C00E0BEEA /* PackagePrice.swift in Sources */,
 				737900CD2527DDF400E0BEEA /* HomeCoordinator.swift in Sources */,
 				737900BE2527AEEC00E0BEEA /* PackageAddress.swift in Sources */,
+				737DBF62252A693D00F74051 /* HomePackageCellAccessibility+Extension.swift in Sources */,
 				737900AE25267A4600E0BEEA /* AppConstants.swift in Sources */,
 				737900BA2527A7ED00E0BEEA /* PackageResults.swift in Sources */,
 				737900C62527C0EB00E0BEEA /* GenericSingleton.swift in Sources */,
@@ -582,6 +665,11 @@
 			isa = PBXTargetDependency;
 			target = 73F691752522B329005EC947 /* Challenge-ios */;
 			targetProxy = 73757723252811940046703E /* PBXContainerItemProxy */;
+		};
+		737DBF6D252A6ED700F74051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73F691752522B329005EC947 /* Challenge-ios */;
+			targetProxy = 737DBF6C252A6ED700F74051 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -644,6 +732,46 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hotéis Búzios.app/Hotéis Búzios";
+			};
+			name = Release;
+		};
+		737DBF6F252A6ED700F74051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJW4XS59WJ;
+				INFOPLIST_FILE = "Hoteis Buzios UITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Andre-Dias.Hoteis-Buzios-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Challenge-ios";
+			};
+			name = Debug;
+		};
+		737DBF70252A6ED700F74051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJW4XS59WJ;
+				INFOPLIST_FILE = "Hoteis Buzios UITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Andre-Dias.Hoteis-Buzios-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Challenge-ios";
 			};
 			name = Release;
 		};
@@ -769,6 +897,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJW4XS59WJ;
 				INFOPLIST_FILE = "Challenge-ios/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -809,6 +938,15 @@
 			buildConfigurations = (
 				73757726252811940046703E /* Debug */,
 				73757727252811940046703E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		737DBF6E252A6ED700F74051 /* Build configuration list for PBXNativeTarget "Hoteis Buzios UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				737DBF6F252A6ED700F74051 /* Debug */,
+				737DBF70252A6ED700F74051 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,13 +11,15 @@ import XCTest
 class HomeViewModelTests: XCTestCase {
     
     var sut: HomeViewModel!
-     var mockAPIService: MockApiService!
+    var mockAPIService: MockApiService!
       
     override func setUp() {
         super.setUp()
         
         self.sut = HomeViewModel()
         self.mockAPIService = MockApiService()
+        self.sut.getHotelsAndPackages(request: self.mockAPIService)
+        
     }
 
     override func tearDown() {
@@ -32,44 +34,28 @@ class HomeViewModelTests: XCTestCase {
     }
     
     func testFetchHotelsAndPackages() {
-        sut.getHotelsAndPackages(request: self.mockAPIService)
+        self.sut.getHotelsAndPackages(request: self.mockAPIService)
         XCTAssertTrue(mockAPIService!.isFetchHotelsCalled)
     }
     
-    func testFiveStarsHotel() throws {
-        
-//        XCTAssertEqual(self.sut.tableView.numberOfSections, Constants.numberOfSections)
+
+    func testFiveStarsHotelQuantity() throws {
+        let fiveStarsHotelsArray = self.sut.getFiveStarsHotel()
+        XCTAssertEqual(fiveStarsHotelsArray.count, 2)
     }
-//    
-//    func testVCTableViewDelegate() throws {
-//        XCTAssertTrue(self.sut.tableView.delegate is HomeViewController)
-//    }
-//      
-//    func testVCTableViewNumberOfSections() throws {
-//        XCTAssertEqual(self.sut.tableView.numberOfSections, Constants.numberOfSections)
-//    }
-//    
-//    func testVCTableViewNumberOfRowsAtSectionZero() throws {
-//        XCTAssertEqual(self.sut.tableView(self.sut.tableView, numberOfRowsInSection: 0), self.homeViewModel.numberOfFiveStarsHotel())
-//    }
-//    
-//    func testVCTableViewNumberOfRowsAtSectionOne() throws {
-//        XCTAssertEqual(self.sut.tableView(self.sut.tableView, numberOfRowsInSection: 1), self.homeViewModel.numberOfFourStarsHotel())
-//    }
-//    
-//    func testVCTableViewNumberOfRowsAtSectionTwo() throws {
-//        XCTAssertEqual(self.sut.tableView(self.sut.tableView, numberOfRowsInSection: 2), self.homeViewModel.numberOfThreeStarsHotel())
-//    }
-//    
-//    func testVCTableViewNumberOfRowsAtSectionThree() throws {
-//        XCTAssertEqual(self.sut.tableView(self.sut.tableView, numberOfRowsInSection: 3), self.homeViewModel.numberOfPackages())
-//    }
-//    
-//    func testVCTableViewHotelHeightForRow() throws {
-//        XCTAssertEqual(self.sut.tableView(self.sut.tableView, heightForRowAt: IndexPath(row: 0, section: 1)), Constants.cellHotelHeight)
-//    }
-//    
-//    func testVCTableViewPackageHeightForRow() throws {
-//        XCTAssertEqual(self.sut.tableView(self.sut.tableView, heightForRowAt: IndexPath(row: 0, section: 3)), Constants.cellPackageHeight)
-//    }
+    
+    func testFourStarsHotelQuantity() throws {
+        let fiveStarsHotelsArray = self.sut.getFourStarsHotel()
+        XCTAssertEqual(fiveStarsHotelsArray.count, 9)
+    }
+    
+    func testThreeStarsHotelQuantity() throws {
+        let fiveStarsHotelsArray = self.sut.getThreeStarsHotel()
+        XCTAssertEqual(fiveStarsHotelsArray.count, 7)
+    }
+    
+    func testPackagesQuantity() throws {
+        let fiveStarsHotelsArray = self.sut.getPackages()
+        XCTAssertEqual(fiveStarsHotelsArray.count, 2)
+    }
 }

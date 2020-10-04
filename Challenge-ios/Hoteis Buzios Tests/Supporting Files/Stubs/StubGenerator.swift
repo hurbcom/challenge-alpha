@@ -10,13 +10,13 @@ import Foundation
 
 class StubGenerator {
     
-    func stubPackageResults() -> PackageResults {
+    func stubPackageResults() -> [PackageResults] {
         guard let url = Bundle(for: type(of: self)).url(forResource: "PackageResultsJsonResponse", withExtension: "json")
             else { fatalError("Can't find search.json file") }
          do {
              let data = try Data(contentsOf: url)
              let decoder = JSONDecoder()
-             return try decoder.decode(PackageResults.self, from: data)
+             return try decoder.decode([PackageResults].self, from: data)
          } catch {
              fatalError("error:\(error)")
          }

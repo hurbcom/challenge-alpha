@@ -11,6 +11,7 @@ import UIKit
 
 extension HomeViewController: UITableViewDelegate {
     
+    //Método para para criar o headerView contendo o titulo da secao seja hoteis ou pacotes
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))

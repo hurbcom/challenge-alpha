@@ -10,6 +10,7 @@ import Foundation
 
 class HomePackagesTableCellViewModel {
     
+    // MARK: Váriaveis
     var packageImageURL: URL?
     var packageName: String = ""
     var packageDestination: String = ""
@@ -18,17 +19,19 @@ class HomePackagesTableCellViewModel {
     var quantityDescriptors: String = ""
     var smallDescription: String = ""
 
+    // MARK: Init
     init(_ packageModel: PackageResults) {
         self.configPackageImage(model: packageModel)
         self.configPackageName(model: packageModel)
         self.configPackageDestination(model: packageModel)
         self.configPackagePrice(model: packageModel)
-        self.configHotelAmenities(model: packageModel)
+        self.configPackageAmenities(model: packageModel)
         self.configPackageQuantityDescriptor(model: packageModel)
         self.configPackageSmallDescription(model: packageModel)
 
     }
     
+    // MARK: Métodos
     private func configPackageImage(model: PackageResults) {
         if let gallery = model.gallery {
             if let firstImage = gallery.first {
@@ -57,7 +60,7 @@ class HomePackagesTableCellViewModel {
         }
     }
     
-    private func configHotelAmenities(model: PackageResults) {
+    private func configPackageAmenities(model: PackageResults) {
         var ametiesString = ""
         if let amenities = model.amenities {
             for (index, element) in amenities.enumerated() {

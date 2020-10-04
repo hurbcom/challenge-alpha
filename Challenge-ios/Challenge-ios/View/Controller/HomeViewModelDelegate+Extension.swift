@@ -11,6 +11,7 @@ import UIKit
 
 extension HomeViewController: HotelsViewModelDelegate {
     
+    // Métodos de delegate para quando é finaliza a chamada de api e na situacao de erro.
     func didFinishFetchingHotels() {
         self.tableView.reloadData()
         

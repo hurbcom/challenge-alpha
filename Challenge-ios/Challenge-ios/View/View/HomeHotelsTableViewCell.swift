@@ -11,6 +11,7 @@ import Kingfisher
 
 class HomeHotelsTableViewCell: UITableViewCell {
     
+    //MARK: Variaveis
     @IBOutlet weak var amenitiesText: UILabel!
     @IBOutlet var starViewArray: [UIImageView]!
     @IBOutlet weak var cancelText: UILabel!
@@ -25,7 +26,7 @@ class HomeHotelsTableViewCell: UITableViewCell {
             self.setup(hotelViewModel: homeHotelTableCellViewModel)
         }
     }
-
+    //MARK: Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
        
@@ -38,6 +39,7 @@ class HomeHotelsTableViewCell: UITableViewCell {
         self.drawShadow()
     }
  
+    //MARK: Métodos
     func setup(hotelViewModel: HomeHotelTableCellViewModel) {
         self.hotelImage.kf.setImage(with: hotelViewModel.hotelImageURL)
         self.setupName(string: hotelViewModel.hotelName)
@@ -48,9 +50,12 @@ class HomeHotelsTableViewCell: UITableViewCell {
         self.setupView()
         self.setupFixedLabels()
         
+        self.applyAccessibility(hotelViewModel)
+        
       
     }
     
+    // Lógica para setar hidden ou não nas imagens de estrelas para formar a imagem completa de estrelas dos hoteis
     private func setupStars(quantity: Int) {
         for (index, element) in self.starViewArray.enumerated() {
             if index >= quantity {
@@ -62,48 +67,36 @@ class HomeHotelsTableViewCell: UITableViewCell {
     }
     
     private func setupName(string: String) {
-        let nameString = string
-        let nameAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 15.0)!]
-        self.hotelName.attributedText = NSAttributedString(string: nameString, attributes: nameAttributes)
+        self.hotelName.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                                   font: UIFont(name:  Fonts.montserratBold, size: 15.0)!,
+                                                                   string: string)
     }
     
     private func setupCityName(string: String) {
-        let cityString = string
-        let cityAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 13.0)!]
-        self.cityName.attributedText = NSAttributedString(string: cityString, attributes: cityAttributes)
+        self.cityName.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                                                 font: UIFont(name: Fonts.montserratRegular, size: 13.0)!,
+                                                                                 string: string)
     }
     
     private func setupAmenities(string: String) {
-        let amenitiesString = string
-        let amenitiesAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.amenitiesText.attributedText = NSAttributedString(string: amenitiesString, attributes: amenitiesAttributes)
+        self.amenitiesText.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                                                      font: UIFont(name: Fonts.montserratRegular, size: 11.0)!,
+                                                                                      string: string)
     }
 
     private func setupPrice(string: String) {
-        let priceString = string
-        let priceAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: Colors.orangePrice,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratBold, size: 18.0)!]
-        self.priceHotel.attributedText = NSAttributedString(string: priceString, attributes: priceAttributes)
+        self.priceHotel.attributedText = GenericSingleton.shared.setAtributtedText(color: Colors.orangePrice,
+                                                                                   font: UIFont(name: Fonts.montserratBold, size: 18.0)!,
+                                                                                   string: string)
     }
     
     private func setupFixedLabels() {
-        let installmentsString = Constants.installmentsText
-        let installmentsAttributes: [NSAttributedString.Key : Any] = [
-                   NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.installmentsText.attributedText = NSAttributedString(string: installmentsString, attributes: installmentsAttributes)
-        
-        let cancelString = Constants.freeCancelText
-        let cancelAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.foregroundColor: Colors.greenCancel,
-            NSAttributedString.Key.font: UIFont(name: Fonts.montserratRegular, size: 11.0)!]
-        self.cancelText.attributedText = NSAttributedString(string: cancelString, attributes: cancelAttributes)
+        self.installmentsText.attributedText = GenericSingleton.shared.setAtributtedText(color: UIColor.black,
+                                                                                         font: UIFont(name: Fonts.montserratRegular, size: 11.0)!,
+                                                                                         string: Constants.installmentsText)
+        self.cancelText.attributedText = GenericSingleton.shared.setAtributtedText(color: Colors.greenCancel,
+                                                                                   font: UIFont(name: Fonts.montserratRegular, size: 11.0)!,
+                                                                                   string: Constants.freeCancelText)
     }
     
     private func setupView() {

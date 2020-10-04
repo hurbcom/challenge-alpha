@@ -11,13 +11,16 @@ import Foundation
 
 class HomeHotelTableCellViewModel {
     
+    // MARK: Váriaveis
     var hotelImageURL: URL?
     var hotelName: String = ""
     var hotelAddress: String = ""
     var hotelPrice: String = ""
     var amenities: String = ""
     var stars: Int = Constants.numberOfStars
-   
+    var smallDescription: String = ""
+    
+    // MARK: Init
     init(_ hotelModel: HotelsResults) {
         self.configHotelImage(model: hotelModel)
         self.configHotelName(model: hotelModel)
@@ -25,9 +28,11 @@ class HomeHotelTableCellViewModel {
         self.configHotelPrice(model: hotelModel)
         self.configHotelStars(model: hotelModel)
         self.configHotelAmenities(model: hotelModel)
+        self.configSmallDescription(model: hotelModel)
 
     }
     
+    // MARK: Métodos
     private func configHotelImage(model: HotelsResults) {
         let hotelImage = model.image
         if !hotelImage.isEmpty {
@@ -59,6 +64,7 @@ class HomeHotelTableCellViewModel {
         self.stars = model.stars
     }
     
+    // Metodo para setar as amenidades com o limite de 3
     private func configHotelAmenities(model: HotelsResults) {
         var ametiesString = ""
         for (index, element) in model.amenities.enumerated() {
@@ -70,6 +76,10 @@ class HomeHotelTableCellViewModel {
         }
         self.amenities = ametiesString
     }
+    
+    private func configSmallDescription(model: HotelsResults) {
+        self.smallDescription = model.smallDescription
+     }
     
     
 

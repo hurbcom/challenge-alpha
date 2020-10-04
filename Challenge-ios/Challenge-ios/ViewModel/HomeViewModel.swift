@@ -20,12 +20,12 @@ class HomeViewModel {
     // MARK: Váriaveis
     private var hotelsArray = [HotelsResults]()
     private var packagesArray = [PackageResults]()
-    private(set) var numberOfFiveStarsHotels: Int = 0
     let numberOfSections = Constants.numberOfSections
     var homeViewModelDelegate: HotelsViewModelDelegate?
     var apiRequest: APIServiceProtocol?
     
-    // MARK: Chamada API de hoteis
+    // MARK: Métodos
+    // Chamada API de hoteis
     func getHotelsAndPackages(request: APIServiceProtocol) {
         request.getHotelsAndPackages { (hotelsResult, packagesResult, error) in
             
@@ -45,13 +45,13 @@ class HomeViewModel {
                 self.homeViewModelDelegate?.didFinishFetchingHotels()
             } else {
                 if let error = error {
-                    self.homeViewModelDelegate?.errorMessage(error: error)
+                    self.homeViewModelDelegate?.errorMessage(error: error.description)
                 }
             }
         }
     }
     
-    //MARK: Métodos com a logica para retornar Hoteis de acordo com o numero de estrelas
+    // Métodos com a logica para retornar Hoteis de acordo com o numero de estrelas
     
     func getFiveStarsHotel() -> [HotelsResults] {
         var fiveStarsArray = [HotelsResults]()
@@ -84,7 +84,7 @@ class HomeViewModel {
         return threeStarsArray
     }
     
-    //MARK: Métodos com que retornar os Pacotes
+    // Métodos com que retornar os Pacotes
      
      func getPackages() -> [PackageResults] {
         if self.packagesArray.count > 0 {
@@ -95,13 +95,13 @@ class HomeViewModel {
         
      }
     
-    // MARK: Retorna a quantidade de pacotes
+    // Retorna a quantidade de pacotes
     
     func numberOfPackages() -> Int {
          return self.packagesArray.count
     }
     
-    //MARK: Retorna a quantidade de hoteis de acordo com o numero de estrelas
+    //MRetorna a quantidade de hoteis de acordo com o numero de estrelas
     
     func numberOfFiveStarsHotel() -> Int {
         return self.getFiveStarsHotel().count

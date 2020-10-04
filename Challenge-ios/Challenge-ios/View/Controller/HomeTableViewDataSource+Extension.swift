@@ -16,6 +16,7 @@ extension HomeViewController:  UITableViewDataSource {
         return self.homeViewModel.numberOfSections
     }
     
+    // Configura sections de acordo com primeiro numero de estrelas fixado do maior para o menor, e por ultimo os pacotes.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section {
@@ -32,9 +33,16 @@ extension HomeViewController:  UITableViewDataSource {
         }
     }
     
+    //Seguindo a lógica anterior configura o tipo de ceula de acordo com a section a terceira setada para os pacotes
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let hotelCell = tableView.dequeueReusableCell(withIdentifier: Constants.cellHotelIdentifier) as! HomeHotelsTableViewCell
         let packageCell = tableView.dequeueReusableCell(withIdentifier: Constants.cellPackageIdentifier) as! HomePackageTableViewCell
+        hotelCell.isAccessibilityElement = true
+        hotelCell.accessibilityIdentifier = String(format: "HotelTableViewCellAtIndexPath:_%d_%d",
+        indexPath.section, indexPath.row)
+        packageCell.isAccessibilityElement = true
+        packageCell.accessibilityIdentifier = String(format: "PackageTableViewCellAtIndexPath:_%d_%d",
+        indexPath.section, indexPath.row)
         
         var hotels = [HotelsResults]()
         var packages = [PackageResults]()
@@ -62,6 +70,7 @@ extension HomeViewController:  UITableViewDataSource {
         }
     }
 
+    //Celula de pacote, precisa ser de um tamanho maior por ter mais informacoes na celula
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
             case 3:
@@ -71,6 +80,7 @@ extension HomeViewController:  UITableViewDataSource {
         }
     }
     
+    // Animacao na celula fazendo ela surgir de cima de maneira suave.
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -10, 0)
         cell.layer.transform = rotationTransform

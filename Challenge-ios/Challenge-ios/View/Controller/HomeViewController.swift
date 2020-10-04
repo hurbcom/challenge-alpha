@@ -11,6 +11,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    //MARK: Váriaveis
     @IBOutlet weak var backgroundViewWithLogo: UIView!
     @IBOutlet weak var tableView: UITableView!
     var indexPathRow: Int?
@@ -22,6 +23,7 @@ class HomeViewController: UIViewController {
         return controller
     }
     
+    //MARK: Métodos de cycle view
     override func viewDidLoad() {
         super.viewDidLoad()
         self.homeViewModel.homeViewModelDelegate = self
@@ -31,6 +33,13 @@ class HomeViewController: UIViewController {
         self.setupNavigation()
         self.setupTableView()
         self.setupView()
+        self.configTableViewAccessiblity()
+    }
+    
+    //MARK: Métodos da classe
+    func configTableViewAccessiblity() {
+        self.tableView.isAccessibilityElement = true
+        self.tableView.accessibilityIdentifier = "HomeTableView"
     }
     
     func setupNavigation() {

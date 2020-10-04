@@ -39,6 +39,16 @@
                ReferencedContainer = "container:Challenge-ios.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "737DBF66252A6ED700F74051"
+               BuildableName = "Hoteis Buzios UITests.xctest"
+               BlueprintName = "Hoteis Buzios UITests"
+               ReferencedContainer = "container:Challenge-ios.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -9,9 +9,9 @@
 import Foundation
 import Alamofire
 
-class HttpService: NSObject{
+class HttpService: NSObject {
     
-    func doGet(url:String, completion: @escaping (_ hotels: [HotelsResults]?, _ packages: [PackageResults]?, _ error: String?) ->()) {
+    func doGet(url:String, completion: @escaping (_ hotels: [HotelsResults]?, _ packages: [PackageResults]?, _ error: APIError?) ->()) {
    
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         AF.request(url, method: .get, parameters: nil, headers: nil).responseJSON { response in
@@ -20,7 +20,7 @@ class HttpService: NSObject{
             case .success:
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
 
-                debugPrint(response.value)
+                debugPrint(response.value as Any)
                 var hotels = [HotelsResults]()
                 var packages = [PackageResults]()
                 if let hotelResult = self.getHotelFrom(response: response) {
@@ -32,14 +32,25 @@ class HttpService: NSObject{
                 
                 completion(hotels, packages, nil)
             case .failure(let error):
-                print("Error \(error.localizedDescription)")
-                completion(nil, nil, error.localizedDescription)
-
+                 let error = self.handleError(error: error, statusCode: response.response?.statusCode ?? 0)
+                completion(nil, nil, error)
             }
             
         }
     }
+    private func handleError(error: AFError, statusCode: Int) -> APIError {
+        print("Error \(error.localizedDescription)")
+        switch statusCode {
+            case 300...499:
+                return APIError.HTTPError(statusCode: statusCode)
+            case 500...599:
+                return APIError.serverError(message: error.localizedDescription)
+            default:
+                return APIError.noInternet
+        }
+    }
     
+    // Lógica para pegar o node de hoteis dentro do response da chamada
     private func getHotelFrom(response:AFDataResponse<Any>) -> [HotelsResults]? {
         if let result = (response.value as? [String : AnyObject])?[Constants.nodeResult] as? [[String : AnyObject]] {
             var hotelArray = [[String : AnyObject]]()
@@ -55,6 +66,7 @@ class HttpService: NSObject{
         }
     }
     
+    // Lógica para pegar o node de pacotes dentro do response da chamada
     private func getPackagesFrom(response:AFDataResponse<Any>) -> [PackageResults]? {
         if let result = (response.value as? [String : AnyObject])?[Constants.nodeResult] as? [[String : AnyObject]] {
             var PackageArray = [[String : AnyObject]]()
