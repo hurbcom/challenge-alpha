@@ -36,6 +36,14 @@ struct Constants {
     
     static let numberOfStars = 3
     
+    //MARK: HomeHotelsTableViewCell
+    
+    static let hotelImageAccessibilityID = "hotelImage"
+    static let starsAccessibilityLabel = "Estrelas"
+    static let threeStarsAccessibilityValue = "Hotel 3 Estrelas"
+    static let fourStarsAccessibilityValue = "Hotel 4 Estrelas"
+    static let fiveStarsAccessibilityLabel = "Hotel 5 Estrelas"
+    
     //MARK: HomeViewController Constants
     
     static let appNavigationTitle = "Hotéis Búzios"

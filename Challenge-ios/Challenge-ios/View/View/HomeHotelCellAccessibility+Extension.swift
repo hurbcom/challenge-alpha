@@ -20,7 +20,7 @@ extension HomeHotelsTableViewCell {
     
     private func applyHotelImageAccessibility(_ hotel: HomeHotelTableCellViewModel) {
         self.hotelImage.isAccessibilityElement = true
-        self.hotelImage.accessibilityIdentifier = "hotelImage"
+        self.hotelImage.accessibilityIdentifier = Constants.hotelImageAccessibilityID
         self.hotelImage.accessibilityTraits = .image
         self.hotelImage.accessibilityLabel = hotel.smallDescription
     }
@@ -29,16 +29,16 @@ extension HomeHotelsTableViewCell {
         self.starViewArray.first!.isAccessibilityElement = true
         self.starViewArray.first!.accessibilityTraits = .none
         
-        self.starViewArray.first!.accessibilityLabel = "Estrelas"
+        self.starViewArray.first!.accessibilityLabel = Constants.starsAccessibilityLabel
         switch hotel.stars {
             case 3:
-                self.starViewArray.first!.accessibilityValue = "Hotel 3 Estrelas"
+                self.starViewArray.first!.accessibilityValue = Constants.threeStarsAccessibilityValue
             case 4:
-                self.starViewArray.first!.accessibilityValue = "Hotel 4 Estrelas"
+                self.starViewArray.first!.accessibilityValue = Constants.fourStarsAccessibilityValue
             case 5:
-                self.starViewArray.first!.accessibilityValue = "Hotel 5 Estrelas"
+                self.starViewArray.first!.accessibilityValue = Constants.fiveStarsAccessibilityLabel
             default:
-                self.starViewArray.first!.accessibilityValue = "Hotel 3 Estrelas"
+                self.starViewArray.first!.accessibilityValue = Constants.threeStarsAccessibilityValue
         }
     }
     

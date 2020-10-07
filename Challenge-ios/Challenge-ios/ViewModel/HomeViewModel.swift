@@ -27,25 +27,27 @@ class HomeViewModel {
     // MARK: Métodos
     // Chamada API de hoteis
     func getHotelsAndPackages(request: APIServiceProtocol) {
-        request.getHotelsAndPackages { (hotelsResult, packagesResult, error) in
+        request.getHotelsAndPackages { [weak self](hotelsResult, packagesResult, error) in
+            
+            guard let strongSelf = self else { return }
             
             if error == nil {
                 if let hotels = hotelsResult, let packages = packagesResult {
                     if hotels.count > 0 {
                         for hotel in hotels {
-                            self.hotelsArray.append(hotel)
+                            strongSelf.hotelsArray.append(hotel)
                         }
                     }
                     if packages.count > 0 {
                         for package in packages {
-                            self.packagesArray.append(package)
+                            strongSelf.packagesArray.append(package)
                         }
                     }
                 }
-                self.homeViewModelDelegate?.didFinishFetchingHotels()
+                strongSelf.homeViewModelDelegate?.didFinishFetchingHotels()
             } else {
                 if let error = error {
-                    self.homeViewModelDelegate?.errorMessage(error: error.description)
+                    strongSelf.homeViewModelDelegate?.errorMessage(error: error.description)
                 }
             }
         }
