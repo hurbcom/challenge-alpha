@@ -11,7 +11,7 @@ import SwiftUI
 struct HurbApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProductListView()
         }
     }
 }

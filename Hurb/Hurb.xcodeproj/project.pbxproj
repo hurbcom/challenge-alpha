@@ -3,23 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		56F6AB052598CACE00D36DAB /* HurbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6AB042598CACE00D36DAB /* HurbApp.swift */; };
-		56F6AB072598CACE00D36DAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6AB062598CACE00D36DAB /* ContentView.swift */; };
 		56F6AB092598CAD200D36DAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F6AB082598CAD200D36DAB /* Assets.xcassets */; };
 		56F6AB0C2598CAD200D36DAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F6AB0B2598CAD200D36DAB /* Preview Assets.xcassets */; };
+		56F6AB162598CF4F00D36DAB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 56F6AB152598CF4F00D36DAB /* Alamofire */; };
+		56F6AB202598D0C000D36DAB /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6AB1F2598D0C000D36DAB /* ProductListView.swift */; };
+		56F6AB242598D33000D36DAB /* ProductsPaginationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6AB232598D33000D36DAB /* ProductsPaginationModel.swift */; };
+		56F6AB272598D3F100D36DAB /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6AB262598D3F100D36DAB /* ProductService.swift */; };
+		56F6AB2A2598D78500D36DAB /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6AB292598D78500D36DAB /* ProductListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56F6AB012598CACE00D36DAB /* Hurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F6AB042598CACE00D36DAB /* HurbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbApp.swift; sourceTree = "<group>"; };
-		56F6AB062598CACE00D36DAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		56F6AB082598CAD200D36DAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56F6AB0B2598CAD200D36DAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		56F6AB0D2598CAD200D36DAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F6AB1F2598D0C000D36DAB /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		56F6AB232598D33000D36DAB /* ProductsPaginationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPaginationModel.swift; sourceTree = "<group>"; };
+		56F6AB262598D3F100D36DAB /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		56F6AB292598D78500D36DAB /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F6AB162598CF4F00D36DAB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,11 +60,14 @@
 		56F6AB032598CACE00D36DAB /* Hurb */ = {
 			isa = PBXGroup;
 			children = (
-				56F6AB042598CACE00D36DAB /* HurbApp.swift */,
-				56F6AB062598CACE00D36DAB /* ContentView.swift */,
 				56F6AB082598CAD200D36DAB /* Assets.xcassets */,
+				56F6AB042598CACE00D36DAB /* HurbApp.swift */,
 				56F6AB0D2598CAD200D36DAB /* Info.plist */,
+				56F6AB192598CFCE00D36DAB /* Models */,
 				56F6AB0A2598CAD200D36DAB /* Preview Content */,
+				56F6AB1C2598D02500D36DAB /* Services */,
+				56F6AB1E2598D06500D36DAB /* ViewModels */,
+				56F6AB1B2598D00100D36DAB /* Views */,
 			);
 			path = Hurb;
 			sourceTree = "<group>";
@@ -67,6 +78,38 @@
 				56F6AB0B2598CAD200D36DAB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		56F6AB192598CFCE00D36DAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56F6AB232598D33000D36DAB /* ProductsPaginationModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		56F6AB1B2598D00100D36DAB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56F6AB1F2598D0C000D36DAB /* ProductListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		56F6AB1C2598D02500D36DAB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				56F6AB262598D3F100D36DAB /* ProductService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		56F6AB1E2598D06500D36DAB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				56F6AB292598D78500D36DAB /* ProductListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +128,9 @@
 			dependencies = (
 			);
 			name = Hurb;
+			packageProductDependencies = (
+				56F6AB152598CF4F00D36DAB /* Alamofire */,
+			);
 			productName = Hurb;
 			productReference = 56F6AB012598CACE00D36DAB /* Hurb.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 56F6AAF82598CACE00D36DAB;
+			packageReferences = (
+				56F6AB142598CF4F00D36DAB /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 56F6AB022598CACE00D36DAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56F6AB072598CACE00D36DAB /* ContentView.swift in Sources */,
 				56F6AB052598CACE00D36DAB /* HurbApp.swift in Sources */,
+				56F6AB2A2598D78500D36DAB /* ProductListViewModel.swift in Sources */,
+				56F6AB272598D3F100D36DAB /* ProductService.swift in Sources */,
+				56F6AB242598D33000D36DAB /* ProductsPaginationModel.swift in Sources */,
+				56F6AB202598D0C000D36DAB /* ProductListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		56F6AB142598CF4F00D36DAB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56F6AB152598CF4F00D36DAB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56F6AB142598CF4F00D36DAB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 56F6AAF92598CACE00D36DAB /* Project object */;
 }
