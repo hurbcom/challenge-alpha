@@ -11,6 +11,7 @@ import Combine
 class HotelListViewModel: ObservableObject, Identifiable {
     
     @Published var hotelPagination: HotelsPaginationModel?
+    @Published var groupedHotels: [GroupedHotels]?
     @Published var searchByCity: String = ""
     
     private var hotelListInteractor: HotelListInteractorProtocol
@@ -35,7 +36,7 @@ class HotelListViewModel: ObservableObject, Identifiable {
                 }
                 
             } receiveValue: { [weak self] in
-                self?.hotelPagination = $0
+                self?.groupedHotels = $0
             }
             .store(in: &disposables)
     }

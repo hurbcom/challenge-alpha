@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5636FA0C2598FDCA009F7B37 /* HotelListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5636FA0B2598FDCA009F7B37 /* HotelListInteractor.swift */; };
+		5636FA1525991FAD009F7B37 /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5636FA1425991FAD009F7B37 /* HeaderSectionView.swift */; };
 		56F6AB052598CACE00D36DAB /* HurbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6AB042598CACE00D36DAB /* HurbApp.swift */; };
 		56F6AB092598CAD200D36DAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F6AB082598CAD200D36DAB /* Assets.xcassets */; };
 		56F6AB0C2598CAD200D36DAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F6AB0B2598CAD200D36DAB /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		5636FA0B2598FDCA009F7B37 /* HotelListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListInteractor.swift; sourceTree = "<group>"; };
+		5636FA1425991FAD009F7B37 /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
 		56F6AB012598CACE00D36DAB /* Hurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F6AB042598CACE00D36DAB /* HurbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbApp.swift; sourceTree = "<group>"; };
 		56F6AB082598CAD200D36DAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				56F6AB1F2598D0C000D36DAB /* HotelListView.swift */,
+				5636FA1425991FAD009F7B37 /* HeaderSectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5636FA1525991FAD009F7B37 /* HeaderSectionView.swift in Sources */,
 				56F6AB052598CACE00D36DAB /* HurbApp.swift in Sources */,
 				56F6AB2A2598D78500D36DAB /* HotelListViewModel.swift in Sources */,
 				5636FA0C2598FDCA009F7B37 /* HotelListInteractor.swift in Sources */,

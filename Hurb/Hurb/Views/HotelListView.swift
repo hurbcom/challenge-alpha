@@ -23,8 +23,13 @@ struct HotelListView: View {
                     }
                     
                     List {
-                        ForEach(self.hotelListViewModel.hotelPagination?.results ?? [], id: \.id) { product in
-                            Text("Hotel: \(product.name)")
+                        ForEach(self.hotelListViewModel.groupedHotels ?? [], id: \.section) { groupedHotel in
+                            
+                            Section(header: HeaderSectionView(stars: groupedHotel.section)) {
+                                ForEach(groupedHotel.hotels ?? [], id: \.id) { hotel in
+                                    Text("\(hotel.name)")
+                                }
+                            }
                         }
                     }
                 }

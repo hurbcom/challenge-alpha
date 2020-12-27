@@ -13,6 +13,11 @@ struct HotelsPaginationModel: Codable {
     let pagination: Pagination
 }
 
+struct GroupedHotels {
+    let section: Int?
+    let hotels: [Hotels]?
+}
+
 // MARK: - Filters
 struct Filters: Codable {
     let amenities, attributes, countries, cities: [AttributeElement]
