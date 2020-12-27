@@ -5,11 +5,11 @@
 
 import Foundation
 
-// MARK: - ProductsPagination
-struct ProductsPaginationModel: Codable {
+// MARK: - HotelsPaginationModel
+struct HotelsPaginationModel: Codable {
     let meta: Meta
     let filters: Filters
-    let results: [Result]
+    let results: [Hotels]
     let pagination: Pagination
 }
 
@@ -59,7 +59,7 @@ struct Pagination: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Hotels: Codable {
     let sku: String
     let isHotel: Bool?
     let category: Category
