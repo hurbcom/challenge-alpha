@@ -9,13 +9,13 @@ import Foundation
 struct HotelsPaginationModel: Codable {
     let meta: Meta
     let filters: Filters
-    let results: [Hotels]
+    let results: [Hotel]
     let pagination: Pagination
 }
 
 struct GroupedHotels {
     let section: Int?
-    let hotels: [Hotels]?
+    let hotels: [Hotel]?
 }
 
 // MARK: - Filters
@@ -64,28 +64,42 @@ struct Pagination: Codable {
 }
 
 // MARK: - Result
-struct Hotels: Codable {
-    let sku: String
-    let isHotel: Bool?
-    let category: Category
-    let smallDescription: String
-    let amenities: [ResultAmenity]
-    let id: String
-    let price: ResultPrice
-    let huFreeCancellation: Bool?
-    let image: String?
-    let name: String
-    let url: String
-    let resultDescription: String
-    let stars: Int?
-    let gallery: [Gallery]
-    let address: Address
-    let tags: [String]?
-    let quantityDescriptors: QuantityDescriptors
-    let featuredItem: FeaturedItem
-    let isPackage: Bool?
-    let startDate, endDate: String?
-    let hasAvailability: Bool?
+struct Hotel: Codable {
+    var sku: String = ""
+    var isHotel: Bool? = nil
+    var category: String? = ""
+    var smallDescription: String = ""
+    var amenities: [ResultAmenity] = []
+    var id: String = ""
+    var price: ResultPrice? = nil
+    var huFreeCancellation: Bool? = nil
+    var image: String? = ""
+    var name: String = ""
+    var url: String = ""
+    var resultDescription: String = ""
+    var stars: Int? = 0
+    var gallery: [Gallery] = []
+    var address: Address? = nil
+    var tags: [String]? = []
+    var quantityDescriptors: QuantityDescriptors? = nil
+    var featuredItem: FeaturedItem? = nil
+    var isPackage: Bool? = nil
+    var startDate: String? = ""
+    var endDate: String? = ""
+    var hasAvailability: Bool? = nil
+    
+    init(name: String,
+         price: ResultPrice?,
+         address: Address?,
+         image: String?,
+         amenities: [ResultAmenity]
+    ) {
+        self.name = name
+        self.price = price
+        self.address = address
+        self.image = image
+        self.amenities = amenities
+    }
 
     enum CodingKeys: String, CodingKey {
         case sku, isHotel, category, smallDescription, amenities, id, price
@@ -98,20 +112,26 @@ struct Hotels: Codable {
 
 // MARK: - Address
 struct Address: Codable {
-    let zipcode, addressFullAddress, street, addressStreetName: String?
-    let streetName, address, fullAddress, neighborhood: String?
-    let idAtlasNeighborhood, idNeighborhood: JSONNull?
-    let city: City
-    let idAtlasCity: JSONNull?
-    let idCity: Int?
-    let state: State
-    let idAtlasState: JSONNull?
-    let idState: Int?
-    let country: Country
-    let idAtlasCountry: JSONNull?
-    let idCountry: Int?
-    let countryAlfa2, addressCountryAlfa2: CountryAlfa2?
-    let geoLocation: GeoLocation
+    var zipcode: String? = ""
+    var addressFullAddress: String? = ""
+    var street: String? = ""
+    var addressStreetName: String? = ""
+    var streetName: String? = ""
+    var address: String? = ""
+    var fullAddress: String? = ""
+    var neighborhood: String? = ""
+    var idAtlasNeighborhood: JSONNull? = nil
+    var idNeighborhood: JSONNull? = nil
+    var city: String = ""
+    var idAtlasCity: JSONNull? = nil
+    var idCity: Int?
+    var state: String = ""
+    var idAtlasState: JSONNull? = nil
+    var idState: Int?
+    var country: String = ""
+    var idAtlasCountry: JSONNull? = nil
+    var idCountry: Int?
+    var geoLocation: GeoLocation
 
     enum CodingKeys: String, CodingKey {
         case zipcode
@@ -121,32 +141,17 @@ struct Address: Codable {
         case streetName, address, fullAddress, neighborhood
         case idAtlasNeighborhood = "id_atlas_neighborhood"
         case idNeighborhood = "id_neighborhood"
-        case city
+        case city = "city"
         case idAtlasCity = "id_atlas_city"
         case idCity = "id_city"
-        case state
+        case state = "state"
         case idAtlasState = "id_atlas_state"
         case idState = "id_state"
-        case country
+        case country = "country"
         case idAtlasCountry = "id_atlas_country"
         case idCountry = "id_country"
-        case countryAlfa2
-        case addressCountryAlfa2 = "country_alfa2"
         case geoLocation
     }
-}
-
-enum CountryAlfa2: String, Codable {
-    case br = "BR"
-}
-
-enum City: String, Codable {
-    case armaçãoDOSBúzios = "Armação dos Búzios"
-    case búzios = "Búzios"
-}
-
-enum Country: String, Codable {
-    case brasil = "Brasil"
 }
 
 // MARK: - GeoLocation
@@ -154,18 +159,9 @@ struct GeoLocation: Codable {
     let lat, lon: Double
 }
 
-enum State: String, Codable {
-    case rioDeJaneiro = "Rio de Janeiro"
-}
-
 // MARK: - ResultAmenity
 struct ResultAmenity: Codable {
     let name, category: String
-}
-
-enum Category: String, Codable {
-    case hospedagem = "hospedagem"
-    case hotel = "hotel"
 }
 
 // MARK: - FeaturedItem
@@ -205,18 +201,28 @@ enum Description: String, Codable {
 
 // MARK: - ResultPrice
 struct ResultPrice: Codable {
-    let amount: Double
-    let priceOldPrice: Double?
-    let currency, currencyOriginal: Currency?
-    let gain, feeExtraOriginal, gainOriginal: Int?
-    let tariffPolicies: [JSONAny]?
-    let priceCurrentPrice, totalPrice: Double?
-    let feeExtra: Int?
-    let sku: String
-    let taxes: [Tax]?
-    let originalAmountPerDay: Double?
-    let amountPerDay: Double
-    let oldPrice, currentPrice, originalAmount: Int?
+    var amount: Double = 0.0
+    var priceOldPrice: Double? = 0.0
+    var currency: Currency? = nil
+    var currencyOriginal: Currency? = nil
+    var gain: Int? = 0
+    var feeExtraOriginal: Int? = 0
+    var gainOriginal: Int? = 0
+    var tariffPolicies: [JSONAny]? = nil
+    var priceCurrentPrice: Double? = 0.0
+    var totalPrice: Double? = 0.0
+    var feeExtra: Int? = 0
+    var sku: String = ""
+    var taxes: [Tax]? = nil
+    var originalAmountPerDay: Double? = 0.0
+    var amountPerDay: Double = 0.0
+    var oldPrice: Int? = 0
+    var currentPrice: Int? = 0
+    var originalAmount: Int? = 0
+    
+    init(amount: Double) {
+        self.amount = amount
+    }
 
     enum CodingKeys: String, CodingKey {
         case amount

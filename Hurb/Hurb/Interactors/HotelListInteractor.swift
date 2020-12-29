@@ -23,7 +23,7 @@ class HotelListInteractor: HotelListInteractorProtocol {
             .eraseToAnyPublisher()
     }
     
-    func orderByStarsOrCategories(hotels: [Hotels]?) -> [GroupedHotels]? {
+    func orderByStarsOrCategories(hotels: [Hotel]?) -> [GroupedHotels]? {
         
         guard let hotels = hotels else {
             return nil
