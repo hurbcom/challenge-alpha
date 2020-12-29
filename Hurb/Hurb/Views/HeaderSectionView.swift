@@ -14,20 +14,23 @@ struct HeaderSectionView: View {
     var body: some View {
         HStack {
             if let stars = stars {
+                
                 ForEach(0..<5, id: \.self) { value in
                     if value < stars {
                         Image(systemName: "star.fill")
                             .foregroundColor(.yellow)
+                            .font(.title2)
                     } else {
                         Image(systemName: "star")
                             .foregroundColor(.yellow)
+                            .font(.title2)
                     }
                 }
             } else {
                 Text("Pacotes")
-                    .foregroundColor(.blue)
+                    .foregroundColor(.blueHurb)
                     .bold()
-                    .font(.headline)
+                    .font(.title2)
             }
         }
         .padding(10)

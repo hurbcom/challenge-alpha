@@ -102,7 +102,7 @@ struct HotelListCell_Previews: PreviewProvider {
             name: "Nome do Hotel",
             price: ResultPrice(amount: 200.2),
             address: nil,
-            image: "",
+            image: imageUrl,
             amenities: [ResultAmenity(name: "TV", category: ""), ResultAmenity(name: "Banheira", category: "")])
 
         HotelListCell(hotel: hotel)
