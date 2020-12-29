@@ -203,8 +203,8 @@ enum Description: String, Codable {
 struct ResultPrice: Codable {
     var amount: Double = 0.0
     var priceOldPrice: Double? = 0.0
-    var currency: Currency? = nil
-    var currencyOriginal: Currency? = nil
+    var currency: String? = ""
+    var currencyOriginal: String? = ""
     var gain: Int? = 0
     var feeExtraOriginal: Int? = 0
     var gainOriginal: Int? = 0
@@ -223,6 +223,16 @@ struct ResultPrice: Codable {
     init(amount: Double) {
         self.amount = amount
     }
+    
+    var formattedAmount: String? {
+        get {
+            let formatter = NumberFormatter()
+            formatter.locale = Locale(identifier: "pt_BR")
+            formatter.numberStyle = .currency
+            
+            return formatter.string(from: NSNumber(value: self.amount))
+        }
+    }
 
     enum CodingKeys: String, CodingKey {
         case amount
@@ -240,16 +250,12 @@ struct ResultPrice: Codable {
     }
 }
 
-enum Currency: String, Codable {
-    case brl = "BRL"
-}
-
 // MARK: - Tax
 struct Tax: Codable {
     let type: TypeEnum
     let name: Name
     let amount, amountOriginal: Double
-    let currency, currencyOriginal: Currency
+    let currency, currencyOriginal: String?
 
     enum CodingKeys: String, CodingKey {
         case type, name, amount
