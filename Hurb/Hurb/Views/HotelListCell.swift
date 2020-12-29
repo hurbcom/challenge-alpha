@@ -14,12 +14,25 @@ struct HotelListCell: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 0) {
                 
                 KFImage(URL(string: hotel.image ?? ""))
                     .resizable()
                     .placeholder {
-                        
+                        ZStack {
+                            Color.blueHurb
+                            
+                            Image("Placeholder")
+                                .scaledToFill()
+                                .frame(
+                                    minWidth: 0,
+                                    maxWidth: .infinity,
+                                    minHeight: 0,
+                                    maxHeight: 200,
+                                    alignment: .center
+                                )
+                                .clipped()
+                        }
                     }
                     .scaledToFill()
                     .frame(
@@ -32,15 +45,24 @@ struct HotelListCell: View {
                     .clipped()
                 
                 VStack(alignment: .leading, spacing: 5) {
+                    
+                    Spacer().frame(width: 0, height: 10)
+                    
                     Text(hotel.name)
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(.darkGray)
                     
+                    Spacer().frame(width: 0, height: 10)
+                    
                     Text(hotel.address?.city ?? "Cidade")
                         .foregroundColor(.darkGray)
                     
                     Text(hotel.address?.state ?? "Estado")
+                        .foregroundColor(.darkGray)
+                    
+                    Text(hotel.formattedAmenities.joined(separator: ", "))
+                        .font(.footnote)
                         .foregroundColor(.darkGray)
                     
                     Spacer().frame(width: 0, height: 10)
@@ -50,7 +72,7 @@ struct HotelListCell: View {
                         .fontWeight(.bold)
                         .foregroundColor(.orange)
                 }
-                .padding(10)
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
             }
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             .background(Color.white)
@@ -73,12 +95,15 @@ struct HotelListCell: View {
 
 struct HotelListCell_Previews: PreviewProvider {
     static var previews: some View {
+        
+        let imageUrl = "https://thumbcdn-0.hotelurbano.net/ulwbHJbu6YyaypSQwTz9eN6MHIU=/trim:bottom-right:80/bottom/filters:quality(50)/https%3A//novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/527706/samoa-beach-resort-ipojuca-001_20200213175602.jpg"
+        
         let hotel = Hotel(
             name: "Nome do Hotel",
             price: ResultPrice(amount: 200.2),
             address: nil,
-            image: "https://thumbcdn-0.hotelurbano.net/ulwbHJbu6YyaypSQwTz9eN6MHIU=/trim:bottom-right:80/bottom/filters:quality(50)/https%3A//novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/527706/samoa-beach-resort-ipojuca-001_20200213175602.jpg",
-            amenities: [ResultAmenity(name: "TV", category: "")])
+            image: "",
+            amenities: [ResultAmenity(name: "TV", category: ""), ResultAmenity(name: "Banheira", category: "")])
 
         HotelListCell(hotel: hotel)
             .background(Color.white)

@@ -24,7 +24,7 @@ struct HotelListView: View {
             NavigationView {
                 ZStack {
                     
-                    Color.blue
+                    Color.blueHurb
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                         .ignoresSafeArea(.container, edges: .top)
                     

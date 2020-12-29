@@ -88,6 +88,22 @@ struct Hotel: Codable {
     var endDate: String? = ""
     var hasAvailability: Bool? = nil
     
+    var formattedAmenities: [String] {
+        get {
+            
+            var amenities: [String] = []
+            
+            for amenity in self.amenities.enumerated() {
+                if amenity.offset > 2 {
+                    break
+                }
+                amenities.append(amenity.element.name)
+            }
+            
+            return amenities
+        }
+    }
+    
     init(name: String,
          price: ResultPrice?,
          address: Address?,
