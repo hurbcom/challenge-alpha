@@ -14,7 +14,7 @@ class HotelListViewModel: ObservableObject, Identifiable {
     @Published var groupedHotels: [GroupedHotels]?
     @Published var listPlaces: [Suggestion]?
     @Published var searchByCity: String = ""
-    @Published var selectedPlace: String = ""
+    @Published var selectedPlace: String = "Rio de Janeiro"
     
     private var hotelListInteractor: HotelListInteractorProtocol
     private var disposables: Set<AnyCancellable> = []

@@ -136,16 +136,16 @@ struct Address: Codable {
     var address: String? = ""
     var fullAddress: String? = ""
     var neighborhood: String? = ""
-    var idAtlasNeighborhood: JSONNull? = nil
-    var idNeighborhood: JSONNull? = nil
+    var idAtlasNeighborhood: Int?
+    var idNeighborhood: Int?
     var city: String = ""
-    var idAtlasCity: JSONNull? = nil
+    var idAtlasCity: Int?
     var idCity: Int?
     var state: String = ""
-    var idAtlasState: JSONNull? = nil
+    var idAtlasState: Int?
     var idState: Int?
     var country: String = ""
-    var idAtlasCountry: JSONNull? = nil
+    var idAtlasCountry: Int?
     var idCountry: Int?
     var geoLocation: GeoLocation
 
@@ -197,7 +197,7 @@ struct FeaturedItem: Codable {
 
 // MARK: - Gallery
 struct Gallery: Codable {
-    let galleryDescription: Description?
+    let galleryDescription: String?
     let url: String
     let roomID: JSONNull?
 
@@ -206,13 +206,6 @@ struct Gallery: Codable {
         case url
         case roomID = "room_id"
     }
-}
-
-enum Description: String, Codable {
-    case aPousadaContaCOM8BlocosSuitesPRBloco = "A pousada conta com 8 Blocos, Suites pr Bloco"
-    case confortoEQualidade = "Conforto e qualidade"
-    case curtaDeNossaPiscinaJuntoABar = "Curta de nossa Piscina, junto a Bar"
-    case empty = ""
 }
 
 // MARK: - ResultPrice
@@ -268,8 +261,8 @@ struct ResultPrice: Codable {
 
 // MARK: - Tax
 struct Tax: Codable {
-    let type: TypeEnum
-    let name: Name
+    let type: String?
+    let name: String?
     let amount, amountOriginal: Double
     let currency, currencyOriginal: String?
 
@@ -279,14 +272,6 @@ struct Tax: Codable {
         case currency
         case currencyOriginal = "currency_original"
     }
-}
-
-enum Name: String, Codable {
-    case taxaDeReserva = "Taxa de Reserva"
-}
-
-enum TypeEnum: String, Codable {
-    case perItemQuantity = "PER_ITEM_QUANTITY"
 }
 
 // MARK: - QuantityDescriptors

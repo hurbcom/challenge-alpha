@@ -28,10 +28,16 @@ class HotelService: HotelServiceProtocol {
                 case .success(let result):
                     
                     if let result = result {
-                        let productPagination = try? JSONDecoder().decode(HotelsPaginationModel.self, from: result)
-                        print("success: \(String(describing: productPagination))")
-                        
-                        self?.hotelListPaginationResult.send(productPagination)
+                        do {
+                            let productPagination = try JSONDecoder().decode(HotelsPaginationModel.self, from: result)
+                            print("success: \(String(describing: productPagination))")
+                            
+                            self?.hotelListPaginationResult.send(productPagination)
+                        } catch let error {
+                            print("failure: \(error)")
+                            self?.hotelListPaginationResult.send(completion: .failure(error))
+                            break
+                        }
                     }
                     
                     break
