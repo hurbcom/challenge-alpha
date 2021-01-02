@@ -10,7 +10,6 @@ import SwiftUI
 struct SearchBarView: View {
     @ObservedObject var hotelListViewModel: HotelListViewModel
     
-    @State var array: [String] = []
     @State private var showCancelButton: Bool = false
     
     var body: some View {
@@ -23,13 +22,13 @@ struct SearchBarView: View {
                               text: self.$hotelListViewModel.searchByCity,
                               onEditingChanged: { isEditing in
                                 self.showCancelButton = true
+                                self.hotelListViewModel.listPlaces = []
                     }, onCommit: {
                         print("onCommit")
-                        self.array = []
                     })
                     .foregroundColor(.primary)
-                        .onReceive(self.hotelListViewModel.$searchByCity.debounce(for: 0.8, scheduler: RunLoop.main)) { teste in
-                        
+                    .onReceive(self.hotelListViewModel.$searchByCity.debounce(for: 0.8, scheduler: RunLoop.main)) { _ in
+                        self.hotelListViewModel.getPlaceList()
                     }
 
                     Button(action: {
@@ -44,11 +43,17 @@ struct SearchBarView: View {
             }
             .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
             
-            if !array.isEmpty {
+            if let listPlaces = self.hotelListViewModel.listPlaces, !listPlaces.isEmpty {
                 List {
                     // Filtered list of names
-                    ForEach(array, id:\.self) { searchText
-                        in Text(searchText)
+                    ForEach(listPlaces, id:\.text) { suggestion in
+                        if let text = suggestion.text {
+                            Text(text)
+                                .onTapGesture {
+                                    self.hotelListViewModel.selectPlaceAndSearch(suggestion: suggestion)
+                                    UIApplication.shared.endEditing(true)
+                                }
+                        }
                     }
                     .listRowBackground(Color.white)
                 }
@@ -59,6 +64,7 @@ struct SearchBarView: View {
             
         }
     }
+    
 }
 
 struct SearchBarView_Previews: PreviewProvider {

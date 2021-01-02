@@ -10,6 +10,7 @@ import Combine
 protocol HotelListInteractorProtocol {
     
     func getHotelListBy(local: String, page: Int) -> AnyPublisher<[GroupedHotels]?, Error>
+    func getPlaceListBy(typing: String) -> AnyPublisher<[Suggestion]?, Error>
 }
 
 class HotelListInteractor: HotelListInteractorProtocol {
@@ -37,8 +38,14 @@ class HotelListInteractor: HotelListInteractorProtocol {
         }
         
         return groupedHotels
-        
-        
     }
     
+    func getPlaceListBy(typing: String) -> AnyPublisher<[Suggestion]?, Error> {
+        return self.productService
+            .getPlaceListBy(typing: typing)
+            .map {
+                return $0?.suggestions
+            }
+            .eraseToAnyPublisher()
+    }
 }
