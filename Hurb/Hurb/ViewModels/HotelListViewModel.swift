@@ -15,6 +15,7 @@ class HotelListViewModel: ObservableObject, Identifiable {
     @Published var listPlaces: [Suggestion]?
     @Published var searchByCity: String = ""
     @Published var selectedPlace: String = "Rio de Janeiro"
+    @Published var isLoading: Bool = false
     
     private var hotelListInteractor: HotelListInteractorProtocol
     private var disposables: Set<AnyCancellable> = []
@@ -26,10 +27,15 @@ class HotelListViewModel: ObservableObject, Identifiable {
     
     func getHotelList() {
         
+        self.isLoading = true
+        
         hotelListInteractor
             .getHotelListBy(local: self.selectedPlace, page: 1)
             .receive(on: RunLoop.main)
-            .sink { result in
+            .sink { [weak self] result in
+                
+                self?.isLoading = false
+                
                 switch result {
                     case .failure(let error):
                         print("Error: \(error.localizedDescription)")

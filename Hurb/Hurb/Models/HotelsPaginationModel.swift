@@ -1,16 +1,16 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let productsPagination = try? newJSONDecoder().decode(ProductsPagination.self, from: jsonData)
+//   let hotelsPaginationModel = try? newJSONDecoder().decode(HotelsPaginationModel.self, from: jsonData)
 
 import Foundation
 
 // MARK: - HotelsPaginationModel
 struct HotelsPaginationModel: Codable {
-    let meta: Meta
-    let filters: Filters
-    let results: [Hotel]
-    let pagination: Pagination
+    var meta: Meta?
+    var filters: Filters?
+    var results: [Hotel]?
+    var pagination: Pagination?
 }
 
 struct GroupedHotels {
@@ -20,89 +20,73 @@ struct GroupedHotels {
 
 // MARK: - Filters
 struct Filters: Codable {
-    let amenities, attributes, countries, cities: [AttributeElement]
-    let departureCities, duration, food, people: [AttributeElement]
-    let prices: [PriceElement]
-    let priceInterval: PriceInterval
-    let productType, regulation, rooms, stars: [AttributeElement]
-    let states: [AttributeElement]
+    var amenities, attributes, countries, cities: [AttributeElement]?
+    var departureCities, duration, food, people: [AttributeElement]?
+    var prices: [PriceElement]?
+    var priceInterval: PriceInterval?
+    var productType, regulation, rooms, stars: [AttributeElement]?
+    var states: [AttributeElement]?
 }
 
 // MARK: - AttributeElement
 struct AttributeElement: Codable {
-    let term, filter: String
-    let count: Int
+    var term, filter: String?
+    var count: Int?
 }
 
 // MARK: - PriceInterval
 struct PriceInterval: Codable {
-    let min, max: Int
-    let filterPattern: String
+    var min, max: Int?
+    var filterPattern: String?
 }
 
 // MARK: - PriceElement
 struct PriceElement: Codable {
-    let min, maxExclusive: Int
-    let filter: String
-    let count: Int
+    var min, maxExclusive: Int?
+    var filter: String?
+    var count: Int?
 }
 
 // MARK: - Meta
 struct Meta: Codable {
-    let count, offset: Int
-    let query, warning: String
-    let countWithAvailability, countWithAvailabilityInPage, countHotel, countPackage: Int
-    let countTicket, countBustrip, countDisney: Int
+    var count, offset: Int?
+    var warning: String?
+    var countWithAvailability, countWithAvailabilityInPage, countHotel, countPackage: Int?
+    var countTicket, countBustrip, countDisney: Int?
 }
 
 // MARK: - Pagination
 struct Pagination: Codable {
-    let count: Int
-    let firstPage, nextPage: String
-    let previousPage: JSONNull?
-    let lastPage: String
+    var count: Int?
+    var firstPage, nextPage: String?
+    var previousPage: Int?
+    var lastPage: String?
 }
 
 // MARK: - Result
 struct Hotel: Codable {
-    var sku: String = ""
-    var isHotel: Bool? = nil
-    var category: String? = ""
-    var smallDescription: String = ""
-    var amenities: [ResultAmenity] = []
-    var id: String = ""
-    var price: ResultPrice? = nil
-    var huFreeCancellation: Bool? = nil
-    var image: String? = ""
-    var name: String = ""
-    var url: String = ""
-    var resultDescription: String = ""
-    var stars: Int? = 0
-    var gallery: [Gallery] = []
-    var address: Address? = nil
-    var tags: [String]? = []
-    var quantityDescriptors: QuantityDescriptors? = nil
-    var featuredItem: FeaturedItem? = nil
-    var isPackage: Bool? = nil
-    var startDate: String? = ""
-    var endDate: String? = ""
-    var hasAvailability: Bool? = nil
     
-    var formattedAmenities: [String] {
-        get {
-            
-            var amenities: [String] = []
-            
-            for amenity in self.amenities.enumerated() {
-                if amenity.offset > 2 {
-                    break
-                }
-                amenities.append(amenity.element.name)
-            }
-            
-            return amenities
-        }
-    }
+    var sku: String?
+    var isHotel: Bool?
+    var category: String?
+    var smallDescription: String?
+    var amenities: [ResultAmenity]?
+    var id: String?
+    var price: ResultPrice?
+    var huFreeCancellation: Bool?
+    var image: String?
+    var name: String?
+    var url: String?
+    var resultDescription: String?
+    var stars: Int?
+    var gallery: [Gallery]?
+    var address: Address?
+    var tags: [String]?
+    var quantityDescriptors: QuantityDescriptors?
+    var featuredItem: FeaturedItem?
+    var isPackage: Bool?
+    var startDate, endDate: String?
+    var hasAvailability: Bool?
     
     init(name: String,
          price: ResultPrice?,
@@ -116,6 +100,24 @@ struct Hotel: Codable {
         self.image = image
         self.amenities = amenities
     }
+    
+    var formattedAmenities: [String] {
+        get {
+            
+            var returnedAmenities: [String] = []
+            
+            if let amenities = self.amenities {
+                for amenity in amenities.enumerated() {
+                    if amenity.offset > 2 {
+                        break
+                    }
+                    returnedAmenities.append(amenity.element.name ?? "")
+                }
+            }
+            
+            return returnedAmenities
+        }
+    }
 
     enum CodingKeys: String, CodingKey {
         case sku, isHotel, category, smallDescription, amenities, id, price
@@ -128,65 +130,65 @@ struct Hotel: Codable {
 
 // MARK: - Address
 struct Address: Codable {
-    var zipcode: String? = ""
-    var addressFullAddress: String? = ""
-    var street: String? = ""
-    var addressStreetName: String? = ""
-    var streetName: String? = ""
-    var address: String? = ""
-    var fullAddress: String? = ""
-    var neighborhood: String? = ""
-    var idAtlasNeighborhood: Int?
-    var idNeighborhood: Int?
-    var city: String = ""
+    var zipcode, addressFullAddress, street, addressStreetName: String?
+    var streetName, address, fullAddress, city: String?
     var idAtlasCity: Int?
     var idCity: Int?
-    var state: String = ""
+    var state: String?
     var idAtlasState: Int?
     var idState: Int?
-    var country: String = ""
+    var country: String?
     var idAtlasCountry: Int?
     var idCountry: Int?
-    var geoLocation: GeoLocation
+    var countryAlfa2, addressCountryAlfa2: String?
+    var geoLocation: GeoLocation?
+    var neighborhood: String?
+    var idAtlasNeighborhood, idNeighborhood: Int?
 
     enum CodingKeys: String, CodingKey {
         case zipcode
         case addressFullAddress = "full_address"
         case street
         case addressStreetName = "street_name"
-        case streetName, address, fullAddress, neighborhood
-        case idAtlasNeighborhood = "id_atlas_neighborhood"
-        case idNeighborhood = "id_neighborhood"
-        case city = "city"
+        case streetName, address, fullAddress, city
         case idAtlasCity = "id_atlas_city"
         case idCity = "id_city"
-        case state = "state"
+        case state
         case idAtlasState = "id_atlas_state"
         case idState = "id_state"
-        case country = "country"
+        case country
         case idAtlasCountry = "id_atlas_country"
         case idCountry = "id_country"
-        case geoLocation
+        case countryAlfa2
+        case addressCountryAlfa2 = "country_alfa2"
+        case geoLocation, neighborhood
+        case idAtlasNeighborhood = "id_atlas_neighborhood"
+        case idNeighborhood = "id_neighborhood"
     }
 }
 
 // MARK: - GeoLocation
 struct GeoLocation: Codable {
-    let lat, lon: Double
+    var lat, lon: Double?
 }
 
 // MARK: - ResultAmenity
 struct ResultAmenity: Codable {
-    let name, category: String
+    var name, category: String?
+    
+    init(name: String?, category: String?) {
+        self.name = name
+        self.category = category
+    }
 }
 
 // MARK: - FeaturedItem
 struct FeaturedItem: Codable {
-    let amenities: [String]?
-    let name: String?
-    let image: String?
-    let featuredItemDescription: String
-    let hasInternet, hasParking: Bool?
+    var amenities: [String]?
+    var name: String?
+    var image: String?
+    var featuredItemDescription: String?
+    var hasInternet, hasParking: Bool?
 
     enum CodingKeys: String, CodingKey {
         case amenities, name, image
@@ -197,9 +199,9 @@ struct FeaturedItem: Codable {
 
 // MARK: - Gallery
 struct Gallery: Codable {
-    let galleryDescription: String?
-    let url: String
-    let roomID: JSONNull?
+    var galleryDescription: String?
+    var url: String?
+    var roomID: Int?
 
     enum CodingKeys: String, CodingKey {
         case galleryDescription = "description"
@@ -210,24 +212,16 @@ struct Gallery: Codable {
 
 // MARK: - ResultPrice
 struct ResultPrice: Codable {
-    var amount: Double = 0.0
-    var priceOldPrice: Double? = 0.0
-    var currency: String? = ""
-    var currencyOriginal: String? = ""
-    var gain: Int? = 0
-    var feeExtraOriginal: Int? = 0
-    var gainOriginal: Int? = 0
-    var tariffPolicies: [JSONAny]? = nil
-    var priceCurrentPrice: Double? = 0.0
-    var totalPrice: Double? = 0.0
-    var feeExtra: Int? = 0
-    var sku: String = ""
-    var taxes: [Tax]? = nil
-    var originalAmountPerDay: Double? = 0.0
-    var amountPerDay: Double = 0.0
-    var oldPrice: Int? = 0
-    var currentPrice: Int? = 0
-    var originalAmount: Int? = 0
+    var amount, priceOldPrice: Double?
+    var currency, currencyOriginal: String?
+    var gain, feeExtraOriginal, gainOriginal: Int?
+    var tariffPolicies: [JSONAny]?
+    var priceCurrentPrice, totalPrice: Double?
+    var feeExtra: Int?
+    var sku: String?
+    var taxes: [Tax]?
+    var originalAmountPerDay, amountPerDay: Double?
+    var oldPrice, currentPrice, originalAmount: Int?
     
     init(amount: Double) {
         self.amount = amount
@@ -239,7 +233,7 @@ struct ResultPrice: Codable {
             formatter.locale = Locale(identifier: "pt_BR")
             formatter.numberStyle = .currency
             
-            return formatter.string(from: NSNumber(value: self.amount))
+            return formatter.string(from: NSNumber(value: self.amount ?? 0.0))
         }
     }
 
@@ -261,10 +255,9 @@ struct ResultPrice: Codable {
 
 // MARK: - Tax
 struct Tax: Codable {
-    let type: String?
-    let name: String?
-    let amount, amountOriginal: Double
-    let currency, currencyOriginal: String?
+    var type, name: String?
+    var amount, amountOriginal: Double?
+    var currency, currencyOriginal: String?
 
     enum CodingKeys: String, CodingKey {
         case type, name, amount
@@ -276,41 +269,11 @@ struct Tax: Codable {
 
 // MARK: - QuantityDescriptors
 struct QuantityDescriptors: Codable {
-    let maxChildren, maxAdults, maxFreeChildrenAge, nights: Int?
-    let maxPeople: Int?
+    var maxChildren, maxAdults, maxFreeChildrenAge, nights: Int?
+    var maxPeople: Int?
 }
 
 // MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-
-    public var hashValue: Int {
-        return 0
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        // No-op
-    }
-
-    public init() {}
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
-    }
-}
-
 class JSONCodingKey: CodingKey {
     let key: String
 
@@ -358,9 +321,6 @@ class JSONAny: Codable {
         if let value = try? container.decode(String.self) {
             return value
         }
-        if container.decodeNil() {
-            return JSONNull()
-        }
         throw decodingError(forCodingPath: container.codingPath)
     }
 
@@ -376,11 +336,6 @@ class JSONAny: Codable {
         }
         if let value = try? container.decode(String.self) {
             return value
-        }
-        if let value = try? container.decodeNil() {
-            if value {
-                return JSONNull()
-            }
         }
         if var container = try? container.nestedUnkeyedContainer() {
             return try decodeArray(from: &container)
@@ -403,11 +358,6 @@ class JSONAny: Codable {
         }
         if let value = try? container.decode(String.self, forKey: key) {
             return value
-        }
-        if let value = try? container.decodeNil(forKey: key) {
-            if value {
-                return JSONNull()
-            }
         }
         if var container = try? container.nestedUnkeyedContainer(forKey: key) {
             return try decodeArray(from: &container)
@@ -446,8 +396,6 @@ class JSONAny: Codable {
                 try container.encode(value)
             } else if let value = value as? String {
                 try container.encode(value)
-            } else if value is JSONNull {
-                try container.encodeNil()
             } else if let value = value as? [Any] {
                 var container = container.nestedUnkeyedContainer()
                 try encode(to: &container, array: value)
@@ -471,8 +419,6 @@ class JSONAny: Codable {
                 try container.encode(value, forKey: key)
             } else if let value = value as? String {
                 try container.encode(value, forKey: key)
-            } else if value is JSONNull {
-                try container.encodeNil(forKey: key)
             } else if let value = value as? [Any] {
                 var container = container.nestedUnkeyedContainer(forKey: key)
                 try encode(to: &container, array: value)
@@ -494,8 +440,6 @@ class JSONAny: Codable {
             try container.encode(value)
         } else if let value = value as? String {
             try container.encode(value)
-        } else if value is JSONNull {
-            try container.encodeNil()
         } else {
             throw encodingError(forValue: value, codingPath: container.codingPath)
         }

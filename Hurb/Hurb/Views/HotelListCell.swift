@@ -48,7 +48,7 @@ struct HotelListCell: View {
                     
                     Spacer().frame(width: 0, height: 10)
                     
-                    Text(hotel.name)
+                    Text(hotel.name ?? "Nome do Hotel")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(.darkGray)

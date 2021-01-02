@@ -41,7 +41,20 @@ struct HomeListView: View {
                         .introspectTableView { tableView in
                             tableView.backgroundColor = .clear
                         }
-                    } else {
+                    } else if self.hotelListViewModel.isLoading {
+                        VStack {
+                            Text("⏳")
+                                .font(.title)
+                                
+                            Text("Carregando...")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.darkGray)
+                                .frame(width: 300, alignment: .center)
+                        }
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                        
+                    } else  {
                         EmptyDataView()
                     }
                 }
