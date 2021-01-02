@@ -13,6 +13,7 @@
 		569F488B25A0BD9E00C8015F /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569F488A25A0BD9E00C8015F /* HomeListView.swift */; };
 		569F488E25A0BDF900C8015F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569F488D25A0BDF900C8015F /* SearchBarView.swift */; };
 		569F489125A0E30200C8015F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569F489025A0E30200C8015F /* Place.swift */; };
+		56D6EA7125A0F89C00FB28B2 /* HurbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6EA7025A0F89C00FB28B2 /* HurbTests.swift */; };
 		56DE8EE3259BA80300446944 /* HotelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8EE2259BA80300446944 /* HotelListCell.swift */; };
 		56DE8EE7259BB65400446944 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 56DE8EE6259BB65400446944 /* Kingfisher */; };
 		56DE8EE9259BB65400446944 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 56DE8EE8259BB65400446944 /* KingfisherSwiftUI */; };
@@ -28,6 +29,16 @@
 		56F6AB2A2598D78500D36DAB /* HotelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6AB292598D78500D36DAB /* HotelListViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		56D6EA7325A0F89C00FB28B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56F6AAF92598CACE00D36DAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56F6AB002598CACE00D36DAB;
+			remoteInfo = Hurb;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5636FA0B2598FDCA009F7B37 /* HotelListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListInteractor.swift; sourceTree = "<group>"; };
 		5636FA1425991FAD009F7B37 /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
@@ -35,6 +46,9 @@
 		569F488A25A0BD9E00C8015F /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
 		569F488D25A0BDF900C8015F /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		569F489025A0E30200C8015F /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		56D6EA6E25A0F89C00FB28B2 /* HurbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HurbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D6EA7025A0F89C00FB28B2 /* HurbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HurbTests.swift; sourceTree = "<group>"; };
+		56D6EA7225A0F89C00FB28B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56DE8EE2259BA80300446944 /* HotelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListCell.swift; sourceTree = "<group>"; };
 		56DE8EF0259BCC0900446944 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		56F6AB012598CACE00D36DAB /* Hurb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hurb.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		56D6EA6B25A0F89C00FB28B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56F6AAFE2598CACE00D36DAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,6 +92,15 @@
 			path = Interactors;
 			sourceTree = "<group>";
 		};
+		56D6EA6F25A0F89C00FB28B2 /* HurbTests */ = {
+			isa = PBXGroup;
+			children = (
+				56D6EA7025A0F89C00FB28B2 /* HurbTests.swift */,
+				56D6EA7225A0F89C00FB28B2 /* Info.plist */,
+			);
+			path = HurbTests;
+			sourceTree = "<group>";
+		};
 		56DE8EEF259BCBE700446944 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				56F6AB032598CACE00D36DAB /* Hurb */,
+				56D6EA6F25A0F89C00FB28B2 /* HurbTests */,
 				56F6AB022598CACE00D36DAB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				56F6AB012598CACE00D36DAB /* Hurb.app */,
+				56D6EA6E25A0F89C00FB28B2 /* HurbTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +193,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		56D6EA6D25A0F89C00FB28B2 /* HurbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56D6EA7525A0F89C00FB28B2 /* Build configuration list for PBXNativeTarget "HurbTests" */;
+			buildPhases = (
+				56D6EA6A25A0F89C00FB28B2 /* Sources */,
+				56D6EA6B25A0F89C00FB28B2 /* Frameworks */,
+				56D6EA6C25A0F89C00FB28B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56D6EA7425A0F89C00FB28B2 /* PBXTargetDependency */,
+			);
+			name = HurbTests;
+			productName = HurbTests;
+			productReference = 56D6EA6E25A0F89C00FB28B2 /* HurbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		56F6AB002598CACE00D36DAB /* Hurb */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56F6AB102598CAD200D36DAB /* Build configuration list for PBXNativeTarget "Hurb" */;
@@ -193,6 +243,10 @@
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					56D6EA6D25A0F89C00FB28B2 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 56F6AB002598CACE00D36DAB;
+					};
 					56F6AB002598CACE00D36DAB = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -217,11 +271,19 @@
 			projectRoot = "";
 			targets = (
 				56F6AB002598CACE00D36DAB /* Hurb */,
+				56D6EA6D25A0F89C00FB28B2 /* HurbTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		56D6EA6C25A0F89C00FB28B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56F6AAFF2598CACE00D36DAB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +296,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		56D6EA6A25A0F89C00FB28B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D6EA7125A0F89C00FB28B2 /* HurbTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56F6AAFD2598CACE00D36DAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,7 +326,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		56D6EA7425A0F89C00FB28B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56F6AB002598CACE00D36DAB /* Hurb */;
+			targetProxy = 56D6EA7325A0F89C00FB28B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		56D6EA7625A0F89C00FB28B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7EDV5524K;
+				INFOPLIST_FILE = HurbTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.givigir.HurbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hurb.app/Hurb";
+			};
+			name = Debug;
+		};
+		56D6EA7725A0F89C00FB28B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7EDV5524K;
+				INFOPLIST_FILE = HurbTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.givigir.HurbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hurb.app/Hurb";
+			};
+			name = Release;
+		};
 		56F6AB0E2598CAD200D36DAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -420,6 +538,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		56D6EA7525A0F89C00FB28B2 /* Build configuration list for PBXNativeTarget "HurbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56D6EA7625A0F89C00FB28B2 /* Debug */,
+				56D6EA7725A0F89C00FB28B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		56F6AAFC2598CACE00D36DAB /* Build configuration list for PBXProject "Hurb" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

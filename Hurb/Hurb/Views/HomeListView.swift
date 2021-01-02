@@ -37,6 +37,7 @@ struct HomeListView: View {
                                 }
                             }
                         }
+                        .resignKeyboardOnDragGesture()
                         .introspectTableView { tableView in
                             tableView.backgroundColor = .clear
                         }
