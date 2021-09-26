@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface HotelService {
     @GET("/endpoint/desejado")
-    fun getUpComingMovies(): Call<HotelRequestResponse>
+    fun getHotels(): Call<HotelRequestResponse>
 }

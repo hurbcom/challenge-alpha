@@ -9,7 +9,9 @@ import com.filipeoliveira.hurbchallenge.R
 import com.filipeoliveira.hurbchallenge.databinding.ItemHotelBinding
 import com.filipeoliveira.hurbchallenge.ui.model.HotelUI
 
-class HotelListAdapter() : RecyclerView.Adapter<HotelListAdapter.HotelListViewHolder>() {
+class HotelListAdapter(
+    val onClick: (HotelUI) -> Unit
+) : RecyclerView.Adapter<HotelListAdapter.HotelListViewHolder>() {
 
     private val hotelList = mutableListOf<HotelUI>()
 
@@ -69,6 +71,10 @@ class HotelListAdapter() : RecyclerView.Adapter<HotelListAdapter.HotelListViewHo
                 restaurantColor,
                 android.graphics.PorterDuff.Mode.SRC_IN
             )
+
+            binding.root.setOnClickListener {
+                onClick(hotel)
+            }
         }
     }
 

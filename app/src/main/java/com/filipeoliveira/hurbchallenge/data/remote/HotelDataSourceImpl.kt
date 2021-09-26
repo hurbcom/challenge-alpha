@@ -12,7 +12,7 @@ class HotelDataSourceImpl(
     override fun getHotelList(): List<HotelResponse> {
 //        Em caso de requests sendo realmente feitos
 
-//        val response = HotelClient.getHotelService().getUpComingMovies().execute()
+//        val response = HotelClient.getHotelService().getHotels().execute()
 
 //        return if (response.isSuccessful && response.body() != null) {
 //            response.body()!!.result

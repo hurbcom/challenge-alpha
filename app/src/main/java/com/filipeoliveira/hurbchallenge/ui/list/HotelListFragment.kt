@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.filipeoliveira.hurbchallenge.R
 import com.filipeoliveira.hurbchallenge.databinding.FragmentHotelListBinding
 import com.filipeoliveira.hurbchallenge.ui.UIState
+import com.filipeoliveira.hurbchallenge.ui.detail.HotelDetailFragment
 import com.filipeoliveira.hurbchallenge.ui.utils.SpaceItemDecoration
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -30,7 +34,10 @@ class HotelListFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        hotelAdapter = HotelListAdapter()
+        hotelAdapter = HotelListAdapter(){
+            val bundle = bundleOf(HotelDetailFragment.TAG_HOTEL to it)
+            findNavController().navigate(R.id.to_hotelDetailFragment, bundle)
+        }
 
         binding.fragHotelListRcv.apply {
             val lm = LinearLayoutManager(requireContext())

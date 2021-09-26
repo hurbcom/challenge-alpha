@@ -1,5 +1,7 @@
 package com.filipeoliveira.hurbchallenge.ui.model
 
+import java.io.Serializable
+
 data class HotelUI(
     val id: String,
     val smallDescription: String,
@@ -15,7 +17,7 @@ data class HotelUI(
     val tags: List<String>,
     val quantityDescriptors: QuantityDescriptorsUI,
     val address: AddressUI
-) {
+) : Serializable {
 
     fun hasBarAmenity(): Boolean {
         return amenities.find {

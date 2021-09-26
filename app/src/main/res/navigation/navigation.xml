@@ -7,5 +7,16 @@
     <fragment
         android:id="@+id/hotelListFragment"
         android:name="com.filipeoliveira.hurbchallenge.ui.list.HotelListFragment"
-        android:label="HotelListFragment" />
+        android:label="HotelListFragment">
+        <action
+            android:id="@+id/to_hotelDetailFragment"
+            app:destination="@id/hotelDetailFragment"
+            app:popUpTo="@id/hotelListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelDetailFragment"
+        android:name="com.filipeoliveira.hurbchallenge.ui.detail.HotelDetailFragment"
+        android:label="HotelDetailFragment" >
+    </fragment>
 </navigation>
