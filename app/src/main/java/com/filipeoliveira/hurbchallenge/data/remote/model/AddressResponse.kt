@@ -1,4 +1,4 @@
-package com.filipeoliveira.hurbchallenge.data.remote
+package com.filipeoliveira.hurbchallenge.data.remote.model
 
 data class AddressResponse(
     val city: String?,
