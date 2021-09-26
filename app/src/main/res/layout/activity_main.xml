@@ -23,6 +23,7 @@
             android:id="@+id/activity_main_bottom_navigation"
             android:layout_width="match_parent"
             app:menu="@menu/bottom_navigation"
+            android:background="?attr/colorSecondary"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent" />
 
