@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Hurb Challenge</string>
+
+    <string name="hint_unavailable_network_error">Não foi possível conectar ao servidor. Por favor, verifique o Wi-fi / Dados móveis e toque para tentar novamente</string>
+    <string name="hint_generic_network_error">Ocorreu um erro. Por favor, toque para tentar novamente ou tente novamente em alguns instantes.</string>
+    <string name="hint_empty_hotel_response">O copo acima está meio cheio, mas essa página está vazia. Não há itens para exibir.</string>
+
     <string name="label_hotel">Hotel</string>
+    <string name="hint_loading">Carregando</string>
 </resources>

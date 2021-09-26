@@ -11,5 +11,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <include
+            android:id="@+id/view_loading"
+            layout="@layout/base_loading" />
+
+        <include
+            android:id="@+id/view_error"
+            layout="@layout/base_error" />
+
+        <include
+            android:id="@+id/view_empty"
+            layout="@layout/base_empty" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
