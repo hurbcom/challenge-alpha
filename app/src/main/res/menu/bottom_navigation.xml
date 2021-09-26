@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_item_hotel"
+        android:title="@string/label_hotel"
+        android:icon="@drawable/ic_hotel"
+        app:showAsAction="always"/>
+
+</menu>

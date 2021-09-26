@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hurb Challenge</string>
+    <string name="label_hotel">Hotel</string>
 </resources>
