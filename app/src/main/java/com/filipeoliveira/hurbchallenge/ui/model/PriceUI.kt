@@ -4,7 +4,7 @@ data class PriceUI(
     val currency: String,
     val pricePerDay: String
 ) {
-    fun getParsedPrice(): String {
+    fun getPriceAsString(): String {
         return "$pricePerDay $currency"
     }
 }

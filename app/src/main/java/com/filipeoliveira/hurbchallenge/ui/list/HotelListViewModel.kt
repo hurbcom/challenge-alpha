@@ -5,10 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.filipeoliveira.hurbchallenge.ui.UIState
-import com.filipeoliveira.hurbchallenge.ui.model.HotelUI
-import com.filipeoliveira.hurbchallenge.ui.model.ImageUI
-import com.filipeoliveira.hurbchallenge.ui.model.PriceUI
-import com.filipeoliveira.hurbchallenge.ui.model.QuantityDescriptorsUI
+import com.filipeoliveira.hurbchallenge.ui.model.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -26,7 +23,12 @@ class HotelListViewModel() : ViewModel() {
                 HotelUI(
                     id = "id",
                     smallDescription = "Uma pequena descrição",
-                    amenities = "Amenities",
+                    amenities = listOf(
+                        AmenityUI(
+                            name = "Bar",
+                            term = AmenityUI.AMENITY_BAR
+                        )
+                    ),
                     priceCurrency = PriceUI(
                         currency = "BRL",
                         pricePerDay = "150,00"
@@ -54,12 +56,23 @@ class HotelListViewModel() : ViewModel() {
                         maxAdults = 2,
                         maxFreeChildrenAge = 12
                     ),
-                    name = "NOME"
+                    name = "NOME",
+                    address = AddressUI(
+                        city = "Rio de Janeiro",
+                        country = "Brasil",
+                        state = "Rio de Janeiro",
+                        street = "Rua do Filipe, 1"
+                    )
                 ),
                 HotelUI(
                     id = "id",
                     smallDescription = "Uma pequena descrição",
-                    amenities = "Amenities",
+                    amenities = listOf(
+                        AmenityUI(
+                            name = "Academia",
+                            term = AmenityUI.AMENITY_GYM
+                        )
+                    ),
                     priceCurrency = PriceUI(
                         currency = "BRL",
                         pricePerDay = "150,00"
@@ -87,7 +100,13 @@ class HotelListViewModel() : ViewModel() {
                         maxAdults = 2,
                         maxFreeChildrenAge = 12
                     ),
-                    name = "NOME"
+                    name = "NOME",
+                    address = AddressUI(
+                        city = "Rio de Janeiro",
+                        country = "Brasil",
+                        state = "Rio de Janeiro",
+                        street = "Rua do Filipe, 1"
+                    )
                 )
             )
 
