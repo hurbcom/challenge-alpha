@@ -13,14 +13,20 @@ class HotelListAdapter() : RecyclerView.Adapter<HotelListAdapter.HotelListViewHo
 
     private val hotelList = mutableListOf<HotelUI>()
 
-    inner class HotelListViewHolder(private val binding: ItemHotelBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(hotel: HotelUI){
-            binding.root.layoutParams = RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT)
+    inner class HotelListViewHolder(private val binding: ItemHotelBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(hotel: HotelUI) {
+            binding.root.layoutParams = RecyclerView.LayoutParams(
+                RecyclerView.LayoutParams.MATCH_PARENT,
+                RecyclerView.LayoutParams.WRAP_CONTENT
+            )
             binding.hotelUI = hotel
 
-            if (hotel.image.isNotEmpty()){
+            if (hotel.image.isNotEmpty()) {
                 Glide.with(binding.root)
                     .load(hotel.image)
+                    .placeholder(R.drawable.ic_hotel)
+                    .error(R.drawable.ic_hotel)
                     .into(binding.itemHotelImage)
             }
 
@@ -40,14 +46,29 @@ class HotelListAdapter() : RecyclerView.Adapter<HotelListAdapter.HotelListViewHo
 
             binding.itemHotelGym.setColorFilter(gymColor, android.graphics.PorterDuff.Mode.SRC_IN)
             binding.itemHotelBar.setColorFilter(barColor, android.graphics.PorterDuff.Mode.SRC_IN)
-            binding.itemHotelWheelChair.setColorFilter(wheelchairColor, android.graphics.PorterDuff.Mode.SRC_IN)
+            binding.itemHotelWheelChair.setColorFilter(
+                wheelchairColor,
+                android.graphics.PorterDuff.Mode.SRC_IN
+            )
             binding.itemHotelWifi.setColorFilter(wifiColor, android.graphics.PorterDuff.Mode.SRC_IN)
             binding.itemHotelTv.setColorFilter(tvColor, android.graphics.PorterDuff.Mode.SRC_IN)
-            binding.itemHotelToilet.setColorFilter(toiletColor, android.graphics.PorterDuff.Mode.SRC_IN)
-            binding.itemHotelParking.setColorFilter(parkingColor, android.graphics.PorterDuff.Mode.SRC_IN)
+            binding.itemHotelToilet.setColorFilter(
+                toiletColor,
+                android.graphics.PorterDuff.Mode.SRC_IN
+            )
+            binding.itemHotelParking.setColorFilter(
+                parkingColor,
+                android.graphics.PorterDuff.Mode.SRC_IN
+            )
             binding.itemHotelPool.setColorFilter(poolColor, android.graphics.PorterDuff.Mode.SRC_IN)
-            binding.itemHotelReception.setColorFilter(receptionColor, android.graphics.PorterDuff.Mode.SRC_IN)
-            binding.itemHotelRestaurant.setColorFilter(restaurantColor, android.graphics.PorterDuff.Mode.SRC_IN)
+            binding.itemHotelReception.setColorFilter(
+                receptionColor,
+                android.graphics.PorterDuff.Mode.SRC_IN
+            )
+            binding.itemHotelRestaurant.setColorFilter(
+                restaurantColor,
+                android.graphics.PorterDuff.Mode.SRC_IN
+            )
         }
     }
 

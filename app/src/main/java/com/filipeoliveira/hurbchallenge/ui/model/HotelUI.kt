@@ -19,53 +19,53 @@ data class HotelUI(
 
     fun hasBarAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_BAR
+            it.name == AmenityUI.AMENITY_BAR
         } != null
     }
 
     fun hasWheelchairAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_WHEELCHAIR
+            it.name == AmenityUI.AMENITY_WHEELCHAIR
         } != null
     }
     fun hasTvAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_TV
+            it.name == AmenityUI.AMENITY_TV
         } != null
     }
     fun hasToiletAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_TOILET
+            it.name == AmenityUI.AMENITY_TOILET
         } != null
     }
     fun hasParkingAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_PARKING
+            it.name == AmenityUI.AMENITY_PARKING
         } != null
     }
     fun hasWifiAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_WIFI
+            it.name == AmenityUI.AMENITY_WIFI
         } != null
     }
     fun hasPoolAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_POOL
+            it.name == AmenityUI.AMENITY_POOL
         } != null
     }
     fun hasReceptionAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_RECEPTION
+            it.name == AmenityUI.AMENITY_RECEPTION
         } != null
     }
     fun hasRestaurantAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_RESTAURANT
+            it.name == AmenityUI.AMENITY_RESTAURANT
         } != null
     }
     fun hasGymAmenity(): Boolean {
         return amenities.find {
-            it.term == AmenityUI.AMENITY_GYM
+            it.name == AmenityUI.AMENITY_GYM
         } != null
     }
 

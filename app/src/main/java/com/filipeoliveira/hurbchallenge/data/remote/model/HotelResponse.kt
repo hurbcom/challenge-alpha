@@ -28,6 +28,8 @@ data class HotelResponse(
     @SerializedName("tags")
     val tags: List<String>?,
     @SerializedName("quantityDescriptors")
-    val quantityDescriptors: QuantityDescriptorsResponse?
+    val quantityDescriptors: QuantityDescriptorsResponse?,
+    @SerializedName("address")
+    val address: AddressResponse?
 
 )
