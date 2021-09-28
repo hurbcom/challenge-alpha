@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_micro"
-            android:text="@{hotelUI.address.cityAndStateAsString}"
+            android:text="@{hotelUI.addressCityAndState}"
             tools:text="Rio de Janeiro, Rio de Janeiro" />
 
         <com.google.android.material.card.MaterialCardView

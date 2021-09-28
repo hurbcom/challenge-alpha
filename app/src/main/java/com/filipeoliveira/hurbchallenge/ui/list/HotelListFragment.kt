@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.filipeoliveira.hurbchallenge.R
@@ -34,8 +35,8 @@ class HotelListFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        hotelAdapter = HotelListAdapter(){
-            val bundle = bundleOf(HotelDetailFragment.TAG_HOTEL to it)
+        hotelAdapter = HotelListAdapter(){ hotel, imageView ->
+            val bundle = bundleOf(HotelDetailFragment.TAG_HOTEL to hotel)
             findNavController().navigate(R.id.to_hotelDetailFragment, bundle)
         }
 

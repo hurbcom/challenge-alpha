@@ -1,23 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="hotelUI"
+            type="com.filipeoliveira.hurbchallenge.ui.model.HotelUI" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/frag_hotel_detail_root"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/fragment_hotel_detail_scene">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/frag_hotel_detail_rc"
+        <View
+            android:id="@+id/frag_hotel_detail_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+        <ImageView
+            android:id="@+id/frag_hotel_detail_cover"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <TextView
+            android:id="@+id/frag_hotel_detail_toolbar_text"
+            style="@style/Item.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_medium"
+            android:gravity="center_vertical"
+            android:text="@{hotelUI.name}"
+            android:textColor="?attr/colorOnSecondary"
+            app:layout_constraintBottom_toBottomOf="@id/frag_hotel_detail_toolbar"
+            app:layout_constraintEnd_toEndOf="@id/frag_hotel_detail_toolbar"
+            app:layout_constraintStart_toEndOf="@id/frag_hotel_detail_back_btn"
+            app:layout_constraintTop_toTopOf="@id/frag_hotel_detail_toolbar"
+            tools:text="Hotel do lugar bonito" />
+
+        <ImageView
+            android:id="@+id/frag_hotel_detail_back_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="@dimen/dimen_tiny"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:background="?attr/colorSecondary"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="@id/frag_hotel_detail_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/frag_hotel_detail_toolbar"
+            app:tint="?attr/colorOnSecondary" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/frag_hotel_detail_sv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="1024:683"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/frag_hotel_detail_cover">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/frag_hotel_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/frag_hotel_detail_rc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/frag_hotel_detail_name"
+                    style="@style/Item.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_medium"
+                    android:layout_marginTop="@dimen/dimen_medium"
+                    android:layout_marginEnd="@dimen/dimen_medium"
+                    android:text="@{hotelUI.name}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_hotel_detail_rc"
+                    tools:text="Hotel do lugar bonito" />
+
+                <TextView
+                    android:id="@+id/frag_hotel_detail_location"
+                    style="@style/Item.Subtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_medium"
+                    android:layout_marginTop="@dimen/dimen_tiny"
+                    android:layout_marginEnd="@dimen/dimen_medium"
+                    android:text="@{hotelUI.addressCityAndState}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_hotel_detail_name"
+                    tools:text="Hotel do lugar bonito" />
+
+                <TextView
+                    android:id="@+id/frag_hotel_detail_description"
+                    style="@style/Item.Quote"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_medium"
+                    android:layout_marginTop="@dimen/dimen_medium"
+                    android:layout_marginEnd="@dimen/dimen_medium"
+                    android:text="@{hotelUI.description}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_hotel_detail_location"
+                    tools:text="Hotel do lugar bonito que fica em um lugar bonito" />
+
+                <RatingBar
+                    android:id="@+id/frag_hotel_detail_rating_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_small"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="@{hotelUI.stars}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_hotel_detail_description" />
+
+                <LinearLayout
+                    android:id="@+id/frag_hotel_detail_amenity_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_medium"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/extra_padding_for_floating_action_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_hotel_detail_rating_bar">
+
+                    <TextView
+                        android:id="@+id/frag_hotel_detail_amenity_label"
+                        style="@style/Item.Subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@string/label_available_amenity"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/frag_hotel_detail_name"
+                        tools:text="Hotel do lugar bonito" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/frag_hotel_detail_go_to_hurb_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isVisible="@{!hotelUI.url.empty}"
+            android:paddingEnd="@dimen/dimen_small"
+            android:paddingStart="@dimen/dimen_small"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/dimen_medium"
+            android:text="@string/label_check_on_hurb"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
 </layout>

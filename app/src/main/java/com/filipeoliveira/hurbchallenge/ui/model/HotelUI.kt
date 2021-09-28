@@ -71,4 +71,6 @@ data class HotelUI(
         } != null
     }
 
+    fun getAddressCityAndState(): String = address.getCityAndStateAsString()
+
 }

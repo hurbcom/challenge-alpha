@@ -2,6 +2,7 @@ package com.filipeoliveira.hurbchallenge.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -10,7 +11,7 @@ import com.filipeoliveira.hurbchallenge.databinding.ItemHotelBinding
 import com.filipeoliveira.hurbchallenge.ui.model.HotelUI
 
 class HotelListAdapter(
-    val onClick: (HotelUI) -> Unit
+    val onClick: (HotelUI, ImageView) -> Unit
 ) : RecyclerView.Adapter<HotelListAdapter.HotelListViewHolder>() {
 
     private val hotelList = mutableListOf<HotelUI>()
@@ -73,7 +74,7 @@ class HotelListAdapter(
             )
 
             binding.root.setOnClickListener {
-                onClick(hotel)
+                onClick(hotel, binding.itemHotelImage)
             }
         }
     }
