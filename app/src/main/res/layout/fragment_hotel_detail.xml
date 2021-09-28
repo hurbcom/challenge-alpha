@@ -111,6 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dimen_medium"
                     android:layout_marginTop="@dimen/dimen_medium"
+                    android:gravity="center"
                     android:layout_marginEnd="@dimen/dimen_medium"
                     android:text="@{hotelUI.description}"
                     app:layout_constraintEnd_toEndOf="parent"
