@@ -45,8 +45,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:paddingBottom="@dimen/dimen_medium"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen_medium">
 
                 <ImageView
                     android:id="@+id/item_hotel_image"
@@ -69,16 +69,30 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     tools:text="150.00 BRL" />
 
+                <TextView
+                    android:id="@+id/item_hotel_small_description"
+                    style="@style/Item.Subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_small"
+                    android:layout_marginTop="@dimen/dimen_small"
+                    android:layout_marginEnd="@dimen/dimen_small"
+                    android:text="@{hotelUI.smallDescription}"
+                    android:textStyle="italic"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/item_hotel_image"
+                    tools:text="lalalalalalallalalaalalal" />
+
                 <ImageView
                     android:id="@+id/item_hotel_gym"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_gym"
                     android:layout_marginTop="@dimen/dimen_medium"
+                    android:src="@drawable/ic_gym"
                     app:layout_constraintEnd_toStartOf="@+id/item_hotel_wheel_chair"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/item_hotel_image" />
+                    app:layout_constraintTop_toBottomOf="@id/item_hotel_small_description" />
 
                 <ImageView
                     android:id="@+id/item_hotel_wheel_chair"
@@ -124,8 +138,8 @@
                     android:id="@+id/item_hotel_parking"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_parking"
                     android:layout_marginTop="@dimen/dimen_medium"
+                    android:src="@drawable/ic_parking"
                     app:layout_constraintEnd_toStartOf="@+id/item_hotel_wifi"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
