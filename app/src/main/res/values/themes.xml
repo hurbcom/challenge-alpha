@@ -27,4 +27,9 @@
     <style name="Item.Quote" parent="TextAppearance.AppCompat.Subhead">
         <item name="android:textStyle">italic</item>
     </style>
+
+    <style name="ThemeOverlay.AppTheme.TextInputEditText.Outlined" parent="">
+        <item name="colorControlNormal">@color/primaryTextColor</item>
+        <item name="colorPrimary">@color/primaryTextColor</item>
+    </style>
 </resources>

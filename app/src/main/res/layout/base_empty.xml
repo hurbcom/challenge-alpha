@@ -28,7 +28,7 @@
             android:layout_marginTop="@dimen/dimen_small"
             android:layout_marginEnd="@dimen/dimen_medium"
             android:gravity="center"
-            tools:text="@string/hint_empty_hotel_response"
+            android:text="@string/hint_empty_hotel_response"
             android:textColor="?attr/colorOnPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.filipeoliveira.hurbchallenge.R
 import com.filipeoliveira.hurbchallenge.databinding.FragmentHotelListBinding
@@ -20,6 +21,7 @@ class HotelListFragment : Fragment() {
 
     private lateinit var binding: FragmentHotelListBinding
     private lateinit var hotelAdapter: HotelListAdapter
+    private lateinit var headerAdapter: HeaderSearchAdapter
     private val viewModel: HotelListViewModel by sharedViewModel()
 
     override fun onCreateView(
@@ -35,15 +37,21 @@ class HotelListFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        hotelAdapter = HotelListAdapter(){ hotel, imageView ->
+        headerAdapter = HeaderSearchAdapter(){
+            viewModel.loadHotelList(query = it)
+        }
+
+        hotelAdapter = HotelListAdapter(){ hotel ->
             val bundle = bundleOf(HotelDetailFragment.TAG_HOTEL to hotel)
             findNavController().navigate(R.id.to_hotelDetailFragment, bundle)
         }
 
+        val concatAdapter = ConcatAdapter(headerAdapter, hotelAdapter)
+
         binding.fragHotelListRcv.apply {
             val lm = LinearLayoutManager(requireContext())
             layoutManager = lm
-            adapter = hotelAdapter
+            adapter = concatAdapter
             addItemDecoration(
                 SpaceItemDecoration(
                     spaceTop = 16,
@@ -54,6 +62,10 @@ class HotelListFragment : Fragment() {
                 )
             )
         }
+    }
+
+    private fun onQueryInserted(query: String) {
+        Toast.makeText(requireContext(), query, Toast.LENGTH_SHORT).show()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -73,6 +85,8 @@ class HotelListFragment : Fragment() {
         viewModel.hotelList.observe(viewLifecycleOwner) {
             when (it) {
                 is UIState.Success -> {
+                    hotelAdapter.clear()
+
                     if(it.data.isNotEmpty()){
                         hotelAdapter.setData(it.data)
                         binding.showRecyclerView()
@@ -81,9 +95,11 @@ class HotelListFragment : Fragment() {
                     }
                 }
                 is UIState.Loading -> {
+                    hotelAdapter.clear()
                     binding.showLoading()
                 }
                 is UIState.Error -> {
+                    hotelAdapter.clear()
                     binding.viewError.baseErrorText.text = getString(it.message)
                     binding.showError()
                 }

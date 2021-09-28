@@ -11,7 +11,7 @@ import com.filipeoliveira.hurbchallenge.databinding.ItemHotelBinding
 import com.filipeoliveira.hurbchallenge.ui.model.HotelUI
 
 class HotelListAdapter(
-    val onClick: (HotelUI, ImageView) -> Unit
+    val onClick: (HotelUI) -> Unit
 ) : RecyclerView.Adapter<HotelListAdapter.HotelListViewHolder>() {
 
     private val hotelList = mutableListOf<HotelUI>()
@@ -74,7 +74,7 @@ class HotelListAdapter(
             )
 
             binding.root.setOnClickListener {
-                onClick(hotel, binding.itemHotelImage)
+                onClick(hotel)
             }
         }
     }
@@ -96,6 +96,11 @@ class HotelListAdapter(
 
     fun setData(hotels: List<HotelUI>) {
         hotelList.addAll(hotels)
+        notifyDataSetChanged()
+    }
+
+    fun clear() {
+        hotelList.clear()
         notifyDataSetChanged()
     }
 }

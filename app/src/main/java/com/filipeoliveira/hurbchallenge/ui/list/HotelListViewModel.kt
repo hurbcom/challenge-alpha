@@ -22,14 +22,14 @@ class HotelListViewModel(
         get() = _hotelList
 
 
-    fun loadHotelList() {
+    fun loadHotelList(query: String = "") {
         _hotelList.value = UIState.Loading
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = repository.getHotelList()
+                val response = repository.getHotelList(query)
                 Thread.sleep(2000)
 
-                when((1..10).random()){
+                when ((1..20).random()) {
                     1 -> throw UnknownHostException()
                     2 -> throw Exception()
                     else -> {
@@ -37,10 +37,10 @@ class HotelListViewModel(
                     }
                 }
 
-            } catch (e: UnknownHostException){
+            } catch (e: UnknownHostException) {
                 Log.e(TAG, e.stackTraceToString())
                 _hotelList.postValue(UIState.Error(R.string.hint_unavailable_network_error))
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 _hotelList.postValue(UIState.Error(R.string.hint_generic_network_error))
             }
         }

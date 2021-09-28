@@ -3,10 +3,12 @@
 
     <string name="hint_unavailable_network_error">Não foi possível conectar ao servidor. Por favor, verifique o Wi-fi / Dados móveis e toque para tentar novamente</string>
     <string name="hint_generic_network_error">Ocorreu um erro. Por favor, toque para tentar novamente ou tente novamente em alguns instantes.</string>
-    <string name="hint_empty_hotel_response">O copo acima está meio cheio, mas essa página está vazia. Não há itens para exibir.</string>
+    <string name="hint_empty_hotel_response">O copo acima está meio cheio, mas essa página está vazia. Não há hotéis para exibir.</string>
+    <string name="hint_search_location">Busque por cidade, estado ou país</string>
+    <string name="hint_loading">Carregando</string>
 
     <string name="label_hotel">Hotel</string>
-    <string name="hint_loading">Carregando</string>
     <string name="label_available_amenity">Disponibiliza</string>
     <string name="label_check_on_hurb">Ver no Hurb</string>
+    <string name="label_search">Busca</string>
 </resources>

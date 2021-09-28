@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frag_hotel_list_root"
@@ -8,26 +9,38 @@
 
         <include
             android:id="@+id/frag_hotel_detail_app_bar"
-            layout="@layout/app_bar"/>
+            layout="@layout/app_bar" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/frag_hotel_list_rcv"
             android:layout_width="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/frag_hotel_detail_app_bar" />
 
         <include
             android:id="@+id/view_loading"
-            layout="@layout/base_loading" />
+            layout="@layout/base_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_hotel_list_rcv" />
 
         <include
             android:id="@+id/view_error"
-            layout="@layout/base_error" />
+            layout="@layout/base_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_hotel_list_rcv" />
 
         <include
             android:id="@+id/view_empty"
-            layout="@layout/base_empty" />
+            layout="@layout/base_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_hotel_list_rcv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

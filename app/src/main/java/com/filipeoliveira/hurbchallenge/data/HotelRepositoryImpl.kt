@@ -6,13 +6,14 @@ import com.filipeoliveira.hurbchallenge.data.remote.model.AmenitiesResponse
 import com.filipeoliveira.hurbchallenge.data.remote.model.ImageResponse
 import com.filipeoliveira.hurbchallenge.data.remote.model.QuantityDescriptorsResponse
 import com.filipeoliveira.hurbchallenge.ui.model.*
+import java.util.Collections.emptyList
 
 class HotelRepositoryImpl(
     val remoteDataSource: HotelDataSource
 ) : HotelRepository{
 
-    override fun getHotelList(): List<HotelUI> {
-        val hotelList = remoteDataSource.getHotelList().map {
+    override fun getHotelList(query: String): List<HotelUI> {
+        val hotelList = remoteDataSource.getHotelList(query).map {
             HotelUI(
                 id = it.id ?: "",
                 smallDescription = it.smallDescription ?: "",
