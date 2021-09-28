@@ -74,12 +74,10 @@ class HotelDetailFragment(): Fragment() {
     }
 
     private fun setupRecyclerView() {
-        with(binding.fragHotelDetailRc){
-            val lm = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
-            layoutManager = lm
-            adapter = imageAdapter
-            addItemDecoration(SpaceLeftAndRightItemDecoration(spaceRight = 16, spaceLeft = 16))
-        }
+        val lm = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+        binding.fragHotelDetailRc.layoutManager = lm
+        binding.fragHotelDetailRc.adapter = imageAdapter
+        binding.fragHotelDetailRc.addItemDecoration(SpaceLeftAndRightItemDecoration(spaceRight = 16, spaceLeft = 16))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
