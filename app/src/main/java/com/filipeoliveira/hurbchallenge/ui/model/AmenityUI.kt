@@ -1,8 +1,10 @@
 package com.filipeoliveira.hurbchallenge.ui.model
 
+import java.io.Serializable
+
 data class AmenityUI(
     val name: String
-) {
+): Serializable {
 
     companion object {
         const val AMENITY_BAR = "Bar"
