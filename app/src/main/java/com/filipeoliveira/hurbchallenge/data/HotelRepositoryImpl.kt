@@ -1,6 +1,8 @@
 package com.filipeoliveira.hurbchallenge.data
 
-import com.filipeoliveira.hurbchallenge.data.remote.HotelDataSource
+import com.filipeoliveira.hurbchallenge.data.local.HotelLocalDataSource
+import com.filipeoliveira.hurbchallenge.data.local.model.HotelDB
+import com.filipeoliveira.hurbchallenge.data.remote.HotelRemoteDataSource
 import com.filipeoliveira.hurbchallenge.data.remote.model.AddressResponse
 import com.filipeoliveira.hurbchallenge.data.remote.model.AmenityResponse
 import com.filipeoliveira.hurbchallenge.data.remote.model.ImageResponse
@@ -9,8 +11,9 @@ import com.filipeoliveira.hurbchallenge.ui.model.*
 import java.util.Collections.emptyList
 
 class HotelRepositoryImpl(
-    val remoteDataSource: HotelDataSource
-) : HotelRepository{
+    val remoteDataSource: HotelRemoteDataSource,
+    val localDataSource: HotelLocalDataSource
+) : HotelRepository {
 
     override fun getHotelList(query: String, enabledFilters: List<String>): HotelInfoUI {
         val response = remoteDataSource.getHotelList(query, enabledFilters)
@@ -48,6 +51,101 @@ class HotelRepositoryImpl(
         return HotelInfoUI(filters = filterUI, hotelList = hotelList)
     }
 
+    override fun getFavoriteHotels(): List<HotelUI> {
+        val hotelList = localDataSource.getFavoriteHotels().map {
+            HotelUI(
+                id = it.id,
+                smallDescription = it.smallDescription,
+                amenities = getAmenityUIFromDB(it),
+                priceCurrency = PriceUI(
+                    currency = it.priceCurrency,
+                    pricePerDay = it.priceValue
+                ),
+                huFreeCancellation = true,
+                image = it.image,
+                name = it.name,
+                url = it.url,
+                description = it.description,
+                stars = it.stars,
+                images = getImagesUIFromDB(it),
+                tags = emptyList(),
+                quantityDescriptors = QuantityDescriptorsUI(0, 0, 0),
+                address = AddressUI(
+                    state = it.state,
+                    street = it.street,
+                    country = it.country,
+                    city = it.city
+                )
+            )
+        }
+
+        return hotelList
+    }
+
+    private fun getImagesUIFromDB(it: HotelDB): List<ImageUI> {
+        val imageUIList = emptyList<ImageUI>()
+
+        for (imageURL in it.images) {
+            imageUIList.add(
+                ImageUI(
+                    url = imageURL,
+                    description = ""
+                )
+            )
+        }
+
+        return imageUIList
+    }
+
+    private fun getAmenityUIFromDB(it: HotelDB): List<AmenityUI> {
+        val amenitiesList = emptyList<AmenityUI>()
+        val amenitiesFromDB = it.amenities
+
+        for (amenity in amenitiesFromDB) {
+            amenitiesList.add(
+                AmenityUI(
+                    name = amenity
+                )
+            )
+        }
+
+        return amenitiesList
+    }
+
+    override fun addToFavorites(hotelUI: HotelUI) {
+        localDataSource.addToFavorites(
+            HotelDB(
+                id = hotelUI.id,
+                amenities = hotelUI.amenities.map {
+                    it.name
+                },
+                priceCurrency = hotelUI.priceCurrency.currency,
+                priceValue = hotelUI.priceCurrency.pricePerDay,
+                image = hotelUI.image,
+                name = hotelUI.name,
+                url = hotelUI.url,
+                description = hotelUI.description,
+                stars = hotelUI.stars,
+                images = hotelUI.images.map {
+                    it.url
+                },
+                city = hotelUI.address.city,
+                street = hotelUI.address.street,
+                state = hotelUI.address.state,
+                country = hotelUI.address.country,
+                smallDescription = hotelUI.smallDescription
+            )
+        )
+    }
+
+    override fun removeFromFavorites(hotelUI: HotelUI) {
+        localDataSource.removeFromFavorites(hotelUI.id)
+    }
+
+    override fun isFavorite(hotelUI: HotelUI): Boolean {
+        localDataSource.isFavorite(hotelUI.id)
+    }
+
     private fun getAddressUIFromResponse(address: AddressResponse?): AddressUI {
         return AddressUI(
             city = address?.city ?: "",
@@ -58,7 +156,7 @@ class HotelRepositoryImpl(
     }
 
     private fun getQuantityDescriptionFromResponse(quantityDescriptors: QuantityDescriptorsResponse?): QuantityDescriptorsUI {
-        return if (quantityDescriptors == null){
+        return if (quantityDescriptors == null) {
             QuantityDescriptorsUI(
                 maxChildren = 0,
                 maxFreeChildrenAge = 0,

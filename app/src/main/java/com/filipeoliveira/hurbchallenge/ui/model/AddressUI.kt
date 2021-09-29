@@ -8,9 +8,6 @@ data class AddressUI(
     val street: String,
     val state: String
 ): Serializable {
-    fun getStreetAndCityAsString(): String {
-        return "$street, $city"
-    }
 
     fun getCityAndStateAsString(): String {
         return "$city, $state"

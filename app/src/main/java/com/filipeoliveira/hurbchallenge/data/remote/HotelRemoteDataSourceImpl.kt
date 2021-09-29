@@ -5,9 +5,9 @@ import com.filipeoliveira.hurbchallenge.data.remote.model.HotelsInfoResponse
 import com.filipeoliveira.hurbchallenge.data.remote.model.HotelResponse
 import com.google.gson.Gson
 
-class HotelDataSourceImpl(
+class HotelRemoteDataSourceImpl(
     val assetManager: AssetManager
-) : HotelDataSource {
+) : HotelRemoteDataSource {
 
     override fun getHotelList(query: String, enabledFilters: List<String>): HotelsInfoResponse {
 //        Em caso de requests sendo realmente feitos
