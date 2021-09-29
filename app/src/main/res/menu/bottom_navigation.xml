@@ -7,4 +7,10 @@
         android:icon="@drawable/ic_hotel"
         app:showAsAction="always"/>
 
+    <item
+        android:id="@+id/menu_item_favorite"
+        android:title="@string/label_favorite"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_heart_filled"/>
+
 </menu>

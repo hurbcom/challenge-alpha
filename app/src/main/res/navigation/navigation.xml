@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation.xml"
     app:startDestination="@id/hotelListFragment">
 
     <fragment
         android:id="@+id/hotelListFragment"
         android:name="com.filipeoliveira.hurbchallenge.ui.list.HotelListFragment"
-        android:label="HotelListFragment">
+        android:label="HotelListFragment"
+        tools:layout="@layout/fragment_hotel_list">
         <action
             android:id="@+id/to_hotelDetailFragment"
             app:destination="@id/hotelDetailFragment"
             app:popUpTo="@id/hotelListFragment"
             app:popUpToInclusive="false" />
     </fragment>
+
     <fragment
         android:id="@+id/hotelDetailFragment"
         android:name="com.filipeoliveira.hurbchallenge.ui.detail.HotelDetailFragment"
-        android:label="HotelDetailFragment" >
+        android:label="HotelDetailFragment"
+        tools:layout="@layout/fragment_hotel_detail"/>
+
+    <fragment
+        android:id="@+id/hotelFavoriteListFragment"
+        android:name="com.filipeoliveira.hurbchallenge.ui.favorite.HotelFavoriteListFragment"
+        android:label="HotelFavoriteListFragment"
+        tools:layout="@layout/fragment_hotel_list">
+        <action
+            android:id="@+id/action_hotelFavoriteListFragment_to_hotelDetailFragment"
+            app:destination="@id/hotelDetailFragment" />
     </fragment>
+
+    <action
+        android:id="@+id/to_hotelListFragment"
+        app:destination="@id/hotelListFragment" />
+
+    <action
+        android:id="@+id/to_hotelFavoriteListFragment"
+        app:destination="@id/hotelFavoriteListFragment" />
 </navigation>

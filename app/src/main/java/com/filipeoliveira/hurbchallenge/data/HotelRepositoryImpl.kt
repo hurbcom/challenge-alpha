@@ -88,7 +88,7 @@ class HotelRepositoryImpl(
         for (imageURL in it.images) {
             imageUIList.add(
                 ImageUI(
-                    url = imageURL,
+                    url = imageURL.toString(),
                     description = ""
                 )
             )
@@ -99,7 +99,7 @@ class HotelRepositoryImpl(
 
     private fun getAmenityUIFromDB(it: HotelDB): List<AmenityUI> {
         val amenitiesList = emptyList<AmenityUI>()
-        val amenitiesFromDB = it.amenities
+        val amenitiesFromDB = it.getAmenitiesAsList()
 
         for (amenity in amenitiesFromDB) {
             amenitiesList.add(
@@ -116,9 +116,7 @@ class HotelRepositoryImpl(
         localDataSource.addToFavorites(
             HotelDB(
                 id = hotelUI.id,
-                amenities = hotelUI.amenities.map {
-                    it.name
-                },
+                amenities = hotelUI.getAmenitiesAsString(),
                 priceCurrency = hotelUI.priceCurrency.currency,
                 priceValue = hotelUI.priceCurrency.pricePerDay,
                 image = hotelUI.image,
@@ -126,9 +124,7 @@ class HotelRepositoryImpl(
                 url = hotelUI.url,
                 description = hotelUI.description,
                 stars = hotelUI.stars,
-                images = hotelUI.images.map {
-                    it.url
-                },
+                images = hotelUI.getGalleryImagesURLAsString(),
                 city = hotelUI.address.city,
                 street = hotelUI.address.street,
                 state = hotelUI.address.state,
@@ -143,7 +139,7 @@ class HotelRepositoryImpl(
     }
 
     override fun isFavorite(hotelUI: HotelUI): Boolean {
-        localDataSource.isFavorite(hotelUI.id)
+        return localDataSource.isFavorite(hotelUI.id)
     }
 
     private fun getAddressUIFromResponse(address: AddressResponse?): AddressUI {

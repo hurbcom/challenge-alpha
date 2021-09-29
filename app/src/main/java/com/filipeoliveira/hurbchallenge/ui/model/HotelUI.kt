@@ -73,4 +73,27 @@ data class HotelUI(
 
     fun getAddressCityAndState(): String = address.getCityAndStateAsString()
 
+    fun getAmenitiesAsString(): String {
+        var string = ""
+
+        for(amenity in amenities){
+            string = "$string$amenity, "
+        }
+
+        string.removeSuffix(", ")
+
+        return string
+    }
+
+    fun getGalleryImagesURLAsString(): String {
+        var string = ""
+
+        for(image in images){
+            string = "$string${image.url}, "
+        }
+
+        string.removeSuffix(", ")
+
+        return string
+    }
 }

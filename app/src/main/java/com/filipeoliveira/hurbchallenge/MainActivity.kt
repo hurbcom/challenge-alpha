@@ -30,8 +30,28 @@ class MainActivity : AppCompatActivity() {
                     bottomNavigationView.findItem(R.id.menu_item_hotel).isChecked = true
                     showBottomNavigation()
                 }
+                R.id.hotelFavoriteListFragment -> {
+                    bottomNavigationView.findItem(R.id.menu_item_favorite).isChecked = true
+                    showBottomNavigation()
+                }
                 else -> {
                     hideBottomNavigation()
+                }
+            }
+        }
+
+        binding.activityMainBottomNavigation.setOnItemSelectedListener { menuItem ->
+            return@setOnItemSelectedListener when (menuItem.itemId) {
+                R.id.menu_item_hotel -> {
+                    navController?.navigate(R.id.to_hotelListFragment)
+                    true
+                }
+                R.id.menu_item_favorite -> {
+                    navController?.navigate(R.id.to_hotelFavoriteListFragment)
+                    true
+                }
+                else -> {
+                    false
                 }
             }
         }

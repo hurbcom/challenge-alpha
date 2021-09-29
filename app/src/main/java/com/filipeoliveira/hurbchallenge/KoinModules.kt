@@ -5,6 +5,7 @@ import com.filipeoliveira.hurbchallenge.data.HotelRepositoryImpl
 import com.filipeoliveira.hurbchallenge.data.local.Database
 import com.filipeoliveira.hurbchallenge.data.local.HotelLocalDataSourceImpl
 import com.filipeoliveira.hurbchallenge.data.remote.HotelRemoteDataSourceImpl
+import com.filipeoliveira.hurbchallenge.ui.favorite.HotelFavoriteListViewModel
 import com.filipeoliveira.hurbchallenge.ui.list.HotelListViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -34,6 +35,12 @@ val modules = module {
 
     viewModel {
         HotelListViewModel(
+            repository = get<HotelRepositoryImpl>()
+        )
+    }
+
+    viewModel {
+        HotelFavoriteListViewModel(
             repository = get<HotelRepositoryImpl>()
         )
     }
