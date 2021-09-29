@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,14 +22,19 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.filipeoliveira.hurbchallenge.R
 import com.filipeoliveira.hurbchallenge.databinding.FragmentHotelDetailBinding
+import com.filipeoliveira.hurbchallenge.ui.UIState
+import com.filipeoliveira.hurbchallenge.ui.favorite.HotelFavoriteListViewModel
 import com.filipeoliveira.hurbchallenge.ui.model.HotelUI
 import com.filipeoliveira.hurbchallenge.ui.utils.SpaceLeftAndRightItemDecoration
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class HotelDetailFragment(): Fragment() {
+class HotelDetailFragment() : Fragment() {
 
     private lateinit var binding: FragmentHotelDetailBinding
     private lateinit var imageAdapter: RecyclerViewImageAdapter
     private lateinit var hotelUI: HotelUI
+    private val viewModel: HotelFavoriteListViewModel by sharedViewModel()
+    private var isInFavorite: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,10 +56,10 @@ class HotelDetailFragment(): Fragment() {
 
     private fun setupAmenityList() {
         val amenityList = hotelUI.amenities
-        if (amenityList.isEmpty()){
+        if (amenityList.isEmpty()) {
             binding.fragHotelDetailAmenityContainer.visibility = View.GONE
         } else {
-            for (amenity in amenityList){
+            for (amenity in amenityList) {
                 val textView: TextView = getAmenityItemTextView()
                 textView.text = amenity.name
                 binding.fragHotelDetailAmenityContainer.addView(textView)
@@ -61,8 +68,11 @@ class HotelDetailFragment(): Fragment() {
     }
 
     private fun getAmenityItemTextView(): TextView {
-        val textView =  TextView(requireContext())
-        val layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        val textView = TextView(requireContext())
+        val layoutParams = LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
         layoutParams.setMargins(
             0,
             8,
@@ -77,14 +87,62 @@ class HotelDetailFragment(): Fragment() {
         val lm = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
         binding.fragHotelDetailRc.layoutManager = lm
         binding.fragHotelDetailRc.adapter = imageAdapter
-        binding.fragHotelDetailRc.addItemDecoration(SpaceLeftAndRightItemDecoration(spaceRight = 16, spaceLeft = 16))
+        binding.fragHotelDetailRc.addItemDecoration(
+            SpaceLeftAndRightItemDecoration(
+                spaceRight = 16,
+                spaceLeft = 16
+            )
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupObservers()
+        setupListeners()
         setImagesToRecyclerView()
         setupCoverImage()
-        setupListeners()
+        viewModel.checkIfItsInFavorites(hotelUI = hotelUI)
+    }
+
+    private fun setupObservers() {
+        viewModel.isInFavorite.observe(viewLifecycleOwner) {
+            when (it) {
+                is UIState.Success -> {
+                    isInFavorite = it.data
+                    updateFavoriteButton(isFavorite = it.data)
+                }
+                else -> {
+                    binding.fragHotelDetailFavorite.visibility = View.INVISIBLE
+                }
+            }
+        }
+
+        viewModel.databaseOperation.observe(viewLifecycleOwner) {
+            when (it) {
+                is UIState.Success -> {
+                    isInFavorite = !isInFavorite
+                    updateFavoriteButton(isInFavorite)
+                    Toast.makeText(requireContext(), it.data, Toast.LENGTH_SHORT).show()
+                }
+                is UIState.Error -> {
+                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                }
+            }
+        }
+    }
+
+    private fun updateFavoriteButton(isFavorite: Boolean) {
+        if (isFavorite) {
+            binding.fragHotelDetailFavorite.setImageDrawable(
+                ContextCompat.getDrawable(requireContext(), R.drawable.ic_heart_filled)
+            )
+        } else {
+            binding.fragHotelDetailFavorite.setImageDrawable(
+                ContextCompat.getDrawable(requireContext(), R.drawable.ic_heart_outlined)
+            )
+        }
     }
 
     private fun setupListeners() {
@@ -95,6 +153,13 @@ class HotelDetailFragment(): Fragment() {
         }
         binding.fragHotelDetailBackBtn.setOnClickListener {
             findNavController().popBackStack()
+        }
+        binding.fragHotelDetailFavorite.setOnClickListener {
+            if (isInFavorite) {
+                viewModel.removeFromFavorite(hotelUI)
+            } else {
+                viewModel.addToFavorite(hotelUI)
+            }
         }
     }
 
@@ -110,7 +175,7 @@ class HotelDetailFragment(): Fragment() {
         Glide.with(requireContext())
             .load(imageUrl)
             .placeholder(R.drawable.ic_image_placeholder)
-            .listener(object : RequestListener<Drawable>{
+            .listener(object : RequestListener<Drawable> {
                 override fun onLoadFailed(
                     e: GlideException?,
                     model: Any?,

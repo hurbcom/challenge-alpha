@@ -83,12 +83,15 @@ class HotelRepositoryImpl(
     }
 
     private fun getImagesUIFromDB(it: HotelDB): List<ImageUI> {
-        val imageUIList = emptyList<ImageUI>()
+        val imageUIList = mutableListOf<ImageUI>()
 
-        for (imageURL in it.images) {
+        val imagesFromDB = it.images.split(",")
+
+
+        for (imageURL in imagesFromDB) {
             imageUIList.add(
                 ImageUI(
-                    url = imageURL.toString(),
+                    url = imageURL,
                     description = ""
                 )
             )
@@ -98,7 +101,7 @@ class HotelRepositoryImpl(
     }
 
     private fun getAmenityUIFromDB(it: HotelDB): List<AmenityUI> {
-        val amenitiesList = emptyList<AmenityUI>()
+        val amenitiesList = mutableListOf<AmenityUI>()
         val amenitiesFromDB = it.getAmenitiesAsList()
 
         for (amenity in amenitiesFromDB) {

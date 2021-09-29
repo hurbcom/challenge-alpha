@@ -6,6 +6,7 @@
     <string name="hint_empty_hotel_response">O copo acima está meio cheio, mas essa página está vazia. Não há hotéis para exibir.</string>
     <string name="hint_search_location">Busque por cidade, estado ou país</string>
     <string name="hint_loading">Carregando</string>
+    <string name="hint_operation_error_generic">Não foi possível completar essa operação. Tente novamente.</string>
 
     <string name="label_hotel">Hotel</string>
     <string name="label_available_amenity">Disponibiliza</string>
@@ -13,4 +14,9 @@
     <string name="label_search">Busca</string>
     <string name="label_filter">Filtros</string>
     <string name="label_favorite">Favoritos</string>
+
+    <string name="feedback_save_favorite_success">Adicionado aos favoritos com sucesso!</string>
+    <string name="feedback_save_favorite_error">Erro ao adicionar aos favoritos</string>
+    <string name="feedback_delete_favorite_success">Removido dos favoritos com sucesso!</string>
+    <string name="feedback_delete_favorite_error">Erro ao remover dos favoritos</string>
 </resources>

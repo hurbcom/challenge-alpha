@@ -36,7 +36,7 @@ class HotelFavoriteListFragment: Fragment() {
     private fun setupRecyclerView() {
         hotelAdapter = HotelListAdapter() { hotel ->
             val bundle = bundleOf(HotelDetailFragment.TAG_HOTEL to hotel)
-            findNavController().navigate(R.id.to_hotelDetailFragment, bundle)
+            findNavController().navigate(R.id.action_hotelFavoriteListFragment_to_hotelDetailFragment, bundle)
         }
 
 
@@ -56,8 +56,15 @@ class HotelFavoriteListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupListeners()
         setupObservers()
         viewModel.loadFavoriteHotels()
+    }
+
+    private fun setupListeners() {
+        binding.viewError.root.setOnClickListener {
+            viewModel.loadFavoriteHotels()
+        }
     }
 
     private fun setupObservers() {

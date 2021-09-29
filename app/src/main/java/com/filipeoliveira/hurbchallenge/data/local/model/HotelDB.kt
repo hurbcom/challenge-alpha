@@ -23,7 +23,7 @@ data class HotelDB(
     val street: String
 ) {
     fun getAmenitiesAsList() : List<String>{
-        var list = emptyList<String>()
+        var list = mutableListOf<String>()
 
         val splitString = amenities.split(", ")
 

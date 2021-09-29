@@ -77,7 +77,7 @@ data class HotelUI(
         var string = ""
 
         for(amenity in amenities){
-            string = "$string$amenity, "
+            string = "$string${amenity.name}, "
         }
 
         string.removeSuffix(", ")
@@ -86,13 +86,17 @@ data class HotelUI(
     }
 
     fun getGalleryImagesURLAsString(): String {
-        var string = ""
-
-        for(image in images){
-            string = "$string${image.url}, "
+        var urlList = images.map {
+            it.url
         }
 
-        string.removeSuffix(", ")
+        var string = ""
+        for(url in urlList){
+            string = "$string${url},"
+        }
+
+        string.removeSuffix(",")
+
 
         return string
     }
