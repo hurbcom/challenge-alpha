@@ -4,14 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.filipeoliveira.hurbchallenge.R
 import com.filipeoliveira.hurbchallenge.databinding.FragmentHotelListBinding
+import com.filipeoliveira.hurbchallenge.ui.filter.FilterFragment
 import com.filipeoliveira.hurbchallenge.ui.UIState
 import com.filipeoliveira.hurbchallenge.ui.detail.HotelDetailFragment
 import com.filipeoliveira.hurbchallenge.ui.utils.SpaceItemDecoration
@@ -23,6 +24,7 @@ class HotelListFragment : Fragment() {
     private lateinit var hotelAdapter: HotelListAdapter
     private lateinit var headerAdapter: HeaderSearchAdapter
     private val viewModel: HotelListViewModel by sharedViewModel()
+    private var availableFilters: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,48 +39,72 @@ class HotelListFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        headerAdapter = HeaderSearchAdapter(){
-            viewModel.loadHotelList(query = it)
+        headerAdapter = HeaderSearchAdapter() {
+            onQueryInserted(it)
         }
 
-        hotelAdapter = HotelListAdapter(){ hotel ->
+        hotelAdapter = HotelListAdapter() { hotel ->
             val bundle = bundleOf(HotelDetailFragment.TAG_HOTEL to hotel)
             findNavController().navigate(R.id.to_hotelDetailFragment, bundle)
         }
 
         val concatAdapter = ConcatAdapter(headerAdapter, hotelAdapter)
 
-        binding.fragHotelListRcv.apply {
-            val lm = LinearLayoutManager(requireContext())
-            layoutManager = lm
-            adapter = concatAdapter
-            addItemDecoration(
-                SpaceItemDecoration(
-                    spaceTop = 16,
-                    spaceBottom = 16,
-                    spaceStart = 16,
-                    spaceEnd = 16,
-                    extraSpaceBetweenItems = 64
-                )
+        val lm = LinearLayoutManager(requireContext())
+        binding.fragHotelListRcv.layoutManager = lm
+        binding.fragHotelListRcv.adapter = concatAdapter
+        binding.fragHotelListRcv.addItemDecoration(
+            SpaceItemDecoration(
+                spaceTop = 16,
+                spaceBottom = 16,
+                spaceStart = 16,
+                spaceEnd = 16,
+                extraSpaceBetweenItems = 64
             )
-        }
+        )
     }
 
     private fun onQueryInserted(query: String) {
-        Toast.makeText(requireContext(), query, Toast.LENGTH_SHORT).show()
+        viewModel.loadHotelList(query = query)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
         setupListeners()
-        viewModel.loadHotelList()
     }
 
     private fun setupListeners() {
         binding.viewError.baseErrorRoot.setOnClickListener {
             viewModel.loadHotelList()
         }
+
+        binding.fragHotelListFab.setOnClickListener {
+            openFilterFragment()
+        }
+
+        binding.fragHotelListRcv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+
+                if (dy > 0 && binding.fragHotelListFab.visibility == View.VISIBLE) {
+                    binding.fragHotelListFab.hide();
+
+                } else if (
+                    dy < 0 &&
+                    binding.fragHotelListFab.visibility != View.VISIBLE &&
+                    availableFilters
+                ) {
+                    binding.fragHotelListFab.show();
+                }
+            }
+        })
+    }
+
+    private fun openFilterFragment() {
+        val availableFilters = viewModel.getAvailableFilters()
+        val filterBottomSheet = FilterFragment()
+        filterBottomSheet.arguments = bundleOf(FilterFragment.TAG_FILTERS to availableFilters)
+        filterBottomSheet.show(parentFragmentManager, FilterFragment.TAG)
     }
 
     private fun setupObservers() {
@@ -87,7 +113,8 @@ class HotelListFragment : Fragment() {
                 is UIState.Success -> {
                     hotelAdapter.clear()
 
-                    if(it.data.isNotEmpty()){
+                    if (it.data.isNotEmpty()) {
+                        setHasAvailableFilters()
                         hotelAdapter.setData(it.data)
                         binding.showRecyclerView()
                     } else {
@@ -108,5 +135,10 @@ class HotelListFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun setHasAvailableFilters() {
+        binding.fragHotelListFab.show()
+        availableFilters = true
     }
 }

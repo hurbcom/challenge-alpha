@@ -8,7 +8,7 @@
         android:layout_height="match_parent">
 
         <include
-            android:id="@+id/frag_hotel_detail_app_bar"
+            android:id="@+id/frag_hotel_list_app_bar"
             layout="@layout/app_bar" />
 
 
@@ -16,7 +16,7 @@
             android:id="@+id/frag_hotel_list_rcv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/frag_hotel_detail_app_bar" />
+            app:layout_constraintTop_toBottomOf="@id/frag_hotel_list_app_bar" />
 
         <include
             android:id="@+id/view_loading"
@@ -41,6 +41,17 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frag_hotel_list_rcv" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/frag_hotel_list_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_medium"
+            android:layout_marginBottom="@dimen/dimen_medium"
+            android:src="@drawable/ic_filter"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -8,7 +8,7 @@ data class HotelResponse(
     @SerializedName("smallDescription")
     val smallDescription: String?,
     @SerializedName("amenities")
-    val amenities: List<AmenitiesResponse>?,
+    val amenities: List<AmenityResponse>?,
     @SerializedName("price")
     val price: PriceResponse?,
     @SerializedName("hu_free_cancellation")

@@ -2,7 +2,7 @@ package com.filipeoliveira.hurbchallenge.data
 
 import com.filipeoliveira.hurbchallenge.data.remote.HotelDataSource
 import com.filipeoliveira.hurbchallenge.data.remote.model.AddressResponse
-import com.filipeoliveira.hurbchallenge.data.remote.model.AmenitiesResponse
+import com.filipeoliveira.hurbchallenge.data.remote.model.AmenityResponse
 import com.filipeoliveira.hurbchallenge.data.remote.model.ImageResponse
 import com.filipeoliveira.hurbchallenge.data.remote.model.QuantityDescriptorsResponse
 import com.filipeoliveira.hurbchallenge.ui.model.*
@@ -12,8 +12,9 @@ class HotelRepositoryImpl(
     val remoteDataSource: HotelDataSource
 ) : HotelRepository{
 
-    override fun getHotelList(query: String): List<HotelUI> {
-        val hotelList = remoteDataSource.getHotelList(query).map {
+    override fun getHotelList(query: String, enabledFilters: List<String>): HotelInfoUI {
+        val response = remoteDataSource.getHotelList(query, enabledFilters)
+        val hotelList = response.result.map {
             HotelUI(
                 id = it.id ?: "",
                 smallDescription = it.smallDescription ?: "",
@@ -35,7 +36,16 @@ class HotelRepositoryImpl(
             )
         }
 
-        return hotelList
+        val filterUI = FilterUI(
+            amenities = response.filters.amenities?.map {
+                AmenityUI(
+                    name = it.name,
+                    filter = it.filter
+                )
+            } ?: emptyList()
+        )
+
+        return HotelInfoUI(filters = filterUI, hotelList = hotelList)
     }
 
     private fun getAddressUIFromResponse(address: AddressResponse?): AddressUI {
@@ -74,7 +84,7 @@ class HotelRepositoryImpl(
         }
     }
 
-    private fun getAmenitiesUIListFromResponse(amenities: List<AmenitiesResponse>?): List<AmenityUI> {
+    private fun getAmenitiesUIListFromResponse(amenities: List<AmenityResponse>?): List<AmenityUI> {
         if (amenities.isNullOrEmpty()) return emptyList()
 
         return amenities.map {

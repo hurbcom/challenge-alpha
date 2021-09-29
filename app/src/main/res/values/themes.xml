@@ -32,4 +32,8 @@
         <item name="colorControlNormal">@color/primaryTextColor</item>
         <item name="colorPrimary">@color/primaryTextColor</item>
     </style>
+
+    <style name="Chip.Text" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/selector_on_secondary</item>
+    </style>
 </resources>

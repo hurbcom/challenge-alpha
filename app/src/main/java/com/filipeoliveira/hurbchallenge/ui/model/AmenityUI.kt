@@ -3,7 +3,8 @@ package com.filipeoliveira.hurbchallenge.ui.model
 import java.io.Serializable
 
 data class AmenityUI(
-    val name: String
+    val name: String,
+    val filter: String = ""
 ): Serializable {
 
     companion object {

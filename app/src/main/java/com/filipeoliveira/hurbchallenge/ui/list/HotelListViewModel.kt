@@ -21,29 +21,57 @@ class HotelListViewModel(
     val hotelList: LiveData<UIState<List<HotelUI>>>
         get() = _hotelList
 
+    private lateinit var filters: FilterUI
+    private val enabledFilters = mutableListOf<String>()
+
+    init {
+        loadHotelList()
+    }
 
     fun loadHotelList(query: String = "") {
         _hotelList.value = UIState.Loading
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = repository.getHotelList(query)
+                val response = repository.getHotelList(query, enabledFilters)
                 Thread.sleep(2000)
 
                 when ((1..20).random()) {
                     1 -> throw UnknownHostException()
                     2 -> throw Exception()
                     else -> {
-                        _hotelList.postValue(UIState.Success(response))
+                        filters = response.filters
+                        _hotelList.postValue(UIState.Success(response.hotelList))
                     }
                 }
 
             } catch (e: UnknownHostException) {
-                Log.e(TAG, e.stackTraceToString())
                 _hotelList.postValue(UIState.Error(R.string.hint_unavailable_network_error))
             } catch (e: Exception) {
+                Log.e(TAG, e.stackTraceToString())
                 _hotelList.postValue(UIState.Error(R.string.hint_generic_network_error))
             }
         }
+    }
+
+    fun getAvailableFilters(): FilterUI? {
+        return if (this::filters.isInitialized){
+            this.filters
+        } else {
+            null
+        }
+    }
+
+
+    fun isOnEnabledFilterList(filter: String) : Boolean {
+        return enabledFilters.contains(filter)
+    }
+
+    fun addFilter(filter: String){
+        enabledFilters.add(filter)
+    }
+
+    fun removeFilter(filter: String){
+        enabledFilters.remove(filter)
     }
 
     companion object {

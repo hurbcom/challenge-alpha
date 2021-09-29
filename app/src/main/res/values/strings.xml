@@ -11,4 +11,5 @@
     <string name="label_available_amenity">Disponibiliza</string>
     <string name="label_check_on_hurb">Ver no Hurb</string>
     <string name="label_search">Busca</string>
+    <string name="label_filter">Filtros</string>
 </resources>
