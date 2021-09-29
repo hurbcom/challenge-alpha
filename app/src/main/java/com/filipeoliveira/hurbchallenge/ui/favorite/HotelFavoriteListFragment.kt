@@ -29,8 +29,13 @@ class HotelFavoriteListFragment: Fragment() {
     ): View {
         binding = FragmentHotelListBinding.inflate(inflater)
 
+        setupToolbar()
         setupRecyclerView()
         return binding.root
+    }
+
+    private fun setupToolbar() {
+        binding.fragHotelListAppBar.toolbarTitle.text = getString(R.string.label_favorite)
     }
 
     private fun setupRecyclerView() {

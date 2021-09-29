@@ -36,8 +36,9 @@
             android:text="@{hotelUI.name}"
             android:textColor="?attr/colorOnSecondary"
             app:layout_constraintBottom_toBottomOf="@id/frag_hotel_detail_toolbar"
-            app:layout_constraintEnd_toEndOf="@id/frag_hotel_detail_toolbar"
             app:layout_constraintEnd_toStartOf="@id/frag_hotel_detail_favorite"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/frag_hotel_detail_back_btn"
             app:layout_constraintTop_toTopOf="@id/frag_hotel_detail_toolbar"
             tools:text="Hotel do lugar bonito" />
 

@@ -16,7 +16,8 @@
                 app:customColorValue="?attr/colorSecondary" />
         </Constraint>
 
-        <Constraint android:id="@+id/frag_hotel_detail_toolbar_text">
+        <Constraint
+            android:id="@+id/frag_hotel_detail_toolbar_text">
             <CustomAttribute
                 app:attributeName="textColor"
                 app:customColorValue="#00000000" />
@@ -38,7 +39,8 @@
                 app:customColorValue="?attr/colorSecondary" />
         </Constraint>
 
-        <Constraint android:id="@+id/frag_hotel_detail_toolbar_text">
+        <Constraint
+            android:id="@+id/frag_hotel_detail_toolbar_text">
             <CustomAttribute
                 app:attributeName="textColor"
                 app:customColorValue="?attr/colorOnSecondary" />
