@@ -1,5 +1,6 @@
 package com.filipeoliveira.hurbchallenge.ui.detail
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
@@ -161,6 +162,24 @@ class HotelDetailFragment() : Fragment() {
                 viewModel.addToFavorite(hotelUI)
             }
         }
+        binding.fragHotelDetailShare.setOnClickListener {
+            onShareClicked()
+        }
+    }
+
+    private fun onShareClicked() {
+        val sendIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, getShareString())
+            type = "text/plain"
+        }
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+    }
+
+    private fun getShareString(): String {
+        return getString(R.string.share_message, hotelUI.name, hotelUI.url)
     }
 
     private fun setImagesToRecyclerView() {
