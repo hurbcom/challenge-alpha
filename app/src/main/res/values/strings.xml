@@ -19,4 +19,5 @@
     <string name="feedback_save_favorite_error">Erro ao adicionar aos favoritos</string>
     <string name="feedback_delete_favorite_success">Removido dos favoritos com sucesso!</string>
     <string name="feedback_delete_favorite_error">Erro ao remover dos favoritos</string>
+    <string name="label_clean_filter">Limpar filtros</string>
 </resources>

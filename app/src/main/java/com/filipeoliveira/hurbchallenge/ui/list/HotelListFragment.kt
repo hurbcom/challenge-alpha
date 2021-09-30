@@ -87,6 +87,12 @@ class HotelListFragment : Fragment() {
             openFilterFragment()
         }
 
+        binding.fragHotelFilterIndicator.setOnClickListener {
+            viewModel.cleanFilters()
+            viewModel.loadHotelList()
+            hideFilterIndicator()
+        }
+
         binding.fragHotelListRcv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
 
@@ -104,6 +110,14 @@ class HotelListFragment : Fragment() {
         })
     }
 
+    private fun hideFilterIndicator() {
+        binding.fragHotelFilterIndicator.visibility = View.GONE
+    }
+
+    private fun showFilterIndicator() {
+        binding.fragHotelFilterIndicator.visibility = View.GONE
+    }
+
     private fun openFilterFragment() {
         val availableFilters = viewModel.getAvailableFilters()
         val filterBottomSheet = FilterFragment()
@@ -118,6 +132,7 @@ class HotelListFragment : Fragment() {
                     hotelAdapter.clear()
 
                     if (it.data.isNotEmpty()) {
+                        setHasEnabledFilters()
                         setHasAvailableFilters()
                         hotelAdapter.setData(it.data)
                         binding.showRecyclerView()
@@ -138,6 +153,14 @@ class HotelListFragment : Fragment() {
 
                 }
             }
+        }
+    }
+
+    private fun setHasEnabledFilters() {
+        if (viewModel.hasEnabledFilters()){
+            binding.fragHotelFilterIndicator.visibility = View.VISIBLE
+        } else {
+            binding.fragHotelFilterIndicator.visibility = View.GONE
         }
     }
 

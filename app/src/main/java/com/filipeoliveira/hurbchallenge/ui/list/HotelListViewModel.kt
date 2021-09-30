@@ -61,6 +61,11 @@ class HotelListViewModel(
         }
     }
 
+    fun cleanFilters(){
+        enabledFilters.clear()
+    }
+
+    fun hasEnabledFilters() = enabledFilters.isNotEmpty()
 
     fun isOnEnabledFilterList(filter: String) : Boolean {
         return enabledFilters.contains(filter)
