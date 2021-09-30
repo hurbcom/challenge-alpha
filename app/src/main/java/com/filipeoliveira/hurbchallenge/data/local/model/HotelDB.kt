@@ -25,7 +25,7 @@ data class HotelDB(
     fun getAmenitiesAsList() : List<String>{
         var list = mutableListOf<String>()
 
-        val splitString = amenities.split(", ")
+        val splitString = amenities.split(",")
 
         for(amenity in splitString){
             list.add(amenity)
@@ -35,9 +35,9 @@ data class HotelDB(
     }
 
     fun getGalleryImagesURLAsList() : List<String>{
-        var list = emptyList<String>()
+        var list = mutableListOf<String>()
 
-        val splitString = image.split(", ")
+        val splitString = images.split(",")
 
         for(url in splitString){
             list.add(url)
