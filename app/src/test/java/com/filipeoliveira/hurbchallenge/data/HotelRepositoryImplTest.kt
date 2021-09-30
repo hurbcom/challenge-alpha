@@ -109,7 +109,7 @@ class HotelRepositoryImplTest {
     }
 }
 
-class FakeHotelRemoteDataSource() : HotelRemoteDataSource {
+class FakeHotelRemoteDataSource: HotelRemoteDataSource {
     override fun getHotelList(query: String, enabledFilters: List<String>): HotelsInfoResponse {
         val hotelResponse = HotelResponse(
             id = "id",
@@ -137,7 +137,7 @@ class FakeHotelRemoteDataSource() : HotelRemoteDataSource {
     }
 }
 
-class FakeHotelLocalDataSource() : HotelLocalDataSource {
+class FakeHotelLocalDataSource : HotelLocalDataSource {
     override fun getFavoriteHotels(): List<HotelDB> {
         return listOf(
             HotelDB(
