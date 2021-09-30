@@ -77,10 +77,10 @@ data class HotelUI(
         var string = ""
 
         for(amenity in amenities){
-            string = "$string${amenity.name}, "
+            string = "$string${amenity.name},"
         }
 
-        string.removeSuffix(", ")
+        string.removeSuffix(",")
 
         return string
     }

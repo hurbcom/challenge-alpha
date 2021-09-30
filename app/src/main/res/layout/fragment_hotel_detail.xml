@@ -48,10 +48,21 @@
             android:layout_height="?attr/actionBarSize"
             android:padding="@dimen/dimen_medium"
             app:layout_constraintBottom_toBottomOf="@id/frag_hotel_detail_toolbar"
-            app:layout_constraintEnd_toEndOf="@id/frag_hotel_detail_toolbar"
+            app:layout_constraintEnd_toStartOf="@id/frag_hotel_detail_share"
             app:layout_constraintTop_toTopOf="@id/frag_hotel_detail_toolbar"
             app:tint="?attr/colorOnSecondary"
             tools:src="@drawable/ic_heart_filled" />
+
+        <ImageView
+            android:id="@+id/frag_hotel_detail_share"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="@dimen/dimen_medium"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="@id/frag_hotel_detail_toolbar"
+            app:layout_constraintEnd_toEndOf="@id/frag_hotel_detail_toolbar"
+            app:layout_constraintTop_toTopOf="@id/frag_hotel_detail_toolbar"
+            app:tint="?attr/colorOnSecondary" />
 
         <ImageView
             android:id="@+id/frag_hotel_detail_back_btn"

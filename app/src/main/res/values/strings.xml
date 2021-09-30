@@ -14,10 +14,12 @@
     <string name="label_search">Busca</string>
     <string name="label_filter">Filtros</string>
     <string name="label_favorite">Favoritos</string>
+    <string name="label_clean_filter">Limpar filtros</string>
 
     <string name="feedback_save_favorite_success">Adicionado aos favoritos com sucesso!</string>
     <string name="feedback_save_favorite_error">Erro ao adicionar aos favoritos</string>
     <string name="feedback_delete_favorite_success">Removido dos favoritos com sucesso!</string>
     <string name="feedback_delete_favorite_error">Erro ao remover dos favoritos</string>
-    <string name="label_clean_filter">Limpar filtros</string>
+
+    <string name="share_message">Oi, tudo bem? Olha o que eu encontrei: %s <br/>e eu acho que você pode gostar. Tem mais informações aqui: <br/> %s</string>
 </resources>
