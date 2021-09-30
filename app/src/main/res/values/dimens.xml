@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_micro">2dp</dimen>
+    <dimen name="dimen_tiny">4dp</dimen>
+    <dimen name="dimen_small">8dp</dimen>
+    <dimen name="dimen_medium">16dp</dimen>
+    <dimen name="dimen_large">20dp</dimen>
+    <dimen name="dimen_extra_large">24dp</dimen>
+    <dimen name="extra_padding_for_floating_action_button">80dp</dimen>
+</resources>

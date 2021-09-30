@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/frag_hotel_detail_cover"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                app:attributeName="imageAlpha"
+                app:customIntegerValue="255" />
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="?attr/colorSecondary" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/frag_hotel_detail_toolbar_text">
+            <CustomAttribute
+                app:attributeName="textColor"
+                app:customColorValue="#00000000" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/frag_hotel_detail_cover"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                app:attributeName="imageAlpha"
+                app:customIntegerValue="0" />
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="?attr/colorSecondary" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/frag_hotel_detail_toolbar_text">
+            <CustomAttribute
+                app:attributeName="textColor"
+                app:customColorValue="?attr/colorOnSecondary" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/frag_hotel_detail_sv"
+            app:touchAnchorSide="top" />
+    </Transition>
+</MotionScene>

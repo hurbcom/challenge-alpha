@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="hotelUI"
+            type="com.filipeoliveira.hurbchallenge.ui.model.HotelUI" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_tiny">
+
+        <TextView
+            android:id="@+id/item_hotel_name"
+            style="@style/Item.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:text="@{hotelUI.name}"
+            tools:text="NOME DO HOTEL AQUI" />
+
+        <TextView
+            android:id="@+id/item_hotel_location"
+            style="@style/Item.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_micro"
+            android:text="@{hotelUI.addressCityAndState}"
+            tools:text="Rio de Janeiro, Rio de Janeiro" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_small"
+            app:cardPreventCornerOverlap="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen_medium">
+
+                <ImageView
+                    android:id="@+id/item_hotel_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_hotel"
+                    app:layout_constraintDimensionRatio="1024:683"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_hotel_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_tiny"
+                    android:background="@drawable/bg_secondary_top_bottom_left_corner_rounded"
+                    android:padding="@dimen/dimen_tiny"
+                    android:text="@{hotelUI.priceCurrency.priceAsString}"
+                    android:textColor="?attr/colorOnSecondary"
+                    app:layout_constraintBottom_toBottomOf="@id/item_hotel_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="150.00 BRL" />
+
+                <TextView
+                    android:id="@+id/item_hotel_small_description"
+                    style="@style/Item.Subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_small"
+                    android:layout_marginTop="@dimen/dimen_small"
+                    android:layout_marginEnd="@dimen/dimen_small"
+                    android:text="@{hotelUI.smallDescription}"
+                    android:textStyle="italic"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/item_hotel_image"
+                    tools:text="lalalalalalallalalaalalal" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_gym"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/dimen_medium"
+                    android:src="@drawable/ic_gym"
+                    app:layout_constraintEnd_toStartOf="@+id/item_hotel_wheel_chair"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_hotel_small_description" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_wheel_chair"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_wheelchair"
+                    app:layout_constraintEnd_toStartOf="@+id/item_hotel_tv"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/item_hotel_gym"
+                    app:layout_constraintTop_toTopOf="@id/item_hotel_gym" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_tv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_tv"
+                    app:layout_constraintEnd_toStartOf="@+id/item_hotel_toilet"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/item_hotel_wheel_chair"
+                    app:layout_constraintTop_toTopOf="@id/item_hotel_gym" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_toilet"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_toilet"
+                    app:layout_constraintEnd_toStartOf="@+id/item_hotel_bar"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/item_hotel_tv"
+                    app:layout_constraintTop_toTopOf="@id/item_hotel_gym" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_bar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_bar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/item_hotel_toilet"
+                    app:layout_constraintTop_toTopOf="@id/item_hotel_gym" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_parking"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/dimen_medium"
+                    android:src="@drawable/ic_parking"
+                    app:layout_constraintEnd_toStartOf="@+id/item_hotel_wifi"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_hotel_gym" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_wifi"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_wifi"
+                    app:layout_constraintEnd_toStartOf="@+id/item_hotel_pool"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/item_hotel_parking"
+                    app:layout_constraintTop_toTopOf="@id/item_hotel_parking" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_pool"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_pool"
+                    app:layout_constraintEnd_toStartOf="@+id/item_hotel_reception"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/item_hotel_wifi"
+                    app:layout_constraintTop_toTopOf="@id/item_hotel_parking" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_reception"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_more_time"
+                    app:layout_constraintEnd_toStartOf="@+id/item_hotel_restaurant"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/item_hotel_pool"
+                    app:layout_constraintTop_toTopOf="@id/item_hotel_parking" />
+
+                <ImageView
+                    android:id="@+id/item_hotel_restaurant"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_restaurant"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/item_hotel_reception"
+                    app:layout_constraintTop_toTopOf="@id/item_hotel_parking" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</layout>
