@@ -15,8 +15,8 @@ android {
         applicationId "com.filipeoliveira.hurbchallenge"
         minSdk 23
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 100
+        versionName "1.00"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
