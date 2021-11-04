@@ -1443,7 +1443,7 @@ public extension HUGraphQL {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
                 GraphQLField("name", type: .nonNull(.scalar(String.self))),
-                GraphQLField("category", type: .nonNull(.scalar(String.self))),
+                GraphQLField("category", type: .scalar(String.self)),
               ]
             }
 
@@ -1453,7 +1453,7 @@ public extension HUGraphQL {
               self.resultMap = unsafeResultMap
             }
 
-            public init(name: String, category: String) {
+            public init(name: String, category: String? = nil) {
               self.init(unsafeResultMap: ["__typename": "SearchResultItemAmenity", "name": name, "category": category])
             }
 
@@ -1477,9 +1477,9 @@ public extension HUGraphQL {
             }
 
             /// Amenity category.
-            public var category: String {
+            public var category: String? {
               get {
-                return resultMap["category"]! as! String
+                return resultMap["category"] as? String
               }
               set {
                 resultMap.updateValue(newValue, forKey: "category")
