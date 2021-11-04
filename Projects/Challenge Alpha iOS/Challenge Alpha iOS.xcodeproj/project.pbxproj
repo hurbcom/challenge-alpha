@@ -12,6 +12,10 @@
 		315562662734184C00E1C17C /* Challenge_Alpha_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155623E2734184A00E1C17C /* Challenge_Alpha_iOSApp.swift */; };
 		315562682734184C00E1C17C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155623F2734184A00E1C17C /* ContentView.swift */; };
 		3155626A2734184C00E1C17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 315562402734184C00E1C17C /* Assets.xcassets */; };
+		315615CD27343C55009FF312 /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = 315615CC27343C55009FF312 /* HUGraphQL */; };
+		315615CF27343D42009FF312 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315615CE27343D42009FF312 /* Manager.swift */; };
+		315615D1273441F3009FF312 /* ResultRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315615D0273441F3009FF312 /* ResultRenderView.swift */; };
+		315615D32734444A009FF312 /* ResultRenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315615D22734444A009FF312 /* ResultRenderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,10 @@
 		315562522734184C00E1C17C /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		315562562734184C00E1C17C /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
 		315562582734184C00E1C17C /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
+		315615CA27343C13009FF312 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HUNetwork; path = Modules/HUNetwork; sourceTree = "<group>"; };
+		315615CE27343D42009FF312 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		315615D0273441F3009FF312 /* ResultRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRenderView.swift; sourceTree = "<group>"; };
+		315615D22734444A009FF312 /* ResultRenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRenderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315615CD27343C55009FF312 /* HUGraphQL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				3155623D2734184A00E1C17C /* Shared */,
+				315615C927343C12009FF312 /* Packages */,
 				315562552734184C00E1C17C /* Tests iOS */,
 				315562462734184C00E1C17C /* Products */,
+				315615CB27343C54009FF312 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +78,9 @@
 				3155623E2734184A00E1C17C /* Challenge_Alpha_iOSApp.swift */,
 				3155623F2734184A00E1C17C /* ContentView.swift */,
 				315562402734184C00E1C17C /* Assets.xcassets */,
+				315615CE27343D42009FF312 /* Manager.swift */,
+				315615D0273441F3009FF312 /* ResultRenderView.swift */,
+				315615D22734444A009FF312 /* ResultRenderViewModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -89,6 +103,21 @@
 			path = "Tests iOS";
 			sourceTree = "<group>";
 		};
+		315615C927343C12009FF312 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				315615CA27343C13009FF312 /* HUNetwork */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		315615CB27343C54009FF312 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,6 +134,9 @@
 			dependencies = (
 			);
 			name = "Challenge Alpha iOS (iOS)";
+			packageProductDependencies = (
+				315615CC27343C55009FF312 /* HUGraphQL */,
+			);
 			productName = "Challenge Alpha iOS (iOS)";
 			productReference = 315562452734184C00E1C17C /* Challenge Alpha iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -189,7 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				315562682734184C00E1C17C /* ContentView.swift in Sources */,
+				315615D32734444A009FF312 /* ResultRenderViewModel.swift in Sources */,
+				315615CF27343D42009FF312 /* Manager.swift in Sources */,
 				315562662734184C00E1C17C /* Challenge_Alpha_iOSApp.swift in Sources */,
+				315615D1273441F3009FF312 /* ResultRenderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +498,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		315615CC27343C55009FF312 /* HUGraphQL */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HUGraphQL;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 315562392734184A00E1C17C /* Project object */;
 }
