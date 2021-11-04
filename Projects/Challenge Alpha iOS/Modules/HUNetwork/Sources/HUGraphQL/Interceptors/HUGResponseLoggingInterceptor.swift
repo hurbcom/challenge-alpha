@@ -9,6 +9,9 @@ import Apollo
 import os.log
 
 internal final class HUGResponseLoggingInterceptor: ApolloInterceptor {
+    enum ResponseLoggingError: Error {
+        case notYetReceived
+    }
             
     internal func interceptAsync<Operation: GraphQLOperation>(
         chain: RequestChain,
@@ -23,7 +26,7 @@ internal final class HUGResponseLoggingInterceptor: ApolloInterceptor {
             }
         
             guard let receivedResponse = response else {
-                chain.handleErrorAsync(HUMRequestError(code: .requestNotYetReceived),
+                chain.handleErrorAsync(ResponseLoggingError.notYetReceived,
                                    request: request,
                                    response: response,
                                    completion: completion)

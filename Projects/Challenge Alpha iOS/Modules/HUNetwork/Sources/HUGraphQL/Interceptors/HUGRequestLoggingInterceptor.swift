@@ -7,6 +7,7 @@
 
 import Apollo
 import os.log
+import Foundation
 
 internal final class HUGRequestLoggingInterceptor: ApolloInterceptor {
     
