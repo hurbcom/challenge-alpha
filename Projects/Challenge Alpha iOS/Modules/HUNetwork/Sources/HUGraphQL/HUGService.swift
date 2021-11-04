@@ -12,7 +12,7 @@ import Foundation
 public final class HUGService {
     /// Log is enabled
     private var logEnabled: Bool
-    private var endpoint = URL(string: "")!
+    private var endpoint = URL(string: "https://graphql.ghucdn.net/graphql")!
     
     public var client: ApolloClient {
         let client = URLSessionClient()
