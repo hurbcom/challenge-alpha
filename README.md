@@ -1,5 +1,3 @@
-
-
 # <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Desafio Alpha
 
 Bem vindo ao coding challenge do time mobile da Hurb!
@@ -11,6 +9,8 @@ O desafio consiste em criar aplicativo para dispositivo móvel (**Swift**, **Kot
 Queremos ver o **máximo da sua capacidade técnica**! Quem decide o limite é você.
 
  [<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/company/hurb/)
+ 
+ #### [>>>>> Veja a Wiki para os detalhes do desafio. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
 
 ## Requisitos Mínimos
 
