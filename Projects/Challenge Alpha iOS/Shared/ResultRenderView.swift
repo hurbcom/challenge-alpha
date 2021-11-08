@@ -34,7 +34,8 @@ struct ResultRenderView: View {
                 case .search: viewModel.performSearch()
                 case .searchHotel: viewModel.performSearchHotel()
                 case .searchPackage: viewModel.performSearchPackage()
-                default: break
+                case .suggestion:
+                    viewModel.performSuggestion()
                 }
             }
             .navigationTitle("Result")

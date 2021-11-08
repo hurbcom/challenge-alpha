@@ -82,6 +82,29 @@ internal final class ResultRenderViewModel: ObservableObject {
             }
             .store(in: &self.subscriptions)
     }
+    
+    internal func performSuggestion() {
+        Manager.shared
+            .performSuggestion(
+                query: "Rio de Janeiro",
+                pagination: .init(
+                    page: 1,
+                    limit: 20,
+                    sort: .price,
+                    sortOrder: .desc),
+                productType: .hotel)
+            .sink { completion in
+                if case .failure(let error) = completion {
+                    debugPrint(error.localizedDescription)
+                }
+            } receiveValue: { [weak self] res in
+                let jsonData = try? JSONSerialization.data(withJSONObject: res?.jsonObject as Any, options: [])
+                if let text = prettyJSON(data: jsonData) {
+                    self?.resultText = text
+                }
+            }
+            .store(in: &self.subscriptions)
+    }
 }
 
 fileprivate func prettyJSON(data: Data?) -> String? {
