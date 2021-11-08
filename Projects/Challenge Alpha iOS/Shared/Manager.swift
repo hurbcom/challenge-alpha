@@ -15,6 +15,7 @@ internal final class Manager {
     internal typealias SearchResult = HUGraphQL.SearchQuery.Data.Search?
     internal typealias SearchPackageResult = HUGraphQL.SearchPackageQuery.Data.SearchPackage?
     internal typealias SearchHotelResult = HUGraphQL.SearchHotelQuery.Data.SearchHotel?
+    internal typealias SuggestionResult = HUGraphQL.SuggestionsQuery.Data.Suggestion?
     
     private let service = HUGService(enableLog: true)
     internal static let shared = Manager()
@@ -88,6 +89,33 @@ internal final class Manager {
 //                    subject.send(completion: .failure(errors))
 //                }
                 subject.send(graphQLValue.data?.searchHotel)
+                subject.send(completion: .finished)
+            }
+        }
+        
+        return subject.eraseToAnyPublisher()
+    }
+    
+    internal func performSuggestion(query: String, pagination: HUGraphQL.SearchInputPagination? = nil, productType: HUGraphQL.SuggestionProductType? = nil) -> AnyPublisher<SuggestionResult, Error> {
+        let subject = PassthroughSubject<SuggestionResult, Error>()
+        
+        let query = HUGraphQL.SuggestionsQuery(
+            q: query,
+            limit: 20,
+            productType: productType,
+            l10n: .init(pos: "br", locale: "pt", currency: "BRL"))
+        
+        service.client.fetch(query: query) { res in
+            switch res {
+            case .failure(let error):
+                subject.send(completion: .failure(error))
+                
+            case .success(let graphQLValue):
+//                if let errors = graphQLValue.errors {
+//                    // HANDLE CUSTOM ERROR
+//                    subject.send(completion: .failure(errors))
+//                }
+                subject.send(graphQLValue.data?.suggestions)
                 subject.send(completion: .finished)
             }
         }
