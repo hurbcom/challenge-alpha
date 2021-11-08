@@ -1,0 +1,3235 @@
+type Query {
+  """Fetches suggestions in Search API."""
+  suggestions(
+    """Query parameter term."""
+    q: String!
+
+    """Max result limit."""
+    limit: Int
+
+    """Product type that should be returned."""
+    productType: SuggestionProductType
+
+    """Search by PoS."""
+    l10n: InputL10n
+  ): SuggestionPayload
+
+  """Fetches suggestions for Hotels in Search API."""
+  suggestionsHotel(
+    """Query parameter term."""
+    q: String!
+
+    """Max result limit."""
+    limit: Int
+
+    """Search by PoS."""
+    l10n: InputL10n
+  ): SuggestionPayload
+
+  """Fetches suggestions for Packages in Search API."""
+  suggestionsPackage(
+    """Query parameter term."""
+    q: String!
+
+    """Max result limit."""
+    limit: Int
+
+    """Search by PoS."""
+    l10n: InputL10n
+  ): SuggestionPayload
+
+  """Fetches suggestions for Tickets in Search API."""
+  suggestionsTicket(
+    """Query parameter term."""
+    q: String!
+
+    """Max result limit."""
+    limit: Int
+
+    """Search by PoS."""
+    l10n: InputL10n
+  ): TicketSuggestionPayload
+
+  """Fetches products in Search API."""
+  search(
+    """Query parameter term."""
+    q: String
+
+    """Filters from search input."""
+    filters: SearchInputFilters
+
+    """Pagination."""
+    pagination: SearchInputPagination
+
+    """Localization information."""
+    l10n: InputL10n
+
+    """Check-In date."""
+    checkin: Date
+
+    """Check-Out date."""
+    checkout: Date
+
+    """Room information."""
+    rooms: [SearchInputRooms!]
+  ): Search
+
+  """Fetches products in Search API."""
+  searchHotel(
+    """Query parameter term."""
+    q: String
+
+    """Filters from search input."""
+    filters: SearchHotelInputFilters
+
+    """Pagination"""
+    pagination: SearchInputPagination
+
+    """Localization information."""
+    l10n: InputL10n
+
+    """Check-In date."""
+    checkin: Date
+
+    """Check-Out date."""
+    checkout: Date
+
+    """Room information."""
+    rooms: [SearchInputRooms!]
+  ): SearchHotel
+
+  """Fetches products in Search API."""
+  searchPackage(
+    """Query parameter term."""
+    q: String
+
+    """Filters from search input."""
+    filters: SearchPackageInputFilters
+
+    """Pagination"""
+    pagination: SearchInputPagination
+
+    """Localization information."""
+    l10n: InputL10n
+  ): SearchPackage
+
+  """Fetches products in Search API."""
+  searchTicket(
+    """Query parameter term."""
+    q: String
+
+    """Filters from search input."""
+    filters: SearchTicketInputFilters
+
+    """Pagination"""
+    pagination: SearchInputPagination
+
+    """Localization information."""
+    l10n: InputL10n
+  ): SearchTicket
+
+  """Fetches Hotels in Search API by Coordinates."""
+  searchByCoordinates(
+    """Represents coordinates."""
+    coordinates: SearchInputCoordinates!
+
+    """Represents the ratio of distance."""
+    distance: NonNegativeInt
+
+    """Filters from search input."""
+    filters: SearchInputFilters
+
+    """Pagination."""
+    pagination: SearchInputPagination
+
+    """Localization information."""
+    l10n: InputL10n
+
+    """Check-In date."""
+    checkin: Date
+
+    """Check-Out date."""
+    checkout: Date
+
+    """Room information."""
+    rooms: [SearchInputRooms!]
+  ): Search
+
+  """Fetches products in Search API by SKU."""
+  searchBySku(
+    """Product SKU."""
+    sku: SKU!
+
+    """Localization information."""
+    l10n: InputL10n
+
+    """Check-In date."""
+    checkin: Date
+
+    """Check-Out date."""
+    checkout: Date
+
+    """Room information."""
+    rooms: [SearchInputRooms!]
+  ): Search
+
+  """Fetches featured hotel in Search API"""
+  searchFeaturedHotel(
+    """Product SKU."""
+    sku: SKU!
+
+    """Localization information."""
+    l10n: InputL10n
+
+    """Check-In date."""
+    checkin: Date
+
+    """Check-Out date."""
+    checkout: Date
+
+    """Room information."""
+    rooms: [SearchInputRooms!]
+  ): SearchFeaturedHotel
+
+  """Fetches nearby cities hotels in Search API"""
+  searchNearbyCities(
+    """Represents coordinates."""
+    coordinates: SearchInputCoordinates!
+
+    """Represents the ratio of distance."""
+    distance: NonNegativeInt
+
+    """Filters from search input."""
+    filters: SearchInputFilters
+
+    """Pagination."""
+    pagination: SearchInputPagination
+
+    """Localization information."""
+    l10n: InputL10n
+
+    """Check-In date."""
+    checkin: Date
+
+    """Check-Out date."""
+    checkout: Date
+
+    """Room information."""
+    rooms: [SearchInputRooms!]
+  ): SearchHotel
+  priceBySku(
+    """SKU List."""
+    skuList: [SKU!]!
+
+    """Channel."""
+    channel: String!
+
+    """Promotion."""
+    promotion: Int
+
+    """Campaign."""
+    campaign: Int
+
+    """Price should operate in full price mode or not."""
+    showFullPrice: Boolean!
+
+    """SKU type list to get full price."""
+    fullPriceTypes: [FullPriceTypes!]
+
+    """Price should be returned per day or total of days."""
+    showPerDay: Boolean!
+
+    """Localization information."""
+    l10n: InputL10n!
+  ): [PriceBySku!]
+  reviewBySku(
+    """SKU List."""
+    skuList: [SKU!]!
+
+    """Localization information."""
+    l10n: InputL10n!
+  ): ReviewBySku
+
+  """Fetches Tags by Sku in ProductTag API."""
+  productTagBySku(
+    """Sku list"""
+    skuList: [SKU!]!
+  ): [ProductTagBySku!]
+
+  """Query to get a page in cms."""
+  cmsOfferPage(
+    """Page category."""
+    category: String!
+
+    """Page slug."""
+    slug: String!
+
+    """Geohash to get the nearest page according to arguments."""
+    geohash: Geohash!
+
+    """Localization information."""
+    l10n: InputL10n!
+
+    """Sections filter by platform"""
+    platform: CMSOfferPagePlatformTypes
+  ): CMSOfferPage
+
+  """Query to get a page."""
+  showcase(
+    """Page category."""
+    category: String!
+
+    """Page slug."""
+    slug: String!
+
+    """Point of sale."""
+    pos: String!
+
+    """Localization."""
+    locale: String
+  ): Showcase
+  ticketBySku(
+    """Ticket SKU"""
+    sku: SKU!
+
+    """Localization information."""
+    l10n: InputL10n!
+  ): Ticket!
+  ticketAvailabilityBySku(
+    """Ticket SKU"""
+    sku: SKU!
+
+    """Date to search availability"""
+    date: String!
+
+    """Adults number"""
+    adults: NonNegativeInt!
+
+    """Children number"""
+    children: NonNegativeInt
+
+    """Children age"""
+    childrenAge: String
+
+    """Localization information."""
+    l10n: InputL10n!
+  ): Ticket
+}
+
+"""Suggestion product types."""
+enum SuggestionProductType {
+  HOTEL
+  PACKAGE
+  TICKET
+}
+
+"""Localization information."""
+input InputL10n {
+  """Point of sale."""
+  pos: PosID!
+
+  """Localization."""
+  locale: Locale
+
+  """Currency code."""
+  currency: String
+}
+
+"""The `PosID` scalar represents the PoS ID in the PoS API"""
+scalar PosID
+
+"""The `Locale` scalar represents the language."""
+scalar Locale
+
+"""Represents the returned fields in the suggestion"""
+type SuggestionPayload {
+  """Results found."""
+  results: [Suggestion!]!
+
+  """Total results counter."""
+  total: Int!
+}
+
+"""Interface for suggestions types."""
+interface Suggestion {
+  """Suggestion text."""
+  text: String!
+
+  """Suggestion filter."""
+  filter: String!
+
+  """Suggestion Type."""
+  suggestionType: String!
+}
+
+"""Represents the returned fields in the suggestion"""
+type TicketSuggestionPayload {
+  """Results found."""
+  results: [TicketSuggestion!]!
+
+  """Total results counter."""
+  total: Int!
+}
+
+"""Represents the fields of the ticket suggestion."""
+type TicketSuggestion {
+  """Suggestion text."""
+  text: String!
+
+  """Suggestion filter."""
+  filter: String!
+
+  """Suggestion Type."""
+  type: TicketSuggestionType!
+}
+
+"""List of ticket suggestion types"""
+enum TicketSuggestionType {
+  ticket
+  destination
+}
+
+"""Represents input data for field filters."""
+input SearchInputFilters {
+  """Cities filter."""
+  cities: SearchInputTermFilter
+
+  """States filter."""
+  states: SearchInputTermFilter
+
+  """Countries filter."""
+  countries: SearchInputTermFilter
+
+  """Departure cities filter."""
+  departureCities: SearchInputTermFilter
+
+  """Duration filter."""
+  duration: SearchInputTermFilter
+
+  """Food filter."""
+  food: SearchInputTermFilter
+
+  """People filter."""
+  people: SearchInputTermFilter
+
+  """Price interval filter."""
+  priceInterval: SearchInputIntervalFilter
+
+  """Price filter."""
+  prices: SearchInputTermFilter
+
+  """Star filter."""
+  stars: SearchInputTermFilter
+
+  """Product type filter."""
+  productType: SearchInputTermFilter
+
+  """Product SKU filter"""
+  sku: SearchInputTermFilter
+
+  """Product amenity filter"""
+  amenities: SearchInputTermFilter
+}
+
+"""Represents input data for field filters."""
+input SearchInputTermFilter {
+  """Filter values."""
+  values: [String]!
+
+  """Filter operator."""
+  operator: SearchFilterOperator!
+}
+
+"""Filter Operator."""
+enum SearchFilterOperator {
+  OR
+  AND
+  NOT
+}
+
+"""Represents input data for interval filter."""
+input SearchInputIntervalFilter {
+  """Min value."""
+  min: Float!
+
+  """Max value."""
+  max: Float!
+}
+
+"""Represents input data for field pagination."""
+input SearchInputPagination {
+  """Current search page."""
+  page: PositiveInt
+
+  """Limit for search results."""
+  limit: PositiveInt
+
+  """Sorts results."""
+  sort: SearchInputSort
+
+  """Sorts by order."""
+  sortOrder: SearchInputSortOrder
+}
+
+"""The `PositiveInt` scalar represents positive integers."""
+scalar PositiveInt
+
+"""Sort types."""
+enum SearchInputSort {
+  SCORE
+  PRICE
+}
+
+"""Order types."""
+enum SearchInputSortOrder {
+  ASC
+  DESC
+}
+
+"""
+The `Date` scalar represents the ISO 8601 date in the specific format yyyy-mm-dd without timestamp or time zones.
+"""
+scalar Date
+
+"""Room information."""
+input SearchInputRooms {
+  """Number of adults per room."""
+  adults: PositiveInt!
+
+  """List of children ages."""
+  children: [NonNegativeInt!]!
+}
+
+"""The `NonNegativeInt` scalar represents non negative integers."""
+scalar NonNegativeInt
+
+"""Represents the fields returned by the search."""
+type Search {
+  """Filters available."""
+  filters: SearchFilters
+
+  """Results found."""
+  results: [SearchResultItem!]
+
+  """Meta-information from search results."""
+  meta: SearchMeta!
+
+  """Necessary info to construct a pagination."""
+  pagination: SearchPagination
+}
+
+"""Filters available."""
+type SearchFilters {
+  """Cities filter."""
+  cities: [SearchTermFilter]
+
+  """States filter."""
+  states: [SearchTermFilter]
+
+  """Countries filter."""
+  countries: [SearchTermFilter]
+
+  """Departure cities filter."""
+  departureCities: [SearchTermFilter]
+
+  """Duration filter."""
+  duration: [SearchTermFilter]
+
+  """Food filter."""
+  food: [SearchTermFilter]
+
+  """People filter."""
+  people: [SearchTermFilter]
+
+  """Price interval filter."""
+  priceInterval: SearchIntervalFilter
+
+  """Price filter."""
+  prices(max: PositiveInt): [SearchPriceGroupFilter]
+
+  """Star filter."""
+  stars: [SearchTermFilter]
+
+  """Product type filter."""
+  productType: [SearchTermFilter]
+
+  """Product SKU filter"""
+  sku: [SearchTermFilter]
+
+  """Product amenity filter"""
+  amenities: [SearchTermFilter]
+}
+
+"""Filter by term."""
+type SearchTermFilter {
+  """Filter label."""
+  label: String!
+
+  """The term used to filter."""
+  filter: String!
+
+  """Total results that contain this term."""
+  count: Int!
+}
+
+"""Filter by interval."""
+type SearchIntervalFilter {
+  """Min interval value."""
+  min: Float!
+
+  """Max interval value."""
+  max: Float!
+}
+
+type SearchPriceGroupFilter {
+  """Min range value."""
+  min: Int!
+
+  """Max range value (exclusive)."""
+  maxExclusive: Int!
+
+  """The range group represented as a term to filter."""
+  filter: String!
+
+  """Total results that contain this term."""
+  count: Int!
+}
+
+interface SearchResultItem {
+  """Product id."""
+  id: ID
+
+  """Product sku."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Product name."""
+  name: String!
+
+  """Product url."""
+  url: String!
+
+  """Product category."""
+  category: String!
+
+  """Product description."""
+  description: String!
+
+  """Product short description."""
+  smallDescription: String!
+
+  """Product price."""
+  price: ProductPrice!
+
+  """Product address."""
+  address: SearchResultItemAddress
+
+  """Product tags."""
+  tags: [SearchResultItemTag!]!
+
+  """List of product images."""
+  gallery(limit: Int): [SearchResultItemGalleryImage!]!
+
+  """List of product amenities."""
+  amenities(
+    """Limit of amenities per product."""
+    limit: PositiveInt
+  ): [SearchResultItemAmenity!]!
+
+  """Inform if the product is available"""
+  isAvailable: Boolean!
+}
+
+"""List of SKU supported patterns."""
+enum SkuPattern {
+  FULL
+  GENERIC
+  MINIMUM
+}
+
+"""The `SKU` scalar represents positive integers."""
+scalar SKU
+
+type ProductPrice {
+  """Price currency."""
+  currency: String
+
+  """Price amount."""
+  amount: Float!
+
+  """Original price amount."""
+  originalAmount: Float
+
+  """Price taxes"""
+  taxes: [ProductPriceTaxes!]!
+}
+
+type ProductPriceTaxes {
+  """Tax type"""
+  type: String!
+
+  """Tax name"""
+  name: String!
+
+  """Tax amount"""
+  amount: Float!
+
+  """Tax currency"""
+  currency: String!
+
+  """Original tax amount"""
+  originalAmount: Float!
+
+  """Original tax currency"""
+  originalCurrency: String!
+}
+
+type SearchResultItemAddress {
+  """Product city."""
+  city: String
+
+  """Product state."""
+  state: String
+
+  """Product country."""
+  country: String
+
+  """Product geolocation."""
+  geoLocation: Coordinates
+}
+
+type Coordinates {
+  lat: Float!
+  lon: Float!
+}
+
+type SearchResultItemTag {
+  """Label of the product tag."""
+  label: String!
+
+  """Slug of the product tag."""
+  slug: String!
+}
+
+type SearchResultItemGalleryImage {
+  """Gallery image url."""
+  url(quality: SearchImageQualityType = HIGH, resolution: SearchImageResolutionType = ORIGINAL, upscaling: SearchImageUpscalingType = SCALING_1X): String
+
+  """Gallery image description."""
+  description: String
+}
+
+"""Search Image Quality Type"""
+enum SearchImageQualityType {
+  HIGH
+  MEDIUM
+}
+
+"""Search Image Resolution Type"""
+enum SearchImageResolutionType {
+  ORIGINAL
+  LOWER
+  LOW
+  MEDIUM
+  HIGH
+}
+
+"""Search Image upscaling type."""
+enum SearchImageUpscalingType {
+  SCALING_1X
+  SCALING_2X
+  SCALING_3X
+}
+
+type SearchResultItemAmenity {
+  """Amenity name."""
+  name: String!
+
+  """Amenity category."""
+  category: String
+}
+
+"""Represents meta-information fields."""
+type SearchMeta {
+  """Quantity of products found."""
+  count: Int!
+
+  """Quantity of products found with availability."""
+  countWithAvailability: Int
+
+  """Quantity of hotels found."""
+  countHotel: Int
+
+  """Quantity of packages found."""
+  countPackage: Int
+
+  """Quantity of tickets found."""
+  countTicket: Int
+}
+
+"""Necessary info to construct a pagination."""
+type SearchPagination {
+  """Number of pages."""
+  count: NonNegativeInt!
+
+  """Inform current page."""
+  current: NonNegativeInt!
+
+  """Inform if exists a next page."""
+  hasNext: Boolean!
+
+  """Inform if exists a previous page."""
+  hasPrevious: Boolean!
+}
+
+"""Represents input data for field filters."""
+input SearchHotelInputFilters {
+  """Cities filter."""
+  cities: SearchInputTermFilter
+
+  """States filter."""
+  states: SearchInputTermFilter
+
+  """Countries filter."""
+  countries: SearchInputTermFilter
+
+  """Food filter."""
+  food: SearchInputTermFilter
+
+  """People filter."""
+  people: SearchInputTermFilter
+
+  """Price interval filter."""
+  priceInterval: SearchInputIntervalFilter
+
+  """Price filter."""
+  prices: SearchInputTermFilter
+
+  """Star filter."""
+  stars: SearchInputTermFilter
+
+  """Product SKU filter"""
+  sku: SearchInputTermFilter
+
+  """Product amenity filter"""
+  amenities: SearchInputTermFilter
+}
+
+"""Represents the fields returned by the search."""
+type SearchHotel {
+  """Filters available."""
+  filters: SearchHotelFilters
+
+  """Results found."""
+  results: [SearchResultHotelItem!]
+
+  """Meta-information from search results."""
+  meta: SearchMeta!
+
+  """Necessary info to construct a pagination."""
+  pagination: SearchPagination
+}
+
+"""Filters available."""
+type SearchHotelFilters {
+  """Cities filter."""
+  cities: [SearchTermFilter]
+
+  """States filter."""
+  states: [SearchTermFilter]
+
+  """Countries filter."""
+  countries: [SearchTermFilter]
+
+  """Food filter."""
+  food: [SearchTermFilter]
+
+  """People filter."""
+  people: [SearchTermFilter]
+
+  """Price interval filter."""
+  priceInterval: SearchIntervalFilter
+
+  """Price filter."""
+  prices(max: PositiveInt): [SearchPriceGroupFilter]
+
+  """Star filter."""
+  stars: [SearchTermFilter]
+
+  """Product amenity filter"""
+  amenities: [SearchTermFilter]
+}
+
+"""Represents the fields related to Hotel Products."""
+type SearchResultHotelItem implements SearchResultItem {
+  """Product id."""
+  id: ID
+
+  """Product sku."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Product name."""
+  name: String!
+
+  """Product url."""
+  url: String!
+
+  """Product category."""
+  category: String!
+
+  """Product description."""
+  description: String!
+
+  """Product short description."""
+  smallDescription: String!
+
+  """Product price."""
+  price: ProductPrice!
+
+  """Product address."""
+  address: SearchResultItemAddress
+
+  """Product tags."""
+  tags: [SearchResultItemTag!]!
+
+  """List of product images."""
+  gallery(limit: Int): [SearchResultItemGalleryImage!]!
+
+  """List of product amenities."""
+  amenities(
+    """Limit of amenities per product."""
+    limit: PositiveInt
+  ): [SearchResultItemAmenity!]!
+
+  """Inform if the product is available"""
+  isAvailable: Boolean!
+
+  """Hotel rating in stars."""
+  stars: Int!
+
+  """Whether the Hotel has a free cancellation policy"""
+  huFreeCancellation: Boolean!
+}
+
+"""Represents input data for field filters."""
+input SearchPackageInputFilters {
+  """Cities filter."""
+  cities: SearchInputTermFilter
+
+  """States filter."""
+  states: SearchInputTermFilter
+
+  """Countries filter."""
+  countries: SearchInputTermFilter
+
+  """Departure cities filter."""
+  departureCities: SearchInputTermFilter
+
+  """Duration filter."""
+  duration: SearchInputTermFilter
+
+  """Food filter."""
+  food: SearchInputTermFilter
+
+  """People filter."""
+  people: SearchInputTermFilter
+
+  """Price interval filter."""
+  priceInterval: SearchInputIntervalFilter
+
+  """Price filter."""
+  prices: SearchInputTermFilter
+
+  """Product SKU filter"""
+  sku: SearchInputTermFilter
+}
+
+"""Represents the fields returned by the search."""
+type SearchPackage {
+  """Filters available."""
+  filters: SearchPackageFilters
+
+  """Results found."""
+  results: [SearchResultPackageItem!]
+
+  """Meta-information from search results."""
+  meta: SearchMeta!
+
+  """Necessary info to construct a pagination."""
+  pagination: SearchPagination
+}
+
+"""Filters available."""
+type SearchPackageFilters {
+  """Cities filter."""
+  cities: [SearchTermFilter]
+
+  """States filter."""
+  states: [SearchTermFilter]
+
+  """Countries filter."""
+  countries: [SearchTermFilter]
+
+  """Departure cities filter."""
+  departureCities: [SearchTermFilter]
+
+  """Duration filter."""
+  duration: [SearchTermFilter]
+
+  """Food filter."""
+  food: [SearchTermFilter]
+
+  """People filter."""
+  people: [SearchTermFilter]
+
+  """Price interval filter."""
+  priceInterval: SearchIntervalFilter
+
+  """Price filter."""
+  prices(max: PositiveInt): [SearchPriceGroupFilter]
+}
+
+"""Represents the fields related to Package Products."""
+type SearchResultPackageItem implements SearchResultItem {
+  """Product id."""
+  id: ID
+
+  """Product sku."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Product name."""
+  name: String!
+
+  """Product url."""
+  url: String!
+
+  """Product category."""
+  category: String!
+
+  """Product description."""
+  description: String!
+
+  """Product short description."""
+  smallDescription: String!
+
+  """Product price."""
+  price: ProductPrice!
+
+  """Product address."""
+  address: SearchResultItemAddress
+
+  """Product tags."""
+  tags: [SearchResultItemTag!]!
+
+  """List of product images."""
+  gallery(limit: Int): [SearchResultItemGalleryImage!]!
+
+  """List of product amenities."""
+  amenities(
+    """Limit of amenities per product."""
+    limit: PositiveInt
+  ): [SearchResultItemAmenity!]!
+
+  """Inform if the product is available"""
+  isAvailable: Boolean!
+
+  """Start of valid period."""
+  startDate: String
+
+  """End of valid period."""
+  endDate: String
+
+  """Whether the Package has flight."""
+  flightIncluded: Boolean!
+
+  """Describes quantities and limits related to the product."""
+  quantityDescriptors: SearchResultItemQuantityDescriptors!
+
+  """Package duration days."""
+  duration: [Int!]
+}
+
+type SearchResultItemQuantityDescriptors {
+  """Number of nights for the stay."""
+  nights: Int
+
+  """Duration of a package or ticket."""
+  duration: Int!
+
+  """Type of duration: night or hour."""
+  durationType: String!
+
+  """Maximum number of people on the room."""
+  maxPeople: Int!
+
+  """Maximum children age for free accommodation."""
+  maxFreeChildrenAge: Int
+}
+
+"""Represents input data for field filters."""
+input SearchTicketInputFilters {
+  """Destinations filter."""
+  destinations: SearchInputTermFilter
+
+  """Price interval filter."""
+  priceInterval: SearchInputIntervalFilter
+
+  """Price filter."""
+  prices: SearchInputTermFilter
+
+  """Product SKU filter"""
+  sku: SearchInputTermFilter
+}
+
+"""Represents the fields returned by the search."""
+type SearchTicket {
+  """Filters available."""
+  filters: SearchTicketFilters
+
+  """Results found."""
+  results: [SearchResultTicketItemV2!]
+
+  """Meta-information from search results."""
+  meta: SearchMeta!
+
+  """Necessary info to construct a pagination."""
+  pagination: SearchPagination
+}
+
+"""Filters available."""
+type SearchTicketFilters {
+  """Destinations filter."""
+  destinations: [SearchTermFilter]
+
+  """Price interval filter."""
+  priceInterval: SearchIntervalFilter
+
+  """Price filter."""
+  prices(max: PositiveInt): [SearchPriceGroupFilter]
+}
+
+"""Represents the fields related to Ticket Products."""
+type SearchResultTicketItemV2 {
+  """Product sku."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Product name."""
+  name: String!
+
+  """Product description."""
+  description: String!
+
+  """Product voucher type"""
+  voucherType: String
+
+  """Product url."""
+  url: String!
+
+  """Product price."""
+  price: ProductPrice!
+
+  """Product duration"""
+  duration: ProductDuration
+
+  """Product address"""
+  address: SearchResultItemTicketAddress
+
+  """Product schedule"""
+  schedule: TicketSchedule!
+
+  """List of product images."""
+  gallery(
+    """Limit of gallery per product."""
+    limit: PositiveInt
+  ): [SearchResultItemGalleryImage!]!
+
+  """List of product amenities."""
+  amenities(
+    """Limit of amenities per product."""
+    limit: PositiveInt
+  ): [SearchResultItemAmenity!]!
+
+  """Inform if the product is available"""
+  isAvailable: Boolean!
+}
+
+type ProductDuration {
+  """Duration value."""
+  value: Float!
+
+  """Duration unit."""
+  unit: ProductDurationUnit
+}
+
+"""Possible duration units in a product"""
+enum ProductDurationUnit {
+  MINUTE
+  HOUR
+  DAY
+}
+
+type SearchResultItemTicketAddress {
+  """Address country."""
+  country: String
+
+  """Address state."""
+  state: String
+
+  """Address city."""
+  city: String
+
+  """Address destination."""
+  destination: String
+}
+
+type TicketSchedule {
+  """Ticket operation days."""
+  operationDays: [String!]
+}
+
+"""Represents latitude and longitude of coordinate."""
+input SearchInputCoordinates {
+  """Latitude coordinate."""
+  lat: Float!
+
+  """Longitude coordinate."""
+  lon: Float!
+}
+
+"""Featured Hotel"""
+type SearchFeaturedHotel {
+  """Hotel result item"""
+  featuredHotel: SearchResultHotelItem
+
+  """List of hotel result item"""
+  nearby(
+    """Represents the ratio of distance."""
+    distance: NonNegativeInt
+
+    """Filters from search input."""
+    filters: SearchHotelInputFilters
+
+    """Pagination"""
+    pagination: SearchInputPagination
+  ): SearchHotel
+}
+
+"""
+Types that can be used to restrict fullPrice (hotel, package and ticket).
+"""
+enum FullPriceTypes {
+  HOTEL
+  PACKAGE
+  TICKET
+}
+
+type PriceBySku {
+  """Product SKU."""
+  sku: SKU!
+
+  """Price information linked to the product SKU."""
+  price: Price!
+}
+
+type Price {
+  """Number of nights (When applicable)."""
+  nights: PositiveInt
+
+  """Price currency."""
+  currency: String!
+
+  """Price amount."""
+  amount: Float!
+
+  """Original price amount."""
+  originalAmount: Float!
+
+  """Discount in percentage."""
+  discount: Float
+
+  """Full price is price amount plus taxes."""
+  isFullPrice: Boolean!
+}
+
+type ReviewBySku {
+  """Trip Advisor review information linked to the product SKU."""
+  tripAdvisor: [Review!]!
+}
+
+type Review {
+  """Product SKU."""
+  sku: SKU!
+
+  """Review count."""
+  count: Int!
+
+  """Review rating."""
+  rating: Float!
+}
+
+type ProductTagBySku {
+  """Product SKU."""
+  sku: SKU!
+  tags(
+    """Limit of tags per product."""
+    limit: PositiveInt
+  ): [ProductTag!]
+}
+
+type ProductTag {
+  name: String!
+  slug: String!
+  theme: String!
+}
+
+"""The `Geohash` scalar represents a geohash."""
+scalar Geohash
+
+"""Types that can be used to filter sections."""
+enum CMSOfferPagePlatformTypes {
+  SITE
+  SITE_MOBILE
+  APP_MOBILE
+}
+
+"""Response object from cms page request."""
+type CMSOfferPage {
+  """Page category."""
+  category: String!
+
+  """Page slug."""
+  slug: String!
+
+  """Page title."""
+  title: String!
+
+  """Page description."""
+  description: String!
+
+  """Indicates when the page was updated."""
+  updatedAt: String!
+
+  """Page POS (Point of Sale)."""
+  pos: String!
+
+  """Page localization."""
+  locale: String!
+
+  """Page meta tags."""
+  metaTags: CMSOfferPageMetaTags!
+
+  """Enables any web page to become a rich object in a social graph."""
+  metaOg: CMSOfferPageMetaOg!
+
+  """Hero information about an Offer Page."""
+  hero: CMSOfferPageHero
+
+  """Sections of the page."""
+  sections: [CMSOfferPageSection!]!
+}
+
+"""Page meta tags"""
+type CMSOfferPageMetaTags {
+  """
+  This metatag is used to provide instructions for how index web page content
+  """
+  robots: String!
+
+  """This metatag is used to define the original content"""
+  canonical: String!
+
+  """List of alternative links."""
+  alternateLinks: [CMSOfferPageAlternateLink!]!
+}
+
+"""Option to change page localization and language"""
+type CMSOfferPageAlternateLink {
+  """Option page url"""
+  url: String
+
+  """Option language"""
+  hreflang: String
+}
+
+"""Enables any web page to become a rich object in a social graph"""
+type CMSOfferPageMetaOg {
+  """
+  The title of your object as it should appear within the graph, e.g., "The Rock"
+  """
+  title: String!
+
+  """An image URL which should represent your object within the graph"""
+  imageUrl: String!
+
+  """The description of your object"""
+  description: String!
+}
+
+"""Hero information about an Offer Page."""
+type CMSOfferPageHero {
+  """Hero's title"""
+  title: String
+
+  """Hero's subtitle"""
+  subtitle: String
+
+  """Hero's image URL"""
+  image: CMSOfferPageHeroImage
+
+  """Hero's theme"""
+  theme: String
+
+  """Hero's background color"""
+  backgroundColor: String
+}
+
+"""Page hero image."""
+type CMSOfferPageHeroImage {
+  """Image for mobile"""
+  mobile(quality: WebImageQuality, resolution: CMSOfferPageHeroImageResolutionMobile, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Image for desktop"""
+  desktop(quality: WebImageQuality, resolution: CMSOfferPageHeroImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Image extends to fill full width"""
+  fullWidth: Boolean!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Web Image Quality"""
+enum WebImageQuality {
+  HIGH
+  MEDIUM
+}
+
+"""Hero Image Resolution Type"""
+enum CMSOfferPageHeroImageResolutionMobile {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""Image Scaling Type"""
+enum CMSOfferPageImageScaling {
+  SCALING_1X
+  SCALING_2X
+  SCALING_3X
+}
+
+"""Hero Image Resolution Type"""
+enum CMSOfferPageHeroImageResolution {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+interface CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+}
+
+"""Response object from showcase request."""
+type Showcase {
+  """Page category."""
+  category: String!
+
+  """Page slug."""
+  slug: String!
+
+  """Page title."""
+  title: String!
+
+  """Page description."""
+  description: String!
+
+  """Page POS (Point of Sale)."""
+  pos: String!
+
+  """Page localization."""
+  locale: String!
+
+  """Page meta tags."""
+  metaTags: ShowcaseMetaTags!
+
+  """Enables any web page to become a rich object in a social graph."""
+  metaOg: ShowcaseMetaOg!
+
+  """Hero information about an Offer Page."""
+  hero: ShowcaseHero
+
+  """Sections of the page."""
+  sections: [ShowcaseSection!]!
+}
+
+"""Page meta tags."""
+type ShowcaseMetaTags {
+  """Instructions for web page indexation by robots."""
+  robots: String!
+
+  """Original content URI."""
+  canonical: String!
+
+  """List of alternative links."""
+  alternateLinks: [ShowcaseAlternateLink!]!
+}
+
+"""Alternative links for the content in other locales."""
+type ShowcaseAlternateLink {
+  """Alternate page URL."""
+  url: String
+
+  """Option language."""
+  hreflang: String
+}
+
+"""Enables any web page to become a rich object in a social graph."""
+type ShowcaseMetaOg {
+  """
+  The title of your object as it should appear within the graph, e.g., "The Rock".
+  """
+  title: String!
+
+  """Open Graph image."""
+  image: ShowcaseMetaOgImage
+
+  """The description of your object."""
+  description: String!
+}
+
+"""Open Graph image."""
+type ShowcaseMetaOgImage {
+  """An image URL which should represent your object within the graph."""
+  url: String
+}
+
+"""Hero information about an showcase."""
+type ShowcaseHero {
+  """Hero's title."""
+  title: String
+
+  """Hero's subtitle."""
+  subtitle: String
+
+  """Hero's image URL."""
+  image: ShowcaseHeroImage
+
+  """Hero's theme."""
+  theme: String
+
+  """Hero's background color."""
+  backgroundColor: String
+}
+
+"""Page hero image."""
+type ShowcaseHeroImage {
+  """Image for mobile."""
+  mobile(quality: WebImageQuality, resolution: ShowcaseHeroImageResolutionMobile, upscaling: ShowcaseImageScaling = SCALING_1X): String!
+
+  """Image for desktop."""
+  desktop(quality: WebImageQuality, resolution: ShowcaseHeroImageResolution, upscaling: ShowcaseImageScaling = SCALING_1X): String!
+
+  """Image should expand to fill screen."""
+  fullWidth: Boolean!
+
+  """Text that describes the image."""
+  description: String
+}
+
+"""Hero Image Resolution Type."""
+enum ShowcaseHeroImageResolutionMobile {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""Image Scaling Type."""
+enum ShowcaseImageScaling {
+  SCALING_1X
+  SCALING_2X
+  SCALING_3X
+}
+
+"""Hero Image Resolution Type."""
+enum ShowcaseHeroImageResolution {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+interface ShowcaseSection {
+  """Type of the section."""
+  type: String!
+}
+
+type Ticket {
+  """Ticket sku"""
+  sku: SKU!
+
+  """Ticket name"""
+  name: String!
+
+  """Ticket description"""
+  description: String!
+
+  """Ticket locale"""
+  locale: String!
+  multimedias: [TicketMultimedia!]!
+  price: TicketPrice!
+  options: [TicketOptions!]!
+  duration: TicketProductDuration
+  schedule: TicketSchedule
+  features: TicketFeature
+
+  """Ticket highlights"""
+  highlights: [String!]!
+
+  """Type of ticket voucher"""
+  voucherType: String
+
+  """Ticket important infos"""
+  importantInfos: [String!]!
+
+  """Ticket summary"""
+  summary: String
+
+  """Ticket url"""
+  url: String
+  destination: TicketDestination
+  meetingPoints: [TicketAddress!]
+  pickUps: [TicketAddress!]
+  attractionAddresses: [TicketAddress!]
+  ageBands: [TicketAgeBand!]!
+}
+
+"""Ticket multimedia list"""
+type TicketMultimedia {
+  """Ticket multimedia url"""
+  url: String!
+}
+
+"""Ticket Price"""
+type TicketPrice {
+  """Price amount."""
+  amount: Float!
+
+  """Price currency"""
+  currency: String!
+
+  """Original price amount."""
+  originalAmount: Float!
+
+  """Original price currency"""
+  originalCurrency: String!
+}
+
+"""Ticket Options"""
+type TicketOptions {
+  """Option sku"""
+  sku: SKU!
+
+  """Option name"""
+  name: String!
+
+  """Option description"""
+  description: String
+
+  """Option price"""
+  price: TicketPrice!
+
+  """Option rate"""
+  rates: [TicketOptionRate!]!
+
+  """Is cancellation policies per room?"""
+  cancellationPoliciesPerRoom: Boolean!
+
+  """Is Hurb cancellation policies per room?"""
+  huCancellationPoliciesPerRoom: Boolean!
+
+  """Cancellation policy label"""
+  cancellationPolicyLabel: String!
+
+  """Cancellation policies text"""
+  cancellationPoliciesText: String!
+
+  """Hurb Cancellation policies text"""
+  huCancellationPoliciesText: String!
+
+  """Is Hurb free cancellation?"""
+  huFreeCancellation: Boolean!
+  policies: [TicketCancellationPoliciesRule!]!
+  noShowPolicy: TicketCancellationNoShowPolicy
+}
+
+"""Ticket Option Rate"""
+type TicketOptionRate {
+  """Option rate locale"""
+  locale: String!
+
+  """Option rate session"""
+  session: String!
+
+  """Option rate sku"""
+  sku: SKU!
+
+  """Option rate price"""
+  price: TicketPrice!
+
+  """Option rate price details"""
+  priceDetails: TicketOptionRatesPriceDetails!
+
+  """Is cancellation policies per room?"""
+  cancellationPoliciesPerRoom: Boolean!
+
+  """Is Hurb cancellation policies per room?"""
+  huCancellationPoliciesPerRoom: Boolean!
+
+  """Cancellation policy label"""
+  cancellationPolicyLabel: String!
+
+  """Cancellation policies text"""
+  cancellationPoliciesText: String!
+
+  """Hurb Cancellation policies text"""
+  huCancellationPoliciesText: String!
+
+  """Is Hurb free cancellation?"""
+  huFreeCancellation: Boolean!
+  policies: [TicketCancellationPoliciesRule!]!
+  noShowPolicy: TicketCancellationNoShowPolicy
+}
+
+type TicketOptionRatesPriceDetails {
+  """Ticket Option Rates Price Details AgeBands"""
+  ageBands: [TicketOptionRatesPriceDetailsAgeBands!]!
+}
+
+type TicketOptionRatesPriceDetailsAgeBands {
+  """Pax type"""
+  paxType: String!
+
+  """Age from"""
+  ageFrom: String!
+
+  """Age to"""
+  ageTo: String!
+  price: TicketOptionRatesPriceDetailsAgeBandsPrice!
+}
+
+type TicketOptionRatesPriceDetailsAgeBandsPrice {
+  """Price amount."""
+  amount: Float!
+
+  """Price currency"""
+  currency: String!
+}
+
+"""Ticket Cancellation Policies Rule"""
+type TicketCancellationPoliciesRule {
+  """Cancellation policies rule charging type"""
+  chargingType: String
+
+  """Cancellation policies rule charging currency"""
+  currency: String
+
+  """Cancellation policies rule charging amount"""
+  value: Float
+
+  """Cancellation policies rule from date"""
+  from: String!
+
+  """Cancellation policies rule to date"""
+  to: String!
+}
+
+"""Ticket Cancellation NoShow Policy"""
+type TicketCancellationNoShowPolicy {
+  """Cancellation no show policy charging type"""
+  chargingType: String
+
+  """Cancellation no show policy charging amount"""
+  value: Float
+
+  """Cancellation no show policy charging currency"""
+  currency: String
+}
+
+type TicketProductDuration {
+  """Duration value."""
+  value: Float
+
+  """Duration unit."""
+  unit: TicketDurationUnit
+}
+
+"""Possible duration units in a ticket"""
+enum TicketDurationUnit {
+  MINUTE
+  HOUR
+  DAY
+}
+
+"""Ticket features object"""
+type TicketFeature {
+  """Ticket feature exclusions"""
+  exclusions: [Feature!]!
+
+  """Ticket feature inclusions"""
+  inclusions: [Feature!]!
+}
+
+"""Feature object"""
+type Feature {
+  """Feature code"""
+  code: String!
+
+  """Feature name"""
+  name: String!
+}
+
+"""Ticket Destination"""
+type TicketDestination {
+  """Atlas ID"""
+  atlasId: String
+
+  """Destination name"""
+  name: String
+  country: AddressCountry
+  state: AddressState
+  city: AddressCity
+}
+
+type AddressCountry {
+  """Atlas ID"""
+  atlasId: String
+
+  """Country name"""
+  name: String
+
+  """Country code"""
+  code: String
+}
+
+type AddressState {
+  """Atlas ID"""
+  atlasId: String
+
+  """State name"""
+  name: String
+}
+
+type AddressCity {
+  """Atlas ID"""
+  atlasId: String
+
+  """City name"""
+  name: String
+}
+
+"""Ticket Address"""
+type TicketAddress {
+  destination: TicketDestination
+
+  """Address line"""
+  addressLine: String
+
+  """Address Longitude"""
+  longitude: Float
+
+  """Address Latitude"""
+  latitude: Float
+
+  """Address ZipCode"""
+  zipcode: String
+
+  """Address Complement"""
+  complement: String
+
+  """Address Description"""
+  description: String
+
+  """Address Pickup Instructions"""
+  pickupInstructions: [String!]
+}
+
+type TicketAgeBand {
+  """Pax type"""
+  paxType: String!
+
+  """Age from"""
+  ageFrom: String!
+
+  """Age to"""
+  ageTo: String!
+}
+
+"""Represents the fields of the location suggestion."""
+type LocationSuggestion implements Suggestion {
+  """Suggestion text."""
+  text: String!
+
+  """Suggestion filter."""
+  filter: String!
+
+  """Suggestion Type."""
+  suggestionType: String!
+
+  """Location suggestion country."""
+  country: String
+
+  """Location suggestion state."""
+  state: String
+
+  """Location suggestion city."""
+  city: String
+}
+
+"""Represents the fields of the product suggestion."""
+type ProductSuggestion implements Suggestion {
+  """Suggestion text."""
+  text: String!
+
+  """Suggestion filter."""
+  filter: String!
+
+  """Suggestion Type."""
+  suggestionType: String!
+
+  """Suggestion product SKU."""
+  sku: SKU!
+
+  """Suggestion product type."""
+  productType: String!
+
+  """Suggestion product country."""
+  country: String
+
+  """Suggestion product state."""
+  state: String
+
+  """Suggestion product city."""
+  city: String
+}
+
+"""Represents the fields on the suggestion tag."""
+type TagSuggestion implements Suggestion {
+  """Suggestion text."""
+  text: String!
+
+  """Suggestion filter."""
+  filter: String!
+
+  """Suggestion Type."""
+  suggestionType: String!
+}
+
+type SearchResultItemDestinations {
+  """Destination name."""
+  name: String!
+
+  """Destination country."""
+  country: String!
+}
+
+"""Represents the fields related to Ticket Products."""
+type SearchResultTicketItem implements SearchResultItem {
+  """Product id."""
+  id: ID
+
+  """Product sku."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Product name."""
+  name: String!
+
+  """Product url."""
+  url: String!
+
+  """Product category."""
+  category: String!
+
+  """Product description."""
+  description: String!
+
+  """Product short description."""
+  smallDescription: String!
+
+  """Product price."""
+  price: ProductPrice!
+
+  """Product address."""
+  address: SearchResultItemAddress
+
+  """Product tags."""
+  tags: [SearchResultItemTag!]!
+
+  """List of product images."""
+  gallery(limit: Int): [SearchResultItemGalleryImage!]!
+
+  """List of product amenities."""
+  amenities(
+    """Limit of amenities per product."""
+    limit: PositiveInt
+  ): [SearchResultItemAmenity!]!
+
+  """Inform if the product is available"""
+  isAvailable: Boolean!
+
+  """Describes quantities and limits related to the product."""
+  quantityDescriptors: SearchResultItemQuantityDescriptors!
+}
+
+"""Possible units for cms offer page products"""
+enum CMSOfferPageProductDurationUnit {
+  MINUTE
+  HOUR
+  DAY
+}
+
+type CMSOfferPageProductDuration {
+  """Duration value."""
+  values: [Float!]!
+
+  """Duration unit."""
+  unit: CMSOfferPageProductDurationUnit!
+}
+
+"""Nearby destinations section."""
+type CMSOfferPageSectionNearbyDestinations implements CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+}
+
+"""Section to show carousel."""
+type CMSOfferPageSectionCarousel implements CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+
+  """Carousel Items"""
+  carouselItems: [CMSOfferPageSectionCarouselItem!]!
+}
+
+"""Object that describes an carousel banner"""
+type CMSOfferPageSectionCarouselItem {
+  """Image of the banner."""
+  image: CMSOfferPageSectionCarouselItemImage
+
+  """Code to be rendered on webview or modal page"""
+  htmlCode: String
+
+  """Offer page parameters to get a linked cms offer page"""
+  contentOfferPage: CMSOfferPageSectionCarouselItemContentOfferPage
+}
+
+"""HeaderBanner image."""
+type CMSOfferPageSectionCarouselItemImage {
+  """Image for mobile"""
+  mobile(quality: WebImageQuality, resolution: CMSOfferPageSectionCarouselItemImageResolutionMobile, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Image for desktop"""
+  desktop(quality: WebImageQuality, resolution: CMSOfferPageSectionCarouselItemImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Carousel Mobile Image Resolution Type"""
+enum CMSOfferPageSectionCarouselItemImageResolutionMobile {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""Carousel Image Resolution Type"""
+enum CMSOfferPageSectionCarouselItemImageResolution {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""Banner content offer page."""
+type CMSOfferPageSectionCarouselItemContentOfferPage {
+  """ContentOfferPage category"""
+  category: String
+
+  """ContentOfferPage slug"""
+  slug: String
+}
+
+"""Section to show a big banner."""
+type CMSOfferPageSectionWideBanner implements CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+
+  """Image of the banner."""
+  image: CMSOfferPageSectionWideBannerImage
+}
+
+"""WideBanner image."""
+type CMSOfferPageSectionWideBannerImage {
+  """Image for mobile"""
+  mobile(quality: WebImageQuality, resolution: CMSOfferPageSectionWideBannerImageResolutionMobile, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Image for desktop"""
+  desktop(quality: WebImageQuality, resolution: CMSOfferPageSectionWideBannerImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""WideBanner Image Resolution Type"""
+enum CMSOfferPageSectionWideBannerImageResolutionMobile {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""WideBanner Image Resolution Type"""
+enum CMSOfferPageSectionWideBannerImageResolution {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""Section to show featured collection."""
+type CMSOfferPageSectionFeaturedCollection implements CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+
+  """Featured Collection Items."""
+  featuredCollectionItems: [CMSOfferPageSectionFeaturedCollectionItem!]!
+}
+
+interface CMSOfferPageSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+}
+
+type CMSOfferPageSectionFeaturedCollectionCampaign implements CMSOfferPageSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Title of the campaign."""
+  title: String
+
+  """Campaign URL."""
+  url: String
+
+  """Image of the campaign."""
+  image: CMSOfferPageSectionFeaturedCollectionCampaignImage
+}
+
+"""Specifies URL and alternate text for a web image."""
+type CMSOfferPageSectionFeaturedCollectionCampaignImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: CMSOfferPageSectionFeaturedCollectionCampaignImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type"""
+enum CMSOfferPageSectionFeaturedCollectionCampaignImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+type CMSOfferPageSectionFeaturedCollectionHotel implements CMSOfferPageSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Hotel SKU."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Hotel URL."""
+  url: String
+
+  """A subtitle for Hotel."""
+  subtitle: String
+
+  """A title for Hotel."""
+  title: String
+
+  """Hotel rating in stars."""
+  stars: Int!
+
+  """is there some rule for a free cancellation?"""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Image of the hotel."""
+  image: CMSOfferPageSectionFeaturedCollectionProductImage
+
+  """Product price."""
+  price: ProductPrice
+}
+
+"""Specifies URL and alternate text for a web image."""
+type CMSOfferPageSectionFeaturedCollectionProductImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: CMSOfferPageSectionFeaturedCollectionProductImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type"""
+enum CMSOfferPageSectionFeaturedCollectionProductImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+type CMSOfferPageSectionFeaturedCollectionPackage implements CMSOfferPageSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Package SKU."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Package URL."""
+  url: String
+
+  """A subtitle for Package."""
+  subtitle: String
+
+  """A title for Package."""
+  title: String
+
+  """Does the package have a flight included?"""
+  flightIncluded: Boolean!
+
+  """Package amenities."""
+  amenities(
+    """Limit of amenities per product."""
+    limit: PositiveInt
+  ): [String!]!
+
+  """Text for the free cancellation."""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Image of the package."""
+  image: CMSOfferPageSectionFeaturedCollectionProductImage
+
+  """Product price."""
+  price: ProductPrice
+
+  """Product duration."""
+  duration: CMSOfferPageProductDuration
+}
+
+type CMSOfferPageSectionFeaturedCollectionTicket implements CMSOfferPageSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Ticket SKU."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Ticket URL."""
+  url: String
+
+  """A subtitle for Ticket."""
+  subtitle: String
+
+  """A title for Ticket."""
+  title: String
+
+  """Text for the free cancellation."""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Image of the Ticket."""
+  image: CMSOfferPageSectionFeaturedCollectionProductTicketImage
+
+  """Product price."""
+  price: ProductPrice
+
+  """Product duration."""
+  duration: CMSOfferPageProductDuration
+
+  """Product schedule"""
+  schedule: TicketSchedule
+}
+
+"""Specifies URL and alternate text for a web image."""
+type CMSOfferPageSectionFeaturedCollectionProductTicketImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: CMSOfferPageSectionFeaturedCollectionProductTicketImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Product Ticket Image Resolution Type"""
+enum CMSOfferPageSectionFeaturedCollectionProductTicketImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+"""Section to show incentives."""
+type CMSOfferPageSectionIncentiveCollection implements CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+
+  """Incentive Collection Items"""
+  incentiveCollectionItems: [CMSOfferPageSectionIncentiveCollectionItem!]!
+}
+
+"""Object that describes an incentive"""
+type CMSOfferPageSectionIncentiveCollectionItem {
+  """Title of the incentive."""
+  title: String!
+
+  """Message of the incentive."""
+  message: String!
+
+  """Image of the incentive."""
+  image: CMSOfferPageSectionIncentiveCollectionItemImage!
+}
+
+"""Specifies URL and alternate text for a web image."""
+type CMSOfferPageSectionIncentiveCollectionItemImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: CMSOfferPageSectionIncentiveCollectionItemImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type"""
+enum CMSOfferPageSectionIncentiveCollectionItemImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+type CMSOfferPageSectionWideTilesCollection implements CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+
+  """Section title."""
+  title: String
+
+  """Tiles list."""
+  wideTilesCollectionItems: [CMSOfferPageSectionWideTilesCollectionItem!]!
+}
+
+type CMSOfferPageSectionWideTilesCollectionItem {
+  """Title of the campaign."""
+  title: String
+
+  """Campaign URL."""
+  url: String
+
+  """Image of the campaign."""
+  image: CMSOfferPageSectionWideTilesCollectionItemImage
+}
+
+"""Specifies URL and alternate text for a web image."""
+type CMSOfferPageSectionWideTilesCollectionItemImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: CMSOfferPageSectionWideTilesCollectionItemImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type"""
+enum CMSOfferPageSectionWideTilesCollectionItemImageResolution {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+type CMSOfferPageSectionTilesCollection implements CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+
+  """Section title."""
+  title: String
+
+  """Tiles List"""
+  tilesCollectionItems: [CMSOfferPageSectionTilesCollectionItem!]!
+}
+
+type CMSOfferPageSectionTilesCollectionItem {
+  """Title of the campaign."""
+  title: String
+
+  """Campaign URL."""
+  url: String
+
+  """Image of the campaign."""
+  image: CMSOfferPageSectionTilesCollectionItemImage
+}
+
+"""Specifies URL and alternate text for a web image."""
+type CMSOfferPageSectionTilesCollectionItemImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: CMSOfferPageSectionTilesCollectionItemImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type"""
+enum CMSOfferPageSectionTilesCollectionItemImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+"""Section to show vertical cards."""
+type CMSOfferPageSectionStandardCollection implements CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+
+  """Section title."""
+  title: String
+
+  """Call to action."""
+  callToAction: CMSOfferPageSectionStandardCollectionCallToAction
+
+  """Standard Collection Items."""
+  standardCollectionItems: [CMSOfferPageSectionStandardCollectionItem!]!
+}
+
+type CMSOfferPageSectionStandardCollectionCallToAction {
+  """Text to show in the call to action."""
+  text: String!
+
+  """Link for call to action."""
+  link: String!
+}
+
+interface CMSOfferPageSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+}
+
+type CMSOfferPageSectionStandardCollectionCampaign implements CMSOfferPageSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Title of the campaign."""
+  title: String
+
+  """Campaign URL."""
+  url: String
+
+  """Image of the campaign."""
+  image: CMSOfferPageSectionStandardCollectionCampaignImage
+}
+
+"""Specifies URL and alternate text for a web image."""
+type CMSOfferPageSectionStandardCollectionCampaignImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: CMSOfferPageSectionStandardCollectionCampaignImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type"""
+enum CMSOfferPageSectionStandardCollectionCampaignImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+type CMSOfferPageSectionStandardCollectionHotel implements CMSOfferPageSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Hotel SKU."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Hotel URL."""
+  url: String
+
+  """A subtitle for Hotel."""
+  subtitle: String
+
+  """A title for Hotel."""
+  title: String
+
+  """Hotel rating in stars."""
+  stars: Int!
+
+  """is there some rule for a free cancellation?"""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Image of the hotel."""
+  image: CMSOfferPageSectionStandardCollectionProductImage
+
+  """Product price."""
+  price: ProductPrice
+}
+
+"""Specifies URL and alternate text for a web image."""
+type CMSOfferPageSectionStandardCollectionProductImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: CMSOfferPageSectionStandardCollectionProductImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type"""
+enum CMSOfferPageSectionStandardCollectionProductImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+type CMSOfferPageSectionStandardCollectionPackage implements CMSOfferPageSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Package SKU."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Package URL."""
+  url: String
+
+  """A subtitle for Package."""
+  subtitle: String
+
+  """A title for Package."""
+  title: String
+
+  """Does the package have a flight included?"""
+  flightIncluded: Boolean!
+
+  """Package amenities."""
+  amenities(
+    """Limit of amenities per product."""
+    limit: PositiveInt
+  ): [String!]!
+
+  """Text for the free cancellation."""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Image of the package."""
+  image: CMSOfferPageSectionStandardCollectionProductImage
+
+  """Product price."""
+  price: ProductPrice
+
+  """Product duration."""
+  duration: CMSOfferPageProductDuration
+}
+
+type CMSOfferPageSectionStandardCollectionTicket implements CMSOfferPageSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Ticket SKU."""
+  sku(pattern: SkuPattern = FULL): SKU!
+
+  """Ticket URL."""
+  url: String
+
+  """A subtitle for Ticket."""
+  subtitle: String
+
+  """A title for Ticket."""
+  title: String
+
+  """Text for the free cancellation."""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Image of the Ticket."""
+  image: CMSOfferPageSectionStandardCollectionProductImage
+
+  """Product price."""
+  price: ProductPrice
+
+  """Product duration."""
+  duration: CMSOfferPageProductDuration
+
+  """Product schedule"""
+  schedule: TicketSchedule
+}
+
+"""Section to show Links."""
+type CMSOfferPageSectionLinkCollection implements CMSOfferPageSection {
+  """Type of the section."""
+  type: String!
+
+  """link Items."""
+  linkCollectionItems: [CMSOfferPageSectionLinkItem!]!
+}
+
+"""Object that describes an link."""
+type CMSOfferPageSectionLinkItem {
+  """Title for the link."""
+  title: String!
+
+  """Link for the url."""
+  link: String!
+}
+
+"""Possible units for showcase products."""
+enum ShowcaseProductDurationUnit {
+  MINUTE
+  HOUR
+  DAY
+}
+
+type ShowcaseProductDuration {
+  """Duration value."""
+  values: [Float!]!
+
+  """Duration unit."""
+  unit: ShowcaseProductDurationUnit!
+}
+
+"""Section to show carousel."""
+type ShowcaseSectionCarousel implements ShowcaseSection {
+  """Type of the section."""
+  type: String!
+
+  """Carousel Items."""
+  carouselItems: [ShowcaseSectionCarouselItem!]!
+}
+
+"""Object that describes an carousel banner."""
+type ShowcaseSectionCarouselItem {
+  """Image of the banner."""
+  image: ShowcaseSectionCarouselItemImage
+
+  """Code to be rendered on webview or modal page."""
+  htmlCode: String
+
+  """Showcase parameters to get a linked showcase."""
+  contentShowcase: ShowcaseSectionCarouselItemContentOfferPage
+}
+
+"""WideBanner image."""
+type ShowcaseSectionCarouselItemImage {
+  """Image for mobile."""
+  mobile(quality: WebImageQuality, resolution: ShowcaseSectionCarouselItemImageResolutionMobile, upscaling: ShowcaseImageScaling = SCALING_1X): String!
+
+  """Image for desktop."""
+  desktop(quality: WebImageQuality, resolution: ShowcaseSectionCarouselItemImageResolution, upscaling: ShowcaseImageScaling = SCALING_1X): String!
+
+  """Image description."""
+  description: String
+}
+
+"""Carousel Mobile Image Resolution Type."""
+enum ShowcaseSectionCarouselItemImageResolutionMobile {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""Carousel Image Resolution Type."""
+enum ShowcaseSectionCarouselItemImageResolution {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""Banner content offer page."""
+type ShowcaseSectionCarouselItemContentOfferPage {
+  """ContentOfferPage category."""
+  category: String
+
+  """ContentOfferPage slug."""
+  slug: String
+}
+
+"""Section to show a big banner."""
+type ShowcaseSectionWideBanner implements ShowcaseSection {
+  """Type of the section."""
+  type: String!
+
+  """Image of the banner."""
+  image: ShowcaseSectionWideBannerImage
+}
+
+"""WideBanner image."""
+type ShowcaseSectionWideBannerImage {
+  """Image for mobile."""
+  mobile(quality: WebImageQuality, resolution: ShowcaseSectionWideBannerImageResolutionMobile, upscaling: ShowcaseImageScaling = SCALING_1X): String!
+
+  """Image for desktop."""
+  desktop(quality: WebImageQuality, resolution: ShowcaseSectionWideBannerImageResolution, upscaling: ShowcaseImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""WideBanner Image Resolution Type."""
+enum ShowcaseSectionWideBannerImageResolutionMobile {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""WideBanner Image Resolution Type."""
+enum ShowcaseSectionWideBannerImageResolution {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+"""Section to show featured collection."""
+type ShowcaseSectionFeaturedCollection implements ShowcaseSection {
+  """Type of the section."""
+  type: String!
+
+  """Featured Collection Items."""
+  featuredCollectionItems: [ShowcaseSectionFeaturedCollectionItem!]!
+}
+
+interface ShowcaseSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+}
+
+type ShowcaseSectionFeaturedCollectionCampaign implements ShowcaseSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Title of the campaign."""
+  title: String
+
+  """Campaign URL."""
+  url: String
+
+  """Image of the campaign."""
+  image: ShowcaseSectionFeaturedCollectionCampaignImage
+}
+
+"""Specifies URL and alternate text for a web image."""
+type ShowcaseSectionFeaturedCollectionCampaignImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: ShowcaseSectionFeaturedCollectionCampaignImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type."""
+enum ShowcaseSectionFeaturedCollectionCampaignImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+type ShowcaseSectionFeaturedCollectionHotel implements ShowcaseSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Hotel SKU."""
+  sku: String!
+
+  """Hotel URL."""
+  url: String
+
+  """A title for Hotel."""
+  title: String
+
+  """Hotel rating in stars."""
+  stars: Int!
+
+  """is there some rule for a free cancellation?"""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Gallery of the hotel."""
+  gallery: [ShowcaseSectionFeaturedCollectionProductImage!]
+
+  """Hotel address."""
+  address: ShowcaseSectionFeaturedCollectionHotelAddress!
+}
+
+"""Specifies URL and alternate text for a web image."""
+type ShowcaseSectionFeaturedCollectionProductImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: ShowcaseSectionFeaturedCollectionProductImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type."""
+enum ShowcaseSectionFeaturedCollectionProductImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+"""Hotel address."""
+type ShowcaseSectionFeaturedCollectionHotelAddress implements ShowcaseSectionFeaturedCollectionProductAddress {
+  """Product city."""
+  city: String
+
+  """Product country."""
+  country: String
+}
+
+"""Product address."""
+interface ShowcaseSectionFeaturedCollectionProductAddress {
+  """Product city."""
+  city: String
+
+  """Product country."""
+  country: String
+}
+
+type ShowcaseSectionFeaturedCollectionPackage implements ShowcaseSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Package SKU."""
+  sku: String!
+
+  """Package URL."""
+  url: String
+
+  """A title for Package."""
+  title: String
+
+  """Does the package have a flight included?"""
+  flightIncluded: Boolean!
+
+  """Package amenities."""
+  amenities(
+    """Limit of amenities per product."""
+    limit: PositiveInt
+  ): [String!]!
+
+  """Text for the free cancellation."""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Gallery of the package."""
+  gallery: [ShowcaseSectionFeaturedCollectionProductImage!]
+
+  """Product duration."""
+  duration: ShowcaseProductDuration
+}
+
+type ShowcaseSectionFeaturedCollectionTicket implements ShowcaseSectionFeaturedCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Ticket SKU."""
+  sku: String!
+
+  """Ticket URL."""
+  url: String
+
+  """A title for Ticket."""
+  title: String
+
+  """If it has free cancellation."""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Gallery of the Ticket."""
+  gallery: [ShowcaseSectionFeaturedCollectionProductTicketImage!]
+
+  """Product duration."""
+  duration: ShowcaseProductDuration
+
+  """Product schedule."""
+  schedule: TicketSchedule
+
+  """Ticket address."""
+  address: ShowcaseSectionFeaturedCollectionTicketAddress!
+}
+
+"""Specifies URL and alternate text for a web image."""
+type ShowcaseSectionFeaturedCollectionProductTicketImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: ShowcaseSectionFeaturedCollectionProductTicketImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Product Ticket Image Resolution Type."""
+enum ShowcaseSectionFeaturedCollectionProductTicketImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+"""Ticket address."""
+type ShowcaseSectionFeaturedCollectionTicketAddress implements ShowcaseSectionFeaturedCollectionProductAddress {
+  """Product city."""
+  city: String
+
+  """Product country."""
+  country: String
+
+  """Ticket destination."""
+  destination: String!
+}
+
+"""Section to show incentives."""
+type ShowcaseSectionIncentiveCollection implements ShowcaseSection {
+  """Type of the section."""
+  type: String!
+
+  """Incentive Collection Items."""
+  incentiveCollectionItems: [ShowcaseSectionIncentiveCollectionItem!]!
+}
+
+"""Object that describes an incentive."""
+type ShowcaseSectionIncentiveCollectionItem {
+  """Title of the incentive."""
+  title: String!
+
+  """Message of the incentive."""
+  message: String!
+
+  """Image of the incentive."""
+  image: ShowcaseSectionIncentiveCollectionItemImage!
+}
+
+"""Specifies URL and alternate text for a web image."""
+type ShowcaseSectionIncentiveCollectionItemImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: ShowcaseSectionIncentiveCollectionItemImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type."""
+enum ShowcaseSectionIncentiveCollectionItemImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+type ShowcaseSectionWideTilesCollection implements ShowcaseSection {
+  """Type of the section."""
+  type: String!
+
+  """Section title."""
+  title: String
+
+  """Tiles list."""
+  wideTilesCollectionItems: [ShowcaseSectionWideTilesCollectionItem!]!
+}
+
+type ShowcaseSectionWideTilesCollectionItem {
+  """Title of the campaign."""
+  title: String
+
+  """Campaign URL."""
+  url: String
+
+  """Image of the campaign."""
+  image: ShowcaseSectionWideTilesCollectionItemImage
+}
+
+"""Specifies URL and alternate text for a web image."""
+type ShowcaseSectionWideTilesCollectionItemImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: ShowcaseSectionWideTilesCollectionItemImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type."""
+enum ShowcaseSectionWideTilesCollectionItemImageResolution {
+  ORIGINAL
+  LOW
+  MEDIUM
+}
+
+type ShowcaseSectionTilesCollection implements ShowcaseSection {
+  """Type of the section."""
+  type: String!
+
+  """Section title."""
+  title: String
+
+  """Tiles List."""
+  tilesCollectionItems: [ShowcaseSectionTilesCollectionItem!]!
+}
+
+type ShowcaseSectionTilesCollectionItem {
+  """Title of the campaign."""
+  title: String
+
+  """Campaign URL."""
+  url: String
+
+  """Image of the campaign."""
+  image: ShowcaseSectionTilesCollectionItemImage
+}
+
+"""Specifies URL and alternate text for a web image."""
+type ShowcaseSectionTilesCollectionItemImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: ShowcaseSectionTilesCollectionItemImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type."""
+enum ShowcaseSectionTilesCollectionItemImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+"""Section to show vertical cards."""
+type ShowcaseSectionStandardCollection implements ShowcaseSection {
+  """Type of the section."""
+  type: String!
+
+  """Section title."""
+  title: String
+
+  """Call to action."""
+  callToAction: ShowcaseSectionStandardCollectionCallToAction
+
+  """Standard Collection Items."""
+  standardCollectionItems: [ShowcaseSectionStandardCollectionItem!]!
+}
+
+type ShowcaseSectionStandardCollectionCallToAction {
+  """Text for the call to action."""
+  text: String!
+
+  """Link for the call to action."""
+  link: String!
+}
+
+interface ShowcaseSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+}
+
+type ShowcaseSectionStandardCollectionCampaign implements ShowcaseSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Title of the campaign."""
+  title: String
+
+  """Campaign URL."""
+  url: String
+
+  """Image of the campaign."""
+  image: ShowcaseSectionStandardCollectionCampaignImage
+}
+
+"""Specifies URL and alternate text for a web image."""
+type ShowcaseSectionStandardCollectionCampaignImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: ShowcaseSectionStandardCollectionCampaignImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type."""
+enum ShowcaseSectionStandardCollectionCampaignImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+type ShowcaseSectionStandardCollectionHotel implements ShowcaseSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Hotel SKU."""
+  sku: String!
+
+  """Hotel URL."""
+  url: String
+
+  """A title for Hotel."""
+  title: String
+
+  """Hotel rating in stars."""
+  stars: Int!
+
+  """is there some rule for a free cancellation?"""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Gallery of the hotel."""
+  gallery: [ShowcaseSectionStandardCollectionProductImage!]!
+
+  """Hotel address."""
+  address: ShowcaseSectionStandardCollectionHotelAddress!
+}
+
+"""Specifies URL and alternate text for a web image."""
+type ShowcaseSectionStandardCollectionProductImage {
+  """Specifies the URL of the image."""
+  url(quality: WebImageQuality, resolution: ShowcaseSectionStandardCollectionProductImageResolution, upscaling: CMSOfferPageImageScaling = SCALING_1X): String!
+
+  """Specifies a text that describes the image."""
+  description: String
+}
+
+"""Campaign Resolution Type."""
+enum ShowcaseSectionStandardCollectionProductImageResolution {
+  ORIGINAL
+  LOWER
+  LOW
+}
+
+"""Hotel address."""
+type ShowcaseSectionStandardCollectionHotelAddress implements ShowcaseSectionStandardCollectionProductAddress {
+  """Product city."""
+  city: String
+
+  """Product country."""
+  country: String
+}
+
+"""Product address."""
+interface ShowcaseSectionStandardCollectionProductAddress {
+  """Product city."""
+  city: String
+
+  """Product country."""
+  country: String
+}
+
+type ShowcaseSectionStandardCollectionPackage implements ShowcaseSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Package SKU."""
+  sku: String!
+
+  """Package URL."""
+  url: String
+
+  """A title for Package."""
+  title: String
+
+  """Does the package have a flight included?"""
+  flightIncluded: Boolean!
+
+  """Package amenities."""
+  amenities(
+    """Limit of amenities per product."""
+    limit: PositiveInt
+  ): [String!]!
+
+  """Text for the free cancellation."""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Gallery of the package."""
+  gallery: [ShowcaseSectionStandardCollectionProductImage!]!
+
+  """Product duration."""
+  duration: ShowcaseProductDuration
+}
+
+type ShowcaseSectionStandardCollectionTicket implements ShowcaseSectionStandardCollectionItem {
+  """Type of the card."""
+  type: String!
+
+  """Ticket SKU."""
+  sku: String!
+
+  """Ticket URL."""
+  url: String
+
+  """A title for Ticket."""
+  title: String
+
+  """Text for the free cancellation."""
+  huFreeCancellation: Boolean!
+
+  """Text for the free cancellation."""
+  huCancellationPolicyLabel: String
+
+  """Gallery of the Ticket."""
+  gallery: [ShowcaseSectionStandardCollectionProductImage!]!
+
+  """Product duration."""
+  duration: ShowcaseProductDuration
+
+  """Product schedule."""
+  schedule: TicketSchedule
+
+  """Ticket address."""
+  address: ShowcaseSectionStandardCollectionTicketAddress!
+}
+
+"""Ticket address."""
+type ShowcaseSectionStandardCollectionTicketAddress implements ShowcaseSectionStandardCollectionProductAddress {
+  """Product city."""
+  city: String
+
+  """Product country."""
+  country: String
+
+  """Ticket destination."""
+  destination: String!
+}
+
+"""Section to show Links."""
+type ShowcaseSectionLinkCollection implements ShowcaseSection {
+  """Type of the section."""
+  type: String!
+
+  """Link Items."""
+  linkCollectionItems: [ShowcaseSectionLinkItem!]!
+}
+
+"""Object that describes an link."""
+type ShowcaseSectionLinkItem {
+  """Title for the link."""
+  title: String!
+
+  """URL for the link."""
+  link: String!
+}
+
+"""Types that can be used to filter sections."""
+enum ShowcasePlatformTypes {
+  SITE
+  SITE_MOBILE
+  APP_MOBILE
+}
