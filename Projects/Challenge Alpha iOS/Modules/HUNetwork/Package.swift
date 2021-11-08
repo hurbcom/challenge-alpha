@@ -25,7 +25,7 @@ let package = Package(
                 .product(name: "Apollo", package: "Apollo"),
                 .product(name: "ApolloWebSocket", package: "Apollo"),
             ],
-            exclude: ["Queries", "introspection_response.json", "schema.graphqls"]
+            exclude: ["Queries"]
         ),
         .executableTarget(
             name: "ApolloCodegen",
