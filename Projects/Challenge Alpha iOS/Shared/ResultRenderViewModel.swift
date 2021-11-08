@@ -27,7 +27,7 @@ internal final class ResultRenderViewModel: ObservableObject {
                     debugPrint(error.localizedDescription)
                 }
             } receiveValue: { [weak self] res in
-                let jsonData = try? JSONSerialization.data(withJSONObject: res?.jsonObject, options: [])
+                let jsonData = try? JSONSerialization.data(withJSONObject: res?.jsonObject as Any, options: [])
                 
                 if let text = prettyJSON(data: jsonData) {
                     self?.resultText = text
@@ -51,7 +51,7 @@ internal final class ResultRenderViewModel: ObservableObject {
                     debugPrint(error.localizedDescription)
                 }
             } receiveValue: { [weak self] res in
-                let jsonData = try? JSONSerialization.data(withJSONObject: res?.jsonObject, options: [])
+                let jsonData = try? JSONSerialization.data(withJSONObject: res?.jsonObject as Any, options: [])
                 
                 if let text = prettyJSON(data: jsonData) {
                     self?.resultText = text
@@ -74,7 +74,7 @@ internal final class ResultRenderViewModel: ObservableObject {
                     debugPrint(error.localizedDescription)
                 }
             } receiveValue: { [weak self] res in
-                let jsonData = try? JSONSerialization.data(withJSONObject: res?.jsonObject, options: [])
+                let jsonData = try? JSONSerialization.data(withJSONObject: res?.jsonObject as Any, options: [])
                 
                 if let text = prettyJSON(data: jsonData) {
                     self?.resultText = text
