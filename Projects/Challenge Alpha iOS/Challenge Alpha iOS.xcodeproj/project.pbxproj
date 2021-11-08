@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		315562572734184C00E1C17C /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315562562734184C00E1C17C /* Tests_iOS.swift */; };
-		315562592734184C00E1C17C /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315562582734184C00E1C17C /* Tests_iOSLaunchTests.swift */; };
 		315562662734184C00E1C17C /* Challenge_Alpha_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155623E2734184A00E1C17C /* Challenge_Alpha_iOSApp.swift */; };
 		315562682734184C00E1C17C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155623F2734184A00E1C17C /* ContentView.swift */; };
 		3155626A2734184C00E1C17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 315562402734184C00E1C17C /* Assets.xcassets */; };
@@ -18,24 +16,11 @@
 		315615D32734444A009FF312 /* ResultRenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315615D22734444A009FF312 /* ResultRenderViewModel.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		315562532734184C00E1C17C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 315562392734184A00E1C17C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 315562442734184C00E1C17C;
-			remoteInfo = "Challenge Alpha iOS (iOS)";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		3155623E2734184A00E1C17C /* Challenge_Alpha_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_Alpha_iOSApp.swift; sourceTree = "<group>"; };
 		3155623F2734184A00E1C17C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		315562402734184C00E1C17C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		315562452734184C00E1C17C /* Challenge Alpha iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		315562522734184C00E1C17C /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		315562562734184C00E1C17C /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
-		315562582734184C00E1C17C /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
 		315615CA27343C13009FF312 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HUNetwork; path = Modules/HUNetwork; sourceTree = "<group>"; };
 		315615CE27343D42009FF312 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		315615D0273441F3009FF312 /* ResultRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRenderView.swift; sourceTree = "<group>"; };
@@ -52,13 +37,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3155624F2734184C00E1C17C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,7 +46,6 @@
 				31DB70752739692600F8663E /* README.md */,
 				3155623D2734184A00E1C17C /* Shared */,
 				315615C927343C12009FF312 /* Packages */,
-				315562552734184C00E1C17C /* Tests iOS */,
 				315562462734184C00E1C17C /* Products */,
 				315615CB27343C54009FF312 /* Frameworks */,
 			);
@@ -91,18 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				315562452734184C00E1C17C /* Challenge Alpha iOS.app */,
-				315562522734184C00E1C17C /* Tests iOS.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		315562552734184C00E1C17C /* Tests iOS */ = {
-			isa = PBXGroup;
-			children = (
-				315562562734184C00E1C17C /* Tests_iOS.swift */,
-				315562582734184C00E1C17C /* Tests_iOSLaunchTests.swift */,
-			);
-			path = "Tests iOS";
 			sourceTree = "<group>";
 		};
 		315615C927343C12009FF312 /* Packages */ = {
@@ -143,24 +110,6 @@
 			productReference = 315562452734184C00E1C17C /* Challenge Alpha iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		315562512734184C00E1C17C /* Tests iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 315562742734184C00E1C17C /* Build configuration list for PBXNativeTarget "Tests iOS" */;
-			buildPhases = (
-				3155624E2734184C00E1C17C /* Sources */,
-				3155624F2734184C00E1C17C /* Frameworks */,
-				315562502734184C00E1C17C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				315562542734184C00E1C17C /* PBXTargetDependency */,
-			);
-			name = "Tests iOS";
-			productName = "Tests iOS";
-			productReference = 315562522734184C00E1C17C /* Tests iOS.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -173,10 +122,6 @@
 				TargetAttributes = {
 					315562442734184C00E1C17C = {
 						CreatedOnToolsVersion = 13.1;
-					};
-					315562512734184C00E1C17C = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = 315562442734184C00E1C17C;
 					};
 				};
 			};
@@ -194,7 +139,6 @@
 			projectRoot = "";
 			targets = (
 				315562442734184C00E1C17C /* Challenge Alpha iOS (iOS) */,
-				315562512734184C00E1C17C /* Tests iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -205,13 +149,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3155626A2734184C00E1C17C /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		315562502734184C00E1C17C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,24 +167,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3155624E2734184C00E1C17C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				315562592734184C00E1C17C /* Tests_iOSLaunchTests.swift in Sources */,
-				315562572734184C00E1C17C /* Tests_iOS.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		315562542734184C00E1C17C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 315562442734184C00E1C17C /* Challenge Alpha iOS (iOS) */;
-			targetProxy = 315562532734184C00E1C17C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3155626C2734184C00E1C17C /* Debug */ = {
@@ -420,55 +340,6 @@
 			};
 			name = Release;
 		};
-		315562752734184C00E1C17C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "hurb.com.Tests-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Challenge Alpha iOS (iOS)";
-			};
-			name = Debug;
-		};
-		315562762734184C00E1C17C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "hurb.com.Tests-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Challenge Alpha iOS (iOS)";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -486,15 +357,6 @@
 			buildConfigurations = (
 				3155626F2734184C00E1C17C /* Debug */,
 				315562702734184C00E1C17C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		315562742734184C00E1C17C /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				315562752734184C00E1C17C /* Debug */,
-				315562762734184C00E1C17C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
