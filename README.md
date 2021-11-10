@@ -10,7 +10,7 @@ The challenge is to create a mobile app (**Swift**, **Kotlin**) that consumes th
 
 We want to see the **maximum of your technical ability**! You decide the limit.
 
-[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin .com/company/hurb/)
+[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/company/hurb/)
 
 #### [>>>>> See Wiki for challenge details. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
 
