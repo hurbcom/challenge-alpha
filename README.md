@@ -1,6 +1,6 @@
 # <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Alpha Challenge
 
-[[English](readme.md) | [Português](readme.pt.md)]
+[[English](README.md) | [Português](README.pt.md)]
 
 Welcome to Hurb's mobile team coding challenge!
 
