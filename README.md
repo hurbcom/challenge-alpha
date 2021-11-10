@@ -1,54 +1,55 @@
-# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Desafio Alpha
+# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Alpha Challenge
 
-Bem vindo ao coding challenge do time mobile da Hurb!
+[[English](readme.md) | [Português](readme.pt.md)]
 
-Estamos sempre procurando expandir nossa equipe com devs dedicados, veja se tem vagas abertas no nosso [Gupy](https://hurb.gupy.io/), caso não tenha a vaga em aberto mande uma mensagem pelo LinkedIn ou abra uma issue.
+Welcome to Hurb's mobile team coding challenge!
 
-O desafio consiste em criar aplicativo para dispositivo móvel (**Swift**, **Kotlin**) que consuma o JSON exposto pela nossa API REST ou GraphQL de busca e apresente as informações em uma listagem. Você é livre para utilizar bibliotecas de terceiros.
+We are always looking to expand our team with dedicated devs, see if you have open positions in our [Gupy](https://hurb.gupy.io/), if you don't have an open position, send a message on LinkedIn or open an issue.
 
-Queremos ver o **máximo da sua capacidade técnica**! Quem decide o limite é você.
+The challenge is to create a mobile app (**Swift**, **Kotlin**) that consumes the JSON exposed by our REST API or GraphQL search and presents the information in a listing. You are free to use third-party libraries.
 
- [<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/company/hurb/)
- 
- #### [>>>>> Veja a Wiki para os detalhes do desafio. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
+We want to see the **maximum of your technical ability**! You decide the limit.
 
-## Requisitos Mínimos
+[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin .com/company/hurb/)
 
--   Forkar esse desafio e criar o seu projeto (ou workspace) usando a sua versão desse repositório, tão logo acabe o desafio, submeta um _pull request_.
-    -   Caso você tenha algum motivo para não submeter um _pull request_, crie um repositório privado no Github, faça todo desafio na branch **master** e não se esqueça de preencher o arquivo `pull-request.txt`. Tão logo termine seu desenvolvimento, adicione como colaborador o usuário `automator-hurb` no seu repositório e o deixe disponível por pelo menos 30 dias. **Não adicione o `automator-hurb` antes do término do desenvolvimento.**
-    -   Caso você tenha algum problema para criar o repositório privado, ao término do desafio preencha o arquivo chamado `pull-request.txt`, comprima a pasta do projeto - incluindo a pasta `.git` - e nos envie por email.
--   Faça chamadas assíncronas para a API e emita um log dos dados recebidos.
+#### [>>>>> See Wiki for challenge details. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
 
--   Ter testes para o código criado
+## Minimum requirements
 
-## Critério de avaliação
+-   Fork this challenge and create your project (or workspace) using your version of that repository, as soon as you finish the challenge, submit a _pull request_.
+    -   If you have any reason not to submit a _pull request_, create a private repository on Github, do every challenge on the **master** branch and don't forget to fill in the `pull-request.txt` file. As soon as you finish your development, add the user `automator-hurb` to your repository as a contributor and make it available for at least 30 days. **Do not add the `automator-hurb` until development is complete.**
+    -   If you have any problem creating the private repository, at the end of the challenge fill in the file called `pull-request.txt`, compress the project folder - including the `.git` folder - and send it to us by email.
+-   Make asynchronous calls to the API and log the data received.
 
--   **Organização do código**: Separação de módulos, view e model, back-end e front-end
+-   Have tests for the code created
 
--   **Clareza**: O README explica de forma resumida qual é o problema e como pode rodar a aplicação?
+## Evaluation criteria
 
--   **Assertividade**: A aplicação está fazendo o que é esperado? Se tem algo faltando, o README explica o porquê?
+-   **Organization of code**: Separation of modules, view and model, back-end and front-end
 
--   **Legibilidade do código** (incluindo comentários)
+-   **Clarity**: Does the README explain briefly what the problem is and how can I run the application?
 
--   **Segurança**: Existe alguma vulnerabilidade clara?
+-   **Assertiveness**: Is the application doing what is expected? If something is missing, does the README explain why?
 
--   **Cobertura de testes** (Não esperamos cobertura completa)
+-   **Code readability** (including comments)
 
--   **Histórico de commits** (estrutura e qualidade)
+-   **Security**: Are there any clear vulnerabilities?
 
--   **UX**: A interface é de fácil uso e auto-explicativa? A API é intuitiva?
+-   **Test coverage** (We don't expect full coverage)
 
--   **Escolhas técnicas**: A escolha das bibliotecas, banco de dados, arquitetura, etc, é a melhor escolha para a aplicação?
+-   **History of commits** (structure and quality)
 
--   **"Algo a mais"**: Foi adicionada alguma feature não descrita nos requisitos mínimos? Ela foi bem executada? Traz alguma inovação interessante?
+-   **UX**: Is the interface user-friendly and self-explanatory? Is the API intuitive?
 
-## Dúvidas
+-   **Technical choices**: Is the choice of libraries, database, architecture, etc. the best choice for the application?
 
-Quaisquer dúvidas que você venha a ter, consulte as [_issues_](https://github.com/HurbCom/challenge-alpha/issues) para ver se alguém já não a fez e caso você não ache sua resposta, abra você mesmo uma nova issue!
+-   **"Something more"**: Was any feature not described in the minimum requirements added? Was it well executed? Does it bring any interesting innovations?
 
-Boa sorte e boa viagem! ;)
+## Doubts
 
+Any questions you may have, check the [_issues_](https://github.com/HurbCom/challenge-alpha/issues) to see if someone hasn't already and if you can't find your answer, open one yourself. new issue!
+
+Good luck and good trip! ;)
 
 <p align="center">
   <img src="ca.jpg" alt="Challange accepted" />
