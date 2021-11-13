@@ -1,0 +1,15 @@
+name: AppHotel
+options:
+  bundleIdPrefix: com.gondekr
+packages:
+  Kingfisher:
+    url: https://github.com/onevcat/Kingfisher.git
+    majorVersion: 7.0.0
+targets:
+  AppHotel:
+    type: application
+    platform: iOS
+    deploymentTarget: "10.0"
+    sources: [AppHotel]
+    dependencies:
+      - package: Kingfisher
