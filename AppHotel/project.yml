@@ -2,9 +2,8 @@ name: AppHotel
 options:
   bundleIdPrefix: com.gondekr
 packages:
-  Kingfisher:
-    url: https://github.com/onevcat/Kingfisher.git
-    majorVersion: 7.0.0
+  HUNetwork:
+    path: ../Projects/Challenge Alpha iOS/Modules/HUNetwork
 targets:
   AppHotel:
     type: application
@@ -14,7 +13,7 @@ targets:
     settings:
       TARGET_DEVICE_FAMILY: 1
     dependencies:
-      - package: Kingfisher
+      - package: HUNetwork
   Tests:
     type: bundle.unit-test
     platform: iOS
