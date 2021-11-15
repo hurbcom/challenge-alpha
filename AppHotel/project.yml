@@ -7,8 +7,6 @@ packages:
     majorVersion: 7.0.0
 targets:
   AppHotel:
-    info:
-      path: Info.plist
     type: application
     platform: iOS
     deploymentTarget: "13.0"
