@@ -7,9 +7,17 @@ packages:
     majorVersion: 7.0.0
 targets:
   AppHotel:
+    info:
+      path: Info.plist
     type: application
     platform: iOS
-    deploymentTarget: "10.0"
-    sources: [AppHotel]
+    deploymentTarget: "13.0"
+    sources: [Sources]
+    settings:
+      TARGET_DEVICE_FAMILY: 1
     dependencies:
       - package: Kingfisher
+  Tests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests]

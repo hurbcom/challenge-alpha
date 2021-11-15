@@ -1,0 +1,2 @@
+generate:
+	cd AppHotel; xcodegen
