@@ -8,6 +8,10 @@ extension HomeVC {
         let interactor = HomeInteractor()
         interactor.output = presenter
         
+        let repository = HotelRepository()
+        repository.networkManager = NetworkManager()
+        interactor.repository = repository
+
         self.output = interactor
     }
 }

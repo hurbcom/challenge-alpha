@@ -2,7 +2,7 @@ name: AppHotel
 options:
   bundleIdPrefix: com.gondekr
 packages:
-  HUNetwork:
+  HUGraphQL:
     path: ../Projects/Challenge Alpha iOS/Modules/HUNetwork
 targets:
   AppHotel:
@@ -13,7 +13,7 @@ targets:
     settings:
       TARGET_DEVICE_FAMILY: 1
     dependencies:
-      - package: HUNetwork
+      - package: HUGraphQL
   Tests:
     type: bundle.unit-test
     platform: iOS

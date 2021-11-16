@@ -10,9 +10,12 @@ protocol HomeInteractorOutput {
 class HomeInteractor: HomeInteractorInput {
 //    var repository: HotelRepository!
     var output: HomeInteractorOutput!
+    var repository: HotelRepositoryType!
     
     func fetchProducts() {
-        // let hotels = repository.getHotels()
-        output.presentError("Não implementado")
+        repository.searchHotels(query: "Teste") { [weak self] hotels in
+            self?.output.presentProducts(hotels)
+//            output.presentError("Não implementado")
+        }
     }
 }

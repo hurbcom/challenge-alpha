@@ -14,8 +14,7 @@ class HomePresenter: HomePresenterInput {
     weak var output: HomePresenterOutput!
     
     func formatProducts(_ list: [Hotel]) {
-        let sortedList = list.sorted { $0.name > $1.name }
-        output.showProducts(sortedList)
+        output.showProducts(list)
     }
     
     func formatError(_ error: String) {

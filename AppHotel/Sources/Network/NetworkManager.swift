@@ -1,4 +1,5 @@
 import HUGraphQL
+import Apollo
 
 enum NetworkError: Error {
     case invalidURL
@@ -8,11 +9,12 @@ enum NetworkError: Error {
 }
 
 protocol NetworkManagerType {
-    func makeRequest<T: Decodable>(query: GraphQLQuery, parameters: [String: Any], onComplete: @escaping (Result<T, NetworkError>) -> Void)
+    func makeRequest<Q: GraphQLQuery>(query: Q, onComplete: @escaping (Result<Q.Data?, NetworkError>) -> Void)
 }
 
 struct NetworkManager: NetworkManagerType {
-    func makeRequest<T>(query: GraphQLQuery, onComplete: @escaping  (Result<T, NetworkError>) -> Void) {
+    var service = HUGService(enableLog: true)
+    func makeRequest<Q: GraphQLQuery>(query: Q, onComplete: @escaping (Result<Q.Data?, NetworkError>) -> Void) {
         service.client.fetch(query: query) { res in
             switch res {
             case .failure(let error):
@@ -20,11 +22,11 @@ struct NetworkManager: NetworkManagerType {
                 return
             case .success(let graphQLResponse):
                 if let errors = graphQLResponse.errors {
-                    onComplete(.failure(.unknownError(errors.jsonValue)))
+                    onComplete(.failure(.unknownError(errors.debugDescription)))
                     return
                 }
                 
-                onComplete(.success(graphQLResponse.data?.search))
+                onComplete(.success(graphQLResponse.data))
             }
         }
     }
