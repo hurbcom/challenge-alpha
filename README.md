@@ -26,30 +26,21 @@ We want to see the **maximum of your technical ability**! You decide the limit.
 ## Evaluation criteria
 
 -   **Organization of code**: Separation of modules, view and model, back-end and front-end
-
 -   **Clarity**: Does the README explain briefly what the problem is and how can I run the application?
-
 -   **Assertiveness**: Is the application doing what is expected? If something is missing, does the README explain why?
-
 -   **Code readability** (including comments)
-
 -   **Security**: Are there any clear vulnerabilities?
-
 -   **Test coverage** (We don't expect full coverage)
-
 -   **History of commits** (structure and quality)
-
 -   **UX**: Is the interface user-friendly and self-explanatory? Is the API intuitive?
-
 -   **Technical choices**: Is the choice of libraries, database, architecture, etc. the best choice for the application?
 
--   **"Something more"**: Was any feature not described in the minimum requirements added? Was it well executed? Does it bring any interesting innovations?
 
 ## Doubts
 
 Any questions you may have, check the [_issues_](https://github.com/HurbCom/challenge-alpha/issues) to see if someone hasn't already and if you can't find your answer, open one yourself. new issue!
 
-Good luck and good trip! ;)
+Godspeed! ;)
 
 <p align="center">
   <img src="ca.jpg" alt="Challange accepted" />
