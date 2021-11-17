@@ -55,6 +55,7 @@ extension Array where Element == SearchData.Result {
                 description: $0.smallDescription,
                 cover: $0.gallery.first?.url ?? "",
                 price: $0.price.amount.toCurrency(code: $0.price.currency),
+                address: $0.address?.formatted() ?? "",
                 category: ResultCategory(rawValue: $0.category) ?? .none)
         }
     }
@@ -76,5 +77,21 @@ extension SearchData.Pagination {
         return Pagination(
             current: self.current,
             hasNext: self.hasNext)
+    }
+}
+
+extension SearchData.Result.Address {
+    func formatted() -> String {
+        var formatted = ""
+        if let city = city {
+            formatted += "\(city)"
+        }
+        if let state = state {
+            formatted += ", \(state)"
+        }
+        if let country = country {
+            formatted += " - \(country)"
+        }
+        return formatted
     }
 }

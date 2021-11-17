@@ -6,7 +6,7 @@ extension UIImageView {
         let url = URL(string: path)
         kf.setImage(
             with: url,
-            placeholder: UIImage(systemName: "moon.zzz"),
+            placeholder: UIImage(named: "placeholder"),
             options: [
                 .transition(.fade(1))
             ])

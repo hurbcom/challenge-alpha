@@ -1,6 +1,26 @@
 import UIKit
 
 class ResultCell: UITableViewCell {
+    let cardView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.setCodable()
+
+        view.layer.cornerRadius = 15
+        view.setShadow()
+        return view
+    }()
+
+    let cardContentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.setCodable()
+
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = true
+        return view
+    }()
+
     let imgPhoto: UIImageView = {
         let img = UIImageView()
         img.setCodable()
@@ -42,43 +62,64 @@ class ResultCell: UITableViewCell {
         return lbl
     }()
 
-    func setupUI() {
-        contentView.addSubview(imgPhoto)
+    let lblAddress: UILabel = {
+        let lbl = UILabel()
+        lbl.font = UIFont.systemFont(ofSize: 12)
+        lbl.textColor = .lightGray
+        lbl.setCodable()
+        return lbl
+    }()
 
-        contentView.addSubview(infoView)
+    func setupUI() {
+        selectionStyle = .none
+
+        contentView.addSubview(cardView)
+        cardView.addSubview(cardContentView)
+
+        cardContentView.addSubview(imgPhoto)
+        cardContentView.addSubview(infoView)
+
         infoView.addSubview(lblName)
         infoView.addSubview(imgPrice)
         infoView.addSubview(lblPrice)
+        infoView.addSubview(lblAddress)
 
         setupConstraints()
     }
 
     func setupConstraints() {
+        // Card View
+        cardView.setEdgesToSuperview(constant: 10)
+        cardContentView.setEdgesToSuperview()
+
         // Cover Image View
-        imgPhoto.setEdgesToSuperview(excluding: [.bottom], constant: 5)
         imgPhoto.setHeight(100)
+        imgPhoto.setEdgesToSuperview(excluding: [.bottom])
 
         // Info
         infoView.setTop(to: imgPhoto.bottomAnchor)
-        infoView.setEdgesToSuperview(excluding: [.top], constant: 5)
+        infoView.setEdgesToSuperview(excluding: [.top])
 
         // - Name
         lblName.setEdgesToSuperview(excluding: [.bottom], constant: 10)
 
+        // - Address
+        lblAddress.setTop(to: lblName.bottomAnchor, constant: 5)
+        lblAddress.setEdgesToSuperview(excluding: [.bottom, .top], constant: 10)
+
         // Price View
         // - Icon
-        imgPrice.setTop(to: lblName.bottomAnchor, constant: 10)
-        imgPrice.setLeading(to: infoView.leadingAnchor, constant: 10)
-        imgPrice.setBottom(to: infoView.bottomAnchor, constant: 10)
+        imgPrice.setTop(to: lblAddress.bottomAnchor, constant: 5)
+        imgPrice.setEdgesToSuperview(excluding: [.trailing, .top], constant: 10)
         // - Price
         lblPrice.setLeading(to: imgPrice.trailingAnchor, constant: 5)
-        lblPrice.setTop(to: lblName.bottomAnchor, constant: 10)
-        lblPrice.setBottom(to: infoView.bottomAnchor, constant: 10)
+        lblPrice.setCenterY(to: imgPrice.centerYAnchor)
     }
 
     func configure(result: SearchResult) {
-        lblName.text = result.name
         imgPhoto.loadImage(url: result.cover)
+        lblName.text = result.name
+        lblAddress.text = result.address
         lblPrice.text = "\(result.price)"
     }
 
@@ -90,5 +131,10 @@ class ResultCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupUI()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        cardView.setShadow(color: selected ? .systemBlue : .black, animated: animated)
+        if selected { setSelected(false, animated: true) }
     }
 }

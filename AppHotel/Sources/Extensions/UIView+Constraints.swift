@@ -34,6 +34,10 @@ extension UIView {
         centerXAnchor.constraint(equalTo: view, constant: constant).isActive = true
     }
 
+    func setCenterY(to view: NSLayoutYAxisAnchor, constant: CGFloat = 0) {
+        centerYAnchor.constraint(equalTo: view, constant: constant).isActive = true
+    }
+
     func setBottom(to view: NSLayoutYAxisAnchor, constant: CGFloat = 0) {
         bottomAnchor.constraint(equalTo: view, constant: constant * -1).isActive = true
     }

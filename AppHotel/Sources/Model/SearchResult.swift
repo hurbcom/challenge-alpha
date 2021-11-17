@@ -3,6 +3,7 @@ struct SearchResult {
     let description: String
     let cover: String
     let price: String
+    let address: String
     let category: ResultCategory
 }
 
