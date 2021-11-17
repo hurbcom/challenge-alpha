@@ -17,21 +17,23 @@ extension HomeVC {
 }
 
 extension HomeInteractor: HomeVCOutput {
-    func askForProducts() { fetchProducts() }
+    func askForSearch(term: String) {
+        fetchProducts(term: term)
+    }
 }
 
 extension HomePresenter: HomeInteractorOutput {
-    func presentProducts(_ list: [Hotel]) {
+    func presentProducts(_ list: [SearchResult]) {
         formatProducts(list)
     }
     
-    func presentError(_ error: String) {
+    func presentError(_ error: NetworkError) {
         formatError(error)
     }
 }
 
 extension HomeVC: HomePresenterOutput {
-    func showProducts(_ list: [Hotel]) {
+    func showProducts(_ list: [SearchResult]) {
         displayProducts(list)
     }
     

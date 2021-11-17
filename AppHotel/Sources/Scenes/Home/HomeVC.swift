@@ -1,12 +1,12 @@
 import UIKit
 
 protocol HomeVCInput {
-    func displayProducts(_ list: [Hotel])
+    func displayProducts(_ list: [SearchResult])
     func displayAlert(_ alert: UIAlertController)
 }
 
 protocol HomeVCOutput {
-    func askForProducts()
+    func askForSearch(term: String)
 }
 
 class HomeVC: UIViewController {
@@ -14,7 +14,13 @@ class HomeVC: UIViewController {
     var router: HomeRouter!
     var output: HomeVCOutput!
     
-    var items: [Hotel] = []
+    var items: [SearchResult] = []
+    var searchTerm: String! {
+        didSet {
+            title = searchTerm
+            output.askForSearch(term: searchTerm)
+        }
+    }
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -37,8 +43,9 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         configure()
         setupViews()
+
         view.backgroundColor = .white
-        output.askForProducts()
+        searchTerm = "Bariloche"
     }
 
     func setupViews() {
@@ -48,7 +55,7 @@ class HomeVC: UIViewController {
 }
 
 extension HomeVC: HomeVCInput {
-    func displayProducts(_ list: [Hotel]) {
+    func displayProducts(_ list: [SearchResult]) {
         items = list
         tableView.reloadData()
     }
@@ -72,6 +79,14 @@ extension HomeVC: UITableViewDataSource {
         let item = items[indexPath.row]
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.description
+
+        switch item.category {
+        case .activity: cell.textLabel?.textColor = .green
+        case .hotel: cell.textLabel?.textColor = .systemOrange
+        case .none: cell.textLabel?.textColor = .lightGray
+        case .package: cell.textLabel?.textColor = .blue
+        }
+
         return cell
     }
 }
