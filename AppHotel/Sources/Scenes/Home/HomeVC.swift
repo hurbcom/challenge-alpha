@@ -34,8 +34,9 @@ class HomeVC: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.setCodable()
-        tableView.separatorStyle = .singleLine
+        tableView.separatorStyle = .none
         tableView.dataSource = self
+        tableView.register(ResultCell.self)
         return tableView
     }()
 
@@ -75,18 +76,9 @@ extension HomeVC: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "id")
+        let cell = tableView.dequeueReusableCell(ResultCell.self, for: indexPath)!
         let item = items[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = item.description
-
-        switch item.category {
-        case .activity: cell.textLabel?.textColor = .green
-        case .hotel: cell.textLabel?.textColor = .systemOrange
-        case .none: cell.textLabel?.textColor = .lightGray
-        case .package: cell.textLabel?.textColor = .blue
-        }
-
+        cell.configure(result: item)
         return cell
     }
 }

@@ -4,6 +4,9 @@ options:
 packages:
   HUGraphQL:
     path: ../Projects/Challenge Alpha iOS/Modules/HUNetwork
+  Kingfisher:
+    url: https://github.com/onevcat/Kingfisher.git
+    majorVersion: 7.0.0
 targets:
   AppHotel:
     type: application
@@ -14,6 +17,7 @@ targets:
       TARGET_DEVICE_FAMILY: 1
     dependencies:
       - package: HUGraphQL
+      - package: Kingfisher
   Tests:
     type: bundle.unit-test
     platform: iOS

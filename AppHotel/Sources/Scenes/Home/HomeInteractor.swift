@@ -9,7 +9,7 @@ protocol HomeInteractorOutput {
 
 class HomeInteractor: HomeInteractorInput {
     var output: HomeInteractorOutput!
-    var repository: HotelRepositoryType!
+    var repository: SearchRepositoryType!
     var currentPagination: Pagination = Pagination(current: 0, hasNext: true)
     var currentTerm: String?
     

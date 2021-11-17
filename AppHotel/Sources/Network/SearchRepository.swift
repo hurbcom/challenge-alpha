@@ -1,7 +1,7 @@
 import Foundation
 import HUGraphQL
 
-protocol HotelRepositoryType {
+protocol SearchRepositoryType {
     func search(term: String,
                 page: Pagination,
                 onSuccess: @escaping ([SearchResult], Pagination) -> Void,
@@ -13,7 +13,7 @@ struct Pagination {
     let hasNext: Bool
 }
 
-class HotelRepository: HotelRepositoryType {
+class SearchRepository: SearchRepositoryType {
     var networkManager: NetworkManagerType!
     
     func search(
@@ -53,8 +53,21 @@ extension Array where Element == SearchData.Result {
             SearchResult(
                 name: $0.name,
                 description: $0.smallDescription,
+                cover: $0.gallery.first?.url ?? "",
+                price: $0.price.amount.toCurrency(code: $0.price.currency),
                 category: ResultCategory(rawValue: $0.category) ?? .none)
         }
+    }
+}
+
+extension Double {
+    func toCurrency(code: String?) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = code
+        formatter.currencyDecimalSeparator = ","
+        formatter.currencyGroupingSeparator = "."
+        return formatter.string(from: self as NSNumber) ?? ""
     }
 }
 

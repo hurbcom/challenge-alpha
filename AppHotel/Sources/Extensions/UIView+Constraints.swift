@@ -10,12 +10,12 @@ extension UIView {
         setHeight(height)
     }
 
-    func setEdgesToSuperview() {
+    func setEdgesToSuperview(excluding: Set<AnchorSide> = [], constant: CGFloat = 0) {
         guard let parent = superview else { return }
-        setTop(to: parent.topAnchor)
-        setLeading(to: parent.leadingAnchor)
-        setTrailing(to: parent.trailingAnchor)
-        setBottom(to: parent.bottomAnchor)
+        if !excluding.contains(.top) { setTop(to: parent.topAnchor, constant: constant) }
+        if !excluding.contains(.leading) { setLeading(to: parent.leadingAnchor, constant: constant) }
+        if !excluding.contains(.trailing) { setTrailing(to: parent.trailingAnchor, constant: constant) }
+        if !excluding.contains(.bottom) { setBottom(to: parent.bottomAnchor, constant: constant) }
     }
 
     func setHeight(_ height: CGFloat) {
@@ -49,4 +49,8 @@ extension UIView {
     func setTrailing(to view: NSLayoutXAxisAnchor, constant: CGFloat = 0) {
         trailingAnchor.constraint(equalTo: view, constant: constant * -1).isActive = true
     }
+}
+
+enum AnchorSide: CaseIterable {
+    case top, bottom, leading, trailing
 }
