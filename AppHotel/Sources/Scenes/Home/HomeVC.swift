@@ -11,7 +11,7 @@ protocol HomeVCOutput {
 
 class HomeVC: UIViewController {
     // MARK: - Init and variables
-    var router: HomeRouter!
+    var router: HomeRouterType!
     var output: HomeVCOutput!
     
     var items: [SearchResult] = []
@@ -24,6 +24,7 @@ class HomeVC: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
+        navigationItem.backButtonTitle = ""
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +37,7 @@ class HomeVC: UIViewController {
         tableView.setCodable()
         tableView.separatorStyle = .none
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(ResultCell.self)
         return tableView
     }()
@@ -46,7 +48,7 @@ class HomeVC: UIViewController {
         setupViews()
 
         view.backgroundColor = .white
-        searchTerm = "Bariloche"
+        searchTerm = "Monte Verde"
     }
 
     func setupViews() {
@@ -80,5 +82,12 @@ extension HomeVC: UITableViewDataSource {
         let item = items[indexPath.row]
         cell.configure(result: item)
         return cell
+    }
+}
+
+extension HomeVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        router.openDetails(item)
     }
 }

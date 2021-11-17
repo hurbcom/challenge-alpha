@@ -13,6 +13,10 @@ extension HomeVC {
         interactor.repository = repository
 
         self.output = interactor
+
+        let router = HomeRouter()
+        router.viewController = self
+        self.router = router
     }
 }
 

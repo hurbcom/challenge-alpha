@@ -52,11 +52,23 @@ extension Array where Element == SearchData.Result {
         return self.map {
             SearchResult(
                 name: $0.name,
-                description: $0.smallDescription,
+                description: $0.description,
                 cover: $0.gallery.first?.url ?? "",
                 price: $0.price.amount.toCurrency(code: $0.price.currency),
                 address: $0.address?.formatted() ?? "",
-                category: ResultCategory(rawValue: $0.category) ?? .none)
+                category: ResultCategory(rawValue: $0.category) ?? .none,
+                gallery: $0.gallery.toModel()
+            )
+        }
+    }
+}
+
+extension Array where Element == SearchData.Result.Gallery {
+    func toModel() -> [ResultImage] {
+        return self.map {
+            ResultImage(
+                url: $0.url ?? "",
+                name: $0.description ?? "")
         }
     }
 }

@@ -1,18 +1,14 @@
 import UIKit
 
-protocol HomeRouterContract {
-    func openHotelDetails(_ hotel: SearchResult)
-    func openPackageDetails(_ package: SearchResult)
+protocol HomeRouterType {
+    func openDetails(_ hotel: SearchResult)
 }
 
-class HomeRouter: HomeRouterContract {
+class HomeRouter: HomeRouterType {
     weak var viewController: UIViewController!
     
-    func openHotelDetails(_ hotel: SearchResult) {
-        // Open Details view controller for Hotel
-    }
-    
-    func openPackageDetails(_ package: SearchResult) {
-        // Open Details view controller for package
+    func openDetails(_ result: SearchResult) {
+        let detailsViewController = DetailsVC(result: result)
+        viewController.navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }

@@ -5,6 +5,12 @@ struct SearchResult {
     let price: String
     let address: String
     let category: ResultCategory
+    let gallery: [ResultImage]
+}
+
+struct ResultImage {
+    let url: String
+    let name: String
 }
 
 enum ResultCategory: String {
