@@ -1,7 +1,8 @@
 import UIKit
 
 enum DetailSections {
-    case banner(gallery: [ResultImage])
+    case banner(image: String)
+    case info(result: SearchResult)
     case description(text: String)
 }
 
@@ -16,6 +17,8 @@ class DetailsVC: UIViewController {
     init(result: SearchResult) {
         self.result = result
         self.sections = [
+            .banner(image: result.cover),
+            .info(result: result),
             .description(text: result.description)
         ]
 
@@ -34,6 +37,8 @@ class DetailsVC: UIViewController {
         tableView.setCodable()
         tableView.separatorStyle = .none
         tableView.dataSource = self
+        tableView.register(BannerCell.self)
+        tableView.register(InfoCell.self)
         tableView.register(DescriptionCell.self)
         return tableView
     }()
@@ -63,12 +68,18 @@ extension DetailsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = sections[indexPath.row]
         switch item {
+            case .banner(let image):
+                let cell = tableView.dequeueReusableCell(BannerCell.self, for: indexPath)!
+                cell.configure(coverImage: image)
+                return cell
+            case .info(let result):
+                let cell = tableView.dequeueReusableCell(InfoCell.self, for: indexPath)!
+                cell.configure(result: result)
+                return cell
             case .description(let text):
                 let cell = tableView.dequeueReusableCell(DescriptionCell.self, for: indexPath)!
                 cell.configure(description: text)
                 return cell
-            case .banner(gallery: let gallery):
-                return UITableViewCell()
         }
     }
 }
