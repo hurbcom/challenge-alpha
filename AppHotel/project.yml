@@ -1,12 +1,21 @@
 name: AppHotel
 options:
   bundleIdPrefix: com.gondekr
+  groupSortPosition: top
+  generateEmptyDirectories: true
+  deploymentTarget:
+    iOS: "13.0"
+
 packages:
   HUGraphQL:
     path: ../Projects/Challenge Alpha iOS/Modules/HUNetwork
   Kingfisher:
     url: https://github.com/onevcat/Kingfisher.git
     majorVersion: 7.0.0
+  SnapshotTesting:
+    url: https://github.com/pointfreeco/swift-snapshot-testing.git
+    majorVersion: 1.9.0
+
 targets:
   AppHotel:
     type: application
@@ -18,7 +27,22 @@ targets:
     dependencies:
       - package: HUGraphQL
       - package: Kingfisher
+
   Tests:
     type: bundle.unit-test
     platform: iOS
     sources: [Tests]
+    dependencies:
+      - target: AppHotel
+      - package: SnapshotTesting
+
+schemes:
+  AppHotel:
+    build:
+      targets:
+        AppHotel: all
+    test:
+      targets:
+        - name: Tests
+      gatherCoverageData: true
+      coverageTargets: AppHotel

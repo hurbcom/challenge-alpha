@@ -1,20 +1,20 @@
 import UIKit
 
 protocol HomePresenterInput {
-    func formatProducts(_ list: [SearchResult])
+    func formatResults(_ list: [SearchResult])
     func formatError(_ error: NetworkError)
 }
 
 protocol HomePresenterOutput: AnyObject {
-    func showProducts(_ list: [SearchResult])
+    func showResults(_ list: [SearchResult])
     func showAlert(_ alert: UIAlertController)
 }
 
 class HomePresenter: HomePresenterInput {
     weak var output: HomePresenterOutput!
     
-    func formatProducts(_ list: [SearchResult]) {
-        output.showProducts(list)
+    func formatResults(_ list: [SearchResult]) {
+        output.showResults(list)
     }
     
     func formatError(_ error: NetworkError) {

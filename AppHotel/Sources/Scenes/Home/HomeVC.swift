@@ -1,7 +1,7 @@
 import UIKit
 
 protocol HomeVCInput {
-    func displayProducts(_ list: [SearchResult])
+    func displayResults(_ list: [SearchResult])
     func displayAlert(_ alert: UIAlertController)
 }
 
@@ -58,7 +58,7 @@ class HomeVC: UIViewController {
 }
 
 extension HomeVC: HomeVCInput {
-    func displayProducts(_ list: [SearchResult]) {
+    func displayResults(_ list: [SearchResult]) {
         items = list
         tableView.reloadData()
     }

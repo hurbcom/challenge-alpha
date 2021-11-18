@@ -32,7 +32,7 @@ class DetailsVC: UIViewController {
     }
     
     // MARK: - Layout components
-    private lazy var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.setCodable()
         tableView.separatorStyle = .none

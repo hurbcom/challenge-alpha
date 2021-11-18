@@ -22,13 +22,13 @@ extension HomeVC {
 
 extension HomeInteractor: HomeVCOutput {
     func askForSearch(term: String) {
-        fetchProducts(term: term)
+        fetchResults(term: term)
     }
 }
 
 extension HomePresenter: HomeInteractorOutput {
-    func presentProducts(_ list: [SearchResult]) {
-        formatProducts(list)
+    func presentResults(_ list: [SearchResult]) {
+        formatResults(list)
     }
     
     func presentError(_ error: NetworkError) {
@@ -37,8 +37,8 @@ extension HomePresenter: HomeInteractorOutput {
 }
 
 extension HomeVC: HomePresenterOutput {
-    func showProducts(_ list: [SearchResult]) {
-        displayProducts(list)
+    func showResults(_ list: [SearchResult]) {
+        displayResults(list)
     }
     
     func showAlert(_ alert: UIAlertController) {
