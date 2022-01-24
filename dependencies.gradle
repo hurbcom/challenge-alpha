@@ -1,0 +1,57 @@
+ext {
+    constraintlayout_version = '2.1.2'
+    material_version = '1.4.0'
+    appcompat_version = '1.4.0'
+    core_ktx_version = '1.7.0'
+    espresso_version = '3.4.0'
+    junit_version = '4.0.0'
+    android_junit_version = '4.0.0'
+    hilt_version = "2.37"
+    hilt_compiler_version = '1.0.0-alpha03'
+    legacy_support_v4_version = '1.0.0'
+    retrofit_version = '2.9.0'
+    coil_version = '1.1.1'
+    nav_version = '2.3.5'
+    okhttp_version = '4.5.0'
+
+    androidLibs = [
+            "androidx.appcompat:appcompat:$appcompat_version",
+            "com.google.android.material:material:$material_version",
+            "androidx.constraintlayout:constraintlayout:$constraintlayout_version",
+            "androidx.core:core-ktx:$core_ktx_version",
+
+            "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0",
+            'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1',
+            "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            "androidx.navigation:navigation-ui-ktx:$nav_version",
+            // Hilt
+            "com.google.dagger:hilt-android:$hilt_version",
+            'com.facebook.shimmer:shimmer:0.5.0'
+
+    ]
+
+    kaptLibs = [
+            "com.google.dagger:hilt-compiler:$hilt_version"
+    ]
+
+
+    kotlinLibs = [
+            "io.coil-kt:coil:$coil_version"
+    ]
+
+    networkLibs = [
+            "com.squareup.retrofit2:retrofit:$retrofit_version",
+            "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    ]
+
+    testImplementationLibs = [
+            "junit:junit:$junit_version"
+    ]
+
+    androidTestImplementationLibs = [
+            "androidx.test.ext:junit:$android_junit_version",
+            "androidx.test.espresso:espresso-core:$espresso_version"
+    ]
+
+}
