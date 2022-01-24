@@ -1,4 +1,4 @@
-package com.br.natanbrito.challenge.domain.model.results
+package com.br.natanbrito.challenge.data.model.results
 
 data class Result(
     val address: Address,

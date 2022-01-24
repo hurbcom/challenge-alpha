@@ -1,4 +1,4 @@
-package com.br.natanbrito.challenge.domain.model.filters
+package com.br.natanbrito.challenge.data.model.filters
 
 data class Filters(
     val amenities: List<Amenity>,

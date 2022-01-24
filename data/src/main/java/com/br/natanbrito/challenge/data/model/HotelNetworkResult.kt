@@ -1,4 +1,4 @@
-package com.br.natanbrito.challenge.domain.model
+package com.br.natanbrito.challenge.data.model
 
 sealed class HotelNetworkResult {
     class Success(val hotel: Hotel): HotelNetworkResult()

@@ -25,15 +25,18 @@ ext {
             "androidx.navigation:navigation-fragment-ktx:$nav_version",
             "androidx.navigation:navigation-ui-ktx:$nav_version",
             // Hilt
-            "com.google.dagger:hilt-android:$hilt_version",
+            //"com.google.dagger:hilt-android:$hilt_version",
             'com.facebook.shimmer:shimmer:0.5.0'
 
+    ]
+
+    sharedLibs = [
+            "com.google.dagger:hilt-android:$hilt_version"
     ]
 
     kaptLibs = [
             "com.google.dagger:hilt-compiler:$hilt_version"
     ]
-
 
     kotlinLibs = [
             "io.coil-kt:coil:$coil_version"
