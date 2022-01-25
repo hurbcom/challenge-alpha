@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="80dp"
+    android:minHeight="80dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="@dimen/default_dimen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="360dp"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="@dimen/match_constraint"
+            android:id="@+id/hotelImage"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:foreground="@color/black_translucid"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="@string/ratio_16_9"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@tools:sample/avatars"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hotelName"
+            android:elevation="0dp"
+            android:layout_marginStart="@dimen/default_dimen"
+            android:layout_marginEnd="@dimen/default_dimen"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hotelLocation"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:includeFontPadding="false"
+            tools:text="Hotel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hotelLocation"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_dimen"
+            android:layout_marginEnd="@dimen/default_dimen"
+            android:elevation="0dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Cidade/Estado" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hotelAmenities"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="0dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:maxLines="2"
+            app:layout_constraintBottom_toTopOf="@+id/hotelPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Cidade/Estado" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hotelPrice"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:elevation="0dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:includeFontPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/hotelImage"
+            tools:text="Por R$100,00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

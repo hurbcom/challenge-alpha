@@ -1,5 +1,8 @@
 package com.br.natanbrito.challenge.data.model.results
 
+import com.br.natanbrito.challenge.data.utils.HTTPS_CONSTANT
+import com.br.natanbrito.challenge.data.utils.HTTP_CONSTANT
+
 data class Result(
     val address: Address,
     val amenities: List<AmenityResults>,
@@ -19,7 +22,7 @@ data class Result(
     val stars: Int,
     val tags: List<String>,
     val url: String
-) /*{
+) {
     fun convertFromHttpToHttps(): String = if (image.startsWith(HTTP_CONSTANT)) {
         image.replace(
             HTTP_CONSTANT,
@@ -28,7 +31,7 @@ data class Result(
     } else {
         image
     }
-}*/
+}
 
 
 data class Gallery(
