@@ -2,12 +2,19 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 apply from: '../base-build.gradle'
 
+android{
+    kotlinOptions.jvmTarget = '1.8'
+}
+
 dependencies {
-    implementation androidLibs + networkLibs + kotlinLibs
+    implementation project(':data')
+    implementation project(':domain')
+    implementation androidLibs + networkLibs + kotlinLibs + sharedLibs
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'

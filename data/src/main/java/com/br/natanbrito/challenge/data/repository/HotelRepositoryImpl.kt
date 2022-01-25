@@ -1,5 +1,6 @@
 package com.br.natanbrito.challenge.data.repository
 
+import com.br.natanbrito.challenge.data.datasource.HotelDataSource
 import com.br.natanbrito.challenge.data.model.Hotel
 import javax.inject.Inject
 
