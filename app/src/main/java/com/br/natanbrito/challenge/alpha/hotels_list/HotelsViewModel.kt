@@ -4,8 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import androidx.lifecycle.viewModelScope
+import com.br.natanbrito.challenge.alpha.R
 import com.br.natanbrito.challenge.data.datasource.HotelDataSourceImpl
 import com.br.natanbrito.challenge.data.model.Hotel
+import com.br.natanbrito.challenge.data.model.HotelNetworkResult
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -14,12 +16,33 @@ class HotelsViewModel @Inject constructor(
     private val repository: HotelDataSourceImpl
 ) : ViewModel() {
 
-    private val _hotels = MutableLiveData<Hotel?>()
+    private val _hotels = MutableLiveData<Hotel>()
     val hotels get() = _hotels
+    private val _errorMessage = MutableLiveData<Any>()
+    val errorMessage get() = _errorMessage
+    private val _isConnected = MutableLiveData<Boolean>()
+    val isConnected get() = _isConnected
 
-    fun getHotels() = viewModelScope.launch {
+    fun prepareDataRequest(hasInternetConnection: Boolean) {
+        _isConnected.value = hasInternetConnection
+
+        if (hasInternetConnection) {
+            getHotels()
+        } else {
+            _errorMessage.value = R.string.you_are_offline
+        }
+    }
+
+    private fun getHotels() = viewModelScope.launch {
         val hotelsResult = repository.fetchHotels()
-        _hotels.value = hotelsResult
+        when(hotelsResult) {
+            is HotelNetworkResult.Success -> {
+                _hotels.value = hotelsResult.hotel
+            }
+            is HotelNetworkResult.Error -> {
+                _errorMessage.value = hotelsResult.message
+            }
+        }
     }
 
 }

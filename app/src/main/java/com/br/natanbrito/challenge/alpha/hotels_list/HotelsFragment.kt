@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.br.natanbrito.challenge.alpha.databinding.HotelsFragmentBinding
 import com.br.natanbrito.challenge.alpha.utils.gone
@@ -18,11 +19,13 @@ class HotelsFragment : Fragment() {
     private lateinit var binding: HotelsFragmentBinding
     private val viewModel: HotelsViewModel by viewModels()
     private lateinit var groupStarsAdapter: GroupStarsAdapter
+    private var oldStarsValue = 0
+    private val listOfHotelsList = arrayListOf<List<Result>>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View  {
+    ): View {
         binding = HotelsFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -30,28 +33,79 @@ class HotelsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (requireContext().hasInternetConnection()) {
-            viewModel.getHotels()
-            initObservers()
-        }
+        viewModel.prepareDataRequest(requireContext().hasInternetConnection())
+        initObservers()
     }
 
     private fun initObservers() {
-        viewModel.hotels.observe(viewLifecycleOwner) { hotel ->
-            var oldStarsValue = 0
-            hotel?.results?.let { hotelResultList ->
-                prepareHotelsList()
-                val listOfList = arrayListOf<List<Result>>()
 
-                hotelResultList.sortedByDescending { it.stars }.forEach { result ->
-                    if (result.stars != oldStarsValue ) {
-                        val hotels = hotelResultList.filter { it.stars == result.stars }
-                        listOfList.addAll(listOf(hotels))
-                        oldStarsValue = result.stars
-                    }
+        with(viewModel) {
+            isConnected.observe(viewLifecycleOwner) { isOnline ->
+                if (isOnline) {
+                    showLoadingScreen()
+                    prepareHotelsList()
+                } else {
+                    hideLoadingScreen()
                 }
+            }
 
-                loadDataOnUi(listOfList)
+            errorMessage.observe(viewLifecycleOwner) { message ->
+                setupErrorLayout(message)
+            }
+
+            hotels.observe(viewLifecycleOwner) { hotel ->
+
+                setupEmptyList()
+
+                hotel?.results?.let { hotelResultList ->
+                    hideLoadingScreen()
+                    setupHotelsList(hotelResultList)
+                    loadDataOnUi(listOfHotelsList)
+                }
+            }
+        }
+    }
+
+    private fun setupEmptyList() {
+        if (listOfHotelsList.isNotEmpty()) {
+            listOfHotelsList.clear()
+        }
+        oldStarsValue = 0
+    }
+
+    private fun setupHotelsList(hotelResultList: List<Result>) {
+        hotelResultList.sortedByDescending { it.stars }.forEach { result ->
+            if (result.stars != oldStarsValue) {
+                val hotels = hotelResultList.filter { it.stars == result.stars }
+                listOfHotelsList.addAll(listOf(hotels))
+                oldStarsValue = result.stars
+            }
+        }
+    }
+
+    private fun hideLoadingScreen() {
+        with(binding) {
+            loadingList.stopShimmer()
+            loadingList.gone()
+        }
+    }
+
+    private fun showLoadingScreen() {
+        with(binding) {
+            loadingList.startShimmer()
+            loadingList.visible()
+        }
+    }
+
+    private fun setupErrorLayout(message: Any) {
+        with(binding) {
+            groupOffline.visible()
+            errorMessage.text = when (message) {
+                is Int -> requireContext().getString(message)
+                else -> message.toString()
+            }
+            retryButton.setOnClickListener {
+                viewModel.prepareDataRequest(requireContext().hasInternetConnection())
             }
         }
     }
@@ -64,8 +118,9 @@ class HotelsFragment : Fragment() {
 
     private fun prepareHotelsList() {
         with(binding) {
-            loadingList.stopShimmer()
-            loadingList.gone()
+            if (groupOffline.isVisible) {
+                groupOffline.gone()
+            }
             groupStarsList.visible()
             groupStarsList.hasFixedSize()
         }

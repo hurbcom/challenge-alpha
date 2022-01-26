@@ -4,29 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HotelsFragment">
+    tools:context=".hotels_list.HotelsFragment">
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/loading_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <include layout="@layout/hotel_item_shimmer_placeholder" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPlaceholder1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_dimen"
+                android:layout_marginTop="@dimen/default_dimen"
+                android:layout_marginEnd="@dimen/default_dimen"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toTopOf="@id/cardPlacholder1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <include layout="@layout/hotel_item_shimmer_placeholder" />
+            <include
+                android:id="@+id/cardPlacholder1"
+                layout="@layout/hotel_item_shimmer_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_dimen"
+                android:layout_marginTop="@dimen/default_dimen"
+                app:layout_constraintStart_toStartOf="@id/textPlaceholder1"
+                app:layout_constraintTop_toBottomOf="@id/textPlaceholder1" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPlaceholder2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_dimen"
+                android:layout_marginTop="@dimen/default_dimen"
+                android:layout_marginEnd="@dimen/default_dimen"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardPlacholder1" />
+
+            <include
+                android:id="@+id/cardPlacholder2"
+                layout="@layout/hotel_item_shimmer_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_dimen"
+                android:layout_marginTop="@dimen/default_dimen"
+                app:layout_constraintStart_toStartOf="@id/textPlaceholder2"
+                app:layout_constraintTop_toBottomOf="@id/textPlaceholder2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPlaceholder3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_dimen"
+                android:layout_marginTop="@dimen/default_dimen"
+                android:layout_marginEnd="@dimen/default_dimen"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardPlacholder2" />
+
+            <include
+                android:id="@+id/cardPlacholder3"
+                layout="@layout/hotel_item_shimmer_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_dimen"
+                android:layout_marginTop="@dimen/default_dimen"
+                app:layout_constraintStart_toStartOf="@id/textPlaceholder3"
+                app:layout_constraintTop_toBottomOf="@id/textPlaceholder3" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 
@@ -34,12 +96,42 @@
         android:id="@+id/groupStarsList"
         android:layout_width="@dimen/match_constraint"
         android:layout_height="@dimen/match_constraint"
+        android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/group_stars_item"
+        tools:visibility="gone" />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/groupOffline"
+        app:constraint_referenced_ids="errorMessage, retryButton"
         />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/errorMessage"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_dimen"
+        android:layout_marginEnd="@dimen/default_dimen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/retryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_dimen"
+        android:text="@string/reload_data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/errorMessage" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

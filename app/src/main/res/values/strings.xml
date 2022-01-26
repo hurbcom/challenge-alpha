@@ -7,4 +7,6 @@
     <string name="hotels_offers">Ofertas de hospedagens</string>
     <string name="hotels_by_stars">Hospedagens %d estrelas</string>
     <string name="additional_cost">custo adicional</string>
+    <string name="you_are_offline">Poxa, parece que a sua conexão de internet não está ativa.</string>
+    <string name="reload_data">Recarregar \n dados</string>
 </resources>

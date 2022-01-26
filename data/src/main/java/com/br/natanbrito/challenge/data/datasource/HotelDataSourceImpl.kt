@@ -1,24 +1,29 @@
 package com.br.natanbrito.challenge.data.datasource
 
-import android.util.Log
 import com.br.natanbrito.challenge.data.api.HurbApi
-import com.br.natanbrito.challenge.data.model.Hotel
+import com.br.natanbrito.challenge.data.model.HotelNetworkResult
 import javax.inject.Inject
 
 class HotelDataSourceImpl @Inject constructor(
     private val hurbApi: HurbApi
 ) : HotelDataSource {
 
-    override suspend fun fetchHotels(): Hotel? {
+    override suspend fun fetchHotels(): HotelNetworkResult {
 
-        var result: Hotel? = null
+        var result: HotelNetworkResult
 
         val response = hurbApi.getHotels()
 
         if (response.isSuccessful) {
-            result = response.body()
+
+            result = if (response.body() != null) {
+                HotelNetworkResult.Success(response.body()!!)
+            } else {
+                HotelNetworkResult.Error("")
+            }
+
         } else {
-            Log.d("NATAN", "ali = ${response.errorBody()}")
+            result = HotelNetworkResult.Error(response.errorBody().toString())
         }
 
         return result
