@@ -17,11 +17,7 @@ class HotelsViewModel @Inject constructor(
     private val _hotels = MutableLiveData<Hotel?>()
     val hotels get() = _hotels
 
-    init {
-        getHotels()
-    }
-
-    private fun getHotels() = viewModelScope.launch {
+    fun getHotels() = viewModelScope.launch {
         val hotelsResult = repository.fetchHotels()
         _hotels.value = hotelsResult
     }

@@ -10,8 +10,8 @@ import com.br.natanbrito.challenge.alpha.R
 import com.br.natanbrito.challenge.alpha.databinding.GroupStarsItemBinding
 import com.br.natanbrito.challenge.data.model.results.Result
 
-class GroupStarsAdapter(private val hotels: List<Result>) :
-    ListAdapter<Result, GroupStarsAdapter.GroupStarsViewHolder>(GroupStarsAdapter) {
+class GroupStarsAdapter(private val hotels: ArrayList<List<Result>>) :
+    ListAdapter<List<Result>, GroupStarsAdapter.GroupStarsViewHolder>(GroupStarsAdapter) {
 
     private lateinit var binding: GroupStarsItemBinding
     private lateinit var context: Context
@@ -23,8 +23,7 @@ class GroupStarsAdapter(private val hotels: List<Result>) :
     }
 
     override fun onBindViewHolder(holder: GroupStarsViewHolder, position: Int) {
-
-        holder.bind(hotels,position,context)
+        holder.bind(hotels[position],position,context)
     }
 
     class GroupStarsViewHolder(private val view: GroupStarsItemBinding) : RecyclerView.ViewHolder(view.root) {
@@ -33,23 +32,20 @@ class GroupStarsAdapter(private val hotels: List<Result>) :
             with(view) {
                 starCount.text = context.getString(R.string.hotels_by_stars, result[position].stars)
 
-                val hotels = result.filter { it.stars == result[position].stars }
-
-
-                val adapter = HotelAdapter(hotels)
+                val adapter = HotelAdapter(result)
                 hotelsList.adapter = adapter
-                adapter.submitList(hotels)
+                adapter.submitList(result)
             }
         }
     }
 
-    private companion object : DiffUtil.ItemCallback<Result>() {
+    private companion object : DiffUtil.ItemCallback<List<Result>>() {
 
-        override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
-            return oldItem.id == newItem.id
+        override fun areItemsTheSame(oldItem: List<Result>, newItem: List<Result>): Boolean {
+            return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+        override fun areContentsTheSame(oldItem: List<Result>, newItem: List<Result>): Boolean {
             return oldItem == newItem
         }
     }

@@ -17,7 +17,6 @@ class HotelDataSourceImpl @Inject constructor(
 
         if (response.isSuccessful) {
             result = response.body()
-            Log.d("NATAN", "ali = ${result?.results?.size}")
         } else {
             Log.d("NATAN", "ali = ${response.errorBody()}")
         }
