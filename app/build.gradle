@@ -18,12 +18,16 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    testImplementation 'junit:junit:4.12'
     kapt kaptLibs
     testImplementation testImplementationLibs
     androidTestImplementation androidTestImplementationLibs
+    kaptTest kaptLibs
 }
 
 kapt {
+    correctErrorTypes true
+
     javacOptions {
         // These options are normally set automatically via the Hilt Gradle plugin, but we
         // set them manually to workaround a bug in the Kotlin 1.5.20

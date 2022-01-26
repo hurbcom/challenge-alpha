@@ -10,6 +10,7 @@ apply from: '../base-build.gradle'
 dependencies {
     implementation project(':data')
     implementation sharedLibs
+    testImplementation 'junit:junit:4.12'
     kapt kaptLibs
 }
 
