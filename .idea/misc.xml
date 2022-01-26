@@ -9,6 +9,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
+        <entry key="app/src/main/res/layout/hotel_item.xml" value="0.14739583333333334" />
+        <entry key="app/src/main/res/layout/hotel_item_shimmer_placeholder.xml" value="0.14739583333333334" />
+        <entry key="app/src/main/res/layout/hotels_fragment.xml" value="0.18" />
       </map>
     </option>
   </component>

@@ -7,8 +7,20 @@ plugins {
 
 apply from: '../base-build.gradle'
 
+android{
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file("gradle.properties").newDataInputStream())
+    def baseUrl = properties.getProperty("baseUrl")
+
+    defaultConfig {
+        buildConfigField "String", "BASE_URL", "\"" + baseUrl + "\""
+    }
+}
+
 dependencies {
     implementation sharedLibs + networkLibs
+    testImplementation 'junit:junit:4.12'
     kapt kaptLibs
 }
 

@@ -1,6 +1,7 @@
 package com.br.natanbrito.challenge.data.di
 
 import com.br.natanbrito.challenge.data.api.HurbApi
+import com.com.br.natanbrito.challenge.alpha.data.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,7 +13,6 @@ import javax.inject.Singleton
 
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
-
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -30,12 +30,10 @@ object ApiModule {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl("https://raw.githubusercontent.com/hurbcom/challenge-alpha/master/examples/")
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
             .create(HurbApi::class.java)
     }
-
-
 }
