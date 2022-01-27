@@ -6,17 +6,18 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
-
-import okhttp3.logging.HttpLoggingInterceptor
-import java.util.concurrent.TimeUnit
 
 @Module
 @InstallIn(SingletonComponent::class)
 object ApiModule {
+
+    private const val TIMEOUT_TIME: Long = 15
 
     @Singleton
     @Provides
@@ -26,7 +27,7 @@ object ApiModule {
         val client: OkHttpClient = OkHttpClient.Builder()
             .addInterceptor(interceptor)
             .retryOnConnectionFailure(true)
-            .connectTimeout(15, TimeUnit.SECONDS)
+            .connectTimeout(TIMEOUT_TIME, TimeUnit.SECONDS)
             .build()
 
         return Retrofit.Builder()

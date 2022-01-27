@@ -1,19 +1,19 @@
-package com.br.natanbrito.challenge.alpha.hotels_list
+package com.br.natanbrito.challenge.alpha.list
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
 import androidx.lifecycle.viewModelScope
 import com.br.natanbrito.challenge.alpha.R
-import com.br.natanbrito.challenge.data.datasource.HotelDataSourceImpl
 import com.br.natanbrito.challenge.data.model.Hotel
 import com.br.natanbrito.challenge.data.model.HotelNetworkResult
-import kotlinx.coroutines.launch
+import com.br.natanbrito.challenge.domain.usecases.GetHotelsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class HotelsViewModel @Inject constructor(
-    private val repository: HotelDataSourceImpl
+    private val useCase: GetHotelsUseCase
 ) : ViewModel() {
 
     private val _hotels = MutableLiveData<Hotel>()
@@ -34,8 +34,7 @@ class HotelsViewModel @Inject constructor(
     }
 
     private fun getHotels() = viewModelScope.launch {
-        val hotelsResult = repository.fetchHotels()
-        when(hotelsResult) {
+        when (val hotelsResult = useCase.invoke()) {
             is HotelNetworkResult.Success -> {
                 _hotels.value = hotelsResult.hotel
             }
@@ -44,5 +43,4 @@ class HotelsViewModel @Inject constructor(
             }
         }
     }
-
 }

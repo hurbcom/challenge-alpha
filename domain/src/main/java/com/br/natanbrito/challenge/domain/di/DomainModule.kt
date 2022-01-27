@@ -13,5 +13,4 @@ interface DomainModule {
 
     @Binds
     fun bindGetHotels(useCase: GetHotelsUseCaseImpl): GetHotelsUseCase
-
 }

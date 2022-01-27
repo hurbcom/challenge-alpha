@@ -8,14 +8,10 @@ fun Context.hasInternetConnection(): Boolean {
     val connectivityManager =
         this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
-        val nw = connectivityManager.activeNetwork ?: return false
-        val actNw = connectivityManager.getNetworkCapabilities(nw) ?: return false
+    val actNw = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+        ?: return false
 
-        return when {
-            actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
-            actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
-            actNw.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) -> true
-            else -> false
-        }
-
+    return actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+        actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+        actNw.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
 }

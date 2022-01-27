@@ -1,14 +1,13 @@
 package com.br.natanbrito.challenge.alpha
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.br.natanbrito.challenge.alpha.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -28,5 +27,4 @@ class MainActivity : AppCompatActivity() {
 
         binding.toolbarMain.setupWithNavController(navController, appBarConfiguration)
     }
-
 }

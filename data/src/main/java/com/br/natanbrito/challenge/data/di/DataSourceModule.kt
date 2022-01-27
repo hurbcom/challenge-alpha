@@ -23,5 +23,4 @@ abstract class DataSourceModule {
     @Singleton
     @Binds
     abstract fun bindHotelDataSource(hotelDataSourceImpl: HotelDataSourceImpl): HotelDataSource
-
 }

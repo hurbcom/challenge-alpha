@@ -8,5 +8,4 @@ interface HurbApi {
 
     @GET("hotel.json")
     suspend fun getHotels(): Response<Hotel>
-
 }

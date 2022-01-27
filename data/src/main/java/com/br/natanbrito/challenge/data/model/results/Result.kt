@@ -2,6 +2,7 @@ package com.br.natanbrito.challenge.data.model.results
 
 import com.br.natanbrito.challenge.data.utils.HTTPS_CONSTANT
 import com.br.natanbrito.challenge.data.utils.HTTP_CONSTANT
+import com.google.gson.annotations.SerializedName
 
 data class Result(
     val address: Address,
@@ -10,7 +11,8 @@ data class Result(
     val description: String,
     val featuredItem: FeaturedItem,
     val gallery: List<Gallery>,
-    val hu_free_cancellation: Boolean,
+    @SerializedName("hu_free_cancellation")
+    val huFreeCancellation: Boolean,
     val id: String,
     val image: String,
     val isHotel: Boolean,
@@ -33,7 +35,6 @@ data class Result(
     }
 }
 
-
 data class Gallery(
     val description: String,
     val url: String
@@ -45,4 +46,3 @@ data class FeaturedItem(
     val image: String,
     val name: String
 )
-

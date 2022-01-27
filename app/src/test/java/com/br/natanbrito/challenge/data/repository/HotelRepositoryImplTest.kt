@@ -1,8 +1,8 @@
 package com.br.natanbrito.challenge.data.repository
 
-import com.br.natanbrito.challenge.factory.HotelResponseFactory
 import com.br.natanbrito.challenge.data.datasource.HotelDataSource
 import com.br.natanbrito.challenge.data.model.HotelNetworkResult
+import com.br.natanbrito.challenge.factory.HotelResponseFactory
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.confirmVerified

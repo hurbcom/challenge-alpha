@@ -1,4 +1,4 @@
-package com.br.natanbrito.challenge.alpha.hotels_list
+package com.br.natanbrito.challenge.alpha.list
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -23,10 +23,12 @@ class GroupStarsAdapter(private val hotels: ArrayList<List<Result>>) :
     }
 
     override fun onBindViewHolder(holder: GroupStarsViewHolder, position: Int) {
-        holder.bind(hotels[position],position,context)
+        holder.bind(hotels[position], position, context)
     }
 
-    class GroupStarsViewHolder(private val view: GroupStarsItemBinding) : RecyclerView.ViewHolder(view.root) {
+    class GroupStarsViewHolder(private val view: GroupStarsItemBinding) : RecyclerView.ViewHolder(
+        view.root
+    ) {
 
         fun bind(result: List<Result>, position: Int, context: Context) {
             with(view) {
@@ -50,4 +52,3 @@ class GroupStarsAdapter(private val hotels: ArrayList<List<Result>>) :
         }
     }
 }
-

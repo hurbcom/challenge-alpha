@@ -1,12 +1,17 @@
 package com.br.natanbrito.challenge.data.model.results
 
+import com.google.gson.annotations.SerializedName
+
 data class PriceResults(
     val amount: Double,
     val amountPerDay: Double,
     val currency: String,
-    val currency_original: String,
-    val current_price: Double,
-    val old_price: Double,
+    @SerializedName("currency_original")
+    val currencyOriginal: String,
+    @SerializedName("current_price")
+    val currentPrice: Double,
+    @SerializedName("old_price")
+    val oldPrice: Double,
     val originalAmountPerDay: Double,
     val sku: String
 )

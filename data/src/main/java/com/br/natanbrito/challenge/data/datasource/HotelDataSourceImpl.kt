@@ -21,12 +21,10 @@ class HotelDataSourceImpl @Inject constructor(
             } else {
                 HotelNetworkResult.Error("")
             }
-
         } else {
             result = HotelNetworkResult.Error(response.errorBody().toString())
         }
 
         return result
     }
-
 }
