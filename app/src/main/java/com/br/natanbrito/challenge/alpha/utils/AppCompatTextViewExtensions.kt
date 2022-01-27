@@ -6,7 +6,7 @@ import com.br.natanbrito.challenge.data.model.results.Address
 import com.br.natanbrito.challenge.data.model.results.PriceResults
 
 fun AppCompatTextView.prepareCurrencyText(price: PriceResults) {
-    val convertedPrice = price.current_price.toString().replace(".", ",")
+    val convertedPrice = price.currentPrice.toString().replace(".", ",")
     text = context.getString(R.string.hotel_price, convertedPrice)
 }
 

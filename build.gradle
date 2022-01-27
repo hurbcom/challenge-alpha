@@ -34,23 +34,9 @@ allprojects {
 subprojects {
     apply plugin: "io.gitlab.arturbosch.detekt"
     apply plugin: "org.jlleitschuh.gradle.ktlint"
-
-    //detekt {
-    /*tasks.named("detekt").configure {
-        allRules = true
-        buildUponDefaultConfig = true
-
-        reports {
-            xml {
-                enabled = true
-                destination = file("$projectDir/build/reports/detekt/detektReport.xml")
-            }
-            html {
-                enabled = true
-                destination = file("$projectDir/build/reports/detekt/detektReport.html")
-            }
-        }
-    }*/
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-kapt'
+    apply plugin: 'dagger.hilt.android.plugin'
 
     tasks.named("detekt").configure {
         failFast = true
@@ -61,11 +47,6 @@ subprojects {
                 enabled = true
                 destination = file("$projectDir/build/reports/detekt/detektReport.html")
             }
-            /*xml.required.set(true)
-            xml.destination.set(file("$projectDir/build/reports/detekt/detektReport.xml"))
-
-            html.required.set(true)
-            html.outputLocation.set(file("$projectDir/build/reports/detekt/detektReport.html"))*/
         }
     }
 
