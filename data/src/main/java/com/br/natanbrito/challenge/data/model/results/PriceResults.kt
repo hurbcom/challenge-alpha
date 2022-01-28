@@ -1,7 +1,10 @@
 package com.br.natanbrito.challenge.data.model.results
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class PriceResults(
     val amount: Double,
     val amountPerDay: Double,
@@ -14,4 +17,4 @@ data class PriceResults(
     val oldPrice: Double,
     val originalAmountPerDay: Double,
     val sku: String
-)
+): Parcelable

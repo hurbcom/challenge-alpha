@@ -1,9 +1,12 @@
 package com.br.natanbrito.challenge.data.model.results
 
+import android.os.Parcelable
 import com.br.natanbrito.challenge.data.utils.HTTPS_CONSTANT
 import com.br.natanbrito.challenge.data.utils.HTTP_CONSTANT
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Result(
     val address: Address,
     val amenities: List<AmenityResults>,
@@ -24,7 +27,7 @@ data class Result(
     val stars: Int,
     val tags: List<String>,
     val url: String
-) {
+): Parcelable {
     fun convertFromHttpToHttps(): String = if (image.startsWith(HTTP_CONSTANT)) {
         image.replace(
             HTTP_CONSTANT,
@@ -35,14 +38,16 @@ data class Result(
     }
 }
 
+@Parcelize
 data class Gallery(
     val description: String,
     val url: String
-)
+): Parcelable
 
+@Parcelize
 data class FeaturedItem(
     val amenities: List<String>,
     val description: String,
     val image: String,
     val name: String
-)
+): Parcelable

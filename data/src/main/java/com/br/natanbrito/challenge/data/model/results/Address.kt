@@ -1,7 +1,10 @@
 package com.br.natanbrito.challenge.data.model.results
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Address(
     val city: String,
     val country: String,
@@ -23,9 +26,10 @@ data class Address(
     val state: String,
     val street: String,
     val zipcode: String
-)
+): Parcelable
 
+@Parcelize
 data class GeoLocation(
     val lat: Double,
     val lon: Double
-)
+): Parcelable

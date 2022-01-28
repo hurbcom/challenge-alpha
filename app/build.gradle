@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 apply from: '../base-build.gradle'
