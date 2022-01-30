@@ -27,6 +27,22 @@
             android:name="hotelResult"
             app:argType="com.br.natanbrito.challenge.data.model.results.Result"
             />
+        <action
+            android:id="@+id/navigateToImageFragment"
+            app:destination="@id/imageFullFragment" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/imageFullFragment"
+        android:name="com.br.natanbrito.challenge.alpha.hotel.detail.ImageFullFragment"
+        android:label="fragment_image_full"
+        tools:layout="@layout/fragment_image_full">
+        <argument
+            android:name="image"
+            app:argType="string" />
+
+        <argument
+            android:name="description"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -15,7 +15,7 @@ data class Result(
     val featuredItem: FeaturedItem,
     val gallery: List<Gallery>,
     @SerializedName("hu_free_cancellation")
-    val huFreeCancellation: Boolean,
+    val hasFreeCancellation: Boolean,
     val id: String,
     val image: String,
     val isHotel: Boolean,

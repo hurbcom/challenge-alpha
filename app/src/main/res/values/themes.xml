@@ -15,4 +15,21 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="headLine" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">@dimen/text_18_sp</item>
+    </style>
+
+    <style name="priceBold" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">@dimen/text_18_sp</item>
+    </style>
+
+    <style name="textDefault" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/text_16_sp</item>
+    </style>
 </resources>

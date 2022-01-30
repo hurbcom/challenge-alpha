@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import com.br.natanbrito.challenge.alpha.R
 import com.br.natanbrito.challenge.alpha.databinding.HotelsFragmentBinding
+import com.br.natanbrito.challenge.alpha.utils.Routes
 import com.br.natanbrito.challenge.alpha.utils.gone
 import com.br.natanbrito.challenge.alpha.utils.hasInternetConnection
 import com.br.natanbrito.challenge.alpha.utils.visible
@@ -112,7 +112,7 @@ class HotelsFragment : Fragment() {
 
     private fun loadDataOnUi(hotelResultList: ArrayList<List<Result>>) {
         groupStarsAdapter = GroupStarsAdapter(hotelResultList) {
-            selectedHotel(it)
+            Routes.navigateToDetailsRoute(it, binding.root)
         }
         binding.groupStarsList.adapter = groupStarsAdapter
         groupStarsAdapter.submitList(hotelResultList)
@@ -126,10 +126,5 @@ class HotelsFragment : Fragment() {
             groupStarsList.visible()
             groupStarsList.hasFixedSize()
         }
-    }
-
-    private fun selectedHotel(result: Result) {
-        val action = HotelsFragmentDirections.navigateToHotelDetailFragment(result)
-        Navigation.findNavController(binding.root).navigate(action)
     }
 }

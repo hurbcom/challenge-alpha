@@ -1,7 +1,6 @@
 package com.br.natanbrito.challenge.alpha.hotel.list
 
 import android.content.Context
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -12,7 +11,7 @@ import com.br.natanbrito.challenge.alpha.R
 import com.br.natanbrito.challenge.alpha.databinding.HotelItemBinding
 import com.br.natanbrito.challenge.alpha.utils.prepareCurrencyText
 import com.br.natanbrito.challenge.alpha.utils.prepareLocationText
-import com.br.natanbrito.challenge.data.model.results.AmenityResults
+import com.br.natanbrito.challenge.alpha.utils.setupAmenities
 import com.br.natanbrito.challenge.data.model.results.Result
 
 const val INITIAL_POSITION = 0
@@ -35,33 +34,27 @@ class HotelAdapter(private val hotels: List<Result>, private val onItemClicked: 
     }
 
     override fun onBindViewHolder(holder: HotelViewHolder, position: Int) {
-        holder.bind(hotels[position], context, onItemClicked)
+        holder.bind(hotels[position], context)
     }
 
     class HotelViewHolder(private val view: HotelItemBinding) : RecyclerView.ViewHolder(view.root) {
 
-        fun bind(result: Result, context: Context, onItemClicked: (Result) -> Unit) {
+        fun bind(result: Result, context: Context) {
             with(view) {
                 hotelImage.load(result.convertFromHttpToHttps())
                 hotelName.text = result.name
                 hotelPrice.prepareCurrencyText(R.string.hotel_price, result.price)
                 hotelLocation.prepareLocationText(result.address)
-                val amenities = setupAmenities(result.amenities, context)
+                hotelAmenities.setupAmenities(
+                    result.amenities, true
+                )
 
                 hotelAmenities.text = if (result.amenities.size > 2) context.getString(
                     R.string.more_than_three_amenities,
-                    amenities
-                ) else amenities
+                    hotelAmenities.text
+                ) else hotelAmenities.text
             }
         }
-
-        private fun setupAmenities(amenities: List<AmenityResults>, context: Context) =
-            TextUtils.join(
-                ", ",
-                amenities.filter {
-                    !it.name.contains(context.getString(R.string.additional_cost))
-                }.subList(INITIAL_POSITION, MAX_AMENITIES_COUNT).map { amenity -> amenity.name }
-            )
     }
 
     private companion object : DiffUtil.ItemCallback<Result>() {
