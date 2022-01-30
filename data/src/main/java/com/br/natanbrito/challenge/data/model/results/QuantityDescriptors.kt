@@ -8,4 +8,4 @@ data class QuantityDescriptors(
     val maxAdults: Int,
     val maxChildren: Int,
     val maxFreeChildrenAge: Int
-): Parcelable
+) : Parcelable

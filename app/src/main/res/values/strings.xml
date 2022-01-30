@@ -2,6 +2,7 @@
     <string name="app_name">challenge-alpha</string>
     <string name="ratio_16_9">16:9</string>
     <string name="hotel_price">R$ %s</string>
+    <string name="from_hotel_price">A partir de\nR$ %s</string>
     <string name="location">%s - %s</string>
     <string name="more_than_three_amenities">%s e mais facilidades</string>
     <string name="hotels_offers">Ofertas de hospedagens</string>
@@ -9,4 +10,8 @@
     <string name="additional_cost">custo adicional</string>
     <string name="you_are_offline">Poxa, parece que a sua conexão de internet não está ativa.</string>
     <string name="reload_data">Recarregar \n dados</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_counter">%1$s/%2$s</string>
+    <string name="amenities">Facilidades:\n%s</string>
 </resources>

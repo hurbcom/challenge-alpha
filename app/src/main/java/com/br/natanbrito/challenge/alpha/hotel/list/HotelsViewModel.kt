@@ -1,4 +1,4 @@
-package com.br.natanbrito.challenge.alpha.list
+package com.br.natanbrito.challenge.alpha.hotel.list
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -17,4 +17,4 @@ data class PriceResults(
     val oldPrice: Double,
     val originalAmountPerDay: Double,
     val sku: String
-): Parcelable
+) : Parcelable

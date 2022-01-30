@@ -1,4 +1,4 @@
-package com.br.natanbrito.challenge.alpha.list
+package com.br.natanbrito.challenge.alpha.hotel.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import com.br.natanbrito.challenge.alpha.R
 import com.br.natanbrito.challenge.alpha.databinding.HotelsFragmentBinding
 import com.br.natanbrito.challenge.alpha.utils.gone
 import com.br.natanbrito.challenge.alpha.utils.hasInternetConnection
@@ -34,6 +36,7 @@ class HotelsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.toolbarMain.title = getString(R.string.app_name)
         viewModel.prepareDataRequest(requireContext().hasInternetConnection())
         initObservers()
     }
@@ -56,7 +59,10 @@ class HotelsFragment : Fragment() {
 
             hotels.observe(viewLifecycleOwner) { hotel ->
 
-                setupEmptyList()
+                if (listOfHotelsList.isNotEmpty()) {
+                    listOfHotelsList.clear()
+                }
+                oldStarsValue = 0
 
                 hotel?.results?.let { hotelResultList ->
                     hideLoadingScreen()
@@ -65,13 +71,6 @@ class HotelsFragment : Fragment() {
                 }
             }
         }
-    }
-
-    private fun setupEmptyList() {
-        if (listOfHotelsList.isNotEmpty()) {
-            listOfHotelsList.clear()
-        }
-        oldStarsValue = 0
     }
 
     private fun setupHotelsList(hotelResultList: List<Result>) {
@@ -112,7 +111,9 @@ class HotelsFragment : Fragment() {
     }
 
     private fun loadDataOnUi(hotelResultList: ArrayList<List<Result>>) {
-        groupStarsAdapter = GroupStarsAdapter(hotelResultList)
+        groupStarsAdapter = GroupStarsAdapter(hotelResultList) {
+            selectedHotel(it)
+        }
         binding.groupStarsList.adapter = groupStarsAdapter
         groupStarsAdapter.submitList(hotelResultList)
     }
@@ -125,5 +126,10 @@ class HotelsFragment : Fragment() {
             groupStarsList.visible()
             groupStarsList.hasFixedSize()
         }
+    }
+
+    private fun selectedHotel(result: Result) {
+        val action = HotelsFragmentDirections.navigateToHotelDetailFragment(result)
+        Navigation.findNavController(binding.root).navigate(action)
     }
 }

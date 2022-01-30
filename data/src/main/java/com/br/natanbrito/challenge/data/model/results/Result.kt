@@ -27,7 +27,7 @@ data class Result(
     val stars: Int,
     val tags: List<String>,
     val url: String
-): Parcelable {
+) : Parcelable {
     fun convertFromHttpToHttps(): String = if (image.startsWith(HTTP_CONSTANT)) {
         image.replace(
             HTTP_CONSTANT,
@@ -42,7 +42,16 @@ data class Result(
 data class Gallery(
     val description: String,
     val url: String
-): Parcelable
+) : Parcelable {
+    fun convertFromHttpToHttps(): String = if (url.startsWith(HTTP_CONSTANT)) {
+        url.replace(
+            HTTP_CONSTANT,
+            HTTPS_CONSTANT
+        )
+    } else {
+        url
+    }
+}
 
 @Parcelize
 data class FeaturedItem(
@@ -50,4 +59,4 @@ data class FeaturedItem(
     val description: String,
     val image: String,
     val name: String
-): Parcelable
+) : Parcelable

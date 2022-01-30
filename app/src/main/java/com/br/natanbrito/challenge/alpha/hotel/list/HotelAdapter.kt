@@ -1,4 +1,4 @@
-package com.br.natanbrito.challenge.alpha.list
+package com.br.natanbrito.challenge.alpha.hotel.list
 
 import android.content.Context
 import android.text.TextUtils
@@ -18,7 +18,7 @@ import com.br.natanbrito.challenge.data.model.results.Result
 const val INITIAL_POSITION = 0
 const val MAX_AMENITIES_COUNT = 3
 
-class HotelAdapter(private val hotels: List<Result>) :
+class HotelAdapter(private val hotels: List<Result>, private val onItemClicked: (Result) -> Unit) :
     ListAdapter<Result, HotelAdapter.HotelViewHolder>(HotelAdapter) {
 
     private lateinit var binding: HotelItemBinding
@@ -27,20 +27,24 @@ class HotelAdapter(private val hotels: List<Result>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotelViewHolder {
         context = parent.context
         binding = HotelItemBinding.inflate(LayoutInflater.from(context), parent, false)
-        return HotelViewHolder(binding)
+        val holder = HotelViewHolder(binding)
+        holder.itemView.setOnClickListener {
+            onItemClicked(hotels[holder.adapterPosition])
+        }
+        return holder
     }
 
     override fun onBindViewHolder(holder: HotelViewHolder, position: Int) {
-        holder.bind(hotels[position], context)
+        holder.bind(hotels[position], context, onItemClicked)
     }
 
     class HotelViewHolder(private val view: HotelItemBinding) : RecyclerView.ViewHolder(view.root) {
 
-        fun bind(result: Result, context: Context) {
+        fun bind(result: Result, context: Context, onItemClicked: (Result) -> Unit) {
             with(view) {
                 hotelImage.load(result.convertFromHttpToHttps())
                 hotelName.text = result.name
-                hotelPrice.prepareCurrencyText(result.price)
+                hotelPrice.prepareCurrencyText(R.string.hotel_price, result.price)
                 hotelLocation.prepareLocationText(result.address)
                 val amenities = setupAmenities(result.amenities, context)
 

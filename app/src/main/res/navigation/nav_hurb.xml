@@ -7,7 +7,26 @@
 
     <fragment
         android:id="@+id/hotelsFragment"
-        android:name="com.br.natanbrito.challenge.alpha.list.HotelsFragment"
+        android:name="com.br.natanbrito.challenge.alpha.hotel.list.HotelsFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/hotels_fragment" />
+        tools:layout="@layout/hotels_fragment" >
+        <action
+            android:id="@+id/navigateToHotelDetailFragment"
+            app:destination="@id/hotelDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelDetailFragment"
+        android:name="com.br.natanbrito.challenge.alpha.hotel.detail.HotelDetailFragment"
+        android:label="fragment_hotel_detail"
+        tools:layout="@layout/fragment_hotel_detail">
+
+        <argument
+            android:name="hotelResult"
+            app:argType="com.br.natanbrito.challenge.data.model.results.Result"
+            />
+
+    </fragment>
 </navigation>

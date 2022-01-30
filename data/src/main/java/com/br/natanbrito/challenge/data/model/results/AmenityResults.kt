@@ -7,4 +7,4 @@ import kotlinx.android.parcel.Parcelize
 data class AmenityResults(
     val category: String,
     val name: String
-): Parcelable
+) : Parcelable

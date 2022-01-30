@@ -1,4 +1,4 @@
-package com.br.natanbrito.challenge.alpha.list
+package com.br.natanbrito.challenge.alpha.hotel.list
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,7 +10,10 @@ import com.br.natanbrito.challenge.alpha.R
 import com.br.natanbrito.challenge.alpha.databinding.GroupStarsItemBinding
 import com.br.natanbrito.challenge.data.model.results.Result
 
-class GroupStarsAdapter(private val hotels: ArrayList<List<Result>>) :
+class GroupStarsAdapter(
+    private val hotels: ArrayList<List<Result>>,
+    private val onItemClicked: (Result) -> Unit
+) :
     ListAdapter<List<Result>, GroupStarsAdapter.GroupStarsViewHolder>(GroupStarsAdapter) {
 
     private lateinit var binding: GroupStarsItemBinding
@@ -23,18 +26,23 @@ class GroupStarsAdapter(private val hotels: ArrayList<List<Result>>) :
     }
 
     override fun onBindViewHolder(holder: GroupStarsViewHolder, position: Int) {
-        holder.bind(hotels[position], position, context)
+        holder.bind(hotels[position], position, context, onItemClicked)
     }
 
     class GroupStarsViewHolder(private val view: GroupStarsItemBinding) : RecyclerView.ViewHolder(
         view.root
     ) {
 
-        fun bind(result: List<Result>, position: Int, context: Context) {
+        fun bind(
+            result: List<Result>,
+            position: Int,
+            context: Context,
+            onItemClicked: (Result) -> Unit
+        ) {
             with(view) {
                 starCount.text = context.getString(R.string.hotels_by_stars, result[position].stars)
 
-                val adapter = HotelAdapter(result)
+                val adapter = HotelAdapter(result, onItemClicked)
                 hotelsList.adapter = adapter
                 adapter.submitList(result)
             }

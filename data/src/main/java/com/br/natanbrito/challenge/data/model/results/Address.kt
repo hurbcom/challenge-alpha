@@ -26,10 +26,10 @@ data class Address(
     val state: String,
     val street: String,
     val zipcode: String
-): Parcelable
+) : Parcelable
 
 @Parcelize
 data class GeoLocation(
     val lat: Double,
     val lon: Double
-): Parcelable
+) : Parcelable
