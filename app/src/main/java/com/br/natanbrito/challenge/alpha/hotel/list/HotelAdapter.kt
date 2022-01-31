@@ -46,7 +46,8 @@ class HotelAdapter(private val hotels: List<Result>, private val onItemClicked: 
                 hotelPrice.prepareCurrencyText(R.string.hotel_price, result.price)
                 hotelLocation.prepareLocationText(result.address)
                 hotelAmenities.setupAmenities(
-                    result.amenities, true
+                    result.amenities,
+                    true
                 )
 
                 hotelAmenities.text = if (result.amenities.size > 2) context.getString(

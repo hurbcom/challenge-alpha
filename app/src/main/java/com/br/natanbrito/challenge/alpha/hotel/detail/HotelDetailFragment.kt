@@ -123,7 +123,7 @@ class HotelDetailFragment : Fragment() {
 
     private fun setupImageGallery(gallery: List<Gallery>) {
         val adapter = ImagesViewPagerAdapter(gallery) {
-            Routes.navigateToImageRoute(it.url, hotel.description, binding.root)
+            Routes.navigateToImageRoute(it.convertFromHttpToHttps(), hotel.description, binding.root)
         }
         with(binding) {
             imageGallery.adapter = adapter

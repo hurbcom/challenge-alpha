@@ -28,13 +28,13 @@ class HotelRepositoryImplTest {
 
         dispatcher.runBlockingTest {
 
-            val response = repository.getHotels()
+            val response = repository.getHotels() as HotelNetworkResult.Success
 
             coVerify(exactly = 1) {
                 dataSource.fetchHotels()
             }
 
-            assert(expectedResponse.results == response)
+            assert(expectedResponse.results == response.hotel.results)
 
             confirmVerified(dataSource)
         }

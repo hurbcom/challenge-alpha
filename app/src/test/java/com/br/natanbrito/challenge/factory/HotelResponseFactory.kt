@@ -50,13 +50,13 @@ object HotelResponseFactory {
         city = cityName,
         country = COUNTRY,
         geoLocation = GeoLocation(0.0, 0.0),
-        id_atlas_city = null,
-        id_atlas_country = null,
-        id_atlas_state = null,
-        id_atlas_neighborhood = null,
-        id_city = 0,
-        id_country = 0,
-        id_state = 0,
+        idAtlasCity = null,
+        idAtlasCountry = null,
+        idAtlasState = null,
+        idAtlasNeighborhood = null,
+        idCity = 0,
+        idCountry = 0,
+        idState = 0,
         zipcode = ZIP_CODE,
         state = stateName,
         street = streetName
@@ -66,11 +66,11 @@ object HotelResponseFactory {
         amount = 160.0,
         amountPerDay = 160.0,
         currency = "BRL",
-        currency_original = "BRL",
+        currencyOriginal = "BRL",
         sku = "",
         originalAmountPerDay = 0.0,
-        current_price = 160.0,
-        old_price = 0.0
+        currentPrice = 160.0,
+        oldPrice = 0.0
     )
 
     private fun buildFeaturedItem() = FeaturedItem(
@@ -94,7 +94,7 @@ object HotelResponseFactory {
     ) = Result(
         address = addressValue,
         category = "hotel",
-        hu_free_cancellation = true,
+        hasFreeCancellation = true,
         isHotel = true,
         description = descriptionValue,
         smallDescription = smallDescriptionValue,
