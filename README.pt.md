@@ -2,55 +2,30 @@
 
 [[English](README.md) | [Português](README.pt.md)]
 
-Bem vindo ao coding challenge do time mobile da Hurb!
+Um app android que consome a partir de uma chamada a API uma lista de hoteis.
 
-Estamos sempre procurando expandir nossa equipe com devs dedicados, veja se tem vagas abertas no nosso [Gupy](https://hurb.gupy.io/), caso não tenha a vaga em aberto mande uma mensagem pelo LinkedIn ou abra uma issue.
+#### [>>>>> Ver o wiki para mais detalhes do desafio. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
 
-O desafio consiste em criar aplicativo para dispositivo móvel (**Swift**, **Kotlin**) que consuma o JSON exposto pela nossa API REST ou GraphQL de busca e apresente as informações em uma listagem. Você é livre para utilizar bibliotecas de terceiros.
+## Tech Stack
 
-Queremos ver o **máximo da sua capacidade técnica**! Quem decide o limite é você.
+-   Dagger Hilt para injeção de dependência;
+-   Bibliotecas do Android Jetpack:
+    - LiveData
+    - ViewModel
+    - ViewBinding
+    - Navigation Component
+    - Material Design Components
+    - Test
+-   Kotlin Coroutines
+-   Coil para carregar as imagens
+-   Retrofit para chamada a API REST
+-   Detekt & KtLint para análise estática
+-   Mockk para mockar testes.
 
-[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/company/hurb/)
+## Funcionalidades extras:
 
-#### [>>>>> Veja a Wiki para os detalhes do desafio. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
+- O usuário ao clicar em um dos hotéis da lista, é direcionado para uma tela de detalhes.
+- Na tela de detalhes, há um carrossel de images. O usuário ao clicar na imagem que está sendo exibida, irá para uma tela em que a imagem é exibida por completo.
 
-## Requisitos Mínimos
-
--   Forkar esse desafio e criar o seu projeto (ou workspace) usando a sua versão desse repositório, tão logo acabe o desafio, submeta um _pull request_.
-    -   Caso você tenha algum motivo para não submeter um _pull request_, crie um repositório privado no Github, faça todo desafio na branch **master** e não se esqueça de preencher o arquivo `pull-request.txt`. Tão logo termine seu desenvolvimento, adicione como colaborador o usuário `automator-hurb` no seu repositório e o deixe disponível por pelo menos 30 dias. **Não adicione o `automator-hurb` antes do término do desenvolvimento.**
-    -   Caso você tenha algum problema para criar o repositório privado, ao término do desafio preencha o arquivo chamado `pull-request.txt`, comprima a pasta do projeto - incluindo a pasta `.git` - e nos envie por email.
--   Faça chamadas assíncronas para a API e emita um log dos dados recebidos.
-
--   Ter testes para o código criado
-
-## Critério de avaliação
-
--   **Organização do código**: Separação de módulos, view e model, back-end e front-end
-
--   **Clareza**: O README explica de forma resumida qual é o problema e como pode rodar a aplicação?
-
--   **Assertividade**: A aplicação está fazendo o que é esperado? Se tem algo faltando, o README explica o porquê?
-
--   **Legibilidade do código** (incluindo comentários)
-
--   **Segurança**: Existe alguma vulnerabilidade clara?
-
--   **Cobertura de testes** (Não esperamos cobertura completa)
-
--   **Histórico de commits** (estrutura e qualidade)
-
--   **UX**: A interface é de fácil uso e auto-explicativa? A API é intuitiva?
-
--   **Escolhas técnicas**: A escolha das bibliotecas, banco de dados, arquitetura, etc, é a melhor escolha para a aplicação?
-
--   **"Algo a mais"**: Foi adicionada alguma feature não descrita nos requisitos mínimos? Ela foi bem executada? Traz alguma inovação interessante?
-
-## Dúvidas
-
-Quaisquer dúvidas que você venha a ter, consulte as [_issues_](https://github.com/HurbCom/challenge-alpha/issues) para ver se alguém já não a fez e caso você não ache sua resposta, abra você mesmo uma nova issue!
-
-Boa sorte e boa viagem! ;)
-
-<p align="center">
-  <img src="ca.jpg" alt="Challange accepted" />
-</p>
+## Serviço de API do desafio
+- REST API
