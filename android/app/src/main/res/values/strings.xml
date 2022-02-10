@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ChallengeAlpha</string>
+    <string name="unused_string">Unused string</string>
 </resources>
