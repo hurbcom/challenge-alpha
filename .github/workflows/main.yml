@@ -1,8 +1,8 @@
 name: CI
 
 on:
-  schedule:
-    - cron: '0 */12 * * *'
+  push:
+    branches: [ master ]
 
   workflow_dispatch:
 
@@ -17,10 +17,22 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: update version file
+        run: |
+          cd ./android
+          CURRENT_VERSION=$(cat ./current-version.txt)
+          NEXT_VERSION=$(($CURRENT_VERSION + 1))
+      - name: commit new version file
+        run: |
+          git add .
+          git commit -m "chore: update version to $NEXT_VERSION"
+          git tag -a "$NEXT_VERSION"
+          git push origin "$NEXT_VERSION"
+          git push origin master
       - name: build app with debug variant
         run: |
           cd ./android
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug -PversionName="1.$NEXT_VERSION.0"
       - name: distribute on firebase distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
