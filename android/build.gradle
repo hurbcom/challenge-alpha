@@ -15,6 +15,16 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.osacky.doctor" version "0.7.3"
+}
+
+doctor {
+    javaHome {
+        failOnError.set(false)
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
