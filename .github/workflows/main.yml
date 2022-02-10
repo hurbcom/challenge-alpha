@@ -23,8 +23,6 @@ jobs:
           CURRENT_VERSION=$(cat ./current-version.txt)
           NEXT_VERSION=$(($CURRENT_VERSION + 1))
           echo $NEXT_VERSION > current-version.txt
-      - name: commit new version file
-        run: |
           git config --global user.name 'israel nascimento'
           git config --global user.email 'dev.israelnascimento@gmail.com'
           git add .
