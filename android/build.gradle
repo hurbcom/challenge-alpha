@@ -17,6 +17,7 @@ buildscript {
 
 plugins {
     id "com.osacky.doctor" version "0.7.3"
+    id "org.jetbrains.kotlinx.kover" version "0.5.0"
 }
 
 // Desativando JAVA_HOME check para evitar muitas configurações para testar o projeto
