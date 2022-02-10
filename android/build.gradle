@@ -19,6 +19,7 @@ plugins {
     id "com.osacky.doctor" version "0.7.3"
 }
 
+// Desativando JAVA_HOME check para evitar muitas configurações para testar o projeto
 doctor {
     javaHome {
         failOnError.set(false)
