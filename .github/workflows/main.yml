@@ -33,7 +33,7 @@ jobs:
       - name: build app with debug variant
         run: |
           cd ./android
-          ./gradlew assembleDebug -PversionName="1.$NEXT_VERSION.0"
+          ./gradlew assembleDebug -PversionName="1.$(cat ./current-version.txt).0"
       - name: distribute on firebase distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
