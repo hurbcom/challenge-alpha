@@ -27,4 +27,27 @@ jobs:
           name: detekt-report
           path: android/app/build/reports/detekt/detekt.html
 
-          
+  remove-unused-resources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout project
+        uses: actions/checkout@v2      
+      - name: setup JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Run unused resources task
+        run: |
+          cd ./android
+          ./gradlew removeUnusedResources
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: 'Remove unused resources'
+          assignees: aka-godinez
+          reviewers: aka-godinez
+          commit-message: 'Remove unused resources'
+          delete-branch: true
+
+
