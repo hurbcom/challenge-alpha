@@ -50,4 +50,22 @@ jobs:
           commit-message: 'Remove unused resources'
           delete-branch: true
 
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout project
+        uses: actions/checkout@v2      
+      - name: setup JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Unit tests
+        run: |
+          cd ./android
+          ./gradlew koverReport --stacktrace
+      - name: Upload test reports to Codecov
+        uses: codecov/codecov-action@v2.1.0
+
+
 
