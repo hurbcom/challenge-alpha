@@ -33,6 +33,11 @@ android {
     }
 }
 
+
+detekt {
+    config = files("$rootDir/config/detekt/detekt.yml")
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
