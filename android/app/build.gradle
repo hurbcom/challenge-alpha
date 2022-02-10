@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.github.konifar.gradle.unused-resources-remover'
+    id "io.gitlab.arturbosch.detekt" version "1.19.0"
 }
 
 android {
