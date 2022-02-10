@@ -5,6 +5,11 @@ plugins {
     id "io.gitlab.arturbosch.detekt" version "1.19.0"
 }
 
+def getMyVersionName = { ->
+    def name = project.hasProperty('versionName') ? versionName : "1.0"
+    return name
+}
+
 android {
     compileSdk 31
 
@@ -13,7 +18,7 @@ android {
         minSdk 23
         targetSdk 31
         versionCode 1
-        versionName "1.0"
+        versionName getMyVersionName()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -32,7 +37,6 @@ android {
         jvmTarget = '1.8'
     }
 }
-
 
 detekt {
     config = files("$rootDir/config/detekt/detekt.yml")
