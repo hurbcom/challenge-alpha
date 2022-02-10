@@ -1,4 +1,5 @@
 # <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Alpha Challenge
+[![CI](https://github.com/aka-godinez/challenge-alpha/actions/workflows/main.yml/badge.svg)](https://github.com/aka-godinez/challenge-alpha/actions/workflows/main.yml)
 
 [[English](README.md) | [Português](README.pt.md)]
 
