@@ -13,6 +13,7 @@ import kotlinx.coroutines.runBlocking
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
+import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import retrofit2.Response
@@ -50,16 +51,22 @@ class ServiceFactoryTest {
         }
         curlLoggingInterceptor = CurlInterceptor(curlLoggingInterceptorLogger)
         sut = ServiceFactory(false, httpLoggingInterceptor, CurlInterceptor(curlLoggingInterceptorLogger))
+
         mockWebServer = MockWebServer()
+        mockWebServer.start()
         every { curlLoggingInterceptorLogger.log(any()) } just Runs
         every { httpLoggingInterceptorLogger.log(any()) } just Runs
+    }
+
+    @After
+    fun tearDown() {
+        mockWebServer.shutdown()
     }
 
     @Test
     fun `WHEN isDebug is false THEN the factory does not display logs`() = runBlocking {
         sut.createRestClient(TestApi::class.java, mockWebServer.url("/"))
         val api = sut.createRestClient(TestApi::class.java, mockWebServer.url("/"))
-
         mockWebServer.enqueue(MockResponse().setResponseCode(200).setBody(DEFAULT_RESPONSE_BODY))
         api.testCorrectParser()
 
