@@ -11,9 +11,9 @@ inline fun <T> withNetworkResponse(networkCall: () -> Response<T>): NetworkRespo
         }
         // Se tivesse tratamento para erros específicos, provavelmente entraria aqui algo como
         // NetworkResponse.HttpError(code: Int, body: ???)
-        return NetworkResponse.GenericError()
     } catch (e: Exception) {
         e.printStackTrace()
-        return NetworkResponse.GenericError()
     }
+    return NetworkResponse.GenericError()
+
 }
