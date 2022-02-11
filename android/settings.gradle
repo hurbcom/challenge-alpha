@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "ChallengeAlpha"
 include ':app'
 include ':network'
+include ':data-transfer-objects'

@@ -6,6 +6,7 @@ ext {
     retrofitVersion = "2.9.0"
     okHttpVersion = "4.9.3"
     ok2CurlInterceptorVersion = "0.7.0"
+    jacksonVersion = "2.10.1"
 
     // Testing
     mockWebserverVersion = "4.9.3"
