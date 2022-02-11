@@ -1,0 +1,14 @@
+ext {
+    // Core
+    coroutinesVersion = "1.5.0"
+
+    // Networking
+    retrofitVersion = "2.9.0"
+    okHttpVersion = "4.9.3"
+    ok2CurlInterceptorVersion = "0.7.0"
+
+    // Testing
+    mockWebserverVersion = "4.9.3"
+    truthVersion = "1.1.3"
+    mockKVersion = "1.12.1"
+}
