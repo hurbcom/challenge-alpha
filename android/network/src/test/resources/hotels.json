@@ -1,0 +1,208 @@
+{
+  "filters": {
+    "amenities": [
+      {
+        "term": "Bar",
+        "filter": "amenity_bar|1",
+        "count": 41
+      }
+    ],
+    "countries": [
+      {
+        "term": "Brasil",
+        "filter": "country_brasil|1",
+        "count": 149
+      }
+    ],
+    "cities": [
+      {
+        "term": "Campos dos Goytacazes",
+        "filter": "city_campos_dos_goytacazes|1,state_rio_de_janeiro|1",
+        "count": 1
+      }
+    ],
+    "prices": [
+      {
+        "min": 0,
+        "maxExclusive": 300,
+        "filter": "pricegroup_1|1",
+        "count": 96
+      }
+    ],
+    "priceInterval": {
+      "min": 6646,
+      "max": 483750,
+      "filterPattern": "price_[min|max]_[value]"
+    },
+    "productType": [
+      {
+        "term": "hotel",
+        "filter": "product_type_hotel|1",
+        "count": 149
+      }
+    ],
+    "rooms": [
+      {
+        "term": "Apartamento 202 ",
+        "filter": "room_apartamento_202|1",
+        "count": 3
+      }
+    ],
+    "states": [
+      {
+        "term": "Rio Grande do Sul",
+        "filter": "state_rio_grande_do_sul|1,country_brasil|1",
+        "count": 147
+      }
+    ]
+  },
+  "results": [
+    {
+      "sku": "NHU-7987-0-0-0-0",
+      "isHotel": true,
+      "category": "hotel",
+      "smallDescription": "Espaço planejado para o total bem estar dos hóspedes que procuram prazer e comodidade em uma estadia na Serra.",
+      "amenities": [
+        {
+          "name": "Bar",
+          "category": "Comida / Bebida"
+        },
+        {
+          "name": "Wifi",
+          "category": "Diversos"
+        }
+      ],
+      "id": "AT7987",
+      "price": {
+        "currency": "BRL",
+        "currency_original": "BRL",
+        "current_price": 287.88,
+        "old_price": 0,
+        "sku": "NHU-7987-0-0-0-0",
+        "originalAmountPerDay": 0,
+        "amountPerDay": 287.88,
+        "amount": 287.88
+      },
+      "hu_free_cancellation": true,
+      "image": "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5cf6fa3c_pousada-aardvark-inn.jpg",
+      "name": "Pousada Aardvark Inn",
+      "url": "https://www.hurb.com/hoteis/gramado/pousada-aardvark-inn-7987",
+      "description": "Espaços charmosos, bons serviços, conforto nos detalhes e ambiente informalmente descontraído. \r\nCom atendimento personalizado feito por uma equipe de funcionários e gerenciamento familiar, buscamos oferecer constantemente um alto padrão de hospitalidade aliados a preços acessíveis.",
+      "stars": 3,
+      "gallery": [
+        {
+          "description": "",
+          "url": "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5cf6fa3c_pousada-aardvark-inn.jpg"
+        },
+        {
+          "description": "",
+          "url": "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5d8bfd46_pousada-aardvark-inn.jpg"
+        }
+      ],
+      "address": {
+        "city": "Gramado",
+        "country": "Brasil",
+        "id_atlas_city": null,
+        "id_atlas_country": null,
+        "id_atlas_neighborhood": null,
+        "id_atlas_state": null,
+        "id_city": 7744,
+        "id_country": 1,
+        "id_state": 23,
+        "state": "Rio Grande do Sul",
+        "street": "Rua Mestre, 18",
+        "zipcode": "95670000",
+        "geoLocation": {
+          "lat": -29.372126,
+          "lon": -29.372126
+        }
+      },
+      "tags": [
+        "Serra Gaúcha"
+      ],
+      "quantityDescriptors": {
+        "maxChildren": 1,
+        "maxAdults": 2,
+        "maxFreeChildrenAge": 17
+      },
+      "featuredItem": {
+        "amenities": [
+          "Amenidade de banho",
+          "Aparelho TV"
+        ],
+        "name": "Standard Duplo",
+        "image": "https://static.hotelurbano.com/reservas/prodaccommodation/30607/58c8470703a3d_pousada-aardvark-inn.jpg",
+        "description": "Para seu conforto e bem estar, todas as acomodações oferecem frigobar, calefação central, televisores LCD com TV a Cabo e DVD, secador de cabelo, roupas de cama em algodão, toalhas king size, ducha pressurizada com aquecimento central, sabonetes e shampoos com aroma do campo, facilidade de bebidas quentes. Será disponível um berço para a criança na gratuidade como cortesia."
+      }
+    },
+    {
+      "sku": "OMN-2762-0-0-0-0-0-0",
+      "isHotel": true,
+      "category": "hotel",
+      "smallDescription": "O Klein Ville Gramado te espera com uma ótima estrutura projetada para oferecer conforto e tranquilidade. O hotel possui a sua disposição uma equipe treinada e capacitada para bem atendê-lo. Todos os apartamentos são equipados com internet, telefone, TV a",
+      "amenities": [
+        {
+          "name": "Sala de tv",
+          "category": "Áreas comuns"
+        },
+        {
+          "name": "Recepção 24 horas",
+          "category": "Serviços de recepção"
+        }
+      ],
+      "id": "AT648",
+      "price": {
+        "currency": "BRL",
+        "currency_original": "BRL",
+        "current_price": 308,
+        "old_price": 194.04,
+        "sku": "OMN-2762-0-0-0-0-0-0",
+        "originalAmountPerDay": 194.04,
+        "amountPerDay": 308,
+        "amount": 308
+      },
+      "hu_free_cancellation": true,
+      "image": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/648/hotel-klein-ville-gramado-001_20181127120123_20190625175541.jpg",
+      "name": "Hotel Klein Ville Gramado",
+      "url": "https://www.hurb.com/hoteis/gramado/hotel-klein-ville-gramado-OMN-2762",
+      "description": "O Hotel Klein Ville Gramado te espera com uma ótima estrutura projetada para oferecer conforto e tranquilidade. O hotel possui a sua disposição uma equipe treinada e capacitada para bem atendê-lo. Todos os apartamentos são equipados com internet, telefone, TV a Cabo, ar condicionado, cama box, frigobar, cofre e mesa de trabalho, além de uma decoração contemporânea e charmosa. Além de todo o conforto será possível desfrutar de uma farto e delicioso café da manhã, estilo colonial. No Hotel Klein Ville Gramado \" entre como hóspede e saia como amigo!\" \r\nQuer viajar em grupo? o HU te leva! Grupos a partir de 8 quartos podem solicitar cotações especiais! Basta entrar em contato pelo email grupohu@hotelurbano.com.br  ",
+      "stars": 4,
+      "gallery": [
+        {
+          "description": "",
+          "url": "https://novo-hu.s3.amazonaws.com/reservas/ota/prod/hotel/648/hotel-klein-ville-gramado-001_20181127120123_20190625175541.jpg"
+        }
+      ],
+      "address": {
+        "city": "Gramado",
+        "country": "Brasil",
+        "id_atlas_city": null,
+        "id_atlas_country": null,
+        "id_atlas_neighborhood": null,
+        "id_atlas_state": null,
+        "id_city": 430910,
+        "id_country": 1,
+        "id_state": 43,
+        "state": "Rio Grande do Sul",
+        "street": "Rua Itapeva, 59 Carniel",
+        "zipcode": "95670000",
+        "geoLocation": {
+          "lat": -29.3596688,
+          "lon": -50.8557461
+        }
+      },
+      "tags": [],
+      "quantityDescriptors": {
+        "maxChildren": 10,
+        "maxAdults": 10,
+        "maxFreeChildrenAge": 17
+      },
+      "featuredItem": {
+        "amenities": [],
+        "name": "LUXO",
+        "image": "http://media.omnibees.com/Images/2762/RoomTypes/306260.jpg",
+        "description": "- Ar condicionado; \r- Mini bar; \r- Secador de cabelo; \r- Cofre; \r- Wi-fi grátis; \r- TV a cabo; "
+      }
+    }
+  ]
+}
