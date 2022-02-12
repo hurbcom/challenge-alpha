@@ -19,6 +19,7 @@ dependencies {
     testImplementation "app.cash.turbine:turbine:$turbineVersion"
     testImplementation project(':test-utils')
 
+    implementation project(':utils')
     implementation project(':network')
     implementation project(':theme')
 }
