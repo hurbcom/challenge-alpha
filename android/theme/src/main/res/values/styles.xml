@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CATextDefault">
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+    <style name="CATextTitle" parent="CATextDefault">
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

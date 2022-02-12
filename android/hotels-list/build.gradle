@@ -16,4 +16,5 @@ dependencies {
     testImplementation project(':test-utils')
 
     implementation project(':network')
+    implementation project(':theme')
 }
