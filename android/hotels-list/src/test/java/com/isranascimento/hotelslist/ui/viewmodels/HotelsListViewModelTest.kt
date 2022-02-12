@@ -7,9 +7,9 @@ import com.isranascimento.hotelslist.models.HotelsListDomainState
 import com.isranascimento.hotelslist.repository.IHotelsListRepository
 import com.isranascimento.hotelslist.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.ERROR
 import com.isranascimento.hotelslist.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.SUCCESS
-import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIItem
-import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIState
-import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUITitle
+import com.isranascimento.hotelslist.ui.models.HotelListUIItem
+import com.isranascimento.hotelslist.ui.models.HotelListUIState
+import com.isranascimento.hotelslist.ui.models.HotelListUITitle
 import com.isranascimento.hotelslist.util.ReturnedValues.HOTEL_DOMAIN_LIST
 import com.isranascimento.testutils.MainCoroutineRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi

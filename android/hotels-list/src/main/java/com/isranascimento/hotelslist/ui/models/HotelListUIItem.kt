@@ -1,4 +1,4 @@
-package com.isranascimento.hotelslist.ui.viewmodels.models
+package com.isranascimento.hotelslist.ui.models
 
 import com.isranascimento.hotelslist.models.Hotel
 

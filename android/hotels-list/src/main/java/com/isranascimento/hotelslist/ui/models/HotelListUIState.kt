@@ -1,4 +1,4 @@
-package com.isranascimento.hotelslist.ui.viewmodels.models
+package com.isranascimento.hotelslist.ui.models
 
 sealed class HotelListUIState {
     object Loading: HotelListUIState()

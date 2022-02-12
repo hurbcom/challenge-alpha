@@ -1,6 +1,5 @@
-package com.isranascimento.hotelslist.ui.viewmodels.fragment
+package com.isranascimento.hotelslist.ui.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

@@ -1,11 +1,6 @@
 package com.isranascimento.hotelslist.ui.models
 
 import com.google.common.truth.Truth.assertThat
-import com.isranascimento.hotelslist.models.Address
-import com.isranascimento.hotelslist.models.Hotel
-import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUI
-import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIItem
-import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUITitle
 import com.isranascimento.hotelslist.util.ReturnedValues.HOTEL_DOMAIN_LIST
 import org.junit.Test
 

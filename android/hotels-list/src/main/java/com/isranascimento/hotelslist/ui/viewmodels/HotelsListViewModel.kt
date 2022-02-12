@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.isranascimento.hotelslist.models.HotelsListDomainState
 import com.isranascimento.hotelslist.repository.IHotelsListRepository
-import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUI
-import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIState
+import com.isranascimento.hotelslist.ui.models.HotelListUI
+import com.isranascimento.hotelslist.ui.models.HotelListUIState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
