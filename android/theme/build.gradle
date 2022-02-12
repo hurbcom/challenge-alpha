@@ -1,25 +1,19 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
-    id 'com.github.konifar.gradle.unused-resources-remover'
-}
-
-def getMyVersionName = { ->
-    def name = project.hasProperty('versionName') ? versionName : "1.0"
-    return name
 }
 
 android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.isranascimento.challengealpha"
         minSdk 23
         targetSdk 31
         versionCode 1
-        versionName getMyVersionName()
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -42,10 +36,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
-    implementation project(":theme")
 }

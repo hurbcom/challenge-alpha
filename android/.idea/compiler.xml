@@ -5,6 +5,7 @@
       <module name="ChallengeAlpha.app" target="11" />
       <module name="ChallengeAlpha.hotels-list" target="11" />
       <module name="ChallengeAlpha.network" target="11" />
+      <module name="ChallengeAlpha.theme" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
