@@ -19,8 +19,13 @@ class KoinUtilsTest: KoinTest {
     }
 
     @Test
-    fun `verify dependency graph`() {
-        checkKoinModules(KoinUtils.getModules())
+    fun `verify dependency graph with debug true`() {
+        checkKoinModules(KoinUtils.getModules(true, "https://google.com/"))
+    }
+
+    @Test
+    fun `verify dependency graph with debug false`() {
+        checkKoinModules(KoinUtils.getModules(false, "https://google.com/"))
     }
 
 }

@@ -6,5 +6,6 @@ import com.isranascimento.hotelslist.di.hotelsModule
 import com.isranascimento.network.di.networkModule
 
 object KoinUtils {
-    fun getModules() = networkModule(BuildConfig.DEBUG, MainApplication.BASE_URL) + hotelsModule()
+    fun getModules(isDebug: Boolean, baseUrl: String) =
+        networkModule(isDebug, baseUrl) + hotelsModule()
 }

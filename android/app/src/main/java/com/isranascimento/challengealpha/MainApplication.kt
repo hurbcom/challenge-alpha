@@ -12,12 +12,12 @@ class MainApplication: Application() {
 
         startKoin {
             modules(
-                KoinUtils.getModules()
+                KoinUtils.getModules(BuildConfig.DEBUG, BASE_URL)
             )
         }
     }
 
     companion object {
-        const val BASE_URL = "https://raw.githubusercontent.com/"
+        private const val BASE_URL = "https://raw.githubusercontent.com/"
     }
 }
