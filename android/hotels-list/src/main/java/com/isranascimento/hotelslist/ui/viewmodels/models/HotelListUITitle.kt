@@ -2,12 +2,12 @@ package com.isranascimento.hotelslist.ui.viewmodels.models
 
 import com.isranascimento.hotelslist.models.Hotel
 
-data class HotelListUIItem(
-    val name: String
+data class HotelListUITitle(
+    val starCount: Int
 ): HotelListUI() {
     companion object {
-        fun fromDomainModel(domain: Hotel) = HotelListUIItem(
-            name = domain.name
+        fun fromDomainModel(domain: Hotel) = HotelListUITitle(
+            starCount = domain.starCount
         )
     }
 }

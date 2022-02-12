@@ -5,6 +5,7 @@ import com.isranascimento.hotelslist.models.Address
 import com.isranascimento.hotelslist.models.Hotel
 import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUI
 import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIItem
+import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUITitle
 import com.isranascimento.hotelslist.util.ReturnedValues.HOTEL_DOMAIN_LIST
 import org.junit.Test
 
@@ -16,17 +17,27 @@ class HotelListUITest {
             HOTEL_DOMAIN_LIST
         )
 
-        assertThat(hotelUIModelList.count()).isEqualTo(2)
+        assertThat(hotelUIModelList.count()).isEqualTo(7)
 
-        val firstItem = hotelUIModelList[0]
-        assertThat(firstItem.starCount).isEqualTo(1)
-        assertThat(firstItem.hotelLists.count()).isEqualTo(1)
-        assertThat(firstItem.hotelLists[0]).isEqualTo(HotelListUIItem("Hotel 3"))
+        assertTitle(hotelUIModelList[0], HotelListUITitle(4))
+        assertHotelItem(hotelUIModelList[1], HotelListUIItem("Hotel 4"))
 
-        val secondItem = hotelUIModelList[1]
-        assertThat(secondItem.starCount).isEqualTo(3)
-        assertThat(secondItem.hotelLists.size).isEqualTo(2)
-        assertThat(secondItem.hotelLists[0].name).isEqualTo("Hotel 1")
-        assertThat(secondItem.hotelLists[1].name).isEqualTo("Hotel 2")
+        assertTitle(hotelUIModelList[2], HotelListUITitle(3))
+        assertHotelItem(hotelUIModelList[3], HotelListUIItem("Hotel 1"))
+        assertHotelItem(hotelUIModelList[4], HotelListUIItem("Hotel 2"))
+
+        assertTitle(hotelUIModelList[5], HotelListUITitle(1))
+        assertHotelItem(hotelUIModelList[6], HotelListUIItem("Hotel 3"))
+
+    }
+
+    private fun assertTitle(item: HotelListUI, expected: HotelListUITitle) {
+        assertThat(item).isInstanceOf(HotelListUITitle::class.java)
+        assertThat(item).isEqualTo(expected)
+    }
+
+    private fun assertHotelItem(item: HotelListUI, expected: HotelListUIItem) {
+        assertThat(item).isInstanceOf(HotelListUIItem::class.java)
+        assertThat(item).isEqualTo(expected)
     }
 }

@@ -7,7 +7,9 @@ import com.isranascimento.hotelslist.models.HotelsListDomainState
 import com.isranascimento.hotelslist.repository.IHotelsListRepository
 import com.isranascimento.hotelslist.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.ERROR
 import com.isranascimento.hotelslist.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.SUCCESS
+import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIItem
 import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIState
+import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUITitle
 import com.isranascimento.hotelslist.util.ReturnedValues.HOTEL_DOMAIN_LIST
 import com.isranascimento.testutils.MainCoroutineRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -32,9 +34,9 @@ class HotelsListViewModelTest {
             val successItem = awaitItem()
             assertThat(successItem).isInstanceOf(HotelListUIState.Success::class.java)
             successItem as HotelListUIState.Success
-            assertThat(successItem.hotelsValue.size).isEqualTo(2)
-            assertThat(successItem.hotelsValue[0].starCount).isEqualTo(1)
-            assertThat(successItem.hotelsValue[0].hotelLists[0].name).isEqualTo("Hotel 3")
+            assertThat(successItem.hotelsValue.size).isEqualTo(7)
+            assertThat(successItem.hotelsValue[0]).isEqualTo(HotelListUITitle(4))
+            assertThat(successItem.hotelsValue[1]).isEqualTo(HotelListUIItem("Hotel 4"))
             cancelAndIgnoreRemainingEvents()
         }
     }

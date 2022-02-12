@@ -43,6 +43,19 @@ object ReturnedValues {
                 "Rio de Janeiro"
             ),
             starCount = 1
+        ),
+        Hotel(
+            id = "4",
+            sku = "4",
+            name = "Hotel 4",
+            gallery = listOf("item1"),
+            amenities = listOf("amenity1"),
+            price = 2.0,
+            address = Address(
+                "RJ",
+                "Rio de Janeiro"
+            ),
+            starCount = 4
         )
     )
 }
