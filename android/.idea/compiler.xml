@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
       <module name="ChallengeAlpha.app" target="11" />
+      <module name="ChallengeAlpha.hotels-list" target="11" />
       <module name="ChallengeAlpha.network" target="11" />
     </bytecodeTargetLevel>
   </component>
