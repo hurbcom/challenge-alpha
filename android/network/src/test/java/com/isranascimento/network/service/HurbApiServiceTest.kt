@@ -139,11 +139,11 @@ class HurbApiServiceTest {
     private fun expectedPrice() = PriceResponse(
         currency = "BRL",
         currencyOriginal = "BRL",
-        currentPrice = 287.88f,
-        oldPrice = 0f,
+        currentPrice = 287.88,
+        oldPrice = 0.toDouble(),
         sku = "NHU-7987-0-0-0-0",
-        originalAmountPerDay = 0f,
-        amountPerDay = 287.88f,
-        amount = 287.88f
+        originalAmountPerDay = 0.toDouble(),
+        amountPerDay = 287.88,
+        amount = 287.88
     )
 }
