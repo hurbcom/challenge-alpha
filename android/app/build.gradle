@@ -52,6 +52,9 @@ dependencies {
     implementation "io.insert-koin:koin-core:$koinVersion"
     implementation "io.insert-koin:koin-android:$koinVersion"
 
+    testImplementation "io.mockk:mockk:$mockKVersion"
+    testImplementation "io.insert-koin:koin-test-junit4:$koinVersion"
+
     implementation project(':network')
     implementation project(':hotels-list')
     implementation project(":theme")
