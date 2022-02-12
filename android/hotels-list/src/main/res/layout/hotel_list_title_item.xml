@@ -15,14 +15,4 @@
         style="@style/CATextTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/hotel_list_items"
-        app:layout_constraintTop_toBottomOf="@id/hotel_list_title"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        tools:listitem="@layout/hotel_list_card_item"
-        tools:itemCount="3"
-        android:layout_marginTop="@dimen/spacing_small"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>
