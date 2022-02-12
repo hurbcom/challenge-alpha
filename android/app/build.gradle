@@ -10,12 +10,12 @@ def getMyVersionName = { ->
 }
 
 android {
-    compileSdk 31
+    compileSdk project.COMPILE_SDK_VERSION as Integer
 
     defaultConfig {
         applicationId "com.isranascimento.challengealpha"
-        minSdk 23
-        targetSdk 31
+        minSdk project.MIN_SDK_VERSION as Integer
+        targetSdk project.TARGET_SDK_VERSION as Integer
         versionCode 1
         versionName getMyVersionName()
 
