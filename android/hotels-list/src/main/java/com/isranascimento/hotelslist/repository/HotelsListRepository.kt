@@ -9,10 +9,10 @@ import kotlinx.coroutines.withContext
 
 class HotelsListRepository(
     private val remoteDataSource: IHotelsRemoteDataSoure
-) {
+) : IHotelsListRepository {
     private var hotelsDomainListMap = mapOf<HotelId, Hotel>()
 
-    suspend fun getHotelList(): HotelsListDomainState = withContext(Dispatchers.IO) {
+    override suspend fun getHotelList(): HotelsListDomainState = withContext(Dispatchers.IO) {
         when(val response = remoteDataSource.getHotelsList()) {
             is NetworkResponse.Success -> {
                 response.body?.asDomainModel()?.let {
@@ -30,7 +30,7 @@ class HotelsListRepository(
         hotelsDomainListMap = it.associateBy { hotel -> hotel.id }
     }
 
-    fun getHotelWithSku(hotelId: HotelId): Hotel? {
+    override fun getHotelWithSku(hotelId: String): Hotel? {
         return hotelsDomainListMap[hotelId]
     }
 }
