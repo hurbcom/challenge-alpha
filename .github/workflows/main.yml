@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: detekt-report
-          path: android/app/build/reports/detekt/detekt.html
+          path: android/build/reports/detekt/detekt.html
 
   remove-unused-resources:
     runs-on: ubuntu-latest
