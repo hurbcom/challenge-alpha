@@ -5,6 +5,7 @@ import com.google.common.truth.Truth.assertThat
 import com.isranascimento.hotelslist.models.Hotel
 import com.isranascimento.hotelslist.models.HotelsListDomainState
 import com.isranascimento.hotelslist.repository.IHotelsListRepository
+import com.isranascimento.hotelslist.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.ERROR
 import com.isranascimento.hotelslist.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.SUCCESS
 import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIState
 import com.isranascimento.hotelslist.util.ReturnedValues.HOTEL_DOMAIN_LIST
@@ -39,13 +40,19 @@ class HotelsListViewModelTest {
     }
 
     @Test
-    fun `WHEN repository returns with error THEN the viewmodel update the uiStateFlow to loading and after UiState_Error`() {
-        // awaiting...
+    fun `WHEN repository returns with error THEN the viewmodel update the uiStateFlow to loading and after UiState_Error`() = runBlocking {
+        sut = HotelsListViewModel(HotelsListRepositoryDouble(ERROR))
+        sut.uiState.test {
+            sut.getHotelsList()
+            assertThat(awaitItem()).isInstanceOf(HotelListUIState.Loading::class.java)
+            assertThat(awaitItem()).isInstanceOf(HotelListUIState.Error::class.java)
+            cancelAndIgnoreRemainingEvents()
+        }
     }
 
     @Test
     fun `WHEN getHotelWithSku is called THEN the viewmodel returns the expected HotelDetailUIModel`() {
-        // awaiting...
+        // awaiting finish ui of the list first...
     }
 
     private class HotelsListRepositoryDouble(
@@ -57,7 +64,7 @@ class HotelsListViewModelTest {
 
         override suspend fun getHotelList(): HotelsListDomainState = when (expectedResponseStatus) {
             SUCCESS -> HotelsListDomainState.Success(HOTEL_DOMAIN_LIST)
-            ExpectedResponseStatus.ERROR -> HotelsListDomainState.Error
+            ERROR -> HotelsListDomainState.Error
         }
 
         override fun getHotelWithSku(hotelId: String): Hotel? {

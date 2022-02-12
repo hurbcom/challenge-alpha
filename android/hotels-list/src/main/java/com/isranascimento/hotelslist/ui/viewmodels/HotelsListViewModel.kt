@@ -24,7 +24,7 @@ class HotelsListViewModel(
                     _uiState.value = HotelListUIState.Success(HotelListUI.fromHotelListDomainClass(value.hotelList))
                 }
                 is HotelsListDomainState.Error -> {
-
+                    _uiState.value = HotelListUIState.Error
                 }
             }
         }
