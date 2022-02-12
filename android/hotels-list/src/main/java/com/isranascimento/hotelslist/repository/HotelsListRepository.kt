@@ -10,14 +10,29 @@ import kotlinx.coroutines.withContext
 class HotelsListRepository(
     private val remoteDataSource: IHotelsRemoteDataSoure
 ) {
+    private var hotelsDomainListMap = mapOf<HotelId, Hotel>()
+
     suspend fun getHotelList(): HotelsListDomainState = withContext(Dispatchers.IO) {
         return@withContext when(val response = remoteDataSource.getHotelsList()) {
             is NetworkResponse.Success -> {
-                response.body?.asDomainModel()?.let { HotelsListDomainState.Success(it) } ?: HotelsListDomainState.Error
+                response.body?.asDomainModel()?.let {
+                    prepareHotelListMap(it)
+                    HotelsListDomainState.Success(it)
+                } ?: HotelsListDomainState.Error
             }
             is NetworkResponse.GenericError -> {
                 HotelsListDomainState.Error
             }
         }
     }
+
+    private fun prepareHotelListMap(it: List<Hotel>) {
+        hotelsDomainListMap = it.associateBy { hotel -> hotel.id }
+    }
+
+    fun getHotelWithSku(hotelId: HotelId): Hotel? {
+        return hotelsDomainListMap[hotelId]
+    }
 }
+
+typealias HotelId = String

@@ -58,6 +58,15 @@ class HotelsListRepositoryTest {
         assertThat(hotelsState).isInstanceOf(HotelsListDomainState.Error::class.java)
     }
 
+    @Test
+    fun `WHEN getHotelList is called with correct SKU THEN the hotel domain is returned`() = runBlocking {
+        sut = HotelsListRepository(HotelsDataSourceDouble(SUCCESS))
+        sut.getHotelList()
+        val hotel = sut.getHotelWithSku("AT7987")
+
+        assertThat(hotel).isEqualTo(expectedFirstHotel())
+    }
+
     private class HotelsDataSourceDouble(
         private val expectedResponseStatus: ExpectedResponseStatus
     ): IHotelsRemoteDataSoure {
