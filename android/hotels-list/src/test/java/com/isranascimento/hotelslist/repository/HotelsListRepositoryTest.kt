@@ -77,7 +77,6 @@ class HotelsListRepositoryTest {
             ERROR -> NetworkResponse.GenericError()
         }
 
-        // TODO: TRANSFER TO A DIFFERENT SHARED MODULE
         private fun expectedResponse() = HotelsResponse(
             results = listOf(
                 HotelResponse(
@@ -173,5 +172,4 @@ class HotelsListRepositoryTest {
             amount = 287.88
         )
     }
-
 }

@@ -19,7 +19,7 @@ jobs:
       - name: Run detekt
         run: |
           cd ./android
-          ./gradlew detekt --stacktrace
+          ./gradlew detektAll --stacktrace
       - name: Save artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v2

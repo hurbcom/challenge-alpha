@@ -221,7 +221,7 @@ exceptions:
   ObjectExtendsThrowable:
     active: false
   PrintStackTrace:
-    active: true
+    active: false
   RethrowCaughtException:
     active: true
   ReturnFromFinally:
@@ -255,7 +255,7 @@ exceptions:
   ThrowingNewInstanceOfSameException:
     active: true
   TooGenericExceptionCaught:
-    active: true
+    active: false
     excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**']
     exceptionNames:
       - 'ArrayIndexOutOfBoundsException'
@@ -695,6 +695,7 @@ style:
     excludePackageStatements: true
     excludeImportStatements: true
     excludeCommentStatements: false
+    excludes: [ '**/test/**', '**/*.Test.kt', '**/*.Spec.kt' ]
   MayBeConst:
     active: true
   ModifierOrder:

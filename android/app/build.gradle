@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.github.konifar.gradle.unused-resources-remover'
-    id "io.gitlab.arturbosch.detekt" version "1.19.0"
 }
 
 def getMyVersionName = { ->
@@ -36,10 +35,6 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-}
-
-detekt {
-    config = files("$rootDir/config/detekt/detekt.yml")
 }
 
 dependencies {
