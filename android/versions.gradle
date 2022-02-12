@@ -2,6 +2,7 @@ ext {
     // Core
     coroutinesVersion = "1.5.0"
     lifecycleVersion = "2.4.1"
+    koinVersion = "3.1.5"
 
     // Networking
     retrofitVersion = "2.9.0"

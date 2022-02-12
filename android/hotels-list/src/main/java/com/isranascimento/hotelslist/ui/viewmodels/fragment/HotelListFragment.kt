@@ -13,15 +13,11 @@ import com.isranascimento.hotelslist.databinding.HotelListFragmentBinding
 import com.isranascimento.hotelslist.ui.viewmodels.HotelsListViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HotelListFragment: Fragment() {
     private lateinit var binding: HotelListFragmentBinding
-    private lateinit var viewModel: HotelsListViewModel
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        viewModel.getHotelsList()
-    }
+    private val viewModel: HotelsListViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +32,7 @@ class HotelListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getHotelsList()
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect {

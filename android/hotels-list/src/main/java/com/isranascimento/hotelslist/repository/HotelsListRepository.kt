@@ -4,11 +4,12 @@ import com.isranascimento.hotelslist.mapper.asDomainModel
 import com.isranascimento.hotelslist.models.Hotel
 import com.isranascimento.hotelslist.models.HotelsListDomainState
 import com.isranascimento.network.response.NetworkResponse
+import com.isranascimento.network.service.IHotelsRemoteDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class HotelsListRepository(
-    private val remoteDataSource: IHotelsRemoteDataSoure
+    private val remoteDataSource: IHotelsRemoteDataSource
 ) : IHotelsListRepository {
     private var hotelsDomainListMap = mapOf<HotelId, Hotel>()
 

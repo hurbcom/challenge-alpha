@@ -8,6 +8,7 @@ import com.isranascimento.hotelslist.models.HotelsListDomainState
 import com.isranascimento.hotelslist.repository.HotelsListRepositoryTest.HotelsDataSourceDouble.ExpectedResponseStatus.ERROR
 import com.isranascimento.hotelslist.repository.HotelsListRepositoryTest.HotelsDataSourceDouble.ExpectedResponseStatus.SUCCESS
 import com.isranascimento.network.response.NetworkResponse
+import com.isranascimento.network.service.IHotelsRemoteDataSource
 import com.isranascimento.testutils.ExpectedHotelsResponse
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
@@ -69,7 +70,7 @@ class HotelsListRepositoryTest {
 
     private class HotelsDataSourceDouble(
         private val expectedResponseStatus: ExpectedResponseStatus
-    ): IHotelsRemoteDataSoure {
+    ): IHotelsRemoteDataSource {
         enum class ExpectedResponseStatus {
             SUCCESS, ERROR
         }

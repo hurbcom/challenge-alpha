@@ -5,8 +5,8 @@ import com.isranascimento.network.restclient.HurbRestClient
 
 class HurbApiService(
     private val client: HurbRestClient
-) {
-    suspend fun getHotelsList() = withNetworkResponse {
+): IHotelsRemoteDataSource {
+    override suspend fun getHotelsList() = withNetworkResponse {
         client.getHotelsList()
     }
 }

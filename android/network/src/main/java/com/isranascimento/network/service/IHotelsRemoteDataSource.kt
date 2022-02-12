@@ -1,8 +1,8 @@
-package com.isranascimento.hotelslist.repository
+package com.isranascimento.network.service
 
 import com.isranascimento.datatransferobjects.hotels.HotelsResponse
 import com.isranascimento.network.response.NetworkResponse
 
-interface IHotelsRemoteDataSoure {
+interface IHotelsRemoteDataSource {
     suspend fun getHotelsList(): NetworkResponse<HotelsResponse>
 }
