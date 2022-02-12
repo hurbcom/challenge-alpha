@@ -44,6 +44,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
 
     testImplementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    testImplementation "app.cash.turbine:turbine:$turbineVersion"
     testImplementation project(':test-utils')
 
     implementation project(':network')

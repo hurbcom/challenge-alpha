@@ -1,18 +1,39 @@
 package com.isranascimento.hotelslist.ui.viewmodels
 
+import app.cash.turbine.test
+import com.google.common.truth.Truth.assertThat
 import com.isranascimento.hotelslist.models.Hotel
 import com.isranascimento.hotelslist.models.HotelsListDomainState
 import com.isranascimento.hotelslist.repository.IHotelsListRepository
 import com.isranascimento.hotelslist.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.SUCCESS
+import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIState
+import com.isranascimento.testutils.MainCoroutineRule
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.runBlocking
+import org.junit.Rule
 import org.junit.Test
 
 class HotelsListViewModelTest {
+
+    @ExperimentalCoroutinesApi
+    @get:Rule
+    val mainCoroutineRule = MainCoroutineRule()
+
     private lateinit var sut: HotelsListViewModel
 
     @Test
-    fun `WHEN repository returns with success THEN the viewmodel update the uiStateFlow to loading and after UiState_Success expected value`() {
+    fun `WHEN repository returns with success THEN the viewmodel update the uiStateFlow to loading and after UiState_Success expected value`() = runBlocking {
         sut = HotelsListViewModel(HotelsListRepositoryDouble(SUCCESS))
-        sut.getHotelsList()
+        sut.uiState.test {
+            sut.getHotelsList()
+            assertThat(awaitItem()).isInstanceOf(HotelListUIState.Loading::class.java)
+            val successItem = awaitItem()
+            assertThat(successItem).isInstanceOf(HotelListUIState.Success::class.java)
+            successItem as HotelListUIState.Success
+            assertThat(successItem.hotelsValue.size).isEqualTo(2)
+            assertThat(successItem.hotelsValue[0].starCount).isEqualTo(1)
+            assertThat(successItem.hotelsValue[0].hotelLists[0].name).isEqualTo("Hotel 1")
+        }
     }
 
     @Test

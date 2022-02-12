@@ -4,7 +4,7 @@ import com.google.common.truth.Truth.assertThat
 import com.isranascimento.hotelslist.models.Address
 import com.isranascimento.hotelslist.models.Hotel
 import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUI
-import com.isranascimento.hotelslist.ui.viewmodels.models.HotelUI
+import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIItem
 import org.junit.Test
 
 class HotelListUITest {
@@ -19,14 +19,14 @@ class HotelListUITest {
 
         val firstItem = hotelUIModelList[0]
         assertThat(firstItem.starCount).isEqualTo(1)
-        assertThat(firstItem.hotels.count()).isEqualTo(1)
-        assertThat(firstItem.hotels[0]).isEqualTo(HotelUI("Hotel 3"))
+        assertThat(firstItem.hotelLists.count()).isEqualTo(1)
+        assertThat(firstItem.hotelLists[0]).isEqualTo(HotelListUIItem("Hotel 3"))
 
         val secondItem = hotelUIModelList[1]
         assertThat(secondItem.starCount).isEqualTo(3)
-        assertThat(secondItem.hotels.size).isEqualTo(2)
-        assertThat(secondItem.hotels[0].name).isEqualTo("Hotel 1")
-        assertThat(secondItem.hotels[1].name).isEqualTo("Hotel 2")
+        assertThat(secondItem.hotelLists.size).isEqualTo(2)
+        assertThat(secondItem.hotelLists[0].name).isEqualTo("Hotel 1")
+        assertThat(secondItem.hotelLists[1].name).isEqualTo("Hotel 2")
     }
 
     companion object {
