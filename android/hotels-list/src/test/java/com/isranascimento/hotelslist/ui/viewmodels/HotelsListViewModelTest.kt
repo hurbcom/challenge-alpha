@@ -7,6 +7,7 @@ import com.isranascimento.hotelslist.models.HotelsListDomainState
 import com.isranascimento.hotelslist.repository.IHotelsListRepository
 import com.isranascimento.hotelslist.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.SUCCESS
 import com.isranascimento.hotelslist.ui.viewmodels.models.HotelListUIState
+import com.isranascimento.hotelslist.util.ReturnedValues.HOTEL_DOMAIN_LIST
 import com.isranascimento.testutils.MainCoroutineRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
@@ -32,7 +33,8 @@ class HotelsListViewModelTest {
             successItem as HotelListUIState.Success
             assertThat(successItem.hotelsValue.size).isEqualTo(2)
             assertThat(successItem.hotelsValue[0].starCount).isEqualTo(1)
-            assertThat(successItem.hotelsValue[0].hotelLists[0].name).isEqualTo("Hotel 1")
+            assertThat(successItem.hotelsValue[0].hotelLists[0].name).isEqualTo("Hotel 3")
+            cancelAndIgnoreRemainingEvents()
         }
     }
 
@@ -54,7 +56,7 @@ class HotelsListViewModelTest {
         }
 
         override suspend fun getHotelList(): HotelsListDomainState = when (expectedResponseStatus) {
-            SUCCESS -> HotelsListDomainState.Success(listOf())
+            SUCCESS -> HotelsListDomainState.Success(HOTEL_DOMAIN_LIST)
             ExpectedResponseStatus.ERROR -> HotelsListDomainState.Error
         }
 
