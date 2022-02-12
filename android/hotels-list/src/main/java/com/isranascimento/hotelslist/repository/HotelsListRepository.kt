@@ -13,15 +13,15 @@ class HotelsListRepository(
     private var hotelsDomainListMap = mapOf<HotelId, Hotel>()
 
     suspend fun getHotelList(): HotelsListDomainState = withContext(Dispatchers.IO) {
-        return@withContext when(val response = remoteDataSource.getHotelsList()) {
+        when(val response = remoteDataSource.getHotelsList()) {
             is NetworkResponse.Success -> {
                 response.body?.asDomainModel()?.let {
                     prepareHotelListMap(it)
-                    HotelsListDomainState.Success(it)
-                } ?: HotelsListDomainState.Error
+                    return@withContext HotelsListDomainState.Success(it)
+                } ?: return@withContext HotelsListDomainState.Error
             }
             is NetworkResponse.GenericError -> {
-                HotelsListDomainState.Error
+                return@withContext HotelsListDomainState.Error
             }
         }
     }
