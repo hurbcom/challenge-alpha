@@ -14,14 +14,14 @@ class HotelListUITest {
 
         assertThat(hotelUIModelList.count()).isEqualTo(7)
 
-        assertTitle(hotelUIModelList[0], HotelListUITitle(4))
+        assertTitle(hotelUIModelList[0], HotelListUITitle(4f))
         assertHotelItem(hotelUIModelList[1], HotelListUIItem("Hotel 4"))
 
-        assertTitle(hotelUIModelList[2], HotelListUITitle(3))
+        assertTitle(hotelUIModelList[2], HotelListUITitle(3f))
         assertHotelItem(hotelUIModelList[3], HotelListUIItem("Hotel 1"))
         assertHotelItem(hotelUIModelList[4], HotelListUIItem("Hotel 2"))
 
-        assertTitle(hotelUIModelList[5], HotelListUITitle(1))
+        assertTitle(hotelUIModelList[5], HotelListUITitle(1f))
         assertHotelItem(hotelUIModelList[6], HotelListUIItem("Hotel 3"))
 
     }

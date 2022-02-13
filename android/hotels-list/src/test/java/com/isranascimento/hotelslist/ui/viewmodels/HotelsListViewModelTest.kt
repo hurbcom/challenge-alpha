@@ -35,7 +35,7 @@ class HotelsListViewModelTest {
             assertThat(successItem).isInstanceOf(HotelListUIState.Success::class.java)
             successItem as HotelListUIState.Success
             assertThat(successItem.hotelsValue.size).isEqualTo(7)
-            assertThat(successItem.hotelsValue[0]).isEqualTo(HotelListUITitle(4))
+            assertThat(successItem.hotelsValue[0]).isEqualTo(HotelListUITitle(4f))
             assertThat(successItem.hotelsValue[1]).isEqualTo(HotelListUIItem("Hotel 4"))
             cancelAndIgnoreRemainingEvents()
         }
