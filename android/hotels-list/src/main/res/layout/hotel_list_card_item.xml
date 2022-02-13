@@ -9,14 +9,34 @@
         android:padding="@dimen/spacing_small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/hotel_image"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
         <TextView
             android:id="@+id/hotel_title"
-            style="@style/CATextDefault"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/CATextTitle"
+            android:maxLines="2"
+            app:layout_constraintTop_toBottomOf="@id/hotel_image"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="Hotel Natural de Campo Grande - RJ"
             android:elevation="10dp"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/location"
+            tools:text="Gramado - Rio Grande do Sul"
+            app:layout_constraintTop_toBottomOf="@id/hotel_title"
+            style="@style/CATextDefault"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:id="@+id/amenities"
+            app:layout_constraintTop_toBottomOf="@id/location"
+            app:layout_constraintStart_toStartOf="@id/location"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

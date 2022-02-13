@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hotel_list_location_text">%s - %s</string>
+    <string name="bullet_icon_text">• %s</string>
+</resources>
