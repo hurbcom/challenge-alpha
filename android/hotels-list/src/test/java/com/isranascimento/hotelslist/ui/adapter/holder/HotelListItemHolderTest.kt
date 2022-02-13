@@ -8,11 +8,11 @@ import androidx.test.filters.SmallTest
 import androidx.test.runner.AndroidJUnit4
 import com.google.common.truth.Truth
 import com.google.common.truth.Truth.assertThat
+import com.isranascimento.androidtestutils.TestContextProvider
 import com.isranascimento.hotelslist.databinding.HotelListCardItemBinding
 import com.isranascimento.hotelslist.databinding.HotelListTitleItemBinding
 import com.isranascimento.hotelslist.ui.models.HotelListUIItem
 import com.isranascimento.hotelslist.ui.models.HotelListUITitle
-import com.isranascimento.hotelslist.util.TestContextProvider
 import com.isranascimento.hotelslist.util.createHotelUIItem
 import com.isranascimento.utils.extensions.load
 import io.mockk.Runs

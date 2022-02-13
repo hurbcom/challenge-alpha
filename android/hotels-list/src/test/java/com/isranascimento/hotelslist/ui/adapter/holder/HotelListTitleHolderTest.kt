@@ -5,9 +5,9 @@ import androidx.test.filters.SmallTest
 import androidx.test.runner.AndroidJUnit4
 import androidx.test.runner.AndroidJUnitRunner
 import com.google.common.truth.Truth.assertThat
+import com.isranascimento.androidtestutils.TestContextProvider.context
 import com.isranascimento.hotelslist.databinding.HotelListTitleItemBinding
 import com.isranascimento.hotelslist.ui.models.HotelListUITitle
-import com.isranascimento.hotelslist.util.TestContextProvider.context
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
