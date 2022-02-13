@@ -8,7 +8,7 @@ sealed class HotelListUI {
             val hotelList = mutableListOf<HotelListUI>()
             val hotelGroup = domain.groupBy { it.starCount }.toSortedMap(reverseOrder())
             hotelGroup.forEach { (key, value) ->
-                hotelList.add(HotelListUITitle(key))
+                hotelList.add(HotelListUITitle(key.toFloat()))
                 value.forEach {
                     hotelList.add(HotelListUIItem.fromDomainModel(it))
                 }

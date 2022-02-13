@@ -9,6 +9,6 @@ class HotelListTitleHolder(
 ): BaseHotelListHolder(binding.root) {
     override fun bind(item: HotelListUI) {
         val itemCasted = item as HotelListUITitle
-        binding.hotelListTitle.text = itemCasted.starCount.toString()
+        binding.rating.rating = itemCasted.starCount.toFloat()
     }
 }

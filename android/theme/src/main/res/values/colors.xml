@@ -4,4 +4,5 @@
     <color name="primary">#3468fc</color>
     <color name="primary_dark">#17317A</color>
     <color name="text">#1E1E1E</color>
+    <color name="rating_bar_tint">#FFB102</color>
 </resources>
