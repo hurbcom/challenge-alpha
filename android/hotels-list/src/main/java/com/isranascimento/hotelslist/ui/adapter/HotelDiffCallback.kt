@@ -11,7 +11,7 @@ class HotelDiffCallback:DiffUtil.ItemCallback<HotelListUI>() {
             return oldItem.starCount == newItem.starCount
         }
         if(oldItem is HotelListUIItem && newItem is HotelListUIItem) {
-            return oldItem.name == newItem.name
+            return oldItem.sku == newItem.sku
         }
         return false
     }
@@ -21,7 +21,11 @@ class HotelDiffCallback:DiffUtil.ItemCallback<HotelListUI>() {
             return oldItem.starCount == newItem.starCount
         }
         if(oldItem is HotelListUIItem && newItem is HotelListUIItem) {
-            return oldItem.name == newItem.name
+            return oldItem.name == newItem.name &&
+                    oldItem.amenities == newItem.amenities &&
+                    oldItem.city == newItem.city &&
+                    oldItem.image == newItem.image &&
+                    oldItem.state == newItem.state
         }
         return false
     }
