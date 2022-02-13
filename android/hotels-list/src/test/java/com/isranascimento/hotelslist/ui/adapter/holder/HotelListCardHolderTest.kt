@@ -6,13 +6,9 @@ import android.widget.TextView
 import androidx.core.view.children
 import androidx.test.filters.SmallTest
 import androidx.test.runner.AndroidJUnit4
-import com.google.common.truth.Truth
 import com.google.common.truth.Truth.assertThat
 import com.isranascimento.androidtestutils.TestContextProvider
 import com.isranascimento.hotelslist.databinding.HotelListCardItemBinding
-import com.isranascimento.hotelslist.databinding.HotelListTitleItemBinding
-import com.isranascimento.hotelslist.ui.models.HotelListUIItem
-import com.isranascimento.hotelslist.ui.models.HotelListUITitle
 import com.isranascimento.hotelslist.util.createHotelUIItem
 import com.isranascimento.utils.extensions.load
 import io.mockk.Runs
@@ -27,9 +23,9 @@ import org.junit.runner.RunWith
 
 @SmallTest
 @RunWith(AndroidJUnit4::class)
-class HotelListItemHolderTest {
+class HotelListCardHolderTest {
 
-    private lateinit var sut: HotelListItemHolder
+    private lateinit var sut: HotelListCardHolder
     private var _binding: HotelListCardItemBinding? = null
     private val binding
         get() = _binding!!
@@ -37,7 +33,7 @@ class HotelListItemHolderTest {
     @Before
     fun setup() {
         _binding = HotelListCardItemBinding.inflate(LayoutInflater.from(TestContextProvider.context()))
-        sut = HotelListItemHolder(
+        sut = HotelListCardHolder(
             binding
         )
     }

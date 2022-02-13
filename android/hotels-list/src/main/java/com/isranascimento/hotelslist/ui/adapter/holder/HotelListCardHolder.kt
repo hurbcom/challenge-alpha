@@ -8,7 +8,7 @@ import com.isranascimento.hotelslist.ui.models.HotelListUI
 import com.isranascimento.hotelslist.ui.models.HotelListUIItem
 import com.isranascimento.utils.extensions.load
 
-class HotelListItemHolder(
+class HotelListCardHolder(
     private val binding: HotelListCardItemBinding
 ): BaseHotelListHolder(binding.root) {
     override fun bind(item: HotelListUI) {

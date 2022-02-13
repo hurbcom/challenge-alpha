@@ -5,8 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.isranascimento.hotelslist.databinding.HotelListCardItemBinding
 import com.isranascimento.hotelslist.databinding.HotelListTitleItemBinding
+import com.isranascimento.hotelslist.ui.adapter.HotelsListViewType.CARD
+import com.isranascimento.hotelslist.ui.adapter.HotelsListViewType.TITLE
 import com.isranascimento.hotelslist.ui.adapter.holder.BaseHotelListHolder
-import com.isranascimento.hotelslist.ui.adapter.holder.HotelListItemHolder
+import com.isranascimento.hotelslist.ui.adapter.holder.HotelListCardHolder
 import com.isranascimento.hotelslist.ui.adapter.holder.HotelListTitleHolder
 import com.isranascimento.hotelslist.ui.models.HotelListUI
 import com.isranascimento.hotelslist.ui.models.HotelListUITitle
@@ -20,7 +22,7 @@ class HotelsListAdapter: ListAdapter<HotelListUI, BaseHotelListHolder>(HotelDiff
                 )
             )
         }
-        return HotelListItemHolder(
+        return HotelListCardHolder(
             HotelListCardItemBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
@@ -36,10 +38,5 @@ class HotelsListAdapter: ListAdapter<HotelListUI, BaseHotelListHolder>(HotelDiff
             return TITLE
         }
         return CARD
-    }
-
-    companion object {
-        private const val TITLE = 0
-        private const val CARD = 1
     }
 }
