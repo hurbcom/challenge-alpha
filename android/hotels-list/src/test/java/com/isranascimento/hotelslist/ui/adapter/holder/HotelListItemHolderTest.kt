@@ -61,7 +61,7 @@ class HotelListItemHolderTest {
     }
 
     private fun assertAmenity() {
-        assertThat(binding.amenities.childCount).isEqualTo(1)
+        assertThat(binding.amenities.childCount).isEqualTo(3)
         val firstAmenity = binding.amenities.children.first()
         assertThat(firstAmenity).isInstanceOf(TextView::class.java)
         firstAmenity as TextView
