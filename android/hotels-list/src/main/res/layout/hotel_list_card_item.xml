@@ -1,12 +1,14 @@
 <androidx.cardview.widget.CardView app:layout_constraintTop_toBottomOf="@id/hotel_list_title"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/spacing_small"
+    android:layout_marginHorizontal="@dimen/spacing_medium"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:padding="@dimen/spacing_small"
+        android:paddingBottom="@dimen/spacing_medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
@@ -16,26 +18,44 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
-            android:layout_height="200dp" />
+            android:layout_height="150dp" />
+        <View
+            app:layout_constraintTop_toTopOf="@id/hotel_image"
+            app:layout_constraintBottom_toBottomOf="@id/hotel_image"
+            app:layout_constraintStart_toStartOf="@id/hotel_image"
+            app:layout_constraintEnd_toEndOf="@id/hotel_image"
+            android:background="@color/image_foreground"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
         <TextView
             android:id="@+id/hotel_title"
             style="@style/CATextTitle"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
             android:maxLines="2"
-            app:layout_constraintTop_toBottomOf="@id/hotel_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/hotel_image"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="Hotel Natural de Campo Grande - RJ"
-            android:elevation="10dp"
-            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:textSize="@dimen/text_size_big"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
         <TextView
             android:id="@+id/location"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
             tools:text="Gramado - Rio Grande do Sul"
-            app:layout_constraintTop_toBottomOf="@id/hotel_title"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/hotel_image"
             style="@style/CATextDefault"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
         <LinearLayout
             android:id="@+id/amenities"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
             app:layout_constraintTop_toBottomOf="@id/location"
             app:layout_constraintStart_toStartOf="@id/location"
             android:orientation="vertical"

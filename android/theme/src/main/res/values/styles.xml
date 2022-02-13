@@ -5,7 +5,7 @@
         <item name="android:textSize">@dimen/text_size_normal</item>
     </style>
     <style name="CATextTitle" parent="CATextDefault">
-        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textSize">@dimen/text_size_biggest</item>
         <item name="android:textStyle">bold</item>
     </style>
 </resources>

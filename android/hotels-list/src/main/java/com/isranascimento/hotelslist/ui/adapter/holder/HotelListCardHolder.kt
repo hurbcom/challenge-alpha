@@ -1,5 +1,6 @@
 package com.isranascimento.hotelslist.ui.adapter.holder
 
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.isranascimento.hotelslist.R
