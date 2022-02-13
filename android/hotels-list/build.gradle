@@ -22,10 +22,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
 
-    testImplementation "androidx.test:core:$androidxTestVersion"
-    testImplementation "androidx.test:runner:$androidxTestVersion"
-    testImplementation "androidx.test:rules:$androidxTestVersion"
-    testImplementation "org.robolectric:robolectric:$robolectricVersion"
     testImplementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     testImplementation "app.cash.turbine:turbine:$turbineVersion"
     testImplementation "io.mockk:mockk:$mockKVersion"
@@ -34,4 +30,5 @@ dependencies {
     implementation project(':utils')
     implementation project(':network')
     implementation project(':theme')
+    implementation project(':android-test-utils')
 }
