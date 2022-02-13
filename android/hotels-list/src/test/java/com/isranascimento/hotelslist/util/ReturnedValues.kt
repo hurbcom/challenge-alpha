@@ -7,7 +7,7 @@ object ReturnedValues {
     val HOTEL_DOMAIN_LIST = listOf<Hotel>(
         Hotel(
             id = "1",
-            sku = "2",
+            sku = "1",
             name = "Hotel 1",
             gallery = listOf("item1"),
             amenities = listOf("amenity1"),

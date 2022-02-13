@@ -2,6 +2,7 @@ package com.isranascimento.hotelslist.ui.models
 
 import com.google.common.truth.Truth.assertThat
 import com.isranascimento.hotelslist.util.ReturnedValues.HOTEL_DOMAIN_LIST
+import com.isranascimento.hotelslist.util.createExpectedHotelUIItem
 import org.junit.Test
 
 class HotelListUITest {
@@ -15,14 +16,14 @@ class HotelListUITest {
         assertThat(hotelUIModelList.count()).isEqualTo(7)
 
         assertTitle(hotelUIModelList[0], HotelListUITitle(4f))
-        assertHotelItem(hotelUIModelList[1], HotelListUIItem("Hotel 4"))
+        assertHotelItem(hotelUIModelList[1], createExpectedHotelUIItem(4))
 
         assertTitle(hotelUIModelList[2], HotelListUITitle(3f))
-        assertHotelItem(hotelUIModelList[3], HotelListUIItem("Hotel 1"))
-        assertHotelItem(hotelUIModelList[4], HotelListUIItem("Hotel 2"))
+        assertHotelItem(hotelUIModelList[3], createExpectedHotelUIItem(1))
+        assertHotelItem(hotelUIModelList[4], createExpectedHotelUIItem(2))
 
         assertTitle(hotelUIModelList[5], HotelListUITitle(1f))
-        assertHotelItem(hotelUIModelList[6], HotelListUIItem("Hotel 3"))
+        assertHotelItem(hotelUIModelList[6], createExpectedHotelUIItem(3))
 
     }
 

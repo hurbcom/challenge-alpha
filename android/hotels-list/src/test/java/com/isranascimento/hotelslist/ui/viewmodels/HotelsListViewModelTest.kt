@@ -11,6 +11,7 @@ import com.isranascimento.hotelslist.ui.models.HotelListUIItem
 import com.isranascimento.hotelslist.ui.models.HotelListUIState
 import com.isranascimento.hotelslist.ui.models.HotelListUITitle
 import com.isranascimento.hotelslist.util.ReturnedValues.HOTEL_DOMAIN_LIST
+import com.isranascimento.hotelslist.util.createExpectedHotelUIItem
 import com.isranascimento.testutils.MainCoroutineRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
@@ -36,7 +37,7 @@ class HotelsListViewModelTest {
             successItem as HotelListUIState.Success
             assertThat(successItem.hotelsValue.size).isEqualTo(7)
             assertThat(successItem.hotelsValue[0]).isEqualTo(HotelListUITitle(4f))
-            assertThat(successItem.hotelsValue[1]).isEqualTo(HotelListUIItem("Hotel 4"))
+            assertThat(successItem.hotelsValue[1]).isEqualTo(createExpectedHotelUIItem(4))
             cancelAndIgnoreRemainingEvents()
         }
     }
