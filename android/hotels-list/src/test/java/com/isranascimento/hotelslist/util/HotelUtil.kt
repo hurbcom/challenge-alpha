@@ -9,5 +9,5 @@ fun createHotelUIItem(number: Int) = HotelListUIItem(
     image = "Image $number",
     city = "City $number",
     state = "State $number",
-    amenities = listOf("Amenity $number")
+    amenities = listOf("Amenity $number", "Amenity $number", "Amenity $number")
 )

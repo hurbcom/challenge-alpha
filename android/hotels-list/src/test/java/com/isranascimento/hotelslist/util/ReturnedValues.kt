@@ -10,7 +10,7 @@ object ReturnedValues {
             sku = "1",
             name = "Hotel 1",
             gallery = listOf("item1"),
-            amenities = listOf("Amenity 1"),
+            amenities = listOf("Amenity 1", "Amenity 1", "Amenity 1", "Amenity 1", "Amenity 1", "Amenity 1"),
             price = 2.0,
             address = Address(
                 "State 1",
@@ -24,7 +24,7 @@ object ReturnedValues {
             sku = "2",
             name = "Hotel 2",
             gallery = listOf("item1"),
-            amenities = listOf("Amenity 2"),
+            amenities = listOf("Amenity 2", "Amenity 2", "Amenity 2", "Amenity 2"),
             price = 2.0,
             address = Address(
                 "State 2",
@@ -38,7 +38,7 @@ object ReturnedValues {
             sku = "3",
             name = "Hotel 3",
             gallery = listOf("item1"),
-            amenities = listOf("Amenity 3"),
+            amenities = listOf("Amenity 3", "Amenity 3", "Amenity 3", "Amenity 3", "Amenity 3", "Amenity 3"),
             price = 2.0,
             address = Address(
                 "State 3",
@@ -52,7 +52,7 @@ object ReturnedValues {
             sku = "4",
             name = "Hotel 4",
             gallery = listOf("item1"),
-            amenities = listOf("Amenity 4"),
+            amenities = listOf("Amenity 4", "Amenity 4", "Amenity 4", "Amenity 4", "Amenity 4", "Amenity 4"),
             price = 2.0,
             address = Address(
                 "State 4",
