@@ -16,10 +16,10 @@ class HotelsListRepository(
     override suspend fun getHotelList(): HotelsListDomainState = withContext(Dispatchers.IO) {
         when(val response = remoteDataSource.getHotelsList()) {
             is NetworkResponse.Success -> {
-                response.body?.asDomainModel()?.let {
+                response.body!!.asDomainModel().let {
                     prepareHotelListMap(it)
                     return@withContext HotelsListDomainState.Success(it)
-                } ?: return@withContext HotelsListDomainState.Error
+                }
             }
             is NetworkResponse.GenericError -> {
                 return@withContext HotelsListDomainState.Error
