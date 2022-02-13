@@ -7,12 +7,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:padding="@dimen/spacing_small"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/hotel_image"
+            android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
             android:layout_height="200dp" />
         <TextView
             android:id="@+id/hotel_title"
