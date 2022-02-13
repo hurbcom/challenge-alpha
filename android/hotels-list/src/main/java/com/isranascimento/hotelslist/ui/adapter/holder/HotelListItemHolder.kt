@@ -16,6 +16,7 @@ class HotelListItemHolder(
         binding.hotelImage.load(itemCasted.image)
         binding.hotelTitle.text = itemCasted.name
 
+        binding.amenities.removeAllViews()
         item.amenities.forEach {
             binding.amenities.addView(createAmenityTextview(it))
         }
