@@ -13,6 +13,7 @@ fun ImageView.load(url: String?) {
             .load(url)
             .error(R.drawable.ic_image_error)
             .into(this, object: Callback {
+                @Suppress("EmptyFunctionBlock")
                 override fun onSuccess() {}
 
                 override fun onError(e: Exception?) {
