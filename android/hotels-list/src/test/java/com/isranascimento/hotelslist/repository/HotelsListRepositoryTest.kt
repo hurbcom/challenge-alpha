@@ -49,7 +49,8 @@ class HotelsListRepositoryTest {
             "Rio Grande do Sul",
             "Gramado"
         ),
-        starCount = 3
+        starCount = 3,
+        mainImage = "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5cf6fa3c_pousada-aardvark-inn.jpg"
     )
 
     @Test

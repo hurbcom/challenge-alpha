@@ -4,6 +4,10 @@ import com.isranascimento.hotelslist.models.Hotel
 import com.isranascimento.hotelslist.ui.models.HotelListUIItem
 
 fun createExpectedHotelUIItem(number: Int) = HotelListUIItem(
-    number.toString(),
-    "Hotel $number"
+    sku = number.toString(),
+    name = "Hotel $number",
+    image = "Image $number",
+    city = "City $number",
+    state = "State $number",
+    amenities = listOf("Amenity $number")
 )

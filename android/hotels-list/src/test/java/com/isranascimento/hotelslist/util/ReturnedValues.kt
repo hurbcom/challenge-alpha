@@ -10,52 +10,56 @@ object ReturnedValues {
             sku = "1",
             name = "Hotel 1",
             gallery = listOf("item1"),
-            amenities = listOf("amenity1"),
+            amenities = listOf("Amenity 1"),
             price = 2.0,
             address = Address(
-                "RJ",
-                "Rio de Janeiro"
+                "State 1",
+                "City 1"
             ),
-            starCount = 3
+            starCount = 3,
+            mainImage = "Image 1"
         ),
         Hotel(
             id = "2",
             sku = "2",
             name = "Hotel 2",
             gallery = listOf("item1"),
-            amenities = listOf("amenity1"),
+            amenities = listOf("Amenity 2"),
             price = 2.0,
             address = Address(
-                "RJ",
-                "Rio de Janeiro"
+                "State 2",
+                "City 2"
             ),
-            starCount = 3
+            starCount = 3,
+            mainImage = "Image 2"
         ),
         Hotel(
             id = "3",
             sku = "3",
             name = "Hotel 3",
             gallery = listOf("item1"),
-            amenities = listOf("amenity1"),
+            amenities = listOf("Amenity 3"),
             price = 2.0,
             address = Address(
-                "RJ",
-                "Rio de Janeiro"
+                "State 3",
+                "City 3"
             ),
-            starCount = 1
+            starCount = 1,
+            mainImage = "Image 3"
         ),
         Hotel(
             id = "4",
             sku = "4",
             name = "Hotel 4",
             gallery = listOf("item1"),
-            amenities = listOf("amenity1"),
+            amenities = listOf("Amenity 4"),
             price = 2.0,
             address = Address(
-                "RJ",
-                "Rio de Janeiro"
+                "State 4",
+                "City 4"
             ),
-            starCount = 4
+            starCount = 4,
+            mainImage = "Image 4"
         )
     )
 }

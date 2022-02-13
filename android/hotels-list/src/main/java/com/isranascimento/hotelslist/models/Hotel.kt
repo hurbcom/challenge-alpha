@@ -5,6 +5,7 @@ data class Hotel(
     val sku: String,
     val name: String,
     val gallery: List<String>,
+    val mainImage: String,
     val amenities: List<String>,
     val price: Double,
     val address: Address,

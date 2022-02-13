@@ -21,6 +21,7 @@ private fun HotelResponse.asDomainModel(): Hotel {
             this.address?.state ?: "",
             this.address?.city ?: ""
         ),
-        starCount = this.stars ?: 0
+        starCount = this.stars ?: 0,
+        mainImage = this.image ?: ""
     )
 }
