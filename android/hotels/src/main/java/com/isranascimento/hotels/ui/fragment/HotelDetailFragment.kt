@@ -1,7 +1,9 @@
 package com.isranascimento.hotels.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -30,6 +32,24 @@ class HotelDetailFragment: BaseToolbarFragment() {
     }
 
     override fun getToolbarTitle(): String = uiModel.name
+
+    override fun getMenuResource(): Int? = R.menu.hotels_detail_menu
+
+    override fun onMenuItemClick(menuItem: MenuItem): Boolean {
+        if(menuItem.itemId == R.id.action_share) {
+            shareHotel()
+            return true
+        }
+        return super.onMenuItemClick(menuItem)
+    }
+
+    private fun shareHotel() {
+        val i = Intent(Intent.ACTION_SEND)
+        i.type = "text/plain"
+        i.putExtra(Intent.EXTRA_TEXT, uiModel.shareLink)
+        startActivity(Intent.createChooser(i, getString(R.string.share_action)))
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
