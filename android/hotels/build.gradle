@@ -28,9 +28,10 @@ dependencies {
     testImplementation "app.cash.turbine:turbine:$turbineVersion"
     testImplementation "io.mockk:mockk:$mockKVersion"
     testImplementation project(':test-utils')
+    testImplementation project(':android-test-utils')
 
     implementation project(':utils')
     implementation project(':network')
     implementation project(':theme')
-    implementation project(':android-test-utils')
+    implementation project(':core')
 }

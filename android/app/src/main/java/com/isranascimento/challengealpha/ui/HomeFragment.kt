@@ -8,9 +8,10 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.isranascimento.challengealpha.R
 import com.isranascimento.challengealpha.databinding.HomeFragmentBinding
+import com.isranascimento.core.fragment.BaseToolbarFragment
 import com.isranascimento.hotels.ui.fragment.HotelListFragment
 
-class HomeFragment: Fragment() {
+class HomeFragment: BaseToolbarFragment() {
     private lateinit var binding: HomeFragmentBinding
 
     override fun onCreateView(
@@ -22,17 +23,13 @@ class HomeFragment: Fragment() {
                 binding = it
             }.root
 
+    override fun getToolbarTitle(): String = getString(R.string.app_name)
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        setupHomeToolbar()
+        super.onViewCreated(view, savedInstanceState)
         childFragmentManager
             .beginTransaction()
             .add(R.id.fragment_container, HotelListFragment())
             .commit()
-    }
-
-    private fun setupHomeToolbar() {
-        binding.root.findViewById<Toolbar>(R.id.toolbar).apply {
-            this.title = getString(R.string.app_name)
-        }
     }
 }

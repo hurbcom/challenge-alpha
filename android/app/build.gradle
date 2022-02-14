@@ -65,4 +65,5 @@ dependencies {
     implementation project(':network')
     implementation project(':hotels')
     implementation project(":theme")
+    implementation project(':core')
 }
