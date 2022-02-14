@@ -13,7 +13,8 @@ import com.isranascimento.hotels.ui.adapter.holder.HotelListTitleHolder
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUITitle
 
-class HotelsListAdapter(private val onHotelCardClickListener: (String) -> Unit) : ListAdapter<HotelListUI, BaseHotelListHolder>(HotelDiffCallback()) {
+class HotelsListAdapter(private val onHotelCardClickListener: (String) -> Unit)
+    : ListAdapter<HotelListUI, BaseHotelListHolder>(HotelDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseHotelListHolder {
         if(viewType == TITLE) {
             return HotelListTitleHolder(
