@@ -8,6 +8,7 @@
     android:layout_alignParentTop="true"
     android:minHeight="@dimen/toolbar_default_height"
     android:background="@color/primary"
+    app:contentInsetStartWithNavigation="0dp"
     android:elevation="4dp"
     app:theme="@style/ThemeOverlay.AppCompat.Dark">
 

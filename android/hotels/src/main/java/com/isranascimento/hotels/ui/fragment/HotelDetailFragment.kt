@@ -33,6 +33,7 @@ class HotelDetailFragment: BaseToolbarFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         with(binding) {
             hotelName.text = uiModel.name
             hotelDescription.text = uiModel.description

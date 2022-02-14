@@ -25,6 +25,8 @@ class HomeFragment: BaseToolbarFragment() {
 
     override fun getToolbarTitle(): String = getString(R.string.app_name)
 
+    override fun hasNavigationItem() = false
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         childFragmentManager
