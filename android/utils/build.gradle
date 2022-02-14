@@ -12,9 +12,9 @@ dependencies {
     testImplementation "androidx.test:runner:$androidxTestVersion"
     testImplementation "androidx.test:rules:$androidxTestVersion"
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation project(':android-test-utils')
+    testImplementation project(':test-utils')
 
     implementation "com.squareup.picasso:picasso:$picassoVersion"
-
-    implementation project(':android-test-utils')
-    implementation project(':test-utils')
+    
 }
