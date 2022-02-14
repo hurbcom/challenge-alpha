@@ -17,7 +17,9 @@ object ReturnedValues {
                 "City 1"
             ),
             starCount = 3,
-            mainImage = "Image 1"
+            mainImage = "Image 1",
+            description = "Description 1",
+            url = "Share 1"
         ),
         Hotel(
             id = "2",
@@ -31,7 +33,9 @@ object ReturnedValues {
                 "City 2"
             ),
             starCount = 3,
-            mainImage = "Image 2"
+            mainImage = "Image 2",
+            description = "Description 2",
+            url = "Share 2"
         ),
         Hotel(
             id = "3",
@@ -45,7 +49,9 @@ object ReturnedValues {
                 "City 3"
             ),
             starCount = 1,
-            mainImage = "Image 3"
+            mainImage = "Image 3",
+            description = "Description 3",
+            url = "Share 3"
         ),
         Hotel(
             id = "4",
@@ -59,7 +65,9 @@ object ReturnedValues {
                 "City 4"
             ),
             starCount = 4,
-            mainImage = "Image 4"
+            mainImage = "Image 4",
+            description = "Description 4",
+            url = "Share 4"
         )
     )
 }

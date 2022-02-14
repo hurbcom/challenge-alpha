@@ -50,7 +50,9 @@ class HotelsListRepositoryTest {
             "Gramado"
         ),
         starCount = 3,
-        mainImage = "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5cf6fa3c_pousada-aardvark-inn.jpg"
+        mainImage = "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5cf6fa3c_pousada-aardvark-inn.jpg",
+        description = "Espaços charmosos, bons serviços, conforto nos detalhes e ambiente informalmente descontraído. \r\nCom atendimento personalizado feito por uma equipe de funcionários e gerenciamento familiar, buscamos oferecer constantemente um alto padrão de hospitalidade aliados a preços acessíveis.",
+        url = "https://www.hurb.com/hoteis/gramado/pousada-aardvark-inn-7987"
     )
 
     @Test

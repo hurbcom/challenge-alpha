@@ -9,5 +9,7 @@ data class Hotel(
     val amenities: List<String>,
     val price: Double,
     val address: Address,
-    val starCount: Int
+    val starCount: Int,
+    val description: String,
+    val url: String
 )
