@@ -24,7 +24,7 @@ class HotelListCardHolder(
         }
         binding.location.text = binding.root.context.getString(R.string.hotel_list_location_text, item.city, item.state)
         binding.root.setOnClickListener {
-            onHotelClick?.invoke(item.sku)
+            onHotelClick?.invoke(item.id)
         }
     }
 

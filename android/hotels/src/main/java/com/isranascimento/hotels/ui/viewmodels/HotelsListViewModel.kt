@@ -31,8 +31,8 @@ class HotelsListViewModel(
         }
     }
 
-    fun getHotelDetailUIModel(sku: String): HotelDetailUI {
-        val hotel = repository.getHotelWithSku(sku)
+    fun getHotelDetailUIModel(id: String): HotelDetailUI {
+        val hotel = repository.getHotelWithId(id)
         return HotelDetailUI.fromDomainModel(hotel!!)
     }
 }

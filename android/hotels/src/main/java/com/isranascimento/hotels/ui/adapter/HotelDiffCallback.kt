@@ -11,7 +11,7 @@ class HotelDiffCallback:DiffUtil.ItemCallback<HotelListUI>() {
             return oldItem.starCount == newItem.starCount
         }
         if(oldItem is HotelListUIItem && newItem is HotelListUIItem) {
-            return oldItem.sku == newItem.sku
+            return oldItem.id == newItem.id
         }
         return false
     }

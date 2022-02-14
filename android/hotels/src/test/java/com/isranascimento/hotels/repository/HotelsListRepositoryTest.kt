@@ -66,7 +66,7 @@ class HotelsListRepositoryTest {
     fun `WHEN getHotelList is called with correct SKU THEN the hotel domain is returned`() = runBlocking {
         sut = HotelsListRepository(HotelsDataSourceDouble(SUCCESS))
         sut.getHotelList()
-        val hotel = sut.getHotelWithSku("AT7987")
+        val hotel = sut.getHotelWithId("AT7987")
 
         assertThat(hotel).isEqualTo(expectedFirstHotel())
     }

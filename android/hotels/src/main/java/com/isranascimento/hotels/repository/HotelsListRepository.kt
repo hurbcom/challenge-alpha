@@ -31,7 +31,7 @@ class HotelsListRepository(
         hotelsDomainListMap = it.associateBy { hotel -> hotel.id }
     }
 
-    override fun getHotelWithSku(hotelId: String): Hotel? {
+    override fun getHotelWithId(hotelId: String): Hotel? {
         return hotelsDomainListMap[hotelId]
     }
 }

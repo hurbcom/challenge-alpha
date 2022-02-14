@@ -13,6 +13,7 @@ import com.isranascimento.hotels.ui.adapter.HotelsListAdapter
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUIState
 import com.isranascimento.hotels.ui.viewmodels.HotelsListViewModel
+import com.isranascimento.utils.extensions.IdentifierUtils
 import com.isranascimento.utils.extensions.setVisible
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -23,7 +24,14 @@ class HotelListFragment: Fragment() {
     private val viewModel: HotelsListViewModel by viewModel()
     private val adapter by lazy {
         HotelsListAdapter {
-
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.add(
+                    IdentifierUtils.getItemIdByIdentifier(requireContext(), "root_container"),
+                    HotelDetailFragment.newInstance(viewModel.getHotelDetailUIModel(it))
+                )
+                ?.addToBackStack(null)
+                ?.commit()
         }
     }
 

@@ -3,7 +3,7 @@ package com.isranascimento.hotels.ui.models
 import com.isranascimento.hotels.models.Hotel
 
 data class HotelListUIItem(
-    val sku: String,
+    val id: String,
     val name: String,
     val image: String,
     val city: String,
@@ -14,7 +14,7 @@ data class HotelListUIItem(
         private const val AMENITIES_TO_DISPLAY_ON_LIST_COUNT = 3
         fun fromDomainModel(domain: Hotel) = HotelListUIItem(
             name = domain.name,
-            sku = domain.sku,
+            id = domain.id,
             image = domain.mainImage,
             city = domain.address.city,
             state = domain.address.state,

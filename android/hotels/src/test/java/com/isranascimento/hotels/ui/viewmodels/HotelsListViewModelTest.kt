@@ -82,7 +82,7 @@ class HotelsListViewModelTest {
             ERROR -> HotelsListDomainState.Error
         }
 
-        override fun getHotelWithSku(hotelId: String): Hotel? {
+        override fun getHotelWithId(hotelId: String): Hotel? {
             return HOTEL_DOMAIN_LIST[0]
         }
     }
