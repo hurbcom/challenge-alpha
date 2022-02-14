@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class HotelDetailUI(
     val gallery: List<String>,
-    val sku: String,
+    val id: String,
     val name: String,
     val city: String,
     val state: String,
@@ -20,7 +20,7 @@ data class HotelDetailUI(
         fun fromDomainModel(domain: Hotel): HotelDetailUI {
             return HotelDetailUI(
                 gallery = domain.gallery,
-                sku = domain.sku,
+                id = domain.id,
                 name = domain.name,
                 city = domain.address.city,
                 state = domain.address.state,

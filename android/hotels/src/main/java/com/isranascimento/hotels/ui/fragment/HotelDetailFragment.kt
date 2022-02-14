@@ -2,20 +2,18 @@ package com.isranascimento.hotels.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.SnapHelper
 import com.isranascimento.core.fragment.BaseToolbarFragment
 import com.isranascimento.hotels.R
 import com.isranascimento.hotels.databinding.HotelDetailFragmentBinding
 import com.isranascimento.hotels.ui.adapter.detail.HotelDetailGalleryAdapter
 import com.isranascimento.hotels.ui.models.HotelDetailUI
+import com.isranascimento.hotels.ui.util.createAmenityTextview
 import com.isranascimento.utils.extensions.attachSnapHelperWithListener
 
 class HotelDetailFragment: BaseToolbarFragment() {
@@ -44,7 +42,13 @@ class HotelDetailFragment: BaseToolbarFragment() {
             hotelDescription.text = uiModel.description
             hotelRating.rating = uiModel.starCount
             hotelLocation.text = getString(R.string.hotel_list_location_text, uiModel.city, uiModel.state)
-            binding.gallery.adapter = HotelDetailGalleryAdapter(uiModel.gallery)
+            hotelId.text = uiModel.id
+            gallery.adapter = HotelDetailGalleryAdapter(uiModel.gallery)
+        }
+        uiModel.amenities.forEach {
+            val amenityTextView = createAmenityTextview(requireContext(), it)
+            amenityTextView.setTextColor(requireContext().getColor(R.color.text))
+            binding.hotelAmenities.addView(amenityTextView)
         }
         setupGalleryItemsText(0)
         setupGallerySnap()

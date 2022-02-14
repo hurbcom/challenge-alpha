@@ -20,6 +20,6 @@ class HotelDetailUITest {
         assertThat(sut.description).isEqualTo("Description 1")
         assertThat(sut.shareLink).isEqualTo("Share 1")
         assertThat(sut.name).isEqualTo("Hotel 1")
-        assertThat(sut.sku).isEqualTo("1")
+        assertThat(sut.id).isEqualTo("1")
     }
 }

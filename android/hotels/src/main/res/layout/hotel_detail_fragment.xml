@@ -1,94 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/white">
-
-        <include layout="@layout/toolbar" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/gallery"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_height="300dp" />
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/spacing_small"
+            android:background="@color/white">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gallery"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="300dp" />
 
-        <View
-            app:layout_constraintTop_toTopOf="@id/gallery"
-            app:layout_constraintEnd_toEndOf="@id/gallery"
-            app:layout_constraintStart_toStartOf="@id/gallery"
-            app:layout_constraintBottom_toBottomOf="@id/gallery"
-            android:background="@color/image_foreground"
-            android:layout_width="0dp"
-            android:layout_height="0dp" />
-        <TextView
-            android:id="@+id/gallery_items_text"
-            app:layout_constraintBottom_toBottomOf="@id/gallery"
-            app:layout_constraintEnd_toEndOf="@id/gallery"
-            tools:text="Imagem 1/5"
-            android:textColor="@color/white"
-            android:textStyle="italic|bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <View
+                app:layout_constraintTop_toTopOf="@id/gallery"
+                app:layout_constraintEnd_toEndOf="@id/gallery"
+                app:layout_constraintStart_toStartOf="@id/gallery"
+                app:layout_constraintBottom_toBottomOf="@id/gallery"
+                android:background="@color/image_foreground"
+                android:layout_width="0dp"
+                android:layout_height="0dp" />
+            <TextView
+                android:id="@+id/gallery_items_text"
+                android:layout_marginBottom="@dimen/spacing_small"
+                app:layout_constraintBottom_toBottomOf="@id/gallery"
+                app:layout_constraintEnd_toEndOf="@id/gallery"
+                tools:text="Imagem 1/5"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:textColor="@color/white"
+                android:textStyle="italic|bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/hotel_name"
-            app:layout_constraintTop_toBottomOf="@id/gallery"
-            style="@style/CATextTitle"
-            tools:text="Hotel de campo grande RJ com duas piscinas e quadra de tenis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/hotel_name"
+                android:layout_marginTop="@dimen/spacing_small"
+                app:layout_constraintTop_toBottomOf="@id/gallery"
+                style="@style/CATextTitle"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                tools:text="Hotel de campo grande RJ com duas piscinas e quadra de tenis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <RatingBar
-            android:id="@+id/hotel_rating"
-            app:layout_constraintTop_toBottomOf="@id/hotel_name"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:max="5"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <RatingBar
+                android:id="@+id/hotel_rating"
+                app:layout_constraintTop_toBottomOf="@id/hotel_name"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:max="5"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:progressTint="@color/rating_bar_tint"
+                android:layout_marginStart="@dimen/spacing_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-        <TextView
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/hotel_rating"
-            tools:text="HURB-122312312DSFS"
-            style="@style/CATextDefault"
-            android:textColor="@color/gray"
-            android:textStyle="italic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/hotel_id"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/hotel_rating"
+                tools:text="HURB-122312312DSFS"
+                style="@style/CATextDefault"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:textColor="@color/gray"
+                android:textStyle="italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/hotel_location"
-            app:layout_constraintTop_toBottomOf="@id/hotel_rating"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Rio de Janeiro - RJ"
-            style="@style/CATextDefault"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/hotel_location"
+                app:layout_constraintTop_toBottomOf="@id/hotel_rating"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Rio de Janeiro - RJ"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                style="@style/CATextDefault"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/hotel_description"
-            app:layout_constraintTop_toBottomOf="@id/hotel_location"
-            style="@style/CATextDefault"
-            tools:text="Espaços charmosos, bons serviços, conforto nos detalhes e ambiente informalmente descontraído. \r\nCom atendimento personalizado feito por uma equipe de funcionários e gerenciamento familiar, buscamos oferecer constantemente um alto padrão de hospitalidade aliados a preços acessíveis."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/hotel_description"
+                app:layout_constraintTop_toBottomOf="@id/hotel_location"
+                style="@style/CATextDefault"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                tools:text="Espaços charmosos, bons serviços, conforto nos detalhes e ambiente informalmente descontraído. \r\nCom atendimento personalizado feito por uma equipe de funcionários e gerenciamento familiar, buscamos oferecer constantemente um alto padrão de hospitalidade aliados a preços acessíveis."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:id="@+id/hotel_amenities"
-            app:layout_constraintTop_toBottomOf="@id/hotel_description"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:id="@+id/hotel_amenities"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                app:layout_constraintTop_toBottomOf="@id/hotel_description"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>

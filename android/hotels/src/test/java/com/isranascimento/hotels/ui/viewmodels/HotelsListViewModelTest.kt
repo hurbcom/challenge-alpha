@@ -9,7 +9,6 @@ import com.isranascimento.hotels.ui.viewmodels.HotelsListViewModelTest.HotelsLis
 import com.isranascimento.hotels.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.SUCCESS
 import com.isranascimento.hotels.ui.models.HotelListUIState
 import com.isranascimento.hotels.ui.models.HotelListUITitle
-import com.isranascimento.hotels.util.ReturnedValues
 import com.isranascimento.hotels.util.ReturnedValues.HOTEL_DOMAIN_LIST
 import com.isranascimento.hotels.util.createHotelUIItem
 import com.isranascimento.testutils.MainCoroutineRule
@@ -59,7 +58,7 @@ class HotelsListViewModelTest {
 
         val hotelUIModel = sut.getHotelDetailUIModel("1")
 
-        assertThat(hotelUIModel.sku).isEqualTo("1")
+        assertThat(hotelUIModel.id).isEqualTo("1")
         assertThat(hotelUIModel.name).isEqualTo("Hotel 1")
         assertThat(hotelUIModel.gallery.size).isEqualTo(1)
         assertThat(hotelUIModel.shareLink).isEqualTo("Share 1")
