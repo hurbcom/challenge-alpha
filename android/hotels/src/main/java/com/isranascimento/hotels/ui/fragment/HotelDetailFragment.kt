@@ -46,12 +46,21 @@ class HotelDetailFragment: BaseToolbarFragment() {
             hotelLocation.text = getString(R.string.hotel_list_location_text, uiModel.city, uiModel.state)
             binding.gallery.adapter = HotelDetailGalleryAdapter(uiModel.gallery)
         }
+        setupGalleryItemsText(0)
+        setupGallerySnap()
+    }
 
+    private fun setupGallerySnap() {
         binding.gallery.attachSnapHelperWithListener(
             PagerSnapHelper(),
         ) {
-            Log.d("TAG", "$it")
+            setupGalleryItemsText(it)
         }
+    }
+
+    private fun setupGalleryItemsText(currentItem: Int) {
+        binding.galleryItemsText.text =
+            getString(R.string.gallery_items_text, currentItem + 1, uiModel.gallery.count())
     }
 
     override fun getToolbarTitle(): String = uiModel.name
