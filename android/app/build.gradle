@@ -63,6 +63,6 @@ dependencies {
     testImplementation "io.insert-koin:koin-test-junit4:$koinVersion"
 
     implementation project(':network')
-    implementation project(':hotels-list')
+    implementation project(':hotels')
     implementation project(":theme")
 }

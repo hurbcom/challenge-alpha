@@ -10,7 +10,7 @@ rootProject.name = "ChallengeAlpha"
 include ':app'
 include ':network'
 include ':data-transfer-objects'
-include ':hotels-list'
+include ':hotels'
 include ':test-utils'
 include ':theme'
 include ':utils'

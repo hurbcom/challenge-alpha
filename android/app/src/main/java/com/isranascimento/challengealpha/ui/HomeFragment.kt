@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.isranascimento.challengealpha.R
 import com.isranascimento.challengealpha.databinding.HomeFragmentBinding
-import com.isranascimento.hotelslist.ui.fragment.HotelListFragment
+import com.isranascimento.hotels.ui.fragment.HotelListFragment
 
 class HomeFragment: Fragment() {
     private lateinit var binding: HomeFragmentBinding
