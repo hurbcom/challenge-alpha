@@ -29,15 +29,19 @@ abstract class BaseToolbarFragment: Fragment() {
                 this.setNavigationOnClickListener {
                     activity?.onBackPressed()
                 }
-                getMenuResource()?.let {
-                    this.inflateMenu(it)
-                    this.setOnMenuItemClickListener {
-                        onMenuItemClick(it)
-                    }
-                    this.menu?.forEach { item ->
-                        item.icon.setTint(Color.WHITE)
-                    }
-                }
+                setupMenuIfNeeded()
+            }
+        }
+    }
+
+    private fun Toolbar.setupMenuIfNeeded() {
+        getMenuResource()?.let {
+            this.inflateMenu(it)
+            this.setOnMenuItemClickListener { item ->
+                onMenuItemClick(item)
+            }
+            this.menu?.forEach { item ->
+                item.icon.setTint(Color.WHITE)
             }
         }
     }
