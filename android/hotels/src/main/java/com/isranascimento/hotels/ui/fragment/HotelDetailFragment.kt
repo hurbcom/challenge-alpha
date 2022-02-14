@@ -2,16 +2,21 @@ package com.isranascimento.hotels.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.SnapHelper
 import com.isranascimento.core.fragment.BaseToolbarFragment
 import com.isranascimento.hotels.R
 import com.isranascimento.hotels.databinding.HotelDetailFragmentBinding
+import com.isranascimento.hotels.ui.adapter.detail.HotelDetailGalleryAdapter
 import com.isranascimento.hotels.ui.models.HotelDetailUI
+import com.isranascimento.utils.extensions.attachSnapHelperWithListener
 
 class HotelDetailFragment: BaseToolbarFragment() {
     private lateinit var binding: HotelDetailFragmentBinding
@@ -31,6 +36,24 @@ class HotelDetailFragment: BaseToolbarFragment() {
             }.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        with(binding) {
+            hotelName.text = uiModel.name
+            hotelDescription.text = uiModel.description
+            hotelRating.rating = uiModel.starCount
+            hotelLocation.text = getString(R.string.hotel_list_location_text, uiModel.city, uiModel.state)
+            binding.gallery.adapter = HotelDetailGalleryAdapter(uiModel.gallery)
+        }
+
+        binding.gallery.attachSnapHelperWithListener(
+            PagerSnapHelper(),
+        ) {
+            Log.d("TAG", "$it")
+        }
+    }
+
     override fun getToolbarTitle(): String = uiModel.name
 
     override fun getMenuResource(): Int = R.menu.hotels_detail_menu
@@ -48,18 +71,6 @@ class HotelDetailFragment: BaseToolbarFragment() {
         i.type = "text/plain"
         i.putExtra(Intent.EXTRA_TEXT, uiModel.shareLink)
         startActivity(Intent.createChooser(i, getString(R.string.share_action)))
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        with(binding) {
-            hotelName.text = uiModel.name
-            hotelDescription.text = uiModel.description
-            hotelRating.rating = uiModel.starCount
-            hotelLocation.text = getString(R.string.hotel_list_location_text, uiModel.city, uiModel.state)
-        }
     }
 
     companion object {
