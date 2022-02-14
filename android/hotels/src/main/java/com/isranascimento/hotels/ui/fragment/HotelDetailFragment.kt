@@ -33,7 +33,7 @@ class HotelDetailFragment: BaseToolbarFragment() {
 
     override fun getToolbarTitle(): String = uiModel.name
 
-    override fun getMenuResource(): Int? = R.menu.hotels_detail_menu
+    override fun getMenuResource(): Int = R.menu.hotels_detail_menu
 
     override fun onMenuItemClick(menuItem: MenuItem): Boolean {
         if(menuItem.itemId == R.id.action_share) {
