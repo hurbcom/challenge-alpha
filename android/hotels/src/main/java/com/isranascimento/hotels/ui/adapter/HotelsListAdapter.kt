@@ -13,7 +13,7 @@ import com.isranascimento.hotels.ui.adapter.holder.HotelListTitleHolder
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUITitle
 
-class HotelsListAdapter: ListAdapter<HotelListUI, BaseHotelListHolder>(HotelDiffCallback()) {
+class HotelsListAdapter(private val onHotelCardClickListener: (String) -> Unit) : ListAdapter<HotelListUI, BaseHotelListHolder>(HotelDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseHotelListHolder {
         if(viewType == TITLE) {
             return HotelListTitleHolder(
@@ -25,15 +25,15 @@ class HotelsListAdapter: ListAdapter<HotelListUI, BaseHotelListHolder>(HotelDiff
         return HotelListCardHolder(
             HotelListCardItemBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
-            ),
-            {
-
-            }
+            )
         )
     }
 
     override fun onBindViewHolder(holder: BaseHotelListHolder, position: Int) {
         holder.bind(currentList[position])
+        if(holder is HotelListCardHolder) {
+            holder.setClickListener(onHotelCardClickListener)
+        }
     }
 
     override fun getItemViewType(position: Int): Int {

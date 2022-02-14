@@ -10,8 +10,9 @@ import com.isranascimento.utils.extensions.load
 
 class HotelListCardHolder(
     private val binding: HotelListCardItemBinding,
-    private val onHotelClick: (sku: String) -> Unit
 ): BaseHotelListHolder(binding.root) {
+    private var onHotelClick: ((sku: String) -> Unit)? = null
+
     override fun bind(item: HotelListUI) {
         val itemCasted = item as HotelListUIItem
         binding.hotelImage.load(itemCasted.image)
@@ -23,7 +24,7 @@ class HotelListCardHolder(
         }
         binding.location.text = binding.root.context.getString(R.string.hotel_list_location_text, item.city, item.state)
         binding.root.setOnClickListener {
-            onHotelClick.invoke(item.sku)
+            onHotelClick?.invoke(item.sku)
         }
     }
 
@@ -33,5 +34,9 @@ class HotelListCardHolder(
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
         this.text = context.getString(R.string.bullet_icon_text, amenity)
+    }
+
+    fun setClickListener(callback: (String) -> Unit) {
+        onHotelClick = callback
     }
 }

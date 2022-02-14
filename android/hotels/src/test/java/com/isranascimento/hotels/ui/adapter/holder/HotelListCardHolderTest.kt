@@ -39,13 +39,7 @@ class HotelListCardHolderTest {
         mockkStatic(ImageView::load)
         every { binding.hotelImage.load(any()) } just Runs
 
-        callbackOnClick = mockk()
-        every { callbackOnClick(any()) } just Runs
-
-        sut = HotelListCardHolder(
-            binding,
-            callbackOnClick
-        )
+        sut = HotelListCardHolder(binding)
     }
 
     @After
@@ -66,7 +60,12 @@ class HotelListCardHolderTest {
 
     @Test
     fun `WHEN a click ocurrs THEN the callbackFunction is called with correct SKU`() {
+
+        callbackOnClick = mockk()
+        every { callbackOnClick(any()) } just Runs
+
         sut.bind(createHotelUIItem(1))
+        sut.setClickListener { callbackOnClick.invoke(it) }
         binding.root.callOnClick()
         verify {
             callbackOnClick("1")

@@ -21,7 +21,11 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class HotelListFragment: Fragment() {
     private lateinit var binding: HotelListFragmentBinding
     private val viewModel: HotelsListViewModel by viewModel()
-    private val adapter by lazy { HotelsListAdapter() }
+    private val adapter by lazy {
+        HotelsListAdapter {
+
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
