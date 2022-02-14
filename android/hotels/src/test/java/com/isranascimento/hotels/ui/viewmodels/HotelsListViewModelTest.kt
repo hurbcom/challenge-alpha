@@ -9,6 +9,7 @@ import com.isranascimento.hotels.ui.viewmodels.HotelsListViewModelTest.HotelsLis
 import com.isranascimento.hotels.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.SUCCESS
 import com.isranascimento.hotels.ui.models.HotelListUIState
 import com.isranascimento.hotels.ui.models.HotelListUITitle
+import com.isranascimento.hotels.util.ReturnedValues
 import com.isranascimento.hotels.util.ReturnedValues.HOTEL_DOMAIN_LIST
 import com.isranascimento.hotels.util.createHotelUIItem
 import com.isranascimento.testutils.MainCoroutineRule
@@ -54,7 +55,19 @@ class HotelsListViewModelTest {
 
     @Test
     fun `WHEN getHotelWithSku is called THEN the viewmodel returns the expected HotelDetailUIModel`() {
-        // awaiting finish ui of the list first...
+        sut = HotelsListViewModel(HotelsListRepositoryDouble(SUCCESS))
+
+        val hotelUIModel = sut.getHotelDetailUIModel("1")
+
+        assertThat(hotelUIModel.sku).isEqualTo("1")
+        assertThat(hotelUIModel.name).isEqualTo("Hotel 1")
+        assertThat(hotelUIModel.gallery.size).isEqualTo(1)
+        assertThat(hotelUIModel.shareLink).isEqualTo("Share 1")
+        assertThat(hotelUIModel.description).isEqualTo("Description 1")
+        assertThat(hotelUIModel.city).isEqualTo("City 1")
+        assertThat(hotelUIModel.amenities.size).isEqualTo(6)
+        assertThat(hotelUIModel.starCount).isEqualTo(3)
+        assertThat(hotelUIModel.state).isEqualTo("State 1")
     }
 
     private class HotelsListRepositoryDouble(
@@ -70,7 +83,7 @@ class HotelsListViewModelTest {
         }
 
         override fun getHotelWithSku(hotelId: String): Hotel? {
-            TODO("Not yet implemented")
+            return HOTEL_DOMAIN_LIST[0]
         }
     }
 }

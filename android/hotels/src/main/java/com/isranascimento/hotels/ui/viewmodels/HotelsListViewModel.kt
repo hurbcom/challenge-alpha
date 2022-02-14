@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.isranascimento.hotels.models.HotelsListDomainState
 import com.isranascimento.hotels.repository.IHotelsListRepository
+import com.isranascimento.hotels.ui.models.HotelDetailUI
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUIState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,5 +29,10 @@ class HotelsListViewModel(
                 }
             }
         }
+    }
+
+    fun getHotelDetailUIModel(sku: String): HotelDetailUI {
+        val hotel = repository.getHotelWithSku(sku)
+        return HotelDetailUI.fromDomainModel(hotel!!)
     }
 }
