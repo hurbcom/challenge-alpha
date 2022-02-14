@@ -7,6 +7,7 @@ import android.view.View
 import androidx.annotation.CallSuper
 import androidx.annotation.MenuRes
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.forEach
 import androidx.fragment.app.Fragment
 import com.isranascimento.core.R
 
@@ -32,6 +33,9 @@ abstract class BaseToolbarFragment: Fragment() {
                     this.inflateMenu(it)
                     this.setOnMenuItemClickListener {
                         onMenuItemClick(it)
+                    }
+                    this.menu?.forEach { item ->
+                        item.icon.setTint(Color.WHITE)
                     }
                 }
             }
