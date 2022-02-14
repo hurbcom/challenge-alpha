@@ -25,7 +25,10 @@ class HotelsListAdapter: ListAdapter<HotelListUI, BaseHotelListHolder>(HotelDiff
         return HotelListCardHolder(
             HotelListCardItemBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
-            )
+            ),
+            {
+
+            }
         )
     }
 

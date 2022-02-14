@@ -9,7 +9,8 @@ import com.isranascimento.hotels.ui.models.HotelListUIItem
 import com.isranascimento.utils.extensions.load
 
 class HotelListCardHolder(
-    private val binding: HotelListCardItemBinding
+    private val binding: HotelListCardItemBinding,
+    private val onHotelClick: (sku: String) -> Unit
 ): BaseHotelListHolder(binding.root) {
     override fun bind(item: HotelListUI) {
         val itemCasted = item as HotelListUIItem
@@ -21,6 +22,9 @@ class HotelListCardHolder(
             binding.amenities.addView(createAmenityTextview(it))
         }
         binding.location.text = binding.root.context.getString(R.string.hotel_list_location_text, item.city, item.state)
+        binding.root.setOnClickListener {
+            onHotelClick.invoke(item.sku)
+        }
     }
 
     private fun createAmenityTextview(amenity: String) = TextView(binding.root.context).apply {

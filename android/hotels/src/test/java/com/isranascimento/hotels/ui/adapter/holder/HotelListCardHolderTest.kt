@@ -14,6 +14,7 @@ import com.isranascimento.utils.extensions.load
 import io.mockk.Runs
 import io.mockk.every
 import io.mockk.just
+import io.mockk.mockk
 import io.mockk.mockkStatic
 import io.mockk.verify
 import org.junit.After
@@ -30,11 +31,20 @@ class HotelListCardHolderTest {
     private val binding
         get() = _binding!!
 
+    private lateinit var callbackOnClick: (String) -> Unit
     @Before
     fun setup() {
         _binding = HotelListCardItemBinding.inflate(LayoutInflater.from(TestContextProvider.context()))
+
+        mockkStatic(ImageView::load)
+        every { binding.hotelImage.load(any()) } just Runs
+
+        callbackOnClick = mockk()
+        every { callbackOnClick(any()) } just Runs
+
         sut = HotelListCardHolder(
-            binding
+            binding,
+            callbackOnClick
         )
     }
 
@@ -45,8 +55,6 @@ class HotelListCardHolderTest {
 
     @Test
     fun `WHEN a hotelItem is bound THEN the hotel properties is set to views`() {
-        mockkStatic(ImageView::load)
-        every { binding.hotelImage.load(any()) } just Runs
 
         sut.bind(createHotelUIItem(1))
 
@@ -54,6 +62,15 @@ class HotelListCardHolderTest {
         assertThat(binding.hotelTitle.text).isEqualTo("Hotel 1")
         assertAmenity()
         assertThat(binding.location.text).isEqualTo("City 1 - State 1")
+    }
+
+    @Test
+    fun `WHEN a click ocurrs THEN the callbackFunction is called with correct SKU`() {
+        sut.bind(createHotelUIItem(1))
+        binding.root.callOnClick()
+        verify {
+            callbackOnClick("1")
+        }
     }
 
     private fun assertAmenity() {
