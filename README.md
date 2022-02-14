@@ -1,5 +1,5 @@
 # <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Alpha Challenge
-[![CI](https://github.com/aka-godinez/challenge-alpha/actions/workflows/main.yml/badge.svg)](https://github.com/aka-godinez/challenge-alpha/actions/workflows/main.yml)
+[![CI](https://github.com/aka-godinez-2/challenge-alpha/actions/workflows/main.yml/badge.svg)](https://github.com/aka-godinez-2/challenge-alpha/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/aka-godinez/challenge-alpha/branch/master/graph/badge.svg?token=5NH7HP6LHO)](https://codecov.io/gh/aka-godinez/challenge-alpha)
 
 
