@@ -32,8 +32,8 @@ class HotelsDAOTest {
 
     @Test
     fun `WHEN returning a list of hotels THEN it returns the list in correct order`() = runBlocking {
-        sut.insertHotel(createHotelEntity(1))
-        sut.insertHotel(createHotelEntity(2))
+        sut._insertHotel(createHotelEntity(1))
+        sut._insertHotel(createHotelEntity(2))
 
         sut.getHotelsWithAmenities().test {
             val hotels = awaitItem()
@@ -44,7 +44,7 @@ class HotelsDAOTest {
 
     @Test
     fun `WHEN adding a hotel with amenities THEN the item is added correctly`() = runBlocking {
-        sut.insertHotelWithAmenities(createHotelEntity(1), listOf("Amenity 1"), listOf("Gallery 1"))
+        sut.insertHotel(createHotelEntity(1), listOf("Amenity 1"), listOf("Gallery 1"))
 
         sut.getHotelsWithAmenities().test {
             val hotels = awaitItem()
@@ -58,8 +58,8 @@ class HotelsDAOTest {
 
     @Test
     fun `WHEN insert a new Hotel with the same sku THEN the hotel is replaced`() = runBlocking {
-        sut.insertHotel(createHotelEntity(1, insertedTime = 1))
-        sut.insertHotel(createHotelEntity(1, insertedTime = 2))
+        sut._insertHotel(createHotelEntity(1, insertedTime = 1))
+        sut._insertHotel(createHotelEntity(1, insertedTime = 2))
         sut.getHotelsWithAmenities().test {
             val hotels = awaitItem()
             assertThat(hotels.size).isEqualTo(1)

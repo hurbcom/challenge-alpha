@@ -11,9 +11,7 @@ import io.mockk.every
 import io.mockk.just
 import io.mockk.mockk
 import io.mockk.mockkObject
-import io.mockk.verify
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
@@ -26,7 +24,7 @@ class HotelsDetailRepositoryTest {
         dao = mockk()
         mockkObject(TimerHelper)
         every { TimerHelper.getNow() } returns 1L
-        coEvery { dao.insertHotelWithAmenities(any(), any(), any()) } just Runs
+        coEvery { dao.insertHotel(any(), any(), any()) } just Runs
         sut = HotelsDetailRepository(dao)
     }
 
@@ -34,7 +32,7 @@ class HotelsDetailRepositoryTest {
     fun `WHEN save lastviewed is called THEN it calls the dao with correct params`() = runBlocking {
         sut.insertIntoLastViewed(HOTEL_DOMAIN_LIST[0])
         coVerify {
-            dao.insertHotelWithAmenities(HotelDatabaseEntity(
+            dao.insertHotel(HotelDatabaseEntity(
                 id = "1",
                 city = "City 1",
                 state = "State 1",

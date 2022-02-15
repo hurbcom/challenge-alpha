@@ -12,9 +12,9 @@ import com.isranascimento.databasedtos.hotels.HotelsWithAmenitiesEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-abstract class HotelsDAO {
+abstract class HotelsDAO: IInsertHotelOnDatabase {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insertHotel(createHotelEntity: HotelDatabaseEntity): Long
+    abstract suspend fun _insertHotel(createHotelEntity: HotelDatabaseEntity): Long
 
     @Insert
     abstract suspend fun insertAmenities(list: List<HotelsAmenityDatabaseEntity>)
@@ -23,12 +23,12 @@ abstract class HotelsDAO {
     abstract suspend fun insertGalleryItems(list: List<HotelsGalleryItemDatabaseEntity>)
 
     @Transaction
-    open suspend fun insertHotelWithAmenities(
+    override suspend fun insertHotel(
         hotel: HotelDatabaseEntity,
         amenities: List<String>,
         gallery: List<String>
     ) {
-        insertHotel(hotel)
+        _insertHotel(hotel)
         insertAmenities(getAmenitiesToInsert(amenities, hotel))
         insertGalleryItems(getGalleryToInsert(gallery, hotel))
     }

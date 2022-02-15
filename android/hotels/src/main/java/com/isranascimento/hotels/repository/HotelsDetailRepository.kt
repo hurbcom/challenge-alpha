@@ -11,7 +11,7 @@ class HotelsDetailRepository(
     private val dao: HotelsDAO
 ) : IHotelsDetailRepository {
     override suspend fun insertIntoLastViewed(hotel: Hotel) = withContext(Dispatchers.IO) {
-        dao.insertHotelWithAmenities(
+        dao.insertHotel(
             hotel.asDatabaseModel(),
             hotel.amenities,
             hotel.gallery
