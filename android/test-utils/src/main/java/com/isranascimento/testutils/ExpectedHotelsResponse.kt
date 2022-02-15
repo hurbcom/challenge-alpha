@@ -1,14 +1,14 @@
 package com.isranascimento.testutils
 
-import com.isranascimento.datatransferobjects.hotels.AddressResponse
-import com.isranascimento.datatransferobjects.hotels.AmenityResponse
-import com.isranascimento.datatransferobjects.hotels.FeaturedItemResponse
-import com.isranascimento.datatransferobjects.hotels.GalleryResponse
-import com.isranascimento.datatransferobjects.hotels.GeolocationResponse
-import com.isranascimento.datatransferobjects.hotels.HotelResponse
-import com.isranascimento.datatransferobjects.hotels.HotelsResponse
-import com.isranascimento.datatransferobjects.hotels.PriceResponse
-import com.isranascimento.datatransferobjects.hotels.QuantityDescriptorsResponse
+import com.isranascimento.networkdtos.hotels.AddressResponse
+import com.isranascimento.networkdtos.hotels.AmenityResponse
+import com.isranascimento.networkdtos.hotels.FeaturedItemResponse
+import com.isranascimento.networkdtos.hotels.GalleryResponse
+import com.isranascimento.networkdtos.hotels.GeolocationResponse
+import com.isranascimento.networkdtos.hotels.HotelResponse
+import com.isranascimento.networkdtos.hotels.HotelsResponse
+import com.isranascimento.networkdtos.hotels.PriceResponse
+import com.isranascimento.networkdtos.hotels.QuantityDescriptorsResponse
 
 
 object ExpectedHotelsResponse {

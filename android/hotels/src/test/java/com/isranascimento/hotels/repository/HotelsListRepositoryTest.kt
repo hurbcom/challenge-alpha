@@ -1,7 +1,7 @@
 package com.isranascimento.hotels.repository
 
 import com.google.common.truth.Truth.assertThat
-import com.isranascimento.datatransferobjects.hotels.HotelsResponse
+import com.isranascimento.networkdtos.hotels.HotelsResponse
 import com.isranascimento.hotels.models.Address
 import com.isranascimento.hotels.models.Hotel
 import com.isranascimento.hotels.models.HotelsListDomainState

@@ -1,7 +1,7 @@
 package com.isranascimento.hotels.mapper
 
-import com.isranascimento.datatransferobjects.hotels.HotelResponse
-import com.isranascimento.datatransferobjects.hotels.HotelsResponse
+import com.isranascimento.networkdtos.hotels.HotelResponse
+import com.isranascimento.networkdtos.hotels.HotelsResponse
 import com.isranascimento.hotels.models.Address
 import com.isranascimento.hotels.models.Hotel
 

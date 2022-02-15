@@ -1,4 +1,4 @@
-package com.isranascimento.datatransferobjects.hotels
+package com.isranascimento.networkdtos.hotels
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

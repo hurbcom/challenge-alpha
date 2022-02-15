@@ -1,6 +1,6 @@
 package com.isranascimento.network.restclient
 
-import com.isranascimento.datatransferobjects.hotels.HotelsResponse
+import com.isranascimento.networkdtos.hotels.HotelsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

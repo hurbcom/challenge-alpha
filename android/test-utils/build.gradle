@@ -12,5 +12,5 @@ dependencies {
     api 'junit:junit:4.13.2'
     api "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
     api "com.google.truth:truth:$truthVersion"
-    api project(':data-transfer-objects')
+    api project(':network-dtos')
 }

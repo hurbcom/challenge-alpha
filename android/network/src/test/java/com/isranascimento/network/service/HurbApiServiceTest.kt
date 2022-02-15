@@ -1,15 +1,7 @@
 package com.isranascimento.network.service
 
 import com.google.common.truth.Truth.assertThat
-import com.isranascimento.datatransferobjects.hotels.AddressResponse
-import com.isranascimento.datatransferobjects.hotels.AmenityResponse
-import com.isranascimento.datatransferobjects.hotels.FeaturedItemResponse
-import com.isranascimento.datatransferobjects.hotels.GalleryResponse
-import com.isranascimento.datatransferobjects.hotels.GeolocationResponse
-import com.isranascimento.datatransferobjects.hotels.HotelResponse
-import com.isranascimento.datatransferobjects.hotels.HotelsResponse
-import com.isranascimento.datatransferobjects.hotels.PriceResponse
-import com.isranascimento.datatransferobjects.hotels.QuantityDescriptorsResponse
+import com.isranascimento.networkdtos.hotels.HotelsResponse
 import com.isranascimento.network.response.NetworkResponse
 import com.isranascimento.network.util.createRestClient
 import com.isranascimento.network.util.mockResponse

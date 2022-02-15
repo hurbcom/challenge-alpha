@@ -18,7 +18,7 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
     implementation "com.github.mrmike:ok2curl:$ok2CurlInterceptorVersion"
 
-    api project(":data-transfer-objects")
+    api project(":network-dtos")
 
     testImplementation "com.squareup.okhttp3:mockwebserver:$mockWebserverVersion"
     testImplementation "io.mockk:mockk:$mockKVersion"
