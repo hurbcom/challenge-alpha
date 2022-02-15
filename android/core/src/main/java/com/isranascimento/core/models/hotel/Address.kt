@@ -1,4 +1,4 @@
-package com.isranascimento.hotels.models
+package com.isranascimento.core.models.hotel
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

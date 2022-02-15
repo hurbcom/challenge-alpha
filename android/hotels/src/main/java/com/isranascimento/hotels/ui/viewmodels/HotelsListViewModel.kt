@@ -2,10 +2,9 @@ package com.isranascimento.hotels.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.isranascimento.hotels.models.Hotel
+import com.isranascimento.core.models.hotel.Hotel
 import com.isranascimento.hotels.models.HotelsListDomainState
 import com.isranascimento.hotels.repository.IHotelsListRepository
-import com.isranascimento.hotels.ui.models.HotelDetailUI
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUIState
 import kotlinx.coroutines.flow.MutableStateFlow

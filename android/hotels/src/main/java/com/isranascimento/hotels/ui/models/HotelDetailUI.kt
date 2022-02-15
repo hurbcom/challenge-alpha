@@ -1,10 +1,8 @@
 package com.isranascimento.hotels.ui.models
 
 import android.os.Parcelable
-import com.isranascimento.hotels.models.Hotel
-import kotlinx.parcelize.Parcelize
+import com.isranascimento.core.models.hotel.Hotel
 
-@Parcelize
 data class HotelDetailUI(
     val gallery: List<String>,
     val id: String,
@@ -15,7 +13,7 @@ data class HotelDetailUI(
     val description: String,
     val starCount: Float,
     val shareLink: String
-): Parcelable {
+) {
     companion object {
         fun fromDomainModel(domain: Hotel): HotelDetailUI {
             return HotelDetailUI(

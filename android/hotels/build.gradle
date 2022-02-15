@@ -1,5 +1,4 @@
 apply from: "$rootDir/commom-android-library.gradle"
-apply plugin: 'kotlin-parcelize'
 
 android {
     testOptions {

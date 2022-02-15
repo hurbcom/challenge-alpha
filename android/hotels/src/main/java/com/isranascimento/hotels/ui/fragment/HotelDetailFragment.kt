@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import com.isranascimento.core.fragment.BaseToolbarFragment
 import com.isranascimento.hotels.R
 import com.isranascimento.hotels.databinding.HotelDetailFragmentBinding
-import com.isranascimento.hotels.models.Hotel
+import com.isranascimento.core.models.hotel.Hotel
 import com.isranascimento.hotels.repository.IHotelsDetailRepository
 import com.isranascimento.hotels.ui.adapter.detail.HotelDetailGalleryAdapter
 import com.isranascimento.hotels.ui.models.HotelDetailUI

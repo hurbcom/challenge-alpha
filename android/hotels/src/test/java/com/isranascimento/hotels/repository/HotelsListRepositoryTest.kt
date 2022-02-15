@@ -2,8 +2,8 @@ package com.isranascimento.hotels.repository
 
 import com.google.common.truth.Truth.assertThat
 import com.isranascimento.networkdtos.hotels.HotelsResponse
-import com.isranascimento.hotels.models.Address
-import com.isranascimento.hotels.models.Hotel
+import com.isranascimento.core.models.hotel.Address
+import com.isranascimento.core.models.hotel.Hotel
 import com.isranascimento.hotels.models.HotelsListDomainState
 import com.isranascimento.hotels.repository.HotelsListRepositoryTest.HotelsDataSourceDouble.ExpectedResponseStatus.ERROR
 import com.isranascimento.hotels.repository.HotelsListRepositoryTest.HotelsDataSourceDouble.ExpectedResponseStatus.SUCCESS
