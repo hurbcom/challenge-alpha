@@ -29,20 +29,32 @@ abstract class HotelsDAO {
         gallery: List<String>
     ) {
         insertHotel(hotel)
-        val amenitiesToInsert: List<HotelsAmenityDatabaseEntity> = amenities.map {
+        insertAmenities(getAmenitiesToInsert(amenities, hotel))
+        insertGalleryItems(getGalleryToInsert(gallery, hotel))
+    }
+
+    private fun getAmenitiesToInsert(
+        amenities: List<String>,
+        hotel: HotelDatabaseEntity
+    ): List<HotelsAmenityDatabaseEntity> {
+        return amenities.map {
             HotelsAmenityDatabaseEntity(
                 value = it,
                 hotelId = hotel.id
             )
         }
-        val galleryToInsert = gallery.map {
+    }
+
+    private fun getGalleryToInsert(
+        gallery: List<String>,
+        hotel: HotelDatabaseEntity
+    ): List<HotelsGalleryItemDatabaseEntity> {
+        return gallery.map {
             HotelsGalleryItemDatabaseEntity(
                 value = it,
                 hotelId = hotel.id
             )
         }
-        insertAmenities(amenitiesToInsert)
-        insertGalleryItems(galleryToInsert)
     }
 
     @Query("SELECT * from hotels ORDER BY insertedTime DESC")
