@@ -4,6 +4,9 @@ ext {
     lifecycleVersion = "2.4.1"
     koinVersion = "3.1.5"
 
+    // Database
+    roomVersion = "2.4.1"
+
     //UI
     coilVersion = "1.4.0"
 
