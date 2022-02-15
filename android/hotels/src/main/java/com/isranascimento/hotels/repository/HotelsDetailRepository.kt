@@ -9,8 +9,8 @@ import kotlinx.coroutines.withContext
 
 class HotelsDetailRepository(
     private val dao: HotelsDAO
-) {
-    suspend fun insertIntoLastViewed(hotel: Hotel) = withContext(Dispatchers.IO) {
+) : IHotelsDetailRepository {
+    override suspend fun insertIntoLastViewed(hotel: Hotel) = withContext(Dispatchers.IO) {
         dao.insertHotelWithAmenities(
             hotel.asDatabaseModel(),
             hotel.amenities

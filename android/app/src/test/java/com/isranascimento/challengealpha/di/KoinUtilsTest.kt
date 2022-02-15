@@ -1,13 +1,21 @@
 package com.isranascimento.challengealpha.di
 
+import android.content.Context
+import androidx.test.runner.AndroidJUnit4
+import com.isranascimento.androidtestutils.TestContextProvider.context
 import io.mockk.mockkClass
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.koin.android.ext.koin.androidContext
+import org.koin.dsl.koinApplication
 import org.koin.test.KoinTest
 import org.koin.test.check.checkKoinModules
+import org.koin.test.check.checkModules
 import org.koin.test.mock.MockProviderRule
 import kotlin.reflect.KClass
 
+@RunWith(AndroidJUnit4::class)
 class KoinUtilsTest: KoinTest {
 
     @get:Rule
@@ -17,12 +25,20 @@ class KoinUtilsTest: KoinTest {
 
     @Test
     fun `verify dependency graph with debug true`() {
-        checkKoinModules(KoinUtils.getModules(true, "https://google.com/"))
+        koinApplication {
+            androidContext(context())
+            modules(KoinUtils.getModules(true, "https://google.com/"))
+            checkModules()
+        }
     }
 
     @Test
     fun `verify dependency graph with debug false`() {
-        checkKoinModules(KoinUtils.getModules(false, "https://google.com/"))
+        koinApplication {
+            androidContext(context())
+            modules(KoinUtils.getModules(false, "https://google.com/"))
+            checkModules()
+        }
     }
 
 }

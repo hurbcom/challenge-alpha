@@ -66,4 +66,6 @@ dependencies {
     implementation project(':hotels')
     implementation project(":theme")
     implementation project(':core')
+
+    testImplementation project(':android-test-utils')
 }

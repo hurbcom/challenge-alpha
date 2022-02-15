@@ -23,6 +23,7 @@ dependencies {
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
 
     testImplementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     testImplementation "app.cash.turbine:turbine:$turbineVersion"
