@@ -1,10 +1,10 @@
-package com.isranascimento.hotelslist.database
+package com.isranascimento.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.isranascimento.database.HotelsDao
+
 import com.isranascimento.databasedtos.hotels.HotelDatabaseEntity
 import com.isranascimento.databasedtos.hotels.HotelsAmenityDatabaseEntity
 
@@ -13,7 +13,7 @@ import com.isranascimento.databasedtos.hotels.HotelsAmenityDatabaseEntity
     version = 1
 )
 abstract class HotelsRoomDatabase: RoomDatabase() {
-    abstract fun hotelsDao(): HotelsDao
+    abstract fun hotelsDao(): HotelsDAO
 
     companion object {
         @Volatile

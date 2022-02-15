@@ -1,14 +1,11 @@
 package com.isranascimento.database
 
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import androidx.test.runner.AndroidJUnit4
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import com.isranascimento.androidtestutils.TestContextProvider.context
-import com.isranascimento.database.HotelsDao
 import com.isranascimento.database.utils.createHotelEntity
-import com.isranascimento.hotelslist.database.HotelsRoomDatabase
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
@@ -18,7 +15,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class HotelsDAOTest {
     private lateinit var database: HotelsRoomDatabase
-    private lateinit var sut: HotelsDao
+    private lateinit var sut: HotelsDAO
 
     @Before
     fun setup() {
@@ -38,10 +35,30 @@ class HotelsDAOTest {
         sut.insertHotel(createHotelEntity(1))
         sut.insertHotel(createHotelEntity(2))
 
-        sut.getHotelList().test {
+        sut.getHotelsWithAmenities().test {
             val hotels = awaitItem()
-            assertThat(hotels[0].id).isEqualTo("2")
-            assertThat(hotels[1].id).isEqualTo("1")
+            assertThat(hotels[0].hotel.id).isEqualTo("2")
+            assertThat(hotels[1].hotel.id).isEqualTo("1")
+        }
+    }
+
+    @Test
+    fun `WHEN adding a hotel with amenities THEN the item is added correctly`() = runBlocking {
+        sut.insertHotelWithAmenities(createHotelEntity(1), listOf("Amenity 1"))
+
+        sut.getHotelsWithAmenities().test {
+            val hotels = awaitItem()
+            assertThat(hotels[0].hotel.id).isEqualTo("1")
+            assertThat(hotels[0].amenities.size).isEqualTo(1)
+            assertThat(hotels[0].amenities[0].value).isEqualTo("Amenity 1")
+        }
+    }
+
+    @Test
+    fun `WHEN returning a list of hotels THEN the hotels list is with correct properties`() = runBlocking {
+        sut.insertHotel(createHotelEntity(1))
+        sut.getHotelsWithAmenities().test {
+            val hotels = awaitItem()
         }
     }
 
@@ -49,11 +66,11 @@ class HotelsDAOTest {
     fun `WHEN insert a new Hotel with the same sku THEN the hotel is replaced`() = runBlocking {
         sut.insertHotel(createHotelEntity(1, insertedTime = 1))
         sut.insertHotel(createHotelEntity(1, insertedTime = 2))
-        sut.getHotelList().test {
+        sut.getHotelsWithAmenities().test {
             val hotels = awaitItem()
             assertThat(hotels.size).isEqualTo(1)
-            assertThat(hotels[0].id).isEqualTo("1")
-            assertThat(hotels[0].insertedTime).isEqualTo(2)
+            assertThat(hotels[0].hotel.id).isEqualTo("1")
+            assertThat(hotels[0].hotel.insertedTime).isEqualTo(2)
         }
     }
 }

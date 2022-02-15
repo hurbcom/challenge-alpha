@@ -19,7 +19,7 @@ data class HotelsAmenityDatabaseEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     @NonNull
-    val id: Long,
+    val id: Long = 0,
 
     @ColumnInfo(name = "value")
     @NonNull 
