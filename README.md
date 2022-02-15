@@ -1,7 +1,5 @@
 # <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Alpha Challenge
 [![CI](https://github.com/aka-godinez-2/challenge-alpha/actions/workflows/main.yml/badge.svg)](https://github.com/aka-godinez-2/challenge-alpha/actions/workflows/main.yml)
-[![codecov](https://codecov.io/gh/aka-godinez-2/challenge-alpha/branch/master/graph/badge.svg?token=7F7X4M9B0B)](https://codecov.io/gh/aka-godinez-2/challenge-alpha)
-
 
 [[English](README.md) | [Português](README.pt.md)]
 
