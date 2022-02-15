@@ -6,15 +6,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "hotels", foreignKeys = [
-    ForeignKey(
-        entity = HotelsAmenityDatabaseEntity::class,
-        parentColumns = ["id"],
-        childColumns = ["hotelId"],
-        onDelete = ForeignKey.CASCADE,
-        onUpdate = ForeignKey.CASCADE
-    )
-])
+@Entity(tableName = "hotels")
 data class HotelDatabaseEntity(
     @PrimaryKey
     @NonNull
