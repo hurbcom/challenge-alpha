@@ -25,7 +25,10 @@ class HotelsDetailRepository(
             state = this.address.state,
             mainImage = this.mainImage,
             name = this.name,
-            insertedTime = TimerHelper.getNow()
+            insertedTime = TimerHelper.getNow(),
+            starCount = this.starCount,
+            description = this.description,
+            url = this.url
         )
     }
 }

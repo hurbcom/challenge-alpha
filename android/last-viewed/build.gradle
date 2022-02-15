@@ -13,6 +13,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
 
     implementation project(':database')
+    implementation project(':core')
 
     testImplementation project(':test-utils')
     testImplementation "app.cash.turbine:turbine:$turbineVersion"

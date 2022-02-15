@@ -2,6 +2,8 @@ package com.isranascimento.lastviewed.repository
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import com.isranascimento.core.models.hotel.Address
+import com.isranascimento.core.models.hotel.Hotel
 import com.isranascimento.database.IRetrieveHotelList
 import com.isranascimento.databasedtos.hotels.HotelDatabaseEntity
 import com.isranascimento.databasedtos.hotels.HotelsAmenityDatabaseEntity
@@ -34,20 +36,35 @@ class LastViewedRepositoryTest {
 
         value.test {
             val hotelList = awaitItem()
-            assertThat(hotelList.size).isEqualTo(2)
-            assertThat(hotelList[0].hotel.id).isEqualTo("1")
-            assertThat(hotelList[1].hotel.id).isEqualTo("2")
+            assertThat(hotelList.size).isEqualTo(1)
+            val hotel = hotelList[0]
+            assertThat(hotel).isEqualTo(
+                getExpectedHotel()
+            )
             cancelAndConsumeRemainingEvents()
         }
-        assertThat(value)
     }
+
+    private fun getExpectedHotel() = Hotel(
+        id = "1",
+        name = "Name 1",
+        gallery = listOf("GalleryItem 1"),
+        mainImage = "MainImage 1",
+        amenities = listOf("Amenity 1"),
+        address = Address(
+            "State 1",
+            "City 1"
+        ),
+        starCount = 1,
+        description = "Description 1",
+        url = "Url 1"
+    )
 
     class RetrieveHotelListDouble: IRetrieveHotelList {
         override fun getHotelsWithAmenities(): Flow<List<HotelsWithAmenitiesEntity>> {
             return flowOf(
                 listOf(
                     createHotelEntity(1),
-                    createHotelEntity(2)
                 )
             )
         }
@@ -72,7 +89,7 @@ class LastViewedRepositoryTest {
         private fun createHotelGalleryDatabaseEntity(number: Int): HotelsGalleryItemDatabaseEntity {
             return HotelsGalleryItemDatabaseEntity(
                 id = number.toLong(),
-                value = "Amenity $number",
+                value = "GalleryItem $number",
                 hotelId = "HotelId $number"
             )
         }
@@ -84,7 +101,10 @@ class LastViewedRepositoryTest {
                 city = "City $number",
                 state = "State $number",
                 mainImage = "MainImage $number",
-                name = "Name $number"
+                name = "Name $number",
+                starCount = number,
+                description = "Description $number",
+                url = "Url $number"
             )
         }
     }

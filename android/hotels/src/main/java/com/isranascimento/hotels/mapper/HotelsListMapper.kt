@@ -13,10 +13,8 @@ private fun HotelResponse.asDomainModel(): Hotel {
     return Hotel(
         id = this.id,
         gallery = this.gallery.map { it.url },
-        sku = this.sku,
         amenities = this.amenities.map { it.name },
         name = this.name,
-        price = this.price.currentPrice,
         address = Address(
             this.address.state,
             this.address.city

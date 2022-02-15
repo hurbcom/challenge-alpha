@@ -8,5 +8,8 @@ fun createHotelEntity(number: Int, insertedTime: Long? = null) = HotelDatabaseEn
     city = "City $number",
     state = "State $number",
     mainImage = "mainImage $number",
-    name = "Name $number"
+    name = "Name $number",
+    starCount = number,
+    description = "Description $number",
+    url = "Url $number"
 )

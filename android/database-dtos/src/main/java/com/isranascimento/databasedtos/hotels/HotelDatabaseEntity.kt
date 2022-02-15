@@ -39,4 +39,16 @@ data class HotelDatabaseEntity(
     @ColumnInfo(name = "name")
     @NonNull
     val name: String,
+    
+    @ColumnInfo(name = "starCount")
+    @NonNull 
+    val starCount: Int,
+    
+    @ColumnInfo(name = "description")
+    @NonNull 
+    val description: String,
+
+    @ColumnInfo(name = "url")
+    @NonNull
+    val url: String,
 )

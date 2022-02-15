@@ -38,7 +38,10 @@ class HotelsDetailRepositoryTest {
                 state = "State 1",
                 mainImage = "Image 1",
                 name = "Hotel 1",
-                insertedTime = 1L
+                insertedTime = 1L,
+                starCount = 3,
+                description = "Description 1",
+                url = "Share 1"
             ), HOTEL_DOMAIN_LIST[0].amenities, HOTEL_DOMAIN_LIST[0].gallery)
         }
     }

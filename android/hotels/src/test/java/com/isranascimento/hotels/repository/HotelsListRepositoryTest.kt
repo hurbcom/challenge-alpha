@@ -35,7 +35,6 @@ class HotelsListRepositoryTest {
 
     private fun expectedFirstHotel(): Hotel = Hotel(
         id = "AT7987",
-        sku = "NHU-7987-0-0-0-0",
         name = "Pousada Aardvark Inn",
         gallery = listOf(
             "https://static.hotelurbano.com/reservas/prod0/7/7987/5d28d5cf6fa3c_" +
@@ -44,7 +43,6 @@ class HotelsListRepositoryTest {
                     "pousada-aardvark-inn.jpg"
         ),
         amenities = listOf("Bar", "Wifi"),
-        price = 287.88,
         address = Address(
             "Rio Grande do Sul",
             "Gramado"
