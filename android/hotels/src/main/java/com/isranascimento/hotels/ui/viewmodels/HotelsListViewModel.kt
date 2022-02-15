@@ -2,6 +2,7 @@ package com.isranascimento.hotels.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.isranascimento.hotels.models.Hotel
 import com.isranascimento.hotels.models.HotelsListDomainState
 import com.isranascimento.hotels.repository.IHotelsListRepository
 import com.isranascimento.hotels.ui.models.HotelDetailUI
@@ -31,8 +32,8 @@ class HotelsListViewModel(
         }
     }
 
-    fun getHotelDetailUIModel(id: String): HotelDetailUI {
+    fun getHotelDetailUIModel(id: String): Hotel {
         val hotel = repository.getHotelWithId(id)
-        return HotelDetailUI.fromDomainModel(hotel!!)
+        return hotel!!
     }
 }

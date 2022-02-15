@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "hotels_amenity", foreignKeys = [
     ForeignKey(
-        entity = HotelsAmenityDatabaseEntity::class,
+        entity = HotelDatabaseEntity::class,
         parentColumns = ["id"],
         childColumns = ["hotelId"],
         onDelete = ForeignKey.CASCADE,

@@ -19,7 +19,11 @@ abstract class HotelsDAO {
     abstract suspend fun insertAmenities(list: List<HotelsAmenityDatabaseEntity>)
 
     @Transaction
-    open suspend fun insertHotelWithAmenities(hotel: HotelDatabaseEntity, amenities: List<String>) {
+    open suspend fun insertHotelWithAmenities(
+        hotel: HotelDatabaseEntity,
+        amenities: List<String>,
+        gallery: List<String>
+    ) {
         insertHotel(hotel)
         val amenitiesToInsert: List<HotelsAmenityDatabaseEntity> = amenities.map {
             HotelsAmenityDatabaseEntity(

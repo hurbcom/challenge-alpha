@@ -1,5 +1,9 @@
 package com.isranascimento.hotels.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Hotel(
     val id: String,
     val sku: String,
@@ -12,4 +16,4 @@ data class Hotel(
     val starCount: Int,
     val description: String,
     val url: String
-)
+): Parcelable

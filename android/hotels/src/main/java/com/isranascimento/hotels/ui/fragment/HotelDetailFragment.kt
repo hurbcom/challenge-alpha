@@ -7,27 +7,42 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.isranascimento.core.fragment.BaseToolbarFragment
 import com.isranascimento.hotels.R
 import com.isranascimento.hotels.databinding.HotelDetailFragmentBinding
+import com.isranascimento.hotels.models.Hotel
+import com.isranascimento.hotels.repository.IHotelsDetailRepository
 import com.isranascimento.hotels.ui.adapter.detail.HotelDetailGalleryAdapter
 import com.isranascimento.hotels.ui.models.HotelDetailUI
 import com.isranascimento.hotels.ui.util.createAmenityTextview
 import com.isranascimento.utils.extensions.attachSnapHelperWithListener
+import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 
 class HotelDetailFragment: BaseToolbarFragment() {
     private lateinit var binding: HotelDetailFragmentBinding
 
-    private val uiModel by lazy {
-        requireArguments().getParcelable<HotelDetailUI>(MODEL)!!
+    private val hotel by lazy {
+        requireArguments().getParcelable<Hotel>(MODEL)!!
     }
+
+    private val uiModel by lazy {
+        HotelDetailUI.fromDomainModel(hotel)
+    }
+
+    private val repository: IHotelsDetailRepository by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        lifecycleScope.launch {
+            repository.insertIntoLastViewed(hotel)
+        }
+
         return HotelDetailFragmentBinding.inflate(inflater, container, false)
             .also {
                 binding = it
@@ -89,7 +104,7 @@ class HotelDetailFragment: BaseToolbarFragment() {
     companion object {
         private const val MODEL = "model"
 
-        fun newInstance(model: HotelDetailUI): HotelDetailFragment =
+        fun newInstance(model: Hotel): HotelDetailFragment =
             HotelDetailFragment().apply {
                 this.arguments = bundleOf(MODEL to model)
             }
