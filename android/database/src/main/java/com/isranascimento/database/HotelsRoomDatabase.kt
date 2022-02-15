@@ -7,9 +7,14 @@ import androidx.room.RoomDatabase
 
 import com.isranascimento.databasedtos.hotels.HotelDatabaseEntity
 import com.isranascimento.databasedtos.hotels.HotelsAmenityDatabaseEntity
+import com.isranascimento.databasedtos.hotels.HotelsGalleryItemDatabaseEntity
 
 @Database(
-    entities = [HotelDatabaseEntity::class, HotelsAmenityDatabaseEntity::class],
+    entities = [
+        HotelDatabaseEntity::class,
+        HotelsAmenityDatabaseEntity::class,
+        HotelsGalleryItemDatabaseEntity::class
+   ],
     version = 1
 )
 abstract class HotelsRoomDatabase: RoomDatabase() {

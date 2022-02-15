@@ -7,6 +7,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import com.isranascimento.databasedtos.hotels.HotelDatabaseEntity
 import com.isranascimento.databasedtos.hotels.HotelsAmenityDatabaseEntity
+import com.isranascimento.databasedtos.hotels.HotelsGalleryItemDatabaseEntity
 import com.isranascimento.databasedtos.hotels.HotelsWithAmenitiesEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -17,6 +18,9 @@ abstract class HotelsDAO {
 
     @Insert
     abstract suspend fun insertAmenities(list: List<HotelsAmenityDatabaseEntity>)
+
+    @Insert
+    abstract suspend fun insertGalleryItems(list: List<HotelsGalleryItemDatabaseEntity>)
 
     @Transaction
     open suspend fun insertHotelWithAmenities(
@@ -31,7 +35,14 @@ abstract class HotelsDAO {
                 hotelId = hotel.id
             )
         }
+        val galleryToInsert = gallery.map {
+            HotelsGalleryItemDatabaseEntity(
+                value = it,
+                hotelId = hotel.id
+            )
+        }
         insertAmenities(amenitiesToInsert)
+        insertGalleryItems(galleryToInsert)
     }
 
     @Query("SELECT * from hotels ORDER BY insertedTime DESC")

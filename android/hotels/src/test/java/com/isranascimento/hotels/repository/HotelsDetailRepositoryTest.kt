@@ -26,7 +26,7 @@ class HotelsDetailRepositoryTest {
         dao = mockk()
         mockkObject(TimerHelper)
         every { TimerHelper.getNow() } returns 1L
-        coEvery { dao.insertHotelWithAmenities(any(), any()) } just Runs
+        coEvery { dao.insertHotelWithAmenities(any(), any(), any()) } just Runs
         sut = HotelsDetailRepository(dao)
     }
 
@@ -41,7 +41,7 @@ class HotelsDetailRepositoryTest {
                 mainImage = "Image 1",
                 name = "Hotel 1",
                 insertedTime = 1L
-            ), HOTEL_DOMAIN_LIST[0].amenities)
+            ), HOTEL_DOMAIN_LIST[0].amenities, HOTEL_DOMAIN_LIST[0].gallery)
         }
     }
 }

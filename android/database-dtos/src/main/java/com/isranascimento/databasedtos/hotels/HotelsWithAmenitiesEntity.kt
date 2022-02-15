@@ -6,9 +6,16 @@ import androidx.room.Relation
 data class HotelsWithAmenitiesEntity(
     @Embedded
     val hotel: HotelDatabaseEntity,
+
     @Relation(
         parentColumn = "id",
         entityColumn = "hotelId"
     )
-    val amenities: List<HotelsAmenityDatabaseEntity>
+    val amenities: List<HotelsAmenityDatabaseEntity>,
+
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "hotelId"
+    )
+    val gallery: List<HotelsGalleryItemDatabaseEntity>
 )

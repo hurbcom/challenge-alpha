@@ -44,21 +44,15 @@ class HotelsDAOTest {
 
     @Test
     fun `WHEN adding a hotel with amenities THEN the item is added correctly`() = runBlocking {
-        sut.insertHotelWithAmenities(createHotelEntity(1), listOf("Amenity 1"))
+        sut.insertHotelWithAmenities(createHotelEntity(1), listOf("Amenity 1"), listOf("Gallery 1"))
 
         sut.getHotelsWithAmenities().test {
             val hotels = awaitItem()
             assertThat(hotels[0].hotel.id).isEqualTo("1")
             assertThat(hotels[0].amenities.size).isEqualTo(1)
             assertThat(hotels[0].amenities[0].value).isEqualTo("Amenity 1")
-        }
-    }
-
-    @Test
-    fun `WHEN returning a list of hotels THEN the hotels list is with correct properties`() = runBlocking {
-        sut.insertHotel(createHotelEntity(1))
-        sut.getHotelsWithAmenities().test {
-            val hotels = awaitItem()
+            assertThat(hotels[0].gallery.size).isEqualTo(1)
+            assertThat(hotels[0].gallery[0].value).isEqualTo("Gallery 1")
         }
     }
 
