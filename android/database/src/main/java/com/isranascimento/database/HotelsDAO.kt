@@ -12,8 +12,9 @@ import com.isranascimento.databasedtos.hotels.HotelsWithAmenitiesEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-abstract class HotelsDAO: IInsertHotelOnDatabase {
+abstract class HotelsDAO: IInsertHotelOnDatabase, IRetrieveHotelList {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Suppress("FunctionNaming")
     abstract suspend fun _insertHotel(createHotelEntity: HotelDatabaseEntity): Long
 
     @Insert
@@ -58,5 +59,5 @@ abstract class HotelsDAO: IInsertHotelOnDatabase {
     }
 
     @Query("SELECT * from hotels ORDER BY insertedTime DESC")
-    abstract fun getHotelsWithAmenities(): Flow<List<HotelsWithAmenitiesEntity>>
+    abstract override fun getHotelsWithAmenities(): Flow<List<HotelsWithAmenitiesEntity>>
 }
