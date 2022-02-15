@@ -12,10 +12,7 @@ import org.koin.dsl.module
 fun hotelsModule() = module {
     factory<IHotelsListRepository> { HotelsListRepository(get()) }
     viewModel { HotelsListViewModel(get()) }
-    single<IHotelsDetailRepository> {
+    factory <IHotelsDetailRepository> {
         HotelsDetailRepository(get())
-    }
-    single {
-        HotelsRoomDatabase.getDatabase(get()).hotelsDao()
     }
 }

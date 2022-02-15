@@ -1,6 +1,7 @@
 package com.isranascimento.hotels.repository
 
 import com.isranascimento.database.HotelsDAO
+import com.isranascimento.database.IInsertHotelOnDatabase
 import com.isranascimento.databasedtos.hotels.HotelDatabaseEntity
 import com.isranascimento.hotels.TimerHelper
 import com.isranascimento.hotels.models.Hotel
@@ -8,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class HotelsDetailRepository(
-    private val dao: HotelsDAO
+    private val dao: IInsertHotelOnDatabase
 ) : IHotelsDetailRepository {
     override suspend fun insertIntoLastViewed(hotel: Hotel) = withContext(Dispatchers.IO) {
         dao.insertHotel(

@@ -19,6 +19,9 @@ dependencies {
     implementation "androidx.room:room-ktx:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
 
+    implementation "io.insert-koin:koin-core:$koinVersion"
+    implementation "io.insert-koin:koin-android:$koinVersion"
+
     testImplementation "app.cash.turbine:turbine:$turbineVersion"
     testImplementation "io.mockk:mockk-android:$mockKVersion"
     testImplementation project(':test-utils')
