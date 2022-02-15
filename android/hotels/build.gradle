@@ -31,6 +31,7 @@ dependencies {
     testImplementation project(':android-test-utils')
 
     implementation project(':utils')
+    implementation project(':database')
     implementation project(':network')
     implementation project(':theme')
     implementation project(':core')

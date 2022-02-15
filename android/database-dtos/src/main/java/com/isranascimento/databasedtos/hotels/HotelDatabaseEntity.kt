@@ -15,7 +15,7 @@ data class HotelDatabaseEntity(
 
     @ColumnInfo(name = "insertedTime")
     @NonNull
-    val insertedTime: Long = System.currentTimeMillis(),
+    val insertedTime: Long,
 
     /**
      * Creio que no cenário ideal, somente as duas informações acima seriam salvas
