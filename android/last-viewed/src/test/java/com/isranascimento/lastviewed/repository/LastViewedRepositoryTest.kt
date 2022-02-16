@@ -2,8 +2,8 @@ package com.isranascimento.lastviewed.repository
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import com.isranascimento.core.models.hotel.Address
-import com.isranascimento.core.models.hotel.Hotel
+import com.isranascimento.coremodels.hotel.Address
+import com.isranascimento.coremodels.hotel.Hotel
 import com.isranascimento.database.IRetrieveHotelList
 import com.isranascimento.databasedtos.hotels.HotelDatabaseEntity
 import com.isranascimento.databasedtos.hotels.HotelsAmenityDatabaseEntity
@@ -11,7 +11,6 @@ import com.isranascimento.databasedtos.hotels.HotelsGalleryItemDatabaseEntity
 import com.isranascimento.databasedtos.hotels.HotelsWithAmenitiesEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test

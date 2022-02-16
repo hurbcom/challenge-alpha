@@ -2,8 +2,8 @@ package com.isranascimento.hotels.mapper
 
 import com.isranascimento.networkdtos.hotels.HotelResponse
 import com.isranascimento.networkdtos.hotels.HotelsResponse
-import com.isranascimento.core.models.hotel.Address
-import com.isranascimento.core.models.hotel.Hotel
+import com.isranascimento.coremodels.hotel.Address
+import com.isranascimento.coremodels.hotel.Hotel
 
 fun HotelsResponse.asDomainModel() = this.results.map {
     it.asDomainModel()

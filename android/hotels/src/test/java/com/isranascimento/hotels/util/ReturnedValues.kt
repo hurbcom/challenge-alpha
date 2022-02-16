@@ -1,7 +1,7 @@
 package com.isranascimento.hotels.util
 
-import com.isranascimento.core.models.hotel.Address
-import com.isranascimento.core.models.hotel.Hotel
+import com.isranascimento.coremodels.hotel.Address
+import com.isranascimento.coremodels.hotel.Hotel
 
 object ReturnedValues {
     val HOTEL_DOMAIN_LIST = listOf<Hotel>(

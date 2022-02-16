@@ -2,7 +2,7 @@ package com.isranascimento.hotels.ui.viewmodels
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import com.isranascimento.core.models.hotel.Hotel
+import com.isranascimento.coremodels.hotel.Hotel
 import com.isranascimento.hotels.models.HotelsListDomainState
 import com.isranascimento.hotels.repository.IHotelsListRepository
 import com.isranascimento.hotels.ui.viewmodels.HotelsListViewModelTest.HotelsListRepositoryDouble.ExpectedResponseStatus.ERROR

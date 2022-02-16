@@ -35,4 +35,5 @@ dependencies {
     implementation project(':network')
     implementation project(':theme')
     implementation project(':core')
+    implementation project(':core-models')
 }

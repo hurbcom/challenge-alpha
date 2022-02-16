@@ -1,7 +1,7 @@
 package com.isranascimento.hotels.repository
 
 import com.isranascimento.hotels.mapper.asDomainModel
-import com.isranascimento.core.models.hotel.Hotel
+import com.isranascimento.coremodels.hotel.Hotel
 import com.isranascimento.hotels.models.HotelsListDomainState
 import com.isranascimento.network.response.NetworkResponse
 import com.isranascimento.network.service.IHotelsRemoteDataSource

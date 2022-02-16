@@ -1,7 +1,6 @@
 package com.isranascimento.hotels.ui.models
 
-import android.os.Parcelable
-import com.isranascimento.core.models.hotel.Hotel
+import com.isranascimento.coremodels.hotel.Hotel
 
 data class HotelDetailUI(
     val gallery: List<String>,
