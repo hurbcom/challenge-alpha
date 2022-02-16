@@ -20,13 +20,11 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HotelListFragment: Fragment() {
+class HotelListFragment: Fragment(), HotelsListAdapter.HotelsListAdapterContract {
     private lateinit var binding: HotelListFragmentBinding
     private val viewModel: HotelsListViewModel by viewModel()
     private val adapter by lazy {
-        HotelsListAdapter {
-            navigateToScreen(HotelDetailFragment.newInstance(viewModel.getHotelDetailUIModel(it)))
-        }
+        HotelsListAdapter(this)
     }
 
     override fun onCreateView(
@@ -72,5 +70,11 @@ class HotelListFragment: Fragment() {
     private fun renderSuccess(value: List<HotelListUI>) {
         binding.hotelList.setVisible(true)
         adapter.submitList(value)
+    }
+
+    override fun onHotelClick(hotelId: String) {
+        navigateToScreen(HotelDetailFragment.newInstance(
+            viewModel.getHotelDetailUIModel(hotelId))
+        )
     }
 }

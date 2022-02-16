@@ -6,7 +6,6 @@ import androidx.test.runner.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
 import com.isranascimento.androidtestutils.TestContextProvider
 import com.isranascimento.androidtestutils.TestContextProvider.context
-import com.isranascimento.hotels.databinding.HotelListCardItemBinding
 import com.isranascimento.hotels.ui.adapter.holder.BaseHotelListHolder
 import io.mockk.Runs
 import io.mockk.every

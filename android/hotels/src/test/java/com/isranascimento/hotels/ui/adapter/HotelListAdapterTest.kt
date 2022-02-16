@@ -25,14 +25,14 @@ class HotelListAdapterTest {
     private lateinit var sut: HotelsListAdapter
     private lateinit var viewGroup: FrameLayout
 
-    private lateinit var callbackOnClick: (String) -> Unit
+    private lateinit var contract: HotelsListAdapter.HotelsListAdapterContract
 
     @Before
     fun setup() {
-        callbackOnClick = mockk()
-        every { callbackOnClick(any()) } just Runs
+        contract = mockk()
+        every { contract.onHotelClick(any()) } just Runs
 
-        sut = HotelsListAdapter(callbackOnClick)
+        sut = HotelsListAdapter(contract)
         viewGroup = FrameLayout(context())
     }
 
@@ -66,13 +66,13 @@ class HotelListAdapterTest {
     fun `WHEN binding a card THEN the callback is passed to it`() {
         val viewHolderMockk = mockk<HotelListCardHolder>()
         every { viewHolderMockk.bind(any()) } just Runs
-        every { viewHolderMockk.setClickListener(any()) } just Runs
+        every { viewHolderMockk.bindListener(any(), any()) } just Runs
 
         sut.submitList(listOf(createHotelUIItem(1)))
         sut.onBindViewHolder(viewHolderMockk, 0)
 
         verify {
-            viewHolderMockk.setClickListener(callbackOnClick)
+            viewHolderMockk.bindListener(any(), contract)
         }
     }
 

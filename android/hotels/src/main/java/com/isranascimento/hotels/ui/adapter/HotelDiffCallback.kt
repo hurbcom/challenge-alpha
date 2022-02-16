@@ -3,7 +3,6 @@ package com.isranascimento.hotels.ui.adapter
 import androidx.recyclerview.widget.DiffUtil
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUIItem
-import com.isranascimento.theme.HotelCardItem
 import com.isranascimento.hotels.ui.models.HotelListUITitle
 
 class HotelDiffCallback:DiffUtil.ItemCallback<HotelListUI>() {

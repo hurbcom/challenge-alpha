@@ -1,7 +1,7 @@
 package com.isranascimento.hotels.ui.models
 
 import com.isranascimento.coremodels.hotel.Hotel
-import com.isranascimento.theme.HotelCardItem
+import com.isranascimento.theme.hotel.HotelCardItem
 
 sealed class HotelListUI {
     companion object {

@@ -3,7 +3,6 @@ package com.isranascimento.hotels.ui.models
 import com.google.common.truth.Truth.assertThat
 import com.isranascimento.hotels.util.ReturnedValues.HOTEL_DOMAIN_LIST
 import com.isranascimento.hotels.util.createHotelUIItem
-import com.isranascimento.theme.HotelCardItem
 import org.junit.Test
 
 class HotelListUITest {

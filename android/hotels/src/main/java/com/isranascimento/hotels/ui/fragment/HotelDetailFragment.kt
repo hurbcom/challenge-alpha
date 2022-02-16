@@ -16,7 +16,7 @@ import com.isranascimento.coremodels.hotel.Hotel
 import com.isranascimento.hotels.repository.IHotelsDetailRepository
 import com.isranascimento.hotels.ui.adapter.detail.HotelDetailGalleryAdapter
 import com.isranascimento.hotels.ui.models.HotelDetailUI
-import com.isranascimento.hotels.ui.util.createAmenityTextview
+import com.isranascimento.utils.hotels.createAmenityTextview
 import com.isranascimento.utils.extensions.attachSnapHelperWithListener
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject

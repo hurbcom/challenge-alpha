@@ -1,4 +1,4 @@
-package com.isranascimento.theme
+package com.isranascimento.theme.hotel
 
 import com.isranascimento.coremodels.hotel.Hotel
 
