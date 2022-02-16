@@ -3,6 +3,7 @@ package com.isranascimento.hotels.ui.adapter
 import androidx.recyclerview.widget.DiffUtil
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUIItem
+import com.isranascimento.theme.HotelCardItem
 import com.isranascimento.hotels.ui.models.HotelListUITitle
 
 class HotelDiffCallback:DiffUtil.ItemCallback<HotelListUI>() {
@@ -11,7 +12,7 @@ class HotelDiffCallback:DiffUtil.ItemCallback<HotelListUI>() {
             return oldItem.starCount == newItem.starCount
         }
         if(oldItem is HotelListUIItem && newItem is HotelListUIItem) {
-            return oldItem.id == newItem.id
+            return oldItem.card.id == newItem.card.id
         }
         return false
     }
@@ -21,11 +22,11 @@ class HotelDiffCallback:DiffUtil.ItemCallback<HotelListUI>() {
             return oldItem.starCount == newItem.starCount
         }
         if(oldItem is HotelListUIItem && newItem is HotelListUIItem) {
-            return oldItem.name == newItem.name &&
-                    oldItem.amenities == newItem.amenities &&
-                    oldItem.city == newItem.city &&
-                    oldItem.image == newItem.image &&
-                    oldItem.state == newItem.state
+            return oldItem.card.name == newItem.card.name &&
+                    oldItem.card.amenities == newItem.card.amenities &&
+                    oldItem.card.city == newItem.card.city &&
+                    oldItem.card.image == newItem.card.image &&
+                    oldItem.card.state == newItem.card.state
         }
         return false
     }

@@ -1,6 +1,7 @@
 package com.isranascimento.hotels.ui.models
 
 import com.isranascimento.coremodels.hotel.Hotel
+import com.isranascimento.theme.HotelCardItem
 
 sealed class HotelListUI {
     companion object {
@@ -10,7 +11,9 @@ sealed class HotelListUI {
             hotelGroup.forEach { (key, value) ->
                 hotelList.add(HotelListUITitle(key.toFloat()))
                 value.forEach {
-                    hotelList.add(HotelListUIItem.fromDomainModel(it))
+                    hotelList.add(
+                        HotelListUIItem(HotelCardItem.fromDomainModel(it))
+                    )
                 }
             }
             return hotelList
