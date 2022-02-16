@@ -17,10 +17,8 @@ class HotelCardItemView(
 
     init {
         val lp = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        lp.bottomMargin = context.getDimension(R.dimen.spacing_small)
-        lp.topMargin = context.getDimension(R.dimen.spacing_small)
-
         layoutParams = lp
+
     }
 
     fun bind(hotel: HotelCardItem) {
