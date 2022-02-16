@@ -1,12 +1,7 @@
 apply from: "$rootDir/commom-android-library.gradle"
 apply plugin: 'kotlin-kapt'
-android {
-    testOptions {
-        unitTests {
-            includeAndroidResources = true
-        }
-    }
-}
+apply from: "$rootDir/robolectric-testing.gradle"
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'

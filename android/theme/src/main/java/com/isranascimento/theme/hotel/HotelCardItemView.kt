@@ -3,6 +3,7 @@ package com.isranascimento.theme.hotel
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.VisibleForTesting
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.isranascimento.theme.R
 import com.isranascimento.theme.databinding.HotelListCardItemBinding
@@ -13,12 +14,12 @@ import com.isranascimento.utils.hotels.createAmenityTextview
 class HotelCardItemView(
     context: Context
 ): ConstraintLayout(context) {
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     val binding = HotelListCardItemBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
         val lp = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         layoutParams = lp
-
     }
 
     fun bind(hotel: HotelCardItem) {

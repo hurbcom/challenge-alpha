@@ -1,4 +1,4 @@
-<androidx.cardview.widget.CardView app:layout_constraintTop_toBottomOf="@id/hotel_list_title"
+<androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/spacing_medium"
