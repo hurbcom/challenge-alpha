@@ -18,6 +18,8 @@ dependencies {
     implementation project(':core-models')
     implementation project(':theme')
 
-    testImplementation project(':test-utils')
+    testImplementation "io.mockk:mockk:$mockKVersion"
     testImplementation "app.cash.turbine:turbine:$turbineVersion"
+    testImplementation project(':test-utils')
+    testImplementation project(':android-test-utils')
 }

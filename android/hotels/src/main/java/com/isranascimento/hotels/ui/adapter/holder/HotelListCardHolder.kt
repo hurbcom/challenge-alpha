@@ -2,7 +2,6 @@ package com.isranascimento.hotels.ui.adapter.holder
 
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUIItem
-import com.isranascimento.theme.hotel.HotelCardItem
 import com.isranascimento.theme.hotel.HotelCardItemView
 
 class HotelListCardHolder(
@@ -13,6 +12,6 @@ class HotelListCardHolder(
     }
 
     fun bindListener(item: HotelListUIItem, callback: HotelCardItemView.HotelCardItemListener) {
-        cardItemView.bindCallback(item.card, callback)
+        cardItemView.bindListener(item.card, callback)
     }
 }

@@ -33,7 +33,7 @@ class HomeFragment: BaseToolbarFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        replaceFragment(hotelsFragment)
+        replaceFragment(lastViewedFragment)
         binding.bottomNavigationContainer.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_hotel -> {

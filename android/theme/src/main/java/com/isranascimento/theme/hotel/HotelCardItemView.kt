@@ -34,7 +34,7 @@ class HotelCardItemView(
             binding.root.context.getString(R.string.hotel_list_location_text, hotel.city, hotel.state)
     }
 
-    fun bindCallback(hotel: HotelCardItem, listener: HotelCardItemListener) {
+    fun bindListener(hotel: HotelCardItem, listener: HotelCardItemListener) {
         binding.root.setOnClickListener {
             listener.onHotelClick(hotel.id)
         }

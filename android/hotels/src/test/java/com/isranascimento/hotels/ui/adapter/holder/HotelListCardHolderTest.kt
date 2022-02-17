@@ -1,27 +1,14 @@
 package com.isranascimento.hotels.ui.adapter.holder
 
-import android.view.LayoutInflater
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.view.children
-import androidx.test.filters.SmallTest
-import androidx.test.runner.AndroidJUnit4
-import com.google.common.truth.Truth.assertThat
-import com.isranascimento.androidtestutils.TestContextProvider
-import com.isranascimento.hotels.ui.models.HotelListUIItem
 import com.isranascimento.hotels.util.createHotelUIItem
 import com.isranascimento.theme.hotel.HotelCardItemView
-import com.isranascimento.utils.extensions.load
 import io.mockk.Runs
 import io.mockk.every
 import io.mockk.just
 import io.mockk.mockk
-import io.mockk.mockkStatic
 import io.mockk.verify
-import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
 
 class HotelListCardHolderTest {
 
@@ -51,12 +38,12 @@ class HotelListCardHolderTest {
 
     @Test
     fun `WHEN bindCallback is called THEN it calls view bindCallback correctly`() {
-        every { cardItemMock.bindCallback(any(), any()) } just Runs
+        every { cardItemMock.bindListener(any(), any()) } just Runs
 
         sut.bindListener(createHotelUIItem(1), listener)
 
         verify {
-            cardItemMock.bindCallback(createHotelUIItem(1).card, listener)
+            cardItemMock.bindListener(createHotelUIItem(1).card, listener)
         }
     }
 

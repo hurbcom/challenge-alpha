@@ -1,6 +1,5 @@
 package com.isranascimento.theme.hotel
 
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -63,7 +62,7 @@ class HotelCardItemViewTest {
 
     @Test
     fun `WHEN bindCallback is called and a click occurs THEN the callback is called correctly`() {
-        sut.bindCallback(createHotelCardItem(), callback)
+        sut.bindListener(createHotelCardItem(), callback)
         sut.binding.root.callOnClick()
         verify { callback.onHotelClick("1") }
     }
