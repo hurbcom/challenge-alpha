@@ -30,4 +30,5 @@ dependencies {
     implementation project(':theme')
     implementation project(':core')
     implementation project(':core-models')
+    implementation project(':hotel-detail')
 }

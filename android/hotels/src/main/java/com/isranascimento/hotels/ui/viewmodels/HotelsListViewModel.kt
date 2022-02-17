@@ -35,7 +35,7 @@ class HotelsListViewModel(
         }
     }
 
-    fun getHotelDetailUIModel(id: String): Hotel {
+    fun getHotel(id: String): Hotel {
         val hotel = repository.getHotelWithId(id)
         return hotel!!
     }

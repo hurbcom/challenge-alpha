@@ -2,6 +2,7 @@ package com.isranascimento.lastviewed.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.isranascimento.coremodels.hotel.Hotel
 import com.isranascimento.lastviewed.repository.ILastViewedRepository
 import com.isranascimento.lastviewed.ui.models.LastViewedUIState
 import com.isranascimento.theme.hotel.HotelCardItem
@@ -42,5 +43,9 @@ class LastViewedViewModel(
                 }
                 .launchIn(this)
         }
+    }
+
+    fun getHotelWithId(id: String): Hotel {
+        return repository.getHotelWithId(id)!!
     }
 }

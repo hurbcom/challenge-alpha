@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.isranascimento.hoteldetail.fragment.HotelDetailFragment
 import com.isranascimento.hotels.databinding.HotelListFragmentBinding
 import com.isranascimento.hotels.ui.adapter.HotelsListAdapter
 import com.isranascimento.hotels.ui.models.HotelListUI
@@ -72,8 +73,9 @@ class HotelListFragment: Fragment(), HotelsListAdapter.HotelsListAdapterContract
 
     override fun onHotelClick(hotelId: String) {
         navigateToScreen(
-            com.isranascimento.hoteldetail.fragment.HotelDetailFragment.newInstance(
-            viewModel.getHotelDetailUIModel(hotelId))
+            HotelDetailFragment.newInstance(
+                viewModel.getHotel(hotelId)
+            )
         )
     }
 }

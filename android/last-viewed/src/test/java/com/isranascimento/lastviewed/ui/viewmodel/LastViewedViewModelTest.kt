@@ -60,6 +60,24 @@ class LastViewedViewModelTest {
         }
     }
 
+    @Test
+    fun `WHEN getHotelWithSku is called THEN the viewmodel returns the expected Hotel`() {
+        sut = LastViewedViewModel(LastViewedRepositoryDouble(WITH_ITEMS))
+
+        val hotel = sut.getHotelWithId("1")
+
+        assertThat(hotel.id).isEqualTo("id")
+        assertThat(hotel.name).isEqualTo("name")
+        assertThat(hotel.gallery.size).isEqualTo(1)
+        assertThat(hotel.url).isEqualTo("url")
+        assertThat(hotel.mainImage).isEqualTo("mainImage")
+        assertThat(hotel.description).isEqualTo("description")
+        assertThat(hotel.address.city).isEqualTo("city")
+        assertThat(hotel.amenities.size).isEqualTo(1)
+        assertThat(hotel.starCount).isEqualTo(3)
+        assertThat(hotel.address.state).isEqualTo("state")
+    }
+
     class LastViewedRepositoryDouble(
         private val expectedValue: ExpectedValue
     ): ILastViewedRepository {
@@ -75,6 +93,10 @@ class LastViewedViewModelTest {
             return flowOf(
                 emptyList()
             )
+        }
+
+        override fun getHotelWithId(hotelId: String): Hotel? {
+            return createHotel()
         }
 
         private fun createHotel(): Hotel = Hotel(

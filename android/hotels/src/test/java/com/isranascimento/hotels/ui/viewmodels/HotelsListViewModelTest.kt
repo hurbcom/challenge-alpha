@@ -74,17 +74,17 @@ class HotelsListViewModelTest {
     fun `WHEN getHotelWithSku is called THEN the viewmodel returns the expected Hotel`() {
         sut = HotelsListViewModel(HotelsListRepositoryDouble(SUCCESS))
 
-        val hotelUIModel = sut.getHotelDetailUIModel("1")
+        val hotel = sut.getHotel("1")
 
-        assertThat(hotelUIModel.id).isEqualTo("1")
-        assertThat(hotelUIModel.name).isEqualTo("Hotel 1")
-        assertThat(hotelUIModel.gallery.size).isEqualTo(1)
-        assertThat(hotelUIModel.url).isEqualTo("Share 1")
-        assertThat(hotelUIModel.description).isEqualTo("Description 1")
-        assertThat(hotelUIModel.address.city).isEqualTo("City 1")
-        assertThat(hotelUIModel.amenities.size).isEqualTo(6)
-        assertThat(hotelUIModel.starCount).isEqualTo(3)
-        assertThat(hotelUIModel.address.state).isEqualTo("State 1")
+        assertThat(hotel.id).isEqualTo("1")
+        assertThat(hotel.name).isEqualTo("Hotel 1")
+        assertThat(hotel.gallery.size).isEqualTo(1)
+        assertThat(hotel.url).isEqualTo("Share 1")
+        assertThat(hotel.description).isEqualTo("Description 1")
+        assertThat(hotel.address.city).isEqualTo("City 1")
+        assertThat(hotel.amenities.size).isEqualTo(6)
+        assertThat(hotel.starCount).isEqualTo(3)
+        assertThat(hotel.address.state).isEqualTo("State 1")
     }
 
     private class HotelsListRepositoryDouble(

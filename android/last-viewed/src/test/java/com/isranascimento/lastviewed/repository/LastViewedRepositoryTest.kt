@@ -40,12 +40,18 @@ class LastViewedRepositoryTest {
             assertThat(hotel).isEqualTo(
                 getExpectedHotel(1)
             )
+            cancelAndConsumeRemainingEvents()
+        }
+    }
 
-            val secondItem = awaitItem()
-            val hotel1 = secondItem[0]
-            assertThat(hotel1).isEqualTo(
-                getExpectedHotel(2)
-            )
+
+    @Test
+    fun `WHEN getHotel is called with correct Id THEN the hotel domain is returned`() = runBlocking {
+        val value = sut.getLastViewed()
+        value.test {
+            val hotelWithId = sut.getHotelWithId("1")
+            assertThat(getExpectedHotel(1)).isEqualTo(hotelWithId)
+
             cancelAndConsumeRemainingEvents()
         }
     }
@@ -72,6 +78,7 @@ class LastViewedRepositoryTest {
                     createHotelEntity(1),
                 ),
                 listOf(
+                    createHotelEntity(1),
                     createHotelEntity(2),
                 )
             )
