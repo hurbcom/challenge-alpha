@@ -17,6 +17,10 @@ class HotelsListViewModel(
     private val _uiState = MutableStateFlow<HotelListUIState>(HotelListUIState.Loading)
     val uiState = _uiState.asStateFlow()
 
+    init {
+        getHotelsList()
+    }
+
     fun getHotelsList() {
         _uiState.value = HotelListUIState.Loading
         viewModelScope.launch {
