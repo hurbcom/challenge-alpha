@@ -34,32 +34,16 @@ class HomeFragment: BaseToolbarFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activeFragment = lastViewedFragment
-
-        childFragmentManager.beginTransaction()
-            .add(R.id.fragment_container, hotelsFragment)
-            .hide(hotelsFragment)
-            .add(R.id.fragment_container, lastViewedFragment)
-            .commit()
+        setupInitialFragmentManager()
         binding.bottomNavigationContainer.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_hotel -> {
-                    childFragmentManager
-                        .beginTransaction()
-                        .hide(activeFragment!!)
-                        .show(hotelsFragment)
-                        .commit()
-                    activeFragment = hotelsFragment
+                    replaceFragment(hotelsFragment)
                     return@setOnItemSelectedListener true
 
                 }
                 R.id.menu_history -> {
-                    childFragmentManager
-                        .beginTransaction()
-                        .hide(activeFragment!!)
-                        .show(lastViewedFragment)
-                        .commit()
-                    activeFragment = lastViewedFragment
+                    replaceFragment(lastViewedFragment)
                     return@setOnItemSelectedListener true
 
                 }
@@ -68,11 +52,22 @@ class HomeFragment: BaseToolbarFragment() {
         }
     }
 
+    private fun setupInitialFragmentManager() {
+        activeFragment = hotelsFragment
+
+        childFragmentManager.beginTransaction()
+            .add(R.id.fragment_container, lastViewedFragment)
+            .hide(lastViewedFragment)
+            .add(R.id.fragment_container, hotelsFragment)
+            .commit()
+    }
+
     private fun replaceFragment(newFragment: Fragment) {
         childFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container, newFragment)
+            .hide(activeFragment!!)
+            .show(newFragment)
             .commit()
-
+        activeFragment = newFragment
     }
 }

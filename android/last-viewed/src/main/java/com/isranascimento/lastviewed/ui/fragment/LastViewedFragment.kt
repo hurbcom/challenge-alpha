@@ -52,13 +52,6 @@ class LastViewedFragment: Fragment(),
     }
 
     private fun setupViewModelObserver() {
-        repository
-            .getLastViewed()
-            .flowWithLifecycle(lifecycle)
-            .onEach {
-                Toast.makeText(requireContext(), "Text ${it.count()}", Toast.LENGTH_LONG).show()
-            }.launchIn(lifecycleScope)
-
         viewModel
             .uiState
             .flowWithLifecycle(lifecycle)
