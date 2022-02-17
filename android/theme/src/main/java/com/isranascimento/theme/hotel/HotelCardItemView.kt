@@ -9,6 +9,7 @@ import com.isranascimento.theme.R
 import com.isranascimento.theme.databinding.HotelListCardItemBinding
 import com.isranascimento.utils.extensions.getDimension
 import com.isranascimento.utils.extensions.load
+import com.isranascimento.utils.extensions.screenWidthInPx
 import com.isranascimento.utils.hotels.createAmenityTextview
 
 class HotelCardItemView(
@@ -17,12 +18,8 @@ class HotelCardItemView(
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     val binding = HotelListCardItemBinding.inflate(LayoutInflater.from(context), this, true)
 
-    init {
-        val lp = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        layoutParams = lp
-    }
-
-    fun bind(hotel: HotelCardItem) {
+    fun bind(hotel: HotelCardItem, width: Int = ViewGroup.LayoutParams.MATCH_PARENT) {
+        setupLayoutParams(width)
         binding.hotelImage.load(hotel.image)
         binding.hotelTitle.text = hotel.name
 
@@ -32,6 +29,12 @@ class HotelCardItemView(
         }
         binding.location.text =
             binding.root.context.getString(R.string.hotel_list_location_text, hotel.city, hotel.state)
+    }
+
+
+    private fun setupLayoutParams(width: Int) {
+        val lp = LayoutParams(width, ViewGroup.LayoutParams.WRAP_CONTENT)
+        layoutParams = lp
     }
 
     fun bindListener(hotel: HotelCardItem, listener: HotelCardItemListener) {
