@@ -17,6 +17,7 @@ class HomeFragment: BaseToolbarFragment() {
 
     private val hotelsFragment = HotelListFragment()
     private val lastViewedFragment = LastViewedFragment()
+    private var activeFragment: Fragment? = null
 
     override fun getToolbarTitle(): String = getString(R.string.app_name)
 
@@ -33,17 +34,37 @@ class HomeFragment: BaseToolbarFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        replaceFragment(lastViewedFragment)
+        activeFragment = lastViewedFragment
+
+        childFragmentManager.beginTransaction()
+            .add(R.id.fragment_container, hotelsFragment)
+            .hide(hotelsFragment)
+            .add(R.id.fragment_container, lastViewedFragment)
+            .commit()
         binding.bottomNavigationContainer.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_hotel -> {
-                    replaceFragment(hotelsFragment)
+                    childFragmentManager
+                        .beginTransaction()
+                        .hide(activeFragment!!)
+                        .show(hotelsFragment)
+                        .commit()
+                    activeFragment = hotelsFragment
+                    return@setOnItemSelectedListener true
+
                 }
                 R.id.menu_history -> {
-                    replaceFragment(lastViewedFragment)
+                    childFragmentManager
+                        .beginTransaction()
+                        .hide(activeFragment!!)
+                        .show(lastViewedFragment)
+                        .commit()
+                    activeFragment = lastViewedFragment
+                    return@setOnItemSelectedListener true
+
                 }
             }
-            return@setOnItemSelectedListener true
+            return@setOnItemSelectedListener false
         }
     }
 

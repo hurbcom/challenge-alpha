@@ -38,25 +38,31 @@ class LastViewedRepositoryTest {
             assertThat(hotelList.size).isEqualTo(1)
             val hotel = hotelList[0]
             assertThat(hotel).isEqualTo(
-                getExpectedHotel()
+                getExpectedHotel(1)
+            )
+
+            val secondItem = awaitItem()
+            val hotel1 = secondItem[0]
+            assertThat(hotel1).isEqualTo(
+                getExpectedHotel(2)
             )
             cancelAndConsumeRemainingEvents()
         }
     }
 
-    private fun getExpectedHotel() = Hotel(
-        id = "1",
-        name = "Name 1",
-        gallery = listOf("GalleryItem 1"),
-        mainImage = "MainImage 1",
-        amenities = listOf("Amenity 1"),
+    private fun getExpectedHotel(number: Int) = Hotel(
+        id = "$number",
+        name = "Name $number",
+        gallery = listOf("GalleryItem $number"),
+        mainImage = "MainImage $number",
+        amenities = listOf("Amenity $number"),
         address = Address(
-            "State 1",
-            "City 1"
+            "State $number",
+            "City $number"
         ),
-        starCount = 1,
-        description = "Description 1",
-        url = "Url 1"
+        starCount = number,
+        description = "Description $number",
+        url = "Url $number"
     )
 
     class RetrieveHotelListDouble: IRetrieveHotelList {
@@ -64,6 +70,9 @@ class LastViewedRepositoryTest {
             return flowOf(
                 listOf(
                     createHotelEntity(1),
+                ),
+                listOf(
+                    createHotelEntity(2),
                 )
             )
         }
