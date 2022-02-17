@@ -78,10 +78,4 @@ class HotelCardItemViewTest {
         sut.binding.root.callOnClick()
         verify { callback.onHotelClick("1") }
     }
-
-    @Test
-    fun `WHEN the view is created THEN the layout params is set correctly`() {
-        assertThat(sut.layoutParams.height).isEqualTo(ViewGroup.LayoutParams.WRAP_CONTENT)
-        assertThat(sut.layoutParams.width).isEqualTo(ViewGroup.LayoutParams.MATCH_PARENT)
-    }
 }
