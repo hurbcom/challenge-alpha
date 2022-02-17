@@ -71,3 +71,5 @@ dependencies {
 
     testImplementation project(':android-test-utils')
 }
+
+apply from: "$rootDir/project-dependency-graph.gradle"

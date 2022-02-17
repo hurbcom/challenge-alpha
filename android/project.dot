@@ -1,0 +1,81 @@
+digraph {
+  graph [label="ChallengeAlpha\n ",labelloc=t,fontsize=30,ranksep=1.4];
+  node [style=filled, fillcolor="#bbbbbb"];
+  rankdir=TB;
+
+  # Projects
+
+  ":android-test-utils" [fillcolor="#baffc9"];
+  ":app" [fillcolor="#baffc9"];
+  ":core" [fillcolor="#baffc9"];
+  ":core-models" [fillcolor="#baffc9"];
+  ":database" [fillcolor="#baffc9"];
+  ":database-dtos" [fillcolor="#baffc9"];
+  ":hotel-detail" [fillcolor="#baffc9"];
+  ":hotels" [fillcolor="#baffc9"];
+  ":last-viewed" [fillcolor="#baffc9"];
+  ":network" [fillcolor="#baffc9"];
+  ":network-dtos" [fillcolor="#ffb3ba"];
+  ":test-utils" [fillcolor="#ffb3ba"];
+  ":theme" [fillcolor="#baffc9"];
+  ":utils" [fillcolor="#baffc9"];
+
+  {rank = same;}
+
+  # Dependencies
+
+  ":android-test-utils" -> ":android-test-utils"
+  ":app" -> ":app"
+  ":app" -> ":network" [style=dotted]
+  ":app" -> ":hotels" [style=dotted]
+  ":app" -> ":theme" [style=dotted]
+  ":app" -> ":core" [style=dotted]
+  ":app" -> ":database" [style=dotted]
+  ":app" -> ":last-viewed" [style=dotted]
+  ":app" -> ":android-test-utils" [style=dotted]
+  ":core" -> ":core"
+  ":core" -> ":theme" [style=dotted]
+  ":core-models" -> ":core-models"
+  ":database" -> ":database-dtos"
+  ":database" -> ":database"
+  ":database" -> ":test-utils" [style=dotted]
+  ":database" -> ":android-test-utils" [style=dotted]
+  ":database-dtos" -> ":database-dtos"
+  ":hotel-detail" -> ":core"
+  ":hotel-detail" -> ":hotel-detail"
+  ":hotel-detail" -> ":database" [style=dotted]
+  ":hotel-detail" -> ":utils" [style=dotted, style=dotted]
+  ":hotel-detail" -> ":core-models" [style=dotted]
+  ":hotel-detail" -> ":test-utils" [style=dotted]
+  ":hotel-detail" -> ":android-test-utils" [style=dotted]
+  ":hotels" -> ":hotels"
+  ":hotels" -> ":utils" [style=dotted]
+  ":hotels" -> ":database" [style=dotted]
+  ":hotels" -> ":network" [style=dotted]
+  ":hotels" -> ":theme" [style=dotted]
+  ":hotels" -> ":core" [style=dotted]
+  ":hotels" -> ":core-models" [style=dotted]
+  ":hotels" -> ":hotel-detail" [style=dotted]
+  ":hotels" -> ":test-utils" [style=dotted]
+  ":hotels" -> ":android-test-utils" [style=dotted]
+  ":last-viewed" -> ":last-viewed"
+  ":last-viewed" -> ":database" [style=dotted]
+  ":last-viewed" -> ":core-models" [style=dotted]
+  ":last-viewed" -> ":theme" [style=dotted]
+  ":last-viewed" -> ":utils" [style=dotted]
+  ":last-viewed" -> ":hotel-detail" [style=dotted]
+  ":last-viewed" -> ":test-utils" [style=dotted]
+  ":last-viewed" -> ":android-test-utils" [style=dotted]
+  ":network" -> ":network-dtos"
+  ":network" -> ":network"
+  ":network" -> ":test-utils" [style=dotted]
+  ":test-utils" -> ":network-dtos"
+  ":theme" -> ":theme"
+  ":theme" -> ":core-models" [style=dotted]
+  ":theme" -> ":utils" [style=dotted]
+  ":theme" -> ":android-test-utils" [style=dotted]
+  ":theme" -> ":test-utils" [style=dotted]
+  ":utils" -> ":utils"
+  ":utils" -> ":android-test-utils" [style=dotted]
+  ":utils" -> ":test-utils" [style=dotted]
+}
