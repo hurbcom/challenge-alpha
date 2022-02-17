@@ -1,7 +1,7 @@
 package com.isranascimento.database
 
 import androidx.room.Room
-import androidx.test.runner.AndroidJUnit4
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import com.isranascimento.androidtestutils.TestContextProvider.context

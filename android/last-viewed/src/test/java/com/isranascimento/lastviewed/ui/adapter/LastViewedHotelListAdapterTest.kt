@@ -1,7 +1,7 @@
 package com.isranascimento.lastviewed.ui.adapter
 
 import android.widget.FrameLayout
-import androidx.test.runner.AndroidJUnit4
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth
 import com.google.common.truth.Truth.assertThat
 import com.isranascimento.androidtestutils.TestContextProvider.context

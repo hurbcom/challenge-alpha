@@ -2,7 +2,7 @@ package com.isranascimento.hoteldetail.adapter
 
 import android.view.LayoutInflater
 import android.widget.ImageView
-import androidx.test.runner.AndroidJUnit4
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.isranascimento.androidtestutils.TestContextProvider
 import com.isranascimento.hoteldetail.databinding.HotelDetailGalleryHolderBinding
 import com.isranascimento.utils.extensions.load

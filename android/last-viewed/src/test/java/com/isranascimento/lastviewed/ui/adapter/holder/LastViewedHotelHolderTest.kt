@@ -1,7 +1,7 @@
 package com.isranascimento.lastviewed.ui.adapter.holder
 
 import android.content.Context
-import androidx.test.runner.AndroidJUnit4
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.isranascimento.lastviewed.ui.adapter.holder.LastViewedHotelHolder.Companion.CARD_WIDTH_IN_PERCENTAGE
 import com.isranascimento.theme.hotel.HotelCardItem
 import com.isranascimento.theme.hotel.HotelCardItemView
