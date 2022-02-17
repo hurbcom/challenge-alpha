@@ -10,6 +10,7 @@
         android:text="@string/last_viewed_hotels"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_medium"
         style="@style/CATextTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
