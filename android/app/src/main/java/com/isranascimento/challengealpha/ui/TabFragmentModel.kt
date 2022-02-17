@@ -6,6 +6,5 @@ import androidx.fragment.app.Fragment
 
 data class TabFragmentModel(
     @StringRes val title: Int,
-    @DrawableRes val icon: Int,
     val fragment: Fragment
 )

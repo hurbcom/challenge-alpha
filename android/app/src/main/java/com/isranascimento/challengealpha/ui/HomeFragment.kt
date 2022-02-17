@@ -16,15 +16,13 @@ import com.isranascimento.lastviewed.ui.fragment.LastViewedFragment
 class HomeFragment: BaseToolbarFragment() {
     private lateinit var binding: HomeFragmentBinding
 
-    private val tabsFragments = listOf<TabFragmentModel>(
+    private val tabsFragments = listOf(
         TabFragmentModel(
             title = R.string.hotels,
-            icon = R.drawable.ic_outline_hotel,
             fragment = HotelListFragment()
         ),
         TabFragmentModel(
             title = R.string.last_viewed,
-            icon = R.drawable.ic_history,
             fragment = LastViewedFragment()
         )
     )
@@ -55,7 +53,6 @@ class HomeFragment: BaseToolbarFragment() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             val tabFragmentModel = tabsFragments[position]
             tab.text = getString(tabFragmentModel.title)
-            tab.icon = AppCompatResources.getDrawable(requireContext(), tabFragmentModel.icon)
         }.attach()
     }
 }
