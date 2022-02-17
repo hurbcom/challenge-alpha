@@ -41,10 +41,6 @@ class LastViewedViewModelTest {
         sut = LastViewedViewModel(LastViewedRepositoryDouble(WITH_ITEMS))
 
         sut.uiState.test {
-            val firstUIState = awaitItem()
-            assertThat(firstUIState).isInstanceOf(LastViewedUIState.Empty::class.java)
-
-            sut.getLastHotelsViewed()
             val uiState = awaitItem()
 
             assertThat(uiState).isInstanceOf(LastViewedUIState.WithItem::class.java)
@@ -52,23 +48,6 @@ class LastViewedViewModelTest {
 
             assertThat(uiState.items.size).isEqualTo(1)
             assertThat(uiState.items[0]).isEqualTo(
-                HotelCardItem(
-                    "id",
-                    "name",
-                    "mainImage",
-                    "city",
-                    "state",
-                    listOf("amenityItem")
-                )
-            )
-
-            val nextUI = awaitItem()
-
-            assertThat(nextUI).isInstanceOf(LastViewedUIState.WithItem::class.java)
-            (nextUI as LastViewedUIState.WithItem)
-
-            assertThat(nextUI.items.size).isEqualTo(2)
-            assertThat(nextUI.items[0]).isEqualTo(
                 HotelCardItem(
                     "id",
                     "name",
@@ -90,8 +69,7 @@ class LastViewedViewModelTest {
         override fun getLastViewed(): Flow<List<Hotel>> {
             if(expectedValue == WITH_ITEMS) {
                 return flowOf(
-                    listOf(createHotel()),
-                    listOf(createHotel(), createHotel())
+                    listOf(createHotel())
                 )
             }
             return flowOf(
