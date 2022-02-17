@@ -44,7 +44,7 @@ class LastViewedHotelListAdapterTest {
         val viewHolderMockk = mockk<LastViewedHotelHolder>()
         every { viewHolderMockk.bind(any()) } just Runs
         every { viewHolderMockk.bindListener(any(), any()) } just Runs
-        
+
         sut.submitList(listOf(createHotelCardItemModel()))
         sut.onBindViewHolder(viewHolderMockk, 0)
 

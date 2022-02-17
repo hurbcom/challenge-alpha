@@ -29,8 +29,10 @@ class HotelsListViewModelTest {
     fun `WHEN repository returns with success THEN the viewmodel update the uiStateFlow to loading and after UiState_Success expected value`() = runBlocking {
         sut = HotelsListViewModel(HotelsListRepositoryDouble(SUCCESS))
         sut.uiState.test {
+            assertThat(awaitItem()).isInstanceOf(HotelListUIState.Success::class.java)
             sut.getHotelsList()
             assertThat(awaitItem()).isInstanceOf(HotelListUIState.Loading::class.java)
+
             val successItem = awaitItem()
             assertThat(successItem).isInstanceOf(HotelListUIState.Success::class.java)
             successItem as HotelListUIState.Success
@@ -44,12 +46,28 @@ class HotelsListViewModelTest {
     @Test
     fun `WHEN repository returns with error THEN the viewmodel update the uiStateFlow to loading and after UiState_Error`() = runBlocking {
         sut = HotelsListViewModel(HotelsListRepositoryDouble(ERROR))
+
         sut.uiState.test {
+            assertThat(awaitItem()).isInstanceOf(HotelListUIState.Error::class.java)
             sut.getHotelsList()
             assertThat(awaitItem()).isInstanceOf(HotelListUIState.Loading::class.java)
             assertThat(awaitItem()).isInstanceOf(HotelListUIState.Error::class.java)
             cancelAndIgnoreRemainingEvents()
         }
+    }
+
+    @Test
+    fun `WHEN the viewModel is created it calls the getHotelsList function and set expected sequence of state`() = runBlocking {
+        sut = HotelsListViewModel(HotelsListRepositoryDouble(ERROR))
+
+        sut.uiState.test {
+            assertThat(awaitItem()).isInstanceOf(HotelListUIState.Error::class.java)
+            sut.getHotelsList()
+            assertThat(awaitItem()).isInstanceOf(HotelListUIState.Loading::class.java)
+            assertThat(awaitItem()).isInstanceOf(HotelListUIState.Error::class.java)
+            cancelAndIgnoreRemainingEvents()
+        }
+
     }
 
     @Test
