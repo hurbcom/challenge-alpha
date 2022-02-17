@@ -13,7 +13,6 @@ import com.isranascimento.hotels.ui.adapter.HotelsListAdapter
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUIState
 import com.isranascimento.hotels.ui.viewmodels.HotelsListViewModel
-import com.isranascimento.utils.extensions.IdentifierUtils
 import com.isranascimento.utils.extensions.navigateToScreen
 import com.isranascimento.utils.extensions.setVisible
 import kotlinx.coroutines.flow.collect
@@ -72,7 +71,8 @@ class HotelListFragment: Fragment(), HotelsListAdapter.HotelsListAdapterContract
     }
 
     override fun onHotelClick(hotelId: String) {
-        navigateToScreen(HotelDetailFragment.newInstance(
+        navigateToScreen(
+            com.isranascimento.hoteldetail.fragment.HotelDetailFragment.newInstance(
             viewModel.getHotelDetailUIModel(hotelId))
         )
     }

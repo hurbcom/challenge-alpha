@@ -1,7 +1,7 @@
-package com.isranascimento.hotels.ui.adapter.detail
+package com.isranascimento.hoteldetail.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import com.isranascimento.hotels.databinding.HotelDetailGalleryHolderBinding
+import com.isranascimento.hoteldetail.databinding.HotelDetailGalleryHolderBinding
 import com.isranascimento.utils.extensions.load
 
 class HotelDetailGalleryItemHolder(

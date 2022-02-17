@@ -1,4 +1,4 @@
-package com.isranascimento.hotels.ui.fragment
+package com.isranascimento.hoteldetail.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,12 +10,12 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.isranascimento.core.fragment.BaseToolbarFragment
-import com.isranascimento.hotels.R
-import com.isranascimento.hotels.databinding.HotelDetailFragmentBinding
 import com.isranascimento.coremodels.hotel.Hotel
-import com.isranascimento.hotels.repository.IHotelsDetailRepository
-import com.isranascimento.hotels.ui.adapter.detail.HotelDetailGalleryAdapter
-import com.isranascimento.hotels.ui.models.HotelDetailUI
+import com.isranascimento.hoteldetail.R
+import com.isranascimento.hoteldetail.adapter.HotelDetailGalleryAdapter
+import com.isranascimento.hoteldetail.databinding.HotelDetailFragmentBinding
+import com.isranascimento.hoteldetail.models.HotelDetailUI
+import com.isranascimento.hoteldetail.repository.IHotelsDetailRepository
 import com.isranascimento.utils.hotels.createAmenityTextview
 import com.isranascimento.utils.extensions.attachSnapHelperWithListener
 import kotlinx.coroutines.launch

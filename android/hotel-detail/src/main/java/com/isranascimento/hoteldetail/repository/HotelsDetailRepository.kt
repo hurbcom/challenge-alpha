@@ -1,9 +1,9 @@
-package com.isranascimento.hotels.repository
+package com.isranascimento.hoteldetail.repository
 
 import com.isranascimento.database.IInsertHotelOnDatabase
 import com.isranascimento.databasedtos.hotels.HotelDatabaseEntity
 import com.isranascimento.coremodels.hotel.Hotel
-import com.isranascimento.hotels.TimerHelper
+import com.isranascimento.hoteldetail.util.TimerHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

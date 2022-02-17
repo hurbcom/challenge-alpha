@@ -1,14 +1,16 @@
-package com.isranascimento.hotels.ui.models
+package com.isranascimento.hoteldetail.models
 
 import com.google.common.truth.Truth.assertThat
-import com.isranascimento.hotels.util.ReturnedValues
+import com.isranascimento.coremodels.hotel.Address
+import com.isranascimento.coremodels.hotel.Hotel
+import com.isranascimento.hoteldetail.util.createHotel
 import org.junit.Test
 
 class HotelDetailUITest {
 
     @Test
     fun `WHEN fromDomainModels is called THEN it returns correct HotelDetailUI`() {
-        val hotel = ReturnedValues.HOTEL_DOMAIN_LIST[0]
+        val hotel = createHotel()
 
         val sut = HotelDetailUI.fromDomainModel(hotel)
 

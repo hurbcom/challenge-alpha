@@ -1,10 +1,10 @@
-package com.isranascimento.hotels.ui.adapter.detail
+package com.isranascimento.hoteldetail.adapter
 
 import android.view.LayoutInflater
 import android.widget.ImageView
 import androidx.test.runner.AndroidJUnit4
 import com.isranascimento.androidtestutils.TestContextProvider
-import com.isranascimento.hotels.databinding.HotelDetailGalleryHolderBinding
+import com.isranascimento.hoteldetail.databinding.HotelDetailGalleryHolderBinding
 import com.isranascimento.utils.extensions.load
 import io.mockk.Runs
 import io.mockk.every

@@ -1,9 +1,9 @@
-package com.isranascimento.hotels.repository
+package com.isranascimento.hoteldetail.repository
 
 import com.isranascimento.database.HotelsDAO
 import com.isranascimento.databasedtos.hotels.HotelDatabaseEntity
-import com.isranascimento.hotels.TimerHelper
-import com.isranascimento.hotels.util.ReturnedValues.HOTEL_DOMAIN_LIST
+import com.isranascimento.hoteldetail.util.TimerHelper
+import com.isranascimento.hoteldetail.util.createHotel
 import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -30,7 +30,7 @@ class HotelsDetailRepositoryTest {
 
     @Test
     fun `WHEN save lastviewed is called THEN it calls the dao with correct params`() = runBlocking {
-        sut.insertIntoLastViewed(HOTEL_DOMAIN_LIST[0])
+        sut.insertIntoLastViewed(createHotel())
         coVerify {
             dao.insertHotel(HotelDatabaseEntity(
                 id = "1",
@@ -42,7 +42,7 @@ class HotelsDetailRepositoryTest {
                 starCount = 3,
                 description = "Description 1",
                 url = "Share 1"
-            ), HOTEL_DOMAIN_LIST[0].amenities, HOTEL_DOMAIN_LIST[0].gallery)
+            ), createHotel().amenities, createHotel().gallery)
         }
     }
 }

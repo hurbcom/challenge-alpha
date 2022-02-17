@@ -1,4 +1,4 @@
-package com.isranascimento.hotels.repository
+package com.isranascimento.hoteldetail.repository
 
 import com.isranascimento.coremodels.hotel.Hotel
 

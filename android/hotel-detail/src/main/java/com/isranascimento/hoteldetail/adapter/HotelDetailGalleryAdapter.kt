@@ -1,11 +1,9 @@
-package com.isranascimento.hotels.ui.adapter.detail
+package com.isranascimento.hoteldetail.adapter
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.isranascimento.hotels.databinding.HotelDetailGalleryHolderBinding
+import com.isranascimento.hoteldetail.databinding.HotelDetailGalleryHolderBinding
 
 class HotelDetailGalleryAdapter(
     private val gallery: List<String>
