@@ -14,6 +14,7 @@ import com.isranascimento.hotels.ui.adapter.HotelsListAdapter
 import com.isranascimento.hotels.ui.models.HotelListUI
 import com.isranascimento.hotels.ui.models.HotelListUIState
 import com.isranascimento.hotels.ui.viewmodels.HotelsListViewModel
+import com.isranascimento.theme.sharedcomponents.ConnectionErrorView
 import com.isranascimento.utils.extensions.navigateToScreen
 import com.isranascimento.utils.extensions.setVisible
 import kotlinx.coroutines.flow.collect
@@ -60,9 +61,20 @@ class HotelListFragment: Fragment(), HotelsListAdapter.HotelsListAdapterContract
 
     private fun renderUi(state: HotelListUIState) {
         binding.loadingIndicator.setVisible(state is HotelListUIState.Loading)
+        binding.hotelList.setVisible(state is HotelListUIState.Success)
+        binding.connectionErrorView.setVisible(state is HotelListUIState.Error)
 
         if(state is HotelListUIState.Success) {
             renderSuccess(state.hotelsValue)
+        }
+        if(state is HotelListUIState.Error) {
+            renderError()
+        }
+    }
+
+    private fun renderError() {
+        binding.connectionErrorView.setOnTryAgainClickListener {
+            viewModel.getHotelsList()
         }
     }
 
