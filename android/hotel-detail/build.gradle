@@ -20,8 +20,8 @@ dependencies {
 
     implementation project(':database')
     implementation project(':utils')
-    implementation project(':core')
     implementation project(':core-models')
+    api project(':core')
 
     testImplementation "io.mockk:mockk:$mockKVersion"
     testImplementation project(':test-utils')

@@ -10,12 +10,14 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.isranascimento.hoteldetail.fragment.HotelDetailFragment
 import com.isranascimento.lastviewed.databinding.LastViewedFragmentBinding
 import com.isranascimento.lastviewed.repository.ILastViewedRepository
 import com.isranascimento.lastviewed.ui.adapter.LastViewedHotelListAdapter
 import com.isranascimento.lastviewed.ui.models.LastViewedUIState
 import com.isranascimento.lastviewed.ui.viewmodel.LastViewedViewModel
 import com.isranascimento.theme.hotel.HotelCardItem
+import com.isranascimento.utils.extensions.navigateToScreen
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -72,6 +74,10 @@ class LastViewedFragment: Fragment(),
     }
 
     override fun onHotelClick(hotelId: String) {
-        TODO("Not yet implemented")
+        navigateToScreen(
+            HotelDetailFragment.newInstance(
+                viewModel.getHotelWithId(hotelId)
+            )
+        )
     }
 }

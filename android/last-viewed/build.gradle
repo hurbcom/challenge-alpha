@@ -23,6 +23,7 @@ dependencies {
     implementation project(':core-models')
     implementation project(':theme')
     implementation project(':utils')
+    implementation project(':hotel-detail')
 
     testImplementation "io.mockk:mockk:$mockKVersion"
     testImplementation "app.cash.turbine:turbine:$turbineVersion"
