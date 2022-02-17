@@ -12,14 +12,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/hotel_list"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/hotel_list_title_item"
-        tools:itemCount="50"
-        android:visibility="visible"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <com.isranascimento.theme.sharedcomponents.ConnectionErrorView
+        android:id="@+id/connection_error_view"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hotel_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="50"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="-235dp"
+            tools:listitem="@layout/hotel_list_title_item" />
+    </com.isranascimento.theme.sharedcomponents.ConnectionErrorView>
 </FrameLayout>

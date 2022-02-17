@@ -7,9 +7,7 @@ import androidx.annotation.VisibleForTesting
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.isranascimento.theme.R
 import com.isranascimento.theme.databinding.HotelListCardItemBinding
-import com.isranascimento.utils.extensions.getDimension
 import com.isranascimento.utils.extensions.load
-import com.isranascimento.utils.extensions.screenWidthInPx
 import com.isranascimento.utils.hotels.createAmenityTextview
 
 class HotelCardItemView(

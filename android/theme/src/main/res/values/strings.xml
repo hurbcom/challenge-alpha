@@ -4,4 +4,6 @@
     <string name="share_action">compartilhar via:</string>
     <string name="gallery_items_text">Imagem %d de %d</string>
     <string name="hotel_list_location_text">%s - %s</string>
+    <string name="connection_error_title">Parece que você está sem conexão. Que tal tentar novamente?</string>
+    <string name="try_again">tentar novamente</string>
 </resources>

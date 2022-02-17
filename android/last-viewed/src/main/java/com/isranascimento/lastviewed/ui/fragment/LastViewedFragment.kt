@@ -4,12 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import com.isranascimento.hoteldetail.fragment.HotelDetailFragment
 import com.isranascimento.lastviewed.R
 import com.isranascimento.lastviewed.databinding.LastViewedFragmentBinding
@@ -18,13 +15,11 @@ import com.isranascimento.lastviewed.ui.adapter.LastViewedHotelListAdapter
 import com.isranascimento.lastviewed.ui.models.LastViewedUIState
 import com.isranascimento.lastviewed.ui.viewmodel.LastViewedViewModel
 import com.isranascimento.theme.hotel.HotelCardItem
-import com.isranascimento.utils.extensions.load
+import com.isranascimento.utils.extensions.loadFromResource
 import com.isranascimento.utils.extensions.navigateToScreen
 import com.isranascimento.utils.extensions.setVisible
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -71,7 +66,7 @@ class LastViewedFragment: Fragment(),
             binding.noHotelGroup.setVisible(false)
             renderSuccess(state.items)
         } else {
-            binding.noHotelPlaceholder.load(R.drawable.ic_empty)
+            binding.noHotelPlaceholder.loadFromResource(R.drawable.ic_empty)
             binding.noHotelGroup.setVisible(true)
         }
     }

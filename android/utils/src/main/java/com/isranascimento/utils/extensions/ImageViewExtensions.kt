@@ -16,7 +16,7 @@ fun ImageView.load(url: String?, scaleType: ImageView.ScaleType = ImageView.Scal
     }
 }
 
-fun ImageView.load(@DrawableRes resourceId: Int) {
+fun ImageView.loadFromResource(@DrawableRes resourceId: Int) {
     if(resourceId != 0) {
         this.setImageResource(resourceId)
     }
