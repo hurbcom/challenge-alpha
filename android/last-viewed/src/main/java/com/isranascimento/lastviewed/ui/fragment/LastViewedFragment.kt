@@ -11,13 +11,16 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.isranascimento.hoteldetail.fragment.HotelDetailFragment
+import com.isranascimento.lastviewed.R
 import com.isranascimento.lastviewed.databinding.LastViewedFragmentBinding
 import com.isranascimento.lastviewed.repository.ILastViewedRepository
 import com.isranascimento.lastviewed.ui.adapter.LastViewedHotelListAdapter
 import com.isranascimento.lastviewed.ui.models.LastViewedUIState
 import com.isranascimento.lastviewed.ui.viewmodel.LastViewedViewModel
 import com.isranascimento.theme.hotel.HotelCardItem
+import com.isranascimento.utils.extensions.load
 import com.isranascimento.utils.extensions.navigateToScreen
+import com.isranascimento.utils.extensions.setVisible
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -65,7 +68,11 @@ class LastViewedFragment: Fragment(),
 
     private fun renderUi(state: LastViewedUIState) {
         if(state is LastViewedUIState.WithItem) {
+            binding.noHotelGroup.setVisible(false)
             renderSuccess(state.items)
+        } else {
+            binding.noHotelPlaceholder.load(R.drawable.ic_empty)
+            binding.noHotelGroup.setVisible(true)
         }
     }
 

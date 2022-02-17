@@ -15,6 +15,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <ImageView
+        android:id="@+id/no_hotel_placeholder"
+        app:layout_constraintTop_toBottomOf="@id/last_viewed_hotels_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing_medium"
+        app:tint="@color/gray"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <TextView
+        android:id="@+id/no_hotel_disclaimer"
+        app:layout_constraintTop_toBottomOf="@id/no_hotel_placeholder"
+        app:layout_constraintStart_toStartOf="@id/no_hotel_placeholder"
+        app:layout_constraintEnd_toEndOf="@id/no_hotel_placeholder"
+        android:text="@string/no_hotel_placeholder_text"
+        style="@style/CATextTitle"
+        android:textColor="@color/gray"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/no_hotel_group"
+        app:constraint_referenced_ids="no_hotel_disclaimer,no_hotel_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/last_viewed_hotels_list"
         tools:listitem="@layout/hotel_list_card_item"

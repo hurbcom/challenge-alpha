@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="last_viewed_hotels">Últimos hotéis vistos</string>
+    <string name="no_hotel_placeholder_text">Assim que você visitar os detalhes de um hotel, ele aparecerá aqui :)</string>
 </resources>
