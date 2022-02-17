@@ -72,7 +72,7 @@ class HotelListAdapterTest {
         sut.onBindViewHolder(viewHolderMockk, 0)
 
         verify {
-            viewHolderMockk.bindListener(any(), contract)
+            viewHolderMockk.bindListener(createHotelUIItem(1), contract)
         }
     }
 

@@ -10,11 +10,14 @@ class LastViewedHotelListAdapter(
     private val contract: LastViewedHotelListAdapterContract
 ): ListAdapter<HotelCardItem, LastViewedHotelHolder>(LastViewedHotelDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LastViewedHotelHolder {
-        TODO("Not yet implemented")
+        return LastViewedHotelHolder(
+            HotelCardItemView(parent.context)
+        )
     }
 
     override fun onBindViewHolder(holder: LastViewedHotelHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(currentList[position])
+        holder.bindListener(currentList[position], contract)
     }
 
     interface LastViewedHotelListAdapterContract: HotelCardItemView.HotelCardItemListener
