@@ -7,10 +7,14 @@ import com.isranascimento.databasedtos.hotels.HotelsWithAmenitiesEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+interface ILastViewedRepository {
+    fun getLastViewed(): Flow<List<Hotel>>
+}
+
 class LastViewedRepository(
     private val retrieveHotelList: IRetrieveHotelList
-) {
-    fun getLastViewed(): Flow<List<Hotel>> {
+) : ILastViewedRepository {
+    override fun getLastViewed(): Flow<List<Hotel>> {
         return retrieveHotelList.getHotelsWithAmenities().map { list ->
             list.asDomainModel()
         }
