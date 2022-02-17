@@ -10,9 +10,17 @@ import com.isranascimento.challengealpha.R
 import com.isranascimento.challengealpha.databinding.HomeFragmentBinding
 import com.isranascimento.core.fragment.BaseToolbarFragment
 import com.isranascimento.hotels.ui.fragment.HotelListFragment
+import com.isranascimento.lastviewed.ui.fragment.LastViewedFragment
 
 class HomeFragment: BaseToolbarFragment() {
     private lateinit var binding: HomeFragmentBinding
+
+    private val hotelsFragment = HotelListFragment()
+    private val lastViewedFragment = LastViewedFragment()
+
+    override fun getToolbarTitle(): String = getString(R.string.app_name)
+
+    override fun hasNavigationItem() = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,15 +31,27 @@ class HomeFragment: BaseToolbarFragment() {
                 binding = it
             }.root
 
-    override fun getToolbarTitle(): String = getString(R.string.app_name)
-
-    override fun hasNavigationItem() = false
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        replaceFragment(hotelsFragment)
+        binding.bottomNavigationContainer.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu_hotel -> {
+                    replaceFragment(hotelsFragment)
+                }
+                R.id.menu_history -> {
+                    replaceFragment(lastViewedFragment)
+                }
+            }
+            return@setOnItemSelectedListener true
+        }
+    }
+
+    private fun replaceFragment(newFragment: Fragment) {
         childFragmentManager
             .beginTransaction()
-            .add(R.id.fragment_container, HotelListFragment())
+            .replace(R.id.fragment_container, newFragment)
             .commit()
+
     }
 }

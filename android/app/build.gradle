@@ -67,6 +67,7 @@ dependencies {
     implementation project(":theme")
     implementation project(':core')
     implementation project(':database')
+    implementation project(':last-viewed')
 
     testImplementation project(':android-test-utils')
 }
