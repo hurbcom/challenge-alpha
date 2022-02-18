@@ -70,6 +70,8 @@ dependencies {
     implementation project(':last-viewed')
 
     testImplementation project(':android-test-utils')
+
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
 }
 
 apply from: "$rootDir/project-dependency-graph.gradle"

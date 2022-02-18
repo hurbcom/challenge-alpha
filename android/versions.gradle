@@ -23,4 +23,7 @@ ext {
     turbineVersion = "0.7.0"
     robolectricVersion = "4.7.3"
     androidxTestVersion = "1.4.0"
+
+    // Debugging
+    leakCanaryVersion = "2.8.1"
 }
