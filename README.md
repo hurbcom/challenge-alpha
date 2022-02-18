@@ -1,48 +1,41 @@
-# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Alpha Challenge
+# Challenge Alpha
 [![CI](https://github.com/aka-godinez-2/challenge-alpha/actions/workflows/main.yml/badge.svg)](https://github.com/aka-godinez-2/challenge-alpha/actions/workflows/main.yml)
 
-[[English](README.md) | [Português](README.pt.md)]
+### Como abrir o projeto?
+O projeto foi criado a partir do Android Studio Arctic Fox, então qualquer versão do mesmo igual ou superior à essa deve abrir sem maiores complicações. 
+Para visualizar o projeto no android studio, importe o projeto à partir do arquivo `build.gradle` que se encontra na pasta `/android`
 
-Welcome to Hurb's mobile team coding challenge!
+### Árvore de dependências entre os módulos do projeto
+<p align="center">
+  <img src="/android/project.dot.png" alt="Dependency Tree" />
+</p>
 
-We are always looking to expand our team with dedicated devs, see if you have open positions in our [Gupy](https://hurb.gupy.io/), if you don't have an open position, send a message on LinkedIn or open an issue.
+### Principais features
+- Listagem de hotéis a partir da API Rest
+- Tela de detalhes de hotéis
+- Últimos hotéis vistos
 
-The challenge is to create a mobile app (**Swift**, **Kotlin**) that consumes the JSON exposed by our REST API or GraphQL search and presents the information in a listing. You are free to use third-party libraries.
+### Principais stacks tech
+- [Coroutines + Flow](https://kotlinlang.org/docs/coroutines-guide.html) - Programação assíncrona com Kotlin
+- [Detekt](https://detekt.dev/) - Análise estática para Kotlin
+- [Firebase Distribution](https://firebase.google.com/docs/app-distribution) - Upload dos apks gerados a partir do CI
+- [Gerenciamento de versão](https://github.com/aka-godinez-2/challenge-alpha/blob/master/android/current-version.txt) - Tags sendo gerenciadas por esse arquivo + Schedule do Github Action
+- [Github Actions](https://github.com/features/actions) - CI/CD¹
+- [Gradle Doctor](https://runningcode.github.io/gradle-doctor/) - Sugestões para melhoramento de builds com gradle²
+- [Koin](https://insert-koin.io/) - Injeção de dependencia para Kotlin!
+- [Kover](https://github.com/Kotlin/kotlinx-kover) + [Codecov](https://about.codecov.io/) - Coverage dos testes do código²
+- [Leak Canary](https://square.github.io/leakcanary/) - Detecção de memory leaks
+- [Robolectric](http://robolectric.org/) - Testes unitários em classes que utilizem framework do android
+- [Room](https://developer.android.com/training/data-storage/room) - Database local com SQLite no android
+- [Unused Resources Remover](https://github.com/konifar/gradle-unused-resources-remover-plugin) - Plugin do gradle para remover arquivos não utilizados do projeto
 
-We want to see the **maximum of your technical ability**! You decide the limit.
+¹Tive um "pequeno-grande" problema com o CI. Basicamente fui banido do github por não saber que não podia usar os github actions (nos self-hosted runners do github) para algumas coisas, por isso criei essa conta "2". Depois de entrar em contato com o suporte, decidi comentar o código de alguns jobs (como fazer o upload pro codecov e abrir PR para remover os arquivos não utilizados) afim de evitar problemas novamente.
 
-[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/company/hurb/)
-
-#### [>>>>> See Wiki for challenge details. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
-
-## Minimum requirements
-
--   Fork this challenge and create your project (or workspace) using your version of that repository, as soon as you finish the challenge, submit a _pull request_.
-    -   If you have any reason not to submit a _pull request_, create a private repository on Github, do every challenge on the **master** branch and don't forget to fill in the `pull-request.txt` file. As soon as you finish your development, add the user `automator-hurb` to your repository as a contributor and make it available for at least 30 days. **Do not add the `automator-hurb` until development is complete.**
-    -   If you have any problem creating the private repository, at the end of the challenge fill in the file called `pull-request.txt`, compress the project folder - including the `.git` folder - and send it to us by email.
--   Make asynchronous calls to the API and log the data received.
-
--   Have tests for the code created
-
-## Evaluation criteria
-
--   **Organization of code**: Separation of modules, view and model, back-end and front-end
--   **Clarity**: Does the README explain briefly what the problem is and how can I run the application?
--   **Assertiveness**: Is the application doing what is expected? If something is missing, does the README explain why?
--   **Code readability** (including comments)
--   **Security**: Are there any clear vulnerabilities?
--   **Test coverage** (We don't expect full coverage)
--   **History of commits** (structure and quality)
--   **UX**: Is the interface user-friendly and self-explanatory? Is the API intuitive?
--   **Technical choices**: Is the choice of libraries, database, architecture, etc. the best choice for the application?
-
-
-## Doubts
-
-Any questions you may have, check the [_issues_](https://github.com/HurbCom/challenge-alpha/issues) to see if someone hasn't already and if you can't find your answer, open one yourself. new issue!
-
-Godspeed! ;)
+²Como o gradle doctor acaba adicionando uma camada extra de configuração para buildar o projeto, preferi comentar o código dele no momento final para vcs não terem grandes problemas ao rodar o projeto
 
 <p align="center">
-  <img src="ca.jpg" alt="Challange accepted" />
+  <img src="https://memegenerator.net/img/instances/55383699/challenge-completed.jpg" alt="Challenge Completed" />
 </p>
+
+
+
