@@ -9,9 +9,7 @@ class LastViewedHotelHolder(
     private val cardItemView: HotelCardItemView
 ): RecyclerView.ViewHolder(cardItemView) {
     fun bind(card: HotelCardItem) {
-        cardItemView.bind(card,
-            (itemView.context.screenWidthInPx() * CARD_WIDTH_IN_PERCENTAGE).toInt()
-        )
+        cardItemView.bind(card)
     }
 
     fun bindListener(

@@ -5,26 +5,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/last_viewed_hotels_title"
-        android:text="@string/last_viewed_hotels"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginHorizontal="@dimen/spacing_medium"
-        android:layout_marginTop="@dimen/spacing_medium"
-        style="@style/CATextTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <ImageView
         android:id="@+id/no_hotel_placeholder"
-        app:layout_constraintTop_toBottomOf="@id/last_viewed_hotels_title"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="@dimen/spacing_medium"
         app:tint="@color/gray"
         android:layout_marginHorizontal="@dimen/spacing_medium"
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
     <TextView
         android:id="@+id/no_hotel_disclaimer"
@@ -48,9 +39,8 @@
         android:id="@+id/last_viewed_hotels_list"
         tools:listitem="@layout/hotel_list_card_item"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/last_viewed_hotels_title"
-        android:layout_marginTop="@dimen/spacing_small"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

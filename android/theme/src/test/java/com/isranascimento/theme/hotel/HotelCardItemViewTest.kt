@@ -44,13 +44,7 @@ class HotelCardItemViewTest {
     }
 
     @Test
-    fun `WHEN bind is called with width THEN it sets the view layout params width correctly`() {
-        sut.bind(createHotelCardItem(), 300)
-        assertThat(sut.layoutParams.width).isEqualTo(300)
-    }
-
-    @Test
-    fun `WHEN bind is called without width THEN it sets the view layout params width to match parent`() {
+    fun `WHEN bind is called THEN it sets the view layout params width to match parent`() {
         sut.bind(createHotelCardItem())
         assertThat(sut.layoutParams.width).isEqualTo(ViewGroup.LayoutParams.MATCH_PARENT)
     }

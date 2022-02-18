@@ -25,19 +25,17 @@ class LastViewedHotelHolderTest {
     }
     @Before
     fun setup() {
-        every { cardViewMock.bind(any(), any()) } just Runs
+        every { cardViewMock.bind(any()) } just Runs
         mockkStatic(Context::screenWidthInPx)
         sut = LastViewedHotelHolder(cardViewMock)
     }
 
     @Test
     fun `WHEN the holder bind is called THEN it calls the card bind with correct argument`() {
-        every { sut.itemView.context.screenWidthInPx() } returns 100
-
         sut.bind(createHotelCardItem())
 
         verify {
-            cardViewMock.bind(createHotelCardItem(), (100 * CARD_WIDTH_IN_PERCENTAGE).toInt())
+            cardViewMock.bind(createHotelCardItem())
         }
     }
 

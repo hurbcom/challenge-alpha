@@ -16,8 +16,8 @@ class HotelCardItemView(
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     val binding = HotelListCardItemBinding.inflate(LayoutInflater.from(context), this, true)
 
-    fun bind(hotel: HotelCardItem, width: Int = ViewGroup.LayoutParams.MATCH_PARENT) {
-        setupLayoutParams(width)
+    fun bind(hotel: HotelCardItem) {
+        setupLayoutParams()
         binding.hotelImage.load(hotel.image)
         binding.hotelTitle.text = hotel.name
 
@@ -30,8 +30,8 @@ class HotelCardItemView(
     }
 
 
-    private fun setupLayoutParams(width: Int) {
-        val lp = LayoutParams(width, ViewGroup.LayoutParams.WRAP_CONTENT)
+    private fun setupLayoutParams() {
+        val lp = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         layoutParams = lp
     }
 
