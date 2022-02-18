@@ -6,7 +6,5 @@
     <color name="text">#1E1E1E</color>
     <color name="rating_bar_tint">#FFB102</color>
     <color name="gray">#999</color>
-    <color name="light_gray">#B6B6B6</color>
-
     <color name="image_foreground">#33000000</color>
 </resources>
