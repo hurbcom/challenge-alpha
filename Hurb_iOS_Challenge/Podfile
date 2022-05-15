@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Hurb_iOS_Challenge' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Hurb_iOS_Challenge
+
+  target 'Hurb_iOS_ChallengeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Hurb_iOS_ChallengeUITests' do
+    # Pods for testing
+  end
+  
+  # Pods for Alamorife
+  
+  pod 'Alamofire'
+
+  # Pods for Kingfisher
+
+  pod 'Kingfisher'
+
+end
