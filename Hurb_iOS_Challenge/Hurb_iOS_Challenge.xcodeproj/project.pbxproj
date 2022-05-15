@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		3080E2FA282DEB6B00584255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E2F9282DEB6B00584255 /* AppDelegate.swift */; };
 		3080E2FC282DEB6B00584255 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E2FB282DEB6B00584255 /* SceneDelegate.swift */; };
-		3080E2FE282DEB6B00584255 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E2FD282DEB6B00584255 /* ViewController.swift */; };
-		3080E301282DEB6B00584255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3080E2FF282DEB6B00584255 /* Main.storyboard */; };
+		3080E2FE282DEB6B00584255 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E2FD282DEB6B00584255 /* HomeViewController.swift */; };
 		3080E303282DEB6D00584255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3080E302282DEB6D00584255 /* Assets.xcassets */; };
 		3080E306282DEB6D00584255 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3080E304282DEB6D00584255 /* LaunchScreen.storyboard */; };
 		3080E311282DEB6D00584255 /* Hurb_iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E310282DEB6D00584255 /* Hurb_iOS_ChallengeTests.swift */; };
 		3080E31B282DEB6D00584255 /* Hurb_iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E31A282DEB6D00584255 /* Hurb_iOS_ChallengeUITests.swift */; };
 		3080E31D282DEB6D00584255 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E31C282DEB6D00584255 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */; };
+		30A205C028318B1400EDC26D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A205BF28318B1400EDC26D /* CodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,7 @@
 		3080E2F6282DEB6B00584255 /* Hurb_iOS_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hurb_iOS_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3080E2F9282DEB6B00584255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3080E2FB282DEB6B00584255 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3080E2FD282DEB6B00584255 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3080E300282DEB6B00584255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3080E2FD282DEB6B00584255 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3080E302282DEB6D00584255 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3080E305282DEB6D00584255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3080E307282DEB6D00584255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		3080E316282DEB6D00584255 /* Hurb_iOS_ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hurb_iOS_ChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3080E31A282DEB6D00584255 /* Hurb_iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
 		3080E31C282DEB6D00584255 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		30A205BF28318B1400EDC26D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +99,17 @@
 		3080E2F8282DEB6B00584255 /* Hurb_iOS_Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				3080E2F9282DEB6B00584255 /* AppDelegate.swift */,
-				3080E2FB282DEB6B00584255 /* SceneDelegate.swift */,
-				3080E2FD282DEB6B00584255 /* ViewController.swift */,
-				3080E2FF282DEB6B00584255 /* Main.storyboard */,
-				3080E302282DEB6D00584255 /* Assets.xcassets */,
-				3080E304282DEB6D00584255 /* LaunchScreen.storyboard */,
 				3080E307282DEB6D00584255 /* Info.plist */,
+				30A205BD2831898900EDC26D /* Application */,
+				30A205BC2831898300EDC26D /* Model */,
+				30A205BB2831897C00EDC26D /* View */,
+				30A205BA2831897700EDC26D /* ViewModel */,
+				30A205B92831896F00EDC26D /* Controller */,
+				30A205B82831896400EDC26D /* Networking */,
+				30A205B72831895D00EDC26D /* Utils */,
+				30A205BE28318B0200EDC26D /* Helper */,
+				30A205B62831895500EDC26D /* Constants */,
+				30A205B52831894300EDC26D /* Resources */,
 			);
 			path = Hurb_iOS_Challenge;
 			sourceTree = "<group>";
@@ -125,6 +129,82 @@
 				3080E31C282DEB6D00584255 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */,
 			);
 			path = Hurb_iOS_ChallengeUITests;
+			sourceTree = "<group>";
+		};
+		30A205B52831894300EDC26D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3080E302282DEB6D00584255 /* Assets.xcassets */,
+				3080E304282DEB6D00584255 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		30A205B62831895500EDC26D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		30A205B72831895D00EDC26D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		30A205B82831896400EDC26D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		30A205B92831896F00EDC26D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3080E2FD282DEB6B00584255 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		30A205BA2831897700EDC26D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		30A205BB2831897C00EDC26D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		30A205BC2831898300EDC26D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30A205BD2831898900EDC26D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3080E2F9282DEB6B00584255 /* AppDelegate.swift */,
+				3080E2FB282DEB6B00584255 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		30A205BE28318B0200EDC26D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				30A205BF28318B1400EDC26D /* CodeView.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +313,6 @@
 			files = (
 				3080E306282DEB6D00584255 /* LaunchScreen.storyboard in Resources */,
 				3080E303282DEB6D00584255 /* Assets.xcassets in Resources */,
-				3080E301282DEB6B00584255 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +337,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3080E2FE282DEB6B00584255 /* ViewController.swift in Sources */,
+				3080E2FE282DEB6B00584255 /* HomeViewController.swift in Sources */,
 				3080E2FA282DEB6B00584255 /* AppDelegate.swift in Sources */,
 				3080E2FC282DEB6B00584255 /* SceneDelegate.swift in Sources */,
+				30A205C028318B1400EDC26D /* CodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +377,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3080E2FF282DEB6B00584255 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3080E300282DEB6B00584255 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3080E304282DEB6D00584255 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,9 +516,9 @@
 				INFOPLIST_FILE = Hurb_iOS_Challenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +528,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -472,9 +544,9 @@
 				INFOPLIST_FILE = Hurb_iOS_Challenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,7 +556,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
