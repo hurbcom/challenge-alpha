@@ -17,6 +17,7 @@
 		3080E31D282DEB6D00584255 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E31C282DEB6D00584255 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */; };
 		30835ACA283322F600421C1A /* hotel.json in Resources */ = {isa = PBXBuildFile; fileRef = 30835AC9283322F600421C1A /* hotel.json */; };
 		30835ACC283323C500421C1A /* package.json in Resources */ = {isa = PBXBuildFile; fileRef = 30835ACB283323C500421C1A /* package.json */; };
+		30835ACE283AE87100421C1A /* AnchorConstraints+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835ACD283AE87100421C1A /* AnchorConstraints+UIView.swift */; };
 		30A205C028318B1400EDC26D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A205BF28318B1400EDC26D /* CodeView.swift */; };
 		4E2D257CE4A53FACC8873D0C /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4884F8363DA07CBD98F6BF /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework */; };
 		DD52A6507EE2F23D735949E9 /* Pods_Hurb_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4776A26021AD50F37DF6D3 /* Pods_Hurb_iOS_ChallengeTests.framework */; };
@@ -56,6 +57,7 @@
 		3080E31C282DEB6D00584255 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		30835AC9283322F600421C1A /* hotel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hotel.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		30835ACB283323C500421C1A /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		30835ACD283AE87100421C1A /* AnchorConstraints+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnchorConstraints+UIView.swift"; sourceTree = "<group>"; };
 		30A205BF28318B1400EDC26D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		3550B1C6CD2BF9F2287753BC /* Pods-Hurb_iOS_ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb_iOS_ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-Hurb_iOS_ChallengeTests/Pods-Hurb_iOS_ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		4DCCBEB9BFF194456F0BBC9F /* Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests/Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		30A205B72831895D00EDC26D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				30835ACD283AE87100421C1A /* AnchorConstraints+UIView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				3080E2FE282DEB6B00584255 /* HomeViewController.swift in Sources */,
 				3080E2FA282DEB6B00584255 /* AppDelegate.swift in Sources */,
 				3080E2FC282DEB6B00584255 /* SceneDelegate.swift in Sources */,
+				30835ACE283AE87100421C1A /* AnchorConstraints+UIView.swift in Sources */,
 				30A205C028318B1400EDC26D /* CodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
