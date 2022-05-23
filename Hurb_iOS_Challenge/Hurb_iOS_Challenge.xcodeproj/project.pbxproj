@@ -21,6 +21,18 @@
 		30835AD0283AEAD200421C1A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835ACF283AEAD200421C1A /* MainTabBarController.swift */; };
 		30835AD2283AEBA100421C1A /* LastSeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AD1283AEBA100421C1A /* LastSeenViewController.swift */; };
 		30835AD4283AEBD100421C1A /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AD3283AEBD100421C1A /* FavoritesViewController.swift */; };
+		30835AD6283AF7E600421C1A /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AD5283AF7E600421C1A /* NetworkingService.swift */; };
+		30835AD8283AF8F600421C1A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AD7283AF8F600421C1A /* Constants.swift */; };
+		30835ADA283AFCF800421C1A /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AD9283AFCF800421C1A /* Hotel.swift */; };
+		30835ADC283AFD2500421C1A /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835ADB283AFD2500421C1A /* Filters.swift */; };
+		30835ADE283AFDDB00421C1A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835ADD283AFDDB00421C1A /* Result.swift */; };
+		30835AE0283AFE0900421C1A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835ADF283AFE0900421C1A /* Address.swift */; };
+		30835AE2283AFE2F00421C1A /* GeographicInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AE1283AFE2F00421C1A /* GeographicInformation.swift */; };
+		30835AE4283AFE7500421C1A /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AE3283AFE7400421C1A /* Price.swift */; };
+		30835AE6283AFFF500421C1A /* QuantityDescriptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AE5283AFFF500421C1A /* QuantityDescriptors.swift */; };
+		30835AE8283B000D00421C1A /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AE7283B000D00421C1A /* Gallery.swift */; };
+		30835AEA283B002500421C1A /* FeaturedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AE9283B002500421C1A /* FeaturedItem.swift */; };
+		30835AEC283B00A000421C1A /* JSONMockedEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AEB283B00A000421C1A /* JSONMockedEnums.swift */; };
 		30A205C028318B1400EDC26D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A205BF28318B1400EDC26D /* CodeView.swift */; };
 		4E2D257CE4A53FACC8873D0C /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4884F8363DA07CBD98F6BF /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework */; };
 		DD52A6507EE2F23D735949E9 /* Pods_Hurb_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4776A26021AD50F37DF6D3 /* Pods_Hurb_iOS_ChallengeTests.framework */; };
@@ -64,6 +76,18 @@
 		30835ACF283AEAD200421C1A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		30835AD1283AEBA100421C1A /* LastSeenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSeenViewController.swift; sourceTree = "<group>"; };
 		30835AD3283AEBD100421C1A /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		30835AD5283AF7E600421C1A /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		30835AD7283AF8F600421C1A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30835AD9283AFCF800421C1A /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		30835ADB283AFD2500421C1A /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		30835ADD283AFDDB00421C1A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		30835ADF283AFE0900421C1A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		30835AE1283AFE2F00421C1A /* GeographicInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicInformation.swift; sourceTree = "<group>"; };
+		30835AE3283AFE7400421C1A /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		30835AE5283AFFF500421C1A /* QuantityDescriptors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityDescriptors.swift; sourceTree = "<group>"; };
+		30835AE7283B000D00421C1A /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		30835AE9283B002500421C1A /* FeaturedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedItem.swift; sourceTree = "<group>"; };
+		30835AEB283B00A000421C1A /* JSONMockedEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMockedEnums.swift; sourceTree = "<group>"; };
 		30A205BF28318B1400EDC26D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		3550B1C6CD2BF9F2287753BC /* Pods-Hurb_iOS_ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb_iOS_ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-Hurb_iOS_ChallengeTests/Pods-Hurb_iOS_ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		4DCCBEB9BFF194456F0BBC9F /* Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests/Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +221,7 @@
 		30A205B62831895500EDC26D /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				30835AD7283AF8F600421C1A /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -212,6 +237,7 @@
 		30A205B82831896400EDC26D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				30835AD5283AF7E600421C1A /* NetworkingService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -244,6 +270,16 @@
 		30A205BC2831898300EDC26D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30835AD9283AFCF800421C1A /* Hotel.swift */,
+				30835ADB283AFD2500421C1A /* Filters.swift */,
+				30835ADD283AFDDB00421C1A /* Result.swift */,
+				30835ADF283AFE0900421C1A /* Address.swift */,
+				30835AE1283AFE2F00421C1A /* GeographicInformation.swift */,
+				30835AE3283AFE7400421C1A /* Price.swift */,
+				30835AE5283AFFF500421C1A /* QuantityDescriptors.swift */,
+				30835AE7283B000D00421C1A /* Gallery.swift */,
+				30835AE9283B002500421C1A /* FeaturedItem.swift */,
+				30835AEB283B00A000421C1A /* JSONMockedEnums.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -506,13 +542,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				3080E2FE282DEB6B00584255 /* HomeViewController.swift in Sources */,
+				30835ADE283AFDDB00421C1A /* Result.swift in Sources */,
 				3080E2FA282DEB6B00584255 /* AppDelegate.swift in Sources */,
 				30835AD4283AEBD100421C1A /* FavoritesViewController.swift in Sources */,
+				30835AD6283AF7E600421C1A /* NetworkingService.swift in Sources */,
 				30835AD2283AEBA100421C1A /* LastSeenViewController.swift in Sources */,
+				30835AE4283AFE7500421C1A /* Price.swift in Sources */,
+				30835AEA283B002500421C1A /* FeaturedItem.swift in Sources */,
+				30835AE0283AFE0900421C1A /* Address.swift in Sources */,
+				30835AD8283AF8F600421C1A /* Constants.swift in Sources */,
 				30835AD0283AEAD200421C1A /* MainTabBarController.swift in Sources */,
+				30835AE8283B000D00421C1A /* Gallery.swift in Sources */,
 				3080E2FC282DEB6B00584255 /* SceneDelegate.swift in Sources */,
+				30835AE6283AFFF500421C1A /* QuantityDescriptors.swift in Sources */,
 				30835ACE283AE87100421C1A /* AnchorConstraints+UIView.swift in Sources */,
+				30835ADC283AFD2500421C1A /* Filters.swift in Sources */,
+				30835AE2283AFE2F00421C1A /* GeographicInformation.swift in Sources */,
+				30835AEC283B00A000421C1A /* JSONMockedEnums.swift in Sources */,
 				30A205C028318B1400EDC26D /* CodeView.swift in Sources */,
+				30835ADA283AFCF800421C1A /* Hotel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
