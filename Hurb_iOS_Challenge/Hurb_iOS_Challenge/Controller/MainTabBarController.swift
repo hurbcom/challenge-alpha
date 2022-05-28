@@ -58,7 +58,7 @@ class MainTabBarController: UITabBarController {
         nav.navigationBar.barStyle = .default
         nav.navigationBar.isTranslucent = false
         nav.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        nav.hidesBarsOnSwipe = true
+        nav.hidesBarsOnSwipe = false
         
         configureNavigationBar(nav: nav)
         
