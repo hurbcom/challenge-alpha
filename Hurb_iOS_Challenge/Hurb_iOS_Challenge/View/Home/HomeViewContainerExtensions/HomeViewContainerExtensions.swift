@@ -28,11 +28,18 @@ extension HomeContainerView: UICollectionViewDataSource {
 }
 
 extension HomeContainerView: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        DispatchQueue.main.async { [weak self] in
+            let viewController = DetailViewController()
+            guard let hotelsResult = self?.hotelsResult else { return }
+            viewController.detailContainerView.hotelsResult  = hotelsResult[indexPath.row]
+            self?.parentViewController?.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
 }
 
 extension HomeContainerView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return Constants.HomeCollectionViewConstraints.HOME_COLLECTIONVIEW_DIMENTIONS_WITH_PADDING
+        return Constants.HomeCollectionViewConstraints.HOME_COLLECTIONVIEW_DIMENTIONS_SIZE_WITH_PADDING
     }
 }

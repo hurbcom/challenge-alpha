@@ -43,5 +43,9 @@ extension HomeViewController: CodeView {
                                   bottom: view.bottomAnchor,
                                   trailling: view.trailingAnchor)
     }
+    
+    func setupAdditionalConfiguration() {
+        homeContainerView.parentViewController = self
+    }
 }
 

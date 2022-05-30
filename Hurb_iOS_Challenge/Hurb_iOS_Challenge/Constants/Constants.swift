@@ -18,7 +18,11 @@ struct Constants {
     
     // MARK: - HomeCollectionView Constraints
     struct HomeCollectionViewConstraints {
-        static let HOME_COLLECTIONVIEW_DIMENTIONS_WITH_PADDING = CGSize(width: UIScreen.main.bounds.width - 32, height: 300)
+        static let HOME_COLLECTIONVIEW_DIMENTIONS_SIZE_WITH_PADDING = CGSize(width: UIScreen.main.bounds.width - 32, height: 330)
+    }
+    
+    struct DetailContainerViewConstraints {
+        static let DETAIL_IMAGES_DIMENTIONS_WITH_PADDING = CGSize(width: UIScreen.main.bounds.width, height: 400)
     }
     
     // MARK: - UIAlerts Messages

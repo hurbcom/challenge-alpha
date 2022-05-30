@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class HomeCollectionViewCell: UICollectionViewCell {
-    // MARK: - Properties
+    // MARK: - Properties    
     var hotelResult: HotelResult? {
         didSet {
             configureCell()
@@ -25,7 +25,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     lazy var imageScrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.setDimensions(width: Constants.HomeCollectionViewConstraints.HOME_COLLECTIONVIEW_DIMENTIONS_WITH_PADDING.width,
+        scrollView.setDimensions(width: Constants.HomeCollectionViewConstraints.HOME_COLLECTIONVIEW_DIMENTIONS_SIZE_WITH_PADDING.width,
                                  height: 180)
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
@@ -53,20 +53,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private var nightsLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.textAlignment = .left
-        label.textColor = .black
-        return label
-    }()
-    
     private var originalPriceLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         label.textAlignment = .left
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 12, weight: .light)
         return label
     }()
     
@@ -82,7 +73,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.textAlignment = .left
-        label.textColor = .green
+        label.textColor = .freeCancelationGreen
         label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         return label
     }()
@@ -91,7 +82,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.numberOfLines = 2
         label.textAlignment = .left
+        label.textColor = .gray
+        return label
+    }()
+    
+    private var starLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .left
         label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 13, weight: .light)
         return label
     }()
     
@@ -114,16 +114,20 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         hotelDescriptionLabel.attributedText = viewModel.hotelDescriptionText
         finalPriceLabel.attributedText = viewModel.hotelFinalPriceText
+        starLabel.text = viewModel.hotelStars
         freeCancelationLabel.text = viewModel.freeCancelingText
         hotelAmenitiesLabel.attributedText = viewModel.hotelAmenitiesText
         
         /// Configure `ScrollView` and `PageControl`.
+        imagePageControl.numberOfPages = viewModel.hotelsImage.count
+        imagePageControl.currentPage = 0
+        
         for imageURL in viewModel.hotelsImage {
             let url = URL(string: imageURL)
             let imageView = UIImageView()
             imageView.kf.setImage(with: url)
             imageView.contentMode = .scaleAspectFill
-            imageView.setDimensions(width: Constants.HomeCollectionViewConstraints.HOME_COLLECTIONVIEW_DIMENTIONS_WITH_PADDING.width,
+            imageView.setDimensions(width: Constants.HomeCollectionViewConstraints.HOME_COLLECTIONVIEW_DIMENTIONS_SIZE_WITH_PADDING.width,
                                     height: 180)
             imageView.clipsToBounds = true
             if imageView.image == nil {
@@ -135,8 +139,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         imageScrollView.contentSize = CGSize(width: imageScrollView.contentSize.width * CGFloat(viewModel.hotelsImage.count),
                                              height: imageScrollView.contentSize.height)
-        imagePageControl.numberOfPages = viewModel.hotelsImage.count
-        imagePageControl.currentPage = 0
+        
+        /// Configure `FreeCancelationLabel`.
+        if freeCancelationLabel.text == "" {
+            freeCancelationLabel.isHidden = true
+        }
     }
 }
 
@@ -147,6 +154,7 @@ extension HomeCollectionViewCell: CodeView {
         addSubview(imagePageControl)
         addSubview(hotelDescriptionLabel)
         addSubview(finalPriceLabel)
+        addSubview(starLabel)
         addSubview(hotelAmenitiesLabel)
         addSubview(freeCancelationLabel)
     }
@@ -170,7 +178,12 @@ extension HomeCollectionViewCell: CodeView {
                                trailling: trailingAnchor,
                                paddingTop: 8)
         
-        hotelAmenitiesLabel.anchor(top: finalPriceLabel.bottomAnchor,
+        starLabel.anchor(top: finalPriceLabel.bottomAnchor,
+                                   leading: leadingAnchor,
+                                   trailling: trailingAnchor,
+                                   paddingTop: 8)
+        
+        hotelAmenitiesLabel.anchor(top: starLabel.bottomAnchor,
                                    leading: leadingAnchor,
                                    trailling: trailingAnchor,
                                    paddingTop: 8)

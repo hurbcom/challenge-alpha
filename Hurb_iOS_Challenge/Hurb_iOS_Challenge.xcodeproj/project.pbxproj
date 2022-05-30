@@ -11,6 +11,8 @@
 		30671210283DC13D00210FAE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3067120F283DC13D00210FAE /* HomeViewModel.swift */; };
 		30671212283DC77900210FAE /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30671211283DC77900210FAE /* StringUtils.swift */; };
 		30671214283DC89400210FAE /* CurrencyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30671213283DC89400210FAE /* CurrencyUtils.swift */; };
+		306712182843FC5700210FAE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306712172843FC5700210FAE /* DetailViewController.swift */; };
+		3067121B284402E900210FAE /* DetailContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3067121A284402E900210FAE /* DetailContainerView.swift */; };
 		3080E2FA282DEB6B00584255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E2F9282DEB6B00584255 /* AppDelegate.swift */; };
 		3080E2FC282DEB6B00584255 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E2FB282DEB6B00584255 /* SceneDelegate.swift */; };
 		3080E2FE282DEB6B00584255 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080E2FD282DEB6B00584255 /* HomeViewController.swift */; };
@@ -41,6 +43,8 @@
 		30835AF4283C4E8D00421C1A /* HomeViewContainerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AF3283C4E8D00421C1A /* HomeViewContainerExtensions.swift */; };
 		30835AF7283C4FD200421C1A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30835AF6283C4FD200421C1A /* HomeCollectionViewCell.swift */; };
 		30A205C028318B1400EDC26D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A205BF28318B1400EDC26D /* CodeView.swift */; };
+		30AB9B8728440B3C00A28464 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AB9B8628440B3C00A28464 /* UIColorExtension.swift */; };
+		30AB9B8A2844386400A28464 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AB9B892844386400A28464 /* LineView.swift */; };
 		4E2D257CE4A53FACC8873D0C /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4884F8363DA07CBD98F6BF /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework */; };
 		DD52A6507EE2F23D735949E9 /* Pods_Hurb_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4776A26021AD50F37DF6D3 /* Pods_Hurb_iOS_ChallengeTests.framework */; };
 		DDA1E1752F39FC3580D76604 /* Pods_Hurb_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491EED7856ADE819B9EB15F /* Pods_Hurb_iOS_Challenge.framework */; };
@@ -69,6 +73,8 @@
 		3067120F283DC13D00210FAE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		30671211283DC77900210FAE /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		30671213283DC89400210FAE /* CurrencyUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUtils.swift; sourceTree = "<group>"; };
+		306712172843FC5700210FAE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3067121A284402E900210FAE /* DetailContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContainerView.swift; sourceTree = "<group>"; };
 		3080E2F6282DEB6B00584255 /* Hurb_iOS_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hurb_iOS_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3080E2F9282DEB6B00584255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3080E2FB282DEB6B00584255 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +109,8 @@
 		30835AF3283C4E8D00421C1A /* HomeViewContainerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewContainerExtensions.swift; sourceTree = "<group>"; };
 		30835AF6283C4FD200421C1A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		30A205BF28318B1400EDC26D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		30AB9B8628440B3C00A28464 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		30AB9B892844386400A28464 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		3550B1C6CD2BF9F2287753BC /* Pods-Hurb_iOS_ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb_iOS_ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-Hurb_iOS_ChallengeTests/Pods-Hurb_iOS_ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		4DCCBEB9BFF194456F0BBC9F /* Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests/Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6B4884F8363DA07CBD98F6BF /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +170,14 @@
 				DE4776A26021AD50F37DF6D3 /* Pods_Hurb_iOS_ChallengeTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30671219284402DE00210FAE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3067121A284402E900210FAE /* DetailContainerView.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		3080E2ED282DEB6B00584255 = {
@@ -225,6 +241,7 @@
 		30835AF1283C4E2F00421C1A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				30AB9B8628440B3C00A28464 /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -292,6 +309,7 @@
 				30835ACF283AEAD200421C1A /* MainTabBarController.swift */,
 				30835AD1283AEBA100421C1A /* LastSeenViewController.swift */,
 				30835AD3283AEBD100421C1A /* FavoritesViewController.swift */,
+				306712172843FC5700210FAE /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -307,6 +325,8 @@
 		30A205BB2831897C00EDC26D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				30AB9B882844385400A28464 /* Components */,
+				30671219284402DE00210FAE /* Detail */,
 				30835AF5283C4FB900421C1A /* Home */,
 			);
 			path = View;
@@ -344,6 +364,14 @@
 				30A205BF28318B1400EDC26D /* CodeView.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		30AB9B882844385400A28464 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				30AB9B892844386400A28464 /* LineView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,9 +627,12 @@
 				30835AE4283AFE7500421C1A /* Price.swift in Sources */,
 				30835AEA283B002500421C1A /* FeaturedItem.swift in Sources */,
 				30835AF0283C4C5A00421C1A /* HomeContainerView.swift in Sources */,
+				30AB9B8A2844386400A28464 /* LineView.swift in Sources */,
 				30835AE0283AFE0900421C1A /* Address.swift in Sources */,
 				30835AD8283AF8F600421C1A /* Constants.swift in Sources */,
+				3067121B284402E900210FAE /* DetailContainerView.swift in Sources */,
 				30671212283DC77900210FAE /* StringUtils.swift in Sources */,
+				30AB9B8728440B3C00A28464 /* UIColorExtension.swift in Sources */,
 				30835AD0283AEAD200421C1A /* MainTabBarController.swift in Sources */,
 				30835AE8283B000D00421C1A /* Gallery.swift in Sources */,
 				3080E2FC282DEB6B00584255 /* SceneDelegate.swift in Sources */,
@@ -613,6 +644,7 @@
 				30A205C028318B1400EDC26D /* CodeView.swift in Sources */,
 				30835ADA283AFCF800421C1A /* Hotel.swift in Sources */,
 				3067120E283DBEBF00210FAE /* UIAlertController+UIViewController.swift in Sources */,
+				306712182843FC5700210FAE /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

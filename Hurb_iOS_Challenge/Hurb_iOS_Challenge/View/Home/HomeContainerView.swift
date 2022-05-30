@@ -9,6 +9,8 @@ import UIKit
 
 class HomeContainerView: UIView {
     // MARK: - Properties
+    var parentViewController: HomeViewController?
+    
     var hotelsResult: [HotelResult]? {
         didSet {
             configureContainter()
@@ -21,6 +23,7 @@ class HomeContainerView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 16
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
