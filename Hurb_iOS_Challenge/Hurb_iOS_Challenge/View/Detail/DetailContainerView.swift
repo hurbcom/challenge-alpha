@@ -111,6 +111,7 @@ class DetailContainerView: UIView {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showMore(tapGesture:)))
         label.numberOfLines = .max
         label.textAlignment = .left
+        label.lineBreakMode = .byWordWrapping
         label.textColor = .black
         label.isUserInteractionEnabled = true
         label.addGestureRecognizer(tapGesture)
@@ -127,13 +128,22 @@ class DetailContainerView: UIView {
         return label
     }()
     
+    lazy var showHideFullDescriptionButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle(" ‣ Ver mais ", for: .normal)
+        button.titleLabel?.tintColor = .hurbMainBlue
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        button.addTarget(self, action: #selector(showMore), for: .touchUpInside)
+        return button
+    }()
+    
     private var lineSpacing = LineView()
     private var lineSpacing2 = LineView()
     private var lineSpacing3 = LineView()
     
     /// Stacks.
     lazy var hotelDescriptionsStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [smallDescriptionLabel, fullDescriptionLabel])
+        let stack = UIStackView(arrangedSubviews: [smallDescriptionLabel, showHideFullDescriptionButton, fullDescriptionLabel])
         stack.axis = .vertical
         stack.alignment = .leading
         stack.distribution = .fillProportionally
@@ -198,6 +208,7 @@ class DetailContainerView: UIView {
     @objc func showMore(tapGesture: UITapGestureRecognizer) {
         isFullDescriptionShown.toggle()
         fullDescriptionLabel.isHidden = isFullDescriptionShown ? false : true
+        showHideFullDescriptionButton.setTitle(isFullDescriptionShown ? " ▴ Ver menos " : " ▾ Ver mais ", for: .normal)
     }
 }
 

@@ -45,6 +45,8 @@
 		30A205C028318B1400EDC26D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A205BF28318B1400EDC26D /* CodeView.swift */; };
 		30AB9B8728440B3C00A28464 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AB9B8628440B3C00A28464 /* UIColorExtension.swift */; };
 		30AB9B8A2844386400A28464 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AB9B892844386400A28464 /* LineView.swift */; };
+		30AB9B8C2846AB0200A28464 /* HotelStarsSections+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AB9B8B2846AB0200A28464 /* HotelStarsSections+Enum.swift */; };
+		30AB9B8E2846B04600A28464 /* CollectionViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AB9B8D2846B04600A28464 /* CollectionViewHeaderView.swift */; };
 		4E2D257CE4A53FACC8873D0C /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4884F8363DA07CBD98F6BF /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework */; };
 		DD52A6507EE2F23D735949E9 /* Pods_Hurb_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4776A26021AD50F37DF6D3 /* Pods_Hurb_iOS_ChallengeTests.framework */; };
 		DDA1E1752F39FC3580D76604 /* Pods_Hurb_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491EED7856ADE819B9EB15F /* Pods_Hurb_iOS_Challenge.framework */; };
@@ -111,6 +113,8 @@
 		30A205BF28318B1400EDC26D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		30AB9B8628440B3C00A28464 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		30AB9B892844386400A28464 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		30AB9B8B2846AB0200A28464 /* HotelStarsSections+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HotelStarsSections+Enum.swift"; sourceTree = "<group>"; };
+		30AB9B8D2846B04600A28464 /* CollectionViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeaderView.swift; sourceTree = "<group>"; };
 		3550B1C6CD2BF9F2287753BC /* Pods-Hurb_iOS_ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb_iOS_ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-Hurb_iOS_ChallengeTests/Pods-Hurb_iOS_ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		4DCCBEB9BFF194456F0BBC9F /* Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests/Pods-Hurb_iOS_Challenge-Hurb_iOS_ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6B4884F8363DA07CBD98F6BF /* Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hurb_iOS_Challenge_Hurb_iOS_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +294,7 @@
 				3067120D283DBEBF00210FAE /* UIAlertController+UIViewController.swift */,
 				30671211283DC77900210FAE /* StringUtils.swift */,
 				30671213283DC89400210FAE /* CurrencyUtils.swift */,
+				30AB9B8B2846AB0200A28464 /* HotelStarsSections+Enum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				30AB9B892844386400A28464 /* LineView.swift */,
+				30AB9B8D2846B04600A28464 /* CollectionViewHeaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				30835AD6283AF7E600421C1A /* NetworkingService.swift in Sources */,
 				30671214283DC89400210FAE /* CurrencyUtils.swift in Sources */,
 				30835AF4283C4E8D00421C1A /* HomeViewContainerExtensions.swift in Sources */,
+				30AB9B8C2846AB0200A28464 /* HotelStarsSections+Enum.swift in Sources */,
 				30835AD2283AEBA100421C1A /* LastSeenViewController.swift in Sources */,
 				30835AE4283AFE7500421C1A /* Price.swift in Sources */,
 				30835AEA283B002500421C1A /* FeaturedItem.swift in Sources */,
@@ -633,6 +640,7 @@
 				3067121B284402E900210FAE /* DetailContainerView.swift in Sources */,
 				30671212283DC77900210FAE /* StringUtils.swift in Sources */,
 				30AB9B8728440B3C00A28464 /* UIColorExtension.swift in Sources */,
+				30AB9B8E2846B04600A28464 /* CollectionViewHeaderView.swift in Sources */,
 				30835AD0283AEAD200421C1A /* MainTabBarController.swift in Sources */,
 				30835AE8283B000D00421C1A /* Gallery.swift in Sources */,
 				3080E2FC282DEB6B00584255 /* SceneDelegate.swift in Sources */,

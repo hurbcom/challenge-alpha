@@ -17,7 +17,16 @@ class HomeContainerView: UIView {
         }
     }
     
+    var oneStarHotel: [HotelResult] = []
+    var twoStarHotel: [HotelResult] = []
+    var threeStarHotel: [HotelResult] = []
+    var fourStarHotel: [HotelResult] = []
+    var fiveStarHotel: [HotelResult] = []
+    
+    //let sectionTitles: [String] = ["5 Estrelas", "4 Estrelas", "3 Estrelas", "2 Estrelas", "1 Estrela"]
+    
     let reuseIdentifier = String(describing: HomeCollectionViewCell.self)
+    let headerIdentifier = "HeaderIdentifier"
     
     lazy var homeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -26,7 +35,6 @@ class HomeContainerView: UIView {
         layout.minimumLineSpacing = 16
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
         collectionView.isUserInteractionEnabled = true
         collectionView.showsVerticalScrollIndicator = false
         collectionView.dataSource = self
@@ -46,9 +54,34 @@ class HomeContainerView: UIView {
     }
     
     // MARK: - Helper Methods
-    
     private func configureContainter() {
+        filterHotels()
         homeCollectionView.reloadData()
+    }
+    
+    // MARK: - Filter Hotels by Stars
+    private func filterHotels() {
+        guard let hotelsResult = hotelsResult else { return }
+        for hotel in hotelsResult {
+            if hotel.stars == 1 {
+                oneStarHotel.append(hotel)
+            }
+            else if hotel.stars == 2 {
+                twoStarHotel.append(hotel)
+            }
+            else if hotel.stars == 3 {
+                threeStarHotel.append(hotel)
+            }
+            else if hotel.stars == 4 {
+                fourStarHotel.append(hotel)
+            }
+            else if hotel.stars == 5 {
+                fiveStarHotel.append(hotel)
+            }
+            else {
+                return
+            }
+        }
     }
 }
 
@@ -66,7 +99,10 @@ extension HomeContainerView: CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        /// Configure View.
+        backgroundColor = .white
         /// Register CollectionView Cell.
         homeCollectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        homeCollectionView.register(CollectionViewHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
     }
 }

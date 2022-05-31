@@ -113,8 +113,6 @@ class HomeViewModel {
     var hotelDetailSmallDescription: NSAttributedString {
         let text = NSMutableAttributedString(string: (hotelResult?.smallDescription ?? hotelResult?.resultDescription) ?? "--",
                                              attributes: [.font: UIFont.systemFont(ofSize: 13, weight: .light)])
-        text.append(NSAttributedString(string: " ‣ Ver mais. ",
-                                       attributes: [.font: UIFont.systemFont(ofSize: 12, weight: .regular), .foregroundColor: UIColor.hurbMainBlue]))
         return text
     }
     
