@@ -76,10 +76,14 @@ extension UIView {
         }
     }
     
-    func setDimensions(width: CGFloat, height: CGFloat) {
+    func setDimensions(width: CGFloat? = nil, height: CGFloat? = nil) {
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalToConstant: width).isActive = true
-        heightAnchor.constraint(equalToConstant: height).isActive = true
+        if let width = width {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+        if let height = height {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
     }
     
     func addConstraintsToFillView(_ view: UIView) {
