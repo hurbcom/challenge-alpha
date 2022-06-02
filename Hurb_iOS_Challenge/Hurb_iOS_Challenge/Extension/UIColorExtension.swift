@@ -18,4 +18,7 @@ extension UIColor {
     
     /// Hurb Main Blue:
     static let hurbMainBlue = UIColor.rgb(red: 31, green: 96, blue: 245)
+    
+    /// TabBar white:
+    static let tabBarWhite = UIColor.rgb(red: 249, green: 248, blue: 255)
 }

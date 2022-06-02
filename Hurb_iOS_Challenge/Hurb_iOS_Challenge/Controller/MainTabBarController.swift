@@ -14,13 +14,35 @@ class MainTabBarController: UITabBarController {
     let favoritesViewController = FavoritesViewController()
     
     // MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+            lazy var statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.size.height ?? 20
+            
+            let statusbarView = UIView()
+            statusbarView.backgroundColor = UIColor.white
+            view.addSubview(statusbarView)
+          
+            statusbarView.translatesAutoresizingMaskIntoConstraints = false
+            statusbarView.heightAnchor
+                .constraint(equalToConstant: statusBarHeight).isActive = true
+            statusbarView.widthAnchor
+                .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
+            statusbarView.topAnchor
+                .constraint(equalTo: view.topAnchor).isActive = true
+            statusbarView.centerXAnchor
+                .constraint(equalTo: view.centerXAnchor).isActive = true
+          
+        } else {
+            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+            statusBar?.backgroundColor = UIColor.white
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMainTabBarControllers()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     // MARK: - Helper Methods
@@ -37,27 +59,25 @@ class MainTabBarController: UITabBarController {
         nav2.title = "Favoritos"
         nav3.title = "Últimos vistos"
         
-        tabBar.backgroundColor = .white
-        tabBar.tintColor = .black
+        tabBar.barTintColor = .tabBarWhite
+        tabBar.isTranslucent = true
+        tabBar.tintColor = .hurbMainBlue
+        tabBar.unselectedItemTintColor = .lightGray
     }
     
     func templateNatigationController(image: UIImage?, rootViewControoler: UIViewController) -> UINavigationController {
         let nav = UINavigationController(rootViewController: rootViewControoler)
         nav.tabBarItem.image = image
-        
-        /// Costumization of the `NavigationBar` color after the iOS 15 atualizations.
-        /// Now the `standardAppearance` must be equal to `scrollEdgeAppearance` to not be transparent.
+
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .white
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         nav.navigationBar.standardAppearance = appearance
-        nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance
         nav.navigationBar.tintColor = .black
-        nav.navigationBar.barStyle = .default
+        nav.navigationBar.barStyle = .black
         nav.navigationBar.isTranslucent = false
-        nav.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        nav.navigationBar.backgroundColor = .white
         nav.hidesBarsOnSwipe = false
         
         configureNavigationBar(nav: nav)
@@ -70,13 +90,5 @@ class MainTabBarController: UITabBarController {
         imageView.contentMode = .scaleAspectFit
         imageView.anchor(height: 35)
         nav.navigationBar.topItem?.titleView = imageView
-    }
-}
-
-// MARK: - UINavigationController
-    
-extension UINavigationController {
-    open override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }
