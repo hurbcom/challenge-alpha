@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
             case .success(let hotelsResult):
                 self?.homeContainerView.hotelsResult = hotelsResult
             case .failure(let error):
-                self?.showAlert(message: error.localizedDescription, title: Constants.UIAlertsMessages.SERVICE_ERROR_MESSAGE_TITLE)
+                AlertUtils.showAlert(message: error.localizedDescription, description: "Falha de Conexão")
             }
         }
     }
