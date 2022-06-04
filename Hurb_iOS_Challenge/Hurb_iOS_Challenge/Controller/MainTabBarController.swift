@@ -36,7 +36,7 @@ class MainTabBarController: UITabBarController {
         
         tabBar.barTintColor = .tabBarWhite
         tabBar.isTranslucent = true
-        tabBar.tintColor = .hurbMainBlue
+        tabBar.backgroundColor = .tabBarWhite
         tabBar.unselectedItemTintColor = .lightGray
     }
     
