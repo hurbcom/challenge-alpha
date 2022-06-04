@@ -29,9 +29,10 @@ final class NetworkingService {
                 let hotelsResponse = try JSONDecoder().decode(HotelReponse.self, from: data)
                 let hotelResult = hotelsResponse.results
                 completion(.success(hotelResult))
+                print("DEBUG: ✅ REQUEST SUCCESS ✅ - \n", hotelResult!)
             }
             catch {
-                print(error.localizedDescription)
+                print("DEBUG: ❌ REQUEST ERROR ❌ - ", error.localizedDescription)
                 completion(.failure(error))
             }
         }

@@ -51,12 +51,13 @@ class DataPersistenceManager {
         
         do {
             try context.save()
+            print("DEBUG: ✅ SAVE HOTEL IN DATABASE SUCCESSED ✅")
             completion(.success(()))
         }
         catch {
             completion(.failure(DataBaseError.failToSaveHotelLocally))
             AlertUtils.showAlert(message: "Falha ao adicionar item à lista. Por favor, tente novamente.")
-            print(error.localizedDescription)
+            print("DEBUG: ❌ SAVE HOTEL IN DATABASE FAILED ❌ WITH ERROR - ", error.localizedDescription)
         }
     }
     
@@ -72,9 +73,11 @@ class DataPersistenceManager {
         do {
             let moviesResponse = try context.fetch(request)
             completion(.success(moviesResponse))
+            print("DEBUG: ✅ FETCH HOTEL IN DATABASE SUCCESSED ✅ - ", moviesResponse)
         }
         catch {
             completion(.failure(DataBaseError.failToFetchLocalHotel))
+            print("DEBUG: ❌ FETCH HOTEL IN DATABASE FAILED ❌")
             AlertUtils.showAlert(message: "Falha ao carregar a lista. Por favor, tente novamente.")
         }
     }
@@ -92,8 +95,10 @@ class DataPersistenceManager {
         
         do {
             try context.save()
+            print("DEBUG: ✅ DELETE DATABASE HOTEL SUCCESS ✅")
             completion(.success(()))
         } catch {
+            print("DEBUG: ❌ DELETE DATABASE HOTEL FAIL ❌")
             completion(.failure(DataBaseError.failedToDeleteData))
         }
         
