@@ -58,20 +58,12 @@ class LastSeenTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var textStackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [hotelImageView, hotelNameLabel, starLabel, hotelDescriptionLabel])
         stack.spacing = 8
         stack.alignment = .leading
         stack.axis = .vertical
-        stack.distribution = .fillProportionally
-        return stack
-    }()
-    
-    private lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [hotelImageView, textStackView])
-        stack.spacing = 16
-        stack.alignment = .leading
-        stack.distribution = .fillProportionally
+        stack.distribution = .equalSpacing
         return stack
     }()
 
@@ -109,11 +101,11 @@ class LastSeenTableViewCell: UITableViewCell {
 // MARK: - CodeView
 extension LastSeenTableViewCell: CodeView {
     func buildViewHierarchy() {
-        addSubview(textStackView)
+        addSubview(stackView)
     }
     
     func setupConstraints() {
-        textStackView.anchor(top: topAnchor,
+        stackView.anchor(top: topAnchor,
                          leading: leadingAnchor,
                          bottom: bottomAnchor,
                          trailling: trailingAnchor,

@@ -11,11 +11,7 @@ import UIKit
 class LastSeenContainerView: UIView {
     
     // MARK: Properties
-    var lastSeenHotels: [LastSeenHotel]? {
-        didSet {
-            lastSeenTableView.reloadData()
-        }
-    }
+    var lastSeenHotels: [LastSeenHotel]?
     
     let tableViewCellReuseIdentifier = String(describing: LastSeenTableViewCell.self)
     
