@@ -59,6 +59,18 @@ class HomeContainerView: UIView {
         homeCollectionView.reloadData()
     }
     
+    func saveHotelAtLastSeenList(model: HotelResult) {
+        DataPersistenceManager.shared.addHotelToLastSeenList(model: model) { result in
+            switch result {
+            case .success():
+                NotificationCenter.default.post(name: Notification.Name(Constants.NotificationCenterNames.NOTIFICATION_CENTER_LAST_SEEN_ADDED), object: nil)
+                print("DEBUG: - HOTEL SALVO COM SUCESSO NA LISTA DE VISTOS POR ÚLTIMO.")
+            case .failure(let error):
+                print("DEBUG: - \(error.localizedDescription)")
+            }
+        }
+    }
+    
     // MARK: - Filter Hotels by Stars
     private func filterHotels() {
         guard let hotelsResult = hotelsResult else { return }

@@ -120,10 +120,22 @@ extension HomeContainerView: UICollectionViewDataSource {
 
 extension HomeContainerView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section: StarsForSection = StarsForSection(rawValue: indexPath.section)!
+        let selectedHotel: HotelResult?
+        
+        switch section {
+        case .fiveStars: selectedHotel = fiveStarHotel[indexPath.row]
+        case .fourStars: selectedHotel = fourStarHotel[indexPath.row]
+        case .threeStars: selectedHotel = threeStarHotel[indexPath.row]
+        case .twoStars: selectedHotel = twoStarHotel[indexPath.row]
+        case .oneStar: selectedHotel = oneStarHotel[indexPath.row]
+        }
+        
         DispatchQueue.main.async { [weak self] in
             let viewController = DetailViewController()
-            guard let hotelsResult = self?.hotelsResult else { return }
-            viewController.detailContainerView.hotelsResult  = hotelsResult[indexPath.row]
+            guard let selectedHotelResult = selectedHotel else { return }
+            viewController.detailContainerView.hotelsResult  = selectedHotelResult
+            self?.saveHotelAtLastSeenList(model: selectedHotelResult)
             self?.parentViewController?.navigationController?.pushViewController(viewController, animated: true)
         }
     }

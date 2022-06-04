@@ -29,4 +29,9 @@ struct Constants {
     struct UIAlertsMessages {
         static let SERVICE_ERROR_MESSAGE_TITLE = "Erro de Conexão"
     }
+    
+    // MARK: - NotificationCenter
+    struct NotificationCenterNames {
+        static let NOTIFICATION_CENTER_LAST_SEEN_ADDED = "HotelAdicionadoAosVistosPorUltimo"
+    }
 }
