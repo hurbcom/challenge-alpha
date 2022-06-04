@@ -58,5 +58,9 @@ extension LastSeenViewController: CodeView {
                                                queue: nil) { _ in
             self.fetchLocalLestSeenHotels()
         }
+        
+        self.title = "Últimos vistos"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
     }
 }
