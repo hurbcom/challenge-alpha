@@ -7,18 +7,17 @@
 ## 1. CONTEÚDO
 - [1. Conteúdo](#1-conteúdo)
 - [2. Informações sobre o Projeto](#2-informações-sobre-o-projeto)
-- [3. Requisitos mínimos](#4-requisitos-mínimos)
-- [4. Instruções de Instalação](#3-instruções-de-instalação)
-- [5. Tarefas requisitas e Bônus implementados](#5-tarefas-requisitadas-e_bônus-implementados)
+- [3. Requisitos mínimos](#3-requisitos-mínimos)
+- [4. Instruções de Instalação](#4-instruções-de-instalação)
+- [5. Tarefas requisitas e Bônus implementados](#5-tarefas-requisitadas-e-bônus-implementados)
 - [6. Tarefas pendentes](#6-tarefas-pendentes)
 - [7. Design e Resultado das Telas](7#-design-e-resultado-das-telas)
-- [8. Testes](#8-teste)
+- [8. Testes](#8-testes)
 - [9. Logs](#9-logs)
 - [10. Dependências](#10-dependências)
-- [10.1. CocoaPods](#10.1-ckocoaPods)
-- [10.2 Kingfisher](#10.2-Kingfisher)
+- [10.1. Alamofire](#10.1-alamofire)
+- [10.2. Kingfisher](#10.2-kingfisher)
 - [11. Vulnerabilidades](#11-vulnerabilidades)
-    - [11.1. Imagens mockadas no JSON sem serem do tipo HTTPS](#11.1-imagens-mockadas-no-JSON-sem-serem-do-tipo-HTTPS)
 
 
 ## 2. INFORMAÇÕES SOBRE O PROJETO
@@ -54,6 +53,8 @@
 - **Bônus:**
     - ✅ Último visto.
 
+_OBS: No ítem bônus entregue, é importante destacar que foi utilizado o framework `CoreData`, nativo iOS, para o armazenamento local das informações necessárias para a construçõa da tela. Além disso, foram adicionadas ao Manager dos dados locais três funções adicionais: adição de dados, exclusão e busca._
+
 
 ## 6. TAREFAS PENDENTES
 - ⚠️ Separação dos Pacotes na Listagem.
@@ -66,7 +67,7 @@ Buscando dispor as informações de forma minimalista e clara, os textos como pr
 
 Além disso, as cores utilizadas no projeto seguiram o padrão de [acessibilidade para daltonismo da ferramenta da Adobe](https://color.adobe.com/pt/create/color-accessibility).
 
-É importante ressaltar que, na tela de `Últimos Vistos`, as células foram criadas com as informações disponíveis nas mocks do JSON e que poderiam ser salvas utilizando o `CoreData`.
+É importante ressaltar que, na tela de `Últimos Vistos`, as células foram criadas com as informações disponíveis nas mocks do JSON e que poderiam ser salvas utilizando os meus conhecimentos em `CoreData`.
 
 Por fim, foram implementados alertas em caso de falhas e erros para dar um retorno ao usuário, além do tratamento para possíveis retornos vazios ou nulos das requests.
 
@@ -92,10 +93,14 @@ Levando em consideração as poucas chamadas existentes no projeto, optei por im
 Foram cobertos os _Status_ de ✅ `.success` ou ❌ `.failure`. 
 
 ## 10. DEPENDÊNCIAS
-   - **Alamorire:** Por ser uma biblioteca pensada para a linguagem de programação Swift e por ser amplamente utilizada para realizar requisições HTTP para as plataformas iOS, macOS, o Alamofire foi utilizado para acessar o arquivo JSON local e realizar retornar o um resultado mais prático de se tratar.
+O CocoaPods foi instalado na máquina e utilizado para a gerenciamento de dependências. Em coparação ao SwiftPackageManager, o CocoaPods foi utilizado, principalmente, porque em versões mais recentes do XCode o SwiftPackage estava apresentando problemas de compilação e build do projeto.
 
-   - **Kingfisher:** É um ótimo gerenciador de imagens e a principal vantagem dele é a possibilidade de fazer cash das imagens, diminuindo assim o número de resições necessárias para a implementção das células e até a própria troca de imagens ao ser aplicada a reutiliação de células do próprio `Swift`.
+## 10.1 Alamorire
+Por ser uma biblioteca pensada para a linguagem de programação Swift e por ser amplamente utilizada para realizar requisições HTTP para as plataformas iOS, macOS, o Alamofire foi utilizado para acessar o arquivo JSON local e realizar retornar o um resultado mais prático de se tratar.
+
+## 10.2 Kingfisher
+É um ótimo gerenciador de imagens e a principal vantagem dele é a possibilidade de fazer cash das imagens, diminuindo assim o número de resições necessárias para a implementção das células e até evitar a própria troca de imagens ao ser aplicada a reutiliação de células do próprio `Swift`.
 
 ## 11. VULNERABILIDADES
-- Foi observado que alguma imagens estavam retornando URLs sem o protocolo de segurança HTTPS, ou seja, vinham em HTTP. Realizei alguns tentes e elas funcionaram ao forçar o acesso através do protocolo HTTPS também, mas é importante ressaltar que essa não é uma boa prática e que as informações da base de dados precisam vir do serviço já tratando essa questão de segurança. 
+- Foi observado que algumas imagens estavam retornando URLs sem o protocolo de segurança HTTPS, ou seja, vinham em HTTP. Realizei alguns tentes e elas funcionaram ao forçar o acesso através do protocolo HTTPS também, mas é importante ressaltar que essa não é uma boa prática e que as informações da base de dados precisam vir do serviço já tratando essa questão de segurança. 
 
