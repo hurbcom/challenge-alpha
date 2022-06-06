@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 struct Constants {
     // MARK: - JSON Files Names Constant
     struct JSONFilesNames {

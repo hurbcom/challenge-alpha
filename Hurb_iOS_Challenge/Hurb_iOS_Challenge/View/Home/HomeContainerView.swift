@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeContainerView: UIView {
+    
     // MARK: - Properties
     var parentViewController: HomeViewController?
     

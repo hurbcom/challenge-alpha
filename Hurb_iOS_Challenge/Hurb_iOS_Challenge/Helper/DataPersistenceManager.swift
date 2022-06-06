@@ -11,7 +11,6 @@ import CoreData
 class DataPersistenceManager {
     
     // MARK: - Properties
-    
     enum DataBaseError: Error {
         case failToSaveHotelLocally
         case failToFetchLocalHotel
@@ -33,7 +32,6 @@ class DataPersistenceManager {
     
     
     // MARK: - Helper Methods
-    
     func addHotelToLastSeenList(model: HotelResult, completion: @escaping(Result<Void, Error>) -> Void ) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
@@ -63,13 +61,11 @@ class DataPersistenceManager {
     
     func fetchHotelsFromDataBaseLocal(completion: @escaping(Result<[LastSeenHotel], Error>) -> Void){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-
         let context = appDelegate.persistentContainer.viewContext
-
         let request: NSFetchRequest<LastSeenHotel>
-
+        
         request = LastSeenHotel.fetchRequest()
-
+        
         do {
             let moviesResponse = try context.fetch(request)
             completion(.success(moviesResponse))
@@ -83,13 +79,8 @@ class DataPersistenceManager {
     }
     
     func deleteTitleWith(model: LastSeenHotel, completion: @escaping (Result<Void, Error>)-> Void) {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
-        
         
         context.delete(model)
         
@@ -101,7 +92,6 @@ class DataPersistenceManager {
             print("DEBUG: ❌ DELETE DATABASE HOTEL FAIL ❌")
             completion(.failure(DataBaseError.failedToDeleteData))
         }
-        
     }
 }
 

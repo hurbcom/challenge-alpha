@@ -8,6 +8,7 @@
 import UIKit
 
 class DetailContainerView: UIView {
+    
     // MARK: - Properties
     var hotelsResult: HotelResult? {
         didSet {
@@ -108,7 +109,7 @@ class DetailContainerView: UIView {
     
     lazy var smallDescriptionLabel: UILabel = {
         let label = UILabel()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showMore(tapGesture:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showMorePressed(tapGesture:)))
         label.numberOfLines = .max
         label.textAlignment = .left
         label.lineBreakMode = .byWordWrapping
@@ -133,7 +134,7 @@ class DetailContainerView: UIView {
         button.setTitle(" ‣ Ver mais ", for: .normal)
         button.titleLabel?.tintColor = .hurbMainBlue
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        button.addTarget(self, action: #selector(showMore), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showMorePressed), for: .touchUpInside)
         return button
     }()
     
@@ -164,7 +165,7 @@ class DetailContainerView: UIView {
     // MARK: - Helper Methods
     private func configureContainter() {
         guard let hotelsResult = hotelsResult else { return }
-        let viewModel = HomeViewModel()
+        let viewModel = HomeDetailViewModel()
         viewModel.hotelResult = hotelsResult
         
         hotelNameLabel.text = viewModel.hotelDetailName
@@ -205,13 +206,14 @@ class DetailContainerView: UIView {
     }
     
     // MARK: - Selectors
-    @objc func showMore(tapGesture: UITapGestureRecognizer) {
+    @objc func showMorePressed(tapGesture: UITapGestureRecognizer) {
         isFullDescriptionShown.toggle()
         fullDescriptionLabel.isHidden = isFullDescriptionShown ? false : true
         showHideFullDescriptionButton.setTitle(isFullDescriptionShown ? " ▴ Ver menos " : " ▾ Ver mais ", for: .normal)
     }
 }
 
+// MARK: - CodeView
 extension DetailContainerView: CodeView {
     func buildViewHierarchy() {
         addSubview(imageScrollView)
@@ -270,11 +272,11 @@ extension DetailContainerView: CodeView {
                                    paddingTrailling: 16)
         
         lineSpacing2.anchor(top: hotelAmenitiesLabel.bottomAnchor,
-                           leading: leadingAnchor,
-                           trailling: trailingAnchor,
-                           paddingTop: 16,
-                           paddingLeading: 16,
-                           paddingTrailling: 16)
+                            leading: leadingAnchor,
+                            trailling: trailingAnchor,
+                            paddingTop: 16,
+                            paddingLeading: 16,
+                            paddingTrailling: 16)
         
         finalPriceLabel.anchor(top: lineSpacing2.bottomAnchor,
                                leading: leadingAnchor,
@@ -291,12 +293,12 @@ extension DetailContainerView: CodeView {
                                     paddingTrailling: 16)
         
         lineSpacing3.anchor(top: freeCancelationLabel.bottomAnchor,
-                           leading: leadingAnchor,
-                           trailling: trailingAnchor,
-                           paddingTop: 16,
-                           paddingLeading: 16,
-                           paddingTrailling: 16)
-
+                            leading: leadingAnchor,
+                            trailling: trailingAnchor,
+                            paddingTop: 16,
+                            paddingLeading: 16,
+                            paddingTrailling: 16)
+        
         
         hotelDescriptionsStackView.anchor(top: lineSpacing3.bottomAnchor,
                                           leading: leadingAnchor,
@@ -311,6 +313,7 @@ extension DetailContainerView: CodeView {
     }
 }
 
+// MARK: - UIScrollViewDelegate
 extension DetailContainerView: UIScrollViewDelegate {
     /// Set the current page of `PageControl` based on the `ScrollView` lenth.
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

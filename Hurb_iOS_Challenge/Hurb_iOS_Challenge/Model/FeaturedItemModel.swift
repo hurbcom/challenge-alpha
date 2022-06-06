@@ -1,5 +1,5 @@
 //
-//  FeaturedItem.swift
+//  FeaturedItemModel.swift
 //  Hurb_iOS_Challenge
 //
 //  Created by Gáudio Ney on 22/05/22.
@@ -13,7 +13,7 @@ struct FeaturedItem: Codable {
     let name: String?
     let image: String?
     let featuredItemDescription: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case amenities, name, image
         case featuredItemDescription = "description"

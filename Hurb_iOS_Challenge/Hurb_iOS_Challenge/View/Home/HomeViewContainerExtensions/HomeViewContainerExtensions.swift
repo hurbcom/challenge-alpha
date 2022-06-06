@@ -90,27 +90,27 @@ extension HomeContainerView: UICollectionViewDataSource {
         switch section {
         case .fiveStars:
             let hotel = fiveStarHotel[indexPath.row]
-            let viewModel = HomeViewModel()
+            let viewModel = HomeDetailViewModel()
             viewModel.hotelResult = hotel
             cell.hotelResult = hotel
         case .fourStars:
             let hotel = fourStarHotel[indexPath.row]
-            let viewModel = HomeViewModel()
+            let viewModel = HomeDetailViewModel()
             viewModel.hotelResult = hotel
             cell.hotelResult = hotel
         case .threeStars:
             let hotel = threeStarHotel[indexPath.row]
-            let viewModel = HomeViewModel()
+            let viewModel = HomeDetailViewModel()
             viewModel.hotelResult = hotel
             cell.hotelResult = hotel
         case .twoStars:
             let hotel = twoStarHotel[indexPath.row]
-            let viewModel = HomeViewModel()
+            let viewModel = HomeDetailViewModel()
             viewModel.hotelResult = hotel
             cell.hotelResult = hotel
         case .oneStar:
             let hotel = oneStarHotel[indexPath.row]
-            let viewModel = HomeViewModel()
+            let viewModel = HomeDetailViewModel()
             viewModel.hotelResult = hotel
             cell.hotelResult = hotel
         }
@@ -141,6 +141,7 @@ extension HomeContainerView: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeContainerView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return Constants.HomeCollectionViewConstraints.HOME_COLLECTIONVIEW_DIMENTIONS_SIZE_WITH_PADDING

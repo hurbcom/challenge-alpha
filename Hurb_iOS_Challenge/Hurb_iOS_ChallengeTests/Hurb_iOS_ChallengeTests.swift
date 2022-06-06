@@ -9,28 +9,59 @@ import XCTest
 @testable import Hurb_iOS_Challenge
 
 class Hurb_iOS_ChallengeTests: XCTestCase {
+    
+    var sut: HomeDetailViewModel?
+    var mock: HotelResult?
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        sut = HomeDetailViewModel()
+        mock = HotelResult(sku: "0101", isHotel: true, category: ResultCategoryEnum.hotel,
+                           smallDescription: "Description", amenities: [ResultAmenity.init(name: "TV a cabo", category: AmenityCategoryEnum.entretenimentoEServiçosParaFamílias)],
+                           id: "10100111", price: nil, huFreeCancellation: true,
+                           image: "http://media.omnibees.com/Images/8006/RoomTypes/339196.jpg",
+                           name: "Nome do Hotel", url: "https://www.hurb.com/hoteis/gramado/pousada-brisa-de-gramado-OMN-9241", resultDescription: "result", stars: 1000000, gallery: [Gallery(galleryDescription: "", url: "http://media.omnibees.com/Images/8006/RoomTypes/339196.jpg")],
+                           address: nil, tags: nil, quantityDescriptors: nil, featuredItem: nil)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        sut = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+    /// Test ViewModel Free Cancelation Text.
+    func testViewModelFreeCancelationReturn() {
+        /// Given:
+        sut?.hotelResult = mock
+        
+        /// When:
+        let isFreeCancelationTextCorrect = sut?.freeCancelingText
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        /// Then:
+        XCTAssertEqual(isFreeCancelationTextCorrect, "Cancelamento gratuito",
+                       "The imput text is not a String type or something is wrong.")
     }
-
+    
+    /// Test Hotel Stars Text.
+    func testViewModelHotelStarsReturn() {
+        /// Given:
+        sut?.hotelResult = mock
+        
+        /// When:
+        let hotelStars = sut?.hotelStars
+        /// Then:
+        XCTAssertEqual(hotelStars, "★ 1000000.0",
+                       "The imput text is not a String type or something is wrong.")
+    }
+    
+    /// Test the HTTPS correctin for the URLs from image Gallery.
+    func testViewModelHotelImagesURLStrigForHTTPS() {
+        /// Given:
+        sut?.hotelResult = mock
+        
+        /// When:
+        let imageURL = sut?.hotelsImage
+        
+        /// Then:
+        XCTAssertEqual(imageURL, ["https://media.omnibees.com/Images/8006/RoomTypes/339196.jpg"],
+                       "The imput text is not a Array of Strings type or something is wrong.")
+    }
 }

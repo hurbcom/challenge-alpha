@@ -5,12 +5,11 @@
 //  Created by Gáudio Ney on 02/06/22.
 //
 
-import Foundation
 import UIKit
 
 class LastSeenContainerView: UIView {
     
-    // MARK: Properties
+    // MARK: - Properties
     var lastSeenHotels: [LastSeenHotel]?
     
     let tableViewCellReuseIdentifier = String(describing: LastSeenTableViewCell.self)
@@ -21,7 +20,7 @@ class LastSeenContainerView: UIView {
         return tableView
     }()
     
-    // MARK: Lifecycle
+    // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -30,11 +29,9 @@ class LastSeenContainerView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: Helper Methods
 }
 
-// MARK: CodeView
+// MARK: - CodeView
 extension LastSeenContainerView: CodeView {
     func buildViewHierarchy() {
         addSubview(lastSeenTableView)
@@ -53,7 +50,6 @@ extension LastSeenContainerView: CodeView {
         
         /// Configure TableView.
         lastSeenTableView.register(LastSeenTableViewCell.self, forCellReuseIdentifier: tableViewCellReuseIdentifier)
-        lastSeenTableView.delegate = self
         lastSeenTableView.dataSource = self
     }
 }

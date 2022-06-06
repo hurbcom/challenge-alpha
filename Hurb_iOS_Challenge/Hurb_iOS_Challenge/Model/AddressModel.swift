@@ -1,5 +1,5 @@
 //
-//  Address.swift
+//  AddressModel.swift
 //  Hurb_iOS_Challenge
 //
 //  Created by Gáudio Ney on 22/05/22.
@@ -9,14 +9,14 @@ import Foundation
 
 // MARK: - Address
 struct Address: Codable {
-    let city: City?
-    let country: Country?
+    let city: CityEnum?
+    let country: CountryEnum?
     let idAtlasCity, idAtlasCountry, idAtlasNeighborhood, idAtlasState: Int?
     let idCity, idCountry, idState: Int?
-    let state: State?
+    let state: StateEnum?
     let street, zipcode: String?
     let geoLocation: GeoLocation?
-
+    
     enum CodingKeys: String, CodingKey {
         case city, country
         case idAtlasCity = "id_atlas_city"

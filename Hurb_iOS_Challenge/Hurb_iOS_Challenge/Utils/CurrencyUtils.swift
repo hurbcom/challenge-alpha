@@ -8,6 +8,7 @@
 import UIKit
 
 class CurrencyUtils {
+    /// Function that formats the price from (0.00) Double type to a ("R$ 0,00") String type.
     class func formatPrice(price: Double) -> String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true

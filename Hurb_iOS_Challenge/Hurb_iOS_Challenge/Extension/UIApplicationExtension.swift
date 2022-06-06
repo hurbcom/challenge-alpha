@@ -12,6 +12,7 @@ import UIKit
 fileprivate let window = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.flatMap { $0.windows }.first { $0.isKeyWindow }
 
 extension UIApplication {
+    /// Function to get the top ViewController from the UIApplicaiton Windouw and return it.
     class func topViewController(controller: UIViewController? = window?.rootViewController) -> UIViewController? {
         
         if let navigationController = controller as? UINavigationController {

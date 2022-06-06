@@ -8,6 +8,9 @@
 import UIKit
 
 class LastSeenViewModel {
+    ///
+    ///  LastSeen Hotels Local Result.
+    ///
     var hotelResult: LastSeenHotel?
     
     var hotelNameText: String {
