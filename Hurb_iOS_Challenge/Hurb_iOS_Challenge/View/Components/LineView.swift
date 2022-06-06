@@ -8,9 +8,11 @@
 import UIKit
 
 class LineView: UIView {
+    
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        /// Configure View.
         backgroundColor = .lightGray
         setDimensions(width: Constants.HomeCollectionViewConstraints.HOME_COLLECTIONVIEW_DIMENTIONS_SIZE_WITH_PADDING.width, height: 0.5)
     }

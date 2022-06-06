@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 final class NetworkingService {
-    // MARK: - Properties
     
+    // MARK: - Properties
     static let shared = NetworkingService()
     
     private let hotelsBaseURL: URL = Bundle.main.url(forResource: Constants.JSONFilesNames.HOTEL_JSON_FILE_NAME, withExtension: Constants.JSONFilesNames.JSON_TYPE)!

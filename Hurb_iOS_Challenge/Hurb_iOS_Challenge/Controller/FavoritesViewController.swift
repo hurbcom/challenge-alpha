@@ -8,6 +8,7 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
+    
     // MARK: - Properties
     private let comingSoonFavoritesLabel: UILabel = {
         let label = UILabel()
@@ -24,7 +25,6 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-
     }
 }
 

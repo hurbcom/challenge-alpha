@@ -1,5 +1,5 @@
 //
-//  GeographicInformation.swift
+//  GeographicInformationModel.swift
 //  Hurb_iOS_Challenge
 //
 //  Created by Gáudio Ney on 22/05/22.

@@ -10,13 +10,13 @@ import XCTest
 
 class Hurb_iOS_ChallengeTests: XCTestCase {
     
-    var sut: HomeViewModel?
+    var sut: HomeDetailViewModel?
     var mock: HotelResult?
 
     override func setUp() {
-        sut = HomeViewModel()
-        mock = HotelResult(sku: "0101", isHotel: true, category: ResultCategory.hotel,
-                           smallDescription: "Description", amenities: [ResultAmenity.init(name: "TV a cabo", category: AmenityCategory.entretenimentoEServiçosParaFamílias)],
+        sut = HomeDetailViewModel()
+        mock = HotelResult(sku: "0101", isHotel: true, category: ResultCategoryEnum.hotel,
+                           smallDescription: "Description", amenities: [ResultAmenity.init(name: "TV a cabo", category: AmenityCategoryEnum.entretenimentoEServiçosParaFamílias)],
                            id: "10100111", price: nil, huFreeCancellation: true,
                            image: "http://media.omnibees.com/Images/8006/RoomTypes/339196.jpg",
                            name: "Nome do Hotel", url: "https://www.hurb.com/hoteis/gramado/pousada-brisa-de-gramado-OMN-9241", resultDescription: "result", stars: 1000000, gallery: [Gallery(galleryDescription: "", url: "http://media.omnibees.com/Images/8006/RoomTypes/339196.jpg")],

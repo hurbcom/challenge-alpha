@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  ResultModel.swift
 //  Hurb_iOS_Challenge
 //
 //  Created by Gáudio Ney on 22/05/22.
@@ -11,7 +11,7 @@ import Foundation
 struct HotelResult: Codable {
     let sku: String?
     let isHotel: Bool?
-    let category: ResultCategory?
+    let category: ResultCategoryEnum?
     let smallDescription: String?
     let amenities: [ResultAmenity]?
     let id: String?
@@ -27,7 +27,7 @@ struct HotelResult: Codable {
     let tags: [String]?
     let quantityDescriptors: QuantityDescriptors?
     let featuredItem: FeaturedItem?
-
+    
     enum CodingKeys: String, CodingKey {
         case sku, isHotel, category, smallDescription, amenities, id, price
         case huFreeCancellation = "hu_free_cancellation"
@@ -40,16 +40,16 @@ struct HotelResult: Codable {
 // MARK: - ResultAmenity
 struct ResultAmenity: Codable {
     let name: String?
-    let category: AmenityCategory?
+    let category: AmenityCategoryEnum?
 }
 
 // MARK: - ResultPrice
 struct ResultPrice: Codable {
-    let currency, currencyOriginal: Currency?
+    let currency, currencyOriginal: CurrencyEnum?
     let currentPrice, oldPrice: Double?
     let sku: String?
     let originalAmountPerDay, amountPerDay, amount: Double?
-
+    
     enum CodingKeys: String, CodingKey {
         case currency
         case currencyOriginal = "currency_original"

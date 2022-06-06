@@ -29,21 +29,15 @@ extension LastSeenContainerView: UITableViewDataSource {
             DataPersistenceManager.shared.deleteTitleWith(model: (lastSeenHotels?[indexPath.row])!) { [weak self] result in
                 switch result {
                 case .success():
-                    print("DEBUG: - ITEM DELETADO DA LISTA DE VISTOS POR ÚLTIMO COM SUCESSO.")
                     AlertUtils.showAlert(message: "Item deletado da lista de vistos por último.")
                     self?.lastSeenHotels?.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
-                case .failure(let error):
+                case .failure(_):
                     AlertUtils.showAlert(message: "Falha ao deletar item, por favor tente novamente.")
-                    print("DEBUG: - \(error.localizedDescription)")
                 }
             }
         default:
             break
         }
     }
-}
-
-extension LastSeenContainerView: UITableViewDelegate {
-    
 }

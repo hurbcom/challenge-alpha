@@ -8,9 +8,9 @@
 import UIKit
 
 class CollectionViewHeaderView: UICollectionReusableView {
-    // MARK: - Properties 
-    lazy var headerDividingLine = LineView()
     
+    // MARK: - Properties
+    var headerDividingLine = LineView()
     private var headerDividingLine2 = LineView()
     
     lazy var sectionHeaderLabel: UILabel = {
@@ -43,6 +43,7 @@ class CollectionViewHeaderView: UICollectionReusableView {
     }
 }
 
+// MARK: - CodeView
 extension CollectionViewHeaderView: CodeView {
     func buildViewHierarchy() {
         addSubview(stackView)
@@ -59,6 +60,7 @@ extension CollectionViewHeaderView: CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        /// Configure View.
         backgroundColor = .white
     }
 }

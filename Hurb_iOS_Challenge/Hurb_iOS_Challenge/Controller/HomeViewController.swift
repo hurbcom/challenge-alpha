@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
     // MARK: - Properties
     private var homeContainerView = HomeContainerView()
     
@@ -19,7 +20,6 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - Helper Methods
-    
     private func fetchHomeData() {
         NetworkingService.shared.fetchHotels { [weak self] result in
             switch result {
@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - CodeView
 extension HomeViewController: CodeView {
     func buildViewHierarchy() {
         view.addSubview(homeContainerView)
@@ -39,9 +40,9 @@ extension HomeViewController: CodeView {
     
     func setupConstraints() {
         homeContainerView.anchor(top: view.topAnchor,
-                                  leading: view.leadingAnchor,
-                                  bottom: view.bottomAnchor,
-                                  trailling: view.trailingAnchor)
+                                 leading: view.leadingAnchor,
+                                 bottom: view.bottomAnchor,
+                                 trailling: view.trailingAnchor)
     }
     
     func setupAdditionalConfiguration() {

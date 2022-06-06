@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    // MARK: - Properties    
+    // MARK: - Properties
     var detailContainerView = DetailContainerView()
     
     private var scrollView: UIScrollView = {
@@ -24,8 +24,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupView()
     }
-    
-    // MARK: - Helper Methods
 }
 
 extension DetailViewController: CodeView {
@@ -36,14 +34,14 @@ extension DetailViewController: CodeView {
     
     func setupConstraints() {
         scrollView.anchor(top: view.topAnchor,
-                                  leading: view.leadingAnchor,
-                                  bottom: view.bottomAnchor,
-                                  trailling: view.trailingAnchor)
+                          leading: view.leadingAnchor,
+                          bottom: view.bottomAnchor,
+                          trailling: view.trailingAnchor)
         
         detailContainerView.anchor(top: scrollView.topAnchor,
-                                  leading: scrollView.leadingAnchor,
-                                  bottom: scrollView.bottomAnchor,
-                                  trailling: scrollView.trailingAnchor)
+                                   leading: scrollView.leadingAnchor,
+                                   bottom: scrollView.bottomAnchor,
+                                   trailling: scrollView.trailingAnchor)
     }
     
     func setupAdditionalConfiguration() {

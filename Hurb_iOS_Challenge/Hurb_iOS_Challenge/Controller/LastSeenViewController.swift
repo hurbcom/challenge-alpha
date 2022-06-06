@@ -8,9 +8,9 @@
 import UIKit
 
 class LastSeenViewController: UIViewController {
+    
     // MARK: - Properties
     var lastSeenContainerView = LastSeenContainerView()
-    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -35,6 +35,7 @@ class LastSeenViewController: UIViewController {
     }
 }
 
+// MARK: - CodeView
 extension LastSeenViewController: CodeView {
     func buildViewHierarchy() {
         view.addSubview(lastSeenContainerView)
@@ -59,6 +60,7 @@ extension LastSeenViewController: CodeView {
             self.fetchLocalLestSeenHotels()
         }
         
+        /// Configure NavigationBar layout.
         self.title = "Últimos vistos"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always

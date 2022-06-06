@@ -9,6 +9,7 @@ import UIKit
 import Kingfisher
 
 class HomeCollectionViewCell: UICollectionViewCell {
+    
     // MARK: - Properties    
     var hotelResult: HotelResult? {
         didSet {
@@ -106,10 +107,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Helper Methods
-    
     private func configureCell() {
         guard let hotelResult = hotelResult else { return }
-        let viewModel = HomeViewModel()
+        let viewModel = HomeDetailViewModel()
         viewModel.hotelResult = hotelResult
         
         hotelDescriptionLabel.attributedText = viewModel.hotelDescriptionText
@@ -147,6 +147,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
 }
 
+// MARK: CodeView
 extension HomeCollectionViewCell: CodeView {
     func buildViewHierarchy() {
         addSubview(imageScrollView)
@@ -179,9 +180,9 @@ extension HomeCollectionViewCell: CodeView {
                                paddingTop: 8)
         
         starLabel.anchor(top: finalPriceLabel.bottomAnchor,
-                                   leading: leadingAnchor,
-                                   trailling: trailingAnchor,
-                                   paddingTop: 8)
+                         leading: leadingAnchor,
+                         trailling: trailingAnchor,
+                         paddingTop: 8)
         
         hotelAmenitiesLabel.anchor(top: starLabel.bottomAnchor,
                                    leading: leadingAnchor,
@@ -198,11 +199,12 @@ extension HomeCollectionViewCell: CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        /// Configure View.
         backgroundColor = .white
-        clipsToBounds = true
     }
 }
 
+// MARK: UIScrollViewDelegate
 extension HomeCollectionViewCell: UIScrollViewDelegate {
     /// Set the current page of `PageControl` based on the `ScrollView` lenth.
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

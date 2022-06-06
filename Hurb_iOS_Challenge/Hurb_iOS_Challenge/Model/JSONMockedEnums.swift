@@ -9,8 +9,8 @@ import Foundation
 
 /// Hotel Enums
 
-// MARK: - AmenityCategory
-enum AmenityCategory: String, Codable {
+// MARK: - AmenityCategoryEnum
+enum AmenityCategoryEnum: String, Codable {
     case acomodação = "Acomodação"
     case atividades = "Atividades"
     case comidaBebida = "Comida / Bebida"
@@ -25,27 +25,27 @@ enum AmenityCategory: String, Codable {
     case áreasComuns = "Áreas comuns"
 }
 
-// MARK: - Currency
-enum Currency: String, Codable {
+// MARK: - CurrencyEnum
+enum CurrencyEnum: String, Codable {
     case brl = "BRL"
 }
 
-// MARK: - City
-enum City: String, Codable {
+// MARK: - CityEnum
+enum CityEnum: String, Codable {
     case gramado = "Gramado"
 }
 
-// MARK: - Country
-enum Country: String, Codable {
+// MARK: - CountryEnum
+enum CountryEnum: String, Codable {
     case brasil = "Brasil"
 }
 
-// MARK: - State
-enum State: String, Codable {
+// MARK: - StateEnum
+enum StateEnum: String, Codable {
     case rioGrandeDoSul = "Rio Grande do Sul"
 }
 
-// MARK: - Result Category
-enum ResultCategory: String, Codable {
+// MARK: - ResultCategoryEnum
+enum ResultCategoryEnum: String, Codable {
     case hotel = "hotel"
 }

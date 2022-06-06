@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Class that set all the App Alerts.
 class AlertUtils {
     class func showAlert(message: String, description: String? = nil, attributedDescription: NSMutableAttributedString? = nil, viewController: UIViewController? = nil, completionHandler: (() -> ())? = nil) {
         let alert = UIAlertController(title: message, message: description, preferredStyle: .alert)

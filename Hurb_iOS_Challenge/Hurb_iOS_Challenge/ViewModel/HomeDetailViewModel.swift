@@ -1,15 +1,13 @@
 //
-//  HomeViewModel.swift
+//  HomeDetailViewModel.swift
 //  Hurb_iOS_Challenge
 //
 //  Created by Gáudio Ney on 24/05/22.
 //
 
 import UIKit
-import SwiftUI
-import MapKit
 
-class HomeViewModel {
+class HomeDetailViewModel {
     // MARK: - Properties
     ///
     /// Hotel Result: `Home`
@@ -31,8 +29,8 @@ class HomeViewModel {
     }
     
     var hotelDescriptionText: NSAttributedString {
-        let cityAddress = City.gramado.rawValue //hotelsResult?.address?.city?.gramado
-        let countryAddress = Country.brasil.rawValue //hotelsResult?.address?.country?.brasil
+        let cityAddress = CityEnum.gramado.rawValue //hotelsResult?.address?.city?.gramado
+        let countryAddress = CountryEnum.brasil.rawValue //hotelsResult?.address?.country?.brasil
         let text = NSMutableAttributedString(string: hotelResult?.name ?? "--",
                                              attributes: [.font: UIFont.systemFont(ofSize: 14, weight: .regular)])
         text.append(NSAttributedString(string: "・" + (cityAddress.capitalizedFirstLetter()) ,
@@ -44,11 +42,11 @@ class HomeViewModel {
     var hotelFinalPriceText: NSAttributedString {
         guard let priceByNights = hotelResult?.price?.amountPerDay else { return NSAttributedString(string: "--") }
         let price = CurrencyUtils.formatPrice(price: priceByNights)
-    
+        
         let text = NSMutableAttributedString(string: price,
                                              attributes: [.font: UIFont.systemFont(ofSize: 13, weight: .regular)])
-            text.append(NSAttributedString(string: " / noite",
-                                           attributes: [.font: UIFont.systemFont(ofSize: 12, weight: .light)]))
+        text.append(NSAttributedString(string: " / noite",
+                                       attributes: [.font: UIFont.systemFont(ofSize: 12, weight: .light)]))
         return text
     }
     
@@ -102,8 +100,8 @@ class HomeViewModel {
     }
     
     var hotelDetailLocation: NSAttributedString {
-        let cityAddress = City.gramado.rawValue //hotelsResult?.address?.city?.gramado
-        let countryAddress = Country.brasil.rawValue //hotelsResult?.address?.country?.brasil
+        let cityAddress = CityEnum.gramado.rawValue //hotelsResult?.address?.city?.gramado
+        let countryAddress = CountryEnum.brasil.rawValue //hotelsResult?.address?.country?.brasil
         let text = NSMutableAttributedString(string: "・ " + cityAddress.capitalizedFirstLetter(),
                                              attributes: [.font: UIFont.systemFont(ofSize: 13, weight: .regular)])
         text.append(NSAttributedString(string: ", " + (countryAddress.capitalizedFirstLetter()), attributes: [.font: UIFont.systemFont(ofSize: 13, weight: .regular)]))

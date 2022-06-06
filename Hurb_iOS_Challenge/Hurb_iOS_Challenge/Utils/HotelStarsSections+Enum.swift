@@ -7,21 +7,22 @@
 
 import Foundation
 
+/// Enum used to personalize the CollectionView Sections and better treat them.
 enum StarsForSection: Int {
     typealias rawValue = String
     
     case fiveStars, fourStars, threeStars, twoStars, oneStar
     
     init?(rawValue: Int){
-            switch rawValue {
-            case 0 : self = .fiveStars
-            case 1 : self = .fourStars
-            case 2 : self = .threeStars
-            case 3 : self = .twoStars
-            case 4 : self = .oneStar
-            default : return nil
-            }
+        switch rawValue {
+        case 0 : self = .fiveStars
+        case 1 : self = .fourStars
+        case 2 : self = .threeStars
+        case 3 : self = .twoStars
+        case 4 : self = .oneStar
+        default : return nil
         }
+    }
     
     static let identifiers = [
         fiveStars:     "5 Estrelas",
