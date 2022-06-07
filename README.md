@@ -1,4 +1,4 @@
-# HURB iOS Challange
+# HURB iOS - Alpha Challange
 **Desenvolvido por:** Gáudio Uchôa Ney
 
 **Contato**: gaudiouchoaney@gmail.com
@@ -38,7 +38,7 @@
 ## 4. INSTRUÇÕES DE INSTALAÇÃO
 - Instale o CocoaPods na máquina.
 - Abra o arquivo: Hurb_iOS_Challenge.xcworkspace
-- Rode o simulado do projeto no XCode.
+- Rode o simulador do projeto no XCode.
 
 
 ## 5. TAREFAS REQUISITADAS E BÔNUS IMPLEMENTADOS
@@ -51,7 +51,7 @@
     - ✅ Exibir os itens de Hotels numa UITableView ou UICollectionView (como no iOS, por exemplo). Cada célula vai representar um ítem de Hotelse deve mostrar seu nome, preço, cidade, estado, uma foto e três amenidades.
     - ✅ Agrupar as células (usando um título para separá-las) pela quantidade de estrelas. Caso não exista estrelas, agrupe em Pacotes. Veja os exemplos de resposta para hoteis e pacotes. (Deve estar ordena descrentemente pela quantidade de estrelas.)
 - **Bônus:**
-    - ✅ Último visto.
+    - ✅ Últimos vistos.
 
 _OBS: No ítem bônus entregue, é importante destacar que foi utilizado o framework `CoreData`, nativo iOS, para o armazenamento local das informações necessárias para a construçõa da tela. Além disso, foram adicionadas ao Manager dos dados locais três funções adicionais: adição de dados, exclusão e busca._
 
@@ -60,8 +60,11 @@ _OBS: No ítem bônus entregue, é importante destacar que foi utilizado o frame
 - ⚠️ Separação dos Pacotes na Listagem.
 - ⚠️ Correção de adição de mais de uma vez o mesmo hotel no "Últimos vistos"
 
+
 ## 7. DESIGN E RESULTADO DAS TELAS
-Tendo em vista que o Design não tinha requisitos a serem seguidos, busquei implementar uma interface simples e objetiva, que atende as necessidads do projeto e ao escopo que delimitei para entregar o desafio. O Design trouxe maior destaque para as imagens em um carrossel na horizontal dentro de uma célula da listagem. 
+A UI foi desenvolvida para comportar as diferentes dimensões dos dispositivos iPhone somente e com orientação vertical da tela.
+
+Tendo em vista que o Design não tinha requisitos a serem seguidos, busquei implementar uma interface simples e objetiva, que atende as necessidads do projeto e ao escopo que delimitei para entregar o desafio. O Design trouxe maior destaque para as imagens em um carrossel na horizontal dentro de uma célula da listagem na vertical. 
 
 Buscando dispor as informações de forma minimalista e clara, os textos como preço, título, localização etc. seguiram o padrão de fonte nativa iOS e o peso`.regular` e o `.light`.
 
@@ -83,23 +86,28 @@ Por fim, foram implementados alertas em caso de falhas e erros para dar um retor
 ### Últimos Vistos
 ![Simulator Screen Shot - iPhone 11 - 2022-06-06 at 18 34 13](https://user-images.githubusercontent.com/62902650/172260953-a2b090d5-686d-4c61-b73c-99e5bb4e8d80.png) ![Simulator Screen Shot - iPhone 11 - 2022-06-06 at 18 33 16](https://user-images.githubusercontent.com/62902650/172260986-d95c8b4b-1cae-425f-9c64-9a5aef9b37a3.png)
 
+
 ## 8. TESTES
 Pessoalmente, confesso que, durante minha trajetória como desenvolvedor iOS, eu infelizmente tive pouco contato com testes automatizados ou trabalhei em projetos que aplicassem o Test-Driven Development(TDD). Apesar disso, busquei mostrar o mínimo que sei sobre o assunto e o que achei pertinente testar dentro de um escopo fechado e de forma bem simples. Para isso, foram testados apenas alguns retornos de variáveis tradas na `ViewModel` das células da `Home`.
 
 Como pode ser observado nos commmits, os testes foram implementados em um momento pós produção, o que não é uma boa prática, mas que só fui descobrir isso ao estudar mais sobre o assunto para o desafio. Apesar de ter entregado o mínimo requerido para o início dos testes do projeto, foi o melhor que consegui desenvolver tendo em vista o escopo do projeto e os meus conhecimentos sobre o assunto.
 
+
 ## 9. LOGS
 Levando em consideração as poucas chamadas existentes no projeto, optei por imprimir os resultados das requisições REST no próprio Console do XCode. 
 Foram cobertos os _Status_ de ✅ `.success` ou ❌ `.failure`. 
 
+
 ## 10. DEPENDÊNCIAS
-O CocoaPods foi instalado na máquina e utilizado para a gerenciamento de dependências. Em coparação ao SwiftPackageManager, o CocoaPods foi utilizado, principalmente, porque em versões mais recentes do XCode o SwiftPackage estava apresentando problemas de compilação e build do projeto.
+O `CocoaPods` foi instalado na máquina e utilizado para a gerenciamento de dependências. Em coparação ao `SwiftPackageManager`, o `CocoaPods` foi utilizado, principalmente, porque em versões mais recentes do XCode o SwiftPackage estava apresentando problemas de compilação e build do projeto.
+
 
 ## 10.1 Alamorire
-Por ser uma biblioteca pensada para a linguagem de programação Swift e por ser amplamente utilizada para realizar requisições HTTP para as plataformas iOS, macOS, o Alamofire foi utilizado para acessar o arquivo JSON local e realizar retornar o um resultado mais prático de se tratar.
+Por ser uma biblioteca pensada para a linguagem de programação Swift e por ser amplamente utilizada para realizar requisições `HTTP` para as plataformas iOS, macOS, o Alamofire foi utilizado, neste caso, para acessar o arquivo JSON local através de um `GET` e retornar o um resultado mais prático de se tratar.
 
 ## 10.2 Kingfisher
 É um ótimo gerenciador de imagens e a principal vantagem dele é a possibilidade de fazer cash das imagens, diminuindo assim o número de resições necessárias para a implementção das células e até evitar a própria troca de imagens ao ser aplicada a reutiliação de células do próprio `Swift`.
+
 
 ## 11. VULNERABILIDADES
 - Foi observado que algumas imagens estavam retornando URLs sem o protocolo de segurança HTTPS, ou seja, vinham em HTTP. Realizei alguns tentes e elas funcionaram ao forçar o acesso através do protocolo HTTPS também, mas é importante ressaltar que essa não é uma boa prática e que as informações da base de dados precisam vir do serviço já tratando essa questão de segurança. 
