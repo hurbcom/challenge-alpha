@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    compileSdk 30
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.edufelip.challengealpha"
@@ -69,8 +69,8 @@ android {
 dependencies {
     def ktx_version = "1.8.0"
     def appcompat_version = "1.4.2"
-    def constraintlayout_version = "2.1.4"
-    def material_version = "1.7.0-alpha02"
+    def constraint_layout_version = "2.1.4"
+    def material_version = "1.6.1"
     def lifecycle_extensions_version = "2.2.0"
     def lifecycle_version = "2.5.0"
     def room_version = "2.4.2"
@@ -78,7 +78,7 @@ dependencies {
     def navigation_version = "2.5.0"
     def coroutines_version = "1.6.1"
     def activity_ktx_version = "1.5.0"
-    def hilt_version = "2.38.1"
+    def hilt_version = "2.42"
     def hilt_compiler_version = "1.0.0"
     def glide_version = "4.13.2"
     def retrofit_version = "2.9.0"
@@ -87,7 +87,7 @@ dependencies {
 
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
 
     // Material Design
     implementation "com.google.android.material:material:$material_version"
