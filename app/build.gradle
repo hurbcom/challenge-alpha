@@ -34,6 +34,15 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             debuggable false
+            buildConfigField "String", "BASE_URL", "\"https://swapi.dev/api\""
+        }
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable true
+            buildConfigField "String", "BASE_URL", "\"https://swapi.dev/api/\""
         }
     }
     compileOptions {
