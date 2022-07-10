@@ -10,37 +10,37 @@ interface ApiService {
 
     @GET("/api/films/")
     suspend fun getPeopleList(
-        @Query("name") search: String,
+        @Query("name") search: String?,
         @Query("page") page: Int,
     ): Response<PagedListResponse<PeopleResponse>>
 
     @GET("/api/films/")
     suspend fun getFilmList(
-        @Query("title") search: String,
+        @Query("title") search: String?,
         @Query("page") page: Int,
     ): Response<PagedListResponse<FilmResponse>>
 
     @GET("/api/starships/")
     suspend fun getStarshipList(
-        @Query("name") search: String,
+        @Query("name") search: String?,
         @Query("page") page: Int,
     ): Response<PagedListResponse<StarshipResponse>>
 
     @GET("/api/vehicles/")
     suspend fun getVehiclesList(
-        @Query("name") search: String,
+        @Query("name") search: String?,
         @Query("page") page: Int,
     ): Response<PagedListResponse<VehicleResponse>>
 
     @GET("/api/films/")
     suspend fun getPlanetsList(
-        @Query("search") search: String,
+        @Query("search") search: String?,
         @Query("page") page: Int,
     ): Response<PagedListResponse<PlanetResponse>>
 
     @GET("/api/species/")
     suspend fun getSpeciesList(
-        @Query("search") search: String,
+        @Query("search") search: String?,
         @Query("page") page: Int,
     ): Response<PagedListResponse<SpecieResponse>>
 }

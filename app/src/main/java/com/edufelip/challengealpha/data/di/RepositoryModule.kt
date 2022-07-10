@@ -2,7 +2,7 @@ package com.edufelip.challengealpha.data.di
 
 import com.edufelip.challengealpha.common.mapper.ListMapper
 import com.edufelip.challengealpha.data.data_sources.general_list.GeneralListMenuLocalDataSource
-import com.edufelip.challengealpha.data.models.GeneralListMenuItemResponse
+import com.edufelip.challengealpha.data.network.models.GeneralListMenuItemResponse
 import com.edufelip.challengealpha.data.repositories.GeneralListMenuRepositoryImpl
 import com.edufelip.challengealpha.domain.models.GeneralListMenuItem
 import com.edufelip.challengealpha.domain.repositories.GeneralListMenuRepository

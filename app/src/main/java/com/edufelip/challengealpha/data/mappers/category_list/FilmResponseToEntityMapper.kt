@@ -1,4 +1,4 @@
-package com.edufelip.challengealpha.data.mappers
+package com.edufelip.challengealpha.data.mappers.category_list
 
 import com.edufelip.challengealpha.common.mapper.Mapper
 import com.edufelip.challengealpha.data.network.models.FilmResponse

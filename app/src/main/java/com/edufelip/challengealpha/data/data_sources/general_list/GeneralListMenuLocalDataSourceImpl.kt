@@ -2,7 +2,7 @@ package com.edufelip.challengealpha.data.data_sources.general_list
 
 import android.content.Context
 import com.edufelip.challengealpha.R
-import com.edufelip.challengealpha.data.models.GeneralListMenuItemResponse
+import com.edufelip.challengealpha.data.network.models.GeneralListMenuItemResponse
 import com.google.gson.Gson
 import java.io.IOException
 import java.io.InputStream

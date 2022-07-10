@@ -1,4 +1,4 @@
-package com.edufelip.challengealpha.data.models
+package com.edufelip.challengealpha.data.network.models
 
 import com.google.gson.annotations.SerializedName
 

@@ -2,8 +2,8 @@ package com.edufelip.challengealpha.data.di
 
 import com.edufelip.challengealpha.common.mapper.ListMapper
 import com.edufelip.challengealpha.common.mapper.ListMapperImpl
-import com.edufelip.challengealpha.data.mappers.GeneralListMenuItemResponseToEntityMapper
-import com.edufelip.challengealpha.data.models.GeneralListMenuItemResponse
+import com.edufelip.challengealpha.data.mappers.general_list.GeneralListMenuItemResponseToEntityMapper
+import com.edufelip.challengealpha.data.network.models.GeneralListMenuItemResponse
 import com.edufelip.challengealpha.domain.models.GeneralListMenuItem
 import dagger.Module
 import dagger.Provides
