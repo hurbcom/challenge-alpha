@@ -1,7 +1,10 @@
 package com.edufelip.challengealpha.data.di
 
+import com.edufelip.challengealpha.data.data_sources.category_list.CategoryListRemoteDataSource
+import com.edufelip.challengealpha.data.data_sources.category_list.CategoryListRemoteDataSourceImpl
 import com.edufelip.challengealpha.data.data_sources.general_list.GeneralListMenuLocalDataSource
 import com.edufelip.challengealpha.data.data_sources.general_list.GeneralListMenuLocalDataSourceImpl
+import com.edufelip.challengealpha.data.network.service.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,4 +18,9 @@ object DataSourceModule {
     @Provides
     fun providesGeneralListMenuLocalDataSource(): GeneralListMenuLocalDataSource =
         GeneralListMenuLocalDataSourceImpl()
+
+    @ViewModelScoped
+    @Provides
+    fun providesCategoryListRemoteDataSource(apiService: ApiService): CategoryListRemoteDataSource =
+        CategoryListRemoteDataSourceImpl(apiService)
 }

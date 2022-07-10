@@ -18,7 +18,7 @@ import javax.inject.Singleton
 object ServiceModule {
     @Provides
     @Singleton
-    fun providesBackendApi(factory: GsonConverterFactory): ApiService? {
+    fun providesBackendApi(factory: GsonConverterFactory): ApiService {
         val baseUrl: String = BuildConfig.BASE_URL
         val logging = HttpLoggingInterceptor()
         return Retrofit.Builder()
