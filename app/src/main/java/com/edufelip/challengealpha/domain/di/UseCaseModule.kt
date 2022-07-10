@@ -5,15 +5,15 @@ import com.edufelip.challengealpha.domain.usecases.GetGeneralListMenuItemsUseCas
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityRetainedComponent
-import javax.inject.Singleton
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
-@InstallIn(ActivityRetainedComponent::class)
-object DataSourceModule {
-    @Singleton
+@InstallIn(ViewModelComponent::class)
+object UseCaseModule {
+    @ViewModelScoped
     @Provides
-    fun provideGetGeneralListMenuItemsUseCase(
+    fun providesGetGeneralListMenuItemsUseCase(
         repository: GeneralListMenuRepository
-    ) = GetGeneralListMenuItemsUseCase(repository = repository)
+    ): GetGeneralListMenuItemsUseCase = GetGeneralListMenuItemsUseCase(repository = repository)
 }

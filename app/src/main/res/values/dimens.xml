@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="padding_or_margin_zero">0dp</dimen>
+    <dimen name="padding_or_margin_tiny">2dp</dimen>
+    <dimen name="padding_or_margin_micro">4dp</dimen>
+    <dimen name="padding_or_margin_small">8dp</dimen>
+    <dimen name="padding_or_margin_medium">12dp</dimen>
+    <dimen name="padding_or_margin_normal">16dp</dimen>
+    <dimen name="padding_or_margin_large">20dp</dimen>
+    <dimen name="padding_or_margin_xlarge">24dp</dimen>
+    <dimen name="padding_or_margin_super_large">28dp</dimen>
+    <dimen name="padding_or_margin_super_xlarge">32dp</dimen>
+    <dimen name="padding_or_margin_super_x_xlarge">40dp</dimen>
 </resources>

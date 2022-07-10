@@ -1,19 +1,23 @@
 package com.edufelip.challengealpha.data.di
 
+import com.edufelip.challengealpha.common.mapper.ListMapper
 import com.edufelip.challengealpha.common.mapper.ListMapperImpl
 import com.edufelip.challengealpha.data.mappers.GeneralListMenuItemResponseToEntityMapper
+import com.edufelip.challengealpha.data.models.GeneralListMenuItemResponse
+import com.edufelip.challengealpha.domain.models.GeneralListMenuItem
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityRetainedComponent
-import javax.inject.Singleton
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
-@InstallIn(ActivityRetainedComponent::class)
+@InstallIn(ViewModelComponent::class)
 object MapperModule {
-    @Singleton
+    @ViewModelScoped
     @Provides
-    fun provideGeneralListMenuItemListMapper() = ListMapperImpl(
-        mapper = GeneralListMenuItemResponseToEntityMapper()
-    )
+    fun providesGeneralListMenuItemListMapper(): ListMapper<GeneralListMenuItemResponse, GeneralListMenuItem> =
+        ListMapperImpl(
+            mapper = GeneralListMenuItemResponseToEntityMapper()
+        )
 }

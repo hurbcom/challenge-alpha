@@ -3,6 +3,7 @@ package com.edufelip.challengealpha.presentation.fragments.general_list
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.edufelip.challengealpha.databinding.GeneralListItemBinding
 import com.edufelip.challengealpha.domain.models.GeneralListMenuItem
 import javax.inject.Inject
@@ -15,6 +16,7 @@ class GeneralListMenuItemAdapter @Inject constructor() :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(menuItem: GeneralListMenuItem) {
             binding.menuItem = menuItem
+            Glide.with(binding.root.context).load(menuItem.image).into(binding.generalListItemImageView)
             binding.executePendingBindings()
         }
 
