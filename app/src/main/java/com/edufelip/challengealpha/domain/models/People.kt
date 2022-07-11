@@ -1,7 +1,8 @@
 package com.edufelip.challengealpha.domain.models
 
 data class People(
-    val birthdayYear: String,
+    val id: String,
+    val birthYear: String,
     val eyeColor: String,
     val films: List<String>,
     val gender: String,
@@ -15,4 +16,5 @@ data class People(
     val starships: List<String>,
     val url: String,
     val vehicles: List<String>,
+    val imageUrl: String,
 )

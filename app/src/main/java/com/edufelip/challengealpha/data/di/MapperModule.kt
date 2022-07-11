@@ -3,7 +3,6 @@ package com.edufelip.challengealpha.data.di
 import com.edufelip.challengealpha.common.mapper.ListMapper
 import com.edufelip.challengealpha.common.mapper.ListMapperImpl
 import com.edufelip.challengealpha.common.mapper.PagedListMapper
-import com.edufelip.challengealpha.data.mappers.base.MetaResponseToMeta
 import com.edufelip.challengealpha.data.mappers.base.PagedListResponseToPagedListMapper
 import com.edufelip.challengealpha.data.mappers.category_list.*
 import com.edufelip.challengealpha.data.mappers.general_list.GeneralListMenuItemResponseToEntityMapper
@@ -29,7 +28,6 @@ object MapperModule {
     @Provides
     fun providesFilmListResponseToEntityMapper(): PagedListMapper<FilmResponse, Film> =
         PagedListResponseToPagedListMapper(
-            metaMapper = MetaResponseToMeta(),
             listMapper = ListMapperImpl(
                 mapper = FilmResponseToEntityMapper()
             ),
@@ -39,7 +37,6 @@ object MapperModule {
     @Provides
     fun providesPeopleListResponseToEntityMapper(): PagedListMapper<PeopleResponse, People> =
         PagedListResponseToPagedListMapper(
-            metaMapper = MetaResponseToMeta(),
             listMapper = ListMapperImpl(
                 mapper = PeopleResponseToEntityMapper()
             ),
@@ -49,7 +46,6 @@ object MapperModule {
     @Provides
     fun providesPlanetListResponseToEntityMapper(): PagedListMapper<PlanetResponse, Planet> =
         PagedListResponseToPagedListMapper(
-            metaMapper = MetaResponseToMeta(),
             listMapper = ListMapperImpl(
                 mapper = PlanetResponseToEntityMapper()
             ),
@@ -59,7 +55,6 @@ object MapperModule {
     @Provides
     fun providesSpecieListResponseToEntityMapper(): PagedListMapper<SpecieResponse, Specie> =
         PagedListResponseToPagedListMapper(
-            metaMapper = MetaResponseToMeta(),
             listMapper = ListMapperImpl(
                 mapper = SpecieResponseToEntityMapper()
             ),
@@ -69,7 +64,6 @@ object MapperModule {
     @Provides
     fun providesStarshipListResponseToEntityMapper(): PagedListMapper<StarshipResponse, Starship> =
         PagedListResponseToPagedListMapper(
-            metaMapper = MetaResponseToMeta(),
             listMapper = ListMapperImpl(
                 mapper = StarshipResponseToEntityMapper()
             ),
@@ -79,7 +73,6 @@ object MapperModule {
     @Provides
     fun providesVehicleListResponseToEntityMapper(): PagedListMapper<VehicleResponse, Vehicle> =
         PagedListResponseToPagedListMapper(
-            metaMapper = MetaResponseToMeta(),
             listMapper = ListMapperImpl(
                 mapper = VehicleResponseToEntityMapper()
             ),

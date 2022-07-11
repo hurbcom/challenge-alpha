@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class PagedListResponse<T>(
-    @SerializedName("meta") val meta: MetaResponse,
-    @SerializedName("objects") val objects: List<T>
+    @SerializedName("next") val next: String?,
+    @SerializedName("results") val objects: List<T>
 ) : Serializable

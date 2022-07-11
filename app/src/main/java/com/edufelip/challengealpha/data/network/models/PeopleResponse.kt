@@ -3,8 +3,8 @@ package com.edufelip.challengealpha.data.network.models
 import com.google.gson.annotations.SerializedName
 
 class PeopleResponse (
-    @SerializedName("birthday_year")
-    val birthdayYear: String,
+    @SerializedName("birth_year")
+    val birthYear: String,
     @SerializedName("eye_color")
     val eyeColor: String,
     @SerializedName("films")

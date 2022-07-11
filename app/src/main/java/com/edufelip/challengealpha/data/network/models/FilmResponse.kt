@@ -2,7 +2,7 @@ package com.edufelip.challengealpha.data.network.models
 
 import com.google.gson.annotations.SerializedName
 
-class FilmResponse (
+class FilmResponse(
     @SerializedName("characters")
     val characters: List<String>,
     @SerializedName("director")
@@ -26,5 +26,5 @@ class FilmResponse (
     @SerializedName("title")
     val title: String,
     @SerializedName("vehicles")
-    val vehicles: List<String>,
+    val vehicles: List<String>
 )

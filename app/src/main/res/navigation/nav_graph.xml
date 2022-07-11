@@ -8,5 +8,72 @@
     <fragment
         android:id="@+id/generalListMenuFragment"
         android:name="com.edufelip.challengealpha.presentation.fragments.general_list.GeneralListMenuFragment"
-        android:label="GeneralListMenuFragment" />
+        android:label="GeneralListMenuFragment" >
+        <action
+            android:id="@+id/action_generalListMenuFragment_to_categoryListFilmFragment"
+            app:destination="@id/categoryListFilmFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_generalListMenuFragment_to_categoryListPeopleFragment"
+            app:destination="@id/categoryListPeopleFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_generalListMenuFragment_to_categoryListPlanetFragment"
+            app:destination="@id/categoryListPlanetFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_generalListMenuFragment_to_categoryListSpecieFragment"
+            app:destination="@id/categoryListSpecieFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_generalListMenuFragment_to_categoryListStarshipFragment"
+            app:destination="@id/categoryListStarshipFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_generalListMenuFragment_to_categoryListVehicleFragment"
+            app:destination="@id/categoryListVehicleFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryListFilmFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_film.CategoryListFilmFragment"
+        android:label="CategoryListFilmFragment" />
+    <fragment
+        android:id="@+id/categoryListPeopleFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_people.CategoryListPeopleFragment"
+        android:label="CategoryListPeopleFragment" />
+    <fragment
+        android:id="@+id/categoryListPlanetFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_planet.CategoryListPlanetFragment"
+        android:label="CategoryListPlanetFragment" />
+    <fragment
+        android:id="@+id/categoryListSpecieFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_specie.CategoryListSpecieFragment"
+        android:label="CategoryListSpecieFragment" />
+    <fragment
+        android:id="@+id/categoryListStarshipFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_starship.CategoryListStarshipFragment"
+        android:label="CategoryListStarshipFragment" />
+    <fragment
+        android:id="@+id/categoryListVehicleFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_vehicle.CategoryListVehicleFragment"
+        android:label="CategoryListVehicleFragment" />
 </navigation>

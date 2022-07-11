@@ -2,10 +2,14 @@ package com.edufelip.challengealpha.presentation.fragments.general_list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.edufelip.challengealpha.databinding.GeneralListItemBinding
 import com.edufelip.challengealpha.domain.models.GeneralListMenuItem
+import com.edufelip.challengealpha.domain.models.GeneralListMenuItemTypeEnum
+import com.edufelip.challengealpha.presentation.fragments.general_list.navigation_delegate.*
 import javax.inject.Inject
 
 class GeneralListMenuItemAdapter @Inject constructor() :
@@ -16,8 +20,23 @@ class GeneralListMenuItemAdapter @Inject constructor() :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(menuItem: GeneralListMenuItem) {
             binding.menuItem = menuItem
-            Glide.with(binding.root.context).load(menuItem.image).into(binding.generalListItemImageView)
+            Glide.with(binding.root.context).load(menuItem.image)
+                .into(binding.generalListItemImageView)
             binding.executePendingBindings()
+            binding.root.setOnClickListener {
+                navigateDelegateFactory(menuItem.type).navigate(binding.root.findNavController())
+            }
+        }
+
+        private fun navigateDelegateFactory(type: GeneralListMenuItemTypeEnum): NavigationDelegate {
+            return when(type) {
+                GeneralListMenuItemTypeEnum.CHARACTERS -> NavigationPeopleDelegate()
+                GeneralListMenuItemTypeEnum.FILMS -> NavigationFilmDelegate()
+                GeneralListMenuItemTypeEnum.SPECIES -> NavigationSpecieDelegate()
+                GeneralListMenuItemTypeEnum.STARSHIPS -> NavigationStarshipDelegate()
+                GeneralListMenuItemTypeEnum.VEHICLES -> NavigationVehicleDelegate()
+                GeneralListMenuItemTypeEnum.PLANETS -> NavigationPlanetDelegate()
+            }
         }
 
         companion object {

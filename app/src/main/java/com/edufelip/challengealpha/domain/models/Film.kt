@@ -1,6 +1,7 @@
 package com.edufelip.challengealpha.domain.models
 
 data class Film (
+    val id: String,
     val characters: List<String>,
     val director: String,
     val episodeId: String,
@@ -13,4 +14,5 @@ data class Film (
     val url: String,
     val title: String,
     val vehicles: List<String>,
+    val imageUrl: String,
 )

@@ -1,31 +1,37 @@
 [
   {
     "title": "main_menu_characters",
+    "type": "characters",
     "image": "https://starwars-visualguide.com/assets/img/categories/character.jpg",
     "resource_uri": "https://swapi.dev/api/people/"
   },
   {
     "title": "main_menu_films",
+    "type": "films",
     "image": "https://starwars-visualguide.com/assets/img/categories/films.jpg",
     "resource_uri": "https://swapi.dev/api/films/"
   },
   {
     "title": "main_menu_species",
+    "type": "species",
     "image": "https://starwars-visualguide.com/assets/img/categories/species.jpg",
     "resource_uri": "https://swapi.dev/api/species/"
   },
   {
     "title": "main_menu_starships",
+    "type": "starships",
     "image": "https://starwars-visualguide.com/assets/img/categories/starships.jpg",
     "resource_uri": "https://swapi.dev/api/starships/"
   },
   {
     "title": "main_menu_vehicles",
+    "type": "vehicles",
     "image": "https://starwars-visualguide.com/assets/img/categories/vehicles.jpg",
     "resource_uri": "https://swapi.dev/api/vehicles/"
   },
   {
     "title": "main_menu_planets",
+    "type": "planets",
     "image": "https://starwars-visualguide.com/assets/img/categories/planets.jpg",
     "resource_uri": "https://swapi.dev/api/planets/"
   }

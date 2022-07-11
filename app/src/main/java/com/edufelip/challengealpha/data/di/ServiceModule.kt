@@ -20,12 +20,14 @@ object ServiceModule {
     @Singleton
     fun providesBackendApi(factory: GsonConverterFactory): ApiService {
         val baseUrl: String = BuildConfig.BASE_URL
-        val logging = HttpLoggingInterceptor()
+        val logging = HttpLoggingInterceptor().apply {
+            setLevel(HttpLoggingInterceptor.Level.BODY)
+        }
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(
                 OkHttpClient.Builder()
-                    .connectTimeout(30, TimeUnit.NANOSECONDS)
+                    .connectTimeout(30, TimeUnit.SECONDS)
                     .readTimeout(30, TimeUnit.SECONDS)
                     .writeTimeout(30, TimeUnit.SECONDS)
                     .addInterceptor(logging)

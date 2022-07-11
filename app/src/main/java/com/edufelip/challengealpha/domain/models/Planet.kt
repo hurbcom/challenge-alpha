@@ -1,6 +1,8 @@
 package com.edufelip.challengealpha.domain.models
 
 data class Planet(
+    val id: String,
+    val name: String,
     val climate: String,
     val diameter: String,
     val gravity: String,
@@ -12,4 +14,5 @@ data class Planet(
     val url: String,
     val films: List<String>,
     val residents: List<String>,
+    val imageUrl: String,
 )

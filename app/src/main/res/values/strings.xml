@@ -11,4 +11,14 @@
     <string name="main_menu_planets">Planetas</string>
     <string name="general_list_item_image_view_content_description">Imagem da categoria</string>
 
+    <!-- Category List -->
+    <string name="search">Procure</string>
+    <string name="category_list_error_toast">Ocorreu um erro, tente novamente</string>
+    <string name="category_list_people_toolbar_title">Personagens</string>
+    <string name="category_list_film_toolbar_title">Filmes</string>
+    <string name="category_list_planet_toolbar_title">Plenatas</string>
+    <string name="category_list_specie_toolbar_title">Espécies</string>
+    <string name="category_list_starship_toolbar_title">Naves</string>
+    <string name="category_list_vehicle_toolbar_title">Veículos</string>
+
 </resources>

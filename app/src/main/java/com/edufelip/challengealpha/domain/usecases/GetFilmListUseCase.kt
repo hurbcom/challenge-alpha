@@ -9,7 +9,7 @@ import javax.inject.Inject
 class GetFilmListUseCase @Inject constructor(
     private val repository: CategoryListRepository
 ) {
-    operator fun invoke(search: String? = null, page: Int): Flow<PagedList<Film>> {
+    operator fun invoke(search: String? = null, page: Int = 1): Flow<PagedList<Film>> {
         return repository.getFilmList(search = search, page = page)
     }
 }

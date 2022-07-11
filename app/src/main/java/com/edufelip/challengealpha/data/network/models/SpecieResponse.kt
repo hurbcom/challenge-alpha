@@ -14,7 +14,7 @@ class SpecieResponse (
     @SerializedName("eye_colors")
     val eyeColors: String,
     @SerializedName("homeworld")
-    val homeworld: String,
+    val homeworld: String?,
     @SerializedName("language")
     val language: String,
     @SerializedName("name")

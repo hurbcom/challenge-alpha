@@ -40,11 +40,12 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/rv_text"
+                android:id="@+id/general_list_item_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/padding_or_margin_small"
                 android:textStyle="bold"
+                tools:text="Text Example"
                 app:textByResourceName="@{menuItem.title}" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

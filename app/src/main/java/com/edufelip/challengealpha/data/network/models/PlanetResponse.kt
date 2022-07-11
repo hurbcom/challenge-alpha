@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName
 class PlanetResponse (
     @SerializedName("climate")
     val climate: String,
+    @SerializedName("name")
+    val name: String,
     @SerializedName("diameter")
     val diameter: String,
     @SerializedName("gravity")
