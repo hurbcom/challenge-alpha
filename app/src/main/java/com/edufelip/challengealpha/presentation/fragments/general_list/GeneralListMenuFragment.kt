@@ -111,10 +111,10 @@ class GeneralListMenuFragment @Inject constructor(
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 mGeneralListMenuViewModel?.generalListMenuItemsState?.collect {
                     when (it) {
-                        is StateUI.Error -> Unit // Error dialog TODO
+                        is StateUI.Error -> Unit
                         is StateUI.Idle -> Unit
                         is StateUI.Processed -> adapter.setMenuItems(it.data)
-                        is StateUI.Processing -> Unit // Processing Dialog
+                        is StateUI.Processing -> Unit
                     }
                 }
             }

@@ -6,5 +6,5 @@ class GeneralListMenuItemResponse(
     @SerializedName("title") val title: String,
     @SerializedName("image") val image: String,
     @SerializedName("type") val type: String,
-    @SerializedName("resource_uri") val resourceUri: String,
+    @SerializedName("resource_url") val resourceUrl: String,
 )

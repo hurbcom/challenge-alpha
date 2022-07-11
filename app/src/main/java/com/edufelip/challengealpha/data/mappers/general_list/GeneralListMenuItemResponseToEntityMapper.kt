@@ -12,7 +12,7 @@ class GeneralListMenuItemResponseToEntityMapper :
             GeneralListMenuItem(
                 title = title,
                 image = image,
-                resourceUri = resourceUri,
+                resourceUrl = resourceUrl,
                 type = GeneralListMenuItemTypeEnum.valueOf(type.uppercase())
             )
         }
