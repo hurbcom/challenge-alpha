@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/generalListMenuFragment"
         android:name="com.edufelip.challengealpha.presentation.fragments.general_list.GeneralListMenuFragment"
-        android:label="GeneralListMenuFragment" >
+        android:label="GeneralListMenuFragment">
         <action
             android:id="@+id/action_generalListMenuFragment_to_categoryListFilmFragment"
             app:destination="@id/categoryListFilmFragment"
@@ -55,25 +55,121 @@
     <fragment
         android:id="@+id/categoryListFilmFragment"
         android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_film.CategoryListFilmFragment"
-        android:label="CategoryListFilmFragment" />
+        android:label="CategoryListFilmFragment">
+        <action
+            android:id="@+id/action_categoryListFilmFragment_to_categoryDetailFilmFragment"
+            app:destination="@id/categoryDetailFilmFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
     <fragment
         android:id="@+id/categoryListPeopleFragment"
         android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_people.CategoryListPeopleFragment"
-        android:label="CategoryListPeopleFragment" />
+        android:label="CategoryListPeopleFragment">
+        <action
+            android:id="@+id/action_categoryListPeopleFragment_to_categoryDetailPeopleFragment"
+            app:destination="@id/categoryDetailPeopleFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
     <fragment
         android:id="@+id/categoryListPlanetFragment"
         android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_planet.CategoryListPlanetFragment"
-        android:label="CategoryListPlanetFragment" />
+        android:label="CategoryListPlanetFragment">
+        <action
+            android:id="@+id/action_categoryListPlanetFragment_to_categoryDetailPlanetFragment"
+            app:destination="@id/categoryDetailPlanetFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
     <fragment
         android:id="@+id/categoryListSpecieFragment"
         android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_specie.CategoryListSpecieFragment"
-        android:label="CategoryListSpecieFragment" />
+        android:label="CategoryListSpecieFragment">
+        <action
+            android:id="@+id/action_categoryListSpecieFragment_to_categoryDetailSpecieFragment"
+            app:destination="@id/categoryDetailSpecieFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
     <fragment
         android:id="@+id/categoryListStarshipFragment"
         android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_starship.CategoryListStarshipFragment"
-        android:label="CategoryListStarshipFragment" />
+        android:label="CategoryListStarshipFragment">
+        <action
+            android:id="@+id/action_categoryListStarshipFragment_to_categoryDetailStarshipFragment"
+            app:destination="@id/categoryDetailStarshipFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
     <fragment
         android:id="@+id/categoryListVehicleFragment"
         android:name="com.edufelip.challengealpha.presentation.fragments.category_list.category_list_vehicle.CategoryListVehicleFragment"
-        android:label="CategoryListVehicleFragment" />
+        android:label="CategoryListVehicleFragment">
+        <action
+            android:id="@+id/action_categoryListVehicleFragment_to_categoryDetailVehicleFragment"
+            app:destination="@id/categoryDetailVehicleFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailFilmFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_detail.category_detail_film.CategoryDetailFilmFragment"
+        android:label="CategoryDetailFilmFragment" >
+        <argument
+            android:name="film"
+            app:argType="com.edufelip.challengealpha.domain.models.Film" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailPeopleFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_detail.category_detail_people.CategoryDetailPeopleFragment"
+        android:label="CategoryDetailPeopleFragment" >
+        <argument
+            android:name="people"
+            app:argType="com.edufelip.challengealpha.domain.models.People" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailSpecieFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_detail.category_detail_specie.CategoryDetailSpecieFragment"
+        android:label="CategoryDetailSpecieFragment" >
+        <argument
+            android:name="specie"
+            app:argType="com.edufelip.challengealpha.domain.models.Specie" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailStarshipFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_detail.category_detail_starship.CategoryDetailStarshipFragment"
+        android:label="CategoryDetailStarshipFragment" >
+        <argument
+            android:name="starship"
+            app:argType="com.edufelip.challengealpha.domain.models.Starship" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailVehicleFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_detail.category_detail_vehicle.CategoryDetailVehicleFragment"
+        android:label="CategoryDetailVehicleFragment" >
+        <argument
+            android:name="vehicle"
+            app:argType="com.edufelip.challengealpha.domain.models.Vehicle" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailPlanetFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.category_detail.category_detail_planet.CategoryDetailPlanetFragment"
+        android:label="CategoryDetailPlanetFragment" >
+        <argument
+            android:name="planet"
+            app:argType="com.edufelip.challengealpha.domain.models.Planet" />
+    </fragment>
 </navigation>

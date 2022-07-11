@@ -6,6 +6,8 @@ import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.edufelip.challengealpha.R
 import com.edufelip.challengealpha.databinding.GeneralListItemBinding
 import com.edufelip.challengealpha.domain.models.GeneralListMenuItem
 import com.edufelip.challengealpha.domain.models.GeneralListMenuItemTypeEnum
@@ -20,7 +22,9 @@ class GeneralListMenuItemAdapter @Inject constructor() :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(menuItem: GeneralListMenuItem) {
             binding.menuItem = menuItem
-            Glide.with(binding.root.context).load(menuItem.image)
+            Glide.with(binding.root.context).setDefaultRequestOptions(
+                RequestOptions().placeholder(R.drawable.placeholder)
+            ).load(menuItem.image)
                 .into(binding.generalListItemImageView)
             binding.executePendingBindings()
             binding.root.setOnClickListener {

@@ -1,5 +1,9 @@
 package com.edufelip.challengealpha.domain.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Starship(
     val id: String,
     val mglt: String,
@@ -19,4 +23,4 @@ data class Starship(
     val films: List<String>,
     val pilots: List<String>,
     val imageUrl: String,
-)
+) : Parcelable

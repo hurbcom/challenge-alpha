@@ -1,5 +1,9 @@
 package com.edufelip.challengealpha.domain.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class People(
     val id: String,
     val birthYear: String,
@@ -17,4 +21,4 @@ data class People(
     val url: String,
     val vehicles: List<String>,
     val imageUrl: String,
-)
+) : Parcelable

@@ -21,4 +21,42 @@
     <string name="category_list_starship_toolbar_title">Naves</string>
     <string name="category_list_vehicle_toolbar_title">Veículos</string>
 
+    <!-- Category Detail -->
+    <string name="category_detail_toolbar_title">Detalhes</string>
+    <string name="category_detail_film_title_string">Título</string>
+    <string name="category_detail_film_episode_string">Episódio</string>
+    <string name="category_detail_film_director_string">Diretor</string>
+    <string name="category_detail_film_producer_string">Produtor</string>
+    <string name="category_detail_film_opening_string">Abertura</string>
+
+    <string name="category_detail_people_name_string">Nome</string>
+    <string name="category_detail_people_gender_string">Gênero</string>
+    <string name="category_detail_people_birth_string">Nascimento</string>
+    <string name="category_detail_people_height_string">Altura</string>
+    <string name="category_detail_people_skin_string">Cor de pele</string>
+
+    <string name="category_detail_planet_name_string">Nome</string>
+    <string name="category_detail_planet_climate_string">Clima</string>
+    <string name="category_detail_planet_gravity_string">Gravidade</string>
+    <string name="category_detail_planet_orbital_period_string">Período orbital</string>
+    <string name="category_detail_planet_population_string">População</string>
+
+    <string name="category_detail_specie_name_string">Nome</string>
+    <string name="category_detail_specie_height_string">Altura</string>
+    <string name="category_detail_specie_lifespan_string">Tempo de vida</string>
+    <string name="category_detail_specie_eye_colors_string">Cor dos olhos</string>
+    <string name="category_detail_specie_language_string">Idioma</string>
+
+    <string name="category_detail_starship_name_string">Nome</string>
+    <string name="category_detail_starship_model_string">Modelo</string>
+    <string name="category_detail_starship_cargo_capacity_string">Capacidade de carga</string>
+    <string name="category_detail_starship_cost_credits_string">Custo</string>
+    <string name="category_detail_starship_hyperdriving_rate_string">Taxa de hyperdrive</string>
+
+    <string name="category_detail_vehicles_name_string">Nome</string>
+    <string name="category_detail_vehicles_model_string">Modelo</string>
+    <string name="category_detail_vehicles_cargo_capacity_string">Capacidade de carga</string>
+    <string name="category_detail_vehicles_consumables_string">Consumíveis</string>
+    <string name="category_detail_vehicles_hyperdriving_rate_string">Taxa de hyperdrive</string>
+
 </resources>

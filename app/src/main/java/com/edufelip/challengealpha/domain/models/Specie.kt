@@ -1,5 +1,9 @@
 package com.edufelip.challengealpha.domain.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Specie(
     val id: String,
     val averageHeight: String,
@@ -15,4 +19,4 @@ data class Specie(
     val people: List<String>,
     val films: List<String>,
     val imageUrl: String,
-)
+) : Parcelable

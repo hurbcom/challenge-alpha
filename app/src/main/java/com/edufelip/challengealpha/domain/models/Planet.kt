@@ -1,5 +1,9 @@
 package com.edufelip.challengealpha.domain.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Planet(
     val id: String,
     val name: String,
@@ -15,4 +19,4 @@ data class Planet(
     val films: List<String>,
     val residents: List<String>,
     val imageUrl: String,
-)
+) : Parcelable

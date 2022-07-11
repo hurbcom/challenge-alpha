@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/padding_or_margin_large"
             android:layout_marginBottom="@dimen/padding_or_margin_medium"
+            android:layout_marginTop="@dimen/padding_or_margin_small"
             android:hint="@string/search"
             android:maxLength="150"
             app:layout_constraintEnd_toEndOf="parent"

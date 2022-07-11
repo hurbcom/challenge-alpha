@@ -2,10 +2,14 @@ package com.edufelip.challengealpha.presentation.fragments.category_list.categor
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.edufelip.challengealpha.R
 import com.edufelip.challengealpha.databinding.CategoryListItemBinding
 import com.edufelip.challengealpha.domain.models.Specie
+import com.edufelip.challengealpha.presentation.fragments.category_list.category_list_film.CategoryListFilmFragmentDirections
 import javax.inject.Inject
 
 class CategoryListSpecieItemAdapter @Inject constructor() :
@@ -15,8 +19,16 @@ class CategoryListSpecieItemAdapter @Inject constructor() :
     class CategoryListViewHolder(private val binding: CategoryListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(specie: Specie) {
+            binding.root.setOnClickListener {
+                binding.root.findNavController().navigate(
+                    CategoryListSpecieFragmentDirections
+                        .actionCategoryListSpecieFragmentToCategoryDetailSpecieFragment(specie)
+                )
+            }
             binding.categoryListText.text = specie.name
-            Glide.with(binding.root.context).load(specie.imageUrl)
+            Glide.with(binding.root.context).setDefaultRequestOptions(
+                RequestOptions().placeholder(R.drawable.placeholder)
+            ).load(specie.imageUrl)
                 .into(binding.categoryListItemImageView)
             binding.executePendingBindings()
         }
