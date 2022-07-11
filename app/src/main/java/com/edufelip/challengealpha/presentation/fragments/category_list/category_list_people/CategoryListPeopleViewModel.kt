@@ -6,6 +6,7 @@ import com.edufelip.challengealpha.domain.usecases.GetPeopleListUseCase
 import com.edufelip.challengealpha.presentation.base.models.StateUI
 import com.edufelip.challengealpha.presentation.fragments.category_list.base.BaseCategoryListViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
@@ -64,7 +65,9 @@ class CategoryListPeopleViewModel @Inject constructor(
     }
 
     override fun search(text: String) {
-        viewModelScope.launch {
+        searchJob?.cancel()
+        searchJob = viewModelScope.launch {
+            delay(400)
             getPeopleListUseCase(search = text)
                 .onStart {
                     _listItemState.emit(StateUI.Processing())

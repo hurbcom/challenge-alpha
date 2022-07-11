@@ -6,6 +6,7 @@ import com.edufelip.challengealpha.domain.usecases.GetVehicleListUseCase
 import com.edufelip.challengealpha.presentation.base.models.StateUI
 import com.edufelip.challengealpha.presentation.fragments.category_list.base.BaseCategoryListViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
@@ -42,7 +43,9 @@ class CategoryListVehicleViewModel @Inject constructor(
 
     override fun loadMore() {
         if (!hasNext.value) return
-        viewModelScope.launch {
+        searchJob?.cancel()
+        searchJob = viewModelScope.launch {
+            delay(400)
             getVehicleListUseCase(page = page.value!!)
                 .onStart {
                     _listItemState.emit(StateUI.Processing())
