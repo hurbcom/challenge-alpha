@@ -84,7 +84,6 @@ dependencies {
     def lifecycle_extensions_version = "2.2.0"
     def lifecycle_version = "2.5.0"
     def room_version = "2.4.2"
-    def legacy_support_version = "1.0.0"
     def navigation_version = "2.5.0"
     def coroutines_version = "1.6.1"
     def activity_ktx_version = "1.5.0"
@@ -115,9 +114,6 @@ dependencies {
 
     // Navigation
     implementation "androidx.navigation:navigation-testing:$navigation_version"
-
-    // Legacy
-    implementation "androidx.legacy:legacy-support-v4:$legacy_support_version"
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"

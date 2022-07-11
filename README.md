@@ -1,47 +1,33 @@
-# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Alpha Challenge
+# Hurb Challenge
 
-[[English](README.md) | [Português](README.pt.md)]
+Nesse desafio do processo seletivo da hurb o objetivo foi construir um aplicativo que consumisse uma API que fornece dados referentes à saga StarWars. Além de listar categorias e detalhar os elementos em uma página de detalhes, um dos objetivos foi a criação de um fluxo de favoritos, que tem como base o armaezenamento local do telefone do usuário
 
-Welcome to Hurb's mobile team coding challenge!
+# Pontos importantes
 
-We are always looking to expand our team with dedicated devs, see if you have open positions in our [Gupy](https://hurb.gupy.io/), if you don't have an open position, send a message on LinkedIn or open an issue.
+## Menu inicial
 
-The challenge is to create a mobile app (**Swift**, **Kotlin**) that consumes the JSON exposed by our REST API or GraphQL search and presents the information in a listing. You are free to use third-party libraries.
+O menu inicial foi construído a partir de um json local, pois a rota inicial da API só fornece uma url para cada categoria, e mesmo acessando essas url's não temos as informações de nome da categoria e imagem das quais preciamos para fazer a listagem inicial.
 
-We want to see the **maximum of your technical ability**! You decide the limit.
+## Listagem de items por categoria
 
-[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/company/hurb/)
+Ao clicar em uma categoria pode-se ntoar que foi implementada uma caixa de texto para que o usuário possa digitar e buscar pelo elemento em questão, mas caso não queira digitar ele também pode scrollar infinitamente pela página em busca do elemento desejado. 
 
-#### [>>>>> See Wiki for challenge details. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
+## Detalhe do item
 
-## Minimum requirements
+Na página de detalhe do item são exibidas cinco informações referentes ao mesmo, e, na toolbar, há a opção de adicionar esse elemento como favorito
 
--   Fork this challenge and create your project (or workspace) using your version of that repository, as soon as you finish the challenge, submit a _pull request_.
-    -   If you have any reason not to submit a _pull request_, create a private repository on Github, do every challenge on the **master** branch and don't forget to fill in the `pull-request.txt` file. As soon as you finish your development, add the user `automator-hurb` to your repository as a contributor and make it available for at least 30 days. **Do not add the `automator-hurb` until development is complete.**
-    -   If you have any problem creating the private repository, at the end of the challenge fill in the file called `pull-request.txt`, compress the project folder - including the `.git` folder - and send it to us by email.
--   Make asynchronous calls to the API and log the data received.
+## Favoritos
 
--   Have tests for the code created
+Na página de favoritos são exibidos os items que o usuário favoritou, constando também a opção de remover esse item da lista através do ícone da lixeira.
 
-## Evaluation criteria
+## Bibliotecas
+Para o armazenamento local foi escolhido o RoomDB, uma opção muito mais sólida e atual que o antigo SQLite
 
--   **Organization of code**: Separation of modules, view and model, back-end and front-end
--   **Clarity**: Does the README explain briefly what the problem is and how can I run the application?
--   **Assertiveness**: Is the application doing what is expected? If something is missing, does the README explain why?
--   **Code readability** (including comments)
--   **Security**: Are there any clear vulnerabilities?
--   **Test coverage** (We don't expect full coverage)
--   **History of commits** (structure and quality)
--   **UX**: Is the interface user-friendly and self-explanatory? Is the API intuitive?
--   **Technical choices**: Is the choice of libraries, database, architecture, etc. the best choice for the application?
+Para navegação optei por utilizar o jetpack navigation, que se baseia em haver apenas uma activity no projeto e construir as telas em cima de fragments
 
+O consumo da API ficou a cargo do Retrofit, assim como a injeção de dependência ficou a cargo do Hilt
 
-## Doubts
+Todo o trabalho assíncrono foi realizado atraveś de coroutines
 
-Any questions you may have, check the [_issues_](https://github.com/HurbCom/challenge-alpha/issues) to see if someone hasn't already and if you can't find your answer, open one yourself. new issue!
-
-Godspeed! ;)
-
-<p align="center">
-  <img src="ca.jpg" alt="Challange accepted" />
-</p>
+# Comentários pertinentes
+Devido à limitação de tempo o design do app ficou minimalista por assim dizer, mas dei foco na otimização das funcionalidades de listagem, armazenamento local (favoritos) e scroll infinito, assim como também dei foco na arquitetura do projeto e na separação das camadas do mesmo, seguindo os padrões de arquitetura limpa.
