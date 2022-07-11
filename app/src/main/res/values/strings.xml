@@ -59,4 +59,7 @@
     <string name="category_detail_vehicles_consumables_string">Consumíveis</string>
     <string name="category_detail_vehicles_hyperdriving_rate_string">Taxa de hyperdrive</string>
 
+    <!-- Favorites -->
+    <string name="favorites_toolbar_title">Favoritos</string>
+
 </resources>

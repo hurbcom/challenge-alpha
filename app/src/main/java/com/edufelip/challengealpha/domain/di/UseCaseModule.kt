@@ -1,6 +1,7 @@
 package com.edufelip.challengealpha.domain.di
 
 import com.edufelip.challengealpha.domain.repositories.CategoryListRepository
+import com.edufelip.challengealpha.domain.repositories.FavoritesRepository
 import com.edufelip.challengealpha.domain.repositories.GeneralListMenuRepository
 import com.edufelip.challengealpha.domain.usecases.*
 import dagger.Module
@@ -53,4 +54,10 @@ object UseCaseModule {
     fun providesGetVehicleListUseCase(
         repository: CategoryListRepository
     ): GetVehicleListUseCase = GetVehicleListUseCase(repository = repository)
+
+    @ViewModelScoped
+    @Provides
+    fun providesGetFavoritesListUseCase(
+        repository: FavoritesRepository
+    ): GetFavoritesListUseCase = GetFavoritesListUseCase(repository = repository)
 }

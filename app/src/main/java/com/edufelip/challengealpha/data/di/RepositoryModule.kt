@@ -3,12 +3,15 @@ package com.edufelip.challengealpha.data.di
 import com.edufelip.challengealpha.common.mapper.ListMapper
 import com.edufelip.challengealpha.common.mapper.PagedListMapper
 import com.edufelip.challengealpha.data.data_sources.category_list.CategoryListRemoteDataSource
+import com.edufelip.challengealpha.data.data_sources.favorites.FavoritesLocalDataSource
 import com.edufelip.challengealpha.data.data_sources.general_list.GeneralListMenuLocalDataSource
 import com.edufelip.challengealpha.data.network.models.*
 import com.edufelip.challengealpha.data.repositories.CategoryListRepositoryImpl
+import com.edufelip.challengealpha.data.repositories.FavoritesRepositoryImpl
 import com.edufelip.challengealpha.data.repositories.GeneralListMenuRepositoryImpl
 import com.edufelip.challengealpha.domain.models.*
 import com.edufelip.challengealpha.domain.repositories.CategoryListRepository
+import com.edufelip.challengealpha.domain.repositories.FavoritesRepository
 import com.edufelip.challengealpha.domain.repositories.GeneralListMenuRepository
 import dagger.Module
 import dagger.Provides
@@ -47,5 +50,13 @@ object RepositoryModule {
         specieListResponseToEntityMapper = specieListResponseToEntityMapper,
         starshipListResponseToEntityMapper = starshipListResponseToEntityMapper,
         vehicleListResponseToEntityMapper = vehicleListResponseToEntityMapper
+    )
+
+    @ViewModelScoped
+    @Provides
+    fun providesFavoritesRepository(
+        localDataSource: FavoritesLocalDataSource
+    ): FavoritesRepository = FavoritesRepositoryImpl(
+        localDataSource = localDataSource
     )
 }

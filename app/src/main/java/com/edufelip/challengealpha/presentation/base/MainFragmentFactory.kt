@@ -14,6 +14,8 @@ import com.edufelip.challengealpha.presentation.fragments.category_list.category
 import com.edufelip.challengealpha.presentation.fragments.category_list.category_list_starship.CategoryListStarshipItemAdapter
 import com.edufelip.challengealpha.presentation.fragments.category_list.category_list_vehicle.CategoryListVehicleFragment
 import com.edufelip.challengealpha.presentation.fragments.category_list.category_list_vehicle.CategoryListVehicleItemAdapter
+import com.edufelip.challengealpha.presentation.fragments.favorites.FavoritesAdapter
+import com.edufelip.challengealpha.presentation.fragments.favorites.FavoritesFragment
 import com.edufelip.challengealpha.presentation.fragments.general_list.GeneralListMenuFragment
 import com.edufelip.challengealpha.presentation.fragments.general_list.GeneralListMenuItemAdapter
 import javax.inject.Inject
@@ -26,30 +28,32 @@ class MainFragmentFactory @Inject constructor(
     private val categoryListSpecieItemAdapter: CategoryListSpecieItemAdapter,
     private val categoryListStarshipItemAdapter: CategoryListStarshipItemAdapter,
     private val categoryListVehicleItemAdapter: CategoryListVehicleItemAdapter,
+    private val favoritesAdapter: FavoritesAdapter
 ) : FragmentFactory() {
     override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
-        return when(className) {
-            GeneralListMenuFragment::class.java.name -> {
-                GeneralListMenuFragment(generalListMenuItemAdapter)
-            }
-            CategoryListFilmFragment::class.java.name -> {
-                CategoryListFilmFragment(categoryListFilmItemAdapter)
-            }
-            CategoryListPeopleFragment::class.java.name -> {
-                CategoryListPeopleFragment(categoryListPeopleItemAdapter)
-            }
-            CategoryListPlanetFragment::class.java.name -> {
-                CategoryListPlanetFragment(categoryListPlanetItemAdapter)
-            }
-            CategoryListSpecieFragment::class.java.name -> {
-                CategoryListSpecieFragment(categoryListSpecieItemAdapter)
-            }
-            CategoryListStarshipFragment::class.java.name -> {
-                CategoryListStarshipFragment(categoryListStarshipItemAdapter)
-            }
-            CategoryListVehicleFragment::class.java.name -> {
-                CategoryListVehicleFragment(categoryListVehicleItemAdapter)
-            }
+        return when (className) {
+            GeneralListMenuFragment::class.java.name -> GeneralListMenuFragment(
+                generalListMenuItemAdapter
+            )
+            CategoryListFilmFragment::class.java.name -> CategoryListFilmFragment(
+                categoryListFilmItemAdapter
+            )
+            CategoryListPeopleFragment::class.java.name -> CategoryListPeopleFragment(
+                categoryListPeopleItemAdapter
+            )
+            CategoryListPlanetFragment::class.java.name -> CategoryListPlanetFragment(
+                categoryListPlanetItemAdapter
+            )
+            CategoryListSpecieFragment::class.java.name -> CategoryListSpecieFragment(
+                categoryListSpecieItemAdapter
+            )
+            CategoryListStarshipFragment::class.java.name -> CategoryListStarshipFragment(
+                categoryListStarshipItemAdapter
+            )
+            CategoryListVehicleFragment::class.java.name -> CategoryListVehicleFragment(
+                categoryListVehicleItemAdapter
+            )
+            FavoritesFragment::class.java.name -> FavoritesFragment(favoritesAdapter)
             else -> super.instantiate(classLoader, className)
         }
     }
