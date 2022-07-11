@@ -82,11 +82,12 @@ class CategoryListVehicleFragment @Inject constructor(
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 mCategoryListVehicleViewModel?.listItemState?.collect {
-                    when (it) {
+                    when (it.getContentIfNotHandled()) {
                         is StateUI.Error -> showErrorToast()
                         is StateUI.Idle -> Unit
                         is StateUI.Processed -> showResult()
                         is StateUI.Processing -> showLoading()
+                        else -> Unit
                     }
                 }
             }

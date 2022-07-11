@@ -3,6 +3,7 @@ package com.edufelip.challengealpha.presentation.fragments.category_list.categor
 import androidx.lifecycle.viewModelScope
 import com.edufelip.challengealpha.domain.models.Vehicle
 import com.edufelip.challengealpha.domain.usecases.GetVehicleListUseCase
+import com.edufelip.challengealpha.presentation.base.models.Event
 import com.edufelip.challengealpha.presentation.base.models.StateUI
 import com.edufelip.challengealpha.presentation.fragments.category_list.base.BaseCategoryListViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,13 +28,13 @@ class CategoryListVehicleViewModel @Inject constructor(
         viewModelScope.launch {
             getVehicleListUseCase()
                 .onStart {
-                    _listItemState.emit(StateUI.Processing())
+                    _listItemState.emit(Event(StateUI.Processing()))
                 }
                 .catch { e ->
-                    _listItemState.emit(StateUI.Error(e.toString()))
+                    _listItemState.emit(Event(StateUI.Error(e.toString())))
                 }
                 .collect {
-                    _listItemState.emit(StateUI.Processed(Unit))
+                    _listItemState.emit(Event(StateUI.Processed(Unit)))
                     _vehicleList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()
@@ -49,17 +50,17 @@ class CategoryListVehicleViewModel @Inject constructor(
             delay(400)
             getVehicleListUseCase(page = page.value)
                 .onStart {
-                    _listItemState.emit(StateUI.Processing())
+                    _listItemState.emit(Event(StateUI.Processing()))
                 }
                 .catch { e ->
-                    _listItemState.emit(StateUI.Error(e.toString()))
+                    _listItemState.emit(Event(StateUI.Error(e.toString())))
                 }
                 .collect {
                     val list = mutableListOf<Vehicle>().apply {
                         addAll(_vehicleList.value)
                         addAll(it.results)
                     }
-                    _listItemState.emit(StateUI.Processed(Unit))
+                    _listItemState.emit(Event(StateUI.Processed(Unit)))
                     _vehicleList.emit(list)
                     hasNext.value = it.next != null
                     increasePageValue()
@@ -73,13 +74,13 @@ class CategoryListVehicleViewModel @Inject constructor(
         viewModelScope.launch {
             getVehicleListUseCase(search = text)
                 .onStart {
-                    _listItemState.emit(StateUI.Processing())
+                    _listItemState.emit(Event(StateUI.Processing()))
                 }
                 .catch { e ->
-                    _listItemState.emit(StateUI.Error(e.toString()))
+                    _listItemState.emit(Event(StateUI.Error(e.toString())))
                 }
                 .collect {
-                    _listItemState.emit(StateUI.Processed(Unit))
+                    _listItemState.emit(Event(StateUI.Processed(Unit)))
                     _vehicleList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()

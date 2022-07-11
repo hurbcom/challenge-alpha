@@ -82,11 +82,12 @@ class CategoryListPlanetFragment @Inject constructor(
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 mCategoryListPlanetViewModel?.listItemState?.collect {
-                    when (it) {
+                    when (it.getContentIfNotHandled()) {
                         is StateUI.Error -> showErrorToast()
                         is StateUI.Idle -> Unit
                         is StateUI.Processed -> showResult()
                         is StateUI.Processing -> showLoading()
+                        else -> Unit
                     }
                 }
             }

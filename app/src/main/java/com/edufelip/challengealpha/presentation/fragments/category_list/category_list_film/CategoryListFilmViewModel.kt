@@ -3,6 +3,7 @@ package com.edufelip.challengealpha.presentation.fragments.category_list.categor
 import androidx.lifecycle.viewModelScope
 import com.edufelip.challengealpha.domain.models.Film
 import com.edufelip.challengealpha.domain.usecases.GetFilmListUseCase
+import com.edufelip.challengealpha.presentation.base.models.Event
 import com.edufelip.challengealpha.presentation.base.models.StateUI
 import com.edufelip.challengealpha.presentation.fragments.category_list.base.BaseCategoryListViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,13 +28,13 @@ class CategoryListFilmViewModel @Inject constructor(
         viewModelScope.launch {
             getFilmListUseCase()
                 .onStart {
-                    _listItemState.emit(StateUI.Processing())
+                    _listItemState.emit(Event(StateUI.Processing()))
                 }
-                .catch { e ->
-                    _listItemState.emit(StateUI.Error(e.toString()))
+                .catch {
+                    _listItemState.emit(Event(StateUI.Error()))
                 }
                 .collect {
-                    _listItemState.emit(StateUI.Processed(Unit))
+                    _listItemState.emit(Event(StateUI.Processed(Unit)))
                     _filmList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()
@@ -47,17 +48,17 @@ class CategoryListFilmViewModel @Inject constructor(
         viewModelScope.launch {
             getFilmListUseCase(page = page.value)
                 .onStart {
-                    _listItemState.emit(StateUI.Processing())
+                    _listItemState.emit(Event(StateUI.Processing()))
                 }
-                .catch { e ->
-                    _listItemState.emit(StateUI.Error(e.toString()))
+                .catch {
+                    _listItemState.emit(Event(StateUI.Error()))
                 }
                 .collect {
                     val list = mutableListOf<Film>().apply {
                         addAll(_filmList.value)
                         addAll(it.results)
                     }
-                    _listItemState.emit(StateUI.Processed(Unit))
+                    _listItemState.emit(Event(StateUI.Processed(Unit)))
                     _filmList.emit(list)
                     hasNext.value = it.next != null
                     increasePageValue()
@@ -73,13 +74,13 @@ class CategoryListFilmViewModel @Inject constructor(
             delay(400)
             getFilmListUseCase(search = text)
                 .onStart {
-                    _listItemState.emit(StateUI.Processing())
+                    _listItemState.emit(Event(StateUI.Processing()))
                 }
-                .catch { e ->
-                    _listItemState.emit(StateUI.Error(e.toString()))
+                .catch {
+                    _listItemState.emit(Event(StateUI.Error()))
                 }
                 .collect {
-                    _listItemState.emit(StateUI.Processed(Unit))
+                    _listItemState.emit(Event(StateUI.Processed(Unit)))
                     _filmList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()

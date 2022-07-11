@@ -32,6 +32,7 @@ class CategoryDetailStarshipFragment @Inject constructor(
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
+        setupViewModel()
         setupOptionsMenu()
         observeInsertNote()
         return binding.root
@@ -77,11 +78,12 @@ class CategoryDetailStarshipFragment @Inject constructor(
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 mSharedViewModel?.insertFavoriteState?.collect {
-                    when (it) {
+                    when (it.getContentIfNotHandled()) {
                         is StateUI.Error -> showErrorToast()
                         is StateUI.Idle -> Unit
                         is StateUI.Processed -> showSuccessToast()
                         is StateUI.Processing -> Unit
+                        else -> Unit
                     }
                 }
             }

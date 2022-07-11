@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Challenge Alpha</string>
+    <string name="label_yes">Sim</string>
+    <string name="label_no">Não</string>
 
     <!-- General List Fragment -->
     <string name="general_list_toolbar_title">Challenge Alpha</string>
@@ -68,5 +70,6 @@
     <string name="favorites_toolbar_title">Favoritos</string>
     <string name="favorites_fail_load">Favoritos</string>
     <string name="fragment_favorites_list_empty">Ainda não há favoritos =(</string>
+    <string name="fragment_favorites_delete_message">Quer mesmo remover:</string>
 
 </resources>

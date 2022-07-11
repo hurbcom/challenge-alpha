@@ -1,8 +1,10 @@
 package com.edufelip.challengealpha.presentation.fragments.category_list.category_list_people
 
 import androidx.lifecycle.viewModelScope
+import com.edufelip.challengealpha.domain.models.Film
 import com.edufelip.challengealpha.domain.models.People
 import com.edufelip.challengealpha.domain.usecases.GetPeopleListUseCase
+import com.edufelip.challengealpha.presentation.base.models.Event
 import com.edufelip.challengealpha.presentation.base.models.StateUI
 import com.edufelip.challengealpha.presentation.fragments.category_list.base.BaseCategoryListViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,13 +29,13 @@ class CategoryListPeopleViewModel @Inject constructor(
         viewModelScope.launch {
             getPeopleListUseCase()
                 .onStart {
-                    _listItemState.emit(StateUI.Processing())
+                    _listItemState.emit(Event(StateUI.Processing()))
                 }
-                .catch { e ->
-                    _listItemState.emit(StateUI.Error(e.toString()))
+                .catch {
+                    _listItemState.emit(Event(StateUI.Error()))
                 }
                 .collect {
-                    _listItemState.emit(StateUI.Processed(Unit))
+                    _listItemState.emit(Event(StateUI.Processed(Unit)))
                     _peopleList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()
@@ -47,17 +49,17 @@ class CategoryListPeopleViewModel @Inject constructor(
         viewModelScope.launch {
             getPeopleListUseCase(page = page.value)
                 .onStart {
-                    _loadMoreState.emit(StateUI.Processing())
+                    _listItemState.emit(Event(StateUI.Processing()))
                 }
-                .catch { e ->
-                    _loadMoreState.emit(StateUI.Error(e.toString()))
+                .catch {
+                    _listItemState.emit(Event(StateUI.Error()))
                 }
                 .collect {
                     val list = mutableListOf<People>().apply {
                         addAll(_peopleList.value)
                         addAll(it.results)
                     }
-                    _loadMoreState.emit(StateUI.Processed(Unit))
+                    _listItemState.emit(Event(StateUI.Processed(Unit)))
                     _peopleList.emit(list)
                     hasNext.value = it.next != null
                     increasePageValue()
@@ -73,13 +75,13 @@ class CategoryListPeopleViewModel @Inject constructor(
             delay(400)
             getPeopleListUseCase(search = text)
                 .onStart {
-                    _listItemState.emit(StateUI.Processing())
+                    _listItemState.emit(Event(StateUI.Processing()))
                 }
                 .catch { e ->
-                    _listItemState.emit(StateUI.Error(e.toString()))
+                    _listItemState.emit(Event(StateUI.Error(e.toString())))
                 }
                 .collect {
-                    _listItemState.emit(StateUI.Processed(Unit))
+                    _listItemState.emit(Event(StateUI.Processed(Unit)))
                     _peopleList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()
