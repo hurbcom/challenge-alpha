@@ -16,6 +16,7 @@ abstract class BaseCategoryListViewModel : ViewModel() {
     protected val _listItemState: MutableStateFlow<StateUI<Unit>> =
         MutableStateFlow(StateUI.Idle())
     val listItemState = _listItemState.asStateFlow()
+    val lastText = MutableLiveData("")
 
     protected fun resetPageValue() {
         page.postValue(1)

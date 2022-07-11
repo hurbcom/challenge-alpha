@@ -67,6 +67,8 @@ class CategoryListVehicleViewModel @Inject constructor(
     }
 
     override fun search(text: String) {
+        if(text == lastText.value) return
+        lastText.postValue(text)
         viewModelScope.launch {
             getVehicleListUseCase(search = text)
                 .onStart {

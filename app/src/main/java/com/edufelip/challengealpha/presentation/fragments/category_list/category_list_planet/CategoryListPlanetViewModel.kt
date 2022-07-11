@@ -65,6 +65,8 @@ class CategoryListPlanetViewModel @Inject constructor(
     }
 
     override fun search(text: String) {
+        if(text == lastText.value) return
+        lastText.postValue(text)
         searchJob?.cancel()
         searchJob = viewModelScope.launch {
             delay(400)
