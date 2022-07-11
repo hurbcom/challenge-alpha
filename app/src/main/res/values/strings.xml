@@ -3,6 +3,7 @@
 
     <!-- General List Fragment -->
     <string name="general_list_toolbar_title">Challenge Alpha</string>
+    <string name="general_list_toolbar_options_favorites">Favoritos</string>
     <string name="main_menu_characters">Personagens</string>
     <string name="main_menu_films">Filmes</string>
     <string name="main_menu_species">Espécies</string>
@@ -22,6 +23,7 @@
     <string name="category_list_vehicle_toolbar_title">Veículos</string>
 
     <!-- Category Detail -->
+    <string name="category_detail_toolbar_options_favorites">Adicionar aos favoritos</string>
     <string name="category_detail_toolbar_title">Detalhes</string>
     <string name="category_detail_film_title_string">Título</string>
     <string name="category_detail_film_episode_string">Episódio</string>
@@ -59,7 +61,12 @@
     <string name="category_detail_vehicles_consumables_string">Consumíveis</string>
     <string name="category_detail_vehicles_hyperdriving_rate_string">Taxa de hyperdrive</string>
 
+    <string name="category_detail_add_favorites_success">Adicionado com sucesso aos favoritos</string>
+    <string name="category_detail_add_favorites_error">Ocorreu um erro ao adicionar aos favoritos</string>
+
     <!-- Favorites -->
     <string name="favorites_toolbar_title">Favoritos</string>
+    <string name="favorites_fail_load">Favoritos</string>
+    <string name="fragment_favorites_list_empty">Ainda não há favoritos =(</string>
 
 </resources>

@@ -15,6 +15,9 @@
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.3734375" />
         <entry key="app/src/main/res/layout/general_list_item.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/toolbar_default.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/menu/favorites_menu.xml" value="0.3723958333333333" />
+        <entry key="app/src/main/res/menu/fragment_detail_menu.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.3734375" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.3734375" />
       </map>
     </option>

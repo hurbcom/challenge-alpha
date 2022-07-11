@@ -51,6 +51,13 @@
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_generalListMenuFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/categoryListFilmFragment"
@@ -172,4 +179,8 @@
             android:name="planet"
             app:argType="com.edufelip.challengealpha.domain.models.Planet" />
     </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.edufelip.challengealpha.presentation.fragments.favorites.FavoritesFragment"
+        android:label="FavoritesFragment" />
 </navigation>

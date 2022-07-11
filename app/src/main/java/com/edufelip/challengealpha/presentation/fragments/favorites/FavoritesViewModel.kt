@@ -21,11 +21,7 @@ class FavoritesViewModel @Inject constructor(
     private val _favoritesStateList: MutableStateFlow<StateUI<List<Favorite>>> = MutableStateFlow(StateUI.Idle())
     val favoritesStateList = _favoritesStateList.asStateFlow()
 
-    init {
-        getFavoritesList()
-    }
-
-    private fun getFavoritesList() {
+    fun getFavoritesList() {
         viewModelScope.launch {
             getFavoritesListUseCase()
                 .onStart {

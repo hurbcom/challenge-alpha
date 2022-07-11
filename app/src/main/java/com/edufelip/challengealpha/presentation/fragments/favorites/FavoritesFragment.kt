@@ -11,9 +11,17 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.edufelip.challengealpha.R
 import com.edufelip.challengealpha.databinding.FragmentFavoritesBinding
+import com.edufelip.challengealpha.presentation.base.decorations.SpaceStartAndEndItemDecoration
+import com.edufelip.challengealpha.presentation.base.decorations.SpaceTopAndBottomItemDecoration
+import com.edufelip.challengealpha.presentation.base.decorations.SpacesItemDecoration
 import com.edufelip.challengealpha.presentation.base.models.StateUI
+import com.edufelip.challengealpha.presentation.base.utils.hide
+import com.edufelip.challengealpha.presentation.base.utils.show
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -35,14 +43,44 @@ class FavoritesFragment @Inject constructor(
 
         setupToolbar()
         setupViewModel()
+        setupRecyclerView()
         observeFavorites()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        mFavoritesViewModel?.getFavoritesList()
+        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun setupToolbar() {
         (activity as AppCompatActivity).apply {
             setSupportActionBar(binding.favoritesToolbar.toolbar)
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
             title = getString(R.string.favorites_toolbar_title)
+        }
+        binding.favoritesToolbar.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
+    }
+
+    private fun setupRecyclerView() {
+        val spaceSmall = resources.getDimension(R.dimen.padding_or_margin_small).toInt()
+        binding.favoritesRecyclerView.apply {
+            adapter = this@FavoritesFragment.adapter
+            layoutManager = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
+            addItemDecoration(
+                SpacesItemDecoration(
+                    spaceSmall,
+                    false
+                )
+            )
+            addItemDecoration(
+                SpaceTopAndBottomItemDecoration(spaceSmall, 0)
+            )
+            addItemDecoration(
+                SpaceStartAndEndItemDecoration(spaceSmall, true)
+            )
         }
     }
 
@@ -60,6 +98,10 @@ class FavoritesFragment @Inject constructor(
                         is StateUI.Error -> showErrorToast()
                         is StateUI.Idle -> Unit
                         is StateUI.Processed -> {
+                            if (it.data.isEmpty()) {
+                                binding.favoritesListEmptyTextview.show()
+                                binding.favoritesRecyclerView.hide()
+                            }
                             adapter.setItems(it.data)
                         }
                         is StateUI.Processing -> Unit
@@ -72,7 +114,7 @@ class FavoritesFragment @Inject constructor(
     private fun showErrorToast() {
         Toast.makeText(
             requireContext(),
-            "Ocorreu um erro ao carregar os favoritos",
+            requireActivity().getString(R.string.favorites_fail_load),
             Toast.LENGTH_SHORT
         ).show()
     }

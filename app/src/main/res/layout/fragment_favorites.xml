@@ -25,5 +25,16 @@
             app:layout_constraintTop_toBottomOf="@id/favorites_toolbar"
             tools:listitem="@layout/category_list_item" />
 
+        <TextView
+            android:id="@+id/favorites_list_empty_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="@string/fragment_favorites_list_empty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,23 +1,24 @@
 package com.edufelip.challengealpha.presentation.fragments.general_list
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.edufelip.challengealpha.R
 import com.edufelip.challengealpha.databinding.FragmentGeneralListMenuBinding
-import com.edufelip.challengealpha.presentation.base.models.StateUI
 import com.edufelip.challengealpha.presentation.base.decorations.SpaceStartAndEndItemDecoration
 import com.edufelip.challengealpha.presentation.base.decorations.SpaceTopAndBottomItemDecoration
 import com.edufelip.challengealpha.presentation.base.decorations.SpacesItemDecoration
+import com.edufelip.challengealpha.presentation.base.models.StateUI
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -40,6 +41,7 @@ class GeneralListMenuFragment @Inject constructor(
         binding.lifecycleOwner = viewLifecycleOwner
 
         setupToolbar()
+        setupOptionsMenu()
         setupRecyclerView()
         setupViewModel()
         observeMenuItems()
@@ -49,6 +51,25 @@ class GeneralListMenuFragment @Inject constructor(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mGeneralListMenuViewModel?.getMenuList(requireContext())
+    }
+
+    private fun setupOptionsMenu() {
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.main_menu, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.menu_favorites -> {
+                        findNavController().navigate(GeneralListMenuFragmentDirections.actionGeneralListMenuFragmentToFavoritesFragment())
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     private fun setupToolbar() {
