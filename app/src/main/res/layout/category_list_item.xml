@@ -14,9 +14,11 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="300dp"
+            android:layout_marginHorizontal="@dimen/padding_or_margin_large"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/padding_or_margin_large">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"

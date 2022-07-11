@@ -37,6 +37,7 @@ class CategoryListPlanetViewModel @Inject constructor(
                     _planetList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()
+                    increasePageValue()
                 }
         }
     }
@@ -44,7 +45,7 @@ class CategoryListPlanetViewModel @Inject constructor(
     override fun loadMore() {
         if (!hasNext.value) return
         viewModelScope.launch {
-            getPlanetListUseCase(page = page.value!!)
+            getPlanetListUseCase(page = page.value)
                 .onStart {
                     _listItemState.emit(StateUI.Processing())
                 }
@@ -59,7 +60,7 @@ class CategoryListPlanetViewModel @Inject constructor(
                     _listItemState.emit(StateUI.Processed(Unit))
                     _planetList.emit(list)
                     hasNext.value = it.next != null
-                    page.value = page.value?.plus(1)
+                    increasePageValue()
                 }
         }
     }

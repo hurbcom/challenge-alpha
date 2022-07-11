@@ -21,6 +21,7 @@ import com.edufelip.challengealpha.presentation.base.utils.show
 abstract class BaseCategoryListFragment : Fragment() {
     private var _binding: FragmentCategoryListBinding? = null
     protected val binding get() = _binding!!
+    lateinit var mLayoutManager: LinearLayoutManager
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,8 +53,9 @@ abstract class BaseCategoryListFragment : Fragment() {
 
     private fun setupRecyclerViewLayoutManager() {
         val spaceSmall = resources.getDimension(R.dimen.padding_or_margin_small).toInt()
+        this.mLayoutManager = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
         binding.categoryListRecyclerView.apply {
-            layoutManager = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
+            layoutManager = mLayoutManager
             addItemDecoration(
                 SpacesItemDecoration(
                     spaceSmall,

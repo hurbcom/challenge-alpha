@@ -37,6 +37,7 @@ class CategoryListVehicleViewModel @Inject constructor(
                     _vehicleList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()
+                    increasePageValue()
                 }
         }
     }
@@ -46,7 +47,7 @@ class CategoryListVehicleViewModel @Inject constructor(
         searchJob?.cancel()
         searchJob = viewModelScope.launch {
             delay(400)
-            getVehicleListUseCase(page = page.value!!)
+            getVehicleListUseCase(page = page.value)
                 .onStart {
                     _listItemState.emit(StateUI.Processing())
                 }
@@ -61,7 +62,7 @@ class CategoryListVehicleViewModel @Inject constructor(
                     _listItemState.emit(StateUI.Processed(Unit))
                     _vehicleList.emit(list)
                     hasNext.value = it.next != null
-                    page.value = page.value?.plus(1)
+                    increasePageValue()
                 }
         }
     }

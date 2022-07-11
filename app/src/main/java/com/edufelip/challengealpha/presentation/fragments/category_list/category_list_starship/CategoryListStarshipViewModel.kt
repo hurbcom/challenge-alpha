@@ -38,6 +38,7 @@ class CategoryListStarshipViewModel @Inject constructor(
                     _starshipList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()
+                    increasePageValue()
                 }
         }
     }
@@ -45,7 +46,7 @@ class CategoryListStarshipViewModel @Inject constructor(
     override fun loadMore() {
         if (!hasNext.value) return
         viewModelScope.launch {
-            getStarshipListUseCase(page = page.value!!)
+            getStarshipListUseCase(page = page.value)
                 .onStart {
                     _listItemState.emit(StateUI.Processing())
                 }
@@ -60,7 +61,7 @@ class CategoryListStarshipViewModel @Inject constructor(
                     _listItemState.emit(StateUI.Processed(Unit))
                     _starshipList.emit(list)
                     hasNext.value = it.next != null
-                    page.value = page.value?.plus(1)
+                    increasePageValue()
                 }
         }
     }

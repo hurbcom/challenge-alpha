@@ -39,6 +39,7 @@ class CategoryListPeopleFragment @Inject constructor(
         super.onCreateView(inflater, container, savedInstanceState)
         setupToolbarTitle()
         setupRecyclerViewAdapter()
+        setupRecyclerViewScrollListener()
         setupViewModel()
         observeItems()
         observeItemsState()
@@ -99,5 +100,24 @@ class CategoryListPeopleFragment @Inject constructor(
         binding.categoryListRecyclerView.apply {
             adapter = this@CategoryListPeopleFragment.adapter
         }
+    }
+
+    private fun setupRecyclerViewScrollListener() {
+        binding.categoryListRecyclerView.addOnScrollListener(object:
+            RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    if (dy > 0) {
+                        val visibleItemCount = mLayoutManager.childCount
+                        val totalItemCount = mLayoutManager.itemCount
+                        val pastVisibleItems = mLayoutManager.findFirstVisibleItemPosition()
+
+                        if((visibleItemCount + pastVisibleItems) >= totalItemCount) {
+                            mCategoryListPeopleViewModel?.loadMore()
+                        }
+                    }
+                }
+            }
+        )
+
     }
 }

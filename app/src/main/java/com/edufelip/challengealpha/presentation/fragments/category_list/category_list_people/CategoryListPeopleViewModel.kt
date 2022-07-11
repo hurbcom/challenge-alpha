@@ -37,29 +37,30 @@ class CategoryListPeopleViewModel @Inject constructor(
                     _peopleList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()
+                    increasePageValue()
                 }
         }
     }
 
     override fun loadMore() {
-        if (!hasNext.value) return
+        if(!checkLoadMore()) return
         viewModelScope.launch {
-            getPeopleListUseCase(page = page.value!!)
+            getPeopleListUseCase(page = page.value)
                 .onStart {
-                    _listItemState.emit(StateUI.Processing())
+                    _loadMoreState.emit(StateUI.Processing())
                 }
                 .catch { e ->
-                    _listItemState.emit(StateUI.Error(e.toString()))
+                    _loadMoreState.emit(StateUI.Error(e.toString()))
                 }
                 .collect {
                     val list = mutableListOf<People>().apply {
                         addAll(_peopleList.value)
                         addAll(it.results)
                     }
-                    _listItemState.emit(StateUI.Processed(Unit))
+                    _loadMoreState.emit(StateUI.Processed(Unit))
                     _peopleList.emit(list)
                     hasNext.value = it.next != null
-                    page.value = page.value?.plus(1)
+                    increasePageValue()
                 }
         }
     }

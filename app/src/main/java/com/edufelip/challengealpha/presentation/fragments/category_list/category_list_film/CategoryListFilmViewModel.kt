@@ -37,6 +37,7 @@ class CategoryListFilmViewModel @Inject constructor(
                     _filmList.emit(it.results)
                     hasNext.value = it.next != null
                     resetPageValue()
+                    increasePageValue()
                 }
         }
     }
@@ -44,7 +45,7 @@ class CategoryListFilmViewModel @Inject constructor(
     override fun loadMore() {
         if (!hasNext.value) return
         viewModelScope.launch {
-            getFilmListUseCase(page = page.value!!)
+            getFilmListUseCase(page = page.value)
                 .onStart {
                     _listItemState.emit(StateUI.Processing())
                 }
@@ -59,7 +60,7 @@ class CategoryListFilmViewModel @Inject constructor(
                     _listItemState.emit(StateUI.Processed(Unit))
                     _filmList.emit(list)
                     hasNext.value = it.next != null
-                    page.value = page.value?.plus(1)
+                    increasePageValue()
                 }
         }
     }
