@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: BaseViewController {
     // MARK: Properties
     
     // MARK: Outlets
