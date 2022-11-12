@@ -30,7 +30,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="tableView" destination="5nV-x6-dpk" id="spN-cy-mHB"/>
+                <outlet property="tableView" destination="5nV-x6-dpk" id="yhY-mi-9zP"/>
             </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </view>

@@ -33,6 +33,7 @@ extension BaseViewController {
     
     func closeLoading() {
         DispatchQueue.main.async {
+            print("==> CloseLoading")
             self.loadingView.isHidden = true
         }
     }

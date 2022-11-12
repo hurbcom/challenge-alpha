@@ -30,8 +30,8 @@ class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         bindEvents()
+        setupUI()
     }
     
     // MARK: Actions
@@ -44,12 +44,23 @@ class SearchViewController: BaseViewController {
             }
         }
         
+        viewModel.didReturnResults = { [weak self] results in
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                guard let self = self else { return }
+                print("==> Resultss: \(results)")
+                self.tableView.reloadData()
+                self.searchController.resignFirstResponder()
+                self.closeLoading()
+            }
+        }
+        
         viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
             DispatchQueue.main.async {
-                self?.viewModel.querySearch = suggestion
                 self?.searchController.searchBar.text = suggestion
-                self?.viewSearchSuggestions.isHidden = true
-                self?.view.endEditing(true)
+                self?.viewModel.fetchResultsFrom(query: suggestion)
+                if #available(iOS 13.0, *) {
+                    self?.searchController.searchBar.searchTextField.resignFirstResponder()
+                }
                 self?.becomeFirstResponder()
             }
         }
@@ -63,6 +74,11 @@ class SearchViewController: BaseViewController {
     private func setupUI() {
         setupSearchController()
         setupSugestionView()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.dataSource = self
     }
     
     private func setupSearchController() {
@@ -81,6 +97,18 @@ class SearchViewController: BaseViewController {
 }
 
 // MARK: Extensions
+extension SearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        return UITableViewCell()
+    }
+}
+
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.getSuggestionsFrom(text: searchText)
@@ -98,6 +126,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.becomeFirstResponder()
         showLoading()
+        viewModel.fetchResultsFrom(query: searchBar.text ?? "")
         print("==> searchBarSearchButtonClicked: \(searchBar.text)")
     }
     
