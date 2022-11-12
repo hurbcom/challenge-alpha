@@ -6,30 +6,26 @@
 //
 
 import Foundation
+import HUGraphQL
 
 protocol SearchServiceProtocol {
-    func getSuggestionsFrom(text: String, completion: @escaping ([String]) -> Void)
-    func fetchResultsFrom(query: String, completion: ([String]) -> Void)
+    func getSuggestionsFrom(text: String, completion: @escaping ([Suggestion]) -> Void)
+    func fetchResultsFrom(query: String, completion: ([Search]) -> Void)
 }
 
 struct SearchService: SearchServiceProtocol {
     
     // MARK: Properties
+    typealias Suggestion = HUGraphQL.SuggestionsQuery.Data.Suggestion
+    typealias Search = HUGraphQL.SearchQuery.Data.Search
+    private let graphQL = HUGService(enableLog: true)
     
     // MARK: Methods
-    func getSuggestionsFrom(text: String, completion: @escaping ([String]) -> Void) {
+    func getSuggestionsFrom(text: String, completion: @escaping ([Suggestion]) -> Void) {
         
-        completion(["Sugestão 1"])
-        
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
-            completion(["Sugestão 1", "Sugestão 2", "Sugestão 3"])
-        }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-            completion(["Sugestão 1", "Sugestão 2", "Sugestão 3", "Sugestão 4", "Sugestão 5", "Sugestão 6"])
-        }
     }
     
-    func fetchResultsFrom(query: String, completion: ([String]) -> Void) {
-        completion(["Resultado 1", "Resulrado 2"])
+    func fetchResultsFrom(query: String, completion: ([Search]) -> Void) {
+        
     }
 }
