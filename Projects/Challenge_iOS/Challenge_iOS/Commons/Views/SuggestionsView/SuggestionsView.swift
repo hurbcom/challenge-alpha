@@ -10,14 +10,14 @@ import UIKit
 final class SuggestionsView: UIView {
     
     // MARK: Properties
-    private var suggestions: [String] = []
-    var didSelectedSuggestion: ((String) -> ())?
+    private var suggestions: [SuggestionModel] = []
+    var didSelectedSuggestion: ((SuggestionModel) -> ())?
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Setup
-    func setup(with suggestions: [String]) {
+    func setup(with suggestions: [SuggestionModel]) {
         self.suggestions = suggestions
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -37,8 +37,7 @@ extension SuggestionsView: UITableViewDataSource {
         let suggestion = suggestions[indexPath.row]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = suggestion//.text
-        cell.detailTextLabel?.text = suggestion//.country
+        cell.textLabel?.text = suggestion.text
         cell.selectionStyle = .none
         return cell
     }

@@ -10,8 +10,8 @@ import Foundation
 final class SearchViewModel {
     // MARK: Properties
     private let service: SearchServiceProtocol
-    var didReturnSuggestions: (([String]) -> Void)?
-    var didReturnResults: (([String]) -> Void)?
+    var didReturnSuggestions: (([SuggestionModel]) -> Void)?
+    var didReturnResults: (([SearchService.Search]) -> Void)?
     
     // MARK: Initialization
     init(service: SearchServiceProtocol = SearchService()) {
@@ -25,8 +25,8 @@ final class SearchViewModel {
         }
     }
     
-    func fetchResultsFrom(query: String) {
-        service.fetchResultsFrom(query: query) { results in
+    func fetchSearchFrom(query: String) {
+        service.fetchSearchFrom(query: query) { results in
             self.didReturnResults?(results)
         }
     }

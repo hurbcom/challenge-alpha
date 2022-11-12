@@ -45,7 +45,7 @@ class SearchViewController: BaseViewController {
         }
         
         viewModel.didReturnResults = { [weak self] results in
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+            DispatchQueue.main.async {
                 guard let self = self else { return }
                 print("==> Resultss: \(results)")
                 self.tableView.reloadData()
@@ -56,8 +56,8 @@ class SearchViewController: BaseViewController {
         
         viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
             DispatchQueue.main.async {
-                self?.searchController.searchBar.text = suggestion
-                self?.viewModel.fetchResultsFrom(query: suggestion)
+                self?.searchController.searchBar.text = suggestion.text
+                self?.viewModel.fetchSearchFrom(query: suggestion.text)
                 if #available(iOS 13.0, *) {
                     self?.searchController.searchBar.searchTextField.resignFirstResponder()
                 }
@@ -126,7 +126,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.becomeFirstResponder()
         showLoading()
-        viewModel.fetchResultsFrom(query: searchBar.text ?? "")
+        viewModel.fetchSearchFrom(query: searchBar.text ?? "")
         print("==> searchBarSearchButtonClicked: \(searchBar.text)")
     }
     
