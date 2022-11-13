@@ -10,7 +10,7 @@ import HUGraphQL
 
 protocol SearchServiceProtocol {
     func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void)
-    func fetchSearchFrom(query: String, completion: ([SearchService.Search]) -> Void)
+    func fetchSearchFrom(query: String, completion: @escaping ([SearchModel]) -> Void)
 }
 
 struct SearchService: SearchServiceProtocol {
@@ -42,7 +42,7 @@ struct SearchService: SearchServiceProtocol {
         }
     }
     
-    func fetchSearchFrom(query: String, completion: ([SearchService.Search]) -> Void) {
+    func fetchSearchFrom(query: String, completion: @escaping ([SearchModel]) -> Void) {
         
         let pagination = HUGraphQL.SearchInputPagination(page: 1, limit: 10, sort: nil, sortOrder: nil)
         let query = HUGraphQL.SearchQuery(q: query, pagination: pagination)
@@ -50,7 +50,11 @@ struct SearchService: SearchServiceProtocol {
         graphQL.client.fetch(query: query) { result in
             switch result {
             case .success(let value):
-                print("==> SearchValue: \(value)")
+                if let search = value.data?.resultMap["search"] as? [String:Any],
+                   let results = search["results"] as? [[String:Any]] {
+                    let models = results.compactMap({ JSONDecoder.decode(to: SearchModel.self, from: $0) })
+                    completion(models)
+                }
                 
             case .failure(let error):
                 print("==> Error: \(error.localizedDescription)")

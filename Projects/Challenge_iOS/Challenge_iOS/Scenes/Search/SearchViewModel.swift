@@ -11,7 +11,7 @@ final class SearchViewModel {
     // MARK: Properties
     private let service: SearchServiceProtocol
     var didReturnSuggestions: (([SuggestionModel]) -> Void)?
-    var didReturnResults: (([SearchService.Search]) -> Void)?
+    var didReturnResults: (([SearchModel]) -> Void)?
     
     // MARK: Initialization
     init(service: SearchServiceProtocol = SearchService()) {

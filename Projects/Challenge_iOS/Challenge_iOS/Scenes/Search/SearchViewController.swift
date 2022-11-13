@@ -47,7 +47,7 @@ class SearchViewController: BaseViewController {
         viewModel.didReturnResults = { [weak self] results in
             DispatchQueue.main.async {
                 guard let self = self else { return }
-                print("==> Resultss: \(results)")
+                print("==> Results: \(results)")
                 self.tableView.reloadData()
                 self.searchController.resignFirstResponder()
                 self.closeLoading()
