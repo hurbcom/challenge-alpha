@@ -31,7 +31,7 @@ final class SearchViewModel {
     }
     
     func fetchSearchFrom(query: String) {
-        service.fetchSearchFrom(query: query) { results in
+        service.fetchSearchFrom(query: query, pagination: 1) { results in
             self.searchResults = results
             self.shouldUpdateUI?()
         }
