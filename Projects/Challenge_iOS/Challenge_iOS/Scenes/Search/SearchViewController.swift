@@ -44,12 +44,11 @@ class SearchViewController: BaseViewController {
             }
         }
         
-        viewModel.didReturnResults = { [weak self] results in
+        viewModel.shouldUpdateUI = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else { return }
-                print("==> Results: \(results)")
                 self.tableView.reloadData()
-                self.searchController.resignFirstResponder()
+//                self.searchController.resignFirstResponder()
                 self.closeLoading()
             }
         }
@@ -78,6 +77,9 @@ class SearchViewController: BaseViewController {
     }
     
     private func setupTableView() {
+        tableView.register(UINib(nibName: CardSearchTableViewCell.identifier,
+                                 bundle: nil),
+                           forCellReuseIdentifier: CardSearchTableViewCell.identifier)
         tableView.dataSource = self
     }
     
@@ -99,11 +101,18 @@ class SearchViewController: BaseViewController {
 // MARK: Extensions
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        viewModel.getSearchResults().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let model = viewModel.getSearchResults()[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CardSearchTableViewCell.identifier) as? CardSearchTableViewCell {
+            
+            cell.setupWith(model: model)
+            return cell
+        }
         
         return UITableViewCell()
     }
@@ -127,7 +136,6 @@ extension SearchViewController: UISearchBarDelegate {
         self.becomeFirstResponder()
         showLoading()
         viewModel.fetchSearchFrom(query: searchBar.text ?? "")
-        print("==> searchBarSearchButtonClicked: \(searchBar.text)")
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

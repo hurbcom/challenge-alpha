@@ -10,8 +10,9 @@ import Foundation
 final class SearchViewModel {
     // MARK: Properties
     private let service: SearchServiceProtocol
+    private var searchResults: [SearchModel] = []
     var didReturnSuggestions: (([SuggestionModel]) -> Void)?
-    var didReturnResults: (([SearchModel]) -> Void)?
+    var shouldUpdateUI: (() -> Void)?
     
     // MARK: Initialization
     init(service: SearchServiceProtocol = SearchService()) {
@@ -19,6 +20,10 @@ final class SearchViewModel {
     }
     
     // MARK: Methods
+    func getSearchResults() -> [SearchModel] {
+        searchResults
+    }
+    
     func getSuggestionsFrom(text: String) {
         service.getSuggestionsFrom(text: text) { suggestions in
             self.didReturnSuggestions?(suggestions)
@@ -27,7 +32,8 @@ final class SearchViewModel {
     
     func fetchSearchFrom(query: String) {
         service.fetchSearchFrom(query: query) { results in
-            self.didReturnResults?(results)
+            self.searchResults = results
+            self.shouldUpdateUI?()
         }
     }
 }
