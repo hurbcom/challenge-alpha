@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Xa8-VW-fEX" customClass="LoadingView" customModule="Challenge_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sL-ca-8Cu">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JlQ-IB-Aso">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" red="0.1176470588" green="0.2274509804" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="E6d-nu-BYR"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9sL-ca-8Cu" firstAttribute="top" secondItem="Xa8-VW-fEX" secondAttribute="top" id="2Hq-gV-aAf"/>
+                <constraint firstItem="JlQ-IB-Aso" firstAttribute="centerX" secondItem="Xa8-VW-fEX" secondAttribute="centerX" id="DNk-9I-I7Z"/>
+                <constraint firstAttribute="bottom" secondItem="9sL-ca-8Cu" secondAttribute="bottom" id="Gyt-CC-fbD"/>
+                <constraint firstItem="JlQ-IB-Aso" firstAttribute="centerY" secondItem="Xa8-VW-fEX" secondAttribute="centerY" id="Mtd-jF-ZAo"/>
+                <constraint firstItem="E6d-nu-BYR" firstAttribute="trailing" secondItem="9sL-ca-8Cu" secondAttribute="trailing" id="TGE-SP-P92"/>
+                <constraint firstItem="9sL-ca-8Cu" firstAttribute="leading" secondItem="Xa8-VW-fEX" secondAttribute="leading" id="v28-Do-kyP"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </view>
+    </objects>
+</document>
