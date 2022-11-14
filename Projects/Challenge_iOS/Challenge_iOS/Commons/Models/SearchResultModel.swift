@@ -14,6 +14,7 @@ struct SearchResultModel: Decodable {
     let smallDescription: String
     let category: String
     let isAvailable: Bool
+    let huFreeCancellation: Bool?
     let gallery: [Gallery]
     let sku: String
     let price: Price?

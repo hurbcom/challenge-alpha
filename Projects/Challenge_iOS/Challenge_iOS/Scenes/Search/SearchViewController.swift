@@ -48,7 +48,6 @@ class SearchViewController: BaseViewController {
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 self.tableView.reloadData()
-//                self.searchController.resignFirstResponder()
                 self.closeLoading()
             }
         }
@@ -66,8 +65,6 @@ class SearchViewController: BaseViewController {
     }
     
     // MARK: Methods
-    
-    // MARK: Updates
     
     // MARK: Setup
     private func setupUI() {
