@@ -30,7 +30,7 @@ class BaseTabbarController: UITabBarController {
         viewController.navigationItem.title = title
         viewController.tabBarItem.title = title
         if let image = image {
-            let tabImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            let tabImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
             tabImage.image = UIImage(named: image)
             viewController.tabBarItem.image = tabImage.image
         }
