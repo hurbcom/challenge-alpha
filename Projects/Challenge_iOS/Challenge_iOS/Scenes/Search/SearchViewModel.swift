@@ -12,7 +12,7 @@ final class SearchViewModel {
     private let service: SearchServiceProtocol
     private var suggestionsResults: [SuggestionModel] = []
     private var searchResults: [SearchResultModel] = []
-    var didReturnSuggestions: (([SuggestionModel]) -> Void)?
+    var didReturnSuggestions: (() -> Void)?
     var shouldUpdateUI: (() -> Void)?
     var shouldShowNotFound: (() -> Void)?
     
@@ -32,7 +32,8 @@ final class SearchViewModel {
     
     func getSuggestionsFrom(text: String) {
         service.getSuggestionsFrom(text: text) { suggestions in
-            self.didReturnSuggestions?(suggestions)
+            self.suggestionsResults = suggestions
+            self.didReturnSuggestions?()
         }
     }
     
