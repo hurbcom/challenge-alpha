@@ -16,10 +16,13 @@ final class CardHotelTableViewCell: UITableViewCell {
     // MARK: Outlets
     @IBOutlet weak var viewContent: UIView!
     @IBOutlet weak var collectionViewImages: UICollectionView!
+    @IBOutlet weak var labelStars: UILabel!
     @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var labelLocation: UILabel!
-    @IBOutlet weak var labelPrice: UILabel!
+    @IBOutlet weak var labelAddress: UILabel!
+    @IBOutlet weak var labelValue: UILabel!
+    @IBOutlet weak var labelSecondAmenitie: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var viewSecondAmenitie: UIStackView!
     
     // MARK: Overrides
     override func awakeFromNib() {
@@ -40,7 +43,7 @@ final class CardHotelTableViewCell: UITableViewCell {
                             bundle: nil),
                       forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
         
-        let cellSize = CGSize(width: (UIScreen.main.bounds.width - 32), height: 180)
+        let cellSize = CGSize(width: (UIScreen.main.bounds.width - 32), height: 200)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = cellSize
@@ -61,9 +64,13 @@ final class CardHotelTableViewCell: UITableViewCell {
         self.model = model
         collectionViewImages.reloadData()
         pageControl.numberOfPages = model.gallery.count
+        labelStars.text = model.getStarsDescription()
         labelName.text = model.name
-        labelLocation.text = model.getAddressFormatted()
-        labelPrice.text = model.getAmount()
+        labelAddress.text = model.getAddressFormatted()
+        labelValue.text = model.getAmount()
+        let secondAmenitie = model.getSecondAmenitie()
+        labelSecondAmenitie.text = secondAmenitie
+        viewSecondAmenitie.isHidden = secondAmenitie == nil
     }
 }
 

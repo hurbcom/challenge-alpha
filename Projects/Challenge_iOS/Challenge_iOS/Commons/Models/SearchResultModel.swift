@@ -23,6 +23,7 @@ struct SearchResultModel: Decodable {
     let quantityDescriptors: QuantityDescriptors?
     let startDate: String?
     let endDate: String?
+    let stars: Int?
     
     enum Category: String, Codable {
         case hotel
@@ -58,7 +59,7 @@ struct SearchResultModel: Decodable {
     
     struct Amenities: Decodable {
         let name: String
-        let category: String
+        let category: String?
     }
     
     struct QuantityDescriptors: Decodable {
@@ -68,12 +69,19 @@ struct SearchResultModel: Decodable {
 }
 
 extension SearchResultModel {
+    func getStarsDescription() -> String {
+        if let stars = stars {
+            return "Hotel \(stars) estrelas"
+        }
+        return "não informado"
+    }
+    
     func getAddressFormatted() -> String? {
         if let city = address?.city,
            let country = address?.country {
             return "\(city), \(country)"
         } else {
-            return "Endereço não informado"
+            return "endereço não informado"
         }
     }
     
@@ -94,5 +102,9 @@ extension SearchResultModel {
             return maxPeople == 1 ? "1 pessoa" : "\(maxPeople) pessoas"
         }
         return nil
+    }
+    
+    func getSecondAmenitie() -> String? {
+        amenities.first?.name
     }
 }
