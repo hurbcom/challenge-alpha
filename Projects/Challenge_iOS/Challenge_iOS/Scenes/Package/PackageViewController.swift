@@ -73,9 +73,9 @@ class PackageViewController: BaseViewController {
     }
     
     private func setupTableView() {
-        tableView.register(UINib(nibName: CardHotelTableViewCell.identifier,
+        tableView.register(UINib(nibName: CardPackageTableViewCell.identifier,
                                  bundle: nil),
-                           forCellReuseIdentifier: CardHotelTableViewCell.identifier)
+                           forCellReuseIdentifier: CardPackageTableViewCell.identifier)
         tableView.dataSource = self
     }
     
@@ -104,7 +104,7 @@ extension PackageViewController: UITableViewDataSource {
         
         let model = viewModel.getSearchResults()[indexPath.row]
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: CardHotelTableViewCell.identifier) as? CardHotelTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CardPackageTableViewCell.identifier) as? CardPackageTableViewCell {
             
             cell.setupWith(model: model)
             return cell
