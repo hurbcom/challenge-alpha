@@ -73,7 +73,10 @@ class HotelViewController: BaseViewController {
     }
     
     private func setupTableView() {
-        
+        tableView.register(UINib(nibName: CardHotelTableViewCell.identifier,
+                                 bundle: nil),
+                           forCellReuseIdentifier: CardHotelTableViewCell.identifier)
+        tableView.dataSource = self
     }
     
     private func setupSearchController() {
@@ -92,6 +95,25 @@ class HotelViewController: BaseViewController {
 }
 
 // MARK: Extensions
+extension HotelViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.getSearchResults().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let model = viewModel.getSearchResults()[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CardHotelTableViewCell.identifier) as? CardHotelTableViewCell {
+            
+            cell.setupWith(model: model)
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+}
+
 extension HotelViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.getSuggestionsFrom(text: searchText)

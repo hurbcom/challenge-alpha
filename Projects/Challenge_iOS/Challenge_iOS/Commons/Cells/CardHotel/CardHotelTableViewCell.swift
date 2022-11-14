@@ -1,5 +1,5 @@
 //
-//  CardSearchTableViewCell.swift
+//  CardHotelTableViewCell.swift
 //  Challenge_iOS
 //
 //  Created by Helio Junior on 13/11/22.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class CardSearchTableViewCell: UITableViewCell {
-    static let identifier = "CardSearchTableViewCell"
+final class CardHotelTableViewCell: UITableViewCell {
+    static let identifier = "CardHotelTableViewCell"
     
     // MARK: Properties
     private var model: SearchResultModel?
@@ -74,7 +74,7 @@ final class CardSearchTableViewCell: UITableViewCell {
     }
 }
 
-extension CardSearchTableViewCell: UICollectionViewDataSource {
+extension CardHotelTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         model?.gallery.count ?? 0
@@ -97,7 +97,7 @@ extension CardSearchTableViewCell: UICollectionViewDataSource {
     }
 }
 
-extension CardSearchTableViewCell: UICollectionViewDelegate {
+extension CardHotelTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         pageControl.currentPage = indexPath.item
     }
