@@ -1,0 +1,71 @@
+//
+//  HotelService.swift
+//  Challenge_iOS
+//
+//  Created by Helio Junior on 13/11/22.
+//
+
+import Foundation
+import HUGraphQL
+
+protocol HotelServiceProtocol {
+    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void)
+    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchModel]) -> Void)
+}
+
+struct HotelService: HotelServiceProtocol {
+    
+    // MARK: Properties
+    typealias Search = HUGraphQL.SearchQuery.Data.Search
+    private let graphQL = HUGService(enableLog: true)
+    
+    // MARK: Methods
+    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void) {
+        let query = HUGraphQL.SuggestionsQuery(
+            q: text,
+            limit: 6,
+            productType: .hotel,
+            l10n: .init(pos: "br", locale: "pt", currency: "BRL"))
+        
+        graphQL.client.fetch(query: query) { result in
+            switch result {
+            case .success(let value):
+                if let data = value.data, let dataSuggestions = data.suggestions {
+                    let texts = dataSuggestions.results.compactMap({ $0.resultMap["text"] as? String })
+                    let suggestions = texts.map({ SuggestionModel(text: $0) })
+                    completion(suggestions)
+                }
+                
+            case .failure(let error):
+                print("==> Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchModel]) -> Void) {
+        
+        let pagination = HUGraphQL.SearchInputPagination(page: pagination, limit: 10, sort: nil, sortOrder: nil)
+        let query = HUGraphQL.SearchHotelQuery(
+            q: query,
+            filters: nil,
+            pagination: pagination,
+            l10n: .init(pos: "br", locale: "pt", currency: "BRL"),
+            checkin: Date(),
+            checkout: nil,
+            rooms: nil)
+        
+        graphQL.client.fetch(query: query) { result in
+            switch result {
+            case .success(let value):
+                if let search = value.data?.resultMap["searchHotel"] as? [String:Any],
+                   let results = search["results"] as? [[String:Any]] {
+                    let models = results.compactMap({ JSONDecoder.decode(to: SearchModel.self, from: $0) })
+                    completion(models)
+                }
+                
+            case .failure(let error):
+                print("==> Error: \(error.localizedDescription)")
+            }
+        }
+    }
+}

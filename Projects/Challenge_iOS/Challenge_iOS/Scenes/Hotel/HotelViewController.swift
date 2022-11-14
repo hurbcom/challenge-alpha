@@ -9,11 +9,22 @@ import UIKit
 
 class HotelViewController: BaseViewController {
     // MARK: Properties
+    private var viewModel: HotelViewModel
     private let searchController = UISearchController(searchResultsController: nil)
     private var viewSearchSuggestions: SuggestionsView = SuggestionsView.fromNib()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: Initialization
+    init(viewModel: HotelViewModel = HotelViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: Overrides
     override func viewDidLoad() {
@@ -26,7 +37,30 @@ class HotelViewController: BaseViewController {
     
     // MARK: BindEvents
     private func bindEvents() {
+        viewModel.didReturnSuggestions = { [weak self] suggestions in
+            DispatchQueue.main.async {
+                self?.viewSearchSuggestions.setup(with: suggestions)
+            }
+        }
         
+        viewModel.shouldUpdateUI = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.tableView.reloadData()
+                self.closeLoading()
+            }
+        }
+        
+        viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
+            DispatchQueue.main.async {
+                self?.searchController.searchBar.text = suggestion.text
+                self?.viewModel.findHotelFrom(query: suggestion.text)
+                if #available(iOS 13.0, *) {
+                    self?.searchController.searchBar.searchTextField.resignFirstResponder()
+                }
+                self?.becomeFirstResponder()
+            }
+        }
     }
     
     // MARK: Methods
@@ -75,7 +109,7 @@ extension HotelViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.becomeFirstResponder()
         showLoading()
-        viewModel.fetchHotelFrom(query: searchBar.text ?? "")
+        viewModel.findHotelFrom(query: searchBar.text ?? "")
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
