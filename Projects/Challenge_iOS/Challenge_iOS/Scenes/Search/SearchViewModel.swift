@@ -10,6 +10,7 @@ import Foundation
 final class SearchViewModel {
     // MARK: Properties
     private let service: SearchServiceProtocol
+    private var suggestionsResults: [SuggestionModel] = []
     private var searchResults: [SearchResultModel] = []
     var didReturnSuggestions: (([SuggestionModel]) -> Void)?
     var shouldUpdateUI: (() -> Void)?
@@ -21,6 +22,10 @@ final class SearchViewModel {
     }
     
     // MARK: Methods
+    func getSuggestionsResults() -> [SuggestionModel] {
+        suggestionsResults
+    }
+    
     func getSearchResults() -> [SearchResultModel] {
         searchResults
     }
