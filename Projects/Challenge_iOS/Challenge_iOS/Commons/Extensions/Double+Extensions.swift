@@ -13,6 +13,7 @@ extension Double {
         formatter.numberStyle = .currency
         formatter.currencyCode = currency ?? "BRL"
         formatter.maximumFractionDigits = fractionDigits
+        formatter.locale = Locale(identifier: "pt-BR")
         let number = NSNumber(value: self)
         return formatter.string(from: number)!
     }

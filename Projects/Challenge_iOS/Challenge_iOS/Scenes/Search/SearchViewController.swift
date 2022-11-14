@@ -48,7 +48,6 @@ class SearchViewController: BaseViewController {
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 self.tableView.reloadData()
-//                self.searchController.resignFirstResponder()
                 self.closeLoading()
             }
         }
@@ -67,8 +66,6 @@ class SearchViewController: BaseViewController {
     
     // MARK: Methods
     
-    // MARK: Updates
-    
     // MARK: Setup
     private func setupUI() {
         setupSearchController()
@@ -77,9 +74,9 @@ class SearchViewController: BaseViewController {
     }
     
     private func setupTableView() {
-        tableView.register(UINib(nibName: CardSearchTableViewCell.identifier,
+        tableView.register(UINib(nibName: CardHotelTableViewCell.identifier,
                                  bundle: nil),
-                           forCellReuseIdentifier: CardSearchTableViewCell.identifier)
+                           forCellReuseIdentifier: CardHotelTableViewCell.identifier)
         tableView.dataSource = self
     }
     
@@ -108,7 +105,7 @@ extension SearchViewController: UITableViewDataSource {
         
         let model = viewModel.getSearchResults()[indexPath.row]
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: CardSearchTableViewCell.identifier) as? CardSearchTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CardHotelTableViewCell.identifier) as? CardHotelTableViewCell {
             
             cell.setupWith(model: model)
             return cell

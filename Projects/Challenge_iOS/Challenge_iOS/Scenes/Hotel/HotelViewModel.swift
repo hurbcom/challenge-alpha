@@ -1,21 +1,21 @@
 //
-//  SearchViewModel.swift
+//  HotelViewModel.swift
 //  Challenge_iOS
 //
-//  Created by Helio Junior on 12/11/22.
+//  Created by Helio Junior on 13/11/22.
 //
 
 import Foundation
 
-final class SearchViewModel {
+final class HotelViewModel {
     // MARK: Properties
-    private let service: SearchServiceProtocol
+    private let service: HotelServiceProtocol
     private var searchResults: [SearchResultModel] = []
     var didReturnSuggestions: (([SuggestionModel]) -> Void)?
     var shouldUpdateUI: (() -> Void)?
     
     // MARK: Initialization
-    init(service: SearchServiceProtocol = SearchService()) {
+    init(service: HotelServiceProtocol = HotelService()) {
         self.service = service
     }
     
@@ -30,8 +30,8 @@ final class SearchViewModel {
         }
     }
     
-    func fetchSearchFrom(query: String) {
-        service.fetchSearchFrom(query: query, pagination: 1) { results in
+    func findHotelFrom(query: String) {
+        service.findHotelFrom(query: query, pagination: 1) { results in
             self.searchResults = results
             self.shouldUpdateUI?()
         }

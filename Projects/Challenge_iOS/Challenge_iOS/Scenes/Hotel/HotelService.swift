@@ -1,19 +1,19 @@
 //
-//  SearchService.swift
+//  HotelService.swift
 //  Challenge_iOS
 //
-//  Created by Helio Junior on 12/11/22.
+//  Created by Helio Junior on 13/11/22.
 //
 
 import Foundation
 import HUGraphQL
 
-protocol SearchServiceProtocol {
+protocol HotelServiceProtocol {
     func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void)
-    func fetchSearchFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void)
+    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void)
 }
 
-struct SearchService: SearchServiceProtocol {
+struct HotelService: HotelServiceProtocol {
     
     // MARK: Properties
     typealias Search = HUGraphQL.SearchQuery.Data.Search
@@ -24,7 +24,7 @@ struct SearchService: SearchServiceProtocol {
         let query = HUGraphQL.SuggestionsQuery(
             q: text,
             limit: 6,
-            productType: nil,
+            productType: .hotel,
             l10n: .init(pos: "br", locale: "pt", currency: "BRL"))
         
         graphQL.client.fetch(query: query) { result in
@@ -42,15 +42,22 @@ struct SearchService: SearchServiceProtocol {
         }
     }
     
-    func fetchSearchFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void) {
+    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void) {
         
         let pagination = HUGraphQL.SearchInputPagination(page: pagination, limit: 10, sort: nil, sortOrder: nil)
-        let query = HUGraphQL.SearchQuery(q: query, pagination: pagination)
+        let query = HUGraphQL.SearchHotelQuery(
+            q: query,
+            filters: nil,
+            pagination: pagination,
+            l10n: .init(pos: "br", locale: "pt", currency: "BRL"),
+            checkin: Date(),
+            checkout: nil,
+            rooms: nil)
         
         graphQL.client.fetch(query: query) { result in
             switch result {
             case .success(let value):
-                if let search = value.data?.resultMap["search"] as? [String:Any],
+                if let search = value.data?.resultMap["searchHotel"] as? [String:Any],
                    let results = search["results"] as? [[String:Any]] {
                     let models = results.compactMap({ JSONDecoder.decode(to: SearchResultModel.self, from: $0) })
                     completion(models)
