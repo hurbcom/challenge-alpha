@@ -19,6 +19,7 @@ class CardPackageTableViewCell: UITableViewCell {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var labelAddress: UILabel!
     @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelDailys: UILabel!
     @IBOutlet weak var labelPersons: UILabel!
     @IBOutlet weak var labelValue: UILabel!
 
@@ -63,6 +64,7 @@ class CardPackageTableViewCell: UITableViewCell {
         pageControl.numberOfPages = model.gallery.count
         labelName.text = model.name
         labelAddress.text = model.getAddressFormatted()
+        labelDailys.text = model.getDailysLabel()
         labelPersons.text = model.getPersonsLabel()
         labelValue.text = model.getAmount()
     }

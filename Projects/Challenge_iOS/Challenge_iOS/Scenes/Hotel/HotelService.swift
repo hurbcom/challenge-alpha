@@ -10,7 +10,8 @@ import HUGraphQL
 
 protocol HotelServiceProtocol {
     func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void)
-    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void)
+    func findHotelFrom(query: String, pagination: Int,
+                       completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void)
 }
 
 struct HotelService: HotelServiceProtocol {
@@ -41,7 +42,8 @@ struct HotelService: HotelServiceProtocol {
         }
     }
     
-    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void) {
+    func findHotelFrom(query: String, pagination: Int,
+                       completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void) {
         
         let pagination = HUGraphQL.SearchInputPagination(page: pagination, limit: 10, sort: nil, sortOrder: nil)
         let query = HUGraphQL.SearchHotelQuery(
@@ -59,11 +61,13 @@ struct HotelService: HotelServiceProtocol {
                 if let search = value.data?.resultMap["searchHotel"] as? [String:Any],
                    let results = search["results"] as? [[String:Any]] {
                     let models = results.compactMap({ JSONDecoder.decode(to: SearchResultModel.self, from: $0) })
-                    completion(models)
+                    completion(.success(models))
+                } else {
+                    completion(.failure(.custom("Não foi encontrado resultados")))
                 }
                 
-            case .failure(let error):
-                print("==> Error: \(error.localizedDescription)")
+            case .failure:
+                completion(.failure(.unknown))
             }
         }
     }

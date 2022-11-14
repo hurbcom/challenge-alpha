@@ -13,6 +13,7 @@ final class SearchViewModel {
     private var searchResults: [SearchResultModel] = []
     var didReturnSuggestions: (([SuggestionModel]) -> Void)?
     var shouldUpdateUI: (() -> Void)?
+    var shouldShowNotFound: (() -> Void)?
     
     // MARK: Initialization
     init(service: SearchServiceProtocol = SearchService()) {
@@ -31,9 +32,16 @@ final class SearchViewModel {
     }
     
     func fetchSearchFrom(query: String) {
-        service.fetchSearchFrom(query: query, pagination: 1) { results in
-            self.searchResults = results
-            self.shouldUpdateUI?()
+        service.fetchSearchFrom(query: query, pagination: 1) { response in
+            switch response {
+            case .success(let results):
+                self.searchResults = results
+                self.shouldUpdateUI?()
+                
+            case .failure:
+                self.searchResults = []
+                self.shouldShowNotFound?()
+            }
         }
     }
 }

@@ -97,6 +97,13 @@ extension SearchResultModel {
         }
     }
     
+    func getDailysLabel() -> String? {
+        if let duration = quantityDescriptors?.duration {
+            return duration == 1 ? "1 diária" : "\(duration) diárias"
+        }
+        return nil
+    }
+    
     func getPersonsLabel() -> String? {
         if let maxPeople = quantityDescriptors?.maxPeople {
             return maxPeople == 1 ? "1 pessoa" : "\(maxPeople) pessoas"

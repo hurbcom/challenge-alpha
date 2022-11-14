@@ -12,6 +12,7 @@ class HotelViewController: BaseViewController {
     private var viewModel: HotelViewModel
     private let searchController = UISearchController(searchResultsController: nil)
     private var viewSearchSuggestions: SuggestionsView = SuggestionsView.fromNib()
+    private let viewSearchNotFound: SearchNotFoundView = SearchNotFoundView.fromNib()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -46,9 +47,13 @@ class HotelViewController: BaseViewController {
         viewModel.shouldUpdateUI = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else { return }
-                self.tableView.reloadData()
+                self.reloadData()
                 self.closeLoading()
             }
+        }
+        
+        viewModel.shouldShowNotFound = { [weak self] in
+            self?.showViewNotFoundResult()
         }
         
         viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
@@ -64,6 +69,20 @@ class HotelViewController: BaseViewController {
     }
     
     // MARK: Methods
+    private func showViewNotFoundResult() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.tableView.backgroundView = self.viewSearchNotFound
+            self.closeLoading()
+        }
+    }
+    
+    private func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.tableView.backgroundView = nil
+        }
+    }
         
     // MARK: Setup
     private func setupUI() {

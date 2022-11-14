@@ -12,6 +12,7 @@ class SearchViewController: BaseViewController {
     private var viewModel: SearchViewModel
     private let searchController = UISearchController(searchResultsController: nil)
     private var viewSearchSuggestions: SuggestionsView = SuggestionsView.fromNib()
+    private let viewSearchNotFound: SearchNotFoundView = SearchNotFoundView.fromNib()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -47,9 +48,13 @@ class SearchViewController: BaseViewController {
         viewModel.shouldUpdateUI = { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else { return }
-                self.tableView.reloadData()
+                self.reloadData()
                 self.closeLoading()
             }
+        }
+        
+        viewModel.shouldShowNotFound = { [weak self] in
+            self?.showViewNotFoundResult()
         }
         
         viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
@@ -65,6 +70,20 @@ class SearchViewController: BaseViewController {
     }
     
     // MARK: Methods
+    private func showViewNotFoundResult() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.tableView.backgroundView = self.viewSearchNotFound
+            self.closeLoading()
+        }
+    }
+    
+    private func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.tableView.backgroundView = nil
+        }
+    }
     
     // MARK: Setup
     private func setupUI() {
@@ -74,9 +93,14 @@ class SearchViewController: BaseViewController {
     }
     
     private func setupTableView() {
-        tableView.register(UINib(nibName: CardHotelTableViewCell.identifier,
-                                 bundle: nil),
-                           forCellReuseIdentifier: CardHotelTableViewCell.identifier)
+        tableView.register(
+            UINib(nibName: CardHotelTableViewCell.identifier,
+                  bundle: nil),
+            forCellReuseIdentifier: CardHotelTableViewCell.identifier)
+        tableView.register(
+            UINib(nibName: CardPackageTableViewCell.identifier,
+                  bundle: nil),
+            forCellReuseIdentifier: CardPackageTableViewCell.identifier)
         tableView.dataSource = self
     }
     
@@ -105,7 +129,7 @@ extension SearchViewController: UITableViewDataSource {
         let model = viewModel.getSearchResults()[indexPath.row]
         
         switch model.category {
-        case .pacote:
+        case .hotel:
             if let cell = tableView.dequeueReusableCell(
                 withIdentifier: CardHotelTableViewCell.identifier) as? CardHotelTableViewCell {
                 
@@ -115,7 +139,7 @@ extension SearchViewController: UITableViewDataSource {
             
         default:
             if let cell = tableView.dequeueReusableCell(
-                withIdentifier: CardHotelTableViewCell.identifier) as? CardHotelTableViewCell {
+                withIdentifier: CardPackageTableViewCell.identifier) as? CardPackageTableViewCell {
                 
                 cell.setupWith(model: model)
                 return cell

@@ -13,6 +13,7 @@ final class PackageViewModel {
     private var searchResults: [SearchResultModel] = []
     var didReturnSuggestions: (([SuggestionModel]) -> Void)?
     var shouldUpdateUI: (() -> Void)?
+    var shouldShowNotFound: (() -> Void)?
     
     // MARK: Initialization
     init(service: PackageServiceProtocol = PackageService()) {
@@ -31,9 +32,16 @@ final class PackageViewModel {
     }
     
     func findPackageFrom(query: String) {
-        service.findPackageFrom(query: query, pagination: 1) { results in
-            self.searchResults = results
-            self.shouldUpdateUI?()
+        service.findPackageFrom(query: query, pagination: 1) { response in
+            switch response {
+            case .success(let results):
+                self.searchResults = results
+                self.shouldUpdateUI?()
+                
+            case .failure:
+                self.searchResults = []
+                self.shouldShowNotFound?()
+            }
         }
     }
 }

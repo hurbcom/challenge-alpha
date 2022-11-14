@@ -194,6 +194,7 @@
             <connections>
                 <outlet property="collectionViewGallery" destination="Ks6-Bo-JMk" id="mnv-gW-zIK"/>
                 <outlet property="labelAddress" destination="hCl-Q5-p7z" id="fgV-qX-AJX"/>
+                <outlet property="labelDailys" destination="QoT-lf-HXS" id="HzO-X5-AGe"/>
                 <outlet property="labelName" destination="kir-RU-2du" id="1pw-YE-Jm1"/>
                 <outlet property="labelPersons" destination="6cm-UA-ti3" id="vmY-TD-olG"/>
                 <outlet property="labelValue" destination="FtY-eD-frY" id="EnM-ts-U4z"/>

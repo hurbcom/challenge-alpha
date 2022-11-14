@@ -10,7 +10,8 @@ import HUGraphQL
 
 protocol PackageServiceProtocol {
     func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void)
-    func findPackageFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void)
+    func findPackageFrom(query: String, pagination: Int,
+                         completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void)
 }
 
 struct PackageService: PackageServiceProtocol {
@@ -41,7 +42,8 @@ struct PackageService: PackageServiceProtocol {
         }
     }
     
-    func findPackageFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void) {
+    func findPackageFrom(query: String, pagination: Int,
+                         completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void) {
         
         let pagination = HUGraphQL.SearchInputPagination(page: pagination, limit: 10, sort: nil, sortOrder: nil)
         let query = HUGraphQL.SearchPackageQuery(
@@ -56,11 +58,13 @@ struct PackageService: PackageServiceProtocol {
                 if let search = value.data?.resultMap["searchPackage"] as? [String:Any],
                    let results = search["results"] as? [[String:Any]] {
                     let models = results.compactMap({ JSONDecoder.decode(to: SearchResultModel.self, from: $0) })
-                    completion(models)
+                    completion(.success(models))
+                } else {
+                    completion(.failure(.custom("Não foi encontrado resultados")))
                 }
                 
-            case .failure(let error):
-                print("==> Error: \(error.localizedDescription)")
+            case .failure:
+                completion(.failure(.unknown))
             }
         }
     }
