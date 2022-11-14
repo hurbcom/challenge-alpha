@@ -53,25 +53,25 @@
                                 <rect key="frame" x="0.0" y="180" width="346" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pacote de Viagem - Itacaré - 2024" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzK-ym-r8c">
-                                        <rect key="frame" x="8" y="10" width="330" height="18"/>
+                                        <rect key="frame" x="16" y="10" width="322" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A partir de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vai-jB-AQA">
-                                        <rect key="frame" x="8" y="64" width="64" height="16"/>
+                                        <rect key="frame" x="16" y="64" width="64" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttc-SN-1SZ">
-                                        <rect key="frame" x="80" y="59.5" width="58.5" height="20.5"/>
+                                        <rect key="frame" x="88" y="59.5" width="58.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" systemColor="systemOrangeColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rio de Janeiro, Brasil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-Se-p90">
-                                        <rect key="frame" x="8" y="38" width="127" height="16"/>
+                                        <rect key="frame" x="16" y="38" width="127" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -79,14 +79,14 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="zzK-ym-r8c" firstAttribute="leading" secondItem="oFL-zh-NYU" secondAttribute="leading" constant="8" id="01R-jO-yTq"/>
+                                    <constraint firstItem="zzK-ym-r8c" firstAttribute="leading" secondItem="oFL-zh-NYU" secondAttribute="leading" constant="16" id="01R-jO-yTq"/>
                                     <constraint firstItem="zzK-ym-r8c" firstAttribute="top" secondItem="oFL-zh-NYU" secondAttribute="top" constant="10" id="CTv-M6-KqI"/>
                                     <constraint firstItem="ttc-SN-1SZ" firstAttribute="bottom" secondItem="vai-jB-AQA" secondAttribute="bottom" id="Lya-bF-QbU"/>
                                     <constraint firstItem="0WS-Se-p90" firstAttribute="top" secondItem="zzK-ym-r8c" secondAttribute="bottom" constant="10" id="NoR-05-krb"/>
                                     <constraint firstAttribute="trailing" secondItem="zzK-ym-r8c" secondAttribute="trailing" constant="8" id="P4s-Bu-QXT"/>
-                                    <constraint firstItem="vai-jB-AQA" firstAttribute="leading" secondItem="oFL-zh-NYU" secondAttribute="leading" constant="8" id="Qtw-Le-p6t"/>
+                                    <constraint firstItem="vai-jB-AQA" firstAttribute="leading" secondItem="oFL-zh-NYU" secondAttribute="leading" constant="16" id="Qtw-Le-p6t"/>
                                     <constraint firstItem="vai-jB-AQA" firstAttribute="top" secondItem="0WS-Se-p90" secondAttribute="bottom" constant="10" id="Xsh-RR-8Uh"/>
-                                    <constraint firstItem="0WS-Se-p90" firstAttribute="leading" secondItem="oFL-zh-NYU" secondAttribute="leading" constant="8" id="jUG-DC-owK"/>
+                                    <constraint firstItem="0WS-Se-p90" firstAttribute="leading" secondItem="oFL-zh-NYU" secondAttribute="leading" constant="16" id="jUG-DC-owK"/>
                                     <constraint firstItem="ttc-SN-1SZ" firstAttribute="leading" secondItem="vai-jB-AQA" secondAttribute="trailing" constant="8" id="kjc-zY-J3H"/>
                                     <constraint firstAttribute="bottom" secondItem="vai-jB-AQA" secondAttribute="bottom" constant="15" id="sfl-Kc-JY6"/>
                                 </constraints>

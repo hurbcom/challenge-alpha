@@ -12,7 +12,7 @@ struct SearchResultModel: Decodable {
     let name: String
     let description: String
     let smallDescription: String
-    let category: String
+    let category: Category
     let isAvailable: Bool
     let huFreeCancellation: Bool?
     let gallery: [Gallery]
@@ -20,6 +20,20 @@ struct SearchResultModel: Decodable {
     let price: Price?
     let address: Address?
     let amenities: [Amenities]
+    let quantityDescriptors: QuantityDescriptors?
+    let startDate: String?
+    let endDate: String?
+    
+    enum Category: String, Codable {
+        case hotel
+        case pacote
+        case comboDiarias = "combo_de_diarias"
+        case `default`
+        
+        init(from decoder: Decoder) throws {
+            self = try Category(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .default
+        }
+    }
     
     struct Gallery: Decodable {
         let url: String
@@ -28,12 +42,6 @@ struct SearchResultModel: Decodable {
     struct Price: Decodable {
         let amount: Double
         let currency: String
-        let taxes: [Taxe]?
-    }
-    
-    struct Taxe: Decodable {
-        let originalAmount: Double?
-        let originalCurrency: String?
     }
     
     struct Address: Decodable {
@@ -48,8 +56,43 @@ struct SearchResultModel: Decodable {
         let lon: Double
     }
     
-      struct Amenities: Decodable {
-          let name: String
-          let category: String
-      }
+    struct Amenities: Decodable {
+        let name: String
+        let category: String
+    }
+    
+    struct QuantityDescriptors: Decodable {
+        let maxPeople: Int
+        let duration: Int
+    }
+}
+
+extension SearchResultModel {
+    func getAddressFormatted() -> String? {
+        if let city = address?.city,
+           let country = address?.country {
+            return "\(city), \(country)"
+        } else {
+            return "Endereço não informado"
+        }
+    }
+    
+    func getAmount() -> String? {
+        switch category {
+        case .hotel:
+            let amountValue = price?.amount ?? 0
+            return amountValue.formatCurrency(from: price?.currency).description
+            
+        default:
+            let amountFixValue = (price?.amount ?? 0) / 100
+            return amountFixValue.formatCurrency(from: price?.currency).description
+        }
+    }
+    
+    func getPersonsLabel() -> String? {
+        if let maxPeople = quantityDescriptors?.maxPeople {
+            return maxPeople == 1 ? "1 pessoa" : "\(maxPeople) pessoas"
+        }
+        return nil
+    }
 }
