@@ -11,7 +11,7 @@ final class CardSearchTableViewCell: UITableViewCell {
     static let identifier = "CardSearchTableViewCell"
     
     // MARK: Properties
-    private var model: SearchModel?
+    private var model: SearchResultModel?
     
     // MARK: Outlets
     @IBOutlet weak var viewContent: UIView!
@@ -58,7 +58,7 @@ final class CardSearchTableViewCell: UITableViewCell {
         collectionViewImages.reloadData()
     }
     
-    func setupWith(model: SearchModel) {
+    func setupWith(model: SearchResultModel) {
         self.model = model
         collectionViewImages.reloadData()
         pageControl.numberOfPages = model.gallery.count

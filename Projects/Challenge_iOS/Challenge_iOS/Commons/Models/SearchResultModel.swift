@@ -1,5 +1,5 @@
 //
-//  SearchModel.swift
+//  SearchResultModel.swift
 //  Challenge_iOS
 //
 //  Created by Helio Junior on 12/11/22.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct SearchModel: Decodable {
-    let id: String
+struct SearchResultModel: Decodable {
+    let id: String?
     let name: String
     let description: String
     let smallDescription: String

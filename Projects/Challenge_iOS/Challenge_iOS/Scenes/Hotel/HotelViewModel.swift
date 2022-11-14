@@ -10,7 +10,7 @@ import Foundation
 final class HotelViewModel {
     // MARK: Properties
     private let service: HotelServiceProtocol
-    private var searchResults: [SearchModel] = []
+    private var searchResults: [SearchResultModel] = []
     var didReturnSuggestions: (([SuggestionModel]) -> Void)?
     var shouldUpdateUI: (() -> Void)?
     
@@ -20,7 +20,7 @@ final class HotelViewModel {
     }
     
     // MARK: Methods
-    func getSearchResults() -> [SearchModel] {
+    func getSearchResults() -> [SearchResultModel] {
         searchResults
     }
     

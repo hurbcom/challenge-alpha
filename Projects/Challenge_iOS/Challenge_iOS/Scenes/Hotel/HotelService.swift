@@ -10,7 +10,7 @@ import HUGraphQL
 
 protocol HotelServiceProtocol {
     func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void)
-    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchModel]) -> Void)
+    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void)
 }
 
 struct HotelService: HotelServiceProtocol {
@@ -42,7 +42,7 @@ struct HotelService: HotelServiceProtocol {
         }
     }
     
-    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchModel]) -> Void) {
+    func findHotelFrom(query: String, pagination: Int, completion: @escaping ([SearchResultModel]) -> Void) {
         
         let pagination = HUGraphQL.SearchInputPagination(page: pagination, limit: 10, sort: nil, sortOrder: nil)
         let query = HUGraphQL.SearchHotelQuery(
@@ -59,7 +59,7 @@ struct HotelService: HotelServiceProtocol {
             case .success(let value):
                 if let search = value.data?.resultMap["searchHotel"] as? [String:Any],
                    let results = search["results"] as? [[String:Any]] {
-                    let models = results.compactMap({ JSONDecoder.decode(to: SearchModel.self, from: $0) })
+                    let models = results.compactMap({ JSONDecoder.decode(to: SearchResultModel.self, from: $0) })
                     completion(models)
                 }
                 
