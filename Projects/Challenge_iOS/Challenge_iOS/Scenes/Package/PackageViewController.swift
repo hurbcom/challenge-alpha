@@ -9,6 +9,7 @@ import UIKit
 
 class PackageViewController: BaseViewController {
     // MARK: Properties
+    private var viewModel: PackageViewModel
     private let searchController = UISearchController(searchResultsController: nil)
     private var viewSearchSuggestions: SuggestionsView = SuggestionsView.fromNib()
     
@@ -16,7 +17,8 @@ class PackageViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Initialization
-    init() {
+    init(viewModel: PackageViewModel = PackageViewModel()) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,16 +29,32 @@ class PackageViewController: BaseViewController {
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindEvents()
+        setupUI()
     }
     
     // MARK: Actions
     
     // MARK: BindEvents
     private func bindEvents() {
+        viewModel.didReturnSuggestions = { [weak self] suggestions in
+            DispatchQueue.main.async {
+                self?.viewSearchSuggestions.setup(with: suggestions)
+            }
+        }
+        
+        viewModel.shouldUpdateUI = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.tableView.reloadData()
+                self.closeLoading()
+            }
+        }
+        
         viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
             DispatchQueue.main.async {
                 self?.searchController.searchBar.text = suggestion.text
-//                self?.viewModel.findPackageFrom(query: suggestion.text)
+                self?.viewModel.findPackageFrom(query: suggestion.text)
                 if #available(iOS 13.0, *) {
                     self?.searchController.searchBar.searchTextField.resignFirstResponder()
                 }
@@ -55,6 +73,10 @@ class PackageViewController: BaseViewController {
     }
     
     private func setupTableView() {
+        tableView.register(UINib(nibName: CardHotelTableViewCell.identifier,
+                                 bundle: nil),
+                           forCellReuseIdentifier: CardHotelTableViewCell.identifier)
+        tableView.dataSource = self
     }
     
     private func setupSearchController() {
@@ -73,9 +95,28 @@ class PackageViewController: BaseViewController {
 }
 
 // MARK: Extensions
+extension PackageViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.getSearchResults().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let model = viewModel.getSearchResults()[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CardHotelTableViewCell.identifier) as? CardHotelTableViewCell {
+            
+            cell.setupWith(model: model)
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+}
+
 extension PackageViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        viewModel.getSuggestionsFrom(text: searchText)
+        viewModel.getSuggestionsFrom(text: searchText)
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -90,7 +131,7 @@ extension PackageViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.becomeFirstResponder()
         showLoading()
-//        viewModel.findPackageFrom(query: searchBar.text ?? "")
+        viewModel.findPackageFrom(query: searchBar.text ?? "")
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

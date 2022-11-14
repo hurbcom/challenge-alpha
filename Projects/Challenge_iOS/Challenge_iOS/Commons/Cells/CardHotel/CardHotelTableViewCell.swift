@@ -63,14 +63,8 @@ final class CardHotelTableViewCell: UITableViewCell {
         collectionViewImages.reloadData()
         pageControl.numberOfPages = model.gallery.count
         labelName.text = model.name
-        if let city = model.address?.city,
-           let state = model.address?.state,
-           let country = model.address?.country {
-            labelLocation.text = "\(city), \(state), \(country)"
-        } else {
-            labelLocation.text = "Endereço não informado"
-        }
-        labelPrice.text = model.price?.amount.formatCurrency(from: model.price?.currency)
+        labelLocation.text = model.getAddressFormatted()
+        labelPrice.text = model.getAmount()
     }
 }
 

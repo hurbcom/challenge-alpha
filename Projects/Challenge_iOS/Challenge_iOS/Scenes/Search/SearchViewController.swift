@@ -102,15 +102,25 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let model = viewModel.getSearchResults()[indexPath.row]
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: CardHotelTableViewCell.identifier) as? CardHotelTableViewCell {
+        switch model.category {
+        case .pacote:
+            if let cell = tableView.dequeueReusableCell(
+                withIdentifier: CardHotelTableViewCell.identifier) as? CardHotelTableViewCell {
+                
+                cell.setupWith(model: model)
+                return cell
+            }
             
-            cell.setupWith(model: model)
-            return cell
+        default:
+            if let cell = tableView.dequeueReusableCell(
+                withIdentifier: CardHotelTableViewCell.identifier) as? CardHotelTableViewCell {
+                
+                cell.setupWith(model: model)
+                return cell
+            }
         }
-        
         return UITableViewCell()
     }
 }

@@ -16,7 +16,6 @@ protocol SearchServiceProtocol {
 struct SearchService: SearchServiceProtocol {
     
     // MARK: Properties
-    typealias Search = HUGraphQL.SearchQuery.Data.Search
     private let graphQL = HUGService(enableLog: true)
     
     // MARK: Methods
