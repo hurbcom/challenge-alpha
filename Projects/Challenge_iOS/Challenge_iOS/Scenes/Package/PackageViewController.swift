@@ -10,9 +10,9 @@ import UIKit
 class PackageViewController: BaseViewController {
     // MARK: Properties
     private var viewModel: PackageViewModel
-    private let searchController = UISearchController(searchResultsController: nil)
-    private var viewSearchSuggestions: SuggestionsView = SuggestionsView.fromNib()
-    private let viewSearchNotFound: SearchNotFoundView = SearchNotFoundView.fromNib()
+    let searchController = UISearchController(searchResultsController: nil)
+    var viewSearchSuggestions: SuggestionsView = SuggestionsView.fromNib()
+    let viewSearchNotFound: SearchNotFoundView = SearchNotFoundView.fromNib()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -58,9 +58,9 @@ class PackageViewController: BaseViewController {
         }
         
         viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
+            self?.viewModel.findPackageFrom(query: suggestion.text)
             DispatchQueue.main.async {
                 self?.searchController.searchBar.text = suggestion.text
-                self?.viewModel.findPackageFrom(query: suggestion.text)
                 if #available(iOS 13.0, *) {
                     self?.searchController.searchBar.searchTextField.resignFirstResponder()
                 }
@@ -156,5 +156,6 @@ extension PackageViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.becomeFirstResponder()
+        viewSearchSuggestions.isHidden = true
     }
 }
