@@ -10,8 +10,8 @@ import Foundation
 
 struct HotelServiceFailureStub: HotelServiceProtocol {
     
-    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void) {
-        completion([])
+    func getSuggestionsFrom(text: String, completion: @escaping (Result<[SuggestionModel], CustomError>) -> Void) {
+        completion(.failure(.unknown))
     }
     
     func findHotelFrom(query: String, pagination: Int, completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void) {

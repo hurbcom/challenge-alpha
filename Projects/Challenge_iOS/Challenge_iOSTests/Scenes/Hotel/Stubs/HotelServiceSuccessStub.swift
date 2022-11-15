@@ -10,14 +10,14 @@ import Foundation
 
 struct HotelServiceSuccessStub: HotelServiceProtocol {
     
-    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void) {
+    func getSuggestionsFrom(text: String, completion: @escaping (Result<[SuggestionModel], CustomError>) -> Void) {
         let suggestions = [
             SuggestionModel(text: "Hotel Plaza"),
             SuggestionModel(text: "Grand Hotel Plaza"),
             SuggestionModel(text: "Royal Plaza Hotel"),
             SuggestionModel(text: "Imperial Hotel Plaza")
         ]
-        completion(suggestions)
+        completion(.success(suggestions))
     }
     
     func findHotelFrom(query: String, pagination: Int, completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void) {
