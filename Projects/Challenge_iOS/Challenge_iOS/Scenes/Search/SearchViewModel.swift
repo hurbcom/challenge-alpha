@@ -46,6 +46,7 @@ final class SearchViewModel {
                 
             case .failure:
                 self.searchResults = []
+                self.shouldUpdateUI?()
                 self.shouldShowNotFound?()
             }
         }
