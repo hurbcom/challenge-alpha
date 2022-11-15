@@ -1,22 +1,22 @@
 //
-//  SearchViewControllerTest.swift
+//  HotelViewControllerTest.swift
 //  Challenge_iOSTests
 //
-//  Created by Helio Junior on 14/11/22.
+//  Created by Helio Junior on 15/11/22.
 //
 
 import XCTest
 @testable import Challenge_iOS
 
-class SearchViewControllerTest: XCTestCase {
-
-    var sut: SearchViewController!
-    var viewModel: SearchViewModel!
+class HotelViewControllerTest: XCTestCase {
+    
+    var sut: HotelViewController!
+    var viewModel: HotelViewModel!
     
     override func setUpWithError() throws {
-        let serviceStub = SearchServiceSuccessStub()
-        viewModel = SearchViewModel(service: serviceStub)
-        sut = SearchViewController(viewModel: viewModel)
+        let serviceStub = HotelServiceSuccessStub()
+        viewModel = HotelViewModel(service: serviceStub)
+        sut = HotelViewController(viewModel: viewModel)
         _ = sut.view
     }
 
@@ -26,24 +26,24 @@ class SearchViewControllerTest: XCTestCase {
     }
     
     func test_TableViewSuccessRenderCells() {
-        viewModel.fetchSearchFrom(query: "")
+        viewModel.findHotelFrom(query: "")
         
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 2)
     }
     
     func test_TableViewFailureRenderCells() {
-        let serviceStub = SearchServiceFailureStub()
-        viewModel = SearchViewModel(service: serviceStub)
-        sut = SearchViewController(viewModel: viewModel)
+        let serviceStub = HotelServiceFailureStub()
+        viewModel = HotelViewModel(service: serviceStub)
+        sut = HotelViewController(viewModel: viewModel)
         _ = sut.view
         
-        viewModel.fetchSearchFrom(query: "")
+        viewModel.findHotelFrom(query: "")
         
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
 
     func test_TableViewRenderCellsAndIdentifierHotelCell() {
-        viewModel.fetchSearchFrom(query: "")
+        viewModel.findHotelFrom(query: "")
         let indexPath = IndexPath(row: 0, section: 0)
         let tableView = sut.tableView!
         
@@ -55,7 +55,7 @@ class SearchViewControllerTest: XCTestCase {
     }
     
     func test_TableViewRenderCellsAndIdentifierPackageCell() {
-        viewModel.fetchSearchFrom(query: "")
+        viewModel.findHotelFrom(query: "")
         let indexPath = IndexPath(row: 1, section: 0)
         let tableView = sut.tableView!
         
@@ -90,12 +90,12 @@ class SearchViewControllerTest: XCTestCase {
     }
     
     func test_ShowViewSearchNotFound() {
-        let serviceStub = SearchServiceFailureStub()
-        viewModel = SearchViewModel(service: serviceStub)
-        sut = SearchViewController(viewModel: viewModel)
+        let serviceStub = HotelServiceFailureStub()
+        viewModel = HotelViewModel(service: serviceStub)
+        sut = HotelViewController(viewModel: viewModel)
         _ = sut.view
         
-        viewModel.fetchSearchFrom(query: "")
+        viewModel.findHotelFrom(query: "")
         
         XCTAssertFalse(sut.viewSearchNotFound.isHidden)
     }
