@@ -9,8 +9,8 @@ import Foundation
 @testable import Challenge_iOS
 
 struct SearchServiceFailureStub: SearchServiceProtocol {
-    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void) {
-        completion([])
+    func getSuggestionsFrom(text: String, completion: @escaping (Result<[SuggestionModel], CustomError>) -> Void) {
+        completion(.failure(.unknown))
     }
     
     func fetchSearchFrom(query: String, pagination: Int, completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void) {

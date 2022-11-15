@@ -9,14 +9,14 @@ import Foundation
 @testable import Challenge_iOS
 
 struct SearchServiceSuccessStub: SearchServiceProtocol {
-    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void) {
+    func getSuggestionsFrom(text: String, completion: @escaping (Result<[SuggestionModel], CustomError>) -> Void) {
         let suggestions = [
             SuggestionModel(text: "Rio de Janeiro"),
             SuggestionModel(text: "Rio Claro"),
             SuggestionModel(text: "Rio Negro"),
             SuggestionModel(text: "Rio Branco")
         ]
-        completion(suggestions)
+        completion(.success(suggestions))
     }
     
     func fetchSearchFrom(query: String, pagination: Int, completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void) {
