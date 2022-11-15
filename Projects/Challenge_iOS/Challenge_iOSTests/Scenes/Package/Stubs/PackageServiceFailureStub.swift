@@ -9,8 +9,8 @@ import Foundation
 @testable import Challenge_iOS
 
 struct PackageServiceFailureStub: PackageServiceProtocol {
-    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void) {
-        completion([])
+    func getSuggestionsFrom(text: String, completion: @escaping (Result<[SuggestionModel], CustomError>) -> Void) {
+        completion(.failure(.unknown))
     }
     
     func findPackageFrom(query: String, pagination: Int, completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void) {

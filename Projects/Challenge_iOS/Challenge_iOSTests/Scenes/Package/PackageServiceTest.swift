@@ -1,5 +1,5 @@
 //
-//  HotelServiceTest.swift
+//  PackageServiceTest.swift
 //  Challenge_iOSTests
 //
 //  Created by Helio Junior on 15/11/22.
@@ -8,12 +8,12 @@
 import XCTest
 @testable import Challenge_iOS
 
-class HotelServiceTest: XCTestCase {
+class PackageServiceTest: XCTestCase {
 
-    var sut: HotelService!
+    var sut: PackageService!
 
     override func setUpWithError() throws {
-        sut = HotelService()
+        sut = PackageService()
     }
 
     override func tearDownWithError() throws {
@@ -38,10 +38,10 @@ class HotelServiceTest: XCTestCase {
         wait(for: [promesse], timeout: 3)
     }
     
-    func test_IntegrationSearchHotelResults() {
-        let promesse = expectation(description: "Espero receber resultados da busca por Hotel da API da Hurb.")
+    func test_IntegrationSearchPackageResults() {
+        let promesse = expectation(description: "Espero receber resultados da busca por Pacotes da API da Hurb.")
         
-        sut.findHotelFrom(query: "Rio de Janeiro", pagination: 1) { response in
+        sut.findPackageFrom(query: "Rio de Janeiro", pagination: 1) { response in
             defer {
                 promesse.fulfill()
             }

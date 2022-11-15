@@ -31,9 +31,15 @@ final class PackageViewModel {
     }
     
     func getSuggestionsFrom(text: String) {
-        service.getSuggestionsFrom(text: text) { suggestions in
-            self.suggestionsResults = suggestions
-            self.didReturnSuggestions?()
+        service.getSuggestionsFrom(text: text) { response in
+            switch response {
+            case .success(let suggestions):
+                self.suggestionsResults = suggestions
+                self.didReturnSuggestions?()
+            case .failure(let error):
+                self.suggestionsResults = []
+                print("==> ERROR: \(error.localizedDescription)")
+            }
         }
     }
     

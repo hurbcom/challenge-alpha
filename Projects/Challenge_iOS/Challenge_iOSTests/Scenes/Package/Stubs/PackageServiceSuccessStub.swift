@@ -10,13 +10,13 @@ import Foundation
 
 struct PackageServiceSuccessStub: PackageServiceProtocol {
     
-    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void) {
+    func getSuggestionsFrom(text: String, completion: @escaping (Result<[SuggestionModel], CustomError>) -> Void) {
         let suggestions = [
             SuggestionModel(text: "Gramado, Mato Grosso"),
             SuggestionModel(text: "Gramado, Rio Grande do Sul"),
             SuggestionModel(text: "Pacote Gramado - 2023")
         ]
-        completion(suggestions)
+        completion(.success(suggestions))
     }
     
     func findPackageFrom(query: String, pagination: Int, completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void) {
