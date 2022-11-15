@@ -10,8 +10,9 @@ import Foundation
 final class HotelViewModel {
     // MARK: Properties
     private let service: HotelServiceProtocol
+    private var suggestionsResults: [SuggestionModel] = []
     private var searchResults: [SearchResultModel] = []
-    var didReturnSuggestions: (([SuggestionModel]) -> Void)?
+    var didReturnSuggestions: (() -> Void)?
     var shouldUpdateUI: (() -> Void)?
     var shouldShowNotFound: (() -> Void)?
     
@@ -21,13 +22,18 @@ final class HotelViewModel {
     }
     
     // MARK: Methods
+    func getSuggestionsResults() -> [SuggestionModel] {
+        suggestionsResults
+    }
+    
     func getSearchResults() -> [SearchResultModel] {
         searchResults
     }
     
     func getSuggestionsFrom(text: String) {
         service.getSuggestionsFrom(text: text) { suggestions in
-            self.didReturnSuggestions?(suggestions)
+            self.suggestionsResults = suggestions
+            self.didReturnSuggestions?()
         }
     }
     
