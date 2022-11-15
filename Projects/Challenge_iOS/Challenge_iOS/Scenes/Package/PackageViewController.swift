@@ -38,9 +38,10 @@ class PackageViewController: BaseViewController {
     
     // MARK: BindEvents
     private func bindEvents() {
-        viewModel.didReturnSuggestions = { [weak self] suggestions in
+        viewModel.didReturnSuggestions = { [weak self] in
             DispatchQueue.main.async {
-                self?.viewSearchSuggestions.setup(with: suggestions)
+                guard let self = self else { return }
+                self.viewSearchSuggestions.setup(with: self.viewModel.getSuggestionsResults())
             }
         }
         
