@@ -10,8 +10,9 @@ import Foundation
 final class PackageViewModel {
     // MARK: Properties
     private let service: PackageServiceProtocol
+    private var suggestionsResults: [SuggestionModel] = []
     private var searchResults: [SearchResultModel] = []
-    var didReturnSuggestions: (([SuggestionModel]) -> Void)?
+    var didReturnSuggestions: (() -> Void)?
     var shouldUpdateUI: (() -> Void)?
     var shouldShowNotFound: (() -> Void)?
     
@@ -21,13 +22,24 @@ final class PackageViewModel {
     }
     
     // MARK: Methods
+    func getSuggestionsResults() -> [SuggestionModel] {
+        suggestionsResults
+    }
+    
     func getSearchResults() -> [SearchResultModel] {
         searchResults
     }
     
     func getSuggestionsFrom(text: String) {
-        service.getSuggestionsFrom(text: text) { suggestions in
-            self.didReturnSuggestions?(suggestions)
+        service.getSuggestionsFrom(text: text) { response in
+            switch response {
+            case .success(let suggestions):
+                self.suggestionsResults = suggestions
+                self.didReturnSuggestions?()
+            case .failure(let error):
+                self.suggestionsResults = []
+                print("==> ERROR: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -40,6 +52,7 @@ final class PackageViewModel {
                 
             case .failure:
                 self.searchResults = []
+                self.shouldUpdateUI?()
                 self.shouldShowNotFound?()
             }
         }

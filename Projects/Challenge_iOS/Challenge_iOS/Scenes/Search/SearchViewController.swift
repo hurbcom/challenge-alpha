@@ -10,9 +10,9 @@ import UIKit
 class SearchViewController: BaseViewController {
     // MARK: Properties
     private var viewModel: SearchViewModel
-    private let searchController = UISearchController(searchResultsController: nil)
-    private var viewSearchSuggestions: SuggestionsView = SuggestionsView.fromNib()
-    private let viewSearchNotFound: SearchNotFoundView = SearchNotFoundView.fromNib()
+    let searchController = UISearchController(searchResultsController: nil)
+    var viewSearchSuggestions: SuggestionsView = SuggestionsView.fromNib()
+    let viewSearchNotFound: SearchNotFoundView = SearchNotFoundView.fromNib()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -39,9 +39,10 @@ class SearchViewController: BaseViewController {
     
     // MARK: BindEvents
     private func bindEvents() {
-        viewModel.didReturnSuggestions = { [weak self] suggestions in
+        viewModel.didReturnSuggestions = { [weak self] in
             DispatchQueue.main.async {
-                self?.viewSearchSuggestions.setup(with: suggestions)
+                guard let self = self else { return }
+                self.viewSearchSuggestions.setup(with: self.viewModel.getSuggestionsResults())
             }
         }
         
@@ -58,9 +59,9 @@ class SearchViewController: BaseViewController {
         }
         
         viewSearchSuggestions.didSelectedSuggestion = { [weak self] suggestion in
+            self?.viewModel.fetchSearchFrom(query: suggestion.text)
             DispatchQueue.main.async {
                 self?.searchController.searchBar.text = suggestion.text
-                self?.viewModel.fetchSearchFrom(query: suggestion.text)
                 if #available(iOS 13.0, *) {
                     self?.searchController.searchBar.searchTextField.resignFirstResponder()
                 }
@@ -171,5 +172,6 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.becomeFirstResponder()
+        viewSearchSuggestions.isHidden = true
     }
 }

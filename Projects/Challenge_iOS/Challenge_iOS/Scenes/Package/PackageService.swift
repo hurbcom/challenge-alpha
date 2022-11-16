@@ -9,8 +9,10 @@ import Foundation
 import HUGraphQL
 
 protocol PackageServiceProtocol {
-    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void)
-    func findPackageFrom(query: String, pagination: Int,
+    func getSuggestionsFrom(text: String,
+                            completion: @escaping (Result<[SuggestionModel], CustomError>) -> Void)
+    func findPackageFrom(query: String,
+                         pagination: Int,
                          completion: @escaping (Result<[SearchResultModel], CustomError>) -> Void)
 }
 
@@ -20,7 +22,7 @@ struct PackageService: PackageServiceProtocol {
     private let graphQL = HUGService(enableLog: true)
     
     // MARK: Methods
-    func getSuggestionsFrom(text: String, completion: @escaping ([SuggestionModel]) -> Void) {
+    func getSuggestionsFrom(text: String, completion: @escaping (Result<[SuggestionModel], CustomError>) -> Void) {
         let query = HUGraphQL.SuggestionsQuery(
             q: text,
             limit: 6,
@@ -33,11 +35,11 @@ struct PackageService: PackageServiceProtocol {
                 if let data = value.data, let dataSuggestions = data.suggestions {
                     let texts = dataSuggestions.results.compactMap({ $0.resultMap["text"] as? String })
                     let suggestions = texts.map({ SuggestionModel(text: $0) })
-                    completion(suggestions)
+                    completion(.success(suggestions))
                 }
                 
-            case .failure(let error):
-                print("==> Error: \(error.localizedDescription)")
+            case .failure:
+                completion(.failure(.unknown))
             }
         }
     }

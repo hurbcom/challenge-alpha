@@ -15,7 +15,7 @@ final class CardHotelTableViewCell: UITableViewCell {
     
     // MARK: Outlets
     @IBOutlet weak var viewContent: UIView!
-    @IBOutlet weak var collectionViewImages: UICollectionView!
+    @IBOutlet weak var collectionViewGallery: UICollectionView!
     @IBOutlet weak var labelStars: UILabel!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelAddress: UILabel!
@@ -38,7 +38,7 @@ final class CardHotelTableViewCell: UITableViewCell {
     }
     
     private func setupCollectionView() {
-        collectionViewImages
+        collectionViewGallery
             .register(UINib(nibName: ImageCollectionViewCell.identifier,
                             bundle: nil),
                       forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
@@ -53,16 +53,16 @@ final class CardHotelTableViewCell: UITableViewCell {
                                            right: 0)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        self.collectionViewImages.setCollectionViewLayout(layout, animated: false)
+        self.collectionViewGallery.setCollectionViewLayout(layout, animated: false)
         
-        collectionViewImages.dataSource = self
-        collectionViewImages.delegate = self
-        collectionViewImages.reloadData()
+        collectionViewGallery.dataSource = self
+        collectionViewGallery.delegate = self
+        collectionViewGallery.reloadData()
     }
     
     func setupWith(model: SearchResultModel) {
         self.model = model
-        collectionViewImages.reloadData()
+        collectionViewGallery.reloadData()
         pageControl.numberOfPages = model.gallery.count
         labelStars.text = model.getStarsDescription()
         labelName.text = model.name
