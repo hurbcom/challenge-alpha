@@ -41,18 +41,6 @@ class PackageViewControllerTest: XCTestCase {
         
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
-
-    func test_TableViewRenderCellsAndIdentifierHotelCell() {
-        viewModel.findPackageFrom(query: "")
-        let indexPath = IndexPath(row: 0, section: 0)
-        let tableView = sut.tableView!
-        
-        if let cell = sut.tableView(tableView, cellForRowAt: indexPath) as? CardHotelTableViewCell {
-            XCTAssertEqual(cell.labelName.text, "Imperial Plaza Hotel")
-            XCTAssertEqual(cell.labelAddress.text, "Brasília, Brasil")
-            XCTAssertEqual(cell.labelValue.text, "R$ 158")
-        }
-    }
     
     func test_TableViewRenderCellsAndIdentifierPackageCell() {
         viewModel.findPackageFrom(query: "")
