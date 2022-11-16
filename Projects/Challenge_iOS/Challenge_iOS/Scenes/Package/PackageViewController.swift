@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PackageViewController: BaseViewController {
+final class PackageViewController: BaseViewController {
     // MARK: Properties
     private var viewModel: PackageViewModel
     let searchController = UISearchController(searchResultsController: nil)
@@ -32,6 +32,17 @@ class PackageViewController: BaseViewController {
         super.viewDidLoad()
         bindEvents()
         setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        title = "Pacote"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        title = ""
     }
     
     // MARK: Actions

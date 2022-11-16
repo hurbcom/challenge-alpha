@@ -11,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="gTV-IL-0wX" customClass="ImageCollectionViewCell" customModule="Challenge_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="288" height="177"/>
+            <rect key="frame" x="0.0" y="0.0" width="293" height="260"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="288" height="177"/>
+                <rect key="frame" x="0.0" y="0.0" width="293" height="260"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-example" translatesAutoresizingMaskIntoConstraints="NO" id="Hrs-gp-Zed">
-                        <rect key="frame" x="0.0" y="0.0" width="288" height="177"/>
+                        <rect key="frame" x="0.0" y="0.0" width="293" height="260"/>
                     </imageView>
                 </subviews>
             </view>
@@ -29,11 +29,11 @@
                 <constraint firstItem="Hrs-gp-Zed" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="o7e-o9-do4"/>
                 <constraint firstAttribute="bottom" secondItem="Hrs-gp-Zed" secondAttribute="bottom" id="xsp-dV-t1t"/>
             </constraints>
-            <size key="customSize" width="288" height="177"/>
+            <size key="customSize" width="293" height="260"/>
             <connections>
                 <outlet property="imageView" destination="Hrs-gp-Zed" id="Ons-gy-PSc"/>
             </connections>
-            <point key="canvasLocation" x="310.14492753623193" y="114.17410714285714"/>
+            <point key="canvasLocation" x="313.768115942029" y="141.96428571428569"/>
         </collectionViewCell>
     </objects>
     <resources>

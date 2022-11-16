@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HotelViewController: BaseViewController {
+final class HotelViewController: BaseViewController {
     // MARK: Properties
     private var viewModel: HotelViewModel
     let searchController = UISearchController(searchResultsController: nil)

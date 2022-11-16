@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: BaseViewController {
+final class SearchViewController: BaseViewController {
     // MARK: Properties
     private var viewModel: SearchViewModel
     let searchController = UISearchController(searchResultsController: nil)
