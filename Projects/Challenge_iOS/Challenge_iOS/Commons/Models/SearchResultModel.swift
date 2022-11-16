@@ -85,6 +85,15 @@ extension SearchResultModel {
         }
     }
     
+    func getAddressShortFormatted() -> String? {
+        if let city = address?.city,
+           let country = address?.country {
+            return "\(city)"
+        } else {
+            return "endereço não informado"
+        }
+    }
+    
     func getAmount() -> String? {
         switch category {
         case .hotel:
@@ -94,6 +103,18 @@ extension SearchResultModel {
         default:
             let amountFixValue = (price?.amount ?? 0) / 100
             return amountFixValue.formatCurrency(from: price?.currency).description
+        }
+    }
+    
+    func getAmountShort() -> String? {
+        switch category {
+        case .hotel:
+            let amountValue = price?.amount ?? 0
+            return Int(round(amountValue)).description
+            
+        default:
+            let amountFixValue = (price?.amount ?? 0) / 100
+            return Int(round(amountFixValue)).description
         }
     }
     

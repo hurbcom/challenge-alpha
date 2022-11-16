@@ -12,6 +12,7 @@ class CardPackageTableViewCell: UITableViewCell {
     
     // MARK: Properties
     private var model: SearchResultModel?
+    var didClicked: (() -> Void)?
     
     // MARK: Outlets
     @IBOutlet weak var viewContent: UIView!
@@ -94,5 +95,9 @@ extension CardPackageTableViewCell: UICollectionViewDataSource {
 extension CardPackageTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         pageControl.currentPage = indexPath.item
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didClicked?()
     }
 }

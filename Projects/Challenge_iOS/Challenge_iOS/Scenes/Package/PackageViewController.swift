@@ -85,6 +85,11 @@ class PackageViewController: BaseViewController {
         }
     }
     
+    private func showPackageDetail(_ model: SearchResultModel) {
+        let viewController = PackageDetailViewController(model: model)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     // MARK: Setup
     private func setupUI() {
         setupSearchController()
@@ -97,6 +102,7 @@ class PackageViewController: BaseViewController {
                                  bundle: nil),
                            forCellReuseIdentifier: CardPackageTableViewCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private func setupSearchController() {
@@ -121,16 +127,24 @@ extension PackageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let model = viewModel.getSearchResults()[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: CardPackageTableViewCell.identifier) as? CardPackageTableViewCell {
             
             cell.setupWith(model: model)
+            cell.didClicked = {
+                self.showPackageDetail(model)
+            }
             return cell
         }
-        
         return UITableViewCell()
+    }
+}
+
+extension PackageViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = viewModel.getSearchResults()[indexPath.row]
+        showPackageDetail(model)
     }
 }
 
