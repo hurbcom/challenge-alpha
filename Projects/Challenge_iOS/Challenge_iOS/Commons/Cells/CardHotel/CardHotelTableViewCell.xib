@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,7 +33,7 @@
                                         </collectionViewFlowLayout>
                                     </collectionView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1b5-Jv-1UX">
-                                        <rect key="frame" x="114" y="166" width="115.5" height="26"/>
+                                        <rect key="frame" x="113.5" y="166" width="116.5" height="26"/>
                                     </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -229,7 +227,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="collectionViewImages" destination="lc1-Bt-OMO" id="Ebc-QG-HgK"/>
+                <outlet property="collectionViewGallery" destination="lc1-Bt-OMO" id="Ebc-QG-HgK"/>
                 <outlet property="labelAddress" destination="0WS-Se-p90" id="3fF-Wf-w9C"/>
                 <outlet property="labelName" destination="zzK-ym-r8c" id="5lE-zS-w93"/>
                 <outlet property="labelSecondAmenitie" destination="2Ec-kJ-OXD" id="zVL-0x-u4X"/>

@@ -25,11 +25,14 @@ let searchResulHotelModelMock = SearchResultModel(id: nil,
                                                                                 country: "Brasil",
                                                                                 city: "Brasília",
                                                                                 geoLocation: nil),
-                                             amenities: [],
+                                                  amenities: [
+                                                    SearchResultModel.Amenities(name: "Estacionamento", category: nil),
+                                                    SearchResultModel.Amenities(name: "Spa", category: nil)
+                                                  ],
                                              quantityDescriptors: nil,
                                              startDate: nil,
                                              endDate: nil,
-                                             stars: nil)
+                                             stars: 4)
 
 let searchResulPackageModelMock = SearchResultModel(id: "1413827",
                                              name: "Pacote de Viagem - CDesign Hotel (Rio de Janeiro) - 2023",
