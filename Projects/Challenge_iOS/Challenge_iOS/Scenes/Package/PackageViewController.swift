@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PackageViewController: BaseViewController {
+final class PackageViewController: BaseViewController {
     // MARK: Properties
     private var viewModel: PackageViewModel
     let searchController = UISearchController(searchResultsController: nil)
@@ -34,6 +34,17 @@ class PackageViewController: BaseViewController {
         setupUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        title = "Pacote"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        title = ""
+    }
+    
     // MARK: Actions
     
     // MARK: BindEvents
@@ -47,9 +58,9 @@ class PackageViewController: BaseViewController {
         
         viewModel.shouldUpdateUI = { [weak self] in
             DispatchQueue.main.async {
-                guard let self = self else { return }
-                self.reloadData()
-                self.closeLoading()
+                self?.viewSearchNotFound.isHidden = true
+                self?.tableView.reloadData()
+                self?.closeLoading()
             }
         }
         
@@ -73,21 +84,20 @@ class PackageViewController: BaseViewController {
     private func showViewNotFoundResult() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            self.tableView.backgroundView = self.viewSearchNotFound
+            self.viewSearchNotFound.isHidden = false
             self.closeLoading()
         }
     }
     
-    private func reloadData() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-            self.tableView.backgroundView = nil
-        }
+    private func showPackageDetail(_ model: SearchResultModel) {
+        let viewController = PackageDetailViewController(model: model)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     // MARK: Setup
     private func setupUI() {
         setupSearchController()
+        setupSearchNotFound()
         setupSugestionView()
         setupTableView()
     }
@@ -97,6 +107,7 @@ class PackageViewController: BaseViewController {
                                  bundle: nil),
                            forCellReuseIdentifier: CardPackageTableViewCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private func setupSearchController() {
@@ -104,6 +115,13 @@ class PackageViewController: BaseViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Pesquisar..."
         searchController.searchBar.delegate = self
+    }
+    
+    private func setupSearchNotFound() {
+        viewSearchNotFound.isHidden = true
+        viewSearchNotFound.frame = view.bounds
+        view.addSubview(viewSearchNotFound)
+        viewSearchNotFound.bringSubviewToFront(view)
     }
     
     private func setupSugestionView() {
@@ -121,16 +139,24 @@ extension PackageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let model = viewModel.getSearchResults()[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: CardPackageTableViewCell.identifier) as? CardPackageTableViewCell {
             
             cell.setupWith(model: model)
+            cell.didClicked = {
+                self.showPackageDetail(model)
+            }
             return cell
         }
-        
         return UITableViewCell()
+    }
+}
+
+extension PackageViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = viewModel.getSearchResults()[indexPath.row]
+        showPackageDetail(model)
     }
 }
 

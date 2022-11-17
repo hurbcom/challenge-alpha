@@ -85,6 +85,15 @@ extension SearchResultModel {
         }
     }
     
+    func getAddressShort() -> String? {
+        if let city = address?.city,
+           let country = address?.country {
+            return "\(city)"
+        } else {
+            return "endereço não informado"
+        }
+    }
+    
     func getAmount() -> String? {
         switch category {
         case .hotel:
@@ -94,6 +103,18 @@ extension SearchResultModel {
         default:
             let amountFixValue = (price?.amount ?? 0) / 100
             return amountFixValue.formatCurrency(from: price?.currency).description
+        }
+    }
+    
+    func getAmountShort() -> String? {
+        switch category {
+        case .hotel:
+            let amountValue = price?.amount ?? 0
+            return Int(round(amountValue)).description
+            
+        default:
+            let amountFixValue = (price?.amount ?? 0) / 100
+            return Int(round(amountFixValue)).description
         }
     }
     
@@ -111,7 +132,23 @@ extension SearchResultModel {
         return nil
     }
     
-    func getSecondAmenitie() -> String? {
+    func getFirstAmenitie() -> String? {
         amenities.first?.name
+    }
+    
+    func getPeriod() -> String? {
+        guard let startDate = startDate, let endDate = endDate else { return nil }
+        
+        let dateFormater1 = DateFormatter()
+        dateFormater1.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let start = dateFormater1.date(from: startDate) ?? Date()
+        let end = dateFormater1.date(from: endDate) ?? Date()
+
+        let dateFormater2 = DateFormatter()
+        dateFormater2.dateFormat = "MMM/yy"
+        let startString = dateFormater2.string(from: start)
+        let endString = dateFormater2.string(from: end)
+        
+        return "\(startString) e \(endString)"
     }
 }

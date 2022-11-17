@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: BaseViewController {
+final class SearchViewController: BaseViewController {
     // MARK: Properties
     private var viewModel: SearchViewModel
     let searchController = UISearchController(searchResultsController: nil)
@@ -48,9 +48,9 @@ class SearchViewController: BaseViewController {
         
         viewModel.shouldUpdateUI = { [weak self] in
             DispatchQueue.main.async {
-                guard let self = self else { return }
-                self.reloadData()
-                self.closeLoading()
+                self?.viewSearchNotFound.isHidden = true
+                self?.tableView.reloadData()
+                self?.closeLoading()
             }
         }
         
@@ -74,21 +74,20 @@ class SearchViewController: BaseViewController {
     private func showViewNotFoundResult() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            self.tableView.backgroundView = self.viewSearchNotFound
+            self.viewSearchNotFound.isHidden = false
             self.closeLoading()
         }
     }
     
-    private func reloadData() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-            self.tableView.backgroundView = nil
-        }
+    private func showPackageDetail(_ model: SearchResultModel) {
+        let viewController = PackageDetailViewController(model: model)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     // MARK: Setup
     private func setupUI() {
         setupSearchController()
+        setupSearchNotFound()
         setupSugestionView()
         setupTableView()
     }
@@ -103,6 +102,7 @@ class SearchViewController: BaseViewController {
                   bundle: nil),
             forCellReuseIdentifier: CardPackageTableViewCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private func setupSearchController() {
@@ -110,6 +110,13 @@ class SearchViewController: BaseViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Pesquisar..."
         searchController.searchBar.delegate = self
+    }
+    
+    private func setupSearchNotFound() {
+        viewSearchNotFound.isHidden = true
+        viewSearchNotFound.frame = view.bounds
+        view.addSubview(viewSearchNotFound)
+        viewSearchNotFound.bringSubviewToFront(view)
     }
     
     private func setupSugestionView() {
@@ -143,10 +150,25 @@ extension SearchViewController: UITableViewDataSource {
                 withIdentifier: CardPackageTableViewCell.identifier) as? CardPackageTableViewCell {
                 
                 cell.setupWith(model: model)
+                cell.didClicked = {
+                    self.showPackageDetail(model)
+                }
                 return cell
             }
         }
         return UITableViewCell()
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = viewModel.getSearchResults()[indexPath.row]
+        
+        if model.category == .hotel {
+            // TODO: Show Hotel Detail
+        } else {
+            showPackageDetail(model)
+        }
     }
 }
 

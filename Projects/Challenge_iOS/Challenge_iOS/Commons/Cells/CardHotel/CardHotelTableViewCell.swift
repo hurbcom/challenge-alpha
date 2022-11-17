@@ -47,10 +47,7 @@ final class CardHotelTableViewCell: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = cellSize
-        layout.sectionInset = UIEdgeInsets(top: 0,
-                                           left: 0,
-                                           bottom: 0,
-                                           right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         self.collectionViewGallery.setCollectionViewLayout(layout, animated: false)
@@ -68,7 +65,7 @@ final class CardHotelTableViewCell: UITableViewCell {
         labelName.text = model.name
         labelAddress.text = model.getAddressFormatted()
         labelValue.text = model.getAmount()
-        let secondAmenitie = model.getSecondAmenitie()
+        let secondAmenitie = model.getFirstAmenitie()
         labelSecondAmenitie.text = secondAmenitie
         viewSecondAmenitie.isHidden = secondAmenitie == nil
     }
