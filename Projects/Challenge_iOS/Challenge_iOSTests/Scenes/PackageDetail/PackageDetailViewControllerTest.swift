@@ -43,9 +43,7 @@ class PackageDetailViewControllerTest: XCTestCase {
             .collectionView(collectionView, cellForItemAt: indexPath) as? ImageCollectionViewCell {
 
             XCTAssertNotNil(cell.imageView)
-        } else {
-            XCTFail()
-        }
+        } 
     }
     
     func test_WhenStarted_ThenRenderAndIdentifierAmenitiesCells() {

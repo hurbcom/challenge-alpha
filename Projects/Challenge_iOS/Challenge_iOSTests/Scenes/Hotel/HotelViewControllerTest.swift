@@ -25,13 +25,13 @@ class HotelViewControllerTest: XCTestCase {
         viewModel = nil
     }
     
-    func test_TableViewSuccessRenderCells() {
+    func test_WhenSearchTerm_TableViewSuccessRenderCells() {
         viewModel.findHotelFrom(query: "")
         
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 2)
     }
     
-    func test_TableViewFailureRenderCells() {
+    func test_WhenSearchTermNotExist_TableViewFailureRenderCells() {
         let serviceStub = HotelServiceFailureStub()
         viewModel = HotelViewModel(service: serviceStub)
         sut = HotelViewController(viewModel: viewModel)
@@ -42,7 +42,7 @@ class HotelViewControllerTest: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
 
-    func test_TableViewRenderCellsAndIdentifierHotelCell() {
+    func test_WhenSearchTerm_TableViewRenderCellsAndIdentifierHotelCell() {
         viewModel.findHotelFrom(query: "")
         let indexPath = IndexPath(row: 0, section: 0)
         let tableView = sut.tableView!
@@ -54,26 +54,14 @@ class HotelViewControllerTest: XCTestCase {
         }
     }
     
-    func test_TableViewRenderCellsAndIdentifierPackageCell() {
-        viewModel.findHotelFrom(query: "")
-        let indexPath = IndexPath(row: 1, section: 0)
-        let tableView = sut.tableView!
-        
-        if let cell = sut.tableView(tableView, cellForRowAt: indexPath) as? CardPackageTableViewCell {
-            XCTAssertEqual(cell.labelName.text, "Pacote de Viagem - CDesign Hotel (Rio de Janeiro) - 2023")
-            XCTAssertEqual(cell.labelDailys.text, "1 diária")
-            XCTAssertEqual(cell.labelPersons.text, "2 pessoas")
-        }
-    }
-    
-    func test_ShowViewSearchSuggestions() {
+    func test_WhenBeginSearch_ShowSearchSuggestionsView() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
 
         XCTAssertFalse(sut.viewSearchSuggestions.isHidden)
     }
     
-    func test_ShowAndAfterHideViewSearchSuggestions() {
+    func test_WhenBeginAndEndSearch_ThenHideSearchSuggestionsView() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBarTextDidEndEditing?(searchBar)
@@ -81,7 +69,7 @@ class HotelViewControllerTest: XCTestCase {
         XCTAssertTrue(sut.viewSearchSuggestions.isHidden)
     }
     
-    func test_HideViewSearchSuggestionsIfClickedButtonCancel() {
+    func test_WhenClickedButtonCancel_ThenHideSearchSuggestionsView() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBarCancelButtonClicked?(searchBar)
@@ -89,7 +77,7 @@ class HotelViewControllerTest: XCTestCase {
         XCTAssertTrue(sut.viewSearchSuggestions.isHidden)
     }
     
-    func test_ShowViewSearchNotFound() {
+    func test_WhenFailureSearch_ThenShowSearchNotFoundView() {
         let serviceStub = HotelServiceFailureStub()
         viewModel = HotelViewModel(service: serviceStub)
         sut = HotelViewController(viewModel: viewModel)
@@ -100,7 +88,7 @@ class HotelViewControllerTest: XCTestCase {
         XCTAssertFalse(sut.viewSearchNotFound.isHidden)
     }
     
-    func test_SearchFromClickedButtonSearch() {
+    func test_WhenClickedOnButtonSearchKeyboard_ThenSearchAndLoadResults() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBar?(searchBar, textDidChange: "Rio de Janeiro")
@@ -109,7 +97,7 @@ class HotelViewControllerTest: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 2)
     }
     
-    func test_SearchFromClickedSuggestion() {
+    func test_WhenClickedOnSuggestion_ThenSearchAndLoadResults() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBar?(searchBar, textDidChange: "Rio de Janeiro")

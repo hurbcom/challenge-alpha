@@ -25,13 +25,13 @@ class PackageViewControllerTest: XCTestCase {
         viewModel = nil
     }
     
-    func test_TableViewSuccessRenderCells() {
+    func test_WhenSearchTerm_TableViewSuccessRenderCells() {
         viewModel.findPackageFrom(query: "")
         
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 2)
     }
     
-    func test_TableViewFailureRenderCells() {
+    func test_WhenSearchTermNotExist_TableViewFailureRenderCells() {
         let serviceStub = PackageServiceFailureStub()
         viewModel = PackageViewModel(service: serviceStub)
         sut = PackageViewController(viewModel: viewModel)
@@ -42,7 +42,7 @@ class PackageViewControllerTest: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
     
-    func test_TableViewRenderCellsAndIdentifierPackageCell() {
+    func test_WhenSearchTerm_TableViewRenderCellsAndIdentifierPackageCell() {
         viewModel.findPackageFrom(query: "")
         let indexPath = IndexPath(row: 1, section: 0)
         let tableView = sut.tableView!
@@ -54,14 +54,14 @@ class PackageViewControllerTest: XCTestCase {
         }
     }
     
-    func test_ShowViewSearchSuggestions() {
+    func test_WhenBeginSearch_ShowSearchSuggestionsView() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
 
         XCTAssertFalse(sut.viewSearchSuggestions.isHidden)
     }
     
-    func test_ShowAndAfterHideViewSearchSuggestions() {
+    func test_WhenBeginAndEndSearch_ThenHideSearchSuggestionsView() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBarTextDidEndEditing?(searchBar)
@@ -69,7 +69,7 @@ class PackageViewControllerTest: XCTestCase {
         XCTAssertTrue(sut.viewSearchSuggestions.isHidden)
     }
     
-    func test_HideViewSearchSuggestionsIfClickedButtonCancel() {
+    func test_WhenClickedButtonCancel_ThenHideSearchSuggestionsView() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBarCancelButtonClicked?(searchBar)
@@ -77,7 +77,7 @@ class PackageViewControllerTest: XCTestCase {
         XCTAssertTrue(sut.viewSearchSuggestions.isHidden)
     }
     
-    func test_ShowViewSearchNotFound() {
+    func test_WhenFailureSearch_ThenShowSearchNotFoundView() {
         let serviceStub = PackageServiceFailureStub()
         viewModel = PackageViewModel(service: serviceStub)
         sut = PackageViewController(viewModel: viewModel)
@@ -88,7 +88,7 @@ class PackageViewControllerTest: XCTestCase {
         XCTAssertFalse(sut.viewSearchNotFound.isHidden)
     }
     
-    func test_SearchFromClickedButtonSearch() {
+    func test_WhenClickedOnButtonSearchKeyboard_ThenSearchAndLoadResults() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBar?(searchBar, textDidChange: "Rio de Janeiro")
@@ -97,12 +97,15 @@ class PackageViewControllerTest: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 2)
     }
     
-    func test_SearchFromClickedSuggestion() {
+    func test_WhenClickedOnSuggestion_ThenSearchAndLoadResults() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBar?(searchBar, textDidChange: "Rio de Janeiro")
         
-        sut.viewSearchSuggestions.didSelectedSuggestion?(SuggestionModel(text: "Rio de Janeiro"))
+        let tableview = sut.viewSearchSuggestions.tableView!
+        let indexPath = IndexPath(row: 0, section: 0)
+        sut.viewSearchSuggestions.setup(with: [SuggestionModel(text: "")])
+        sut.viewSearchSuggestions.tableView.delegate?.tableView?(tableview, didSelectRowAt: indexPath)
 
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 2)
     }

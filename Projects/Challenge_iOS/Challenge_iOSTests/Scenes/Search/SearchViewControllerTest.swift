@@ -25,13 +25,13 @@ class SearchViewControllerTest: XCTestCase {
         viewModel = nil
     }
     
-    func test_TableViewSuccessRenderCells() {
+    func test_WhenSearchTerm_TableViewSuccessRenderCells() {
         viewModel.fetchSearchFrom(query: "")
         
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 2)
     }
     
-    func test_TableViewFailureRenderCells() {
+    func test_WhenSearchTermNotExist_TableViewFailureRenderCells() {
         let serviceStub = SearchServiceFailureStub()
         viewModel = SearchViewModel(service: serviceStub)
         sut = SearchViewController(viewModel: viewModel)
@@ -42,7 +42,7 @@ class SearchViewControllerTest: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
 
-    func test_TableViewRenderCellsAndIdentifierHotelCell() {
+    func test_WhenSearchTerm_TableViewRenderCellsAndIdentifierHotelCell() {
         viewModel.fetchSearchFrom(query: "")
         let indexPath = IndexPath(row: 0, section: 0)
         let tableView = sut.tableView!
@@ -54,7 +54,7 @@ class SearchViewControllerTest: XCTestCase {
         }
     }
     
-    func test_TableViewRenderCellsAndIdentifierPackageCell() {
+    func test_WhenSearchTerm_TableViewRenderCellsAndIdentifierPackageCell() {
         viewModel.fetchSearchFrom(query: "")
         let indexPath = IndexPath(row: 1, section: 0)
         let tableView = sut.tableView!
@@ -66,14 +66,14 @@ class SearchViewControllerTest: XCTestCase {
         }
     }
     
-    func test_ShowViewSearchSuggestions() {
+    func test_WhenBeginSearch_ShowSearchSuggestionsView() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
 
         XCTAssertFalse(sut.viewSearchSuggestions.isHidden)
     }
     
-    func test_ShowAndAfterHideViewSearchSuggestions() {
+    func test_WhenBeginAndEndSearch_ThenHideSearchSuggestionsView() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBarTextDidEndEditing?(searchBar)
@@ -81,7 +81,7 @@ class SearchViewControllerTest: XCTestCase {
         XCTAssertTrue(sut.viewSearchSuggestions.isHidden)
     }
     
-    func test_HideViewSearchSuggestionsIfClickedButtonCancel() {
+    func test_WhenClickedButtonCancel_ThenHideSearchSuggestionsView() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBarCancelButtonClicked?(searchBar)
@@ -89,7 +89,7 @@ class SearchViewControllerTest: XCTestCase {
         XCTAssertTrue(sut.viewSearchSuggestions.isHidden)
     }
     
-    func test_ShowViewSearchNotFound() {
+    func test_WhenFailureSearch_ThenShowSearchNotFoundView() {
         let serviceStub = SearchServiceFailureStub()
         viewModel = SearchViewModel(service: serviceStub)
         sut = SearchViewController(viewModel: viewModel)
@@ -100,7 +100,7 @@ class SearchViewControllerTest: XCTestCase {
         XCTAssertFalse(sut.viewSearchNotFound.isHidden)
     }
     
-    func test_SearchFromClickedButtonSearch() {
+    func test_WhenClickedOnButtonSearchKeyboard_ThenSearchAndLoadResults() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBar?(searchBar, textDidChange: "Rio de Janeiro")
@@ -109,7 +109,7 @@ class SearchViewControllerTest: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 2)
     }
     
-    func test_SearchFromClickedSuggestion() {
+    func test_WhenClickedOnSuggestion_ThenSearchAndLoadResults() {
         let searchBar = sut.searchController.searchBar
         _ = sut.searchController.searchBar.delegate?.searchBarShouldBeginEditing?(searchBar)
         sut.searchController.searchBar.delegate?.searchBar?(searchBar, textDidChange: "Rio de Janeiro")
