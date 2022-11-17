@@ -78,6 +78,7 @@ class HotelViewControllerTest: XCTestCase {
     }
     
     func test_WhenFailureSearch_ThenShowSearchNotFoundView() {
+        let promesse = expectation(description: "View de Resultado não encontrado deve ser exibida.")
         let serviceStub = HotelServiceFailureStub()
         viewModel = HotelViewModel(service: serviceStub)
         sut = HotelViewController(viewModel: viewModel)
@@ -85,7 +86,11 @@ class HotelViewControllerTest: XCTestCase {
         
         viewModel.findHotelFrom(query: "")
         
-        XCTAssertFalse(sut.viewSearchNotFound.isHidden)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+            XCTAssertFalse(self.sut.viewSearchNotFound.isHidden)
+            promesse.fulfill()
+        }
+        wait(for: [promesse], timeout: 1)
     }
     
     func test_WhenClickedOnButtonSearchKeyboard_ThenSearchAndLoadResults() {

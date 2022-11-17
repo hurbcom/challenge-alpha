@@ -58,9 +58,9 @@ final class PackageViewController: BaseViewController {
         
         viewModel.shouldUpdateUI = { [weak self] in
             DispatchQueue.main.async {
-                guard let self = self else { return }
-                self.reloadData()
-                self.closeLoading()
+                self?.viewSearchNotFound.isHidden = true
+                self?.tableView.reloadData()
+                self?.closeLoading()
             }
         }
         
@@ -84,15 +84,8 @@ final class PackageViewController: BaseViewController {
     private func showViewNotFoundResult() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            self.tableView.backgroundView = self.viewSearchNotFound
+            self.viewSearchNotFound.isHidden = false
             self.closeLoading()
-        }
-    }
-    
-    private func reloadData() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-            self.tableView.backgroundView = nil
         }
     }
     
@@ -104,6 +97,7 @@ final class PackageViewController: BaseViewController {
     // MARK: Setup
     private func setupUI() {
         setupSearchController()
+        setupSearchNotFound()
         setupSugestionView()
         setupTableView()
     }
@@ -121,6 +115,13 @@ final class PackageViewController: BaseViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Pesquisar..."
         searchController.searchBar.delegate = self
+    }
+    
+    private func setupSearchNotFound() {
+        viewSearchNotFound.isHidden = true
+        viewSearchNotFound.frame = view.bounds
+        view.addSubview(viewSearchNotFound)
+        viewSearchNotFound.bringSubviewToFront(view)
     }
     
     private func setupSugestionView() {
