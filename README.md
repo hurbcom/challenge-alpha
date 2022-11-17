@@ -16,4 +16,4 @@
 - O desafio contempla testes Unitários, incluindo de Integração para as camadas de Service. Totalizando pouco mais de 90% de cobertura.
 
 ### Nota:
-- Tela de Detalhes do Hotel: Por que questão de tempo não consegui desenvolver a tela de detalhes do Hotel, apenas a tela de Detalhes do Pacote, seguindo o Layout original do App da Hurb.
+- Por questão de tempo não consegui desenvolver a tela de detalhes do Hotel, apenas a tela de Detalhes do Pacote, seguindo o Layout original do App da Hurb.
