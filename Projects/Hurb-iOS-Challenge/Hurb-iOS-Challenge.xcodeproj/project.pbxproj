@@ -1,0 +1,732 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		757048A22967490C00CDA3F1 /* HotelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7570489B2967490C00CDA3F1 /* HotelsPresenter.swift */; };
+		757048A32967490C00CDA3F1 /* HotelsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7570489C2967490C00CDA3F1 /* HotelsWorker.swift */; };
+		757048A42967490C00CDA3F1 /* HotelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7570489D2967490C00CDA3F1 /* HotelsRouter.swift */; };
+		757048A52967490C00CDA3F1 /* HotelsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7570489E2967490C00CDA3F1 /* HotelsModels.swift */; };
+		757048A62967490C00CDA3F1 /* HotelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7570489F2967490C00CDA3F1 /* HotelsViewController.swift */; };
+		757048A72967490C00CDA3F1 /* HotelsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757048A02967490C00CDA3F1 /* HotelsInteractor.swift */; };
+		757048A82967490C00CDA3F1 /* HotelsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757048A12967490C00CDA3F1 /* HotelsConfigurator.swift */; };
+		757C5C19295A8EF100EFC1F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C18295A8EF100EFC1F3 /* AppDelegate.swift */; };
+		757C5C1B295A8EF100EFC1F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C1A295A8EF100EFC1F3 /* SceneDelegate.swift */; };
+		757C5C20295A8EF100EFC1F3 /* Hotels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C1E295A8EF100EFC1F3 /* Hotels.storyboard */; };
+		757C5C22295A8EF200EFC1F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C21295A8EF200EFC1F3 /* Assets.xcassets */; };
+		757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C23295A8EF200EFC1F3 /* LaunchScreen.storyboard */; };
+		757C5C30295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C2F295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift */; };
+		757C5C3A295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */; };
+		757C5C3C295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */; };
+		757C5C4C295A8FAA00EFC1F3 /* HUNetwork in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C4B295A8FAA00EFC1F3 /* HUNetwork */; };
+		7594CE7F2966576C0086D2DC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7594CE7E2966576C0086D2DC /* Kingfisher */; };
+		75C66D4029675098000B3C71 /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */; };
+		75C66D4229675120000B3C71 /* AnyModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C66D4129675120000B3C71 /* AnyModelStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		757C5C2C295A8EF200EFC1F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 757C5C0D295A8EF100EFC1F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 757C5C14295A8EF100EFC1F3;
+			remoteInfo = "Hurb-iOS-Challenge";
+		};
+		757C5C36295A8EF200EFC1F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 757C5C0D295A8EF100EFC1F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 757C5C14295A8EF100EFC1F3;
+			remoteInfo = "Hurb-iOS-Challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7570489B2967490C00CDA3F1 /* HotelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsPresenter.swift; sourceTree = "<group>"; };
+		7570489C2967490C00CDA3F1 /* HotelsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsWorker.swift; sourceTree = "<group>"; };
+		7570489D2967490C00CDA3F1 /* HotelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsRouter.swift; sourceTree = "<group>"; };
+		7570489E2967490C00CDA3F1 /* HotelsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsModels.swift; sourceTree = "<group>"; };
+		7570489F2967490C00CDA3F1 /* HotelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsViewController.swift; sourceTree = "<group>"; };
+		757048A02967490C00CDA3F1 /* HotelsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsInteractor.swift; sourceTree = "<group>"; };
+		757048A12967490C00CDA3F1 /* HotelsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsConfigurator.swift; sourceTree = "<group>"; };
+		757C5C15295A8EF100EFC1F3 /* Hurb-iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hurb-iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		757C5C18295A8EF100EFC1F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		757C5C1A295A8EF100EFC1F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		757C5C1F295A8EF100EFC1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hotels.storyboard; sourceTree = "<group>"; };
+		757C5C21295A8EF200EFC1F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		757C5C24295A8EF200EFC1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		757C5C26295A8EF200EFC1F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		757C5C2B295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb-iOS-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		757C5C2F295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeTests.swift; sourceTree = "<group>"; };
+		757C5C35295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb-iOS-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
+		757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		757C5C4B295A8FAA00EFC1F3 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HUNetwork; sourceTree = "<group>"; };
+		75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
+		75C66D4129675120000B3C71 /* AnyModelStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyModelStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		757C5C12295A8EF100EFC1F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7594CE7F2966576C0086D2DC /* Kingfisher in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757C5C28295A8EF200EFC1F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757C5C32295A8EF200EFC1F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7517490D2967143100FB7081 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7517490E2967149C00FB7081 /* Hotels */ = {
+			isa = PBXGroup;
+			children = (
+				75C66D3E2967505D000B3C71 /* Cells */,
+				757C5C1E295A8EF100EFC1F3 /* Hotels.storyboard */,
+				757048A12967490C00CDA3F1 /* HotelsConfigurator.swift */,
+				7570489F2967490C00CDA3F1 /* HotelsViewController.swift */,
+				7570489E2967490C00CDA3F1 /* HotelsModels.swift */,
+				757048A02967490C00CDA3F1 /* HotelsInteractor.swift */,
+				7570489B2967490C00CDA3F1 /* HotelsPresenter.swift */,
+				7570489C2967490C00CDA3F1 /* HotelsWorker.swift */,
+				7570489D2967490C00CDA3F1 /* HotelsRouter.swift */,
+			);
+			path = Hotels;
+			sourceTree = "<group>";
+		};
+		757C5C0C295A8EF100EFC1F3 = {
+			isa = PBXGroup;
+			children = (
+				757C5C17295A8EF100EFC1F3 /* Hurb-iOS-Challenge */,
+				757C5C2E295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests */,
+				757C5C38295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests */,
+				757C5C4A295A8FA200EFC1F3 /* Modules */,
+				757C5C16295A8EF100EFC1F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		757C5C16295A8EF100EFC1F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				757C5C15295A8EF100EFC1F3 /* Hurb-iOS-Challenge.app */,
+				757C5C2B295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests.xctest */,
+				757C5C35295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		757C5C17295A8EF100EFC1F3 /* Hurb-iOS-Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				757C5C18295A8EF100EFC1F3 /* AppDelegate.swift */,
+				757C5C1A295A8EF100EFC1F3 /* SceneDelegate.swift */,
+				757C5C26295A8EF200EFC1F3 /* Info.plist */,
+				7594CE7C296656600086D2DC /* Scenes */,
+				7594CE80296658B60086D2DC /* Models */,
+				7594CE7B296656310086D2DC /* Resources */,
+				7517490D2967143100FB7081 /* Extensions */,
+			);
+			path = "Hurb-iOS-Challenge";
+			sourceTree = "<group>";
+		};
+		757C5C2E295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				757C5C2F295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift */,
+			);
+			path = "Hurb-iOS-ChallengeTests";
+			sourceTree = "<group>";
+		};
+		757C5C38295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */,
+				757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */,
+			);
+			path = "Hurb-iOS-ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		757C5C4A295A8FA200EFC1F3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				757C5C4B295A8FAA00EFC1F3 /* HUNetwork */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7594CE7B296656310086D2DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				757C5C21295A8EF200EFC1F3 /* Assets.xcassets */,
+				757C5C23295A8EF200EFC1F3 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7594CE7C296656600086D2DC /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7517490E2967149C00FB7081 /* Hotels */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7594CE80296658B60086D2DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75C66D4129675120000B3C71 /* AnyModelStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		75C66D3E2967505D000B3C71 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		757C5C14295A8EF100EFC1F3 /* Hurb-iOS-Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 757C5C3F295A8EF200EFC1F3 /* Build configuration list for PBXNativeTarget "Hurb-iOS-Challenge" */;
+			buildPhases = (
+				757C5C11295A8EF100EFC1F3 /* Sources */,
+				757C5C12295A8EF100EFC1F3 /* Frameworks */,
+				757C5C13295A8EF100EFC1F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hurb-iOS-Challenge";
+			packageProductDependencies = (
+				7594CE7E2966576C0086D2DC /* Kingfisher */,
+			);
+			productName = "Hurb-iOS-Challenge";
+			productReference = 757C5C15295A8EF100EFC1F3 /* Hurb-iOS-Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		757C5C2A295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 757C5C42295A8EF200EFC1F3 /* Build configuration list for PBXNativeTarget "Hurb-iOS-ChallengeTests" */;
+			buildPhases = (
+				757C5C27295A8EF200EFC1F3 /* Sources */,
+				757C5C28295A8EF200EFC1F3 /* Frameworks */,
+				757C5C29295A8EF200EFC1F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				757C5C2D295A8EF200EFC1F3 /* PBXTargetDependency */,
+			);
+			name = "Hurb-iOS-ChallengeTests";
+			productName = "Hurb-iOS-ChallengeTests";
+			productReference = 757C5C2B295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		757C5C34295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 757C5C45295A8EF200EFC1F3 /* Build configuration list for PBXNativeTarget "Hurb-iOS-ChallengeUITests" */;
+			buildPhases = (
+				757C5C31295A8EF200EFC1F3 /* Sources */,
+				757C5C32295A8EF200EFC1F3 /* Frameworks */,
+				757C5C33295A8EF200EFC1F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				757C5C37295A8EF200EFC1F3 /* PBXTargetDependency */,
+			);
+			name = "Hurb-iOS-ChallengeUITests";
+			productName = "Hurb-iOS-ChallengeUITests";
+			productReference = 757C5C35295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		757C5C0D295A8EF100EFC1F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					757C5C14295A8EF100EFC1F3 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					757C5C2A295A8EF200EFC1F3 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 757C5C14295A8EF100EFC1F3;
+					};
+					757C5C34295A8EF200EFC1F3 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 757C5C14295A8EF100EFC1F3;
+					};
+				};
+			};
+			buildConfigurationList = 757C5C10295A8EF100EFC1F3 /* Build configuration list for PBXProject "Hurb-iOS-Challenge" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 757C5C0C295A8EF100EFC1F3;
+			packageReferences = (
+				7594CE7D2966576C0086D2DC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
+			productRefGroup = 757C5C16295A8EF100EFC1F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				757C5C14295A8EF100EFC1F3 /* Hurb-iOS-Challenge */,
+				757C5C2A295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests */,
+				757C5C34295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		757C5C13295A8EF100EFC1F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757C5C4C295A8FAA00EFC1F3 /* HUNetwork in Resources */,
+				757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */,
+				757C5C22295A8EF200EFC1F3 /* Assets.xcassets in Resources */,
+				757C5C20295A8EF100EFC1F3 /* Hotels.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757C5C29295A8EF200EFC1F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757C5C33295A8EF200EFC1F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		757C5C11295A8EF100EFC1F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757048A52967490C00CDA3F1 /* HotelsModels.swift in Sources */,
+				757048A72967490C00CDA3F1 /* HotelsInteractor.swift in Sources */,
+				757048A42967490C00CDA3F1 /* HotelsRouter.swift in Sources */,
+				757048A62967490C00CDA3F1 /* HotelsViewController.swift in Sources */,
+				757C5C19295A8EF100EFC1F3 /* AppDelegate.swift in Sources */,
+				75C66D4229675120000B3C71 /* AnyModelStore.swift in Sources */,
+				757C5C1B295A8EF100EFC1F3 /* SceneDelegate.swift in Sources */,
+				757048A22967490C00CDA3F1 /* HotelsPresenter.swift in Sources */,
+				75C66D4029675098000B3C71 /* UICollectionReusableView.swift in Sources */,
+				757048A32967490C00CDA3F1 /* HotelsWorker.swift in Sources */,
+				757048A82967490C00CDA3F1 /* HotelsConfigurator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757C5C27295A8EF200EFC1F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757C5C30295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757C5C31295A8EF200EFC1F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757C5C3A295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift in Sources */,
+				757C5C3C295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		757C5C2D295A8EF200EFC1F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 757C5C14295A8EF100EFC1F3 /* Hurb-iOS-Challenge */;
+			targetProxy = 757C5C2C295A8EF200EFC1F3 /* PBXContainerItemProxy */;
+		};
+		757C5C37295A8EF200EFC1F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 757C5C14295A8EF100EFC1F3 /* Hurb-iOS-Challenge */;
+			targetProxy = 757C5C36295A8EF200EFC1F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		757C5C1E295A8EF100EFC1F3 /* Hotels.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				757C5C1F295A8EF100EFC1F3 /* Base */,
+			);
+			name = Hotels.storyboard;
+			sourceTree = "<group>";
+		};
+		757C5C23295A8EF200EFC1F3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				757C5C24295A8EF200EFC1F3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		757C5C3D295A8EF200EFC1F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		757C5C3E295A8EF200EFC1F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		757C5C40295A8EF200EFC1F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hurb-iOS-Challenge/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Hotels;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		757C5C41295A8EF200EFC1F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hurb-iOS-Challenge/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Hotels;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		757C5C43295A8EF200EFC1F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hurb-iOS-Challenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hurb-iOS-Challenge";
+			};
+			name = Debug;
+		};
+		757C5C44295A8EF200EFC1F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hurb-iOS-Challenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hurb-iOS-Challenge";
+			};
+			name = Release;
+		};
+		757C5C46295A8EF200EFC1F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Hurb-iOS-Challenge";
+			};
+			name = Debug;
+		};
+		757C5C47295A8EF200EFC1F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Hurb-iOS-Challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		757C5C10295A8EF100EFC1F3 /* Build configuration list for PBXProject "Hurb-iOS-Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757C5C3D295A8EF200EFC1F3 /* Debug */,
+				757C5C3E295A8EF200EFC1F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		757C5C3F295A8EF200EFC1F3 /* Build configuration list for PBXNativeTarget "Hurb-iOS-Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757C5C40295A8EF200EFC1F3 /* Debug */,
+				757C5C41295A8EF200EFC1F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		757C5C42295A8EF200EFC1F3 /* Build configuration list for PBXNativeTarget "Hurb-iOS-ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757C5C43295A8EF200EFC1F3 /* Debug */,
+				757C5C44295A8EF200EFC1F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		757C5C45295A8EF200EFC1F3 /* Build configuration list for PBXNativeTarget "Hurb-iOS-ChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757C5C46295A8EF200EFC1F3 /* Debug */,
+				757C5C47295A8EF200EFC1F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7594CE7D2966576C0086D2DC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7594CE7E2966576C0086D2DC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7594CE7D2966576C0086D2DC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 757C5C0D295A8EF100EFC1F3 /* Project object */;
+}
