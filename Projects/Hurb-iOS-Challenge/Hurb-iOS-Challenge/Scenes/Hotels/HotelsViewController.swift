@@ -26,13 +26,15 @@ class HotelsViewController: UIViewController {
 //    private lazy var sectionsStore: AnyModelStore<CollectionViewSection<SolutionsSection>> = AnyModelStore([])
 //    private lazy var itemsStore: AnyModelStore<CollectionViewItem> = AnyModelStore([])
     
+    private lazy var searchController = UISearchController(searchResultsController: nil)
+
     @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        self.setupSearchController()
     }
     
     // MARK: Routing
@@ -40,6 +42,14 @@ class HotelsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
+    }
+    
+    private func setupSearchController() {
+        
+        self.navigationItem.searchController = self.searchController
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Quero ir para..."
+        self.searchController.searchBar.delegate = self
     }
     
     // MARK: Do something
@@ -56,4 +66,8 @@ extension HotelsViewController: HotelsDisplayLogic {
     func displaySomething(viewModel: Hotels.Something.ViewModel) {
         //nameTextField.text = viewModel.name
     }
+}
+
+extension HotelsViewController: UISearchBarDelegate {
+    
 }

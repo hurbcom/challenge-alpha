@@ -17,12 +17,13 @@
 		757C5C19295A8EF100EFC1F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C18295A8EF100EFC1F3 /* AppDelegate.swift */; };
 		757C5C1B295A8EF100EFC1F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C1A295A8EF100EFC1F3 /* SceneDelegate.swift */; };
 		757C5C20295A8EF100EFC1F3 /* Hotels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C1E295A8EF100EFC1F3 /* Hotels.storyboard */; };
-		757C5C22295A8EF200EFC1F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C21295A8EF200EFC1F3 /* Assets.xcassets */; };
+		757C5C22295A8EF200EFC1F3 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C21295A8EF200EFC1F3 /* Icons.xcassets */; };
 		757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C23295A8EF200EFC1F3 /* LaunchScreen.storyboard */; };
 		757C5C30295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C2F295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift */; };
 		757C5C3A295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */; };
 		757C5C3C295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */; };
 		757C5C4C295A8FAA00EFC1F3 /* HUNetwork in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C4B295A8FAA00EFC1F3 /* HUNetwork */; };
+		758CA7C829678BBC0075FFB8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758CA7C729678BBC0075FFB8 /* Colors.xcassets */; };
 		7594CE7F2966576C0086D2DC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7594CE7E2966576C0086D2DC /* Kingfisher */; };
 		75C66D4029675098000B3C71 /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */; };
 		75C66D4229675120000B3C71 /* AnyModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C66D4129675120000B3C71 /* AnyModelStore.swift */; };
@@ -57,7 +58,7 @@
 		757C5C18295A8EF100EFC1F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		757C5C1A295A8EF100EFC1F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		757C5C1F295A8EF100EFC1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hotels.storyboard; sourceTree = "<group>"; };
-		757C5C21295A8EF200EFC1F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		757C5C21295A8EF200EFC1F3 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		757C5C24295A8EF200EFC1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		757C5C26295A8EF200EFC1F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757C5C2B295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb-iOS-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +67,7 @@
 		757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
 		757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		757C5C4B295A8FAA00EFC1F3 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HUNetwork; sourceTree = "<group>"; };
+		758CA7C729678BBC0075FFB8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
 		75C66D4129675120000B3C71 /* AnyModelStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyModelStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,7 +185,8 @@
 		7594CE7B296656310086D2DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				757C5C21295A8EF200EFC1F3 /* Assets.xcassets */,
+				758CA7C729678BBC0075FFB8 /* Colors.xcassets */,
+				757C5C21295A8EF200EFC1F3 /* Icons.xcassets */,
 				757C5C23295A8EF200EFC1F3 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -322,9 +325,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758CA7C829678BBC0075FFB8 /* Colors.xcassets in Resources */,
 				757C5C4C295A8FAA00EFC1F3 /* HUNetwork in Resources */,
 				757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */,
-				757C5C22295A8EF200EFC1F3 /* Assets.xcassets in Resources */,
+				757C5C22295A8EF200EFC1F3 /* Icons.xcassets in Resources */,
 				757C5C20295A8EF100EFC1F3 /* Hotels.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
