@@ -11,15 +11,57 @@
 //
 
 import UIKit
+import HUGraphQL
+
+enum ServiceError: Error {
+    
+    case emptyReturn
+    case unknown(_ message: String)
+}
 
 protocol HotelsWorkerProtocol {
     
-    func doSomeWork()
+    func searchHotel(term: String, page: Int, limit: Int, completion: @escaping (Result<[Hotel], ServiceError>) -> Void)
 }
 
 class HotelsWorker: HotelsWorkerProtocol {
     
-    func doSomeWork() {
+    func searchHotel(term: String, page: Int, limit: Int, completion: @escaping (Result<[Hotel], ServiceError>) -> Void) {
         
+        let pagination: HUGraphQL.SearchInputPagination = HUGraphQL.SearchInputPagination(page: page, limit: limit, sort: nil, sortOrder: nil)
+        let query: HUGraphQL.SearchHotelQuery = HUGraphQL.SearchHotelQuery(
+            q: term,
+            filters: nil,
+            pagination: pagination,
+            l10n: .init(pos: "br", locale: "pt", currency: "BRL"),
+            checkin: Date(),
+            checkout: nil,
+            rooms: nil
+        )
+        
+        let graphQL = HUGService(enableLog: true)
+        graphQL.client.fetch(query: query) { result in
+            
+            switch result {
+                    
+            case .success(let value):
+
+                    if let listObject = value.data?.searchHotel?.results?.compactMap({ $0.resultMap }),
+                       let jsonData = try? JSONSerialization.data(withJSONObject: listObject, options: .prettyPrinted),
+                       let decoded = try? JSONDecoder().decode([Hotel].self, from: jsonData) {
+
+                        completion(.success(decoded))
+
+                    } else {
+                        
+                        completion(.failure(.emptyReturn))
+                    }
+                break
+                    
+            case .failure(let error):
+                    completion(.failure(.unknown(error.localizedDescription)))
+                    break
+            }
+        }
     }
 }

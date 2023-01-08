@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751F5174296B6DBE002EAE11 /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = 751F5173296B6DBE002EAE11 /* HUGraphQL */; };
 		757048A22967490C00CDA3F1 /* HotelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7570489B2967490C00CDA3F1 /* HotelsPresenter.swift */; };
 		757048A32967490C00CDA3F1 /* HotelsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7570489C2967490C00CDA3F1 /* HotelsWorker.swift */; };
 		757048A42967490C00CDA3F1 /* HotelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7570489D2967490C00CDA3F1 /* HotelsRouter.swift */; };
@@ -22,9 +23,15 @@
 		757C5C30295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C2F295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift */; };
 		757C5C3A295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */; };
 		757C5C3C295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */; };
-		757C5C4C295A8FAA00EFC1F3 /* HUNetwork in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C4B295A8FAA00EFC1F3 /* HUNetwork */; };
+		7582ABD22968762E00F9F155 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7582ABD12968762E00F9F155 /* Hotel.swift */; };
 		758CA7C829678BBC0075FFB8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758CA7C729678BBC0075FFB8 /* Colors.xcassets */; };
 		7594CE7F2966576C0086D2DC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7594CE7E2966576C0086D2DC /* Kingfisher */; };
+		75B4BA6F296B561600085669 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA6E296B561600085669 /* Category.swift */; };
+		75B4BA71296B59B800085669 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA70296B59B800085669 /* Media.swift */; };
+		75B4BA73296B5B8100085669 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA72296B5B8100085669 /* Price.swift */; };
+		75B4BA75296B608B00085669 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA74296B608B00085669 /* Amenity.swift */; };
+		75B4BA79296B61F300085669 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA78296B61F300085669 /* Location.swift */; };
+		75B4BA7B296B660900085669 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA7A296B660900085669 /* Geolocation.swift */; };
 		75C66D4029675098000B3C71 /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */; };
 		75C66D4229675120000B3C71 /* AnyModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C66D4129675120000B3C71 /* AnyModelStore.swift */; };
 /* End PBXBuildFile section */
@@ -66,8 +73,15 @@
 		757C5C35295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb-iOS-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
 		757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		757C5C4B295A8FAA00EFC1F3 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HUNetwork; sourceTree = "<group>"; };
+		7582ABD12968762E00F9F155 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		758CA7C729678BBC0075FFB8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		75B4BA6E296B561600085669 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		75B4BA70296B59B800085669 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		75B4BA72296B5B8100085669 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		75B4BA74296B608B00085669 /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
+		75B4BA78296B61F300085669 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		75B4BA7A296B660900085669 /* Geolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geolocation.swift; sourceTree = "<group>"; };
+		75B4BA82296B6AE600085669 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HUNetwork; path = Modules/HUNetwork; sourceTree = "<group>"; };
 		75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
 		75C66D4129675120000B3C71 /* AnyModelStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyModelStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7594CE7F2966576C0086D2DC /* Kingfisher in Frameworks */,
+				751F5174296B6DBE002EAE11 /* HUGraphQL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,14 +137,22 @@
 			path = Hotels;
 			sourceTree = "<group>";
 		};
+		751F5172296B6DA9002EAE11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		757C5C0C295A8EF100EFC1F3 = {
 			isa = PBXGroup;
 			children = (
+				75B4BA81296B6AE600085669 /* Modules */,
 				757C5C17295A8EF100EFC1F3 /* Hurb-iOS-Challenge */,
 				757C5C2E295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests */,
 				757C5C38295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests */,
-				757C5C4A295A8FA200EFC1F3 /* Modules */,
 				757C5C16295A8EF100EFC1F3 /* Products */,
+				751F5172296B6DA9002EAE11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,14 +197,6 @@
 			path = "Hurb-iOS-ChallengeUITests";
 			sourceTree = "<group>";
 		};
-		757C5C4A295A8FA200EFC1F3 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				757C5C4B295A8FAA00EFC1F3 /* HUNetwork */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
 		7594CE7B296656310086D2DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,9 +218,32 @@
 		7594CE80296658B60086D2DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				75B4BA6D296B55F900085669 /* Enums */,
 				75C66D4129675120000B3C71 /* AnyModelStore.swift */,
+				7582ABD12968762E00F9F155 /* Hotel.swift */,
+				75B4BA70296B59B800085669 /* Media.swift */,
+				75B4BA72296B5B8100085669 /* Price.swift */,
+				75B4BA74296B608B00085669 /* Amenity.swift */,
+				75B4BA78296B61F300085669 /* Location.swift */,
+				75B4BA7A296B660900085669 /* Geolocation.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		75B4BA6D296B55F900085669 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				75B4BA6E296B561600085669 /* Category.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		75B4BA81296B6AE600085669 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				75B4BA82296B6AE600085669 /* HUNetwork */,
+			);
+			name = Modules;
 			sourceTree = "<group>";
 		};
 		75C66D3E2967505D000B3C71 /* Cells */ = {
@@ -233,6 +271,7 @@
 			name = "Hurb-iOS-Challenge";
 			packageProductDependencies = (
 				7594CE7E2966576C0086D2DC /* Kingfisher */,
+				751F5173296B6DBE002EAE11 /* HUGraphQL */,
 			);
 			productName = "Hurb-iOS-Challenge";
 			productReference = 757C5C15295A8EF100EFC1F3 /* Hurb-iOS-Challenge.app */;
@@ -326,7 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				758CA7C829678BBC0075FFB8 /* Colors.xcassets in Resources */,
-				757C5C4C295A8FAA00EFC1F3 /* HUNetwork in Resources */,
 				757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */,
 				757C5C22295A8EF200EFC1F3 /* Icons.xcassets in Resources */,
 				757C5C20295A8EF100EFC1F3 /* Hotels.storyboard in Resources */,
@@ -356,15 +394,22 @@
 			files = (
 				757048A52967490C00CDA3F1 /* HotelsModels.swift in Sources */,
 				757048A72967490C00CDA3F1 /* HotelsInteractor.swift in Sources */,
+				75B4BA71296B59B800085669 /* Media.swift in Sources */,
 				757048A42967490C00CDA3F1 /* HotelsRouter.swift in Sources */,
 				757048A62967490C00CDA3F1 /* HotelsViewController.swift in Sources */,
+				75B4BA79296B61F300085669 /* Location.swift in Sources */,
 				757C5C19295A8EF100EFC1F3 /* AppDelegate.swift in Sources */,
 				75C66D4229675120000B3C71 /* AnyModelStore.swift in Sources */,
+				7582ABD22968762E00F9F155 /* Hotel.swift in Sources */,
+				75B4BA73296B5B8100085669 /* Price.swift in Sources */,
 				757C5C1B295A8EF100EFC1F3 /* SceneDelegate.swift in Sources */,
 				757048A22967490C00CDA3F1 /* HotelsPresenter.swift in Sources */,
+				75B4BA6F296B561600085669 /* Category.swift in Sources */,
 				75C66D4029675098000B3C71 /* UICollectionReusableView.swift in Sources */,
 				757048A32967490C00CDA3F1 /* HotelsWorker.swift in Sources */,
 				757048A82967490C00CDA3F1 /* HotelsConfigurator.swift in Sources */,
+				75B4BA7B296B660900085669 /* Geolocation.swift in Sources */,
+				75B4BA75296B608B00085669 /* Amenity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,6 +770,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		751F5173296B6DBE002EAE11 /* HUGraphQL */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HUGraphQL;
+		};
 		7594CE7E2966576C0086D2DC /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7594CE7D2966576C0086D2DC /* XCRemoteSwiftPackageReference "Kingfisher" */;
