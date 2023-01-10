@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Hoteis-->
+        <!--Hoteis, Pacotes, Atividades-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HotelsViewController" customModule="Hurb_iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProductsViewController" customModule="Hurb_iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
                             <constraint firstAttribute="trailing" secondItem="SNf-SR-5TW" secondAttribute="trailing" id="a1q-iE-aCz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Hoteis" id="Lld-Ha-iYB"/>
+                    <navigationItem key="navigationItem" title="Hoteis, Pacotes, Atividades" id="Lld-Ha-iYB"/>
                     <connections>
                         <outlet property="collectionView" destination="SNf-SR-5TW" id="qqb-Rq-61T"/>
                     </connections>

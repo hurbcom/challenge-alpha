@@ -10,8 +10,9 @@ import UIKit
 enum Category: Codable, Hashable {
     
     case hotel
+    case package
+    case activity
     
-    //case pacote
     case unknown(value: String)
     
     init(from decoder: Decoder) throws {
@@ -22,8 +23,9 @@ enum Category: Codable, Hashable {
         switch status {
                 
             case "hotel": self = .hotel
-//            case "pacote": self = .pacote
-                
+            case "pacote": self = .package
+            case "atividade": self = .activity
+
             default:
                 self = .unknown(value: status ?? "unknown")
         }
