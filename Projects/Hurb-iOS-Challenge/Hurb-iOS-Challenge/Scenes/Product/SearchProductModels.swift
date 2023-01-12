@@ -1,5 +1,5 @@
 //
-//  ProductsModels.swift
+//  SearchProductModels.swift
 //  Hurb-iOS-Challenge
 //
 //  Created by Rômulo Monteiro on 10/01/23.
@@ -12,22 +12,29 @@
 
 import UIKit
 
-enum Products {
+enum SearchProduct {
     
     // MARK: Use cases
     
-    enum Something {
+    enum Query {
         
         struct Request {
             
+            var term: String
+            var page: Int
+            var limit: Int
         }
         
         struct Response {
             
+            var pagination: Pagination
+            var products: [Product]
         }
         
         struct ViewModel {
             
+            var pagination: Pagination
+            var products: [Product]
         }
     }
 }

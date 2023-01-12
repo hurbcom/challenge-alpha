@@ -16,10 +16,12 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Products</string>
+					<string>SearchProduct</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>pt_Br</string>
 </dict>
 </plist>

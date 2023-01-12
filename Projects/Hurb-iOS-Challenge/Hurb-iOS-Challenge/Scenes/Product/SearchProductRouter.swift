@@ -1,5 +1,5 @@
 //
-//  ProductsRouter.swift
+//  SearchProductRouter.swift
 //  Hurb-iOS-Challenge
 //
 //  Created by Rômulo Monteiro on 10/01/23.
@@ -17,22 +17,22 @@ import UIKit
 //    case toSomewhere
 //}
 
-@objc protocol ProductsRoutingLogic {
+@objc protocol SearchProductRoutingLogic {
     
     func routeTo(segue: UIStoryboardSegue, sender: Any?)
 }
 
-protocol ProductsDataPassing {
+protocol SearchProductDataPassing {
     
-    var dataStore: ProductsDataStore? { get }
+    var dataStore: SearchProductDataStore? { get }
 }
 
-class ProductsRouter: NSObject, ProductsRoutingLogic, ProductsDataPassing {
+class SearchProductRouter: NSObject, SearchProductRoutingLogic, SearchProductDataPassing {
     
-    weak var viewController: ProductsViewController?
-    var dataStore: ProductsDataStore?
+    weak var viewController: SearchProductViewController?
+    var dataStore: SearchProductDataStore?
     
-    init(viewController: ProductsViewController, dataStore: ProductsDataStore) {
+    init(viewController: SearchProductViewController, dataStore: SearchProductDataStore) {
         
         self.viewController = viewController
         self.dataStore = dataStore

@@ -1,5 +1,5 @@
 //
-//  ProductsWorker.swift
+//  SearchProductWorker.swift
 //  Hurb-iOS-Challenge
 //
 //  Created by Rômulo Monteiro on 10/01/23.
@@ -19,16 +19,16 @@ enum ServiceError: Error {
     case unknown(_ message: String)
 }
 
-protocol ProductsWorkerProtocol {
+protocol SearchProductWorkerProtocol {
     
-    func searchProducts(term: String, page: Int, completion: @escaping (Result<[Product], ServiceError>) -> Void)
+    func searchProducts(term: String, page: Int, limit: Int, completion: @escaping (Result<ProductContainer, ServiceError>) -> Void)
 }
 
-class ProductsWorker: ProductsWorkerProtocol {
+class SearchProductWorker: SearchProductWorkerProtocol {
     
-    func searchProducts(term: String, page: Int, completion: @escaping (Result<[Product], ServiceError>) -> Void) {
+    func searchProducts(term: String, page: Int, limit: Int, completion: @escaping (Result<ProductContainer, ServiceError>) -> Void) {
         
-        let pagination: HUGraphQL.SearchInputPagination = HUGraphQL.SearchInputPagination(page: page, limit: 50, sort: nil, sortOrder: nil)
+        let pagination: HUGraphQL.SearchInputPagination = HUGraphQL.SearchInputPagination(page: page, limit: limit, sort: nil, sortOrder: nil)
         let query = HUGraphQL.SearchQuery(q: term, pagination: pagination)
         
         let graphQL = HUGService(enableLog: true)
@@ -38,9 +38,9 @@ class ProductsWorker: ProductsWorkerProtocol {
                     
             case .success(let value):
 
-                    if let listObject = value.data?.search?.results?.compactMap({ $0.resultMap }),
+                    if let listObject = value.data?.search?.resultMap,
                        let jsonData = try? JSONSerialization.data(withJSONObject: listObject, options: .prettyPrinted),
-                       let decoded = try? JSONDecoder().decode([Product].self, from: jsonData) {
+                       let decoded = try? JSONDecoder().decode(ProductContainer.self, from: jsonData) {
 
                         completion(.success(decoded))
 

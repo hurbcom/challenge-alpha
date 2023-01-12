@@ -8,25 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		751F5174296B6DBE002EAE11 /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = 751F5173296B6DBE002EAE11 /* HUGraphQL */; };
-		7558C4D3296D09C000ED6C8D /* HotelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558C4D1296D09C000ED6C8D /* HotelCollectionViewCell.swift */; };
-		7558C4D4296D09C000ED6C8D /* HotelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7558C4D2296D09C000ED6C8D /* HotelCollectionViewCell.xib */; };
-		7558C4D7296D09CB00ED6C8D /* PackageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558C4D5296D09CB00ED6C8D /* PackageCollectionViewCell.swift */; };
-		7558C4D8296D09CB00ED6C8D /* PackageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7558C4D6296D09CB00ED6C8D /* PackageCollectionViewCell.xib */; };
+		754B8281296E425D00772C01 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754B8280296E425D00772C01 /* UIImageView.swift */; };
+		7558C4D3296D09C000ED6C8D /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558C4D1296D09C000ED6C8D /* ProductsCollectionViewCell.swift */; };
+		7558C4D4296D09C000ED6C8D /* ProductsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7558C4D2296D09C000ED6C8D /* ProductsCollectionViewCell.xib */; };
 		757C5C19295A8EF100EFC1F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C18295A8EF100EFC1F3 /* AppDelegate.swift */; };
 		757C5C1B295A8EF100EFC1F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C1A295A8EF100EFC1F3 /* SceneDelegate.swift */; };
-		757C5C20295A8EF100EFC1F3 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C1E295A8EF100EFC1F3 /* Products.storyboard */; };
+		757C5C20295A8EF100EFC1F3 /* SearchProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C1E295A8EF100EFC1F3 /* SearchProduct.storyboard */; };
 		757C5C22295A8EF200EFC1F3 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C21295A8EF200EFC1F3 /* Icons.xcassets */; };
 		757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C23295A8EF200EFC1F3 /* LaunchScreen.storyboard */; };
 		757C5C30295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C2F295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift */; };
 		757C5C3A295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */; };
 		757C5C3C295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */; };
-		757F8ABC296DDC1D00A081C7 /* ProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB5296DDC1D00A081C7 /* ProductsPresenter.swift */; };
-		757F8ABD296DDC1D00A081C7 /* ProductsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB6296DDC1D00A081C7 /* ProductsWorker.swift */; };
-		757F8ABE296DDC1D00A081C7 /* ProductsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB7296DDC1D00A081C7 /* ProductsRouter.swift */; };
-		757F8ABF296DDC1D00A081C7 /* ProductsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB8296DDC1D00A081C7 /* ProductsModels.swift */; };
-		757F8AC0296DDC1D00A081C7 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB9296DDC1D00A081C7 /* ProductsViewController.swift */; };
-		757F8AC1296DDC1D00A081C7 /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8ABA296DDC1D00A081C7 /* ProductsInteractor.swift */; };
-		757F8AC2296DDC1D00A081C7 /* ProductsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8ABB296DDC1D00A081C7 /* ProductsConfigurator.swift */; };
+		757F8ABC296DDC1D00A081C7 /* SearchProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB5296DDC1D00A081C7 /* SearchProductPresenter.swift */; };
+		757F8ABD296DDC1D00A081C7 /* SearchProductWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB6296DDC1D00A081C7 /* SearchProductWorker.swift */; };
+		757F8ABE296DDC1D00A081C7 /* SearchProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB7296DDC1D00A081C7 /* SearchProductRouter.swift */; };
+		757F8ABF296DDC1D00A081C7 /* SearchProductModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB8296DDC1D00A081C7 /* SearchProductModels.swift */; };
+		757F8AC0296DDC1D00A081C7 /* SearchProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB9296DDC1D00A081C7 /* SearchProductViewController.swift */; };
+		757F8AC1296DDC1D00A081C7 /* SearchProductInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8ABA296DDC1D00A081C7 /* SearchProductInteractor.swift */; };
+		757F8AC2296DDC1D00A081C7 /* SearchProductConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8ABB296DDC1D00A081C7 /* SearchProductConfigurator.swift */; };
+		757F8AC5296DE8FD00A081C7 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AC4296DE8FD00A081C7 /* DesignableView.swift */; };
+		757F8AC7296DED6000A081C7 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AC6296DED6000A081C7 /* NumberFormatter.swift */; };
 		7582ABD22968762E00F9F155 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7582ABD12968762E00F9F155 /* Product.swift */; };
 		758CA7C829678BBC0075FFB8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758CA7C729678BBC0075FFB8 /* Colors.xcassets */; };
 		7594CE7F2966576C0086D2DC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7594CE7E2966576C0086D2DC /* Kingfisher */; };
@@ -35,9 +36,11 @@
 		75B4BA73296B5B8100085669 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA72296B5B8100085669 /* Price.swift */; };
 		75B4BA75296B608B00085669 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA74296B608B00085669 /* Amenity.swift */; };
 		75B4BA79296B61F300085669 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA78296B61F300085669 /* Location.swift */; };
-		75B4BA7B296B660900085669 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA7A296B660900085669 /* Geolocation.swift */; };
+		75B4BA7B296B660900085669 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B4BA7A296B660900085669 /* Pagination.swift */; };
 		75C66D4029675098000B3C71 /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */; };
 		75C66D4229675120000B3C71 /* AnyModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C66D4129675120000B3C71 /* AnyModelStore.swift */; };
+		75E59A15296FA4AB00FE9E30 /* ProductContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E59A14296FA4AB00FE9E30 /* ProductContainer.swift */; };
+		75E59A17296FABF400FE9E30 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E59A16296FABF400FE9E30 /* UIViewController.swift */; };
 		75E845D6296B733A006D7C54 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 75E845D5296B733A006D7C54 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
@@ -59,14 +62,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7558C4D1296D09C000ED6C8D /* HotelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCollectionViewCell.swift; sourceTree = "<group>"; };
-		7558C4D2296D09C000ED6C8D /* HotelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelCollectionViewCell.xib; sourceTree = "<group>"; };
-		7558C4D5296D09CB00ED6C8D /* PackageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCollectionViewCell.swift; sourceTree = "<group>"; };
-		7558C4D6296D09CB00ED6C8D /* PackageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCollectionViewCell.xib; sourceTree = "<group>"; };
+		754B8280296E425D00772C01 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		7558C4D1296D09C000ED6C8D /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7558C4D2296D09C000ED6C8D /* ProductsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCollectionViewCell.xib; sourceTree = "<group>"; };
 		757C5C15295A8EF100EFC1F3 /* Hurb-iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hurb-iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		757C5C18295A8EF100EFC1F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		757C5C1A295A8EF100EFC1F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		757C5C1F295A8EF100EFC1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Products.storyboard; sourceTree = "<group>"; };
+		757C5C1F295A8EF100EFC1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchProduct.storyboard; sourceTree = "<group>"; };
 		757C5C21295A8EF200EFC1F3 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		757C5C24295A8EF200EFC1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		757C5C26295A8EF200EFC1F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,13 +77,15 @@
 		757C5C35295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb-iOS-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
 		757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		757F8AB5296DDC1D00A081C7 /* ProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPresenter.swift; sourceTree = "<group>"; };
-		757F8AB6296DDC1D00A081C7 /* ProductsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsWorker.swift; sourceTree = "<group>"; };
-		757F8AB7296DDC1D00A081C7 /* ProductsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRouter.swift; sourceTree = "<group>"; };
-		757F8AB8296DDC1D00A081C7 /* ProductsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModels.swift; sourceTree = "<group>"; };
-		757F8AB9296DDC1D00A081C7 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
-		757F8ABA296DDC1D00A081C7 /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
-		757F8ABB296DDC1D00A081C7 /* ProductsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsConfigurator.swift; sourceTree = "<group>"; };
+		757F8AB5296DDC1D00A081C7 /* SearchProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductPresenter.swift; sourceTree = "<group>"; };
+		757F8AB6296DDC1D00A081C7 /* SearchProductWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductWorker.swift; sourceTree = "<group>"; };
+		757F8AB7296DDC1D00A081C7 /* SearchProductRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductRouter.swift; sourceTree = "<group>"; };
+		757F8AB8296DDC1D00A081C7 /* SearchProductModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductModels.swift; sourceTree = "<group>"; };
+		757F8AB9296DDC1D00A081C7 /* SearchProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductViewController.swift; sourceTree = "<group>"; };
+		757F8ABA296DDC1D00A081C7 /* SearchProductInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductInteractor.swift; sourceTree = "<group>"; };
+		757F8ABB296DDC1D00A081C7 /* SearchProductConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductConfigurator.swift; sourceTree = "<group>"; };
+		757F8AC4296DE8FD00A081C7 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		757F8AC6296DED6000A081C7 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		7582ABD12968762E00F9F155 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		758CA7C729678BBC0075FFB8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		75B4BA6E296B561600085669 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -89,10 +93,12 @@
 		75B4BA72296B5B8100085669 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		75B4BA74296B608B00085669 /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
 		75B4BA78296B61F300085669 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		75B4BA7A296B660900085669 /* Geolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geolocation.swift; sourceTree = "<group>"; };
+		75B4BA7A296B660900085669 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		75B4BA82296B6AE600085669 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HUNetwork; path = Modules/HUNetwork; sourceTree = "<group>"; };
 		75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
 		75C66D4129675120000B3C71 /* AnyModelStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyModelStore.swift; sourceTree = "<group>"; };
+		75E59A14296FA4AB00FE9E30 /* ProductContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductContainer.swift; sourceTree = "<group>"; };
+		75E59A16296FABF400FE9E30 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				75C66D3F29675098000B3C71 /* UICollectionReusableView.swift */,
+				757F8AC6296DED6000A081C7 /* NumberFormatter.swift */,
+				754B8280296E425D00772C01 /* UIImageView.swift */,
+				75E59A16296FABF400FE9E30 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,14 +144,14 @@
 			isa = PBXGroup;
 			children = (
 				75C66D3E2967505D000B3C71 /* Cells */,
-				757C5C1E295A8EF100EFC1F3 /* Products.storyboard */,
-				757F8ABB296DDC1D00A081C7 /* ProductsConfigurator.swift */,
-				757F8AB9296DDC1D00A081C7 /* ProductsViewController.swift */,
-				757F8AB8296DDC1D00A081C7 /* ProductsModels.swift */,
-				757F8ABA296DDC1D00A081C7 /* ProductsInteractor.swift */,
-				757F8AB5296DDC1D00A081C7 /* ProductsPresenter.swift */,
-				757F8AB6296DDC1D00A081C7 /* ProductsWorker.swift */,
-				757F8AB7296DDC1D00A081C7 /* ProductsRouter.swift */,
+				757C5C1E295A8EF100EFC1F3 /* SearchProduct.storyboard */,
+				757F8ABB296DDC1D00A081C7 /* SearchProductConfigurator.swift */,
+				757F8AB9296DDC1D00A081C7 /* SearchProductViewController.swift */,
+				757F8AB8296DDC1D00A081C7 /* SearchProductModels.swift */,
+				757F8ABA296DDC1D00A081C7 /* SearchProductInteractor.swift */,
+				757F8AB5296DDC1D00A081C7 /* SearchProductPresenter.swift */,
+				757F8AB6296DDC1D00A081C7 /* SearchProductWorker.swift */,
+				757F8AB7296DDC1D00A081C7 /* SearchProductRouter.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -184,6 +193,7 @@
 				757C5C26295A8EF200EFC1F3 /* Info.plist */,
 				7594CE7C296656600086D2DC /* Scenes */,
 				7594CE80296658B60086D2DC /* Models */,
+				757F8AC3296DE8DC00A081C7 /* Components */,
 				7594CE7B296656310086D2DC /* Resources */,
 				7517490D2967143100FB7081 /* Extensions */,
 			);
@@ -205,6 +215,14 @@
 				757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */,
 			);
 			path = "Hurb-iOS-ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		757F8AC3296DE8DC00A081C7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				757F8AC4296DE8FD00A081C7 /* DesignableView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		7594CE7B296656310086D2DC /* Resources */ = {
@@ -230,12 +248,13 @@
 			children = (
 				75B4BA6D296B55F900085669 /* Enums */,
 				75C66D4129675120000B3C71 /* AnyModelStore.swift */,
+				75E59A14296FA4AB00FE9E30 /* ProductContainer.swift */,
 				7582ABD12968762E00F9F155 /* Product.swift */,
 				75B4BA70296B59B800085669 /* Media.swift */,
 				75B4BA72296B5B8100085669 /* Price.swift */,
 				75B4BA74296B608B00085669 /* Amenity.swift */,
 				75B4BA78296B61F300085669 /* Location.swift */,
-				75B4BA7A296B660900085669 /* Geolocation.swift */,
+				75B4BA7A296B660900085669 /* Pagination.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,10 +278,8 @@
 		75C66D3E2967505D000B3C71 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7558C4D1296D09C000ED6C8D /* HotelCollectionViewCell.swift */,
-				7558C4D2296D09C000ED6C8D /* HotelCollectionViewCell.xib */,
-				7558C4D5296D09CB00ED6C8D /* PackageCollectionViewCell.swift */,
-				7558C4D6296D09CB00ED6C8D /* PackageCollectionViewCell.xib */,
+				7558C4D1296D09C000ED6C8D /* ProductsCollectionViewCell.swift */,
+				7558C4D2296D09C000ED6C8D /* ProductsCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -380,12 +397,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7558C4D4296D09C000ED6C8D /* HotelCollectionViewCell.xib in Resources */,
-				7558C4D8296D09CB00ED6C8D /* PackageCollectionViewCell.xib in Resources */,
+				7558C4D4296D09C000ED6C8D /* ProductsCollectionViewCell.xib in Resources */,
 				758CA7C829678BBC0075FFB8 /* Colors.xcassets in Resources */,
 				757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */,
 				757C5C22295A8EF200EFC1F3 /* Icons.xcassets in Resources */,
-				757C5C20295A8EF100EFC1F3 /* Products.storyboard in Resources */,
+				757C5C20295A8EF100EFC1F3 /* SearchProduct.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,25 +426,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				757F8ABC296DDC1D00A081C7 /* ProductsPresenter.swift in Sources */,
+				757F8ABC296DDC1D00A081C7 /* SearchProductPresenter.swift in Sources */,
 				75B4BA71296B59B800085669 /* Media.swift in Sources */,
-				757F8ABF296DDC1D00A081C7 /* ProductsModels.swift in Sources */,
+				757F8ABF296DDC1D00A081C7 /* SearchProductModels.swift in Sources */,
 				75B4BA79296B61F300085669 /* Location.swift in Sources */,
 				757C5C19295A8EF100EFC1F3 /* AppDelegate.swift in Sources */,
 				75C66D4229675120000B3C71 /* AnyModelStore.swift in Sources */,
+				754B8281296E425D00772C01 /* UIImageView.swift in Sources */,
 				7582ABD22968762E00F9F155 /* Product.swift in Sources */,
-				7558C4D7296D09CB00ED6C8D /* PackageCollectionViewCell.swift in Sources */,
 				75B4BA73296B5B8100085669 /* Price.swift in Sources */,
-				757F8ABD296DDC1D00A081C7 /* ProductsWorker.swift in Sources */,
+				757F8ABD296DDC1D00A081C7 /* SearchProductWorker.swift in Sources */,
 				757C5C1B295A8EF100EFC1F3 /* SceneDelegate.swift in Sources */,
-				757F8AC2296DDC1D00A081C7 /* ProductsConfigurator.swift in Sources */,
+				757F8AC5296DE8FD00A081C7 /* DesignableView.swift in Sources */,
+				757F8AC2296DDC1D00A081C7 /* SearchProductConfigurator.swift in Sources */,
 				75B4BA6F296B561600085669 /* Category.swift in Sources */,
+				75E59A17296FABF400FE9E30 /* UIViewController.swift in Sources */,
 				75C66D4029675098000B3C71 /* UICollectionReusableView.swift in Sources */,
-				757F8AC0296DDC1D00A081C7 /* ProductsViewController.swift in Sources */,
-				757F8ABE296DDC1D00A081C7 /* ProductsRouter.swift in Sources */,
-				757F8AC1296DDC1D00A081C7 /* ProductsInteractor.swift in Sources */,
-				7558C4D3296D09C000ED6C8D /* HotelCollectionViewCell.swift in Sources */,
-				75B4BA7B296B660900085669 /* Geolocation.swift in Sources */,
+				757F8AC0296DDC1D00A081C7 /* SearchProductViewController.swift in Sources */,
+				757F8ABE296DDC1D00A081C7 /* SearchProductRouter.swift in Sources */,
+				757F8AC7296DED6000A081C7 /* NumberFormatter.swift in Sources */,
+				757F8AC1296DDC1D00A081C7 /* SearchProductInteractor.swift in Sources */,
+				7558C4D3296D09C000ED6C8D /* ProductsCollectionViewCell.swift in Sources */,
+				75E59A15296FA4AB00FE9E30 /* ProductContainer.swift in Sources */,
+				75B4BA7B296B660900085669 /* Pagination.swift in Sources */,
 				75B4BA75296B608B00085669 /* Amenity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,12 +486,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		757C5C1E295A8EF100EFC1F3 /* Products.storyboard */ = {
+		757C5C1E295A8EF100EFC1F3 /* SearchProduct.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				757C5C1F295A8EF100EFC1F3 /* Base */,
 			);
-			name = Products.storyboard;
+			name = SearchProduct.storyboard;
 			sourceTree = "<group>";
 		};
 		757C5C23295A8EF200EFC1F3 /* LaunchScreen.storyboard */ = {
@@ -535,7 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -589,7 +609,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -606,12 +626,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
+				DEVELOPMENT_TEAM = 385J8EY5CD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hurb-iOS-Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Products;
+				INFOPLIST_KEY_UIMainStoryboardFile = SearchProduct;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -637,12 +657,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
+				DEVELOPMENT_TEAM = 385J8EY5CD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hurb-iOS-Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Products;
+				INFOPLIST_KEY_UIMainStoryboardFile = SearchProduct;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -670,7 +690,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-ChallengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -690,7 +710,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ZD8Y3KJ4Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-ChallengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

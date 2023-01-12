@@ -8,8 +8,7 @@
 import UIKit
 
 extension UICollectionReusableView {
-    
-    /// Swift only
+
     static var cellIdentifier: String {
         
         return String(describing: self)

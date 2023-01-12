@@ -12,7 +12,7 @@
         <!--Hoteis, Pacotes, Atividades-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ProductsViewController" customModule="Hurb_iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchProductViewController" customModule="Hurb_iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,6 +27,9 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nhh-st-wOe"/>
                                 </connections>
@@ -53,7 +56,7 @@
         <!--Navigation Controller-->
         <scene sceneID="MWw-UX-2Qq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v8F-Gl-MuS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchProductNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v8F-Gl-MuS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="y7G-jA-tHm">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Product: Codable {
+struct Product: Codable, Identifiable {
     
     private enum CodingKeys: String, CodingKey {
         
@@ -15,22 +15,18 @@ struct Product: Codable {
         case category
         case description
         case medias = "gallery"
-        case huFreeCancellation
         case price
         case location = "address"
-        case stars
         case name
         case amenities
     }
     
-    let id: String?
+    var id: String?
     let category: Category
     let description: String
     let medias: [Media]
-    let huFreeCancellation: Bool?
     let price: Price
     let location: Location
-    let stars: Int?
     let name: String
     let amenities: [Amenity]
 }
@@ -46,11 +42,30 @@ extension Product {
         self.category = try container.decode(Category.self, forKey: .category)
         self.description = try container.decode(String.self, forKey: .description)
         self.medias = try container.decode([Media].self, forKey: .medias)
-        self.huFreeCancellation = try? container.decodeIfPresent(Bool.self, forKey: .huFreeCancellation)
         self.price = try container.decode(Price.self, forKey: .price)
         self.location = try container.decode(Location.self, forKey: .location)
-        self.stars = try? container.decodeIfPresent(Int.self, forKey: .stars)
         self.name = try container.decode(String.self, forKey: .name)
         self.amenities = try container.decode([Amenity].self, forKey: .amenities)
+    }
+    
+    func getFormattedAddress() -> String {
+        
+        return "\(self.location.city), \(self.location.country)"
+    }
+    
+    func getFormattedPrice() -> String? {
+        
+        switch category {
+                
+            case .hotel:
+                let amountValue: Double = self.price.amount
+                let formatter: NumberFormatter = NumberFormatter.currencyFormatter(from: self.price.currency)
+                return formatter.string(for: amountValue)
+                
+            default:
+                let amountValue: Double = self.price.amount / 100
+                let formatter: NumberFormatter = NumberFormatter.currencyFormatter(from: self.price.currency)
+                return formatter.string(for: amountValue)
+        }
     }
 }
