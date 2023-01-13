@@ -52,6 +52,11 @@ final class HomeView: UIView {
             constant: -50
         ).isActive = true
         
+        tableView.topAnchor.constraint(
+            equalTo: searchButton.bottomAnchor,
+            constant: 20
+        ).isActive = true
+        
         tableView.leftAnchor.constraint(
             equalTo: leftAnchor
         ).isActive = true
