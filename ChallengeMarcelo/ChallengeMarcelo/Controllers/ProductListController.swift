@@ -1,14 +1,13 @@
 import UIKit
 
-final class HomeController: UIViewController {
+final class ProductListController: UIViewController {
     // MARK: UI
 
-    lazy var screenView = HomeView()
+    lazy var screenView = ProductListView()
     
     // MARK: Properties
-    
-    private var dataSource = [Product]()
-    private let viewModel = HomeViewModel()
+
+    private let viewModel = ProductListViewModel()
 
     // MARK: Override
     
@@ -22,6 +21,7 @@ final class HomeController: UIViewController {
         viewModel.delegate = self
         screenView.tableView.delegate = self
         screenView.tableView.dataSource = self
+        screenView.tableView.register(ProductListCell.self, forCellReuseIdentifier: "HomeCell")
         screenView.searchButton.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
     }
     
@@ -34,32 +34,33 @@ final class HomeController: UIViewController {
 
 // MARK: - UITableViewDelegate
 
-extension HomeController: UITableViewDelegate {
+extension ProductListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(dataSource[indexPath.row].name)
+        print(viewModel.products[indexPath.row].name)
     }
 }
 
 // MARK: - UITableViewDataSource
 
-extension HomeController: UITableViewDataSource {
+extension ProductListController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return viewModel.products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "[\(dataSource[indexPath.row].category)] \(dataSource[indexPath.row].name)"
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? ProductListCell {
+            cell.setupCell(product: viewModel.products[indexPath.row])
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
 }
 
 // MARK: - HomeViewModelDelegate
 
-extension HomeController: HomeViewModelDelegate {
-    func didUpdate(products: [Product]) {
-        dataSource = products
-
+extension ProductListController: ProductListViewModelDelegate {
+    func didUpdate() {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
             self.screenView.tableView.reloadData()
