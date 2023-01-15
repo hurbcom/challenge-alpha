@@ -17,6 +17,14 @@
 		DA710C17297497E300D0A444 /* Challenge_Alpha_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710C16297497E300D0A444 /* Challenge_Alpha_iOSUITests.swift */; };
 		DA710C19297497E300D0A444 /* Challenge_Alpha_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710C18297497E300D0A444 /* Challenge_Alpha_iOSUITestsLaunchTests.swift */; };
 		DA710C3D29749E0800D0A444 /* HUNetwork in Resources */ = {isa = PBXBuildFile; fileRef = DA710C3C29749E0800D0A444 /* HUNetwork */; };
+		DAF2DE0E2974AAF80055D6E3 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE0D2974AAF80055D6E3 /* SearchResult.swift */; };
+		DAF2DE102974AD070055D6E3 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE0F2974AD070055D6E3 /* Price.swift */; };
+		DAF2DE122974ADA10055D6E3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE112974ADA10055D6E3 /* Address.swift */; };
+		DAF2DE152974AE0D0055D6E3 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE142974AE0D0055D6E3 /* Tag.swift */; };
+		DAF2DE172974AE7C0055D6E3 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE162974AE7C0055D6E3 /* GalleryItem.swift */; };
+		DAF2DE192974AEAA0055D6E3 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE182974AEAA0055D6E3 /* Amenity.swift */; };
+		DAF2DE1C2974AEFF0055D6E3 /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE1B2974AEFF0055D6E3 /* CategoryEnum.swift */; };
+		DAF2DE1F2974B9A40055D6E3 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE1E2974B9A40055D6E3 /* Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +58,14 @@
 		DA710C16297497E300D0A444 /* Challenge_Alpha_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_Alpha_iOSUITests.swift; sourceTree = "<group>"; };
 		DA710C18297497E300D0A444 /* Challenge_Alpha_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_Alpha_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DA710C3C29749E0800D0A444 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HUNetwork; sourceTree = "<group>"; };
+		DAF2DE0D2974AAF80055D6E3 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		DAF2DE0F2974AD070055D6E3 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		DAF2DE112974ADA10055D6E3 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		DAF2DE142974AE0D0055D6E3 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		DAF2DE162974AE7C0055D6E3 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
+		DAF2DE182974AEAA0055D6E3 /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
+		DAF2DE1B2974AEFF0055D6E3 /* CategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
+		DAF2DE1E2974B9A40055D6E3 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +135,7 @@
 		DA710BF4297497E100D0A444 /* Challenge Alpha iOS */ = {
 			isa = PBXGroup;
 			children = (
+				DAF2DE0C2974AA870055D6E3 /* Models */,
 				DA710BF5297497E100D0A444 /* AppDelegate.swift */,
 				DA710BF7297497E100D0A444 /* SceneDelegate.swift */,
 				DA710C03297497E200D0A444 /* Info.plist */,
@@ -151,6 +168,37 @@
 				DA710C3C29749E0800D0A444 /* HUNetwork */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		DAF2DE0C2974AA870055D6E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAF2DE1A2974AED10055D6E3 /* Search */,
+				DAF2DE1D2974AF3F0055D6E3 /* Shared */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DAF2DE1A2974AED10055D6E3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DAF2DE1E2974B9A40055D6E3 /* Search.swift */,
+				DAF2DE0D2974AAF80055D6E3 /* SearchResult.swift */,
+				DAF2DE1B2974AEFF0055D6E3 /* CategoryEnum.swift */,
+				DAF2DE142974AE0D0055D6E3 /* Tag.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DAF2DE1D2974AF3F0055D6E3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DAF2DE0F2974AD070055D6E3 /* Price.swift */,
+				DAF2DE112974ADA10055D6E3 /* Address.swift */,
+				DAF2DE162974AE7C0055D6E3 /* GalleryItem.swift */,
+				DAF2DE182974AEAA0055D6E3 /* Amenity.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,8 +335,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF2DE1F2974B9A40055D6E3 /* Search.swift in Sources */,
+				DAF2DE122974ADA10055D6E3 /* Address.swift in Sources */,
 				DA710BFA297497E100D0A444 /* ViewController.swift in Sources */,
+				DAF2DE192974AEAA0055D6E3 /* Amenity.swift in Sources */,
 				DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */,
+				DAF2DE1C2974AEFF0055D6E3 /* CategoryEnum.swift in Sources */,
+				DAF2DE172974AE7C0055D6E3 /* GalleryItem.swift in Sources */,
+				DAF2DE152974AE0D0055D6E3 /* Tag.swift in Sources */,
+				DAF2DE0E2974AAF80055D6E3 /* SearchResult.swift in Sources */,
+				DAF2DE102974AD070055D6E3 /* Price.swift in Sources */,
 				DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
