@@ -11,7 +11,7 @@ final class ProductListViewModel {
     // MARK: Delegate
     
     weak var delegate: ProductListViewModelDelegate?
-    
+
     // MARK: Public
     
     func performSearch(for text: String) {

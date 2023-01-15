@@ -22,13 +22,17 @@ final class ProductListController: UIViewController {
         screenView.tableView.delegate = self
         screenView.tableView.dataSource = self
         screenView.tableView.register(ProductListCell.self, forCellReuseIdentifier: "HomeCell")
-        screenView.searchButton.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
+        screenView.inputField.searchButton.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
+        
+        // MARK: TO REMOVE
+
+        viewModel.performSearch(for: "Recife")
     }
     
     // MARK: Obj-C
     
     @objc func didTapSearch() {
-        viewModel.performSearch(for: screenView.inputField.text ?? "")
+        viewModel.performSearch(for: screenView.inputField.textField.text ?? "")
     }
 }
 
@@ -36,7 +40,10 @@ final class ProductListController: UIViewController {
 
 extension ProductListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(viewModel.products[indexPath.row].name)
+        navigationController?.pushViewController(
+            ProductDetailViewController(model: viewModel.products[indexPath.row]),
+            animated: true
+        )
     }
 }
 

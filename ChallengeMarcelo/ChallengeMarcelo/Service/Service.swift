@@ -7,14 +7,14 @@ typealias SuggestionResult = HUGraphQL.SuggestionsQuery.Data.Suggestion.Result
 
 struct Service {
     // MARK: Singleton
-
+    
     private init() {}
     static let shared = Service()
     
     // MARK: Properties
-
+    
     private let hugService = HUGService(enableLog: true)
-
+    
     // MARK: Public
     
     func perform(
@@ -29,10 +29,13 @@ struct Service {
             case .failure(let error):
                 completion(.failure(error))
             }
-        }        
+        }
     }
     
-    func performPackage(search queryString: String, completion: @escaping (Result<[SearchPackageResult]?, Error>) -> Void) {
+    func performPackage(
+        search queryString: String,
+        completion: @escaping (Result<[SearchPackageResult]?, Error>) -> Void
+    ) {
         let query = HUGraphQL.SearchPackageQuery(q: queryString, pagination: nil)
         hugService.client.fetch(query: query) { result in
             switch result {
@@ -44,14 +47,17 @@ struct Service {
         }
     }
     
-    func performHotel(search queryString: String, completion: @escaping (Result<[SearchHotelResult]?, Error>) -> Void ) {
+    func performHotel(
+        search queryString: String,
+        completion: @escaping (Result<[SearchHotelResult]?, Error>) -> Void
+    ) {
         let query =
         HUGraphQL.SearchHotelQuery(
             q: queryString,
             filters: nil,
             pagination: nil,
             l10n: .init(pos: "br", locale: "pt", currency: "BRL"),
-//            checkin: Date(),
+            //            checkin: Date(),
             checkout: nil,
             rooms: nil)
         hugService.client.fetch(query: query) { result in
@@ -64,13 +70,14 @@ struct Service {
         }
     }
     
-    func performSuggestion(queryString: String, completion: @escaping (Result<[SuggestionResult]?, Error>) -> Void) {
-
-        
+    func performSuggestion(
+        queryString: String,
+        completion: @escaping (Result<[SuggestionResult]?, Error>) -> Void
+    ) {
         let query = HUGraphQL.SuggestionsQuery(
             q: queryString,
             limit: 20,
-//            productType: productType,
+            //            productType: productType,
             l10n: .init(pos: "br", locale: "pt", currency: "BRL"))
         
         hugService.client.fetch(query: query) { result in
