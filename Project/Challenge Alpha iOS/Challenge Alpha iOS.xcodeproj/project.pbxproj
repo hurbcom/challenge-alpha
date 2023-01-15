@@ -85,6 +85,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DA117D9C2974A40500CC3749 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DA710BFE297497E200D0A444 /* Assets.xcassets */,
+				DA710C00297497E200D0A444 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DA710BE9297497E100D0A444 = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +121,9 @@
 			children = (
 				DA710BF5297497E100D0A444 /* AppDelegate.swift */,
 				DA710BF7297497E100D0A444 /* SceneDelegate.swift */,
-				DA710BF9297497E100D0A444 /* ViewController.swift */,
-				DA710BFE297497E200D0A444 /* Assets.xcassets */,
-				DA710C00297497E200D0A444 /* LaunchScreen.storyboard */,
 				DA710C03297497E200D0A444 /* Info.plist */,
+				DA710BF9297497E100D0A444 /* ViewController.swift */,
+				DA117D9C2974A40500CC3749 /* Resources */,
 			);
 			path = "Challenge Alpha iOS";
 			sourceTree = "<group>";
