@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "hurb_launch_image.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
