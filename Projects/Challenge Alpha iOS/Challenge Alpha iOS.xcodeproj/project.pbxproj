@@ -14,6 +14,8 @@
 		315615CF27343D42009FF312 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315615CE27343D42009FF312 /* Manager.swift */; };
 		315615D1273441F3009FF312 /* ResultRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315615D0273441F3009FF312 /* ResultRenderView.swift */; };
 		315615D32734444A009FF312 /* ResultRenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315615D22734444A009FF312 /* ResultRenderViewModel.swift */; };
+		FBD4D46E2975F1A6005AF2C9 /* BaseViewPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D46D2975F1A6005AF2C9 /* BaseViewPipeline.swift */; };
+		FBD4D4702975F46B005AF2C9 /* BaseViewHierarchyRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D46F2975F46B005AF2C9 /* BaseViewHierarchyRelation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		315615D0273441F3009FF312 /* ResultRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRenderView.swift; sourceTree = "<group>"; };
 		315615D22734444A009FF312 /* ResultRenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRenderViewModel.swift; sourceTree = "<group>"; };
 		31DB70752739692600F8663E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		FBD4D46D2975F1A6005AF2C9 /* BaseViewPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewPipeline.swift; sourceTree = "<group>"; };
+		FBD4D46F2975F46B005AF2C9 /* BaseViewHierarchyRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewHierarchyRelation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,10 @@
 		315562382734184A00E1C17C = {
 			isa = PBXGroup;
 			children = (
+				FBD4D46B2975DD63005AF2C9 /* Extensions */,
+				FBD4D4692975DD4E005AF2C9 /* Model */,
+				FBD4D4682975DD40005AF2C9 /* View */,
+				FBD4D4672975DD36005AF2C9 /* ViewModel */,
 				31DB70752739692600F8663E /* README.md */,
 				3155623D2734184A00E1C17C /* Shared */,
 				315615C927343C12009FF312 /* Packages */,
@@ -85,6 +93,52 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBD4D4672975DD36005AF2C9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FBD4D4682975DD40005AF2C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBD4D46A2975DD5A005AF2C9 /* Screen */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FBD4D4692975DD4E005AF2C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FBD4D46A2975DD5A005AF2C9 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FBD4D46C2975DF8E005AF2C9 /* BaseView */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		FBD4D46B2975DD63005AF2C9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBD4D46C2975DF8E005AF2C9 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				FBD4D46D2975F1A6005AF2C9 /* BaseViewPipeline.swift */,
+				FBD4D46F2975F46B005AF2C9 /* BaseViewHierarchyRelation.swift */,
+			);
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +216,8 @@
 				315562682734184C00E1C17C /* ContentView.swift in Sources */,
 				315615D32734444A009FF312 /* ResultRenderViewModel.swift in Sources */,
 				315615CF27343D42009FF312 /* Manager.swift in Sources */,
+				FBD4D4702975F46B005AF2C9 /* BaseViewHierarchyRelation.swift in Sources */,
+				FBD4D46E2975F1A6005AF2C9 /* BaseViewPipeline.swift in Sources */,
 				315562662734184C00E1C17C /* Challenge_Alpha_iOSApp.swift in Sources */,
 				315615D1273441F3009FF312 /* ResultRenderView.swift in Sources */,
 			);
