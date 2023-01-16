@@ -17,6 +17,9 @@
 		DA2908FC29759977005B0EFD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2908FB29759977005B0EFD /* UIConstants.swift */; };
 		DA29090029759ED1005B0EFD /* HUSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2908FF29759ED1005B0EFD /* HUSearchButton.swift */; };
 		DA2909032975AC4C005B0EFD /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2909022975AC4C005B0EFD /* CornerRadius.swift */; };
+		DA29090B2975B0C9005B0EFD /* SearchPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29090A2975B0C9005B0EFD /* SearchPackage.swift */; };
+		DA29090D2975B116005B0EFD /* PackageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29090C2975B116005B0EFD /* PackageResult.swift */; };
+		DA29090F2975B12D005B0EFD /* QuantityDescriptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29090E2975B12D005B0EFD /* QuantityDescriptors.swift */; };
 		DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF5297497E100D0A444 /* AppDelegate.swift */; };
 		DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF7297497E100D0A444 /* SceneDelegate.swift */; };
 		DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF9297497E100D0A444 /* SearchViewHostingController.swift */; };
@@ -64,6 +67,9 @@
 		DA2908FB29759977005B0EFD /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		DA2908FF29759ED1005B0EFD /* HUSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUSearchButton.swift; sourceTree = "<group>"; };
 		DA2909022975AC4C005B0EFD /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		DA29090A2975B0C9005B0EFD /* SearchPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPackage.swift; sourceTree = "<group>"; };
+		DA29090C2975B116005B0EFD /* PackageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageResult.swift; sourceTree = "<group>"; };
+		DA29090E2975B12D005B0EFD /* QuantityDescriptors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityDescriptors.swift; sourceTree = "<group>"; };
 		DA710BF2297497E100D0A444 /* Challenge Alpha iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA710BF5297497E100D0A444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA710BF7297497E100D0A444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +174,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DA2909092975B032005B0EFD /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				DA29090A2975B0C9005B0EFD /* SearchPackage.swift */,
+				DA29090C2975B116005B0EFD /* PackageResult.swift */,
+				DA29090E2975B12D005B0EFD /* QuantityDescriptors.swift */,
+			);
+			path = Package;
+			sourceTree = "<group>";
+		};
 		DA710BE9297497E100D0A444 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +248,7 @@
 		DAF2DE0C2974AA870055D6E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DA2909092975B032005B0EFD /* Package */,
 				DAF2DE1A2974AED10055D6E3 /* Search */,
 				DAF2DE1D2974AF3F0055D6E3 /* Shared */,
 			);
@@ -420,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF2DE1F2974B9A40055D6E3 /* Search.swift in Sources */,
+				DA29090F2975B12D005B0EFD /* QuantityDescriptors.swift in Sources */,
 				DAF2DE122974ADA10055D6E3 /* Address.swift in Sources */,
 				DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */,
 				DA2908EE29757E9B005B0EFD /* SearchSceneFactory.swift in Sources */,
@@ -428,6 +446,7 @@
 				DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */,
 				DAF2DE1C2974AEFF0055D6E3 /* CategoryEnum.swift in Sources */,
 				DA2909032975AC4C005B0EFD /* CornerRadius.swift in Sources */,
+				DA29090D2975B116005B0EFD /* PackageResult.swift in Sources */,
 				DAF2DE252974BF500055D6E3 /* SerachViewModel.swift in Sources */,
 				DAF2DE232974BDBE0055D6E3 /* SearchInteractor.swift in Sources */,
 				DA2908FA29759893005B0EFD /* HUButton.swift in Sources */,
@@ -437,6 +456,7 @@
 				DA29090029759ED1005B0EFD /* HUSearchButton.swift in Sources */,
 				DA2908EA297575AD005B0EFD /* SearchView.swift in Sources */,
 				DAF2DE0E2974AAF80055D6E3 /* SearchResult.swift in Sources */,
+				DA29090B2975B0C9005B0EFD /* SearchPackage.swift in Sources */,
 				DAF2DE102974AD070055D6E3 /* Price.swift in Sources */,
 				DA2908F829758FF1005B0EFD /* ImageCarousel.swift in Sources */,
 				DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */,
