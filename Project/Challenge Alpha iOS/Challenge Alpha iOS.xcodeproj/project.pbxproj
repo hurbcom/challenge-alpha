@@ -11,6 +11,7 @@
 		DA2908EA297575AD005B0EFD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2908E9297575AD005B0EFD /* SearchView.swift */; };
 		DA2908EE29757E9B005B0EFD /* SearchSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2908ED29757E9B005B0EFD /* SearchSceneFactory.swift */; };
 		DA2908F029757F29005B0EFD /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2908EF29757F29005B0EFD /* SearchRouter.swift */; };
+		DA2908F429758F43005B0EFD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DA2908F329758F43005B0EFD /* Kingfisher */; };
 		DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF5297497E100D0A444 /* AppDelegate.swift */; };
 		DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF7297497E100D0A444 /* SceneDelegate.swift */; };
 		DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF9297497E100D0A444 /* SearchViewHostingController.swift */; };
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2908F429758F43005B0EFD /* Kingfisher in Frameworks */,
 				DA117D9B29749E9600CC3749 /* HUGraphQL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +252,7 @@
 			name = "Challenge Alpha iOS";
 			packageProductDependencies = (
 				DA117D9A29749E9600CC3749 /* HUGraphQL */,
+				DA2908F329758F43005B0EFD /* Kingfisher */,
 			);
 			productName = "Challenge Alpha iOS";
 			productReference = DA710BF2297497E100D0A444 /* Challenge Alpha iOS.app */;
@@ -323,6 +326,9 @@
 				Base,
 			);
 			mainGroup = DA710BE9297497E100D0A444;
+			packageReferences = (
+				DA2908F229758F43005B0EFD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = DA710BF3297497E100D0A444 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -714,10 +720,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		DA2908F229758F43005B0EFD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = exactVersion;
+				version = 7.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		DA117D9A29749E9600CC3749 /* HUGraphQL */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HUGraphQL;
+		};
+		DA2908F329758F43005B0EFD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA2908F229758F43005B0EFD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
