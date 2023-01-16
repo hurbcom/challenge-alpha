@@ -14,7 +14,9 @@ struct SearchView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .leading) {
-                self.searchButton
+                HUSearchButton(searchText: $viewModel.searchText) {
+                    // TODO: Handle search tap
+                }
                 Spacer()
                 
                 ForEach(0..<viewModel.serachResults.count, id: \.self) { index in
@@ -25,33 +27,6 @@ struct SearchView: View {
         }
         .onAppear {
             viewModel.onViewAppear()
-        }
-    }
-    
-    var searchButton: some View {
-        HStack {
-            Image(systemName: "magnifyingglass")
-                .resizable()
-                .foregroundColor(.black)
-                .frame(width: 16, height: 16)
-            
-            Text(viewModel.searchText)
-                .font(.system(size: 16, weight: .regular))
-                .foregroundColor(.black)
-            
-            Spacer()
-        }
-        .padding(.horizontal) // internal padding
-        .padding(.vertical, 14) // internal padding
-        .frame(maxWidth: .infinity)
-        .background {
-            RoundedRectangle(cornerRadius: 4.0)
-                .strokeBorder(Color.secondary, lineWidth: 1)
-                .foregroundColor(.clear)
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            viewModel.onSearchTap()
         }
     }
 }
