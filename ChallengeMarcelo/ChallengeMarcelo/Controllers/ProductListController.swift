@@ -23,16 +23,29 @@ final class ProductListController: UIViewController {
         screenView.tableView.dataSource = self
         screenView.tableView.register(ProductListCell.self, forCellReuseIdentifier: "HomeCell")
         screenView.inputField.searchButton.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
-        
-        // MARK: TO REMOVE
-
-        viewModel.performSearch(for: "Recife")
+        screenView.segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControl), for: .valueChanged)
     }
     
     // MARK: Obj-C
-    
+
     @objc func didTapSearch() {
-        viewModel.performSearch(for: screenView.inputField.textField.text ?? "")
+        shouldSearch()
+    }
+
+    @objc private func didChangeSegmentedControl() {
+        shouldSearch()
+    }
+    
+    // MARK: - Private
+    
+    private func shouldSearch() {
+        guard let place = screenView.inputField.textField.text else { return }
+
+        if screenView.segmentedControl.selectedSegmentIndex == 0 {
+            viewModel.searchHotels(in: place)
+        } else {
+            viewModel.searchPackages(in: place)
+        }
     }
 }
 

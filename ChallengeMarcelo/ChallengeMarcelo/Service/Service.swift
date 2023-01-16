@@ -1,9 +1,8 @@
 import HUGraphQL
 
-typealias SearchResult = HUGraphQL.SearchQuery.Data.Search.Result
-typealias SearchPackageResult = HUGraphQL.SearchPackageQuery.Data.SearchPackage.Result
-typealias SearchHotelResult = HUGraphQL.SearchHotelQuery.Data.SearchHotel.Result
 typealias SuggestionResult = HUGraphQL.SuggestionsQuery.Data.Suggestion.Result
+typealias SearchHotelResult = HUGraphQL.SearchHotelQuery.Data.SearchHotel.Result
+typealias SearchPackageResult = HUGraphQL.SearchPackageQuery.Data.SearchPackage.Result
 
 struct Service {
     // MARK: Singleton
@@ -17,21 +16,30 @@ struct Service {
     
     // MARK: Public
     
-    func perform(
+    func performHotel(
         search queryString: String,
-        completion: @escaping (Result<[SearchResult]?, Error>) -> Void
+        completion: @escaping (Result<[SearchHotelResult]?, Error>) -> Void
     ) {
-        let query = HUGraphQL.SearchQuery(q: queryString, pagination: nil)
+        let query =
+        HUGraphQL.SearchHotelQuery(
+            q: queryString,
+            filters: nil,
+            pagination: nil,
+            l10n: .init(pos: "br", locale: "pt", currency: "BRL"),
+            //            checkin: Date(),
+            checkout: nil,
+            rooms: nil
+        )
         hugService.client.fetch(query: query) { result in
             switch result {
             case .success(let onSuccess):
-                completion(.success(onSuccess.data?.search?.results))
+                completion(.success(onSuccess.data?.searchHotel?.results))
             case .failure(let error):
                 completion(.failure(error))
             }
         }
     }
-    
+
     func performPackage(
         search queryString: String,
         completion: @escaping (Result<[SearchPackageResult]?, Error>) -> Void
@@ -46,30 +54,7 @@ struct Service {
             }
         }
     }
-    
-    func performHotel(
-        search queryString: String,
-        completion: @escaping (Result<[SearchHotelResult]?, Error>) -> Void
-    ) {
-        let query =
-        HUGraphQL.SearchHotelQuery(
-            q: queryString,
-            filters: nil,
-            pagination: nil,
-            l10n: .init(pos: "br", locale: "pt", currency: "BRL"),
-            //            checkin: Date(),
-            checkout: nil,
-            rooms: nil)
-        hugService.client.fetch(query: query) { result in
-            switch result {
-            case .success(let onSuccess):
-                completion(.success(onSuccess.data?.searchHotel?.results))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
+
     func performSuggestion(
         queryString: String,
         completion: @escaping (Result<[SuggestionResult]?, Error>) -> Void

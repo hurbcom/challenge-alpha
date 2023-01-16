@@ -5,7 +5,6 @@ final class ProductListCell: UITableViewCell {
     let titleLabel = UILabel()
     let priceLabel = UILabel()
     let photoView = UIImageView()
-    let categoryLabel = UILabel()
     let descriptionLabel = UILabel()
     let smallAddressLabel = UILabel()
 
@@ -25,7 +24,6 @@ final class ProductListCell: UITableViewCell {
         titleLabel.text = nil
         priceLabel.text = nil
         photoView.image = nil
-        categoryLabel.text = nil
         descriptionLabel.text = nil
         smallAddressLabel.text = nil
     }
@@ -51,7 +49,6 @@ final class ProductListCell: UITableViewCell {
         photoView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
-        categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         smallAddressLabel.translatesAutoresizingMaskIntoConstraints = false
 
@@ -66,7 +63,6 @@ final class ProductListCell: UITableViewCell {
         cardView.addSubview(photoView)
         cardView.addSubview(titleLabel)
         cardView.addSubview(priceLabel)
-        cardView.addSubview(categoryLabel)
         cardView.addSubview(descriptionLabel)
         cardView.addSubview(smallAddressLabel)
         contentView.addSubview(cardView)
@@ -83,12 +79,9 @@ final class ProductListCell: UITableViewCell {
 
             smallAddressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             smallAddressLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
-            
-            categoryLabel.topAnchor.constraint(equalTo: smallAddressLabel.bottomAnchor, constant: 10),
-            categoryLabel.leftAnchor.constraint(equalTo: smallAddressLabel.leftAnchor),
 
-            priceLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 10),
-            priceLabel.leftAnchor.constraint(equalTo: categoryLabel.leftAnchor),
+            priceLabel.topAnchor.constraint(equalTo: smallAddressLabel.bottomAnchor, constant: 10),
+            priceLabel.leftAnchor.constraint(equalTo: smallAddressLabel.leftAnchor),
             priceLabel.heightAnchor.constraint(equalToConstant: 45),
             
             descriptionLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10),
@@ -105,7 +98,6 @@ final class ProductListCell: UITableViewCell {
     
     func setupCell(product: Product) {
         titleLabel.text = product.name
-        categoryLabel.text = product.category.capitalized
         descriptionLabel.text = product.smallDescription
         smallAddressLabel.text = "\(product.address.city), \(product.address.country)"
         
