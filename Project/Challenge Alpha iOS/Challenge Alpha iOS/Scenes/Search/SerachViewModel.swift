@@ -12,6 +12,7 @@ final class SearchViewModel: ObservableObject {
     // MARK: - Published variables
     @Published var serachResults: [SearchResult] = []
     @Published var searchText: String = "Rio de Janeiro"
+    @Published var showLoading: Bool = true
     @Published var showError: Bool = false
     
     // MARK: - Dispose bag
@@ -41,6 +42,8 @@ final class SearchViewModel: ObservableObject {
                 if case .failure(_) = completion {
                     self.showError = true
                 }
+                
+                self.hideLoading()
             } receiveValue: { searchResults in
                 self.serachResults = searchResults
             }
@@ -50,5 +53,10 @@ final class SearchViewModel: ObservableObject {
     // MARK: - Actions
     func onSearchTap() {
         
+    }
+    
+    // MARK: - Helpers
+    private func hideLoading() {
+        self.showLoading = false
     }
 }

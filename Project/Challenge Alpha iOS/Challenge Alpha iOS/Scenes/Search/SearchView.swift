@@ -25,6 +25,7 @@ struct SearchView: View {
             }
             .padding(.horizontal)
         }
+        .loading($viewModel.showLoading)
         .onAppear {
             viewModel.onViewAppear()
         }
