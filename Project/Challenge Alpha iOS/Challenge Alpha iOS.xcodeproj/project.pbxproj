@@ -49,7 +49,7 @@
 		DAF2DE1C2974AEFF0055D6E3 /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE1B2974AEFF0055D6E3 /* CategoryEnum.swift */; };
 		DAF2DE1F2974B9A40055D6E3 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE1E2974B9A40055D6E3 /* Search.swift */; };
 		DAF2DE232974BDBE0055D6E3 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE222974BDBE0055D6E3 /* SearchInteractor.swift */; };
-		DAF2DE252974BF500055D6E3 /* SerachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE242974BF500055D6E3 /* SerachViewModel.swift */; };
+		DAF2DE252974BF500055D6E3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE242974BF500055D6E3 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +114,7 @@
 		DAF2DE1B2974AEFF0055D6E3 /* CategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
 		DAF2DE1E2974B9A40055D6E3 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		DAF2DE222974BDBE0055D6E3 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
-		DAF2DE242974BF500055D6E3 /* SerachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachViewModel.swift; sourceTree = "<group>"; };
+		DAF2DE242974BF500055D6E3 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,7 +372,7 @@
 				DA2908ED29757E9B005B0EFD /* SearchSceneFactory.swift */,
 				DAF2DE222974BDBE0055D6E3 /* SearchInteractor.swift */,
 				DA2908EF29757F29005B0EFD /* SearchRouter.swift */,
-				DAF2DE242974BF500055D6E3 /* SerachViewModel.swift */,
+				DAF2DE242974BF500055D6E3 /* SearchViewModel.swift */,
 				DA2908E9297575AD005B0EFD /* SearchView.swift */,
 				DA710BF9297497E100D0A444 /* SearchViewHostingController.swift */,
 			);
@@ -531,7 +531,7 @@
 				DA2909032975AC4C005B0EFD /* CornerRadius.swift in Sources */,
 				DA29090D2975B116005B0EFD /* PackageResult.swift in Sources */,
 				DA2909142975C3C0005B0EFD /* PackageListInteractor.swift in Sources */,
-				DAF2DE252974BF500055D6E3 /* SerachViewModel.swift in Sources */,
+				DAF2DE252974BF500055D6E3 /* SearchViewModel.swift in Sources */,
 				DA2909122975C3AB005B0EFD /* PackageListFactory.swift in Sources */,
 				DA2909192975C443005B0EFD /* PackageListRouter.swift in Sources */,
 				DAF2DE232974BDBE0055D6E3 /* SearchInteractor.swift in Sources */,

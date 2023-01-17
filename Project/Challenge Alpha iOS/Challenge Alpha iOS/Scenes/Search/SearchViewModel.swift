@@ -1,5 +1,5 @@
 //
-//  SerachViewModel.swift
+//  SearchViewModel.swift
 //  Challenge Alpha iOS
 //
 //  Created by Yuri Strack on 15/01/23.
