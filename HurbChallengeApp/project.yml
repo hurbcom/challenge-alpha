@@ -1,0 +1,37 @@
+name: HurbApp
+options:
+  deploymentTarget: 
+    iOS: 13.0
+  generateEmptyDirectories: true
+
+targets:
+
+  HurbApp:
+    deploymentTarget:
+      iOS: 13.0
+    type: application
+    platform: iOS
+    sources: HurbApp
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: hurb.com.Challenge-Alpha-iOS
+
+  HurbAppTests:
+    dependencies: 
+      - target: HurbApp
+    deploymentTarget: 
+      iOS: 13.0
+    type: bundle.unit-test
+    platform: iOS
+    sources: 
+      - path: HurbAppTests
+
+
+schemes:
+  HurbApp:
+    build:
+      targets:
+        HurbApp: all
+    test:
+      targets:
+        - name: HurbAppTests
+      gatherCoverageData: true
