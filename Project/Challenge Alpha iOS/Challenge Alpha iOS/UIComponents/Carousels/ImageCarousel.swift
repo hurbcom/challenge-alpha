@@ -30,7 +30,7 @@ struct ImageCarousel: View {
                 )
             }
         }
-        .frame(maxWidth: .infinity, minHeight: 200, maxHeight: self.maxHeight)
+        .frame(maxWidth: .infinity, minHeight: self.maxHeight, maxHeight: self.maxHeight)
         .tabViewStyle(.page(indexDisplayMode: .always))
     }
 }
