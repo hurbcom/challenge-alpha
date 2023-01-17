@@ -98,15 +98,25 @@ struct PackageResult: Codable {
             return item.label ?? ""
         }
         
+        let discountLabel = self.getDiscountString()
+        
+        if !discountLabel.isEmpty {
+            tagStrings.insert(discountLabel, at: 0)
+        }
+        
+        return tagStrings
+    }
+    
+    func getDiscountString() -> String {
         let amount = self.getFixedAmount()
         let originalAmount = self.getFixedOriginalAmount()
         
         if amount != originalAmount {
             let discount = 100 - ((originalAmount / amount) * 100)
             let discountLabel = String(format: "-%.0f", discount) + "%"
-            tagStrings.insert(discountLabel, at: 0)
+            return discountLabel
         }
         
-        return tagStrings
+        return ""
     }
 }
