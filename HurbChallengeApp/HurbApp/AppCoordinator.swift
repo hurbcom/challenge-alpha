@@ -17,7 +17,9 @@ final class AppCoordinator {
 
     func start() {
 
-        let rootViewController = HUViewController()
+        let viewModel = HUViewModel()
+
+        let rootViewController = HUViewController(viewModel: viewModel)
 
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()

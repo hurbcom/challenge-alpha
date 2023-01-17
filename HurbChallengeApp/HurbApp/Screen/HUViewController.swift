@@ -9,7 +9,10 @@ import UIKit
 
 class HUViewController: UIViewController {
 
-    init() {
+    private let viewModel: HUViewModelProtocol
+
+    init(viewModel: HUViewModelProtocol) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -21,6 +24,7 @@ class HUViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        viewModel.loadData()
     }
 
     private func setupView() {
