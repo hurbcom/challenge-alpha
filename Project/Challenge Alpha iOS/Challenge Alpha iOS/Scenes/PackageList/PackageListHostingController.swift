@@ -25,11 +25,16 @@ final class PackageListHostingController: UIHostingController<PackageListView> {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationBar()
+        self.setupNavigationBarItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupNavigationBarAppearance()
     }
     
     // MARK: Navigation Bar setup
-    private func setupNavigationBar() {
+    private func setupNavigationBarItems() {
         let rightBarItem = UIBarButtonItem(
             image: UIImage(systemName: "magnifyingglass"),
             style: .plain, target: self.viewModel,
@@ -38,8 +43,18 @@ final class PackageListHostingController: UIHostingController<PackageListView> {
         
         self.navigationItem.rightBarButtonItem = rightBarItem
         self.navigationItem.title = "Pacotes"
-        
-        self.navigationController?.navigationBar.tintColor = UIColor(named: UIConstants.COLOR_NAME.hurbBlue)
+    }
+    
+    private func setupNavigationBarAppearance() {
+        self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .white
+        appearance.backgroundEffect = .none
+        
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.compactAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }
