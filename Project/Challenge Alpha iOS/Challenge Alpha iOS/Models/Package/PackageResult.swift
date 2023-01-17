@@ -19,4 +19,5 @@ struct PackageResult: Codable {
     var address: Address?
     var gallery: [GalleryItem]?
     var amenities: [Amenity]?
+    var tags: [Tag]?
 }
