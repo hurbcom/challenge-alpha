@@ -11,6 +11,7 @@ import Foundation
 struct PackageResult: Codable {
     var sku: String?
     var name: String?
+    var description: String?
     var startDate: String?
     var endDate: String?
     var isAvailable: Bool?
