@@ -11,7 +11,7 @@ import Combine
 final class SearchViewModel: ObservableObject {
     // MARK: - Published variables
     @Published var serachResults: [SearchResult] = []
-    @Published var searchText: String = "Rio de Janeiro"
+    @Published var searchText: String = "Rio de Janeiro, Brasil"
     @Published var showLoading: Bool = true
     @Published var showError: Bool = false
     
@@ -30,7 +30,7 @@ final class SearchViewModel: ObservableObject {
     func onViewAppear() {
         self.interactor
             .getSearchResults(
-                query: "Rio de Janeiro",
+                query: "Rio de Janeiro, Brasil",
                 pagination: .init(
                     page: 1,
                     limit: 20,
