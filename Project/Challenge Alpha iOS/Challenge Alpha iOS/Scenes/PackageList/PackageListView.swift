@@ -121,31 +121,4 @@ struct PackageListView: View {
             action()
         }
     }
-    
-    @ViewBuilder
-    private func HULabel(imageName: String, title: String, fillColor: Color) -> some View {
-        HStack(spacing: 4) {
-            Image(systemName: imageName)
-                .font(.system(size: 14))
-                .foregroundColor(fillColor)
-            
-            Text("\(title)")
-                .font(.system(size: 14))
-                .foregroundColor(fillColor)
-        }
-    }
-    
-    @ViewBuilder
-    private func HUTagView(title: String, textColor: Color, backgroundColor: Color) -> some View {
-        Text(title)
-            .font(.system(size: 14, weight: .semibold))
-            .lineLimit(1)
-            .foregroundColor(textColor)
-            .padding(.vertical, 4)
-            .padding(.horizontal, 12)
-            .background(
-                backgroundColor
-            )
-            .cornerRadius(16)
-    }
 }

@@ -20,13 +20,15 @@
 		DA29090B2975B0C9005B0EFD /* SearchPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29090A2975B0C9005B0EFD /* SearchPackage.swift */; };
 		DA29090D2975B116005B0EFD /* PackageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29090C2975B116005B0EFD /* PackageResult.swift */; };
 		DA29090F2975B12D005B0EFD /* QuantityDescriptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29090E2975B12D005B0EFD /* QuantityDescriptors.swift */; };
-		DA29092B2975CDD2005B0EFD /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29092A2975CDD2005B0EFD /* LoadingModifier.swift */; };
 		DA2909122975C3AB005B0EFD /* PackageListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2909112975C3AB005B0EFD /* PackageListFactory.swift */; };
 		DA2909142975C3C0005B0EFD /* PackageListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2909132975C3C0005B0EFD /* PackageListInteractor.swift */; };
 		DA2909192975C443005B0EFD /* PackageListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2909182975C443005B0EFD /* PackageListRouter.swift */; };
 		DA29091C2975C563005B0EFD /* PackageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29091B2975C563005B0EFD /* PackageListView.swift */; };
 		DA29091E2975C58A005B0EFD /* PackageListHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29091D2975C58A005B0EFD /* PackageListHostingController.swift */; };
 		DA2909202975C5A4005B0EFD /* PackageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29091F2975C5A4005B0EFD /* PackageListViewModel.swift */; };
+		DA29092B2975CDD2005B0EFD /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29092A2975CDD2005B0EFD /* LoadingModifier.swift */; };
+		DA2B70BE2976F19F005FB2A3 /* HULabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70BD2976F19F005FB2A3 /* HULabel.swift */; };
+		DA2B70C12976F239005FB2A3 /* HUTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70C02976F239005FB2A3 /* HUTagView.swift */; };
 		DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF5297497E100D0A444 /* AppDelegate.swift */; };
 		DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF7297497E100D0A444 /* SceneDelegate.swift */; };
 		DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF9297497E100D0A444 /* SearchViewHostingController.swift */; };
@@ -77,13 +79,15 @@
 		DA29090A2975B0C9005B0EFD /* SearchPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPackage.swift; sourceTree = "<group>"; };
 		DA29090C2975B116005B0EFD /* PackageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageResult.swift; sourceTree = "<group>"; };
 		DA29090E2975B12D005B0EFD /* QuantityDescriptors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityDescriptors.swift; sourceTree = "<group>"; };
-		DA29092A2975CDD2005B0EFD /* LoadingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
 		DA2909112975C3AB005B0EFD /* PackageListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListFactory.swift; sourceTree = "<group>"; };
 		DA2909132975C3C0005B0EFD /* PackageListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListInteractor.swift; sourceTree = "<group>"; };
 		DA2909182975C443005B0EFD /* PackageListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListRouter.swift; sourceTree = "<group>"; };
 		DA29091B2975C563005B0EFD /* PackageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListView.swift; sourceTree = "<group>"; };
 		DA29091D2975C58A005B0EFD /* PackageListHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListHostingController.swift; sourceTree = "<group>"; };
 		DA29091F2975C5A4005B0EFD /* PackageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListViewModel.swift; sourceTree = "<group>"; };
+		DA29092A2975CDD2005B0EFD /* LoadingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
+		DA2B70BD2976F19F005FB2A3 /* HULabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HULabel.swift; sourceTree = "<group>"; };
+		DA2B70C02976F239005FB2A3 /* HUTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUTagView.swift; sourceTree = "<group>"; };
 		DA710BF2297497E100D0A444 /* Challenge Alpha iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA710BF5297497E100D0A444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA710BF7297497E100D0A444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				DA2908FB29759977005B0EFD /* UIConstants.swift */,
 				DA2908FD29759B20005B0EFD /* Buttons */,
 				DA2908FE29759B29005B0EFD /* Carousels */,
+				DA2B70BC2976F189005FB2A3 /* Labels */,
+				DA2B70BF2976F22A005FB2A3 /* Tags */,
 				DA2909292975CDBE005B0EFD /* ViewModifiers */,
 				DA2909012975AC1B005B0EFD /* Extensions */,
 			);
@@ -199,14 +205,6 @@
 			path = Package;
 			sourceTree = "<group>";
 		};
-		DA2909292975CDBE005B0EFD /* ViewModifiers */ = {
-			isa = PBXGroup;
-			children = (
-				DA29092A2975CDD2005B0EFD /* LoadingModifier.swift */,
-			);
-			path = ViewModifiers;
-			sourceTree = "<group>";
-		};
 		DA2909102975C394005B0EFD /* PackageList */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +216,30 @@
 				DA29091F2975C5A4005B0EFD /* PackageListViewModel.swift */,
 			);
 			path = PackageList;
+			sourceTree = "<group>";
+		};
+		DA2909292975CDBE005B0EFD /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				DA29092A2975CDD2005B0EFD /* LoadingModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		DA2B70BC2976F189005FB2A3 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				DA2B70BD2976F19F005FB2A3 /* HULabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		DA2B70BF2976F22A005FB2A3 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				DA2B70C02976F239005FB2A3 /* HUTagView.swift */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		DA710BE9297497E100D0A444 = {
@@ -478,6 +500,7 @@
 				DAF2DE122974ADA10055D6E3 /* Address.swift in Sources */,
 				DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */,
 				DA29091E2975C58A005B0EFD /* PackageListHostingController.swift in Sources */,
+				DA2B70BE2976F19F005FB2A3 /* HULabel.swift in Sources */,
 				DA2908EE29757E9B005B0EFD /* SearchSceneFactory.swift in Sources */,
 				DA2908F029757F29005B0EFD /* SearchRouter.swift in Sources */,
 				DAF2DE192974AEAA0055D6E3 /* Amenity.swift in Sources */,
@@ -498,6 +521,7 @@
 				DA29092B2975CDD2005B0EFD /* LoadingModifier.swift in Sources */,
 				DA2908EA297575AD005B0EFD /* SearchView.swift in Sources */,
 				DAF2DE0E2974AAF80055D6E3 /* SearchResult.swift in Sources */,
+				DA2B70C12976F239005FB2A3 /* HUTagView.swift in Sources */,
 				DA29090B2975B0C9005B0EFD /* SearchPackage.swift in Sources */,
 				DAF2DE102974AD070055D6E3 /* Price.swift in Sources */,
 				DA2908F829758FF1005B0EFD /* ImageCarousel.swift in Sources */,
