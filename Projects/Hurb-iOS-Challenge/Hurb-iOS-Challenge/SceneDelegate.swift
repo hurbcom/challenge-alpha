@@ -20,9 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         /// Initialize the `SearchProductViewController` as the rootViewController:
         let storyboard: UIStoryboard = UIStoryboard(name: "SearchProduct", bundle: nil)
-        let navigationController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "SearchProductNavigationController") as! UINavigationController
+        let navigationController: UINavigationController? = storyboard.instantiateViewController(withIdentifier: "SearchProductNavigationController") as? UINavigationController
         
-        if let controller: SearchProductViewController = navigationController.viewControllers.first as? SearchProductViewController {
+        if let controller: SearchProductViewController = navigationController?.viewControllers.first as? SearchProductViewController {
             
             SearchProductConfigurator.setupArch(viewController: controller)
             
