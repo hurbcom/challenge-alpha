@@ -4,17 +4,21 @@ options:
     iOS: 13.0
   generateEmptyDirectories: true
 
-targets:
+packages:
+  HUGraphQL:
+    path: ../Modules/HUNetwork
 
+targets:
   HurbApp:
-    deploymentTarget:
-      iOS: 13.0
     type: application
     platform: iOS
+    deploymentTarget:
+      iOS: 13.0
     sources: HurbApp
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: hurb.com.Challenge-Alpha-iOS
-
+    dependencies:
+      - package: HUGraphQL
   HurbAppTests:
     dependencies: 
       - target: HurbApp
@@ -24,7 +28,6 @@ targets:
     platform: iOS
     sources: 
       - path: HurbAppTests
-
 
 schemes:
   HurbApp:
