@@ -16,15 +16,15 @@ struct PackageListView: View {
             VStack(alignment: .leading, spacing: 12) {
                 ForEach(0..<viewModel.packages.count, id: \.self) { index in
                     PackageCardView(
-                        city: viewModel.packages[index].address?.city ?? "",
-                        country: viewModel.packages[index].address?.country ?? "",
-                        name: viewModel.packages[index].name ?? "",
-                        duration: viewModel.packages[index].quantityDescriptors?.duration ?? 0,
-                        maxPeople: viewModel.packages[index].quantityDescriptors?.maxPeople ?? 0,
-                        amount: viewModel.packages[index].price?.amount ?? 0.0,
-                        originalAmount: viewModel.packages[index].price?.originalAmount ?? 0.0,
-                        tags: viewModel.getTagsForPackage(at: index),
-                        imagesURL: viewModel.getImagesURLForPackage(at: index),
+                        city: viewModel.packages[index].getCity(),
+                        country: viewModel.packages[index].getCountry(),
+                        name: viewModel.packages[index].getName(),
+                        duration: viewModel.packages[index].getDuration(),
+                        maxPeople: viewModel.packages[index].getMaxPeople(),
+                        amount: viewModel.packages[index].getFormattedAmount(),
+                        originalAmount: viewModel.packages[index].getFormattedOriginalAmount(),
+                        tags: viewModel.packages[index].getTags(),
+                        imagesURL: viewModel.packages[index].getImagesURL(),
                         action: {}
                     )
                 }

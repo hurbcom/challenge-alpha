@@ -58,42 +58,6 @@ final class PackageListViewModel: ObservableObject {
     }
     
     // MARK: - Helpers
-    // TODO: Move Model related functions to Model struct
-    func getImagesURLForPackage(at index: Int) -> [String] {
-        let packageResult: PackageResult = self.packages[index]
-        guard let gallery = packageResult.gallery else {
-            // TODO: Add log
-            return []
-        }
-        
-        let urls = gallery.map { item -> String in
-            return item.url ?? ""
-        }
-        
-        return urls
-    }
-    
-    func getTagsForPackage(at index: Int) -> [String] {
-        let packageResult: PackageResult = self.packages[index]
-        guard let tags = packageResult.tags else {
-            // TODO: Add log
-            return []
-        }
-        
-        var tagStrings = tags.map { item -> String in
-            return item.label ?? ""
-        }
-        
-        if let amount = packageResult.price?.amount, let originalAmount = packageResult.price?.originalAmount,
-           amount != originalAmount {
-            let discount = 100 - (((originalAmount / 100) / ( amount / 100)) * 100)
-            let discountLabel = String(format: "-%.0f", discount) + "%"
-            tagStrings.insert(discountLabel, at: 0)
-        }
-        
-        return tagStrings
-    }
-    
     private func hideLoading() {
         self.showLoading = false
     }

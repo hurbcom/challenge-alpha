@@ -15,8 +15,8 @@ struct PackageCardView: View {
     var name: String
     var duration: Int
     var maxPeople: Int
-    var amount: Double
-    var originalAmount: Double
+    var amount: String
+    var originalAmount: String
     var tags: [String]
     var imagesURL: [String]
     var action: (() -> Void)
@@ -104,13 +104,13 @@ struct PackageCardView: View {
                 .font(.system(size: 14))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
             +
-            Text("\(originalAmount != amount ? "R$ \(String(format: "%.0f", amount / 100))" : "")")
+            Text("\(originalAmount != amount ? amount : "")")
                 .strikethrough()
                 .font(.system(size: 14))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
             
             // Amount
-            Text("R$ \(String(format: "%.0f", originalAmount / 100))")
+            Text(originalAmount)
                 .font(.system(size: 18, weight: .bold))
                 .foregroundColor(originalAmount != amount ? UIConstants.COLOR.hurbOrange : .black)
             +
