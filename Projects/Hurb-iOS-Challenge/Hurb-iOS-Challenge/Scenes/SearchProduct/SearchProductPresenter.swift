@@ -15,6 +15,7 @@ import UIKit
 protocol SearchProductPresentationLogic {
     
     func presentNewProducts(response: SearchProduct.Query.Response)
+    func presentNoSearchResultsView()
     func presentFirstPageSkeletonView()
     func presentErrorAlert()
 }
@@ -34,6 +35,11 @@ class SearchProductPresenter: SearchProductPresentationLogic {
         
         let viewModel = SearchProduct.Query.ViewModel(pagination: response.pagination, products: response.products)
         self.viewController?.displayNewProducts(viewModel: viewModel)
+    }
+    
+    func presentNoSearchResultsView() {
+        
+        self.viewController?.displayNoSearchResultsView()
     }
     
     func presentFirstPageSkeletonView() {

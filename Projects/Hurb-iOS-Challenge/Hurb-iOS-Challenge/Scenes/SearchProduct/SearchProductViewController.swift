@@ -17,6 +17,7 @@ import SkeletonView
 protocol SearchProductDisplayLogic: AnyObject {
     
     func displayNewProducts(viewModel: SearchProduct.Query.ViewModel)
+    func displayNoSearchResultsView()
     func displayFirstPageSkeletonView()
     func displayErrorAlert()
 }
@@ -70,7 +71,7 @@ class SearchProductViewController: UIViewController {
     private lazy var dataSource: UICollectionViewDiffableDataSource<Section.ID, Item.ID>! = nil
     private lazy var itemsStore: AnyModelStore<Item> = AnyModelStore([])
     
-    private lazy var searchController = UISearchController(searchResultsController: nil)
+    private var searchController: UISearchController?
     private lazy var page: Int = 1
     private lazy var limit: Int = 15
     private lazy var hasNext: Bool = true
@@ -85,7 +86,7 @@ class SearchProductViewController: UIViewController {
         self.setupSearchController()
         self.configureHierarchy()
         self.configureDataSource()
-        //self.load()
+        self.load()
     }
     
     // MARK: Routing
@@ -97,10 +98,18 @@ class SearchProductViewController: UIViewController {
     
     private func setupSearchController() {
         
+        let storyboard: UIStoryboard = UIStoryboard(name: "SearchLocation", bundle: nil)
+        let searchLocationViewController: SearchLocationViewController? = storyboard.instantiateViewController(withIdentifier: "SearchLocationViewController") as? SearchLocationViewController
+        
+        self.searchController = UISearchController(searchResultsController: searchLocationViewController)
+        //self.searchController?.obscuresBackgroundDuringPresentation = true
+        //self.searchController?.showsSearchResultsController = true
+        self.searchController?.searchBar.searchTextField.placeholder = "Vai pra onde?"
+        self.searchController?.searchBar.delegate = self
+        self.searchController?.searchResultsUpdater = self
+        self.searchController?.delegate = self
+        
         self.navigationItem.searchController = self.searchController
-        self.searchController.obscuresBackgroundDuringPresentation = false
-        self.searchController.searchBar.placeholder = "Buscar produtos em..."
-        self.searchController.searchBar.delegate = self
     }
     
     // MARK: Configure Hierarchy
@@ -117,6 +126,11 @@ class SearchProductViewController: UIViewController {
         self.collectionView.register(
             EmptyProductsCollectionViewCell.nib,
             forCellWithReuseIdentifier: EmptyProductsCollectionViewCell.cellIdentifier
+        )
+        
+        self.collectionView.register(
+            NoSearchResultsCollectionViewCell.nib,
+            forCellWithReuseIdentifier: NoSearchResultsCollectionViewCell.cellIdentifier
         )
     }
     
@@ -158,7 +172,7 @@ class SearchProductViewController: UIViewController {
                 return cell
             }
             
-            if let _ = item as? Section.Identifier {
+            if let section = item as? Section.Identifier, section == .empty {
                 
                 guard let cell: EmptyProductsCollectionViewCell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: EmptyProductsCollectionViewCell.cellIdentifier,
@@ -168,15 +182,25 @@ class SearchProductViewController: UIViewController {
                 return cell
             }
             
+            if let section = item as? Section.Identifier, section == .noSearchResults {
+                
+                guard let cell: NoSearchResultsCollectionViewCell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: NoSearchResultsCollectionViewCell.cellIdentifier,
+                    for: indexPath
+                ) as? NoSearchResultsCollectionViewCell else { return nil }
+                            
+                return cell
+            }
+            
             return nil
         }
         
         var snapshot = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
         snapshot.appendSections([Section.Identifier.empty])
-        
+
         let item: Item = Item(id: UUID(), item: Section.Identifier.empty)
         self.itemsStore.append([item])
-        
+
         snapshot.appendItems([item.id], toSection: .empty)
 
         self.dataSource.apply(snapshot, animatingDifferences: false)
@@ -186,7 +210,7 @@ class SearchProductViewController: UIViewController {
     
     func load() {
         
-        let request = SearchProduct.Query.Request(term: "punta cana", page: self.page, limit: self.limit)
+        let request = SearchProduct.Query.Request(term: "asuhdauhs", page: self.page, limit: self.limit)
         self.interactor?.searchProducts(request: request)
     }
 }
@@ -195,7 +219,7 @@ extension SearchProductViewController: SearchProductDisplayLogic {
 
     func displayNewProducts(viewModel: SearchProduct.Query.ViewModel) {
         
-        self.hasNext = viewModel.pagination.hasNext
+        self.hasNext = viewModel.pagination?.hasNext ?? false
         
         var snapshot = self.dataSource.snapshot()
         let itens = viewModel.products.compactMap({ Item(id: UUID(), item: $0) })
@@ -213,6 +237,25 @@ extension SearchProductViewController: SearchProductDisplayLogic {
         self.dataSource.apply(snapshot, animatingDifferences: false)
     }
     
+    func displayNoSearchResultsView() {
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
+
+        if snapshot.indexOfSection(.noSearchResults) == nil {
+            
+            snapshot.deleteAllItems()
+            snapshot.appendSections([Section.Identifier.noSearchResults])
+        }
+        
+        let item: Item = Item(id: UUID(), item: Section.Identifier.noSearchResults)
+        self.itemsStore.append([item])
+        
+        snapshot.appendItems([item.id], toSection: .noSearchResults)
+
+        self.collectionView.hideSkeleton()
+        self.dataSource.apply(snapshot, animatingDifferences: false)
+    }
+    
     func displayFirstPageSkeletonView() {
         
         self.collectionView.showAnimatedGradientSkeleton(transition: .none)
@@ -223,15 +266,16 @@ extension SearchProductViewController: SearchProductDisplayLogic {
     }
 }
 
-extension SearchProductViewController: UISearchBarDelegate {
-
-}
-
 extension SearchProductViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        if indexPath.row > (self.page * self.limit) - 10 && self.hasNext {
+        let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+
+        if indexPath.row > (self.page * self.limit) - 10 &&
+            self.hasNext &&
+            section != .empty &&
+            section != .noSearchResults {
             
             self.page += 1
             self.hasNext = false
@@ -239,4 +283,25 @@ extension SearchProductViewController: UICollectionViewDelegate {
             self.interactor?.searchProducts(request: request)
         }
     }
+}
+
+extension SearchProductViewController: UISearchBarDelegate {
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        // User tapped the Done button in the keyboard.
+        self.searchController?.dismiss(animated: true, completion: nil)
+        searchBar.text = ""
+    }
+}
+
+extension SearchProductViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+}
+
+extension SearchProductViewController: UISearchControllerDelegate {
+    
 }

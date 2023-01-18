@@ -27,13 +27,13 @@ enum SearchProduct {
         
         struct Response {
             
-            var pagination: Pagination
+            var pagination: Pagination?
             var products: [Product]
         }
         
         struct ViewModel {
             
-            var pagination: Pagination
+            var pagination: Pagination?
             var products: [Product]
         }
     }

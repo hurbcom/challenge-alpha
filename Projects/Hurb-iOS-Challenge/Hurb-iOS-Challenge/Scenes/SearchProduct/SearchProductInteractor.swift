@@ -49,11 +49,17 @@ class SearchProductInteractor: SearchProductBusinessLogic, SearchProductDataStor
                     
                 case .success(let container):
                     
-                    let response = SearchProduct.Query.Response(pagination: container.pagination, products: container.products)
-                    self.presenter?.presentNewProducts(response: response)
+                    if let products: [Product] = container.products, products.count > 0 {
+                        
+                        let response = SearchProduct.Query.Response(pagination: container.pagination, products: products)
+                        self.presenter?.presentNewProducts(response: response)
+                    } else if request.page <= 1 {
+                        
+                        self.presenter?.presentNoSearchResultsView()
+                    }
                     break
                     
-                case .failure(let error):
+                case .failure( _):
                     self.presenter?.presentErrorAlert()
                     break
             }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NoSearchResultsCollectionViewCell" id="Gga-5H-cWQ" customClass="NoSearchResultsCollectionViewCell" customModule="Hurb_iOS_Challenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="532"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="384" height="532"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exb-iy-0nN">
+                        <rect key="frame" x="16" y="64" width="352" height="99.666666666666686"/>
+                        <subviews>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sem resultados para a busca" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msl-vv-XFt">
+                                <rect key="frame" x="0.0" y="0.0" width="352" height="26.333333333333332"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="textColor" name="Black-100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pesquisamos por toda parte e não encontramos nada que corresponda à sua pesquisa" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIw-se-Bha">
+                                <rect key="frame" x="16" y="42.333333333333329" width="320" height="57.333333333333329"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" name="Black-100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BIw-se-Bha" firstAttribute="top" secondItem="msl-vv-XFt" secondAttribute="bottom" constant="16" id="4xH-Rd-Wig"/>
+                            <constraint firstItem="BIw-se-Bha" firstAttribute="leading" secondItem="Exb-iy-0nN" secondAttribute="leading" constant="16" id="6O7-Kr-RW1"/>
+                            <constraint firstItem="msl-vv-XFt" firstAttribute="top" secondItem="Exb-iy-0nN" secondAttribute="top" id="DuU-W0-fdh"/>
+                            <constraint firstAttribute="trailing" secondItem="msl-vv-XFt" secondAttribute="trailing" id="I0b-Tu-LBp"/>
+                            <constraint firstAttribute="trailing" secondItem="BIw-se-Bha" secondAttribute="trailing" constant="16" id="YBo-ji-Nzk"/>
+                            <constraint firstAttribute="bottom" secondItem="BIw-se-Bha" secondAttribute="bottom" id="gs1-Rz-ghc"/>
+                            <constraint firstItem="msl-vv-XFt" firstAttribute="leading" secondItem="Exb-iy-0nN" secondAttribute="leading" id="lAw-NG-zbX"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-results-image" translatesAutoresizingMaskIntoConstraints="NO" id="zyU-re-Nkg">
+                        <rect key="frame" x="49.666666666666657" y="195.66666666666663" width="285" height="234"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="234" id="Xmy-TC-Y4h"/>
+                            <constraint firstAttribute="width" constant="285" id="hCc-HG-XgW"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ODh-ii-bAS"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Exb-iy-0nN" firstAttribute="centerX" secondItem="Gga-5H-cWQ" secondAttribute="centerX" id="2U9-Rn-mr4"/>
+                <constraint firstItem="Exb-iy-0nN" firstAttribute="top" secondItem="Gga-5H-cWQ" secondAttribute="top" constant="64" id="7Pf-Og-2n5"/>
+                <constraint firstAttribute="trailing" secondItem="Exb-iy-0nN" secondAttribute="trailing" constant="16" id="QLm-cA-gMj"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zyU-re-Nkg" secondAttribute="bottom" constant="32" id="W0V-YL-R0y"/>
+                <constraint firstItem="zyU-re-Nkg" firstAttribute="centerX" secondItem="Gga-5H-cWQ" secondAttribute="centerX" id="dEP-hU-ELE"/>
+                <constraint firstItem="Exb-iy-0nN" firstAttribute="leading" secondItem="Gga-5H-cWQ" secondAttribute="leading" constant="16" id="mYL-ZZ-Zzp"/>
+                <constraint firstItem="zyU-re-Nkg" firstAttribute="top" secondItem="Exb-iy-0nN" secondAttribute="bottom" constant="32" id="tL5-F5-Lqb"/>
+            </constraints>
+            <size key="customSize" width="384" height="532"/>
+            <point key="canvasLocation" x="61.068702290076331" y="189.43661971830986"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="no-results-image" width="310" height="254"/>
+        <namedColor name="Black-100">
+            <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

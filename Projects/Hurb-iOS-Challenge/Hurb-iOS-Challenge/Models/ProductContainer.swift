@@ -15,8 +15,8 @@ struct ProductContainer: Codable {
         case products = "results"
     }
     
-    let pagination: Pagination
-    let products: [Product]
+    let pagination: Pagination?
+    let products: [Product]?
 }
 
 // Decode methods
@@ -26,7 +26,7 @@ extension ProductContainer {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        self.pagination = try container.decode(Pagination.self, forKey: .pagination)
-        self.products = try container.decode([Product].self, forKey: .products)
+        self.pagination = try? container.decodeIfPresent(Pagination.self, forKey: .pagination)
+        self.products = try? container.decodeIfPresent([Product].self, forKey: .products)
     }
 }
