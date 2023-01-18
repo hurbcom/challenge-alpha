@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
         searchTextField.clearButtonMode = .whileEditing
         searchTextField.leftViewMode = .always
         searchTextField.leftView = UIImageView(image: .searchIcon)
+        searchTextField.textPadding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
         return searchTextField
     }()
 
