@@ -57,6 +57,8 @@ final class ProductDetailViewController: UIViewController {
         present(ac, animated: true)
     }
     
+    // MARK: - Private
+    
     private func embedScrollViewController() {
         addChild(scrollViewController)
         view.addSubview(scrollViewController.view)
@@ -102,10 +104,14 @@ final class ProductDetailViewController: UIViewController {
         ))
     }
     
+    // MARK: - Method
+    
     func verifyIfItemIsFavorite() {
         viewModel.verifyIfItemIsFavorite()
     }
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension ProductDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -123,6 +129,8 @@ extension ProductDetailViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegate
+
 extension ProductDetailViewController: UICollectionViewDelegate {
     // TODO
 }
@@ -136,6 +144,9 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
         CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
 }
+
+
+// MARK: - Protocol
 
 extension ProductDetailViewController: ProductDetailViewModelDelegate {
     func removeItemFromList() {

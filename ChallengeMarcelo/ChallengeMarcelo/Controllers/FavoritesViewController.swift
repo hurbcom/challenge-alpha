@@ -1,9 +1,15 @@
 import UIKit
 
 final class FavoritesViewController: UIViewController {
-
+    // MARK: UI
+    
     lazy var screenView = FavoritesView()
+    
+    // MARK: Properties
+    
     var arrayData = UserDefaults.standard.array(forKey: "favorites") as? [Data] ?? [Data]()
+    
+    // MARK: Override
     
     override func loadView() {
         view = screenView
@@ -15,6 +21,8 @@ final class FavoritesViewController: UIViewController {
         screenView.tableView.register(ProductListCell.self, forCellReuseIdentifier: "HomeCell")
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -15,7 +15,7 @@ final class ProductListViewModel {
     weak var delegate: ProductListViewModelDelegate?
 
     // MARK: Public
-
+    // Procurar hotel a partir de uma cidade/estado/país
     func searchHotels(in place: String) {
         service.performHotel(search: place) { [weak self] in
             guard let self else { return }
@@ -57,6 +57,7 @@ final class ProductListViewModel {
         }
     }
     
+    // procurar um pacote de viagem a partir de uma cidade/estado/país
     func searchPackages(in place: String) {
         service.performPackage(search: place) { [weak self] in
             guard let self else { return }
@@ -97,7 +98,7 @@ final class ProductListViewModel {
             }
         }
     }
-    
+    // salvar um produto na lista de historico ao clicar na celula
     func didTapCell(product: Product) {
         do {
             let objectData = try JSONEncoder().encode(product)

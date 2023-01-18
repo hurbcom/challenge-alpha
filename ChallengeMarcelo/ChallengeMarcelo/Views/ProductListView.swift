@@ -6,6 +6,8 @@ final class ProductListView: UIView {
     let segmentedControl = UISegmentedControl(items: ["Hoteis", "Pacotes"])
     let hurbBlue = UIColor(red: 42/255, green: 99/255, blue: 241/255, alpha: 1)
 
+    // MARK: Init
+    
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
@@ -14,6 +16,8 @@ final class ProductListView: UIView {
         setupUI()
         setupConstraints()
     }
+    
+    // MARK: Private
     
     private func disableAutoresizingMaskIntoConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false

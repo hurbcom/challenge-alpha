@@ -12,6 +12,8 @@ final class ProductDetailViewModel {
     var suggestions = [Suggestion]()
     private let service = Service.shared
     
+    // MARK: Delegate
+    
     weak var delegate: ProductDetailViewModelDelegate?
     
     // MARK: Init
@@ -20,6 +22,8 @@ final class ProductDetailViewModel {
         self.model = model
     }
     
+    // MARK: Public
+   // trás uma lista de sugestões baseado na busca do usuário
     func performSuggestions() {
         service.performSuggestion(queryString: model.address.city) { [weak self] result in
             guard let self else { return }
@@ -43,6 +47,7 @@ final class ProductDetailViewModel {
         }
     }
     
+    // salva um produto ao clicar no botao, ou remove caso já esteja salvo
     func didTapFavorite() {
         do {
             let objectData = try JSONEncoder().encode(model)
@@ -72,6 +77,7 @@ final class ProductDetailViewModel {
         }
     }
     
+    // verifica se já está salvo na lista o produto e modifica a imagem do botao
     func verifyIfItemIsFavorite() {
         if let favorites = UserDefaults.standard.array(forKey: "favorites") as? [Data] {
             let existingItem = favorites.first { data in

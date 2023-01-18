@@ -14,6 +14,10 @@ final class ProductListCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         setupUI()
+        disableAutoresizingMaskIntoConstraints()
+        addSubViews()
+        setupConstraints()
+        
     }
     
     required init?(coder: NSCoder) { nil }
@@ -44,13 +48,6 @@ final class ProductListCell: UITableViewCell {
         smallAddressLabel.font = .systemFont(ofSize: 14.0)
         
         smallAddressLabel.textColor = .darkGray
-        
-        cardView.translatesAutoresizingMaskIntoConstraints = false
-        photoView.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        priceLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        smallAddressLabel.translatesAutoresizingMaskIntoConstraints = false
 
         cardView.layer.shadowColor = UIColor(red: 42/255, green: 99/255, blue: 241/255, alpha: 1).cgColor
         cardView.layer.shadowOffset = .zero
@@ -59,14 +56,27 @@ final class ProductListCell: UITableViewCell {
 
         cardView.layer.cornerRadius = 10
         cardView.backgroundColor = .white
-        
+    }
+    
+    private func addSubViews() {
         cardView.addSubview(photoView)
         cardView.addSubview(titleLabel)
         cardView.addSubview(priceLabel)
         cardView.addSubview(descriptionLabel)
         cardView.addSubview(smallAddressLabel)
         contentView.addSubview(cardView)
-
+    }
+    
+    private func disableAutoresizingMaskIntoConstraints() {
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        photoView.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        smallAddressLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             photoView.topAnchor.constraint(equalTo: cardView.topAnchor),
             photoView.leftAnchor.constraint(equalTo: cardView.leftAnchor),
@@ -95,6 +105,8 @@ final class ProductListCell: UITableViewCell {
             cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
         ])
     }
+    
+    // MARK: Method
     
     func setupCell(product: Product) {
         titleLabel.text = product.name

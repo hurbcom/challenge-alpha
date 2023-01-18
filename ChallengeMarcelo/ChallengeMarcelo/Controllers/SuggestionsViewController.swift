@@ -1,16 +1,23 @@
 import UIKit
 
 final class SuggestionsViewController: UIViewController {
-
+    // MARK: UI
+    
     lazy var screenView = SuggestionView()
+    
+    // MARK: Properties
+    
     let viewModel: SuggestionsViewModel
     
+    // MARK: INIT
     init(model: [Suggestion]) {
         self.viewModel = SuggestionsViewModel(model: model)
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) { nil }
+  
+    // MARK: Override
     
     override func loadView() {
         view = screenView
@@ -24,9 +31,13 @@ final class SuggestionsViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension SuggestionsViewController: UITableViewDelegate {
 
 }
+
+// MARK: - UITableViewDataSource
 
 extension SuggestionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

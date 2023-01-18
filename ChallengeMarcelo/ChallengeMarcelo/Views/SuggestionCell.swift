@@ -9,7 +9,9 @@ final class SuggestionCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
+        addSubviews()
         setupUI()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) { nil }
@@ -36,9 +38,19 @@ final class SuggestionCell: UITableViewCell {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         smallAddressLabel.translatesAutoresizingMaskIntoConstraints = false
         
+    }
+    
+    private func addSubviews() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(smallAddressLabel)
+    }
+    
+    func setupCell(suggestion: Suggestion) {
+        titleLabel.text = suggestion.text
+        smallAddressLabel.text = suggestion.suggestionType.capitalized
+    }
 
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
@@ -49,10 +61,4 @@ final class SuggestionCell: UITableViewCell {
             smallAddressLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
-    
-    func setupCell(suggestion: Suggestion) {
-        titleLabel.text = suggestion.text
-        smallAddressLabel.text = suggestion.suggestionType.capitalized
-    }
-
 }

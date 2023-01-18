@@ -20,6 +20,8 @@ final class ProductDetailView: UIView {
     let suggestionButton = UIButton()
     let favoriteButton = UIButton()
     
+    // MARK: Init
+    
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
@@ -29,9 +31,9 @@ final class ProductDetailView: UIView {
         setupConstraints()
     }
     
+    // MARK: Private
+    
     private func addSubviews() {
-
-        
         addSubview(mapView)
         addSubview(titleLabel)
         addSubview(priceLabel)

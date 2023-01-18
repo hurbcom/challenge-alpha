@@ -106,7 +106,7 @@ extension ProductListController: UITableViewDataSource {
     }
 }
 
-// MARK: - HomeViewModelDelegate
+// MARK: - Protocol
 
 extension ProductListController: ProductListViewModelDelegate {
     func didUpdate() {

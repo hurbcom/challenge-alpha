@@ -1,9 +1,15 @@
 import UIKit
 
 final class HistoryViewController: UIViewController {
-
+    // MARK: UI
+    
     lazy var screenView = HistoryView()
+    
+    // MARK: Properties
+    
     var arrayData = UserDefaults.standard.array(forKey: "myHistory") as? [Data] ?? [Data]()
+    
+    // MARK: Override
     
     override func loadView() {
         view = screenView
@@ -15,6 +21,8 @@ final class HistoryViewController: UIViewController {
         screenView.tableView.register(ProductListCell.self, forCellReuseIdentifier: "HomeCell")
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension HistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

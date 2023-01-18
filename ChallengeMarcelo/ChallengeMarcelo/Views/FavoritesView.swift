@@ -4,6 +4,8 @@ final class FavoritesView: UIView {
     let welcomeLabel = UILabel()
     let tableView = UITableView()
     
+    // MARK: Init
+    
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
