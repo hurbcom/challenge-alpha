@@ -18,6 +18,19 @@
 		FBD4D4702975F46B005AF2C9 /* BaseViewHierarchyRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D46F2975F46B005AF2C9 /* BaseViewHierarchyRelation.swift */; };
 		FBD4D4722975F8CE005AF2C9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D4712975F8CE005AF2C9 /* UIView+Extensions.swift */; };
 		FBD4D4742975F900005AF2C9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D4732975F900005AF2C9 /* UIColor+Extensions.swift */; };
+		FBD4D4782975FA23005AF2C9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D4772975FA23005AF2C9 /* HomeView.swift */; };
+		FBD4D47A2975FA6A005AF2C9 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D4792975FA6A005AF2C9 /* HomeViewCell.swift */; };
+		FBD4D47C2975FA79005AF2C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D47B2975FA79005AF2C9 /* HomeViewController.swift */; };
+		FBD4D48B29771458005AF2C9 /* hotel.json in Resources */ = {isa = PBXBuildFile; fileRef = FBD4D48A29771457005AF2C9 /* hotel.json */; };
+		FBD4D48D2977146F005AF2C9 /* package.json in Resources */ = {isa = PBXBuildFile; fileRef = FBD4D48C2977146F005AF2C9 /* package.json */; };
+		FBD4D48F29772A91005AF2C9 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D48E29772A91005AF2C9 /* ViewCodable.swift */; };
+		FBD4D49129773F8A005AF2C9 /* ResponseHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D49029773F8A005AF2C9 /* ResponseHotel.swift */; };
+		FBD4D493297742C4005AF2C9 /* ResponsePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D492297742C3005AF2C9 /* ResponsePackage.swift */; };
+		FBD4D4962977508D005AF2C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D4952977508D005AF2C9 /* AppDelegate.swift */; };
+		FBD4D4982977509F005AF2C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D4972977509F005AF2C9 /* SceneDelegate.swift */; };
+		FBD4D49B2977522B005AF2C9 /* CityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D49A2977522B005AF2C9 /* CityDetailsView.swift */; };
+		FBD4D49D29775247005AF2C9 /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D49C29775247005AF2C9 /* CityDetailsViewController.swift */; };
+		FBD4D49F297756A8005AF2C9 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4D49E297756A8005AF2C9 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +47,19 @@
 		FBD4D46F2975F46B005AF2C9 /* BaseViewHierarchyRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewHierarchyRelation.swift; sourceTree = "<group>"; };
 		FBD4D4712975F8CE005AF2C9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		FBD4D4732975F900005AF2C9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FBD4D4772975FA23005AF2C9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FBD4D4792975FA6A005AF2C9 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		FBD4D47B2975FA79005AF2C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FBD4D48A29771457005AF2C9 /* hotel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hotel.json; path = ../../../examples/hotel.json; sourceTree = "<group>"; };
+		FBD4D48C2977146F005AF2C9 /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = package.json; path = ../../../examples/package.json; sourceTree = "<group>"; };
+		FBD4D48E29772A91005AF2C9 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
+		FBD4D49029773F8A005AF2C9 /* ResponseHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHotel.swift; sourceTree = "<group>"; };
+		FBD4D492297742C3005AF2C9 /* ResponsePackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsePackage.swift; sourceTree = "<group>"; };
+		FBD4D4952977508D005AF2C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBD4D4972977509F005AF2C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FBD4D49A2977522B005AF2C9 /* CityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsView.swift; sourceTree = "<group>"; };
+		FBD4D49C29775247005AF2C9 /* CityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
+		FBD4D49E297756A8005AF2C9 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +77,7 @@
 		315562382734184A00E1C17C = {
 			isa = PBXGroup;
 			children = (
+				FBD4D4942977506C005AF2C9 /* AppDelegate */,
 				FBD4D46B2975DD63005AF2C9 /* Extensions */,
 				FBD4D4692975DD4E005AF2C9 /* Model */,
 				FBD4D4682975DD40005AF2C9 /* View */,
@@ -117,6 +144,10 @@
 		FBD4D4692975DD4E005AF2C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FBD4D49029773F8A005AF2C9 /* ResponseHotel.swift */,
+				FBD4D48A29771457005AF2C9 /* hotel.json */,
+				FBD4D492297742C3005AF2C9 /* ResponsePackage.swift */,
+				FBD4D48C2977146F005AF2C9 /* package.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,6 +155,7 @@
 		FBD4D46A2975DD5A005AF2C9 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				FBD4D49929775208005AF2C9 /* CityDetails */,
 				FBD4D4752975F97A005AF2C9 /* Home */,
 				FBD4D46C2975DF8E005AF2C9 /* BaseView */,
 			);
@@ -135,6 +167,7 @@
 			children = (
 				FBD4D4712975F8CE005AF2C9 /* UIView+Extensions.swift */,
 				FBD4D4732975F900005AF2C9 /* UIColor+Extensions.swift */,
+				FBD4D49E297756A8005AF2C9 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +177,7 @@
 			children = (
 				FBD4D46D2975F1A6005AF2C9 /* BaseViewPipeline.swift */,
 				FBD4D46F2975F46B005AF2C9 /* BaseViewHierarchyRelation.swift */,
+				FBD4D48E29772A91005AF2C9 /* ViewCodable.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -151,8 +185,29 @@
 		FBD4D4752975F97A005AF2C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FBD4D4772975FA23005AF2C9 /* HomeView.swift */,
+				FBD4D4792975FA6A005AF2C9 /* HomeViewCell.swift */,
+				FBD4D47B2975FA79005AF2C9 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FBD4D4942977506C005AF2C9 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FBD4D4952977508D005AF2C9 /* AppDelegate.swift */,
+				FBD4D4972977509F005AF2C9 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FBD4D49929775208005AF2C9 /* CityDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FBD4D49A2977522B005AF2C9 /* CityDetailsView.swift */,
+				FBD4D49C29775247005AF2C9 /* CityDetailsViewController.swift */,
+			);
+			path = CityDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +271,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD4D48B29771458005AF2C9 /* hotel.json in Resources */,
 				3155626A2734184C00E1C17C /* Assets.xcassets in Resources */,
+				FBD4D48D2977146F005AF2C9 /* package.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,15 +284,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD4D493297742C4005AF2C9 /* ResponsePackage.swift in Sources */,
 				315562682734184C00E1C17C /* ContentView.swift in Sources */,
 				315615D32734444A009FF312 /* ResultRenderViewModel.swift in Sources */,
 				315615CF27343D42009FF312 /* Manager.swift in Sources */,
+				FBD4D4782975FA23005AF2C9 /* HomeView.swift in Sources */,
 				FBD4D4702975F46B005AF2C9 /* BaseViewHierarchyRelation.swift in Sources */,
+				FBD4D49D29775247005AF2C9 /* CityDetailsViewController.swift in Sources */,
+				FBD4D48F29772A91005AF2C9 /* ViewCodable.swift in Sources */,
+				FBD4D4982977509F005AF2C9 /* SceneDelegate.swift in Sources */,
+				FBD4D47A2975FA6A005AF2C9 /* HomeViewCell.swift in Sources */,
+				FBD4D49F297756A8005AF2C9 /* UIImageView+Extensions.swift in Sources */,
+				FBD4D49B2977522B005AF2C9 /* CityDetailsView.swift in Sources */,
+				FBD4D4962977508D005AF2C9 /* AppDelegate.swift in Sources */,
 				FBD4D46E2975F1A6005AF2C9 /* BaseViewPipeline.swift in Sources */,
 				315562662734184C00E1C17C /* Challenge_Alpha_iOSApp.swift in Sources */,
 				FBD4D4722975F8CE005AF2C9 /* UIView+Extensions.swift in Sources */,
 				FBD4D4742975F900005AF2C9 /* UIColor+Extensions.swift in Sources */,
 				315615D1273441F3009FF312 /* ResultRenderView.swift in Sources */,
+				FBD4D47C2975FA79005AF2C9 /* HomeViewController.swift in Sources */,
+				FBD4D49129773F8A005AF2C9 /* ResponseHotel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@ import UIKit
 
 class BaseViewPipeline: UIView {
     
-    open var hierarchy: [BaseViewHierarchyRelation] { [] }
+    open var hierarchies: [BaseViewHierarchyRelation] { [] }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,10 +20,13 @@ class BaseViewPipeline: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setupConstraints() {
+        NSLayoutConstraint.activate(constraints)
+    }
+    
     private func setupView() {
-        for relation in hierarchy {
+        for relation in hierarchies {
             relation.makeHierarchy()
         }
-        NSLayoutConstraint.activate(constraints)
     }
 }

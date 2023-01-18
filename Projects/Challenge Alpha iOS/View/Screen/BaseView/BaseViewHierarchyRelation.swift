@@ -11,7 +11,7 @@ struct BaseViewHierarchyRelation {
     let parentView: UIView
     let subViews: [UIView]
     
-    init(parentView: UIView, subViews: UIView...) {
+    init(parentView: UIView, subViews: [UIView]) {
         self.parentView = parentView
         self.subViews = subViews
     }
