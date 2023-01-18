@@ -26,15 +26,15 @@ class HUNavigationController: UINavigationController {
     private func setupDefaultsConfigurations() {
 
         let standardAppearance = UINavigationBarAppearance()
-        standardAppearance.backgroundColor = UIColor(named: "Primary")
+        standardAppearance.backgroundColor = .primaryColor
         navigationBar.standardAppearance = standardAppearance
 
         let compactAppearance = UINavigationBarAppearance()
-        compactAppearance.backgroundColor = UIColor(named: "Primary")
+        compactAppearance.backgroundColor = .primaryColor
         navigationBar.compactAppearance = compactAppearance
 
         let scrollEdgeAppearance = UINavigationBarAppearance()
-        scrollEdgeAppearance.backgroundColor = UIColor(named: "Primary")
+        scrollEdgeAppearance.backgroundColor = .primaryColor
         navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
 
     }
