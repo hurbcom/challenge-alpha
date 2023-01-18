@@ -21,19 +21,7 @@ final class AppCoordinator {
 
         let serchViewController = SearchViewController(viewModel: viewModel)
 
-        let rootViewController = UINavigationController(rootViewController: serchViewController)
-
-        let standardAppearance = UINavigationBarAppearance()
-        standardAppearance.backgroundColor = UIColor(named: "Primary")
-        rootViewController.navigationBar.standardAppearance = standardAppearance
-
-        let compactAppearance = UINavigationBarAppearance()
-        compactAppearance.backgroundColor = UIColor(named: "Primary")
-        rootViewController.navigationBar.compactAppearance = compactAppearance
-
-        let scrollEdgeAppearance = UINavigationBarAppearance()
-        scrollEdgeAppearance.backgroundColor = UIColor(named: "Primary")
-        rootViewController.navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
+        let rootViewController = HUNavigationController(rootViewController: serchViewController)
 
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
