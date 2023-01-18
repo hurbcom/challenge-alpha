@@ -11,34 +11,25 @@ class HomeViewCell: UITableViewCell {
     
     static let identifier = "HomeViewCell"
     
-    // MARK: - Private Properties UI
-    lazy var imageCity: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.clipsToBounds = true
-        image.layer.cornerRadius = 18.0
-        image.layer.masksToBounds = true
-        image.contentMode = .scaleToFill
-        return image
+    private let homeCell: HomeVIew = {
+        let homeCell = HomeVIew()
+        homeCell.translatesAutoresizingMaskIntoConstraints = false
+        return homeCell
     }()
     
-    lazy var hotelTituloLabel: UILabel = {
-        let hotelLabel = UILabel()
-        hotelLabel.font = .systemFont(ofSize: 15, weight: .medium)
-        hotelLabel.textColor = .black
-        hotelLabel.lineBreakMode = .byWordWrapping
-        hotelLabel.numberOfLines = 0
-        hotelLabel.translatesAutoresizingMaskIntoConstraints = false
-        return hotelLabel
-    }()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+            super.init(style: style, reuseIdentifier: reuseIdentifier)
+            backgroundColor = .clear
+        setupView()
+        }
+   
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-    lazy var priceLabel: UILabel = {
-        let  priceLabel = UILabel()
-        priceLabel.font = .systemFont(ofSize: 15, weight: .bold)
-        priceLabel.textColor = .systemGreen
-        priceLabel.translatesAutoresizingMaskIntoConstraints = false
-        return priceLabel
-    }()
+    func configureCell(with homeCell: Result) {
+        homeCell.setup(image: homeCell.image, name: homeCell.name, price: homeCell.price)
+    }
     
     
     // MARK: - Init
@@ -47,9 +38,12 @@ class HomeViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
-        
-    }
+    //MARK: - Functions
+    func setupCell(with hotel: Result) {
+        hotelTituloLabel.text = hotel.name
+        priceLabel.text = "R$\(hotelprices)"
+        imageHotel.image = UIImage(named: image)
+        }
     
 }
 
@@ -60,9 +54,18 @@ extension HomeViewCell: ViewCodableProtocol {
         setupAdditionalConfiguration()
     }
 
-    func buildViewHierarchy() {}
-
-    func setupConstraints() {}
+    func buildViewHierarchy() {
+        self.addSubview(homeCell)
+    }
+    
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            homeCell.topAnchor.constraint(equalTo: self.topAnchor),
+            homeCell.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            homeCell.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            homeCell.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+        ])
+    }
 
     func setupAdditionalConfiguration() {}
 }

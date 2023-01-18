@@ -9,12 +9,20 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    private let viewModel = ResponseHotel?.self
+    private var viewModel: [Result] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     // MARK: - Private Properties UI
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
-        search.placeholder = "Search Cities"
+        search.translatesAutoresizingMaskIntoConstraints = false
+        search.placeholder = "Search..."
+        search.showsCancelButton = true
         search.searchBarStyle = .prominent
         search.delegate = self
         return search
@@ -30,16 +38,6 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
-    private lazy var searchButton: UIButton = {
-        let searchButton = UIButton()
-        if let image = UIImage(named: "search-img") {
-            searchButton.setImage(image, for: .normal)
-        }
-//        searchButton.addTarget(self, action:#selector(self.), for: .touchUpInside)
-        searchButton.translatesAutoresizingMaskIntoConstraints = false
-        return searchButton
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackground()
@@ -51,6 +49,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    // para testar o filtro e a tableview
     var cursos = ["Swift", "Kotlin", "JavaScript", "Flutter", "React Native", "Go"]
     var filter: [String] = []
 }
@@ -60,11 +59,12 @@ extension HomeViewController: ViewCodableProtocol {
         buildViewHierarchy()
         setupConstraints()
         setupAdditionalConfiguration()
+        navigationItem.backButtonTitle = "Voltar"
     }
 
     func buildViewHierarchy() {
         view.addSubview(searchBar)
-        searchBar.addSubview(searchButton)
+//        searchBar.addSubview(searchButton)
         view.addSubview(tableView)
     }
 
@@ -73,9 +73,6 @@ extension HomeViewController: ViewCodableProtocol {
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            searchButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 111),
-            searchButton.trailingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: -32),
             
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -109,6 +106,11 @@ extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -121,6 +123,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = filter[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailsVC = DetailsViewController(result: viewModel[indexPath.row])
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 
