@@ -22,7 +22,7 @@ struct PackageResult: Codable {
     var amenities: [Amenity]?
     var tags: [Tag]?
     
-    // MARK: - Helpers
+    // MARK: - Getters
     func getCity() -> String {
         return self.address?.city ?? ""
     }
@@ -118,5 +118,25 @@ struct PackageResult: Codable {
         }
         
         return ""
+    }
+    
+    /// Format startDate string to month and year only.
+    /// - Returns: monthName/year
+    func getStartDateMonthAndYear() -> String {
+        guard let startDate = self.startDate else {
+            return ""
+        }
+        
+        return startDate.monthAndYearString()
+    }
+    
+    /// Format endDate string to month and year only.
+    /// - Returns: monthName/year
+    func getEndDateMonthAndYear() -> String {
+        guard let endDate = self.endDate else {
+            return ""
+        }
+        
+        return endDate.monthAndYearString()
     }
 }
