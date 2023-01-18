@@ -24,18 +24,15 @@ final class AppCoordinator {
         let rootViewController = UINavigationController(rootViewController: serchViewController)
 
         let standardAppearance = UINavigationBarAppearance()
-//        standardAppearance.configureWithOpaqueBackground()
-        standardAppearance.backgroundColor = .red
+        standardAppearance.backgroundColor = UIColor(named: "Primary")
         rootViewController.navigationBar.standardAppearance = standardAppearance
 
         let compactAppearance = UINavigationBarAppearance()
-//        compactAppearance.configureWithOpaqueBackground()
-        compactAppearance.backgroundColor = .blue
+        compactAppearance.backgroundColor = UIColor(named: "Primary")
         rootViewController.navigationBar.compactAppearance = compactAppearance
 
         let scrollEdgeAppearance = UINavigationBarAppearance()
-//        scrollEdgeAppearance.configureWithOpaqueBackground()
-        scrollEdgeAppearance.backgroundColor = .yellow
+        scrollEdgeAppearance.backgroundColor = UIColor(named: "Primary")
         rootViewController.navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
 
         window.rootViewController = rootViewController
