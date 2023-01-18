@@ -1,6 +1,6 @@
 import UIKit
 
-class SuggestionCell: UITableViewCell {
+final class SuggestionCell: UITableViewCell {
     let titleLabel = UILabel()
     let smallAddressLabel = UILabel()
 

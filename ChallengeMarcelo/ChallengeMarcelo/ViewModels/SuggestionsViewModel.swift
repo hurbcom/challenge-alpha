@@ -6,6 +6,4 @@ final class SuggestionsViewModel {
     init(model: [Suggestion]) {
         self.suggestions = model
     }
-    
-    
 }

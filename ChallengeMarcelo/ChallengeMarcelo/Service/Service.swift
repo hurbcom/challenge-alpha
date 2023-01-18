@@ -12,7 +12,7 @@ struct Service {
     
     // MARK: Properties
     
-    private let hugService = HUGService(enableLog: true)
+    private let hugService = HUGService(enableLog: false)
     
     // MARK: Public
     

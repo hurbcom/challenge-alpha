@@ -5,14 +5,14 @@ import ScrollViewController
 
 final class ProductDetailViewController: UIViewController {
     // MARK: UI
-
+    
     lazy private var screenView = ProductDetailView()
     lazy private var scrollViewController = ScrollViewController()
     
     // MARK: Properties
     
     private let viewModel: ProductDetailViewModel
-
+    
     // MARK: Init
     
     init(model: Product) {
@@ -29,17 +29,32 @@ final class ProductDetailViewController: UIViewController {
         embedScrollViewController()
         configView()
         
+        viewModel.delegate = self
         viewModel.performSuggestions()
         screenView.collectionView.delegate = self
         screenView.collectionView.dataSource = self
         screenView.collectionView.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: "PhotoCollectionCell")
         screenView.suggestionButton.addTarget(self, action: #selector(didTapSuggestion), for: .touchUpInside)
+        screenView.favoriteButton.addTarget(self, action: #selector(didTapFavorite), for: .touchUpInside)
+        
+        verifyIfItemIsFavorite()
     }
+    
+    // MARK: Obj-C
     
     @objc func didTapSuggestion() {
         let nextController = SuggestionsViewController(model: viewModel.suggestions)
         navigationController?.present(nextController, animated: true)
-        
+    }
+    
+    @objc func didTapFavorite() {
+        viewModel.didTapFavorite()
+    }
+    
+    @objc func didTapShare() {
+        let items = [URL(string: viewModel.model.url)!]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
     }
     
     private func embedScrollViewController() {
@@ -57,7 +72,7 @@ final class ProductDetailViewController: UIViewController {
     
     private func configView() {
         navigationItem.title = viewModel.model.category.capitalized
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .done, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .done, target: self, action: #selector(didTapShare))
         screenView.titleLabel.text = viewModel.model.name
         screenView.descriptionLabel.text = viewModel.model._description
         screenView.smallAddressLabel.text =
@@ -70,21 +85,25 @@ final class ProductDetailViewController: UIViewController {
         
         let latitude = viewModel.model.address.geoLocation.lat
         let longitude = viewModel.model.address.geoLocation.lon
-
+        
         var region = MKCoordinateRegion()
         region.center.latitude = latitude
         region.center.longitude = longitude
         region.span.latitudeDelta = 0.05
         region.span.longitudeDelta = 0.05
-    
+        
         screenView.mapView.setRegion(
             screenView.mapView.regionThatFits(region),
             animated: true
         )
-
+        
         screenView.mapView.addAnnotation(MKPlacemark(
             coordinate: CLLocationCoordinate2DMake(latitude, longitude)
         ))
+    }
+    
+    func verifyIfItemIsFavorite() {
+        viewModel.verifyIfItemIsFavorite()
     }
 }
 
@@ -118,3 +137,12 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension ProductDetailViewController: ProductDetailViewModelDelegate {
+    func removeItemFromList() {
+        screenView.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+    }
+    
+    func addItemFromList() {
+        screenView.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+    }
+}

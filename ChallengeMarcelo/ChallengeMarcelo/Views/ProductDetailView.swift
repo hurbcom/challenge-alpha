@@ -18,6 +18,7 @@ final class ProductDetailView: UIView {
     let priceLabel = UILabel()
     let mapView = MKMapView()
     let suggestionButton = UIButton()
+    let favoriteButton = UIButton()
     
     init() {
         super.init(frame: .zero)
@@ -35,6 +36,7 @@ final class ProductDetailView: UIView {
         addSubview(titleLabel)
         addSubview(priceLabel)
         addSubview(collectionView)
+        collectionView.addSubview(favoriteButton)
         addSubview(descriptionLabel)
         addSubview(smallAddressLabel)
         addSubview(suggestionButton)
@@ -45,6 +47,7 @@ final class ProductDetailView: UIView {
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         smallAddressLabel.translatesAutoresizingMaskIntoConstraints = false
         suggestionButton.translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +70,9 @@ final class ProductDetailView: UIView {
         smallAddressLabel.font = .systemFont(ofSize: 14.0)
 
         smallAddressLabel.textColor = .darkGray
+        
+        favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        favoriteButton.imageView?.tintColor = .white
     }
     
     
@@ -78,6 +84,9 @@ final class ProductDetailView: UIView {
             collectionView.leftAnchor.constraint(equalTo: leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: rightAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 300),
+            
+            favoriteButton.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            favoriteButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -15),
             
             titleLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),

@@ -24,9 +24,37 @@ final class ProductListController: UIViewController {
         screenView.tableView.register(ProductListCell.self, forCellReuseIdentifier: "HomeCell")
         screenView.inputField.searchButton.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
         screenView.segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControl), for: .valueChanged)
+
+        navigationItem.setRightBarButton(
+            UIBarButtonItem(
+                image: UIImage(systemName: "list.star"),
+                style: .plain,
+                target: self,
+                action: #selector(didTapFavoriteList)
+            ), animated: true
+        )
+        
+        navigationItem.setLeftBarButton(
+            UIBarButtonItem(
+                image: UIImage(systemName: "clock"),
+                style: .plain,
+                target: self,
+                action: #selector(didTapHistoryList)
+            ), animated: true
+        )
     }
     
     // MARK: Obj-C
+    
+    @objc func didTapFavoriteList() {
+        let nextController = FavoritesViewController()
+        navigationController?.present(nextController, animated: true)
+    }
+    
+    @objc func didTapHistoryList() {
+        let nextController = HistoryViewController()
+        navigationController?.present(nextController, animated: true)
+    }
 
     @objc func didTapSearch() {
         shouldSearch()
@@ -57,6 +85,7 @@ extension ProductListController: UITableViewDelegate {
             ProductDetailViewController(model: viewModel.products[indexPath.row]),
             animated: true
         )
+        viewModel.didTapCell(product: viewModel.products[indexPath.row])
     }
 }
 

@@ -9,7 +9,25 @@ final class ProductListView: UIView {
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
+        disableAutoresizingMaskIntoConstraints()
+        addSubViews()
+        setupUI()
+        setupConstraints()
+    }
+    
+    private func disableAutoresizingMaskIntoConstraints() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        inputField.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func addSubViews() {
+        addSubview(segmentedControl)
+        addSubview(inputField)
+        addSubview(tableView)
+    }
 
+    private func setupUI() {
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.selectedSegmentTintColor = hurbBlue
         segmentedControl.setTitleTextAttributes([
@@ -21,14 +39,11 @@ final class ProductListView: UIView {
         ], for: .selected)
         
         tableView.separatorStyle = .none
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        inputField.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-
-        addSubview(segmentedControl)
-        addSubview(inputField)
-        addSubview(tableView)
-
+    }
+    
+    required init?(coder: NSCoder) { nil }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             segmentedControl.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             segmentedControl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
@@ -46,6 +61,4 @@ final class ProductListView: UIView {
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
-
-    required init?(coder: NSCoder) { nil }
 }

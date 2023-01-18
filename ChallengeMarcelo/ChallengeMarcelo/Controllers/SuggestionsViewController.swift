@@ -1,6 +1,6 @@
 import UIKit
 
-class SuggestionsViewController: UIViewController {
+final class SuggestionsViewController: UIViewController {
 
     lazy var screenView = SuggestionView()
     let viewModel: SuggestionsViewModel

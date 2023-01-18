@@ -1,3 +1,5 @@
+import Foundation
+
 protocol ProductListViewModelDelegate: AnyObject {
     func didUpdate()
 }
@@ -93,6 +95,30 @@ final class ProductListViewModel {
             case .failure(let error):
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    func didTapCell(product: Product) {
+        do {
+            let objectData = try JSONEncoder().encode(product)
+
+            if var favorites = UserDefaults.standard.array(forKey: "myHistory") as? [Data] {
+                let existingItem = try favorites.first { data in
+                    let object = try JSONDecoder().decode(Product.self, from: data)
+                    return object.url == product.url
+                }
+
+                if existingItem == nil {
+                    favorites.append(objectData)
+                }
+
+                UserDefaults.standard.setValue(favorites, forKey: "myHistory")
+            } else {
+                UserDefaults.standard.setValue([Data](), forKey: "myHistory")
+                didTapCell(product: product)
+            }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
