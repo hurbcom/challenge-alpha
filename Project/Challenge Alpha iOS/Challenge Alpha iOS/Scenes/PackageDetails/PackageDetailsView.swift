@@ -11,6 +11,11 @@ import MapKit
 struct PackageDetailsView: View {
     
     @ObservedObject var viewModel: PackageDetailsViewModel
+    @State var mapRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 0,longitude: 0),
+        latitudinalMeters: 750,
+        longitudinalMeters: 750
+    ) // Start location
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
@@ -48,8 +53,18 @@ struct PackageDetailsView: View {
             )
         }
         .edgesIgnoringSafeArea(.top)
+        .onAppear {
+            // Update location with right coordinates
+            self.mapRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: viewModel.package.getLatitude(),
+                                               longitude: viewModel.package.getLongitude()),
+                latitudinalMeters: 750,
+                longitudinalMeters: 750
+            )
+        }
     }
     
+    // MARK: - View Components
     var headerCarouselView: some View {
         HUImageCarousel(
             imagesURL: viewModel.package.getImagesURL(),
@@ -157,7 +172,7 @@ struct PackageDetailsView: View {
                 .font(.system(size: 22, weight: .bold))
                 .foregroundColor(UIConstants.COLOR.hurbPink)
             
-            Map(coordinateRegion: $viewModel.mapRegion, annotationItems: [viewModel.place]) { place in
+            Map(coordinateRegion: $mapRegion, annotationItems: [viewModel.place]) { place in
                 MapMarker(coordinate: place.location,
                           tint: UIConstants.COLOR.hurbBlue)
             }

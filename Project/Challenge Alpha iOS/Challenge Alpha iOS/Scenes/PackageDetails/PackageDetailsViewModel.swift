@@ -11,9 +11,6 @@ import MapKit
 
 final class PackageDetailsViewModel: ObservableObject {
     
-    // MARK: - Published properties
-    @Published var mapRegion: MKCoordinateRegion
-    
     // MARK: - Map properties
     /// A place to me marked on the Map
     var place: IdentifiablePlace
@@ -37,12 +34,6 @@ final class PackageDetailsViewModel: ObservableObject {
     init(package: PackageResult, router: PackageDetailsRouter) {
         self.package = package
         self.router = router
-        self.mapRegion = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: package.getLatitude(),
-                                           longitude: package.getLongitude()),
-            latitudinalMeters: 750,
-            longitudinalMeters: 750
-        )
         self.place = IdentifiablePlace(lat: package.getLatitude(), long: package.getLongitude())
     }
     
