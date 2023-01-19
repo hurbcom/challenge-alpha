@@ -9,9 +9,12 @@ import Foundation
 
 // MARK: - Package Result
 struct PackageResult: Codable {
+    var id: String?
     var sku: String?
     var name: String?
     var description: String?
+    var category: String?
+    var url: String?
     var startDate: String?
     var endDate: String?
     var isAvailable: Bool?
@@ -138,5 +141,26 @@ struct PackageResult: Codable {
         }
         
         return endDate.monthAndYearString()
+    }
+    
+    func getAmenitiesName() -> [String] {
+        guard let amenities = self.amenities else {
+            // TODO: Add log
+            return []
+        }
+        
+        let amenitiesName = amenities.map { item -> String in
+            return item.name ?? ""
+        }
+        
+        return amenitiesName
+    }
+    
+    func getLatitude() -> Double {
+        return self.address?.geolocation?.latitude ?? 0.0
+    }
+    
+    func getLongitude() -> Double {
+        return self.address?.geolocation?.longitude ?? 0.0
     }
 }
