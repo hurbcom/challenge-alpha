@@ -36,6 +36,9 @@ struct HotelCardView: View {
                     // Pacakge Location + Name
                     self.hotelGeneralInfo
                     
+                    // Amenities
+                    self.hotelAmenitiesInfo
+                    
                     // Price
                     self.hotelPriceInfo
                 }
@@ -72,6 +75,11 @@ struct HotelCardView: View {
                 .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
         }
+    }
+    
+    /// Hotel amenities
+    var hotelAmenitiesInfo: some View {
+        AmenitiesGrid(amenities: self.amenities)
     }
     
     /// Price information (amount + general amount)
