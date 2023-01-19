@@ -15,6 +15,7 @@ import UIKit
 protocol SearchLocationPresentationLogic {
     
     func presentLocations(response: SearchLocation.Setup.Response)
+    func presentSkeleton()
 }
 
 class SearchLocationPresenter: SearchLocationPresentationLogic {
@@ -32,5 +33,10 @@ class SearchLocationPresenter: SearchLocationPresentationLogic {
         
         let viewModel: SearchLocation.Setup.ViewModel = SearchLocation.Setup.ViewModel(locations: response.locations)
         self.viewController?.displayLocations(viewModel: viewModel)
+    }
+    
+    func presentSkeleton() {
+        
+        self.viewController?.displaySkeleton()
     }
 }

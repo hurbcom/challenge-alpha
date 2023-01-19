@@ -16,6 +16,7 @@ import SkeletonView
 protocol SearchLocationDisplayLogic: AnyObject {
     
     func displayLocations(viewModel: SearchLocation.Setup.ViewModel)
+    func displaySkeleton()
 }
 
 protocol SuggestedSearch: AnyObject {
@@ -120,8 +121,6 @@ class SearchLocationViewController: UIViewController {
     
     func searchTerm(_ term: String) {
         
-        self.eraseDataSource()
-        self.collectionView.showAnimatedGradientSkeleton(transition: .none)
         self.interactor?.searchTerm(request: SearchLocation.Setup.Request(term: term, limit: 3))
     }
     
@@ -144,6 +143,12 @@ extension SearchLocationViewController: SearchLocationDisplayLogic {
 
         self.collectionView.hideSkeleton()
         self.dataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
+    func displaySkeleton() {
+        
+        self.eraseDataSource()
+        self.collectionView.showAnimatedGradientSkeleton(transition: .none)
     }
 }
 

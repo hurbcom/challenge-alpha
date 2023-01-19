@@ -72,16 +72,8 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         
         self.photoImageView.prepareForReuse()
-        self.nameLabel.text = nil
-        self.typeLabel.text = nil
-        self.addressLabel.text = nil
-        self.topPriceLabel.text = nil
-        self.priceLabel.text = nil
-        self.bottomPriceLabel.text = nil
         self.firstAmenityView.isHidden = true
-        self.firstAmenityLabel.text = nil
         self.secondAmenityView.isHidden = true
-        self.secondAmenityLabel.text = nil
     }
     
     override var isHighlighted: Bool {

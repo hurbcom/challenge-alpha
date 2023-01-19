@@ -26,7 +26,7 @@ class SearchLocationInteractor: SearchLocationBusinessLogic, SearchLocationDataS
     
     var presenter: SearchLocationPresentationLogic?
     var worker: SearchLocationWorkerProtocol?
-    //var name: String = ""
+    lazy var term: String = ""
     
     init(presenter: SearchLocationPresentationLogic, worker: SearchLocationWorkerProtocol) {
         
@@ -38,22 +38,28 @@ class SearchLocationInteractor: SearchLocationBusinessLogic, SearchLocationDataS
     
     func searchTerm(request: SearchLocation.Setup.Request) {
         
-        self.worker?.searchLocations(term: request.term, limit: request.limit, completion: { result in
+        if request.term != self.term {
             
-            switch result {
-                    
-                case .success(let locations):
-                    
-                    if let locations: [Location] = locations, locations.count > 0 {
+            self.term = request.term
+            
+            self.presenter?.presentSkeleton()
+            self.worker?.searchLocations(term: request.term, limit: request.limit, completion: { result in
+                
+                switch result {
                         
-                        let response = SearchLocation.Setup.Response(locations: locations.compactMap({ $0.text }))
-                        self.presenter?.presentLocations(response: response)
-                    }
-                    break
-                    
-                case .failure( _):
-                    break
-            }
-        })
+                    case .success(let locations):
+                        
+                        if let locations: [Location] = locations, locations.count > 0 {
+                            
+                            let response = SearchLocation.Setup.Response(locations: locations.compactMap({ $0.text }))
+                            self.presenter?.presentLocations(response: response)
+                        }
+                        break
+                        
+                    case .failure( _):
+                        break
+                }
+            })
+        }
     }
 }
