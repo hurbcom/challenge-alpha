@@ -11,4 +11,5 @@ struct Constants {
     private init() {}
     
     static let BUNDLE_NAME = "com.yuri.Challenge-Alpha-iOS"
+    static let DEFAULT_DESTINATION = "Rio de Janeiro, Brasil"
 }

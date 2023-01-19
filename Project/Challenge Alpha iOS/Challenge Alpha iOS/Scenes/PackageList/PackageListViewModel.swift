@@ -11,7 +11,7 @@ import Combine
 final class PackageListViewModel: ObservableObject {
     // MARK: - Published variables
     @Published var packages: [PackageResult] = []
-    @Published var query: String = "Rio de Janeiro, Brasil" // Default value
+    @Published var query: String = Constants.DEFAULT_DESTINATION
     @Published var showLoading = true
     @Published var showError: Bool = false
     
