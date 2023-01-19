@@ -139,7 +139,7 @@ struct PackageDetailsView: View {
 //                $0.font = Font.system(size: 14, weight: .regular, design: .default)
 //            }
             
-            HUButton(title: "Mostrar detalhes", color: UIConstants.COLOR.hurbBlue, style: .outline, action: {})
+            HUButton(title: "Mostrar detalhes", color: UIConstants.COLOR.hurbBlue, style: .outline, verticalPadding: 8, action: {})
         }
     }
     

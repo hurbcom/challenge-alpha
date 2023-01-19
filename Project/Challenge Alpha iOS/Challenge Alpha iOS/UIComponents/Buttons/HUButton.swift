@@ -17,6 +17,7 @@ struct HUButton: View {
     var title: String
     var color: Color
     var style: Style
+    var verticalPadding: CGFloat = 16
     var action: () -> Void
     
     var content: some View {
@@ -30,10 +31,10 @@ struct HUButton: View {
             switch style {
             case .fill:
                 content
-                    .buttonStyle(FillButtonStyle(color: self.color))
+                    .buttonStyle(FillButtonStyle(color: self.color, verticalPadding: self.verticalPadding))
             case .outline:
                 content
-                    .buttonStyle(OutlineButtonStyle(color: self.color))
+                    .buttonStyle(OutlineButtonStyle(color: self.color, verticalPadding: self.verticalPadding))
             }
         }
     }
@@ -43,14 +44,16 @@ struct HUButton: View {
 struct FillButtonStyle: ButtonStyle {
     
     var color: Color
+    var verticalPadding: CGFloat
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 16, weight: .bold))
+            .font(.system(size: 16, weight: .semibold))
             .lineLimit(1)
             .minimumScaleFactor(0.5)
             .foregroundColor(Color.white)
-            .padding()
+            .padding(.vertical, verticalPadding)
+            .padding(.horizontal)
             .frame(maxWidth: .infinity)
             .background(color)
             .cornerRadius(4)
@@ -60,14 +63,16 @@ struct FillButtonStyle: ButtonStyle {
 struct OutlineButtonStyle: ButtonStyle {
     
     var color: Color
+    var verticalPadding: CGFloat
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 16, weight: .bold))
+            .font(.system(size: 16, weight: .semibold))
             .lineLimit(1)
             .minimumScaleFactor(0.5)
             .foregroundColor(color)
-            .padding()
+            .padding(.vertical, verticalPadding)
+            .padding(.horizontal)
             .frame(maxWidth: .infinity)
             .background(Color.clear)
             .cornerRadius(4)
