@@ -135,11 +135,15 @@ struct PackageDetailsView: View {
                 }
             }
             
-//            Text(viewModel.package.description ?? "") {
-//                $0.font = Font.system(size: 14, weight: .regular, design: .default)
-//            }
-            
-            HUButton(title: "Mostrar detalhes", color: UIConstants.COLOR.hurbBlue, style: .outline, verticalPadding: 8, action: {})
+            if #available(iOS 15, *) {
+                Text(viewModel.package.description ?? "") {
+                    $0.font = Font.system(size: 14, weight: .regular, design: .default)
+                }.lineLimit(3)
+                
+                HUButton(title: "Ler mais", color: UIConstants.COLOR.hurbBlue, style: .outline, verticalPadding: 8, action: {})
+            } else {
+                HUButton(title: "Mostrar detalhes", color: UIConstants.COLOR.hurbBlue, style: .outline, verticalPadding: 8, action: {})
+            }
         }
     }
     
