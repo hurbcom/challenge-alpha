@@ -23,12 +23,14 @@ struct SuggestionView: View {
             }.padding()
             
             VStack(alignment: .leading, spacing: 12) {
-                TextField("", text: $viewModel.searchText)
-                    .placeholder(when: viewModel.searchText.isEmpty) {
-                        Text("Quero ir para...")
-                            .font(.system(size: 18))
-                            .foregroundColor(UIConstants.COLOR.hurbGray)
-                    }.padding(.horizontal)
+                TextField("", text: $viewModel.searchText, onCommit: {
+                    viewModel.onTextfieldSubmit()
+                })
+                .placeholder(when: viewModel.searchText.isEmpty) {
+                    Text("Quero ir para...")
+                        .font(.system(size: 18))
+                        .foregroundColor(UIConstants.COLOR.hurbGray)
+                }.padding(.horizontal)
                 
                 Rectangle()
                     .frame(maxWidth: .infinity, maxHeight: 1)
@@ -82,6 +84,11 @@ struct SuggestionView: View {
                         
                         Spacer()
                     }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        let searchTerm = viewModel.destinationSuggestions[index].text ?? ""
+                        viewModel.onDestinationTap(name: searchTerm)
+                    }
                 }
             }
         }
@@ -109,6 +116,10 @@ struct SuggestionView: View {
                         
                         Spacer()
                     }
+                    .onTapGesture {
+                        let searchTerm = viewModel.otherSuggestions[index].text ?? ""
+                        viewModel.onDestinationTap(name: searchTerm)
+                    }
                 }
             }
         }
@@ -130,6 +141,6 @@ extension View {
 
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestionView(viewModel: SuggestionViewModel(suggestionType: .package, interactor: SuggestionInteractor(), router: SuggestionRouter()))
+        SuggestionView(viewModel: SuggestionViewModel(suggestionType: .package, interactor: SuggestionInteractor(), router: SuggestionRouter(), onSearchComplete: { _ in }))
     }
 }

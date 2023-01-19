@@ -14,6 +14,13 @@ struct PackageListView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
+                HStack {
+                    Text(viewModel.query.isEmpty ? "" : "Exibindo resultados de \(viewModel.query)")
+                        .font(.system(size: 12))
+                        .foregroundColor(UIConstants.COLOR.hurbGray)
+                    Spacer()
+                }
+                
                 ForEach(0..<viewModel.packages.count, id: \.self) { index in
                     PackageCardView(
                         city: viewModel.packages[index].getCity(),
@@ -34,6 +41,9 @@ struct PackageListView: View {
             .padding()
         }
         .loading($viewModel.showLoading)
+        .onChange(of: viewModel.query, perform: { newValue in
+            self.viewModel.getPackages()
+        })
         .onAppear {
             self.viewModel.getPackages()
         }

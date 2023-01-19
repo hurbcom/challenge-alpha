@@ -21,11 +21,18 @@ final class SuggestionViewModel: ObservableObject {
     var suggestionType: SuggestionType
     var interactor: SuggestionInteractorInput
     var router: SuggestionRouterProtocol
+    var onSearchComplete: ((String) -> Void)
     
-    init(suggestionType: SuggestionType, interactor: SuggestionInteractorInput, router: SuggestionRouterProtocol) {
+    init(
+        suggestionType: SuggestionType,
+        interactor: SuggestionInteractorInput,
+        router: SuggestionRouterProtocol,
+        onSearchComplete: @escaping ((String) -> Void))
+    {
         self.suggestionType = suggestionType
         self.interactor = interactor
         self.router = router
+        self.onSearchComplete = onSearchComplete
     }
     
     // MARK: - Actions
@@ -62,6 +69,16 @@ final class SuggestionViewModel: ObservableObject {
             })
         }
         .store(in: &cancellables)
+    }
+    
+    func onTextfieldSubmit() {
+        self.onSearchComplete(self.searchText)
+        router.dismiss()
+    }
+    
+    func onDestinationTap(name: String) {
+        self.onSearchComplete(name)
+        router.dismiss()
     }
     
     // MARK: - Helpers

@@ -8,10 +8,10 @@
 import Foundation
 
 enum SuggestionFactory {
-    static func build(suggestionType: SuggestionType) -> SuggestionHostingController {
+    static func build(suggestionType: SuggestionType, onSearchComplete: @escaping ((String) -> Void)) -> SuggestionHostingController {
         let interactor = SuggestionInteractor()
         let router = SuggestionRouter()
-        let viewModel = SuggestionViewModel(suggestionType: suggestionType, interactor: interactor, router: router)
+        let viewModel = SuggestionViewModel(suggestionType: suggestionType, interactor: interactor, router: router, onSearchComplete: onSearchComplete)
         let view = SuggestionView(viewModel: viewModel)
         let viewController = SuggestionHostingController(rootView: view)
         

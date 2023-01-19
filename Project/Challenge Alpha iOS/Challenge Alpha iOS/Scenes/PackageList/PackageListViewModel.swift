@@ -11,6 +11,7 @@ import Combine
 final class PackageListViewModel: ObservableObject {
     // MARK: - Published variables
     @Published var packages: [PackageResult] = []
+    @Published var query: String = "Rio de Janeiro, Brasil" // Default value
     @Published var showLoading = true
     @Published var showError: Bool = false
     
@@ -28,7 +29,7 @@ final class PackageListViewModel: ObservableObject {
     
     func getPackages() {
         interactor.getPackages(
-            query: "Rio de Janeiro, Brasil",
+            query: self.query,
             pagination: .init(
                 page: 1,
                 limit: 20,
@@ -54,11 +55,16 @@ final class PackageListViewModel: ObservableObject {
     }
     
     @objc func onSearchTap() {
-        router.presentSearch()
+        router.presentSearch(onComplete: self.redraw(with:))
     }
     
     // MARK: - Helpers
     private func hideLoading() {
         self.showLoading = false
+    }
+    
+    func redraw(with searchTerm: String) {
+        self.showLoading = true
+        self.query = searchTerm
     }
 }

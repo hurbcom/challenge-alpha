@@ -9,7 +9,7 @@ import UIKit
 
 protocol PackageListRouterProtocol {
     func navigateToPackageDetails(_ package: PackageResult)
-    func presentSearch()
+    func presentSearch(onComplete: @escaping ((String) -> Void))
 }
 
 final class PackageListRouter: PackageListRouterProtocol {
@@ -20,8 +20,8 @@ final class PackageListRouter: PackageListRouterProtocol {
         self.viewController?.navigationController?.pushViewController(packageDetailsVC, animated: true)
     }
     
-    func presentSearch() {
-        let suggestionVC = SuggestionFactory.build(suggestionType: .package)
+    func presentSearch(onComplete: @escaping ((String) -> Void)) {
+        let suggestionVC = SuggestionFactory.build(suggestionType: .package, onSearchComplete: onComplete)
         self.viewController?.present(suggestionVC, animated: true)
     }
 }
