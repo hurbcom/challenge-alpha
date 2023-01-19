@@ -15,6 +15,7 @@ import UIKit
 protocol ProductDetailsDisplayLogic: AnyObject {
     
     func displaySetupView(viewModel: ProductDetails.Setup.ViewModel)
+    func displayShareProduct(viewModel: ProductDetails.Share.ViewModel)
 }
 
 class ProductDetailsViewController: UIViewController {
@@ -41,8 +42,8 @@ class ProductDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupLayout()
         
+        self.setupLayout()
     }
     
     // MARK: Routing
@@ -50,6 +51,7 @@ class ProductDetailsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
+        self.router?.routeTo(segue: segue, sender: sender)
     }
     
     // MARK: Setup Layout
@@ -64,6 +66,7 @@ class ProductDetailsViewController: UIViewController {
     
     @IBAction private func share(_ button: UIBarButtonItem) {
 
+        self.interactor?.shareProduct()
     }
 }
 
@@ -92,5 +95,21 @@ extension ProductDetailsViewController: ProductDetailsDisplayLogic {
             self.secondAmenityView.isHidden = false
             self.secondAmenityLabel.text = secondAmenity.name
         }
+    }
+    
+    func displayShareProduct(viewModel: ProductDetails.Share.ViewModel) {
+        
+        let activityViewController: UIActivityViewController = UIActivityViewController(
+            activityItems: [viewModel.sharedText],
+            applicationActivities: nil
+        )
+        
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        self.present(
+            activityViewController,
+            animated: true,
+            completion: nil
+        )
     }
 }

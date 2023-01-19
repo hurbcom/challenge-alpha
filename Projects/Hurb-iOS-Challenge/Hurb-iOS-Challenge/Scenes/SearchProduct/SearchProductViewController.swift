@@ -109,8 +109,8 @@ class SearchProductViewController: UIViewController {
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    // MARK: Configure Hierarchy
-    
+    // MARK: Configure Collection View
+
     private func configureHierarchy() {
         
         self.collectionView.collectionViewLayout = self.createLayout()
@@ -279,7 +279,7 @@ extension SearchProductViewController: UICollectionViewDelegate {
             
             let section: Section.ID = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
             
-            if section != .empty && section != .noSearchResults {
+            if section == .results {
                 
                 self.page += 1
                 self.hasNext = false

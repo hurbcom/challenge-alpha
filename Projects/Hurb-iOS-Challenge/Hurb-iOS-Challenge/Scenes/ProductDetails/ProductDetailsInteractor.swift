@@ -15,6 +15,7 @@ import UIKit
 protocol ProductDetailsBusinessLogic {
     
     func setupView()
+    func shareProduct()
 }
 
 protocol ProductDetailsDataStore {
@@ -39,9 +40,17 @@ class ProductDetailsInteractor: ProductDetailsBusinessLogic, ProductDetailsDataS
     
     func setupView() {
 
-        guard let product = self.product else { return }
+        guard let product: Product = self.product else { return }
         
         let response: ProductDetails.Setup.Response = ProductDetails.Setup.Response(product: product)
         self.presenter?.presentSetupView(response: response)
+    }
+    
+    func shareProduct() {
+        
+        guard let product: Product = self.product else { return }
+
+        let response: ProductDetails.Share.Response = ProductDetails.Share.Response(sharedText: product.url ?? "")
+        self.presenter?.presentShareProduct(response: response)
     }
 }

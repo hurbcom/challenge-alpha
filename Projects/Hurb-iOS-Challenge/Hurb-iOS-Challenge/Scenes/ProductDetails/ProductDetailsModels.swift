@@ -33,4 +33,21 @@ enum ProductDetails {
             var descriptionTitle: String
         }
     }
+    
+    enum Share {
+        
+        struct Request {
+            
+        }
+        
+        struct Response {
+            
+            var sharedText: String
+        }
+        
+        struct ViewModel {
+            
+            var sharedText: String
+        }
+    }
 }
