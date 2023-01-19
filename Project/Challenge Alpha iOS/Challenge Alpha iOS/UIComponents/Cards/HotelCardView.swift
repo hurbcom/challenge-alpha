@@ -64,16 +64,32 @@ struct HotelCardView: View {
     /// Hotel Location and Name
     var hotelGeneralInfo: some View {
         VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.DEFAULT_SMALL) {
-            // Hotel name
-            Text("\(name)")
-                .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
-                .foregroundColor(.black)
-                .lineLimit(2)
+            if stars > 0 {
+                HStack(spacing: UIConstants.PADDING_VALUES.SMALL) {
+                    Image(systemName: "star.fill")
+                        .font(.system(size: UIConstants.FONT_SIZE.SMALL))
+                        .foregroundColor(Color.yellow)
+                    
+                    Text("Hotel \(stars) estrelas")
+                        .font(.system(size: UIConstants.FONT_SIZE.SUPER_SMALL, weight: .semibold))
+                        .foregroundColor(UIConstants.COLOR.hurbDarkGray)
+                    
+                    Spacer()
+                }
+            }
             
-            // Location
-            Text("\(city), \(country)")
-                .font(.system(size: UIConstants.FONT_SIZE.SMALL))
-                .foregroundColor(UIConstants.COLOR.hurbDarkGray)
+            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.SUPER_SMALL) {
+                // Hotel name
+                Text("\(name)")
+                    .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
+                    .foregroundColor(.black)
+                    .lineLimit(2)
+                
+                // Location
+                Text("\(city), \(country)")
+                    .font(.system(size: UIConstants.FONT_SIZE.SMALL))
+                    .foregroundColor(UIConstants.COLOR.hurbDarkGray)
+            }
         }
     }
     
@@ -86,7 +102,7 @@ struct HotelCardView: View {
     var hotelPriceInfo: some View {
         VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.SUPER_SMALL) {
             // Label
-            Text("diária a partir de ")
+            Text("A partir de ")
                 .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
             
