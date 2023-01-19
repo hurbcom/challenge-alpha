@@ -97,9 +97,15 @@ struct PackageResult: Codable {
             return []
         }
         
-        var tagStrings = tags.map { item -> String in
+        let tagStrings = tags.map { item -> String in
             return item.label ?? ""
         }
+        
+        return tagStrings
+    }
+    
+    func getTagsWithDiscount() -> [String] {
+        var tagStrings = self.getTags()
         
         let discountLabel = self.getDiscountString()
         

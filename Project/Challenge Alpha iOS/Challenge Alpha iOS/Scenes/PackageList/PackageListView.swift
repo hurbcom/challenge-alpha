@@ -23,7 +23,7 @@ struct PackageListView: View {
                         maxPeople: viewModel.packages[index].getMaxPeople(),
                         amount: viewModel.packages[index].getFormattedAmount(),
                         originalAmount: viewModel.packages[index].getFormattedOriginalAmount(),
-                        tags: viewModel.packages[index].getTags(),
+                        tags: viewModel.packages[index].getTagsWithDiscount(),
                         imagesURL: viewModel.packages[index].getImagesURL(),
                         action: {
                             viewModel.onPackageTap(viewModel.packages[index])
