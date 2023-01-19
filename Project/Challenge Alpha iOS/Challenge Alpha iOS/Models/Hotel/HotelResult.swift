@@ -44,6 +44,10 @@ struct HotelResult: Codable {
         return self.price?.amount ?? 0.0
     }
     
+    func getStars() -> Int {
+        return self.stars ?? -1
+    }
+    
     func getFormattedAmount() -> String {
         guard let currency = self.price?.currency else {
             return ""
