@@ -59,7 +59,7 @@ struct HotelResult: Codable {
         guard let currency = self.price?.currency else {
             return ""
         }
-        return self.getFixedOriginalAmount().formatCurrency(currency)
+        return self.getOriginalAmount().formatCurrency(currency)
     }
     
     func getImagesURL() -> [String] {
