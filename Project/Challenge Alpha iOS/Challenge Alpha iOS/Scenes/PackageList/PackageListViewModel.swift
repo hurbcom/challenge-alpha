@@ -22,7 +22,7 @@ final class PackageListViewModel: ObservableObject {
     var interactor: PackageListInteractorProtocol
     var router: PackageListRouterProtocol
     
-    init(interactor: PackageListInteractorProtocol, router: PackageListRouterProtocol) {
+    init(interactor: PackageListInteractorProtocol, router: PackageListRouterProtocol = PackageListRouter()) {
         self.interactor = interactor
         self.router = router
     }
