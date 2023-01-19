@@ -1,47 +1,32 @@
-# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Alpha Challenge
+# Desafio da HURB
 
-[[English](README.md) | [Português](README.pt.md)]
+### Aplicativo para localizar hotéis/pacotes de viagem dada uma localização inserida através de um texto.
 
-Welcome to Hurb's mobile team coding challenge!
-
-We are always looking to expand our team with dedicated devs, see if you have open positions in our [Gupy](https://hurb.gupy.io/), if you don't have an open position, send a message on LinkedIn or open an issue.
-
-The challenge is to create a mobile app (**Swift**, **Kotlin**) that consumes the JSON exposed by our REST API or GraphQL search and presents the information in a listing. You are free to use third-party libraries.
-
-We want to see the **maximum of your technical ability**! You decide the limit.
-
-[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/company/hurb/)
-
-#### [>>>>> See Wiki for challenge details. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
-
-## Minimum requirements
-
--   Fork this challenge and create your project (or workspace) using your version of that repository, as soon as you finish the challenge, submit a _pull request_.
-    -   If you have any reason not to submit a _pull request_, create a private repository on Github, do every challenge on the **master** branch and don't forget to fill in the `pull-request.txt` file. As soon as you finish your development, add the user `automator-hurb` to your repository as a contributor and make it available for at least 30 days. **Do not add the `automator-hurb` until development is complete.**
-    -   If you have any problem creating the private repository, at the end of the challenge fill in the file called `pull-request.txt`, compress the project folder - including the `.git` folder - and send it to us by email.
--   Make asynchronous calls to the API and log the data received.
-
--   Have tests for the code created
-
-## Evaluation criteria
-
--   **Organization of code**: Separation of modules, view and model, back-end and front-end
--   **Clarity**: Does the README explain briefly what the problem is and how can I run the application?
--   **Assertiveness**: Is the application doing what is expected? If something is missing, does the README explain why?
--   **Code readability** (including comments)
--   **Security**: Are there any clear vulnerabilities?
--   **Test coverage** (We don't expect full coverage)
--   **History of commits** (structure and quality)
--   **UX**: Is the interface user-friendly and self-explanatory? Is the API intuitive?
--   **Technical choices**: Is the choice of libraries, database, architecture, etc. the best choice for the application?
+* Tela principal onde a funcionalidade de `buscar` está implementada e onde os resultados são listados:
 
 
-## Doubts
+![1o screenshot](https://user-images.githubusercontent.com/99778212/213345213-095ba1ca-d9ff-4872-a27c-5280792b1d69.png)
+![2o screenshot](https://user-images.githubusercontent.com/99778212/213346244-fa611d70-33fc-4f25-a4d3-7bf5c213b9c7.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2023-01-19 at 00 10 07](https://user-images.githubusercontent.com/99778212/213346860-20a8ec32-3be6-4616-bd48-90e22726f9f5.png)
 
-Any questions you may have, check the [_issues_](https://github.com/HurbCom/challenge-alpha/issues) to see if someone hasn't already and if you can't find your answer, open one yourself. new issue!
+* Logo ao clicar na célula, o usuário é levado para a próxima tela, com valores, descrição completa, localização no mapa, de que tipo é o produto e sugestões para o usuário no final da tela.
 
-Godspeed! ;)
 
-<p align="center">
-  <img src="ca.jpg" alt="Challange accepted" />
-</p>
+![Simulator Screen Shot - iPhone 14 Pro - 2023-01-19 at 00 10 07-2](https://user-images.githubusercontent.com/99778212/213347172-6d971537-3c2a-4363-9d4d-1c28174c095b.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2023-01-19 at 00 14 43](https://user-images.githubusercontent.com/99778212/213347309-75a88093-33bc-4eb4-98c1-ef4f63c77622.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2023-01-19 at 00 14 43-2](https://user-images.githubusercontent.com/99778212/213347961-6748e496-3054-4de8-9333-49ef157c6062.png)
+
+* Na tela de detalhe de pedidos o usuário pode selecionar para compartilhar o produto e ver sugestões do aplicativo.
+
+![Simulator Screen Shot - iPhone 14 Pro - 2023-01-19 at 00 25 33](https://user-images.githubusercontent.com/99778212/213349215-75e810d4-1522-41f2-b15e-0cc1b27554ce.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2023-01-19 at 00 28 09](https://user-images.githubusercontent.com/99778212/213349237-76b5bc09-ab07-4b66-be97-60cf1e18656c.png)
+
+* Na tela principal o usuário pode selecionar a lista de favoritos, lista de últimas visualizações ou algum produto.
+
+![Simulator Screen Shot - iPhone 14 Pro - 2023-01-19 at 00 33 47](https://user-images.githubusercontent.com/99778212/213349601-4dc31df1-86f9-4a4c-a759-d3c17a18468f.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2023-01-19 at 00 33 40](https://user-images.githubusercontent.com/99778212/213349609-be0fc9f4-7797-4a23-a0ca-9cf8e2137b0d.png)
+
+
+* A interface gráfica é intuitiva. Utilizei apenas uma library chamada [ScrollViewController](https://github.com/darrarski/ScrollViewController).
+
+* A arquitetura do projeto é MVVM que, na minha concepção, é apropriada para esse projeto pois possibilita a segregação de responsabilidades e é de fácil manutenção.
