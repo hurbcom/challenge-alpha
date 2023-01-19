@@ -31,6 +31,11 @@
 		DA2B70C12976F239005FB2A3 /* HUTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70C02976F239005FB2A3 /* HUTagView.swift */; };
 		DA2B70C52976F3A6005FB2A3 /* PackageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70C42976F3A6005FB2A3 /* PackageCardView.swift */; };
 		DA2B70C82976FBB3005FB2A3 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70C72976FBB3005FB2A3 /* Double+Extension.swift */; };
+		DA2B70CB29773A87005FB2A3 /* PackageDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70CA29773A87005FB2A3 /* PackageDetailsViewModel.swift */; };
+		DA2B70CD29773ADD005FB2A3 /* PackageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70CC29773ADD005FB2A3 /* PackageDetailsView.swift */; };
+		DA2B70CF29774233005FB2A3 /* PackageDetailsHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70CE29774233005FB2A3 /* PackageDetailsHostingController.swift */; };
+		DA2B70D1297742AD005FB2A3 /* PackageDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70D0297742AD005FB2A3 /* PackageDetailsFactory.swift */; };
+		DA2B70D329774328005FB2A3 /* PackageDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70D229774328005FB2A3 /* PackageDetailsRouter.swift */; };
 		DA2B70D929777921005FB2A3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70D829777921005FB2A3 /* String+Extension.swift */; };
 		DA2B70DB297780F9005FB2A3 /* MonthsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70DA297780F9005FB2A3 /* MonthsEnum.swift */; };
 		DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF5297497E100D0A444 /* AppDelegate.swift */; };
@@ -94,6 +99,11 @@
 		DA2B70C02976F239005FB2A3 /* HUTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUTagView.swift; sourceTree = "<group>"; };
 		DA2B70C42976F3A6005FB2A3 /* PackageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCardView.swift; sourceTree = "<group>"; };
 		DA2B70C72976FBB3005FB2A3 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		DA2B70CA29773A87005FB2A3 /* PackageDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsViewModel.swift; sourceTree = "<group>"; };
+		DA2B70CC29773ADD005FB2A3 /* PackageDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsView.swift; sourceTree = "<group>"; };
+		DA2B70CE29774233005FB2A3 /* PackageDetailsHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsHostingController.swift; sourceTree = "<group>"; };
+		DA2B70D0297742AD005FB2A3 /* PackageDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsFactory.swift; sourceTree = "<group>"; };
+		DA2B70D229774328005FB2A3 /* PackageDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsRouter.swift; sourceTree = "<group>"; };
 		DA2B70D829777921005FB2A3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DA2B70DA297780F9005FB2A3 /* MonthsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsEnum.swift; sourceTree = "<group>"; };
 		DA710BF2297497E100D0A444 /* Challenge Alpha iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +279,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		DA2B70C929773A63005FB2A3 /* PackageDetails */ = {
+			isa = PBXGroup;
+			children = (
+				DA2B70D0297742AD005FB2A3 /* PackageDetailsFactory.swift */,
+				DA2B70D229774328005FB2A3 /* PackageDetailsRouter.swift */,
+				DA2B70CA29773A87005FB2A3 /* PackageDetailsViewModel.swift */,
+				DA2B70CC29773ADD005FB2A3 /* PackageDetailsView.swift */,
+				DA2B70CE29774233005FB2A3 /* PackageDetailsHostingController.swift */,
+			);
+			path = PackageDetails;
+			sourceTree = "<group>";
+		};
 		DA710BE9297497E100D0A444 = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +388,7 @@
 		DAF2DE202974BD9C0055D6E3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DA2B70C929773A63005FB2A3 /* PackageDetails */,
 				DA2909102975C394005B0EFD /* PackageList */,
 				DAF2DE212974BDAD0055D6E3 /* Search */,
 			);
@@ -528,12 +551,15 @@
 				DAF2DE122974ADA10055D6E3 /* Address.swift in Sources */,
 				DA2B70DB297780F9005FB2A3 /* MonthsEnum.swift in Sources */,
 				DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */,
+				DA2B70CD29773ADD005FB2A3 /* PackageDetailsView.swift in Sources */,
 				DA29091E2975C58A005B0EFD /* PackageListHostingController.swift in Sources */,
 				DA2B70BE2976F19F005FB2A3 /* HULabel.swift in Sources */,
 				DA2908EE29757E9B005B0EFD /* SearchSceneFactory.swift in Sources */,
+				DA2B70D329774328005FB2A3 /* PackageDetailsRouter.swift in Sources */,
 				DA2908F029757F29005B0EFD /* SearchRouter.swift in Sources */,
 				DAF2DE192974AEAA0055D6E3 /* Amenity.swift in Sources */,
 				DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */,
+				DA2B70CB29773A87005FB2A3 /* PackageDetailsViewModel.swift in Sources */,
 				DAF2DE1C2974AEFF0055D6E3 /* CategoryEnum.swift in Sources */,
 				DA2909032975AC4C005B0EFD /* CornerRadius.swift in Sources */,
 				DA29090D2975B116005B0EFD /* PackageResult.swift in Sources */,
@@ -554,6 +580,8 @@
 				DAF2DE0E2974AAF80055D6E3 /* SearchResult.swift in Sources */,
 				DA2B70C12976F239005FB2A3 /* HUTagView.swift in Sources */,
 				DA29090B2975B0C9005B0EFD /* SearchPackage.swift in Sources */,
+				DA2B70CF29774233005FB2A3 /* PackageDetailsHostingController.swift in Sources */,
+				DA2B70D1297742AD005FB2A3 /* PackageDetailsFactory.swift in Sources */,
 				DAF2DE102974AD070055D6E3 /* Price.swift in Sources */,
 				DA2908F829758FF1005B0EFD /* ImageCarousel.swift in Sources */,
 				DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */,

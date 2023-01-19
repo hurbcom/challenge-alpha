@@ -16,8 +16,8 @@ final class PackageListRouter: PackageListRouterProtocol {
     weak var viewController: UIViewController?
     
     func navigateToPackageDetails(_ package: PackageResult) {
-//        let packageDetailsVC = PackageDetailsFactory.build(package: package)
-//        self.viewController?.navigationController?.pushViewController(packageDetailsVC, animated: true)
+        let packageDetailsVC = PackageDetailsFactory.build(package: package)
+        self.viewController?.navigationController?.pushViewController(packageDetailsVC, animated: true)
     }
     
     func presentSearch() {

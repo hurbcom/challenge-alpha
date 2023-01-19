@@ -25,7 +25,9 @@ struct PackageListView: View {
                         originalAmount: viewModel.packages[index].getFormattedOriginalAmount(),
                         tags: viewModel.packages[index].getTags(),
                         imagesURL: viewModel.packages[index].getImagesURL(),
-                        action: {}
+                        action: {
+                            viewModel.onPackageTap(viewModel.packages[index])
+                        }
                     )
                 }
             }
