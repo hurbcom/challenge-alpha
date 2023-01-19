@@ -68,7 +68,7 @@ struct PackageDetailsView: View {
     
     var titleView: some View {
         Text(viewModel.package.getName())
-            .font(.system(size: 18, weight: .semibold))
+            .font(.system(size: 22, weight: .semibold))
     }
     
     var dateInfoView: some View {
@@ -126,8 +126,8 @@ struct PackageDetailsView: View {
     
     var amenitiesView: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("O que tem no pacote?")
-                .font(.system(size: 16, weight: .semibold))
+            Text("O que está incluso?")
+                .font(.system(size: 18, weight: .semibold))
             
             LazyVGrid(columns: [.init(.flexible(), spacing: 16, alignment: .leading), .init(.flexible(), alignment: .leading)], spacing: 12) {
                 ForEach(viewModel.package.getAmenitiesName(), id: \.self) { amenity in
