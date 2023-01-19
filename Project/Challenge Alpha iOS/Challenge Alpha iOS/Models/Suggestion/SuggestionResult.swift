@@ -18,5 +18,6 @@ enum SuggestionType: String, Codable {
     case city = "city"
     case state = "estado"
     case hotel = "hotel"
+    case package = "package"
     case tag = "tag"
 }
