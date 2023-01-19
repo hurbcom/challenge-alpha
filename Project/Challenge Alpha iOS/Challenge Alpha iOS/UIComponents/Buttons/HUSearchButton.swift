@@ -46,7 +46,7 @@ struct HUSearchButton: View {
     private func magnifyingglassImage(color: Color) -> some View {
         Image(systemName: "magnifyingglass")
             .foregroundColor(color)
-            .font(.system(size: 16, weight: .medium))
+            .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .medium))
     }
     
     var searchLabel: some View {
@@ -56,7 +56,7 @@ struct HUSearchButton: View {
             }
             
             Text(self.searchText)
-                .font(.system(size: 16, weight: .regular))
+                .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .regular))
                 .foregroundColor(.black)
         }
         .padding(.horizontal)

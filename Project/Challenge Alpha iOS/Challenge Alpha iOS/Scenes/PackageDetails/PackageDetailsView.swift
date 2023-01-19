@@ -83,21 +83,21 @@ struct PackageDetailsView: View {
     
     var titleView: some View {
         Text(viewModel.package.getName())
-            .font(.system(size: 22, weight: .semibold))
+            .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .semibold))
     }
     
     var dateInfoView: some View {
         VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.SMALL) {
             Text("Viaje entre")
-                .font(.system(size: 14))
+                .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
             
             Text("\(viewModel.package.getStartDateMonthAndYear()) e \(viewModel.package.getEndDateMonthAndYear())")
-                .font(.system(size: 14, weight: .medium))
+                .font(.system(size: UIConstants.FONT_SIZE.SMALL, weight: .medium))
                 .foregroundColor(.black)
             
             Text("\(viewModel.package.getDuration()) diárias")
-                .font(.system(size: 14))
+                .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
         }
     }
@@ -110,12 +110,12 @@ struct PackageDetailsView: View {
             VStack(alignment: .trailing, spacing: UIConstants.PADDING_VALUES.SUPER_SMALL) {
                 HStack(spacing: UIConstants.PADDING_VALUES.SMALL) {
                     Text("A partir de ")
-                        .font(.system(size: 14))
+                        .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                         .foregroundColor(UIConstants.COLOR.hurbGray)
                     +
                     Text("\(originalAmount != amount ? amount : "")")
                         .strikethrough()
-                        .font(.system(size: 14))
+                        .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                         .foregroundColor(UIConstants.COLOR.hurbDarkGray)
                     
                     if !viewModel.package.getDiscountString().isEmpty {
@@ -128,11 +128,11 @@ struct PackageDetailsView: View {
                 }
                 
                 Text(originalAmount)
-                    .font(.system(size: 22, weight: .bold))
+                    .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .bold))
                     .foregroundColor(originalAmount != amount ? UIConstants.COLOR.hurbOrange : .black)
                 
                 Text("+ Taxas, até 12x no cartão")
-                    .font(.system(size: 14))
+                    .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                     .foregroundColor(UIConstants.COLOR.hurbGray)
                     .padding(.top, UIConstants.PADDING_VALUES.SUPER_SMALL)
             }
@@ -142,7 +142,7 @@ struct PackageDetailsView: View {
     var amenitiesView: some View {
         VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.DEFAULT_BIG) {
             Text("O que está incluso?")
-                .font(.system(size: 18, weight: .semibold))
+                .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
             
             LazyVGrid(
                 columns: [
@@ -172,11 +172,11 @@ struct PackageDetailsView: View {
     var mapView: some View {
         VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.NORMAL) {
             Text("Local")
-                .font(.system(size: 16))
+                .font(.system(size: UIConstants.FONT_SIZE.DEFAULT))
                 .foregroundColor(.black)
             
             Text("\(viewModel.package.getCity())")
-                .font(.system(size: 22, weight: .bold))
+                .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .bold))
                 .foregroundColor(UIConstants.COLOR.hurbPink)
             
             Map(coordinateRegion: $mapRegion, annotationItems: [viewModel.place]) { place in

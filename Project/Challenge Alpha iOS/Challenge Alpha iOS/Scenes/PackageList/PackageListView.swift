@@ -16,7 +16,7 @@ struct PackageListView: View {
             VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.NORMAL) {
                 HStack {
                     Text(viewModel.query.isEmpty ? "" : "Exibindo resultados de \(viewModel.query)")
-                        .font(.system(size: 12))
+                        .font(.system(size: UIConstants.FONT_SIZE.SUPER_SMALL))
                         .foregroundColor(UIConstants.COLOR.hurbGray)
                     Spacer()
                 }

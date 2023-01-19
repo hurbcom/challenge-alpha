@@ -50,4 +50,19 @@ public struct UIConstants {
         /// 0
         public static var NONE: CGFloat = 0
     }
+    
+    public struct FONT_SIZE {
+        private init() {}
+        
+        /// 22
+        public static var HEADER: CGFloat = 22
+        /// 18
+        public static var TITLE: CGFloat = 18
+        /// 16
+        public static var DEFAULT: CGFloat = 16
+        /// 14
+        public static var SMALL: CGFloat = 14
+        /// 12
+        public static var SUPER_SMALL: CGFloat = 12
+    }
 }

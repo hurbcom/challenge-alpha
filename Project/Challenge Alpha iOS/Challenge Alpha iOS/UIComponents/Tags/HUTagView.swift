@@ -15,7 +15,7 @@ struct HUTagView: View {
     
     var body: some View {
         Text(title)
-            .font(.system(size: 14, weight: .semibold))
+            .font(.system(size: UIConstants.FONT_SIZE.SMALL, weight: .semibold))
             .lineLimit(1)
             .foregroundColor(textColor)
             .padding(.vertical, UIConstants.PADDING_VALUES.SMALL)

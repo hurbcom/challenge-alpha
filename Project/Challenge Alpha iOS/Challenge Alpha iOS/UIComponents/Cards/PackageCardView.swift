@@ -77,12 +77,12 @@ struct PackageCardView: View {
         VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.DEFAULT_SMALL) {
             // Location
             Text("\(city), \(country)")
-                .font(.system(size: 14))
+                .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
             
             // Package name
             Text("\(name)")
-                .font(.system(size: 16, weight: .semibold))
+                .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
                 .foregroundColor(.black)
                 .lineLimit(2)
         }
@@ -101,21 +101,21 @@ struct PackageCardView: View {
         VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.SUPER_SMALL) {
             // Original amount
             Text("A partir de ")
-                .font(.system(size: 14))
+                .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
             +
             Text("\(originalAmount != amount ? amount : "")")
                 .strikethrough()
-                .font(.system(size: 14))
+                .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
             
             // Amount
             Text(originalAmount)
-                .font(.system(size: 18, weight: .bold))
+                .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .bold))
                 .foregroundColor(originalAmount != amount ? UIConstants.COLOR.hurbOrange : .black)
             +
             Text(" até 12x no cartão")
-                .font(.system(size: 14))
+                .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
         }
     }

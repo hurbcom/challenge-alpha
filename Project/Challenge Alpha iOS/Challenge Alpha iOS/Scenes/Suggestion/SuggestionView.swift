@@ -17,7 +17,7 @@ struct SuggestionView: View {
                 Spacer()
                 Button(action: viewModel.onCloseTap) {
                     Image(systemName: "xmark")
-                        .font(.system(size: 18, weight: .semibold))
+                        .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
                         .foregroundColor(.black)
                 }
             }.padding()
@@ -28,7 +28,7 @@ struct SuggestionView: View {
                 })
                 .placeholder(when: viewModel.searchText.isEmpty) {
                     Text("Quero ir para...")
-                        .font(.system(size: 18))
+                        .font(.system(size: UIConstants.FONT_SIZE.TITLE))
                         .foregroundColor(UIConstants.COLOR.hurbGray)
                 }.padding(.horizontal)
                 
@@ -69,17 +69,17 @@ struct SuggestionView: View {
         } else {
             VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.LARGE) {
                 Text("Destinos")
-                    .font(.system(size: 22, weight: .semibold))
+                    .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .semibold))
                     .foregroundColor(.black)
                 
                 ForEach(0..<viewModel.destinationSuggestions.count, id: \.self) { index in
                     HStack(alignment: .top) {
                         Image(systemName: "mappin.circle")
-                            .font(.system(size: 18, weight: .semibold))
+                            .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
                             .foregroundColor(UIConstants.COLOR.hurbBlue)
                         
                         Text(viewModel.destinationSuggestions[index].text ?? "")
-                            .font(.system(size: 16, weight: .semibold))
+                            .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
                             .foregroundColor(.black)
                         
                         Spacer()
@@ -101,17 +101,17 @@ struct SuggestionView: View {
         } else {
             VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.LARGE) {
                 Text(viewModel.getOtherSuggestionsTitle())
-                    .font(.system(size: 22, weight: .semibold))
+                    .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .semibold))
                     .foregroundColor(.black)
                 
                 ForEach(0..<viewModel.otherSuggestions.count, id: \.self) { index in
                     HStack(alignment: .top) {
                         Image(systemName: "bag.fill")
-                            .font(.system(size: 18, weight: .semibold))
+                            .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
                             .foregroundColor(UIConstants.COLOR.hurbBlue)
                         
                         Text(viewModel.otherSuggestions[index].text ?? "")
-                            .font(.system(size: 16, weight: .semibold))
+                            .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
                             .foregroundColor(.black)
                         
                         Spacer()

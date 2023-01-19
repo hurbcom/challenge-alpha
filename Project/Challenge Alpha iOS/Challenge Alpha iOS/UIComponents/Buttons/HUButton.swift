@@ -48,7 +48,7 @@ struct FillButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 16, weight: .semibold))
+            .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
             .lineLimit(1)
             .minimumScaleFactor(0.5)
             .foregroundColor(Color.white)
@@ -68,7 +68,7 @@ struct OutlineButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 16, weight: .semibold))
+            .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
             .lineLimit(1)
             .minimumScaleFactor(0.5)
             .foregroundColor(color)

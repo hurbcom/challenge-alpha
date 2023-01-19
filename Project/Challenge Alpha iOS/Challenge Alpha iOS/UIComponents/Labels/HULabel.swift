@@ -17,11 +17,11 @@ struct HULabel: View {
     var body: some View {
         HStack(spacing: UIConstants.PADDING_VALUES.SMALL) {
             Image(systemName: imageName)
-                .font(.system(size: 14))
+                .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(fillColor)
             
             Text("\(title)")
-                .font(.system(size: 14))
+                .font(.system(size: UIConstants.FONT_SIZE.SMALL))
                 .foregroundColor(fillColor)
                 .minimumScaleFactor(0.5)
                 .lineLimit(1)
