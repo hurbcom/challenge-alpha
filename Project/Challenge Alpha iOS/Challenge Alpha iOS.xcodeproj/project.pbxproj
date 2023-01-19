@@ -39,6 +39,8 @@
 		DA2B70D929777921005FB2A3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70D829777921005FB2A3 /* String+Extension.swift */; };
 		DA2B70DB297780F9005FB2A3 /* MonthsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B70DA297780F9005FB2A3 /* MonthsEnum.swift */; };
 		DA2CDFAA2978CB700070D898 /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFA92978CB700070D898 /* Text+Extension.swift */; };
+		DA2CDFB52978F6710070D898 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFB42978F6710070D898 /* Suggestions.swift */; };
+		DA2CDFB72978F69A0070D898 /* SuggestionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFB62978F69A0070D898 /* SuggestionResult.swift */; };
 		DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF5297497E100D0A444 /* AppDelegate.swift */; };
 		DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF7297497E100D0A444 /* SceneDelegate.swift */; };
 		DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF9297497E100D0A444 /* SearchViewHostingController.swift */; };
@@ -108,6 +110,8 @@
 		DA2B70D829777921005FB2A3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DA2B70DA297780F9005FB2A3 /* MonthsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsEnum.swift; sourceTree = "<group>"; };
 		DA2CDFA92978CB700070D898 /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
+		DA2CDFB42978F6710070D898 /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
+		DA2CDFB62978F69A0070D898 /* SuggestionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionResult.swift; sourceTree = "<group>"; };
 		DA710BF2297497E100D0A444 /* Challenge Alpha iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA710BF5297497E100D0A444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA710BF7297497E100D0A444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -294,6 +298,15 @@
 			path = PackageDetails;
 			sourceTree = "<group>";
 		};
+		DA2CDFB32978F6550070D898 /* Suggestion */ = {
+			isa = PBXGroup;
+			children = (
+				DA2CDFB42978F6710070D898 /* Suggestions.swift */,
+				DA2CDFB62978F69A0070D898 /* SuggestionResult.swift */,
+			);
+			path = Suggestion;
+			sourceTree = "<group>";
+		};
 		DA710BE9297497E100D0A444 = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +372,7 @@
 		DAF2DE0C2974AA870055D6E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DA2CDFB32978F6550070D898 /* Suggestion */,
 				DA2909092975B032005B0EFD /* Package */,
 				DAF2DE1A2974AED10055D6E3 /* Search */,
 				DAF2DE1D2974AF3F0055D6E3 /* Shared */,
@@ -587,11 +601,13 @@
 				DA2B70CF29774233005FB2A3 /* PackageDetailsHostingController.swift in Sources */,
 				DA2B70D1297742AD005FB2A3 /* PackageDetailsFactory.swift in Sources */,
 				DAF2DE102974AD070055D6E3 /* Price.swift in Sources */,
+				DA2CDFB72978F69A0070D898 /* SuggestionResult.swift in Sources */,
 				DA2908F829758FF1005B0EFD /* HUImageCarousel.swift in Sources */,
 				DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */,
 				DA29091C2975C563005B0EFD /* PackageListView.swift in Sources */,
 				DA2909202975C5A4005B0EFD /* PackageListViewModel.swift in Sources */,
 				DA2B70D929777921005FB2A3 /* String+Extension.swift in Sources */,
+				DA2CDFB52978F6710070D898 /* Suggestions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
