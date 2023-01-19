@@ -16,9 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let viewController = PackageListFactory.build()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        window.rootViewController = navigationController
+        
+        let packageViewController = PackageListFactory.build()
+        let hotelViewController = HotelListFactory.build()
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            UINavigationController(rootViewController: packageViewController),
+            UINavigationController(rootViewController: hotelViewController),
+        ]
+        window.rootViewController = tabBarController
         self.window = window
         
         window.makeKeyAndVisible()
