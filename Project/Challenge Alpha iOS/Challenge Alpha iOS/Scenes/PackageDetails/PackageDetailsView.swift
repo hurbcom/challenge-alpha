@@ -51,7 +51,7 @@ struct PackageDetailsView: View {
     }
     
     var headerCarouselView: some View {
-        ImageCarousel(
+        HUImageCarousel(
             imagesURL: viewModel.package.getImagesURL(),
             maxHeight: UIScreen.main.bounds.height / 3
         )

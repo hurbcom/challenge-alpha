@@ -59,7 +59,7 @@ struct PackageCardView: View {
     /// Image Carousel with tags on top
     var imageHeader: some View {
         ZStack(alignment: .topLeading) {
-            ImageCarousel(imagesURL: imagesURL)
+            HUImageCarousel(imagesURL: imagesURL)
                 .cornerRadius(8, corners: .topLeft)
                 .cornerRadius(8, corners: .topRight)
             

@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct ImageCarousel: View {
+struct HUImageCarousel: View {
     
     var imagesURL: [String]
     var maxHeight: CGFloat = 224
@@ -38,7 +38,7 @@ struct ImageCarousel: View {
 struct ImageCarousel_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            ImageCarousel(
+            HUImageCarousel(
                 imagesURL: [
                     "https://thumbcdn-b.hotelurbano.net/HMPCfEPtnilwIrF6fEbUQLKNAbI=/origxorig/center/middle/filters:quality(70)/https://i.travelapi.com/hotels/3000000/2230000/2227000/2226944/2b054887_z.jpg",
                     "https://thumbcdn-3.hotelurbano.net/f8sxWMKkAQ6nGtA20ynXRGac0zI=/origxorig/center/middle/filters:quality(70)/https://i.travelapi.com/hotels/3000000/2230000/2227000/2226944/02587451_z.jpg"
