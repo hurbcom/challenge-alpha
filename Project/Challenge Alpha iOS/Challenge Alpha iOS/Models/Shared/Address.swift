@@ -13,6 +13,11 @@ struct Address: Codable {
     var city: String?
     var country: String?
     var geolocation: Geolocation?
+    
+    enum CodingKeys: String, CodingKey {
+        case state, city, country
+        case geolocation = "geoLocation"
+    }
 }
 
 // MARK: - Geolocation
