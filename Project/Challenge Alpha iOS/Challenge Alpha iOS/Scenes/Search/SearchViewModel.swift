@@ -10,7 +10,8 @@ import Combine
 
 final class SearchViewModel: ObservableObject {
     // MARK: - Published variables
-    @Published var serachResults: [SearchResult] = []
+    @Published var searchResults: [SearchResult] = []
+    @Published var selectedSegmentedControlIndex = 0
     @Published var searchText: String = Constants.DEFAULT_DESTINATION
     @Published var showLoading: Bool = true
     @Published var showError: Bool = false
@@ -45,14 +46,34 @@ final class SearchViewModel: ObservableObject {
                 
                 self.hideLoading()
             } receiveValue: { searchResults in
-                self.serachResults = searchResults
+                self.searchResults = searchResults
             }
             .store(in: &cancellables)
     }
     
     // MARK: - Actions
     func onSearchTap() {
+        var suggestionType: SuggestionType = .hotel
+        switch self.selectedSegmentedControlIndex {
+        case 1:
+            suggestionType = .package
+        default:
+            suggestionType = .hotel
+        }
         
+        router.presentSuggestions(suggestionType: suggestionType) { searchTerm in
+            self.searchText = searchTerm
+            
+//            suggestionType == .hotel ? router.navigateToHotelList() : router.navigateToPackageList()
+        }
+    }
+    
+    func onHotelTap(_ hotel: HotelResult) {
+        router.navigateToHotelDetails(hotel)
+    }
+    
+    func onPackageTap(_ package: PackageResult) {
+        router.navigateToPackageDetails(package)
     }
     
     // MARK: - Helpers

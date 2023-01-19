@@ -8,10 +8,27 @@
 import UIKit
 
 protocol SearchRouterProtocol {
-    // TODO: Add navigation functions
+    func navigateToHotelDetails(_ hotel: HotelResult)
+    func navigateToPackageDetails(_ package: PackageResult)
+    func presentSuggestions(suggestionType: SuggestionType, onComplete: @escaping ((String) -> Void))
 }
 
 final class SearchRouter: SearchRouterProtocol {
     weak var viewController: UIViewController?
+    
+    func navigateToHotelDetails(_ hotel: HotelResult) {
+//        let hotelDetailsVC = HotelDetailsFactory.build(package: package)
+//        viewController?.navigationController?.pushViewController(packageDetailsVC, animated: true)
+    }
+    
+    func navigateToPackageDetails(_ package: PackageResult) {
+        let packageDetailsVC = PackageDetailsFactory.build(package: package)
+        viewController?.navigationController?.pushViewController(packageDetailsVC, animated: true)
+    }
+    
+    func presentSuggestions(suggestionType: SuggestionType, onComplete: @escaping ((String) -> Void)) {
+        let suggestionVC = SuggestionFactory.build(suggestionType: suggestionType, onSearchComplete: onComplete)
+        viewController?.present(suggestionVC, animated: true)
+    }
     
 }
