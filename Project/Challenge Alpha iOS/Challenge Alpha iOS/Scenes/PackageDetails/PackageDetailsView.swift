@@ -151,11 +151,12 @@ struct PackageDetailsView: View {
             }
             
             if #available(iOS 15, *) {
-                Text(viewModel.package.description ?? "") {
-                    $0.font = Font.system(size: 14, weight: .regular, design: .default)
-                }.lineLimit(3)
+                Text((viewModel.package.description ?? "").addFontToHTMLString().htmlToAttributedString())
+                    .lineLimit(3)
                 
-                HUButton(title: "Ler mais", color: UIConstants.COLOR.hurbBlue, style: .outline, verticalPadding: 8, action: {})
+                HUButton(title: "Ler mais", color: UIConstants.COLOR.hurbBlue, style: .outline, verticalPadding: 8, action: {
+                    viewModel.onDescriptionButtonTap()
+                })
             } else {
                 HUButton(title: "Mostrar detalhes", color: UIConstants.COLOR.hurbBlue, style: .outline, verticalPadding: 8, action: {})
             }
@@ -180,5 +181,44 @@ struct PackageDetailsView: View {
             .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
         }
         .padding(.vertical)
+    }
+}
+
+@available(iOS 15, *)
+struct PackageDescriptionView: View {
+    
+    var description: String
+    var amenities: [String]
+    var closeAction: (() -> Void)
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            LazyVGrid(columns: [.init(.flexible(), spacing: 16, alignment: .leading), .init(.flexible(), alignment: .leading)], spacing: 12) {
+                ForEach(amenities, id: \.self) { amenity in
+                    HULabel(imageName: "checkmark.circle", title: amenity, fillColor: UIConstants.COLOR.hurbDarkGray)
+                }
+            }
+            .padding()
+            .background(
+                Color.white
+            )
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                Text(description.addFontToHTMLString().htmlToAttributedString())
+            }.padding()
+            
+            HUButton(title: "Fechar", color: UIConstants.COLOR.hurbBlue, style: .fill, verticalPadding: 12) {
+                self.closeAction()
+            }
+            .padding()
+            .background(
+                Color.white
+            )
+        }
+        .frame(width: UIScreen.main.bounds.width - 32, height: UIScreen.main.bounds.height * 0.8)
+        .background(
+            Color.white
+        )
+        .cornerRadius(4)
     }
 }

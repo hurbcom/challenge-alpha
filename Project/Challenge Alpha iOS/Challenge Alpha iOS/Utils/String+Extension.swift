@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     func monthAndYearString() -> String {
@@ -28,6 +29,10 @@ extension String {
         
         let yearString = String(year).suffix(2)
         return "\(monthString)/\(yearString)"
+    }
+    
+    func addFontToHTMLString() -> String {
+        return "<span style=\"font-family: Helvetica; font-size: 14\">" + self + "</span>"
     }
 }
 

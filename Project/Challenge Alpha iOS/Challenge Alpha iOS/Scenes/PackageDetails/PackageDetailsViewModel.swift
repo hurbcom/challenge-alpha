@@ -41,4 +41,9 @@ final class PackageDetailsViewModel: ObservableObject {
     @objc func onShareButtonTap() {
         router.presentShareSheet(urlString: self.package.url ?? "")
     }
+    
+    @available(iOS 15, *)
+    func onDescriptionButtonTap() {
+        router.presentDescription(self.package.description ?? "", amenities: self.package.getAmenitiesName())
+    }
 }
