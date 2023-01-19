@@ -144,17 +144,7 @@ struct PackageDetailsView: View {
             Text("O que está incluso?")
                 .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
             
-            LazyVGrid(
-                columns: [
-                    .init(.flexible(), spacing: UIConstants.PADDING_VALUES.DEFAULT_BIG, alignment: .leading),
-                    .init(.flexible(), alignment: .leading)
-                ],
-                spacing: UIConstants.PADDING_VALUES.NORMAL)
-            {
-                ForEach(viewModel.package.getAmenitiesName(), id: \.self) { amenity in
-                    HULabel(imageName: "checkmark.circle", title: amenity, fillColor: UIConstants.COLOR.hurbDarkGray)
-                }
-            }
+            AmenitiesGrid(amenities: viewModel.package.getAmenitiesName())
             
             if #available(iOS 15, *) {
                 Text((viewModel.package.description ?? "").addFontToHTMLString().htmlToAttributedString())
@@ -199,21 +189,11 @@ struct PackageDescriptionView: View {
     
     var body: some View {
         VStack(spacing: UIConstants.PADDING_VALUES.NONE) {
-            LazyVGrid(
-                columns: [
-                    .init(.flexible(), spacing: UIConstants.PADDING_VALUES.DEFAULT_BIG, alignment: .leading),
-                    .init(.flexible(), alignment: .leading)
-                ],
-                spacing: UIConstants.PADDING_VALUES.NORMAL)
-            {
-                ForEach(amenities, id: \.self) { amenity in
-                    HULabel(imageName: "checkmark.circle", title: amenity, fillColor: UIConstants.COLOR.hurbDarkGray)
-                }
-            }
-            .padding()
-            .background(
-                Color.white
-            )
+            AmenitiesGrid(amenities: amenities)
+                .padding()
+                .background(
+                    Color.white
+                )
             
             ScrollView(.vertical, showsIndicators: false) {
                 Text(description.addFontToHTMLString().htmlToAttributedString())

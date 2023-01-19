@@ -15,6 +15,7 @@
 		DA081BF72979C4C0005CF0EA /* SearchHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA081BF62979C4C0005CF0EA /* SearchHotel.swift */; };
 		DA081BF92979C4F4005CF0EA /* HotelResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA081BF82979C4F4005CF0EA /* HotelResult.swift */; };
 		DA081BFB2979C71C005CF0EA /* HotelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA081BFA2979C71C005CF0EA /* HotelCardView.swift */; };
+		DA081BFE2979C98B005CF0EA /* AmenitiesGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA081BFD2979C98B005CF0EA /* AmenitiesGrid.swift */; };
 		DA117D9B29749E9600CC3749 /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = DA117D9A29749E9600CC3749 /* HUGraphQL */; };
 		DA2908EA297575AD005B0EFD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2908E9297575AD005B0EFD /* SearchView.swift */; };
 		DA2908EE29757E9B005B0EFD /* SearchSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2908ED29757E9B005B0EFD /* SearchSceneFactory.swift */; };
@@ -102,6 +103,7 @@
 		DA081BF62979C4C0005CF0EA /* SearchHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotel.swift; sourceTree = "<group>"; };
 		DA081BF82979C4F4005CF0EA /* HotelResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelResult.swift; sourceTree = "<group>"; };
 		DA081BFA2979C71C005CF0EA /* HotelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCardView.swift; sourceTree = "<group>"; };
+		DA081BFD2979C98B005CF0EA /* AmenitiesGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmenitiesGrid.swift; sourceTree = "<group>"; };
 		DA2908E9297575AD005B0EFD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DA2908ED29757E9B005B0EFD /* SearchSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSceneFactory.swift; sourceTree = "<group>"; };
 		DA2908EF29757F29005B0EFD /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -210,6 +212,14 @@
 			path = Hotel;
 			sourceTree = "<group>";
 		};
+		DA081BFC2979C972005CF0EA /* Grids */ = {
+			isa = PBXGroup;
+			children = (
+				DA081BFD2979C98B005CF0EA /* AmenitiesGrid.swift */,
+			);
+			path = Grids;
+			sourceTree = "<group>";
+		};
 		DA117D9929749E9600CC3749 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +243,7 @@
 				DA2908FD29759B20005B0EFD /* Buttons */,
 				DA2B70C22976F374005FB2A3 /* Cards */,
 				DA2908FE29759B29005B0EFD /* Carousels */,
+				DA081BFC2979C972005CF0EA /* Grids */,
 				DA2B70BC2976F189005FB2A3 /* Labels */,
 				DA2B70BF2976F22A005FB2A3 /* Tags */,
 				DA2909292975CDBE005B0EFD /* ViewModifiers */,
@@ -675,6 +686,7 @@
 				DA2B70CF29774233005FB2A3 /* PackageDetailsHostingController.swift in Sources */,
 				DA2B70D1297742AD005FB2A3 /* PackageDetailsFactory.swift in Sources */,
 				DAF2DE102974AD070055D6E3 /* Price.swift in Sources */,
+				DA081BFE2979C98B005CF0EA /* AmenitiesGrid.swift in Sources */,
 				DA2CDFB72978F69A0070D898 /* SuggestionResult.swift in Sources */,
 				DA2908F829758FF1005B0EFD /* HUImageCarousel.swift in Sources */,
 				DA081BE82979919E005CF0EA /* LoggerFactory.swift in Sources */,
