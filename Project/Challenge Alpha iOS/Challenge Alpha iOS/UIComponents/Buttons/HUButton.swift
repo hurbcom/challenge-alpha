@@ -57,6 +57,7 @@ struct FillButtonStyle: ButtonStyle {
             .frame(maxWidth: .infinity)
             .background(color)
             .cornerRadius(4)
+            .contentShape(Rectangle())
     }
 }
 
@@ -80,6 +81,7 @@ struct OutlineButtonStyle: ButtonStyle {
                 RoundedRectangle(cornerRadius: 4)
                     .stroke(color, lineWidth: 1)
             )
+            .contentShape(Rectangle())
     }
 }
 
