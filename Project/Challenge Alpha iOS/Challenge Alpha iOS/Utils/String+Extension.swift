@@ -31,21 +31,21 @@ extension String {
     }
 }
 
-extension StringProtocol {
-    func htmlToAttributedString() -> AttributedString {
-        guard let attString = try? AttributedString(
-            NSAttributedString(
-                data: .init(utf8),
-                options: [
-                    .documentType: NSAttributedString.DocumentType.html,
-                    .characterEncoding: String.Encoding.utf8.rawValue
-                ],
-                documentAttributes: nil
-            )
-        ) else {
-            return AttributedString(stringLiteral: "")
-        }
-        
-        return attString
-    }
-}
+//extension StringProtocol {
+//    func htmlToAttributedString() -> AttributedString {
+//        guard let attString = try? AttributedString(
+//            NSAttributedString(
+//                data: .init(utf8),
+//                options: [
+//                    .documentType: NSAttributedString.DocumentType.html,
+//                    .characterEncoding: String.Encoding.utf8.rawValue
+//                ],
+//                documentAttributes: nil
+//            )
+//        ) else {
+//            return AttributedString(stringLiteral: "")
+//        }
+//        
+//        return attString
+//    }
+//}

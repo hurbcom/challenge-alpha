@@ -134,11 +134,9 @@ struct PackageDetailsView: View {
                 }
             }
             
-            
-            Text(viewModel.package.description ?? "") {
-                $0.font = Font.system(size: 14, weight: .regular, design: .default)
-            }
-            .lineLimit(3)
+//            Text(viewModel.package.description ?? "") {
+//                $0.font = Font.system(size: 14, weight: .regular, design: .default)
+//            }
             
             HUButton(title: "Mostrar detalhes", color: UIConstants.COLOR.hurbBlue, style: .outline, action: {})
         }

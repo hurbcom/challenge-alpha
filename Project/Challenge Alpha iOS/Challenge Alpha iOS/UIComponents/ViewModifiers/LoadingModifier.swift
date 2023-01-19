@@ -19,8 +19,7 @@ struct LoadingModifier: ViewModifier {
         ZStack {
             if isLoading {
                 ProgressView()
-                    .progressViewStyle(.circular)
-                    .tint(UIConstants.COLOR.hurbBlue)
+                    .progressViewStyle(CircularProgressViewStyle(tint: UIConstants.COLOR.hurbBlue))
             }
             
             content

@@ -22,13 +22,13 @@ struct ImageCarousel: View {
                     }
                     .resizable()
             }
-            .overlay {
+            .overlay(
                 LinearGradient(
                     colors: [.clear, .clear, .black.opacity(0.6)],
                     startPoint: .center,
                     endPoint: .bottom
                 )
-            }
+            )
         }
         .frame(maxWidth: .infinity, minHeight: self.maxHeight, maxHeight: self.maxHeight)
         .tabViewStyle(.page(indexDisplayMode: .always))

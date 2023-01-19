@@ -30,11 +30,11 @@ struct HUSearchButton: View {
             }
         }
         .frame(maxWidth: .infinity, minHeight: 48, maxHeight: 48)
-        .background {
+        .background(
             RoundedRectangle(cornerRadius: 4.0)
                 .strokeBorder(Color.secondary, lineWidth: 1)
                 .foregroundColor(.clear)
-        }
+        )
         .contentShape(Rectangle())
         .onTapGesture {
             self.action()
