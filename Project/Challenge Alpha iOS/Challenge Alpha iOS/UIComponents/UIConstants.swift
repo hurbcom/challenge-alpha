@@ -15,6 +15,7 @@ public struct UIConstants {
         public static var hurbLightGray: String = "hurb_light_gray"
         public static var hurbDarkGray: String = "hurb_dark_gray"
         public static var hurbOrange: String = "hurb_orange"
+        public static var hurbPink: String = "hurb_pink"
     }
     
     public struct COLOR {
@@ -23,5 +24,6 @@ public struct UIConstants {
         public static var hurbLightGray: Color = Color(UIConstants.COLOR_NAME.hurbLightGray)
         public static var hurbDarkGray: Color = Color(UIConstants.COLOR_NAME.hurbDarkGray)
         public static var hurbOrange: Color = Color(UIConstants.COLOR_NAME.hurbOrange)
+        public static var hurbPink: Color = Color(UIConstants.COLOR_NAME.hurbPink)
     }
 }
