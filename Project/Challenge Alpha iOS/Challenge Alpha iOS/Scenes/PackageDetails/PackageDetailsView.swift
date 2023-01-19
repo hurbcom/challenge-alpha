@@ -53,6 +53,7 @@ struct PackageDetailsView: View {
     var headerCarouselView: some View {
         HUImageCarousel(
             imagesURL: viewModel.package.getImagesURL(),
+            hasBlackOverlay: true,
             maxHeight: UIScreen.main.bounds.height / 3
         )
     }

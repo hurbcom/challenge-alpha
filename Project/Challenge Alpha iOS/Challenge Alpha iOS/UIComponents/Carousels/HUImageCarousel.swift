@@ -11,6 +11,7 @@ import Kingfisher
 struct HUImageCarousel: View {
     
     var imagesURL: [String]
+    var hasBlackOverlay: Bool = false
     var maxHeight: CGFloat = 224
     
     var body: some View {
@@ -23,11 +24,16 @@ struct HUImageCarousel: View {
                     .resizable()
             }
             .overlay(
-                LinearGradient(
-                    colors: [.clear, .clear, .black.opacity(0.6)],
-                    startPoint: .center,
-                    endPoint: .bottom
-                )
+                ZStack {
+                    Color.black
+                        .opacity(hasBlackOverlay ? 0.2 : 0)
+                    
+                    LinearGradient(
+                        colors: [.clear, .clear, .black.opacity(0.6)],
+                        startPoint: .center,
+                        endPoint: .bottom
+                    )
+                }
             )
         }
         .frame(maxWidth: .infinity, minHeight: self.maxHeight, maxHeight: self.maxHeight)
