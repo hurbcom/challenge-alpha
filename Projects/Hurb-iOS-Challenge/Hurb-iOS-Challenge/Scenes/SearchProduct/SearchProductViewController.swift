@@ -104,13 +104,11 @@ class SearchProductViewController: UIViewController {
         SearchLocationConfigurator.setupArch(viewController: searchLocationViewController!)
         
         self.searchController = UISearchController(searchResultsController: searchLocationViewController)
-        //self.searchController?.obscuresBackgroundDuringPresentation = true
-        //self.searchController?.showsSearchResultsController = true
-        //self.searchController?.searchBar.searchTextField.clearButtonMode = .never
         self.searchController?.searchBar.searchTextField.placeholder = "Vai pra onde?"
         self.searchController?.searchBar.delegate = self
         self.searchController?.searchResultsUpdater = self
-        
+        self.searchController?.searchBar.setValue("Cancelar", forKey: "cancelButtonText")
+
         self.navigationItem.searchController = self.searchController
         self.definesPresentationContext = true
         self.navigationItem.hidesSearchBarWhenScrolling = false
@@ -264,6 +262,12 @@ extension SearchProductViewController: SearchProductDisplayLogic {
     
     func displayErrorAlert() {
         
+        let alert: UIAlertController = UIAlertController(title: "Erro", message: "Aconteceu um erro inesperado, tente novamente em alguns instantes.", preferredStyle: .alert)
+        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

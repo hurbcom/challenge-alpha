@@ -34,6 +34,9 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="0.67000000000000004" id="utK-pr-NUX"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>

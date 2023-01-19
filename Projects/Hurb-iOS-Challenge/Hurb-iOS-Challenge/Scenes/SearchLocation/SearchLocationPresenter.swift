@@ -16,6 +16,7 @@ protocol SearchLocationPresentationLogic {
     
     func presentLocations(response: SearchLocation.Setup.Response)
     func presentSkeleton()
+    func presentErrorAlert()
 }
 
 class SearchLocationPresenter: SearchLocationPresentationLogic {
@@ -38,5 +39,10 @@ class SearchLocationPresenter: SearchLocationPresentationLogic {
     func presentSkeleton() {
         
         self.viewController?.displaySkeleton()
+    }
+    
+    func presentErrorAlert() {
+        
+        self.viewController?.displayErrorAlert()
     }
 }

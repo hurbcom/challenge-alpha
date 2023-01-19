@@ -17,6 +17,7 @@ protocol SearchLocationDisplayLogic: AnyObject {
     
     func displayLocations(viewModel: SearchLocation.Setup.ViewModel)
     func displaySkeleton()
+    func displayErrorAlert()
 }
 
 protocol SuggestedSearch: AnyObject {
@@ -40,7 +41,7 @@ private class CollectionViewSkeletonDiffableDataSource<Section: Hashable, Item: 
     }
 
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 20
     }
 }
 
@@ -129,6 +130,7 @@ class SearchLocationViewController: UIViewController {
         var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
         snapshot.deleteAllItems()
         
+        self.collectionView.hideSkeleton()
         self.dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
@@ -149,6 +151,16 @@ extension SearchLocationViewController: SearchLocationDisplayLogic {
         
         self.eraseDataSource()
         self.collectionView.showAnimatedGradientSkeleton(transition: .none)
+    }
+    
+    func displayErrorAlert() {
+        
+        let alert: UIAlertController = UIAlertController(title: "Erro", message: "Aconteceu um erro inesperado, tente novamente em alguns instantes.", preferredStyle: .alert)
+        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

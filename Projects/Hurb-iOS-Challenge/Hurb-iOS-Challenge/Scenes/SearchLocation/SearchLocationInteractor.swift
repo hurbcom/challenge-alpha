@@ -57,6 +57,7 @@ class SearchLocationInteractor: SearchLocationBusinessLogic, SearchLocationDataS
                         break
                         
                     case .failure( _):
+                        self.presenter?.presentErrorAlert()
                         break
                 }
             })
