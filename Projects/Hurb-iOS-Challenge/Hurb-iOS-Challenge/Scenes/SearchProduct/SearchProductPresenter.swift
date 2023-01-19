@@ -16,7 +16,6 @@ protocol SearchProductPresentationLogic {
     
     func presentNewProducts(response: SearchProduct.Query.Response)
     func presentNoSearchResultsView()
-    func presentFirstPageSkeletonView()
     func presentErrorAlert()
 }
 
@@ -40,11 +39,6 @@ class SearchProductPresenter: SearchProductPresentationLogic {
     func presentNoSearchResultsView() {
         
         self.viewController?.displayNoSearchResultsView()
-    }
-    
-    func presentFirstPageSkeletonView() {
-        
-        self.viewController?.displayFirstPageSkeletonView()
     }
     
     func presentErrorAlert() {

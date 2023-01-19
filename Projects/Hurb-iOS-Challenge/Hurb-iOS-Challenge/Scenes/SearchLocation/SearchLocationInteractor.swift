@@ -14,7 +14,7 @@ import UIKit
 
 protocol SearchLocationBusinessLogic {
     
-    func doSomething(request: SearchLocation.Something.Request)
+    func searchTerm(request: SearchLocation.Setup.Request)
 }
 
 protocol SearchLocationDataStore {
@@ -36,9 +36,24 @@ class SearchLocationInteractor: SearchLocationBusinessLogic, SearchLocationDataS
     
     // MARK: Do something
     
-    func doSomething(request: SearchLocation.Something.Request) {
-
-        let response = SearchLocation.Something.Response()
-        presenter?.presentSomething(response: response)
+    func searchTerm(request: SearchLocation.Setup.Request) {
+        
+        self.worker?.searchLocations(term: request.term, limit: request.limit, completion: { result in
+            
+            switch result {
+                    
+                case .success(let locations):
+                    
+                    if let locations: [Location] = locations, locations.count > 0 {
+                        
+                        let response = SearchLocation.Setup.Response(locations: locations.compactMap({ $0.text }))
+                        self.presenter?.presentLocations(response: response)
+                    }
+                    break
+                    
+                case .failure( _):
+                    break
+            }
+        })
     }
 }

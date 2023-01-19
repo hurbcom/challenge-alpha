@@ -14,8 +14,11 @@ class ProductsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var typeLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var topPriceLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var bottomPriceLabel: UILabel!
     @IBOutlet private weak var firstAmenityView: UIView!
     @IBOutlet private weak var firstAmenityLabel: UILabel!
     @IBOutlet private weak var secondAmenityView: UIView!
@@ -35,8 +38,11 @@ class ProductsCollectionViewCell: UICollectionViewCell {
             }
             
             self.nameLabel.text = product.name
+            self.typeLabel.text = product.category.rawValue
             self.addressLabel.text = product.getFormattedAddress()
+            self.topPriceLabel.text = product.getPriceTopText()
             self.priceLabel.text = product.getFormattedPrice()
+            self.bottomPriceLabel.text = product.getPriceBottomText()
             
             if let firstAmenity: Amenity = product.amenities.first {
                 
@@ -67,8 +73,11 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         
         self.photoImageView.prepareForReuse()
         self.nameLabel.text = nil
+        self.typeLabel.text = nil
         self.addressLabel.text = nil
+        self.topPriceLabel.text = nil
         self.priceLabel.text = nil
+        self.bottomPriceLabel.text = nil
         self.firstAmenityView.isHidden = true
         self.firstAmenityLabel.text = nil
         self.secondAmenityView.isHidden = true

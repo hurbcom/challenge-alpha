@@ -18,7 +18,6 @@ protocol SearchProductDisplayLogic: AnyObject {
     
     func displayNewProducts(viewModel: SearchProduct.Query.ViewModel)
     func displayNoSearchResultsView()
-    func displayFirstPageSkeletonView()
     func displayErrorAlert()
 }
 
@@ -48,7 +47,7 @@ private struct Item: Identifiable {
     var item: AnyHashable
 }
 
-class CollectionViewSkeletonDiffableDataSource<Section: Hashable, Item: Hashable>: UICollectionViewDiffableDataSource<Section, Item>, SkeletonCollectionViewDataSource {
+private class CollectionViewSkeletonDiffableDataSource<Section: Hashable, Item: Hashable>: UICollectionViewDiffableDataSource<Section, Item>, SkeletonCollectionViewDataSource {
 
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return ProductsCollectionViewCell.cellIdentifier
@@ -72,10 +71,12 @@ class SearchProductViewController: UIViewController {
     private lazy var itemsStore: AnyModelStore<Item> = AnyModelStore([])
     
     private var searchController: UISearchController?
+    private lazy var location: String = "Rio de janeiro"
     private lazy var page: Int = 1
     private lazy var limit: Int = 15
-    private lazy var hasNext: Bool = true
-    
+    private lazy var hasNext: Bool = false
+    private lazy var searchTimer: Timer = Timer()
+
     @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: View lifecycle
@@ -86,7 +87,6 @@ class SearchProductViewController: UIViewController {
         self.setupSearchController()
         self.configureHierarchy()
         self.configureDataSource()
-        self.load()
     }
     
     // MARK: Routing
@@ -100,16 +100,20 @@ class SearchProductViewController: UIViewController {
         
         let storyboard: UIStoryboard = UIStoryboard(name: "SearchLocation", bundle: nil)
         let searchLocationViewController: SearchLocationViewController? = storyboard.instantiateViewController(withIdentifier: "SearchLocationViewController") as? SearchLocationViewController
+        searchLocationViewController?.delegate = self
+        SearchLocationConfigurator.setupArch(viewController: searchLocationViewController!)
         
         self.searchController = UISearchController(searchResultsController: searchLocationViewController)
         //self.searchController?.obscuresBackgroundDuringPresentation = true
         //self.searchController?.showsSearchResultsController = true
+        //self.searchController?.searchBar.searchTextField.clearButtonMode = .never
         self.searchController?.searchBar.searchTextField.placeholder = "Vai pra onde?"
         self.searchController?.searchBar.delegate = self
         self.searchController?.searchResultsUpdater = self
-        self.searchController?.delegate = self
         
         self.navigationItem.searchController = self.searchController
+        self.definesPresentationContext = true
+        self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     // MARK: Configure Hierarchy
@@ -206,12 +210,14 @@ class SearchProductViewController: UIViewController {
         self.dataSource.apply(snapshot, animatingDifferences: false)
     }
     
-    // MARK: Do something
+    // MARK: IBActions
     
-    func load() {
+    @IBAction private func didFireTimerForAddress(_ timer: Timer) {
         
-        let request = SearchProduct.Query.Request(term: "asuhdauhs", page: self.page, limit: self.limit)
-        self.interactor?.searchProducts(request: request)
+        if let resultsController = self.searchController?.searchResultsController as? SearchLocationViewController {
+            
+            resultsController.searchTerm((self.searchController?.searchBar.text)!)
+        }
     }
 }
 
@@ -256,31 +262,26 @@ extension SearchProductViewController: SearchProductDisplayLogic {
         self.dataSource.apply(snapshot, animatingDifferences: false)
     }
     
-    func displayFirstPageSkeletonView() {
-        
-        self.collectionView.showAnimatedGradientSkeleton(transition: .none)
-    }
-    
     func displayErrorAlert() {
         
     }
 }
 
 extension SearchProductViewController: UICollectionViewDelegate {
-
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
-
-        if indexPath.row > (self.page * self.limit) - 10 &&
-            self.hasNext &&
-            section != .empty &&
-            section != .noSearchResults {
+        if indexPath.row > (self.page * self.limit) - 10 && self.hasNext && self.dataSource.snapshot().sectionIdentifiers.count > 0 {
             
-            self.page += 1
-            self.hasNext = false
-            let request = SearchProduct.Query.Request(term: "punta cana", page: self.page, limit: self.limit)
-            self.interactor?.searchProducts(request: request)
+            let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+            
+            if section != .empty && section != .noSearchResults {
+                
+                self.page += 1
+                self.hasNext = false
+                let request = SearchProduct.Query.Request(term: self.location, page: self.page, limit: self.limit)
+                self.interactor?.searchProducts(request: request)
+            }
         }
     }
 }
@@ -290,8 +291,20 @@ extension SearchProductViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         // User tapped the Done button in the keyboard.
-        self.searchController?.dismiss(animated: true, completion: nil)
-        searchBar.text = ""
+        self.searchController?.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
+        snapshot.appendSections([Section.Identifier.empty])
+
+        let item: Item = Item(id: UUID(), item: Section.Identifier.empty)
+        self.itemsStore.append([item])
+
+        snapshot.appendItems([item.id], toSection: .empty)
+
+        self.dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 
@@ -299,9 +312,48 @@ extension SearchProductViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         
+        self.searchTimer.invalidate()
+
+        let trimmedString: String = searchController.searchBar.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if trimmedString.count >= 3 {
+            
+            self.searchTimer = Timer.scheduledTimer(
+                timeInterval: 1.0,
+                target: self,
+                selector: #selector(didFireTimerForAddress(_:)),
+                userInfo: nil,
+                repeats: false
+            )
+        } else {
+            
+            if let resultsController = self.searchController?.searchResultsController as? SearchLocationViewController {
+                
+                resultsController.eraseDataSource()
+            }
+        }
     }
 }
 
-extension SearchProductViewController: UISearchControllerDelegate {
+extension SearchProductViewController: SuggestedSearch {
     
+    func didSelectLocation(location: String) {
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
+        snapshot.deleteAllItems()
+
+        self.dataSource.apply(snapshot, animatingDifferences: false)
+        
+        self.searchController?.searchBar.text = location
+        self.searchController?.dismiss(animated: true, completion: {
+            
+            self.location = location
+            self.page = 1
+            self.hasNext = false
+            
+            self.collectionView.showAnimatedGradientSkeleton(transition: .none)
+            let request = SearchProduct.Query.Request(term: self.location, page: self.page, limit: self.limit)
+            self.interactor?.searchProducts(request: request)
+        })
+    }
 }

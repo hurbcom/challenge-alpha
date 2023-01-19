@@ -14,11 +14,13 @@ struct Location: Codable {
         case state
         case country
         case city
+        case text
     }
     
-    let state: String
-    let country: String
-    let city: String
+    let state: String?
+    let country: String?
+    let city: String?
+    let text: String?
 }
 
 // Decode methods
@@ -28,8 +30,9 @@ extension Location {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        self.state = try container.decode(String.self, forKey: .state)
-        self.country = try container.decode(String.self, forKey: .country)
-        self.city = try container.decode(String.self, forKey: .city)
+        self.state = try? container.decodeIfPresent(String.self, forKey: .state)
+        self.country = try? container.decodeIfPresent(String.self, forKey: .country)
+        self.city = try? container.decodeIfPresent(String.self, forKey: .city)
+        self.text = try? container.decodeIfPresent(String.self, forKey: .text)
     }
 }

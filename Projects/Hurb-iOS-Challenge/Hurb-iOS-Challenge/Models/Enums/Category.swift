@@ -30,4 +30,17 @@ enum Category: Codable, Hashable {
                 self = .unknown(value: status ?? "unknown")
         }
     }
+    
+    var rawValue: String? {
+        
+        switch self {
+                
+            case .hotel: return "Hotel"
+            case .package: return "Pacote"
+            case .activity: return "Atividade"
+            
+            default:
+                return nil
+        }
+    }
 }

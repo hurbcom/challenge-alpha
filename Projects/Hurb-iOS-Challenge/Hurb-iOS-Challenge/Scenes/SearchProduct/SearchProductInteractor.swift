@@ -37,11 +37,6 @@ class SearchProductInteractor: SearchProductBusinessLogic, SearchProductDataStor
     // MARK: Do something
     
     func searchProducts(request: SearchProduct.Query.Request) {
-
-        if request.page <= 1 {
-            
-            self.presenter?.presentFirstPageSkeletonView()
-        }
         
         self.worker?.searchProducts(term: request.term, page: request.page, limit: request.limit, completion: { result in
             

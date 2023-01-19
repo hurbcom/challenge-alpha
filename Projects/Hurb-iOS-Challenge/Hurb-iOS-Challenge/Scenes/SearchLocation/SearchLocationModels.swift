@@ -16,18 +16,22 @@ enum SearchLocation {
     
     // MARK: Use cases
     
-    enum Something {
+    enum Setup {
         
         struct Request {
             
+            var term: String
+            var limit: Int
         }
         
         struct Response {
             
+            var locations: [String]
         }
         
         struct ViewModel {
             
+            var locations: [String]
         }
     }
 }

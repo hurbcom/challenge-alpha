@@ -8,11 +8,11 @@
 import UIKit
 
 struct Product: Codable, Identifiable, Hashable {
-
+    
     static func == (lhs: Product, rhs: Product) -> Bool {
         return lhs.id == rhs.id
     }
-
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.id)
     }
@@ -45,7 +45,7 @@ extension Product {
     init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
-
+        
         self.id = try? container.decodeIfPresent(String.self, forKey: .id)
         self.category = try container.decode(Category.self, forKey: .category)
         self.description = try container.decode(String.self, forKey: .description)
@@ -58,22 +58,39 @@ extension Product {
     
     func getFormattedAddress() -> String {
         
-        return "\(self.location.city), \(self.location.country)"
+        return "\(self.location.city ?? ""), \(self.location.country ?? "")"
     }
     
     func getFormattedPrice() -> String? {
         
+        let amountValue: Double = self.price.amount
+        let formatter: NumberFormatter = NumberFormatter.currencyFormatter(from: self.price.currency)
+        return formatter.string(for: amountValue)
+    }
+    
+    func getPriceTopText() -> String? {
+        
         switch category {
                 
-            case .hotel:
-                let amountValue: Double = self.price.amount
-                let formatter: NumberFormatter = NumberFormatter.currencyFormatter(from: self.price.currency)
-                return formatter.string(for: amountValue)
+            case .hotel: return "Diárias a partir de"
+            case .package: return "A partir de"
+            case .activity: return "A partir de"
                 
             default:
-                let amountValue: Double = self.price.amount / 100
-                let formatter: NumberFormatter = NumberFormatter.currencyFormatter(from: self.price.currency)
-                return formatter.string(for: amountValue)
+                return nil
+        }
+    }
+    
+    func getPriceBottomText() -> String? {
+        
+        switch category {
+                
+            case .hotel: return "+ Taxas"
+            case .package: return "+ Taxas | até 12x no cartão"
+            case .activity: return "em até 12x"
+                
+            default:
+                return nil
         }
     }
 }

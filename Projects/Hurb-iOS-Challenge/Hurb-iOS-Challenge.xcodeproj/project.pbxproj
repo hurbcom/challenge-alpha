@@ -53,6 +53,8 @@
 		75E7172C2977572900863E46 /* SearchLocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E717252977572900863E46 /* SearchLocationInteractor.swift */; };
 		75E7172D2977572900863E46 /* SearchLocationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E717262977572900863E46 /* SearchLocationConfigurator.swift */; };
 		75E717312977575400863E46 /* SearchLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E717302977575400863E46 /* SearchLocation.storyboard */; };
+		75E717352977969900863E46 /* SearchLocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E717332977969900863E46 /* SearchLocationCollectionViewCell.swift */; };
+		75E717362977969900863E46 /* SearchLocationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E717342977969900863E46 /* SearchLocationCollectionViewCell.xib */; };
 		75E845D6296B733A006D7C54 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 75E845D5296B733A006D7C54 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +125,8 @@
 		75E717252977572900863E46 /* SearchLocationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationInteractor.swift; sourceTree = "<group>"; };
 		75E717262977572900863E46 /* SearchLocationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationConfigurator.swift; sourceTree = "<group>"; };
 		75E717302977575400863E46 /* SearchLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchLocation.storyboard; sourceTree = "<group>"; };
+		75E717332977969900863E46 /* SearchLocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationCollectionViewCell.swift; sourceTree = "<group>"; };
+		75E717342977969900863E46 /* SearchLocationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchLocationCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +266,7 @@
 		7594CE7C296656600086D2DC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				75E7172E2977572E00863E46 /* New Group */,
+				75E7172E2977572E00863E46 /* SearchLocation */,
 				7517490E2967149C00FB7081 /* SearchProduct */,
 			);
 			path = Scenes;
@@ -313,9 +317,10 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		75E7172E2977572E00863E46 /* New Group */ = {
+		75E7172E2977572E00863E46 /* SearchLocation */ = {
 			isa = PBXGroup;
 			children = (
+				75E717322977967F00863E46 /* Cells */,
 				75E717302977575400863E46 /* SearchLocation.storyboard */,
 				75E717262977572900863E46 /* SearchLocationConfigurator.swift */,
 				75E717242977572900863E46 /* SearchLocationViewController.swift */,
@@ -325,7 +330,16 @@
 				75E717212977572900863E46 /* SearchLocationWorker.swift */,
 				75E717222977572900863E46 /* SearchLocationRouter.swift */,
 			);
-			path = "New Group";
+			path = SearchLocation;
+			sourceTree = "<group>";
+		};
+		75E717322977967F00863E46 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				75E717332977969900863E46 /* SearchLocationCollectionViewCell.swift */,
+				75E717342977969900863E46 /* SearchLocationCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +458,7 @@
 				75A14A902976280F0028767C /* EmptyProductsCollectionViewCell.xib in Resources */,
 				7558C4D4296D09C000ED6C8D /* ProductsCollectionViewCell.xib in Resources */,
 				75E7171F2977501D00863E46 /* NoSearchResultsCollectionViewCell.xib in Resources */,
+				75E717362977969900863E46 /* SearchLocationCollectionViewCell.xib in Resources */,
 				758CA7C829678BBC0075FFB8 /* Colors.xcassets in Resources */,
 				757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */,
 				757C5C22295A8EF200EFC1F3 /* Icons.xcassets in Resources */,
@@ -506,6 +521,7 @@
 				75B4BA75296B608B00085669 /* Amenity.swift in Sources */,
 				75E717292977572900863E46 /* SearchLocationRouter.swift in Sources */,
 				75E7172D2977572900863E46 /* SearchLocationConfigurator.swift in Sources */,
+				75E717352977969900863E46 /* SearchLocationCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
