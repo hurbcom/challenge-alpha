@@ -131,7 +131,7 @@ struct PackageDetailsView: View {
             
             LazyVGrid(columns: [.init(.flexible(), spacing: 16, alignment: .leading), .init(.flexible(), alignment: .leading)], spacing: 12) {
                 ForEach(viewModel.package.getAmenitiesName(), id: \.self) { amenity in
-                    HULabel(imageName: "checkmark", title: amenity, fillColor: UIConstants.COLOR.hurbDarkGray)
+                    HULabel(imageName: "checkmark.circle", title: amenity, fillColor: UIConstants.COLOR.hurbDarkGray)
                 }
             }
             
