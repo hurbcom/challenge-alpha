@@ -15,7 +15,8 @@ protocol SuggestionInteractorInput {
 
 final class SuggestionInteractor: SuggestionInteractorInput {
     
-    private let service = HUGService(enableLog: true)
+    private let service = HUGService(enableLog: false)
+    private let logger = LoggerFactory.createLogger(class: SuggestionInteractor.self)
     
     func getSuggestions(query: String, pagination: HUGraphQL.SearchInputPagination? = nil, productType: HUGraphQL.SuggestionProductType? = nil) -> AnyPublisher<[SuggestionResult], Error> {
         let subject = PassthroughSubject<[SuggestionResult], Error>()
@@ -29,6 +30,7 @@ final class SuggestionInteractor: SuggestionInteractorInput {
         service.client.fetch(query: query) { res in
             switch res {
             case .failure(let error):
+                self.logger.error("Failed to fetch Suggestions - error \(error.localizedDescription)")
                 subject.send(completion: .failure(error))
                 
             case .success(let graphQLValue):
@@ -60,7 +62,7 @@ final class SuggestionInteractor: SuggestionInteractorInput {
             
             return suggestions
         } catch {
-            // TODO: Log error
+            self.logger.error("Failed to decode received Suggestion response - error \(error.localizedDescription)")
             return nil
         }
     }

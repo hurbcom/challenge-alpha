@@ -16,6 +16,7 @@ protocol PackageListInteractorProtocol {
 internal final class PackageListInteractor: PackageListInteractorProtocol {
     
     private let service = HUGService(enableLog: true)
+    private let logger = LoggerFactory.createLogger(class: PackageListInteractor.self)
     
     func getPackages(query: String, pagination: HUGraphQL.SearchInputPagination? = nil) -> AnyPublisher<[PackageResult], Error> {
         
@@ -43,6 +44,7 @@ internal final class PackageListInteractor: PackageListInteractorProtocol {
                 subject.send(completion: .finished)
                 
             case .failure(let error):
+                self.logger.error("Failed to fetch Packages - error \(error.localizedDescription)")
                 subject.send(completion: .failure(error))
             }
         }
@@ -57,7 +59,7 @@ internal final class PackageListInteractor: PackageListInteractorProtocol {
             
             return searchPackage
         } catch {
-            // TODO: Log error
+            self.logger.error("Failed to decode received Packages response - error \(error.localizedDescription)")
             return nil
         }
     }

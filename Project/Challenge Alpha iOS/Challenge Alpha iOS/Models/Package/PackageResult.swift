@@ -56,7 +56,6 @@ struct PackageResult: Codable {
     
     func getFormattedAmount() -> String {
         guard let currency = self.price?.currency else {
-            // TODO: Add log
             return ""
         }
         return self.getFixedAmount().formatCurrency(currency)
@@ -72,7 +71,6 @@ struct PackageResult: Codable {
     
     func getFormattedOriginalAmount() -> String {
         guard let currency = self.price?.currency else {
-            // TODO: Add log
             return ""
         }
         return self.getFixedOriginalAmount().formatCurrency(currency)
@@ -80,7 +78,6 @@ struct PackageResult: Codable {
     
     func getImagesURL() -> [String] {
         guard let gallery = self.gallery else {
-            // TODO: Add log
             return []
         }
         
@@ -93,7 +90,6 @@ struct PackageResult: Codable {
     
     func getTags() -> [String] {
         guard let tags = self.tags else {
-            // TODO: Add log
             return []
         }
         
@@ -151,7 +147,6 @@ struct PackageResult: Codable {
     
     func getAmenitiesName() -> [String] {
         guard let amenities = self.amenities else {
-            // TODO: Add log
             return []
         }
         

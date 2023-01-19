@@ -15,7 +15,8 @@ protocol SearchInteractorInput {
 
 final class SearchInteractor: SearchInteractorInput {
 
-    let service = HUGService(enableLog: true)
+    private let service = HUGService(enableLog: true)
+    private let logger = LoggerFactory.createLogger(class: SearchInteractor.self)
 
     func getSearchResults(query: String, pagination: HUGraphQL.SearchInputPagination? = nil) -> AnyPublisher<[SearchResult], Error> {
 
@@ -43,6 +44,7 @@ final class SearchInteractor: SearchInteractorInput {
                 subject.send(completion: .finished)
 
             case .failure(let error):
+                self.logger.error("Failed to fetch Search - error \(error.localizedDescription)")
                 subject.send(completion: .failure(error))
             }
         }
@@ -57,7 +59,7 @@ final class SearchInteractor: SearchInteractorInput {
 
             return search
         } catch {
-            // TODO: Log error
+            self.logger.error("Failed to decode received Search response - error \(error.localizedDescription)")
             return nil
         }
     }
