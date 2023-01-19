@@ -12,7 +12,7 @@ struct SuggestionView: View {
     @ObservedObject var viewModel: SuggestionViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.DEFAULT_BIG) {
             HStack {
                 Spacer()
                 Button(action: viewModel.onCloseTap) {
@@ -22,7 +22,7 @@ struct SuggestionView: View {
                 }
             }.padding()
             
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.NORMAL) {
                 TextField("", text: $viewModel.searchText, onCommit: {
                     viewModel.onTextfieldSubmit()
                 })
@@ -67,7 +67,7 @@ struct SuggestionView: View {
         if viewModel.destinationSuggestions.isEmpty {
             EmptyView()
         } else {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.LARGE) {
                 Text("Destinos")
                     .font(.system(size: 22, weight: .semibold))
                     .foregroundColor(.black)
@@ -99,7 +99,7 @@ struct SuggestionView: View {
         if viewModel.otherSuggestions.isEmpty {
             EmptyView()
         } else {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.LARGE) {
                 Text(viewModel.getOtherSuggestionsTitle())
                     .font(.system(size: 22, weight: .semibold))
                     .foregroundColor(.black)

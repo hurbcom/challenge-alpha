@@ -19,7 +19,7 @@ struct PackageDetailsView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.DEFAULT_BIG) {
                 // Images Carousel
                 self.headerCarouselView
                 
@@ -45,7 +45,7 @@ struct PackageDetailsView: View {
                     // Location
                     self.mapView
                 }
-                .padding(.horizontal, 12)
+                .padding(.horizontal, UIConstants.PADDING_VALUES.NORMAL)
             }
             .background(
                 Color.white
@@ -87,7 +87,7 @@ struct PackageDetailsView: View {
     }
     
     var dateInfoView: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.SMALL) {
             Text("Viaje entre")
                 .font(.system(size: 14))
                 .foregroundColor(UIConstants.COLOR.hurbDarkGray)
@@ -107,8 +107,8 @@ struct PackageDetailsView: View {
         let originalAmount = viewModel.package.getFormattedOriginalAmount()
         
         return AnyView(
-            VStack(alignment: .trailing, spacing: 2) {
-                HStack(spacing: 4) {
+            VStack(alignment: .trailing, spacing: UIConstants.PADDING_VALUES.SUPER_SMALL) {
+                HStack(spacing: UIConstants.PADDING_VALUES.SMALL) {
                     Text("A partir de ")
                         .font(.system(size: 14))
                         .foregroundColor(UIConstants.COLOR.hurbGray)
@@ -134,17 +134,23 @@ struct PackageDetailsView: View {
                 Text("+ Taxas, até 12x no cartão")
                     .font(.system(size: 14))
                     .foregroundColor(UIConstants.COLOR.hurbGray)
-                    .padding(.top, 2)
+                    .padding(.top, UIConstants.PADDING_VALUES.SUPER_SMALL)
             }
         )
     }
     
     var amenitiesView: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.DEFAULT_BIG) {
             Text("O que está incluso?")
                 .font(.system(size: 18, weight: .semibold))
             
-            LazyVGrid(columns: [.init(.flexible(), spacing: 16, alignment: .leading), .init(.flexible(), alignment: .leading)], spacing: 12) {
+            LazyVGrid(
+                columns: [
+                    .init(.flexible(), spacing: UIConstants.PADDING_VALUES.DEFAULT_BIG, alignment: .leading),
+                    .init(.flexible(), alignment: .leading)
+                ],
+                spacing: UIConstants.PADDING_VALUES.NORMAL)
+            {
                 ForEach(viewModel.package.getAmenitiesName(), id: \.self) { amenity in
                     HULabel(imageName: "checkmark.circle", title: amenity, fillColor: UIConstants.COLOR.hurbDarkGray)
                 }
@@ -164,7 +170,7 @@ struct PackageDetailsView: View {
     }
     
     var mapView: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.NORMAL) {
             Text("Local")
                 .font(.system(size: 16))
                 .foregroundColor(.black)
@@ -192,8 +198,14 @@ struct PackageDescriptionView: View {
     var closeAction: (() -> Void)
     
     var body: some View {
-        VStack(spacing: 0) {
-            LazyVGrid(columns: [.init(.flexible(), spacing: 16, alignment: .leading), .init(.flexible(), alignment: .leading)], spacing: 12) {
+        VStack(spacing: UIConstants.PADDING_VALUES.NONE) {
+            LazyVGrid(
+                columns: [
+                    .init(.flexible(), spacing: UIConstants.PADDING_VALUES.DEFAULT_BIG, alignment: .leading),
+                    .init(.flexible(), alignment: .leading)
+                ],
+                spacing: UIConstants.PADDING_VALUES.NORMAL)
+            {
                 ForEach(amenities, id: \.self) { amenity in
                     HULabel(imageName: "checkmark.circle", title: amenity, fillColor: UIConstants.COLOR.hurbDarkGray)
                 }

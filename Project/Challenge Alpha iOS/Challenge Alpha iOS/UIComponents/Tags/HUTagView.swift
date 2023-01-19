@@ -18,8 +18,8 @@ struct HUTagView: View {
             .font(.system(size: 14, weight: .semibold))
             .lineLimit(1)
             .foregroundColor(textColor)
-            .padding(.vertical, 4)
-            .padding(.horizontal, 12)
+            .padding(.vertical, UIConstants.PADDING_VALUES.SMALL)
+            .padding(.horizontal, UIConstants.PADDING_VALUES.NORMAL)
             .background(
                 backgroundColor
             )

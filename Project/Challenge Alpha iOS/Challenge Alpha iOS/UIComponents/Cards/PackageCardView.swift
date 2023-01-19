@@ -29,12 +29,12 @@ struct PackageCardView: View {
     }
     
     var content: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.NONE) {
             // Image Carousel with Tags
             self.imageHeader
             
             HStack {
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.NORMAL) {
                     // Pacakge Location + Name
                     self.packageGeneralInfo
                     
@@ -63,7 +63,7 @@ struct PackageCardView: View {
                 .cornerRadius(8, corners: .topLeft)
                 .cornerRadius(8, corners: .topRight)
             
-            HStack(spacing: 8) {
+            HStack(spacing: UIConstants.PADDING_VALUES.DEFAULT_SMALL) {
                 ForEach(tags, id: \.self) { tag in
                     HUTagView(title: tag, textColor: Color.white, backgroundColor: UIConstants.COLOR.hurbOrange)
                 }
@@ -74,7 +74,7 @@ struct PackageCardView: View {
     
     /// Package Location and Name
     var packageGeneralInfo: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.DEFAULT_SMALL) {
             // Location
             Text("\(city), \(country)")
                 .font(.system(size: 14))
@@ -90,7 +90,7 @@ struct PackageCardView: View {
     
     /// Quantity Descriptors
     var packageQuantityInfo: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: UIConstants.PADDING_VALUES.DEFAULT_BIG) {
             HULabel(imageName: "sun.max", title: "\(duration) diárias", fillColor: UIConstants.COLOR.hurbDarkGray)
             HULabel(imageName: "person", title: "\(maxPeople) \(maxPeople > 1 ? "pessoas" : "pessoa")", fillColor: UIConstants.COLOR.hurbDarkGray)
         }
@@ -98,7 +98,7 @@ struct PackageCardView: View {
     
     /// Price information (amount + general amount)
     var packagePriceInfo: some View {
-        VStack(alignment: .leading, spacing: 2) {
+        VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.SUPER_SMALL) {
             // Original amount
             Text("A partir de ")
                 .font(.system(size: 14))

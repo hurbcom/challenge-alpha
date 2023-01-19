@@ -15,7 +15,7 @@ struct HULabel: View {
     var fillColor: Color
     
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: UIConstants.PADDING_VALUES.SMALL) {
             Image(systemName: imageName)
                 .font(.system(size: 14))
                 .foregroundColor(fillColor)

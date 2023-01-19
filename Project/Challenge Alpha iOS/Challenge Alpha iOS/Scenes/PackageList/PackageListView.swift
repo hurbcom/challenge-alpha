@@ -13,7 +13,7 @@ struct PackageListView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.NORMAL) {
                 HStack {
                     Text(viewModel.query.isEmpty ? "" : "Exibindo resultados de \(viewModel.query)")
                         .font(.system(size: 12))
