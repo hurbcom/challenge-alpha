@@ -23,6 +23,8 @@ struct HULabel: View {
             Text("\(title)")
                 .font(.system(size: 14))
                 .foregroundColor(fillColor)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
         }
     }
 }
