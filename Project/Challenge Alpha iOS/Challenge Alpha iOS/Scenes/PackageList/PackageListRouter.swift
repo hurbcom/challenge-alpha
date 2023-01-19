@@ -21,7 +21,7 @@ final class PackageListRouter: PackageListRouterProtocol {
     }
     
     func presentSearch() {
-//        let searchVC = SearchFactory.build(searchType: .package)
-//        self.viewController?.present(searchVC, animated: true)
+        let suggestionVC = SuggestionFactory.build(suggestionType: .package)
+        self.viewController?.present(suggestionVC, animated: true)
     }
 }

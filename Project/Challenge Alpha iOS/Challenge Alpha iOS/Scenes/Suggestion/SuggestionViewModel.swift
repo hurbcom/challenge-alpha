@@ -1,0 +1,82 @@
+//
+//  SuggestionViewModel.swift
+//  Challenge Alpha iOS
+//
+//  Created by Yuri Strack on 19/01/23.
+//
+
+import Foundation
+import Combine
+
+final class SuggestionViewModel: ObservableObject {
+    // MARK: - Published properties
+    @Published var destinationSuggestions: [SuggestionResult] = []
+    @Published var otherSuggestions: [SuggestionResult] = []
+    @Published var searchText: String = ""
+    
+    // MARK: - Dispose bag
+    var cancellables = Set<AnyCancellable>()
+    
+    // MARK: - Dependencies
+    var suggestionType: SuggestionType
+    var interactor: SuggestionInteractorInput
+    var router: SuggestionRouterProtocol
+    
+    init(suggestionType: SuggestionType, interactor: SuggestionInteractorInput, router: SuggestionRouterProtocol) {
+        self.suggestionType = suggestionType
+        self.interactor = interactor
+        self.router = router
+    }
+    
+    // MARK: - Actions
+    func onCloseTap() {
+        router.dismiss()
+    }
+    
+    func onChangeOfSearchText() {
+        guard searchText.count > 2 else {
+            return
+        }
+        
+        interactor.getSuggestions(
+            query: self.searchText,
+            pagination: .init(
+                page: 1,
+                limit: 20,
+                sort: .price,
+                sortOrder: .desc),
+            productType: .package
+        )
+        .receive(on: DispatchQueue.main)
+        .sink { completion in
+            if case .failure(_) = completion {
+                return
+            }
+        } receiveValue: { suggestions in
+            self.destinationSuggestions = suggestions.filter({ suggestion in
+                return (suggestion.suggestionType == .city) || (suggestion.suggestionType == .state)
+            })
+            
+            self.otherSuggestions = suggestions.filter({ suggestion in
+                return suggestion.suggestionType == .package
+            })
+        }
+        .store(in: &cancellables)
+    }
+    
+    // MARK: - Helpers
+    func getOtherSuggestionsTitle() -> String {
+        switch suggestionType {
+        case .city:
+            return "Destinos"
+        case .state:
+            return "Destinos"
+        case .hotel:
+            return "Hoteis"
+        case .package:
+            return "Pacotes"
+        case .tag:
+            return "Tags"
+        }
+    }
+}

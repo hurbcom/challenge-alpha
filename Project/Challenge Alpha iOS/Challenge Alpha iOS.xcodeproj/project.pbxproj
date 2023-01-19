@@ -41,6 +41,12 @@
 		DA2CDFAA2978CB700070D898 /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFA92978CB700070D898 /* Text+Extension.swift */; };
 		DA2CDFB52978F6710070D898 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFB42978F6710070D898 /* Suggestions.swift */; };
 		DA2CDFB72978F69A0070D898 /* SuggestionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFB62978F69A0070D898 /* SuggestionResult.swift */; };
+		DA2CDFBA2978F8210070D898 /* SuggestionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFB92978F8210070D898 /* SuggestionInteractor.swift */; };
+		DA2CDFBC2978F9D60070D898 /* SuggestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFBB2978F9D60070D898 /* SuggestionRouter.swift */; };
+		DA2CDFBE2978FA230070D898 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFBD2978FA230070D898 /* SuggestionView.swift */; };
+		DA2CDFC02978FE410070D898 /* SuggestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFBF2978FE410070D898 /* SuggestionViewModel.swift */; };
+		DA2CDFC22979005F0070D898 /* SuggestionHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFC12979005F0070D898 /* SuggestionHostingController.swift */; };
+		DA2CDFC4297900900070D898 /* SuggestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CDFC3297900900070D898 /* SuggestionFactory.swift */; };
 		DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF5297497E100D0A444 /* AppDelegate.swift */; };
 		DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF7297497E100D0A444 /* SceneDelegate.swift */; };
 		DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF9297497E100D0A444 /* SearchViewHostingController.swift */; };
@@ -112,6 +118,12 @@
 		DA2CDFA92978CB700070D898 /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
 		DA2CDFB42978F6710070D898 /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		DA2CDFB62978F69A0070D898 /* SuggestionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionResult.swift; sourceTree = "<group>"; };
+		DA2CDFB92978F8210070D898 /* SuggestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionInteractor.swift; sourceTree = "<group>"; };
+		DA2CDFBB2978F9D60070D898 /* SuggestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionRouter.swift; sourceTree = "<group>"; };
+		DA2CDFBD2978FA230070D898 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
+		DA2CDFBF2978FE410070D898 /* SuggestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewModel.swift; sourceTree = "<group>"; };
+		DA2CDFC12979005F0070D898 /* SuggestionHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionHostingController.swift; sourceTree = "<group>"; };
+		DA2CDFC3297900900070D898 /* SuggestionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionFactory.swift; sourceTree = "<group>"; };
 		DA710BF2297497E100D0A444 /* Challenge Alpha iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA710BF5297497E100D0A444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA710BF7297497E100D0A444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -307,6 +319,19 @@
 			path = Suggestion;
 			sourceTree = "<group>";
 		};
+		DA2CDFB82978F7F90070D898 /* Suggestion */ = {
+			isa = PBXGroup;
+			children = (
+				DA2CDFC3297900900070D898 /* SuggestionFactory.swift */,
+				DA2CDFB92978F8210070D898 /* SuggestionInteractor.swift */,
+				DA2CDFBB2978F9D60070D898 /* SuggestionRouter.swift */,
+				DA2CDFBD2978FA230070D898 /* SuggestionView.swift */,
+				DA2CDFC12979005F0070D898 /* SuggestionHostingController.swift */,
+				DA2CDFBF2978FE410070D898 /* SuggestionViewModel.swift */,
+			);
+			path = Suggestion;
+			sourceTree = "<group>";
+		};
 		DA710BE9297497E100D0A444 = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +433,7 @@
 				DA2B70C929773A63005FB2A3 /* PackageDetails */,
 				DA2909102975C394005B0EFD /* PackageList */,
 				DAF2DE212974BDAD0055D6E3 /* Search */,
+				DA2CDFB82978F7F90070D898 /* Suggestion */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -565,6 +591,7 @@
 			files = (
 				DAF2DE1F2974B9A40055D6E3 /* Search.swift in Sources */,
 				DA29090F2975B12D005B0EFD /* QuantityDescriptors.swift in Sources */,
+				DA2CDFC22979005F0070D898 /* SuggestionHostingController.swift in Sources */,
 				DAF2DE122974ADA10055D6E3 /* Address.swift in Sources */,
 				DA2B70DB297780F9005FB2A3 /* MonthsEnum.swift in Sources */,
 				DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */,
@@ -592,12 +619,17 @@
 				DA2B70C52976F3A6005FB2A3 /* PackageCardView.swift in Sources */,
 				DA2908FC29759977005B0EFD /* UIConstants.swift in Sources */,
 				DA2B70C82976FBB3005FB2A3 /* Double+Extension.swift in Sources */,
+				DA2CDFC4297900900070D898 /* SuggestionFactory.swift in Sources */,
 				DA29090029759ED1005B0EFD /* HUSearchButton.swift in Sources */,
+				DA2CDFBA2978F8210070D898 /* SuggestionInteractor.swift in Sources */,
 				DA29092B2975CDD2005B0EFD /* LoadingModifier.swift in Sources */,
 				DA2908EA297575AD005B0EFD /* SearchView.swift in Sources */,
+				DA2CDFBC2978F9D60070D898 /* SuggestionRouter.swift in Sources */,
+				DA2CDFBE2978FA230070D898 /* SuggestionView.swift in Sources */,
 				DAF2DE0E2974AAF80055D6E3 /* SearchResult.swift in Sources */,
 				DA2B70C12976F239005FB2A3 /* HUTagView.swift in Sources */,
 				DA29090B2975B0C9005B0EFD /* SearchPackage.swift in Sources */,
+				DA2CDFC02978FE410070D898 /* SuggestionViewModel.swift in Sources */,
 				DA2B70CF29774233005FB2A3 /* PackageDetailsHostingController.swift in Sources */,
 				DA2B70D1297742AD005FB2A3 /* PackageDetailsFactory.swift in Sources */,
 				DAF2DE102974AD070055D6E3 /* Price.swift in Sources */,
