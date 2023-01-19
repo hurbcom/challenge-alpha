@@ -16,7 +16,7 @@ enum ProductDetails {
     
     // MARK: Use cases
     
-    enum Something {
+    enum Setup {
         
         struct Request {
             
@@ -24,10 +24,13 @@ enum ProductDetails {
         
         struct Response {
             
+            var product: Product
         }
         
         struct ViewModel {
             
+            var product: Product
+            var descriptionTitle: String
         }
     }
 }

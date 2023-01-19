@@ -14,19 +14,20 @@ import UIKit
 
 protocol ProductDetailsBusinessLogic {
     
-    func doSomething(request: ProductDetails.Something.Request)
+    func setupView()
 }
 
 protocol ProductDetailsDataStore {
     
-    //var name: String { get set }
+    var product: Product? { get set }
 }
 
 class ProductDetailsInteractor: ProductDetailsBusinessLogic, ProductDetailsDataStore {
     
     var presenter: ProductDetailsPresentationLogic?
     var worker: ProductDetailsWorkerProtocol?
-    //var name: String = ""
+    
+    var product: Product?
     
     init(presenter: ProductDetailsPresentationLogic, worker: ProductDetailsWorkerProtocol) {
         
@@ -36,9 +37,11 @@ class ProductDetailsInteractor: ProductDetailsBusinessLogic, ProductDetailsDataS
     
     // MARK: Do something
     
-    func doSomething(request: ProductDetails.Something.Request) {
+    func setupView() {
 
-        let response = ProductDetails.Something.Response()
-        presenter?.presentSomething(response: response)
+        guard let product = self.product else { return }
+        
+        let response: ProductDetails.Setup.Response = ProductDetails.Setup.Response(product: product)
+        self.presenter?.presentSetupView(response: response)
     }
 }

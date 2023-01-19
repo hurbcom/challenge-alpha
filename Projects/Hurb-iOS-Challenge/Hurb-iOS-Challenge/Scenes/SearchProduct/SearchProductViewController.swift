@@ -19,6 +19,8 @@ protocol SearchProductDisplayLogic: AnyObject {
     func displayNewProducts(viewModel: SearchProduct.Query.ViewModel)
     func displayNoSearchResultsView()
     func displayErrorAlert()
+    
+    func displayProductDetails()
 }
 
 private struct Section: Identifiable {
@@ -31,14 +33,6 @@ private struct Section: Identifiable {
     }
     
     var id: Identifier
-
-    // Conform to CustomStringConvertible protocol to use
-//    var description: String {
-//
-//        switch self {
-//            case .main: return ""
-//        }
-//    }
 }
 
 private struct Item: Identifiable {
@@ -94,6 +88,7 @@ class SearchProductViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
+        self.router?.routeTo(segue: segue, sender: sender)
     }
     
     private func setupSearchController() {
@@ -138,7 +133,7 @@ class SearchProductViewController: UIViewController {
     
     func createLayout() -> UICollectionViewLayout {
         
-        let sectionProvider = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+        let sectionProvider: (Int, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
             let itemSize: NSCollectionLayoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(334))
             let item: NSCollectionLayoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -162,7 +157,7 @@ class SearchProductViewController: UIViewController {
             
             let item: AnyHashable = self.itemsStore.fetchByID(id).item
             
-            if let product = item as? Product {
+            if let product: Product = item as? Product {
                 
                 guard let cell: ProductsCollectionViewCell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: ProductsCollectionViewCell.cellIdentifier,
@@ -174,7 +169,7 @@ class SearchProductViewController: UIViewController {
                 return cell
             }
             
-            if let section = item as? Section.Identifier, section == .empty {
+            if let section: Section.Identifier = item as? Section.Identifier, section == .empty {
                 
                 guard let cell: EmptyProductsCollectionViewCell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: EmptyProductsCollectionViewCell.cellIdentifier,
@@ -184,7 +179,7 @@ class SearchProductViewController: UIViewController {
                 return cell
             }
             
-            if let section = item as? Section.Identifier, section == .noSearchResults {
+            if let section: Section.Identifier = item as? Section.Identifier, section == .noSearchResults {
                 
                 guard let cell: NoSearchResultsCollectionViewCell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: NoSearchResultsCollectionViewCell.cellIdentifier,
@@ -197,7 +192,7 @@ class SearchProductViewController: UIViewController {
             return nil
         }
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
+        var snapshot: NSDiffableDataSourceSnapshot<Section.ID, Item.ID> = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
         snapshot.appendSections([Section.Identifier.empty])
 
         let item: Item = Item(id: UUID(), item: Section.Identifier.empty)
@@ -212,7 +207,7 @@ class SearchProductViewController: UIViewController {
     
     @IBAction private func didFireTimerForAddress(_ timer: Timer) {
         
-        if let resultsController = self.searchController?.searchResultsController as? SearchLocationViewController {
+        if let resultsController: SearchLocationViewController = self.searchController?.searchResultsController as? SearchLocationViewController {
             
             resultsController.searchTerm((self.searchController?.searchBar.text)!)
         }
@@ -225,8 +220,8 @@ extension SearchProductViewController: SearchProductDisplayLogic {
         
         self.hasNext = viewModel.pagination?.hasNext ?? false
         
-        var snapshot = self.dataSource.snapshot()
-        let itens = viewModel.products.compactMap({ Item(id: UUID(), item: $0) })
+        var snapshot: NSDiffableDataSourceSnapshot<Section.ID, Item.ID> = self.dataSource.snapshot()
+        let itens: [Item] = viewModel.products.compactMap({ Item(id: UUID(), item: $0) })
         self.itemsStore.append(itens)
 
         if snapshot.indexOfSection(.results) == nil {
@@ -243,7 +238,7 @@ extension SearchProductViewController: SearchProductDisplayLogic {
     
     func displayNoSearchResultsView() {
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
+        var snapshot: NSDiffableDataSourceSnapshot<Section.ID, Item.ID> = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
 
         if snapshot.indexOfSection(.noSearchResults) == nil {
             
@@ -269,6 +264,11 @@ extension SearchProductViewController: SearchProductDisplayLogic {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func displayProductDetails() {
+        
+        self.router?.navigateToDetails()
+    }
 }
 
 extension SearchProductViewController: UICollectionViewDelegate {
@@ -277,15 +277,26 @@ extension SearchProductViewController: UICollectionViewDelegate {
         
         if indexPath.row > (self.page * self.limit) - 10 && self.hasNext && self.dataSource.snapshot().sectionIdentifiers.count > 0 {
             
-            let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+            let section: Section.ID = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
             
             if section != .empty && section != .noSearchResults {
                 
                 self.page += 1
                 self.hasNext = false
-                let request = SearchProduct.Query.Request(term: self.location, page: self.page, limit: self.limit)
+                let request: SearchProduct.Query.Request = SearchProduct.Query.Request(term: self.location, page: self.page, limit: self.limit)
                 self.interactor?.searchProducts(request: request)
             }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let itemId: Item.ID = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        let item: AnyHashable = self.itemsStore.fetchByID(itemId).item
+        
+        if let product: Product = item as? Product {
+            
+            self.interactor?.didSeletedProduct(request: SearchProduct.Selection.Request(product: product))
         }
     }
 }
@@ -300,7 +311,7 @@ extension SearchProductViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
+        var snapshot: NSDiffableDataSourceSnapshot<Section.ID, Item.ID> = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
         snapshot.appendSections([Section.Identifier.empty])
 
         let item: Item = Item(id: UUID(), item: Section.Identifier.empty)
@@ -331,7 +342,7 @@ extension SearchProductViewController: UISearchResultsUpdating {
             )
         } else {
             
-            if let resultsController = self.searchController?.searchResultsController as? SearchLocationViewController {
+            if let resultsController: SearchLocationViewController = self.searchController?.searchResultsController as? SearchLocationViewController {
                 
                 resultsController.eraseDataSource()
             }
@@ -343,7 +354,7 @@ extension SearchProductViewController: SuggestedSearch {
     
     func didSelectLocation(location: String) {
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
+        var snapshot: NSDiffableDataSourceSnapshot<Section.ID, Item.ID> = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
         snapshot.deleteAllItems()
 
         self.dataSource.apply(snapshot, animatingDifferences: false)
@@ -356,7 +367,7 @@ extension SearchProductViewController: SuggestedSearch {
             self.hasNext = false
             
             self.collectionView.showAnimatedGradientSkeleton(transition: .none)
-            let request = SearchProduct.Query.Request(term: self.location, page: self.page, limit: self.limit)
+            let request: SearchProduct.Query.Request = SearchProduct.Query.Request(term: self.location, page: self.page, limit: self.limit)
             self.interactor?.searchProducts(request: request)
         })
     }

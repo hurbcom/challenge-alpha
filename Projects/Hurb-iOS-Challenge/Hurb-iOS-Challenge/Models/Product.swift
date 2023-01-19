@@ -20,6 +20,7 @@ struct Product: Codable, Identifiable, Hashable {
     private enum CodingKeys: String, CodingKey {
         
         case id
+        case url
         case category
         case description
         case medias = "gallery"
@@ -30,6 +31,7 @@ struct Product: Codable, Identifiable, Hashable {
     }
     
     var id: String?
+    let url: String?
     let category: Category
     let description: String
     let medias: [Media]
@@ -47,6 +49,7 @@ extension Product {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         self.id = try? container.decodeIfPresent(String.self, forKey: .id)
+        self.url = try? container.decodeIfPresent(String.self, forKey: .url)
         self.category = try container.decode(Category.self, forKey: .category)
         self.description = try container.decode(String.self, forKey: .description)
         self.medias = try container.decode([Media].self, forKey: .medias)
@@ -70,7 +73,7 @@ extension Product {
     
     func getPriceTopText() -> String? {
         
-        switch category {
+        switch self.category {
                 
             case .hotel: return "Diárias a partir de"
             case .package: return "A partir de"
@@ -83,7 +86,7 @@ extension Product {
     
     func getPriceBottomText() -> String? {
         
-        switch category {
+        switch self.category {
                 
             case .hotel: return "+ Taxas"
             case .package: return "+ Taxas | até 12x no cartão"

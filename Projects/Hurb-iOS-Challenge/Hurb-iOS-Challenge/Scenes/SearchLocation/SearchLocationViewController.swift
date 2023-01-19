@@ -71,7 +71,7 @@ class SearchLocationViewController: UIViewController {
         
     }
     
-    // MARK: Configure Hierarchy
+    // MARK: Configure Collection View
     
     private func configureHierarchy() {
         
@@ -127,7 +127,7 @@ class SearchLocationViewController: UIViewController {
     
     func eraseDataSource() {
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
+        var snapshot: NSDiffableDataSourceSnapshot<Section, String> = NSDiffableDataSourceSnapshot<Section, String>()
         snapshot.deleteAllItems()
         
         self.collectionView.hideSkeleton()
@@ -139,7 +139,7 @@ extension SearchLocationViewController: SearchLocationDisplayLogic {
     
     func displayLocations(viewModel: SearchLocation.Setup.ViewModel) {
 
-        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
+        var snapshot: NSDiffableDataSourceSnapshot<Section, String> = NSDiffableDataSourceSnapshot<Section, String>()
         snapshot.appendSections([Section.main])
         snapshot.appendItems(viewModel.locations, toSection: .main)
 

@@ -13,7 +13,7 @@ extension UIImageView {
     func loadPhoto(url: String?, completion: (() -> Void)? = nil) {
         
         guard let imageUrl: String = url,
-              let anUrl = URL(string: imageUrl) else { return }
+              let anUrl: URL = URL(string: imageUrl) else { return }
         
         let resourse: ImageResource = ImageResource(
             downloadURL: anUrl,

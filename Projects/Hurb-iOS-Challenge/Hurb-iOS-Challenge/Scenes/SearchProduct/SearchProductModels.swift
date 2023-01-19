@@ -37,4 +37,20 @@ enum SearchProduct {
             var products: [Product]
         }
     }
+    
+    enum Selection {
+        
+        struct Request {
+            
+            var product: Product
+        }
+        
+        struct Response {
+            
+        }
+        
+        struct ViewModel {
+            
+        }
+    }
 }

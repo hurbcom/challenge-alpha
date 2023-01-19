@@ -47,11 +47,22 @@
                     <navigationItem key="navigationItem" title="Buscar" id="Lld-Ha-iYB"/>
                     <connections>
                         <outlet property="collectionView" destination="SNf-SR-5TW" id="qqb-Rq-61T"/>
+                        <segue destination="uyu-ky-Z7t" kind="show" identifier="toDetails" id="t97-TE-Mn0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1965.6488549618321" y="-2.1126760563380285"/>
+        </scene>
+        <!--ProductDetails-->
+        <scene sceneID="0QA-kh-Pmu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProductDetails" id="uyu-ky-Z7t" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Cwf-mn-ixl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S8v-GF-eXf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2571" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MWw-UX-2Qq">
@@ -61,6 +72,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="y7G-jA-tHm">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

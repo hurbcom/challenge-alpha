@@ -14,7 +14,7 @@ import UIKit
 
 protocol ProductDetailsDisplayLogic: AnyObject {
     
-    func displaySomething(viewModel: ProductDetails.Something.ViewModel)
+    func displaySetupView(viewModel: ProductDetails.Setup.ViewModel)
 }
 
 class ProductDetailsViewController: UIViewController {
@@ -22,11 +22,27 @@ class ProductDetailsViewController: UIViewController {
     var interactor: ProductDetailsBusinessLogic?
     var router: (NSObjectProtocol & ProductDetailsRoutingLogic & ProductDetailsDataPassing)?
     
+    // MARK: Outlets
+
+    @IBOutlet private weak var photoImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var topPriceLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var bottomPriceLabel: UILabel!
+    @IBOutlet private weak var firstAmenityView: UIView!
+    @IBOutlet private weak var firstAmenityLabel: UILabel!
+    @IBOutlet private weak var secondAmenityView: UIView!
+    @IBOutlet private weak var secondAmenityLabel: UILabel!
+    @IBOutlet private weak var descriptionTitleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+
     // MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        self.setupLayout()
+        
     }
     
     // MARK: Routing
@@ -36,18 +52,45 @@ class ProductDetailsViewController: UIViewController {
         
     }
     
-    // MARK: Do something
+    // MARK: Setup Layout
     
-    func doSomething() {
-        
-        let request = ProductDetails.Something.Request()
-        interactor?.doSomething(request: request)
+    private func setupLayout() {
+     
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.interactor?.setupView()
+    }
+    
+    // MARK: IBActions
+    
+    @IBAction private func share(_ button: UIBarButtonItem) {
+
     }
 }
 
 extension ProductDetailsViewController: ProductDetailsDisplayLogic {
     
-    func displaySomething(viewModel: ProductDetails.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+    func displaySetupView(viewModel: ProductDetails.Setup.ViewModel) {
+        
+        self.photoImageView.loadPhoto(url: viewModel.product.medias.first?.url)
+        
+        self.nameLabel.text = "\(viewModel.product.name) - \(viewModel.product.category.rawValue ?? "")"
+        self.addressLabel.text = viewModel.product.getFormattedAddress()
+        self.topPriceLabel.text = viewModel.product.getPriceTopText()
+        self.priceLabel.text = viewModel.product.getFormattedPrice()
+        self.bottomPriceLabel.text = viewModel.product.getPriceBottomText()
+        self.descriptionTitleLabel.text = viewModel.descriptionTitle
+        self.descriptionLabel.text = viewModel.product.description.stringReadingHtml
+        
+        if let firstAmenity: Amenity = viewModel.product.amenities.first {
+            
+            self.firstAmenityView.isHidden = false
+            self.firstAmenityLabel.text = firstAmenity.name
+        }
+        
+        if let secondAmenity: Amenity = viewModel.product.amenities.last {
+            
+            self.secondAmenityView.isHidden = false
+            self.secondAmenityLabel.text = secondAmenity.name
+        }
     }
 }

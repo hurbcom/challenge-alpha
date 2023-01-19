@@ -29,9 +29,9 @@ class SearchProductWorker: SearchProductWorkerProtocol {
     func searchProducts(term: String, page: Int, limit: Int, completion: @escaping (Result<ProductContainer, ServiceError>) -> Void) {
         
         let pagination: HUGraphQL.SearchInputPagination = HUGraphQL.SearchInputPagination(page: page, limit: limit, sort: nil, sortOrder: nil)
-        let query = HUGraphQL.SearchQuery(q: term, pagination: pagination)
+        let query: HUGraphQL.SearchQuery = HUGraphQL.SearchQuery(q: term, pagination: pagination)
         
-        let graphQL = HUGService(enableLog: true)
+        let graphQL: HUGService = HUGService(enableLog: true)
         graphQL.client.fetch(query: query) { result in
             
             switch result {
@@ -39,8 +39,8 @@ class SearchProductWorker: SearchProductWorkerProtocol {
             case .success(let value):
 
                     if let listObject = value.data?.search?.resultMap,
-                       let jsonData = try? JSONSerialization.data(withJSONObject: listObject, options: .prettyPrinted),
-                       let decoded = try? JSONDecoder().decode(ProductContainer.self, from: jsonData) {
+                       let jsonData: Data = try? JSONSerialization.data(withJSONObject: listObject, options: .prettyPrinted),
+                       let decoded: ProductContainer = try? JSONDecoder().decode(ProductContainer.self, from: jsonData) {
 
                         completion(.success(decoded))
 

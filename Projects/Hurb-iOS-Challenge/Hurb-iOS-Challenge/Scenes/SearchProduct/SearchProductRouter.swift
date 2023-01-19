@@ -13,13 +13,14 @@
 import UIKit
 
 // Private segues names
-//private enum Segues: String {
-//    case toSomewhere
-//}
+private enum Segues: String {
+    case toDetails
+}
 
 @objc protocol SearchProductRoutingLogic {
     
     func routeTo(segue: UIStoryboardSegue, sender: Any?)
+    func navigateToDetails()
 }
 
 protocol SearchProductDataPassing {
@@ -42,17 +43,28 @@ class SearchProductRouter: NSObject, SearchProductRoutingLogic, SearchProductDat
     
     func routeTo(segue: UIStoryboardSegue, sender: Any?) {
 
-//        switch segue.identifier {
-//
-//        case Segues.toSomewhere.rawValue:
-//            if let nextController: SomewhereViewController = segue.destination as? SomewhereViewController {
-//
-//                SomewhereConfigurator.setupArch(viewController: nextController)
-//            }
-//            break
-//
-//        default:
-//            break
-//        }
+        switch segue.identifier {
+
+        case Segues.toDetails.rawValue:
+            if let nextController: ProductDetailsViewController = segue.destination as? ProductDetailsViewController {
+
+                ProductDetailsConfigurator.setupArch(viewController: nextController)
+                
+                if let sourceDataStore: SearchProductDataStore = self.dataStore,
+                   var destinationDataSource: ProductDetailsDataStore = nextController.router?.dataStore {
+
+                    destinationDataSource.product = sourceDataStore.product
+                }
+            }
+            break
+
+        default:
+            break
+        }
+    }
+    
+    func navigateToDetails() {
+        
+        self.viewController?.performSegue(withIdentifier: Segues.toDetails.rawValue, sender: nil)
     }
 }

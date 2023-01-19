@@ -17,6 +17,8 @@ protocol SearchProductPresentationLogic {
     func presentNewProducts(response: SearchProduct.Query.Response)
     func presentNoSearchResultsView()
     func presentErrorAlert()
+    
+    func presentProductDetails()
 }
 
 class SearchProductPresenter: SearchProductPresentationLogic {
@@ -32,7 +34,7 @@ class SearchProductPresenter: SearchProductPresentationLogic {
     
     func presentNewProducts(response: SearchProduct.Query.Response) {
         
-        let viewModel = SearchProduct.Query.ViewModel(pagination: response.pagination, products: response.products)
+        let viewModel: SearchProduct.Query.ViewModel = SearchProduct.Query.ViewModel(pagination: response.pagination, products: response.products)
         self.viewController?.displayNewProducts(viewModel: viewModel)
     }
     
@@ -44,5 +46,10 @@ class SearchProductPresenter: SearchProductPresentationLogic {
     func presentErrorAlert() {
         
         self.viewController?.displayErrorAlert()
+    }
+    
+    func presentProductDetails() {
+        
+        self.viewController?.displayProductDetails()
     }
 }

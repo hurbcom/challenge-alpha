@@ -14,7 +14,7 @@ import UIKit
 
 protocol ProductDetailsPresentationLogic {
     
-    func presentSomething(response: ProductDetails.Something.Response)
+    func presentSetupView(response: ProductDetails.Setup.Response)
 }
 
 class ProductDetailsPresenter: ProductDetailsPresentationLogic {
@@ -28,9 +28,9 @@ class ProductDetailsPresenter: ProductDetailsPresentationLogic {
     
     // MARK: Do something
     
-    func presentSomething(response: ProductDetails.Something.Response) {
-        
-        let viewModel = ProductDetails.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentSetupView(response: ProductDetails.Setup.Response) {
+
+        let viewModel: ProductDetails.Setup.ViewModel = ProductDetails.Setup.ViewModel(product: response.product, descriptionTitle: "Detalhes do \((response.product.category.rawValue ?? "").lowercased())")
+        self.viewController?.displaySetupView(viewModel: viewModel)
     }
 }

@@ -14,7 +14,6 @@ class ProductsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var typeLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var topPriceLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
@@ -37,8 +36,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
                 self.setNeedsLayout()
             }
             
-            self.nameLabel.text = product.name
-            self.typeLabel.text = product.category.rawValue
+            self.nameLabel.text = "\(product.name) - \(product.category.rawValue ?? "")"
             self.addressLabel.text = product.getFormattedAddress()
             self.topPriceLabel.text = product.getPriceTopText()
             self.priceLabel.text = product.getFormattedPrice()

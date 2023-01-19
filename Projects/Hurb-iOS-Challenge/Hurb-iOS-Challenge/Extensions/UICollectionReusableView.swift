@@ -16,9 +16,9 @@ extension UICollectionReusableView {
     
     static var nib: UINib {
         
-        let bundle = Bundle(for: self)
+        let bundle: Bundle = Bundle(for: self)
         
-        let nib = UINib(
+        let nib: UINib = UINib(
             nibName: self.cellIdentifier,
             bundle: bundle
         )
