@@ -45,4 +45,9 @@ final class PackageDetailsViewModel: ObservableObject {
         )
         self.place = IdentifiablePlace(lat: package.getLatitude(), long: package.getLongitude())
     }
+    
+    // MARK: - Actions
+    @objc func onShareButtonTap() {
+        router.presentShareSheet(urlString: self.package.url ?? "")
+    }
 }

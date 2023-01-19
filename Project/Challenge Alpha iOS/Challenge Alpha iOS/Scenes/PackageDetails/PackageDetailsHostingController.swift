@@ -24,16 +24,28 @@ final class PackageDetailsHostingController: UIHostingController<PackageDetailsV
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.largeTitleDisplayMode = .never
+        self.setupNavigationBarItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setupNavigationBar()
+        self.setupNavigationBarAppearance()
     }
     
     // MARK: Setup functions
-    private func setupNavigationBar() {
+    private func setupNavigationBarItems() {
+        self.navigationItem.largeTitleDisplayMode = .never
+        
+        let rightBarItem = UIBarButtonItem(
+            image: UIImage(systemName: "square.and.arrow.up"),
+            style: .plain, target: self.viewModel,
+            action: #selector(viewModel.onShareButtonTap)
+        )
+        
+        self.navigationItem.rightBarButtonItem = rightBarItem
+    }
+    
+    private func setupNavigationBarAppearance() {
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
 

@@ -8,9 +8,16 @@
 import UIKit
 
 protocol PackageDetailsRouterProtocol {
-    // TODO: Add navigation functions
+    func presentShareSheet(urlString: String)
 }
 
 final class PackageDetailsRouter: PackageDetailsRouterProtocol {
+    
     weak var viewController: UIViewController?
+    
+    func presentShareSheet(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        viewController?.present(activityVC, animated: true, completion: nil)
+    }
 }
