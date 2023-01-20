@@ -40,8 +40,6 @@
 		757C5C20295A8EF100EFC1F3 /* SearchProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C1E295A8EF100EFC1F3 /* SearchProduct.storyboard */; };
 		757C5C22295A8EF200EFC1F3 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C21295A8EF200EFC1F3 /* Icons.xcassets */; };
 		757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C23295A8EF200EFC1F3 /* LaunchScreen.storyboard */; };
-		757C5C3A295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */; };
-		757C5C3C295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */; };
 		757F8ABC296DDC1D00A081C7 /* SearchProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB5296DDC1D00A081C7 /* SearchProductPresenter.swift */; };
 		757F8ABD296DDC1D00A081C7 /* SearchProductWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB6296DDC1D00A081C7 /* SearchProductWorker.swift */; };
 		757F8ABE296DDC1D00A081C7 /* SearchProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB7296DDC1D00A081C7 /* SearchProductRouter.swift */; };
@@ -89,13 +87,6 @@
 			remoteGlobalIDString = 757C5C14295A8EF100EFC1F3;
 			remoteInfo = "Hurb-iOS-Challenge";
 		};
-		757C5C36295A8EF200EFC1F3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 757C5C0D295A8EF100EFC1F3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 757C5C14295A8EF100EFC1F3;
-			remoteInfo = "Hurb-iOS-Challenge";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -134,9 +125,6 @@
 		757C5C24295A8EF200EFC1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		757C5C26295A8EF200EFC1F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757C5C2B295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb-iOS-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		757C5C35295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb-iOS-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
-		757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		757F8AB5296DDC1D00A081C7 /* SearchProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductPresenter.swift; sourceTree = "<group>"; };
 		757F8AB6296DDC1D00A081C7 /* SearchProductWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductWorker.swift; sourceTree = "<group>"; };
 		757F8AB7296DDC1D00A081C7 /* SearchProductRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductRouter.swift; sourceTree = "<group>"; };
@@ -187,13 +175,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		757C5C28295A8EF200EFC1F3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		757C5C32295A8EF200EFC1F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,7 +334,6 @@
 				75B4BA81296B6AE600085669 /* Modules */,
 				757C5C17295A8EF100EFC1F3 /* Hurb-iOS-Challenge */,
 				757C5C2E295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests */,
-				757C5C38295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests */,
 				757C5C16295A8EF100EFC1F3 /* Products */,
 				751F5172296B6DA9002EAE11 /* Frameworks */,
 			);
@@ -364,7 +344,6 @@
 			children = (
 				757C5C15295A8EF100EFC1F3 /* Hurb-iOS-Challenge.app */,
 				757C5C2B295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests.xctest */,
-				757C5C35295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -390,15 +369,6 @@
 				7510FC25297AE8EE00F58786 /* Scenes */,
 			);
 			path = "Hurb-iOS-ChallengeTests";
-			sourceTree = "<group>";
-		};
-		757C5C38295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */,
-				757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */,
-			);
-			path = "Hurb-iOS-ChallengeUITests";
 			sourceTree = "<group>";
 		};
 		757F8AC3296DE8DC00A081C7 /* Components */ = {
@@ -542,24 +512,6 @@
 			productReference = 757C5C2B295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		757C5C34295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 757C5C45295A8EF200EFC1F3 /* Build configuration list for PBXNativeTarget "Hurb-iOS-ChallengeUITests" */;
-			buildPhases = (
-				757C5C31295A8EF200EFC1F3 /* Sources */,
-				757C5C32295A8EF200EFC1F3 /* Frameworks */,
-				757C5C33295A8EF200EFC1F3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				757C5C37295A8EF200EFC1F3 /* PBXTargetDependency */,
-			);
-			name = "Hurb-iOS-ChallengeUITests";
-			productName = "Hurb-iOS-ChallengeUITests";
-			productReference = 757C5C35295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -574,10 +526,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					757C5C2A295A8EF200EFC1F3 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 757C5C14295A8EF100EFC1F3;
-					};
-					757C5C34295A8EF200EFC1F3 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 757C5C14295A8EF100EFC1F3;
 					};
@@ -602,7 +550,6 @@
 			targets = (
 				757C5C14295A8EF100EFC1F3 /* Hurb-iOS-Challenge */,
 				757C5C2A295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests */,
-				757C5C34295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -626,13 +573,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		757C5C29295A8EF200EFC1F3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		757C5C33295A8EF200EFC1F3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -713,15 +653,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		757C5C31295A8EF200EFC1F3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				757C5C3A295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift in Sources */,
-				757C5C3C295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -729,11 +660,6 @@
 			isa = PBXTargetDependency;
 			target = 757C5C14295A8EF100EFC1F3 /* Hurb-iOS-Challenge */;
 			targetProxy = 757C5C2C295A8EF200EFC1F3 /* PBXContainerItemProxy */;
-		};
-		757C5C37295A8EF200EFC1F3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 757C5C14295A8EF100EFC1F3 /* Hurb-iOS-Challenge */;
-			targetProxy = 757C5C36295A8EF200EFC1F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -975,42 +901,6 @@
 			};
 			name = Release;
 		};
-		757C5C46295A8EF200EFC1F3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 385J8EY5CD;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-ChallengeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Hurb-iOS-Challenge";
-			};
-			name = Debug;
-		};
-		757C5C47295A8EF200EFC1F3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 385J8EY5CD;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.app.romulomga.Hurb-iOS-ChallengeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Hurb-iOS-Challenge";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1037,15 +927,6 @@
 			buildConfigurations = (
 				757C5C43295A8EF200EFC1F3 /* Debug */,
 				757C5C44295A8EF200EFC1F3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		757C5C45295A8EF200EFC1F3 /* Build configuration list for PBXNativeTarget "Hurb-iOS-ChallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				757C5C46295A8EF200EFC1F3 /* Debug */,
-				757C5C47295A8EF200EFC1F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
