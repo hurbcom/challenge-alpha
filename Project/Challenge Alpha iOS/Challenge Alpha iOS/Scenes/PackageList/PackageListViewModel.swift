@@ -59,10 +59,6 @@ final class PackageListViewModel: ObservableObject {
         router.navigateToPackageDetails(selectedPackage)
     }
     
-    @objc func onSearchTap() {
-        router.presentSearch(onComplete: self.redraw(with:))
-    }
-    
     // MARK: - Helpers
     private func hideLoading() {
         self.showLoading = false

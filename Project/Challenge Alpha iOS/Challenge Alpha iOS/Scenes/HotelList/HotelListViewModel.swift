@@ -60,10 +60,6 @@ final class HotelListViewModel: ObservableObject {
         router.navigateToHotelDetails(hotel)
     }
     
-    @objc func onSearchTap() {
-//        router.presentSearch(onComplete: self.redraw(with:))
-    }
-    
     // MARK: - Helpers
     func hideLoading() {
         self.showLoading = false

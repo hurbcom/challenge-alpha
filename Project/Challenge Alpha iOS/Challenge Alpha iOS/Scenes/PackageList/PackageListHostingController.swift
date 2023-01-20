@@ -35,13 +35,6 @@ final class PackageListHostingController: UIHostingController<PackageListView> {
     
     // MARK: Navigation Bar setup
     private func setupNavigationBarItems() {
-//        let rightBarItem = UIBarButtonItem(
-//            image: UIImage(systemName: "magnifyingglass"),
-//            style: .plain, target: self.viewModel,
-//            action: #selector(viewModel.onSearchTap)
-//        )
-//
-//        self.navigationItem.rightBarButtonItem = rightBarItem
         self.navigationItem.title = viewModel.query
     }
     
