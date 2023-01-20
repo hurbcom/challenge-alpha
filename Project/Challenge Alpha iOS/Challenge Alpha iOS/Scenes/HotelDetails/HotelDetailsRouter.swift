@@ -1,20 +1,19 @@
 //
-//  PackageDetailsRouter.swift
+//  HotelDetailsRouter.swift
 //  Challenge Alpha iOS
 //
-//  Created by Yuri Strack on 17/01/23.
+//  Created by Yuri Strack on 19/01/23.
 //
 
 import UIKit
 import SwiftUI
 
-protocol PackageDetailsRouterProtocol {
+protocol HotelDetailsRouterProtocol {
     func presentShareSheet(urlString: String)
-    @available(iOS 15, *) func presentDescription(_ description: String, amenities: [String])
+    @available(iOS 15, *) func presentDescription(_ description: String)
 }
 
-final class PackageDetailsRouter: PackageDetailsRouterProtocol {
-    
+final class HotelDetailsRouter: HotelDetailsRouterProtocol {
     weak var viewController: UIViewController?
     
     func presentShareSheet(urlString: String) {
@@ -24,8 +23,8 @@ final class PackageDetailsRouter: PackageDetailsRouterProtocol {
     }
     
     @available(iOS 15, *)
-    func presentDescription(_ description: String, amenities: [String]) {
-        let vc = UIHostingController<DescriptionView>.init(rootView: DescriptionView(description: description, amenities: amenities, closeAction: { [weak self] in
+    func presentDescription(_ description: String) {
+        let vc = UIHostingController<DescriptionView>.init(rootView: DescriptionView(description: description, amenities: [], closeAction: { [weak self] in
             self?.viewController?.dismiss(animated: true)
         }))
         vc.modalPresentationStyle = .overFullScreen

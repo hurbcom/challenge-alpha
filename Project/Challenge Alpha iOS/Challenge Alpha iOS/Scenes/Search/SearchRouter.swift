@@ -19,8 +19,8 @@ final class SearchRouter: SearchRouterProtocol {
     weak var viewController: UIViewController?
     
     func navigateToHotelDetails(_ hotel: HotelResult) {
-//        let hotelDetailsVC = HotelDetailsFactory.build(package: package)
-//        viewController?.navigationController?.pushViewController(packageDetailsVC, animated: true)
+        let hotelDetailsVC = HotelDetailsFactory.build(hotel: hotel)
+        viewController?.navigationController?.pushViewController(hotelDetailsVC, animated: true)
     }
     
     func navigateToPackageDetails(_ package: PackageResult) {

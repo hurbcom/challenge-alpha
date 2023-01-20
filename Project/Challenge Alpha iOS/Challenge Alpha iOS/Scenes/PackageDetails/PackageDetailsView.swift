@@ -181,7 +181,7 @@ struct PackageDetailsView: View {
 }
 
 @available(iOS 15, *)
-struct PackageDescriptionView: View {
+struct DescriptionView: View {
     
     var description: String
     var amenities: [String]

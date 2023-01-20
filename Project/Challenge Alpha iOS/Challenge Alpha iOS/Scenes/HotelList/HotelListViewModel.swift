@@ -57,7 +57,7 @@ final class HotelListViewModel: ObservableObject {
     
     // MARK: - Actions
     func onHotelTap(_ hotel: HotelResult) {
-        //
+        router.navigateToHotelDetails(hotel)
     }
     
     @objc func onSearchTap() {
