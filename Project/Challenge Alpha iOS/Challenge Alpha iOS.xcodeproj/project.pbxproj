@@ -81,8 +81,6 @@
 		DA710BFF297497E200D0A444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA710BFE297497E200D0A444 /* Assets.xcassets */; };
 		DA710C02297497E200D0A444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA710C00297497E200D0A444 /* LaunchScreen.storyboard */; };
 		DA710C0D297497E300D0A444 /* PackageListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710C0C297497E300D0A444 /* PackageListViewModelTests.swift */; };
-		DA710C17297497E300D0A444 /* Challenge_Alpha_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710C16297497E300D0A444 /* Challenge_Alpha_iOSUITests.swift */; };
-		DA710C19297497E300D0A444 /* Challenge_Alpha_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710C18297497E300D0A444 /* Challenge_Alpha_iOSUITestsLaunchTests.swift */; };
 		DA710C3D29749E0800D0A444 /* HUNetwork in Resources */ = {isa = PBXBuildFile; fileRef = DA710C3C29749E0800D0A444 /* HUNetwork */; };
 		DAF2DE0E2974AAF80055D6E3 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE0D2974AAF80055D6E3 /* SearchResult.swift */; };
 		DAF2DE102974AD070055D6E3 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE0F2974AD070055D6E3 /* Price.swift */; };
@@ -98,13 +96,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		DA710C09297497E300D0A444 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA710BEA297497E100D0A444 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA710BF1297497E100D0A444;
-			remoteInfo = "Challenge Alpha iOS";
-		};
-		DA710C13297497E300D0A444 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DA710BEA297497E100D0A444 /* Project object */;
 			proxyType = 1;
@@ -189,9 +180,6 @@
 		DA710C03297497E200D0A444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA710C08297497E300D0A444 /* Challenge Alpha iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challenge Alpha iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA710C0C297497E300D0A444 /* PackageListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListViewModelTests.swift; sourceTree = "<group>"; };
-		DA710C12297497E300D0A444 /* Challenge Alpha iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challenge Alpha iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA710C16297497E300D0A444 /* Challenge_Alpha_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_Alpha_iOSUITests.swift; sourceTree = "<group>"; };
-		DA710C18297497E300D0A444 /* Challenge_Alpha_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_Alpha_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DA710C3C29749E0800D0A444 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HUNetwork; sourceTree = "<group>"; };
 		DAF2DE0D2974AAF80055D6E3 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		DAF2DE0F2974AD070055D6E3 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
@@ -216,13 +204,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DA710C05297497E300D0A444 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA710C0F297497E300D0A444 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -495,7 +476,6 @@
 				DA710C3B29749E0800D0A444 /* Modules */,
 				DA710BF4297497E100D0A444 /* Challenge Alpha iOS */,
 				DA710C0B297497E300D0A444 /* Challenge Alpha iOSTests */,
-				DA710C15297497E300D0A444 /* Challenge Alpha iOSUITests */,
 				DA710BF3297497E100D0A444 /* Products */,
 				DA117D9929749E9600CC3749 /* Frameworks */,
 			);
@@ -506,7 +486,6 @@
 			children = (
 				DA710BF2297497E100D0A444 /* Challenge Alpha iOS.app */,
 				DA710C08297497E300D0A444 /* Challenge Alpha iOSTests.xctest */,
-				DA710C12297497E300D0A444 /* Challenge Alpha iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -535,15 +514,6 @@
 				DA081BF02979B188005CF0EA /* PackageListInteractorTests.swift */,
 			);
 			path = "Challenge Alpha iOSTests";
-			sourceTree = "<group>";
-		};
-		DA710C15297497E300D0A444 /* Challenge Alpha iOSUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DA710C16297497E300D0A444 /* Challenge_Alpha_iOSUITests.swift */,
-				DA710C18297497E300D0A444 /* Challenge_Alpha_iOSUITestsLaunchTests.swift */,
-			);
-			path = "Challenge Alpha iOSUITests";
 			sourceTree = "<group>";
 		};
 		DA710C3B29749E0800D0A444 /* Modules */ = {
@@ -657,24 +627,6 @@
 			productReference = DA710C08297497E300D0A444 /* Challenge Alpha iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DA710C11297497E300D0A444 /* Challenge Alpha iOSUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA710C22297497E300D0A444 /* Build configuration list for PBXNativeTarget "Challenge Alpha iOSUITests" */;
-			buildPhases = (
-				DA710C0E297497E300D0A444 /* Sources */,
-				DA710C0F297497E300D0A444 /* Frameworks */,
-				DA710C10297497E300D0A444 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA710C14297497E300D0A444 /* PBXTargetDependency */,
-			);
-			name = "Challenge Alpha iOSUITests";
-			productName = "Challenge Alpha iOSUITests";
-			productReference = DA710C12297497E300D0A444 /* Challenge Alpha iOSUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -689,10 +641,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					DA710C07297497E300D0A444 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = DA710BF1297497E100D0A444;
-					};
-					DA710C11297497E300D0A444 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = DA710BF1297497E100D0A444;
 					};
@@ -716,7 +664,6 @@
 			targets = (
 				DA710BF1297497E100D0A444 /* Challenge Alpha iOS */,
 				DA710C07297497E300D0A444 /* Challenge Alpha iOSTests */,
-				DA710C11297497E300D0A444 /* Challenge Alpha iOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -733,13 +680,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DA710C06297497E300D0A444 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA710C10297497E300D0A444 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -843,15 +783,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA710C0E297497E300D0A444 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA710C17297497E300D0A444 /* Challenge_Alpha_iOSUITests.swift in Sources */,
-				DA710C19297497E300D0A444 /* Challenge_Alpha_iOSUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -859,11 +790,6 @@
 			isa = PBXTargetDependency;
 			target = DA710BF1297497E100D0A444 /* Challenge Alpha iOS */;
 			targetProxy = DA710C09297497E300D0A444 /* PBXContainerItemProxy */;
-		};
-		DA710C14297497E300D0A444 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA710BF1297497E100D0A444 /* Challenge Alpha iOS */;
-			targetProxy = DA710C13297497E300D0A444 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1097,42 +1023,6 @@
 			};
 			name = Release;
 		};
-		DA710C23297497E300D0A444 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P2F8K76LP8;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yuri.Challenge-Alpha-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Challenge Alpha iOS";
-			};
-			name = Debug;
-		};
-		DA710C24297497E300D0A444 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P2F8K76LP8;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yuri.Challenge-Alpha-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Challenge Alpha iOS";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1159,15 +1049,6 @@
 			buildConfigurations = (
 				DA710C20297497E300D0A444 /* Debug */,
 				DA710C21297497E300D0A444 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DA710C22297497E300D0A444 /* Build configuration list for PBXNativeTarget "Challenge Alpha iOSUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA710C23297497E300D0A444 /* Debug */,
-				DA710C24297497E300D0A444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
