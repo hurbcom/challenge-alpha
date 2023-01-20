@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7510FC30297AE99700F58786 /* SearchLocationPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC2F297AE99700F58786 /* SearchLocationPresenterSpy.swift */; };
+		7510FC32297AE9A500F58786 /* SearchLocationViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC31297AE9A500F58786 /* SearchLocationViewControllerSpy.swift */; };
+		7510FC34297AE9B700F58786 /* SearchLocationWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC33297AE9B700F58786 /* SearchLocationWorkerSpy.swift */; };
+		7510FC36297AE9D400F58786 /* SearchLocationInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC35297AE9D400F58786 /* SearchLocationInteractorTest.swift */; };
+		7510FC38297AE9E100F58786 /* SearchLocationPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC37297AE9E100F58786 /* SearchLocationPresenterTest.swift */; };
+		7510FC3A297AECB300F58786 /* SearchProductPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC39297AECB300F58786 /* SearchProductPresenterSpy.swift */; };
+		7510FC3C297AECC000F58786 /* SearchProductViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC3B297AECC000F58786 /* SearchProductViewControllerSpy.swift */; };
+		7510FC3E297AECC900F58786 /* SearchProductWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC3D297AECC900F58786 /* SearchProductWorkerSpy.swift */; };
+		7510FC40297AECD900F58786 /* SearchProductInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC3F297AECD900F58786 /* SearchProductInteractorTest.swift */; };
+		7510FC42297AECE500F58786 /* SearchProductPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC41297AECE500F58786 /* SearchProductPresenterTest.swift */; };
+		7510FC44297AF44600F58786 /* ProductDetailsPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC43297AF44600F58786 /* ProductDetailsPresenterSpy.swift */; };
+		7510FC46297AF45B00F58786 /* ProductDetailsViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC45297AF45B00F58786 /* ProductDetailsViewControllerSpy.swift */; };
+		7510FC48297AF46700F58786 /* ProductDetailsWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC47297AF46700F58786 /* ProductDetailsWorkerSpy.swift */; };
+		7510FC4A297AF47500F58786 /* ProductDetailsInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC49297AF47500F58786 /* ProductDetailsInteractorTest.swift */; };
+		7510FC4C297AF47F00F58786 /* ProductDetailsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510FC4B297AF47F00F58786 /* ProductDetailsPresenterTest.swift */; };
 		751F5174296B6DBE002EAE11 /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = 751F5173296B6DBE002EAE11 /* HUGraphQL */; };
 		753083B82979B94B0014E891 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753083B72979B94B0014E891 /* ProductDetails.storyboard */; };
 		753083BA2979D2C40014E891 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753083B92979D2C40014E891 /* String.swift */; };
@@ -25,7 +40,6 @@
 		757C5C20295A8EF100EFC1F3 /* SearchProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C1E295A8EF100EFC1F3 /* SearchProduct.storyboard */; };
 		757C5C22295A8EF200EFC1F3 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C21295A8EF200EFC1F3 /* Icons.xcassets */; };
 		757C5C25295A8EF200EFC1F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5C23295A8EF200EFC1F3 /* LaunchScreen.storyboard */; };
-		757C5C30295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C2F295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift */; };
 		757C5C3A295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */; };
 		757C5C3C295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */; };
 		757F8ABC296DDC1D00A081C7 /* SearchProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8AB5296DDC1D00A081C7 /* SearchProductPresenter.swift */; };
@@ -85,6 +99,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7510FC2F297AE99700F58786 /* SearchLocationPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationPresenterSpy.swift; sourceTree = "<group>"; };
+		7510FC31297AE9A500F58786 /* SearchLocationViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewControllerSpy.swift; sourceTree = "<group>"; };
+		7510FC33297AE9B700F58786 /* SearchLocationWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationWorkerSpy.swift; sourceTree = "<group>"; };
+		7510FC35297AE9D400F58786 /* SearchLocationInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationInteractorTest.swift; sourceTree = "<group>"; };
+		7510FC37297AE9E100F58786 /* SearchLocationPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationPresenterTest.swift; sourceTree = "<group>"; };
+		7510FC39297AECB300F58786 /* SearchProductPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductPresenterSpy.swift; sourceTree = "<group>"; };
+		7510FC3B297AECC000F58786 /* SearchProductViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductViewControllerSpy.swift; sourceTree = "<group>"; };
+		7510FC3D297AECC900F58786 /* SearchProductWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductWorkerSpy.swift; sourceTree = "<group>"; };
+		7510FC3F297AECD900F58786 /* SearchProductInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductInteractorTest.swift; sourceTree = "<group>"; };
+		7510FC41297AECE500F58786 /* SearchProductPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductPresenterTest.swift; sourceTree = "<group>"; };
+		7510FC43297AF44600F58786 /* ProductDetailsPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsPresenterSpy.swift; sourceTree = "<group>"; };
+		7510FC45297AF45B00F58786 /* ProductDetailsViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewControllerSpy.swift; sourceTree = "<group>"; };
+		7510FC47297AF46700F58786 /* ProductDetailsWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsWorkerSpy.swift; sourceTree = "<group>"; };
+		7510FC49297AF47500F58786 /* ProductDetailsInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsInteractorTest.swift; sourceTree = "<group>"; };
+		7510FC4B297AF47F00F58786 /* ProductDetailsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsPresenterTest.swift; sourceTree = "<group>"; };
 		753083B72979B94B0014E891 /* ProductDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
 		753083B92979D2C40014E891 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		754B8280296E425D00772C01 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -105,7 +134,6 @@
 		757C5C24295A8EF200EFC1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		757C5C26295A8EF200EFC1F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757C5C2B295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb-iOS-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		757C5C2F295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeTests.swift; sourceTree = "<group>"; };
 		757C5C35295A8EF200EFC1F3 /* Hurb-iOS-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hurb-iOS-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		757C5C39295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
 		757C5C3B295A8EF200EFC1F3 /* Hurb_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hurb_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -175,6 +203,100 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7510FC25297AE8EE00F58786 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC26297AE8F800F58786 /* SearchLocation */,
+				7510FC27297AE90200F58786 /* SearchProduct */,
+				7510FC28297AE91000F58786 /* ProductDetails */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7510FC26297AE8F800F58786 /* SearchLocation */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC29297AE92500F58786 /* Spies */,
+				7510FC2A297AE92A00F58786 /* Tests */,
+			);
+			path = SearchLocation;
+			sourceTree = "<group>";
+		};
+		7510FC27297AE90200F58786 /* SearchProduct */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC2C297AE93900F58786 /* Spies */,
+				7510FC2B297AE93500F58786 /* Tests */,
+			);
+			path = SearchProduct;
+			sourceTree = "<group>";
+		};
+		7510FC28297AE91000F58786 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC2E297AE94400F58786 /* Spies */,
+				7510FC2D297AE93F00F58786 /* Tests */,
+			);
+			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		7510FC29297AE92500F58786 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC2F297AE99700F58786 /* SearchLocationPresenterSpy.swift */,
+				7510FC31297AE9A500F58786 /* SearchLocationViewControllerSpy.swift */,
+				7510FC33297AE9B700F58786 /* SearchLocationWorkerSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		7510FC2A297AE92A00F58786 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC35297AE9D400F58786 /* SearchLocationInteractorTest.swift */,
+				7510FC37297AE9E100F58786 /* SearchLocationPresenterTest.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		7510FC2B297AE93500F58786 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC3F297AECD900F58786 /* SearchProductInteractorTest.swift */,
+				7510FC41297AECE500F58786 /* SearchProductPresenterTest.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		7510FC2C297AE93900F58786 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC39297AECB300F58786 /* SearchProductPresenterSpy.swift */,
+				7510FC3B297AECC000F58786 /* SearchProductViewControllerSpy.swift */,
+				7510FC3D297AECC900F58786 /* SearchProductWorkerSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		7510FC2D297AE93F00F58786 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC49297AF47500F58786 /* ProductDetailsInteractorTest.swift */,
+				7510FC4B297AF47F00F58786 /* ProductDetailsPresenterTest.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		7510FC2E297AE94400F58786 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				7510FC43297AF44600F58786 /* ProductDetailsPresenterSpy.swift */,
+				7510FC45297AF45B00F58786 /* ProductDetailsViewControllerSpy.swift */,
+				7510FC47297AF46700F58786 /* ProductDetailsWorkerSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
 		7517490D2967143100FB7081 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,7 +387,7 @@
 		757C5C2E295A8EF200EFC1F3 /* Hurb-iOS-ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				757C5C2F295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift */,
+				7510FC25297AE8EE00F58786 /* Scenes */,
 			);
 			path = "Hurb-iOS-ChallengeTests";
 			sourceTree = "<group>";
@@ -573,7 +695,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				757C5C30295A8EF200EFC1F3 /* Hurb_iOS_ChallengeTests.swift in Sources */,
+				7510FC32297AE9A500F58786 /* SearchLocationViewControllerSpy.swift in Sources */,
+				7510FC4C297AF47F00F58786 /* ProductDetailsPresenterTest.swift in Sources */,
+				7510FC3C297AECC000F58786 /* SearchProductViewControllerSpy.swift in Sources */,
+				7510FC34297AE9B700F58786 /* SearchLocationWorkerSpy.swift in Sources */,
+				7510FC3A297AECB300F58786 /* SearchProductPresenterSpy.swift in Sources */,
+				7510FC4A297AF47500F58786 /* ProductDetailsInteractorTest.swift in Sources */,
+				7510FC3E297AECC900F58786 /* SearchProductWorkerSpy.swift in Sources */,
+				7510FC30297AE99700F58786 /* SearchLocationPresenterSpy.swift in Sources */,
+				7510FC38297AE9E100F58786 /* SearchLocationPresenterTest.swift in Sources */,
+				7510FC42297AECE500F58786 /* SearchProductPresenterTest.swift in Sources */,
+				7510FC44297AF44600F58786 /* ProductDetailsPresenterSpy.swift in Sources */,
+				7510FC36297AE9D400F58786 /* SearchLocationInteractorTest.swift in Sources */,
+				7510FC46297AF45B00F58786 /* ProductDetailsViewControllerSpy.swift in Sources */,
+				7510FC48297AF46700F58786 /* ProductDetailsWorkerSpy.swift in Sources */,
+				7510FC40297AECD900F58786 /* SearchProductInteractorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
