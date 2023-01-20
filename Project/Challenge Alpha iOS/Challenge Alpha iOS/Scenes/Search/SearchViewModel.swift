@@ -72,7 +72,8 @@ final class SearchViewModel: ObservableObject {
         }
     }
     
-    func onSearchSideButtonTap() {
+    func onSearchButtonTap() {
+        self.selectedSegmentedControlIndex == 0 ? self.router.navigateToHotelList(with: self.searchText) :
         self.router.navigateToPackageList(with: self.searchText)
     }
     

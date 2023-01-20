@@ -76,7 +76,13 @@ struct SearchView: View {
             HUSearchButton(searchText: $viewModel.searchText, style: viewModel.selectedSegmentedControlIndex == 0 ? .plain : .sideButton) {
                 viewModel.onSearchTap()
             } sideButtonAction: {
-                viewModel.onSearchSideButtonTap()
+                viewModel.onSearchButtonTap()
+            }
+            
+            if viewModel.selectedSegmentedControlIndex == 0 {
+                HUButton(title: "Pesquisar", color: UIConstants.COLOR.hurbBlue, style: .fill) {
+                    viewModel.onSearchButtonTap()
+                }
             }
         }
         .padding(.bottom)
