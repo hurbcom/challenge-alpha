@@ -32,6 +32,10 @@ struct HotelResult: Codable {
         return self.address?.country ?? ""
     }
     
+    func getState() -> String {
+        return self.address?.state ?? ""
+    }
+    
     func getName() -> String {
         return self.name ?? ""
     }
