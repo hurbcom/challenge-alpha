@@ -971,6 +971,7 @@
 				DEVELOPMENT_TEAM = P2F8K76LP8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Challenge Alpha iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hurb Challenge";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1002,6 +1003,7 @@
 				DEVELOPMENT_TEAM = P2F8K76LP8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Challenge Alpha iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hurb Challenge";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
