@@ -64,8 +64,12 @@ final class SearchViewModel: ObservableObject {
         router.presentSuggestions(suggestionType: suggestionType) { searchTerm in
             self.searchText = searchTerm
             
-//            suggestionType == .hotel ? router.navigateToHotelList() : router.navigateToPackageList()
+            suggestionType == .hotel ? self.router.navigateToHotelList(with: searchTerm) : self.router.navigateToPackageList(with: searchTerm)
         }
+    }
+    
+    func onSearchSideButtonTap() {
+        self.router.navigateToPackageList(with: self.searchText)
     }
     
     func onHotelTap(_ hotel: HotelResult) {

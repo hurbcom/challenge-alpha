@@ -11,7 +11,7 @@ import Foundation
 struct SuggestionResult: Codable {
     var text: String?
     var filter: String?
-    var suggestionType: SuggestionType
+    var suggestionType: SuggestionType?
 }
 
 enum SuggestionType: String, Codable {
@@ -20,4 +20,21 @@ enum SuggestionType: String, Codable {
     case hotel = "hotel"
     case package = "package"
     case tag = "tag"
+    case neighborhood = "neighborhood"
+    case unknown
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let string = try container.decode(String.self)
+        
+        switch string {
+        case "city": self = .city
+        case "estado": self = .state
+        case "hotel": self = .hotel
+        case "package": self = .package
+        case "tag": self = .tag
+        case "neighborhood": self = .neighborhood
+        default: self = .unknown
+        }
+    }
 }

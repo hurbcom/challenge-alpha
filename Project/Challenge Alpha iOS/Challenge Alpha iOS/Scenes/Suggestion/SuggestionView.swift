@@ -85,6 +85,7 @@ struct SuggestionView: View {
                         Spacer()
                     }
                     .contentShape(Rectangle())
+                    .padding(.vertical, UIConstants.PADDING_VALUES.NORMAL)
                     .onTapGesture {
                         let searchTerm = viewModel.destinationSuggestions[index].text ?? ""
                         viewModel.onDestinationTap(name: searchTerm)
@@ -106,7 +107,7 @@ struct SuggestionView: View {
                 
                 ForEach(0..<viewModel.otherSuggestions.count, id: \.self) { index in
                     HStack(alignment: .top) {
-                        Image(systemName: "bag.fill")
+                        Image(systemName: viewModel.getOtherSuggestionsImage())
                             .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
                             .foregroundColor(UIConstants.COLOR.hurbBlue)
                         
@@ -116,6 +117,8 @@ struct SuggestionView: View {
                         
                         Spacer()
                     }
+                    .contentShape(Rectangle())
+                    .padding(.vertical, UIConstants.PADDING_VALUES.NORMAL)
                     .onTapGesture {
                         let searchTerm = viewModel.otherSuggestions[index].text ?? ""
                         viewModel.onDestinationTap(name: searchTerm)

@@ -42,7 +42,7 @@ final class HotelListHostingController: UIHostingController<HotelListView> {
         )
         
         self.navigationItem.rightBarButtonItem = rightBarItem
-        self.navigationItem.title = "Hoteis"
+        self.navigationItem.title = "Hotéis"
     }
     
     private func setupNavigationBarAppearance() {

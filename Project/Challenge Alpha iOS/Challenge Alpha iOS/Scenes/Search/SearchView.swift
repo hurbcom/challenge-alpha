@@ -14,12 +14,7 @@ struct SearchView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .leading) {
-                // TODO: Add HUPicker
-                
-                HUSearchButton(searchText: $viewModel.searchText) {
-                    // TODO: Handle search tap
-                }
-                Spacer()
+                self.searchHeader
                 
                 ForEach(0..<viewModel.searchResults.count, id: \.self) { index in
                     switch viewModel.searchResults[index].category {
@@ -48,6 +43,43 @@ struct SearchView: View {
         }
     }
     
+    // MARK: - Visual Components
+    var searchHeader: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Hotéis")
+                    .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42)
+                    .foregroundColor(viewModel.selectedSegmentedControlIndex == 0 ? UIConstants.COLOR.hurbBlue : UIConstants.COLOR.hurbDarkGray)
+                    .background(
+                        viewModel.selectedSegmentedControlIndex == 0 ? UIConstants.COLOR.hurbBlue.opacity(0.1) : Color.white
+                    )
+                    .contentShape(Rectangle())
+                    .cornerRadius(4)
+                    .onTapGesture {
+                        viewModel.selectedSegmentedControlIndex = 0
+                    }
+                
+                Text("Pacotes")
+                    .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42)
+                    .foregroundColor(viewModel.selectedSegmentedControlIndex == 1 ? UIConstants.COLOR.hurbBlue : UIConstants.COLOR.hurbDarkGray)
+                    .background(
+                        viewModel.selectedSegmentedControlIndex == 1 ? UIConstants.COLOR.hurbBlue.opacity(0.1) : Color.white
+                    )
+                    .contentShape(Rectangle())
+                    .cornerRadius(4)
+                    .onTapGesture {
+                        viewModel.selectedSegmentedControlIndex = 1
+                    }
+            }
+            
+            HUSearchButton(searchText: $viewModel.searchText, style: viewModel.selectedSegmentedControlIndex == 0 ? .plain : .sideButton) {
+                viewModel.onSearchTap()
+            } sideButtonAction: {
+                viewModel.onSearchSideButtonTap()
+            }
+        }
+        .padding(.bottom)
+    }
     @ViewBuilder
     func searchHotelCard(_ hotel: HotelResult) -> some View {
         HotelCardView(

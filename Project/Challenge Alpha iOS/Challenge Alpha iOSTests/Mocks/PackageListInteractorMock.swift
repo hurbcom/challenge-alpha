@@ -13,7 +13,7 @@ import HUGraphQL
 final class PackageListInteractorMock: PackageListInteractorProtocol {
     func getPackages(query: String, pagination: HUGraphQL.SearchInputPagination?) -> AnyPublisher<[Challenge_Alpha_iOS.PackageResult], Error> {
         let data = mockedPackages
-        print("TENHO: \(data.count)")
+        
         let subject = PassthroughSubject<[PackageResult], Error>()
         
         subject.send(data)

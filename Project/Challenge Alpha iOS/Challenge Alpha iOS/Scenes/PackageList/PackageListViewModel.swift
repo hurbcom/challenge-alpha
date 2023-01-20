@@ -11,7 +11,7 @@ import Combine
 final class PackageListViewModel: ObservableObject {
     // MARK: - Published variables
     @Published var packages: [PackageResult] = []
-    @Published var query: String = Constants.DEFAULT_DESTINATION
+    @Published var query: String
     @Published var showLoading = true
     @Published var showError: Bool = false
     
@@ -22,7 +22,8 @@ final class PackageListViewModel: ObservableObject {
     var interactor: PackageListInteractorProtocol
     var router: PackageListRouterProtocol
     
-    init(interactor: PackageListInteractorProtocol, router: PackageListRouterProtocol = PackageListRouter()) {
+    init(query: String = Constants.DEFAULT_DESTINATION, interactor: PackageListInteractorProtocol, router: PackageListRouterProtocol = PackageListRouter()) {
+        self.query = query
         self.interactor = interactor
         self.router = router
     }

@@ -35,19 +35,20 @@ final class PackageListHostingController: UIHostingController<PackageListView> {
     
     // MARK: Navigation Bar setup
     private func setupNavigationBarItems() {
-        let rightBarItem = UIBarButtonItem(
-            image: UIImage(systemName: "magnifyingglass"),
-            style: .plain, target: self.viewModel,
-            action: #selector(viewModel.onSearchTap)
-        )
-        
-        self.navigationItem.rightBarButtonItem = rightBarItem
-        self.navigationItem.title = "Pacotes"
+//        let rightBarItem = UIBarButtonItem(
+//            image: UIImage(systemName: "magnifyingglass"),
+//            style: .plain, target: self.viewModel,
+//            action: #selector(viewModel.onSearchTap)
+//        )
+//
+//        self.navigationItem.rightBarButtonItem = rightBarItem
+        self.navigationItem.title = viewModel.query
     }
     
     private func setupNavigationBarAppearance() {
         self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
+        self.navigationItem.largeTitleDisplayMode = .never
         
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .white

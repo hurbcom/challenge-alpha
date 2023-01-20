@@ -52,7 +52,7 @@ final class SuggestionViewModel: ObservableObject {
                 limit: 20,
                 sort: .price,
                 sortOrder: .desc),
-            productType: .package
+            productType: suggestionType == .hotel ? .hotel : .package
         )
         .receive(on: DispatchQueue.main)
         .sink { completion in
@@ -65,7 +65,7 @@ final class SuggestionViewModel: ObservableObject {
             })
             
             self.otherSuggestions = suggestions.filter({ suggestion in
-                return suggestion.suggestionType == .package
+                return suggestion.suggestionType == self.suggestionType
             })
         }
         .store(in: &cancellables)
@@ -89,11 +89,24 @@ final class SuggestionViewModel: ObservableObject {
         case .state:
             return "Destinos"
         case .hotel:
-            return "Hoteis"
+            return "Hotéis"
         case .package:
             return "Pacotes"
         case .tag:
             return "Tags"
+        case .neighborhood:
+            return ""
+        case .unknown:
+            return ""
+        }
+    }
+    
+    func getOtherSuggestionsImage() -> String {
+        switch suggestionType {
+        case .hotel:
+            return "building.fill"
+        default:
+            return "bag.fill"
         }
     }
 }

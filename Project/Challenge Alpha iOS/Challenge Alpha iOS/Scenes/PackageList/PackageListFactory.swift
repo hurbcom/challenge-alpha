@@ -8,10 +8,10 @@
 import Foundation
 
 enum PackageListFactory {
-    static func build() -> PackageListHostingController {
+    static func build(with searchTerm: String = Constants.DEFAULT_DESTINATION) -> PackageListHostingController {
         let interactor = PackageListInteractor()
         let router = PackageListRouter()
-        let viewModel = PackageListViewModel(interactor: interactor, router: router)
+        let viewModel = PackageListViewModel(query: searchTerm, interactor: interactor, router: router)
         let view = PackageListView(viewModel: viewModel)
         let viewController = PackageListHostingController(viewModel: viewModel, rootView: view)
         
