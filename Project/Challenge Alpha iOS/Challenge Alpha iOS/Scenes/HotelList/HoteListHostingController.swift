@@ -35,7 +35,7 @@ final class HotelListHostingController: UIHostingController<HotelListView> {
     
     // MARK: Navigation Bar setup
     private func setupNavigationBarItems() {
-        self.navigationItem.title = viewModel.query
+        self.navigationItem.title = viewModel.query.query
     }
     
     private func setupNavigationBarAppearance() {

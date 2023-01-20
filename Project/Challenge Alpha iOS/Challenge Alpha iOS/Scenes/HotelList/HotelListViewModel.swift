@@ -12,7 +12,6 @@ final class HotelListViewModel: ObservableObject {
     
     // MARK: - Published properties
     @Published var hotels: [HotelResult] = []
-    @Published var query: String
     @Published var showLoading: Bool = true
     @Published var showError: Bool = false
     
@@ -20,10 +19,11 @@ final class HotelListViewModel: ObservableObject {
     var cancellables = Set<AnyCancellable>()
     
     // MARK: - Dependencies
+    var query: HotelQueryParams
     var interactor: HotelListInteractorInput
     var router: HotelListRouterProtocol
     
-    init(query: String = Constants.DEFAULT_DESTINATION, interactor: HotelListInteractorInput, router: HotelListRouterProtocol = HotelListRouter()) {
+    init(query: HotelQueryParams = HotelQueryParams(), interactor: HotelListInteractorInput, router: HotelListRouterProtocol = HotelListRouter()) {
         self.query = query
         self.interactor = interactor
         self.router = router
@@ -31,7 +31,10 @@ final class HotelListViewModel: ObservableObject {
     
     func getHotelList() {
         interactor.getHotels(
-            query: query,
+            query: query.query,
+            rooms: query.adults,
+            startDate: query.startDate,
+            endDate: query.endDate,
             pagination: .init(
                 page: 1,
                 limit: 20,

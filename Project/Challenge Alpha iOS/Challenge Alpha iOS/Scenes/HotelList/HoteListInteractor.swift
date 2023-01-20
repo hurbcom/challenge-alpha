@@ -10,7 +10,7 @@ import Combine
 import HUGraphQL
 
 protocol HotelListInteractorInput {
-    func getHotels(query: String, pagination: HUGraphQL.SearchInputPagination?) -> AnyPublisher<[HotelResult], Error>
+    func getHotels(query: String, rooms: Int?, startDate: Date?, endDate: Date?, pagination: HUGraphQL.SearchInputPagination?) -> AnyPublisher<[HotelResult], Error>
 }
 
 final class HotelListInteractor: HotelListInteractorInput {
@@ -18,7 +18,7 @@ final class HotelListInteractor: HotelListInteractorInput {
     private let service = HUGService(enableLog: true)
     private let logger = LoggerFactory.createLogger(class: HotelListInteractor.self)
     
-    func getHotels(query: String, pagination: HUGraphQL.SearchInputPagination? = nil) -> AnyPublisher<[HotelResult], Error> {
+    func getHotels(query: String, rooms: Int?, startDate: Date?, endDate: Date?, pagination: HUGraphQL.SearchInputPagination? = nil) -> AnyPublisher<[HotelResult], Error> {
         let subject = PassthroughSubject<[HotelResult], Error>()
         
         let query = HUGraphQL.SearchHotelQuery(
@@ -26,9 +26,9 @@ final class HotelListInteractor: HotelListInteractorInput {
             filters: nil,
             pagination: pagination,
             l10n: .init(pos: "br", locale: "pt", currency: "BRL"),
-            checkin: Date(),
-            checkout: nil,
-            rooms: nil)
+            checkin: startDate,
+            checkout: endDate,
+            rooms: [HUGraphQL.SearchInputRooms.init(adults: rooms ?? 1, children: [])])
         
         service.client.fetch(query: query) { result in
             switch result {

@@ -15,6 +15,12 @@ final class SearchViewModel: ObservableObject {
     @Published var searchText: String
     @Published var showLoading: Bool = true
     @Published var showError: Bool = false
+    @Published var presentHotelQueryParamsView: Bool = false
+    
+    // MARK: - Hotel query params
+    @Published var startDate: Date = Date()
+    @Published var endDate: Date = Date.tomorrow()
+    @Published var adults: Int = 1
     
     // MARK: - Dispose bag
     var cancellables = Set<AnyCancellable>()
@@ -75,7 +81,8 @@ final class SearchViewModel: ObservableObject {
             self.searchText = searchTerm
             
             if !self.searchText.isEmpty {
-                suggestionType == .hotel ? self.router.navigateToHotelList(with: searchTerm) : self.router.navigateToPackageList(with: searchTerm)
+                let query = HotelQueryParams(query: self.searchText, adults: self.adults, startDate: self.startDate, endDate: self.endDate)
+                suggestionType == .hotel ? self.router.navigateToHotelList(with: query) : self.router.navigateToPackageList(with: searchTerm)
                 self.selectedSegmentedControlIndex == 0 ? UserDefaultsManager.shared.saveLastSearchedHotelQuery(searchTerm) : UserDefaultsManager.shared.saveLastSearchedPackageQuery(searchTerm)
             }
         }
@@ -85,7 +92,8 @@ final class SearchViewModel: ObservableObject {
         guard !self.searchText.isEmpty else { return }
         
         if self.selectedSegmentedControlIndex == 0 {
-            self.router.navigateToHotelList(with: self.searchText)
+            let query = HotelQueryParams(query: searchText, adults: adults, startDate: startDate, endDate: endDate)
+            self.router.navigateToHotelList(with: query)
             UserDefaultsManager.shared.saveLastSearchedHotelQuery(self.searchText)
             return
         }
@@ -100,6 +108,10 @@ final class SearchViewModel: ObservableObject {
     
     func onPackageTap(_ package: PackageResult) {
         router.navigateToPackageDetails(package)
+    }
+    
+    func onQueryParamTap() {
+        self.presentHotelQueryParamsView = true
     }
     
     // MARK: - Helpers

@@ -33,9 +33,6 @@ struct HotelListView: View {
         }
         .loading($viewModel.showLoading)
         .error($viewModel.showError)
-        .onChange(of: viewModel.query, perform: { newValue in
-            self.viewModel.getHotelList()
-        })
         .onAppear {
             self.viewModel.getHotelList()
         }

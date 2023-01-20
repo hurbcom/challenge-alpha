@@ -10,7 +10,7 @@ import UIKit
 protocol SearchRouterProtocol {
     func navigateToHotelDetails(_ hotel: HotelResult)
     func navigateToPackageDetails(_ package: PackageResult)
-    func navigateToHotelList(with searchTerm: String)
+    func navigateToHotelList(with searchTerm: HotelQueryParams)
     func navigateToPackageList(with searchTerm: String)
     func presentSuggestions(suggestionType: SuggestionType, onComplete: @escaping ((String) -> Void))
 }
@@ -28,8 +28,8 @@ final class SearchRouter: SearchRouterProtocol {
         viewController?.navigationController?.pushViewController(packageDetailsVC, animated: true)
     }
     
-    func navigateToHotelList(with searchTerm: String) {
-        let hotelListVC = HotelListFactory.build(with: searchTerm)
+    func navigateToHotelList(with query: HotelQueryParams) {
+        let hotelListVC = HotelListFactory.build(with: query)
         viewController?.navigationController?.pushViewController(hotelListVC, animated: true)
     }
     

@@ -39,6 +39,13 @@ struct SearchView: View {
         }
         .loading($viewModel.showLoading)
         .error($viewModel.showError)
+        .sheet(isPresented: $viewModel.presentHotelQueryParamsView, content: {
+            HotelQueryParamsView(
+                startDate: $viewModel.startDate,
+                endDate: $viewModel.endDate,
+                adults: $viewModel.adults
+            )
+        })
         .onChange(of: viewModel.selectedSegmentedControlIndex, perform: { _ in
             viewModel.onChangeOfSelectedSegment()
         })
@@ -83,6 +90,23 @@ struct SearchView: View {
             }
             
             if viewModel.selectedSegmentedControlIndex == 0 {
+                HStack {
+                    HUButton(
+                        title: "\(viewModel.startDate.dayAndMonthString()) - \(viewModel.endDate.dayAndMonthString())",
+                        color: UIConstants.COLOR.hurbBlue, style: .outline)
+                    {
+                        viewModel.onQueryParamTap()
+                    }
+                    
+                    HUButton(
+                        title: "\(viewModel.adults) \(viewModel.adults > 1 ? "hospedes" : "hospede")",
+                        color: UIConstants.COLOR.hurbBlue,
+                        style: .outline)
+                    {
+                        viewModel.onQueryParamTap()
+                    }
+                }
+                
                 HUButton(title: "Pesquisar", color: UIConstants.COLOR.hurbBlue, style: .fill) {
                     viewModel.onSearchButtonTap()
                 }

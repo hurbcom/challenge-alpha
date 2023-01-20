@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0661DD297ADA2E002981AF /* HUPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0661DC297ADA2E002981AF /* HUPicker.swift */; };
+		DA0661DF297AE230002981AF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0661DE297AE230002981AF /* Date+Extension.swift */; };
+		DA0661E2297AE287002981AF /* HotelQueryParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0661E1297AE287002981AF /* HotelQueryParamsView.swift */; };
+		DA0661E4297AE8B2002981AF /* HotelQueryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0661E3297AE8B2002981AF /* HotelQueryParams.swift */; };
 		DA081BE82979919E005CF0EA /* LoggerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA081BE72979919E005CF0EA /* LoggerFactory.swift */; };
 		DA081BEA29799700005CF0EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA081BE929799700005CF0EA /* Constants.swift */; };
 		DA081BED2979A938005CF0EA /* PackagesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA081BEC2979A938005CF0EA /* PackagesMock.swift */; };
@@ -110,6 +114,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0661DC297ADA2E002981AF /* HUPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUPicker.swift; sourceTree = "<group>"; };
+		DA0661DE297AE230002981AF /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		DA0661E1297AE287002981AF /* HotelQueryParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelQueryParamsView.swift; sourceTree = "<group>"; };
+		DA0661E3297AE8B2002981AF /* HotelQueryParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelQueryParams.swift; sourceTree = "<group>"; };
 		DA081BE72979919E005CF0EA /* LoggerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerFactory.swift; sourceTree = "<group>"; };
 		DA081BE929799700005CF0EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA081BEC2979A938005CF0EA /* PackagesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesMock.swift; sourceTree = "<group>"; };
@@ -224,6 +232,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0661DB297ADA1A002981AF /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				DA0661DC297ADA2E002981AF /* HUPicker.swift */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
+		DA0661E0297AE253002981AF /* HotelQueryParams */ = {
+			isa = PBXGroup;
+			children = (
+				DA0661E1297AE287002981AF /* HotelQueryParamsView.swift */,
+			);
+			path = HotelQueryParams;
+			sourceTree = "<group>";
+		};
 		DA081BEB2979A922005CF0EA /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +262,7 @@
 			children = (
 				DA081BF62979C4C0005CF0EA /* SearchHotel.swift */,
 				DA081BF82979C4F4005CF0EA /* HotelResult.swift */,
+				DA0661E3297AE8B2002981AF /* HotelQueryParams.swift */,
 			);
 			path = Hotel;
 			sourceTree = "<group>";
@@ -290,6 +315,7 @@
 				DA61ACC5297A28EC009AEA68 /* Error */,
 				DA081BFC2979C972005CF0EA /* Grids */,
 				DA2B70BC2976F189005FB2A3 /* Labels */,
+				DA0661DB297ADA1A002981AF /* Pickers */,
 				DA2B70BF2976F22A005FB2A3 /* Tags */,
 				DA2909292975CDBE005B0EFD /* ViewModifiers */,
 				DA2909012975AC1B005B0EFD /* Extensions */,
@@ -386,6 +412,7 @@
 				DA081BE929799700005CF0EA /* Constants.swift */,
 				DA2B70C72976FBB3005FB2A3 /* Double+Extension.swift */,
 				DA2B70D829777921005FB2A3 /* String+Extension.swift */,
+				DA0661DE297AE230002981AF /* Date+Extension.swift */,
 				DA2B70DA297780F9005FB2A3 /* MonthsEnum.swift */,
 				DA081BE72979919E005CF0EA /* LoggerFactory.swift */,
 			);
@@ -577,6 +604,7 @@
 		DAF2DE212974BDAD0055D6E3 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				DA0661E0297AE253002981AF /* HotelQueryParams */,
 				DA2908ED29757E9B005B0EFD /* SearchSceneFactory.swift */,
 				DAF2DE222974BDBE0055D6E3 /* SearchInteractor.swift */,
 				DA2908EF29757F29005B0EFD /* SearchRouter.swift */,
@@ -748,6 +776,7 @@
 				DAF2DE1C2974AEFF0055D6E3 /* CategoryEnum.swift in Sources */,
 				DA61ACD2297A3117009AEA68 /* HotelDetailsView.swift in Sources */,
 				DA2909032975AC4C005B0EFD /* CornerRadius.swift in Sources */,
+				DA0661E4297AE8B2002981AF /* HotelQueryParams.swift in Sources */,
 				DA29090D2975B116005B0EFD /* PackageResult.swift in Sources */,
 				DA2909142975C3C0005B0EFD /* PackageListInteractor.swift in Sources */,
 				DAF2DE252974BF500055D6E3 /* SearchViewModel.swift in Sources */,
@@ -780,12 +809,15 @@
 				DAF2DE0E2974AAF80055D6E3 /* SearchResult.swift in Sources */,
 				DA2B70C12976F239005FB2A3 /* HUTagView.swift in Sources */,
 				DA29090B2975B0C9005B0EFD /* SearchPackage.swift in Sources */,
+				DA0661DF297AE230002981AF /* Date+Extension.swift in Sources */,
 				DA2CDFC02978FE410070D898 /* SuggestionViewModel.swift in Sources */,
 				DA2B70CF29774233005FB2A3 /* PackageDetailsHostingController.swift in Sources */,
 				DA2B70D1297742AD005FB2A3 /* PackageDetailsFactory.swift in Sources */,
+				DA0661DD297ADA2E002981AF /* HUPicker.swift in Sources */,
 				DAF2DE102974AD070055D6E3 /* Price.swift in Sources */,
 				DA081BFE2979C98B005CF0EA /* AmenitiesGrid.swift in Sources */,
 				DA2CDFB72978F69A0070D898 /* SuggestionResult.swift in Sources */,
+				DA0661E2297AE287002981AF /* HotelQueryParamsView.swift in Sources */,
 				DA2908F829758FF1005B0EFD /* HUImageCarousel.swift in Sources */,
 				DA61ACCC297A2F98009AEA68 /* HotelDetailsFactory.swift in Sources */,
 				DA081BE82979919E005CF0EA /* LoggerFactory.swift in Sources */,
