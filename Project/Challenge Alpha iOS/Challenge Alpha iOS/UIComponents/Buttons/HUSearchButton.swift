@@ -15,6 +15,7 @@ struct HUSearchButton: View {
     }
     
     @Binding var searchText: String
+    var placeholderText: String
     var style: Style = .plain
     var action: (() -> Void)
     var sideButtonAction: (() -> Void)?
@@ -58,6 +59,12 @@ struct HUSearchButton: View {
             Text(self.searchText)
                 .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .regular))
                 .foregroundColor(.black)
+                .placeholder(when: self.searchText.isEmpty) {
+                    Text(self.placeholderText)
+                        .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .regular))
+                        .foregroundColor(UIConstants.COLOR.hurbDarkGray)
+                    
+                }
         }
         .padding(.horizontal)
     }
@@ -83,11 +90,13 @@ struct HUSearchButton_Previews: PreviewProvider {
         VStack {
             HUSearchButton(
                 searchText: .constant("Pesquisar por hotel ou destino"),
+                placeholderText: "Buscar",
                 style: .plain,
                 action: {}
             )
             HUSearchButton(
                 searchText: .constant("Pesquisar por hotel ou destino"),
+                placeholderText: "Buscar",
                 style: .sideButton,
                 action: {},
                 sideButtonAction: {}

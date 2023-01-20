@@ -106,4 +106,12 @@ final class SearchViewModel: ObservableObject {
     private func hideLoading() {
         self.showLoading = false
     }
+    
+    func getPlaceholderText() -> String {
+        if self.selectedSegmentedControlIndex == 0 {
+            return searchText.isEmpty ? "Pesquise por hotel ou destino" : self.searchText
+        }
+        
+        return searchText.isEmpty ? "Pesquise por cidade, região ou país" : self.searchText
+    }
 }
