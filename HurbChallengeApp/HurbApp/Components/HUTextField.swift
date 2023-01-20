@@ -37,8 +37,4 @@ final class HUTextField: UITextField {
         return rect.inset(by: textPadding)
     }
 
-//    override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
-//        <#code#>
-//    }
-
 }
