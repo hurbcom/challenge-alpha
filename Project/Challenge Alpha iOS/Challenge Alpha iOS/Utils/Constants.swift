@@ -18,5 +18,7 @@ struct Constants {
         
         static let LAST_SEARCHED_HOTEL = "LAST_SEARCHED_HOTEL"
         static let LAST_SEARCHED_PACKAGE = "LAST_SEARCHED_PACKAGE"
+        static let LAST_SEARCHED_HOTELS = "LAST_SEARCHED_HOTELS"
+        static let LAST_SEARCHED_PACKAGES = "LAST_SEARCHED_PACKAGES"
     }
 }

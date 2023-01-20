@@ -38,6 +38,9 @@ struct SuggestionView: View {
             }
             
             ScrollView(.vertical, showsIndicators: false) {
+                self.lastSearchedQueriesView()
+                    .padding(.horizontal)
+                
                 self.destinationSuggestionsView
                     .padding(.horizontal)
                 
@@ -50,8 +53,6 @@ struct SuggestionView: View {
                 self.otherSuggestionsView
                     .padding(.horizontal)
             }
-            
-//            Spacer()
         }
         .background(
             Color.white
@@ -59,6 +60,45 @@ struct SuggestionView: View {
         )
         .onChange(of: viewModel.searchText) { newValue in
             viewModel.onChangeOfSearchText()
+        }
+    }
+    
+    @ViewBuilder
+    func lastSearchedQueriesView() -> some View {
+        let queries = viewModel.getLastSearchedQueries()
+        
+        if queries.isEmpty {
+            EmptyView()
+        } else {
+            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.SMALL) {
+                Text("Últimas buscas")
+                    .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .semibold))
+                    .foregroundColor(.black)
+                    .padding(.vertical, UIConstants.PADDING_VALUES.NORMAL)
+                
+                ForEach(queries, id: \.self) { query in
+                    HStack(alignment: .top) {
+                        Image(systemName: "ticket")
+                            .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
+                            .foregroundColor(UIConstants.COLOR.hurbBlue)
+                        
+                        Text(query)
+                            .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
+                            .foregroundColor(.black)
+                        
+                        Spacer()
+                    }
+                    .contentShape(Rectangle())
+                    .padding(.vertical, UIConstants.PADDING_VALUES.NORMAL)
+                    .onTapGesture {
+                        viewModel.onDestinationTap(name: query)
+                    }
+                    
+                    Rectangle()
+                        .frame(maxWidth: .infinity, maxHeight: 1)
+                        .padding(.horizontal)
+                }
+            }
         }
     }
     

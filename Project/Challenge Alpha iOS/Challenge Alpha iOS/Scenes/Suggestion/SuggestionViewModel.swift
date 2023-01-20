@@ -109,4 +109,13 @@ final class SuggestionViewModel: ObservableObject {
             return "bag.fill"
         }
     }
+    
+    func getLastSearchedQueries() -> [String] {
+        switch suggestionType {
+        case .hotel:
+            return Array(UserDefaultsManager.shared.getLastSearchedHotelQueries().prefix(3))
+        default:
+            return Array(UserDefaultsManager.shared.getLastSearchedPackageQueries().prefix(3))
+        }
+    }
 }
