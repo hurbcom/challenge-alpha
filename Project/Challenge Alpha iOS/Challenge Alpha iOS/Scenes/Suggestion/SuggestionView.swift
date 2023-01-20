@@ -96,7 +96,7 @@ struct SuggestionView: View {
                     
                     Rectangle()
                         .frame(maxWidth: .infinity, maxHeight: 1)
-                        .padding(.horizontal)
+                        .foregroundColor(UIConstants.COLOR.hurbGray.opacity(0.5))
                 }
             }
         }
