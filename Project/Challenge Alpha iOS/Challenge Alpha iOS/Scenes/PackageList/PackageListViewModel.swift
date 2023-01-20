@@ -46,6 +46,10 @@ final class PackageListViewModel: ObservableObject {
             
             self.hideLoading()
         } receiveValue: { packages in
+            if packages.isEmpty {
+                self.showError = true
+            }
+            
             self.packages = packages
         }.store(in: &cancellables)
     }

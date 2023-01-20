@@ -46,6 +46,10 @@ final class SearchViewModel: ObservableObject {
                 
                 self.hideLoading()
             } receiveValue: { searchResults in
+                if searchResults.isEmpty {
+                    self.showError = true
+                }
+                
                 self.searchResults = searchResults
             }
             .store(in: &cancellables)

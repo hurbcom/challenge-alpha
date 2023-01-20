@@ -14,6 +14,7 @@ final class HotelListViewModel: ObservableObject {
     @Published var hotels: [HotelResult] = []
     @Published var query: String = Constants.DEFAULT_DESTINATION
     @Published var showLoading: Bool = true
+    @Published var showError: Bool = false
     
     // MARK: - Dispose bag
     var cancellables = Set<AnyCancellable>()
@@ -39,11 +40,15 @@ final class HotelListViewModel: ObservableObject {
         .receive(on: DispatchQueue.main)
         .sink { completion in
             if case .failure(_) = completion {
-                // TODO: Handle error
+                self.showError = true
             }
             
             self.hideLoading()
         } receiveValue: { hotels in
+            if hotels.isEmpty {
+                self.showError = true
+            }
+            
             self.hotels = hotels
         }
         .store(in: &cancellables)
