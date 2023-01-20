@@ -42,6 +42,16 @@ struct SearchResult: Codable {
     }
     
     func toPackage() -> PackageResult {
+        // Multiple amounts by 100 to be fixed by the PackageResult
+        var amount = self.price?.amount
+        if let unwrappedAmount = self.price?.amount {
+            amount = unwrappedAmount * 100
+        }
+        var originalAmount = self.price?.originalAmount
+        if let unwrappedOriginalAmount = self.price?.amount {
+            originalAmount = unwrappedOriginalAmount * 100
+        }
+        
         return PackageResult(
             id: id,
             sku: sku,
@@ -53,7 +63,12 @@ struct SearchResult: Codable {
             endDate: nil,
             isAvailable: isAvailable,
             quantityDescriptors: nil,
-            price: price,
+            price: .init(
+                amount: amount,
+                originalAmount: originalAmount,
+                currency: self.price?.currency,
+                taxes: self.price?.taxes
+            ),
             address: address,
             gallery: gallery,
             amenities: amenities,
