@@ -14,19 +14,6 @@ struct HotelListView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.NORMAL) {
-                HStack {
-                    if !viewModel.query.isEmpty {
-                        Text("Exibindo resultados de ")
-                            .font(.system(size: UIConstants.FONT_SIZE.SUPER_SMALL))
-                            .foregroundColor(UIConstants.COLOR.hurbGray)
-                        +
-                        Text("\(viewModel.query)")
-                            .font(.system(size: UIConstants.FONT_SIZE.SUPER_SMALL, weight: .semibold))
-                            .foregroundColor(UIConstants.COLOR.hurbGray)
-                    }
-                    Spacer()
-                }
-                
                 ForEach(0..<viewModel.hotels.count, id: \.self) { index in
                     HotelCardView(
                         name: viewModel.hotels[index].getName(),
