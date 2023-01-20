@@ -12,7 +12,7 @@ final class SearchViewModel: ObservableObject {
     // MARK: - Published variables
     @Published var searchResults: [SearchResult] = []
     @Published var selectedSegmentedControlIndex = 0
-    @Published var searchText: String = Constants.DEFAULT_DESTINATION
+    @Published var searchText: String
     @Published var showLoading: Bool = true
     @Published var showError: Bool = false
     
@@ -26,6 +26,8 @@ final class SearchViewModel: ObservableObject {
     init(interactor: SearchInteractorInput, router: SearchRouterProtocol) {
         self.interactor = interactor
         self.router = router
+        
+        self.searchText = UserDefaultsManager.shared.getLastSearchedHotelQuery()
     }
     
     func onViewAppear() {
@@ -55,6 +57,10 @@ final class SearchViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func onChangeOfSelectedSegment() {
+        self.searchText = self.selectedSegmentedControlIndex == 0 ? UserDefaultsManager.shared.getLastSearchedHotelQuery() : UserDefaultsManager.shared.getLastSearchedPackageQuery()
+    }
+    
     // MARK: - Actions
     func onSearchTap() {
         var suggestionType: SuggestionType = .hotel
@@ -69,12 +75,19 @@ final class SearchViewModel: ObservableObject {
             self.searchText = searchTerm
             
             suggestionType == .hotel ? self.router.navigateToHotelList(with: searchTerm) : self.router.navigateToPackageList(with: searchTerm)
+            self.selectedSegmentedControlIndex == 0 ? UserDefaultsManager.shared.saveLastSearchedHotelQuery(searchTerm) : UserDefaultsManager.shared.saveLastSearchedPackageQuery(searchTerm)
         }
     }
     
     func onSearchButtonTap() {
-        self.selectedSegmentedControlIndex == 0 ? self.router.navigateToHotelList(with: self.searchText) :
+        if self.selectedSegmentedControlIndex == 0 {
+            self.router.navigateToHotelList(with: self.searchText)
+            UserDefaultsManager.shared.saveLastSearchedHotelQuery(self.searchText)
+            return
+        }
+        
         self.router.navigateToPackageList(with: self.searchText)
+        UserDefaultsManager.shared.saveLastSearchedPackageQuery(self.searchText)
     }
     
     func onHotelTap(_ hotel: HotelResult) {

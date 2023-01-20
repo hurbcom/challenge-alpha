@@ -39,6 +39,9 @@ struct SearchView: View {
         }
         .loading($viewModel.showLoading)
         .error($viewModel.showError)
+        .onChange(of: viewModel.selectedSegmentedControlIndex, perform: { _ in
+            viewModel.onChangeOfSelectedSegment()
+        })
         .onAppear {
             viewModel.onViewAppear()
         }

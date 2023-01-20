@@ -70,6 +70,7 @@
 		DA61ACD2297A3117009AEA68 /* HotelDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61ACD1297A3117009AEA68 /* HotelDetailsView.swift */; };
 		DA61ACD4297A313D009AEA68 /* HotelDetailsHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61ACD3297A313D009AEA68 /* HotelDetailsHostingController.swift */; };
 		DA61ACD7297A3ECA009AEA68 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61ACD6297A3ECA009AEA68 /* DescriptionView.swift */; };
+		DA61ACDA297A4296009AEA68 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61ACD9297A4296009AEA68 /* UserDefaultManager.swift */; };
 		DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF5297497E100D0A444 /* AppDelegate.swift */; };
 		DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF7297497E100D0A444 /* SceneDelegate.swift */; };
 		DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF9297497E100D0A444 /* SearchViewHostingController.swift */; };
@@ -170,6 +171,7 @@
 		DA61ACD1297A3117009AEA68 /* HotelDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailsView.swift; sourceTree = "<group>"; };
 		DA61ACD3297A313D009AEA68 /* HotelDetailsHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailsHostingController.swift; sourceTree = "<group>"; };
 		DA61ACD6297A3ECA009AEA68 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		DA61ACD9297A4296009AEA68 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		DA710BF2297497E100D0A444 /* Challenge Alpha iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA710BF5297497E100D0A444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA710BF7297497E100D0A444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -452,6 +454,14 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		DA61ACD8297A424E009AEA68 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DA61ACD9297A4296009AEA68 /* UserDefaultManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		DA710BE9297497E100D0A444 = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +490,7 @@
 				DA710BF5297497E100D0A444 /* AppDelegate.swift */,
 				DA710BF7297497E100D0A444 /* SceneDelegate.swift */,
 				DA710C03297497E200D0A444 /* Info.plist */,
+				DA61ACD8297A424E009AEA68 /* Managers */,
 				DAF2DE0C2974AA870055D6E3 /* Models */,
 				DA2908F629758F81005B0EFD /* UIComponents */,
 				DA2B70C62976FB8B005FB2A3 /* Utils */,
@@ -756,6 +767,7 @@
 				DA081C0C2979D339005CF0EA /* HotelListFactory.swift in Sources */,
 				DA081C0A2979D23B005CF0EA /* HoteListHostingController.swift in Sources */,
 				DA61ACCE297A3044009AEA68 /* HotelDetailsRouter.swift in Sources */,
+				DA61ACDA297A4296009AEA68 /* UserDefaultManager.swift in Sources */,
 				DA2CDFC4297900900070D898 /* SuggestionFactory.swift in Sources */,
 				DA29090029759ED1005B0EFD /* HUSearchButton.swift in Sources */,
 				DA081C042979CE78005CF0EA /* HotelListRouter.swift in Sources */,
