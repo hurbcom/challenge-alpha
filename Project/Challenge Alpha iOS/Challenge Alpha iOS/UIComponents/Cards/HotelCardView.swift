@@ -95,7 +95,7 @@ struct HotelCardView: View {
     
     /// Hotel amenities
     var hotelAmenitiesInfo: some View {
-        AmenitiesGrid(amenities: self.amenities)
+        AmenitiesGrid(amenities: self.amenities.sorted(by: { $0.count < $1.count }), limit: 4)
     }
     
     /// Price information (amount + general amount)

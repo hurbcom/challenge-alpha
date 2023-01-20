@@ -10,6 +10,7 @@ import SwiftUI
 struct AmenitiesGrid: View {
     
     var amenities: [String]
+    var limit: Int? = nil
     
     var body: some View {
         LazyVGrid(
@@ -19,7 +20,7 @@ struct AmenitiesGrid: View {
             ],
             spacing: UIConstants.PADDING_VALUES.NORMAL)
         {
-            ForEach(amenities, id: \.self) { amenity in
+            ForEach(limit != nil ? Array(amenities.prefix(limit!)) : amenities, id: \.self) { amenity in
                 HULabel(imageName: "checkmark.circle", title: amenity, fillColor: UIConstants.COLOR.hurbDarkGray)
             }
         }
