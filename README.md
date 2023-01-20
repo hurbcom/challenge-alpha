@@ -18,7 +18,7 @@
 - **Arquitetura utilizada:** [Clean Swift](https://clean-swift.com)
 - **Bibliotecas externas utilizadas:** KingFisher e SkeletonView.
 - **Gerenciador de dependências escolhido:** Swift Package Manager.
-
+- **Como rodar o projeto:** O projeto não necessita de instalações adicionais, por isso, para rodar apenas abra o Hurb-iOS-Challenge.xcodeproj e rode o projeto
 
 ## 3. REQUISITOS MÍNIMOS
 - **Target iOS:** 13.0
