@@ -20,6 +20,7 @@ final class AppCoordinator {
         let viewModel = SearchViewModel()
 
         let serchViewController = SearchViewController(viewModel: viewModel)
+        viewModel.delegate = serchViewController
 
         let rootViewController = HUNavigationController(rootViewController: serchViewController)
 
