@@ -69,6 +69,7 @@
 		DA61ACD0297A30CE009AEA68 /* HotelDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61ACCF297A30CE009AEA68 /* HotelDetailsViewModel.swift */; };
 		DA61ACD2297A3117009AEA68 /* HotelDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61ACD1297A3117009AEA68 /* HotelDetailsView.swift */; };
 		DA61ACD4297A313D009AEA68 /* HotelDetailsHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61ACD3297A313D009AEA68 /* HotelDetailsHostingController.swift */; };
+		DA61ACD7297A3ECA009AEA68 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61ACD6297A3ECA009AEA68 /* DescriptionView.swift */; };
 		DA710BF6297497E100D0A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF5297497E100D0A444 /* AppDelegate.swift */; };
 		DA710BF8297497E100D0A444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF7297497E100D0A444 /* SceneDelegate.swift */; };
 		DA710BFA297497E100D0A444 /* SearchViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710BF9297497E100D0A444 /* SearchViewHostingController.swift */; };
@@ -168,6 +169,7 @@
 		DA61ACCF297A30CE009AEA68 /* HotelDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailsViewModel.swift; sourceTree = "<group>"; };
 		DA61ACD1297A3117009AEA68 /* HotelDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailsView.swift; sourceTree = "<group>"; };
 		DA61ACD3297A313D009AEA68 /* HotelDetailsHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailsHostingController.swift; sourceTree = "<group>"; };
+		DA61ACD6297A3ECA009AEA68 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		DA710BF2297497E100D0A444 /* Challenge Alpha iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA710BF5297497E100D0A444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA710BF7297497E100D0A444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				DA2908FB29759977005B0EFD /* UIConstants.swift */,
+				DA61ACD5297A3EBB009AEA68 /* Alerts */,
 				DA2908FD29759B20005B0EFD /* Buttons */,
 				DA2B70C22976F374005FB2A3 /* Cards */,
 				DA2908FE29759B29005B0EFD /* Carousels */,
@@ -439,6 +442,14 @@
 				DA61ACCF297A30CE009AEA68 /* HotelDetailsViewModel.swift */,
 			);
 			path = HotelDetails;
+			sourceTree = "<group>";
+		};
+		DA61ACD5297A3EBB009AEA68 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				DA61ACD6297A3ECA009AEA68 /* DescriptionView.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		DA710BE9297497E100D0A444 = {
@@ -735,6 +746,7 @@
 				DA2908FA29759893005B0EFD /* HUButton.swift in Sources */,
 				DAF2DE172974AE7C0055D6E3 /* GalleryItem.swift in Sources */,
 				DA081BF72979C4C0005CF0EA /* SearchHotel.swift in Sources */,
+				DA61ACD7297A3ECA009AEA68 /* DescriptionView.swift in Sources */,
 				DAF2DE152974AE0D0055D6E3 /* Tag.swift in Sources */,
 				DA2B70C52976F3A6005FB2A3 /* PackageCardView.swift in Sources */,
 				DA2908FC29759977005B0EFD /* UIConstants.swift in Sources */,
