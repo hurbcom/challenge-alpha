@@ -74,12 +74,16 @@ final class SearchViewModel: ObservableObject {
         router.presentSuggestions(suggestionType: suggestionType) { searchTerm in
             self.searchText = searchTerm
             
-            suggestionType == .hotel ? self.router.navigateToHotelList(with: searchTerm) : self.router.navigateToPackageList(with: searchTerm)
-            self.selectedSegmentedControlIndex == 0 ? UserDefaultsManager.shared.saveLastSearchedHotelQuery(searchTerm) : UserDefaultsManager.shared.saveLastSearchedPackageQuery(searchTerm)
+            if !self.searchText.isEmpty {
+                suggestionType == .hotel ? self.router.navigateToHotelList(with: searchTerm) : self.router.navigateToPackageList(with: searchTerm)
+                self.selectedSegmentedControlIndex == 0 ? UserDefaultsManager.shared.saveLastSearchedHotelQuery(searchTerm) : UserDefaultsManager.shared.saveLastSearchedPackageQuery(searchTerm)
+            }
         }
     }
     
     func onSearchButtonTap() {
+        guard !self.searchText.isEmpty else { return }
+        
         if self.selectedSegmentedControlIndex == 0 {
             self.router.navigateToHotelList(with: self.searchText)
             UserDefaultsManager.shared.saveLastSearchedHotelQuery(self.searchText)
