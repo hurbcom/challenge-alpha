@@ -82,6 +82,7 @@
 		DA710C02297497E200D0A444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA710C00297497E200D0A444 /* LaunchScreen.storyboard */; };
 		DA710C0D297497E300D0A444 /* PackageListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA710C0C297497E300D0A444 /* PackageListViewModelTests.swift */; };
 		DA710C3D29749E0800D0A444 /* HUNetwork in Resources */ = {isa = PBXBuildFile; fileRef = DA710C3C29749E0800D0A444 /* HUNetwork */; };
+		DABDB815297B07650018EA5D /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABDB814297B07650018EA5D /* StringExtensionTests.swift */; };
 		DAF2DE0E2974AAF80055D6E3 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE0D2974AAF80055D6E3 /* SearchResult.swift */; };
 		DAF2DE102974AD070055D6E3 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE0F2974AD070055D6E3 /* Price.swift */; };
 		DAF2DE122974ADA10055D6E3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2DE112974ADA10055D6E3 /* Address.swift */; };
@@ -181,6 +182,7 @@
 		DA710C08297497E300D0A444 /* Challenge Alpha iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challenge Alpha iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA710C0C297497E300D0A444 /* PackageListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListViewModelTests.swift; sourceTree = "<group>"; };
 		DA710C3C29749E0800D0A444 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HUNetwork; sourceTree = "<group>"; };
+		DABDB814297B07650018EA5D /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		DAF2DE0D2974AAF80055D6E3 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		DAF2DE0F2974AD070055D6E3 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		DAF2DE112974ADA10055D6E3 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 				DA081BEB2979A922005CF0EA /* Mocks */,
 				DA710C0C297497E300D0A444 /* PackageListViewModelTests.swift */,
 				DA081BF02979B188005CF0EA /* PackageListInteractorTests.swift */,
+				DABDB814297B07650018EA5D /* StringExtensionTests.swift */,
 			);
 			path = "Challenge Alpha iOSTests";
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				DA081BED2979A938005CF0EA /* PackagesMock.swift in Sources */,
 				DA081BF12979B188005CF0EA /* PackageListInteractorTests.swift in Sources */,
 				DA081BEF2979AC37005CF0EA /* PackageListInteractorMock.swift in Sources */,
+				DABDB815297B07650018EA5D /* StringExtensionTests.swift in Sources */,
 				DA710C0D297497E300D0A444 /* PackageListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
