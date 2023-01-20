@@ -70,35 +70,12 @@ struct SuggestionView: View {
         if queries.isEmpty {
             EmptyView()
         } else {
-            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.SMALL) {
-                Text("Últimas buscas")
-                    .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .semibold))
-                    .foregroundColor(.black)
-                    .padding(.vertical, UIConstants.PADDING_VALUES.NORMAL)
-                
-                ForEach(queries, id: \.self) { query in
-                    HStack(alignment: .top) {
-                        Image(systemName: "ticket")
-                            .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
-                            .foregroundColor(UIConstants.COLOR.hurbBlue)
-                        
-                        Text(query)
-                            .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
-                            .foregroundColor(.black)
-                        
-                        Spacer()
-                    }
-                    .contentShape(Rectangle())
-                    .padding(.vertical, UIConstants.PADDING_VALUES.NORMAL)
-                    .onTapGesture {
-                        viewModel.onDestinationTap(name: query)
-                    }
-                    
-                    Rectangle()
-                        .frame(maxWidth: .infinity, maxHeight: 1)
-                        .foregroundColor(UIConstants.COLOR.hurbGray.opacity(0.5))
-                }
-            }
+            suggestionTextView(
+                title: "Últimas buscas",
+                imageName: "ticket",
+                suggestionsStrings: queries,
+                showDivider: true
+            )
         }
     }
     
@@ -107,31 +84,11 @@ struct SuggestionView: View {
         if viewModel.destinationSuggestions.isEmpty {
             EmptyView()
         } else {
-            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.LARGE) {
-                Text("Destinos")
-                    .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .semibold))
-                    .foregroundColor(.black)
-                
-                ForEach(0..<viewModel.destinationSuggestions.count, id: \.self) { index in
-                    HStack(alignment: .top) {
-                        Image(systemName: "mappin.circle")
-                            .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
-                            .foregroundColor(UIConstants.COLOR.hurbBlue)
-                        
-                        Text(viewModel.destinationSuggestions[index].text ?? "")
-                            .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
-                            .foregroundColor(.black)
-                        
-                        Spacer()
-                    }
-                    .contentShape(Rectangle())
-                    .padding(.vertical, UIConstants.PADDING_VALUES.NORMAL)
-                    .onTapGesture {
-                        let searchTerm = viewModel.destinationSuggestions[index].text ?? ""
-                        viewModel.onDestinationTap(name: searchTerm)
-                    }
-                }
-            }
+            suggestionTextView(
+                title: "Destinos",
+                imageName: "mappin.circle",
+                suggestionsStrings: viewModel.destinationSuggestions.map({ $0.text ?? "" })
+            )
         }
     }
     
@@ -140,30 +97,44 @@ struct SuggestionView: View {
         if viewModel.otherSuggestions.isEmpty {
             EmptyView()
         } else {
-            VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.LARGE) {
-                Text(viewModel.getOtherSuggestionsTitle())
-                    .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .semibold))
-                    .foregroundColor(.black)
-                
-                ForEach(0..<viewModel.otherSuggestions.count, id: \.self) { index in
-                    HStack(alignment: .top) {
-                        Image(systemName: viewModel.getOtherSuggestionsImage())
-                            .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
-                            .foregroundColor(UIConstants.COLOR.hurbBlue)
-                        
-                        Text(viewModel.otherSuggestions[index].text ?? "")
-                            .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
-                            .foregroundColor(.black)
-                        
-                        Spacer()
-                    }
-                    .contentShape(Rectangle())
-                    .padding(.vertical, UIConstants.PADDING_VALUES.NORMAL)
-                    .onTapGesture {
-                        let searchTerm = viewModel.otherSuggestions[index].text ?? ""
-                        viewModel.onDestinationTap(name: searchTerm)
-                    }
+            suggestionTextView(
+                title: viewModel.getOtherSuggestionsTitle(),
+                imageName: viewModel.getOtherSuggestionsImage(),
+                suggestionsStrings: viewModel.otherSuggestions.map({ $0.text ?? "" })
+            )
+        }
+    }
+    
+    @ViewBuilder
+    func suggestionTextView(title: String, imageName: String, suggestionsStrings: [String], showDivider: Bool = false) -> some View {
+        VStack(alignment: .leading, spacing: UIConstants.PADDING_VALUES.LARGE) {
+            Text(title)
+                .font(.system(size: UIConstants.FONT_SIZE.HEADER, weight: .semibold))
+                .foregroundColor(.black)
+            
+            ForEach(suggestionsStrings, id: \.self) { suggestion in
+                HStack(alignment: .top) {
+                    Image(systemName: imageName)
+                        .font(.system(size: UIConstants.FONT_SIZE.TITLE, weight: .semibold))
+                        .foregroundColor(UIConstants.COLOR.hurbBlue)
+                    
+                    Text(suggestion)
+                        .font(.system(size: UIConstants.FONT_SIZE.DEFAULT, weight: .semibold))
+                        .foregroundColor(.black)
+                    
+                    Spacer()
                 }
+                .contentShape(Rectangle())
+                .padding(.vertical, UIConstants.PADDING_VALUES.NORMAL)
+                .onTapGesture {
+                    viewModel.onDestinationTap(name: suggestion)
+                }
+            }
+            
+            if showDivider {
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: 1)
+                    .foregroundColor(UIConstants.COLOR.hurbGray.opacity(0.5))
             }
         }
     }
