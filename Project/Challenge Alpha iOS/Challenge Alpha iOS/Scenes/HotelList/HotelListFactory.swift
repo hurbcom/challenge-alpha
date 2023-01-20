@@ -8,10 +8,10 @@
 import Foundation
 
 enum HotelListFactory {
-    static func build() -> HotelListHostingController {
+    static func build(with searchTerm: String = Constants.DEFAULT_DESTINATION) -> HotelListHostingController {
         let interactor = HotelListInteractor()
         let router = HotelListRouter()
-        let viewModel = HotelListViewModel(interactor: interactor, router: router)
+        let viewModel = HotelListViewModel(query: searchTerm, interactor: interactor, router: router)
         let rootView = HotelListView(viewModel: viewModel)
         let viewController = HotelListHostingController(viewModel: viewModel, rootView: rootView)
         

@@ -29,7 +29,7 @@ final class SearchRouter: SearchRouterProtocol {
     }
     
     func navigateToHotelList(with searchTerm: String) {
-        let hotelListVC = HotelListFactory.build()
+        let hotelListVC = HotelListFactory.build(with: searchTerm)
         viewController?.navigationController?.pushViewController(hotelListVC, animated: true)
     }
     

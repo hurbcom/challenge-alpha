@@ -12,7 +12,7 @@ final class HotelListViewModel: ObservableObject {
     
     // MARK: - Published properties
     @Published var hotels: [HotelResult] = []
-    @Published var query: String = Constants.DEFAULT_DESTINATION
+    @Published var query: String
     @Published var showLoading: Bool = true
     @Published var showError: Bool = false
     
@@ -23,7 +23,8 @@ final class HotelListViewModel: ObservableObject {
     var interactor: HotelListInteractorInput
     var router: HotelListRouterProtocol
     
-    init(interactor: HotelListInteractorInput, router: HotelListRouterProtocol = HotelListRouter()) {
+    init(query: String = Constants.DEFAULT_DESTINATION, interactor: HotelListInteractorInput, router: HotelListRouterProtocol = HotelListRouter()) {
+        self.query = query
         self.interactor = interactor
         self.router = router
     }
