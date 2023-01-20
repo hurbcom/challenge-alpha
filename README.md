@@ -17,7 +17,7 @@
 - **Frameworks da Apple utilizados:** UIKit(Storyboard).
 - **Arquitetura utilizada:** [Clean Swift](https://clean-swift.com)
 - **Bibliotecas externas utilizadas:** KingFisher e SkeletonView.
-- **Gerenciador de dependêcias escolhido:** Swift Package Manager.
+- **Gerenciador de dependências escolhido:** Swift Package Manager.
 
 
 ## 3. REQUISITOS MÍNIMOS
