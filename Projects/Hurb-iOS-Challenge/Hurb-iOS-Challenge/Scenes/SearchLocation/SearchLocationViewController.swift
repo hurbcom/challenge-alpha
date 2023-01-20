@@ -16,7 +16,7 @@ import SkeletonView
 protocol SearchLocationDisplayLogic: AnyObject {
     
     func displayLocations(viewModel: SearchLocation.Setup.ViewModel)
-    func displaySkeleton()
+    func displayHideSkeleton()
     func displayErrorAlert()
 }
 
@@ -28,6 +28,17 @@ protocol SuggestedSearch: AnyObject {
 
 private enum Section {
     case main
+}
+
+private struct Item: Hashable {
+    
+    let title: String
+    
+    private let identifier = UUID()
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
 }
 
 private class CollectionViewSkeletonDiffableDataSource<Section: Hashable, Item: Hashable>: UICollectionViewDiffableDataSource<Section, Item>, SkeletonCollectionViewDataSource {
@@ -50,7 +61,7 @@ class SearchLocationViewController: UIViewController {
     var interactor: SearchLocationBusinessLogic?
     var router: (NSObjectProtocol & SearchLocationRoutingLogic & SearchLocationDataPassing)?
     
-    private lazy var dataSource: UICollectionViewDiffableDataSource<Section, String>! = nil
+    private lazy var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     weak var delegate: SuggestedSearch?
     
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -105,14 +116,14 @@ class SearchLocationViewController: UIViewController {
     
     private func configureDataSource() {
         
-        self.dataSource = CollectionViewSkeletonDiffableDataSource<Section, String>(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, location: String) -> UICollectionViewCell? in
+        self.dataSource = CollectionViewSkeletonDiffableDataSource<Section, Item>(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, location: Item) -> UICollectionViewCell? in
             
             guard let cell: SearchLocationCollectionViewCell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: SearchLocationCollectionViewCell.cellIdentifier,
                 for: indexPath
             ) as? SearchLocationCollectionViewCell else { return nil }
             
-            cell.location = location
+            cell.location = location.title
         
             return cell
         }
@@ -122,12 +133,17 @@ class SearchLocationViewController: UIViewController {
     
     func searchTerm(_ term: String) {
         
+        if self.dataSource.snapshot().itemIdentifiers.count < 1 {
+            
+            self.collectionView.showAnimatedGradientSkeleton(transition: .none)
+        }
+        
         self.interactor?.searchTerm(request: SearchLocation.Setup.Request(term: term, limit: 3))
     }
     
     func eraseDataSource() {
         
-        var snapshot: NSDiffableDataSourceSnapshot<Section, String> = NSDiffableDataSourceSnapshot<Section, String>()
+        var snapshot: NSDiffableDataSourceSnapshot<Section, Item> = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.deleteAllItems()
         
         self.collectionView.hideSkeleton()
@@ -138,19 +154,17 @@ class SearchLocationViewController: UIViewController {
 extension SearchLocationViewController: SearchLocationDisplayLogic {
     
     func displayLocations(viewModel: SearchLocation.Setup.ViewModel) {
-
-        var snapshot: NSDiffableDataSourceSnapshot<Section, String> = NSDiffableDataSourceSnapshot<Section, String>()
+        
+        var snapshot: NSDiffableDataSourceSnapshot<Section, Item> = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([Section.main])
-        snapshot.appendItems(viewModel.locations, toSection: .main)
-
-        self.collectionView.hideSkeleton()
+        snapshot.appendItems(viewModel.locations.compactMap({ Item(title: $0) }), toSection: .main)
+        
         self.dataSource.apply(snapshot, animatingDifferences: true)
     }
     
-    func displaySkeleton() {
+    func displayHideSkeleton() {
         
-        self.eraseDataSource()
-        self.collectionView.showAnimatedGradientSkeleton(transition: .none)
+        self.collectionView.hideSkeleton()
     }
     
     func displayErrorAlert() {
@@ -168,9 +182,9 @@ extension SearchLocationViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let location: String = self.dataSource.itemIdentifier(for: indexPath) {
+        if let location: Item = self.dataSource.itemIdentifier(for: indexPath) {
             
-            self.delegate?.didSelectLocation(location: location)
+            self.delegate?.didSelectLocation(location: location.title)
         }
     }
 }

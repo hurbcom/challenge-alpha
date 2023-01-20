@@ -38,29 +38,34 @@ class SearchLocationInteractor: SearchLocationBusinessLogic, SearchLocationDataS
     
     func searchTerm(request: SearchLocation.Setup.Request) {
         
-        if request.term != self.term {
+        if request.term == self.term && request.term.count > 3 {
             
-            self.term = request.term
-            
-            self.presenter?.presentSkeleton()
-            self.worker?.searchLocations(term: request.term, limit: request.limit, completion: { result in
-                
-                switch result {
-                        
-                    case .success(let locations):
-                        
-                        if let locations: [Location] = locations, locations.count > 0 {
-                            
-                            let response = SearchLocation.Setup.Response(locations: locations.compactMap({ $0.text }))
-                            self.presenter?.presentLocations(response: response)
-                        }
-                        break
-                        
-                    case .failure( _):
-                        self.presenter?.presentErrorAlert()
-                        break
-                }
-            })
+            self.presenter?.presentHideSkeleton()
+            return
         }
+        
+        self.term = request.term
+        
+        self.worker?.searchLocations(term: request.term, limit: request.limit, completion: { result in
+            
+            switch result {
+                    
+                case .success(let locations):
+                    
+                    self.presenter?.presentHideSkeleton()
+
+                    if let locations: [Location] = locations, locations.count > 0 {
+                        
+                        let response = SearchLocation.Setup.Response(locations: locations.compactMap({ $0.text }))
+                        self.presenter?.presentLocations(response: response)
+                    }
+                    break
+                    
+                case .failure( _):
+                    self.presenter?.presentHideSkeleton()
+                    self.presenter?.presentErrorAlert()
+                    break
+            }
+        })
     }
 }

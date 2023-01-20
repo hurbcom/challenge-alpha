@@ -15,7 +15,7 @@ import UIKit
 protocol SearchLocationPresentationLogic {
     
     func presentLocations(response: SearchLocation.Setup.Response)
-    func presentSkeleton()
+    func presentHideSkeleton()
     func presentErrorAlert()
 }
 
@@ -36,9 +36,9 @@ class SearchLocationPresenter: SearchLocationPresentationLogic {
         self.viewController?.displayLocations(viewModel: viewModel)
     }
     
-    func presentSkeleton() {
+    func presentHideSkeleton() {
         
-        self.viewController?.displaySkeleton()
+        self.viewController?.displayHideSkeleton()
     }
     
     func presentErrorAlert() {

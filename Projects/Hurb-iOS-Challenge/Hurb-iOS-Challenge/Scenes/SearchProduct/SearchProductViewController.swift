@@ -101,7 +101,6 @@ class SearchProductViewController: UIViewController {
         self.searchController = UISearchController(searchResultsController: searchLocationViewController)
         self.searchController?.searchBar.searchTextField.placeholder = "Vai pra onde?"
         self.searchController?.searchBar.delegate = self
-        self.searchController?.searchResultsUpdater = self
         self.searchController?.searchBar.setValue("Cancelar", forKey: "cancelButtonText")
 
         self.navigationItem.searchController = self.searchController
@@ -303,33 +302,11 @@ extension SearchProductViewController: UICollectionViewDelegate {
 
 extension SearchProductViewController: UISearchBarDelegate {
 
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        // User tapped the Done button in the keyboard.
-        self.searchController?.searchBar.resignFirstResponder()
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
-        var snapshot: NSDiffableDataSourceSnapshot<Section.ID, Item.ID> = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
-        snapshot.appendSections([Section.Identifier.empty])
-
-        let item: Item = Item(id: UUID(), item: Section.Identifier.empty)
-        self.itemsStore.append([item])
-
-        snapshot.appendItems([item.id], toSection: .empty)
-
-        self.dataSource.apply(snapshot, animatingDifferences: false)
-    }
-}
-
-extension SearchProductViewController: UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         self.searchTimer.invalidate()
 
-        let trimmedString: String = searchController.searchBar.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let trimmedString: String = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
 
         if trimmedString.count >= 3 {
             
@@ -347,6 +324,25 @@ extension SearchProductViewController: UISearchResultsUpdating {
                 resultsController.eraseDataSource()
             }
         }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        // User tapped the Done button in the keyboard.
+        self.searchController?.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        var snapshot: NSDiffableDataSourceSnapshot<Section.ID, Item.ID> = NSDiffableDataSourceSnapshot<Section.ID, Item.ID>()
+        snapshot.appendSections([Section.Identifier.empty])
+
+        let item: Item = Item(id: UUID(), item: Section.Identifier.empty)
+        self.itemsStore.append([item])
+
+        snapshot.appendItems([item.id], toSection: .empty)
+
+        self.dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 

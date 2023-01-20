@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaX-1F-5ZM">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4EC-xm-D6n">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
                                                 <color key="backgroundColor" name="White-95"/>
                                             </imageView>
                                         </subviews>
@@ -35,14 +35,14 @@
                                             <constraint firstItem="4EC-xm-D6n" firstAttribute="top" secondItem="LaX-1F-5ZM" secondAttribute="top" id="TuM-ib-sJO"/>
                                             <constraint firstAttribute="bottom" secondItem="4EC-xm-D6n" secondAttribute="bottom" id="eVP-qw-4Y0"/>
                                             <constraint firstItem="4EC-xm-D6n" firstAttribute="leading" secondItem="LaX-1F-5ZM" secondAttribute="leading" id="sFb-Ok-Y3s"/>
-                                            <constraint firstAttribute="height" constant="400" id="ymp-tB-5dm"/>
+                                            <constraint firstAttribute="height" constant="350" id="ymp-tB-5dm"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1r-Ef-K6s">
-                                        <rect key="frame" x="0.0" y="400" width="393" height="297.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="350" width="393" height="297.33333333333326"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qF3-Ww-4LR">
                                                 <rect key="frame" x="16" y="16" width="361" height="265.33333333333331"/>
@@ -156,7 +156,7 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFE-R9-HtX">
-                                                        <rect key="frame" x="0.0" y="117.66666666666661" width="361" height="23.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="117.66666666666667" width="361" height="23.333333333333329"/>
                                                         <subviews>
                                                             <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="diárias a partir de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9a-23-5BA">
                                                                 <rect key="frame" x="0.0" y="4" width="361" height="19.333333333333332"/>
@@ -286,9 +286,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ePD-Om-cQg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CsX-dl-54y"/>
                             <constraint firstAttribute="bottom" secondItem="ePD-Om-cQg" secondAttribute="bottom" id="Jtk-FD-xcd"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ePD-Om-cQg" secondAttribute="trailing" id="r8z-fh-Y3e"/>
+                            <constraint firstItem="ePD-Om-cQg" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Zbg-8T-50t"/>
+                            <constraint firstAttribute="trailing" secondItem="ePD-Om-cQg" secondAttribute="trailing" id="c1a-kG-Hcr"/>
                             <constraint firstItem="ePD-Om-cQg" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="w8V-CY-Ick"/>
                         </constraints>
                     </view>
