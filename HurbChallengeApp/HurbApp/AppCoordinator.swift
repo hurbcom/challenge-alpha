@@ -52,10 +52,25 @@ extension AppCoordinator: SearchViewControllerDelegate {
         let viewModel = SearchDetailViewModel(item: seletedItem)
 
         let destinationViewController = SearchDetailViewController(viewModel: viewModel)
+        destinationViewController.delegate = self
 
         viewModel.delegate = destinationViewController
 
         rootViewController?.pushViewController(destinationViewController, animated: true)
+    }
+
+}
+
+extension AppCoordinator: SearchDetailViewControllerDelegate {
+
+    func searchDetailViewController(viewController: SearchDetailViewController, didShareActivityItems activityItems: [Any]) {
+
+        let activityViewController = UIActivityViewController(
+            activityItems: activityItems,
+            applicationActivities: nil
+        )
+
+        viewController.present(activityViewController, animated: true)
     }
 
 }

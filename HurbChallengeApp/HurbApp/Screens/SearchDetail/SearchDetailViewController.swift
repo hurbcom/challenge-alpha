@@ -7,16 +7,36 @@
 
 import UIKit
 
+protocol SearchDetailViewControllerDelegate: AnyObject {
+    func searchDetailViewController(viewController: SearchDetailViewController, didShareActivityItems activityItems: [Any])
+}
+
 final class SearchDetailViewController: UIViewController {
 
+    weak var delegate: SearchDetailViewControllerDelegate?
+
     private let viewModel: SearchDetailViewModelProtocol
+
+    private lazy var favoriteButton: UIBarButtonItem = {
+        let favoriteButton = UIBarButtonItem()
+        favoriteButton.image = .heart
+        favoriteButton.target = self
+        favoriteButton.action = #selector(favoriteButtonAction)
+        return favoriteButton
+    }()
+    private lazy var shareButton: UIBarButtonItem = {
+        let shareButton = UIBarButtonItem()
+        shareButton.image = .shareIcon
+        shareButton.target = self
+        shareButton.action = #selector(shareButtonAction)
+        return shareButton
+    }()
 
     private let scrollableView: ScrollableView = {
         let scrollableView = ScrollableView()
         scrollableView.translatesAutoresizingMaskIntoConstraints = false
         return scrollableView
     }()
-
     private let galleryImageView: UIImageView = {
         let galleryImageView = UIImageView()
         galleryImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,18 +44,21 @@ final class SearchDetailViewController: UIViewController {
     }()
     private let addressLabel: UILabel = {
         let addressLabel = UILabel()
+        addressLabel.textColor = .defaultText
         addressLabel.font = .systemFont(ofSize: 12.0, weight: .light)
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         return addressLabel
     }()
     private let nameLabel: UILabel = {
         let nameLabel = UILabel()
+        nameLabel.textColor = .defaultText
         nameLabel.font = .systemFont(ofSize: 20.0, weight: .bold)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         return nameLabel
     }()
     private let descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
+        descriptionLabel.textColor = .defaultText
         descriptionLabel.font = .systemFont(ofSize: 12.0, weight: .regular)
         descriptionLabel.numberOfLines = 2
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -43,6 +66,7 @@ final class SearchDetailViewController: UIViewController {
     }()
     private let priceLabel: UILabel = {
         let priceLabel = UILabel()
+        priceLabel.textColor = .defaultText
         priceLabel.font = .systemFont(ofSize: 14.0, weight: .bold)
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         return priceLabel
@@ -58,6 +82,7 @@ final class SearchDetailViewController: UIViewController {
     private let amenityHeaderLabel: UILabel = {
         let amenityHeaderLabel = UILabel()
         amenityHeaderLabel.text = "Comodidades"
+        amenityHeaderLabel.textColor = .defaultText
         amenityHeaderLabel.font = .systemFont(ofSize: 20.0, weight: .bold)
         return amenityHeaderLabel
     }()
@@ -77,11 +102,26 @@ final class SearchDetailViewController: UIViewController {
         viewModel.loadContentData()
     }
 
+    @objc private func favoriteButtonAction() {
+        viewModel.favoriteButtonTouched()
+    }
+
+    @objc private func shareButtonAction() {
+        viewModel.shareButtonTouched()
+    }
+
 }
 
+// MARK: - ViewCodeProtocol
 extension SearchDetailViewController: ViewCodeProtocol {
 
     func setupView() {
+
+        navigationItem.setRightBarButtonItems([
+            shareButton,
+            favoriteButton,
+        ], animated: true)
+
         view.backgroundColor = .background
     }
 
@@ -136,7 +176,7 @@ extension SearchDetailViewController: ViewCodeProtocol {
     }
 
 }
-
+// MARK: - SearchDetailViewModelDelegate
 extension SearchDetailViewController: SearchDetailViewModelDelegate {
 
     func viewModel(contentData item: SearchResult) {
@@ -158,18 +198,18 @@ extension SearchDetailViewController: SearchDetailViewModelDelegate {
 
         let amenityNameList = item.amenities.compactMap { $0.name }
 
-        amenityNameList.forEach { amenity in
-
-            let amenityLabel = UILabel()
+        for (index, amenity) in amenityNameList.enumerated() {
+            let amenityLabel = AmenityItemView()
             amenityLabel.text = amenity
-
             amenityStackView.addArrangedSubview(amenityLabel)
+            if index == 3 {
+                break
+            }
         }
+    }
 
-//        item.isAvailable
-
-//        item.category
-
+    func viewModel(didShareButtonTouched activityItems: [Any]) {
+        delegate?.searchDetailViewController(viewController: self, didShareActivityItems: activityItems)
     }
 
 }

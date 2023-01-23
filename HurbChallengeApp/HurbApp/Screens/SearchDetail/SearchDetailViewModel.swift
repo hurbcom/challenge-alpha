@@ -9,10 +9,13 @@ import Foundation
 
 protocol SearchDetailViewModelDelegate: AnyObject {
     func viewModel(contentData item: SearchResult)
+    func viewModel(didShareButtonTouched activityItems: [Any])
 }
 
 protocol SearchDetailViewModelProtocol {
     func loadContentData()
+    func favoriteButtonTouched()
+    func shareButtonTouched()
 }
 
 final class SearchDetailViewModel {
@@ -31,6 +34,23 @@ extension SearchDetailViewModel: SearchDetailViewModelProtocol {
 
     func loadContentData() {
         delegate?.viewModel(contentData: item)
+    }
+
+    func favoriteButtonTouched() {
+
+    }
+
+    func shareButtonTouched() {
+
+        guard let shareURL = URL(string: item.url) else {
+            return
+        }
+
+        let activityItems: [Any] = [
+            shareURL
+        ]
+
+        delegate?.viewModel(didShareButtonTouched: activityItems)
     }
 
 }
