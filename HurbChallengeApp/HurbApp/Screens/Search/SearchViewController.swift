@@ -25,13 +25,10 @@ class SearchViewController: UIViewController {
 
     private let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(SearchItemTableCell.self, forCellReuseIdentifier: SearchItemTableCell.reuseIdentifier)
-
-        tableView.backgroundColor = .red.withAlphaComponent(0.5)
-        tableView.layer.borderColor = UIColor.red.cgColor
-        tableView.layer.borderWidth = 1.0
-
+        tableView.separatorStyle = .none
         return tableView
     }()
 
@@ -52,7 +49,7 @@ class SearchViewController: UIViewController {
     }
 
     private func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .background
         searchTextField.delegate = self
         tableView.dataSource = self
     }
@@ -79,6 +76,15 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: SearchViewModelDelegate {
 
+    func didSearchFailed(error: AlertMessage) {
+        let alertController = UIAlertController(
+            title: error.title,
+            message: error.message,
+            preferredStyle: .alert
+        )
+        present(alertController, animated: true)
+    }
+
     func didUpdateSearchList() {
         tableView.reloadData()
     }
@@ -102,16 +108,17 @@ extension SearchViewController: UITextFieldDelegate {
 extension SearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.searchList.count
+        return viewModel.searchResults.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchItemTableCell.reuseIdentifier, for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: SearchItemTableCell.reuseIdentifier, for: indexPath) as? SearchItemTableCell {
+            cell.updateContentData(model: viewModel.searchResults[indexPath.row])
+            return cell
+        }
 
-        cell.textLabel?.text = viewModel.searchList[indexPath.row]
-
-        return cell
+        return UITableViewCell()
     }
 
 }

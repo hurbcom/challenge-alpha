@@ -10,11 +10,12 @@ import HUGraphQL
 
 protocol SearchViewModelDelegate: AnyObject {
     func didUpdateSearchList()
+    func didSearchFailed(error: AlertMessage)
 }
 
 protocol SearchViewModelProtocol {
 
-    var searchList: [String] { get }
+    var searchResults: [SearchResult] { get }
 
     func updateTextValue(_ searchText: String?)
     func searchTextValue()
@@ -24,17 +25,13 @@ final class SearchViewModel {
 
     weak var delegate: SearchViewModelDelegate?
 
-    private(set) var searchList: [String]
+    private(set) var searchResults: [SearchResult]
 
     private var searchText: String
 
     init() {
-        self.searchList = []
+        self.searchResults = []
         self.searchText = ""
-    }
-
-    deinit {
-        print("[DEBUG] HomeViewModel \(#function)")
     }
 
 }
@@ -57,21 +54,14 @@ extension SearchViewModel: SearchViewModelProtocol {
         GraphQLNetworkService.makeRequest(query: query) { [weak self] result in
             switch result {
             case .failure(let error):
-                print("[DEBUG] SearchViewModel ERROR")
-                dump(error)
+                let alertMessage = AlertMessage(
+                    title: "Atenção",
+                    message: error.localizedDescription
+                )
+                self?.delegate?.didSearchFailed(error: alertMessage)
             case .success(let data):
-                print("[DEBUG] SearchViewModel SUCCESS")
 
-                let searchResults: [SearchResult] = data.search?.results ?? []
-
-                self?.searchList = [
-                    "Teste",
-                    "Teste",
-                    "Teste",
-                    "Teste",
-                ]
-
-//                let searchPagination: SearchPagination? = data.search?.pagination
+                self?.searchResults = data.search?.results ?? []
 
                 self?.delegate?.didUpdateSearchList()
             }
@@ -80,9 +70,8 @@ extension SearchViewModel: SearchViewModelProtocol {
 
 }
 
-typealias SearchResult = HUGraphQL.SearchQuery.Data.Search.Result
-//typealias SearchPagination = HUGraphQL.SearchQuery.Data.Search.Pagination
 
-struct SearchItem {
-    
+struct AlertMessage {
+    let title: String
+    let message: String
 }
