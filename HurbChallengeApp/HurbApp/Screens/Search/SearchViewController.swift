@@ -7,7 +7,14 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+protocol SearchViewControllerDelegate: AnyObject {
+    func presentAlertMessage(viewController: SearchViewController, alertMessage: AlertMessage)
+    func presentDetailViewController(viewController: SearchViewController, seletedItem: SearchResult)
+}
+
+final class SearchViewController: UIViewController {
+
+    weak var delegate: SearchViewControllerDelegate?
 
     private let viewModel: SearchViewModelProtocol
 
@@ -52,6 +59,7 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .background
         searchTextField.delegate = self
         tableView.dataSource = self
+        tableView.delegate = self
     }
 
     private func setupLayoutConstraints() {
@@ -77,12 +85,7 @@ class SearchViewController: UIViewController {
 extension SearchViewController: SearchViewModelDelegate {
 
     func didSearchFailed(error: AlertMessage) {
-        let alertController = UIAlertController(
-            title: error.title,
-            message: error.message,
-            preferredStyle: .alert
-        )
-        present(alertController, animated: true)
+        delegate?.presentAlertMessage(viewController: self, alertMessage: error)
     }
 
     func didUpdateSearchList() {
@@ -119,6 +122,17 @@ extension SearchViewController: UITableViewDataSource {
         }
 
         return UITableViewCell()
+    }
+
+}
+
+extension SearchViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let selectedItem = viewModel.searchResults[indexPath.row]
+
+        delegate?.presentDetailViewController(viewController: self, seletedItem: selectedItem)
     }
 
 }

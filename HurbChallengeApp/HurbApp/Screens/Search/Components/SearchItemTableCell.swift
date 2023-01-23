@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class SearchItemTableCell: UITableViewCell {
 
@@ -18,6 +19,13 @@ final class SearchItemTableCell: UITableViewCell {
         cardView.layer.cornerRadius = 4.0
         cardView.clipsToBounds = true
         return cardView
+    }()
+    private let photoImageView: UIImageView = {
+        let photoImageView = UIImageView()
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        photoImageView.contentMode = .scaleAspectFill
+        photoImageView.clipsToBounds = true
+        return photoImageView
     }()
     private let nameLabel: UILabel = {
         let nameLabel = UILabel()
@@ -59,6 +67,7 @@ final class SearchItemTableCell: UITableViewCell {
     private func setupLayoutConstraints() {
 
         contentView.addSubview(cardView)
+        cardView.addSubview(photoImageView)
         cardView.addSubview(nameLabel)
         cardView.addSubview(locationLabel)
         cardView.addSubview(priceLabel)
@@ -70,7 +79,12 @@ final class SearchItemTableCell: UITableViewCell {
             cardView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             cardView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 
-            nameLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 8.0),
+            photoImageView.topAnchor.constraint(equalTo: cardView.topAnchor),
+            photoImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+            photoImageView.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
+            photoImageView.heightAnchor.constraint(equalToConstant: 100.0),
+
+            nameLabel.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: 8.0),
             nameLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 8.0),
             nameLabel.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
 
@@ -91,21 +105,33 @@ final class SearchItemTableCell: UITableViewCell {
         nameLabel.text = model.name
 
         if let modelAddress = model.address {
-
-            let addressLocationFormatted = [
-                modelAddress.city,
-                modelAddress.state,
-                modelAddress.country
-            ].compactMap { $0 }
-
-            locationLabel.text = addressLocationFormatted.joined(separator: ", ")
+            locationLabel.text = AddressLocationFormatter.getLocationFormatter(address: modelAddress)
         }
 
         priceLabel.text = CurrencyFormatter.getPriceFormatted(price: model.price)
+
+        if let urlString = model.gallery.first?.url, let photoURL = URL(string: urlString) {
+            photoImageView.kf.setImage(with: photoURL)
+        }
+
     }
 
 }
 
+struct AddressLocationFormatter {
+
+    static func getLocationFormatter(address: SearchResultAddress) -> String {
+
+        let addressList = [
+            address.city,
+            address.state,
+            address.country
+        ].compactMap { $0 }
+
+        return addressList.joined(separator: ", ")
+    }
+
+}
 
 struct CurrencyFormatter {
 

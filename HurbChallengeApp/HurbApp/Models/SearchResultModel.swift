@@ -8,6 +8,7 @@
 import HUGraphQL
 
 typealias SearchResultPrice = HUGraphQL.SearchQuery.Data.Search.Result.Price
+typealias SearchResultAddress = HUGraphQL.SearchQuery.Data.Search.Result.Address
 
 typealias SearchResult = HUGraphQL.SearchQuery.Data.Search.Result
 
