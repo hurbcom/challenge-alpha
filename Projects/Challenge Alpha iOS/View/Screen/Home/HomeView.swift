@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import HUGraphQL
 
 class HomeVIew: UIView {
+    
+    var viewModel = ResultViewModel()
+    typealias Result = HUGraphQL.SearchQuery.Data.Search.Result
     
     // MARK: - Properties UI
     lazy var imageHotel: UIImageView = {
@@ -16,6 +20,8 @@ class HomeVIew: UIView {
         image.clipsToBounds = true
         image.layer.cornerRadius = 18.0
         image.layer.masksToBounds = true
+        image.isAccessibilityElement = true
+        image.accessibilityTraits = .image
         image.contentMode = .scaleToFill
         return image
     }()
@@ -26,6 +32,8 @@ class HomeVIew: UIView {
         hotelLabel.textColor = .black
         hotelLabel.lineBreakMode = .byWordWrapping
         hotelLabel.numberOfLines = 0
+        hotelLabel.isAccessibilityElement = true
+        hotelLabel.accessibilityTraits = .staticText
         hotelLabel.translatesAutoresizingMaskIntoConstraints = false
         return hotelLabel
     }()
@@ -34,6 +42,8 @@ class HomeVIew: UIView {
         let  priceLabel = UILabel()
         priceLabel.font = .systemFont(ofSize: 15, weight: .bold)
         priceLabel.textColor = .systemGreen
+        priceLabel.isAccessibilityElement = true
+        priceLabel.accessibilityTraits = .staticText
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         return priceLabel
     }()
@@ -43,6 +53,7 @@ class HomeVIew: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.distribution = .fillProportionally
+        stack.isAccessibilityElement = false
         stack.spacing = 8
         return stack
     }()
@@ -53,14 +64,19 @@ class HomeVIew: UIView {
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         stack.spacing = 16.0
+        stack.isAccessibilityElement = false
         stack.alignment = .center
         return stack
     }()
     
-    func setup(image: String, name: String, price: Int) {
-        imageHotel.image = UIImage(named: image)
-        hotelTituloLabel.text = name
-        priceLabel.text = "R$ \(price)"
+    func setupCell(hotel: Result) {
+        hotelTituloLabel.text = hotel.name
+        let price = String(hotel.price.amount)
+        priceLabel.text = "R$\(price)"
+        let urlImage = hotel.gallery[0].url ?? ""
+        DispatchQueue.main.async {
+            self.imageHotel.loadFrom(URLAdress: urlImage)
+        }
     }
     
     // MARK: - Init
@@ -83,9 +99,11 @@ extension HomeVIew: ViewCodableProtocol {
     }
 
     func buildViewHierarchy() {
+        addSubview(mainStackView)
+        
         mainStackView.addArrangedSubview(imageHotel)
         mainStackView.addArrangedSubview(textStackView)
-
+        
         textStackView.addArrangedSubview(hotelTituloLabel)
         textStackView.addArrangedSubview(priceLabel)
     }
@@ -98,7 +116,7 @@ extension HomeVIew: ViewCodableProtocol {
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24.0),
             
             imageHotel.widthAnchor.constraint(equalToConstant: 90),
-            imageHotel.heightAnchor.constraint(equalToConstant: 120),
+            imageHotel.heightAnchor.constraint(equalToConstant: 90),
         ])
     }
 

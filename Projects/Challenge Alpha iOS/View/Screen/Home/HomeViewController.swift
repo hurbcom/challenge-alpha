@@ -8,50 +8,58 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+
+    private var requestService = HotelService()
+    private var viewModel = ResultViewModel()
+    private var filterModel: [String] = []
+    private var filter: [String] = []
+    var cityName = ""
     
-    private var viewModel: [Result] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    // MARK: - Private Properties UI
+    // MARK: - Properties UI
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
         search.translatesAutoresizingMaskIntoConstraints = false
         search.placeholder = "Search..."
         search.showsCancelButton = true
+        search.isAccessibilityElement = true
+        search.accessibilityLabel = "Search..."
         search.searchBarStyle = .prominent
         search.delegate = self
         return search
     }()
-    
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .white
         tableView.register(HomeViewCell.self, forCellReuseIdentifier: HomeViewCell.identifier)
         return tableView
     }()
     
+    // MARK: - init
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackground()
-        self.filter = self.cursos
-        setupView()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        viewModel.searchHotel(cityName)
+        setupView()
     }
-    
-    // para testar o filtro e a tableview
-    var cursos = ["Swift", "Kotlin", "JavaScript", "Flutter", "React Native", "Go"]
-    var filter: [String] = []
 }
 
 extension HomeViewController: ViewCodableProtocol {
@@ -59,12 +67,10 @@ extension HomeViewController: ViewCodableProtocol {
         buildViewHierarchy()
         setupConstraints()
         setupAdditionalConfiguration()
-        navigationItem.backButtonTitle = "Voltar"
     }
 
     func buildViewHierarchy() {
         view.addSubview(searchBar)
-//        searchBar.addSubview(searchButton)
         view.addSubview(tableView)
     }
 
@@ -73,7 +79,7 @@ extension HomeViewController: ViewCodableProtocol {
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
+
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -82,31 +88,23 @@ extension HomeViewController: ViewCodableProtocol {
     }
 
     func setupAdditionalConfiguration() {
-        
+
     }
 }
 
-
 extension HomeViewController: UISearchBarDelegate {
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filter = []
-        if searchText.isEmpty {
-            self.filter = self.cursos
-        } else {
-            for value in cursos {
-                if value.uppercased().contains(searchText.uppercased()) {
-                    self.filter.append(value)
-                }
-            }
+        filter = searchText.isEmpty ? filterModel : filterModel.filter { (item: String) -> Bool in
+            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
-        self.tableView.reloadData()
-    }
-    
+        tableView.reloadData()
+        }
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
-    
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
@@ -115,21 +113,26 @@ extension HomeViewController: UISearchBarDelegate {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.filter.count
+        return viewModel.hotels.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewCell.identifier, for: indexPath) as? HomeViewCell else { return UITableViewCell() }
-        cell.textLabel?.text = filter[indexPath.row]
-        
+        let result = viewModel.hotels[indexPath.row]
+        cell.homeCell.setupCell(hotel: result)
+        cell.setupURL(hotel: result)
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let detailsVC = DetailsViewController(result: viewModel[indexPath.row])
+        let detailsVC = DetailsViewController(result: viewModel.hotels[indexPath.row])
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 
-
+extension HomeViewController: ResultViewModelProtocol {
+    func reloadData() {
+        tableView.reloadData()
+    }
+}

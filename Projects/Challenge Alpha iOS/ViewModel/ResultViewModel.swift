@@ -6,17 +6,30 @@
 //
 
 import Foundation
+import HUGraphQL
 
-class ResultViewModel: ResultServiceProtocol {
+//MARK: - Protocol
+protocol ResultViewModelProtocol {
+        func reloadData()
+}
+
+class ResultViewModel {
     
-    private var resultModel = [Result]()
-    private var resultService : Result? = nil
+    var service = HotelService.shared
+    var delegate: ResultViewModelProtocol?
+    var hotels: [HUGraphQL.SearchQuery.Data.Search.Result] = []
     
-    func success(result: [Result]) {
-        self.resultService = result[0].results
-    }
     
-    func error(error: Error) {
-        print("Erro ao carregar os filmes")
+    func searchHotel(_ informations: String) {
+        service.request(search: informations) { result in
+            if let infoAPI = result {
+                for hotel in infoAPI {
+                    if let hotelResult = hotel {
+                        self.hotels.append(hotelResult)
+                    }
+                }
+                self.delegate?.reloadData()
+            }
+        }
     }
 }

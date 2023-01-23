@@ -8,7 +8,8 @@
 import UIKit
 
 extension UIView {
-    
+// TODO: Remover espaçamento desnecessário, eu sugeria pra você criar uma extensão por funcionalidade
+// exemplo: UIView+Background contendo esse método, deixa a classe mais concisa e segue o príncipio de responsabilidade única 😉
     func setBackground() {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds

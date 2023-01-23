@@ -7,18 +7,20 @@
 
 import UIKit
 
+// TODO: Remover funções desnecessárias, assim evitando código avulso
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: scene)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
         let navigationController = UINavigationController(rootViewController: HomeViewController())
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
-        self.window = window
+        
+        self.window?.rootViewController = navigationController
+        self.window?.windowScene = scene
+        self.window?.makeKeyAndVisible()
     }
     
     
