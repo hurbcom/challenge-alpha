@@ -13,7 +13,6 @@ class DetailsViewController: UIViewController {
     var url = URL(string: "https://www.google.com.br")
     typealias Result = HUGraphQL.SearchQuery.Data.Search.Result
 
-//    private var result: Result
     private var requestService = HotelService()
     private var viewModel = ResultViewModel()
     

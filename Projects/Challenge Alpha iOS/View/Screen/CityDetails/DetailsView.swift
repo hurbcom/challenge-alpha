@@ -17,7 +17,6 @@ class DetailsView: UIView {
         hotelImageView.contentMode = .scaleAspectFill
         hotelImageView.backgroundColor = .red
         hotelImageView.translatesAutoresizingMaskIntoConstraints = false
-        hotelImageView.layer.cornerRadius = 18.0
         hotelImageView.layer.masksToBounds = true
         hotelImageView.isAccessibilityElement = true
         hotelImageView.accessibilityTraits = .image
@@ -40,9 +39,9 @@ class DetailsView: UIView {
     
     lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        descriptionLabel.font = .systemFont(ofSize: 16, weight: .regular)
         descriptionLabel.textColor = .black
-        descriptionLabel.numberOfLines = 0
+        descriptionLabel.numberOfLines = 10
         descriptionLabel.textAlignment = .justified
         descriptionLabel.lineBreakMode = .byTruncatingTail
         descriptionLabel.textColor = .black
@@ -71,7 +70,7 @@ class DetailsView: UIView {
         shareButton.translatesAutoresizingMaskIntoConstraints = false
         shareButton.isAccessibilityElement = true
         shareButton.accessibilityTraits = .button
-        shareButton.accessibilityLabel = "Shared"
+        shareButton.accessibilityLabel = "Compartilhar"
         return shareButton
     }()
     
@@ -89,8 +88,11 @@ class DetailsView: UIView {
         container.layer.cornerRadius = 32.0
         container.layer.masksToBounds = true
         container.backgroundColor = .white
-        container.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
         container.isAccessibilityElement = false
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOpacity = 0.5
+        container.layer.shadowOffset = CGSize(width: 5, height: 5)
+        container.layer.shadowRadius = 5
         return container
     }()
     
@@ -157,12 +159,15 @@ extension DetailsView: ViewCodableProtocol {
             containerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             containerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20.0),
             containerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20.0),
-            containerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20.0),
+//            containerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80.0),
+            containerView.widthAnchor.constraint(equalToConstant: 300.0),
+            containerView.heightAnchor.constraint(equalToConstant: 300.0),
+
 
             hotelImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20.0),
             hotelImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            hotelImageView.widthAnchor.constraint(equalToConstant: 400),
-            hotelImageView.heightAnchor.constraint(equalToConstant: 264),
+            hotelImageView.widthAnchor.constraint(equalToConstant: 400.0),
+            hotelImageView.heightAnchor.constraint(equalToConstant: 264.0),
 
             hoteNamelLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10.0),
             hoteNamelLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20.0),

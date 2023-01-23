@@ -21,6 +21,7 @@ class ResultViewModel {
     
     
     func searchHotel(_ informations: String) {
+        self.hotels = []
         service.request(search: informations) { result in
             if let infoAPI = result {
                 for hotel in infoAPI {

@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-//struct Challenge_Alpha_iOSApp: App {
-//    var body: some Scene {
-//        WindowGroup {
-//            ContentView()
-//        }
-//    }
-//}
+struct Challenge_Alpha_iOSApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}

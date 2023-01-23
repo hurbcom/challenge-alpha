@@ -11,18 +11,17 @@ class HomeViewController: UIViewController {
 
     private var requestService = HotelService()
     private var viewModel = ResultViewModel()
-    private var filterModel: [String] = []
-    private var filter: [String] = []
-    var cityName = ""
     
     // MARK: - Properties UI
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
         search.translatesAutoresizingMaskIntoConstraints = false
-        search.placeholder = "Search..."
+        search.placeholder = "Pesquisar por Cidade, Estado ou Hotel"
         search.showsCancelButton = true
+        search.setShowsScope(true, animated: true)
+        search.showsSearchResultsButton = true
         search.isAccessibilityElement = true
-        search.accessibilityLabel = "Search..."
+        search.accessibilityLabel = "Pesquisar por Cidade, Estado ou Hotel"
         search.searchBarStyle = .prominent
         search.delegate = self
         return search
@@ -49,6 +48,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         view.setBackground()
     }
 
@@ -57,7 +57,6 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        viewModel.searchHotel(cityName)
         setupView()
     }
 }
@@ -95,9 +94,7 @@ extension HomeViewController: ViewCodableProtocol {
 extension HomeViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filter = searchText.isEmpty ? filterModel : filterModel.filter { (item: String) -> Bool in
-            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-        }
+        viewModel.searchHotel(searchBar.text ?? "")
         tableView.reloadData()
         }
 
@@ -127,6 +124,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let detailsVC = DetailsViewController(result: viewModel.hotels[indexPath.row])
+        detailsVC.getDetails(hotel: viewModel.hotels[indexPath.row])
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 }

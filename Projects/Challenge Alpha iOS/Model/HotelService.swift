@@ -19,7 +19,7 @@ struct HotelService {
     
     static let shared = HotelService()
     
-    let hug = HUGService(enableLog: false)
+    let hug = HUGService(enableLog: true)
     
     func request(search informations: String, completion: @escaping ([ResultAPI]?) -> Void ) {
         
