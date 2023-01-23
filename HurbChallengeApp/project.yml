@@ -7,6 +7,9 @@ options:
 packages:
   HUGraphQL:
     path: ../Modules/HUNetwork
+  Kingfisher:
+    url: https://github.com/onevcat/Kingfisher.git
+    majorVersion: 7.0.0
 
 targets:
   HurbApp:
@@ -19,6 +22,7 @@ targets:
       PRODUCT_BUNDLE_IDENTIFIER: hurb.com.Challenge-Alpha-iOS
     dependencies:
       - package: HUGraphQL
+      - package: Kingfisher
   HurbAppTests:
     dependencies: 
       - target: HurbApp
