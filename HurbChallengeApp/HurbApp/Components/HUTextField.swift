@@ -9,10 +9,11 @@ import UIKit
 
 final class HUTextField: UITextField {
 
-    var textPadding: UIEdgeInsets
+    var textPadding: UIEdgeInsets = .zero
+
+    var leftViewPadding: UIEdgeInsets = .zero
 
     init() {
-        self.textPadding = .zero
         super.init(frame: .zero)
         setupView()
     }
@@ -35,6 +36,11 @@ final class HUTextField: UITextField {
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.editingRect(forBounds: bounds)
         return rect.inset(by: textPadding)
+    }
+
+    override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.leftViewRect(forBounds: bounds)
+        return rect.inset(by: leftViewPadding)
     }
 
 }
