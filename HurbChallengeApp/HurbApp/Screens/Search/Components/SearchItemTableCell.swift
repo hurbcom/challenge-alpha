@@ -129,36 +129,3 @@ extension SearchItemTableCell: ViewCodeProtocol {
     }
 
 }
-
-struct AddressLocationFormatter {
-
-    static func getLocationFormatter(address: SearchResultAddress) -> String {
-
-        let addressList = [
-            address.city,
-            address.state,
-            address.country
-        ].compactMap { $0 }
-
-        return addressList.joined(separator: ", ")
-    }
-
-}
-
-struct CurrencyFormatter {
-
-    static func getPriceFormatted(price: SearchResultPrice) -> String? {
-
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.currencyCode = price.currency
-        numberFormatter.maximumFractionDigits = 2
-
-        let numberAmount = NSNumber(value: price.amount)
-
-        return numberFormatter.string(from: numberAmount)
-    }
-}
-
-
-//struct Shadow
