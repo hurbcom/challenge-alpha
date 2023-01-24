@@ -15,7 +15,6 @@ extension UIImage {
     static let shareIcon = UIImage(systemName: "square.and.arrow.up")
     static let heart = UIImage(systemName: "heart")
 
-
     // MARK: - Bundle Resource
     static let logo = UIImage(named: "app-logo")
 
