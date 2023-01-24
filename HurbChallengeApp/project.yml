@@ -1,0 +1,44 @@
+name: HurbApp
+options:
+  deploymentTarget: 
+    iOS: 13.0
+  generateEmptyDirectories: true
+
+packages:
+  HUGraphQL:
+    path: ../Modules/HUNetwork
+  Kingfisher:
+    url: https://github.com/onevcat/Kingfisher.git
+    majorVersion: 7.0.0
+
+targets:
+  HurbApp:
+    type: application
+    platform: iOS
+    deploymentTarget:
+      iOS: 13.0
+    sources: HurbApp
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: hurb.com.Challenge-Alpha-iOS
+    dependencies:
+      - package: HUGraphQL
+      - package: Kingfisher
+  HurbAppTests:
+    dependencies: 
+      - target: HurbApp
+    deploymentTarget: 
+      iOS: 13.0
+    type: bundle.unit-test
+    platform: iOS
+    sources: 
+      - path: HurbAppTests
+
+schemes:
+  HurbApp:
+    build:
+      targets:
+        HurbApp: all
+    test:
+      targets:
+        - name: HurbAppTests
+      gatherCoverageData: true
