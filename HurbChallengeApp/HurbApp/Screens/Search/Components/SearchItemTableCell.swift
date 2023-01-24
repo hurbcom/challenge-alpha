@@ -16,8 +16,12 @@ final class SearchItemTableCell: UITableViewCell {
         let cardView = UIView()
         cardView.translatesAutoresizingMaskIntoConstraints = false
         cardView.backgroundColor = .white
-        cardView.layer.cornerRadius = 4.0
-        cardView.clipsToBounds = true
+        cardView.layer.cornerRadius = 8.0
+        cardView.layer.masksToBounds = false
+        cardView.layer.shadowRadius = 4.0
+        cardView.layer.shadowOpacity = 0.3
+        cardView.layer.shadowColor = UIColor.gray.cgColor
+        cardView.layer.shadowOffset = CGSize(width: 1, height: 5)
         return cardView
     }()
     private let photoImageView: UIImageView = {
@@ -25,6 +29,8 @@ final class SearchItemTableCell: UITableViewCell {
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         photoImageView.contentMode = .scaleAspectFill
         photoImageView.clipsToBounds = true
+        photoImageView.layer.cornerRadius = 8.0
+        photoImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         return photoImageView
     }()
     private let nameLabel: UILabel = {
@@ -60,11 +66,33 @@ final class SearchItemTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupView() {
+    override func setSelected(_ selected: Bool, animated: Bool) { }
+
+    func updateContentData(model: SearchResult) {
+
+        nameLabel.text = model.name
+
+        if let modelAddress = model.address {
+            locationLabel.text = AddressLocationFormatter.getLocationFormatter(address: modelAddress)
+        }
+
+        priceLabel.text = CurrencyFormatter.getPriceFormatted(price: model.price)
+
+        if let urlString = model.gallery.first?.url, let photoURL = URL(string: urlString) {
+            photoImageView.kf.setImage(with: photoURL)
+        }
+
+    }
+
+}
+
+extension SearchItemTableCell: ViewCodeProtocol {
+
+    func setupView() {
         backgroundColor = .clear
     }
 
-    private func setupLayoutConstraints() {
+    func setupLayoutConstraints() {
 
         contentView.addSubview(cardView)
         cardView.addSubview(photoImageView)
@@ -100,22 +128,6 @@ final class SearchItemTableCell: UITableViewCell {
         ])
     }
 
-    func updateContentData(model: SearchResult) {
-
-        nameLabel.text = model.name
-
-        if let modelAddress = model.address {
-            locationLabel.text = AddressLocationFormatter.getLocationFormatter(address: modelAddress)
-        }
-
-        priceLabel.text = CurrencyFormatter.getPriceFormatted(price: model.price)
-
-        if let urlString = model.gallery.first?.url, let photoURL = URL(string: urlString) {
-            photoImageView.kf.setImage(with: photoURL)
-        }
-
-    }
-
 }
 
 struct AddressLocationFormatter {
@@ -147,3 +159,6 @@ struct CurrencyFormatter {
         return numberFormatter.string(from: numberAmount)
     }
 }
+
+
+//struct Shadow

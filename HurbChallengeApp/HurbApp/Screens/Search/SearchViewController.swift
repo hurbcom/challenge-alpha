@@ -81,7 +81,7 @@ final class SearchViewController: UIViewController {
             searchTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             tableView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 8.0),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8.0),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0)
         ])
