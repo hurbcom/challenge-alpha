@@ -18,6 +18,11 @@ final class SearchViewController: UIViewController {
 
     private let viewModel: SearchViewModelProtocol
 
+    private let logoBarButton: UIBarButtonItem = {
+        let logoBarButton = UIBarButtonItem()
+        logoBarButton.image = .logo
+        return logoBarButton
+    }()
     private let searchTextField: HUTextField = {
         let searchTextField = HUTextField()
         searchTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +34,6 @@ final class SearchViewController: UIViewController {
         searchTextField.returnKeyType = .done
         return searchTextField
     }()
-
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
@@ -56,6 +60,9 @@ final class SearchViewController: UIViewController {
     }
 
     private func setupView() {
+
+        navigationItem.leftBarButtonItem = logoBarButton
+
         view.backgroundColor = .background
         searchTextField.delegate = self
         tableView.dataSource = self
