@@ -23,6 +23,13 @@ final class SearchViewController: UIViewController {
         logoBarButton.image = .logo
         return logoBarButton
     }()
+
+    private let activityIndicatorView: UIActivityIndicatorView = {
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.color = .primaryColor
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicatorView
+    }()
     private let searchTextField: HUTextField = {
         let searchTextField = HUTextField()
         searchTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -88,6 +95,13 @@ final class SearchViewController: UIViewController {
             tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0)
         ])
+
+        view.addSubview(activityIndicatorView)
+        NSLayoutConstraint.activate([
+            activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+
     }
 
 }
@@ -95,10 +109,12 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: SearchViewModelDelegate {
 
     func didSearchFailed(error: AlertMessage) {
+        activityIndicatorView.stopAnimating()
         delegate?.presentAlertMessage(viewController: self, alertMessage: error)
     }
 
     func didUpdateSearchList() {
+        activityIndicatorView.stopAnimating()
         tableView.reloadData()
     }
 
@@ -108,6 +124,7 @@ extension SearchViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         viewModel.updateTextValue(textField.text)
+        activityIndicatorView.startAnimating()
         viewModel.searchTextValue()
     }
 
