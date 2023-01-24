@@ -10,6 +10,7 @@ import Apollo
 
 enum NetworkError: Error {
     case emptyData
+    case graphQLErrors([GraphQLError])
 }
 
 struct GraphQLNetworkService {
@@ -22,8 +23,12 @@ struct GraphQLNetworkService {
             switch result {
             case .failure(let error):
                 completion(.failure(error))
-            case .success(let response):
-                guard let responseData = response.data else {
+            case .success(let graphQLValue):
+                if let graphQLErrors = graphQLValue.errors {
+                    completion(.failure(NetworkError.graphQLErrors(graphQLErrors)))
+                    return
+                }
+                guard let responseData = graphQLValue.data else {
                     completion(.failure(NetworkError.emptyData))
                     return
                 }
