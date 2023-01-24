@@ -30,7 +30,10 @@ final class SearchViewController: UIViewController {
         searchTextField.clearButtonMode = .whileEditing
         searchTextField.leftViewMode = .always
         searchTextField.leftView = UIImageView(image: .searchIcon)
+        searchTextField.tintColor = .gray
+        searchTextField.leftViewPadding = UIEdgeInsets(top: 0, left: 8.0, bottom: 0, right: -8.0)
         searchTextField.textPadding = UIEdgeInsets(top: 8.0, left: 4.0, bottom: 8.0, right: 8.0)
+        searchTextField.textColor = .defaultText
         searchTextField.returnKeyType = .done
         return searchTextField
     }()
