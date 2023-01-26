@@ -1,3 +1,10 @@
+//
+//  SceneDelegate.swift
+//  HURB
+//
+//  Created by Marcelo Falcao Costa Filho on 26/01/23.
+//
+
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
