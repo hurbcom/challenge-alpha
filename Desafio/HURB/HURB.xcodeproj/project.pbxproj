@@ -32,7 +32,7 @@
 		14135E6729822C9500DBD0AC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14135E6229822C9500DBD0AC /* HistoryViewController.swift */; };
 		14135E6929822CB200DBD0AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14135E6829822CB200DBD0AC /* Assets.xcassets */; };
 		14135E6C29822CFF00DBD0AC /* ScrollViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 14135E6B29822CFF00DBD0AC /* ScrollViewController */; };
-		1440079A29822FAF00F2EE68 /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = 1440079929822FAF00F2EE68 /* HUGraphQL */; };
+		141C1EE329835F0000268A0C /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = 141C1EE229835F0000268A0C /* HUGraphQL */; };
 		1440079C2982328C00F2EE68 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440079B2982328C00F2EE68 /* Product.swift */; };
 		1440079E298232AD00F2EE68 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440079D298232AD00F2EE68 /* Address.swift */; };
 		144007A0298232C400F2EE68 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440079F298232C400F2EE68 /* Location.swift */; };
@@ -65,7 +65,7 @@
 		14135E6129822C9500DBD0AC /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		14135E6229822C9500DBD0AC /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		14135E6829822CB200DBD0AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1440079729822F5F00F2EE68 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HUNetwork; path = "../challenge-alpha/Projects/Challenge Alpha iOS/Modules/HUNetwork"; sourceTree = "<group>"; };
+		141C1EE129835EE600268A0C /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HUNetwork; path = "../../Projects/Challenge Alpha iOS/Modules/HUNetwork"; sourceTree = "<group>"; };
 		1440079B2982328C00F2EE68 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1440079D298232AD00F2EE68 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		1440079F298232C400F2EE68 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14135E6C29822CFF00DBD0AC /* ScrollViewController in Frameworks */,
-				1440079A29822FAF00F2EE68 /* HUGraphQL in Frameworks */,
+				141C1EE329835F0000268A0C /* HUGraphQL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +188,7 @@
 		1440079629822F5F00F2EE68 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				1440079729822F5F00F2EE68 /* HUNetwork */,
+				141C1EE129835EE600268A0C /* HUNetwork */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -218,7 +218,7 @@
 			name = HURB;
 			packageProductDependencies = (
 				14135E6B29822CFF00DBD0AC /* ScrollViewController */,
-				1440079929822FAF00F2EE68 /* HUGraphQL */,
+				141C1EE229835F0000268A0C /* HUGraphQL */,
 			);
 			productName = HURB;
 			productReference = 14135E2329822C4600DBD0AC /* HURB.app */;
@@ -527,7 +527,7 @@
 			package = 14135E6A29822CFF00DBD0AC /* XCRemoteSwiftPackageReference "ScrollViewController" */;
 			productName = ScrollViewController;
 		};
-		1440079929822FAF00F2EE68 /* HUGraphQL */ = {
+		141C1EE229835F0000268A0C /* HUGraphQL */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HUGraphQL;
 		};
