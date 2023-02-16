@@ -23,9 +23,7 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", "BASE_URL", "\"https://gateway.marvel.com/\""
-            buildConfigField "String", "API_PUBLIC_KEY", "\"b13f3dbb0975ee889b0e18b0a8d7d949\""
-            buildConfigField "String", "API_PRIVATE_KEY", "\"261504e41b4f9ca46ed9b37921858aaa12c66e36\""
+            buildConfigField "String", "BASE_URL", "\"https://swapi.dev/api/\""
             buildConfigField "long", "API_TIMEOUT", "30"
         }
         mock {
@@ -35,9 +33,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
-            buildConfigField "String", "BASE_URL", "\"https://gateway.marvel.com/\""
-            buildConfigField "String", "API_PUBLIC_KEY", "\"b13f3dbb0975ee889b0e18b0a8d7d949\""
-            buildConfigField "String", "API_PRIVATE_KEY", "\"261504e41b4f9ca46ed9b37921858aaa12c66e36\""
+            buildConfigField "String", "BASE_URL", "\"https://swapi.dev/api/\""
             buildConfigField "long", "API_TIMEOUT", "30"
         }
     }

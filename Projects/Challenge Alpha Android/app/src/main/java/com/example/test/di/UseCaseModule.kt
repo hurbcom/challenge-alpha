@@ -1,7 +1,7 @@
 package com.example.test.di
 
-import com.example.test.domain.repositories.Repository
-import com.example.test.domain.usecases.UseCase
+import com.example.test.domain.repositories.home.PeopleRepository
+import com.example.test.domain.usecases.home.GetPeopleUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +14,6 @@ object UseCaseModule {
 
     @Singleton
     @Provides
-    fun providesGetHeroesUseCase(repository: Repository): UseCase =
-        UseCase(repository)
+    fun providesGetPeopleUseCase(peopleRepository: PeopleRepository): GetPeopleUseCase =
+        GetPeopleUseCase(peopleRepository)
 }

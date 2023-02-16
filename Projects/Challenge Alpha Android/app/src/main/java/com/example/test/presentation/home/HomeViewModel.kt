@@ -1,20 +1,20 @@
-package com.example.test.ui.home
+package com.example.test.presentation.home
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.test.domain.usecases.UseCase
-import com.example.test.domain.usecases.params.GetParams
+import com.example.test.domain.usecases.home.GetPeopleUseCase
+import com.example.test.domain.usecases.home.ListGetParams
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val useCase: UseCase) :
+class HomeViewModel @Inject constructor(private val getPeopleUseCase: GetPeopleUseCase) :
     ViewModel() {
-    fun getHeroes() {
+    fun getPeople() {
         viewModelScope.launch {
-            useCase.performAction(GetParams(""))
+            getPeopleUseCase.performAction(ListGetParams(1))
                 .collect {
                     Log.e("RESPONSE", "" + it.toString())
                 }
