@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_small">13sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">19sp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="default_border_width">2dp</dimen>
+    <dimen name="default_radius">10dp</dimen>
+    <dimen name="default_padding">10dp</dimen>
+    <dimen name="default_margin">10dp</dimen>
+    <dimen name="double_margin">20dp</dimen>
+
+    <dimen name="toolbar_logo_size">80dp</dimen>
+    <dimen name="image_height">250dp</dimen>
+</resources>

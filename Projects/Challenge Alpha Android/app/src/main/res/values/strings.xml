@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Test</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="people">Pessoas</string>
+    <string name="planets">Planetas</string>
+    <string name="starships">Naves</string>
+    <string name="height">Altura</string>
+    <string name="weight">Peso</string>
+    <string name="climate">Clima</string>
+    <string name="population">População</string>
+    <string name="type">Tipo</string>
+    <string name="passengers">Passageiros</string>
 </resources>

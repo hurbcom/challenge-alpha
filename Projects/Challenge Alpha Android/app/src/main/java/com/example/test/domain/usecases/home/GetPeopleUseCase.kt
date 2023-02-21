@@ -4,6 +4,7 @@ import com.example.core.base.BaseResult
 import com.example.core.base.UseCaseWithParams
 import com.example.test.domain.models.Person
 import com.example.test.domain.repositories.home.PeopleRepository
+import com.example.test.domain.usecases.ListGetParams
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

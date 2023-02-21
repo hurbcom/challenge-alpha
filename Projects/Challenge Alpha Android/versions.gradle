@@ -28,13 +28,15 @@ ext {
     coil_version = '1.2.2'
 
     // LOTTIE
-    lottieVersion = '5.2.0'
+    lottie_version = '5.2.0'
 
     // TESTS
     junit_version = '4.13.2'
     junit_ext_version = '1.1.5'
     mockito_version = '2.27.0'
     mockito_kotlin_version = '2.1.0'
+    mockk_version = '1.13.4'
+    turbine_version = '0.12.1'
     core_ktx_test_version = "1.2.0"
     test_runner_version = '1.1.1'
     espresso_version = '3.5.1'

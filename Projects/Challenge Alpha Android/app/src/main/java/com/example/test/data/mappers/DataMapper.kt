@@ -2,6 +2,8 @@ package com.example.test.data.mappers
 
 import com.example.test.data.datasources.network.models.*
 import com.example.test.data.datasources.network.models.people.PersonResponse
+import com.example.test.data.datasources.network.models.people.PlanetResponse
+import com.example.test.data.datasources.network.models.people.StarshipResponse
 import com.example.test.domain.models.*
 
 object DataMapper {
@@ -11,5 +13,21 @@ object DataMapper {
         mass = mass.orEmpty(),
         gender = gender.orEmpty(),
         eyeColor = eyeColor.orEmpty()
+    )
+
+    fun PlanetResponse.map(): Planet = Planet(
+        climate = climate.orEmpty(),
+        diameter = diameter.orEmpty(),
+        name = name.orEmpty(),
+        population = population.orEmpty(),
+        terrain = terrain.orEmpty()
+    )
+
+    fun StarshipResponse.map(): Starship = Starship(
+        cargoCapacity = cargoCapacity.orEmpty(),
+        manufacturer = manufacturer.orEmpty(),
+        name = name.orEmpty(),
+        passengers = passengers.orEmpty(),
+        starshipClass = starshipClass.orEmpty()
     )
 }

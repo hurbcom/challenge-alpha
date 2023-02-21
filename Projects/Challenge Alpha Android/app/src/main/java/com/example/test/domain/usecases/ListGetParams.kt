@@ -1,4 +1,4 @@
-package com.example.test.domain.usecases.home
+package com.example.test.domain.usecases
 
 data class ListGetParams(
     val page: Int,
