@@ -5,5 +5,5 @@ sealed class BaseResult<out T> {
         BaseResult<T>()
 
     data class Error(val error: Throwable) : BaseResult<Nothing>()
-    object Loading : BaseResult<Nothing>()
+    data class Loading(val shouldShowLoading: Boolean = false) : BaseResult<Nothing>()
 }

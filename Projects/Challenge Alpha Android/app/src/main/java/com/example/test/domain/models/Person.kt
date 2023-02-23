@@ -6,5 +6,6 @@ data class Person(
     val height: String,
     val mass: String,
     val gender: String,
-    val eyeColor: String
+    val eyeColor: String,
+    val image: String
 )

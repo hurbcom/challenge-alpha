@@ -4,6 +4,7 @@ import com.example.test.data.datasources.network.models.PersonResponse
 import com.example.test.data.datasources.network.models.PlanetResponse
 import com.example.test.data.datasources.network.models.StarshipResponse
 import com.example.test.domain.models.*
+import com.example.test.utils.ImageHelper
 
 object DataMapper {
     fun PersonResponse.map(): Person = Person(
@@ -11,7 +12,8 @@ object DataMapper {
         height = height.orEmpty(),
         mass = mass.orEmpty(),
         gender = gender.orEmpty(),
-        eyeColor = eyeColor.orEmpty()
+        eyeColor = eyeColor.orEmpty(),
+        image = ImageHelper.getPeopleImage(url.orEmpty())
     )
 
     fun PlanetResponse.map(): Planet = Planet(
@@ -19,7 +21,8 @@ object DataMapper {
         diameter = diameter.orEmpty(),
         name = name.orEmpty(),
         population = population.orEmpty(),
-        terrain = terrain.orEmpty()
+        terrain = terrain.orEmpty(),
+        image = ImageHelper.getPlanetsImage(url.orEmpty())
     )
 
     fun StarshipResponse.map(): Starship = Starship(
@@ -27,6 +30,7 @@ object DataMapper {
         manufacturer = manufacturer.orEmpty(),
         name = name.orEmpty(),
         passengers = passengers.orEmpty(),
-        starshipClass = starshipClass.orEmpty()
+        starshipClass = starshipClass.orEmpty(),
+        image = ImageHelper.getStarshipsImage(url.orEmpty())
     )
 }

@@ -1,22 +1,20 @@
 package com.example.test.utils
 
-import com.example.core.base.presentation.CategoryType
-
 object ImageHelper {
+    private const val PEOPLE_BASE_URL = "https://swapi.dev/api/people/"
+    private const val PLANETS_BASE_URL = "https://swapi.dev/api/planets/"
+    private const val STARSHIPS_BASE_URL = "https://swapi.dev/api/starships/"
+
     private const val IMAGE_BASE_PEOPLE = "https://starwars-visualguide.com/assets/img/characters/"
     private const val IMAGE_BASE_PLANETS = "https://starwars-visualguide.com/assets/img/planets/"
-    private const val IMAGE_BASE_STARSHIPS =
-        "https://starwars-visualguide.com/assets/img/starships/"
+    private const val IMAGE_BASE_STARSHIPS = "https://starwars-visualguide.com/assets/img/starships/"
 
-    fun getImage(path: Int, type: CategoryType): String {
-        return when (type) {
-            CategoryType.PEOPLE -> return getPeopleImage(path)
-            CategoryType.PLANETS -> return getPlanetsImage(path)
-            else -> getStarshipsImage(path)
-        }
-    }
+    fun getPeopleImage(url: String): String =
+        "${url.replace(PEOPLE_BASE_URL, IMAGE_BASE_PEOPLE).removeSuffix("/")}.jpg"
 
-    private fun getPeopleImage(path: Int): String = "$IMAGE_BASE_PEOPLE$path.jpg"
-    private fun getPlanetsImage(path: Int): String = "$IMAGE_BASE_PLANETS$path.jpg"
-    private fun getStarshipsImage(path: Int): String = "$IMAGE_BASE_STARSHIPS$path.jpg"
+    fun getPlanetsImage(url: String): String =
+        "${url.replace(PLANETS_BASE_URL, IMAGE_BASE_PLANETS).removeSuffix("/")}.jpg"
+
+    fun getStarshipsImage(url: String): String =
+        "${url.replace(STARSHIPS_BASE_URL, IMAGE_BASE_STARSHIPS).removeSuffix("/")}.jpg"
 }

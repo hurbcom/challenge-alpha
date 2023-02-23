@@ -6,4 +6,5 @@ data class Planet(
     val name: String,
     val population: String,
     val terrain: String,
+    val image: String
 )

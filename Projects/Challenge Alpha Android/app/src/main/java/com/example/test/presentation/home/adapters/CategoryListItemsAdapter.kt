@@ -9,12 +9,11 @@ import com.example.test.R
 import com.example.test.databinding.ItemListCategoriesBinding
 import com.example.test.presentation.models.CategoryItemDetailsViewData
 import com.example.test.utils.Extensions.withHelper
-import com.example.test.utils.ImageHelper
 
 class CategoryListItemsAdapter(
     private val context: Context?,
     private var items: List<CategoryItemDetailsViewData>,
-    private val callback: (item: CategoryItemDetailsViewData, position: Int) -> Unit
+    private val callback: (item: CategoryItemDetailsViewData) -> Unit
 ) : RecyclerView.Adapter<CategoryListItemsAdapter.Holder>() {
 
     inner class Holder(val binding: ItemListCategoriesBinding) :
@@ -35,14 +34,14 @@ class CategoryListItemsAdapter(
                 context?.run {
                     item.withHelper(this).apply {
                         tvName.text = name
-                        imgItem.load(ImageHelper.getImage(position + 1, type)) {
+                        imgItem.load(image) {
                             listener(onError = { _, _ -> imgItem.setImageResource(R.drawable.ic_star_wars) })
                         }
                         tvInfoOne.text = infoOne
                         tvInfoTwo.text = infoTwo
                     }
                 }
-                cardCategory.setOnClickListener { callback.invoke(item, position) }
+                cardCategory.setOnClickListener { callback.invoke(item) }
             }
         }
     }

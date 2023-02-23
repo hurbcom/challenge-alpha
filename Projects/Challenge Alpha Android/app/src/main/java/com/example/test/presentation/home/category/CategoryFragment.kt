@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.base.data.BaseResult
 import com.example.core.base.presentation.BaseViewModel
 import com.example.core.base.presentation.BaseViewExtensions.hide
+import com.example.core.base.presentation.BaseViewExtensions.hideKeyboard
+import com.example.core.base.presentation.BaseViewExtensions.onRightDrawableClicked
 import com.example.core.base.presentation.BaseViewExtensions.show
 import com.example.core.base.presentation.RecyclerViewPaginatedScrollListener
 import com.example.test.R
@@ -26,9 +29,7 @@ import kotlinx.coroutines.launch
 class CategoryFragment(private val viewModel: BaseViewModel) : Fragment() {
     private lateinit var binding: FragmentCategoryBinding
     private val categoryAdapter by lazy {
-        CategoryListItemsAdapter(context, arrayListOf()) { item, position ->
-            onItemSelected(item, position)
-        }
+        CategoryListItemsAdapter(context, arrayListOf()) { item -> onItemSelected(item) }
     }
 
     override fun onCreateView(
@@ -45,21 +46,21 @@ class CategoryFragment(private val viewModel: BaseViewModel) : Fragment() {
     }
 
     private fun initView() {
-        with(binding.listCategoryItems) {
+        with(binding) {
             val linearLayoutManager = LinearLayoutManager(context)
-            adapter = categoryAdapter
-            layoutManager = linearLayoutManager
-            addOnScrollListener(object : RecyclerViewPaginatedScrollListener(linearLayoutManager) {
-                override fun loadMoreItems() {
-                    viewModel.getNextPage()
-                }
-
+            listCategoryItems.adapter = categoryAdapter
+            listCategoryItems.layoutManager = linearLayoutManager
+            listCategoryItems.addOnScrollListener(object :
+                RecyclerViewPaginatedScrollListener(linearLayoutManager) {
+                override fun loadMoreItems() = viewModel.getNextPage()
                 override fun isLastPage(): Boolean = viewModel.isLastPage()
                 override fun isLoading(): Boolean = viewModel.isLoading()
             })
+            etSearch.addTextChangedListener { viewModel.searchDebounced(it.toString()) }
+            etSearch.onRightDrawableClicked { closeSearch() }
         }
-        viewModel.getListData()
 
+        viewModel.getListData()
     }
 
     private fun setupStateListener() {
@@ -68,7 +69,7 @@ class CategoryFragment(private val viewModel: BaseViewModel) : Fragment() {
                 when (it) {
                     is BaseResult.Success -> setSuccessState(it.data as List<CategoryItemDetailsViewData>)
                     is BaseResult.Error -> setErrorState()
-                    else -> setLoadingState()
+                    is BaseResult.Loading -> setLoadingState(it.shouldShowLoading)
                 }
             }
         }
@@ -77,34 +78,62 @@ class CategoryFragment(private val viewModel: BaseViewModel) : Fragment() {
     private fun setSuccessState(categories: List<CategoryItemDetailsViewData>) {
         categoryAdapter.setItems(categories)
         with(binding) {
+            cardSearch.show()
             listCategoryItems.show()
+            progressPage.hide()
             animation.hide()
+            ctlError.hide()
         }
     }
 
     private fun setErrorState() {
-
-    }
-
-    private fun setLoadingState() {
         with(binding) {
+            cardSearch.hide()
             listCategoryItems.hide()
+            progressPage.hide()
+            ctlError.show()
             animation.run {
                 show()
-                setAnimation(R.raw.loading)
+                setAnimation(R.raw.error)
                 playAnimation()
             }
+            tvErrorMessage.text = getString(R.string.error_retrieving_data)
+            btTryAgain.setOnClickListener { viewModel.getListData(retry = true) }
         }
     }
 
-    private fun onItemSelected(category: CategoryItemDetailsViewData, position: Int) {
+    private fun setLoadingState(shouldShowAnimation: Boolean) {
+        with(binding) {
+            ctlError.hide()
+            if (shouldShowAnimation) {
+                hideKeyboard()
+                cardSearch.hide()
+                listCategoryItems.hide()
+                animation.run {
+                    show()
+                    setAnimation(R.raw.loading)
+                    playAnimation()
+                }
+            } else
+                progressPage.show()
+        }
+    }
+
+    private fun onItemSelected(category: CategoryItemDetailsViewData) {
         findNavController().navigate(
             R.id.action_homeFragment_to_categoryItemDetailsFragment,
-            bundleOf(
-                Constants.CATEGORY_PARAM_KEY to category,
-                Constants.POSITION_PARAM_KEY to position
-            )
+            bundleOf(Constants.CATEGORY_PARAM_KEY to category)
         )
+    }
+
+    private fun closeSearch() {
+        with(binding.etSearch) {
+            if (text.isNotEmpty()) {
+                setText("")
+                clearFocus()
+                hideKeyboard()
+            }
+        }
     }
 
     companion object {

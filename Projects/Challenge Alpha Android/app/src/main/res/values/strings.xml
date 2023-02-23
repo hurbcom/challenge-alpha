@@ -15,4 +15,7 @@
     <string name="diameter">Diameter</string>
     <string name="manufacturer">Manufacturer</string>
     <string name="capacity">Capacity</string>
+    <string name="try_again">Tentar Novamente</string>
+    <string name="error_retrieving_data">Houve um erro ao buscar os dados</string>
+    <string name="search_by_name">Buscar por nome...</string>
 </resources>

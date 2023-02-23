@@ -7,11 +7,13 @@ import kotlinx.coroutines.flow.StateFlow
 abstract class BaseViewModel : ViewModel() {
     abstract val state: StateFlow<BaseResult<List<BaseViewData>>>
 
-    abstract fun getListData()
+    abstract fun getListData(retry: Boolean = false, search: String? = null)
 
     abstract fun isLastPage(): Boolean
 
     abstract fun isLoading(): Boolean
 
     abstract fun getNextPage()
+
+    abstract fun searchDebounced(text: String)
 }

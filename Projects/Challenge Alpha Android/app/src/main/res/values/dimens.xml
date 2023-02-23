@@ -8,6 +8,8 @@
     <dimen name="default_border_width">2dp</dimen>
     <dimen name="default_radius">10dp</dimen>
     <dimen name="default_padding">10dp</dimen>
+    <dimen name="double_padding">20dp</dimen>
+    <dimen name="quintuple_padding">50dp</dimen>
     <dimen name="default_margin">10dp</dimen>
     <dimen name="double_margin">20dp</dimen>
 

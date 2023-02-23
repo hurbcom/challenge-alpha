@@ -2,15 +2,16 @@ package com.example.test.utils
 
 import android.content.Context
 import com.example.core.base.presentation.BaseExtensions.capitalizeWords
-import com.example.core.base.presentation.CategoryType
 import com.example.test.R
 import com.example.test.presentation.models.CategoryItemDetailsViewData
+import com.example.test.presentation.models.CategoryType
 
 object Extensions {
     fun CategoryItemDetailsViewData.withHelper(context: Context): CategoryItemDetailsViewData {
         return when (type) {
             CategoryType.PEOPLE -> CategoryItemDetailsViewData(
                 type = this.type,
+                image = this.image,
                 name = this.name.capitalizeWords(),
                 infoOne = "${context.getString(R.string.height)}: $infoOne cm".capitalizeWords(),
                 infoTwo = "${context.getString(R.string.weight)}: $infoTwo kg".capitalizeWords(),
@@ -20,6 +21,7 @@ object Extensions {
 
             CategoryType.PLANETS -> CategoryItemDetailsViewData(
                 type = this.type,
+                image = this.image,
                 name = this.name.capitalizeWords(),
                 infoOne = "${context.getString(R.string.climate)}: $infoOne".capitalizeWords(),
                 infoTwo = "${context.getString(R.string.population)}: $infoTwo".capitalizeWords(),
@@ -29,6 +31,7 @@ object Extensions {
 
             else -> CategoryItemDetailsViewData(
                 type = this.type,
+                image = this.image,
                 name = this.name.capitalizeWords(),
                 infoOne = "${context.getString(R.string.type)}: $infoOne".capitalizeWords(),
                 infoTwo = "${context.getString(R.string.passengers)}: $infoTwo".capitalizeWords(),

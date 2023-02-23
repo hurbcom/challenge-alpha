@@ -6,4 +6,5 @@ data class Starship(
     val name: String,
     val passengers: String,
     val starshipClass: String,
+    val image: String
 )
