@@ -1,6 +1,6 @@
 package com.example.test.data.repositories.home
 
-import com.example.core.base.BaseResult
+import com.example.core.base.data.BaseResult
 import com.example.test.data.datasources.network.StarWarsApi
 import com.example.test.data.mappers.DataMapper.map
 import com.example.test.domain.models.Planet

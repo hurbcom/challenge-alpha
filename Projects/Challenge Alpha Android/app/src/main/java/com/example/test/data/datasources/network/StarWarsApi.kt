@@ -1,8 +1,8 @@
 package com.example.test.data.datasources.network
 
-import com.example.test.data.datasources.network.models.people.PersonResponse
-import com.example.test.data.datasources.network.models.people.PlanetResponse
-import com.example.test.data.datasources.network.models.people.StarshipResponse
+import com.example.test.data.datasources.network.models.PersonResponse
+import com.example.test.data.datasources.network.models.PlanetResponse
+import com.example.test.data.datasources.network.models.StarshipResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

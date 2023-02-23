@@ -1,9 +1,8 @@
 package com.example.test.data.mappers
 
-import com.example.test.data.datasources.network.models.*
-import com.example.test.data.datasources.network.models.people.PersonResponse
-import com.example.test.data.datasources.network.models.people.PlanetResponse
-import com.example.test.data.datasources.network.models.people.StarshipResponse
+import com.example.test.data.datasources.network.models.PersonResponse
+import com.example.test.data.datasources.network.models.PlanetResponse
+import com.example.test.data.datasources.network.models.StarshipResponse
 import com.example.test.domain.models.*
 
 object DataMapper {

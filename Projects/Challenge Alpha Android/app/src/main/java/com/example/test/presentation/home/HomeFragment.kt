@@ -5,29 +5,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.example.test.R
 import com.example.test.databinding.FragmentHomeBinding
 import com.example.test.presentation.home.adapters.CategoriesPagerAdapter
-import com.example.test.presentation.home.people.PeopleFragment
-import com.example.test.presentation.home.planets.PlanetsFragment
-import com.example.test.presentation.home.starships.StarshipsFragment
+import com.example.test.presentation.home.category.CategoryFragment
+import com.example.test.presentation.home.category.PeopleViewModel
+import com.example.test.presentation.home.category.PlanetsViewModel
+import com.example.test.presentation.home.category.StarshipsViewModel
+import com.example.test.utils.Constants.PEOPLE_HOME_INDEX
+import com.example.test.utils.Constants.PLANETS_HOME_INDEX
+import com.example.test.utils.Constants.STARSHIPS_HOME_INDEX
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private val peopleViewModel: PeopleViewModel by viewModels()
+    private val planetsViewModel: PlanetsViewModel by viewModels()
+    private val starshipsViewModel: StarshipsViewModel by viewModels()
     private val homeFragments by lazy {
         arrayListOf(
-            PeopleFragment.newInstance(),
-            PlanetsFragment.newInstance(),
-            StarshipsFragment.newInstance()
+            CategoryFragment.newInstance(peopleViewModel),
+            CategoryFragment.newInstance(planetsViewModel),
+            CategoryFragment.newInstance(starshipsViewModel)
         )
-    }
-    private val categoriesPagerAdapter: CategoriesPagerAdapter? by lazy {
-        activity?.run {
-            CategoriesPagerAdapter(homeFragments, supportFragmentManager, lifecycle)
-        } ?: null
     }
 
     override fun onCreateView(
@@ -46,7 +49,12 @@ class HomeFragment : Fragment() {
     private fun initView() {
         with(binding) {
             vpCategories.run {
-                adapter = categoriesPagerAdapter
+                activity?.run {
+                    adapter = CategoriesPagerAdapter(
+                        homeFragments, supportFragmentManager, lifecycle
+                    )
+                }
+
                 registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                     override fun onPageSelected(position: Int) {
                         super.onPageSelected(position)
@@ -57,21 +65,20 @@ class HomeFragment : Fragment() {
             navHomes.setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.itemPeople -> {
-                        vpCategories.currentItem = 0
+                        vpCategories.currentItem = PEOPLE_HOME_INDEX
                         return@setOnItemSelectedListener true
                     }
                     R.id.itemPlanets -> {
-                        vpCategories.currentItem = 1
+                        vpCategories.currentItem = PLANETS_HOME_INDEX
                         return@setOnItemSelectedListener true
                     }
                     R.id.itemStarships -> {
-                        vpCategories.currentItem = 2
+                        vpCategories.currentItem = STARSHIPS_HOME_INDEX
                         return@setOnItemSelectedListener true
                     }
                     else -> return@setOnItemSelectedListener false
                 }
             }
-
         }
     }
 }

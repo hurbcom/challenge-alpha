@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.core.base.BaseFragment
+import com.example.core.base.presentation.BaseFragment
 import com.example.test.R
 import com.example.test.databinding.FragmentSplashBinding
 import com.example.test.utils.Constants.SPLASH_NAV_DELAY

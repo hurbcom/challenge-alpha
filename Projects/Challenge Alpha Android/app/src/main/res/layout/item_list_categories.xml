@@ -2,6 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardCategory"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/default_margin"
@@ -20,21 +21,21 @@
             android:id="@+id/imgItem"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.3"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_star_wars"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.3" />
 
         <View
             android:id="@+id/divider"
             android:layout_width="@dimen/default_border_width"
             android:layout_height="0dp"
             android:background="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imgItem"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvName"
@@ -44,16 +45,16 @@
             android:textColor="@color/yellow"
             android:textSize="@dimen/text_size_large"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/divider"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Luke Skywalker" />
 
         <ImageView
             android:id="@+id/imgInfoOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/double_margin"
             android:layout_marginVertical="@dimen/double_margin"
+            android:layout_marginRight="@dimen/double_margin"
             android:src="@drawable/ic_info"
             app:layout_constraintStart_toStartOf="@+id/tvName"
             app:layout_constraintTop_toBottomOf="@id/tvName"
@@ -80,22 +81,22 @@
             android:layout_marginRight="@dimen/double_margin"
             android:layout_marginBottom="@dimen/double_margin"
             android:src="@drawable/ic_info"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvName"
             app:layout_constraintTop_toBottomOf="@+id/imgInfoOne"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:tint="@color/yellow" />
 
         <TextView
             android:id="@+id/tvInfoTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:layout_marginHorizontal="@dimen/default_margin"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/imgInfoTwo"
-            app:layout_constraintTop_toTopOf="@+id/imgInfoTwo"
             app:layout_constraintStart_toEndOf="@+id/imgInfoTwo"
+            app:layout_constraintTop_toTopOf="@+id/imgInfoTwo"
             tools:text="85 kg" />
 
 

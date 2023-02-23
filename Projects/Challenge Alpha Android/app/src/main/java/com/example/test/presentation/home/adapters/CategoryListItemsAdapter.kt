@@ -5,20 +5,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.request.ImageRequest
-import coil.size.Scale
-import com.example.core.base.Extensions.withDots
 import com.example.test.R
 import com.example.test.databinding.ItemListCategoriesBinding
-import com.example.test.domain.models.Person
-import com.example.test.domain.models.Planet
-import com.example.test.domain.models.Starship
+import com.example.test.presentation.models.CategoryItemDetailsViewData
+import com.example.test.utils.Extensions.withHelper
 import com.example.test.utils.ImageHelper
 
-class CategoryListItemsAdapter<T>(
+class CategoryListItemsAdapter(
     private val context: Context?,
-    private var items: List<T>
-) : RecyclerView.Adapter<CategoryListItemsAdapter<T>.Holder>() {
+    private var items: List<CategoryItemDetailsViewData>,
+    private val callback: (item: CategoryItemDetailsViewData, position: Int) -> Unit
+) : RecyclerView.Adapter<CategoryListItemsAdapter.Holder>() {
 
     inner class Holder(val binding: ItemListCategoriesBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -35,38 +32,22 @@ class CategoryListItemsAdapter<T>(
     override fun onBindViewHolder(holder: Holder, position: Int) {
         items[position].let { item ->
             with(holder.binding) {
-                var image = ""
-                when (item) {
-                    is Person -> {
-                        image = ImageHelper.getPeopleImage(position + 1)
-                        tvName.text = item.name
-                        tvInfoOne.text = "${context?.getString(R.string.height)}: ${item.height} cm"
-                        tvInfoTwo.text = "${context?.getString(R.string.weight)}: ${item.mass} kg"
-                    }
-                    is Planet -> {
-                        image = ImageHelper.getPlanetsImage(position + 1)
-                        tvName.text = item.name
-                        tvInfoOne.text = "${context?.getString(R.string.climate)}: ${item.climate}"
-                        tvInfoTwo.text =
-                            "${context?.getString(R.string.population)}: ${item.population}"
-                    }
-                    is Starship -> {
-                        image = ImageHelper.getStarshipsImage(position + 1)
-                        tvName.text = item.name
-                        tvInfoOne.text =
-                            "${context?.getString(R.string.type)}: ${item.starshipClass}"
-                        tvInfoTwo.text =
-                            "${context?.getString(R.string.passengers)}: ${item.passengers}"
+                context?.run {
+                    item.withHelper(this).apply {
+                        tvName.text = name
+                        imgItem.load(ImageHelper.getImage(position + 1, type)) {
+                            listener(onError = { _, _ -> imgItem.setImageResource(R.drawable.ic_star_wars) })
+                        }
+                        tvInfoOne.text = infoOne
+                        tvInfoTwo.text = infoTwo
                     }
                 }
-                imgItem.load(image) {
-                    listener(onError = { _, _ -> imgItem.setImageResource(R.drawable.ic_star_wars) })
-                }
+                cardCategory.setOnClickListener { callback.invoke(item, position) }
             }
         }
     }
 
-    fun setItems(it: List<T>) {
+    fun setItems(it: List<CategoryItemDetailsViewData>) {
         this.items = it
         notifyDataSetChanged()
     }
