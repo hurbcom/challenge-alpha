@@ -14,6 +14,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.getAndUpdate
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -38,7 +39,7 @@ class PlanetsViewModel @Inject constructor(
             }
             _state.value = BaseResult.Loading(shouldShowLoading)
 
-            getPlanetsUseCase.performAction(ListGetParams(_page.value, search)).collect {
+            getPlanetsUseCase.performAction(ListGetParams(_page.value, search)).collectLatest {
                 if (it is BaseResult.Success) {
                     _currentItems.getAndUpdate { currentItems -> currentItems.plus(it.data) }
                     _state.value = it.copy(_currentItems.value, it.extraData)

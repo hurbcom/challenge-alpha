@@ -23,6 +23,7 @@ import com.example.test.presentation.home.adapters.CategoryListItemsAdapter
 import com.example.test.presentation.models.CategoryItemDetailsViewData
 import com.example.test.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -65,7 +66,7 @@ class CategoryFragment(private val viewModel: BaseViewModel) : Fragment() {
 
     private fun setupStateListener() {
         lifecycleScope.launch {
-            viewModel.state.collect {
+            viewModel.state.collectLatest {
                 when (it) {
                     is BaseResult.Success -> setSuccessState(it.data as List<CategoryItemDetailsViewData>)
                     is BaseResult.Error -> setErrorState()

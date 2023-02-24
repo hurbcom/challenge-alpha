@@ -34,9 +34,7 @@ class CategoryListItemsAdapter(
                 context?.run {
                     item.withHelper(this).apply {
                         tvName.text = name
-                        imgItem.load(image) {
-                            listener(onError = { _, _ -> imgItem.setImageResource(R.drawable.ic_star_wars) })
-                        }
+                        imgItem.load(image)
                         tvInfoOne.text = infoOne
                         tvInfoTwo.text = infoTwo
                     }
