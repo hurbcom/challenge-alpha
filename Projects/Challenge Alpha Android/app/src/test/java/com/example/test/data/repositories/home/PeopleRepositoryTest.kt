@@ -4,7 +4,6 @@ import com.example.core.base.data.BaseResult
 import com.example.test.MainDispatcherRule
 import com.example.test.data.datasources.network.StarWarsApi
 import com.example.test.data.mappers.DataMapper.map
-import com.example.test.domain.models.Person
 import com.example.test.domain.repositories.home.PeopleRepository
 import com.example.test.mocks.RepositoryMocks
 import com.example.test.utils.Constants
@@ -12,10 +11,7 @@ import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Before

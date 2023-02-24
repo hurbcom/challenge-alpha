@@ -17,6 +17,10 @@ object BaseViewExtensions {
         visibility = View.VISIBLE
     }
 
+    fun View.showConditional(show: Boolean) {
+        visibility = View.VISIBLE.takeIf { show } ?: View.GONE
+    }
+
     fun EditText.onRightDrawableClicked(onClicked: (view: EditText) -> Unit) {
         this.setOnTouchListener { v, event ->
             var hasConsumed = false

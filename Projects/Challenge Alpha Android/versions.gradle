@@ -36,7 +36,6 @@ ext {
     mockito_version = '2.27.0'
     mockito_kotlin_version = '2.1.0'
     mockk_version = '1.13.4'
-    turbine_version = '0.12.1'
     core_ktx_test_version = "1.2.0"
     test_runner_version = '1.1.1'
     espresso_version = '3.5.1'

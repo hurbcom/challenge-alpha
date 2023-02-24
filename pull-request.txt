@@ -1,3 +1,86 @@
-Your name: ___
-Your Github homepage: ___
-Original challenge URL: http://github.com/hurbcom/challenge-___
+Your name: Eduardo de Oliveira Freitas
+Your Github homepage: https://github.com/edu1525
+Original challenge URL: https://github.com/hurbcom/challenge-alpha
+
+
+------------------------------------------------------------------
+1. Especificações Técnicas
+	- SDK (Versão Mínima): 24
+	- SDK (Versão Alvo):   33
+	- Pacote:   	       com.example.test
+	- Arquitetura: 	       MVVM + Clean Architecture
+	- Bibliotecas:		
+		- Dagger Hilt (Injeção de Dependências)
+		- Retrofit (Requisições HTTP)
+		- Coil (Carregamento e cache de imagens
+		- Mockk e Mockito (Mock dos testes unitários)		 
+		- Lottie (Animações em json)
+
+
+
+
+		
+
+------------------------------------------------------------------
+2. Descrição
+
+
+Este projeto consiste no desenvolvimento de uma aplicação Android nativa, utilizando a linguagem Kotlin e o padrão de arquitetura MVVM com Clean Architecture para listar os personagens, planetas e naves do universo Star Wars. 
+
+Temos portanto a separação das classes através da estrutura: 
+	- Presentation: Todas as classes relacionadas à view (Activities, Fragments, ViewModels, Adapters de Lista e Entidades da camada de apresentação).
+	- Domain: São as classes relacionadas às Regras de Negócio da aplicação (UseCases e Entidades da camada de negócio).
+	- Data: São as classes relacionadas às fontes de dados da aplicação (ApiService, Repositories e Entidades da camada de dados).
+
+	* A camada de Domain define o contrato dos Repositories, implementado na camada de Data.
+
+
+Estrutura da Arquitetura MVVM
+	Apresentação: Este projeto foi construído utilizando o Navigation Component para navegar entre telas, dessa forma toda a aplicação roda em uma única Activity 
+		      e as telas são construídas utilizando Fragments, todos os layouts foram construídos utilizando arquivos XML e Constraint Layouts.
+			
+		      A tela inicial é construída com a estrutura de ViewPager e suas telas foram construída utilizado um Fragment reutilizável e genérico.
+
+	
+
+	Domain:       Nesta camada foram criados os UseCases da aplicação, para cada listagem de categoria foi criado um UseCase específico.
+
+
+
+	Data: 	     Aqui foram definidos os repositories da aplicação, para cada tipo de categoria foi criado um repository específico, também aqui foi definido o contrato de chamada ao serviço da Retrofit.
+
+	
+	* O projeto também conta com um segundo módulo Core, responsável por separar os arquivos de base do projeto principal e permitir que sejam facilmente reutilizados em outros lugares e projetos futuros.
+
+	* O projeto possui um build variant mockado, ou seja, ao selecionar o build variant "mock", a aplicação consome a versão mockada da api e exibe dados locais.
+
+
+
+
+
+------------------------------------------------------------------
+3. Testes Unitários
+
+Por se tratar de uma aplicação simples e com um tempo limitado para desenvolvimento, foram desenvolvidos testes unitários para as classes de ViewModel, UseCase e Repository apenas para a categoria People. 
+
+
+
+
+
+
+
+------------------------------------------------------------------
+4. Observações
+
+Foi desenvolvida a paginação infinita nas listas de categorias, dessa forma ao atingir o final do scroll, a aplicação automaticamente solicita o carregamento da próxima página de dados.
+
+
+
+
+
+
+------------------------------------------------------------------
+5. Melhorias
+
+	- Desenvolver os testes unitários para as outras 2 categorias escolhidas (Planets e Starships)
+	- Variáveis de ambiente foram definidas diretamente no Gradle, essas informações não devem ficar dentro do projeto, poderiam estar na máquina do desenvolvedor e apenas serem lidas em tempo de build, ou então serem retornadas por um backend específico.

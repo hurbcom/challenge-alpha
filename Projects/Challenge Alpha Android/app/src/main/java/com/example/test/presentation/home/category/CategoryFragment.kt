@@ -16,6 +16,7 @@ import com.example.core.base.presentation.BaseViewExtensions.hide
 import com.example.core.base.presentation.BaseViewExtensions.hideKeyboard
 import com.example.core.base.presentation.BaseViewExtensions.onRightDrawableClicked
 import com.example.core.base.presentation.BaseViewExtensions.show
+import com.example.core.base.presentation.BaseViewExtensions.showConditional
 import com.example.core.base.presentation.RecyclerViewPaginatedScrollListener
 import com.example.test.R
 import com.example.test.databinding.FragmentCategoryBinding
@@ -80,7 +81,7 @@ class CategoryFragment(private val viewModel: BaseViewModel) : Fragment() {
         categoryAdapter.setItems(categories)
         with(binding) {
             cardSearch.show()
-            listCategoryItems.show()
+            listCategoryItems.showConditional(categories.isNotEmpty())
             progressPage.hide()
             animation.hide()
             ctlError.hide()
