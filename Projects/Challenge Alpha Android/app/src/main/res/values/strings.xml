@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">StarWars</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_movie_key">nome</string>
+    <string name="launch_movie_key">lançamento</string>
+    <string name="director_movie_key">Diretor</string>
+    <string name="productor_movie_key">Produtor</string>
+    <string name="opening_movie_key">Abertura:</string>
+    <string name="name_people_key">name</string>
+    <string name="height_people_key">altura</string>
+    <string name="mass_people_key">peso</string>
+    <string name="eyes_people_key">cor dos olhos</string>
+    <string name="birth_year_people_key">ano de nascimento</string>
+    <string name="character_key">Personagens</string>
+    <string name="films_key">Filmes</string>
+    <string name="ss">Nome</string>
+    <string name="application_name">StarWars</string>
+</resources>

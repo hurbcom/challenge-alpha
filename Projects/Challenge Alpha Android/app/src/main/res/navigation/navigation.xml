@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/listSelectorFragment">
+
+
+    <fragment
+        android:id="@+id/listSelectorFragment"
+        android:name="com.example.starwars.presentation.feature.ListSelectorFragment"
+        android:label="fragment_list_selector"
+        tools:layout="@layout/fragment_list_selector">
+
+        <action
+            android:id="@+id/action_listSelectorFragment_to_listMovieFragment"
+            app:destination="@id/listMovieFragment" />
+        <action
+            android:id="@+id/action_listSelectorFragment_to_listPeopleFragment"
+            app:destination="@id/listPeopleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listMovieFragment"
+        android:name="com.example.starwars.presentation.feature.listmovie.ListMovieFragment"
+        android:label="fragment_list_movie"
+        tools:layout="@layout/fragment_list_movie" >
+        <action
+            android:id="@+id/action_listMovieFragment_to_detailsMovieFragment"
+            app:destination="@id/detailsMovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listPeopleFragment"
+        android:name="com.example.starwars.presentation.feature.listpeople.ListPeopleFragment"
+        android:label="fragment_list_people"
+        tools:layout="@layout/fragment_list_people" >
+        <action
+            android:id="@+id/action_listPeopleFragment_to_detailsPeopleFragment"
+            app:destination="@id/detailsPeopleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsMovieFragment"
+        android:name="com.example.starwars.presentation.feature.DetailsMovieFragment"
+        android:label="fragment_details_movie"
+        tools:layout="@layout/fragment_details_movie" >
+        <argument
+            android:name="movie"
+            app:argType="com.example.starwars.presentation.model.Movie"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailsPeopleFragment"
+        android:name="com.example.starwars.presentation.feature.DetailsPeopleFragment"
+        android:label="DetailsPeopleFragment" >
+        <argument
+            android:name="people"
+            app:argType="com.example.starwars.presentation.model.People"/>
+    </fragment>
+
+
+</navigation>

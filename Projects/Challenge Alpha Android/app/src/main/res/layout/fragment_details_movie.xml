@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:context=".presentation.feature.DetailsMovieFragment">
+
+        <ImageView
+            android:id="@+id/fdMovieImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/fdMovieImage"
+            app:layout_constraintEnd_toEndOf="@+id/fdMovieImage"
+            app:layout_constraintStart_toStartOf="@+id/fdMovieImage"
+            app:layout_constraintTop_toTopOf="@+id/fdMovieImage" />
+
+        <TextView
+            android:id="@+id/fdTitleKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:text="@string/title_movie_key"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fdMovieImage" />
+
+        <TextView
+            android:id="@+id/fdTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toEndOf="@id/fdTitleKey"
+            app:layout_constraintTop_toBottomOf="@id/fdMovieImage"
+            tools:text="A New Hope" />
+
+        <TextView
+            android:id="@+id/fdLaunchKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:text="@string/launch_movie_key"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fdTitleKey" />
+
+        <TextView
+            android:id="@+id/fdLaunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toEndOf="@id/fdLaunchKey"
+            app:layout_constraintTop_toBottomOf="@id/fdTitle"
+            tools:text="25/05/1997" />
+
+        <TextView
+            android:id="@+id/fdDirectorKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:text="@string/director_movie_key"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fdLaunchKey" />
+
+        <TextView
+            android:id="@+id/fdDirector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toEndOf="@id/fdDirectorKey"
+            app:layout_constraintTop_toBottomOf="@id/fdLaunch"
+            tools:text="George Lucas" />
+
+        <TextView
+            android:id="@+id/fdProduceKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:text="@string/productor_movie_key"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fdDirectorKey" />
+
+        <TextView
+            android:id="@+id/fdProduce"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:textColor="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@id/fdProduceKey"
+            app:layout_constraintTop_toBottomOf="@id/fdDirector"
+            tools:text="Gary Kurtz, Rick McCallum" />
+
+        <TextView
+            android:id="@+id/fdOpeningKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:text="@string/opening_movie_key"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fdProduce" />
+
+        <TextView
+            android:id="@+id/fdOpening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:textColor="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fdOpeningKey"
+            tools:text="It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy...." />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

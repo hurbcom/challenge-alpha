@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ilImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ilFirstKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin"
+        android:text="@string/name_people_key"
+        android:textColor="@color/yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ilImage" />
+
+    <TextView
+        android:id="@+id/ilFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin"
+        android:textColor="@color/yellow"
+        app:layout_constraintStart_toEndOf="@id/ilFirstKey"
+        app:layout_constraintTop_toBottomOf="@id/ilImage"
+        tools:text="Luke Skywalker" />
+
+    <TextView
+        android:id="@+id/ilSecondKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin"
+        android:text="@string/height_people_key"
+        android:textColor="@color/yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ilFirstKey" />
+
+    <TextView
+        android:id="@+id/ilSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin"
+        android:textColor="@color/yellow"
+        app:layout_constraintStart_toEndOf="@id/ilSecondKey"
+        app:layout_constraintTop_toBottomOf="@id/ilFirst"
+        tools:text="172cm" />
+
+    <TextView
+        android:id="@+id/ilThirdKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin"
+        android:text="@string/mass_people_key"
+        android:textColor="@color/yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ilSecondKey" />
+
+    <TextView
+        android:id="@+id/ilThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin"
+        android:textColor="@color/yellow"
+        app:layout_constraintStart_toEndOf="@id/ilFirstKey"
+        app:layout_constraintTop_toBottomOf="@id/ilSecondKey"
+        tools:text="77kg" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/ilImage"
+        app:layout_constraintEnd_toEndOf="@+id/ilImage"
+        app:layout_constraintStart_toStartOf="@+id/ilImage"
+        app:layout_constraintTop_toTopOf="@+id/ilImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
