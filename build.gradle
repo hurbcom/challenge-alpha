@@ -1,0 +1,37 @@
+buildscript {
+    ext {
+        kotlin_version = '1.8.0'
+        compose_version = '1.4.0-rc1'
+        viewmodel_compose_version = '2.6.0'
+        activity_compose_version = '1.7.0-beta02'
+        coil_compose_version = '2.2.2'
+        accompanist_compose_version = '0.23.0'
+        coroutines_version = '1.6.0'
+        material_version = '1.7.0'
+        material_icons_version = '1.4.0-rc1'
+        core_ktx_version = '1.9.0'
+        lifecycle_version = '2.6.0'
+        room_version = '2.5.0'
+        koin_version = '3.3.3'
+        koin_compose_version = '3.4.2'
+        koin_core_version = '3.1.5'
+        koin_compose = '3.1.5'
+        retrofit_version = '2.9.0'
+        okhttp_version = '4.10.0'
+        room_version = '2.5.0'
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
