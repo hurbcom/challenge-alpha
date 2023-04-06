@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.HurbAndroidChallenge" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="SplashScreenTheme" parent="Theme.HurbAndroidChallenge">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+    </style>
+
 </resources>
