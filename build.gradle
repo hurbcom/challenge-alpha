@@ -1,7 +1,7 @@
 buildscript {
     ext {
-        kotlin_version = '1.8.0'
-        compose_version = '1.4.0-rc1'
+        kotlin_version = '1.8.10'
+        compose_version = '1.4.1'
         viewmodel_compose_version = '2.6.0'
         activity_compose_version = '1.7.0-beta02'
         coil_compose_version = '2.2.2'
