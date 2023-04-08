@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.hurbandroidchallenge'
+    namespace 'br.com.hurbandroidchallenge'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.hurbandroidchallenge"
+        applicationId 'br.com.hurbandroidchallenge'
         minSdk 23
         targetSdk 33
         versionCode 1
@@ -27,13 +27,11 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", "\"https://swapi.dev\""
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", "\"https://swapi.dev\""
         }
     }
     compileOptions {
@@ -120,4 +118,8 @@ dependencies {
 
     // Startup
     implementation "androidx.startup:startup-runtime:1.1.1"
+
+    // Serialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
+    implementation 'com.google.code.gson:gson:2.10.1'
 }

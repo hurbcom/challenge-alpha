@@ -11,11 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HurbAndroidChallenge"
         tools:targetApi="31">
+
         <activity
-            android:name=".MainActivity"
+            android:name="br.com.hurbandroidchallenge.MainActivity"
             android:theme="@style/Theme.HurbAndroidChallenge" />
+
         <activity
-            android:name=".presentation.screens.splash.SplashActivity"
+            android:name="br.com.hurbandroidchallenge.presentation.screens.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
@@ -23,6 +25,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+
+            <meta-data
+                android:name="br.br.com.hurbandroidchallenge.domain.initializer.KoinInitializer"
+                android:value="androidx.startup" />
+
+
+        </provider>
+
     </application>
 
 </manifest>
