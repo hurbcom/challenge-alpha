@@ -6,7 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import br.com.hurbandroidchallenge.MainActivity
+import br.com.hurbandroidchallenge.presentation.MainActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : ComponentActivity() {

@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge
+package br.com.hurbandroidchallenge.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,17 +10,15 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import br.com.hurbandroidchallenge.presentation.compose.theme.HurbAndroidChallengeTheme
+import br.com.hurbandroidchallenge.presentation.navGraph.NavHostScreen
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             HurbAndroidChallengeTheme {
-                Surface {
-                    Box(modifier = Modifier.fillMaxSize()) {
-                        Text(modifier = Modifier.align(Alignment.Center), text = "Hello world")
-                    }
-                }
+                NavHostScreen()
             }
         }
     }
