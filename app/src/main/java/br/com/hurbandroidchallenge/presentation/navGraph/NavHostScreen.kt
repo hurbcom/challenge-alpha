@@ -1,6 +1,5 @@
 package br.com.hurbandroidchallenge.presentation.navGraph
 
-import androidx.activity.OnBackPressedDispatcher
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable

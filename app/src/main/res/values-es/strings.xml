@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Star Wars Book</string>
+
+    <string name="home_categories_people">Caracteres</string>
+    <string name="home_categories_films">Películas</string>
+    <string name="home_categories_species">Especies</string>
+    <string name="home_categories_starships">Nave espacial</string>
+    <string name="home_categories_vehicles">Vehículos</string>
+    <string name="home_categories_planets">Planetas</string>
+
+</resources>

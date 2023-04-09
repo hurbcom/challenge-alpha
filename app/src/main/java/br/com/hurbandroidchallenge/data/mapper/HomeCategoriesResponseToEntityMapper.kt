@@ -1,12 +1,12 @@
 package br.com.hurbandroidchallenge.data.mapper
 
 import br.com.hurbandroidchallenge.commom.mapper.Mapper
-import br.com.hurbandroidchallenge.data.remote.model.HomeListResponse
-import br.com.hurbandroidchallenge.domain.model.HomeList
+import br.com.hurbandroidchallenge.data.remote.model.HomeCategoriesResponse
+import br.com.hurbandroidchallenge.domain.model.HomeCategories
 
-class HomeListResponseToEntityMapper : Mapper<HomeListResponse, HomeList> {
-    override fun map(input: HomeListResponse) = input.run {
-        HomeList(
+class HomeCategoriesResponseToEntityMapper : Mapper<HomeCategoriesResponse, HomeCategories> {
+    override fun map(input: HomeCategoriesResponse) = input.run {
+        HomeCategories(
             people = people.orEmpty(),
             films = films.orEmpty(),
             planets = planets.orEmpty(),

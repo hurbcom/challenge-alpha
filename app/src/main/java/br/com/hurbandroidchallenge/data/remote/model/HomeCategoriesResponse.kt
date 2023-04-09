@@ -2,7 +2,7 @@ package br.com.hurbandroidchallenge.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 
-class HomeListResponse(
+class HomeCategoriesResponse(
     @SerializedName("people") val people: String?,
     @SerializedName("planets") val planets: String?,
     @SerializedName("films") val films: String?,
