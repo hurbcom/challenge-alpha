@@ -16,7 +16,7 @@ class TravelService{
         
         let query = HUGraphQL.SearchPackageQuery(q: local, filters: nil, pagination: .init(
             page: 1,
-            limit: 1,
+            limit: 20,
             sort: .price,
             sortOrder: .desc), l10n: .init(pos: "br", locale: "pt", currency: "BRL"))
         

@@ -13,12 +13,10 @@ import RxSwift
 class HomeViewModel{
     
     var viewDidDisappear = DelegateView<Void>()
-    private let packagesSubject = PublishSubject<[PackageResult]>()
-    var packages : Observable<[PackageResult]> {
-        return packagesSubject.asObservable()
-    }
+    let packagesSubject = PublishSubject<[PackageResult]>()
+
     
-    func testApi(){
+    func fetchPackages(){
 
         TravelService().searchPackage { result in
             switch result {
@@ -27,6 +25,7 @@ class HomeViewModel{
                 let packageItem = try? JSONDecoder().decode(PackageItem.self, from: jsonData ?? Data())
                 if let results = packageItem?.searchPackage.results{
                     self.packagesSubject.onNext(results)
+                    self.packagesSubject.onCompleted()
                 }
             case .failure(let error):
                 print("Failed to fetch user data: \(error)")

@@ -10,16 +10,19 @@ import ImageSlideshow
 
 class HomeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var slideShow: ImageSlideshow!
     @IBOutlet weak var titulo: UILabel!
     @IBOutlet weak var diferencial: UILabel!
     @IBOutlet weak var preco: UILabel!
     @IBOutlet weak var local: UILabel!
+    @IBOutlet weak var data: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        slideShow.setImageInputs(<#T##inputs: [InputSource]##[InputSource]#>)
+
+        
         
     }
 
@@ -30,3 +33,20 @@ class HomeTableViewCell: UITableViewCell {
     }
     
 }
+
+extension HomeTableViewCell{
+    
+    func setupUI(){
+        let pageIndicator = UIPageControl()
+        pageIndicator.currentPageIndicatorTintColor = UIColor(named: "AccentColor")
+        pageIndicator.pageIndicatorTintColor = UIColor.black
+        slideShow.pageIndicator = pageIndicator
+        slideShow.contentScaleMode = .scaleAspectFill
+        self.view.layer.cornerRadius = 8
+        self.view.layer.masksToBounds = true
+
+    }
+}
+
+
+
