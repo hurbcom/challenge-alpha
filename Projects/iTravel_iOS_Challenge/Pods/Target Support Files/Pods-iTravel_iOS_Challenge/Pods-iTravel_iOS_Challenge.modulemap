@@ -1,0 +1,6 @@
+framework module Pods_iTravel_iOS_Challenge {
+  umbrella header "Pods-iTravel_iOS_Challenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
