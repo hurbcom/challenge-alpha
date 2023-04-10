@@ -10,6 +10,10 @@ androidxCore = "1.10.0"
 androidxAppcompat = "1.6.1"
 material = "1.8.0"
 androidxConstraintlayout = "2.1.4"
+timber = "5.0.1"
+hilt = "2.45"
+ktlint = "11.3.1"
+detekt = "1.22.0"
 
 junit = "4.13.2"
 androidxTestExtJunit = "1.1.5"
@@ -20,6 +24,9 @@ androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "and
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidxConstraintlayout" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExtJunit" }
@@ -30,3 +37,7 @@ androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-co
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
