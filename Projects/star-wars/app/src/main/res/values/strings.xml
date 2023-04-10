@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Star Wars</string>
+    <string name="nav_label_home">Categorias</string>
 </resources>

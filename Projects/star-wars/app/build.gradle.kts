@@ -65,6 +65,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
 
+    implementation(libs.navigation)
+
     implementation(libs.timber)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

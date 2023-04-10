@@ -14,6 +14,7 @@ timber = "5.0.1"
 hilt = "2.45"
 ktlint = "11.3.1"
 detekt = "1.22.0"
+navigation = "2.5.3"
 
 junit = "4.13.2"
 androidxTestExtJunit = "1.1.5"
@@ -27,6 +28,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+navigation = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExtJunit" }
