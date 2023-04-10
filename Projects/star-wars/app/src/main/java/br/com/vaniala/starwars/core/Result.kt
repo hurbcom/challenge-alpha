@@ -1,4 +1,4 @@
-package br.com.vaniala.starwars.data.remote.service
+package br.com.vaniala.starwars.core
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.transform

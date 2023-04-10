@@ -1,7 +1,7 @@
 package br.com.vaniala.starwars.domain.usecase
 
+import br.com.vaniala.starwars.core.Result
 import br.com.vaniala.starwars.data.mapper.toCategoryList
-import br.com.vaniala.starwars.data.remote.service.Result
 import br.com.vaniala.starwars.domain.model.Category
 import br.com.vaniala.starwars.domain.repository.CategoryRepository
 import kotlinx.coroutines.Dispatchers

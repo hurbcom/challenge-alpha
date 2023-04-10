@@ -2,11 +2,11 @@ package br.com.vaniala.starwars.ui.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.vaniala.starwars.data.remote.service.doOnFailure
-import br.com.vaniala.starwars.data.remote.service.doOnLoading
-import br.com.vaniala.starwars.data.remote.service.doOnSuccess
+import br.com.vaniala.starwars.core.State
+import br.com.vaniala.starwars.core.doOnFailure
+import br.com.vaniala.starwars.core.doOnLoading
+import br.com.vaniala.starwars.core.doOnSuccess
 import br.com.vaniala.starwars.domain.usecase.GetCategoriesUseCase
-import br.com.vaniala.starwars.ui.home.HomeState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -23,7 +23,7 @@ class HomeViewModel @Inject constructor(
     private val getCategoriesUseCase: GetCategoriesUseCase,
 ) : ViewModel() {
 
-    private val _categories = MutableStateFlow<HomeState>(HomeState.Loading)
+    private val _categories = MutableStateFlow<State>(State.Loading)
     val categories = _categories.asStateFlow()
 
     init {
@@ -33,13 +33,14 @@ class HomeViewModel @Inject constructor(
     private fun getCategories() = viewModelScope.launch {
         getCategoriesUseCase()
             .doOnSuccess {
-                _categories.emit(HomeState.Success(it))
+                val result = if (it.isEmpty()) State.Empty else State.Success(it)
+                _categories.emit(result)
             }
             .doOnFailure {
-                _categories.emit(HomeState.Error(it?.message ?: "error"))
+                _categories.emit(State.Error(it?.message ?: "error"))
             }
             .doOnLoading {
-                _categories.emit(HomeState.Loading)
+                _categories.emit(State.Loading)
             }.collect()
     }
 }
