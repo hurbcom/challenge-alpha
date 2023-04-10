@@ -42,6 +42,21 @@ android {
     }
 
     viewBinding.isEnabled = true
+
+    tasks {
+        val path = "../../../.git/hooks"
+        val origin = "${rootProject.rootDir}/scripts/pre-commit"
+        register("gitHooks", Copy::class) {
+            from(origin)
+            into(path)
+            eachFile {
+                fileMode = 0b111101101
+            }
+        }
+        afterEvaluate {
+            tasks["preBuild"].dependsOn(tasks.named("gitHooks"))
+        }
+    }
 }
 
 dependencies {

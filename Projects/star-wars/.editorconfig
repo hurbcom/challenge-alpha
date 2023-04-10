@@ -1,0 +1,6 @@
+[*.{kt,kts}]
+ij_kotlin_allow_trailing_comma=true
+ij_kotlin_allow_trailing_comma_on_call_site=true
+insert_final_newline=true
+max_line_length=120
+trim_trailing_whitespace=true
