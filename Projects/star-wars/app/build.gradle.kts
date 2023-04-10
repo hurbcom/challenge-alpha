@@ -80,6 +80,8 @@ dependencies {
 
     debugImplementation(libs.leakcanary)
 
+    implementation(libs.shimmer)
+
     implementation(libs.timber)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

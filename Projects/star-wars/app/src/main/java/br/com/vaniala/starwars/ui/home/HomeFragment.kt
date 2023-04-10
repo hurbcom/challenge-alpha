@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.core.State
 import br.com.vaniala.starwars.databinding.FragmentHomeBinding
 import br.com.vaniala.starwars.domain.model.Category
@@ -16,6 +17,7 @@ import br.com.vaniala.starwars.ui.home.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
  * on 10/04/23.
@@ -23,7 +25,6 @@ import kotlinx.coroutines.flow.onEach
  */
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding get() = _binding!!
     private lateinit var adapter: CategoryListAdapter
@@ -44,6 +45,12 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecyclerView()
+        setStateHome()
+    }
+
     private fun initRecyclerView() {
         adapter = CategoryListAdapter()
         binding.fragmentHomeRecycler.adapter = adapter
@@ -52,21 +59,56 @@ class HomeFragment : Fragment() {
     private fun setStateHome() {
         viewModel.categories.onEach { homeState ->
             when (homeState) {
-                is State.Loading -> Toast.makeText(context, "carregando", Toast.LENGTH_SHORT).show()
-                is State.Empty -> Toast.makeText(context, "empty", Toast.LENGTH_SHORT).show()
-                is State.Error -> Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
-                is State.Success<*> -> {
-                    val categories: List<Category> = homeState.result.filterIsInstance<Category>()
-                    adapter.submitList(categories)
+                is State.Loading -> {
+                    showStateLoading()
+                }
+                is State.Empty -> {
+                    showStateEmpty()
+                }
+                is State.Error -> {
+                    showStateError()
+                }
+                is State.Success -> {
+                    showStateSuccess(homeState.result)
                 }
             }
         }.launchIn(lifecycleScope)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initRecyclerView()
-        setStateHome()
+    private fun showStateLoading() {
+        binding.fragmentHomeShimmer.startShimmer()
+    }
+
+    private fun showStateEmpty() {
+        stopShimmer()
+        showTextEmpty(message = resources.getString(R.string.home_empty_categories))
+        Toast.makeText(context, "empty", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showStateError() {
+        stopShimmer()
+        showTextEmpty(message = resources.getString(R.string.home_error_categories))
+        Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showStateSuccess(categories: List<Category>) {
+        stopShimmer()
+        showTextEmpty(show = false)
+        adapter.submitList(categories)
+    }
+
+    private fun showTextEmpty(message: String? = null, show: Boolean = true) {
+        if (show) {
+            binding.fragmentHomeTextMessage.visibility = View.VISIBLE
+            binding.fragmentHomeTextMessage.text = message
+        } else {
+            binding.fragmentHomeTextMessage.visibility = View.GONE
+        }
+    }
+
+    private fun stopShimmer() {
+        binding.fragmentHomeShimmer.stopShimmer()
+        binding.fragmentHomeShimmer.visibility = View.GONE
     }
 
     override fun onDestroyView() {

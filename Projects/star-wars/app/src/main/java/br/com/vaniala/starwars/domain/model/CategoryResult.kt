@@ -10,10 +10,10 @@ import com.squareup.moshi.JsonClass
  */
 @JsonClass(generateAdapter = true)
 data class CategoryResult(
-    @field:Json(name = "") val films: String,
-    @field:Json(name = "") val people: String,
-    @field:Json(name = "") val planets: String,
-    @field:Json(name = "") val species: String,
-    @field:Json(name = "") val starships: String,
-    @field:Json(name = "") val vehicles: String,
+    @field:Json(name = "films") val films: String,
+    @field:Json(name = "people") val people: String,
+    @field:Json(name = "planets") val planets: String,
+    @field:Json(name = "species") val species: String,
+    @field:Json(name = "starships") val starships: String,
+    @field:Json(name = "vehicles") val vehicles: String,
 )

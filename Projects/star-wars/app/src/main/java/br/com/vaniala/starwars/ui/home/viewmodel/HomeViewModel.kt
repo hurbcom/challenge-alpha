@@ -6,6 +6,7 @@ import br.com.vaniala.starwars.core.State
 import br.com.vaniala.starwars.core.doOnFailure
 import br.com.vaniala.starwars.core.doOnLoading
 import br.com.vaniala.starwars.core.doOnSuccess
+import br.com.vaniala.starwars.domain.model.Category
 import br.com.vaniala.starwars.domain.usecase.GetCategoriesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,7 +24,7 @@ class HomeViewModel @Inject constructor(
     private val getCategoriesUseCase: GetCategoriesUseCase,
 ) : ViewModel() {
 
-    private val _categories = MutableStateFlow<State>(State.Loading)
+    private val _categories = MutableStateFlow<State<List<Category>>>(State.Loading)
     val categories = _categories.asStateFlow()
 
     init {

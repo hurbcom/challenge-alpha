@@ -5,9 +5,9 @@ package br.com.vaniala.starwars.core
  * on 10/04/23.
  *
  */
-sealed class State {
-    object Loading : State()
-    object Empty : State()
-    data class Success<out T : Any>(val result: List<T>) : State()
-    data class Error(val message: String) : State()
+sealed class State<out T : Any> {
+    object Loading : State<Nothing>()
+    object Empty : State<Nothing>()
+    data class Success<out T : Any>(val result: T) : State<T>()
+    data class Error(val message: String) : State<Nothing>()
 }
