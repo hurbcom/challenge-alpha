@@ -12,7 +12,7 @@ class MovieListCoordinator: BaseCoordinator {
     private var viewModel: HomeViewModel = HomeViewModel()
     
     override func start() {
-
+        setupBinding()
         let homeViewController = HomeViewController()
         homeViewController.viewmodel = viewModel
         self.navigationController = UINavigationController(rootViewController: homeViewController)
@@ -20,22 +20,17 @@ class MovieListCoordinator: BaseCoordinator {
     }
     
     private func setupBinding() {
-        viewModel.viewDidDisappear.subscribe(to: self) { this, _ in
-            this.parentCoordinator?.didFinish(coordinator: this)
+        viewModel.selectedItem.subscribe(to: self) { this, package in
+            this.navigateToPackageDetail(package: package)
         }
     }
     
 
-//
-//    private func navigateToMovie(movie: Movie) {
-//        let movieCoordinator = MovieCoordinator(movie: movie)
-//        movieCoordinator.navigationController = navigationController
-//        start(coordinator: movieCoordinator)
-//    }
-//
-//    private func navigateToLogin() {
-//        let loginCoordinator = LoginCoordinator()
-//        loginCoordinator.navigationController = navigationController
-//        start(coordinator: loginCoordinator)
-//    }
+
+    func navigateToPackageDetail(package: PackageResult) {
+        let packageCoordinator = PackageDetailViewCoordinator(package: package)
+        packageCoordinator.navigationController = navigationController
+        start(coordinator: packageCoordinator)
+    }
+
 }

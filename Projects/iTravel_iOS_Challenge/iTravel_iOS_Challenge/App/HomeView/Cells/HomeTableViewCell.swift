@@ -8,6 +8,9 @@
 import UIKit
 import ImageSlideshow
 
+protocol HomeTableViewCellDelegate{
+    func tapImage(package:PackageResult)
+}
 class HomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var view: UIView!
@@ -18,11 +21,13 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var local: UILabel!
     @IBOutlet weak var data: UILabel!
     
+    var delegate:HomeTableViewCellDelegate?
+    var package:PackageResult?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-
-        
+        addTapImageGesture()
         
     }
 
@@ -45,6 +50,18 @@ extension HomeTableViewCell{
         self.view.layer.cornerRadius = 8
         self.view.layer.masksToBounds = true
 
+    }
+    
+    
+    func addTapImageGesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)))
+        slideShow.addGestureRecognizer(tap)
+    }
+    
+    @objc func imageTapped(_ sender:Any){
+        if let item = self.package{
+            delegate?.tapImage(package: item)
+        }
     }
 }
 

@@ -14,6 +14,10 @@ import ImageSlideshow
 
 class HomeViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var searchBarBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textFieldVIew: UIView!
     @IBOutlet weak var tableView: UITableView!
     var viewmodel:HomeViewModel = HomeViewModel()
     private let bag = DisposeBag()
@@ -24,9 +28,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
         setupUI()
         setupTableView()
-        
+        setupSearchUI()
+        addKeyboardNotifications()
+        setupErrorHandler()
     }
+    
+  
 
+    @IBAction func searchTap(_ sender: Any) {
+        if let search = textField.text{
+            viewmodel.fetchPackages(search: search)
+        }
+    }
     
     
 }
@@ -52,72 +65,130 @@ extension HomeViewController {
 
     }
     
+    func setupSearchUI(){
+        textFieldVIew.layer.cornerRadius = 14
+        textFieldVIew.layer.masksToBounds = true
+        textField.layer.cornerRadius = 14
+        textField.layer.masksToBounds = true
+        textField.layer.shadowRadius = 4
+        textFieldVIew.dropShadow()
+    }
+    
+    func addKeyboardNotifications(){
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        // Move the view only when the usernameTextField or the passwordTextField are being edited
+        textField.returnKeyType = .search
+        if textField.isEditing{
+            moveViewWithKeyboard(notification: notification, viewBottomConstraint: self.searchBarBottomConstraint, keyboardWillShow: true)
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        moveViewWithKeyboard(notification: notification, viewBottomConstraint: self.searchBarBottomConstraint, keyboardWillShow: false)
+    }
+    
+    func moveViewWithKeyboard(notification: NSNotification, viewBottomConstraint: NSLayoutConstraint, keyboardWillShow: Bool) {
+        // Keyboard's size
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let keyboardHeight = keyboardSize.height
+        
+        // Keyboard's animation duration
+        let keyboardDuration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
+        
+        // Keyboard's animation curve
+        let keyboardCurve = UIView.AnimationCurve(rawValue: notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! Int)!
+        
+        // Change the constant
+        if keyboardWillShow {
+            let safeAreaExists = (self.view?.window?.safeAreaInsets.bottom != 0) // Check if safe area exists
+            let bottomConstant: CGFloat = 108
+            viewBottomConstraint.constant = keyboardHeight + (safeAreaExists ? 0 : bottomConstant)
+        }else {
+            viewBottomConstraint.constant = 108
+        }
+        
+        // Animate the view the same way the keyboard animates
+        let animator = UIViewPropertyAnimator(duration: keyboardDuration, curve: keyboardCurve) { [weak self] in
+            // Update Constraints
+            self?.view.layoutIfNeeded()
+        }
+        
+        // Perform the animation
+        animator.startAnimation()
+    }
+    
+    func setupErrorHandler(){
+        viewmodel.error.subscribe { error in
+            if error == "Error"{
+                self.view.makeToast("Não foram encontrados pacotes",position: .top)
+            }
+        }
+    }
+    
 
 }
+
 
 
 extension HomeViewController:UITableViewDelegate{
     
     func setupTableView() {
-        tableView.rx.setDelegate(self).disposed(by: bag)
+        tableView.delegate = nil
+        tableView.dataSource = nil
         let homeViewCell = UINib(nibName: "HomeTableViewCell",
                                       bundle: nil)
         self.tableView.register(homeViewCell,
                                     forCellReuseIdentifier: "HomeTableViewCell")
+        let backBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+        tableView.keyboardDismissMode = .onDrag
         bindTableView()
     }
+    
+
     
     
     
     private func bindTableView() {
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
-        
-        viewmodel.packagesSubject.bind(to: tableView.rx.items(cellIdentifier: "HomeTableViewCell", cellType: HomeTableViewCell.self)) { (row,item,cell) in
-            // setup price
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            formatter.locale = Locale(identifier: "pt_BR") // or any other locale that uses comma as decimal separator
-
-            let number: Double = Double(item.price.originalAmount ?? 000000)
-            let formattedString = formatter.string(from: NSNumber(value: number/100)) ?? ""
-
-            cell.preco.text = "R$ " + formattedString + ",00"
-            
-            var imgArray:[AlamofireSource] = []
-            
-            for img in item.gallery {
-                if let alamoImg = AlamofireSource(urlString: img.url){
-                    imgArray.append(alamoImg)
-                }
-            }
     
+        viewmodel.packages.bind(to: tableView.rx.items(cellIdentifier: "HomeTableViewCell", cellType: HomeTableViewCell.self)) { (row,item,cell) in
+            cell.preco.text = self.viewmodel.formatPrice(price: item.price.originalAmount)
             cell.setupUI()
-            cell.slideShow.setImageInputs(imgArray)
-
-            
-            //
-            print(item)
+            cell.slideShow.setImageInputs(self.viewmodel.fetchGalleryImages(imgs: item.gallery))
             cell.titulo.text = item.name
             cell.local.text = item.address.city
             cell.diferencial.text = item.amenities.first?.name
             cell.data.text = "\(item.quantityDescriptors.duration) dias"
+            cell.package = item
+            cell.delegate = self
         }.disposed(by: bag)
         
         
         
         tableView.rx.modelSelected(PackageResult.self).subscribe(onNext: { item in
-            print("SelectedItem: \(item.name)")
+            self.viewmodel.selectedItem.accept?(item)
         }).disposed(by: bag)
         
         viewmodel.fetchPackages()
     }
-   
-    
+}
 
-    
-    
-
-    
-    
-    
+extension HomeViewController:HomeTableViewCellDelegate{
+    func tapImage(package: PackageResult) {
+        self.viewmodel.selectedItem.accept?(package)
+    }
 }

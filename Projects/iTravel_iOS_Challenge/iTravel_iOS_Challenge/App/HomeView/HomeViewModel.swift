@@ -9,23 +9,29 @@ import Foundation
 import HUGraphQL
 import Apollo
 import RxSwift
+import RxRelay
+import ImageSlideshow
 
 class HomeViewModel{
     
-    var viewDidDisappear = DelegateView<Void>()
-    let packagesSubject = PublishSubject<[PackageResult]>()
+    let selectedItem = DelegateView<PackageResult>()
+    
+    let packages: BehaviorRelay<[PackageResult]> = BehaviorRelay(value: [])
+
+    let error = PublishSubject<String>()
 
     
-    func fetchPackages(){
+    func fetchPackages(search:String = "Rio de Janeiro"){
 
-        TravelService().searchPackage { result in
+        TravelService().searchPackage(local:search) { result in
             switch result {
             case .success(let user):
                 let jsonData = try? JSONSerialization.data(withJSONObject: user.jsonObject as Any, options: [])
                 let packageItem = try? JSONDecoder().decode(PackageItem.self, from: jsonData ?? Data())
                 if let results = packageItem?.searchPackage.results{
-                    self.packagesSubject.onNext(results)
-                    self.packagesSubject.onCompleted()
+                    self.packages.accept(results)
+                }else{
+                    self.error.onNext("Error")
                 }
             case .failure(let error):
                 print("Failed to fetch user data: \(error)")
@@ -34,8 +40,28 @@ class HomeViewModel{
         }
     }
     
-    func parseData(json:String){
-            
+    func formatPrice(price:Int) -> String{
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale(identifier: "pt_BR") // or any other locale that uses comma as decimal separator
+
+        let number: Double = Double(price) 
+        let formattedString = formatter.string(from: NSNumber(value: number/100)) ?? ""
+        
+        return ("R$ " + formattedString + ",00")
+    }
+    
+    func fetchGalleryImages(imgs:[Gallery]) -> [AlamofireSource]{
+        
+        var imgArray:[AlamofireSource] = []
+        
+        for img in imgs {
+            if let alamoImg = AlamofireSource(urlString: img.url){
+                imgArray.append(alamoImg)
+            }
+        }
+        
+        return imgArray
     }
 
 }

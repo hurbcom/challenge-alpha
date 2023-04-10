@@ -14,12 +14,14 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - ImageSlideshow (~> 1.9.0)
   - ImageSlideshow/Alamofire
   - RxCocoa (= 6.5.0)
   - RxSwift (= 6.5.0)
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
@@ -37,7 +40,8 @@ SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 572722f1100ca9aee2c3daa12f29eb5c6af044c7
+PODFILE CHECKSUM: 8668c481f2348f6c41da180f8ab5da424fc785b8
 
 COCOAPODS: 1.12.0

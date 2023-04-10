@@ -7,24 +7,30 @@ target 'iTravel_iOS_Challenge' do
 
     pod 'RxSwift', '6.5.0'
     pod 'RxCocoa', '6.5.0'
-pod 'ImageSlideshow', '~> 1.9.0'
-pod "ImageSlideshow/Alamofire"
+    pod 'ImageSlideshow', '~> 1.9.0'
+    pod "ImageSlideshow/Alamofire"
+    pod 'Toast-Swift', '~> 5.0.1'
+
 
 
   target 'iTravel_iOS_ChallengeTests' do
     inherit! :search_paths
     pod 'RxSwift', '6.5.0'
     pod 'RxCocoa', '6.5.0'
-pod 'ImageSlideshow', '~> 1.9.0'
-pod "ImageSlideshow/Alamofire"
+    pod 'ImageSlideshow', '~> 1.9.0'
+    pod "ImageSlideshow/Alamofire"
+    pod 'Toast-Swift', '~> 5.0.1'
+
 
   end
 
   target 'iTravel_iOS_ChallengeUITests' do
     pod 'RxSwift', '6.5.0'
     pod 'RxCocoa', '6.5.0'
-pod 'ImageSlideshow', '~> 1.9.0'
-pod "ImageSlideshow/Alamofire"
+    pod 'ImageSlideshow', '~> 1.9.0'
+    pod "ImageSlideshow/Alamofire"
+    pod 'Toast-Swift', '~> 5.0.1'
+
 
   end
 
