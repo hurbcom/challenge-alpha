@@ -15,6 +15,10 @@ hilt = "2.45"
 ktlint = "11.3.1"
 detekt = "1.22.0"
 navigation = "2.5.3"
+retrofit = "2.9.0"
+moshi = "1.14.0"
+okhttp = "5.0.0-alpha.11"
+leakcanary = "2.10"
 
 junit = "4.13.2"
 androidxTestExtJunit = "1.1.5"
@@ -29,11 +33,16 @@ timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 navigation = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+leakcanary = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+moshi = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExtJunit" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspresso" }
-
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

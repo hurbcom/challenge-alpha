@@ -22,6 +22,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://swapi.dev/api/\"")
+        }
+
         release {
             isMinifyEnabled = true
             isShrinkResources = true
@@ -29,6 +33,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
+            buildConfigField("String", "BASE_URL", "\"https://swapi.dev/api/\"")
         }
     }
 
@@ -66,6 +71,14 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     implementation(libs.navigation)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+    implementation(libs.moshi)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging.interceptor)
+
+    debugImplementation(libs.leakcanary)
 
     implementation(libs.timber)
     implementation(libs.hilt.android)
