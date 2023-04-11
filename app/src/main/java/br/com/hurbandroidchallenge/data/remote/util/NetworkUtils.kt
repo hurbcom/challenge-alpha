@@ -1,12 +1,12 @@
 package br.com.hurbandroidchallenge.data.remote.util
 
 import br.com.hurbandroidchallenge.commom.model.Message
+import br.com.hurbandroidchallenge.commom.model.Result
 import com.google.gson.Gson
 import kotlinx.coroutines.coroutineScope
 import org.json.JSONObject
 import retrofit2.HttpException
 import java.io.IOException
-import br.com.hurbandroidchallenge.commom.model.Result
 
 internal suspend fun <T : Any> apiCall(call: suspend () -> T): T {
     return coroutineScope {

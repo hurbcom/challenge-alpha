@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,6 +25,7 @@ fun ItemCard(
     image: String,
     aspectRadio: Float,
     shape: Shape = MaterialTheme.shapes.large,
+    contentScale: ContentScale = ContentScale.FillHeight,
 ) {
     Card(modifier = modifier, shape = shape) {
         Column(
@@ -37,7 +37,7 @@ fun ItemCard(
                         .aspectRatio(aspectRadio),
                     painter = rememberAsyncImagePainter(model = image),
                     contentDescription = null,
-                    contentScale = ContentScale.FillHeight
+                    contentScale = contentScale
                 )
             }
             Text(

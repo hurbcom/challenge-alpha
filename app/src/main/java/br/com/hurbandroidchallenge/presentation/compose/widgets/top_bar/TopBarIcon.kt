@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.compose.components.top_bar
+package br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton

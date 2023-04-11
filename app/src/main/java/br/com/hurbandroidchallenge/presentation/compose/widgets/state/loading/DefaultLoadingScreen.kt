@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.compose.components.state.loading
+package br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.CircularProgressIndicator
@@ -15,7 +15,7 @@ fun DefaultLoadingScreen(
     color: Color = MaterialTheme.colorScheme.primary,
     text: String? = null
 ) {
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize().padding(all = 16.dp)) {
         Column(
             modifier = Modifier.align(Alignment.Center),
             verticalArrangement = Arrangement.spacedBy(16.dp)

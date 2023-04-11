@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.compose.components.edit_text
+package br.com.hurbandroidchallenge.presentation.compose.widgets.edit_text
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn

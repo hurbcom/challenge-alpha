@@ -2,8 +2,8 @@ package br.com.hurbandroidchallenge.domain.use_case
 
 import br.com.hurbandroidchallenge.domain.repository.StarWarsBookRepository
 
-class GetHomeCategoriesUseCase(
+class GetCharactersUseCase(
     private val repository: StarWarsBookRepository,
 ) {
-    operator fun invoke() = repository.getHomeCategories()
+    operator fun invoke(url: String) = repository.getCharacters(url = url)
 }

@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.compose.components.divider
+package br.com.hurbandroidchallenge.presentation.compose.widgets.divider
 
 import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme

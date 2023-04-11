@@ -7,8 +7,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.commom.extension.getString
-import br.com.hurbandroidchallenge.data.remote.config.ImageUrls
-import br.com.hurbandroidchallenge.domain.model.Category
+import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
+import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.domain.model.HomeCategories
 import br.com.hurbandroidchallenge.domain.use_case.GetHomeCategoriesUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
@@ -27,7 +27,7 @@ class HomeListViewModel(
     private val _homeUI = mutableStateOf(HomeUI())
     val homeUI: State<HomeUI> = _homeUI
 
-    private val _homeCategories = MutableStateFlow<StateUI<List<Category>>>(StateUI.Idle())
+    private val _homeCategories = MutableStateFlow<StateUI<List<ItemModel>>>(StateUI.Idle)
     val homeCategories = _homeCategories.asStateFlow()
 
     init {
@@ -37,47 +37,47 @@ class HomeListViewModel(
     private fun getHomeCategories() {
         viewModelScope.launch {
             getHomeCategoriesUseCase().onStart {
-                _homeCategories.emit(StateUI.Processing())
+                _homeCategories.emit(StateUI.Processing)
             }.catch {
                 _homeCategories.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
                 val categories = getCategoriesList(data)
                 _homeUI.value = homeUI.value.copy(categories = categories)
-                _homeCategories.emit(StateUI.Processed(categories))
+                _homeCategories.emit(StateUI.Processed)
             }
         }
     }
 
     private fun getCategoriesList(categories: HomeCategories) = listOf(
-        Category(
-            image = "${ImageUrls.CategoriesImageBaseUrl}/character.jpg",
+        ItemModel(
+            image = "${ApiUrls.imageBaseUrl}/categories/character.jpg",
             url = categories.people,
-            name = getString(R.string.home_categories_people),
+            name = getString(R.string.home_categories_people)
         ),
-        Category(
-            image = "${ImageUrls.CategoriesImageBaseUrl}/films.jpg",
+        ItemModel(
+            image = "${ApiUrls.imageBaseUrl}/categories/films.jpg",
             url = categories.films,
             name = getString(R.string.home_categories_films)
         ),
-        Category(
-            image = "${ImageUrls.CategoriesImageBaseUrl}/species.jpg",
+        ItemModel(
+            image = "${ApiUrls.imageBaseUrl}/categories/species.jpg",
             url = categories.species,
-            name = getString(R.string.home_categories_species),
+            name = getString(R.string.home_categories_species)
         ),
-        Category(
-            image = "${ImageUrls.CategoriesImageBaseUrl}/starships.jpg",
+        ItemModel(
+            image = "${ApiUrls.imageBaseUrl}/categories/starships.jpg",
             url = categories.starships,
-            name = getString(R.string.home_categories_starships),
+            name = getString(R.string.home_categories_starships)
         ),
-        Category(
-            image = "${ImageUrls.CategoriesImageBaseUrl}/vehicles.jpg",
+        ItemModel(
+            image = "${ApiUrls.imageBaseUrl}/categories/vehicles.jpg",
             url = categories.vehicles,
-            name = getString(R.string.home_categories_vehicles),
+            name = getString(R.string.home_categories_vehicles)
         ),
-        Category(
-            image = "${ImageUrls.CategoriesImageBaseUrl}/planets.jpg",
+        ItemModel(
+            image = "${ApiUrls.imageBaseUrl}/categories/planets.jpg",
             url = categories.planets,
-            name = getString(R.string.home_categories_planets),
+            name = getString(R.string.home_categories_planets)
         )
     )
 

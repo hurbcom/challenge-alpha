@@ -2,8 +2,6 @@ package br.com.hurbandroidchallenge.presentation.screens.home
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -14,13 +12,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
-import br.com.hurbandroidchallenge.presentation.compose.components.ItemCard
-import br.com.hurbandroidchallenge.presentation.compose.components.divider.DefaultDivider
-import br.com.hurbandroidchallenge.presentation.compose.components.state.error.DefaultErrorScreen
-import br.com.hurbandroidchallenge.presentation.compose.components.state.loading.DefaultLoadingScreen
+import br.com.hurbandroidchallenge.presentation.compose.components.ItemList
+import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
+import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
+import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
+import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
+import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
 import br.com.hurbandroidchallenge.presentation.model.StateUI
-import br.com.hurbandroidchallenge.presentation.compose.components.top_bar.TopBar
-import br.com.hurbandroidchallenge.presentation.model.CategoryItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -57,7 +55,7 @@ fun HomeMainScreen(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection)
     ) { paddingValues ->
         val homeUI = viewModel.homeUI.value
-        Column(
+        Box(
             modifier = Modifier
                 .padding(paddingValues = paddingValues)
                 .fillMaxSize()
@@ -67,34 +65,15 @@ fun HomeMainScreen(
                     is StateUI.Error -> DefaultErrorScreen(message = response.message)
                     is StateUI.Idle -> Unit
                     is StateUI.Processed -> ItemList(
-                        categoryItems = homeUI.categories.map { category ->
-                            CategoryItem(
-                                text = category.name,
-                                aspectRatio = 2f / 1f,
-                                image = category.image
-                            )
+                        categoryItems = homeUI.categories,
+                        aspectRatio = 2f / 1f,
+                        onItemClick = {
+                           navHostController.navigate(Screens.CategoryDetail.route)
                         }
                     )
                     is StateUI.Processing -> DefaultLoadingScreen()
                 }
             }
-        }
-    }
-}
-
-@Composable
-fun ItemList(categoryItems: List<CategoryItem>) {
-    LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(16.dp),
-        contentPadding = PaddingValues(16.dp)
-    ) {
-        items(categoryItems) { category ->
-            ItemCard(
-                modifier = Modifier.fillMaxWidth(),
-                title = category.text,
-                image = category.image,
-                aspectRadio = 18f / 9f
-            )
         }
     }
 }

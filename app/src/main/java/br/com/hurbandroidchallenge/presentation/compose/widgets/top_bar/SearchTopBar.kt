@@ -1,11 +1,11 @@
-package br.com.hurbandroidchallenge.presentation.compose.components.top_bar
+package br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
-import br.com.hurbandroidchallenge.presentation.compose.components.edit_text.SearchEditText
+import br.com.hurbandroidchallenge.presentation.compose.widgets.edit_text.SearchEditText
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class)
 @Composable
