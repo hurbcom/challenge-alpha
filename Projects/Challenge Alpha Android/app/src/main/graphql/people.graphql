@@ -1,0 +1,11 @@
+query GetPeopleQuery {
+    allPeople {
+        people {
+            birthYear
+            homeworld {
+                name
+            }
+            name
+        }
+    }
+}

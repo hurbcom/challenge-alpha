@@ -1,0 +1,9 @@
+query GetStarshipsQuery {
+    allStarships {
+        starships {
+            name
+            model
+            starshipClass
+        }
+    }
+}

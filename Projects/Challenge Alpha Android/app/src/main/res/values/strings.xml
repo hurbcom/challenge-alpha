@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Challenge alpha Android</string>
+    <string name="name_label">"name: %s"</string>
+    <string name="birthyear_label">"birthyear: %s"</string>
+    <string name="homeworld_label">"homeworld: %s"</string>
+    <string name="starship_name_label">"name: %s"</string>
+    <string name="starship_model_label">"model: %s"</string>
+    <string name="starship_class_label">"class: %s"</string>
+    <string name="planet_name_label">"name: %s"</string>
+    <string name="population_model_label">"population: %f"</string>
+    <string name="diameter_label">"diameter: %d"</string>
+    <string name="click_cache">"Click here if you want to load last cache data"</string>
+    <string name="title_activity_detail_person">DetailPersonActivity</string>
+    <string name="title_activity_detail_planet">DetailPlanetActivity</string>
+    <string name="title_activity_detail_starship">DetailStarshipActivity</string>
+</resources>
