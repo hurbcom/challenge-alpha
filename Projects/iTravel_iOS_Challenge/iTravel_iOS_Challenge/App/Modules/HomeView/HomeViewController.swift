@@ -64,6 +64,7 @@ extension HomeViewController {
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
         UINavigationBar.appearance().tintColor = UIColor(named: "TextColor")
         
+        
 
     }
     

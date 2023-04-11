@@ -35,26 +35,5 @@ class TravelService{
 
     }
     
-    func performSearch() {
-        
-        
-        let query = HUGraphQL.SearchQuery(q: "Rio de Janeiro", pagination: .init(
-            page: 1,
-            limit: 1,
-            sort: .price,
-            sortOrder: .desc))
-        
-        service.client.fetch(query: query) { res in
-            switch res {
-            case .failure(let error):
-                print(error)
-                // error
-            case .success(let graphQLValue):
-                print(graphQLValue.data?.jsonObject)
-                //success
-                
-            }
-            
-        }
-    }
+
 }
