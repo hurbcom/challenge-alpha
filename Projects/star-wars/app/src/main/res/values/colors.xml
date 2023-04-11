@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_shimmer">#dddddd</color>
+    <color name="background_white_shimmer">#dddddd</color>
+    <color name="background_black_shimmer">#7676804D</color>
 </resources>

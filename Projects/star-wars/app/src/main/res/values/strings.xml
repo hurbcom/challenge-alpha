@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Star Wars</string>
+    <!--nav-->
     <string name="nav_label_home">Categorias</string>
+    <!--    home-->
+    <string name="home_title">Categorias</string>
     <string name="home_empty_categories">🤡 Sem categorias</string>
     <string name="home_error_categories">🥴 Algo deu errado</string>
+    <string name="home_img_logo_description">logo star wars</string>
+    <string name="home_img_category_description">categoria do star wars</string>
 </resources>

@@ -24,6 +24,7 @@ android {
     buildTypes {
         debug {
             buildConfigField("String", "BASE_URL", "\"https://swapi.dev/api/\"")
+            buildConfigField("String", "BASE_URL_IMAGES", "\"https://starwars-visualguide.com/assets/img/\"")
         }
 
         release {
@@ -34,6 +35,7 @@ android {
                 "proguard-rules.pro",
             )
             buildConfigField("String", "BASE_URL", "\"https://swapi.dev/api/\"")
+            buildConfigField("String", "BASE_URL_IMAGES", "\"https://starwars-visualguide.com/assets/img/\"")
         }
     }
 
@@ -88,6 +90,7 @@ dependencies {
 
     implementation(libs.shimmer)
     implementation(libs.splshscreen)
+    implementation(libs.coil)
 
     implementation(libs.timber)
     implementation(libs.hilt.android)

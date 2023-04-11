@@ -18,7 +18,6 @@ import javax.inject.Inject
 class GetCategoriesUseCase @Inject constructor(
     private val categoryRepository: CategoryRepository,
 ) {
-
     operator fun invoke(): Flow<Result<List<Category>>> = flow {
         emit(Result.Loading)
         val response = categoryRepository.getCategories()
