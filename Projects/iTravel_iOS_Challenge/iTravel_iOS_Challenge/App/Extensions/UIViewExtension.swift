@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//cria sombras em views
 extension UIView {
     func dropShadow(scale: Bool = true) {
         layer.masksToBounds = false
@@ -20,6 +21,7 @@ extension UIView {
     }
 }
 
+// adiciona efeito de blur em views
 extension UIView {
     func addBlurToView() {
         var blurEffect: UIBlurEffect!

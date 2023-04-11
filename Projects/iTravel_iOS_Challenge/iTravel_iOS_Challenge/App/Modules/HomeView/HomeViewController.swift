@@ -44,6 +44,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
 }
 
+//Setups iniciais da tela
+
 extension HomeViewController {
     
     func setupUI(){
@@ -142,7 +144,7 @@ extension HomeViewController {
 }
 
 
-
+// TableView Delegate
 extension HomeViewController:UITableViewDelegate{
     
     func setupTableView() {
@@ -186,6 +188,8 @@ extension HomeViewController:UITableViewDelegate{
         viewmodel.fetchPackages()
     }
 }
+
+//notificao ao usuario clicar na imagem
 
 extension HomeViewController:HomeTableViewCellDelegate{
     func tapImage(package: PackageResult) {
