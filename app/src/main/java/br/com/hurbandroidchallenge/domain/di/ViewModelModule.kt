@@ -7,7 +7,8 @@ val viewModelModule = module {
 
     single {
         HomeListViewModel(
-            getHomeCategoriesUseCase = get()
+            getHomeCategoriesUseCase = get(),
+            application = get()
         )
     }
 

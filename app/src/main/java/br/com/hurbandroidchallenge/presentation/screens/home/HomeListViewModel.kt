@@ -1,10 +1,12 @@
 package br.com.hurbandroidchallenge.presentation.screens.home
 
+import android.app.Application
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.hurbandroidchallenge.R
+import br.com.hurbandroidchallenge.commom.extension.getString
 import br.com.hurbandroidchallenge.data.remote.config.ImageUrls
 import br.com.hurbandroidchallenge.domain.model.Category
 import br.com.hurbandroidchallenge.domain.model.HomeCategories
@@ -18,8 +20,9 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class HomeListViewModel(
-    private val getHomeCategoriesUseCase: GetHomeCategoriesUseCase
-) : ViewModel() {
+    private val getHomeCategoriesUseCase: GetHomeCategoriesUseCase,
+    application: Application
+) : AndroidViewModel(application) {
 
     private val _homeUI = mutableStateOf(HomeUI())
     val homeUI: State<HomeUI> = _homeUI
@@ -47,34 +50,34 @@ class HomeListViewModel(
 
     private fun getCategoriesList(categories: HomeCategories) = listOf(
         Category(
-            imageUrl = "${ImageUrls.CategoriesImageBaseUrl}/character.jpg",
+            image = "${ImageUrls.CategoriesImageBaseUrl}/character.jpg",
             url = categories.people,
-            nameRes = R.string.home_categories_people,
+            name = getString(R.string.home_categories_people),
         ),
         Category(
-            imageUrl = "${ImageUrls.CategoriesImageBaseUrl}/films.jpg",
+            image = "${ImageUrls.CategoriesImageBaseUrl}/films.jpg",
             url = categories.films,
-            nameRes = R.string.home_categories_films
+            name = getString(R.string.home_categories_films)
         ),
         Category(
-            imageUrl = "${ImageUrls.CategoriesImageBaseUrl}/species.jpg",
+            image = "${ImageUrls.CategoriesImageBaseUrl}/species.jpg",
             url = categories.species,
-            nameRes = R.string.home_categories_species,
+            name = getString(R.string.home_categories_species),
         ),
         Category(
-            imageUrl = "${ImageUrls.CategoriesImageBaseUrl}/starships.jpg",
+            image = "${ImageUrls.CategoriesImageBaseUrl}/starships.jpg",
             url = categories.starships,
-            nameRes = R.string.home_categories_starships,
+            name = getString(R.string.home_categories_starships),
         ),
         Category(
-            imageUrl = "${ImageUrls.CategoriesImageBaseUrl}/vehicles.jpg",
+            image = "${ImageUrls.CategoriesImageBaseUrl}/vehicles.jpg",
             url = categories.vehicles,
-            nameRes = R.string.home_categories_vehicles,
+            name = getString(R.string.home_categories_vehicles),
         ),
         Category(
-            imageUrl = "${ImageUrls.CategoriesImageBaseUrl}/planets.jpg",
+            image = "${ImageUrls.CategoriesImageBaseUrl}/planets.jpg",
             url = categories.planets,
-            nameRes = R.string.home_categories_planets,
+            name = getString(R.string.home_categories_planets),
         )
     )
 
