@@ -1,4 +1,4 @@
-package br.com.vaniala.starwars.ui.home.viewmodel
+package br.com.vaniala.starwars.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -21,7 +21,7 @@ import javax.inject.Inject
  *
  */
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class SharedViewModel @Inject constructor(
     private val getCategoriesUseCase: GetCategoriesUseCase,
 ) : ViewModel() {
 
@@ -47,7 +47,7 @@ class HomeViewModel @Inject constructor(
             .doOnLoading {
                 _categories.emit(State.Loading)
             }.apply {
-                _isLoading.value = false
+                _isLoading.emit(false)
             }.collect()
     }
 }

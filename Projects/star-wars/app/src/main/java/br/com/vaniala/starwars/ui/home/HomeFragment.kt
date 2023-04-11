@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.core.State
 import br.com.vaniala.starwars.databinding.FragmentHomeBinding
 import br.com.vaniala.starwars.domain.model.Category
 import br.com.vaniala.starwars.ui.home.recycler.CategoryListAdapter
-import br.com.vaniala.starwars.ui.home.viewmodel.HomeViewModel
+import br.com.vaniala.starwars.ui.viewmodel.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
     private val binding: FragmentHomeBinding get() = _binding!!
     private lateinit var adapter: CategoryListAdapter
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
