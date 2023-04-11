@@ -22,7 +22,6 @@
 		EDB4F85A29E2291C007C9F09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB4F85829E2291C007C9F09 /* LaunchScreen.storyboard */; };
 		EDB4F86F29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F86E29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.swift */; };
 		EDB4F87129E2291C007C9F09 /* iTravel_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F87029E2291C007C9F09 /* iTravel_iOS_ChallengeUITestsLaunchTests.swift */; };
-		EDB4F87E29E22A12007C9F09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB4F87D29E22A12007C9F09 /* Assets.xcassets */; };
 		EDB4F88229E22E90007C9F09 /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = EDB4F88129E22E90007C9F09 /* HUGraphQL */; };
 		EDB4F88A29E2312E007C9F09 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB4F88829E2312E007C9F09 /* HomeView.xib */; };
 		EDB4F88C29E24628007C9F09 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F88B29E24628007C9F09 /* AppCoordinator.swift */; };
@@ -37,6 +36,7 @@
 		EDE1C40E29E510500072A2AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1C40D29E510500072A2AB /* HomeViewController.swift */; };
 		EDE1C42B29E51A930072A2AB /* TravelServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1C42A29E51A930072A2AB /* TravelServiceSpy.swift */; };
 		EDE1C42E29E51C400072A2AB /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1C42C29E51A980072A2AB /* HomeViewModelTests.swift */; };
+		EDE6C59029E54D7B0039D365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE6C58F29E54D7B0039D365 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +81,6 @@
 		EDB4F86A29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTravel_iOS_ChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB4F86E29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTravel_iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
 		EDB4F87029E2291C007C9F09 /* iTravel_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTravel_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EDB4F87D29E22A12007C9F09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../.Trash/iTravel 21.37.16/iTravel/Assets.xcassets"; sourceTree = "<group>"; };
 		EDB4F88029E22DDB007C9F09 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HUNetwork; path = "../Challenge Alpha iOS/Modules/HUNetwork"; sourceTree = "<group>"; };
 		EDB4F88829E2312E007C9F09 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		EDB4F88B29E24628007C9F09 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		EDE1C41C29E519FD0072A2AB /* iTravel_iOS_ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTravel_iOS_ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE1C42A29E51A930072A2AB /* TravelServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelServiceSpy.swift; sourceTree = "<group>"; };
 		EDE1C42C29E51A980072A2AB /* HomeViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		EDE6C58F29E54D7B0039D365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,8 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				ED003C0A29E37AE00096D79D /* App */,
-				EDB4F87D29E22A12007C9F09 /* Assets.xcassets */,
 				EDB4F85829E2291C007C9F09 /* LaunchScreen.storyboard */,
+				EDE6C58F29E54D7B0039D365 /* Assets.xcassets */,
 				EDB4F85B29E2291C007C9F09 /* Info.plist */,
 				EDB4F85329E22919007C9F09 /* iTravel_iOS_Challenge.xcdatamodeld */,
 			);
@@ -449,9 +449,9 @@
 			files = (
 				ED003C0F29E384DD0096D79D /* PackageDetailView.xib in Resources */,
 				EDB4F85A29E2291C007C9F09 /* LaunchScreen.storyboard in Resources */,
-				EDB4F87E29E22A12007C9F09 /* Assets.xcassets in Resources */,
 				EDB4F88A29E2312E007C9F09 /* HomeView.xib in Resources */,
 				EDE1C40329E50D000072A2AB /* HomeTableViewCell.xib in Resources */,
+				EDE6C59029E54D7B0039D365 /* Assets.xcassets in Resources */,
 				ED45150D29E5018C00C8EDFE /* FullDescricaoModalView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
