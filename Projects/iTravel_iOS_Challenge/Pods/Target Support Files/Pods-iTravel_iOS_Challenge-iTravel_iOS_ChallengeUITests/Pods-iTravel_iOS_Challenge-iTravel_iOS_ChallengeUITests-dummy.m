@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_iTravel_iOS_Challenge_iTravel_iOS_ChallengeUITests : NSObject
-@end
-@implementation PodsDummy_Pods_iTravel_iOS_Challenge_iTravel_iOS_ChallengeUITests
-@end
