@@ -24,6 +24,8 @@ shimmer = "0.5.0"
 junit = "4.13.2"
 androidxTestExtJunit = "1.1.5"
 androidxTestEspresso = "3.5.1"
+coroutines = "1.3.7"
+mockk ="1.13.4"
 
 [libraries]
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
@@ -45,6 +47,8 @@ shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shi
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExtJunit" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspresso" }
+coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+mockk = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

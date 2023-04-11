@@ -62,6 +62,12 @@ android {
             tasks["preBuild"].dependsOn(tasks.named("gitHooks"))
         }
     }
+    tasks.withType<Test> {
+        testLogging {
+            showStandardStreams = true
+            events("passed", "failed")
+        }
+    }
 }
 
 dependencies {
@@ -89,4 +95,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso)
+
+    testImplementation(libs.coroutines)
+    testImplementation(libs.mockk)
 }
