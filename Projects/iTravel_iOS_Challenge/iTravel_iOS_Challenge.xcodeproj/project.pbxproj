@@ -1,0 +1,966 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01510E765EE9FE6507EA2A94 /* Pods_iTravel_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58CB3DB7FD138A917534B5D /* Pods_iTravel_iOS_Challenge.framework */; };
+		70A151588EBB0EEC201A65BC /* Pods_iTravel_iOS_Challenge_iTravel_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665D4A632DAC545B8C707006 /* Pods_iTravel_iOS_Challenge_iTravel_iOS_ChallengeUITests.framework */; };
+		B41F739A663D5E8731E59B1E /* Pods_iTravel_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AF9447AEE5FF2F51F627A4 /* Pods_iTravel_iOS_ChallengeTests.framework */; };
+		ED003C0E29E384DD0096D79D /* PackageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED003C0C29E384DD0096D79D /* PackageDetailViewController.swift */; };
+		ED003C0F29E384DD0096D79D /* PackageDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED003C0D29E384DD0096D79D /* PackageDetailView.xib */; };
+		ED003C1129E3857A0096D79D /* PackageDetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED003C1029E3857A0096D79D /* PackageDetailViewCoordinator.swift */; };
+		ED003C1329E385B20096D79D /* PackageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED003C1229E385B20096D79D /* PackageDetailViewModel.swift */; };
+		ED45150829E3AFE900C8EDFE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45150729E3AFE900C8EDFE /* UIViewExtension.swift */; };
+		ED45150C29E5018C00C8EDFE /* FullDescricaoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45150A29E5018C00C8EDFE /* FullDescricaoModalViewController.swift */; };
+		ED45150D29E5018C00C8EDFE /* FullDescricaoModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED45150B29E5018C00C8EDFE /* FullDescricaoModalView.xib */; };
+		EDB4F84B29E22919007C9F09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F84A29E22919007C9F09 /* AppDelegate.swift */; };
+		EDB4F85529E22919007C9F09 /* iTravel_iOS_Challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F85329E22919007C9F09 /* iTravel_iOS_Challenge.xcdatamodeld */; };
+		EDB4F85A29E2291C007C9F09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB4F85829E2291C007C9F09 /* LaunchScreen.storyboard */; };
+		EDB4F86F29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F86E29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.swift */; };
+		EDB4F87129E2291C007C9F09 /* iTravel_iOS_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F87029E2291C007C9F09 /* iTravel_iOS_ChallengeUITestsLaunchTests.swift */; };
+		EDB4F87E29E22A12007C9F09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB4F87D29E22A12007C9F09 /* Assets.xcassets */; };
+		EDB4F88229E22E90007C9F09 /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = EDB4F88129E22E90007C9F09 /* HUGraphQL */; };
+		EDB4F88A29E2312E007C9F09 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB4F88829E2312E007C9F09 /* HomeView.xib */; };
+		EDB4F88C29E24628007C9F09 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F88B29E24628007C9F09 /* AppCoordinator.swift */; };
+		EDB4F88E29E246BA007C9F09 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F88D29E246BA007C9F09 /* BaseCoordinator.swift */; };
+		EDB4F89029E24733007C9F09 /* HomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F88F29E24733007C9F09 /* HomeViewCoordinator.swift */; };
+		EDB4F89229E2477F007C9F09 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F89129E2477F007C9F09 /* HomeViewModel.swift */; };
+		EDB4F89429E248F1007C9F09 /* DelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F89329E248F1007C9F09 /* DelegateView.swift */; };
+		EDB4F89729E24FBA007C9F09 /* TravelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F89629E24FBA007C9F09 /* TravelService.swift */; };
+		EDB4F89A29E26225007C9F09 /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F89929E26225007C9F09 /* PackageModel.swift */; };
+		EDE1C40329E50D000072A2AB /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE1C40129E50D000072A2AB /* HomeTableViewCell.xib */; };
+		EDE1C40429E50D000072A2AB /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1C40229E50D000072A2AB /* HomeTableViewCell.swift */; };
+		EDE1C40E29E510500072A2AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1C40D29E510500072A2AB /* HomeViewController.swift */; };
+		EDE1C42B29E51A930072A2AB /* TravelServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1C42A29E51A930072A2AB /* TravelServiceSpy.swift */; };
+		EDE1C42E29E51C400072A2AB /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1C42C29E51A980072A2AB /* HomeViewModelTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDB4F86B29E2291C007C9F09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB4F83F29E22919007C9F09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDB4F84629E22919007C9F09;
+			remoteInfo = iTravel_iOS_Challenge;
+		};
+		EDE1C42029E519FD0072A2AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB4F83F29E22919007C9F09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDB4F84629E22919007C9F09;
+			remoteInfo = iTravel_iOS_Challenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B0953F940B67DA2DD6E226F /* Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2CC83A3F768B6EFDC6F96778 /* Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		50A88E1FD7F212AECA4275EB /* Pods-iTravel_iOS_Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTravel_iOS_Challenge.debug.xcconfig"; path = "Target Support Files/Pods-iTravel_iOS_Challenge/Pods-iTravel_iOS_Challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		665D4A632DAC545B8C707006 /* Pods_iTravel_iOS_Challenge_iTravel_iOS_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTravel_iOS_Challenge_iTravel_iOS_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B347F0FDD779DFAF37BAF52 /* Pods-iTravel_iOS_ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTravel_iOS_ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-iTravel_iOS_ChallengeTests/Pods-iTravel_iOS_ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		8027A24C608873D3DE2B4DC6 /* Pods-iTravel_iOS_ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTravel_iOS_ChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-iTravel_iOS_ChallengeTests/Pods-iTravel_iOS_ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C58CB3DB7FD138A917534B5D /* Pods_iTravel_iOS_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTravel_iOS_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0AF9447AEE5FF2F51F627A4 /* Pods_iTravel_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTravel_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9088CB0EBB87D7D95AD9A7 /* Pods-iTravel_iOS_Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTravel_iOS_Challenge.release.xcconfig"; path = "Target Support Files/Pods-iTravel_iOS_Challenge/Pods-iTravel_iOS_Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		ED003C0C29E384DD0096D79D /* PackageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailViewController.swift; sourceTree = "<group>"; };
+		ED003C0D29E384DD0096D79D /* PackageDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageDetailView.xib; sourceTree = "<group>"; };
+		ED003C1029E3857A0096D79D /* PackageDetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailViewCoordinator.swift; sourceTree = "<group>"; };
+		ED003C1229E385B20096D79D /* PackageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailViewModel.swift; sourceTree = "<group>"; };
+		ED45150729E3AFE900C8EDFE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		ED45150A29E5018C00C8EDFE /* FullDescricaoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDescricaoModalViewController.swift; sourceTree = "<group>"; };
+		ED45150B29E5018C00C8EDFE /* FullDescricaoModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullDescricaoModalView.xib; sourceTree = "<group>"; };
+		EDB4F84729E22919007C9F09 /* iTravel_iOS_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTravel_iOS_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB4F84A29E22919007C9F09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDB4F85429E22919007C9F09 /* iTravel_iOS_Challenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTravel_iOS_Challenge.xcdatamodel; sourceTree = "<group>"; };
+		EDB4F85929E2291C007C9F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDB4F85B29E2291C007C9F09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB4F86A29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTravel_iOS_ChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB4F86E29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTravel_iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
+		EDB4F87029E2291C007C9F09 /* iTravel_iOS_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTravel_iOS_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EDB4F87D29E22A12007C9F09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../.Trash/iTravel 21.37.16/iTravel/Assets.xcassets"; sourceTree = "<group>"; };
+		EDB4F88029E22DDB007C9F09 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HUNetwork; path = "../Challenge Alpha iOS/Modules/HUNetwork"; sourceTree = "<group>"; };
+		EDB4F88829E2312E007C9F09 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		EDB4F88B29E24628007C9F09 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EDB4F88D29E246BA007C9F09 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		EDB4F88F29E24733007C9F09 /* HomeViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCoordinator.swift; sourceTree = "<group>"; };
+		EDB4F89129E2477F007C9F09 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EDB4F89329E248F1007C9F09 /* DelegateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateView.swift; sourceTree = "<group>"; };
+		EDB4F89629E24FBA007C9F09 /* TravelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelService.swift; sourceTree = "<group>"; };
+		EDB4F89929E26225007C9F09 /* PackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageModel.swift; sourceTree = "<group>"; };
+		EDE1C40129E50D000072A2AB /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		EDE1C40229E50D000072A2AB /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		EDE1C40D29E510500072A2AB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = iTravel_iOS_Challenge/App/Modules/HomeView/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		EDE1C41C29E519FD0072A2AB /* iTravel_iOS_ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTravel_iOS_ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDE1C42A29E51A930072A2AB /* TravelServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelServiceSpy.swift; sourceTree = "<group>"; };
+		EDE1C42C29E51A980072A2AB /* HomeViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDB4F84429E22919007C9F09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01510E765EE9FE6507EA2A94 /* Pods_iTravel_iOS_Challenge.framework in Frameworks */,
+				EDB4F88229E22E90007C9F09 /* HUGraphQL in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB4F86729E2291C007C9F09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A151588EBB0EEC201A65BC /* Pods_iTravel_iOS_Challenge_iTravel_iOS_ChallengeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE1C41929E519FD0072A2AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41F739A663D5E8731E59B1E /* Pods_iTravel_iOS_ChallengeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D14DEB982BA54B84C4255689 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50A88E1FD7F212AECA4275EB /* Pods-iTravel_iOS_Challenge.debug.xcconfig */,
+				DC9088CB0EBB87D7D95AD9A7 /* Pods-iTravel_iOS_Challenge.release.xcconfig */,
+				2CC83A3F768B6EFDC6F96778 /* Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.debug.xcconfig */,
+				0B0953F940B67DA2DD6E226F /* Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.release.xcconfig */,
+				8027A24C608873D3DE2B4DC6 /* Pods-iTravel_iOS_ChallengeTests.debug.xcconfig */,
+				7B347F0FDD779DFAF37BAF52 /* Pods-iTravel_iOS_ChallengeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DEF89F3EE04351E8844648E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C58CB3DB7FD138A917534B5D /* Pods_iTravel_iOS_Challenge.framework */,
+				665D4A632DAC545B8C707006 /* Pods_iTravel_iOS_Challenge_iTravel_iOS_ChallengeUITests.framework */,
+				D0AF9447AEE5FF2F51F627A4 /* Pods_iTravel_iOS_ChallengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED003C0529E2AA2A0096D79D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1C40229E50D000072A2AB /* HomeTableViewCell.swift */,
+				EDE1C40129E50D000072A2AB /* HomeTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ED003C0A29E37AE00096D79D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EDB4F89529E24923007C9F09 /* Services */,
+				EDE1C40729E50F160072A2AB /* Modules */,
+				ED45150429E3AB3700C8EDFE /* Extensions */,
+				EDB4F88329E22ED6007C9F09 /* Core */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		ED003C0B29E384B60096D79D /* PackageDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				ED45150929E5015200C8EDFE /* FullDescricaoModalView */,
+				ED003C0C29E384DD0096D79D /* PackageDetailViewController.swift */,
+				ED003C0D29E384DD0096D79D /* PackageDetailView.xib */,
+				ED003C1029E3857A0096D79D /* PackageDetailViewCoordinator.swift */,
+				ED003C1229E385B20096D79D /* PackageDetailViewModel.swift */,
+			);
+			path = PackageDetailView;
+			sourceTree = "<group>";
+		};
+		ED45150429E3AB3700C8EDFE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED45150729E3AFE900C8EDFE /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED45150929E5015200C8EDFE /* FullDescricaoModalView */ = {
+			isa = PBXGroup;
+			children = (
+				ED45150A29E5018C00C8EDFE /* FullDescricaoModalViewController.swift */,
+				ED45150B29E5018C00C8EDFE /* FullDescricaoModalView.xib */,
+			);
+			path = FullDescricaoModalView;
+			sourceTree = "<group>";
+		};
+		EDB4F83E29E22919007C9F09 = {
+			isa = PBXGroup;
+			children = (
+				EDB4F87F29E22DDB007C9F09 /* Packages */,
+				EDB4F84929E22919007C9F09 /* iTravel_iOS_Challenge */,
+				EDB4F86D29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests */,
+				EDE1C41D29E519FD0072A2AB /* iTravel_iOS_ChallengeTests */,
+				EDB4F84829E22919007C9F09 /* Products */,
+				D14DEB982BA54B84C4255689 /* Pods */,
+				DEF89F3EE04351E8844648E5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EDB4F84829E22919007C9F09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDB4F84729E22919007C9F09 /* iTravel_iOS_Challenge.app */,
+				EDB4F86A29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.xctest */,
+				EDE1C41C29E519FD0072A2AB /* iTravel_iOS_ChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDB4F84929E22919007C9F09 /* iTravel_iOS_Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				ED003C0A29E37AE00096D79D /* App */,
+				EDB4F87D29E22A12007C9F09 /* Assets.xcassets */,
+				EDB4F85829E2291C007C9F09 /* LaunchScreen.storyboard */,
+				EDB4F85B29E2291C007C9F09 /* Info.plist */,
+				EDB4F85329E22919007C9F09 /* iTravel_iOS_Challenge.xcdatamodeld */,
+			);
+			path = iTravel_iOS_Challenge;
+			sourceTree = "<group>";
+		};
+		EDB4F86D29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDB4F86E29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.swift */,
+				EDB4F87029E2291C007C9F09 /* iTravel_iOS_ChallengeUITestsLaunchTests.swift */,
+			);
+			path = iTravel_iOS_ChallengeUITests;
+			sourceTree = "<group>";
+		};
+		EDB4F87F29E22DDB007C9F09 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				EDB4F88029E22DDB007C9F09 /* HUNetwork */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		EDB4F88329E22ED6007C9F09 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EDB4F84A29E22919007C9F09 /* AppDelegate.swift */,
+				EDB4F88B29E24628007C9F09 /* AppCoordinator.swift */,
+				EDB4F88D29E246BA007C9F09 /* BaseCoordinator.swift */,
+				EDB4F89329E248F1007C9F09 /* DelegateView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		EDB4F88629E23119007C9F09 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				ED003C0529E2AA2A0096D79D /* Cells */,
+				EDE1C40D29E510500072A2AB /* HomeViewController.swift */,
+				EDB4F88829E2312E007C9F09 /* HomeView.xib */,
+				EDB4F89129E2477F007C9F09 /* HomeViewModel.swift */,
+				EDB4F88F29E24733007C9F09 /* HomeViewCoordinator.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		EDB4F89529E24923007C9F09 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EDB4F89829E26213007C9F09 /* Models */,
+				EDB4F89629E24FBA007C9F09 /* TravelService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EDB4F89829E26213007C9F09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDB4F89929E26225007C9F09 /* PackageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EDE1C40729E50F160072A2AB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				ED003C0B29E384B60096D79D /* PackageDetailView */,
+				EDB4F88629E23119007C9F09 /* HomeView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EDE1C41D29E519FD0072A2AB /* iTravel_iOS_ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1C42729E51A7D0072A2AB /* Modules */,
+			);
+			path = iTravel_iOS_ChallengeTests;
+			sourceTree = "<group>";
+		};
+		EDE1C42729E51A7D0072A2AB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1C42829E51A830072A2AB /* HomeView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EDE1C42829E51A830072A2AB /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1C42C29E51A980072A2AB /* HomeViewModelTests.swift */,
+				EDE1C42929E51A8B0072A2AB /* Doubles */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		EDE1C42929E51A8B0072A2AB /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1C42A29E51A930072A2AB /* TravelServiceSpy.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDB4F84629E22919007C9F09 /* iTravel_iOS_Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB4F87429E2291C007C9F09 /* Build configuration list for PBXNativeTarget "iTravel_iOS_Challenge" */;
+			buildPhases = (
+				8AA0CADF97AE99FCEF59D399 /* [CP] Check Pods Manifest.lock */,
+				EDB4F84329E22919007C9F09 /* Sources */,
+				EDB4F84429E22919007C9F09 /* Frameworks */,
+				EDB4F84529E22919007C9F09 /* Resources */,
+				0E5C8C065C7D6505A24DB129 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTravel_iOS_Challenge;
+			packageProductDependencies = (
+				EDB4F88129E22E90007C9F09 /* HUGraphQL */,
+			);
+			productName = iTravel_iOS_Challenge;
+			productReference = EDB4F84729E22919007C9F09 /* iTravel_iOS_Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDB4F86929E2291C007C9F09 /* iTravel_iOS_ChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB4F87A29E2291C007C9F09 /* Build configuration list for PBXNativeTarget "iTravel_iOS_ChallengeUITests" */;
+			buildPhases = (
+				552C656EB21F7BD77D6405C3 /* [CP] Check Pods Manifest.lock */,
+				EDB4F86629E2291C007C9F09 /* Sources */,
+				EDB4F86729E2291C007C9F09 /* Frameworks */,
+				EDB4F86829E2291C007C9F09 /* Resources */,
+				259BC4906F55111086A5B4A0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDB4F86C29E2291C007C9F09 /* PBXTargetDependency */,
+			);
+			name = iTravel_iOS_ChallengeUITests;
+			productName = iTravel_iOS_ChallengeUITests;
+			productReference = EDB4F86A29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		EDE1C41B29E519FD0072A2AB /* iTravel_iOS_ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDE1C42229E519FD0072A2AB /* Build configuration list for PBXNativeTarget "iTravel_iOS_ChallengeTests" */;
+			buildPhases = (
+				7C82DBBFCCD1AD2E9880BFBE /* [CP] Check Pods Manifest.lock */,
+				EDE1C41829E519FD0072A2AB /* Sources */,
+				EDE1C41929E519FD0072A2AB /* Frameworks */,
+				EDE1C41A29E519FD0072A2AB /* Resources */,
+				0E60AA4A14AF29CE2E1451DD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDE1C42129E519FD0072A2AB /* PBXTargetDependency */,
+			);
+			name = iTravel_iOS_ChallengeTests;
+			productName = iTravel_iOS_ChallengeTests;
+			productReference = EDE1C41C29E519FD0072A2AB /* iTravel_iOS_ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDB4F83F29E22919007C9F09 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					EDB4F84629E22919007C9F09 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					EDB4F86929E2291C007C9F09 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = EDB4F84629E22919007C9F09;
+					};
+					EDE1C41B29E519FD0072A2AB = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = EDB4F84629E22919007C9F09;
+					};
+				};
+			};
+			buildConfigurationList = EDB4F84229E22919007C9F09 /* Build configuration list for PBXProject "iTravel_iOS_Challenge" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDB4F83E29E22919007C9F09;
+			productRefGroup = EDB4F84829E22919007C9F09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDB4F84629E22919007C9F09 /* iTravel_iOS_Challenge */,
+				EDB4F86929E2291C007C9F09 /* iTravel_iOS_ChallengeUITests */,
+				EDE1C41B29E519FD0072A2AB /* iTravel_iOS_ChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDB4F84529E22919007C9F09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED003C0F29E384DD0096D79D /* PackageDetailView.xib in Resources */,
+				EDB4F85A29E2291C007C9F09 /* LaunchScreen.storyboard in Resources */,
+				EDB4F87E29E22A12007C9F09 /* Assets.xcassets in Resources */,
+				EDB4F88A29E2312E007C9F09 /* HomeView.xib in Resources */,
+				EDE1C40329E50D000072A2AB /* HomeTableViewCell.xib in Resources */,
+				ED45150D29E5018C00C8EDFE /* FullDescricaoModalView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB4F86829E2291C007C9F09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE1C41A29E519FD0072A2AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E5C8C065C7D6505A24DB129 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTravel_iOS_Challenge/Pods-iTravel_iOS_Challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTravel_iOS_Challenge/Pods-iTravel_iOS_Challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iTravel_iOS_Challenge/Pods-iTravel_iOS_Challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E60AA4A14AF29CE2E1451DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTravel_iOS_ChallengeTests/Pods-iTravel_iOS_ChallengeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTravel_iOS_ChallengeTests/Pods-iTravel_iOS_ChallengeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iTravel_iOS_ChallengeTests/Pods-iTravel_iOS_ChallengeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		259BC4906F55111086A5B4A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		552C656EB21F7BD77D6405C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C82DBBFCCD1AD2E9880BFBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iTravel_iOS_ChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AA0CADF97AE99FCEF59D399 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iTravel_iOS_Challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDB4F84329E22919007C9F09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED45150829E3AFE900C8EDFE /* UIViewExtension.swift in Sources */,
+				EDB4F89029E24733007C9F09 /* HomeViewCoordinator.swift in Sources */,
+				EDB4F88E29E246BA007C9F09 /* BaseCoordinator.swift in Sources */,
+				EDB4F89229E2477F007C9F09 /* HomeViewModel.swift in Sources */,
+				EDB4F89429E248F1007C9F09 /* DelegateView.swift in Sources */,
+				ED003C1329E385B20096D79D /* PackageDetailViewModel.swift in Sources */,
+				EDB4F89A29E26225007C9F09 /* PackageModel.swift in Sources */,
+				ED003C0E29E384DD0096D79D /* PackageDetailViewController.swift in Sources */,
+				EDB4F88C29E24628007C9F09 /* AppCoordinator.swift in Sources */,
+				EDB4F85529E22919007C9F09 /* iTravel_iOS_Challenge.xcdatamodeld in Sources */,
+				EDB4F89729E24FBA007C9F09 /* TravelService.swift in Sources */,
+				EDE1C40E29E510500072A2AB /* HomeViewController.swift in Sources */,
+				ED45150C29E5018C00C8EDFE /* FullDescricaoModalViewController.swift in Sources */,
+				ED003C1129E3857A0096D79D /* PackageDetailViewCoordinator.swift in Sources */,
+				EDE1C40429E50D000072A2AB /* HomeTableViewCell.swift in Sources */,
+				EDB4F84B29E22919007C9F09 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB4F86629E2291C007C9F09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB4F87129E2291C007C9F09 /* iTravel_iOS_ChallengeUITestsLaunchTests.swift in Sources */,
+				EDB4F86F29E2291C007C9F09 /* iTravel_iOS_ChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE1C41829E519FD0072A2AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE1C42B29E51A930072A2AB /* TravelServiceSpy.swift in Sources */,
+				EDE1C42E29E51C400072A2AB /* HomeViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDB4F86C29E2291C007C9F09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDB4F84629E22919007C9F09 /* iTravel_iOS_Challenge */;
+			targetProxy = EDB4F86B29E2291C007C9F09 /* PBXContainerItemProxy */;
+		};
+		EDE1C42129E519FD0072A2AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDB4F84629E22919007C9F09 /* iTravel_iOS_Challenge */;
+			targetProxy = EDE1C42029E519FD0072A2AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDB4F85829E2291C007C9F09 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB4F85929E2291C007C9F09 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDB4F87229E2291C007C9F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDB4F87329E2291C007C9F09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDB4F87529E2291C007C9F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50A88E1FD7F212AECA4275EB /* Pods-iTravel_iOS_Challenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iTravel_iOS_Challenge/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "YagoVanzan.iTravel-iOS-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDB4F87629E2291C007C9F09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC9088CB0EBB87D7D95AD9A7 /* Pods-iTravel_iOS_Challenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iTravel_iOS_Challenge/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "YagoVanzan.iTravel-iOS-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EDB4F87B29E2291C007C9F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CC83A3F768B6EFDC6F96778 /* Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "YagoVanzan.iTravel-iOS-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iTravel_iOS_Challenge;
+			};
+			name = Debug;
+		};
+		EDB4F87C29E2291C007C9F09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B0953F940B67DA2DD6E226F /* Pods-iTravel_iOS_Challenge-iTravel_iOS_ChallengeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "YagoVanzan.iTravel-iOS-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iTravel_iOS_Challenge;
+			};
+			name = Release;
+		};
+		EDE1C42329E519FD0072A2AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8027A24C608873D3DE2B4DC6 /* Pods-iTravel_iOS_ChallengeTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "YagoVanzan.iTravel-iOS-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTravel_iOS_Challenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iTravel_iOS_Challenge";
+			};
+			name = Debug;
+		};
+		EDE1C42429E519FD0072A2AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B347F0FDD779DFAF37BAF52 /* Pods-iTravel_iOS_ChallengeTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "YagoVanzan.iTravel-iOS-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTravel_iOS_Challenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iTravel_iOS_Challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDB4F84229E22919007C9F09 /* Build configuration list for PBXProject "iTravel_iOS_Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB4F87229E2291C007C9F09 /* Debug */,
+				EDB4F87329E2291C007C9F09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDB4F87429E2291C007C9F09 /* Build configuration list for PBXNativeTarget "iTravel_iOS_Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB4F87529E2291C007C9F09 /* Debug */,
+				EDB4F87629E2291C007C9F09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDB4F87A29E2291C007C9F09 /* Build configuration list for PBXNativeTarget "iTravel_iOS_ChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB4F87B29E2291C007C9F09 /* Debug */,
+				EDB4F87C29E2291C007C9F09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDE1C42229E519FD0072A2AB /* Build configuration list for PBXNativeTarget "iTravel_iOS_ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDE1C42329E519FD0072A2AB /* Debug */,
+				EDE1C42429E519FD0072A2AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDB4F88129E22E90007C9F09 /* HUGraphQL */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HUGraphQL;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		EDB4F85329E22919007C9F09 /* iTravel_iOS_Challenge.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EDB4F85429E22919007C9F09 /* iTravel_iOS_Challenge.xcdatamodel */,
+			);
+			currentVersion = EDB4F85429E22919007C9F09 /* iTravel_iOS_Challenge.xcdatamodel */;
+			path = iTravel_iOS_Challenge.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EDB4F83F29E22919007C9F09 /* Project object */;
+}
