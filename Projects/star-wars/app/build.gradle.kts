@@ -87,6 +87,7 @@ dependencies {
     debugImplementation(libs.leakcanary)
 
     implementation(libs.shimmer)
+    implementation(libs.splshscreen)
 
     implementation(libs.timber)
     implementation(libs.hilt.android)

@@ -20,6 +20,7 @@ moshi = "1.14.0"
 okhttp = "5.0.0-alpha.11"
 leakcanary = "2.10"
 shimmer = "0.5.0"
+splshscreen = "1.0.0"
 
 junit = "4.13.2"
 androidxTestExtJunit = "1.1.5"
@@ -43,6 +44,7 @@ moshi = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "mo
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer" }
+splshscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splshscreen" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExtJunit" }

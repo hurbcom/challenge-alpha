@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
  * on 10/04/23.
@@ -26,6 +27,9 @@ class HomeViewModel @Inject constructor(
 
     private val _categories = MutableStateFlow<State<List<Category>>>(State.Loading)
     val categories = _categories.asStateFlow()
+
+    private val _isLoading = MutableStateFlow(true)
+    val isLoading = _isLoading.asStateFlow()
 
     init {
         getCategories()
@@ -42,6 +46,8 @@ class HomeViewModel @Inject constructor(
             }
             .doOnLoading {
                 _categories.emit(State.Loading)
+            }.apply {
+                _isLoading.value = false
             }.collect()
     }
 }
