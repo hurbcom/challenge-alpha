@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class MovieListCoordinator: BaseCoordinator {
-    private var viewModel: HomeViewModel = HomeViewModel()
+    private var viewModel: HomeViewModel = HomeViewModel(service: TravelService())
     
     override func start() {
         setupBinding()

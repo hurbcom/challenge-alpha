@@ -47,16 +47,28 @@
                     <color key="textColor" name="TextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuY-A3-xCZ">
+                    <rect key="frame" x="310" y="658" width="60" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Mais"/>
+                    <connections>
+                        <action selector="lerMaisTap:" destination="-1" eventType="touchUpInside" id="yeL-v5-92M"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGray6Color"/>
             <constraints>
                 <constraint firstItem="ECX-uP-TGD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="49r-Db-OHM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JuY-A3-xCZ" secondAttribute="trailing" constant="23" id="6dP-pU-qkU"/>
+                <constraint firstItem="JuY-A3-xCZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="310" id="6uU-qx-o3c"/>
                 <constraint firstItem="ngM-si-Hhv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="91Y-Qg-l3H"/>
                 <constraint firstItem="ngM-si-Hhv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="MHU-VE-08Z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ECX-uP-TGD" secondAttribute="trailing" constant="16" id="UZ6-9j-Cie"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RyM-fe-hJ7" secondAttribute="bottom" constant="168" id="V8K-zH-FgA"/>
                 <constraint firstItem="RyM-fe-hJ7" firstAttribute="top" secondItem="ECX-uP-TGD" secondAttribute="bottom" constant="8" symbolic="YES" id="Yaq-Au-rfv"/>
+                <constraint firstItem="JuY-A3-xCZ" firstAttribute="top" secondItem="RyM-fe-hJ7" secondAttribute="bottom" constant="8" symbolic="YES" id="dyh-7p-pqh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JuY-A3-xCZ" secondAttribute="bottom" constant="125" id="ihU-S1-PTR"/>
                 <constraint firstItem="RyM-fe-hJ7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jvD-hK-Tlm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RyM-fe-hJ7" secondAttribute="trailing" constant="16" id="ord-wQ-eZe"/>
                 <constraint firstItem="ECX-uP-TGD" firstAttribute="top" secondItem="ngM-si-Hhv" secondAttribute="bottom" constant="8" symbolic="YES" id="tom-iR-CpM"/>

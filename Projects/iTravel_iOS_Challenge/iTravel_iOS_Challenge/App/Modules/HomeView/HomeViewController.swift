@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textFieldVIew: UIView!
     @IBOutlet weak var tableView: UITableView!
-    var viewmodel:HomeViewModel = HomeViewModel()
+    var viewmodel:HomeViewModel = HomeViewModel(service: TravelService())
     private let bag = DisposeBag()
     var packages:Int = 0
 

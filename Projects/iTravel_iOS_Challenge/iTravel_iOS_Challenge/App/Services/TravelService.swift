@@ -10,7 +10,7 @@ import HUGraphQL
 
 class TravelService{
     
-    var service = HUGService(enableLog: false)
+    var service = HUGService(enableLog: true)
 
     func searchPackage(local:String = "Rio de Janeiro", completion: @escaping (Result<HUGraphQL.SearchPackageQuery.Data, Error>) -> Void){
         

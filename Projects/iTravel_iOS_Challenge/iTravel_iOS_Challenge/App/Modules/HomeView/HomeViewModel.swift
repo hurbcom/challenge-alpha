@@ -19,11 +19,16 @@ class HomeViewModel{
     let packages: BehaviorRelay<[PackageResult]> = BehaviorRelay(value: [])
 
     let error = PublishSubject<String>()
-
+    
+    var service:TravelService?
+    
+    init(service:TravelService) {
+        self.service = service
+    }
     
     func fetchPackages(search:String = "Rio de Janeiro"){
 
-        TravelService().searchPackage(local:search) { result in
+        service?.searchPackage(local:search) { result in
             switch result {
             case .success(let user):
                 let jsonData = try? JSONSerialization.data(withJSONObject: user.jsonObject as Any, options: [])

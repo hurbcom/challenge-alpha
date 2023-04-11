@@ -32,7 +32,10 @@ class PackageDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func lerMaisTap(_ sender: Any) {
+        presentFullDescricao()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -68,6 +71,12 @@ extension PackageDetailViewController{
             self.view.hideToastActivity()
             self.view.removeBlurFromView()
         }
+    }
+    
+    func presentFullDescricao(){
+        let con = FullDescricaoModalViewController()
+        con.descricao = self.descricao.text
+        self.navigationController?.present(con, animated: true)
     }
     
 
