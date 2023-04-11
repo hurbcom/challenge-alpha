@@ -17,4 +17,13 @@ val categoriesResultMock = CategoryResult(
     starships = "",
 )
 
+val categoriesResultPopulateMock = CategoryResult(
+    films = "https://swapi.dev/api/people/",
+    people = "https://swapi.dev/api/planets/",
+    planets = "https://swapi.dev/api/films/",
+    species = "https://swapi.dev/api/species/",
+    vehicles = "https://swapi.dev/api/vehicles/",
+    starships = "https://swapi.dev/api/starships/",
+)
+
 val categoriesListMock = categoriesResultMock.toCategoryList()
