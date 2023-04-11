@@ -1,47 +1,34 @@
-# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="HU" width="24" /> Alpha Challenge
-
-[[English](README.md) | [Português](README.pt.md)]
-
-Welcome to Hurb's mobile team coding challenge!
-
-We are always looking to expand our team with dedicated devs, see if you have open positions in our [Gupy](https://hurb.gupy.io/), if you don't have an open position, send a message on LinkedIn or open an issue.
-
-The challenge is to create a mobile app (**Swift**, **Kotlin**) that consumes the JSON exposed by our REST API or GraphQL search and presents the information in a listing. You are free to use third-party libraries.
-
-We want to see the **maximum of your technical ability**! You decide the limit.
-
-[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/company/hurb/)
-
-#### [>>>>> See Wiki for challenge details. <<<<<](https://github.com/hurbcom/challenge-alpha/wiki)
-
-## Minimum requirements
-
--   Fork this challenge and create your project (or workspace) using your version of that repository, as soon as you finish the challenge, submit a _pull request_.
-    -   If you have any reason not to submit a _pull request_, create a private repository on Github, do every challenge on the **master** branch and don't forget to fill in the `pull-request.txt` file. As soon as you finish your development, add the user `automator-hurb` to your repository as a contributor and make it available for at least 30 days. **Do not add the `automator-hurb` until development is complete.**
-    -   If you have any problem creating the private repository, at the end of the challenge fill in the file called `pull-request.txt`, compress the project folder - including the `.git` folder - and send it to us by email.
--   Make asynchronous calls to the API and log the data received.
-
--   Have tests for the code created
-
-## Evaluation criteria
-
--   **Organization of code**: Separation of modules, view and model, back-end and front-end
--   **Clarity**: Does the README explain briefly what the problem is and how can I run the application?
--   **Assertiveness**: Is the application doing what is expected? If something is missing, does the README explain why?
--   **Code readability** (including comments)
--   **Security**: Are there any clear vulnerabilities?
--   **Test coverage** (We don't expect full coverage)
--   **History of commits** (structure and quality)
--   **UX**: Is the interface user-friendly and self-explanatory? Is the API intuitive?
--   **Technical choices**: Is the choice of libraries, database, architecture, etc. the best choice for the application?
 
 
-## Doubts
+## Como usar (possiveis pontos de melhoria de cada um dos itens estarao descritos em uma sessao desse README)
 
-Any questions you may have, check the [_issues_](https://github.com/HurbCom/challenge-alpha/issues) to see if someone hasn't already and if you can't find your answer, open one yourself. new issue!
+Basta abrir a aplicaçao e esperar as informacoes carregarem (pode demorar um pouco, pois como foi feito com graphQL, é
+necessário uma requisicao para cada item para obter o ID da imagem, entao pode demorar um pouco. 
 
-Godspeed! ;)
+Há um bottom navigation view, com as imagens das 3 categorias escolhidas icones. A aba selecionada estara com o nome em negrito. Na Top Bar ha uma
+ferramenta de filtro, que funciona para a tela corrente (filtrara personagens na tela de personagens, starships na tela de starships,etc ), basta
+comecar a digitar e o filtro sera aplicado em tempo real. Ha um icone de estrela para cada item, que pode ser usado para favoritar o item. Ao clicar em um item ele expandira para uma tela de detalhes, com as mesmas informacoes mas dispostas de maneira maior. Nem todos os itens possuem imagens vinculadas, para
+esse caso foi adicionado uma imagem default "no image". Se houver um erro no carregamento dos dados por conta de algum problema de rede ou no servidor,
+é possivel clicar abaixo da mensagem de erro para carregar um cache local (caso ele exista)
 
-<p align="center">
-  <img src="ca.jpg" alt="Challange accepted" />
-</p>
+## Detalhes tecnicos e funcionais
+
+A arquitetura escolhida foi a MVVM. Entre os vários motivos para a escolha dessa arquitetura, alguns deles foram a facilidade de lidar com o gerenciamento
+do estado da UI, representado pela camada de Model, e tambem sua otima integracao com os componentes de arquitetura do Android (o viewmodel por exemplo
+ajuda a lidar com mudancas de configuracao, ja que seu ciclo de vida eh diferente do da activity). O estado da UI eh representado por uma data class (model) que representa o estado da Ui, que observa esse modelo atraves de um stateFlow, e se renderiza/altera automaticamente conforme necessario,
+baseada nas alteracoes que ocorrem no modelo. O stateFlow foi escolhido principalmente pelo sua eficiencia em relacao a realizar a observacao de forma
+lifecycle awareness, e tambem porque facilita o trabalho com variaveis imutaveis, o que ajuda no thread safety. O jetpack compose foi escolhido para a camada de UI. Uma UI satisfatoria e eficiente poderia ter sido construida utilizando constraint layout com data binding, mas o jetpack compose, alem de suas vantagens e de tornar desnecessario o uso de arquivos XML, foi escolhido para ilustrar o conhecimento na ferramente, dado que o projeto tem carater
+avaliativo. O GraphQL tambem foi escolhido como maneira padrao de recuperacao de dados, por possuir diversas vantagens, como recuperar apenas o dado estritamente necessario, o acesso previo a toda configuracao (schema) da informacao disponivel no backend e tambem por possibilitar a obtencao de mais dados com menos chamadas. Infelizmente, foi necessaria a adicao de uma api REST para recuperar o ID dos elementos e fazer o fetching da imagem, o que trouxe complexidade ao código. Ainda assim, o GraphQL foi escolhido pelas razoes citadas, e tambem para ilustrar o conhecimento da ferramenta. Tambem foram aplicados ao código, alguns conceitos basicos de cleanArchtecture e solid. Alem das camadas de viewModel, temos a camada de Data, que compreende todas as data sources e tambem a camada de Domain, que contem o grosso das regras de negocio da aplicacao, e o viewModel, que contem um pedaco menor da logica. Sempre que possivel, as dependencias utilizadas foram abstraidas para interfaces, para tornar o codigo mais robusto a mudancas. Foram exercitados tambem alguns conceitos basicos porem extremamente importantes na engenharia de software, como uso de generics. Varios metodos foram criados de maneira bastante generica, com o objeto de economizar codigo, e tambem foram criadas varias classes base. Algumas classes nao utilizadas estao incluidas no repositorio, como por exemplo a MainActivity. A minha primeira abordagem utilizaria contraint layout com data binding, entao havia criado esta classe para ser aproveitada por outras activities, o que nao ocorreu quando optei pelo jetpack compose, mas a classe foi mantida no codigo para ilustrar conhecimento. Como nao era possivel utilizar a API para salvar as informacoes, o mecanismo de favoritos foi implementado utilizando o cache local (citado anteriormente). Apos renderizar os novos dados, todo elemento carregado da API que existir previamente no cache, recebera o estado de favorito armazenado previamente em cache. Foi utilizado no codigo, a ferramenta Hilt para injecao de dependencia, cujo maior beneficio é ajudar no desacoplamento do codigo. Essa ferramenta é especialmente boa, pois é facil e rapida de configurar (menos verbosa que o Dagger) mas também permite que utilizemos todo o poder do dagger caso necessario, e tambem funciona muito bem com os architecture components. 
+
+## Possiveis melhorias
+
+O aplicativo atualmente apenas mostra os elementos quando todos estao carregados. Uma abordagem melhor seria que cada uma das 3 telas fosse individual o suficiente para controlar seu proprio loading e error. Para isso, seria necessario um incremento no modelo (estado) do viewModel, adicionando erros e loadings especificos para cada tela, que seriam lidos para acionar a composicao. A funcionalidade visto por ultimo nao foi adicionada, mas poderia ser adicionada facilmente utilizando-se do mesmo mecanismo utilizado na funcionalidade de favoritos descrita anteriormente (com a adicacao de que teriamos que salvar o momento exato em que o item foi clicado, para determinar se uma marcacao de visto recenemente seria adicionada ou nao ao item). O cache local atualmente só funciona após o usuario explicitamente pedir por isso (após um erro) ou para carregar as informacoes sobre os favoritos. Uma abordagem melhor, seria carregar o cache imediatamente no inicio do data fetching, para tornar o carregamento dos dados mais rapido para o usuario. Em alguns pontos do codigo, seria possivel ser ainda mais generico e criar metodos comuns para alguns que estao semelhantes (isso ja foi feito em varios pontos do codigo, mas seria possivel generalizar ainda mais). A camada de domain (que geralmente contem os managers e usecases) deve concentrar o grosso da logica da aplicacao, mas para o caso da nossa aplicacao, houveram alguns metodos complexos demais, e o ideal seria que houvesse uma separacao maior de funcionalidade, para compreender o funcionamento e tornar a classe mais testavel. O aplicativo foi feito em um único commit em poucas horas, entao a estrutura de commit nao ficou boa. O ideal teria sido quebrar o trabalho em vários pedacos. A interface gráfica é intuitiva mas poderia ser mais bonita e melhor construida. A biblioteca coil foi escolhida por funcionar bem com imagens carregadas de URL e tambem por proporcionar um cache automatico de imagens (mesmo sem eu salvar a imagem no cache, é possivel visualizar as imagens por alguns segundos mesmo após ficar offline, gracas ao caching dessa biblioteca)e tambem por funcionar muito bem com o compose e providenciar ferramentas para lidar com erros.
+
+Notou-se que para o caso especifico do objeto (Person), o ID de cada personagem, com a excecao de um unico item da lista, era estritamente a ordem de obtencao dos personagens na lista da API. Para economizar tempo (nao dispus de muitas horas para trabalhar no projeto), o ID obtido dessa forma foi utilizado no fetching das imagens (isso jamais teria sido utilizado num cenário real, pois qualquer mudanca minima na API tornaria inconsistente). Para todos os efeitos, a logica correta foi utilizada para os objetos Planet e Starship. 
+
+## Seguranca
+
+O aplicativo nao possui nenhuma falha obvia, por nao tratar de dados sensiveis. Uma boa prática de seguranca quando estamos lidando com URL/BASE URL é utilizar-se de buildVariables para guardas essas chaves e URL's e isto foi feito no código em questao. Caso a aplicacao lidasse com dados sensíveis, o recomendado seria utilizar uma API protegida por autenticacao e tambem adicionar uma criptografia aos dados locais e a um possivel sharedpreferences.
+
+## Test Coverage
+Foi adicionada a cobertura quase completa para o MainViewModel (alguns pequenos casos foram omitidos por redundancia, considerando que um teste muito parecido ja havia sido construido para outra classe de dados), e tambem foi adicionada cobertura parcial para um dos managers (apenas um foi escolhido, pois a cobertura para os outros managers seria semelhante). É sabido que o correto seria concentrar o grosso dos testes unitários na camada de domain (managers), uma cobertura maior nao foi adicionada pois considero que o que foi mostrado é suficiente para ilustrar o conhecimento em testes unitários. 
