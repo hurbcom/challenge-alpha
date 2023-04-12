@@ -3,7 +3,7 @@ package br.com.vaniala.starwars.domain.usecase
 import br.com.vaniala.starwars.categoriesListMock
 import br.com.vaniala.starwars.categoriesResultMock
 import br.com.vaniala.starwars.core.Result
-import br.com.vaniala.starwars.domain.model.CategoryResult
+import br.com.vaniala.starwars.domain.model.CategoryResponse
 import br.com.vaniala.starwars.domain.repository.CategoryRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -41,7 +41,7 @@ class GetCategoriesUseCaseTest {
 
     @Test
     fun `should emit firstly loading when response isSuccessful equals true`() = runTest {
-        val responseMock = mockk<Response<CategoryResult>>()
+        val responseMock = mockk<Response<CategoryResponse>>()
 
         coEvery { categoryRepository.getCategories() } returns responseMock
         every { responseMock.isSuccessful } returns true
@@ -59,7 +59,7 @@ class GetCategoriesUseCaseTest {
 
     @Test
     fun `should emit firstly loading when response isSuccessful equals false`() = runTest {
-        val responseMock = mockk<Response<CategoryResult>>()
+        val responseMock = mockk<Response<CategoryResponse>>()
 
         coEvery { categoryRepository.getCategories() } returns responseMock
         every { responseMock.isSuccessful } returns false
@@ -75,7 +75,7 @@ class GetCategoriesUseCaseTest {
 
     @Test
     fun `should emit success with category list when response isSuccessful equals true`() = runTest {
-        val responseMock = mockk<Response<CategoryResult>>()
+        val responseMock = mockk<Response<CategoryResponse>>()
 
         coEvery { categoryRepository.getCategories() } returns responseMock
         every { responseMock.isSuccessful } returns true
@@ -98,7 +98,7 @@ class GetCategoriesUseCaseTest {
     fun `should emit failure with message Error getting categories when response isSuccessful equals false`() =
         runTest {
             val body = null
-            val responseMock = mockk<Response<CategoryResult>>()
+            val responseMock = mockk<Response<CategoryResponse>>()
 
             coEvery { categoryRepository.getCategories() } returns responseMock
             every { responseMock.isSuccessful } returns false

@@ -2,7 +2,7 @@ package br.com.vaniala.starwars.data.remote
 
 import br.com.vaniala.starwars.categoriesResultPopulateMock
 import br.com.vaniala.starwars.data.remote.service.CategoryService
-import br.com.vaniala.starwars.domain.model.CategoryResult
+import br.com.vaniala.starwars.domain.model.CategoryResponse
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -50,7 +50,7 @@ class RemoteDataSourceImplTest {
     fun `should return errorBody and body null and code 400 and message Error request when response is error`() =
         runTest {
             val expectedErrorBody: ResponseBody = "Error request".toResponseBody("text/plain".toMediaType())
-            val expectedErrorResponse = Response.error<CategoryResult>(400, expectedErrorBody)
+            val expectedErrorResponse = Response.error<CategoryResponse>(400, expectedErrorBody)
             coEvery { service.getCategories() } returns expectedErrorResponse
 
             val result = remoteDataSourceImpl.getCategories()

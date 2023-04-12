@@ -1,7 +1,7 @@
 package br.com.vaniala.starwars.data.remote
 
 import br.com.vaniala.starwars.data.remote.service.CategoryService
-import br.com.vaniala.starwars.domain.model.CategoryResult
+import br.com.vaniala.starwars.domain.model.CategoryResponse
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -13,6 +13,6 @@ import javax.inject.Inject
 class RemoteDataSourceImpl @Inject constructor(
     private val service: CategoryService,
 ) : RemoteDataSource {
-    override suspend fun getCategories(): Response<CategoryResult> =
+    override suspend fun getCategories(): Response<CategoryResponse> =
         service.getCategories()
 }

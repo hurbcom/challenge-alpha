@@ -8,5 +8,23 @@
         android:id="@+id/home"
         android:name="br.com.vaniala.starwars.ui.home.HomeFragment"
         android:label="@string/nav_label_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_films"
+            app:destination="@id/films" />
+        <action
+            android:id="@+id/action_home_to_characters"
+            app:destination="@id/characters" />
+    </fragment>
+    <fragment
+        android:id="@+id/films"
+        android:name="br.com.vaniala.starwars.ui.film.FilmsFragment"
+        android:label="@string/nav_label_films"
+        tools:layout="@layout/fragment_films" />
+    <fragment
+        android:id="@+id/characters"
+        android:name="br.com.vaniala.starwars.ui.characters.CharactersFragment"
+        android:label="@string/nav_label_characters"
+        tools:layout="@layout/fragment_characters" />
+
 </navigation>

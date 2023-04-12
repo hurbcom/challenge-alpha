@@ -1,4 +1,4 @@
-package br.com.vaniala.starwars.ui.home.recycler
+package br.com.vaniala.starwars.ui.home.adapter
 
 import br.com.vaniala.starwars.databinding.ListItemCategoryBinding
 import io.mockk.mockk

@@ -1,14 +1,14 @@
 package br.com.vaniala.starwars
 
 import br.com.vaniala.starwars.data.mapper.toCategoryList
-import br.com.vaniala.starwars.domain.model.CategoryResult
+import br.com.vaniala.starwars.domain.model.CategoryResponse
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
  * on 10/04/23.
  *
  */
-val categoriesResultMock = CategoryResult(
+val categoriesResultMock = CategoryResponse(
     films = "",
     people = "",
     planets = "",
@@ -17,7 +17,7 @@ val categoriesResultMock = CategoryResult(
     starships = "",
 )
 
-val categoriesResultPopulateMock = CategoryResult(
+val categoriesResultPopulateMock = CategoryResponse(
     films = "https://swapi.dev/api/people/",
     people = "https://swapi.dev/api/planets/",
     planets = "https://swapi.dev/api/films/",

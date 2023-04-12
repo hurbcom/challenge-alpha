@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.ktlint)
     alias(libs.plugins.detekt)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.safeargs)
 }
 
 android {
@@ -79,6 +80,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     implementation(libs.navigation)
+    implementation(libs.navigation.ui)
 
     implementation(libs.retrofit)
     implementation(libs.converter.moshi)

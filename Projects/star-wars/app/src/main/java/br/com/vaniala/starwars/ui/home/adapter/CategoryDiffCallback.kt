@@ -1,4 +1,4 @@
-package br.com.vaniala.starwars.ui.home.recycler
+package br.com.vaniala.starwars.ui.home.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import br.com.vaniala.starwars.domain.model.Category

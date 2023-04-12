@@ -8,11 +8,12 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.core.State
 import br.com.vaniala.starwars.databinding.FragmentHomeBinding
 import br.com.vaniala.starwars.domain.model.Category
-import br.com.vaniala.starwars.ui.home.recycler.CategoryListAdapter
+import br.com.vaniala.starwars.ui.home.adapter.CategoryListAdapter
 import br.com.vaniala.starwars.ui.viewmodel.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
@@ -31,6 +32,9 @@ class HomeFragment : Fragment() {
 
     private val viewModel: SharedViewModel by activityViewModels()
 
+    private val findNavController by lazy {
+        findNavController()
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -53,6 +57,25 @@ class HomeFragment : Fragment() {
 
     private fun initRecyclerView() {
         adapter = CategoryListAdapter()
+        adapter.onItemClickListener = {
+            when (it.name) {
+                "films" -> {
+                    findNavController.navigate(
+                        HomeFragmentDirections.actionHomeToFilms(),
+                    )
+                }
+                "people" -> {
+                    findNavController.navigate(
+                        HomeFragmentDirections.actionHomeToCharacters(),
+                    )
+                }
+                else -> Toast.makeText(
+                    context,
+                    resources.getString(R.string.home_toast_not_implemented),
+                    Toast.LENGTH_SHORT,
+                ).show()
+            }
+        }
         binding.fragmentHomeRecycler.adapter = adapter
     }
 

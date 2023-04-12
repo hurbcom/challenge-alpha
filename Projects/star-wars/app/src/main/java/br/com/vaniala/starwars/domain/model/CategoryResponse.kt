@@ -9,7 +9,7 @@ import com.squareup.moshi.JsonClass
  *
  */
 @JsonClass(generateAdapter = true)
-data class CategoryResult(
+data class CategoryResponse(
     @field:Json(name = "films") val films: String,
     @field:Json(name = "people") val people: String,
     @field:Json(name = "planets") val planets: String,

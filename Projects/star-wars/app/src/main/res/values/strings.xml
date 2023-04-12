@@ -1,11 +1,18 @@
 <resources>
     <string name="app_name">Star Wars</string>
     <!--nav-->
-    <string name="nav_label_home">Categorias</string>
+    <string name="nav_label_home">Categories</string>
+    <string name="nav_label_films">Films</string>
+    <string name="nav_label_characters">Characters</string>
     <!--    home-->
-    <string name="home_title">Categorias</string>
-    <string name="home_empty_categories">🤡 Sem categorias</string>
-    <string name="home_error_categories">🥴 Algo deu errado</string>
+    <string name="home_title">Categories</string>
+    <string name="home_empty_categories">🤡 Empty categories</string>
+    <string name="home_error_categories">🥴 Something wrong</string>
     <string name="home_img_logo_description">logo star wars</string>
-    <string name="home_img_category_description">categoria do star wars</string>
+    <string name="home_img_category_description">image category star wars</string>
+    <string name="home_toast_not_implemented">🤧 Not implemented</string>
+    <!--    films-->
+    <string name="films_title">Films</string>
+    <!--    characters-->
+    <string name="characters_title">Characters</string>
 </resources>

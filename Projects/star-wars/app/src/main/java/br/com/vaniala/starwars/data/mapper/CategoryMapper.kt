@@ -1,14 +1,14 @@
 package br.com.vaniala.starwars.data.mapper
 
 import br.com.vaniala.starwars.domain.model.Category
-import br.com.vaniala.starwars.domain.model.CategoryResult
+import br.com.vaniala.starwars.domain.model.CategoryResponse
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
  * on 10/04/23.
  *
  */
-fun CategoryResult.toCategoryList(): List<Category> {
+fun CategoryResponse.toCategoryList(): List<Category> {
     return listOf(
         Category("films", this.films),
         Category("people", this.people),
