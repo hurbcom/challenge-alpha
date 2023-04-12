@@ -24,7 +24,7 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://swapi.dev/api/\"")
+            buildConfigField("String", "BASE_URL", "\"https://swapi.dev/\"")
             buildConfigField("String", "BASE_URL_IMAGES", "\"https://starwars-visualguide.com/assets/img/\"")
         }
 
@@ -35,7 +35,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
-            buildConfigField("String", "BASE_URL", "\"https://swapi.dev/api/\"")
+            buildConfigField("String", "BASE_URL", "\"https://swapi.dev/\"")
             buildConfigField("String", "BASE_URL_IMAGES", "\"https://starwars-visualguide.com/assets/img/\"")
         }
     }
@@ -104,4 +104,5 @@ dependencies {
 
     testImplementation(libs.coroutines)
     testImplementation(libs.mockk)
+    testImplementation(libs.mock.web.server)
 }

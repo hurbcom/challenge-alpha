@@ -2,7 +2,7 @@ package br.com.vaniala.starwars.data.di
 
 import br.com.vaniala.starwars.data.remote.RemoteDataSource
 import br.com.vaniala.starwars.data.remote.RemoteDataSourceImpl
-import br.com.vaniala.starwars.data.remote.service.CategoryService
+import br.com.vaniala.starwars.data.remote.service.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,7 +20,7 @@ object ProvidesModule {
     @Singleton
     @Provides
     fun providesRemoteDataSource(
-        service: CategoryService,
+        service: ApiService,
     ): RemoteDataSource {
         return RemoteDataSourceImpl(service)
     }

@@ -1,7 +1,7 @@
 package br.com.vaniala.starwars.data.remote
 
 import br.com.vaniala.starwars.categoriesResultPopulateMock
-import br.com.vaniala.starwars.data.remote.service.CategoryService
+import br.com.vaniala.starwars.data.remote.service.ApiService
 import br.com.vaniala.starwars.domain.model.CategoryResponse
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -26,7 +26,7 @@ import retrofit2.Response
 class RemoteDataSourceImplTest {
 
     private lateinit var remoteDataSourceImpl: RemoteDataSourceImpl
-    private lateinit var service: CategoryService
+    private lateinit var service: ApiService
 
     @Before
     fun setUp() {

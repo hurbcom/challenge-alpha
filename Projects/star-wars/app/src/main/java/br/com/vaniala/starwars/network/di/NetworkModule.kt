@@ -1,7 +1,7 @@
 package br.com.vaniala.starwars.network.di
 
 import br.com.vaniala.starwars.BuildConfig
-import br.com.vaniala.starwars.data.remote.service.CategoryService
+import br.com.vaniala.starwars.data.remote.service.ApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -64,7 +64,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesCategoryService(retrofit: Retrofit): CategoryService {
-        return retrofit.create(CategoryService::class.java)
+    fun providesCategoryService(retrofit: Retrofit): ApiService {
+        return retrofit.create(ApiService::class.java)
     }
 }
