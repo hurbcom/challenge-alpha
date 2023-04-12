@@ -19,6 +19,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
+private const val CATEGORY_FILMS = "films"
+private const val CATEGORY_CHARACTERS = "people"
+
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
  * on 10/04/23.
@@ -35,6 +38,7 @@ class HomeFragment : Fragment() {
     private val findNavController by lazy {
         findNavController()
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -59,12 +63,12 @@ class HomeFragment : Fragment() {
         adapter = CategoryListAdapter()
         adapter.onItemClickListener = {
             when (it.name) {
-                "films" -> {
+                CATEGORY_FILMS -> {
                     findNavController.navigate(
                         HomeFragmentDirections.actionHomeToFilms(),
                     )
                 }
-                "people" -> {
+                CATEGORY_CHARACTERS -> {
                     findNavController.navigate(
                         HomeFragmentDirections.actionHomeToCharacters(),
                     )
@@ -82,24 +86,12 @@ class HomeFragment : Fragment() {
     private fun setStateHome() {
         viewModel.categories.onEach { homeState ->
             when (homeState) {
-                is State.Loading -> {
-                    showStateLoading()
-                }
-                is State.Empty -> {
-                    showStateEmpty()
-                }
-                is State.Error -> {
-                    showStateError()
-                }
-                is State.Success -> {
-                    showStateSuccess(homeState.result)
-                }
+                is State.Loading -> timber.log.Timber.d("loading")
+                is State.Empty -> showStateEmpty()
+                is State.Error -> showStateError()
+                is State.Success -> showStateSuccess(homeState.result)
             }
         }.launchIn(lifecycleScope)
-    }
-
-    private fun showStateLoading() {
-        binding.fragmentHomeShimmer.startShimmer()
     }
 
     private fun showStateEmpty() {
@@ -136,6 +128,7 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.fragmentHomeRecycler.adapter = null
         _binding = null
         timber.log.Timber.d("onDestroyView")
     }
