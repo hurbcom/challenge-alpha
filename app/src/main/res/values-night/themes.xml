@@ -2,7 +2,7 @@
 <resources>
 
     <style name="Theme.HurbAndroidChallenge" parent="Theme.Material3.DayNight">
-        <item name="android:statusBarColor">#FFFFFF</item>
+        <item name="android:statusBarColor">#000000</item>
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.HurbAndroidChallenge">
