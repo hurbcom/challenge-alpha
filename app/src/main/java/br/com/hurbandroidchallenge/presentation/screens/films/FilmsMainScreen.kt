@@ -17,7 +17,7 @@ import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.domain.model.ItemModel
-import br.com.hurbandroidchallenge.presentation.compose.components.GridItemList
+import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.GridItemList
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar

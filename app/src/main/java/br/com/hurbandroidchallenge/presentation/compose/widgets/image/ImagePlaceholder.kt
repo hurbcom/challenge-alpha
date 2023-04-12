@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ImagePlaceholder(modifier: Modifier = Modifier, icon: ImageVector) {
-    Box(modifier = modifier.background(color = MaterialTheme.colorScheme.surfaceVariant)) {
+    Box(modifier = modifier.background(color = MaterialTheme.colorScheme.outline)) {
         Icon(
             modifier = Modifier
                 .size(64.dp)

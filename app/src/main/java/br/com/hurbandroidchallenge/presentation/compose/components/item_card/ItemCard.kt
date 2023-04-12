@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.compose.components
+package br.com.hurbandroidchallenge.presentation.compose.components.item_card
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -31,9 +31,8 @@ fun ItemCard(
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            val scope = rememberCoroutineScope()
             DefaultImage(
-                image = rememberAsyncImagePainter(model = image, onLoading = { scope.launch { delay(1000L) } }),
+                image = rememberAsyncImagePainter(model = image),
                 contentScale = contentScale,
                 aspectRadio = aspectRadio,
                 shape = shape

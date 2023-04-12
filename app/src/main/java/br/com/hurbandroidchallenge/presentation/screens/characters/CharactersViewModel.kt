@@ -21,7 +21,7 @@ class CharactersViewModel(
 ) : ViewModel() {
 
     private val _charactersUI = mutableStateOf(CharactersUI())
-    val categoryUI: State<CharactersUI> = _charactersUI
+    val characters: State<CharactersUI> = _charactersUI
 
     private val _charactersState = MutableStateFlow<StateUI<PagedList<People>>>(StateUI.Idle)
     val charactersState = _charactersState.asStateFlow()
@@ -40,7 +40,7 @@ class CharactersViewModel(
             }.catch {
                 _charactersState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _charactersUI.value = categoryUI.value.copy(
+                _charactersUI.value = characters.value.copy(
                     characters = data.results,
                     nextPage = data.next
                 )
@@ -57,8 +57,8 @@ class CharactersViewModel(
                 }.catch {
                     _loadMoreState.emit(StateUI.Error(it.message.orEmpty()))
                 }.collect { data ->
-                    _charactersUI.value = categoryUI.value.copy(
-                        characters = categoryUI.value.characters.plus(data.results),
+                    _charactersUI.value = characters.value.copy(
+                        characters = characters.value.characters.plus(data.results),
                         nextPage = data.next
                     )
                     _loadMoreState.emit(StateUI.Processed)

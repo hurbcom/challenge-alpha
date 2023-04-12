@@ -47,10 +47,10 @@ class HomeListViewModel(
         val urls = mutableListOf<String>()
         urls.add(categoriesUrl.people)
         urls.add(categoriesUrl.films)
-        urls.add(categoriesUrl.species)
-        urls.add(categoriesUrl.starships)
-        urls.add(categoriesUrl.vehicles)
-        urls.add(categoriesUrl.planets)
+//        urls.add(categoriesUrl.species)
+//        urls.add(categoriesUrl.starships)
+//        urls.add(categoriesUrl.vehicles)
+//        urls.add(categoriesUrl.planets)
         return Categories.values().filter { urls.contains(it.url) }
     }
 

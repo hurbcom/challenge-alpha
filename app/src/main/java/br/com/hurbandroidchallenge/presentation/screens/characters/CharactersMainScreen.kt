@@ -16,7 +16,7 @@ import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.domain.model.ItemModel
-import br.com.hurbandroidchallenge.presentation.compose.components.GridItemList
+import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.PagedGridItemList
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
@@ -30,7 +30,7 @@ fun CategoryDetailMainScreen(
 ) {
     val scrollBehavior =
         TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-    val categoryDetailUI = viewModel.categoryUI.value
+    val categoryDetailUI = viewModel.characters.value
     Scaffold(
         topBar = {
             TopBar(
@@ -46,23 +46,34 @@ fun CategoryDetailMainScreen(
                 .padding(paddingValues = paddingValues)
                 .fillMaxSize()
         ) {
+            val charactersUI = viewModel.characters.value
+            val loadMoreResponse = viewModel.loadMoreState.collectAsState().value
             viewModel.charactersState.collectAsState().value.let { response ->
                 when (response) {
                     is StateUI.Error -> DefaultErrorScreen(message = response.message)
                     is StateUI.Idle -> Unit
-                    is StateUI.Processed -> GridItemList(
-                        categoryItems = categoryDetailUI.characters.map { character ->
-                            ItemModel(
-                                image = "${ApiUrls.imageBaseUrl}characters/${character.id}.jpg",
-                                name = character.name,
-                                url = character.url
-                            )
-                        },
-                        onItemClick = {
+                    is StateUI.Processed -> {
+                        PagedGridItemList(
+                            categoryItems = categoryDetailUI.characters.map { character ->
+                                ItemModel(
+                                    image = "${ApiUrls.imageBaseUrl}characters/${character.id}.jpg",
+                                    name = character.name,
+                                    url = character.url
+                                )
+                            },
+                            onItemClick = {
 
-                        },
-                        aspectRatio = 4f / 5f
-                    )
+                            },
+                            aspectRatio = 4f / 5f,
+                            isLoading = loadMoreResponse.loading(),
+                            loadMore = {
+                                val canLoadMore = !charactersUI.nextPage.isNullOrBlank()
+                                if (canLoadMore) {
+                                    viewModel.loadMoreCharacters()
+                                }
+                            }
+                        )
+                    }
                     is StateUI.Processing -> DefaultLoadingScreen()
                 }
             }
