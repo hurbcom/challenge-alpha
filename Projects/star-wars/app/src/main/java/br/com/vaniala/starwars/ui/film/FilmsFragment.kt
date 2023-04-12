@@ -1,9 +1,11 @@
 package br.com.vaniala.starwars.ui.film
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -56,6 +58,40 @@ class FilmsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
         initButtonBack()
+
+        binding.apply {
+            fragmentsFilmsSearchEditText.setOnEditorActionListener { _, actionId, _ ->
+                if (actionId == EditorInfo.IME_ACTION_GO) {
+                    updateRepoListFromInput()
+                    true
+                } else {
+                    false
+                }
+            }
+
+            fragmentsFilmsSearchEditText.setOnKeyListener { _, keyCode, event ->
+                if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    updateRepoListFromInput()
+                    true
+                } else {
+                    false
+                }
+            }
+        }
+    }
+
+    private fun updateRepoListFromInput() {
+        binding.fragmentsFilmsSearchEditText.text?.trim().let {
+            if (it != null && it.isNotEmpty()) {
+                filterFilm(it.toString())
+            }
+        }
+    }
+
+    private fun filterFilm(title: String) {
+        lifecycleScope.launch {
+            viewModel.pagingFilter(title).collectLatest(adapter::submitData)
+        }
     }
 
     private fun initButtonBack() {
