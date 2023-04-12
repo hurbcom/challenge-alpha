@@ -1,7 +1,9 @@
 package br.com.vaniala.starwars.domain.model
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.Parcelize
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
@@ -9,6 +11,7 @@ import com.squareup.moshi.JsonClass
  *
  */
 
+@Parcelize
 @JsonClass(generateAdapter = true)
 data class Films(
     @field:Json(name = "title") val title: String,
@@ -16,4 +19,4 @@ data class Films(
     @field:Json(name = "opening_crawl") val openingCrawl: String?,
     @field:Json(name = "episode_id") val episodeId: Int?,
     @field:Json(ignore = true) val image: Int?,
-)
+) : Parcelable

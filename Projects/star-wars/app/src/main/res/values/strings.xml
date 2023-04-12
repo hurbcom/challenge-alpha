@@ -4,6 +4,7 @@
     <string name="nav_label_home">Categories</string>
     <string name="nav_label_films">Films</string>
     <string name="nav_label_characters">Characters</string>
+    <string name="nav_label_films_details">Films Details</string>
     <!--    home-->
     <string name="home_title">Categories</string>
     <string name="home_empty_categories">🤡 Empty categories</string>
@@ -20,4 +21,6 @@
     <!--    characters-->
     <string name="characters_title">Characters</string>
     <string name="search_hint">Search Films</string>
+    <!--    films details-->
+    <string name="films_details_title">Films Details</string>
 </resources>

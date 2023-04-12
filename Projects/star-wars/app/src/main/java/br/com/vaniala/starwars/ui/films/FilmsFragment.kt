@@ -1,4 +1,4 @@
-package br.com.vaniala.starwars.ui.film
+package br.com.vaniala.starwars.ui.films
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -16,8 +16,8 @@ import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.FragmentFilmsBinding
-import br.com.vaniala.starwars.ui.film.adapter.FilmsAdapter
-import br.com.vaniala.starwars.ui.film.viewmodel.FilmViewModel
+import br.com.vaniala.starwars.ui.films.adapter.FilmsAdapter
+import br.com.vaniala.starwars.ui.films.viewmodel.FilmViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -109,7 +109,9 @@ class FilmsFragment : Fragment() {
         }
 
         adapter.onItemClickListener = {
-            Toast.makeText(context, it.title, Toast.LENGTH_SHORT).show()
+            findNavController.navigate(
+                FilmsFragmentDirections.actionFilmsToFilmsDetails(it),
+            )
         }
         stateListener()
     }

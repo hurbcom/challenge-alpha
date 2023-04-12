@@ -1,4 +1,4 @@
-package br.com.vaniala.starwars.ui.film.viewmodel
+package br.com.vaniala.starwars.ui.films.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

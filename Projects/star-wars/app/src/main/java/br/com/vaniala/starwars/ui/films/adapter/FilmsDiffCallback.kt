@@ -1,4 +1,4 @@
-package br.com.vaniala.starwars.ui.film.adapter
+package br.com.vaniala.starwars.ui.films.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import br.com.vaniala.starwars.domain.model.Films

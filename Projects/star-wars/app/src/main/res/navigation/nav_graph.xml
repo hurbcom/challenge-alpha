@@ -11,20 +11,35 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_home_to_films"
-            app:destination="@id/films" />
+            app:destination="@id/films"
+            app:popUpTo="@id/home" />
         <action
             android:id="@+id/action_home_to_characters"
-            app:destination="@id/characters" />
+            app:destination="@id/characters"
+            app:popUpTo="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/films"
-        android:name="br.com.vaniala.starwars.ui.film.FilmsFragment"
+        android:name="br.com.vaniala.starwars.ui.films.FilmsFragment"
         android:label="@string/nav_label_films"
-        tools:layout="@layout/fragment_films" />
+        tools:layout="@layout/fragment_films">
+        <action
+            android:id="@+id/action_films_to_films_details"
+            app:destination="@id/films_details"
+            app:popUpTo="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/films_details"
+        android:name="br.com.vaniala.starwars.ui.films.FilmDetailsFragment"
+        android:label="@string/nav_label_films_details"
+        tools:layout="@layout/fragment_film_details">
+        <argument
+            android:name="film"
+            app:argType="br.com.vaniala.starwars.domain.model.Films" />
+    </fragment>
     <fragment
         android:id="@+id/characters"
         android:name="br.com.vaniala.starwars.ui.characters.CharactersFragment"
         android:label="@string/nav_label_characters"
         tools:layout="@layout/fragment_characters" />
-
 </navigation>

@@ -1,4 +1,4 @@
-package br.com.vaniala.starwars.ui.film.adapter
+package br.com.vaniala.starwars.ui.films.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,4 +1,4 @@
-package br.com.vaniala.starwars.ui.film.adapter
+package br.com.vaniala.starwars.ui.films.adapter
 
 import br.com.vaniala.starwars.databinding.ListItemFilmsBinding
 import io.mockk.mockk
