@@ -11,7 +11,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
-import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.ItemList
+import br.com.hurbandroidchallenge.presentation.screens.home.components.CategoryItemList
 import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
@@ -59,7 +59,7 @@ fun HomeMainScreen(
                 when (response) {
                     is StateUI.Error -> DefaultErrorScreen(message = response.message)
                     is StateUI.Idle -> Unit
-                    is StateUI.Processed -> ItemList(
+                    is StateUI.Processed -> CategoryItemList(
                         categoryItems = homeUI.categories,
                         aspectRatio = 2f / 1f,
                         onItemClick = { route ->

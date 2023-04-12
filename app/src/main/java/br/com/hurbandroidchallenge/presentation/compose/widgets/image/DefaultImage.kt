@@ -14,6 +14,7 @@ import coil.compose.AsyncImagePainter
 
 @Composable
 fun DefaultImage(
+    modifier: Modifier = Modifier,
     image: AsyncImagePainter,
     aspectRadio: Float = 1f,
     contentScale: ContentScale = ContentScale.Fit,

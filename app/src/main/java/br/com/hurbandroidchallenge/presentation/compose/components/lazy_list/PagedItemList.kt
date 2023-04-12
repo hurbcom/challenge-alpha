@@ -3,22 +3,24 @@ package br.com.hurbandroidchallenge.presentation.compose.components.lazy_list
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import br.com.hurbandroidchallenge.commom.extension.isScrolledToTheEnd
 import br.com.hurbandroidchallenge.domain.model.ItemModel
-import br.com.hurbandroidchallenge.presentation.compose.components.item_card.ItemCard
-import br.com.hurbandroidchallenge.presentation.compose.components.item_card.DummyItemCard
+import br.com.hurbandroidchallenge.presentation.compose.components.card.DummyItemCard
+import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 
 @Composable
-fun PagedGridItemList(
+fun PagedItemList(
     modifier: Modifier = Modifier,
     categoryItems: List<ItemModel>,
     onItemClick: () -> Unit,
@@ -26,30 +28,33 @@ fun PagedGridItemList(
     isLoading: Boolean,
     loadMore: () -> Unit
 ) {
-    val state = rememberLazyGridState()
+    val state = rememberLazyListState()
     if (state.isScrolledToTheEnd() and isLoading.not())
         loadMore()
-    LazyVerticalGrid(
+    LazyColumn(
         modifier = modifier,
-        columns = GridCells.Fixed(2),
         state = state,
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = PaddingValues(all = 16.dp)
     ) {
-        items(categoryItems) { category ->
+
+        items(categoryItems) { item ->
+            val shape = MaterialTheme.shapes.large
             ItemCard(
                 modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(shape)
                     .clickable {
                         onItemClick()
                     },
-                title = category.name,
-                image = category.image,
+                image = item.image,
                 contentScale = ContentScale.FillWidth,
-                aspectRadio = aspectRatio
+                aspectRadio = aspectRatio,
+                itemFields = item.fields,
+                shape = shape
             )
         }
-        items(2) {
+        item {
             if (isLoading) {
                 LaunchedEffect(Unit) {
                     state.animateScrollToItem(state.layoutInfo.totalItemsCount - 1)

@@ -17,7 +17,7 @@ import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.domain.model.ItemModel
-import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.GridItemList
+import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.ItemList
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
@@ -52,11 +52,15 @@ fun FilmsMainScreen(
                     is StateUI.Error -> DefaultErrorScreen(message = response.message)
                     is StateUI.Idle -> Unit
                     is StateUI.Processed -> {
-                        GridItemList(
+                        ItemList(
                             categoryItems = filmsUI.films.map { film ->
                                 ItemModel(
                                     image = "${ApiUrls.imageBaseUrl}films/${film.id}.jpg",
-                                    name = "Episode ${film.episodeId.toRoman()}: ${film.title}",
+                                    fields = listOf(
+                                        "Episode ${film.episodeId.toRoman()}: ${film.title}" to "",
+                                        "Diretor" to film.director,
+                                        "Data de lançamento" to film.releaseDate
+                                    ),
                                     url = film.url
                                 )
                             },

@@ -16,7 +16,7 @@ import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.domain.model.ItemModel
-import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.PagedGridItemList
+import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.PagedItemList
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
@@ -53,11 +53,15 @@ fun CategoryDetailMainScreen(
                     is StateUI.Error -> DefaultErrorScreen(message = response.message)
                     is StateUI.Idle -> Unit
                     is StateUI.Processed -> {
-                        PagedGridItemList(
+                        PagedItemList(
                             categoryItems = categoryDetailUI.characters.map { character ->
                                 ItemModel(
                                     image = "${ApiUrls.imageBaseUrl}characters/${character.id}.jpg",
-                                    name = character.name,
+                                    fields = listOf(
+                                        "Nome" to character.name,
+                                        "Altura" to character.height,
+                                        "Massa" to character.mass
+                                    ),
                                     url = character.url
                                 )
                             },

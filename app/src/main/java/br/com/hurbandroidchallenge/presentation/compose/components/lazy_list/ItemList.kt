@@ -6,33 +6,39 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import br.com.hurbandroidchallenge.presentation.compose.components.item_card.ItemCard
-import br.com.hurbandroidchallenge.presentation.model.Categories
+import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 
 @Composable
 fun ItemList(
-    categoryItems: List<Categories>,
-    aspectRatio: Float,
-    onItemClick: (route: String) -> Unit
+    categoryItems: List<ItemModel>,
+    onItemClick: () -> Unit,
+    aspectRatio: Float
 ) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = PaddingValues(16.dp)
     ) {
-        items(categoryItems) { category ->
+        items(categoryItems) { item ->
+            val shape = MaterialTheme.shapes.large
             ItemCard(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .clip(shape)
                     .clickable {
-                        onItemClick(category.route)
+                        onItemClick()
                     },
-                title = stringResource(id = category.nameRes),
-                image = category.image,
-                aspectRadio = aspectRatio
+                image = item.image,
+                contentScale = ContentScale.FillWidth,
+                aspectRadio = aspectRatio,
+                itemFields = item.fields,
+                shape = shape
             )
         }
     }
