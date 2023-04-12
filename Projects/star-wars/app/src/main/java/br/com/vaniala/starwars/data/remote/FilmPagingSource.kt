@@ -27,14 +27,9 @@ class FilmPagingSource(
         return try {
             val nextPage: Int = params.key ?: STARTING_PAGE_INDEX
             val response = service.getFilms(nextPage)
-//            if (response.next == null){
-//            }
 
-            val nextPageNumber: Int?
-            val prevPageNumber: Int?
-
-            prevPageNumber = nextPage - 1
-            nextPageNumber = nextPage + 1
+            val prevPageNumber = if (nextPage == STARTING_PAGE_INDEX) null else nextPage - 1
+            val nextPageNumber = if (response.next == null) null else nextPage + 1
 
             LoadResult.Page(
                 data = response.results,

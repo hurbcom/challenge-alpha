@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.LoadState
 import br.com.vaniala.starwars.databinding.FragmentFilmsSearchBinding
 import br.com.vaniala.starwars.ui.film.adapter.FilmsAdapter
 import br.com.vaniala.starwars.ui.film.viewmodel.FilmViewModel
@@ -61,6 +62,7 @@ class FilmsFragment : Fragment() {
         adapter.onItemClickListener = {
             Toast.makeText(context, it.title, Toast.LENGTH_SHORT).show()
         }
+        loadState()
     }
 
     override fun onDestroyView() {
@@ -108,34 +110,22 @@ class FilmsFragment : Fragment() {
 //
 //        errorState?.let { showError(it.error.toString()) }
 //    }
-//
-//    private fun loadState() {
-//        lifecycleScope.launch {
-//            adapter.loadStateFlow.collect { loadState ->
-//                val isListEmpty =
-//                    loadState.refresh is LoadState.NotLoading && adapter.itemCount == 0
-//                binding.fragmentsFilmsSearchEmptyList.isVisible = isListEmpty
-//                binding.fragmentsFilmsSearchRecycler.isVisible =
-//                    loadState.source.refresh is LoadState.NotLoading ||
-//                    loadState.mediator?.refresh is LoadState.NotLoading
-//                binding.fragmentsFilmsSearchShimmer.isVisible = loadState.mediator?.refresh is LoadState.Loading
-//
-//                if (loadState.mediator?.refresh is LoadState.NotLoading) {
-//                    binding.fragmentsFilmsSearchShimmer.stopShimmer()
-//                }
-//
-//                val errorState = loadState.source.append as? LoadState.Error
-//                    ?: loadState.source.prepend as? LoadState.Error
-//                    ?: loadState.append as? LoadState.Error
-//                    ?: loadState.prepend as? LoadState.ErrorZX
-//                errorState?.let {
-//                    Toast.makeText(
-//                        context,
-//                        " ${it.error}",
-//                        Toast.LENGTH_LONG,
-//                    ).show()
-//                }
-//            }
-//        }
-//    }
+
+    private fun loadState() {
+        lifecycleScope.launch {
+            adapter.loadStateFlow.collect { loadState ->
+                val errorState = loadState.source.append as? LoadState.Error
+                    ?: loadState.source.prepend as? LoadState.Error
+                    ?: loadState.append as? LoadState.Error
+                    ?: loadState.prepend as? LoadState.Error
+                errorState?.let {
+                    Toast.makeText(
+                        context,
+                        " ${it.error}",
+                        Toast.LENGTH_LONG,
+                    ).show()
+                }
+            }
+        }
+    }
 }
