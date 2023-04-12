@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -25,11 +24,9 @@ fun HomeMainScreen(
     navHostController: NavHostController,
     viewModel: HomeListViewModel,
 ) {
-    val scrollBehavior =
-        TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     Scaffold(
         topBar = {
-            TopBar(title = "", scrollBehavior = scrollBehavior) {
+            TopBar(title = "") {
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
@@ -50,8 +47,7 @@ fun HomeMainScreen(
                     DefaultDivider(modifier = Modifier.fillMaxWidth())
                 }
             }
-        },
-        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection)
+        }
     ) { paddingValues ->
         val homeUI = viewModel.homeUI.value
         Box(
