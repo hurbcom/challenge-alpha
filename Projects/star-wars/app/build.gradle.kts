@@ -93,6 +93,7 @@ dependencies {
     implementation(libs.shimmer)
     implementation(libs.splshscreen)
     implementation(libs.coil)
+    implementation(libs.paging)
 
     implementation(libs.timber)
     implementation(libs.hilt.android)

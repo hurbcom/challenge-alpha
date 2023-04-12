@@ -13,6 +13,9 @@
     <string name="home_toast_not_implemented">🤧 Not implemented</string>
     <!--    films-->
     <string name="films_title">Films</string>
+    <string name="films_empty_films">🤡 Empty films</string>
+    <string name="films_error_films">🥴 Something wrong</string>
     <!--    characters-->
     <string name="characters_title">Characters</string>
+    <string name="search_hint">Search Films</string>
 </resources>

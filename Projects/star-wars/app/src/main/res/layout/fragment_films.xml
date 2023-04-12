@@ -8,14 +8,73 @@
 
 
     <TextView
+        android:id="@+id/fragment_films_text_title"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/films_title"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/fragment_films_img_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fragment_films_img_title"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/logo_yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_films_text_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragment_films_text_title"
+        android:contentDescription="@string/home_img_logo_description" />
+
+
+    <TextView
         android:id="@+id/fragment_films_text_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="films"
+        android:text="@string/films_empty_films"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/fragment_films_shimmer"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fragment_films_text_title"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_films_text_title">
+
+        <include layout="@layout/shimmer_categories_layout" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_films_recycler"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="25dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fragment_films_text_title"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_films_text_title"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/list_item_films" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

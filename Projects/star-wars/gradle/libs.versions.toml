@@ -22,6 +22,7 @@ leakcanary = "2.10"
 shimmer = "0.5.0"
 splshscreen = "1.0.0"
 coil = "2.3.0"
+paging = "3.1.1"
 
 junit = "4.13.2"
 androidxTestExtJunit = "1.1.5"
@@ -49,6 +50,7 @@ okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-i
 shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer" }
 splshscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splshscreen" }
 coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+paging = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExtJunit" }

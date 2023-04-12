@@ -51,11 +51,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecyclerView()
+        initAdapter()
         setStateHome()
     }
 
-    private fun initRecyclerView() {
+    private fun initAdapter() {
         adapter = CategoryListAdapter()
         adapter.onItemClickListener = {
             when (it.name) {
