@@ -36,8 +36,8 @@ class FilmPagingSource(
                 prevKey = prevPageNumber,
                 nextKey = nextPageNumber,
             )
-        } catch (e: Exception) {
-            LoadResult.Error(e)
+        } catch (ignore: Exception) {
+            LoadResult.Error(ignore)
         }
     }
 }

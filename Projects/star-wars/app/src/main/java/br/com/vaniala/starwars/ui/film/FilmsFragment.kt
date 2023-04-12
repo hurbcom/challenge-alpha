@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
+import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.FragmentFilmsSearchBinding
 import br.com.vaniala.starwars.ui.film.adapter.FilmsAdapter
 import br.com.vaniala.starwars.ui.film.viewmodel.FilmViewModel
@@ -54,78 +57,84 @@ class FilmsFragment : Fragment() {
         binding.fragmentsFilmsSearchRecycler.adapter = adapter
 
         lifecycleScope.launch {
-            viewModel.pagingDataFlow.collectLatest {
-                adapter.submitData(it)
-            }
+            viewModel.pagingDataFlow.collectLatest(adapter::submitData)
         }
 
         adapter.onItemClickListener = {
             Toast.makeText(context, it.title, Toast.LENGTH_SHORT).show()
         }
-        loadState()
+        stateListener()
+    }
+
+    private fun stateListener() {
+        adapter.addLoadStateListener { loadState ->
+            loadState.decideOnState(
+                showLoading = {
+                    binding.fragmentsFilmsSearchShimmer.isVisible = it
+                    stopShimmer()
+                },
+                showRecycler = {
+                    binding.fragmentsFilmsSearchRecycler.isVisible = it
+                },
+                showEmptyState = {
+                    binding.fragmentsFilmsSearchShimmer.isVisible = it
+                },
+                showError = {
+                    Toast.makeText(
+                        context,
+                        resources.getString(R.string.films_error_films),
+                        Toast.LENGTH_LONG,
+                    ).show()
+                },
+                showErrorThrows = {
+                    binding.fragmentsFilmsSearchError.isVisible = it
+                },
+            )
+        }
+    }
+
+    private fun stopShimmer() {
+        if (!binding.fragmentsFilmsSearchShimmer.isVisible) {
+            binding.fragmentsFilmsSearchShimmer.stopShimmer()
+        }
+    }
+
+    private inline fun CombinedLoadStates.decideOnState(
+        showLoading: (Boolean) -> Unit,
+        showRecycler: (Boolean) -> Unit,
+        showEmptyState: (Boolean) -> Unit,
+        showError: () -> Unit,
+        showErrorThrows: (Boolean) -> Unit,
+    ) {
+        showLoading(
+            refresh is LoadState.Loading,
+        )
+
+        showRecycler(
+            source.refresh is LoadState.NotLoading &&
+                adapter.itemCount > 0,
+        )
+
+        showEmptyState(
+            refresh is LoadState.NotLoading &&
+                adapter.itemCount == 0 &&
+                append.endOfPaginationReached,
+        )
+
+        val errorState = source.append as? LoadState.Error
+            ?: source.prepend as? LoadState.Error
+            ?: append as? LoadState.Error
+            ?: prepend as? LoadState.Error
+
+        errorState?.let {
+            showError()
+        }
+        showErrorThrows(refresh is LoadState.Error)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
         timber.log.Timber.d("onDestroyView")
-    }
-//
-//    private fun stateListener() {
-//        adapter.addLoadStateListener { loadState ->
-//            loadState.decideOnState(
-//                showLoading = { visible ->
-//                    if (visible) View.VISIBLE else View.GONE
-//                },
-//                showEmptyState = { visible ->
-//                    binding.fragmentsFilmsSearchEmptyList.isVisible = visible
-//                    binding.fragmentsFilmsSearchRecycler.isVisible = !visible
-//                },
-//                showError = { message ->
-//                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-//                },
-//            )
-//        }
-//    }
-//
-//    private inline fun CombinedLoadStates.decideOnState(
-//        showLoading: (Boolean) -> Unit,
-//        showEmptyState: (Boolean) -> Unit,
-//        showError: (String) -> Unit,
-//    ) {
-//        showLoading(refresh is LoadState.Loading)
-//
-//        showEmptyState(
-//            source.append is LoadState.NotLoading &&
-//                source.append.endOfPaginationReached &&
-//                adapter.itemCount == 0,
-//        )
-//
-//        val errorState = source.append as? LoadState.Error
-//            ?: source.prepend as? LoadState.Error
-//            ?: source.refresh as? LoadState.Error
-//            ?: append as? LoadState.Error
-//            ?: prepend as? LoadState.Error
-//            ?: refresh as? LoadState.Error
-//
-//        errorState?.let { showError(it.error.toString()) }
-//    }
-
-    private fun loadState() {
-        lifecycleScope.launch {
-            adapter.loadStateFlow.collect { loadState ->
-                val errorState = loadState.source.append as? LoadState.Error
-                    ?: loadState.source.prepend as? LoadState.Error
-                    ?: loadState.append as? LoadState.Error
-                    ?: loadState.prepend as? LoadState.Error
-                errorState?.let {
-                    Toast.makeText(
-                        context,
-                        " ${it.error}",
-                        Toast.LENGTH_LONG,
-                    ).show()
-                }
-            }
-        }
     }
 }
