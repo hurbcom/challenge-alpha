@@ -8,14 +8,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.presentation.model.Categories
 
 @Composable
 fun ItemList(
-    categoryItems: List<ItemModel>,
+    categoryItems: List<Categories>,
     aspectRatio: Float,
-    onItemClick: () -> Unit
+    onItemClick: (route: String) -> Unit
 ) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -26,9 +27,9 @@ fun ItemList(
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable {
-                        onItemClick()
+                        onItemClick(category.route)
                     },
-                title = category.name,
+                title = stringResource(id = category.nameRes),
                 image = category.image,
                 aspectRadio = aspectRatio
             )

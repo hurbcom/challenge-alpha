@@ -7,8 +7,33 @@ sealed class Screens(route: String, argumentKey: String) : ScreenNavOperations(r
         argumentKey = "home_key"
     )
 
-    object CategoryDetail : Screens(
-        route = "category_detail",
-        argumentKey = "category_detail_key"
+    object Characters : Screens(
+        route = "characters",
+        argumentKey = "characters_key"
+    )
+
+    object Films : Screens(
+        route = "films",
+        argumentKey = "films_key"
+    )
+
+    object Species : Screens(
+        route = "species",
+        argumentKey = "species_key"
+    )
+
+    object Starships : Screens(
+        route = "starships",
+        argumentKey = "starships_key"
+    )
+
+    object Vehicles : Screens(
+        route = "vehicles",
+        argumentKey = "vehicles"
+    )
+
+    object Planets : Screens(
+        route = "planets",
+        argumentKey = "planets"
     )
 }

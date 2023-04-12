@@ -13,7 +13,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.presentation.compose.components.ItemList
-import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
@@ -67,8 +66,8 @@ fun HomeMainScreen(
                     is StateUI.Processed -> ItemList(
                         categoryItems = homeUI.categories,
                         aspectRatio = 2f / 1f,
-                        onItemClick = {
-                           navHostController.navigate(Screens.CategoryDetail.route)
+                        onItemClick = { route ->
+                           navHostController.navigate(route)
                         }
                     )
                     is StateUI.Processing -> DefaultLoadingScreen()

@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.categoryDetail
+package br.com.hurbandroidchallenge.presentation.screens.films
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +14,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
+import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.compose.components.GridItemList
@@ -24,17 +25,17 @@ import br.com.hurbandroidchallenge.presentation.model.StateUI
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CategoryDetailMainScreen(
+fun FilmsMainScreen(
     navHostController: NavHostController,
-    viewModel: CharactersViewModel,
+    viewModel: FilmsViewModel
 ) {
     val scrollBehavior =
         TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-    val categoryDetailUI = viewModel.categoryUI.value
+    val filmsUI = viewModel.filmsUI.value
     Scaffold(
         topBar = {
             TopBar(
-                title = stringResource(id = R.string.home_categories_people),
+                title = stringResource(id = R.string.home_categories_films),
                 onBackPressed = { navHostController.navigateUp() },
                 scrollBehavior = scrollBehavior
             )
@@ -46,23 +47,25 @@ fun CategoryDetailMainScreen(
                 .padding(paddingValues = paddingValues)
                 .fillMaxSize()
         ) {
-            viewModel.categoryItems.collectAsState().value.let { response ->
+            viewModel.filmsState.collectAsState().value.let { response ->
                 when (response) {
                     is StateUI.Error -> DefaultErrorScreen(message = response.message)
                     is StateUI.Idle -> Unit
-                    is StateUI.Processed -> GridItemList(
-                        categoryItems = categoryDetailUI.categoryItems.map { character ->
-                            ItemModel(
-                                image = "${ApiUrls.imageBaseUrl}characters/${character.id}.jpg",
-                                name = character.name,
-                                url = character.url
-                            )
-                        },
-                        onItemClick = {
+                    is StateUI.Processed -> {
+                        GridItemList(
+                            categoryItems = filmsUI.films.map { film ->
+                                ItemModel(
+                                    image = "${ApiUrls.imageBaseUrl}films/${film.id}.jpg",
+                                    name = "Episode ${film.episodeId.toRoman()}: ${film.title}",
+                                    url = film.url
+                                )
+                            },
+                            onItemClick = {
 
-                        },
-                        aspectRatio = 4f / 5f
-                    )
+                            },
+                            aspectRatio = 4f / 5.5f
+                        )
+                    }
                     is StateUI.Processing -> DefaultLoadingScreen()
                 }
             }

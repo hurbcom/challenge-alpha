@@ -8,16 +8,16 @@ object ApiUrls {
 
     const val categories = baseUrl
 
-    const val characters = "$baseUrl/people/"
+    const val characters = "${baseUrl}people/"
 
-    const val planets = "$baseUrl/planets/"
+    const val planets = "${baseUrl}planets/"
 
-    const val films = "$baseUrl/films/"
+    const val films = "${baseUrl}films/"
 
-    const val species = "$baseUrl/species/"
+    const val species = "${baseUrl}species/"
 
-    const val vehicles = "$baseUrl/vehicles/"
+    const val vehicles = "${baseUrl}vehicles/"
 
-    const val starships = "$baseUrl/starships/"
+    const val starships = "${baseUrl}starships/"
 
 }

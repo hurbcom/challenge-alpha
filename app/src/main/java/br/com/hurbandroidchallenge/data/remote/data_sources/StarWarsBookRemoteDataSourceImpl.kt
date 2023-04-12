@@ -1,5 +1,6 @@
 package br.com.hurbandroidchallenge.data.remote.data_sources
 
+import br.com.hurbandroidchallenge.data.remote.model.FilmResponse
 import br.com.hurbandroidchallenge.data.remote.model.HomeCategoriesResponse
 import br.com.hurbandroidchallenge.data.remote.model.PeopleResponse
 import br.com.hurbandroidchallenge.data.remote.model.base.PagedListResponse
@@ -21,6 +22,15 @@ class StarWarsBookRemoteDataSourceImpl(
 
     override suspend fun getCharacters(url: String): PagedListResponse<PeopleResponse> {
         val response = service.getCharacters(url = url)
+        if (response.isSuccessful) {
+            return response.body()!!
+        } else {
+            throw HttpException(response)
+        }
+    }
+
+    override suspend fun getFilms(url: String): PagedListResponse<FilmResponse> {
+        val response = service.getFilms(url = url)
         if (response.isSuccessful) {
             return response.body()!!
         } else {
