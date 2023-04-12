@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <TextView
         android:id="@+id/fragment_home_text_title"
         android:layout_width="@dimen/zero_dp"
@@ -60,7 +59,6 @@
         <include layout="@layout/shimmer_categories_layout" />
     </com.facebook.shimmer.ShimmerFrameLayout>
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_home_recycler"
         android:layout_width="@dimen/zero_dp"
@@ -73,8 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/fragment_home_text_title"
         app:layout_constraintTop_toBottomOf="@+id/fragment_home_text_title"
-        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/list_item_category" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

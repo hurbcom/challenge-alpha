@@ -9,10 +9,11 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import br.com.vaniala.starwars.R
-import br.com.vaniala.starwars.databinding.FragmentFilmsSearchBinding
+import br.com.vaniala.starwars.databinding.FragmentFilmsBinding
 import br.com.vaniala.starwars.ui.film.adapter.FilmsAdapter
 import br.com.vaniala.starwars.ui.film.viewmodel.FilmViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,18 +28,22 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class FilmsFragment : Fragment() {
 
-    private var _binding: FragmentFilmsSearchBinding? = null
-    private val binding: FragmentFilmsSearchBinding get() = _binding!!
+    private var _binding: FragmentFilmsBinding? = null
+    private val binding: FragmentFilmsBinding get() = _binding!!
     private lateinit var adapter: FilmsAdapter
 
     private val viewModel: FilmViewModel by viewModels()
+
+    private val findNavController by lazy {
+        findNavController()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        _binding = FragmentFilmsSearchBinding
+        _binding = FragmentFilmsBinding
             .inflate(
                 inflater,
                 container,
@@ -50,11 +55,18 @@ class FilmsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
+        initButtonBack()
+    }
+
+    private fun initButtonBack() {
+        binding.fragmentFilmsImgButtonBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun initAdapter() {
         adapter = FilmsAdapter()
-        binding.fragmentsFilmsSearchRecycler.adapter = adapter
+        binding.fragmentFilmsRecycler.adapter = adapter
 
         lifecycleScope.launch {
             viewModel.pagingDataFlow.collectLatest(adapter::submitData)
@@ -70,14 +82,14 @@ class FilmsFragment : Fragment() {
         adapter.addLoadStateListener { loadState ->
             loadState.decideOnState(
                 showLoading = {
-                    binding.fragmentsFilmsSearchShimmer.isVisible = it
+                    binding.fragmentFilmsShimmer.isVisible = it
                     stopShimmer()
                 },
                 showRecycler = {
-                    binding.fragmentsFilmsSearchRecycler.isVisible = it
+                    binding.fragmentFilmsRecycler.isVisible = it
                 },
                 showEmptyState = {
-                    binding.fragmentsFilmsSearchShimmer.isVisible = it
+                    binding.fragmentsFilmsEmpty.isVisible = it
                 },
                 showError = {
                     Toast.makeText(
@@ -87,15 +99,17 @@ class FilmsFragment : Fragment() {
                     ).show()
                 },
                 showErrorThrows = {
-                    binding.fragmentsFilmsSearchError.isVisible = it
+                    binding.fragmentsFilmsError.isVisible = it
                 },
             )
         }
     }
 
     private fun stopShimmer() {
-        if (!binding.fragmentsFilmsSearchShimmer.isVisible) {
-            binding.fragmentsFilmsSearchShimmer.stopShimmer()
+        if (!binding.fragmentFilmsShimmer.isVisible) {
+            binding.fragmentFilmsShimmer.stopShimmer()
+        } else {
+            binding.fragmentFilmsShimmer.startShimmer()
         }
     }
 

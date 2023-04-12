@@ -10,11 +10,13 @@
     <string name="home_error_categories">🥴 Something wrong</string>
     <string name="home_img_logo_description">logo star wars</string>
     <string name="home_img_category_description">image category star wars</string>
-    <string name="home_toast_not_implemented">🤧 Not implemented</string>
+    <string name="home_toast_not_implemented">🤧 Not implemented yet</string>
     <!--    films-->
     <string name="films_title">Films</string>
     <string name="films_empty_films">🤡 Empty films</string>
     <string name="films_error_films">🥴 Something wrong</string>
+    <string name="films_icon_back">image to back</string>
+    <string name="films_img_film_description">image film</string>
     <!--    characters-->
     <string name="characters_title">Characters</string>
     <string name="search_hint">Search Films</string>
