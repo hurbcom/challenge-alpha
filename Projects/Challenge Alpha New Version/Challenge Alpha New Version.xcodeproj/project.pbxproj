@@ -9,26 +9,28 @@
 /* Begin PBXBuildFile section */
 		679B187D29E75BA2005C8118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B187C29E75BA2005C8118 /* AppDelegate.swift */; };
 		679B187F29E75BA2005C8118 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B187E29E75BA2005C8118 /* SceneDelegate.swift */; };
-		679B188129E75BA2005C8118 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B188029E75BA2005C8118 /* HomeViewController.swift */; };
 		679B188729E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 679B188529E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld */; };
 		679B188929E75BA9005C8118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 679B188829E75BA9005C8118 /* Assets.xcassets */; };
 		679B188C29E75BA9005C8118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 679B188A29E75BA9005C8118 /* LaunchScreen.storyboard */; };
 		679B189629E75CCD005C8118 /* HUNetwork in Resources */ = {isa = PBXBuildFile; fileRef = 679B189529E75CCD005C8118 /* HUNetwork */; };
 		679B189929E75D1D005C8118 /* HUGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = 679B189829E75D1D005C8118 /* HUGraphQL */; };
 		679B189C29E75F89005C8118 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B189B29E75F89005C8118 /* TabbarViewController.swift */; };
+		679B18A029E76FF3005C8118 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B189F29E76FF3005C8118 /* HomeViewController.swift */; };
+		679B18A229E77754005C8118 /* CardInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B18A129E77754005C8118 /* CardInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		679B187929E75BA2005C8118 /* Challenge Alpha New Version.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha New Version.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		679B187C29E75BA2005C8118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		679B187E29E75BA2005C8118 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		679B188029E75BA2005C8118 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		679B188629E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Challenge_Alpha_New_Version.xcdatamodel; sourceTree = "<group>"; };
 		679B188829E75BA9005C8118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		679B188B29E75BA9005C8118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		679B188D29E75BA9005C8118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		679B189529E75CCD005C8118 /* HUNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HUNetwork; sourceTree = "<group>"; };
 		679B189B29E75F89005C8118 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		679B189F29E76FF3005C8118 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		679B18A129E77754005C8118 /* CardInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +80,9 @@
 		679B189329E75C89005C8118 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				679B188029E75BA2005C8118 /* HomeViewController.swift */,
 				679B189B29E75F89005C8118 /* TabbarViewController.swift */,
+				679B189F29E76FF3005C8118 /* HomeViewController.swift */,
+				679B18A129E77754005C8118 /* CardInfoTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,7 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				679B188129E75BA2005C8118 /* HomeViewController.swift in Sources */,
+				679B18A029E76FF3005C8118 /* HomeViewController.swift in Sources */,
+				679B18A229E77754005C8118 /* CardInfoTableViewCell.swift in Sources */,
 				679B187D29E75BA2005C8118 /* AppDelegate.swift in Sources */,
 				679B188729E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld in Sources */,
 				679B189C29E75F89005C8118 /* TabbarViewController.swift in Sources */,
