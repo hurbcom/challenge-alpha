@@ -21,7 +21,8 @@ fun PeopleEntity.toPeople() = this.run {
         vehicles = vehicles,
         starships = starships,
         films = films,
-        url = url
+        url = url,
+        image = image
     )
 }
 
@@ -40,12 +41,13 @@ fun PeopleDto.toEntity() = this.run {
         vehicles = vehicles.orEmpty(),
         starships = starships.orEmpty(),
         films = films.orEmpty(),
-        url = url.orEmpty()
+        url = url.orEmpty(),
+        image = "${ApiUrls.imageBaseUrl}characters/$id.jpg"
     )
 }
 
 fun People.toModel() = ItemModel(
-    image = "${ApiUrls.imageBaseUrl}characters/$id.jpg",
+    image = image,
     fields = listOf(
         "Nome" to name,
         "Altura" to height,

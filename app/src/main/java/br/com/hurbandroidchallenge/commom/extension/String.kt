@@ -1,5 +1,6 @@
 package br.com.hurbandroidchallenge.commom.extension
 
+import br.com.hurbandroidchallenge.commom.util.date.DateUtils
 import org.apache.commons.lang3.StringUtils
 
 fun CharSequence.containsIgnoringAccent(
@@ -8,4 +9,8 @@ fun CharSequence.containsIgnoringAccent(
 ): Boolean {
     val normalizedString = StringUtils.stripAccents(this.toString()).lowercase()
     return normalizedString.contains(other, ignoreCase = ignoreCase)
+}
+
+fun String.toDate(): String {
+    return DateUtils.getClientPatternDate(this)
 }

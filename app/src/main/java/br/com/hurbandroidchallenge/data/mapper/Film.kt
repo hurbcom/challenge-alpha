@@ -1,5 +1,6 @@
 package br.com.hurbandroidchallenge.data.mapper
 
+import br.com.hurbandroidchallenge.commom.extension.toDate
 import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.local.model.FilmEntity
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
@@ -22,7 +23,8 @@ fun FilmEntity.toFilm() = this.run {
         episodeId = episodeId,
         openingCrawl = openingCrawl,
         producer = producer,
-        releaseDate = releaseDate
+        releaseDate = releaseDate,
+        image = image
     )
 }
 
@@ -38,18 +40,19 @@ fun FilmDto.toEntity() = this.run {
         vehicles = vehicles.orEmpty(),
         planets = planets.orEmpty(),
         director = director.orEmpty(),
-        episodeId = episodeId  ?: 0,
+        episodeId = episodeId ?: 0,
         openingCrawl = openingCrawl.orEmpty(),
         producer = producer.orEmpty(),
-        releaseDate = releaseDate.orEmpty()
+        releaseDate = releaseDate.orEmpty(),
+        image = "${ApiUrls.imageBaseUrl}films/${id}.jpg"
     )
 }
 
 fun Film.toModel() = ItemModel(
-    image = "${ApiUrls.imageBaseUrl}films/${id}.jpg",
+    image = image,
     fields = listOf(
         "Episode ${episodeId.toRoman()}: $title" to "",
         "Diretor" to director,
-        "Data de lançamento" to releaseDate
+        "Data de lançamento" to releaseDate.toDate()
     )
 )

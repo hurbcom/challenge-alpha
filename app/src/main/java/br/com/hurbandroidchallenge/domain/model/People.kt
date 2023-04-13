@@ -13,5 +13,6 @@ class People (
     val url: String,
     val films: List<String>,
     val vehicles: List<String>,
-    val starships: List<String>
+    val starships: List<String>,
+    val image: String
 )

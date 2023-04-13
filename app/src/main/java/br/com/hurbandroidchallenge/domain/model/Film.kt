@@ -13,5 +13,6 @@ data class Film(
     val starships: List<String>,
     val vehicles: List<String>,
     val species: List<String>,
-    val url: String
+    val url: String,
+    val image: String
 )

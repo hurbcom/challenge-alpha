@@ -17,8 +17,7 @@ fun HomeCategoriesDto.toEntity() = this.run {
 //        urls.add(vehicles)
 //        urls.add(planets)
     val enabledCategories = Categories.values().filter { urls.contains(it.url) }
-    val categories = enabledCategories.map { category ->
+    enabledCategories.map { category ->
         HomeCategoriesEntity(url = category.url)
     }
-    categories
 }
