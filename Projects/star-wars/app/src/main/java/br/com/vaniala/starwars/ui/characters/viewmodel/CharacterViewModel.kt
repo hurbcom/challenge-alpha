@@ -1,12 +1,12 @@
-package br.com.vaniala.starwars.ui.films.viewmodel
+package br.com.vaniala.starwars.ui.characters.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.filter
-import br.com.vaniala.starwars.domain.model.Films
-import br.com.vaniala.starwars.domain.usecase.GetFilmsUseCase
+import br.com.vaniala.starwars.domain.model.People
+import br.com.vaniala.starwars.domain.usecase.GetCharactersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,23 +20,23 @@ import javax.inject.Inject
  *
  */
 @HiltViewModel
-class FilmViewModel @Inject constructor(
-    getFilmsUseCase: GetFilmsUseCase,
+class CharacterViewModel @Inject constructor(
+    getCharactersUseCase: GetCharactersUseCase,
 ) : ViewModel() {
 
-    private val _filterTitle = MutableStateFlow("")
-    val filterTitle = _filterTitle.asStateFlow()
+    private val _filterName = MutableStateFlow("")
+    val filterName = _filterName.asStateFlow()
 
-    val pagingDataFlow = getFilmsUseCase().cachedIn(viewModelScope)
+    private val pagingDataFlow: Flow<PagingData<People>> = getCharactersUseCase().cachedIn(viewModelScope)
 
-    fun pagingFilter(title: String): Flow<PagingData<Films>> {
-        _filterTitle.value = title
+    fun pagingFilter(title: String): Flow<PagingData<People>> {
+        _filterName.value = title
         if (title.isEmpty()) {
             return pagingDataFlow
         }
         return pagingDataFlow.map { pagingData ->
             pagingData.filter { character ->
-                character.title?.lowercase()?.contains(title.lowercase()) ?: false
+                character.name?.lowercase()?.contains(title.lowercase()) ?: false
             }
         }.cachedIn(viewModelScope)
     }

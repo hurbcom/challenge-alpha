@@ -56,42 +56,40 @@ class FilmsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.fragmentsFilmsSearchEditText.setText(viewModel.filterTitle.value)
         initAdapter()
         initButtonBack()
 
         binding.apply {
             fragmentsFilmsSearchEditText.setOnEditorActionListener { _, actionId, _ ->
                 if (actionId == EditorInfo.IME_ACTION_GO) {
-                    updateRepoListFromInput()
-                    true
-                } else {
-                    false
+                    filterFilm()
+                    return@setOnEditorActionListener true
                 }
+                return@setOnEditorActionListener false
             }
 
             fragmentsFilmsSearchEditText.setOnKeyListener { _, keyCode, event ->
                 if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-                    updateRepoListFromInput()
-                    true
-                } else {
-                    false
+                    filterFilm()
+                    return@setOnKeyListener true
+                }
+                return@setOnKeyListener false
+            }
+        }
+    }
+
+    private fun filterFilm() {
+        binding
+            .fragmentsFilmsSearchEditText.text?.trim().let { search ->
+                if (search != null) {
+                    lifecycleScope.launch {
+                        viewModel.pagingFilter(
+                            search.toString(),
+                        ).collectLatest(adapter::submitData)
+                    }
                 }
             }
-        }
-    }
-
-    private fun updateRepoListFromInput() {
-        binding.fragmentsFilmsSearchEditText.text?.trim().let {
-            if (it != null && it.isNotEmpty()) {
-                filterFilm(it.toString())
-            }
-        }
-    }
-
-    private fun filterFilm(title: String) {
-        lifecycleScope.launch {
-            viewModel.pagingFilter(title).collectLatest(adapter::submitData)
-        }
     }
 
     private fun initButtonBack() {
@@ -104,9 +102,7 @@ class FilmsFragment : Fragment() {
         adapter = FilmsAdapter()
         binding.fragmentFilmsRecycler.adapter = adapter
 
-        lifecycleScope.launch {
-            viewModel.pagingDataFlow.collectLatest(adapter::submitData)
-        }
+        filterFilm()
 
         adapter.onItemClickListener = {
             findNavController.navigate(
@@ -186,6 +182,7 @@ class FilmsFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.fragmentFilmsRecycler.adapter = null
         _binding = null
         timber.log.Timber.d("onDestroyView")
     }

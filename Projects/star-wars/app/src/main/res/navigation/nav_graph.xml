@@ -26,7 +26,7 @@
         <action
             android:id="@+id/action_films_to_films_details"
             app:destination="@id/films_details"
-            app:popUpTo="@id/home" />
+            app:popUpTo="@id/films" />
     </fragment>
     <fragment
         android:id="@+id/films_details"
@@ -41,5 +41,19 @@
         android:id="@+id/characters"
         android:name="br.com.vaniala.starwars.ui.characters.CharactersFragment"
         android:label="@string/nav_label_characters"
-        tools:layout="@layout/fragment_characters" />
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_characters_to_characters_details"
+            app:destination="@id/characters_details"
+            app:popUpTo="@id/characters" />
+    </fragment>
+    <fragment
+        android:id="@+id/characters_details"
+        android:name="br.com.vaniala.starwars.ui.characters.CharactersDetailsFragment"
+        android:label="@string/nav_label_characters_details"
+        tools:layout="@layout/fragment_characters">
+    <argument
+        android:name="character"
+        app:argType="br.com.vaniala.starwars.domain.model.People" />
+    </fragment>
 </navigation>

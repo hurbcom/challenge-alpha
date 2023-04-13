@@ -3,8 +3,9 @@
     <!--nav-->
     <string name="nav_label_home">Categories</string>
     <string name="nav_label_films">Films</string>
-    <string name="nav_label_characters">Characters</string>
     <string name="nav_label_films_details">Films Details</string>
+    <string name="nav_label_characters">Characters</string>
+    <string name="nav_label_characters_details">Characters Details</string>
     <!--    home-->
     <string name="home_title">Categories</string>
     <string name="home_empty_categories">🤡 Empty categories</string>
@@ -14,13 +15,18 @@
     <string name="home_toast_not_implemented">🤧 Not implemented yet</string>
     <!--    films-->
     <string name="films_title">Films</string>
+    <string name="films_search_hint">Search Films</string>
     <string name="films_empty_films">🤡 Empty films</string>
     <string name="films_error_films">🥴 Something wrong</string>
     <string name="films_icon_back">image to back</string>
     <string name="films_img_film_description">image film</string>
     <!--    characters-->
     <string name="characters_title">Characters</string>
-    <string name="search_hint">Search Films</string>
+    <string name="characters_search_hint">Search Characters</string>
+    <string name="characters_icon_back">image to back</string>
+    <string name="characters_empty_characters">🤡 Empty characters</string>
+    <string name="characters_error_characters">🥴 Something wrong</string>
+    <string name="characters_img_characters_description">image character</string>
     <!--    films details-->
     <string name="films_details_title">Films Details</string>
     <string name="films_details_img_film_description">image film</string>
@@ -28,4 +34,16 @@
     <string name="films_details_producer"><b>Producer(s):</b> %1$s</string>
     <string name="films_details_opening_crawl">%1$s</string>
     <string name="films_details_related_characters">Related Characters</string>
+ <!--    characters details-->
+    <string name="characters_details_name">Characters Details</string>
+    <string name="characters_details_img_characters_description">image characters</string>
+    <string name="characters_details_homeworld">Homeworld</string>
+    <string name="characters_details_birth"><b>Birth Year:</b> %1$s</string>
+    <string name="characters_details_gender"><b>Gender:</b> %1$s</string>
+    <string name="characters_details_height"><b>Height:</b> %1$s</string>
+    <string name="characters_details_mass"><b>Mass:</b> %1$s</string>
+    <string name="characters_details_hair"><b>Hair Color:</b> %1$s</string>
+    <string name="characters_details_skin"><b>Skin Color:</b> %1$s</string>
+    <string name="characters_details_opening_crawl">%1$s</string>
+    <string name="characters_details_related_films">Related Films</string>
 </resources>

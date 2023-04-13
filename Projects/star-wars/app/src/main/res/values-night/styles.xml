@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="roundedCornersImageView">
-        <item name="cornerSizeBottomRight">8dp</item>
-        <item name="cornerSizeBottomLeft">8dp</item>
+        <item name="cornerSizeBottomRight">10%</item>
+        <item name="cornerSizeBottomLeft">10%</item>
+    </style>
+
+    <style name="roundedCornersImageViewCharacter">
+        <item name="cornerSize">15%</item>
+    </style>
+
+    <style name="roundedCornersImageViewHomeworld">
+        <item name="cornerSize">25%</item>
     </style>
 </resources>
