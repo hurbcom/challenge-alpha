@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.films.ui
+package br.com.hurbandroidchallenge.presentation.screens.film.list.ui
 
 import br.com.hurbandroidchallenge.domain.model.Film
 

@@ -9,11 +9,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import br.com.hurbandroidchallenge.commom.extension.isScrolledToTheEnd
+import br.com.hurbandroidchallenge.commom.extension.isNearToTheEnd
 import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.compose.components.card.DummyItemCard
 import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
@@ -27,7 +26,7 @@ fun PagedItemList(
     loadMore: () -> Unit
 ) {
     val state = rememberLazyListState()
-    if (state.isScrolledToTheEnd() and isLoading.not())
+    if (state.isNearToTheEnd() and isLoading.not())
         loadMore()
     LazyColumn(
         modifier = modifier,
@@ -51,9 +50,6 @@ fun PagedItemList(
         }
         item {
             if (isLoading) {
-                LaunchedEffect(Unit) {
-                    state.animateScrollToItem(state.layoutInfo.totalItemsCount - 1)
-                }
                 DummyItemCard(aspectRadio = categoryItems.first().aspectRatio)
             }
         }

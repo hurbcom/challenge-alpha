@@ -17,7 +17,7 @@ import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 @Composable
 fun ItemList(
     categoryItems: List<ItemModel>,
-    onItemClick: () -> Unit
+    onItemClick: (url: String) -> Unit
 ) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -30,7 +30,7 @@ fun ItemList(
                     .fillMaxWidth()
                     .clip(shape)
                     .clickable {
-                        onItemClick()
+                        onItemClick(item.url)
                     },
                 itemModel = item,
                 shape = shape

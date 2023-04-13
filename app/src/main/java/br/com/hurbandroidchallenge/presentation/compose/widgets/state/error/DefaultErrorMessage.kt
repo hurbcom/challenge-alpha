@@ -29,7 +29,7 @@ fun DefaultErrorText(
     modifier: Modifier = Modifier,
     message: String = "Ocorreu um erro inesperado"
 ) {
-    Box(modifier = modifier.padding(all = 16.dp)) {
+    Box(modifier = modifier.fillMaxWidth().padding(all = 16.dp)) {
         Text(
             modifier = Modifier.align(Alignment.Center),
             text = message,

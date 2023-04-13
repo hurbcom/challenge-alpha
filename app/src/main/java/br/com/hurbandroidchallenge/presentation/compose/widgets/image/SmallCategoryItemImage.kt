@@ -1,5 +1,6 @@
 package br.com.hurbandroidchallenge.presentation.compose.widgets.image
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.size
@@ -18,9 +19,11 @@ import coil.compose.rememberAsyncImagePainter
 fun SmallCategoryItemImage(
     text: String,
     textColor: Color,
+    onClick: () -> Unit,
     image: String,
 ) {
     Column(
+        modifier = Modifier.clickable { onClick() },
         verticalArrangement = Arrangement.spacedBy(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

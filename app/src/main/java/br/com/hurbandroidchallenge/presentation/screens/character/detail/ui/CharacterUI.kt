@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.character.detail
+package br.com.hurbandroidchallenge.presentation.screens.character.detail.ui
 
 import br.com.hurbandroidchallenge.domain.model.Film
 import br.com.hurbandroidchallenge.domain.model.People

@@ -22,6 +22,11 @@ sealed class Screens(route: String, argumentKey: String) : ScreenNavOperations(r
         argumentKey = "films_key"
     )
 
+    object FilmDetail : Screens(
+        route = "film_detail?film_detail_key={film_detail_key}",
+        argumentKey = "film_detail_key"
+    )
+
     object Species : Screens(
         route = "species",
         argumentKey = "species_key"

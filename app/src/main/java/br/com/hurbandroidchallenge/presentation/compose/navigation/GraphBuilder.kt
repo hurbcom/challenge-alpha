@@ -9,8 +9,10 @@ import br.com.hurbandroidchallenge.presentation.screens.character.detail.Charact
 import br.com.hurbandroidchallenge.presentation.screens.character.detail.CharacterDetailViewModel
 import br.com.hurbandroidchallenge.presentation.screens.character.list.CategoryDetailMainScreen
 import br.com.hurbandroidchallenge.presentation.screens.character.list.CharactersViewModel
-import br.com.hurbandroidchallenge.presentation.screens.films.FilmsMainScreen
-import br.com.hurbandroidchallenge.presentation.screens.films.FilmsViewModel
+import br.com.hurbandroidchallenge.presentation.screens.film.detail.FilmDetailMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.film.detail.FilmDetailViewModel
+import br.com.hurbandroidchallenge.presentation.screens.film.list.FilmsMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.film.list.FilmsViewModel
 import br.com.hurbandroidchallenge.presentation.screens.home.HomeListViewModel
 import br.com.hurbandroidchallenge.presentation.screens.home.HomeMainScreen
 import com.google.accompanist.navigation.animation.composable
@@ -79,6 +81,27 @@ fun NavGraphBuilder.films(
         FilmsMainScreen(
             navHostController = navHostController,
             viewModel = viewModel
+        )
+    }
+}
+
+
+@OptIn(ExperimentalAnimationApi::class)
+fun NavGraphBuilder.filmDetail(
+    navHostController: NavHostController,
+) {
+    composable(
+        route = Screens.FilmDetail.route,
+        arguments = listOf(navArgument(name = Screens.FilmDetail.argumentKey) {
+            type = NavType.StringType
+        })
+    ) {
+        val viewModel = getViewModel<FilmDetailViewModel>()
+        val url = it.arguments?.getString(Screens.FilmDetail.argumentKey).orEmpty()
+        FilmDetailMainScreen(
+            navHostController = navHostController,
+            viewModel = viewModel,
+            url = url
         )
     }
 }

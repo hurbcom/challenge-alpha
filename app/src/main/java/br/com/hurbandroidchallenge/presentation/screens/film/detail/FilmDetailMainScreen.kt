@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.character.detail
+package br.com.hurbandroidchallenge.presentation.screens.film.detail
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -8,10 +8,11 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.commom.extension.toRoman
-import br.com.hurbandroidchallenge.data.mapper.characters.toModel
+import br.com.hurbandroidchallenge.data.mapper.films.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.CategoryItemDetail
 import br.com.hurbandroidchallenge.presentation.compose.components.OtherCategoryCard
 import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
@@ -23,19 +24,19 @@ import br.com.hurbandroidchallenge.presentation.model.StateUI
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CharacterDetailMainScreen(
+fun FilmDetailMainScreen(
     navHostController: NavHostController,
-    viewModel: CharacterDetailViewModel,
+    viewModel: FilmDetailViewModel,
     url: String,
 ) {
-    val characterUI = viewModel.characterUI.value
+    val filmUI = viewModel.filmDetailUI.value
     LaunchedEffect(Unit) {
-        viewModel.loadCharacter(url = url)
+        viewModel.loadFilms(url = url)
     }
     Scaffold(
         topBar = {
             TopBar(
-                title = characterUI.character?.name.orEmpty(),
+                title = "Episode ${filmUI.film?.episodeId?.toRoman()}",
                 onBackPressed = { navHostController.navigateUp() }
             )
         }
@@ -46,15 +47,13 @@ fun CharacterDetailMainScreen(
                 .padding(paddingValues = paddingValues)
                 .verticalScroll(rememberScrollState())
         ) {
-            characterUI.character?.let { character ->
-                val characterModel = character.toModel()
+            filmUI.film?.let { film ->
+                val filmModel = film.toModel()
                 CategoryItemDetail(
-                    itemModel = characterModel.copy(
-                        fields = characterModel.fields.plus(
+                    itemModel = filmModel.copy(
+                        fields = filmModel.fields.plus(
                             listOf(
-                                "Ano de nascimento" to character.birthYear,
-                                "Gênero" to character.gender,
-                                "Cor do cabelo" to character.hairColor
+                                "Produtores" to film.producer
                             )
                         )
                     )
@@ -63,8 +62,19 @@ fun CharacterDetailMainScreen(
                         modifier = Modifier.padding(all = 16.dp),
                         verticalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
-                        OtherCategoryCard(name = "Filmes") {
-                            viewModel.filmsState.collectAsState().value.let { response ->
+                        OtherCategoryCard(name = "Abertura") {
+                            Text(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(horizontal = 32.dp, vertical = 16.dp),
+                                text = film.openingCrawl,
+                                style = MaterialTheme.typography.titleMedium.copy(
+                                    textAlign = TextAlign.Center
+                                )
+                            )
+                        }
+                        OtherCategoryCard(name = "Personagens") {
+                            viewModel.characterState.collectAsState().value.let { response ->
                                 when (response) {
                                     is StateUI.Error -> DefaultErrorText()
                                     is StateUI.Idle -> Unit
@@ -74,13 +84,18 @@ fun CharacterDetailMainScreen(
                                             horizontalArrangement = Arrangement.spacedBy(16.dp),
                                             contentPadding = PaddingValues(all = 16.dp)
                                         ) {
-                                            items(characterUI.films) { film ->
+                                            items(filmUI.characters) { character ->
+                                                val firstName = character.name.split(" ")[0]
                                                 SmallCategoryItemImage(
-                                                    text = "Episode ${film.episodeId.toRoman()}",
+                                                    text = firstName,
                                                     textColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                                    image = film.image,
+                                                    image = character.image,
                                                     onClick = {
-                                                        navHostController.navigate(Screens.FilmDetail.routeWithArgument(film.url))
+                                                        navHostController.navigate(
+                                                            Screens.CharacterDetail.routeWithArgument(
+                                                                character.url
+                                                            )
+                                                        )
                                                     }
                                                 )
                                             }
@@ -99,5 +114,4 @@ fun CharacterDetailMainScreen(
                 }
             }
         }
-    }
-}
+}}

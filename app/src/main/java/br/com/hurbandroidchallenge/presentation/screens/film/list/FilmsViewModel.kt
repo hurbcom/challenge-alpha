@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.films
+package br.com.hurbandroidchallenge.presentation.screens.film.list
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -9,7 +9,7 @@ import br.com.hurbandroidchallenge.domain.model.Film
 import br.com.hurbandroidchallenge.domain.model.base.PagedList
 import br.com.hurbandroidchallenge.domain.use_case.GetFilmsUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
-import br.com.hurbandroidchallenge.presentation.screens.films.ui.FilmsUI
+import br.com.hurbandroidchallenge.presentation.screens.film.list.ui.FilmsUI
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch

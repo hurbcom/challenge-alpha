@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.films
+package br.com.hurbandroidchallenge.presentation.screens.film.list
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,6 +18,7 @@ import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
 import br.com.hurbandroidchallenge.data.mapper.films.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.ItemList
+import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.SearchTopBar
@@ -83,8 +84,8 @@ fun FilmsMainScreen(
                             categoryItems = filteredFilms.map { film ->
                                 film.toModel()
                             },
-                            onItemClick = {
-
+                            onItemClick = { url ->
+                                navHostController.navigate(Screens.FilmDetail.routeWithArgument(url))
                             }
                         )
                     }

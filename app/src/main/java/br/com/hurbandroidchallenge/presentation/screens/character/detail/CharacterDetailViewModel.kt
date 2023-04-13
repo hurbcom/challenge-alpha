@@ -9,6 +9,7 @@ import br.com.hurbandroidchallenge.domain.model.People
 import br.com.hurbandroidchallenge.domain.use_case.GetCharacterByUrlUseCase
 import br.com.hurbandroidchallenge.domain.use_case.GetFilmByUrlUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
+import br.com.hurbandroidchallenge.presentation.screens.character.detail.ui.CharacterUI
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
