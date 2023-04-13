@@ -17,6 +17,8 @@
 		679B189C29E75F89005C8118 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B189B29E75F89005C8118 /* TabbarViewController.swift */; };
 		679B18A029E76FF3005C8118 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B189F29E76FF3005C8118 /* HomeViewController.swift */; };
 		679B18A229E77754005C8118 /* CardInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B18A129E77754005C8118 /* CardInfoTableViewCell.swift */; };
+		679B18A529E7836F005C8118 /* HotelsInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B18A429E7836F005C8118 /* HotelsInfoViewModel.swift */; };
+		679B18A829E78402005C8118 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B18A729E78402005C8118 /* Services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		679B189B29E75F89005C8118 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		679B189F29E76FF3005C8118 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		679B18A129E77754005C8118 /* CardInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoTableViewCell.swift; sourceTree = "<group>"; };
+		679B18A429E7836F005C8118 /* HotelsInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsInfoViewModel.swift; sourceTree = "<group>"; };
+		679B18A729E78402005C8118 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,10 @@
 		679B187B29E75BA2005C8118 /* Challenge Alpha New Version */ = {
 			isa = PBXGroup;
 			children = (
-				679B187C29E75BA2005C8118 /* AppDelegate.swift */,
+				679B18A629E783C3005C8118 /* Services */,
 				679B187E29E75BA2005C8118 /* SceneDelegate.swift */,
+				679B187C29E75BA2005C8118 /* AppDelegate.swift */,
+				679B18A329E78345005C8118 /* ViewModels */,
 				679B189329E75C89005C8118 /* Views */,
 				679B188829E75BA9005C8118 /* Assets.xcassets */,
 				679B188A29E75BA9005C8118 /* LaunchScreen.storyboard */,
@@ -100,6 +106,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		679B18A329E78345005C8118 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				679B18A429E7836F005C8118 /* HotelsInfoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		679B18A629E783C3005C8118 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				679B18A729E78402005C8118 /* Services.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,7 +203,9 @@
 				679B187D29E75BA2005C8118 /* AppDelegate.swift in Sources */,
 				679B188729E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld in Sources */,
 				679B189C29E75F89005C8118 /* TabbarViewController.swift in Sources */,
+				679B18A829E78402005C8118 /* Services.swift in Sources */,
 				679B187F29E75BA2005C8118 /* SceneDelegate.swift in Sources */,
+				679B18A529E7836F005C8118 /* HotelsInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
