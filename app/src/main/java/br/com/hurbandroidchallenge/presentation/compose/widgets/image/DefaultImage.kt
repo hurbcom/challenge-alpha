@@ -18,19 +18,18 @@ fun DefaultImage(
     image: AsyncImagePainter,
     aspectRadio: Float = 1f,
     contentScale: ContentScale = ContentScale.Fit,
-    shape: Shape,
+    shape: Shape
 ) {
-    Box(modifier = Modifier.clip(shape)) {
+    Box(modifier = modifier.clip(shape)) {
         Image(
-            modifier = Modifier.aspectRatio(aspectRadio),
+            modifier = modifier.aspectRatio(aspectRadio),
             painter = image,
             contentDescription = null,
             contentScale = contentScale
         )
         if (image.state !is AsyncImagePainter.State.Success) {
             ImagePlaceholder(
-                modifier = Modifier
-                    .aspectRatio(aspectRadio),
+                modifier = modifier.aspectRatio(aspectRadio),
                 icon = Icons.Default.Image
             )
         }

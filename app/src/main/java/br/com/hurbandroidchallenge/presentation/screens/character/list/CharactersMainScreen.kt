@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.characters
+package br.com.hurbandroidchallenge.presentation.screens.character.list
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,8 +16,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
-import br.com.hurbandroidchallenge.data.mapper.toModel
+import br.com.hurbandroidchallenge.data.mapper.characters.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.PagedItemList
+import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.SearchTopBar
@@ -84,10 +85,9 @@ fun CategoryDetailMainScreen(
                             categoryItems = filteredCharacters.map { character ->
                                 character.toModel()
                             },
-                            onItemClick = {
-
+                            onItemClick = { url ->
+                                navHostController.navigate(Screens.CharacterDetail.routeWithArgument(url))
                             },
-                            aspectRatio = 4f / 5f,
                             isLoading = loadMoreResponse.loading(),
                             loadMore = {
                                 val canLoadMore = charactersUI.nextPage != null

@@ -27,3 +27,22 @@ fun DefaultLoadingScreen(
         }
     }
 }
+
+@Composable
+fun DefaultLoading(
+    modifier: Modifier = Modifier,
+    color: Color = MaterialTheme.colorScheme.primary,
+    text: String? = null
+) {
+    Box(modifier = modifier.padding(all = 16.dp)) {
+        Column(
+            modifier = Modifier.align(Alignment.Center),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            CircularProgressIndicator(color = color)
+            if (text != null) {
+                Text(text = text, style = MaterialTheme.typography.titleMedium)
+            }
+        }
+    }
+}

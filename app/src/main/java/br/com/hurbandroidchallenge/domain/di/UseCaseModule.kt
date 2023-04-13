@@ -1,3 +1,4 @@
+
 package br.com.hurbandroidchallenge.domain.di
 
 import br.com.hurbandroidchallenge.domain.use_case.*
@@ -10,5 +11,9 @@ val useCaseModule = module {
     single { GetCharactersUseCase(get()) }
 
     single { GetFilmsUseCase(get()) }
+
+    single { GetCharacterByUrlUseCase(get()) }
+
+    single { GetFilmByUrlUseCase(get()) }
 
 }

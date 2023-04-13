@@ -16,7 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
-import br.com.hurbandroidchallenge.data.mapper.toModel
+import br.com.hurbandroidchallenge.data.mapper.films.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.ItemList
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
@@ -29,7 +29,7 @@ import br.com.hurbandroidchallenge.presentation.model.StateUI
 @Composable
 fun FilmsMainScreen(
     navHostController: NavHostController,
-    viewModel: FilmsViewModel
+    viewModel: FilmsViewModel,
 ) {
     val scrollBehavior =
         TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -85,8 +85,7 @@ fun FilmsMainScreen(
                             },
                             onItemClick = {
 
-                            },
-                            aspectRatio = 4f / 5.5f
+                            }
                         )
                     }
                     is StateUI.Processing -> DefaultLoadingScreen()

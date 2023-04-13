@@ -8,10 +8,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
 import br.com.hurbandroidchallenge.presentation.compose.widgets.image.DefaultImage
 import coil.compose.rememberAsyncImagePainter
@@ -19,23 +19,20 @@ import coil.compose.rememberAsyncImagePainter
 @Composable
 fun ItemCard(
     modifier: Modifier = Modifier,
-    image: String,
-    aspectRadio: Float,
-    shape: Shape = MaterialTheme.shapes.large,
-    contentScale: ContentScale = ContentScale.FillWidth,
-    itemFields: List<Pair<String, String>>,
+    itemModel: ItemModel,
+    shape: Shape = MaterialTheme.shapes.large
 ) {
     Card(modifier = modifier, shape = shape) {
         Row(
             modifier = Modifier
                 .height(IntrinsicSize.Min)
                 .fillMaxWidth()
-                .aspectRatio(aspectRadio * 2.1f)
+                .aspectRatio(itemModel.aspectRatio * 2.1f)
         ) {
             DefaultImage(
-                image = rememberAsyncImagePainter(model = image),
-                contentScale = contentScale,
-                aspectRadio = aspectRadio,
+                image = rememberAsyncImagePainter(model = itemModel.image),
+                contentScale = itemModel.contentScale,
+                aspectRadio = itemModel.aspectRatio,
                 shape = shape
             )
             Column(
@@ -44,7 +41,7 @@ fun ItemCard(
                     .padding(all = 16.dp),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
-                itemFields.forEachIndexed { index, item ->
+                itemModel.fields.forEachIndexed { index, item ->
                     if (index != 0)
                         DefaultDivider(thickness = 1.dp)
                     ItemField(item.first, item.second)

@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.characters
+package br.com.hurbandroidchallenge.presentation.screens.character.list
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -9,7 +9,7 @@ import br.com.hurbandroidchallenge.domain.model.People
 import br.com.hurbandroidchallenge.domain.model.base.PagedList
 import br.com.hurbandroidchallenge.domain.use_case.GetCharactersUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
-import br.com.hurbandroidchallenge.presentation.screens.characters.ui.CharactersUI
+import br.com.hurbandroidchallenge.presentation.screens.character.list.ui.CharactersUI
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch

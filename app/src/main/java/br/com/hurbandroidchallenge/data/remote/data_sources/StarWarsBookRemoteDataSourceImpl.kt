@@ -38,4 +38,22 @@ class StarWarsBookRemoteDataSourceImpl(
         }
     }
 
+    override suspend fun getFilmByUrl(url: String): FilmDto {
+        val response = service.getFilmByUrl(url)
+        if (response.isSuccessful) {
+            return response.body()!!
+        } else {
+            throw HttpException(response)
+        }
+    }
+
+    override suspend fun getCharacterByUrl(url: String): PeopleDto {
+        val response = service.getCharacterByUrl(url)
+        if (response.isSuccessful) {
+            return response.body()!!
+        } else {
+            throw HttpException(response)
+        }
+    }
+
 }

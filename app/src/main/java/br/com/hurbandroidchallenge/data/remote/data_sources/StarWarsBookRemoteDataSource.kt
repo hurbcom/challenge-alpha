@@ -13,4 +13,8 @@ interface StarWarsBookRemoteDataSource {
 
     suspend fun getFilms(url: String): PagedListResponse<FilmDto>
 
+    suspend fun getFilmByUrl(url: String): FilmDto
+
+    suspend fun getCharacterByUrl(url: String): PeopleDto
+
 }

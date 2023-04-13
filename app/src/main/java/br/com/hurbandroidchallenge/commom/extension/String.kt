@@ -14,3 +14,7 @@ fun CharSequence.containsIgnoringAccent(
 fun String.toDate(): String {
     return DateUtils.getClientPatternDate(this)
 }
+
+fun String.idFromUrl(): Int {
+    return this.split("/").last { it.isNotBlank() }.toInt()
+}

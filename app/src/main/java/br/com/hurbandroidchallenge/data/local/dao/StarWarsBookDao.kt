@@ -32,7 +32,13 @@ interface StarWarsBookDao {
     @Query("SELECT * FROM people")
     suspend fun getCharacters(): List<PeopleEntity>
 
+    @Query("SELECT * FROM people WHERE id = :id")
+    suspend fun getCharacterById(id: Int): PeopleEntity
+
     @Query("SELECT * FROM films")
     suspend fun getFilms(): List<FilmEntity>
+
+    @Query("SELECT * FROM films WHERE id = :id")
+    suspend fun getFilmById(id: Int): FilmEntity
 
 }

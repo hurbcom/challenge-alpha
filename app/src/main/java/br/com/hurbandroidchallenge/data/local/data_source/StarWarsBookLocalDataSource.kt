@@ -12,9 +12,13 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun getCharacters(): List<PeopleEntity>
 
+    suspend fun getCharacterById(id: Int): PeopleEntity
+
     suspend fun setCharacters(characters: List<PeopleEntity>, reset: Boolean)
 
     suspend fun getFilms(): List<FilmEntity>
+
+    suspend fun getFilmById(id: Int): FilmEntity
 
     suspend fun setFilms(films: List<FilmEntity>)
 

@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import br.com.hurbandroidchallenge.commom.extension.isScrolledToTheEnd
 import br.com.hurbandroidchallenge.domain.model.ItemModel
@@ -23,8 +22,7 @@ import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 fun PagedItemList(
     modifier: Modifier = Modifier,
     categoryItems: List<ItemModel>,
-    onItemClick: () -> Unit,
-    aspectRatio: Float,
+    onItemClick: (url: String) -> Unit,
     isLoading: Boolean,
     loadMore: () -> Unit
 ) {
@@ -45,12 +43,9 @@ fun PagedItemList(
                     .fillMaxWidth()
                     .clip(shape)
                     .clickable {
-                        onItemClick()
+                        onItemClick(item.url)
                     },
-                image = item.image,
-                contentScale = ContentScale.FillWidth,
-                aspectRadio = aspectRatio,
-                itemFields = item.fields,
+                itemModel = item,
                 shape = shape
             )
         }
@@ -59,7 +54,7 @@ fun PagedItemList(
                 LaunchedEffect(Unit) {
                     state.animateScrollToItem(state.layoutInfo.totalItemsCount - 1)
                 }
-                DummyItemCard(aspectRadio = aspectRatio)
+                DummyItemCard(aspectRadio = categoryItems.first().aspectRatio)
             }
         }
     }

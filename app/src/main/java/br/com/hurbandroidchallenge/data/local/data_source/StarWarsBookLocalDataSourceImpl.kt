@@ -21,6 +21,10 @@ class StarWarsBookLocalDataSourceImpl(
         return dao.getCharacters()
     }
 
+    override suspend fun getCharacterById(id: Int): PeopleEntity {
+        return dao.getCharacterById(id)
+    }
+
     override suspend fun setCharacters(characters: List<PeopleEntity>, reset: Boolean) {
         if (reset)
             dao.deleteAllCharacters()
@@ -31,6 +35,10 @@ class StarWarsBookLocalDataSourceImpl(
 
     override suspend fun getFilms(): List<FilmEntity> {
         return dao.getFilms()
+    }
+
+    override suspend fun getFilmById(id: Int): FilmEntity {
+        return dao.getFilmById(id)
     }
 
     override suspend fun setFilms(films: List<FilmEntity>) {

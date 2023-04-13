@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.util.Log
+import br.com.hurbandroidchallenge.commom.extension.idFromUrl
 import br.com.hurbandroidchallenge.commom.mapper.Mapper
 import br.com.hurbandroidchallenge.commom.mapper.NullableListMapper
 import br.com.hurbandroidchallenge.commom.mapper.PagedListMapper
@@ -11,6 +12,8 @@ import br.com.hurbandroidchallenge.data.local.data_source.StarWarsBookLocalDataS
 import br.com.hurbandroidchallenge.data.local.model.FilmEntity
 import br.com.hurbandroidchallenge.data.local.model.HomeCategoriesEntity
 import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
+import br.com.hurbandroidchallenge.data.mapper.characters.toPeople
+import br.com.hurbandroidchallenge.data.mapper.films.toFilm
 import br.com.hurbandroidchallenge.data.remote.data_sources.StarWarsBookRemoteDataSource
 import br.com.hurbandroidchallenge.data.remote.model.FilmDto
 import br.com.hurbandroidchallenge.data.remote.model.HomeCategoriesDto
@@ -86,6 +89,20 @@ class StarWarsBookRepositoryImpl(
         }
     }
 
+    override fun getCharacterById(url: String, fromRemote: Boolean): Flow<People> {
+        return flow {
+            if (fromRemote) {
+                if (hasInternetConnection()) {
+                    emit(remoteDataSource.getCharacterByUrl(url).toPeople())
+                } else {
+                    emit(localDataSource.getCharacterById(url.idFromUrl()).toPeople())
+                }
+            } else {
+                emit(localDataSource.getCharacterById(url.idFromUrl()).toPeople())
+            }
+        }
+    }
+
     override fun getFilms(url: String): Flow<PagedList<Film>> {
         return flow {
             if (hasInternetConnection()) {
@@ -113,6 +130,20 @@ class StarWarsBookRepositoryImpl(
                         results = filmEntityToPeopleMapper.map(localFilms)
                     )
                 )
+            }
+        }
+    }
+
+    override fun getFilmByUrl(url: String, fromRemote: Boolean): Flow<Film> {
+        return flow {
+            if (fromRemote) {
+                if (hasInternetConnection()) {
+                    emit(remoteDataSource.getFilmByUrl(url).toFilm())
+                } else {
+                    emit(localDataSource.getFilmById(url.idFromUrl()).toFilm())
+                }
+            } else {
+                emit(localDataSource.getFilmById(url.idFromUrl()).toFilm())
             }
         }
     }

@@ -12,6 +12,10 @@ interface StarWarsBookRepository {
 
     fun getCharacters(url: String): Flow<PagedList<People>>
 
+    fun getCharacterById(url: String, fromRemote: Boolean): Flow<People>
+
     fun getFilms(url: String): Flow<PagedList<Film>>
+
+    fun getFilmByUrl(url: String, fromRemote: Boolean): Flow<Film>
 
 }

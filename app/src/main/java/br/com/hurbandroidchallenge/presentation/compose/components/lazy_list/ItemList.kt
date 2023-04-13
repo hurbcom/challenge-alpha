@@ -10,7 +10,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
@@ -18,8 +17,7 @@ import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 @Composable
 fun ItemList(
     categoryItems: List<ItemModel>,
-    onItemClick: () -> Unit,
-    aspectRatio: Float
+    onItemClick: () -> Unit
 ) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -34,10 +32,7 @@ fun ItemList(
                     .clickable {
                         onItemClick()
                     },
-                image = item.image,
-                contentScale = ContentScale.FillWidth,
-                aspectRadio = aspectRatio,
-                itemFields = item.fields,
+                itemModel = item,
                 shape = shape
             )
         }

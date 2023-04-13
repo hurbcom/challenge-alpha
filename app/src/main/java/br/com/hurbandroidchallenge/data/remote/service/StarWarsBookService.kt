@@ -20,7 +20,7 @@ interface StarWarsBookService {
     ): Response<PagedListResponse<PeopleDto>>
 
     @GET
-    suspend fun getCharacterDetail(@Url url: String): Response<PeopleDto>
+    suspend fun getCharacterByUrl(@Url url: String): Response<PeopleDto>
 
     @GET
     suspend fun getFilms(
@@ -28,6 +28,6 @@ interface StarWarsBookService {
     ): Response<PagedListResponse<FilmDto>>
 
     @GET
-    suspend fun getFilmDetail(@Url url: String): Response<FilmDto>
+    suspend fun getFilmByUrl(@Url url: String): Response<FilmDto>
 
 }

@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.data.mapper
+package br.com.hurbandroidchallenge.data.mapper.categories
 
 import br.com.hurbandroidchallenge.commom.mapper.Mapper
 import br.com.hurbandroidchallenge.data.local.model.HomeCategoriesEntity

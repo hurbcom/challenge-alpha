@@ -3,8 +3,12 @@ package br.com.hurbandroidchallenge.presentation.compose.navigation
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import br.com.hurbandroidchallenge.presentation.screens.characters.CategoryDetailMainScreen
-import br.com.hurbandroidchallenge.presentation.screens.characters.CharactersViewModel
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
+import br.com.hurbandroidchallenge.presentation.screens.character.detail.CharacterDetailMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.character.detail.CharacterDetailViewModel
+import br.com.hurbandroidchallenge.presentation.screens.character.list.CategoryDetailMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.character.list.CharactersViewModel
 import br.com.hurbandroidchallenge.presentation.screens.films.FilmsMainScreen
 import br.com.hurbandroidchallenge.presentation.screens.films.FilmsViewModel
 import br.com.hurbandroidchallenge.presentation.screens.home.HomeListViewModel
@@ -38,6 +42,27 @@ fun NavGraphBuilder.characters(
         CategoryDetailMainScreen(
             navHostController = navHostController,
             viewModel = viewModel
+        )
+    }
+}
+
+@OptIn(ExperimentalAnimationApi::class)
+fun NavGraphBuilder.characterDetail(
+    navHostController: NavHostController,
+) {
+    composable(
+        route = Screens.CharacterDetail.route,
+        arguments = listOf(navArgument(name = Screens.CharacterDetail.argumentKey) {
+            type = NavType.StringType
+        })
+    ) {
+
+        val viewModel = getViewModel<CharacterDetailViewModel>()
+        val url = it.arguments?.getString(Screens.CharacterDetail.argumentKey).orEmpty()
+        CharacterDetailMainScreen(
+            navHostController = navHostController,
+            viewModel = viewModel,
+            url = url
         )
     }
 }

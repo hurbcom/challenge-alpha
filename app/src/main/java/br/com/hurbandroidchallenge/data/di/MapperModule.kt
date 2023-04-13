@@ -1,6 +1,11 @@
 package br.com.hurbandroidchallenge.data.di
 
-import br.com.hurbandroidchallenge.data.mapper.*
+import br.com.hurbandroidchallenge.data.mapper.categories.HomeCategoriesDtoToEntityMapper
+import br.com.hurbandroidchallenge.data.mapper.categories.HomeCategoriesEntityToCategoriesMapper
+import br.com.hurbandroidchallenge.data.mapper.characters.PeopleDtoToEntityMapper
+import br.com.hurbandroidchallenge.data.mapper.characters.PeopleEntityToPeopleMapper
+import br.com.hurbandroidchallenge.data.mapper.films.FilmDtoToEntityMapper
+import br.com.hurbandroidchallenge.data.mapper.films.FilmEntityToFilmMapper
 import org.koin.dsl.module
 
 val mapperModule = module {
