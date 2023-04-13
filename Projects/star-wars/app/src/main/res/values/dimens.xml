@@ -6,5 +6,6 @@
     <dimen name="screen_padding_large">24dp</dimen>
     <dimen name="screen_padding_extra_large">32dp</dimen>
 
+    <dimen name="title_size_medium">12sp</dimen>
     <dimen name="title_size_large">24sp</dimen>
 </resources>

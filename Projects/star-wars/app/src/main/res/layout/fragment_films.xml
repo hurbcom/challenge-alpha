@@ -5,22 +5,23 @@
     android:id="@+id/films"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <ImageView
         android:id="@+id/fragment_films_img_button_back"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_marginTop="@dimen/screen_padding_extra_large"
         android:layout_marginStart="@dimen/screen_padding_large"
         android:contentDescription="@string/films_icon_back"
         android:src="@drawable/ic_action_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fragment_films_text_title" />
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_films_text_title"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fragment_films_text_title"
         android:layout_width="@dimen/zero_dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/screen_padding_large"
+        android:layout_marginTop="@dimen/screen_padding_extra_large"
         android:layout_marginEnd="@dimen/screen_padding_large"
         android:text="@string/films_title"
         android:textColor="@color/black"
@@ -43,7 +44,7 @@
             android:id="@+id/fragments_films_search_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/search_hint"
+            android:hint="@string/films_search_hint"
             android:imeOptions="actionSearch"
             android:inputType="textNoSuggestions"
             android:maxLines="1"

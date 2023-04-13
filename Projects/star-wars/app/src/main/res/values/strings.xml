@@ -23,4 +23,9 @@
     <string name="search_hint">Search Films</string>
     <!--    films details-->
     <string name="films_details_title">Films Details</string>
+    <string name="films_details_img_film_description">image film</string>
+    <string name="films_details_director"><b>Director:</b> %1$s</string>
+    <string name="films_details_producer"><b>Producer(s):</b> %1$s</string>
+    <string name="films_details_opening_crawl">%1$s</string>
+    <string name="films_details_related_characters">Related Characters</string>
 </resources>

@@ -5,7 +5,7 @@ import br.com.vaniala.starwars.BuildConfig
 import br.com.vaniala.starwars.databinding.ListItemFilmsBinding
 import br.com.vaniala.starwars.domain.model.Films
 import coil.load
-import java.util.*
+
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
  * on 12/04/23.
@@ -21,7 +21,9 @@ class FilmsViewHolder(
         }
         binding.itemFilmsName.text = film.title
 
-        binding.itemFilmsImage.load(getUrlImage(film.url))
+        val urlImage = getUrlImage(film.url)
+        film.image = urlImage
+        binding.itemFilmsImage.load(urlImage)
     }
 
     fun getUrlImage(url: String?): String? {

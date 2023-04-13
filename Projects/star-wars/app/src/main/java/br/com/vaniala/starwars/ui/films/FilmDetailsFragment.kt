@@ -1,15 +1,19 @@
 package br.com.vaniala.starwars.ui.films
 
+import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.FragmentFilmDetailsBinding
+import coil.load
 import dagger.hilt.android.AndroidEntryPoint
+
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
  * on 12/04/23.
@@ -18,16 +22,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class FilmDetailsFragment : Fragment() {
 
-    private val argumentos by navArgs<FilmDetailsFragmentArgs>()
+    private val arguments by navArgs<FilmDetailsFragmentArgs>()
     private val film by lazy {
-        argumentos.film
+        arguments.film
     }
     private var _binding: FragmentFilmDetailsBinding? = null
     private val binding: FragmentFilmDetailsBinding get() = _binding!!
-
-    private val findNavController by lazy {
-        findNavController()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,13 +44,29 @@ class FilmDetailsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        if (isLightMode(requireContext())) {
+            WindowInsetsControllerCompat(requireActivity().window, view)
+                .isAppearanceLightStatusBars =
+                false
+        }
         super.onViewCreated(view, savedInstanceState)
         showFilm()
     }
 
+    private fun isLightMode(context: Context): Boolean {
+        val darkModeFlag = context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        return darkModeFlag == Configuration.UI_MODE_NIGHT_NO
+    }
+
     private fun showFilm() {
         binding.apply {
-            Toast.makeText(context, film.title, Toast.LENGTH_SHORT).show()
+            fragmentsFilmsDetailsImage.load(film.image)
+            fragmentsFilmsDetailsTitle.text = film.title
+            val a = film.release_date?.substring(0, 4)
+            fragmentsFilmsDetailsReleaseDate.text = a
+            fragmentsFilmsDetailsDirector.text = getString(R.string.films_details_director, film.director)
+            fragmentsFilmsDetailsProducer.text = getString(R.string.films_details_director, film.producer)
+            fragmentsFilmsDetailsOpeningCrawl.text = film.opening_crawl?.replace("\r\n".toRegex(), "")
         }
     }
 

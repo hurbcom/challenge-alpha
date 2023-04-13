@@ -1,23 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/fragments_films_details_shimmer"
-        android:layout_width="@dimen/zero_dp"
-        android:layout_height="@dimen/zero_dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragments_films_details_constraint_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <include layout="@layout/shimmer_categories_layout" />
-    </com.facebook.shimmer.ShimmerFrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragments_films_details_constraint_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/fragments_films_details_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/black"
+                android:contentDescription="@string/films_details_img_film_description"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedCornersImageView"
+                tools:src="@drawable/logo_yellow" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1.0" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/fragments_films_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blur_title_film"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/screen_padding_large"
+                android:paddingTop="16dp"
+                android:paddingEnd="@dimen/screen_padding_large"
+                android:paddingBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <TextView
+                    android:id="@+id/fragments_films_details_title"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:lines="2"
+                    android:minLines="2"
+                    android:singleLine="false"
+                    android:text=""
+                    android:gravity="center_vertical|start"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="Episode V: The Empire Strikes Back" />
+
+                <TextView
+                    android:id="@+id/fragments_films_details_release_date"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="2"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical|end"
+                    android:minLines="1"
+                    android:text=""
+                    android:textSize="20sp"
+                    tools:text="1983" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/fragments_films_details_director"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_large"
+            android:layout_marginTop="@dimen/screen_padding_medium"
+            android:layout_marginEnd="@dimen/screen_padding_large"
+            android:maxLines="1"
+            android:text="@string/films_details_director"
+            android:textSize="@dimen/title_size_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragments_films_details_constraint_image"
+            tools:text="Diretor: Richard Marquand" />
+
+
+        <TextView
+            android:id="@+id/fragments_films_details_producer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_large"
+            android:layout_marginTop="@dimen/screen_padding_medium"
+            android:layout_marginEnd="@dimen/screen_padding_large"
+            android:maxLines="2"
+            android:text=""
+            android:textSize="@dimen/title_size_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragments_films_details_director"
+            tools:text="Producer(s): Howard G. Kazanjian, George Lucas, Rick McCallum" />
+
+        <TextView
+            android:id="@+id/fragments_films_details_opening_crawl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_large"
+            android:layout_marginTop="@dimen/screen_padding_medium"
+            android:layout_marginEnd="@dimen/screen_padding_large"
+            android:maxLines="10"
+            android:text="@string/films_details_opening_crawl"
+            android:textSize="@dimen/title_size_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragments_films_details_producer"
+            tools:text="It is a dark time for the\r\nRebellion. Although the Death\r\nStar has been destroyed,\r\nImperial troops have driven the\r\nRebel forces from their hidden\r\nbase and pursued them across\r\nthe galaxy.\r\n\r\nEvading the dreaded Imperial\r\nStarfleet, a group of freedom\r\nfighters led by Luke Skywalker\r\nhas established a new secret\r\nbase on the remote ice world\r\nof Hoth.\r\n\r\nThe evil lord Darth Vader,\r\nobsessed with finding young\r\nSkywalker, has dispatched\r\nthousands of remote probes into\r\nthe far reaches of space...." />
+
+        <TextView
+            android:id="@+id/fragments_films_details_related_characters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_large"
+            android:layout_marginTop="@dimen/screen_padding_medium"
+            android:layout_marginEnd="@dimen/screen_padding_large"
+            android:text="@string/films_details_related_characters"
+            android:textSize="@dimen/title_size_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragments_films_details_opening_crawl"
+            tools:text="Related Characters" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragments_films_details_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_large"
+            android:layout_marginTop="@dimen/screen_padding_medium"
+            android:layout_marginEnd="@dimen/screen_padding_large"
+            android:layout_marginBottom="@dimen/screen_padding_medium"
+            android:scrollbars="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragments_films_details_related_characters"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
