@@ -3,7 +3,7 @@ package br.com.vaniala.starwars.ui.films.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
-import br.com.vaniala.starwars.databinding.ListItemFilmsBinding
+import br.com.vaniala.starwars.databinding.ListItemGridBinding
 import br.com.vaniala.starwars.domain.model.Films
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
@@ -15,7 +15,7 @@ class FilmsAdapter(
 ) : PagingDataAdapter<Films, FilmsViewHolder>(FilmsDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmsViewHolder {
-        val binding = ListItemFilmsBinding.inflate(
+        val binding = ListItemGridBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false,

@@ -2,7 +2,7 @@ package br.com.vaniala.starwars.ui.films.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vaniala.starwars.BuildConfig
-import br.com.vaniala.starwars.databinding.ListItemFilmsBinding
+import br.com.vaniala.starwars.databinding.ListItemGridBinding
 import br.com.vaniala.starwars.domain.model.Films
 import coil.load
 
@@ -12,18 +12,18 @@ import coil.load
  *
  */
 class FilmsViewHolder(
-    private val binding: ListItemFilmsBinding,
+    private val binding: ListItemGridBinding,
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(film: Films, onItemClickListener: (film: Films) -> Unit) {
         binding.root.setOnClickListener {
             onItemClickListener(film)
         }
-        binding.itemFilmsName.text = film.title
+        binding.itemGridTitle.text = film.title
 
         val urlImage = getUrlImage(film.url)
         film.image = urlImage
-        binding.itemFilmsImage.load(urlImage)
+        binding.itemGridImage.load(urlImage)
     }
 
     fun getUrlImage(url: String?): String? {

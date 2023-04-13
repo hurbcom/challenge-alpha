@@ -19,14 +19,12 @@
     <string name="films_empty_films">🤡 Empty films</string>
     <string name="films_error_films">🥴 Something wrong</string>
     <string name="films_icon_back">image to back</string>
-    <string name="films_img_film_description">image film</string>
     <!--    characters-->
     <string name="characters_title">Characters</string>
     <string name="characters_search_hint">Search Characters</string>
     <string name="characters_icon_back">image to back</string>
     <string name="characters_empty_characters">🤡 Empty characters</string>
     <string name="characters_error_characters">🥴 Something wrong</string>
-    <string name="characters_img_characters_description">image character</string>
     <!--    films details-->
     <string name="films_details_title">Films Details</string>
     <string name="films_details_img_film_description">image film</string>
@@ -46,4 +44,12 @@
     <string name="characters_details_skin"><b>Skin Color:</b> %1$s</string>
     <string name="characters_details_opening_crawl">%1$s</string>
     <string name="characters_details_related_films">Related Films</string>
+
+
+    <!--    grid-->
+    <string name="grid_img_grid_description">image from category</string>
+    <string name="grid_icon_back">image to back</string>
+
+
+
 </resources>

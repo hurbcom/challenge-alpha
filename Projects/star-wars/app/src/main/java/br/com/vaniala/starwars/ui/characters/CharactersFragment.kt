@@ -1,21 +1,13 @@
 package br.com.vaniala.starwars.ui.characters
 
-import android.os.Bundle
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import br.com.vaniala.starwars.R
-import br.com.vaniala.starwars.databinding.FragmentCharactersBinding
+import br.com.vaniala.starwars.ui.BaseFragment
 import br.com.vaniala.starwars.ui.characters.adapter.CharactersAdapter
 import br.com.vaniala.starwars.ui.characters.viewmodel.CharacterViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,85 +16,39 @@ import kotlinx.coroutines.launch
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
- * on 11/04/23.
+ * on 13/04/23.
  *
  */
 @AndroidEntryPoint
-class CharactersFragment : Fragment() {
+class CharactersFragment : BaseFragment<CharacterViewModel>() {
 
-    private var _binding: FragmentCharactersBinding? = null
-    private val binding: FragmentCharactersBinding get() = _binding!!
-    private lateinit var adapter: CharactersAdapter
-
-    private val viewModel: CharacterViewModel by viewModels()
+    lateinit var adapter: CharactersAdapter
 
     private val findNavController by lazy {
         findNavController()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
-        _binding = FragmentCharactersBinding
-            .inflate(
-                inflater,
-                container,
-                false,
-            )
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.fragmentsCharactersSearchEditText.setText(viewModel.filterName.value)
-        initAdapter()
-        initButtonBack()
-
+    override fun initViews() {
         binding.apply {
-            fragmentsCharactersSearchEditText.setOnEditorActionListener { _, actionId, _ ->
-                if (actionId == EditorInfo.IME_ACTION_GO) {
-                    filterCharacter()
-                    return@setOnEditorActionListener true
-                }
-                return@setOnEditorActionListener false
-            }
-
-            fragmentsCharactersSearchEditText.setOnKeyListener { _, keyCode, event ->
-                if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-                    filterCharacter()
-                    return@setOnKeyListener true
-                }
-                return@setOnKeyListener false
-            }
+            fragmentsGridSearchEditText.setText(viewModel.filterName.value)
+            fragmentGridTextTitle.text = getString(R.string.characters_title)
+            fragmentsGridSearchEditText.hint = getString(R.string.characters_search_hint)
+            fragmentsGridEmpty.text = getString(R.string.characters_empty_characters)
+            fragmentsGridError.text = getString(R.string.characters_error_characters)
         }
     }
 
-    private fun filterCharacter() {
-        binding
-            .fragmentsCharactersSearchEditText.text?.trim().let { search ->
-                if (search != null) {
-                    lifecycleScope.launch {
-                        viewModel.pagingFilter(
-                            search.toString(),
-                        ).collectLatest(adapter::submitData)
-                    }
-                }
-            }
-    }
-
-    private fun initButtonBack() {
-        binding.fragmentCharactersImgButtonBack.setOnClickListener {
-            findNavController().popBackStack()
+    override fun pagingFilter(search: CharSequence) {
+        lifecycleScope.launch {
+            viewModel.pagingFilter(
+                search.toString(),
+            ).collectLatest(adapter::submitData)
         }
     }
 
-    private fun initAdapter() {
+    override fun initAdapter() {
         adapter = CharactersAdapter()
-        binding.fragmentCharactersRecycler.adapter = adapter
-
-        filterCharacter()
+        binding.fragmentGridRecycler.adapter = adapter
 
         adapter.onItemClickListener = {
             findNavController.navigate(
@@ -116,14 +62,14 @@ class CharactersFragment : Fragment() {
         adapter.addLoadStateListener { loadState ->
             loadState.decideOnState(
                 showLoading = {
-                    binding.fragmentCharactersShimmer.isVisible = it
+                    binding.fragmentGridShimmer.isVisible = it
                     stopShimmer()
                 },
                 showRecycler = {
-                    binding.fragmentCharactersRecycler.isVisible = it
+                    binding.fragmentGridRecycler.isVisible = it
                 },
                 showEmptyState = {
-                    binding.fragmentsCharactersEmpty.isVisible = it
+                    binding.fragmentsGridEmpty.isVisible = it
                 },
                 showError = {
                     Toast.makeText(
@@ -133,17 +79,9 @@ class CharactersFragment : Fragment() {
                     ).show()
                 },
                 showErrorThrows = {
-                    binding.fragmentsCharactersError.isVisible = it
+                    binding.fragmentsGridError.isVisible = it
                 },
             )
-        }
-    }
-
-    private fun stopShimmer() {
-        if (!binding.fragmentCharactersShimmer.isVisible) {
-            binding.fragmentCharactersShimmer.stopShimmer()
-        } else {
-            binding.fragmentCharactersShimmer.startShimmer()
         }
     }
 
@@ -181,9 +119,7 @@ class CharactersFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        binding.fragmentGridRecycler.adapter = null
         super.onDestroyView()
-        binding.fragmentCharactersRecycler.adapter = null
-        _binding = null
-        timber.log.Timber.d("onDestroyView")
     }
 }

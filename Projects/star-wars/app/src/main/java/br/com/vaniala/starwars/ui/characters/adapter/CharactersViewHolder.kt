@@ -2,7 +2,7 @@ package br.com.vaniala.starwars.ui.characters.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vaniala.starwars.BuildConfig
-import br.com.vaniala.starwars.databinding.ListItemCharactersBinding
+import br.com.vaniala.starwars.databinding.ListItemGridBinding
 import br.com.vaniala.starwars.domain.model.People
 import coil.load
 
@@ -12,20 +12,20 @@ import coil.load
  *
  */
 class CharactersViewHolder(
-    private val binding: ListItemCharactersBinding,
+    private val binding: ListItemGridBinding,
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(character: People, onItemClickListener: (character: People) -> Unit) {
         binding.root.setOnClickListener {
             onItemClickListener(character)
         }
-        binding.itemCharactersName.text = character.name
+        binding.itemGridTitle.text = character.name
 
         val urlImage = getUrlImage(character.url)
         val urlHomeworld = getUrlImage(character.homeworld, "planets")
         character.imagePeople = urlImage
         character.imageHomeworld = urlHomeworld
-        binding.itemCharactersImage.load(urlImage)
+        binding.itemGridImage.load(urlImage)
     }
 
     private fun getUrlImage(url: String?, type: String = "characters"): String? {

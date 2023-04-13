@@ -1,113 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/films"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/fragment_films_img_button_back"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/zero_dp"
-        android:layout_marginTop="@dimen/screen_padding_extra_large"
-        android:layout_marginStart="@dimen/screen_padding_large"
-        android:contentDescription="@string/films_icon_back"
-        android:src="@drawable/ic_action_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/fragment_films_text_title"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/fragment_films_text_title"
-        android:layout_width="@dimen/zero_dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/screen_padding_extra_large"
-        android:layout_marginEnd="@dimen/screen_padding_large"
-        android:text="@string/films_title"
-        android:textColor="@color/black"
-        android:textSize="@dimen/title_size_large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include
+        android:id="@+id/films_grid_layout"
+        layout="@layout/fragment_grid" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/fragments_films_input_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="@dimen/zero_dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/screen_padding_extra_large"
-        app:layout_constraintEnd_toEndOf="@+id/fragment_films_text_title"
-        app:layout_constraintStart_toStartOf="@+id/fragment_films_img_button_back"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_films_img_button_back"
-        app:startIconDrawable="@drawable/ic_action_search">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/fragments_films_search_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/films_search_hint"
-            android:imeOptions="actionSearch"
-            android:inputType="textNoSuggestions"
-            android:maxLines="1"
-            android:selectAllOnFocus="true"
-            tools:text="@tools:sample/lorem" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/fragments_films_empty"
-        android:layout_width="@dimen/zero_dp"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/films_empty_films"
-        android:textSize="@dimen/title_size_large"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/fragments_films_error"
-        android:layout_width="@dimen/zero_dp"
-        android:layout_height="match_parent"
-        android:text="@string/films_error_films"
-        android:textSize="@dimen/title_size_large"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_films_recycler"
-        android:layout_width="@dimen/zero_dp"
-        android:layout_height="@dimen/zero_dp"
-        android:layout_marginTop="@dimen/screen_padding_extra_large"
-        android:layout_marginBottom="@dimen/title_size_large"
-        android:scrollbars="vertical"
-        android:visibility="gone"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/fragment_films_text_title"
-        app:layout_constraintStart_toStartOf="@+id/fragment_films_img_button_back"
-        app:layout_constraintTop_toBottomOf="@+id/fragments_films_input_layout"
-        app:spanCount="2"
-        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/list_item_films" />
-
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/fragment_films_shimmer"
-        android:layout_width="@dimen/zero_dp"
-        android:layout_height="@dimen/zero_dp"
-        android:layout_marginTop="@dimen/screen_padding_extra_large"
-        android:layout_marginBottom="@dimen/screen_padding_large"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/fragment_films_text_title"
-        app:layout_constraintStart_toStartOf="@+id/fragment_films_img_button_back"
-        app:layout_constraintTop_toBottomOf="@+id/fragments_films_input_layout">
-
-        <include layout="@layout/shimmer_categories_layout" />
-    </com.facebook.shimmer.ShimmerFrameLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

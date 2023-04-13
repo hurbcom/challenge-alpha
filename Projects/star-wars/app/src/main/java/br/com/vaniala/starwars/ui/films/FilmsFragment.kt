@@ -1,21 +1,13 @@
 package br.com.vaniala.starwars.ui.films
 
-import android.os.Bundle
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import br.com.vaniala.starwars.R
-import br.com.vaniala.starwars.databinding.FragmentFilmsBinding
+import br.com.vaniala.starwars.ui.BaseFragment
 import br.com.vaniala.starwars.ui.films.adapter.FilmsAdapter
 import br.com.vaniala.starwars.ui.films.viewmodel.FilmViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,81 +20,34 @@ import kotlinx.coroutines.launch
  *
  */
 @AndroidEntryPoint
-class FilmsFragment : Fragment() {
+class FilmsFragment : BaseFragment<FilmViewModel>() {
 
-    private var _binding: FragmentFilmsBinding? = null
-    private val binding: FragmentFilmsBinding get() = _binding!!
     private lateinit var adapter: FilmsAdapter
-
-    private val viewModel: FilmViewModel by viewModels()
 
     private val findNavController by lazy {
         findNavController()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
-        _binding = FragmentFilmsBinding
-            .inflate(
-                inflater,
-                container,
-                false,
-            )
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.fragmentsFilmsSearchEditText.setText(viewModel.filterTitle.value)
-        initAdapter()
-        initButtonBack()
-
+    override fun initViews() {
         binding.apply {
-            fragmentsFilmsSearchEditText.setOnEditorActionListener { _, actionId, _ ->
-                if (actionId == EditorInfo.IME_ACTION_GO) {
-                    filterFilm()
-                    return@setOnEditorActionListener true
-                }
-                return@setOnEditorActionListener false
-            }
-
-            fragmentsFilmsSearchEditText.setOnKeyListener { _, keyCode, event ->
-                if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-                    filterFilm()
-                    return@setOnKeyListener true
-                }
-                return@setOnKeyListener false
-            }
+            fragmentsGridSearchEditText.setText(viewModel.filterTitle.value)
+            fragmentGridTextTitle.text = getString(R.string.films_title)
+            fragmentsGridSearchEditText.hint = getString(R.string.films_search_hint)
+            fragmentsGridEmpty.text = getString(R.string.films_empty_films)
+            fragmentsGridError.text = getString(R.string.films_error_films)
         }
     }
 
-    private fun filterFilm() {
-        binding
-            .fragmentsFilmsSearchEditText.text?.trim().let { search ->
-                if (search != null) {
-                    lifecycleScope.launch {
-                        viewModel.pagingFilter(
-                            search.toString(),
-                        ).collectLatest(adapter::submitData)
-                    }
-                }
-            }
-    }
-
-    private fun initButtonBack() {
-        binding.fragmentFilmsImgButtonBack.setOnClickListener {
-            findNavController().popBackStack()
+    override fun pagingFilter(search: CharSequence) {
+        lifecycleScope.launch {
+            viewModel.pagingFilter(
+                search.toString(),
+            ).collectLatest(adapter::submitData)
         }
     }
-
-    private fun initAdapter() {
+    override fun initAdapter() {
         adapter = FilmsAdapter()
-        binding.fragmentFilmsRecycler.adapter = adapter
-
-        filterFilm()
+        binding.fragmentGridRecycler.adapter = adapter
 
         adapter.onItemClickListener = {
             findNavController.navigate(
@@ -116,14 +61,14 @@ class FilmsFragment : Fragment() {
         adapter.addLoadStateListener { loadState ->
             loadState.decideOnState(
                 showLoading = {
-                    binding.fragmentFilmsShimmer.isVisible = it
+                    binding.fragmentGridShimmer.isVisible = it
                     stopShimmer()
                 },
                 showRecycler = {
-                    binding.fragmentFilmsRecycler.isVisible = it
+                    binding.fragmentGridRecycler.isVisible = it
                 },
                 showEmptyState = {
-                    binding.fragmentsFilmsEmpty.isVisible = it
+                    binding.fragmentsGridEmpty.isVisible = it
                 },
                 showError = {
                     Toast.makeText(
@@ -133,17 +78,9 @@ class FilmsFragment : Fragment() {
                     ).show()
                 },
                 showErrorThrows = {
-                    binding.fragmentsFilmsError.isVisible = it
+                    binding.fragmentsGridError.isVisible = it
                 },
             )
-        }
-    }
-
-    private fun stopShimmer() {
-        if (!binding.fragmentFilmsShimmer.isVisible) {
-            binding.fragmentFilmsShimmer.stopShimmer()
-        } else {
-            binding.fragmentFilmsShimmer.startShimmer()
         }
     }
 
@@ -181,9 +118,7 @@ class FilmsFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        binding.fragmentGridRecycler.adapter = null
         super.onDestroyView()
-        binding.fragmentFilmsRecycler.adapter = null
-        _binding = null
-        timber.log.Timber.d("onDestroyView")
     }
 }

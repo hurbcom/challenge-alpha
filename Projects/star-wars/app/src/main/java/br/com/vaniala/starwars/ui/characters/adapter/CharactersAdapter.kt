@@ -3,7 +3,7 @@ package br.com.vaniala.starwars.ui.characters.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
-import br.com.vaniala.starwars.databinding.ListItemCharactersBinding
+import br.com.vaniala.starwars.databinding.ListItemGridBinding
 import br.com.vaniala.starwars.domain.model.People
 
 /**w
@@ -16,7 +16,7 @@ class CharactersAdapter(
 ) : PagingDataAdapter<People, CharactersViewHolder>(CharactersDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
-        val binding = ListItemCharactersBinding.inflate(
+        val binding = ListItemGridBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false,

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linear_one"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/screen_padding_small"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linear_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_card_view"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/background_white_shimmer"
+            app:cardCornerRadius="@dimen/screen_padding_extra_large"
+            app:cardElevation="@dimen/screen_padding_small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/background_white_shimmer"
+            android:textSize="@dimen/title_size_medium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_two"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear_one"
+        app:layout_constraintTop_toTopOf="@+id/linear_one">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_card_view"
+            android:layout_marginBottom="@dimen/screen_padding_small"
+            app:cardBackgroundColor="@color/background_white_shimmer"
+            app:cardCornerRadius="@dimen/screen_padding_extra_large"
+            app:cardElevation="@dimen/screen_padding_small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/background_white_shimmer"
+            android:textSize="@dimen/title_size_medium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_three"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/screen_padding_small"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linear_four"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_one">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_card_view"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/background_white_shimmer"
+            app:cardCornerRadius="@dimen/screen_padding_extra_large"
+            app:cardElevation="@dimen/screen_padding_small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/background_white_shimmer"
+            android:textSize="@dimen/title_size_medium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_four"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_padding_small"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear_three"
+        app:layout_constraintTop_toTopOf="@id/linear_three">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_card_view"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/background_white_shimmer"
+            app:cardCornerRadius="@dimen/screen_padding_extra_large"
+            app:cardElevation="@dimen/screen_padding_small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/background_white_shimmer"
+            android:textSize="@dimen/title_size_medium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_five"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/screen_padding_small"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linear_six"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_three">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_card_view"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/background_white_shimmer"
+            app:cardCornerRadius="@dimen/screen_padding_extra_large"
+            app:cardElevation="@dimen/screen_padding_small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/background_white_shimmer"
+            android:textSize="@dimen/title_size_medium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_six"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_padding_small"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linear_five"
+        app:layout_constraintTop_toTopOf="@id/linear_five">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_card_view"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/background_white_shimmer"
+            app:cardCornerRadius="@dimen/screen_padding_extra_large"
+            app:cardElevation="@dimen/screen_padding_small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/background_white_shimmer"
+            android:textSize="@dimen/title_size_medium" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
