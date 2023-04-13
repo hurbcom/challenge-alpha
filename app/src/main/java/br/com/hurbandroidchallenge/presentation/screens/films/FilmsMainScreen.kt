@@ -60,8 +60,7 @@ fun FilmsMainScreen(
                                         "Episode ${film.episodeId.toRoman()}: ${film.title}" to "",
                                         "Diretor" to film.director,
                                         "Data de lançamento" to film.releaseDate
-                                    ),
-                                    url = film.url
+                                    )
                                 )
                             },
                             onItemClick = {

@@ -23,10 +23,10 @@ class CharactersViewModel(
     private val _charactersUI = mutableStateOf(CharactersUI())
     val characters: State<CharactersUI> = _charactersUI
 
-    private val _charactersState = MutableStateFlow<StateUI<PagedList<People>>>(StateUI.Idle)
+    private val _charactersState = MutableStateFlow<StateUI<PagedList<People>>>(StateUI.Idle())
     val charactersState = _charactersState.asStateFlow()
 
-    private val _loadMoreState = MutableStateFlow<StateUI<PagedList<People>>>(StateUI.Idle)
+    private val _loadMoreState = MutableStateFlow<StateUI<PagedList<People>>>(StateUI.Idle())
     val loadMoreState = _loadMoreState.asStateFlow()
 
     init {
@@ -36,7 +36,7 @@ class CharactersViewModel(
     private fun loadCharacters() {
         viewModelScope.launch {
             getCharactersUseCase(url = ApiUrls.characters).onStart {
-                _charactersState.emit(StateUI.Processing)
+                _charactersState.emit(StateUI.Processing())
             }.catch {
                 _charactersState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
@@ -44,7 +44,7 @@ class CharactersViewModel(
                     characters = data.results,
                     nextPage = data.next
                 )
-                _charactersState.emit(StateUI.Processed)
+                _charactersState.emit(StateUI.Processed(data))
             }
         }
     }
@@ -53,7 +53,7 @@ class CharactersViewModel(
         viewModelScope.launch {
             _charactersUI.value.nextPage?.let { nextPage ->
                 getCharactersUseCase(url = nextPage).onStart {
-                    _loadMoreState.emit(StateUI.Processing)
+                    _loadMoreState.emit(StateUI.Processing())
                 }.catch {
                     _loadMoreState.emit(StateUI.Error(it.message.orEmpty()))
                 }.collect { data ->
@@ -61,7 +61,7 @@ class CharactersViewModel(
                         characters = characters.value.characters.plus(data.results),
                         nextPage = data.next
                     )
-                    _loadMoreState.emit(StateUI.Processed)
+                    _loadMoreState.emit(StateUI.Processed(data))
                 }
             }
         }

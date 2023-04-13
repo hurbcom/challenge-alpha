@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.model
+package br.com.hurbandroidchallenge.domain.model
 
 import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls

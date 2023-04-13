@@ -4,9 +4,8 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.hurbandroidchallenge.domain.model.HomeCategories
+import br.com.hurbandroidchallenge.domain.model.Categories
 import br.com.hurbandroidchallenge.domain.use_case.GetHomeCategoriesUseCase
-import br.com.hurbandroidchallenge.presentation.model.Categories
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 import br.com.hurbandroidchallenge.presentation.screens.home.ui.HomeUI
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,7 +21,7 @@ class HomeListViewModel(
     private val _homeUI = mutableStateOf(HomeUI())
     val homeUI: State<HomeUI> = _homeUI
 
-    private val _homeCategories = MutableStateFlow<StateUI<List<Categories>>>(StateUI.Idle)
+    private val _homeCategories = MutableStateFlow<StateUI<List<Categories>>>(StateUI.Idle())
     val homeCategories = _homeCategories.asStateFlow()
 
     init {
@@ -32,26 +31,14 @@ class HomeListViewModel(
     private fun getHomeCategories() {
         viewModelScope.launch {
             getHomeCategoriesUseCase().onStart {
-                _homeCategories.emit(StateUI.Processing)
+                _homeCategories.emit(StateUI.Processing())
             }.catch {
                 _homeCategories.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                val categories = getCategoriesList(data)
-                _homeUI.value = homeUI.value.copy(categories = categories)
-                _homeCategories.emit(StateUI.Processed)
+                _homeUI.value = homeUI.value.copy(categories = data)
+                _homeCategories.emit(StateUI.Processed(data))
             }
         }
-    }
-
-    private fun getCategoriesList(categoriesUrl: HomeCategories): List<Categories> {
-        val urls = mutableListOf<String>()
-        urls.add(categoriesUrl.people)
-        urls.add(categoriesUrl.films)
-//        urls.add(categoriesUrl.species)
-//        urls.add(categoriesUrl.starships)
-//        urls.add(categoriesUrl.vehicles)
-//        urls.add(categoriesUrl.planets)
-        return Categories.values().filter { urls.contains(it.url) }
     }
 
 }

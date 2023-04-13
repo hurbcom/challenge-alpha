@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.data.remote.service.di
+package br.com.hurbandroidchallenge.data.remote.di
 
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.data.remote.service.ServiceManager

@@ -2,7 +2,7 @@ package br.com.hurbandroidchallenge.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 
-class FilmResponse(
+class FilmDto(
     @SerializedName("title") val title: String?,
     @SerializedName("episode_id") val episodeId: Int?,
     @SerializedName("opening_crawl") val openingCrawl: String?,

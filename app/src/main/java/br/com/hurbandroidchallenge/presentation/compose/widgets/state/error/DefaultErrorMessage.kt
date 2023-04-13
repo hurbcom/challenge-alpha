@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun DefaultErrorScreen(
-    message: String
+    message: String = "Ocorreu um erro inesperado"
 ) {
     Box(modifier = Modifier.fillMaxSize().padding(all = 16.dp)) {
         Text(

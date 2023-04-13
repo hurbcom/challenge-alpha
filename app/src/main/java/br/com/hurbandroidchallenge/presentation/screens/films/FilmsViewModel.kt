@@ -23,7 +23,7 @@ class FilmsViewModel(
     private val _filmsUI = mutableStateOf(FilmsUI())
     val filmsUI: State<FilmsUI> = _filmsUI
 
-    private val _filmsState = MutableStateFlow<StateUI<PagedList<Film>>>(StateUI.Idle)
+    private val _filmsState = MutableStateFlow<StateUI<PagedList<Film>>>(StateUI.Idle())
     val filmsState = _filmsState.asStateFlow()
 
     init {
@@ -33,7 +33,7 @@ class FilmsViewModel(
     private fun loadFilms() {
         viewModelScope.launch {
             getFilmsUseCase(url = ApiUrls.films).onStart {
-                _filmsState.emit(StateUI.Processing)
+                _filmsState.emit(StateUI.Processing())
             }.catch {
                 _filmsState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
@@ -41,7 +41,7 @@ class FilmsViewModel(
                     films = data.results,
                     nextPage = data.next
                 )
-                _filmsState.emit(StateUI.Processed)
+                _filmsState.emit(StateUI.Processed(data))
             }
         }
     }

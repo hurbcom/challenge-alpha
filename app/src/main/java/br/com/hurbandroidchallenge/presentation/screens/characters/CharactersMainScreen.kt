@@ -61,8 +61,7 @@ fun CategoryDetailMainScreen(
                                         "Nome" to character.name,
                                         "Altura" to character.height,
                                         "Massa" to character.mass
-                                    ),
-                                    url = character.url
+                                    )
                                 )
                             },
                             onItemClick = {
@@ -71,7 +70,7 @@ fun CategoryDetailMainScreen(
                             aspectRatio = 4f / 5f,
                             isLoading = loadMoreResponse.loading(),
                             loadMore = {
-                                val canLoadMore = !charactersUI.nextPage.isNullOrBlank()
+                                val canLoadMore = charactersUI.nextPage != null
                                 if (canLoadMore) {
                                     viewModel.loadMoreCharacters()
                                 }

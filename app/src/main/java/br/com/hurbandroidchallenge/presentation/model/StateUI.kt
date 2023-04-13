@@ -1,10 +1,10 @@
 package br.com.hurbandroidchallenge.presentation.model
 
 sealed class StateUI<out T : Any> {
-    object Idle : StateUI<Nothing>()
-    object Processing : StateUI<Nothing>()
-    data class Error(val message: String = "") : StateUI<Nothing>()
-    object Processed : StateUI<Nothing>()
+    data class Idle(val message: String = "") : StateUI<Nothing>()
+    data class Processed<out T : Any>(val data: T) : StateUI<T>()
+    data class Processing(val message: String = "") : StateUI<Nothing>()
+    data class Error(val message: String = "", val info: Any? = null) : StateUI<Nothing>()
 
     fun idle() = this is Idle
     fun loading() = this is Processing
