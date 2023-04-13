@@ -32,7 +32,8 @@ val repositoryModule = module {
             ),
             homeCategoriesEntityToCategoriesMapper = NullableListMapperImpl(
                 mapper = get<HomeCategoriesEntityToCategoriesMapper>()
-            )
+            ),
+            context = get()
         )
     }
 

@@ -14,8 +14,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
-import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
-import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.data.mapper.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.PagedItemList
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
@@ -55,14 +54,7 @@ fun CategoryDetailMainScreen(
                     is StateUI.Processed -> {
                         PagedItemList(
                             categoryItems = categoryDetailUI.characters.map { character ->
-                                ItemModel(
-                                    image = "${ApiUrls.imageBaseUrl}characters/${character.id}.jpg",
-                                    fields = listOf(
-                                        "Nome" to character.name,
-                                        "Altura" to character.height,
-                                        "Massa" to character.mass
-                                    )
-                                )
+                                character.toModel()
                             },
                             onItemClick = {
 

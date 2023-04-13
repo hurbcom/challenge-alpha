@@ -58,7 +58,7 @@ class CharactersViewModel(
                     _loadMoreState.emit(StateUI.Error(it.message.orEmpty()))
                 }.collect { data ->
                     _charactersUI.value = characters.value.copy(
-                        characters = characters.value.characters.plus(data.results),
+                        characters = data.results,
                         nextPage = data.next
                     )
                     _loadMoreState.emit(StateUI.Processed(data))

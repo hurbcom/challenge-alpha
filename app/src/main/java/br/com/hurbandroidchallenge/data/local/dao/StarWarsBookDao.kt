@@ -12,7 +12,7 @@ interface StarWarsBookDao {
     suspend fun upsertAllCategories(homeCategoriesEntity: List<HomeCategoriesEntity>)
 
     @Upsert
-    suspend fun upsertAllPeople(peopleEntity: List<PeopleEntity>)
+    suspend fun upsertAllCharacters(peopleEntity: List<PeopleEntity>)
 
     @Upsert
     suspend fun upsertAllFilms(filmsEntity:  List<FilmEntity>)
@@ -21,7 +21,7 @@ interface StarWarsBookDao {
     suspend fun deleteAllCategories()
 
     @Query("DELETE FROM people")
-    suspend fun deleteAllPeople()
+    suspend fun deleteAllCharacters()
 
     @Query("DELETE FROM films")
     suspend fun deleteAllFilms()

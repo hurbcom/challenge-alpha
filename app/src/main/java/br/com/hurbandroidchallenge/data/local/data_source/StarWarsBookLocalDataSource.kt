@@ -16,6 +16,6 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun getFilms(): List<FilmEntity>
 
-    suspend fun setFilms(films: List<FilmEntity>, reset: Boolean)
+    suspend fun setFilms(films: List<FilmEntity>)
 
 }

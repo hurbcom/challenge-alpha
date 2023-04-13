@@ -14,9 +14,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
-import br.com.hurbandroidchallenge.commom.extension.toRoman
-import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
-import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.data.mapper.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.ItemList
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
@@ -54,14 +52,7 @@ fun FilmsMainScreen(
                     is StateUI.Processed -> {
                         ItemList(
                             categoryItems = filmsUI.films.map { film ->
-                                ItemModel(
-                                    image = "${ApiUrls.imageBaseUrl}films/${film.id}.jpg",
-                                    fields = listOf(
-                                        "Episode ${film.episodeId.toRoman()}: ${film.title}" to "",
-                                        "Diretor" to film.director,
-                                        "Data de lançamento" to film.releaseDate
-                                    )
-                                )
+                                film.toModel()
                             },
                             onItemClick = {
 

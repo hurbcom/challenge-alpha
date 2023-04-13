@@ -1,5 +1,9 @@
 package br.com.hurbandroidchallenge.data.repository
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.util.Log
 import br.com.hurbandroidchallenge.commom.mapper.Mapper
 import br.com.hurbandroidchallenge.commom.mapper.NullableListMapper
 import br.com.hurbandroidchallenge.commom.mapper.PagedListMapper
@@ -30,16 +34,21 @@ class StarWarsBookRepositoryImpl(
     private val peopleEntityToPeopleMapper: NullableListMapper<PeopleEntity, People>,
     private val filmDtoToEntityMapper: PagedListMapper<FilmDto, FilmEntity>,
     private val filmEntityToPeopleMapper: NullableListMapper<FilmEntity, Film>,
+    private val context: Context
 ) : StarWarsBookRepository {
 
     override fun getHomeCategories(): Flow<List<Categories>> {
         return flow {
-            apiCall {
-                val remoteCategories = remoteDataSource.getHomeCategories()
-                localDataSource.setHomeCategories(
-                    categories = homeCategoriesDtoToEntityMapper.map(remoteCategories),
-                    reset = true
-                )
+            if (hasInternetConnection()) {
+                apiCall {
+                    val remoteCategories = remoteDataSource.getHomeCategories()
+                    localDataSource.setHomeCategories(
+                        categories = homeCategoriesDtoToEntityMapper.map(remoteCategories),
+                        reset = true
+                    )
+                    emit(homeCategoriesEntityToCategoriesMapper.map(localDataSource.getHomeCategories()))
+                }
+            } else {
                 emit(homeCategoriesEntityToCategoriesMapper.map(localDataSource.getHomeCategories()))
             }
         }
@@ -47,20 +56,30 @@ class StarWarsBookRepositoryImpl(
 
     override fun getCharacters(url: String): Flow<PagedList<People>> {
         return flow {
-            apiCall {
-                val remoteCharacters = remoteDataSource.getCharacters(url)
-                localDataSource.setCharacters(
-                    characters = peopleDtoToEntityMapper.map(remoteCharacters).results,
-                    reset = url.contains("page")
-                )
+            if (hasInternetConnection()) {
+                apiCall {
+                    val remoteCharacters = remoteDataSource.getCharacters(url)
+                    localDataSource.setCharacters(
+                        characters = peopleDtoToEntityMapper.map(remoteCharacters).results,
+                        reset = remoteCharacters.previous == null
+                    )
+                    emit(
+                        PagedList(
+                            count = remoteCharacters.count ?: 0,
+                            next = remoteCharacters.next,
+                            previous = remoteCharacters.previous,
+                            results = peopleEntityToPeopleMapper.map(localDataSource.getCharacters())
+                        )
+                    )
+                }
+            } else {
+                val localCharacters = localDataSource.getCharacters()
                 emit(
                     PagedList(
-                        count = remoteCharacters.count ?: 0,
-                        next = remoteCharacters.next,
-                        previous = remoteCharacters.previous,
-                        results = peopleEntityToPeopleMapper.map(
-                            localDataSource.getCharacters()
-                        )
+                        count = localCharacters.size,
+                        next = null,
+                        previous = null,
+                        results = peopleEntityToPeopleMapper.map(localCharacters)
                     )
                 )
             }
@@ -69,21 +88,54 @@ class StarWarsBookRepositoryImpl(
 
     override fun getFilms(url: String): Flow<PagedList<Film>> {
         return flow {
-            apiCall {
-                val remoteFilms = remoteDataSource.getFilms(url)
-                localDataSource.setFilms(
-                    films = filmDtoToEntityMapper.map(remoteFilms).results,
-                    reset = url.contains("page")
-                )
+            if (hasInternetConnection()) {
+                apiCall {
+                    val remoteFilms = remoteDataSource.getFilms(url)
+                    localDataSource.setFilms(
+                        films = filmDtoToEntityMapper.map(remoteFilms).results
+                    )
+                    emit(
+                        PagedList(
+                            count = remoteFilms.count ?: 0,
+                            next = remoteFilms.next,
+                            previous = remoteFilms.previous,
+                            results = filmEntityToPeopleMapper.map(localDataSource.getFilms())
+                        )
+                    )
+                }
+            } else {
+                val localFilms = localDataSource.getFilms()
                 emit(
                     PagedList(
-                        count = remoteFilms.count ?: 0,
-                        next = remoteFilms.next,
-                        previous = remoteFilms.previous,
-                        results = filmEntityToPeopleMapper.map(localDataSource.getFilms())
+                        count = localFilms.size,
+                        next = null,
+                        previous = null,
+                        results = filmEntityToPeopleMapper.map(localFilms)
                     )
                 )
             }
         }
+    }
+
+    private fun hasInternetConnection(): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager
+        if (connectivityManager != null) {
+            val capabilities =
+                connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+            if (capabilities != null) {
+                if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
+                    return true
+                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
+                    return true
+                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
+                    return true
+                }
+            }
+        }
+        return false
     }
 }

@@ -6,15 +6,14 @@ import br.com.hurbandroidchallenge.data.local.model.HomeCategoriesEntity
 import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
 
 class StarWarsBookLocalDataSourceImpl(
-    private val dao: StarWarsBookDao
+    private val dao: StarWarsBookDao,
 ) : StarWarsBookLocalDataSource {
     override suspend fun getHomeCategories(): List<HomeCategoriesEntity> {
         return dao.getCategories()
     }
 
     override suspend fun setHomeCategories(categories: List<HomeCategoriesEntity>, reset: Boolean) {
-        if (reset)
-            dao.deleteAllCategories()
+        dao.deleteAllCategories()
         dao.upsertAllCategories(categories)
     }
 
@@ -24,17 +23,18 @@ class StarWarsBookLocalDataSourceImpl(
 
     override suspend fun setCharacters(characters: List<PeopleEntity>, reset: Boolean) {
         if (reset)
-            dao.deleteAllPeople()
-        dao.upsertAllPeople(characters)
+            dao.deleteAllCharacters()
+        val currentCharacters = getCharacters()
+        dao.deleteAllCharacters()
+        dao.upsertAllCharacters(currentCharacters.plus(characters).distinct())
     }
 
     override suspend fun getFilms(): List<FilmEntity> {
         return dao.getFilms()
     }
 
-    override suspend fun setFilms(films: List<FilmEntity>, reset: Boolean) {
-        if (reset)
-            dao.deleteAllFilms()
+    override suspend fun setFilms(films: List<FilmEntity>) {
+        dao.deleteAllFilms()
         dao.upsertAllFilms(films)
     }
 
