@@ -17,6 +17,7 @@ import br.com.hurbandroidchallenge.presentation.screens.home.HomeListViewModel
 import br.com.hurbandroidchallenge.presentation.screens.home.HomeMainScreen
 import com.google.accompanist.navigation.animation.composable
 import org.koin.androidx.compose.getViewModel
+import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.home(
@@ -58,13 +59,13 @@ fun NavGraphBuilder.characterDetail(
             type = NavType.StringType
         })
     ) {
-
-        val viewModel = getViewModel<CharacterDetailViewModel>()
         val url = it.arguments?.getString(Screens.CharacterDetail.argumentKey).orEmpty()
+        val viewModel = getViewModel<CharacterDetailViewModel>(
+            parameters = { parametersOf(url) }
+        )
         CharacterDetailMainScreen(
             navHostController = navHostController,
-            viewModel = viewModel,
-            url = url
+            viewModel = viewModel
         )
     }
 }
@@ -96,12 +97,13 @@ fun NavGraphBuilder.filmDetail(
             type = NavType.StringType
         })
     ) {
-        val viewModel = getViewModel<FilmDetailViewModel>()
         val url = it.arguments?.getString(Screens.FilmDetail.argumentKey).orEmpty()
+        val viewModel = getViewModel<FilmDetailViewModel>(
+            parameters = { parametersOf(url) }
+        )
         FilmDetailMainScreen(
             navHostController = navHostController,
-            viewModel = viewModel,
-            url = url
+            viewModel = viewModel
         )
     }
 }

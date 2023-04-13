@@ -28,13 +28,9 @@ import br.com.hurbandroidchallenge.presentation.model.StateUI
 @Composable
 fun FilmDetailMainScreen(
     navHostController: NavHostController,
-    viewModel: FilmDetailViewModel,
-    url: String,
+    viewModel: FilmDetailViewModel
 ) {
     val filmUI = viewModel.filmUI.value
-    LaunchedEffect(Unit) {
-        viewModel.loadFilms(url = url)
-    }
     Scaffold(
         topBar = {
             TopBar(

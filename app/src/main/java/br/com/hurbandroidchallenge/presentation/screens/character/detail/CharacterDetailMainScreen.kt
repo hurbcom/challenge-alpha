@@ -28,12 +28,8 @@ import br.com.hurbandroidchallenge.presentation.model.StateUI
 fun CharacterDetailMainScreen(
     navHostController: NavHostController,
     viewModel: CharacterDetailViewModel,
-    url: String,
 ) {
     val characterUI = viewModel.characterUI.value
-    LaunchedEffect(Unit) {
-        viewModel.loadCharacter(url = url)
-    }
     Scaffold(
         topBar = {
             TopBar(

@@ -18,7 +18,8 @@ import kotlinx.coroutines.launch
 
 class FilmDetailViewModel(
     private val getFilmByUrlUseCase: GetFilmByUrlUseCase,
-    private val getCharacterByUrlUseCase: GetCharacterByUrlUseCase
+    private val getCharacterByUrlUseCase: GetCharacterByUrlUseCase,
+    url: String
 ) : ViewModel() {
     
     private val _filmDetailUI = mutableStateOf(FilmDetailUI())
@@ -30,7 +31,11 @@ class FilmDetailViewModel(
     private val _charactersState = MutableStateFlow<StateUI<List<People>>>(StateUI.Idle())
     val charactersState = _charactersState.asStateFlow()
 
-    fun loadFilms(url: String) {
+    init {
+        loadFilm(url)
+    }
+
+    private fun loadFilm(url: String) {
         viewModelScope.launch {
             getFilmByUrlUseCase(url).onStart {
                 _filmState.emit(StateUI.Processing())
@@ -62,7 +67,4 @@ class FilmDetailViewModel(
             _charactersState.emit(StateUI.Processed(_filmDetailUI.value.characters))
         }
     }
-    
-    
-    
 }

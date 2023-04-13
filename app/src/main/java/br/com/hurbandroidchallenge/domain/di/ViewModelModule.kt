@@ -5,39 +5,42 @@ import br.com.hurbandroidchallenge.presentation.screens.character.list.Character
 import br.com.hurbandroidchallenge.presentation.screens.film.detail.FilmDetailViewModel
 import br.com.hurbandroidchallenge.presentation.screens.film.list.FilmsViewModel
 import br.com.hurbandroidchallenge.presentation.screens.home.HomeListViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
 
-    single {
+    viewModel {
         HomeListViewModel(
             getHomeCategoriesUseCase = get()
         )
     }
 
-    single {
+    viewModel {
         CharactersViewModel(
             getCharactersUseCase = get()
         )
     }
 
-    single {
+    viewModel {
         FilmsViewModel(
             getFilmsUseCase = get()
         )
     }
 
-    factory {
+    viewModel { (url: String) ->
         CharacterDetailViewModel(
             getCharacterByUrlUseCase = get(),
-            getFilmByUrlUseCase = get()
+            getFilmByUrlUseCase = get(),
+            url = url
         )
     }
 
-    factory {
+    viewModel { (url: String) ->
         FilmDetailViewModel(
             getCharacterByUrlUseCase = get(),
-            getFilmByUrlUseCase = get()
+            getFilmByUrlUseCase = get(),
+            url = url
         )
     }
 
