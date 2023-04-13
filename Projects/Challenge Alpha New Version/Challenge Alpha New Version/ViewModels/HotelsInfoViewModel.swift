@@ -17,7 +17,7 @@ struct HotelsInfoViewModel {
         result.name
     }
     var smallDescription:String {
-        result.smallDescription
+        result.description
     }
     var imgGallery: String {
         result.gallery[0].url!

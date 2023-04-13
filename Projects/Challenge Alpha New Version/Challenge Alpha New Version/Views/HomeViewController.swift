@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var HotelListVM: HotelsInfoListViewModel!
+    var isSearchPerformed: Bool = false
     var activeIndicator = UIActivityIndicatorView(style: .large)
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -32,7 +33,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        activityIndicator(isAnimating: true)
+        isSearchPerformed ? activityIndicator(isAnimating: false) :  activityIndicator(isAnimating: true)
 //        navigationController?.navigationBar.isHidden = true
     }
     override func viewDidLoad() {
@@ -80,6 +81,7 @@ class HomeViewController: UIViewController {
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                             self.activityIndicator(isAnimating: false)
+                            self.isSearchPerformed = true
                         }
                 }
             }
@@ -103,7 +105,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let hotel = HotelListVM.resultAt(index: indexPath.row)
-        print("HOTEL SELECIONADO = \(hotel.name)")
+        let vc = DetailViewController()
+        vc.hotel = hotel
+        self.navigationController?.pushViewController(vc, animated: true)
     }
         
 }
