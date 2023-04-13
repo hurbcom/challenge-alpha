@@ -1,5 +1,6 @@
 package br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -13,12 +14,16 @@ fun SearchTopBar(
     searchText: String,
     placeholderText: String,
     onClearClick: () -> Unit,
-    onSearchTextChanged: (String) -> Unit
+    onBackPressed: () -> Unit,
+    onSearchTextChanged: (String) -> Unit,
 
-) {
+    ) {
     val (showClearButton, setShowClearButton) = remember { mutableStateOf(false) }
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusRequester = remember { FocusRequester() }
+    BackHandler {
+        onBackPressed()
+    }
     TopBar(title = "") {
         SearchEditText(
             searchText = searchText,
@@ -28,7 +33,8 @@ fun SearchTopBar(
             setShowClearButton = setShowClearButton,
             keyboardController = keyboardController,
             focusRequester = focusRequester,
-            onClearClick = onClearClick
+            onClearClick = onClearClick,
+            onBackPressed = onBackPressed
         )
     }
     LaunchedEffect(Unit) {

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -30,9 +31,10 @@ fun SearchEditText(
     keyboardController: SoftwareKeyboardController?,
     focusRequester: FocusRequester,
     setShowClearButton: (Boolean) -> Unit,
-    onClearClick: () -> Unit
+    onClearClick: () -> Unit,
+    onBackPressed: () -> Unit
 ) {
-    OutlinedTextField(
+    TextField(
         modifier = modifier
             .fillMaxWidth()
             .onFocusChanged { focusState ->
@@ -63,6 +65,14 @@ fun SearchEditText(
                     )
                 }
 
+            }
+        },
+        leadingIcon = {
+            IconButton(onClick = { onBackPressed() }) {
+                Icon(
+                    imageVector = Icons.Filled.ArrowBack,
+                    contentDescription = null
+                )
             }
         },
         maxLines = 1,

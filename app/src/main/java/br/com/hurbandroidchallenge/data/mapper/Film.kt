@@ -32,7 +32,7 @@ fun FilmDto.toEntity() = this.run {
     val id = url?.split("/")?.last { it.isNotBlank() }?.toInt()
     FilmEntity(
         id = id ?: 0,
-        title = title.orEmpty(),
+        title = "Episode ${episodeId?.toRoman()}: $title",
         characters = characters.orEmpty(),
         url = url.orEmpty(),
         species = species.orEmpty(),
@@ -51,7 +51,7 @@ fun FilmDto.toEntity() = this.run {
 fun Film.toModel() = ItemModel(
     image = image,
     fields = listOf(
-        "Episode ${episodeId.toRoman()}: $title" to "",
+        title to "",
         "Diretor" to director,
         "Data de lançamento" to releaseDate.toDate()
     )
