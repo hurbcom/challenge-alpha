@@ -22,25 +22,25 @@ class FilmDetailViewModel(
 ) : ViewModel() {
     
     private val _filmDetailUI = mutableStateOf(FilmDetailUI())
-    val filmDetailUI: State<FilmDetailUI> = _filmDetailUI
+    val filmUI: State<FilmDetailUI> = _filmDetailUI
     
-    private val _filmsState = MutableStateFlow<StateUI<Film>>(StateUI.Idle())
-    val filmsState = _filmsState.asStateFlow()
+    private val _filmState = MutableStateFlow<StateUI<Film>>(StateUI.Idle())
+    val filmState = _filmState.asStateFlow()
 
-    private val _characterState = MutableStateFlow<StateUI<List<People>>>(StateUI.Idle())
-    val characterState = _characterState.asStateFlow()
+    private val _charactersState = MutableStateFlow<StateUI<List<People>>>(StateUI.Idle())
+    val charactersState = _charactersState.asStateFlow()
 
     fun loadFilms(url: String) {
         viewModelScope.launch {
-            getFilmByUrlUseCase(url, fromRemote = false).onStart {
-                _filmsState.emit(StateUI.Processing())
+            getFilmByUrlUseCase(url).onStart {
+                _filmState.emit(StateUI.Processing())
             }.catch {
-                _filmsState.emit(StateUI.Error(it.message.orEmpty()))
+                _filmState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _filmDetailUI.value = filmDetailUI.value.copy(
+                _filmDetailUI.value = filmUI.value.copy(
                     film = data
                 )
-                _filmsState.emit(StateUI.Processed(data))
+                _filmState.emit(StateUI.Processed(data))
                 loadCharacters(data.characters)
             }
         }
@@ -49,17 +49,17 @@ class FilmDetailViewModel(
     private fun loadCharacters(urls: List<String>) {
         viewModelScope.launch {
             urls.forEach { urls ->
-                getCharacterByUrlUseCase(urls, fromRemote = true).onStart {
-                    _characterState.emit(StateUI.Processing())
+                getCharacterByUrlUseCase(urls).onStart {
+                    _charactersState.emit(StateUI.Processing())
                 }.catch {
-                    _characterState.emit(StateUI.Error())
+                    _charactersState.emit(StateUI.Error())
                 }.collect { data ->
-                    _filmDetailUI.value = filmDetailUI.value.copy(
-                        characters = filmDetailUI.value.characters.plus(data)
+                    _filmDetailUI.value = filmUI.value.copy(
+                        characters = filmUI.value.characters.plus(data)
                     )
                 }
             }
-            _characterState.emit(StateUI.Processed(_filmDetailUI.value.characters))
+            _charactersState.emit(StateUI.Processed(_filmDetailUI.value.characters))
         }
     }
     

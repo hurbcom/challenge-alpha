@@ -17,8 +17,10 @@ import br.com.hurbandroidchallenge.presentation.compose.components.CategoryItemD
 import br.com.hurbandroidchallenge.presentation.compose.components.OtherCategoryCard
 import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.image.SmallCategoryItemImage
+import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorText
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoading
+import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 
@@ -29,14 +31,14 @@ fun FilmDetailMainScreen(
     viewModel: FilmDetailViewModel,
     url: String,
 ) {
-    val filmUI = viewModel.filmDetailUI.value
+    val filmUI = viewModel.filmUI.value
     LaunchedEffect(Unit) {
         viewModel.loadFilms(url = url)
     }
     Scaffold(
         topBar = {
             TopBar(
-                title = "Episode ${filmUI.film?.episodeId?.toRoman()}",
+                title = if (filmUI.film != null) "Episode ${filmUI.film.episodeId.toRoman()}" else "",
                 onBackPressed = { navHostController.navigateUp() }
             )
         }
@@ -45,68 +47,90 @@ fun FilmDetailMainScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues = paddingValues)
-                .verticalScroll(rememberScrollState())
         ) {
-            filmUI.film?.let { film ->
-                val filmModel = film.toModel()
-                CategoryItemDetail(
-                    itemModel = filmModel.copy(
-                        fields = filmModel.fields.plus(
-                            listOf(
-                                "Produtores" to film.producer
-                            )
+            viewModel.filmState.collectAsState().value.let { response ->
+                when (response) {
+                    is StateUI.Error -> DefaultErrorScreen()
+                    is StateUI.Idle -> Unit
+                    is StateUI.Processed -> {
+                        FilmDetailScreen(
+                            viewModel = viewModel,
+                            navHostController = navHostController
+                        )
+                    }
+                    is StateUI.Processing -> DefaultLoadingScreen()
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun FilmDetailScreen(
+    viewModel: FilmDetailViewModel,
+    navHostController: NavHostController,
+) {
+    val filmUI = viewModel.filmUI.value
+    filmUI.film?.let { film ->
+        val filmModel = film.toModel()
+        Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
+            CategoryItemDetail(
+                itemModel = filmModel.copy(
+                    fields = filmModel.fields.plus(
+                        listOf(
+                            "Produtores" to film.producer
                         )
                     )
+                )
+            ) {
+                Column(
+                    modifier = Modifier.padding(all = 16.dp),
+                    verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    Column(
-                        modifier = Modifier.padding(all = 16.dp),
-                        verticalArrangement = Arrangement.spacedBy(16.dp)
-                    ) {
-                        OtherCategoryCard(name = "Abertura") {
-                            Text(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(horizontal = 32.dp, vertical = 16.dp),
-                                text = film.openingCrawl,
-                                style = MaterialTheme.typography.titleMedium.copy(
-                                    textAlign = TextAlign.Center
-                                )
+                    OtherCategoryCard(name = "Abertura") {
+                        Text(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 32.dp, vertical = 16.dp),
+                            text = film.openingCrawl,
+                            style = MaterialTheme.typography.titleMedium.copy(
+                                textAlign = TextAlign.Center
                             )
-                        }
-                        OtherCategoryCard(name = "Personagens") {
-                            viewModel.characterState.collectAsState().value.let { response ->
-                                when (response) {
-                                    is StateUI.Error -> DefaultErrorText()
-                                    is StateUI.Idle -> Unit
-                                    is StateUI.Processed -> {
-                                        LazyRow(
-                                            modifier = Modifier.fillMaxWidth(),
-                                            horizontalArrangement = Arrangement.spacedBy(16.dp),
-                                            contentPadding = PaddingValues(all = 16.dp)
-                                        ) {
-                                            items(filmUI.characters) { character ->
-                                                val firstName = character.name.split(" ")[0]
-                                                SmallCategoryItemImage(
-                                                    text = firstName,
-                                                    textColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                                    image = character.image,
-                                                    onClick = {
-                                                        navHostController.navigate(
-                                                            Screens.CharacterDetail.routeWithArgument(
-                                                                character.url
-                                                            )
+                        )
+                    }
+                    OtherCategoryCard(name = "Personagens") {
+                        viewModel.charactersState.collectAsState().value.let { response ->
+                            when (response) {
+                                is StateUI.Error -> DefaultErrorText()
+                                is StateUI.Idle -> Unit
+                                is StateUI.Processed -> {
+                                    LazyRow(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        horizontalArrangement = Arrangement.spacedBy(16.dp),
+                                        contentPadding = PaddingValues(all = 16.dp)
+                                    ) {
+                                        items(filmUI.characters) { character ->
+                                            val firstName = character.name.split(" ")[0]
+                                            SmallCategoryItemImage(
+                                                text = firstName,
+                                                textColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                                image = character.image,
+                                                onClick = {
+                                                    navHostController.navigate(
+                                                        Screens.CharacterDetail.routeWithArgument(
+                                                            character.url
                                                         )
-                                                    }
-                                                )
-                                            }
+                                                    )
+                                                }
+                                            )
                                         }
                                     }
-                                    is StateUI.Processing -> {
-                                        DefaultLoading(
-                                            modifier = Modifier.fillMaxWidth(),
-                                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                                        )
-                                    }
+                                }
+                                is StateUI.Processing -> {
+                                    DefaultLoading(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
                                 }
                             }
                         }
@@ -114,4 +138,5 @@ fun FilmDetailMainScreen(
                 }
             }
         }
-}}
+    }
+}

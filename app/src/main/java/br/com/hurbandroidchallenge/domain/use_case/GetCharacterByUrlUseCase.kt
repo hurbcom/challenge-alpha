@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 class GetCharacterByUrlUseCase(
     private val repository: StarWarsBookRepository
 ) {
-    operator fun invoke(url: String, fromRemote: Boolean): Flow<People> {
-        return repository.getCharacterById(url, fromRemote)
+    operator fun invoke(url: String): Flow<People> {
+        return repository.getCharacterById(url)
     }
 }

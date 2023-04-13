@@ -15,17 +15,11 @@ fun DefaultLoadingScreen(
     color: Color = MaterialTheme.colorScheme.primary,
     text: String? = null
 ) {
-    Box(modifier = Modifier.fillMaxSize().padding(all = 16.dp)) {
-        Column(
-            modifier = Modifier.align(Alignment.Center),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            CircularProgressIndicator(color = color)
-            if (text != null) {
-                Text(text = text, style = MaterialTheme.typography.titleMedium)
-            }
-        }
-    }
+    DefaultLoading(
+        modifier = Modifier.fillMaxSize(),
+        color = color,
+        text
+    )
 }
 
 @Composable

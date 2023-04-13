@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemField
 import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
 import br.com.hurbandroidchallenge.presentation.compose.widgets.image.DefaultImage
@@ -23,53 +24,35 @@ fun CategoryItemDetail(
 ) {
     val firstCardListSize = 4
     val totalSize = itemModel.fields.size
-    val firstFields = itemModel.fields.subList(0, firstCardListSize - 1)
+    val firstFields = itemModel.fields.subList(0, firstCardListSize)
     val otherFields = itemModel.fields.subList(firstCardListSize, totalSize)
     Column(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier.background(color = MaterialTheme.colorScheme.surfaceVariant),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            Row(
-                modifier = Modifier
-                    .height(IntrinsicSize.Min)
-                    .fillMaxWidth()
-            ) {
-                DefaultImage(
-                    image = rememberAsyncImagePainter(model = itemModel.image),
-                    contentScale = itemModel.contentScale,
-                    aspectRadio = itemModel.aspectRatio,
-                    shape = RoundedCornerShape(
-                        topStart = 0.dp,
-                        bottomStart = 0.dp,
-                        topEnd = corners,
-                        bottomEnd = corners
-                    )
+            ItemCard(
+                itemModel = itemModel.copy(fields = firstFields),
+                shape = RoundedCornerShape(
+                    topStart = 0.dp,
+                    bottomStart = 0.dp,
+                    topEnd = corners,
+                    bottomEnd = corners
                 )
+            )
+            if (otherFields.isNotEmpty()) {
                 Column(
                     modifier = Modifier
-                        .fillMaxHeight()
+                        .fillMaxWidth()
                         .padding(all = 16.dp),
-                    verticalArrangement = Arrangement.SpaceBetween
+                    verticalArrangement = Arrangement.spacedBy(4.dp),
+                    horizontalAlignment = Alignment.Start
                 ) {
-                    firstFields.forEachIndexed { index, item ->
+                    otherFields.forEachIndexed { index, item ->
                         if (index != 0)
                             DefaultDivider(thickness = 1.dp)
                         ItemField(item.first, item.second)
                     }
-                }
-            }
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(all = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp),
-                horizontalAlignment = Alignment.Start
-            ) {
-                otherFields.forEachIndexed { index, item ->
-                    if (index != 0)
-                        DefaultDivider(thickness = 1.dp)
-                    ItemField(item.first, item.second)
                 }
             }
         }

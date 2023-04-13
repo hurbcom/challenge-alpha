@@ -29,7 +29,7 @@ class CharacterDetailViewModel(
 
     fun loadCharacter(url: String) {
         viewModelScope.launch {
-            getCharacterByUrlUseCase(url, fromRemote = false).onStart {
+            getCharacterByUrlUseCase(url).onStart {
                 _characterState.emit(StateUI.Processing())
             }.catch {
                 _characterState.emit(StateUI.Error(it.message.orEmpty()))
@@ -46,7 +46,7 @@ class CharacterDetailViewModel(
     private fun loadFilms(urls: List<String>) {
         viewModelScope.launch {
             urls.forEach { urls ->
-                getFilmByUrlUseCase(urls, fromRemote = true).onStart {
+                getFilmByUrlUseCase(urls).onStart {
                     _filmsState.emit(StateUI.Processing())
                 }.catch {
                     _filmsState.emit(StateUI.Error())

@@ -37,7 +37,7 @@ class StarWarsBookRepositoryImpl(
     private val peopleEntityToPeopleMapper: NullableListMapper<PeopleEntity, People>,
     private val filmDtoToEntityMapper: PagedListMapper<FilmDto, FilmEntity>,
     private val filmEntityToPeopleMapper: NullableListMapper<FilmEntity, Film>,
-    private val context: Context
+    private val context: Context,
 ) : StarWarsBookRepository {
 
     override fun getHomeCategories(): Flow<List<Categories>> {
@@ -89,14 +89,10 @@ class StarWarsBookRepositoryImpl(
         }
     }
 
-    override fun getCharacterById(url: String, fromRemote: Boolean): Flow<People> {
+    override fun getCharacterById(url: String): Flow<People> {
         return flow {
-            if (fromRemote) {
-                if (hasInternetConnection()) {
-                    emit(remoteDataSource.getCharacterByUrl(url).toPeople())
-                } else {
-                    emit(localDataSource.getCharacterById(url.idFromUrl()).toPeople())
-                }
+            if (hasInternetConnection()) {
+                emit(remoteDataSource.getCharacterByUrl(url).toPeople())
             } else {
                 emit(localDataSource.getCharacterById(url.idFromUrl()).toPeople())
             }
@@ -134,14 +130,10 @@ class StarWarsBookRepositoryImpl(
         }
     }
 
-    override fun getFilmByUrl(url: String, fromRemote: Boolean): Flow<Film> {
+    override fun getFilmByUrl(url: String): Flow<Film> {
         return flow {
-            if (fromRemote) {
-                if (hasInternetConnection()) {
-                    emit(remoteDataSource.getFilmByUrl(url).toFilm())
-                } else {
-                    emit(localDataSource.getFilmById(url.idFromUrl()).toFilm())
-                }
+            if (hasInternetConnection()) {
+                emit(remoteDataSource.getFilmByUrl(url).toFilm())
             } else {
                 emit(localDataSource.getFilmById(url.idFromUrl()).toFilm())
             }

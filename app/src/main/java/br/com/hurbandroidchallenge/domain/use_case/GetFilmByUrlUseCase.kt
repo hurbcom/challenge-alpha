@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 class GetFilmByUrlUseCase(
     private val repository: StarWarsBookRepository
 ) {
-    operator fun invoke(url: String, fromRemote: Boolean): Flow<Film> {
-        return repository.getFilmByUrl(url, fromRemote)
+    operator fun invoke(url: String): Flow<Film> {
+        return repository.getFilmByUrl(url)
     }
 }
