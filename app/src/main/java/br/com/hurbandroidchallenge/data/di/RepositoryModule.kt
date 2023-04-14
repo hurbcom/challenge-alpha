@@ -8,25 +8,32 @@ import br.com.hurbandroidchallenge.data.mapper.characters.PeopleDtoToEntityMappe
 import br.com.hurbandroidchallenge.data.mapper.characters.PeopleEntityToPeopleMapper
 import br.com.hurbandroidchallenge.data.mapper.films.FilmDtoToEntityMapper
 import br.com.hurbandroidchallenge.data.mapper.films.FilmEntityToFilmMapper
-import br.com.hurbandroidchallenge.data.repository.StarWarsBookRepositoryImpl
-import br.com.hurbandroidchallenge.domain.repository.StarWarsBookRepository
+import br.com.hurbandroidchallenge.data.remote.util.NetworkManager
+import br.com.hurbandroidchallenge.data.repository.CategoriesRepository
+import br.com.hurbandroidchallenge.data.repository.CharactersRepository
+import br.com.hurbandroidchallenge.data.repository.FilmsRepository
 import org.koin.dsl.module
 
 val repositoryModule = module {
 
-    single<StarWarsBookRepository> {
-        StarWarsBookRepositoryImpl(
+    single {
+        NetworkManager(get())
+    }
+
+    single {
+        CategoriesRepository(
             remoteDataSource = get(),
             localDataSource = get(),
-            filmDtoToEntityMapper = PagedListMapperImpl(
-                listMapper = NullableListMapperImpl(
-                    mapper = get<FilmDtoToEntityMapper>()
-                )
-            ),
-            filmEntityToPeopleMapper = NullableListMapperImpl(
-                mapper = get<FilmEntityToFilmMapper>()
-            ),
             homeCategoriesDtoToEntityMapper = get<HomeCategoriesDtoToEntityMapper>(),
+            homeCategoriesEntityToCategoriesMapper = NullableListMapperImpl(
+                mapper = get<HomeCategoriesEntityToCategoriesMapper>()
+            ),
+            networkManager = get()
+        )
+    }
+
+    single {
+        CharactersRepository(
             peopleDtoToEntityMapper = PagedListMapperImpl(
                 listMapper = NullableListMapperImpl(
                     mapper = get<PeopleDtoToEntityMapper>()
@@ -35,10 +42,25 @@ val repositoryModule = module {
             peopleEntityToPeopleMapper = NullableListMapperImpl(
                 mapper = get<PeopleEntityToPeopleMapper>()
             ),
-            homeCategoriesEntityToCategoriesMapper = NullableListMapperImpl(
-                mapper = get<HomeCategoriesEntityToCategoriesMapper>()
+            remoteDataSource = get(),
+            localDataSource = get(),
+            networkManager = get()
+        )
+    }
+
+    single {
+        FilmsRepository(
+            filmDtoToEntityMapper = PagedListMapperImpl(
+                listMapper = NullableListMapperImpl(
+                    mapper = get<FilmDtoToEntityMapper>()
+                )
             ),
-            context = get()
+            filmEntityToPeopleMapper = NullableListMapperImpl(
+                mapper = get<FilmEntityToFilmMapper>()
+            ),
+            remoteDataSource = get(),
+            localDataSource = get(),
+            networkManager = get()
         )
     }
 

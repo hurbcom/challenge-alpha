@@ -1,21 +1,12 @@
 package br.com.hurbandroidchallenge.domain.repository
 
-import br.com.hurbandroidchallenge.domain.model.Categories
-import br.com.hurbandroidchallenge.domain.model.Film
-import br.com.hurbandroidchallenge.domain.model.People
 import br.com.hurbandroidchallenge.domain.model.base.PagedList
 import kotlinx.coroutines.flow.Flow
 
-interface StarWarsBookRepository {
+interface StarWarsBookRepository<T> {
 
-    fun getHomeCategories(): Flow<List<Categories>>
+    fun getItemList(url: String): Flow<PagedList<T>>
 
-    fun getCharacters(url: String): Flow<PagedList<People>>
-
-    fun getCharacterById(url: String): Flow<People>
-
-    fun getFilms(url: String): Flow<PagedList<Film>>
-
-    fun getFilmByUrl(url: String): Flow<Film>
+    fun getItemByUrl(url: String): Flow<T>
 
 }

@@ -35,8 +35,8 @@ class HomeListViewModel(
             }.catch {
                 _homeCategories.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _homeUI.value = homeUI.value.copy(categories = data)
-                _homeCategories.emit(StateUI.Processed(data))
+                _homeUI.value = homeUI.value.copy(categories = data.results)
+                _homeCategories.emit(StateUI.Processed(data.results))
             }
         }
     }

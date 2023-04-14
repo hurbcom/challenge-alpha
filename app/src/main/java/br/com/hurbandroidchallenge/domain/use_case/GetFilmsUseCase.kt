@@ -1,9 +1,9 @@
 package br.com.hurbandroidchallenge.domain.use_case
 
-import br.com.hurbandroidchallenge.domain.repository.StarWarsBookRepository
+import br.com.hurbandroidchallenge.data.repository.FilmsRepository
 
 class GetFilmsUseCase(
-    private val repository: StarWarsBookRepository,
+    private val repository: FilmsRepository,
 ) {
-    operator fun invoke(url: String) = repository.getFilms(url)
+    operator fun invoke(url: String) = repository.getItemList(url)
 }
