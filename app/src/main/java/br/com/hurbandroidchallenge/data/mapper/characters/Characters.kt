@@ -73,9 +73,9 @@ fun People.toModel() = ItemModel(
     url = url,
     image = image,
     fields = listOf(
-        "Nome" to name,
-        "Altura" to height,
-        "Massa" to mass
+        "Name" to name,
+        "Height" to height,
+        "Mass" to mass
     ),
     contentScale = ContentScale.FillWidth,
     aspectRatio = 4f / 5f,

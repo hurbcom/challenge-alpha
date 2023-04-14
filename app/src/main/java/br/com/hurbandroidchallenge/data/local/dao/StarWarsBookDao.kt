@@ -8,14 +8,14 @@ import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
 @Dao
 interface StarWarsBookDao {
 
-    @Upsert
-    suspend fun upsertAllCategories(homeCategoriesEntity: List<HomeCategoriesEntity>)
+    @Insert
+    suspend fun insertNewCategories(homeCategoriesEntity: List<HomeCategoriesEntity>)
 
-    @Upsert
-    suspend fun upsertAllCharacters(peopleEntity: List<PeopleEntity>)
+    @Insert
+    suspend fun insertNewCharacters(peopleEntity: List<PeopleEntity>)
 
-    @Upsert
-    suspend fun upsertAllFilms(filmsEntity:  List<FilmEntity>)
+    @Insert
+    suspend fun insertNewFilms(filmsEntity:  List<FilmEntity>)
 
     @Query("DELETE FROM categories")
     suspend fun deleteAllCategories()

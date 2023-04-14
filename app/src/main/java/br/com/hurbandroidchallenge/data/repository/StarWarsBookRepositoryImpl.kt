@@ -12,7 +12,9 @@ import br.com.hurbandroidchallenge.data.local.data_source.StarWarsBookLocalDataS
 import br.com.hurbandroidchallenge.data.local.model.FilmEntity
 import br.com.hurbandroidchallenge.data.local.model.HomeCategoriesEntity
 import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
+import br.com.hurbandroidchallenge.data.mapper.characters.toEntity
 import br.com.hurbandroidchallenge.data.mapper.characters.toPeople
+import br.com.hurbandroidchallenge.data.mapper.films.toEntity
 import br.com.hurbandroidchallenge.data.mapper.films.toFilm
 import br.com.hurbandroidchallenge.data.remote.data_sources.StarWarsBookRemoteDataSource
 import br.com.hurbandroidchallenge.data.remote.model.FilmDto
@@ -45,9 +47,8 @@ class StarWarsBookRepositoryImpl(
             if (hasInternetConnection()) {
                 apiCall {
                     val remoteCategories = remoteDataSource.getHomeCategories()
-                    localDataSource.setHomeCategories(
-                        categories = homeCategoriesDtoToEntityMapper.map(remoteCategories),
-                        reset = true
+                    localDataSource.updateHomeCategories(
+                        categories = homeCategoriesDtoToEntityMapper.map(remoteCategories)
                     )
                     emit(homeCategoriesEntityToCategoriesMapper.map(localDataSource.getHomeCategories()))
                 }
@@ -63,8 +64,7 @@ class StarWarsBookRepositoryImpl(
                 apiCall {
                     val remoteCharacters = remoteDataSource.getCharacters(url)
                     localDataSource.setCharacters(
-                        characters = peopleDtoToEntityMapper.map(remoteCharacters).results,
-                        reset = remoteCharacters.previous == null
+                        characters = peopleDtoToEntityMapper.map(remoteCharacters).results
                     )
                     emit(
                         PagedList(
@@ -92,7 +92,9 @@ class StarWarsBookRepositoryImpl(
     override fun getCharacterById(url: String): Flow<People> {
         return flow {
             if (hasInternetConnection()) {
-                emit(remoteDataSource.getCharacterByUrl(url).toPeople())
+                val remoteCharacter = remoteDataSource.getCharacterByUrl(url)
+                localDataSource.setCharacters(listOf(remoteCharacter.toEntity()))
+                emit(remoteCharacter.toPeople())
             } else {
                 emit(localDataSource.getCharacterById(url.idFromUrl()).toPeople())
             }
@@ -104,9 +106,7 @@ class StarWarsBookRepositoryImpl(
             if (hasInternetConnection()) {
                 apiCall {
                     val remoteFilms = remoteDataSource.getFilms(url)
-                    localDataSource.setFilms(
-                        films = filmDtoToEntityMapper.map(remoteFilms).results
-                    )
+                    localDataSource.setFilms(filmDtoToEntityMapper.map(remoteFilms).results)
                     emit(
                         PagedList(
                             count = remoteFilms.count ?: 0,
@@ -133,7 +133,9 @@ class StarWarsBookRepositoryImpl(
     override fun getFilmByUrl(url: String): Flow<Film> {
         return flow {
             if (hasInternetConnection()) {
-                emit(remoteDataSource.getFilmByUrl(url).toFilm())
+                val remoteFilm = remoteDataSource.getFilmByUrl(url)
+                localDataSource.setFilms(listOf(remoteFilm.toEntity()))
+                emit(remoteFilm.toFilm())
             } else {
                 emit(localDataSource.getFilmById(url.idFromUrl()).toFilm())
             }

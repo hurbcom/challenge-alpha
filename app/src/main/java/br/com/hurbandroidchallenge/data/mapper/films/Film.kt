@@ -75,8 +75,8 @@ fun Film.toModel() = ItemModel(
     image = image,
     fields = listOf(
         title to "",
-        "Diretor" to director,
-        "Data de lançamento" to releaseDate.toDate()
+        "Director" to director,
+        "Release date" to releaseDate.toDate()
     ),
     contentScale = ContentScale.FillWidth,
     aspectRatio = 4f / 5.5f,

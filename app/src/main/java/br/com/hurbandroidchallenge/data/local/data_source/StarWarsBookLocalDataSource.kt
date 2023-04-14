@@ -8,13 +8,13 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun getHomeCategories(): List<HomeCategoriesEntity>
 
-    suspend fun setHomeCategories(categories: List<HomeCategoriesEntity>, reset: Boolean)
+    suspend fun updateHomeCategories(categories: List<HomeCategoriesEntity>)
 
     suspend fun getCharacters(): List<PeopleEntity>
 
     suspend fun getCharacterById(id: Int): PeopleEntity
 
-    suspend fun setCharacters(characters: List<PeopleEntity>, reset: Boolean)
+    suspend fun setCharacters(characters: List<PeopleEntity>)
 
     suspend fun getFilms(): List<FilmEntity>
 
