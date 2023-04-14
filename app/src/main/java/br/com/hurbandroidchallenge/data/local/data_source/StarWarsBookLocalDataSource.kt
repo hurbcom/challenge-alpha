@@ -22,4 +22,8 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun setFilms(films: List<FilmEntity>)
 
+    suspend fun containsCharacter(id: Int): Boolean
+
+    suspend fun containsFilm(id: Int): Boolean
+
 }

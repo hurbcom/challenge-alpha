@@ -39,6 +39,10 @@
                 android:name="br.com.hurbandroidchallenge.domain.initializer.KoinInitializer"
                 android:value="androidx.startup" />
 
+            <meta-data
+                android:name="br.com.hurbandroidchallenge.domain.initializer.PreferencesInitializer"
+                android:value="androidx.startup" />
+
         </provider>
 
     </application>

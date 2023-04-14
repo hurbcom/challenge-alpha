@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.util.Log
 import br.com.hurbandroidchallenge.commom.extension.idFromUrl
+import br.com.hurbandroidchallenge.commom.extension.pagedListOf
 import br.com.hurbandroidchallenge.commom.mapper.Mapper
 import br.com.hurbandroidchallenge.commom.mapper.NullableListMapper
 import br.com.hurbandroidchallenge.commom.mapper.PagedListMapper
@@ -12,6 +13,7 @@ import br.com.hurbandroidchallenge.data.local.data_source.StarWarsBookLocalDataS
 import br.com.hurbandroidchallenge.data.local.model.FilmEntity
 import br.com.hurbandroidchallenge.data.local.model.HomeCategoriesEntity
 import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
+import br.com.hurbandroidchallenge.data.local.preferences.PreferencesWrapper
 import br.com.hurbandroidchallenge.data.mapper.characters.toEntity
 import br.com.hurbandroidchallenge.data.mapper.characters.toPeople
 import br.com.hurbandroidchallenge.data.mapper.films.toEntity
@@ -42,102 +44,117 @@ class StarWarsBookRepositoryImpl(
     private val context: Context,
 ) : StarWarsBookRepository {
 
+    private val preferences = PreferencesWrapper.getInstance()
+
+    private suspend fun updateLocalCategories() {
+        val remoteCategories = remoteDataSource.getHomeCategories()
+        localDataSource.updateHomeCategories(
+            categories = homeCategoriesDtoToEntityMapper.map(remoteCategories)
+        )
+    }
+
+    private suspend fun getLocalCategories() =
+        homeCategoriesEntityToCategoriesMapper.map(localDataSource.getHomeCategories())
+
     override fun getHomeCategories(): Flow<List<Categories>> {
         return flow {
-            if (hasInternetConnection()) {
+            if (preferences.isCategoriesUpToDate()) {
+                emit(getLocalCategories())
+            } else if (hasInternetConnection()) {
                 apiCall {
-                    val remoteCategories = remoteDataSource.getHomeCategories()
-                    localDataSource.updateHomeCategories(
-                        categories = homeCategoriesDtoToEntityMapper.map(remoteCategories)
-                    )
-                    emit(homeCategoriesEntityToCategoriesMapper.map(localDataSource.getHomeCategories()))
+                    updateLocalCategories()
+                    emit(getLocalCategories())
                 }
             } else {
-                emit(homeCategoriesEntityToCategoriesMapper.map(localDataSource.getHomeCategories()))
+                emit(getLocalCategories())
             }
         }
     }
 
+
+    private suspend fun getLocalCharacters() =
+        peopleEntityToPeopleMapper.map(localDataSource.getCharacters())
+
+    private suspend fun getLocalCharacterByUrl(url: String) =
+        localDataSource.getCharacterById(url.idFromUrl()).toPeople()
+
     override fun getCharacters(url: String): Flow<PagedList<People>> {
         return flow {
-            if (hasInternetConnection()) {
+            if (preferences.isCharactersUpToDate()) {
+                emit(pagedListOf(getLocalCharacters()))
+            } else if (hasInternetConnection()) {
                 apiCall {
                     val remoteCharacters = remoteDataSource.getCharacters(url)
-                    localDataSource.setCharacters(
-                        characters = peopleDtoToEntityMapper.map(remoteCharacters).results
-                    )
+                    localDataSource.setCharacters(peopleDtoToEntityMapper.map(remoteCharacters).results)
+                    if (remoteCharacters.next == null)
+                        preferences.charactersIsUpToDate()
                     emit(
                         PagedList(
-                            count = remoteCharacters.count ?: 0,
                             next = remoteCharacters.next,
                             previous = remoteCharacters.previous,
-                            results = peopleEntityToPeopleMapper.map(localDataSource.getCharacters())
+                            results = getLocalCharacters()
                         )
                     )
                 }
             } else {
-                val localCharacters = localDataSource.getCharacters()
-                emit(
-                    PagedList(
-                        count = localCharacters.size,
-                        next = null,
-                        previous = null,
-                        results = peopleEntityToPeopleMapper.map(localCharacters)
-                    )
-                )
+                emit(pagedListOf(getLocalCharacters()))
             }
         }
     }
 
     override fun getCharacterById(url: String): Flow<People> {
         return flow {
-            if (hasInternetConnection()) {
+            if (localDataSource.containsCharacter(url.idFromUrl())) {
+                emit(getLocalCharacterByUrl(url))
+            } else if (hasInternetConnection()) {
                 val remoteCharacter = remoteDataSource.getCharacterByUrl(url)
                 localDataSource.setCharacters(listOf(remoteCharacter.toEntity()))
                 emit(remoteCharacter.toPeople())
             } else {
-                emit(localDataSource.getCharacterById(url.idFromUrl()).toPeople())
+                getLocalCharacterByUrl(url)
             }
         }
     }
 
+    private suspend fun getLocalFilms() = filmEntityToPeopleMapper.map(localDataSource.getFilms())
+
+    private suspend fun getLocalFilmByUrl(url: String) = localDataSource.getFilmById(url.idFromUrl()).toFilm()
+
     override fun getFilms(url: String): Flow<PagedList<Film>> {
         return flow {
-            if (hasInternetConnection()) {
+            if (preferences.isFilmsUpToDate()) {
+                emit(pagedListOf(getLocalFilms()))
+            } else if (hasInternetConnection()) {
                 apiCall {
                     val remoteFilms = remoteDataSource.getFilms(url)
                     localDataSource.setFilms(filmDtoToEntityMapper.map(remoteFilms).results)
+                    if (remoteFilms.next == null) {
+                        preferences.filmsIsUpToDate()
+                    }
                     emit(
                         PagedList(
-                            count = remoteFilms.count ?: 0,
                             next = remoteFilms.next,
                             previous = remoteFilms.previous,
-                            results = filmEntityToPeopleMapper.map(localDataSource.getFilms())
+                            results = getLocalFilms()
                         )
                     )
                 }
             } else {
-                val localFilms = localDataSource.getFilms()
-                emit(
-                    PagedList(
-                        count = localFilms.size,
-                        next = null,
-                        previous = null,
-                        results = filmEntityToPeopleMapper.map(localFilms)
-                    )
-                )
+                emit(pagedListOf(getLocalFilms()))
             }
         }
     }
 
     override fun getFilmByUrl(url: String): Flow<Film> {
         return flow {
-            if (hasInternetConnection()) {
+            if (localDataSource.containsFilm(url.idFromUrl())) {
+                emit(getLocalFilmByUrl(url))
+            } else if (hasInternetConnection()) {
                 val remoteFilm = remoteDataSource.getFilmByUrl(url)
                 localDataSource.setFilms(listOf(remoteFilm.toEntity()))
                 emit(remoteFilm.toFilm())
             } else {
-                emit(localDataSource.getFilmById(url.idFromUrl()).toFilm())
+                getLocalFilmByUrl(url)
             }
         }
     }

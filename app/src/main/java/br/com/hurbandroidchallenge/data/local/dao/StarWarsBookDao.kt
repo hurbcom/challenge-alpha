@@ -41,4 +41,10 @@ interface StarWarsBookDao {
     @Query("SELECT * FROM films WHERE id = :id")
     suspend fun getFilmById(id: Int): FilmEntity
 
+    @Query("SELECT COUNT(1) FROM people WHERE id = :id")
+    suspend fun containsCharacter(id: Int): Int
+
+    @Query("SELECT COUNT(1) FROM films WHERE id = :id")
+    suspend fun containsFilm(id: Int): Int
+
 }

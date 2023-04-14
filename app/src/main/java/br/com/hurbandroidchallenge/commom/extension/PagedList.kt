@@ -2,9 +2,8 @@ package br.com.hurbandroidchallenge.commom.extension
 
 import br.com.hurbandroidchallenge.domain.model.base.PagedList
 
-fun <T> pagedListOf() = PagedList(
-    count = 0,
+fun <T> pagedListOf(list: List<T>? = null) = PagedList(
     next = null,
     previous = null,
-    results = emptyList<T>()
+    results = list ifNull emptyList()
 )
