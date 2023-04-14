@@ -29,8 +29,10 @@ class CharactersRepository(
 
     private val preferences = PreferencesWrapper.getInstance()
 
-    override fun getItemList(url: String): Flow<PagedList<People>> {
+    override fun getItemList(url: String, clearLocalDatasource: Boolean): Flow<PagedList<People>> {
         return flow {
+            if (clearLocalDatasource)
+                localDataSource.clearCharacters()
             if (preferences.isCharactersUpToDate()) {
                 emit(pagedListOf(getLocalCharacters()))
             } else if (networkManager.hasInternetConnection()) {

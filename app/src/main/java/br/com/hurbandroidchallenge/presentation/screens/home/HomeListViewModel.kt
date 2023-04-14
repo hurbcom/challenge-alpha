@@ -30,7 +30,7 @@ class HomeListViewModel(
 
     private fun getHomeCategories() {
         viewModelScope.launch {
-            getHomeCategoriesUseCase().onStart {
+            getHomeCategoriesUseCase(clearLocalDatasource = false).onStart {
                 _homeCategories.emit(StateUI.Processing())
             }.catch {
                 _homeCategories.emit(StateUI.Error(it.message.orEmpty()))

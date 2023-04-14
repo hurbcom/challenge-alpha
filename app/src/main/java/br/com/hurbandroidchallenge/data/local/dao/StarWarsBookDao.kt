@@ -21,6 +21,9 @@ interface StarWarsBookDao {
     @Insert
     suspend fun insertNewPlanets(planets:  List<PlanetEntity>)
 
+    @Query("DELETE FROM categories")
+    suspend fun clearCategories()
+
     @Query("SELECT * FROM categories")
     suspend fun getCategories(): List<HomeCategoriesEntity>
 
@@ -30,25 +33,34 @@ interface StarWarsBookDao {
     @Query("SELECT * FROM people WHERE id = :id")
     suspend fun getCharacterById(id: Int): PeopleEntity
 
+    @Query("DELETE FROM people")
+    suspend fun clearCharacters()
+
+    @Query("SELECT COUNT(1) FROM people WHERE id = :id")
+    suspend fun containsCharacter(id: Int): Int
+
     @Query("SELECT * FROM films")
     suspend fun getFilms(): List<FilmEntity>
 
     @Query("SELECT * FROM films WHERE id = :id")
     suspend fun getFilmById(id: Int): FilmEntity
 
-    @Query("SELECT COUNT(1) FROM people WHERE id = :id")
-    suspend fun containsCharacter(id: Int): Int
+    @Query("DELETE FROM films")
+    suspend fun clearFilms()
 
     @Query("SELECT COUNT(1) FROM films WHERE id = :id")
     suspend fun containsFilm(id: Int): Int
-
-    @Query("SELECT COUNT(1) FROM planets WHERE id = :id")
-    suspend fun containsPlanets(id: Int): Int
 
     @Query("SELECT * FROM planets")
     suspend fun getPlanets(): List<PlanetEntity>
 
     @Query("SELECT * FROM planets WHERE id = :id")
     suspend fun getPlanetById(id: Int): PlanetEntity
+
+    @Query("SELECT COUNT(1) FROM planets WHERE id = :id")
+    suspend fun containsPlanets(id: Int): Int
+
+    @Query("DELETE FROM planets")
+    suspend fun clearPlanets()
 
 }

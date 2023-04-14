@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import br.com.hurbandroidchallenge.commom.extension.isNearToTheEnd
 import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.compose.components.card.DummyItemCard
 import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
@@ -26,7 +25,7 @@ fun PagedItemList(
     isLoading: Boolean
 ) {
     val state = rememberLazyListState()
-    if (state.isNearToTheEnd() and isLoading.not())
+    if (isLoading.not())
         loadMore()
     LazyColumn(
         modifier = modifier,
@@ -49,7 +48,7 @@ fun PagedItemList(
         }
         item {
             if (isLoading) {
-                DummyItemCard(aspectRadio = items.first().aspectRatio)
+                DummyItemCard(aspectRatio = items.first().aspectRatio)
             }
         }
     }

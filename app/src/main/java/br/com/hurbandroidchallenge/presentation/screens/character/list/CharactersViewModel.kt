@@ -33,9 +33,9 @@ class CharactersViewModel(
         loadCharacters()
     }
 
-    private fun loadCharacters() {
+    fun loadCharacters() {
         viewModelScope.launch {
-            getCharactersUseCase(url = ApiUrls.characters).onStart {
+            getCharactersUseCase(url = ApiUrls.characters, clearLocalDataSource = false).onStart {
                 _charactersState.emit(StateUI.Processing())
             }.catch {
                 _charactersState.emit(StateUI.Error(it.message.orEmpty()))
@@ -52,7 +52,7 @@ class CharactersViewModel(
     fun loadMoreCharacters() {
         viewModelScope.launch {
             _charactersUI.value.nextPage?.let { nextPage ->
-                getCharactersUseCase(url = nextPage).onStart {
+                getCharactersUseCase(url = nextPage, clearLocalDataSource = false).onStart {
                     _loadMoreState.emit(StateUI.Processing())
                 }.catch {
                     _loadMoreState.emit(StateUI.Error(it.message.orEmpty()))

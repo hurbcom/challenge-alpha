@@ -29,8 +29,9 @@ class PlanetsRepository(
 
     private val preferences = PreferencesWrapper.getInstance()
 
-    override fun getItemList(url: String): Flow<PagedList<Planet>> {
+    override fun getItemList(url: String, clearLocalDatasource: Boolean): Flow<PagedList<Planet>> {
         return flow {
+            if (clearLocalDatasource) localDataSource.clearPlanets()
             if (preferences.isPlanetsUpToDate()) {
                 emit(pagedListOf(getLocalPlanets()))
             } else if (networkManager.hasInternetConnection()) {

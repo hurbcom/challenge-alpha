@@ -5,5 +5,5 @@ import br.com.hurbandroidchallenge.data.repository.CategoriesRepository
 class GetHomeCategoriesUseCase(
     private val repository: CategoriesRepository,
 ) {
-    operator fun invoke() = repository.getItemList("")
+    operator fun invoke(clearLocalDatasource: Boolean) = repository.getItemList("", clearLocalDatasource)
 }

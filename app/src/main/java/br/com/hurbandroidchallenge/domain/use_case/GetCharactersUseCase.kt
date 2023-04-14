@@ -5,5 +5,5 @@ import br.com.hurbandroidchallenge.data.repository.CharactersRepository
 class GetCharactersUseCase(
     private val repository: CharactersRepository,
 ) {
-    operator fun invoke(url: String) = repository.getItemList(url)
+    operator fun invoke(url: String, clearLocalDataSource: Boolean) = repository.getItemList(url, clearLocalDataSource)
 }

@@ -35,7 +35,7 @@ class PlanetsViewModel(
 
     private fun loadPlanets() {
         viewModelScope.launch {
-            getPlanetsUseCase(url = ApiUrls.planets).onStart {
+            getPlanetsUseCase(url = ApiUrls.planets, clearLocalDatasource = false).onStart {
                 _planetsState.emit(StateUI.Processing())
             }.catch {
                 _planetsState.emit(StateUI.Error(it.message.orEmpty()))
@@ -52,7 +52,7 @@ class PlanetsViewModel(
     fun loadMorePlanets() {
         viewModelScope.launch {
             _planetsUI.value.nextPage?.let { nextPage ->
-                getPlanetsUseCase(url = nextPage).onStart {
+                getPlanetsUseCase(url = nextPage, clearLocalDatasource = false).onStart {
                     _loadMoreState.emit(StateUI.Processing())
                 }.catch {
                     _loadMoreState.emit(StateUI.Error(it.message.orEmpty()))

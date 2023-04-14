@@ -32,7 +32,7 @@ class FilmsViewModel(
 
     private fun loadFilms() {
         viewModelScope.launch {
-            getFilmsUseCase(url = ApiUrls.films).onStart {
+            getFilmsUseCase(url = ApiUrls.films, clearLocalDatasource = false).onStart {
                 _filmsState.emit(StateUI.Processing())
             }.catch {
                 _filmsState.emit(StateUI.Error(it.message.orEmpty()))

@@ -76,13 +76,13 @@ fun People.toModel() = ItemModel(
     firstFields = listOf(
         "Name" to name,
         "Height" to height,
-        "Mass" to mass,
-        "Birth yeah" to birthYear
+        "Mass" to mass
     ),
     contentScale = ContentScale.FillWidth,
     aspectRatio = 4f / 5f,
     otherFields = listOf(
         "Gender" to gender,
-        "Hair color" to hairColor
+        "Hair color" to hairColor,
+        "Birth yeah" to birthYear
     )
 )

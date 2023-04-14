@@ -34,8 +34,9 @@ class FilmsRepository(
     private suspend fun getLocalFilmByUrl(url: String) =
         localDataSource.getFilmById(url.idFromUrl()).toFilm()
 
-    override fun getItemList(url: String): Flow<PagedList<Film>> {
+    override fun getItemList(url: String, clearLocalDatasource: Boolean): Flow<PagedList<Film>> {
         return flow {
+            if (clearLocalDatasource) localDataSource.clearFilms()
             if (preferences.isFilmsUpToDate()) {
                 emit(pagedListOf(getLocalFilms()))
             } else if (networkManager.hasInternetConnection()) {

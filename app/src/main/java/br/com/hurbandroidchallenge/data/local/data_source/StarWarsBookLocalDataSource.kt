@@ -11,6 +11,8 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun updateHomeCategories(categories: List<HomeCategoriesEntity>)
 
+    suspend fun clearCategories()
+
     suspend fun getCharacters(): List<PeopleEntity>
 
     suspend fun getCharacterById(id: Int): PeopleEntity
@@ -18,6 +20,8 @@ interface StarWarsBookLocalDataSource {
     suspend fun containsCharacter(id: Int): Boolean
 
     suspend fun updateCharacters(characters: List<PeopleEntity>)
+
+    suspend fun clearCharacters()
 
     suspend fun getFilms(): List<FilmEntity>
 
@@ -27,6 +31,8 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun containsFilm(id: Int): Boolean
 
+    suspend fun clearFilms()
+
     suspend fun updatePlanets(planets: List<PlanetEntity>)
 
     suspend fun getPlanets(): List<PlanetEntity>
@@ -34,5 +40,7 @@ interface StarWarsBookLocalDataSource {
     suspend fun getPlanetById(id: Int): PlanetEntity
 
     suspend fun containsPlanet(id: Int): Boolean
+
+    suspend fun clearPlanets()
 
 }

@@ -37,8 +37,9 @@ class CategoriesRepository(
     private suspend fun getLocalCategories() =
         homeCategoriesEntityToCategoriesMapper.map(localDataSource.getHomeCategories())
 
-    override fun getItemList(url: String): Flow<PagedList<Categories>> {
+    override fun getItemList(url: String, clearLocalDatasource: Boolean): Flow<PagedList<Categories>> {
         return flow {
+            if (clearLocalDatasource) localDataSource.clearCategories()
             if (preferences.isCategoriesUpToDate()) {
                 emit(pagedListOf(getLocalCategories()))
             } else if (networkManager.hasInternetConnection()) {

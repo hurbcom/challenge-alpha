@@ -10,9 +10,14 @@ class PreferencesWrapper private constructor(context: Context) {
     }
 
     fun clearPreferences() {
+        clearCategories()
+        clearCharacters()
+        clearFilms()
+        clearPlanets()
+    }
+
+    fun clearCategories() {
         putBoolean(PreferencesKeys.IS_CATEGORY_UP_TO_DATE, false)
-        putBoolean(PreferencesKeys.IS_CHARACTERS_UP_TO_DATE, false)
-        putBoolean(PreferencesKeys.IS_FILMS_UP_TO_DATE, false)
     }
 
     fun categoriesIsUpToDate() {
@@ -23,12 +28,24 @@ class PreferencesWrapper private constructor(context: Context) {
         putBoolean(PreferencesKeys.IS_CHARACTERS_UP_TO_DATE, true)
     }
 
+    fun clearCharacters() {
+        putBoolean(PreferencesKeys.IS_CHARACTERS_UP_TO_DATE, false)
+    }
+
     fun filmsIsUpToDate() {
         putBoolean(PreferencesKeys.IS_FILMS_UP_TO_DATE, true)
     }
 
+    fun clearFilms() {
+        putBoolean(PreferencesKeys.IS_FILMS_UP_TO_DATE, false)
+    }
+
     fun planetsIsUpToDate() {
         putBoolean(PreferencesKeys.IS_PLANETS_UP_TO_DATE, true)
+    }
+
+    fun clearPlanets() {
+        putBoolean(PreferencesKeys.IS_PLANETS_UP_TO_DATE, false)
     }
 
     fun isCategoriesUpToDate(): Boolean {

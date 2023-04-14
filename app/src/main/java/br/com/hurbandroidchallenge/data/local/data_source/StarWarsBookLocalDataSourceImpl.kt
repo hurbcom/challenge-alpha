@@ -23,6 +23,11 @@ class StarWarsBookLocalDataSourceImpl(
         dao.insertNewCategories(newCategories)
     }
 
+    override suspend fun clearCategories() {
+        preferences.clearCategories()
+        dao.clearCategories()
+    }
+
     override suspend fun getCharacters() = dao.getCharacters().sortedBy { it.id }
 
     override suspend fun getCharacterById(id: Int) = dao.getCharacterById(id)
@@ -31,6 +36,11 @@ class StarWarsBookLocalDataSourceImpl(
         val currentCharacters = getCharacters().map { it.id }
         val newCharacters = characters.filter { !currentCharacters.contains(it.id) }
         dao.insertNewCharacters(newCharacters)
+    }
+
+    override suspend fun clearCharacters() {
+        preferences.clearCharacters()
+        dao.clearCharacters()
     }
 
     override suspend fun getFilms() = dao.getFilms().sortedBy { it.id }
@@ -51,6 +61,11 @@ class StarWarsBookLocalDataSourceImpl(
         return dao.containsFilm(id) == 1
     }
 
+    override suspend fun clearFilms() {
+        preferences.clearFilms()
+        dao.clearFilms()
+    }
+
     override suspend fun updatePlanets(planets: List<PlanetEntity>) {
         val currentFilms = getPlanets().map { it.id }
         val newPlanets = planets.filter { !currentFilms.contains(it.id) }
@@ -64,6 +79,11 @@ class StarWarsBookLocalDataSourceImpl(
 
     override suspend fun containsPlanet(id: Int): Boolean {
         return dao.containsPlanets(id) == 1
+    }
+
+    override suspend fun clearPlanets() {
+        preferences.clearPlanets()
+        dao.clearPlanets()
     }
 
 }
