@@ -2,7 +2,7 @@ package br.com.vaniala.starwars.data.remote.service
 
 import br.com.vaniala.starwars.domain.model.ApiResponse
 import br.com.vaniala.starwars.domain.model.CategoryResponse
-import br.com.vaniala.starwars.domain.model.Films
+import br.com.vaniala.starwars.domain.model.Film
 import br.com.vaniala.starwars.domain.model.People
 import retrofit2.Response
 import retrofit2.http.GET
@@ -20,7 +20,7 @@ interface ApiService {
     @GET("api/films/")
     suspend fun getFilms(
         @Query("page") page: Int,
-    ): ApiResponse<Films>
+    ): ApiResponse<Film>
 
     @GET("api/people/")
     suspend fun getPeople(

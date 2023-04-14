@@ -4,14 +4,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import androidx.paging.filter
 import br.com.vaniala.starwars.domain.model.People
-import br.com.vaniala.starwars.domain.usecase.GetCharactersUseCase
+import br.com.vaniala.starwars.domain.usecase.GetCharactersBDAndRemoteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
@@ -21,23 +21,23 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class CharacterViewModel @Inject constructor(
-    getCharactersUseCase: GetCharactersUseCase,
+    private val getCharactersBDUseCase: GetCharactersBDAndRemoteUseCase,
 ) : ViewModel() {
 
     private val _filterName = MutableStateFlow("")
-    val filterName = _filterName.asStateFlow()
+    val filterName: StateFlow<String>
+        get() = _filterName
 
-    private val pagingDataFlow: Flow<PagingData<People>> = getCharactersUseCase().cachedIn(viewModelScope)
+    private val _characters = MutableSharedFlow<PagingData<People>>()
+    val characters: SharedFlow<PagingData<People>>
+        get() = _characters
 
-    fun pagingFilter(title: String): Flow<PagingData<People>> {
-        _filterName.value = title
-        if (title.isEmpty()) {
-            return pagingDataFlow
-        }
-        return pagingDataFlow.map { pagingData ->
-            pagingData.filter { character ->
-                character.name?.lowercase()?.contains(title.lowercase()) ?: false
+    fun pagingFilter(name: String) {
+        _filterName.value = name
+        viewModelScope.launch {
+            getCharactersBDUseCase(_filterName.value).cachedIn(viewModelScope).collect {
+                _characters.emit(it)
             }
-        }.cachedIn(viewModelScope)
+        }
     }
 }

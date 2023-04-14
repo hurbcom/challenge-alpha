@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.safeargs)
     alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.kapt)
 }
 
@@ -21,12 +22,17 @@ android {
         versionName = "0.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        ksp {
+            arg("room.schemaLocation", "$projectDir/schemas".toString())
+        }
     }
+    testBuildType = "uiTest"
 
     buildTypes {
         debug {
             buildConfigField("String", "BASE_URL", "\"https://swapi.dev/\"")
             buildConfigField("String", "BASE_URL_IMAGES", "\"https://starwars-visualguide.com/assets/img/\"")
+            buildConfigField("String", "DATABASE_NAME", "\"star_wars_debug.db\"")
         }
 
         release {
@@ -38,6 +44,11 @@ android {
             )
             buildConfigField("String", "BASE_URL", "\"https://swapi.dev/\"")
             buildConfigField("String", "BASE_URL_IMAGES", "\"https://starwars-visualguide.com/assets/img/\"")
+            buildConfigField("String", "DATABASE_NAME", "\"star_wars.db\"")
+        }
+        create("uiTest") {
+            initWith(getByName("debug"))
+            buildConfigField("String", "DATABASE_NAME", "\"star_wars_test.db\"")
         }
     }
 
@@ -95,6 +106,10 @@ dependencies {
     implementation(libs.splshscreen)
     implementation(libs.coil)
     implementation(libs.paging)
+
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.paging)
+    ksp(libs.androidx.room.compiler)
 
     implementation(libs.timber)
     implementation(libs.hilt.android)

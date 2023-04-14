@@ -103,7 +103,6 @@ class HomeFragment : Fragment() {
     private fun showStateError() {
         stopShimmer()
         showTextEmpty(message = resources.getString(R.string.home_error_categories))
-        Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
     }
 
     private fun showStateSuccess(categories: List<Category>) {

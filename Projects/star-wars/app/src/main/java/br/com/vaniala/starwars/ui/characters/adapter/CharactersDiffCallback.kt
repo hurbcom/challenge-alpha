@@ -8,5 +8,5 @@ class CharactersDiffCallback : DiffUtil.ItemCallback<People>() {
         oldItem.name == newItem.name
 
     override fun areContentsTheSame(oldItem: People, newItem: People): Boolean =
-        oldItem == newItem
+        oldItem.name == newItem.name
 }

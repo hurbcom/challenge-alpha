@@ -2,16 +2,17 @@ package br.com.vaniala.starwars.ui.films.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.ExperimentalPagingApi
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import androidx.paging.filter
-import br.com.vaniala.starwars.domain.model.Films
-import br.com.vaniala.starwars.domain.usecase.GetFilmsUseCase
+import br.com.vaniala.starwars.domain.model.Film
+import br.com.vaniala.starwars.domain.usecase.GetFilmsBDAndRemoteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
@@ -19,25 +20,27 @@ import javax.inject.Inject
  * on 12/04/23.
  *
  */
+
+@ExperimentalPagingApi
 @HiltViewModel
 class FilmViewModel @Inject constructor(
-    getFilmsUseCase: GetFilmsUseCase,
+    private val getFilmsBDAndRemoteUseCase: GetFilmsBDAndRemoteUseCase,
 ) : ViewModel() {
 
     private val _filterTitle = MutableStateFlow("")
-    val filterTitle = _filterTitle.asStateFlow()
+    val filterTitle: StateFlow<String>
+        get() = _filterTitle
 
-    val pagingDataFlow = getFilmsUseCase().cachedIn(viewModelScope)
+    private val _films = MutableSharedFlow<PagingData<Film>>()
+    val films: SharedFlow<PagingData<Film>>
+        get() = _films
 
-    fun pagingFilter(title: String): Flow<PagingData<Films>> {
+    fun pagingFilter(title: String) {
         _filterTitle.value = title
-        if (title.isEmpty()) {
-            return pagingDataFlow
-        }
-        return pagingDataFlow.map { pagingData ->
-            pagingData.filter { character ->
-                character.title?.lowercase()?.contains(title.lowercase()) ?: false
+        viewModelScope.launch {
+            getFilmsBDAndRemoteUseCase(_filterTitle.value).cachedIn(this).collect {
+                _films.emit(it)
             }
-        }.cachedIn(viewModelScope)
+        }
     }
 }

@@ -4,7 +4,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.paging.CombinedLoadStates
+import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadState
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.ui.BaseFragment
@@ -19,11 +19,11 @@ import kotlinx.coroutines.launch
  * on 11/04/23.
  *
  */
+@ExperimentalPagingApi
 @AndroidEntryPoint
 class FilmsFragment : BaseFragment<FilmViewModel>() {
 
     private lateinit var adapter: FilmsAdapter
-
     private val findNavController by lazy {
         findNavController()
     }
@@ -34,17 +34,15 @@ class FilmsFragment : BaseFragment<FilmViewModel>() {
             fragmentGridTextTitle.text = getString(R.string.films_title)
             fragmentsGridSearchEditText.hint = getString(R.string.films_search_hint)
             fragmentsGridEmpty.text = getString(R.string.films_empty_films)
-            fragmentsGridError.text = getString(R.string.films_error_films)
         }
     }
 
     override fun pagingFilter(search: CharSequence) {
         lifecycleScope.launch {
-            viewModel.pagingFilter(
-                search.toString(),
-            ).collectLatest(adapter::submitData)
+            viewModel.pagingFilter(search.toString())
         }
     }
+
     override fun initAdapter() {
         adapter = FilmsAdapter()
         binding.fragmentGridRecycler.adapter = adapter
@@ -54,67 +52,31 @@ class FilmsFragment : BaseFragment<FilmViewModel>() {
                 FilmsFragmentDirections.actionFilmsToFilmsDetails(it),
             )
         }
-        stateListener()
+
+        lifecycleScope.launch {
+            viewModel.films.collectLatest(adapter::submitData)
+        }
+
+        showLoadState()
     }
 
-    private fun stateListener() {
-        adapter.addLoadStateListener { loadState ->
-            loadState.decideOnState(
-                showLoading = {
-                    binding.fragmentGridShimmer.isVisible = it
-                    stopShimmer()
-                },
-                showRecycler = {
-                    binding.fragmentGridRecycler.isVisible = it
-                },
-                showEmptyState = {
-                    binding.fragmentsGridEmpty.isVisible = it
-                },
-                showError = {
-                    Toast.makeText(
-                        context,
-                        resources.getString(R.string.films_error_films),
-                        Toast.LENGTH_LONG,
-                    ).show()
-                },
-                showErrorThrows = {
-                    binding.fragmentsGridError.isVisible = it
-                },
-            )
+    private fun showLoadState() {
+        lifecycleScope.launch {
+            adapter.loadStateFlow.collect { loadState ->
+
+                binding.fragmentGridShimmer.isVisible = loadState.refresh is LoadState.Loading
+                binding.fragmentGridRecycler.isVisible = loadState.refresh is LoadState.NotLoading
+                binding.fragmentsGridEmpty.isVisible =
+                    adapter.itemCount == 0 && loadState.refresh is LoadState.NotLoading
+
+                val errorState = loadState.refresh as? LoadState.Error
+                    ?: loadState.source.refresh as? LoadState.Error
+
+                errorState?.let {
+                    Toast.makeText(context, resources.getText(R.string.grid_error), Toast.LENGTH_SHORT).show()
+                }
+            }
         }
-    }
-
-    private inline fun CombinedLoadStates.decideOnState(
-        showLoading: (Boolean) -> Unit,
-        showRecycler: (Boolean) -> Unit,
-        showEmptyState: (Boolean) -> Unit,
-        showError: () -> Unit,
-        showErrorThrows: (Boolean) -> Unit,
-    ) {
-        showLoading(
-            refresh is LoadState.Loading,
-        )
-
-        showRecycler(
-            source.refresh is LoadState.NotLoading &&
-                adapter.itemCount > 0,
-        )
-
-        showEmptyState(
-            refresh is LoadState.NotLoading &&
-                adapter.itemCount == 0 &&
-                append.endOfPaginationReached,
-        )
-
-        val errorState = source.append as? LoadState.Error
-            ?: source.prepend as? LoadState.Error
-            ?: append as? LoadState.Error
-            ?: prepend as? LoadState.Error
-
-        errorState?.let {
-            showError()
-        }
-        showErrorThrows(refresh is LoadState.Error)
     }
 
     override fun onDestroyView() {

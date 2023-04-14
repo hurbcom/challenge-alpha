@@ -1,5 +1,6 @@
 package br.com.vaniala.starwars.domain.repository
 
+import br.com.vaniala.starwars.domain.model.Category
 import br.com.vaniala.starwars.domain.model.CategoryResponse
 import retrofit2.Response
 
@@ -11,4 +12,8 @@ import retrofit2.Response
 interface CategoryRepository {
 
     suspend fun getCategories(): Response<CategoryResponse>
+
+    suspend fun insertAll(categories: List<Category>)
+
+    fun getAll(): List<Category>
 }

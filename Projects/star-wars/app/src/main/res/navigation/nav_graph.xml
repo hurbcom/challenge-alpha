@@ -35,7 +35,7 @@
         tools:layout="@layout/fragment_film_details">
         <argument
             android:name="film"
-            app:argType="br.com.vaniala.starwars.domain.model.Films" />
+            app:argType="br.com.vaniala.starwars.domain.model.Film" />
     </fragment>
     <fragment
         android:id="@+id/characters"

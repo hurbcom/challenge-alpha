@@ -1,6 +1,8 @@
 package br.com.vaniala.starwars.domain.model
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.parcelize.Parcelize
@@ -11,21 +13,27 @@ import kotlinx.parcelize.Parcelize
  *
  */
 
+@Entity(
+    tableName = "character",
+)
 @Parcelize
 @JsonClass(generateAdapter = true)
 data class People(
-    @field:Json(name = "birth_year") val birth_year: String?,
-    @field:Json(name = "created") val created: String?,
-    @field:Json(name = "edited") val edited: String?,
-    @field:Json(name = "eye_color") val eye_color: String?,
-    @field:Json(name = "gender") val gender: String?,
-    @field:Json(name = "hair_color") val hair_color: String?,
-    @field:Json(name = "height") val height: String?,
-    @field:Json(name = "homeworld") var homeworld: String?,
-    @field:Json(name = "mass") val mass: String?,
-    @field:Json(name = "name") val name: String?,
-    @field:Json(name = "skin_color") val skin_color: String?,
-    @field:Json(name = "url") val url: String?,
-    @field:Json(ignore = true) var imagePeople: String?,
-    @field:Json(ignore = true) var imageHomeworld: String?,
+    @PrimaryKey
+    val name: String,
+    @field:Json(name = "birth_year") val birth_year: String? = null,
+    @field:Json(name = "created") val created: String? = null,
+    @field:Json(name = "edited") val edited: String? = null,
+    @field:Json(name = "eye_color") val eye_color: String? = null,
+    @field:Json(name = "gender") val gender: String? = null,
+    @field:Json(name = "hair_color") val hair_color: String? = null,
+    @field:Json(name = "height") val height: String? = null,
+    @field:Json(name = "homeworld") var homeworld: String? = null,
+    @field:Json(name = "mass") val mass: String? = null,
+    @field:Json(name = "skin_color") val skin_color: String? = null,
+    @field:Json(name = "url") val url: String? = null,
+    @field:Json(ignore = true) var imagePeople: String? = null,
+    @field:Json(ignore = true) var imageHomeworld: String? = null,
+    @field:Json(ignore = true) var isFavorite: Boolean = false,
+    @field:Json(ignore = true) var timestamp: Long = 0L,
 ) : Parcelable

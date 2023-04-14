@@ -10,7 +10,7 @@ import br.com.vaniala.starwars.domain.model.Category
 import br.com.vaniala.starwars.domain.usecase.GetCategoriesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -26,10 +26,12 @@ class SharedViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _categories = MutableStateFlow<State<List<Category>>>(State.Loading)
-    val categories = _categories.asStateFlow()
+    val categories: StateFlow<State<List<Category>>>
+        get() = _categories
 
     private val _isLoading = MutableStateFlow(true)
-    val isLoading = _isLoading.asStateFlow()
+    val isLoading: StateFlow<Boolean>
+        get() = _isLoading
 
     init {
         getCategories()

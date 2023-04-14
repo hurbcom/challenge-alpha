@@ -1,9 +1,8 @@
 package br.com.vaniala.starwars.ui.films.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import br.com.vaniala.starwars.BuildConfig
 import br.com.vaniala.starwars.databinding.ListItemGridBinding
-import br.com.vaniala.starwars.domain.model.Films
+import br.com.vaniala.starwars.domain.model.Film
 import coil.load
 
 /**
@@ -15,20 +14,11 @@ class FilmsViewHolder(
     private val binding: ListItemGridBinding,
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(film: Films, onItemClickListener: (film: Films) -> Unit) {
+    fun bind(film: Film, onItemClickListener: (film: Film) -> Unit) {
         binding.root.setOnClickListener {
             onItemClickListener(film)
         }
-        binding.itemGridTitle.text = film.title
-
-        val urlImage = getUrlImage(film.url)
-        film.image = urlImage
-        binding.itemGridImage.load(urlImage)
-    }
-
-    fun getUrlImage(url: String?): String? {
-        if (url == null || url.length < 2) return null
-        val id = url[url.length - 2]
-        return "${BuildConfig.BASE_URL_IMAGES}films/$id.jpg"
+        binding.itemGridTitle.text = film.titleFormatted
+        binding.itemGridImage.load(film.image)
     }
 }

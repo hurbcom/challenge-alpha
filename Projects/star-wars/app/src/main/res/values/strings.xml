@@ -15,16 +15,14 @@
     <string name="home_toast_not_implemented">🤧 Not implemented yet</string>
     <!--    films-->
     <string name="films_title">Films</string>
-    <string name="films_search_hint">Search Films</string>
+    <string name="films_search_hint">Search by title</string>
     <string name="films_empty_films">🤡 Empty films</string>
-    <string name="films_error_films">🥴 Something wrong</string>
     <string name="films_icon_back">image to back</string>
     <!--    characters-->
     <string name="characters_title">Characters</string>
-    <string name="characters_search_hint">Search Characters</string>
+    <string name="characters_search_hint">Search by name</string>
     <string name="characters_icon_back">image to back</string>
     <string name="characters_empty_characters">🤡 Empty characters</string>
-    <string name="characters_error_characters">🥴 Something wrong</string>
     <!--    films details-->
     <string name="films_details_title">Films Details</string>
     <string name="films_details_img_film_description">image film</string>
@@ -32,6 +30,7 @@
     <string name="films_details_producer"><b>Producer(s):</b> %1$s</string>
     <string name="films_details_opening_crawl">%1$s</string>
     <string name="films_details_related_characters">Related Characters</string>
+    <string name="fragments_films_details">image to favorite</string>
  <!--    characters details-->
     <string name="characters_details_name">Characters Details</string>
     <string name="characters_details_img_characters_description">image characters</string>
@@ -45,11 +44,11 @@
     <string name="characters_details_opening_crawl">%1$s</string>
     <string name="characters_details_related_films">Related Films</string>
 
-
     <!--    grid-->
     <string name="grid_img_grid_description">image from category</string>
     <string name="grid_icon_back">image to back</string>
-
+    <string name="grid_icon_favorite">image to favorite</string>
+    <string name="grid_error">🥴 Something wrong</string>
 
 
 </resources>

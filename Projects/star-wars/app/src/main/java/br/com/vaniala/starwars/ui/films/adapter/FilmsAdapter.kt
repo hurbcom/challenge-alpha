@@ -4,15 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import br.com.vaniala.starwars.databinding.ListItemGridBinding
-import br.com.vaniala.starwars.domain.model.Films
+import br.com.vaniala.starwars.domain.model.Film
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
  * on 12/04/23.
  *
  */
 class FilmsAdapter(
-    var onItemClickListener: (film: Films) -> Unit = {},
-) : PagingDataAdapter<Films, FilmsViewHolder>(FilmsDiffCallback()) {
+    var onItemClickListener: (film: Film) -> Unit = {},
+) : PagingDataAdapter<Film, FilmsViewHolder>(FilmsDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmsViewHolder {
         val binding = ListItemGridBinding.inflate(

@@ -2,9 +2,9 @@ package br.com.vaniala.starwars
 
 import br.com.vaniala.starwars.data.remote.RemoteDataSourceImplTest
 import br.com.vaniala.starwars.data.remote.service.ApiServiceTest
+import br.com.vaniala.starwars.domain.model.CategoryTest
+import br.com.vaniala.starwars.domain.model.FilmTest
 import br.com.vaniala.starwars.domain.usecase.GetCategoriesUseCaseTest
-import br.com.vaniala.starwars.ui.films.adapter.FilmsViewHolderTest
-import br.com.vaniala.starwars.ui.home.adapter.CategoryViewHolderTest
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 
@@ -16,9 +16,9 @@ import org.junit.runners.Suite
 @Suite.SuiteClasses(
     GetCategoriesUseCaseTest::class,
     RemoteDataSourceImplTest::class,
-    CategoryViewHolderTest::class,
+    CategoryTest::class,
     ApiServiceTest::class,
-    FilmsViewHolderTest::class,
+    FilmTest::class,
 )
 @RunWith(Suite::class)
 class TestSuite

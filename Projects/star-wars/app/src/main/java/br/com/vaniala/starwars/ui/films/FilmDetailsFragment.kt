@@ -8,11 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.FragmentFilmDetailsBinding
+import br.com.vaniala.starwars.ui.films.viewmodel.FilmDetailsViewModel
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
@@ -28,6 +33,8 @@ class FilmDetailsFragment : Fragment() {
     }
     private var _binding: FragmentFilmDetailsBinding? = null
     private val binding: FragmentFilmDetailsBinding get() = _binding!!
+
+    private val viewModel: FilmDetailsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,7 +57,18 @@ class FilmDetailsFragment : Fragment() {
                 false
         }
         super.onViewCreated(view, savedInstanceState)
+        viewModel.savedStateHandle["isFavorite"] = film.isFavorite
         showFilm()
+        setFavoriteOnClickListener()
+        observeFavoriteStatus()
+    }
+
+    private fun setFavoriteOnClickListener() {
+        binding.fragmentsFilmsDetailsImageFavorite.setOnClickListener {
+            lifecycleScope.launch {
+                viewModel.favorite(film)
+            }
+        }
     }
 
     private fun isLightMode(context: Context): Boolean {
@@ -61,12 +79,27 @@ class FilmDetailsFragment : Fragment() {
     private fun showFilm() {
         binding.apply {
             fragmentsFilmsDetailsImage.load(film.image)
-            fragmentsFilmsDetailsTitle.text = film.title
-            val a = film.release_date?.substring(0, 4)
-            fragmentsFilmsDetailsReleaseDate.text = a
+            fragmentsFilmsDetailsTitle.text = film.titleFormatted
+            fragmentsFilmsDetailsReleaseDate.text = film.releaseDate
             fragmentsFilmsDetailsDirector.text = getString(R.string.films_details_director, film.director)
             fragmentsFilmsDetailsProducer.text = getString(R.string.films_details_director, film.producer)
-            fragmentsFilmsDetailsOpeningCrawl.text = film.opening_crawl?.replace("\r\n".toRegex(), "")
+            fragmentsFilmsDetailsOpeningCrawl.text = film.openingCrawl
+        }
+    }
+
+    private fun observeFavoriteStatus() {
+        lifecycleScope.launch {
+            viewModel.isFavorite.collectLatest { isFavorite ->
+                updateFavoriteIcon(isFavorite)
+            }
+        }
+    }
+
+    private fun updateFavoriteIcon(isFavorite: Boolean) {
+        if (isFavorite) {
+            binding.fragmentsFilmsDetailsImageFavorite.setImageResource(R.drawable.ic_action_favorite)
+        } else {
+            binding.fragmentsFilmsDetailsImageFavorite.setImageResource(R.drawable.ic_action_not_favorite)
         }
     }
 

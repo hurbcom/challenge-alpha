@@ -1,11 +1,13 @@
 package br.com.vaniala.starwars.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.createViewModelLazy
@@ -29,6 +31,7 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
 
     private val type = (javaClass.genericSuperclass as ParameterizedType)
     private val classVM = type.actualTypeArguments[0] as Class<VM>
+    private lateinit var view: View
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,6 +50,7 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        this.view = view
         initViews()
         initButtonBack()
         initListeners()
@@ -75,12 +79,12 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
     }
 
     private fun filterPaging() {
-        binding
-            .fragmentsGridSearchEditText.text?.trim().let { search ->
-                if (search != null) {
-                    pagingFilter(search)
-                }
+        hideKeyboard(view)
+        binding.fragmentsGridSearchEditText.text?.trim().let { search ->
+            if (search != null) {
+                pagingFilter(search)
             }
+        }
     }
 
     private fun initButtonBack() {
@@ -97,11 +101,16 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
         }
     }
 
+    private fun hideKeyboard(view: View) {
+        val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
     override fun onDestroyView() {
-        super.onDestroyView()
         binding.fragmentGridRecycler.adapter = null
         _binding = null
         timber.log.Timber.d("onDestroyView")
+        super.onDestroyView()
     }
 
     abstract fun initViews()

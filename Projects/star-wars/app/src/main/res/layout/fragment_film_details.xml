@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/films_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -60,11 +61,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:gravity="center_vertical|start"
                     android:lines="2"
                     android:minLines="2"
                     android:singleLine="false"
                     android:text=""
-                    android:gravity="center_vertical|start"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     tools:text="Episode V: The Empire Strikes Back" />
@@ -75,16 +76,28 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="8dp"
                     android:layout_weight="2"
-                    android:textColor="@color/white"
                     android:gravity="center_vertical|end"
                     android:minLines="1"
                     android:text=""
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     tools:text="1983" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/fragments_films_details_image_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/screen_padding_medium"
+            android:contentDescription="@string/fragments_films_details"
+            android:padding="@dimen/screen_padding_small"
+            android:src="@drawable/ic_action_not_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragments_films_details_constraint_image" />
+
 
         <TextView
             android:id="@+id/fragments_films_details_director"
@@ -98,7 +111,7 @@
             android:textSize="@dimen/title_size_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragments_films_details_constraint_image"
+            app:layout_constraintTop_toBottomOf="@+id/fragments_films_details_image_favorite"
             tools:text="Diretor: Richard Marquand" />
 
 

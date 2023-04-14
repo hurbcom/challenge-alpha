@@ -1,6 +1,7 @@
 package br.com.vaniala.starwars.data.remote
 
 import br.com.vaniala.starwars.categoriesResultPopulateMock
+import br.com.vaniala.starwars.data.remote.datasource.RemoteDataSourceImpl
 import br.com.vaniala.starwars.data.remote.service.ApiService
 import br.com.vaniala.starwars.domain.model.CategoryResponse
 import io.mockk.coEvery
