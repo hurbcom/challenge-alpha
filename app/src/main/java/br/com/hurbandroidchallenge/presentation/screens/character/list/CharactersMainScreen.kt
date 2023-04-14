@@ -12,9 +12,7 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
-import br.com.hurbandroidchallenge.R
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
 import br.com.hurbandroidchallenge.data.mapper.characters.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.PagedItemList
@@ -41,7 +39,7 @@ fun CategoryDetailMainScreen(
             if (isSearching) {
                 SearchTopBar(
                     searchText = searchText,
-                    placeholderText = "Nome do personagem",
+                    placeholderText = "Character name",
                     onClearClick = { searchText = "" },
                     onBackPressed = { isSearching = false },
                     onSearchTextChanged = {
@@ -50,7 +48,7 @@ fun CategoryDetailMainScreen(
                 )
             } else {
                 TopBar(
-                    title = stringResource(id = R.string.home_categories_people),
+                    title = "Characters",
                     onBackPressed = { navHostController.navigateUp() },
                     scrollBehavior = scrollBehavior,
                     actions = {
@@ -82,7 +80,7 @@ fun CategoryDetailMainScreen(
                             } else true
                         }
                         PagedItemList(
-                            categoryItems = filteredCharacters.map { character ->
+                            items = filteredCharacters.map { character ->
                                 character.toModel()
                             },
                             onItemClick = { url ->

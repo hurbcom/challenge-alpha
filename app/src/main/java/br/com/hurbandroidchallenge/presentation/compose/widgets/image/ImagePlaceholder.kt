@@ -5,18 +5,24 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.toSize
 
 @Composable
 fun ImagePlaceholder(modifier: Modifier = Modifier, icon: ImageVector) {
-    Box(modifier = modifier.background(color = MaterialTheme.colorScheme.outline)) {
+    var iconSize by remember { mutableStateOf(Size.Zero) }
+    Box(modifier = modifier
+        .background(color = MaterialTheme.colorScheme.outline)
+        .onGloballyPositioned { iconSize = (it.size / 2).toSize() }) {
         Icon(
             modifier = Modifier
-                .size(64.dp)
+                .size(LocalDensity.current.run { iconSize.toDpSize() })
                 .align(Alignment.Center),
             imageVector = icon,
             contentDescription = null,

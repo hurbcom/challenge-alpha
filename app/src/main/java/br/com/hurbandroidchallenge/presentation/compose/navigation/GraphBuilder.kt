@@ -15,6 +15,10 @@ import br.com.hurbandroidchallenge.presentation.screens.film.list.FilmsMainScree
 import br.com.hurbandroidchallenge.presentation.screens.film.list.FilmsViewModel
 import br.com.hurbandroidchallenge.presentation.screens.home.HomeListViewModel
 import br.com.hurbandroidchallenge.presentation.screens.home.HomeMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.planet.detail.PlanetDetailMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.planet.detail.PlanetDetailViewModel
+import br.com.hurbandroidchallenge.presentation.screens.planet.list.PlanetsMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.planet.list.PlanetsViewModel
 import com.google.accompanist.navigation.animation.composable
 import org.koin.androidx.compose.getViewModel
 import org.koin.core.parameter.parametersOf
@@ -102,6 +106,45 @@ fun NavGraphBuilder.filmDetail(
             parameters = { parametersOf(url) }
         )
         FilmDetailMainScreen(
+            navHostController = navHostController,
+            viewModel = viewModel
+        )
+    }
+}
+
+
+
+@OptIn(ExperimentalAnimationApi::class)
+fun NavGraphBuilder.planets(
+    navHostController: NavHostController,
+) {
+    composable(
+        route = Screens.Planets.route
+    ) {
+        val viewModel = getViewModel<PlanetsViewModel>()
+        PlanetsMainScreen(
+            navHostController = navHostController,
+            viewModel = viewModel
+        )
+    }
+}
+
+
+@OptIn(ExperimentalAnimationApi::class)
+fun NavGraphBuilder.planetDetail(
+    navHostController: NavHostController,
+) {
+    composable(
+        route = Screens.PlanetDetail.route,
+        arguments = listOf(navArgument(name = Screens.PlanetDetail.argumentKey) {
+            type = NavType.StringType
+        })
+    ) {
+        val url = it.arguments?.getString(Screens.PlanetDetail.argumentKey).orEmpty()
+        val viewModel = getViewModel<PlanetDetailViewModel>(
+            parameters = { parametersOf(url) }
+        )
+        PlanetDetailMainScreen(
             navHostController = navHostController,
             viewModel = viewModel
         )

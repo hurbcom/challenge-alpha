@@ -27,6 +27,16 @@ sealed class Screens(route: String, argumentKey: String) : ScreenNavOperations(r
         argumentKey = "film_detail_key"
     )
 
+    object Planets : Screens(
+        route = "planets",
+        argumentKey = "planets"
+    )
+
+    object PlanetDetail : Screens(
+        route = "planet_detail?planet_detail={planet_detail}",
+        argumentKey = "planet_detail"
+    )
+
     object Species : Screens(
         route = "species",
         argumentKey = "species_key"
@@ -40,10 +50,5 @@ sealed class Screens(route: String, argumentKey: String) : ScreenNavOperations(r
     object Vehicles : Screens(
         route = "vehicles",
         argumentKey = "vehicles"
-    )
-
-    object Planets : Screens(
-        route = "planets",
-        argumentKey = "planets"
     )
 }

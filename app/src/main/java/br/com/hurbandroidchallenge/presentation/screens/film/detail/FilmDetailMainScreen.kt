@@ -70,20 +70,12 @@ fun FilmDetailScreen(
     filmUI.film?.let { film ->
         val filmModel = film.toModel()
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-            CategoryItemDetail(
-                itemModel = filmModel.copy(
-                    fields = filmModel.fields.plus(
-                        listOf(
-                            "Produtores" to film.producer
-                        )
-                    )
-                )
-            ) {
+            CategoryItemDetail(itemModel = filmModel) {
                 Column(
                     modifier = Modifier.padding(all = 16.dp),
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    OtherCategoryCard(name = "Abertura") {
+                    OtherCategoryCard(name = "Opening") {
                         Text(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -94,7 +86,7 @@ fun FilmDetailScreen(
                             )
                         )
                     }
-                    OtherCategoryCard(name = "Personagens") {
+                    OtherCategoryCard(name = "Characters") {
                         viewModel.charactersState.collectAsState().value.let { response ->
                             when (response) {
                                 is StateUI.Error -> DefaultErrorText()
@@ -102,11 +94,10 @@ fun FilmDetailScreen(
                                 is StateUI.Processed -> {
                                     LazyRow(
                                         modifier = Modifier.fillMaxWidth(),
-                                        horizontalArrangement = Arrangement.spacedBy(16.dp),
                                         contentPadding = PaddingValues(all = 16.dp)
                                     ) {
                                         items(filmUI.characters) { character ->
-                                            val firstName = character.name.split(" ")[0]
+                                            val firstName = character.name
                                             SmallCategoryItemImage(
                                                 text = firstName,
                                                 textColor = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -116,6 +107,39 @@ fun FilmDetailScreen(
                                                         Screens.CharacterDetail.routeWithArgument(
                                                             character.url
                                                         )
+                                                    )
+                                                }
+                                            )
+                                        }
+                                    }
+                                }
+                                is StateUI.Processing -> {
+                                    DefaultLoading(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
+                        }
+                    }
+                    OtherCategoryCard(name = "Planets") {
+                        viewModel.planetsState.collectAsState().value.let { response ->
+                            when (response) {
+                                is StateUI.Error -> DefaultErrorText()
+                                is StateUI.Idle -> Unit
+                                is StateUI.Processed -> {
+                                    LazyRow(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        contentPadding = PaddingValues(all = 16.dp)
+                                    ) {
+                                        items(filmUI.planets) { planet ->
+                                            SmallCategoryItemImage(
+                                                text = planet.name,
+                                                textColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                                image = planet.image,
+                                                onClick = {
+                                                    navHostController.navigate(
+                                                        Screens.PlanetDetail.routeWithArgument(planet.url)
                                                     )
                                                 }
                                             )

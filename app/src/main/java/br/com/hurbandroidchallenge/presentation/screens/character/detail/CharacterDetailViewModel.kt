@@ -6,17 +6,23 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.hurbandroidchallenge.domain.model.Film
 import br.com.hurbandroidchallenge.domain.model.People
+import br.com.hurbandroidchallenge.domain.model.Planet
 import br.com.hurbandroidchallenge.domain.use_case.GetCharacterByUrlUseCase
 import br.com.hurbandroidchallenge.domain.use_case.GetFilmByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.GetPlanetByUrlUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 import br.com.hurbandroidchallenge.presentation.screens.character.detail.ui.CharacterUI
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class CharacterDetailViewModel(
     private val getCharacterByUrlUseCase: GetCharacterByUrlUseCase,
     private val getFilmByUrlUseCase: GetFilmByUrlUseCase,
-    url: String
+    private val getPlanetByUrlUseCase: GetPlanetByUrlUseCase,
+    url: String,
 ) : ViewModel() {
 
     private val _characterState = MutableStateFlow<StateUI<People>>(StateUI.Idle())
@@ -24,6 +30,9 @@ class CharacterDetailViewModel(
 
     private val _filmsState = MutableStateFlow<StateUI<List<Film>>>(StateUI.Idle())
     val filmsState = _filmsState.asStateFlow()
+
+    private val _planetsState = MutableStateFlow<StateUI<Planet>>(StateUI.Idle())
+    val planetsState = _planetsState.asStateFlow()
 
     private val _characterUI = mutableStateOf(CharacterUI())
     val characterUI: State<CharacterUI> = _characterUI
@@ -44,6 +53,7 @@ class CharacterDetailViewModel(
                 )
                 _characterState.emit(StateUI.Processed(data))
                 loadFilms(data.films)
+                loadHomeWorld(data.homeWorld)
             }
         }
     }
@@ -62,6 +72,19 @@ class CharacterDetailViewModel(
                 }
             }
             _filmsState.emit(StateUI.Processed(_characterUI.value.films))
+        }
+    }
+
+    private fun loadHomeWorld(url: String) {
+        viewModelScope.launch {
+            getPlanetByUrlUseCase(url).onStart {
+                _planetsState.emit(StateUI.Processing())
+            }.catch {
+                _planetsState.emit(StateUI.Error())
+            }.collect { data ->
+                _characterUI.value = characterUI.value.copy(homeWorld = data)
+                _planetsState.emit(StateUI.Processed(data = data))
+            }
         }
     }
 

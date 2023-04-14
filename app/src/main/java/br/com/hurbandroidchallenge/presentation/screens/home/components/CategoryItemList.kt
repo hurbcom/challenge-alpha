@@ -8,7 +8,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import br.com.hurbandroidchallenge.domain.model.Categories
 import br.com.hurbandroidchallenge.presentation.compose.components.card.CategoryCard
@@ -30,7 +29,7 @@ fun CategoryItemList(
                     .clickable {
                         onItemClick(category.route)
                     },
-                title = stringResource(id = category.nameRes),
+                title = category.title,
                 image = category.image,
                 aspectRadio = aspectRatio
             )

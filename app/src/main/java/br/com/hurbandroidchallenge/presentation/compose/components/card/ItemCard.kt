@@ -41,7 +41,7 @@ fun ItemCard(
                     .padding(all = 16.dp),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
-                itemModel.fields.forEachIndexed { index, item ->
+                itemModel.firstFields.forEachIndexed { index, item ->
                     if (index != 0)
                         DefaultDivider(thickness = 1.dp)
                     ItemField(item.first, item.second)

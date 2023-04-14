@@ -5,6 +5,8 @@ import br.com.hurbandroidchallenge.presentation.screens.character.list.Character
 import br.com.hurbandroidchallenge.presentation.screens.film.detail.FilmDetailViewModel
 import br.com.hurbandroidchallenge.presentation.screens.film.list.FilmsViewModel
 import br.com.hurbandroidchallenge.presentation.screens.home.HomeListViewModel
+import br.com.hurbandroidchallenge.presentation.screens.planet.detail.PlanetDetailViewModel
+import br.com.hurbandroidchallenge.presentation.screens.planet.list.PlanetsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -32,12 +34,29 @@ val viewModelModule = module {
         CharacterDetailViewModel(
             getCharacterByUrlUseCase = get(),
             getFilmByUrlUseCase = get(),
+            getPlanetByUrlUseCase = get(),
             url = url
         )
     }
 
     viewModel { (url: String) ->
         FilmDetailViewModel(
+            getCharacterByUrlUseCase = get(),
+            getFilmByUrlUseCase = get(),
+            getPlanetByUrlUseCase = get(),
+            url = url
+        )
+    }
+
+    viewModel {
+        PlanetsViewModel(
+            getPlanetsUseCase = get()
+        )
+    }
+
+    viewModel { (url: String) ->
+        PlanetDetailViewModel(
+            getPlanetByUrlUseCase = get(),
             getCharacterByUrlUseCase = get(),
             getFilmByUrlUseCase = get(),
             url = url

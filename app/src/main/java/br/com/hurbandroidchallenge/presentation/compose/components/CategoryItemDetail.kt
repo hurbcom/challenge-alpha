@@ -13,8 +13,6 @@ import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemField
 import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
-import br.com.hurbandroidchallenge.presentation.compose.widgets.image.DefaultImage
-import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun CategoryItemDetail(
@@ -22,17 +20,13 @@ fun CategoryItemDetail(
     corners: Dp = 16.dp,
     otherCategories: @Composable () -> Unit,
 ) {
-    val firstCardListSize = 4
-    val totalSize = itemModel.fields.size
-    val firstFields = itemModel.fields.subList(0, firstCardListSize)
-    val otherFields = itemModel.fields.subList(firstCardListSize, totalSize)
     Column(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier.background(color = MaterialTheme.colorScheme.surfaceVariant),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             ItemCard(
-                itemModel = itemModel.copy(fields = firstFields),
+                itemModel = itemModel,
                 shape = RoundedCornerShape(
                     topStart = 0.dp,
                     bottomStart = 0.dp,
@@ -40,7 +34,7 @@ fun CategoryItemDetail(
                     bottomEnd = corners
                 )
             )
-            if (otherFields.isNotEmpty()) {
+            if (itemModel.otherFields.isNotEmpty()) {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -48,7 +42,7 @@ fun CategoryItemDetail(
                     verticalArrangement = Arrangement.spacedBy(4.dp),
                     horizontalAlignment = Alignment.Start
                 ) {
-                    otherFields.forEachIndexed { index, item ->
+                    itemModel.otherFields.forEachIndexed { index, item ->
                         if (index != 0)
                             DefaultDivider(thickness = 1.dp)
                         ItemField(item.first, item.second)

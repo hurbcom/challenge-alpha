@@ -15,7 +15,9 @@ import androidx.compose.ui.unit.dp
 fun DefaultErrorScreen(
     message: String = "Ocorreu um erro inesperado"
 ) {
-    Box(modifier = Modifier.fillMaxSize().padding(all = 16.dp)) {
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .padding(all = 16.dp)) {
         Text(
             modifier = Modifier.align(Alignment.Center),
             text = message,
@@ -29,11 +31,13 @@ fun DefaultErrorText(
     modifier: Modifier = Modifier,
     message: String = "Ocorreu um erro inesperado"
 ) {
-    Box(modifier = modifier.fillMaxWidth().padding(all = 16.dp)) {
+    Box(modifier = modifier
+        .fillMaxWidth()
+        .padding(all = 16.dp)) {
         Text(
             modifier = Modifier.align(Alignment.Center),
             text = message,
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.titleMedium
         )
     }
 }

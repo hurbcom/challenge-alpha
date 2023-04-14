@@ -7,8 +7,8 @@ import br.com.hurbandroidchallenge.commom.mapper.PagedListMapper
 import br.com.hurbandroidchallenge.data.local.data_source.StarWarsBookLocalDataSource
 import br.com.hurbandroidchallenge.data.local.model.PlanetEntity
 import br.com.hurbandroidchallenge.data.local.preferences.PreferencesWrapper
-import br.com.hurbandroidchallenge.data.mapper.films.toEntity
-import br.com.hurbandroidchallenge.data.mapper.films.toPlanet
+import br.com.hurbandroidchallenge.data.mapper.planets.toEntity
+import br.com.hurbandroidchallenge.data.mapper.planets.toPlanet
 import br.com.hurbandroidchallenge.data.remote.data_sources.StarWarsBookRemoteDataSource
 import br.com.hurbandroidchallenge.data.remote.model.PlanetDto
 import br.com.hurbandroidchallenge.data.remote.util.NetworkManager

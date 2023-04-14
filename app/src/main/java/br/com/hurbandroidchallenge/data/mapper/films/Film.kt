@@ -74,11 +74,14 @@ fun FilmDto.toEntity() = this.run {
 fun Film.toModel() = ItemModel(
     url = url,
     image = image,
-    fields = listOf(
+    firstFields = listOf(
         title to "",
         "Director" to director,
         "Release date" to releaseDate.toDate()
     ),
     contentScale = ContentScale.FillWidth,
     aspectRatio = 4f / 5.5f,
+    otherFields = listOf(
+        "Producer" to producer
+    )
 )

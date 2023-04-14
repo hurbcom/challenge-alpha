@@ -22,6 +22,8 @@ fun NavHostScreen() {
             characterDetail(navHostController = navHostController)
             films(navHostController = navHostController)
             filmDetail(navHostController = navHostController)
+            planets(navHostController = navHostController)
+            planetDetail(navHostController = navHostController)
         }
     )
 }

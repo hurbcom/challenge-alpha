@@ -20,10 +20,10 @@ import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 @Composable
 fun PagedItemList(
     modifier: Modifier = Modifier,
-    categoryItems: List<ItemModel>,
+    items: List<ItemModel>,
     onItemClick: (url: String) -> Unit,
-    isLoading: Boolean,
-    loadMore: () -> Unit
+    loadMore: () -> Unit,
+    isLoading: Boolean
 ) {
     val state = rememberLazyListState()
     if (state.isNearToTheEnd() and isLoading.not())
@@ -34,8 +34,7 @@ fun PagedItemList(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = PaddingValues(all = 16.dp)
     ) {
-
-        items(categoryItems) { item ->
+        items(items) { item ->
             val shape = MaterialTheme.shapes.large
             ItemCard(
                 modifier = Modifier
@@ -50,7 +49,7 @@ fun PagedItemList(
         }
         item {
             if (isLoading) {
-                DummyItemCard(aspectRadio = categoryItems.first().aspectRatio)
+                DummyItemCard(aspectRadio = items.first().aspectRatio)
             }
         }
     }

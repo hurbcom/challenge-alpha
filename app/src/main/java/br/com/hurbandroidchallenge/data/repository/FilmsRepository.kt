@@ -24,14 +24,15 @@ class FilmsRepository(
     private val localDataSource: StarWarsBookLocalDataSource,
     private val filmDtoToEntityMapper: PagedListMapper<FilmDto, FilmEntity>,
     private val filmEntityToPeopleMapper: NullableListMapper<FilmEntity, Film>,
-    private val networkManager: NetworkManager
+    private val networkManager: NetworkManager,
 ) : StarWarsBookRepository<Film> {
 
     private val preferences = PreferencesWrapper.getInstance()
 
     private suspend fun getLocalFilms() = filmEntityToPeopleMapper.map(localDataSource.getFilms())
 
-    private suspend fun getLocalFilmByUrl(url: String) = localDataSource.getFilmById(url.idFromUrl()).toFilm()
+    private suspend fun getLocalFilmByUrl(url: String) =
+        localDataSource.getFilmById(url.idFromUrl()).toFilm()
 
     override fun getItemList(url: String): Flow<PagedList<Film>> {
         return flow {

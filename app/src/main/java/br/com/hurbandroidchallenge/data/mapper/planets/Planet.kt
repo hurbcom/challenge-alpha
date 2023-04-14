@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.data.mapper.films
+package br.com.hurbandroidchallenge.data.mapper.planets
 
 import androidx.compose.ui.layout.ContentScale
 import br.com.hurbandroidchallenge.commom.extension.idFromUrl
@@ -71,9 +71,14 @@ fun Planet.toModel() = ItemModel(
     image = image,
     contentScale = ContentScale.Crop,
     aspectRatio = 1f,
-    fields = listOf(
+    firstFields = listOf(
+        "Name" to name,
         "Population" to population,
-        "Rotation period" to rotationPeriod,
+        "Rotation period" to rotationPeriod
+    ),
+    otherFields = listOf(
+        "Climate" to climate,
+        "Gravity" to gravity,
         "Orbital Period" to orbitalPeriod
     )
 )

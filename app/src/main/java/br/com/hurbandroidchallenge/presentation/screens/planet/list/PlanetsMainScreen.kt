@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.film.list
+package br.com.hurbandroidchallenge.presentation.screens.planet.list
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
-import br.com.hurbandroidchallenge.data.mapper.films.toModel
-import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.ItemList
+import br.com.hurbandroidchallenge.data.mapper.planets.toModel
+import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.PagedItemList
 import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
@@ -26,13 +26,12 @@ import br.com.hurbandroidchallenge.presentation.model.StateUI
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FilmsMainScreen(
+fun PlanetsMainScreen(
     navHostController: NavHostController,
-    viewModel: FilmsViewModel,
+    viewModel: PlanetsViewModel,
 ) {
     val scrollBehavior =
         TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-    val filmsUI = viewModel.filmsUI.value
     var isSearching by remember { mutableStateOf(false) }
     var searchText by remember { mutableStateOf("") }
     Scaffold(
@@ -40,7 +39,7 @@ fun FilmsMainScreen(
             if (isSearching) {
                 SearchTopBar(
                     searchText = searchText,
-                    placeholderText = "Movie title",
+                    placeholderText = "Planet name",
                     onClearClick = { searchText = "" },
                     onBackPressed = { isSearching = false },
                     onSearchTextChanged = {
@@ -49,7 +48,7 @@ fun FilmsMainScreen(
                 )
             } else {
                 TopBar(
-                    title = "Movies",
+                    title = "Planets",
                     onBackPressed = { navHostController.navigateUp() },
                     scrollBehavior = scrollBehavior,
                     actions = {
@@ -68,22 +67,31 @@ fun FilmsMainScreen(
                 .padding(paddingValues = paddingValues)
                 .fillMaxSize()
         ) {
-            viewModel.filmsState.collectAsState().value.let { response ->
+            val planetsUI = viewModel.planetsUI.value
+            val loadMoreResponse = viewModel.loadMoreState.collectAsState().value
+            viewModel.planetsState.collectAsState().value.let { response ->
                 when (response) {
                     is StateUI.Error -> DefaultErrorScreen(message = response.message)
                     is StateUI.Idle -> Unit
                     is StateUI.Processed -> {
-                        val filteredFilms = filmsUI.films.filter {
+                        val filteredPlanets = planetsUI.planets.filter {
                             if (searchText.isNotBlank()) {
-                                it.title.containsIgnoringAccent(searchText, ignoreCase = true)
+                                it.name.containsIgnoringAccent(searchText, ignoreCase = true)
                             } else true
                         }
-                        ItemList(
-                            categoryItems = filteredFilms.map { film ->
-                                film.toModel()
-                            },
+                        PagedItemList(
+                            items = filteredPlanets.map { it.toModel() },
                             onItemClick = { url ->
-                                navHostController.navigate(Screens.FilmDetail.routeWithArgument(url))
+                                navHostController.navigate(
+                                    Screens.PlanetDetail.routeWithArgument(url)
+                                )
+                            },
+                            isLoading = loadMoreResponse.loading(),
+                            loadMore = {
+                                val canLoadMore = planetsUI.nextPage != null
+                                if (canLoadMore && !isSearching) {
+                                    viewModel.loadMorePlanets()
+                                }
                             }
                         )
                     }

@@ -7,5 +7,6 @@ data class ItemModel(
     val image: String,
     val aspectRatio: Float,
     val contentScale: ContentScale = ContentScale.FillHeight,
-    val fields: List<Pair<String, String>>
+    val firstFields: List<Pair<String, String>>,
+    val otherFields: List<Pair<String, String>>,
 )

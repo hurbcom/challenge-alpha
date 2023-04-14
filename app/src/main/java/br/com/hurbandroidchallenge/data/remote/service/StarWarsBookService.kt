@@ -16,13 +16,13 @@ interface StarWarsBookService {
     suspend fun getHomeCategories(@Url url: String = ApiUrls.categories): Response<HomeCategoriesDto>
 
     @GET
-    suspend fun getCharacters(@Url url: String = ApiUrls.characters): Response<PagedListResponse<PeopleDto>>
+    suspend fun getCharacters(@Url url: String): Response<PagedListResponse<PeopleDto>>
 
     @GET
     suspend fun getCharacterByUrl(@Url url: String): Response<PeopleDto>
 
     @GET
-    suspend fun getFilms(@Url url: String = ApiUrls.films): Response<PagedListResponse<FilmDto>>
+    suspend fun getFilms(@Url url: String): Response<PagedListResponse<FilmDto>>
 
     @GET
     suspend fun getFilmByUrl(@Url url: String): Response<FilmDto>

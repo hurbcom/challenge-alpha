@@ -73,11 +73,16 @@ fun PeopleDto.toPeople() = this.run {
 fun People.toModel() = ItemModel(
     url = url,
     image = image,
-    fields = listOf(
+    firstFields = listOf(
         "Name" to name,
         "Height" to height,
-        "Mass" to mass
+        "Mass" to mass,
+        "Birth yeah" to birthYear
     ),
     contentScale = ContentScale.FillWidth,
     aspectRatio = 4f / 5f,
+    otherFields = listOf(
+        "Gender" to gender,
+        "Hair color" to hairColor
+    )
 )
