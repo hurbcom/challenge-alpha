@@ -13,7 +13,6 @@ import br.com.hurbandroidchallenge.presentation.screens.film.detail.FilmDetailMa
 import br.com.hurbandroidchallenge.presentation.screens.film.detail.FilmDetailViewModel
 import br.com.hurbandroidchallenge.presentation.screens.film.list.FilmsMainScreen
 import br.com.hurbandroidchallenge.presentation.screens.film.list.FilmsViewModel
-import br.com.hurbandroidchallenge.presentation.screens.home.HomeListViewModel
 import br.com.hurbandroidchallenge.presentation.screens.home.HomeMainScreen
 import br.com.hurbandroidchallenge.presentation.screens.planet.detail.PlanetDetailMainScreen
 import br.com.hurbandroidchallenge.presentation.screens.planet.detail.PlanetDetailViewModel
@@ -30,10 +29,8 @@ fun NavGraphBuilder.home(
     composable(
         route = Screens.Home.route
     ) {
-        val viewModel = getViewModel<HomeListViewModel>()
         HomeMainScreen(
-            navHostController = navHostController,
-            viewModel = viewModel
+            navHostController = navHostController
         )
     }
 }

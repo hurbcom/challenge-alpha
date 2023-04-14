@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.home.components
+package br.com.hurbandroidchallenge.presentation.screens.home
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
