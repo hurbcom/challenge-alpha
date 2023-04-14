@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.categories
+package br.com.hurbandroidchallenge.presentation.screens.home.categories
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.model.StateUI
-import br.com.hurbandroidchallenge.presentation.screens.home.CategoryItemList
+import br.com.hurbandroidchallenge.presentation.screens.home.categories.components.CategoryItemList
 import org.koin.androidx.compose.getViewModel
 
 @Composable

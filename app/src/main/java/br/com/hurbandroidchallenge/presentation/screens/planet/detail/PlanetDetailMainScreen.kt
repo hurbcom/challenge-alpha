@@ -84,7 +84,7 @@ fun PlanetDetailScreen(
                                 is StateUI.Idle -> Unit
                                 is StateUI.Processed -> {
                                     if (planetUI.films.isEmpty()) {
-                                        DefaultErrorText(message = "Esse planeta não aparece em nenhum Filme")
+                                        DefaultErrorText(message = "This planet isn't related with any movie")
                                     } else {
                                         LazyRow(
                                             modifier = Modifier.fillMaxWidth(),
@@ -123,7 +123,7 @@ fun PlanetDetailScreen(
                                 is StateUI.Idle -> Unit
                                 is StateUI.Processed -> {
                                     if (planetUI.characters.isEmpty()) {
-                                        DefaultErrorText(message = "Esse planeta não possui habitantes")
+                                        DefaultErrorText(message = "This planet isn't related with any movie")
                                     } else {
                                         LazyRow(
                                             modifier = Modifier.fillMaxWidth(),
@@ -160,4 +160,5 @@ fun PlanetDetailScreen(
             }
         }
     }
+
 }

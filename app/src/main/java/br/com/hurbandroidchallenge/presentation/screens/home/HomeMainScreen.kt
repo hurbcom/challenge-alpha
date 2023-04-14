@@ -14,9 +14,9 @@ import br.com.hurbandroidchallenge.presentation.compose.components.DefaultNaviga
 import br.com.hurbandroidchallenge.presentation.compose.navigation.NavScreens.*
 import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
-import br.com.hurbandroidchallenge.presentation.screens.categories.CategoriesMainScreen
-import br.com.hurbandroidchallenge.presentation.screens.favorites.FavoritesMainScreen
-import br.com.hurbandroidchallenge.presentation.screens.last_seen.LastSeenMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.home.categories.CategoriesMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.home.favorites.FavoritesMainScreen
+import br.com.hurbandroidchallenge.presentation.screens.home.last_seen.LastSeenMainScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

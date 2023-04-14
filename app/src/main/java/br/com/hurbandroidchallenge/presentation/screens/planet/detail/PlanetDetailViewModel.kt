@@ -4,15 +4,19 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import br.com.hurbandroidchallenge.data.mapper.characters.toModel
 import br.com.hurbandroidchallenge.domain.model.Film
-import br.com.hurbandroidchallenge.domain.model.People
+import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.domain.model.Planet
-import br.com.hurbandroidchallenge.domain.use_case.GetCharacterByUrlUseCase
-import br.com.hurbandroidchallenge.domain.use_case.GetFilmByUrlUseCase
-import br.com.hurbandroidchallenge.domain.use_case.GetPlanetByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.characters.GetCharacterByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.films.GetFilmByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.planets.GetPlanetByUrlUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 import br.com.hurbandroidchallenge.presentation.screens.planet.detail.ui.PlanetUI
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class PlanetDetailViewModel(
@@ -31,7 +35,7 @@ class PlanetDetailViewModel(
     private val _filmsState = MutableStateFlow<StateUI<List<Film>>>(StateUI.Idle())
     val filmsState = _filmsState.asStateFlow()
 
-    private val _charactersState = MutableStateFlow<StateUI<List<People>>>(StateUI.Idle())
+    private val _charactersState = MutableStateFlow<StateUI<List<ItemModel>>>(StateUI.Idle())
     val charactersState = _charactersState.asStateFlow()
 
     init {
@@ -85,7 +89,7 @@ class PlanetDetailViewModel(
                     )
                 }
             }
-            _charactersState.emit(StateUI.Processed(_planetUI.value.characters))
+            _charactersState.emit(StateUI.Processed(_planetUI.value.characters.map { it.toModel() }))
         }
     }
 

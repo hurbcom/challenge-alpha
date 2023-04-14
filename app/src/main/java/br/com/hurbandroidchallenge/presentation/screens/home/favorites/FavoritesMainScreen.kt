@@ -1,13 +1,13 @@
-package br.com.hurbandroidchallenge.presentation.screens.last_seen
+package br.com.hurbandroidchallenge.presentation.screens.home.favorites
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun LastSeenMainScreen(
+fun FavoritesMainScreen(
     navHostController: NavHostController,
-    viewModel: LastSeenViewModel = getViewModel(),
+    viewModel: FavoritesViewModel = getViewModel(),
 ) {
 
 }

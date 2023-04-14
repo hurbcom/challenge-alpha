@@ -1,6 +1,6 @@
 package br.com.hurbandroidchallenge.domain.model
 
-class People (
+data class People (
     val id: Int,
     val name: String,
     val height: String,
@@ -14,5 +14,7 @@ class People (
     val films: List<String>,
     val vehicles: List<String>,
     val starships: List<String>,
-    val image: String
+    val image: String,
+    val favorite: Boolean,
+    val lastSeen: String?,
 )

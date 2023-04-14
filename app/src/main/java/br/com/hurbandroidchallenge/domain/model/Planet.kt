@@ -14,5 +14,7 @@ data class Planet(
     val residents: List<String>,
     val films: List<String>,
     val url: String,
-    val image: String
+    val image: String,
+    val lastSeen: String?,
+    val favorite: Boolean
 )

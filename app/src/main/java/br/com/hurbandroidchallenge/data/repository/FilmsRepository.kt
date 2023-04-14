@@ -42,7 +42,7 @@ class FilmsRepository(
             } else if (networkManager.hasInternetConnection()) {
                 apiCall {
                     val remoteFilms = remoteDataSource.getFilms(url)
-                    localDataSource.updateFilms(filmDtoToEntityMapper.map(remoteFilms).results)
+                    localDataSource.insertFilms(filmDtoToEntityMapper.map(remoteFilms).results)
                     if (remoteFilms.next == null) {
                         preferences.filmsIsUpToDate()
                     }
@@ -66,12 +66,25 @@ class FilmsRepository(
                 emit(getLocalFilmByUrl(url))
             } else if (networkManager.hasInternetConnection()) {
                 val remoteFilm = remoteDataSource.getFilmByUrl(url)
-                localDataSource.updateFilms(listOf(remoteFilm.toEntity()))
-                emit(remoteFilm.toFilm())
+                localDataSource.insertFilms(listOf(remoteFilm.toEntity()))
+                val localFilm = getLocalFilmByUrl(remoteFilm.url.orEmpty())
+                emit(localFilm)
             } else {
                 getLocalFilmByUrl(url)
             }
         }
+    }
+
+    override fun getFavoriteItems(): Flow<List<Film>> {
+        return flow { emit(filmEntityToPeopleMapper.map(localDataSource.getFavoriteFilms())) }
+    }
+
+    override fun getLastSeenItems(): Flow<List<Film>> {
+        return flow { emit(filmEntityToPeopleMapper.map(localDataSource.getLastSeenFilms())) }
+    }
+
+    override fun updateItem(item: Film): Flow<Unit> {
+        return flow { localDataSource.updateEntity(item.toEntity()) }
     }
 
 }

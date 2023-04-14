@@ -12,7 +12,6 @@ import br.com.hurbandroidchallenge.data.remote.util.NetworkManager
 import br.com.hurbandroidchallenge.data.remote.util.apiCall
 import br.com.hurbandroidchallenge.domain.model.Categories
 import br.com.hurbandroidchallenge.domain.model.base.PagedList
-import br.com.hurbandroidchallenge.domain.repository.StarWarsBookRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -23,13 +22,13 @@ class CategoriesRepository(
     private val homeCategoriesEntityToCategoriesMapper: NullableListMapper<HomeCategoriesEntity, Categories>,
     private val homeCategoriesDtoToEntityMapper: Mapper<HomeCategoriesDto, List<HomeCategoriesEntity>>,
     private val networkManager: NetworkManager,
-) : StarWarsBookRepository<Categories> {
+) {
 
     private val preferences = PreferencesWrapper.getInstance()
 
     private suspend fun updateLocalCategories() {
         val remoteCategories = remoteDataSource.getHomeCategories()
-        localDataSource.updateHomeCategories(
+        localDataSource.insertHomeCategories(
             categories = homeCategoriesDtoToEntityMapper.map(remoteCategories)
         )
     }
@@ -37,7 +36,9 @@ class CategoriesRepository(
     private suspend fun getLocalCategories() =
         homeCategoriesEntityToCategoriesMapper.map(localDataSource.getHomeCategories())
 
-    override fun getItemList(url: String, clearLocalDatasource: Boolean): Flow<PagedList<Categories>> {
+    fun getCategories(
+        clearLocalDatasource: Boolean,
+    ): Flow<PagedList<Categories>> {
         return flow {
             if (clearLocalDatasource) localDataSource.clearCategories()
             if (preferences.isCategoriesUpToDate()) {
@@ -51,10 +52,6 @@ class CategoriesRepository(
                 emit(pagedListOf(getLocalCategories()))
             }
         }
-    }
-
-    override fun getItemByUrl(url: String): Flow<Categories> {
-        return flow { }
     }
 
 }

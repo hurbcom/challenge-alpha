@@ -7,9 +7,9 @@ import androidx.lifecycle.viewModelScope
 import br.com.hurbandroidchallenge.domain.model.Film
 import br.com.hurbandroidchallenge.domain.model.People
 import br.com.hurbandroidchallenge.domain.model.Planet
-import br.com.hurbandroidchallenge.domain.use_case.GetCharacterByUrlUseCase
-import br.com.hurbandroidchallenge.domain.use_case.GetFilmByUrlUseCase
-import br.com.hurbandroidchallenge.domain.use_case.GetPlanetByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.characters.GetCharacterByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.films.GetFilmByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.planets.GetPlanetByUrlUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 import br.com.hurbandroidchallenge.presentation.screens.character.detail.ui.CharacterUI
 import kotlinx.coroutines.flow.MutableStateFlow

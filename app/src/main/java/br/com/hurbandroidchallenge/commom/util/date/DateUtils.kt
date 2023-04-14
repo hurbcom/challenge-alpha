@@ -12,7 +12,9 @@ class DateUtils {
 
         fun getCurrentDate() = LocalDate.now().toString()
 
-        fun daysBetweenDates(second: String?, first: String = getCurrentDate()): Long {
+        fun daysUntilToday(date: String?) = daysBetweenDates(first = getCurrentDate(), second = date)
+
+        fun daysBetweenDates(first: String?, second: String?): Long {
             formatter.setPattern(SERVER_PATTERN)
             val firstDate = formatter.format(first)
             val secondDate = formatter.format(second)
@@ -42,7 +44,7 @@ class DateUtils {
             return formatter.format(currentPatterDate)
         }
 
-        fun getDate(pattern: String, date: String): Date {
+        private fun getDate(pattern: String, date: String): Date {
             formatter.setPattern(pattern)
             return formatter.format(date)
         }

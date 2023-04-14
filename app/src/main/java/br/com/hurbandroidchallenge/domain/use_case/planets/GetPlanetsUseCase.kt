@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.domain.use_case
+package br.com.hurbandroidchallenge.domain.use_case.planets
 
 import br.com.hurbandroidchallenge.data.repository.PlanetsRepository
 import br.com.hurbandroidchallenge.domain.model.Planet

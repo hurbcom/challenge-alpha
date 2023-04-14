@@ -4,9 +4,9 @@ import br.com.hurbandroidchallenge.presentation.screens.character.detail.Charact
 import br.com.hurbandroidchallenge.presentation.screens.character.list.CharactersViewModel
 import br.com.hurbandroidchallenge.presentation.screens.film.detail.FilmDetailViewModel
 import br.com.hurbandroidchallenge.presentation.screens.film.list.FilmsViewModel
-import br.com.hurbandroidchallenge.presentation.screens.categories.CategoriesViewModel
-import br.com.hurbandroidchallenge.presentation.screens.favorites.FavoritesViewModel
-import br.com.hurbandroidchallenge.presentation.screens.last_seen.LastSeenViewModel
+import br.com.hurbandroidchallenge.presentation.screens.home.categories.CategoriesViewModel
+import br.com.hurbandroidchallenge.presentation.screens.home.favorites.FavoritesViewModel
+import br.com.hurbandroidchallenge.presentation.screens.home.last_seen.LastSeenViewModel
 import br.com.hurbandroidchallenge.presentation.screens.planet.detail.PlanetDetailViewModel
 import br.com.hurbandroidchallenge.presentation.screens.planet.list.PlanetsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -66,7 +66,8 @@ val viewModelModule = module {
     }
 
     viewModel {
-        FavoritesViewModel()
+        FavoritesViewModel(
+        )
     }
 
     viewModel {

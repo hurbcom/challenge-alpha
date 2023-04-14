@@ -1,10 +1,7 @@
 package br.com.hurbandroidchallenge.data.local.dao
 
 import androidx.room.*
-import br.com.hurbandroidchallenge.data.local.model.FilmEntity
-import br.com.hurbandroidchallenge.data.local.model.HomeCategoriesEntity
-import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
-import br.com.hurbandroidchallenge.data.local.model.PlanetEntity
+import br.com.hurbandroidchallenge.data.local.model.*
 
 @Dao
 interface StarWarsBookDao {
@@ -15,11 +12,20 @@ interface StarWarsBookDao {
     @Insert
     suspend fun insertNewCharacters(characters: List<PeopleEntity>)
 
+    @Update(entity = PeopleEntity::class)
+    suspend fun updateCharacter(characters: UpdateEntity)
+
     @Insert
     suspend fun insertNewFilms(films:  List<FilmEntity>)
 
+    @Update(entity = FilmEntity::class)
+    suspend fun updateFilm(characters: UpdateEntity)
+
     @Insert
     suspend fun insertNewPlanets(planets:  List<PlanetEntity>)
+
+    @Update(entity = PlanetEntity::class)
+    suspend fun updatePlanet(characters: UpdateEntity)
 
     @Query("DELETE FROM categories")
     suspend fun clearCategories()

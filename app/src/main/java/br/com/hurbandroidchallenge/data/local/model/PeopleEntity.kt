@@ -19,5 +19,7 @@ class PeopleEntity(
     val films: List<String>,
     val vehicles: List<String>,
     val starships: List<String>,
-    val image: String
+    val image: String,
+    val favorite: Boolean,
+    val lastSeen: String?
 )

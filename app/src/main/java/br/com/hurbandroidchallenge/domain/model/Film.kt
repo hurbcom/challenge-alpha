@@ -14,5 +14,7 @@ data class Film(
     val vehicles: List<String>,
     val species: List<String>,
     val url: String,
-    val image: String
+    val image: String,
+    val lastSeen: String?,
+    val favorite: Boolean
 )

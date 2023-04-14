@@ -4,48 +4,31 @@ import androidx.compose.ui.layout.ContentScale
 import br.com.hurbandroidchallenge.commom.extension.idFromUrl
 import br.com.hurbandroidchallenge.commom.extension.ifNull
 import br.com.hurbandroidchallenge.data.local.model.PlanetEntity
+import br.com.hurbandroidchallenge.data.local.model.UpdateEntity
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.data.remote.model.PlanetDto
 import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.domain.model.Planet
 
-fun PlanetDto.toPlanet() = this.run {
-    val id = url.idFromUrl() ifNull 0
-    Planet(
-        id = id,
-        name = name,
-        films = films,
-        url = url,
-        climate = climate,
-        diameter = diameter,
-        gravity = gravity,
-        orbitalPeriod = orbitalPeriod,
-        population = population,
-        residents = residents,
-        rotationPeriod = rotationPeriod,
-        surfaceWater = surfaceWater,
-        terrain = terrain,
-        image = "${ApiUrls.imageBaseUrl}planets/${id}.jpg"
-    )
-}
-
 fun PlanetDto.toEntity() = this.run {
-    val id = url.idFromUrl() ifNull 0
+    val id = url?.idFromUrl() ifNull 0
     PlanetEntity(
         id = id,
-        name = name,
-        films = films,
-        url = url,
-        climate = climate,
-        diameter = diameter,
-        gravity = gravity,
-        orbitalPeriod = orbitalPeriod,
-        population = population,
-        residents = residents,
-        rotationPeriod = rotationPeriod,
-        surfaceWater = surfaceWater,
-        terrain = terrain,
-        image = "${ApiUrls.imageBaseUrl}planets/${id}.jpg"
+        name = name.orEmpty(),
+        films = films.orEmpty(),
+        url = url.orEmpty(),
+        climate = climate.orEmpty(),
+        diameter = diameter.orEmpty(),
+        gravity = gravity.orEmpty(),
+        orbitalPeriod = orbitalPeriod.orEmpty(),
+        population = population.orEmpty(),
+        residents = residents.orEmpty(),
+        rotationPeriod = rotationPeriod.orEmpty(),
+        surfaceWater = surfaceWater.orEmpty(),
+        terrain = terrain.orEmpty(),
+        image = "${ApiUrls.imageBaseUrl}planets/${id}.jpg",
+        lastSeen = null,
+        favorite = false
     )
 }
 
@@ -63,7 +46,15 @@ fun PlanetEntity.toPlanet() = Planet(
     rotationPeriod = rotationPeriod,
     surfaceWater = surfaceWater,
     terrain = terrain,
-    image = image
+    image = image,
+    lastSeen = lastSeen,
+    favorite = favorite
+)
+
+fun Planet.toEntity() = UpdateEntity(
+    id = id,
+    favorite = favorite,
+    lastSeen = lastSeen
 )
 
 fun Planet.toModel() = ItemModel(

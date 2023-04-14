@@ -1,13 +1,13 @@
-package br.com.hurbandroidchallenge.presentation.screens.categories
+package br.com.hurbandroidchallenge.presentation.screens.home.categories
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.hurbandroidchallenge.domain.model.Categories
-import br.com.hurbandroidchallenge.domain.use_case.GetHomeCategoriesUseCase
+import br.com.hurbandroidchallenge.domain.use_case.categories.GetHomeCategoriesUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
-import br.com.hurbandroidchallenge.presentation.screens.categories.ui.CategoriesUI
+import br.com.hurbandroidchallenge.presentation.screens.home.categories.ui.CategoriesUI
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch

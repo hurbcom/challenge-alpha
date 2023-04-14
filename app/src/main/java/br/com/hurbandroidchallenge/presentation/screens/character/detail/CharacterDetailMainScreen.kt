@@ -87,7 +87,7 @@ private fun CharacterDetailScreen(
                                 is StateUI.Idle -> Unit
                                 is StateUI.Processed -> {
                                     if (characterUI.films.isEmpty()) {
-                                        DefaultErrorText(message = "Esse personagem não apareceu em nenhum filme")
+                                        DefaultErrorText(message = "This character isn't related with any movie")
                                     } else {
                                         LazyRow(
                                             modifier = Modifier.fillMaxWidth(),

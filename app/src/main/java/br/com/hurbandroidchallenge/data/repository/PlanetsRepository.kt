@@ -37,7 +37,7 @@ class PlanetsRepository(
             } else if (networkManager.hasInternetConnection()) {
                 apiCall {
                     val remotePlanets = remoteDataSource.getPlanets(url)
-                    localDataSource.updatePlanets(planetDtoToEntityMapper.map(remotePlanets).results)
+                    localDataSource.insertPlanets(planetDtoToEntityMapper.map(remotePlanets).results)
                     if (remotePlanets.next == null)
                         preferences.planetsIsUpToDate()
                     emit(
@@ -60,12 +60,25 @@ class PlanetsRepository(
                 emit(getLocalCharacterByUrl(url))
             } else if (networkManager.hasInternetConnection()) {
                 val remotePlanets = remoteDataSource.getPlanetByUrl(url)
-                localDataSource.updatePlanets(listOf(remotePlanets.toEntity()))
-                emit(remotePlanets.toPlanet())
+                localDataSource.insertPlanets(listOf(remotePlanets.toEntity()))
+                val localPlanet = getLocalCharacterByUrl(remotePlanets.url.orEmpty())
+                emit(localPlanet)
             } else {
                 getLocalCharacterByUrl(url)
             }
         }
+    }
+
+    override fun getFavoriteItems(): Flow<List<Planet>> {
+        return flow { emit(planetEntityToPlanetMapper.map(localDataSource.getFavoritePlanets())) }
+    }
+
+    override fun getLastSeenItems(): Flow<List<Planet>> {
+        return flow { emit(planetEntityToPlanetMapper.map(localDataSource.getLastSeenPlanets())) }
+    }
+
+    override fun updateItem(item: Planet): Flow<Unit> {
+        return flow { emit(localDataSource.updateEntity(item.toEntity())) }
     }
 
     private suspend fun getLocalPlanets() =

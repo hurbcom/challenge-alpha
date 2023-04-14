@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.domain.use_case
+package br.com.hurbandroidchallenge.domain.use_case.films
 
 import br.com.hurbandroidchallenge.data.repository.FilmsRepository
 import br.com.hurbandroidchallenge.domain.model.Film

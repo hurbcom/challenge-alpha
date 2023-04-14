@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.screens.categories.ui
+package br.com.hurbandroidchallenge.presentation.screens.home.categories.ui
 
 import br.com.hurbandroidchallenge.domain.model.Categories
 

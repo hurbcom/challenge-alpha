@@ -38,7 +38,7 @@ class CharactersRepository(
             } else if (networkManager.hasInternetConnection()) {
                 apiCall {
                     val remoteCharacters = remoteDataSource.getCharacters(url)
-                    localDataSource.updateCharacters(peopleDtoToEntityMapper.map(remoteCharacters).results)
+                    localDataSource.insertCharacters(peopleDtoToEntityMapper.map(remoteCharacters).results)
                     if (remoteCharacters.next == null)
                         preferences.charactersIsUpToDate()
                     emit(
@@ -61,11 +61,26 @@ class CharactersRepository(
                 emit(getLocalCharacterByUrl(url))
             } else if (networkManager.hasInternetConnection()) {
                 val remoteCharacter = remoteDataSource.getCharacterByUrl(url)
-                localDataSource.updateCharacters(listOf(remoteCharacter.toEntity()))
-                emit(remoteCharacter.toPeople())
+                localDataSource.insertCharacters(listOf(remoteCharacter.toEntity()))
+                val localCharacter = getLocalCharacterByUrl(remoteCharacter.url.orEmpty())
+                emit(localCharacter)
             } else {
                 getLocalCharacterByUrl(url)
             }
+        }
+    }
+
+    override fun getFavoriteItems(): Flow<List<People>> {
+        return flow { emit(peopleEntityToPeopleMapper.map(localDataSource.getFavoriteCharacters())) }
+    }
+
+    override fun getLastSeenItems(): Flow<List<People>> {
+        return flow { emit(peopleEntityToPeopleMapper.map(localDataSource.getLastSeenCharacters())) }
+    }
+
+    override fun updateItem(item: People): Flow<Unit> {
+        return flow {
+            localDataSource.updateEntity(item.toEntity())
         }
     }
 
