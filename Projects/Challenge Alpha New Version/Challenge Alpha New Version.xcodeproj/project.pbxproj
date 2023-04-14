@@ -20,6 +20,7 @@
 		679B18A529E7836F005C8118 /* HotelsInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B18A429E7836F005C8118 /* HotelsInfoViewModel.swift */; };
 		679B18A829E78402005C8118 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B18A729E78402005C8118 /* Services.swift */; };
 		679B18AA29E84FCE005C8118 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B18A929E84FCE005C8118 /* DetailViewController.swift */; };
+		679D76C729E87EAB00374203 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D76C629E87EAB00374203 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		679B18A429E7836F005C8118 /* HotelsInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsInfoViewModel.swift; sourceTree = "<group>"; };
 		679B18A729E78402005C8118 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		679B18A929E84FCE005C8118 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		679D76C629E87EAB00374203 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				679B189F29E76FF3005C8118 /* HomeViewController.swift */,
 				679B18A129E77754005C8118 /* CardInfoTableViewCell.swift */,
 				679B18A929E84FCE005C8118 /* DetailViewController.swift */,
+				679D76C629E87EAB00374203 /* SearchViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				679D76C729E87EAB00374203 /* SearchViewController.swift in Sources */,
 				679B18AA29E84FCE005C8118 /* DetailViewController.swift in Sources */,
 				679B18A029E76FF3005C8118 /* HomeViewController.swift in Sources */,
 				679B18A229E77754005C8118 /* CardInfoTableViewCell.swift in Sources */,

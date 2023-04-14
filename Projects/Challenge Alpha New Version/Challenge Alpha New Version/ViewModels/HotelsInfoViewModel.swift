@@ -28,6 +28,12 @@ struct HotelsInfoViewModel {
     var place:String {
         result.address!.city!
     }
+    var price:Double {
+        result.price.amount
+    }
+    var url:String {
+        result.url
+    }
 
 }
 //MARK: - VM

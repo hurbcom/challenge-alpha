@@ -22,7 +22,10 @@ class TabbarViewController: UITabBarController {
         let home = UINavigationController(rootViewController: HomeViewController())
         home.tabBarItem.title = "Inicio"
         home.tabBarItem.image = UIImage(systemName: "house")
-        let views = [home]
+        let search = UINavigationController(rootViewController: SearchViewController())
+        search.tabBarItem.title = "buscar"
+        search.tabBarItem.image = UIImage(systemName: "magnifyingglass")
+        let views = [home, search]
         self.setViewControllers(views, animated: false)
     }
 }

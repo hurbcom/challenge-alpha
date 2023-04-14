@@ -9,8 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var HotelListVM: HotelsInfoListViewModel!
-    var isSearchPerformed: Bool = false
-    var activeIndicator = UIActivityIndicatorView(style: .large)
+    var searchPerformed: Bool = false
+    lazy var activityIndicatorView = UIActivityIndicatorView(style: .large)
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 23, weight: .black)
@@ -21,33 +21,44 @@ class HomeViewController: UIViewController {
     }()
     lazy var tableView:UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(CardTableViewCell.self, forCellReuseIdentifier: CardTableViewCell.cellID)
+        return tableView
+    }()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchPerformed ? activityIndicator(isAnimating: false) :  activityIndicator(isAnimating: true)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureUI()
+    }
+
+    private func configureUI() {
+        searchPerformer()
+        
+        titleLabel.text = "Hoteis em \nRio de Janeiro"
+        
+        view.backgroundColor = .white
+        
+        view.addSubview(titleLabel)
+        view.addSubview(tableView)
+        
+        configConstraints()
+        configureTableView()
+    }
+
+    private func configureTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.isScrollEnabled = true
         tableView.separatorStyle = .singleLine
         tableView.backgroundColor = .clear
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(CardInfoTableViewCell.self, forCellReuseIdentifier: CardInfoTableViewCell.identifierCell)
-        return tableView
-    }()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        isSearchPerformed ? activityIndicator(isAnimating: false) :  activityIndicator(isAnimating: true)
-//        navigationController?.navigationBar.isHidden = true
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        searchPerformer()
-        self.titleLabel.text = "Hoteis em \nRio de Janeiro"
-        
-        view.backgroundColor = .white
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//        self.navigationItem.largeTitleDisplayMode = .always
-        view.addSubview(titleLabel)
-        view.addSubview(tableView)
-        configConstraints()
-    }
+
     // constraints
     private func configConstraints() {
         let safeArea = view.safeAreaLayoutGuide
@@ -65,11 +76,11 @@ class HomeViewController: UIViewController {
     func activityIndicator(isAnimating:Bool) {
         let container = UIView()
         container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        activeIndicator.center = self.view.center
-        container.addSubview(activeIndicator)
-        activeIndicator.color = .black
+        activityIndicatorView.center = self.view.center
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.color = .black
         self.view.addSubview(container)
-        isAnimating ? activeIndicator.startAnimating() : activeIndicator.stopAnimating()
+        isAnimating ? activityIndicatorView.startAnimating() : activityIndicatorView.stopAnimating()
 
         
     }
@@ -81,7 +92,7 @@ class HomeViewController: UIViewController {
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                             self.activityIndicator(isAnimating: false)
-                            self.isSearchPerformed = true
+                            self.searchPerformed = true
                         }
                 }
             }
@@ -92,11 +103,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return self.HotelListVM?.numberOfRowsInSection(section) ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CardInfoTableViewCell.identifierCell, for: indexPath) as! CardInfoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.cellID, for: indexPath) as! CardTableViewCell
         if let data = self.HotelListVM?.resultAt(index: indexPath.row) {
             cell.setCellData(selectedHotel: data)
-            
+
         }
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -105,7 +117,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let hotel = HotelListVM.resultAt(index: indexPath.row)
-        let vc = DetailViewController()
+        let vc = DetailsViewController()
         vc.hotel = hotel
         self.navigationController?.pushViewController(vc, animated: true)
     }

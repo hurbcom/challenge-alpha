@@ -7,115 +7,116 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    var hotel: HotelsInfoViewModel?
-    lazy var scrollView: UIScrollView = {
-       let scrollview = UIScrollView()
-        scrollview.translatesAutoresizingMaskIntoConstraints = false
-        scrollview.isScrollEnabled = true
-       return scrollview
-    }()
-    lazy var cardImage: UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleToFill
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 5
-        image.layer.masksToBounds = true
-        return image
-    }()
-    lazy var cardTitle: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 23, weight: .bold)
-        label.textColor = .label
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    lazy var cardDetail: UILabel = {
-       let label = UILabel()
-        label.textColor = .secondaryLabel
-        label.font = .systemFont(ofSize: 18, weight: .regular)
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    lazy var cardDescription: UILabel = {
-       let label = UILabel()
-        label.textColor = .label
-        label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 18, weight: .regular)
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+class DetailsViewController: UIViewController {
     
-    
-    lazy var VStack: UIStackView = {
-        let vstack = UIStackView()
-        vstack.axis = .vertical
-        vstack.translatesAutoresizingMaskIntoConstraints = false
-        vstack.distribution = .fill
-        return vstack
-    }()
-    lazy var hStack: UIStackView = {
-        let hstack = UIStackView()
-        hstack.axis = .horizontal
-        hstack.translatesAutoresizingMaskIntoConstraints = false
-        hstack.distribution = .fill
-        return hstack
-    }()
-    
-    lazy var favoriteButton: UIButton = {
-        let favoriteBtn = UIButton()
-        favoriteBtn.setImage(UIImage(systemName: "star"), for: .normal)
-        return favoriteBtn
-    }()
-    
+    var hotel:HotelsInfoViewModel?
+    let scrollView = UIScrollView()
+    let contentView = UIView()
+    let imageView = UIImageView()
+    let titleLabel = UILabel()
+    let subtitleLabel = UILabel()
+    let starButton = UIButton()
+    let shareButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Informações do produto"
         view.backgroundColor = .white
-        self.view.addSubview(scrollView)
-        self.scrollView.addSubview(VStack)
-        VStack.addArrangedSubview(cardImage)
-        VStack.addArrangedSubview(hStack)
-        hStack.addArrangedSubview(cardTitle)
-        hStack.addArrangedSubview(favoriteButton)
-        VStack.addArrangedSubview(cardDescription)
+        configureUI()
         configureConstraints()
         displayData()
+        
+    }
+    
+    private func configureUI() {
+        // Configure scrollView
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        // Configure contentView
+        contentView.addSubview(imageView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(subtitleLabel)
+        contentView.addSubview(starButton)
+        contentView.addSubview(shareButton)
+        
+        // Configure imageView
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        
+        // Configure titleLabel
+        titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        titleLabel.numberOfLines = 0
+        
+        // Configure subtitleLabel
+        subtitleLabel.font = UIFont.systemFont(ofSize: 16)
+        subtitleLabel.numberOfLines = 0
+        
+        // Configure starButton
+        starButton.setImage(UIImage(systemName: "star"), for: .normal)
+        starButton.tintColor = .systemYellow
+        
+        // Configure shareButton
+        shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        shareButton.tintColor = .systemBlue
+        
     }
     
     private func configureConstraints(){
+        // Add constraints
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        starButton.translatesAutoresizingMaskIntoConstraints = false
+        shareButton.translatesAutoresizingMaskIntoConstraints = false
+        
         let safeArea = view.safeAreaLayoutGuide
+        //        let confCGFloat = safeArea.heightAnchor. * 2
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             
-            VStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            VStack.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
-            VStack.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
-            VStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            VStack.widthAnchor.constraint(equalTo: safeArea.widthAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            //            contentView.widthAnchor.constraint(equalTo: safeArea.widthAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: (1800)),
+            contentView.widthAnchor.constraint(equalToConstant: 400),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 300),
             
-//            cardTitle.leadingAnchor.constraint(equalTo: VStack.leadingAnchor, constant: 16),
-//            cardTitle.trailingAnchor.constraint(equalTo: VStack.trailingAnchor, constant: -16),
-//            cardDescription.leadingAnchor.constraint(equalTo: VStack.leadingAnchor, constant: 16),
-//            cardDescription.trailingAnchor.constraint(equalTo: VStack.trailingAnchor, constant: -16),
-//
-            cardImage.heightAnchor.constraint(equalToConstant: 250),
-////            cardImage.widthAnchor.constraint(equalToConstant: 50),
-//            cardImage.leadingAnchor.constraint(equalTo: VStack.leadingAnchor, constant: 16),
-//            cardImage.rightAnchor.constraint(equalTo: VStack.rightAnchor, constant: -32),
+            titleLabel.topAnchor.constraint(equalTo: starButton.bottomAnchor, constant: 3),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -16),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            subtitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            
+            starButton.widthAnchor.constraint(equalToConstant: 38),
+            starButton.heightAnchor.constraint(equalToConstant: 38),
+            starButton.topAnchor.constraint(equalTo: imageView.bottomAnchor),
+            starButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor,constant: -16),
+            
+            shareButton.widthAnchor.constraint(equalToConstant: 38),
+            shareButton.heightAnchor.constraint(equalToConstant: 38),
+            shareButton.topAnchor.constraint(equalTo: imageView.bottomAnchor),
+            shareButton.leadingAnchor.constraint(equalTo: starButton.leadingAnchor, constant: -32)
+            
         ])
     }
     
     private func displayData(){
         if let _hotel = hotel {
-            cardTitle.text = _hotel.name
-            cardDescription.text = _hotel.smallDescription
+            titleLabel.text = _hotel.name
+            subtitleLabel.text = _hotel.smallDescription
             getImageFrom(url: _hotel.imgGallery)
         }
     }
@@ -123,9 +124,7 @@ class DetailViewController: UIViewController {
         let url = URL(string:url)
         let data = try? Data(contentsOf: url!)
         DispatchQueue.main.async {
-            self.cardImage.image  = UIImage(data: data!)
+            self.imageView.image  = UIImage(data: data!)
         }
     }
-    
-    
 }
