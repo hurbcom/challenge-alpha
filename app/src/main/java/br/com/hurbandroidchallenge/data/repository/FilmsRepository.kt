@@ -40,7 +40,7 @@ class FilmsRepository(
             } else if (networkManager.hasInternetConnection()) {
                 apiCall {
                     val remoteFilms = remoteDataSource.getFilms(url)
-                    localDataSource.setFilms(filmDtoToEntityMapper.map(remoteFilms).results)
+                    localDataSource.updateFilms(filmDtoToEntityMapper.map(remoteFilms).results)
                     if (remoteFilms.next == null) {
                         preferences.filmsIsUpToDate()
                     }
@@ -64,7 +64,7 @@ class FilmsRepository(
                 emit(getLocalFilmByUrl(url))
             } else if (networkManager.hasInternetConnection()) {
                 val remoteFilm = remoteDataSource.getFilmByUrl(url)
-                localDataSource.setFilms(listOf(remoteFilm.toEntity()))
+                localDataSource.updateFilms(listOf(remoteFilm.toEntity()))
                 emit(remoteFilm.toFilm())
             } else {
                 getLocalFilmByUrl(url)

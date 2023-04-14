@@ -4,6 +4,7 @@ import androidx.room.*
 import br.com.hurbandroidchallenge.data.local.model.FilmEntity
 import br.com.hurbandroidchallenge.data.local.model.HomeCategoriesEntity
 import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
+import br.com.hurbandroidchallenge.data.local.model.PlanetEntity
 
 @Dao
 interface StarWarsBookDao {
@@ -12,19 +13,13 @@ interface StarWarsBookDao {
     suspend fun insertNewCategories(homeCategoriesEntity: List<HomeCategoriesEntity>)
 
     @Insert
-    suspend fun insertNewCharacters(peopleEntity: List<PeopleEntity>)
+    suspend fun insertNewCharacters(characters: List<PeopleEntity>)
 
     @Insert
-    suspend fun insertNewFilms(filmsEntity:  List<FilmEntity>)
+    suspend fun insertNewFilms(films:  List<FilmEntity>)
 
-    @Query("DELETE FROM categories")
-    suspend fun deleteAllCategories()
-
-    @Query("DELETE FROM people")
-    suspend fun deleteAllCharacters()
-
-    @Query("DELETE FROM films")
-    suspend fun deleteAllFilms()
+    @Insert
+    suspend fun insertNewPlanets(planets:  List<PlanetEntity>)
 
     @Query("SELECT * FROM categories")
     suspend fun getCategories(): List<HomeCategoriesEntity>
@@ -46,5 +41,14 @@ interface StarWarsBookDao {
 
     @Query("SELECT COUNT(1) FROM films WHERE id = :id")
     suspend fun containsFilm(id: Int): Int
+
+    @Query("SELECT COUNT(1) FROM planets WHERE id = :id")
+    suspend fun containsPlanets(id: Int): Int
+
+    @Query("SELECT * FROM planets")
+    suspend fun getPlanets(): List<PlanetEntity>
+
+    @Query("SELECT * FROM planets WHERE id = :id")
+    suspend fun getPlanetById(id: Int): PlanetEntity
 
 }

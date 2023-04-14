@@ -2,14 +2,13 @@ package br.com.hurbandroidchallenge.data.local.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
-import br.com.hurbandroidchallenge.commom.util.date.DateUtils
 
 class PreferencesWrapper private constructor(context: Context) {
 
     init {
         sharedPreferences = context.getSharedPreferences(context.packageName, Context.MODE_PRIVATE)
     }
-    
+
     fun clearPreferences() {
         putBoolean(PreferencesKeys.IS_CATEGORY_UP_TO_DATE, false)
         putBoolean(PreferencesKeys.IS_CHARACTERS_UP_TO_DATE, false)
@@ -18,17 +17,18 @@ class PreferencesWrapper private constructor(context: Context) {
 
     fun categoriesIsUpToDate() {
         putBoolean(PreferencesKeys.IS_CATEGORY_UP_TO_DATE, true)
-        putString(PreferencesKeys.CATEGORY_LAST_FULLY_UPDATE_TIME, DateUtils.getCurrentDate())
     }
 
     fun charactersIsUpToDate() {
         putBoolean(PreferencesKeys.IS_CHARACTERS_UP_TO_DATE, true)
-        putString(PreferencesKeys.CHARACTERS_LAST_FULLY_UPDATE_TIME, DateUtils.getCurrentDate())
     }
 
     fun filmsIsUpToDate() {
         putBoolean(PreferencesKeys.IS_FILMS_UP_TO_DATE, true)
-        putString(PreferencesKeys.FILMS_LAST_FULLY_UPDATE_TIME, DateUtils.getCurrentDate())
+    }
+
+    fun planetsIsUpToDate() {
+        putBoolean(PreferencesKeys.IS_PLANETS_UP_TO_DATE, true)
     }
 
     fun isCategoriesUpToDate(): Boolean {
@@ -41,6 +41,10 @@ class PreferencesWrapper private constructor(context: Context) {
 
     fun isFilmsUpToDate(): Boolean {
         return getBoolean(PreferencesKeys.IS_FILMS_UP_TO_DATE, false)
+    }
+
+    fun isPlanetsUpToDate(): Boolean {
+        return getBoolean(PreferencesKeys.IS_PLANETS_UP_TO_DATE, false)
     }
 
     fun putString(key: String, value: String) {

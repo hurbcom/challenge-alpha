@@ -8,10 +8,13 @@ import br.com.hurbandroidchallenge.data.mapper.characters.PeopleDtoToEntityMappe
 import br.com.hurbandroidchallenge.data.mapper.characters.PeopleEntityToPeopleMapper
 import br.com.hurbandroidchallenge.data.mapper.films.FilmDtoToEntityMapper
 import br.com.hurbandroidchallenge.data.mapper.films.FilmEntityToFilmMapper
+import br.com.hurbandroidchallenge.data.mapper.planets.PlanetDtoToEntityMapper
+import br.com.hurbandroidchallenge.data.mapper.planets.PlanetEntityToPlanetMapper
 import br.com.hurbandroidchallenge.data.remote.util.NetworkManager
 import br.com.hurbandroidchallenge.data.repository.CategoriesRepository
 import br.com.hurbandroidchallenge.data.repository.CharactersRepository
 import br.com.hurbandroidchallenge.data.repository.FilmsRepository
+import br.com.hurbandroidchallenge.data.repository.PlanetsRepository
 import org.koin.dsl.module
 
 val repositoryModule = module {
@@ -61,6 +64,22 @@ val repositoryModule = module {
             remoteDataSource = get(),
             localDataSource = get(),
             networkManager = get()
+        )
+    }
+
+    single {
+        PlanetsRepository(
+            planetDtoToEntityMapper = PagedListMapperImpl(
+                listMapper = NullableListMapperImpl(
+                    mapper = get<PlanetDtoToEntityMapper>()
+                )
+            ),
+            planetEntityToPlanetMapper = NullableListMapperImpl(
+                mapper = get<PlanetEntityToPlanetMapper>()
+            ),
+            networkManager = get(),
+            localDataSource = get(),
+            remoteDataSource = get()
         )
     }
 

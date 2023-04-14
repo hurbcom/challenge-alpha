@@ -16,4 +16,8 @@ val useCaseModule = module {
 
     single { GetFilmByUrlUseCase(get()) }
 
+    single { GetPlanetsUseCase(get()) }
+
+    single { GetPlanetByUrlUseCase(get()) }
+
 }

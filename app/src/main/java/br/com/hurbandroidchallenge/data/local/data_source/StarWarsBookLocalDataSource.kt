@@ -3,6 +3,7 @@ package br.com.hurbandroidchallenge.data.local.data_source
 import br.com.hurbandroidchallenge.data.local.model.FilmEntity
 import br.com.hurbandroidchallenge.data.local.model.HomeCategoriesEntity
 import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
+import br.com.hurbandroidchallenge.data.local.model.PlanetEntity
 
 interface StarWarsBookLocalDataSource {
 
@@ -14,16 +15,24 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun getCharacterById(id: Int): PeopleEntity
 
-    suspend fun setCharacters(characters: List<PeopleEntity>)
+    suspend fun containsCharacter(id: Int): Boolean
+
+    suspend fun updateCharacters(characters: List<PeopleEntity>)
 
     suspend fun getFilms(): List<FilmEntity>
 
     suspend fun getFilmById(id: Int): FilmEntity
 
-    suspend fun setFilms(films: List<FilmEntity>)
-
-    suspend fun containsCharacter(id: Int): Boolean
+    suspend fun updateFilms(films: List<FilmEntity>)
 
     suspend fun containsFilm(id: Int): Boolean
+
+    suspend fun updatePlanets(planets: List<PlanetEntity>)
+
+    suspend fun getPlanets(): List<PlanetEntity>
+
+    suspend fun getPlanetById(id: Int): PlanetEntity
+
+    suspend fun containsPlanet(id: Int): Boolean
 
 }

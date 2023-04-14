@@ -7,10 +7,16 @@ import br.com.hurbandroidchallenge.data.local.dao.StarWarsBookDao
 import br.com.hurbandroidchallenge.data.local.model.FilmEntity
 import br.com.hurbandroidchallenge.data.local.model.HomeCategoriesEntity
 import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
+import br.com.hurbandroidchallenge.data.local.model.PlanetEntity
 import br.com.hurbandroidchallenge.data.local.type_converter.StringListConverter
 
 @Database(
-    entities = [PeopleEntity::class, FilmEntity::class, HomeCategoriesEntity::class],
+    entities = [
+        PeopleEntity::class,
+        FilmEntity::class,
+        HomeCategoriesEntity::class,
+        PlanetEntity::class
+    ],
     version = 1
 )
 @TypeConverters(StringListConverter::class)
