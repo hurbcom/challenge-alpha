@@ -12,10 +12,10 @@ fun HomeCategoriesDto.toEntity() = this.run {
     val urls = mutableListOf<String?>()
     urls.add(people)
     urls.add(films)
+    urls.add(planets)
 //        urls.add(species)
 //        urls.add(starships)
 //        urls.add(vehicles)
-//        urls.add(planets)
     val enabledCategories = Categories.values().filter { urls.contains(it.url) }
     enabledCategories.map { category ->
         HomeCategoriesEntity(url = category.url)

@@ -2,6 +2,7 @@ package br.com.hurbandroidchallenge.data.mapper.characters
 
 import androidx.compose.ui.layout.ContentScale
 import br.com.hurbandroidchallenge.commom.extension.idFromUrl
+import br.com.hurbandroidchallenge.commom.extension.ifNull
 import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.data.remote.model.PeopleDto
@@ -31,7 +32,7 @@ fun PeopleEntity.toPeople() = this.run {
 fun PeopleDto.toEntity() = this.run {
     val id = url?.idFromUrl()
     PeopleEntity(
-        id = id ?: 0,
+        id = id ifNull 0,
         name = name.orEmpty(),
         height = height.orEmpty(),
         birthYear = birthYear.orEmpty(),
@@ -52,7 +53,7 @@ fun PeopleDto.toEntity() = this.run {
 fun PeopleDto.toPeople() = this.run {
     val id = url?.idFromUrl()
     People(
-        id = id ?: 0,
+        id = id ifNull 0,
         name = name.orEmpty(),
         height = height.orEmpty(),
         birthYear = birthYear.orEmpty(),

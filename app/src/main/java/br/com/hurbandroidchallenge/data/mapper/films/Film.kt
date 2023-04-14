@@ -2,6 +2,7 @@ package br.com.hurbandroidchallenge.data.mapper.films
 
 import androidx.compose.ui.layout.ContentScale
 import br.com.hurbandroidchallenge.commom.extension.idFromUrl
+import br.com.hurbandroidchallenge.commom.extension.ifNull
 import br.com.hurbandroidchallenge.commom.extension.toDate
 import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.local.model.FilmEntity
@@ -30,10 +31,10 @@ fun FilmEntity.toFilm() = this.run {
     )
 }
 
-fun FilmDto.toFilm() =this.run {
+fun FilmDto.toFilm() = this.run {
     val id = url?.idFromUrl()
     Film(
-        id = id ?: 0,
+        id = id ifNull  0,
         title = "Episode ${episodeId?.toRoman()}: $title",
         characters = characters.orEmpty(),
         url = url.orEmpty(),
@@ -42,7 +43,7 @@ fun FilmDto.toFilm() =this.run {
         vehicles = vehicles.orEmpty(),
         planets = planets.orEmpty(),
         director = director.orEmpty(),
-        episodeId = episodeId ?: 0,
+        episodeId = episodeId ifNull 0,
         openingCrawl = openingCrawl.orEmpty(),
         producer = producer.orEmpty(),
         releaseDate = releaseDate.orEmpty(),
@@ -53,7 +54,7 @@ fun FilmDto.toFilm() =this.run {
 fun FilmDto.toEntity() = this.run {
     val id = url?.idFromUrl()
     FilmEntity(
-        id = id ?: 0,
+        id = id ifNull 0,
         title = "Episode ${episodeId?.toRoman()}: $title",
         characters = characters.orEmpty(),
         url = url.orEmpty(),
@@ -62,7 +63,7 @@ fun FilmDto.toEntity() = this.run {
         vehicles = vehicles.orEmpty(),
         planets = planets.orEmpty(),
         director = director.orEmpty(),
-        episodeId = episodeId ?: 0,
+        episodeId = episodeId ifNull 0,
         openingCrawl = openingCrawl.orEmpty(),
         producer = producer.orEmpty(),
         releaseDate = releaseDate.orEmpty(),

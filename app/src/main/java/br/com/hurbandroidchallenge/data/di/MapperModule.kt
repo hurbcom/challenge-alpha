@@ -6,6 +6,8 @@ import br.com.hurbandroidchallenge.data.mapper.characters.PeopleDtoToEntityMappe
 import br.com.hurbandroidchallenge.data.mapper.characters.PeopleEntityToPeopleMapper
 import br.com.hurbandroidchallenge.data.mapper.films.FilmDtoToEntityMapper
 import br.com.hurbandroidchallenge.data.mapper.films.FilmEntityToFilmMapper
+import br.com.hurbandroidchallenge.data.mapper.planets.PlanetDtoToEntityMapper
+import br.com.hurbandroidchallenge.data.mapper.planets.PlanetEntityToPlanetMapper
 import org.koin.dsl.module
 
 val mapperModule = module {
@@ -21,5 +23,9 @@ val mapperModule = module {
     single { FilmDtoToEntityMapper() }
 
     single { FilmEntityToFilmMapper() }
+
+    single { PlanetEntityToPlanetMapper() }
+
+    single { PlanetDtoToEntityMapper() }
 
 }
