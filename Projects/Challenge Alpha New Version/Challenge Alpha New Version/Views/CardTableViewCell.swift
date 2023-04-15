@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import HUGraphQL
 
 class CardTableViewCell: UITableViewCell {
     static let cellID = "CardTableViewCell"
@@ -41,6 +42,7 @@ class CardTableViewCell: UITableViewCell {
         cardImageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.numberOfLines = 0
         
         NSLayoutConstraint.activate([
             cardImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -65,10 +67,18 @@ class CardTableViewCell: UITableViewCell {
         getImageFrom(url: selectedHotel.imgGallery)
     }
     
+    func setCellDataPackage(package:PackageInfoViewModel) {
+        titleLabel.text = package.name
+        subtitleLabel.text = package.prodtype
+        getImageFrom(url: package.imgGallery)
+    }
+    
     private func getImageFrom(url:String) {
         let url = URL(string:url)
-        let data = try? Data(contentsOf: url!)
-        cardImageView.image  = UIImage(data: data!)
+        if let data = try? Data(contentsOf: url!) {
+            cardImageView.image  = UIImage(data: data)
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

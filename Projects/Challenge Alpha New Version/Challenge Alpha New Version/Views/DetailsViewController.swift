@@ -10,6 +10,7 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     var hotel:HotelsInfoViewModel?
+    var package:PackageInfoViewModel?
     let scrollView = UIScrollView()
     let contentView = UIView()
     let imageView = UIImageView()
@@ -60,6 +61,7 @@ class DetailsViewController: UIViewController {
         // Configure shareButton
         shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         shareButton.tintColor = .systemBlue
+        shareButton.addTarget(self, action: #selector(shareButtonPressed), for: .touchUpInside)
         
     }
     
@@ -116,8 +118,13 @@ class DetailsViewController: UIViewController {
     private func displayData(){
         if let _hotel = hotel {
             titleLabel.text = _hotel.name
-            subtitleLabel.text = _hotel.smallDescription
+            subtitleLabel.text = _hotel.Description
             getImageFrom(url: _hotel.imgGallery)
+        }
+        if let package = package {
+            titleLabel.text = package.name
+            subtitleLabel.text = removeHtmlTagsFromText(text:  package.Description)
+            getImageFrom(url: package.imgGallery)
         }
     }
     func getImageFrom(url:String) {
@@ -127,4 +134,29 @@ class DetailsViewController: UIViewController {
             self.imageView.image  = UIImage(data: data!)
         }
     }
+    
+    
+    func removeHtmlTagsFromText(text:String) -> String {
+        let htmlString = text
+        let attributedString = try? NSAttributedString(data: htmlString.data(using: .utf8)!, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+        let plainString = attributedString?.string
+        let decomposedString = plainString?.decomposedStringWithCanonicalMapping
+        return decomposedString!
+    }
+    
+    func shareURL() {
+        if let hotel = hotel {
+            let activityViewController = UIActivityViewController(activityItems: [hotel.url], applicationActivities: nil)
+            present(activityViewController, animated: true, completion: nil)
+        }
+        if let package = package {
+            let activityViewController = UIActivityViewController(activityItems: [package.url], applicationActivities: nil)
+            present(activityViewController, animated: true, completion: nil)
+        }
+    }
+    
+    @objc private func shareButtonPressed() {
+        shareURL()
+    }
+
 }

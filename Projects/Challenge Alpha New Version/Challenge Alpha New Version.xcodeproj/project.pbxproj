@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		678B2EB429EA37AF007F80D7 /* PackageInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B2EB329EA37AF007F80D7 /* PackageInfoViewModel.swift */; };
 		679B187D29E75BA2005C8118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B187C29E75BA2005C8118 /* AppDelegate.swift */; };
 		679B187F29E75BA2005C8118 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B187E29E75BA2005C8118 /* SceneDelegate.swift */; };
 		679B188729E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 679B188529E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		678B2EB329EA37AF007F80D7 /* PackageInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageInfoViewModel.swift; sourceTree = "<group>"; };
 		679B187929E75BA2005C8118 /* Challenge Alpha New Version.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha New Version.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		679B187C29E75BA2005C8118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		679B187E29E75BA2005C8118 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				679B18A429E7836F005C8118 /* HotelsInfoViewModel.swift */,
+				678B2EB329EA37AF007F80D7 /* PackageInfoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				679B188729E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld in Sources */,
 				679B189C29E75F89005C8118 /* TabbarViewController.swift in Sources */,
 				679B18A829E78402005C8118 /* Services.swift in Sources */,
+				678B2EB429EA37AF007F80D7 /* PackageInfoViewModel.swift in Sources */,
 				679B187F29E75BA2005C8118 /* SceneDelegate.swift in Sources */,
 				679B18A529E7836F005C8118 /* HotelsInfoViewModel.swift in Sources */,
 			);
