@@ -3,6 +3,15 @@
 /local.properties
 /.idea/*
 .DS_Store
+*~
+\#*
+.\#*
+.*.sw[nop]
+*.xcscmblueprint
+/default.profraw
+Utilities/Docker/*.tar.gz
+.swiftpm
+Package.resolved
 /build
 /captures
 .externalNativeBuild
