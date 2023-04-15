@@ -35,7 +35,7 @@ fun LastSeenMainScreen(
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Text(text = "Last seen", style = MaterialTheme.typography.headlineMedium)
+            Text(text = "Last seen", style = MaterialTheme.typography.headlineSmall)
             CategorySmallItems(
                 name = Categories.Characters.title,
                 listState = viewModel.charactersState.collectAsState().value,

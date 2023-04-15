@@ -30,7 +30,7 @@ fun CategorySmallItems(
             Text(
                 modifier = Modifier.padding(top = 16.dp, end = 16.dp, start = 16.dp),
                 text = name,
-                style = MaterialTheme.typography.headlineSmall
+                style = MaterialTheme.typography.titleLarge
             )
             when (listState) {
                 is StateUI.Error -> DefaultErrorText(message = listState.message)
