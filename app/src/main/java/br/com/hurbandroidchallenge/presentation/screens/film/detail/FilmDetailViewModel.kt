@@ -8,7 +8,6 @@ import br.com.hurbandroidchallenge.data.mapper.characters.toSmallModel
 import br.com.hurbandroidchallenge.data.mapper.planets.toSmallMode
 import br.com.hurbandroidchallenge.domain.model.Film
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetCharacterByUrlUseCase
-import br.com.hurbandroidchallenge.domain.use_case.films.GetFavoriteFilmsUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.GetFilmByUrlUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.SetFavoriteFilmUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.SetFilmLastSeenUseCase

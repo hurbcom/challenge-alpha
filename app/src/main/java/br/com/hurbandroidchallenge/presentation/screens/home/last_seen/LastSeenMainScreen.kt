@@ -37,21 +37,21 @@ fun LastSeenMainScreen(
         ) {
             Text(text = "Vistos recentemente", style = MaterialTheme.typography.headlineMedium)
             CategorySmallItems(
-                name = Categories.Characters.name,
+                name = Categories.Characters.title,
                 listState = viewModel.charactersState.collectAsState().value,
                 onClick = { url ->
                     navHostController.navigate(Screens.CharacterDetail.routeWithArgument(url))
                 }
             )
             CategorySmallItems(
-                name = Categories.Films.name,
+                name = Categories.Films.title,
                 listState = viewModel.filmsState.collectAsState().value,
                 onClick = { url ->
                     navHostController.navigate(Screens.FilmDetail.routeWithArgument(url))
                 }
             )
             CategorySmallItems(
-                name = Categories.Planets.name,
+                name = Categories.Planets.title,
                 listState = viewModel.planetsState.collectAsState().value,
                 onClick = { url ->
                     navHostController.navigate(Screens.PlanetDetail.routeWithArgument(url))

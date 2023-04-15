@@ -3,14 +3,12 @@ package br.com.hurbandroidchallenge.data.mapper.planets
 import androidx.compose.ui.layout.ContentScale
 import br.com.hurbandroidchallenge.commom.extension.idFromUrl
 import br.com.hurbandroidchallenge.commom.extension.ifNull
-import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.local.model.PlanetEntity
 import br.com.hurbandroidchallenge.data.local.model.UpdateEntity
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.data.remote.model.PlanetDto
-import br.com.hurbandroidchallenge.domain.model.Film
-import br.com.hurbandroidchallenge.presentation.model.ItemModel
 import br.com.hurbandroidchallenge.domain.model.Planet
+import br.com.hurbandroidchallenge.presentation.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.model.SmallItemModel
 
 fun PlanetDto.toEntity() = this.run {

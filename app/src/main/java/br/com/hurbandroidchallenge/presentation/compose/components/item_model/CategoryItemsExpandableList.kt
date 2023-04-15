@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import br.com.hurbandroidchallenge.presentation.compose.components.DefaultExpandableCard
+import br.com.hurbandroidchallenge.presentation.compose.components.card.DefaultExpandableCard
 import br.com.hurbandroidchallenge.presentation.compose.widgets.image.SmallCategoryItemImage
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorText
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoading

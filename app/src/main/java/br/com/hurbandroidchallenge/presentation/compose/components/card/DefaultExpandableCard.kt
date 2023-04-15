@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.compose.components
+package br.com.hurbandroidchallenge.presentation.compose.components.card
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.clickable

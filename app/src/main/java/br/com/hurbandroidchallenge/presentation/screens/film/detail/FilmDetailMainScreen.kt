@@ -16,7 +16,7 @@ import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.mapper.films.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemDetail
 import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemsExpandableList
-import br.com.hurbandroidchallenge.presentation.compose.components.DefaultExpandableCard
+import br.com.hurbandroidchallenge.presentation.compose.components.card.DefaultExpandableCard
 import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen

@@ -1,7 +1,6 @@
 package br.com.hurbandroidchallenge.presentation.compose.navigation
 
 import androidx.navigation.NavHostController
-import br.com.hurbandroidchallenge.commom.extension.putArgument
 
 sealed class ScreenNavOperations(val route: String, val argumentKey: String) {
 
@@ -19,7 +18,7 @@ sealed class ScreenNavOperations(val route: String, val argumentKey: String) {
         navHostController: NavHostController,
         argumentValue: T?
     ) {
-        navHostController.currentBackStackEntry?.savedStateHandle?.putArgument(
+        navHostController.currentBackStackEntry?.savedStateHandle?.set(
             key = argumentKey,
             value = argumentValue
         )

@@ -37,18 +37,4 @@ sealed class Screens(route: String, argumentKey: String) : ScreenNavOperations(r
         argumentKey = "planet_detail"
     )
 
-    object Species : Screens(
-        route = "species",
-        argumentKey = "species_key"
-    )
-
-    object Starships : Screens(
-        route = "starships",
-        argumentKey = "starships_key"
-    )
-
-    object Vehicles : Screens(
-        route = "vehicles",
-        argumentKey = "vehicles"
-    )
 }

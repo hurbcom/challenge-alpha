@@ -2,7 +2,6 @@ package br.com.hurbandroidchallenge.commom.util.date
 
 import okio.IOException
 import java.text.SimpleDateFormat
-import java.time.format.DateTimeFormatter.ISO_LOCAL_DATE_TIME
 import java.util.*
 
 class SimpleDateFormatter {
