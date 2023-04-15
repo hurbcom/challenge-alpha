@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.domain.model.Film
-import br.com.hurbandroidchallenge.domain.model.base.PagedList
+import br.com.hurbandroidchallenge.domain.model.PagedList
 import br.com.hurbandroidchallenge.domain.use_case.films.GetFilmsUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 import br.com.hurbandroidchallenge.presentation.screens.film.list.ui.FilmsUI

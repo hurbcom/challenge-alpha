@@ -14,7 +14,7 @@ import br.com.hurbandroidchallenge.data.remote.model.FilmDto
 import br.com.hurbandroidchallenge.data.remote.util.NetworkManager
 import br.com.hurbandroidchallenge.data.remote.util.apiCall
 import br.com.hurbandroidchallenge.domain.model.Film
-import br.com.hurbandroidchallenge.domain.model.base.PagedList
+import br.com.hurbandroidchallenge.domain.model.PagedList
 import br.com.hurbandroidchallenge.domain.repository.StarWarsBookRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

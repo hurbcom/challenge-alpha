@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.domain.model.People
-import br.com.hurbandroidchallenge.domain.model.base.PagedList
+import br.com.hurbandroidchallenge.domain.model.PagedList
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetCharactersUseCase
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 import br.com.hurbandroidchallenge.presentation.screens.character.list.ui.CharactersUI

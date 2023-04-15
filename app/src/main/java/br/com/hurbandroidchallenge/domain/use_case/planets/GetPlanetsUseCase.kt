@@ -2,7 +2,7 @@ package br.com.hurbandroidchallenge.domain.use_case.planets
 
 import br.com.hurbandroidchallenge.data.repository.PlanetsRepository
 import br.com.hurbandroidchallenge.domain.model.Planet
-import br.com.hurbandroidchallenge.domain.model.base.PagedList
+import br.com.hurbandroidchallenge.domain.model.PagedList
 import kotlinx.coroutines.flow.Flow
 
 class GetPlanetsUseCase(

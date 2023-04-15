@@ -1,6 +1,6 @@
 package br.com.hurbandroidchallenge.domain.repository
 
-import br.com.hurbandroidchallenge.domain.model.base.PagedList
+import br.com.hurbandroidchallenge.domain.model.PagedList
 import kotlinx.coroutines.flow.Flow
 
 interface StarWarsBookRepository<T> {

@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.domain.model.base
+package br.com.hurbandroidchallenge.domain.model
 
 data class PagedList<T>(
     val next: String?,
