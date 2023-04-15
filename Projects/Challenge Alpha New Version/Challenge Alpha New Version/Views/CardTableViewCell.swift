@@ -73,7 +73,13 @@ class CardTableViewCell: UITableViewCell {
         getImageFrom(url: package.imgGallery)
     }
     
-    private func getImageFrom(url:String) {
+    func displayFavorite(fav:FavoriteViewModel) {
+        titleLabel.text = fav.name
+        subtitleLabel.text = fav.category
+        getImageFrom(url: fav.urlImage)
+    }
+    
+     private func getImageFrom(url:String) {
         let url = URL(string:url)
         if let data = try? Data(contentsOf: url!) {
             cardImageView.image  = UIImage(data: data)

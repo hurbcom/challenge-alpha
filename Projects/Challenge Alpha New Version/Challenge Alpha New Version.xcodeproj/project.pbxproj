@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		678B2EB429EA37AF007F80D7 /* PackageInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B2EB329EA37AF007F80D7 /* PackageInfoViewModel.swift */; };
+		678B2EB629EB441C007F80D7 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B2EB529EB441C007F80D7 /* FavoritesTableViewController.swift */; };
+		678B2EB829EB445A007F80D7 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B2EB729EB445A007F80D7 /* FavoritesViewModel.swift */; };
+		678B2EBA29EB6752007F80D7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B2EB929EB6752007F80D7 /* CoreDataManager.swift */; };
 		679B187D29E75BA2005C8118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B187C29E75BA2005C8118 /* AppDelegate.swift */; };
 		679B187F29E75BA2005C8118 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B187E29E75BA2005C8118 /* SceneDelegate.swift */; };
 		679B188729E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 679B188529E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld */; };
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		678B2EB329EA37AF007F80D7 /* PackageInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageInfoViewModel.swift; sourceTree = "<group>"; };
+		678B2EB529EB441C007F80D7 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		678B2EB729EB445A007F80D7 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		678B2EB929EB6752007F80D7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		679B187929E75BA2005C8118 /* Challenge Alpha New Version.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alpha New Version.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		679B187C29E75BA2005C8118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		679B187E29E75BA2005C8118 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 				679B18A129E77754005C8118 /* CardTableViewCell.swift */,
 				679B18A929E84FCE005C8118 /* DetailsViewController.swift */,
 				679D76C629E87EAB00374203 /* SearchViewController.swift */,
+				678B2EB529EB441C007F80D7 /* FavoritesTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +128,7 @@
 			children = (
 				679B18A429E7836F005C8118 /* HotelsInfoViewModel.swift */,
 				678B2EB329EA37AF007F80D7 /* PackageInfoViewModel.swift */,
+				678B2EB729EB445A007F80D7 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				679B18A729E78402005C8118 /* Services.swift */,
+				678B2EB929EB6752007F80D7 /* CoreDataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -210,6 +219,7 @@
 				679D76C729E87EAB00374203 /* SearchViewController.swift in Sources */,
 				679B18AA29E84FCE005C8118 /* DetailsViewController.swift in Sources */,
 				679B18A029E76FF3005C8118 /* HomeViewController.swift in Sources */,
+				678B2EB629EB441C007F80D7 /* FavoritesTableViewController.swift in Sources */,
 				679B18A229E77754005C8118 /* CardTableViewCell.swift in Sources */,
 				679B187D29E75BA2005C8118 /* AppDelegate.swift in Sources */,
 				679B188729E75BA2005C8118 /* Challenge_Alpha_New_Version.xcdatamodeld in Sources */,
@@ -218,6 +228,8 @@
 				678B2EB429EA37AF007F80D7 /* PackageInfoViewModel.swift in Sources */,
 				679B187F29E75BA2005C8118 /* SceneDelegate.swift in Sources */,
 				679B18A529E7836F005C8118 /* HotelsInfoViewModel.swift in Sources */,
+				678B2EBA29EB6752007F80D7 /* CoreDataManager.swift in Sources */,
+				678B2EB829EB445A007F80D7 /* FavoritesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

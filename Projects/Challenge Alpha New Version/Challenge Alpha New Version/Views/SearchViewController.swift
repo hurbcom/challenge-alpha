@@ -28,7 +28,6 @@ class SearchViewController: UIViewController {
         view.addSubview(SearchSegmentedControl)
         view.addSubview(tableView)
         view.addSubview(searchButton)
-        let safeArea = view.safeAreaLayoutGuide
         title = "Buscar"
         setupSegmentedControll()
         setupSearchBar()

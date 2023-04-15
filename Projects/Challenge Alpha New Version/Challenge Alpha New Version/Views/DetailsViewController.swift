@@ -57,6 +57,7 @@ class DetailsViewController: UIViewController {
         // Configure starButton
         starButton.setImage(UIImage(systemName: "star"), for: .normal)
         starButton.tintColor = .systemYellow
+        starButton.addTarget(self, action: #selector(favBtnPressed), for: .touchUpInside)
         
         // Configure shareButton
         shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
@@ -157,6 +158,16 @@ class DetailsViewController: UIViewController {
     
     @objc private func shareButtonPressed() {
         shareURL()
+    }
+    
+    @objc private func favBtnPressed(){
+        self.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        if let hotel = hotel {
+            CoreDataManager.Manager.createNewFavorite(titulo: hotel.name, descricao: hotel.Description, img: hotel.imgGallery, categoria: hotel.prodtype)
+        }
+        if let package = package {
+            CoreDataManager.Manager.createNewFavorite(titulo: package.name, descricao: package.Description, img: package.imgGallery, categoria: package.prodtype)
+        }
     }
 
 }

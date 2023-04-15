@@ -25,7 +25,10 @@ class TabbarViewController: UITabBarController {
         let search = UINavigationController(rootViewController: SearchViewController())
         search.tabBarItem.title = "buscar"
         search.tabBarItem.image = UIImage(systemName: "magnifyingglass")
-        let views = [home, search]
+        let favs = UINavigationController(rootViewController: FavoritesTableViewController())
+        favs.tabBarItem.title = "Favoritos"
+        favs.tabBarItem.image = UIImage(systemName: "star")
+        let views = [home, search, favs]
         self.setViewControllers(views, animated: false)
     }
 }
