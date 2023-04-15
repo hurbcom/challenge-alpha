@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.presentation.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
 import br.com.hurbandroidchallenge.presentation.compose.widgets.image.DefaultImage
 import coil.compose.rememberAsyncImagePainter
@@ -43,7 +43,7 @@ fun ItemCard(
             ) {
                 itemModel.firstFields.forEachIndexed { index, item ->
                     if (index != 0)
-                        DefaultDivider(thickness = 1.dp)
+                        DefaultDivider()
                     ItemField(item.first, item.second)
                 }
             }

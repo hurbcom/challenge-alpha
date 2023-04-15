@@ -12,15 +12,6 @@ class StarWarsBookRemoteDataSourceImpl(
     private val service: StarWarsBookService
 ) : StarWarsBookRemoteDataSource {
 
-    override suspend fun getHomeCategories(): HomeCategoriesDto {
-        val response = service.getHomeCategories()
-        if (response.isSuccessful) {
-            return response.body()!!
-        } else {
-            throw HttpException(response)
-        }
-    }
-
     override suspend fun getCharacters(url: String): PagedListResponse<PeopleDto> {
         val response = service.getCharacters(url)
         if (response.isSuccessful) {

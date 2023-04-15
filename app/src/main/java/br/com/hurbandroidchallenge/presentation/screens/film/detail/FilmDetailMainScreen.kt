@@ -1,8 +1,6 @@
 package br.com.hurbandroidchallenge.presentation.screens.film.detail
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
@@ -13,13 +11,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.mapper.films.toModel
-import br.com.hurbandroidchallenge.presentation.compose.components.CategoryItemDetail
-import br.com.hurbandroidchallenge.presentation.compose.components.OtherCategoryCard
-import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
-import br.com.hurbandroidchallenge.presentation.compose.widgets.image.SmallCategoryItemImage
+import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemDetail
+import br.com.hurbandroidchallenge.presentation.compose.components.CategoryItemsExpandableList
+import br.com.hurbandroidchallenge.presentation.compose.components.DefaultExpandableCard
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
-import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorText
-import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoading
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
 import br.com.hurbandroidchallenge.presentation.model.StateUI
@@ -28,7 +23,7 @@ import br.com.hurbandroidchallenge.presentation.model.StateUI
 @Composable
 fun FilmDetailMainScreen(
     navHostController: NavHostController,
-    viewModel: FilmDetailViewModel
+    viewModel: FilmDetailViewModel,
 ) {
     val filmUI = viewModel.filmUI.value
     Scaffold(
@@ -75,7 +70,7 @@ fun FilmDetailScreen(
                     modifier = Modifier.padding(all = 16.dp),
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    OtherCategoryCard(name = "Opening") {
+                    DefaultExpandableCard(name = "Opening") {
                         Text(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -86,75 +81,16 @@ fun FilmDetailScreen(
                             )
                         )
                     }
-                    OtherCategoryCard(name = "Characters") {
-                        viewModel.charactersState.collectAsState().value.let { response ->
-                            when (response) {
-                                is StateUI.Error -> DefaultErrorText()
-                                is StateUI.Idle -> Unit
-                                is StateUI.Processed -> {
-                                    LazyRow(
-                                        modifier = Modifier.fillMaxWidth(),
-                                        contentPadding = PaddingValues(all = 16.dp)
-                                    ) {
-                                        items(filmUI.characters) { character ->
-                                            val firstName = character.name
-                                            SmallCategoryItemImage(
-                                                text = firstName,
-                                                textColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                                image = character.image,
-                                                onClick = {
-                                                    navHostController.navigate(
-                                                        Screens.CharacterDetail.routeWithArgument(
-                                                            character.url
-                                                        )
-                                                    )
-                                                }
-                                            )
-                                        }
-                                    }
-                                }
-                                is StateUI.Processing -> {
-                                    DefaultLoading(
-                                        modifier = Modifier.fillMaxWidth(),
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                }
-                            }
-                        }
-                    }
-                    OtherCategoryCard(name = "Planets") {
-                        viewModel.planetsState.collectAsState().value.let { response ->
-                            when (response) {
-                                is StateUI.Error -> DefaultErrorText()
-                                is StateUI.Idle -> Unit
-                                is StateUI.Processed -> {
-                                    LazyRow(
-                                        modifier = Modifier.fillMaxWidth(),
-                                        contentPadding = PaddingValues(all = 16.dp)
-                                    ) {
-                                        items(filmUI.planets) { planet ->
-                                            SmallCategoryItemImage(
-                                                text = planet.name,
-                                                textColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                                image = planet.image,
-                                                onClick = {
-                                                    navHostController.navigate(
-                                                        Screens.PlanetDetail.routeWithArgument(planet.url)
-                                                    )
-                                                }
-                                            )
-                                        }
-                                    }
-                                }
-                                is StateUI.Processing -> {
-                                    DefaultLoading(
-                                        modifier = Modifier.fillMaxWidth(),
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                }
-                            }
-                        }
-                    }
+                    CategoryItemsExpandableList(
+                        name = "Characters",
+                        listState = viewModel.charactersState.collectAsState().value,
+                        navHostController = navHostController
+                    )
+                    CategoryItemsExpandableList(
+                        name = "Planets",
+                        listState = viewModel.planetsState.collectAsState().value,
+                        navHostController = navHostController
+                    )
                 }
             }
         }

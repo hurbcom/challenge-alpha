@@ -4,8 +4,10 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -24,10 +26,12 @@ fun HomeMainScreen(
     navHostController: NavHostController
 ) {
     val navigationItems = values().toList()
-    var currentScreen by remember { mutableStateOf(navigationItems.first()) }
+    var currentScreen by rememberSaveable { mutableStateOf(navigationItems.first()) }
+    val scrollBehavior =
+        TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     Scaffold(
         topBar = {
-            TopBar(title = "") {
+            TopBar(title = "", scrollBehavior = scrollBehavior) {
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
@@ -59,7 +63,8 @@ fun HomeMainScreen(
                     currentScreen == screen
                 }
             )
-        }
+        },
+        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection)
     ) { paddingValues ->
         Box(
             modifier = Modifier

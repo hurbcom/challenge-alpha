@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.compose.components
+package br.com.hurbandroidchallenge.presentation.compose.components.item_model
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -9,10 +9,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import br.com.hurbandroidchallenge.domain.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemField
 import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
+import br.com.hurbandroidchallenge.presentation.model.ItemModel
 
 @Composable
 fun CategoryItemDetail(
@@ -44,7 +44,7 @@ fun CategoryItemDetail(
                 ) {
                     itemModel.otherFields.forEachIndexed { index, item ->
                         if (index != 0)
-                            DefaultDivider(thickness = 1.dp)
+                            DefaultDivider()
                         ItemField(item.first, item.second)
                     }
                 }

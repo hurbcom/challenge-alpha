@@ -5,5 +5,5 @@ import br.com.hurbandroidchallenge.data.repository.PlanetsRepository
 class GetFavoritesPlanetsUseCase(
     private val repository: PlanetsRepository,
 ) {
-    operator fun invoke() = repository.getLastSeenItems()
+    operator fun invoke() = repository.getFavoriteItems()
 }

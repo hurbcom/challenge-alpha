@@ -12,22 +12,6 @@ class StarWarsBookLocalDataSourceImpl(
 
     private val preferences = PreferencesWrapper.getInstance()
 
-    // Categories
-    override suspend fun getHomeCategories() = dao.getCategories()
-
-    override suspend fun insertHomeCategories(categories: List<HomeCategoriesEntity>) {
-        val currentCategories = getHomeCategories().map { it.url }
-        val newCategories = categories.filter { !currentCategories.contains(it.url) }
-        if (newCategories.isEmpty())
-            preferences.categoriesIsUpToDate()
-        dao.insertNewCategories(newCategories)
-    }
-
-    override suspend fun clearCategories() {
-        preferences.clearCategories()
-        dao.clearCategories()
-    }
-
     // Characters
     override suspend fun getCharacters() = dao.getCharacters().sortedBy { it.id }
 
@@ -49,10 +33,14 @@ class StarWarsBookLocalDataSourceImpl(
     }
 
     override suspend fun getLastSeenCharacters(): List<PeopleEntity> {
-        return dao.getCharacters().filter {
-            val days = DateUtils.daysUntilToday(it.lastSeen)
+        return dao.getCharacters().filter { it.lastSeen != null }.filter {
+            val days = DateUtils.daysUntilToday(it.lastSeen ?: return@filter false)
             days <= Constants.LAST_SEEN_DAYS_INTERVAL
         }
+    }
+
+    override suspend fun updateCharacter(entity: UpdateEntity) {
+        dao.updateCharacter(entity)
     }
 
     // Films
@@ -84,10 +72,14 @@ class StarWarsBookLocalDataSourceImpl(
     }
 
     override suspend fun getLastSeenFilms(): List<FilmEntity> {
-        return dao.getFilms().filter {
-            val days = DateUtils.daysUntilToday(it.lastSeen)
+        return dao.getFilms().filter { it.lastSeen != null }.filter {
+            val days = DateUtils.daysUntilToday(it.lastSeen ?: return@filter false)
             days <= Constants.LAST_SEEN_DAYS_INTERVAL
         }
+    }
+
+    override suspend fun updateFilm(entity: UpdateEntity) {
+        dao.updateFilm(entity)
     }
 
     // Planets
@@ -116,14 +108,14 @@ class StarWarsBookLocalDataSourceImpl(
     }
 
     override suspend fun getLastSeenPlanets(): List<PlanetEntity> {
-        return dao.getPlanets().filter {
-            val days = DateUtils.daysUntilToday(it.lastSeen)
+        return dao.getPlanets().filter { it.lastSeen != null }.filter {
+            val days = DateUtils.daysUntilToday(it.lastSeen ?: return@filter false)
             days <= Constants.LAST_SEEN_DAYS_INTERVAL
         }
     }
 
-    override suspend fun updateEntity(entity: UpdateEntity) {
-        dao.updateCharacter(entity)
+    override suspend fun updatePlanet(entity: UpdateEntity) {
+        dao.updatePlanet(entity)
     }
 
 }

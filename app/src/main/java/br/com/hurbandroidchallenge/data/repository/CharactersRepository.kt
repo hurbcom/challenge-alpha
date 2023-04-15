@@ -79,9 +79,7 @@ class CharactersRepository(
     }
 
     override fun updateItem(item: People): Flow<Unit> {
-        return flow {
-            localDataSource.updateEntity(item.toEntity())
-        }
+        return flow { emit(localDataSource.updateCharacter(item.toEntity())) }
     }
 
     private suspend fun getLocalCharacters() =

@@ -14,7 +14,6 @@ import br.com.hurbandroidchallenge.presentation.compose.components.card.Category
 
 @Composable
 fun CategoryItemList(
-    categoryItems: List<Categories>,
     aspectRatio: Float,
     onItemClick: (route: String) -> Unit
 ) {
@@ -22,7 +21,7 @@ fun CategoryItemList(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = PaddingValues(16.dp)
     ) {
-        items(categoryItems) { category ->
+        items(Categories.values()) { category ->
             CategoryCard(
                 modifier = Modifier
                     .fillMaxWidth()

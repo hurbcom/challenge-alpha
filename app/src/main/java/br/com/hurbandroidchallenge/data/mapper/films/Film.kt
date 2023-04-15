@@ -10,7 +10,8 @@ import br.com.hurbandroidchallenge.data.local.model.UpdateEntity
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.data.remote.model.FilmDto
 import br.com.hurbandroidchallenge.domain.model.Film
-import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.presentation.model.ItemModel
+import br.com.hurbandroidchallenge.presentation.model.SmallItemModel
 
 fun FilmEntity.toFilm() = this.run {
     Film(
@@ -59,6 +60,12 @@ fun Film.toEntity() = UpdateEntity(
     id = id,
     favorite = favorite,
     lastSeen = lastSeen
+)
+
+fun Film.toSmallModel() = SmallItemModel(
+    url = url,
+    image = image,
+    name = "Episode ${episodeId.toRoman()}"
 )
 
 fun Film.toModel() = ItemModel(

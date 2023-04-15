@@ -4,25 +4,26 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.hurbandroidchallenge.data.mapper.characters.toModel
-import br.com.hurbandroidchallenge.domain.model.Film
-import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.data.mapper.characters.toSmallModel
+import br.com.hurbandroidchallenge.data.mapper.films.toSmallModel
 import br.com.hurbandroidchallenge.domain.model.Planet
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetCharacterByUrlUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.GetFilmByUrlUseCase
 import br.com.hurbandroidchallenge.domain.use_case.planets.GetPlanetByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.planets.SetFavoritePlanetUseCase
+import br.com.hurbandroidchallenge.domain.use_case.planets.SetPlanetLastSeenUseCase
+import br.com.hurbandroidchallenge.presentation.model.SmallItemModel
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 import br.com.hurbandroidchallenge.presentation.screens.planet.detail.ui.PlanetUI
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class PlanetDetailViewModel(
     private val getPlanetByUrlUseCase: GetPlanetByUrlUseCase,
     private val getCharacterByUrlUseCase: GetCharacterByUrlUseCase,
     private val getFilmByUrlUseCase: GetFilmByUrlUseCase,
+    private val setLastSeenUseCase: SetPlanetLastSeenUseCase,
+    private val setFavoritePlanetUseCase: SetFavoritePlanetUseCase,
     url: String,
 ) : ViewModel() {
 
@@ -32,10 +33,10 @@ class PlanetDetailViewModel(
     private val _planetState = MutableStateFlow<StateUI<Planet>>(StateUI.Idle())
     val planetState = _planetState.asStateFlow()
 
-    private val _filmsState = MutableStateFlow<StateUI<List<Film>>>(StateUI.Idle())
+    private val _filmsState = MutableStateFlow<StateUI<List<SmallItemModel>>>(StateUI.Idle())
     val filmsState = _filmsState.asStateFlow()
 
-    private val _charactersState = MutableStateFlow<StateUI<List<ItemModel>>>(StateUI.Idle())
+    private val _charactersState = MutableStateFlow<StateUI<List<SmallItemModel>>>(StateUI.Idle())
     val charactersState = _charactersState.asStateFlow()
 
     init {
@@ -52,7 +53,9 @@ class PlanetDetailViewModel(
                 _planetUI.value = planetUI.value.copy(
                     planet = data
                 )
-                _planetState.emit(StateUI.Processed(data))
+                setLastSeenUseCase(data).collect {
+                    _planetState.emit(StateUI.Processed(data))
+                }
                 loadCharacters(data.residents)
                 loadFilms(data.films)
             }
@@ -72,7 +75,10 @@ class PlanetDetailViewModel(
                     )
                 }
             }
-            _filmsState.emit(StateUI.Processed(_planetUI.value.films))
+            if (_planetUI.value.films.isEmpty())
+                _filmsState.emit(StateUI.Error("This planet isn't related with any movie"))
+            else
+                _filmsState.emit(StateUI.Processed(_planetUI.value.films.map { it.toSmallModel() }))
         }
     }
 
@@ -89,7 +95,10 @@ class PlanetDetailViewModel(
                     )
                 }
             }
-            _charactersState.emit(StateUI.Processed(_planetUI.value.characters.map { it.toModel() }))
+            if (_planetUI.value.characters.isEmpty())
+                _charactersState.emit(StateUI.Error("This planet isn't related with any movie"))
+            else
+                _charactersState.emit(StateUI.Processed(_planetUI.value.characters.map { it.toSmallModel() }))
         }
     }
 

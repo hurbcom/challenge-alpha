@@ -78,7 +78,7 @@ class PlanetsRepository(
     }
 
     override fun updateItem(item: Planet): Flow<Unit> {
-        return flow { emit(localDataSource.updateEntity(item.toEntity())) }
+        return flow { emit(localDataSource.updatePlanet(item.toEntity())) }
     }
 
     private suspend fun getLocalPlanets() =

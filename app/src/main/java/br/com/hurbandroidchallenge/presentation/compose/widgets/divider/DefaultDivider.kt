@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 fun DefaultDivider(
     modifier: Modifier = Modifier,
     color: Color = MaterialTheme.colorScheme.onSurface,
-    thickness: Dp = (0.5).dp
+    thickness: Dp = 1.dp
 ) {
     Divider(
         modifier = modifier,

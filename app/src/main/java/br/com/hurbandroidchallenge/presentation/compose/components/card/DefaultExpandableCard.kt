@@ -15,9 +15,9 @@ import androidx.compose.ui.unit.dp
 import br.com.hurbandroidchallenge.presentation.compose.animation.SlideVertically
 
 @Composable
-fun OtherCategoryCard(
+fun DefaultExpandableCard(
     name: String,
-    content: @Composable () -> Unit,
+    content: @Composable () -> Unit
 ) {
     Column {
         Card(modifier = Modifier.fillMaxWidth()) {

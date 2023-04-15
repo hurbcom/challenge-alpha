@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.domain.model
+package br.com.hurbandroidchallenge.presentation.model
 
 import androidx.compose.ui.layout.ContentScale
 

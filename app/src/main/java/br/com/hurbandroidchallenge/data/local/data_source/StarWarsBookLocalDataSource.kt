@@ -1,16 +1,11 @@
 package br.com.hurbandroidchallenge.data.local.data_source
 
-import br.com.hurbandroidchallenge.data.local.model.*
-import br.com.hurbandroidchallenge.domain.model.Planet
+import br.com.hurbandroidchallenge.data.local.model.FilmEntity
+import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
+import br.com.hurbandroidchallenge.data.local.model.PlanetEntity
+import br.com.hurbandroidchallenge.data.local.model.UpdateEntity
 
 interface StarWarsBookLocalDataSource {
-
-    // Categories
-    suspend fun getHomeCategories(): List<HomeCategoriesEntity>
-
-    suspend fun insertHomeCategories(categories: List<HomeCategoriesEntity>)
-
-    suspend fun clearCategories()
 
     // Characters
     suspend fun getCharacters(): List<PeopleEntity>
@@ -27,6 +22,8 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun getLastSeenCharacters(): List<PeopleEntity>
 
+    suspend fun updateCharacter(entity: UpdateEntity)
+
     // Films
     suspend fun getFilms(): List<FilmEntity>
 
@@ -41,6 +38,8 @@ interface StarWarsBookLocalDataSource {
     suspend fun getFavoriteFilms(): List<FilmEntity>
 
     suspend fun getLastSeenFilms(): List<FilmEntity>
+
+    suspend fun updateFilm(entity: UpdateEntity)
 
     // Planets
     suspend fun insertPlanets(planets: List<PlanetEntity>)
@@ -57,7 +56,6 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun getLastSeenPlanets(): List<PlanetEntity>
 
-    // Generic
-    suspend fun updateEntity(entity: UpdateEntity)
+    suspend fun updatePlanet(entity: UpdateEntity)
 
 }

@@ -16,24 +16,6 @@ enum class Categories(val title: String, val url: String, val image: String, val
         image = "${ApiUrls.imageBaseUrl}/categories/films.jpg",
         route = Screens.Films.route
     ),
-    Species(
-        title = "Species",
-        url = ApiUrls.species,
-        image = "${ApiUrls.imageBaseUrl}/categories/species.jpg",
-        route = Screens.Species.route
-    ),
-    Starships(
-        title = "Starships",
-        url = ApiUrls.starships,
-        image = "${ApiUrls.imageBaseUrl}/categories/starships.jpg",
-        route = Screens.Starships.route
-    ),
-    Vehicles(
-        title = "Vehicles",
-        url = ApiUrls.vehicles,
-        image = "${ApiUrls.imageBaseUrl}/categories/vehicles.jpg",
-        route = Screens.Vehicles.route
-    ),
     Planets(
         title = "Planets",
         url = ApiUrls.planets,

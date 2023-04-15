@@ -1,11 +1,11 @@
-package br.com.hurbandroidchallenge.presentation.screens.character.detail.ui
+package br.com.hurbandroidchallenge.presentation.screens.home.favorites.ui
 
 import br.com.hurbandroidchallenge.domain.model.Film
 import br.com.hurbandroidchallenge.domain.model.People
 import br.com.hurbandroidchallenge.domain.model.Planet
 
-data class CharacterUI(
-    val character: People? = null,
+data class FavoritesUI(
+    val characters: List<People> = emptyList(),
     val films: List<Film> = emptyList(),
-    val homeWorld: Planet? = null,
+    val planets: List<Planet> = emptyList()
 )

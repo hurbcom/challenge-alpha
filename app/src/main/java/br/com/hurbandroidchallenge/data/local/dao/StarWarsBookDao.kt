@@ -7,9 +7,6 @@ import br.com.hurbandroidchallenge.data.local.model.*
 interface StarWarsBookDao {
 
     @Insert
-    suspend fun insertNewCategories(homeCategoriesEntity: List<HomeCategoriesEntity>)
-
-    @Insert
     suspend fun insertNewCharacters(characters: List<PeopleEntity>)
 
     @Update(entity = PeopleEntity::class)
@@ -26,12 +23,6 @@ interface StarWarsBookDao {
 
     @Update(entity = PlanetEntity::class)
     suspend fun updatePlanet(characters: UpdateEntity)
-
-    @Query("DELETE FROM categories")
-    suspend fun clearCategories()
-
-    @Query("SELECT * FROM categories")
-    suspend fun getCategories(): List<HomeCategoriesEntity>
 
     @Query("SELECT * FROM people")
     suspend fun getCharacters(): List<PeopleEntity>

@@ -84,7 +84,7 @@ class FilmsRepository(
     }
 
     override fun updateItem(item: Film): Flow<Unit> {
-        return flow { localDataSource.updateEntity(item.toEntity()) }
+        return flow { emit(localDataSource.updateFilm(item.toEntity())) }
     }
 
 }

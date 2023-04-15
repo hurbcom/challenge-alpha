@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.presentation.model.ItemModel
 import br.com.hurbandroidchallenge.presentation.compose.components.card.ItemCard
 
 @Composable

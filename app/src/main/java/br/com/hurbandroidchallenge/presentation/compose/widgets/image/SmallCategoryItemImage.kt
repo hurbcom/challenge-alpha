@@ -1,6 +1,5 @@
 package br.com.hurbandroidchallenge.presentation.compose.widgets.image
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
@@ -12,19 +11,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import br.com.hurbandroidchallenge.commom.extension.noRippleClickable
 import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun SmallCategoryItemImage(
     text: String,
-    textColor: Color,
+    textColor: Color = MaterialTheme.colorScheme.onSurfaceVariant,
     onClick: () -> Unit,
     image: String,
 ) {
     Column(
         modifier = Modifier
             .width(86.dp)
-            .clickable { onClick() },
+            .noRippleClickable { onClick() },
         verticalArrangement = Arrangement.spacedBy(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

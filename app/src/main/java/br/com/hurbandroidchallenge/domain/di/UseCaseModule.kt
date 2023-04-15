@@ -1,7 +1,6 @@
 
 package br.com.hurbandroidchallenge.domain.di
 
-import br.com.hurbandroidchallenge.domain.use_case.categories.GetHomeCategoriesUseCase
 import br.com.hurbandroidchallenge.domain.use_case.characters.*
 import br.com.hurbandroidchallenge.domain.use_case.films.*
 import br.com.hurbandroidchallenge.domain.use_case.planets.*
@@ -9,16 +8,14 @@ import org.koin.dsl.module
 
 val useCaseModule = module {
 
-    single { GetHomeCategoriesUseCase(get()) }
-
     // Characters
     single { GetCharactersUseCase(get()) }
 
     single { GetCharacterByUrlUseCase(get()) }
 
-    single { CharacterLastSeenUseCase(get()) }
+    single { SetCharacterLastSeenUseCase(get()) }
 
-    single { FavoriteCharacterUseCase(get()) }
+    single { SetFavoriteCharacterUseCase(get()) }
 
     single { GetFavoriteCharactersUseCase(get()) }
 
@@ -29,9 +26,9 @@ val useCaseModule = module {
 
     single { GetFilmByUrlUseCase(get()) }
 
-    single { FilmLastSeenUseCase(get()) }
+    single { SetFilmLastSeenUseCase(get()) }
 
-    single { FavoriteFilmUseCase(get()) }
+    single { SetFavoriteFilmUseCase(get()) }
 
     single { GetFavoriteFilmsUseCase(get()) }
 
@@ -42,9 +39,9 @@ val useCaseModule = module {
 
     single { GetPlanetByUrlUseCase(get()) }
 
-    single { PlanetLastSeenUseCase(get()) }
+    single { SetPlanetLastSeenUseCase(get()) }
 
-    single { FavoritePlanetUseCase(get()) }
+    single { SetFavoritePlanetUseCase(get()) }
 
     single { GetFavoritesPlanetsUseCase(get()) }
 

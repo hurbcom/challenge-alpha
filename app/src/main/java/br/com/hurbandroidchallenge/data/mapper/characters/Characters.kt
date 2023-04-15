@@ -7,8 +7,9 @@ import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
 import br.com.hurbandroidchallenge.data.local.model.UpdateEntity
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.data.remote.model.PeopleDto
-import br.com.hurbandroidchallenge.domain.model.ItemModel
+import br.com.hurbandroidchallenge.presentation.model.ItemModel
 import br.com.hurbandroidchallenge.domain.model.People
+import br.com.hurbandroidchallenge.presentation.model.SmallItemModel
 
 fun PeopleEntity.toPeople() = this.run {
     val id = url.idFromUrl()
@@ -53,6 +54,12 @@ fun PeopleDto.toEntity() = this.run {
         favorite = false
     )
 }
+
+fun People.toSmallModel() = SmallItemModel(
+    url = url,
+    image = image,
+    name = name
+)
 
 fun People.toModel() = ItemModel(
     url = url,
