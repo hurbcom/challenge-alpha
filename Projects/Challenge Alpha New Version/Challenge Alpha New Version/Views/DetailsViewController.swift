@@ -77,7 +77,7 @@ class DetailsViewController: UIViewController {
         shareButton.translatesAutoresizingMaskIntoConstraints = false
         
         let safeArea = view.safeAreaLayoutGuide
-        //        let confCGFloat = safeArea.heightAnchor. * 2
+
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
@@ -88,7 +88,7 @@ class DetailsViewController: UIViewController {
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            //            contentView.widthAnchor.constraint(equalTo: safeArea.widthAnchor),
+
             contentView.heightAnchor.constraint(equalToConstant: (1800)),
             contentView.widthAnchor.constraint(equalToConstant: 400),
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),

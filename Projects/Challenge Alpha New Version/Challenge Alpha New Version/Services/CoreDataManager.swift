@@ -12,6 +12,7 @@ class CoreDataManager {
     static let Manager = CoreDataManager()
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var favoritesArray : [SavedItem] = []
+    
     //carregar favoritos
     func getItemsFromCoreData()-> [SavedItem] {
         let request: NSFetchRequest<SavedItem> = SavedItem.fetchRequest()

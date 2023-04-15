@@ -9,7 +9,7 @@ import Foundation
 import HUGraphQL
 
 class Services {
-    let service = HUGService(enableLog: false)
+    let service = HUGService(enableLog: true)
     static let servicesNetwork = Services()
     func performSearchFetch(query:String, pagination:HUGraphQL.SearchInputPagination? = nil, completion:@escaping([HUGraphQL.SearchQuery.Data.Search.Result])->()){
         let q = HUGraphQL.SearchQuery(q: query, pagination: pagination)
