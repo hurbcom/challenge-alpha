@@ -35,6 +35,10 @@ class PreferencesWrapper private constructor(context: Context) {
         putBoolean(PreferencesKeys.IS_PLANETS_UP_TO_DATE, false)
     }
 
+    fun charactersIsUpToDate() {
+        putBoolean(PreferencesKeys.IS_CHARACTERS_UP_TO_DATE, true)
+    }
+
     fun isCharactersUpToDate(): Boolean {
         return getBoolean(PreferencesKeys.IS_CHARACTERS_UP_TO_DATE, false)
     }
