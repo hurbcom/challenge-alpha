@@ -7,6 +7,8 @@
  * usei retrofit para chamar a api e room para persistencia local
  * usei koin para injeção de dependencia
  * Fiz alguns test cases
+ * o app não foi traduzido, como os textos que vem da api são em inglês, optei por deixar o app inteiro
+assim.
 
 ### Feature a mais!
  * o app foi pensado no princípio offline first, sempre que uma consulta é feita na api, o dado é
