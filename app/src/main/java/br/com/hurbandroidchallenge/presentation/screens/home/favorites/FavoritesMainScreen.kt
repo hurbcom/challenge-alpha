@@ -38,7 +38,7 @@ fun FavoritesMainScreen(
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Text(text = "Favoritos", style = MaterialTheme.typography.headlineMedium)
+            Text(text = "Favorites", style = MaterialTheme.typography.headlineMedium)
             CategorySmallItems(
                 name = Categories.Characters.title,
                 listState = viewModel.charactersState.collectAsState().value,
