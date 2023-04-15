@@ -29,9 +29,7 @@ fun NavGraphBuilder.home(
     composable(
         route = Screens.Home.route
     ) {
-        HomeMainScreen(
-            navHostController = navHostController
-        )
+        HomeMainScreen(navHostController = navHostController)
     }
 }
 

@@ -18,7 +18,7 @@ fun DefaultLoadingScreen(
     DefaultLoading(
         modifier = Modifier.fillMaxSize(),
         color = color,
-        text
+        text = text
     )
 }
 

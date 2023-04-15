@@ -1,5 +1,6 @@
 package br.com.hurbandroidchallenge.presentation.screens.character.list
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,6 +14,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.navigation.NavHostController
+import br.com.hurbandroidchallenge.commom.extension.backToHome
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
 import br.com.hurbandroidchallenge.data.local.preferences.PreferencesWrapper
 import br.com.hurbandroidchallenge.data.mapper.characters.toModel
@@ -20,7 +22,6 @@ import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.Pag
 import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
-import br.com.hurbandroidchallenge.presentation.compose.widgets.swipe_refresh.DefaultSwipeRefresh
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.SearchTopBar
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBarIcon
@@ -32,6 +33,9 @@ fun CategoryDetailMainScreen(
     navHostController: NavHostController,
     viewModel: CharactersViewModel,
 ) {
+    BackHandler {
+        navHostController.backToHome()
+    }
     val scrollBehavior =
         TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     var isSearching by remember { mutableStateOf(false) }
@@ -51,7 +55,7 @@ fun CategoryDetailMainScreen(
             } else {
                 TopBar(
                     title = "Characters",
-                    onBackPressed = { navHostController.navigateUp() },
+                    onBackPressed = { navHostController.backToHome() },
                     scrollBehavior = scrollBehavior,
                     actions = {
                         TopBarIcon(

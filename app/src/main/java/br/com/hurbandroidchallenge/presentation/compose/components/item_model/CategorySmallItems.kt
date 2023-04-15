@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import br.com.hurbandroidchallenge.presentation.compose.widgets.image.SmallCategoryItemImage
+import br.com.hurbandroidchallenge.presentation.compose.widgets.image.SmallCategoryItemPlaceholder
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorText
 import br.com.hurbandroidchallenge.presentation.model.SmallItemModel
 import br.com.hurbandroidchallenge.presentation.model.StateUI
@@ -33,7 +34,13 @@ fun CategorySmallItems(
             )
             when (listState) {
                 is StateUI.Error -> DefaultErrorText(message = listState.message)
-                is StateUI.Idle -> Unit
+                is StateUI.Idle -> {
+                    LazyRow{
+                        items(10) {
+                            SmallCategoryItemPlaceholder()
+                        }
+                    }
+                }
                 is StateUI.Processed -> {
                     LazyRow(
                         modifier = Modifier.fillMaxWidth(),
@@ -54,11 +61,7 @@ fun CategorySmallItems(
                 is StateUI.Processing -> {
                     LazyRow{
                         items(10) {
-                            SmallCategoryItemImage(
-                                text = "",
-                                onClick = { },
-                                image = ""
-                            )
+                            SmallCategoryItemPlaceholder()
                         }
                     }
                 }

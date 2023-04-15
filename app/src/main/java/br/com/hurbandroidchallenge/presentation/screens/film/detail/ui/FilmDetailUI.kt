@@ -8,4 +8,5 @@ data class FilmDetailUI(
     val film: Film? = null,
     val characters: List<People> = emptyList(),
     val planets: List<Planet> = emptyList(),
+    val favorite: Boolean = false
 )

@@ -3,6 +3,9 @@ package br.com.hurbandroidchallenge.presentation.screens.film.detail
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -12,11 +15,13 @@ import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.mapper.films.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemDetail
-import br.com.hurbandroidchallenge.presentation.compose.components.CategoryItemsExpandableList
+import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemsExpandableList
 import br.com.hurbandroidchallenge.presentation.compose.components.DefaultExpandableCard
+import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
+import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBarIcon
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -30,7 +35,15 @@ fun FilmDetailMainScreen(
         topBar = {
             TopBar(
                 title = if (filmUI.film != null) "Episode ${filmUI.film.episodeId.toRoman()}" else "",
-                onBackPressed = { navHostController.navigateUp() }
+                onBackPressed = { navHostController.navigateUp() },
+                actions = {
+                    TopBarIcon(
+                        onClick = {
+                            viewModel.favorite()
+                        },
+                        imageVector = if (filmUI.favorite)  Icons.Default.Star else  Icons.Default.StarBorder
+                    )
+                }
             )
         }
     ) { paddingValues ->
@@ -84,12 +97,20 @@ fun FilmDetailScreen(
                     CategoryItemsExpandableList(
                         name = "Characters",
                         listState = viewModel.charactersState.collectAsState().value,
-                        navHostController = navHostController
+                        onClick = { url ->
+                            navHostController.navigate(
+                                Screens.CharacterDetail.routeWithArgument(url)
+                            )
+                        }
                     )
                     CategoryItemsExpandableList(
                         name = "Planets",
                         listState = viewModel.planetsState.collectAsState().value,
-                        navHostController = navHostController
+                        onClick = { url ->
+                            navHostController.navigate(
+                                Screens.PlanetDetail.routeWithArgument(url)
+                            )
+                        }
                     )
                 }
             }

@@ -31,7 +31,7 @@ val viewModelModule = module {
             getFilmByUrlUseCase = get(),
             getPlanetByUrlUseCase = get(),
             setCharacterLastSeenUseCase = get(),
-            setFavoritePlanetUseCase = get(),
+            setFavoriteCharacterUseCase = get(),
             url = url
         )
     }
@@ -64,7 +64,7 @@ val viewModelModule = module {
         )
     }
 
-    factory {
+    viewModel {
         FavoritesViewModel(
             getFavoriteCharactersUseCase = get(),
             getFavoriteFilmsUseCase = get(),
@@ -72,7 +72,7 @@ val viewModelModule = module {
         )
     }
 
-    factory {
+    viewModel {
         LastSeenViewModel(
             getLastSeenCharactersUseCase = get(),
             getLastSeenFilmsUseCase = get(),

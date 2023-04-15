@@ -7,5 +7,6 @@ import br.com.hurbandroidchallenge.domain.model.Planet
 data class PlanetUI(
     val planet: Planet? = null,
     val characters: List<People> = emptyList(),
-    val films: List<Film> = emptyList()
+    val films: List<Film> = emptyList(),
+    val favorite: Boolean = false
 )

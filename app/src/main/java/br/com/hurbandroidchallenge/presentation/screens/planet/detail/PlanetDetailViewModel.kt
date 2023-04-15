@@ -51,7 +51,8 @@ class PlanetDetailViewModel(
                 _planetState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
                 _planetUI.value = planetUI.value.copy(
-                    planet = data
+                    planet = data,
+                    favorite = data.favorite
                 )
                 setLastSeenUseCase(data).collect {
                     _planetState.emit(StateUI.Processed(data))
@@ -99,6 +100,18 @@ class PlanetDetailViewModel(
                 _charactersState.emit(StateUI.Error("This planet isn't related with any movie"))
             else
                 _charactersState.emit(StateUI.Processed(_planetUI.value.characters.map { it.toSmallModel() }))
+        }
+    }
+
+    fun favorite() {
+        viewModelScope.launch {
+            _planetUI.value.planet?.let { planet ->
+                setFavoritePlanetUseCase(planet).catch {}.collect {
+                    _planetUI.value = planetUI.value.copy(
+                        favorite = !planet.favorite
+                    )
+                }
+            }
         }
     }
 

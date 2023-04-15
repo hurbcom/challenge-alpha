@@ -8,4 +8,5 @@ data class CharacterUI(
     val character: People? = null,
     val films: List<Film> = emptyList(),
     val homeWorld: Planet? = null,
+    val favorite: Boolean = false
 )

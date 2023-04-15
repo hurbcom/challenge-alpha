@@ -3,6 +3,8 @@ package br.com.hurbandroidchallenge.presentation.compose.widgets.image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Image
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
@@ -15,7 +17,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.toSize
 
 @Composable
-fun ImagePlaceholder(modifier: Modifier = Modifier, icon: ImageVector) {
+fun ImagePlaceholder(modifier: Modifier = Modifier, icon: ImageVector = Icons.Default.Image) {
     var iconSize by remember { mutableStateOf(Size.Zero) }
     Box(modifier = modifier
         .background(color = MaterialTheme.colorScheme.outline)

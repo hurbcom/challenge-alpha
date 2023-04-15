@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,16 +18,19 @@ import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.domain.model.Categories
 import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategorySmallItems
 import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
-import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun FavoritesMainScreen(
     navHostController: NavHostController,
     viewModel: FavoritesViewModel = getViewModel(),
+    update: MutableState<Boolean>,
 ) {
     LaunchedEffect(Unit) {
-        viewModel.loadFavorites()
+        if (update.value) {
+            update.value = false
+            viewModel.loadFavorites()
+        }
     }
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Column(

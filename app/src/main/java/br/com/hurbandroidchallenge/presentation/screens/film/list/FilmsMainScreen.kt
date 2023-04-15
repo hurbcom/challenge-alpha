@@ -1,5 +1,6 @@
 package br.com.hurbandroidchallenge.presentation.screens.film.list
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,6 +14,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.navigation.NavHostController
+import br.com.hurbandroidchallenge.commom.extension.backToHome
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
 import br.com.hurbandroidchallenge.data.mapper.films.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.ItemList
@@ -30,6 +32,9 @@ fun FilmsMainScreen(
     navHostController: NavHostController,
     viewModel: FilmsViewModel,
 ) {
+    BackHandler {
+        navHostController.backToHome()
+    }
     val scrollBehavior =
         TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val filmsUI = viewModel.filmsUI.value
@@ -50,7 +55,7 @@ fun FilmsMainScreen(
             } else {
                 TopBar(
                     title = "Movies",
-                    onBackPressed = { navHostController.navigateUp() },
+                    onBackPressed = { navHostController.backToHome() },
                     scrollBehavior = scrollBehavior,
                     actions = {
                         TopBarIcon(

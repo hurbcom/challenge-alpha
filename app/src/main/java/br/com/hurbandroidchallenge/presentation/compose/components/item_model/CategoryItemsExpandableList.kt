@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.compose.components
+package br.com.hurbandroidchallenge.presentation.compose.components.item_model
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -8,8 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
+import br.com.hurbandroidchallenge.presentation.compose.components.DefaultExpandableCard
 import br.com.hurbandroidchallenge.presentation.compose.widgets.image.SmallCategoryItemImage
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorText
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoading
@@ -20,7 +19,7 @@ import br.com.hurbandroidchallenge.presentation.model.StateUI
 fun CategoryItemsExpandableList(
     name: String,
     listState: StateUI<List<SmallItemModel>>,
-    navHostController: NavHostController,
+    onClick: (url: String) -> Unit
 ) {
     DefaultExpandableCard(name = name) {
         when (listState) {
@@ -37,9 +36,7 @@ fun CategoryItemsExpandableList(
                             textColor = MaterialTheme.colorScheme.onSurfaceVariant,
                             image = item.image,
                             onClick = {
-                                navHostController.navigate(
-                                    Screens.FilmDetail.routeWithArgument(item.url)
-                                )
+                                onClick(item.url)
                             }
                         )
                     }

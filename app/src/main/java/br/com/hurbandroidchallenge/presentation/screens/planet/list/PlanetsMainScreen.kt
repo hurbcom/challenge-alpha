@@ -1,5 +1,6 @@
 package br.com.hurbandroidchallenge.presentation.screens.planet.list
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,6 +14,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.navigation.NavHostController
+import br.com.hurbandroidchallenge.commom.extension.backToHome
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
 import br.com.hurbandroidchallenge.data.mapper.planets.toModel
 import br.com.hurbandroidchallenge.presentation.compose.components.lazy_list.PagedItemList
@@ -30,6 +32,9 @@ fun PlanetsMainScreen(
     navHostController: NavHostController,
     viewModel: PlanetsViewModel,
 ) {
+    BackHandler {
+        navHostController.backToHome()
+    }
     val scrollBehavior =
         TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     var isSearching by remember { mutableStateOf(false) }
@@ -49,7 +54,7 @@ fun PlanetsMainScreen(
             } else {
                 TopBar(
                     title = "Planets",
-                    onBackPressed = { navHostController.navigateUp() },
+                    onBackPressed = { navHostController.backToHome() },
                     scrollBehavior = scrollBehavior,
                     actions = {
                         TopBarIcon(

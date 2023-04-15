@@ -12,7 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.R
-import br.com.hurbandroidchallenge.presentation.compose.components.DefaultNavigationBar
+import br.com.hurbandroidchallenge.presentation.compose.components.bottom_navigation.DefaultNavigationBar
 import br.com.hurbandroidchallenge.presentation.compose.navigation.NavScreens.*
 import br.com.hurbandroidchallenge.presentation.compose.widgets.divider.DefaultDivider
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
@@ -25,10 +25,11 @@ import br.com.hurbandroidchallenge.presentation.screens.home.last_seen.LastSeenM
 fun HomeMainScreen(
     navHostController: NavHostController
 ) {
+    val updateFavorites = remember { mutableStateOf(true) }
+    val updateLastSeen = remember { mutableStateOf(true) }
     val navigationItems = values().toList()
     var currentScreen by rememberSaveable { mutableStateOf(navigationItems.first()) }
-    val scrollBehavior =
-        TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
+    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     Scaffold(
         topBar = {
             TopBar(title = "", scrollBehavior = scrollBehavior) {
@@ -73,8 +74,8 @@ fun HomeMainScreen(
         ) {
             when(currentScreen) {
                 Categories -> CategoriesMainScreen(navHostController = navHostController)
-                Favorites -> FavoritesMainScreen(navHostController = navHostController)
-                LastSeen -> LastSeenMainScreen(navHostController = navHostController)
+                Favorites -> FavoritesMainScreen(navHostController = navHostController, update = updateFavorites)
+                LastSeen -> LastSeenMainScreen(navHostController = navHostController, update = updateLastSeen)
             }
         }
     }

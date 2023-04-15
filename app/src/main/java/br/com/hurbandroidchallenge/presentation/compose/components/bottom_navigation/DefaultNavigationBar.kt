@@ -1,4 +1,4 @@
-package br.com.hurbandroidchallenge.presentation.compose.components
+package br.com.hurbandroidchallenge.presentation.compose.components.bottom_navigation
 
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable

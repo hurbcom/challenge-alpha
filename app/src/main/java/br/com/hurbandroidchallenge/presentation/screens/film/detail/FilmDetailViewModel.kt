@@ -10,6 +10,7 @@ import br.com.hurbandroidchallenge.domain.model.Film
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetCharacterByUrlUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.GetFavoriteFilmsUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.GetFilmByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.films.SetFavoriteFilmUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.SetFilmLastSeenUseCase
 import br.com.hurbandroidchallenge.domain.use_case.planets.GetPlanetByUrlUseCase
 import br.com.hurbandroidchallenge.presentation.model.SmallItemModel
@@ -26,12 +27,12 @@ class FilmDetailViewModel(
     private val getCharacterByUrlUseCase: GetCharacterByUrlUseCase,
     private val getPlanetByUrlUseCase: GetPlanetByUrlUseCase,
     private val setFilmLastSeenUseCase: SetFilmLastSeenUseCase,
-    private val setFavoriteFilmsUseCase: GetFavoriteFilmsUseCase,
+    private val setFavoriteFilmsUseCase: SetFavoriteFilmUseCase,
     url: String,
 ) : ViewModel() {
 
-    private val _filmDetailUI = mutableStateOf(FilmDetailUI())
-    val filmUI: State<FilmDetailUI> = _filmDetailUI
+    private val _filmUI = mutableStateOf(FilmDetailUI())
+    val filmUI: State<FilmDetailUI> = _filmUI
 
     private val _filmState = MutableStateFlow<StateUI<Film>>(StateUI.Idle())
     val filmState = _filmState.asStateFlow()
@@ -53,8 +54,9 @@ class FilmDetailViewModel(
             }.catch {
                 _filmState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _filmDetailUI.value = filmUI.value.copy(
-                    film = data
+                _filmUI.value = filmUI.value.copy(
+                    film = data,
+                    favorite = data.favorite
                 )
                 setFilmLastSeenUseCase(data).collect {
                     _filmState.emit(StateUI.Processed(data))
@@ -73,14 +75,14 @@ class FilmDetailViewModel(
                 }.catch {
                     _charactersState.emit(StateUI.Error())
                 }.collect { data ->
-                    _filmDetailUI.value = filmUI.value.copy(
+                    _filmUI.value = filmUI.value.copy(
                         characters = filmUI.value.characters.plus(data)
                     )
                 }
-                if (_filmDetailUI.value.characters.isEmpty())
+                if (_filmUI.value.characters.isEmpty())
                     _charactersState.emit(StateUI.Error("There is no characters related to this movie"))
                 else
-                    _charactersState.emit(StateUI.Processed(_filmDetailUI.value.characters.map { it.toSmallModel() }))
+                    _charactersState.emit(StateUI.Processed(_filmUI.value.characters.map { it.toSmallModel() }))
             }
         }
     }
@@ -93,14 +95,26 @@ class FilmDetailViewModel(
                 }.catch {
                     _planetsState.emit(StateUI.Error(it.message.orEmpty()))
                 }.collect { data ->
-                    _filmDetailUI.value = filmUI.value.copy(
+                    _filmUI.value = filmUI.value.copy(
                         planets = filmUI.value.planets.plus(data)
                     )
                 }
-                if (_filmDetailUI.value.planets.isEmpty())
+                if (_filmUI.value.planets.isEmpty())
                     _planetsState.emit(StateUI.Error("There is no planets related to this movie"))
                 else
-                    _planetsState.emit(StateUI.Processed(_filmDetailUI.value.planets.map { it.toSmallMode() }))
+                    _planetsState.emit(StateUI.Processed(_filmUI.value.planets.map { it.toSmallMode() }))
+            }
+        }
+    }
+
+    fun favorite() {
+        viewModelScope.launch {
+            _filmUI.value.film?.let { film ->
+                setFavoriteFilmsUseCase(film).catch {}.collect {
+                    _filmUI.value = filmUI.value.copy(
+                        favorite = !film.favorite
+                    )
+                }
             }
         }
     }

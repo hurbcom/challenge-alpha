@@ -3,17 +3,22 @@ package br.com.hurbandroidchallenge.presentation.screens.character.detail
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.data.mapper.characters.toModel
+import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemsExpandableList
 import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemDetail
-import br.com.hurbandroidchallenge.presentation.compose.components.CategoryItemsExpandableList
+import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBar
+import br.com.hurbandroidchallenge.presentation.compose.widgets.top_bar.TopBarIcon
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -27,7 +32,15 @@ fun CharacterDetailMainScreen(
         topBar = {
             TopBar(
                 title = characterUI.character?.name.orEmpty(),
-                onBackPressed = { navHostController.navigateUp() }
+                onBackPressed = { navHostController.navigateUp() },
+                actions = {
+                    TopBarIcon(
+                        onClick = {
+                            viewModel.favorite()
+                        },
+                        imageVector = if (characterUI.favorite) Icons.Default.Star else Icons.Default.StarBorder
+                    )
+                }
             )
         }
     ) { paddingValues ->
@@ -76,7 +89,11 @@ private fun CharacterDetailScreen(
                     CategoryItemsExpandableList(
                         name = "Movies",
                         listState = viewModel.filmsState.collectAsState().value,
-                        navHostController = navHostController
+                        onClick = { url ->
+                            navHostController.navigate(
+                                Screens.FilmDetail.routeWithArgument(url)
+                            )
+                        }
                     )
                 }
             }

@@ -4,19 +4,21 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.hurbandroidchallenge.commom.util.date.DateUtils
 import br.com.hurbandroidchallenge.data.mapper.films.toSmallModel
 import br.com.hurbandroidchallenge.domain.model.People
 import br.com.hurbandroidchallenge.domain.model.Planet
-import br.com.hurbandroidchallenge.domain.use_case.characters.SetCharacterLastSeenUseCase
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetCharacterByUrlUseCase
+import br.com.hurbandroidchallenge.domain.use_case.characters.SetCharacterLastSeenUseCase
+import br.com.hurbandroidchallenge.domain.use_case.characters.SetFavoriteCharacterUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.GetFilmByUrlUseCase
 import br.com.hurbandroidchallenge.domain.use_case.planets.GetPlanetByUrlUseCase
-import br.com.hurbandroidchallenge.domain.use_case.planets.SetFavoritePlanetUseCase
 import br.com.hurbandroidchallenge.presentation.model.SmallItemModel
 import br.com.hurbandroidchallenge.presentation.model.StateUI
 import br.com.hurbandroidchallenge.presentation.screens.character.detail.ui.CharacterUI
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class CharacterDetailViewModel(
@@ -24,7 +26,7 @@ class CharacterDetailViewModel(
     private val getFilmByUrlUseCase: GetFilmByUrlUseCase,
     private val getPlanetByUrlUseCase: GetPlanetByUrlUseCase,
     private val setCharacterLastSeenUseCase: SetCharacterLastSeenUseCase,
-    private val setFavoritePlanetUseCase: SetFavoritePlanetUseCase,
+    private val setFavoriteCharacterUseCase: SetFavoriteCharacterUseCase,
     url: String,
 ) : ViewModel() {
 
@@ -50,8 +52,11 @@ class CharacterDetailViewModel(
             }.catch {
                 _characterState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _characterUI.value = characterUI.value.copy(character = data)
-                setCharacterLastSeenUseCase(data).collect{
+                _characterUI.value = characterUI.value.copy(
+                    character = data,
+                    favorite = data.favorite
+                )
+                setCharacterLastSeenUseCase(data).collect {
                     _characterState.emit(StateUI.Processed(data))
                 }
                 loadFilms(data.films)
@@ -89,6 +94,18 @@ class CharacterDetailViewModel(
             }.collect { data ->
                 _characterUI.value = characterUI.value.copy(homeWorld = data)
                 _homeWorld.emit(StateUI.Processed(data = data))
+            }
+        }
+    }
+
+    fun favorite() {
+        viewModelScope.launch {
+            _characterUI.value.character?.let { character ->
+                setFavoriteCharacterUseCase(character).catch {}.collect {
+                    _characterUI.value = characterUI.value.copy(
+                        favorite = !character.favorite
+                    )
+                }
             }
         }
     }
