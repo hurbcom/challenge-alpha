@@ -12,7 +12,7 @@ class DateUtils {
 
         fun getCurrentDate() = LocalDate.now().toString()
 
-        fun daysUntilToday(date: String?) = daysBetweenDates(first = getCurrentDate(), second = date)
+        fun daysUntilToday(date: String?) = daysBetweenDates(first = date, second = getCurrentDate())
 
         fun daysBetweenDates(first: String?, second: String?): Long {
             formatter.setPattern(SERVER_PATTERN)
