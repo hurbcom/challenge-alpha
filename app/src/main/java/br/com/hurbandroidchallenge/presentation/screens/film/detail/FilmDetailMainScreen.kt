@@ -11,6 +11,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.commom.extension.toRoman
 import br.com.hurbandroidchallenge.data.mapper.films.toModel
@@ -52,7 +53,7 @@ fun FilmDetailMainScreen(
                 .fillMaxSize()
                 .padding(paddingValues = paddingValues)
         ) {
-            viewModel.filmState.collectAsState().value.let { response ->
+            viewModel.filmState.collectAsStateWithLifecycle().value.let { response ->
                 when (response) {
                     is StateUI.Error -> DefaultErrorScreen()
                     is StateUI.Idle -> Unit
@@ -96,7 +97,7 @@ fun FilmDetailScreen(
                     }
                     CategoryItemsExpandableList(
                         name = "Characters",
-                        listState = viewModel.charactersState.collectAsState().value,
+                        listState = viewModel.charactersState.collectAsStateWithLifecycle().value,
                         onClick = { url ->
                             navHostController.navigate(
                                 Screens.CharacterDetail.routeWithArgument(url)
@@ -105,7 +106,7 @@ fun FilmDetailScreen(
                     )
                     CategoryItemsExpandableList(
                         name = "Planets",
-                        listState = viewModel.planetsState.collectAsState().value,
+                        listState = viewModel.planetsState.collectAsStateWithLifecycle().value,
                         onClick = { url ->
                             navHostController.navigate(
                                 Screens.PlanetDetail.routeWithArgument(url)

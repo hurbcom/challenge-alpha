@@ -14,6 +14,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.domain.model.Categories
 import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategorySmallItems
@@ -46,7 +47,7 @@ fun LastSeenMainScreen(
                 onClick = { url ->
                     navHostController.navigate(Screens.CharacterDetail.routeWithArgument(url))
                 },
-                listState = viewModel.charactersState.collectAsState().value
+                listState = viewModel.charactersState.collectAsStateWithLifecycle().value
             )
             CategorySmallItems(
                 name = Categories.Films.title,
@@ -54,7 +55,7 @@ fun LastSeenMainScreen(
                 onClick = { url ->
                     navHostController.navigate(Screens.FilmDetail.routeWithArgument(url))
                 },
-                listState = viewModel.filmsState.collectAsState().value
+                listState = viewModel.filmsState.collectAsStateWithLifecycle().value
             )
             CategorySmallItems(
                 name = Categories.Planets.title,
@@ -62,7 +63,7 @@ fun LastSeenMainScreen(
                 onClick = { url ->
                     navHostController.navigate(Screens.PlanetDetail.routeWithArgument(url))
                 },
-                listState = viewModel.planetsState.collectAsState().value
+                listState = viewModel.planetsState.collectAsStateWithLifecycle().value
             )
         }
     }

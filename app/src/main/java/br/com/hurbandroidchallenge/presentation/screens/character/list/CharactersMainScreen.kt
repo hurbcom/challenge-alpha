@@ -13,6 +13,7 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.commom.extension.backToHome
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
@@ -73,7 +74,7 @@ fun CategoryDetailMainScreen(
                 .padding(paddingValues = paddingValues)
                 .fillMaxSize()
         ) {
-            viewModel.charactersState.collectAsState().value.let { response ->
+            viewModel.charactersState.collectAsStateWithLifecycle().value.let { response ->
                 when (response) {
                     is StateUI.Error -> {
                         DefaultErrorScreen(
@@ -107,7 +108,7 @@ fun CharactersScreen(
     isSearching: Boolean,
 ) {
     val charactersUI = viewModel.characters.value
-    val loadMoreResponse = viewModel.loadMoreState.collectAsState().value
+    val loadMoreResponse = viewModel.loadMoreState.collectAsStateWithLifecycle().value
     val filteredCharacters = charactersUI.characters.filter {
         if (searchText.isNotBlank()) {
             it.name.containsIgnoringAccent(searchText, ignoreCase = true)

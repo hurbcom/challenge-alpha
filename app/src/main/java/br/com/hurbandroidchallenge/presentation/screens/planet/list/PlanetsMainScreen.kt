@@ -13,6 +13,7 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.commom.extension.backToHome
 import br.com.hurbandroidchallenge.commom.extension.containsIgnoringAccent
@@ -73,8 +74,8 @@ fun PlanetsMainScreen(
                 .fillMaxSize()
         ) {
             val planetsUI = viewModel.planetsUI.value
-            val loadMoreResponse = viewModel.loadMoreState.collectAsState().value
-            viewModel.planetsState.collectAsState().value.let { response ->
+            val loadMoreResponse = viewModel.loadMoreState.collectAsStateWithLifecycle().value
+            viewModel.planetsState.collectAsStateWithLifecycle().value.let { response ->
                 when (response) {
                     is StateUI.Error -> DefaultErrorScreen(message = response.message)
                     is StateUI.Idle -> Unit

@@ -68,6 +68,7 @@ dependencies {
     implementation "io.coil-kt:coil-compose:$coil_compose_version"
     implementation "androidx.compose.ui:ui-tooling:$compose_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$viewmodel_compose_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-compose:$viewmodel_compose_version"
     implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version"
     implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
