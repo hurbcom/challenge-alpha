@@ -4,7 +4,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import br.com.hurbandroidchallenge.commom.util.date.DateUtils
 import br.com.hurbandroidchallenge.data.mapper.characters.charactersEntity
 import br.com.hurbandroidchallenge.data.mapper.characters.toPeople
-import br.com.hurbandroidchallenge.domain.use_case.characters.GetLastSeenCharactersUseCase
 import br.com.hurbandroidchallenge.domain.use_case.characters.SetCharacterLastSeenUseCase
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest

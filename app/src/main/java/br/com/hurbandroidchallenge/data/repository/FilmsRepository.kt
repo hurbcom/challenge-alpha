@@ -4,7 +4,7 @@ import br.com.hurbandroidchallenge.commom.extension.idFromUrl
 import br.com.hurbandroidchallenge.commom.extension.pagedListOf
 import br.com.hurbandroidchallenge.commom.mapper.NullableListMapper
 import br.com.hurbandroidchallenge.commom.mapper.PagedListMapper
-import br.com.hurbandroidchallenge.data.local.data_source.StarWarsBookLocalDataSource
+import br.com.hurbandroidchallenge.data.local.data_source.FilmsLocalDataSource
 import br.com.hurbandroidchallenge.data.local.model.FilmEntity
 import br.com.hurbandroidchallenge.data.local.preferences.PreferencesWrapper
 import br.com.hurbandroidchallenge.data.mapper.films.toEntity
@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.flow
 
 class FilmsRepository(
     private val remoteDataSource: StarWarsBookRemoteDataSource,
-    private val localDataSource: StarWarsBookLocalDataSource,
+    private val localDataSource: FilmsLocalDataSource,
     private val filmDtoToEntityMapper: PagedListMapper<FilmDto, FilmEntity>,
     private val filmEntityToPeopleMapper: NullableListMapper<FilmEntity, Film>,
     private val networkManager: NetworkManager,
@@ -29,20 +29,20 @@ class FilmsRepository(
 
     private val preferences = PreferencesWrapper.getInstance()
 
-    private suspend fun getLocalFilms() = filmEntityToPeopleMapper.map(localDataSource.getFilms())
+    private suspend fun getLocalFilms() = filmEntityToPeopleMapper.map(localDataSource.getEntities())
 
     private suspend fun getLocalFilmByUrl(url: String) =
-        localDataSource.getFilmById(url.idFromUrl()).toFilm()
+        localDataSource.getEntityById(url.idFromUrl()).toFilm()
 
     override fun getItemList(url: String, clearLocalDatasource: Boolean): Flow<PagedList<Film>> {
         return flow {
-            if (clearLocalDatasource) localDataSource.clearFilms()
+            if (clearLocalDatasource) localDataSource.clearEntities()
             if (preferences.isFilmsUpToDate()) {
                 emit(pagedListOf(getLocalFilms()))
             } else if (networkManager.hasInternetConnection()) {
                 apiCall {
                     val remoteFilms = remoteDataSource.getFilms(url)
-                    localDataSource.insertFilms(filmDtoToEntityMapper.map(remoteFilms).results)
+                    localDataSource.insertEntities(filmDtoToEntityMapper.map(remoteFilms).results)
                     if (remoteFilms.next == null) {
                         preferences.filmsIsUpToDate()
                     }
@@ -62,11 +62,11 @@ class FilmsRepository(
 
     override fun getItemByUrl(url: String): Flow<Film> {
         return flow {
-            if (localDataSource.containsFilm(url.idFromUrl())) {
+            if (localDataSource.containsEntity(url.idFromUrl())) {
                 emit(getLocalFilmByUrl(url))
             } else if (networkManager.hasInternetConnection()) {
                 val remoteFilm = remoteDataSource.getFilmByUrl(url)
-                localDataSource.insertFilms(listOf(remoteFilm.toEntity()))
+                localDataSource.insertEntities(listOf(remoteFilm.toEntity()))
                 val localFilm = getLocalFilmByUrl(remoteFilm.url.orEmpty())
                 emit(localFilm)
             } else {
@@ -76,15 +76,15 @@ class FilmsRepository(
     }
 
     override fun getFavoriteItems(): Flow<List<Film>> {
-        return flow { emit(filmEntityToPeopleMapper.map(localDataSource.getFavoriteFilms())) }
+        return flow { emit(filmEntityToPeopleMapper.map(localDataSource.getFavoriteEntities())) }
     }
 
     override fun getLastSeenItems(): Flow<List<Film>> {
-        return flow { emit(filmEntityToPeopleMapper.map(localDataSource.getLastSeenFilms())) }
+        return flow { emit(filmEntityToPeopleMapper.map(localDataSource.getLastSeenEntities())) }
     }
 
     override fun updateItem(item: Film): Flow<Film> {
-        return flow { emit(localDataSource.updateFilm(item.toEntity()).toFilm()) }
+        return flow { emit(localDataSource.updateEntity(item.toEntity()).toFilm()) }
     }
 
 }

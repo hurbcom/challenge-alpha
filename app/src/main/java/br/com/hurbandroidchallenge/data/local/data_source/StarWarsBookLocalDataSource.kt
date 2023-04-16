@@ -1,61 +1,23 @@
 package br.com.hurbandroidchallenge.data.local.data_source
 
-import br.com.hurbandroidchallenge.data.local.model.FilmEntity
-import br.com.hurbandroidchallenge.data.local.model.PeopleEntity
-import br.com.hurbandroidchallenge.data.local.model.PlanetEntity
 import br.com.hurbandroidchallenge.data.local.model.UpdateEntity
 
-interface StarWarsBookLocalDataSource {
+interface StarWarsBookLocalDataSource <T> {
 
-    // Characters
-    suspend fun getCharacters(): List<PeopleEntity>
+    suspend fun getEntities(): List<T>
 
-    suspend fun getCharacterById(id: Int): PeopleEntity
+    suspend fun getEntityById(id: Int): T
 
-    suspend fun containsCharacter(id: Int): Boolean
+    suspend fun containsEntity(id: Int): Boolean
 
-    suspend fun insertCharacters(characters: List<PeopleEntity>)
+    suspend fun insertEntities(characters: List<T>)
 
-    suspend fun clearCharacters()
+    suspend fun clearEntities()
 
-    suspend fun getFavoriteCharacters(): List<PeopleEntity>
+    suspend fun getFavoriteEntities(): List<T>
 
-    suspend fun getLastSeenCharacters(): List<PeopleEntity>
+    suspend fun getLastSeenEntities(): List<T>
 
-    suspend fun updateCharacter(entity: UpdateEntity): PeopleEntity
-
-    // Films
-    suspend fun getFilms(): List<FilmEntity>
-
-    suspend fun getFilmById(id: Int): FilmEntity
-
-    suspend fun insertFilms(films: List<FilmEntity>)
-
-    suspend fun containsFilm(id: Int): Boolean
-
-    suspend fun clearFilms()
-
-    suspend fun getFavoriteFilms(): List<FilmEntity>
-
-    suspend fun getLastSeenFilms(): List<FilmEntity>
-
-    suspend fun updateFilm(entity: UpdateEntity): FilmEntity
-
-    // Planets
-    suspend fun insertPlanets(planets: List<PlanetEntity>)
-
-    suspend fun getPlanets(): List<PlanetEntity>
-
-    suspend fun getPlanetById(id: Int): PlanetEntity
-
-    suspend fun containsPlanet(id: Int): Boolean
-
-    suspend fun clearPlanets()
-
-    suspend fun getFavoritePlanets(): List<PlanetEntity>
-
-    suspend fun getLastSeenPlanets(): List<PlanetEntity>
-
-    suspend fun updatePlanet(entity: UpdateEntity): PlanetEntity
+    suspend fun updateEntity(entity: UpdateEntity): T
 
 }

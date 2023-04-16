@@ -94,7 +94,7 @@ class PlanetDetailViewModel(
                 }
             }
             if (_planetUI.value.characters.isEmpty())
-                _charactersState.emit(StateUI.Error("This planet isn't related with any movie"))
+                _charactersState.emit(StateUI.Error("This planet isn't related with any character"))
             else
                 _charactersState.emit(StateUI.Processed(_planetUI.value.characters.map { it.toSmallModel() }))
         }

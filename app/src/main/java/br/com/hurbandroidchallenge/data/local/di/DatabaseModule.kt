@@ -14,7 +14,9 @@ val databaseModule = module {
         ).fallbackToDestructiveMigration().build()
     }
 
-    single {
-        get<StarWarsBookDatabase>().dao
-    }
+    single { get<StarWarsBookDatabase>().charactersDao }
+
+    single { get<StarWarsBookDatabase>().filmsDao }
+
+    single { get<StarWarsBookDatabase>().planetsDao }
 }
