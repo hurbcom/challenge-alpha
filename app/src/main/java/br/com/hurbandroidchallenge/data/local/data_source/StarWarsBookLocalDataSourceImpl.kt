@@ -39,8 +39,9 @@ class StarWarsBookLocalDataSourceImpl(
         }
     }
 
-    override suspend fun updateCharacter(entity: UpdateEntity) {
+    override suspend fun updateCharacter(entity: UpdateEntity): PeopleEntity {
         dao.updateCharacter(entity)
+        return dao.getCharacterById(entity.id)
     }
 
     // Films
@@ -78,8 +79,9 @@ class StarWarsBookLocalDataSourceImpl(
         }
     }
 
-    override suspend fun updateFilm(entity: UpdateEntity) {
+    override suspend fun updateFilm(entity: UpdateEntity): FilmEntity {
         dao.updateFilm(entity)
+        return dao.getFilmById(entity.id)
     }
 
     // Planets
@@ -114,8 +116,9 @@ class StarWarsBookLocalDataSourceImpl(
         }
     }
 
-    override suspend fun updatePlanet(entity: UpdateEntity) {
+    override suspend fun updatePlanet(entity: UpdateEntity): PlanetEntity {
         dao.updatePlanet(entity)
+        return dao.getPlanetById(entity.id)
     }
 
 }

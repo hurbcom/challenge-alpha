@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 class SetPlanetLastSeenUseCase(
     private val repository: PlanetsRepository
 ) {
-    operator fun invoke(planet: Planet): Flow<Unit> {
+    operator fun invoke(planet: Planet): Flow<Planet> {
         val now = DateUtils.getCurrentDate()
         return repository.updateItem(planet.copy(lastSeen = now))
     }

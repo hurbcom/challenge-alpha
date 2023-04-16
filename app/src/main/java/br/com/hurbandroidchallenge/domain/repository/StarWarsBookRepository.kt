@@ -9,7 +9,7 @@ interface StarWarsBookRepository<T> {
 
     fun getItemByUrl(url: String): Flow<T>
 
-    fun updateItem(item: T): Flow<Unit>
+    fun updateItem(item: T): Flow<T>
 
     fun getFavoriteItems(): Flow<List<T>>
 

@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 class SetCharacterLastSeenUseCase(
     private val repository: CharactersRepository
 ) {
-    operator fun invoke(people: People): Flow<Unit> {
+    operator fun invoke(people: People): Flow<People> {
         val now = DateUtils.getCurrentDate()
         return repository.updateItem(people.copy(lastSeen = now))
     }

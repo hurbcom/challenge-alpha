@@ -13,8 +13,8 @@ import br.com.hurbandroidchallenge.data.remote.data_sources.StarWarsBookRemoteDa
 import br.com.hurbandroidchallenge.data.remote.model.PlanetDto
 import br.com.hurbandroidchallenge.data.remote.util.NetworkManager
 import br.com.hurbandroidchallenge.data.remote.util.apiCall
-import br.com.hurbandroidchallenge.domain.model.Planet
 import br.com.hurbandroidchallenge.domain.model.PagedList
+import br.com.hurbandroidchallenge.domain.model.Planet
 import br.com.hurbandroidchallenge.domain.repository.StarWarsBookRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -77,8 +77,8 @@ class PlanetsRepository(
         return flow { emit(planetEntityToPlanetMapper.map(localDataSource.getLastSeenPlanets())) }
     }
 
-    override fun updateItem(item: Planet): Flow<Unit> {
-        return flow { emit(localDataSource.updatePlanet(item.toEntity())) }
+    override fun updateItem(item: Planet): Flow<Planet> {
+        return flow { emit(localDataSource.updatePlanet(item.toEntity()).toPlanet()) }
     }
 
     private suspend fun getLocalPlanets() =

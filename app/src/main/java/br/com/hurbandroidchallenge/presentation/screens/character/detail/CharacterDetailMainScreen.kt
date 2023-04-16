@@ -38,7 +38,7 @@ fun CharacterDetailMainScreen(
                         onClick = {
                             viewModel.favorite()
                         },
-                        imageVector = if (characterUI.favorite) Icons.Default.Star else Icons.Default.StarBorder
+                        imageVector = if (characterUI.character?.favorite == true) Icons.Default.Star else Icons.Default.StarBorder
                     )
                 }
             )

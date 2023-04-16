@@ -22,7 +22,7 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun getLastSeenCharacters(): List<PeopleEntity>
 
-    suspend fun updateCharacter(entity: UpdateEntity)
+    suspend fun updateCharacter(entity: UpdateEntity): PeopleEntity
 
     // Films
     suspend fun getFilms(): List<FilmEntity>
@@ -39,7 +39,7 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun getLastSeenFilms(): List<FilmEntity>
 
-    suspend fun updateFilm(entity: UpdateEntity)
+    suspend fun updateFilm(entity: UpdateEntity): FilmEntity
 
     // Planets
     suspend fun insertPlanets(planets: List<PlanetEntity>)
@@ -56,6 +56,6 @@ interface StarWarsBookLocalDataSource {
 
     suspend fun getLastSeenPlanets(): List<PlanetEntity>
 
-    suspend fun updatePlanet(entity: UpdateEntity)
+    suspend fun updatePlanet(entity: UpdateEntity): PlanetEntity
 
 }

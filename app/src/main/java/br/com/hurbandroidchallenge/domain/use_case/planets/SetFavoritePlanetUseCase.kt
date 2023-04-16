@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 class SetFavoritePlanetUseCase(
     private val repository: PlanetsRepository
 ) {
-    operator fun invoke(planet: Planet): Flow<Unit> {
+    operator fun invoke(planet: Planet): Flow<Planet> {
         return repository.updateItem(planet.copy(favorite = !planet.favorite))
     }
 }

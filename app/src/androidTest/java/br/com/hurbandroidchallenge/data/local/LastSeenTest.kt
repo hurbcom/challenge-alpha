@@ -1,6 +1,7 @@
 package br.com.hurbandroidchallenge.data.local
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import br.com.hurbandroidchallenge.commom.util.date.DateUtils
 import br.com.hurbandroidchallenge.data.mapper.characters.charactersEntity
 import br.com.hurbandroidchallenge.data.mapper.characters.toPeople
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetLastSeenCharactersUseCase
@@ -16,16 +17,14 @@ import org.koin.core.component.inject
 class LastSeenTest : KoinComponent {
 
     private val setCharacterLastSeenUseCase: SetCharacterLastSeenUseCase by inject()
-    private val getLastSeenCharactersUseCase: GetLastSeenCharactersUseCase by inject()
 
     @Test
     fun setCharacterLastSeen() {
         val character = charactersEntity.first()
         runBlocking {
             launch(Dispatchers.IO) {
-                setCharacterLastSeenUseCase(character.toPeople())
-                getLastSeenCharactersUseCase().collectLatest {
-                    assert(it.isNotEmpty())
+                setCharacterLastSeenUseCase(character.toPeople()).collectLatest {
+                    assert(it.lastSeen == DateUtils.getCurrentDate())
                 }
             }
         }

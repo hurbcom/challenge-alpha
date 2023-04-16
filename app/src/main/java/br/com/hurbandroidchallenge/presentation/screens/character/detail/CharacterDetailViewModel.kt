@@ -52,10 +52,7 @@ class CharacterDetailViewModel(
             }.catch {
                 _characterState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _characterUI.value = characterUI.value.copy(
-                    character = data,
-                    favorite = data.favorite
-                )
+                _characterUI.value = characterUI.value.copy(character = data)
                 setCharacterLastSeenUseCase(data).collect {
                     _characterState.emit(StateUI.Processed(data))
                 }
@@ -101,10 +98,8 @@ class CharacterDetailViewModel(
     fun favorite() {
         viewModelScope.launch {
             _characterUI.value.character?.let { character ->
-                setFavoriteCharacterUseCase(character).catch {}.collect {
-                    _characterUI.value = characterUI.value.copy(
-                        favorite = !character.favorite
-                    )
+                setFavoriteCharacterUseCase(character).collect { updatedCharacter ->
+                    _characterUI.value = characterUI.value.copy(character = updatedCharacter)
                 }
             }
         }

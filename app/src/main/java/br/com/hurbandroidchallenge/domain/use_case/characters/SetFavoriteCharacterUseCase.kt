@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 class SetFavoriteCharacterUseCase(
     private val repository: CharactersRepository
 ) {
-    operator fun invoke(people: People): Flow<Unit> {
+    operator fun invoke(people: People): Flow<People> {
         return repository.updateItem(people.copy(favorite = !people.favorite))
     }
 }

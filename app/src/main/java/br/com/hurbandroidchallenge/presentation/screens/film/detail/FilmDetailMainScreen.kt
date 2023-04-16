@@ -41,7 +41,7 @@ fun FilmDetailMainScreen(
                         onClick = {
                             viewModel.favorite()
                         },
-                        imageVector = if (filmUI.favorite)  Icons.Default.Star else  Icons.Default.StarBorder
+                        imageVector = if (filmUI.film?.favorite == true) Icons.Default.Star else Icons.Default.StarBorder
                     )
                 }
             )

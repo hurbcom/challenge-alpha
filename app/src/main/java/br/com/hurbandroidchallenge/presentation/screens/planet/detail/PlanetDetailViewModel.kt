@@ -50,10 +50,7 @@ class PlanetDetailViewModel(
             }.catch {
                 _planetState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _planetUI.value = planetUI.value.copy(
-                    planet = data,
-                    favorite = data.favorite
-                )
+                _planetUI.value = planetUI.value.copy(planet = data)
                 setLastSeenUseCase(data).collect {
                     _planetState.emit(StateUI.Processed(data))
                 }
@@ -106,10 +103,8 @@ class PlanetDetailViewModel(
     fun favorite() {
         viewModelScope.launch {
             _planetUI.value.planet?.let { planet ->
-                setFavoritePlanetUseCase(planet).catch {}.collect {
-                    _planetUI.value = planetUI.value.copy(
-                        favorite = !planet.favorite
-                    )
+                setFavoritePlanetUseCase(planet).catch {}.collect { updatedPlanet ->
+                    _planetUI.value = planetUI.value.copy(planet = updatedPlanet)
                 }
             }
         }

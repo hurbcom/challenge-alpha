@@ -83,8 +83,8 @@ class FilmsRepository(
         return flow { emit(filmEntityToPeopleMapper.map(localDataSource.getLastSeenFilms())) }
     }
 
-    override fun updateItem(item: Film): Flow<Unit> {
-        return flow { emit(localDataSource.updateFilm(item.toEntity())) }
+    override fun updateItem(item: Film): Flow<Film> {
+        return flow { emit(localDataSource.updateFilm(item.toEntity()).toFilm()) }
     }
 
 }

@@ -18,7 +18,6 @@ import org.koin.core.component.inject
 class FavoriteItemTest : KoinComponent {
 
     private val setFavoriteCharacterUseCase: SetFavoriteCharacterUseCase by inject()
-    private val getFavoriteCharactersUseCase: GetFavoriteCharactersUseCase by inject()
     private val getCharacterByUrlUseCase: GetCharacterByUrlUseCase by inject()
 
     @Test
@@ -27,9 +26,8 @@ class FavoriteItemTest : KoinComponent {
         runBlocking {
             launch(Dispatchers.IO) {
                 getCharacterByUrlUseCase("${ApiUrls.characters}1").collectLatest { character ->
-                    setFavoriteCharacterUseCase(character)
-                    getFavoriteCharactersUseCase().collectLatest { characters ->
-                        assert(characters.map { it.id }.contains(character.id))
+                    setFavoriteCharacterUseCase(character).collect { favoriteCharacter ->
+                        assert(favoriteCharacter.favorite)
                     }
                 }
             }

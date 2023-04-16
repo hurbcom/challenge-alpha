@@ -54,8 +54,7 @@ class FilmDetailViewModel(
                 _filmState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
                 _filmUI.value = filmUI.value.copy(
-                    film = data,
-                    favorite = data.favorite
+                    film = data
                 )
                 setFilmLastSeenUseCase(data).collect {
                     _filmState.emit(StateUI.Processed(data))
@@ -109,10 +108,8 @@ class FilmDetailViewModel(
     fun favorite() {
         viewModelScope.launch {
             _filmUI.value.film?.let { film ->
-                setFavoriteFilmsUseCase(film).catch {}.collect {
-                    _filmUI.value = filmUI.value.copy(
-                        favorite = !film.favorite
-                    )
+                setFavoriteFilmsUseCase(film).collect { updatedFilm ->
+                    _filmUI.value = filmUI.value.copy(film = updatedFilm)
                 }
             }
         }
