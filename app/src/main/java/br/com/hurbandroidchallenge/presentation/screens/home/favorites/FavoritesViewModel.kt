@@ -1,15 +1,19 @@
 package br.com.hurbandroidchallenge.presentation.screens.home.favorites
 
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import br.com.hurbandroidchallenge.commom.extension.symmetricDifference
 import br.com.hurbandroidchallenge.data.mapper.characters.toSmallModel
 import br.com.hurbandroidchallenge.data.mapper.films.toSmallModel
-import br.com.hurbandroidchallenge.data.mapper.planets.toSmallMode
+import br.com.hurbandroidchallenge.data.mapper.planets.toSmallModel
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetFavoriteCharactersUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.GetFavoriteFilmsUseCase
 import br.com.hurbandroidchallenge.domain.use_case.planets.GetFavoritesPlanetsUseCase
 import br.com.hurbandroidchallenge.presentation.model.SmallItemModel
 import br.com.hurbandroidchallenge.presentation.model.StateUI
+import br.com.hurbandroidchallenge.presentation.screens.home.favorites.ui.FavoritesUI
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
@@ -21,6 +25,9 @@ class FavoritesViewModel(
     private val getFavoriteFilmsUseCase: GetFavoriteFilmsUseCase,
     private val getFavoriteCharactersUseCase: GetFavoriteCharactersUseCase,
 ) : ViewModel() {
+
+    private val _favoritesUI = mutableStateOf(FavoritesUI())
+    val favoritesUI: State<FavoritesUI> = _favoritesUI
 
     private val _charactersState = MutableStateFlow<StateUI<List<SmallItemModel>>>(StateUI.Idle())
     val charactersState = _charactersState.asStateFlow()
@@ -44,10 +51,19 @@ class FavoritesViewModel(
             }.catch {
                 _charactersState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                if (data.isEmpty())
+                if (data.isEmpty()) {
                     _charactersState.emit(StateUI.Error("You have no favorites characters"))
-                else
-                    _charactersState.emit(StateUI.Processed(data.map { it.toSmallModel() }))
+                } else {
+                    val models = data.map { it.toSmallModel() }
+                    val hasDifference =
+                        (models symmetricDifference _favoritesUI.value.characters).isNotEmpty()
+                    if (hasDifference) {
+                        _favoritesUI.value = favoritesUI.value.copy(
+                            characters = favoritesUI.value.characters.plus(models).distinct()
+                        )
+                    }
+                    _charactersState.emit(StateUI.Processed(models))
+                }
             }
         }
     }
@@ -59,10 +75,19 @@ class FavoritesViewModel(
             }.catch {
                 _filmsState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                if (data.isEmpty())
-                    _filmsState.emit(StateUI.Error("You have no favorites films"))
-                else
-                    _filmsState.emit(StateUI.Processed(data.map { it.toSmallModel() }))
+                if (data.isEmpty()) {
+                    _filmsState.emit(StateUI.Error("You have no favorites planets"))
+                } else {
+                    val models = data.map { it.toSmallModel() }
+                    val hasDifference =
+                        (models symmetricDifference _favoritesUI.value.films).isNotEmpty()
+                    if (hasDifference) {
+                        _favoritesUI.value = favoritesUI.value.copy(
+                            films = favoritesUI.value.films.plus(models).distinct()
+                        )
+                    }
+                    _filmsState.emit(StateUI.Processed(models))
+                }
             }
         }
     }
@@ -74,10 +99,19 @@ class FavoritesViewModel(
             }.catch {
                 _planetsState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                if (data.isEmpty())
+                if (data.isEmpty()) {
                     _planetsState.emit(StateUI.Error("You have no favorites planets"))
-                else
-                    _planetsState.emit(StateUI.Processed(data.map { it.toSmallMode() }))
+                } else {
+                    val models = data.map { it.toSmallModel() }
+                    val hasDifference =
+                        (models symmetricDifference _favoritesUI.value.planets).isNotEmpty()
+                    if (hasDifference) {
+                        _favoritesUI.value = favoritesUI.value.copy(
+                            planets = favoritesUI.value.planets.plus(models).distinct()
+                        )
+                    }
+                    _planetsState.emit(StateUI.Processed(models))
+                }
             }
         }
     }

@@ -7,7 +7,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -29,6 +32,7 @@ fun LastSeenMainScreen(
             viewModel.loadLastSeen()
         }
     }
+    val lastSeenUI = viewModel.lastSeenUI.value
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Column(
             modifier = Modifier.padding(all = 16.dp),
@@ -38,24 +42,27 @@ fun LastSeenMainScreen(
             Text(text = "Last seen", style = MaterialTheme.typography.headlineSmall)
             CategorySmallItems(
                 name = Categories.Characters.title,
-                listState = viewModel.charactersState.collectAsState().value,
+                itemList = lastSeenUI.characters,
                 onClick = { url ->
                     navHostController.navigate(Screens.CharacterDetail.routeWithArgument(url))
-                }
+                },
+                listState = viewModel.charactersState.collectAsState().value
             )
             CategorySmallItems(
                 name = Categories.Films.title,
-                listState = viewModel.filmsState.collectAsState().value,
+                itemList = lastSeenUI.films,
                 onClick = { url ->
                     navHostController.navigate(Screens.FilmDetail.routeWithArgument(url))
-                }
+                },
+                listState = viewModel.filmsState.collectAsState().value
             )
             CategorySmallItems(
                 name = Categories.Planets.title,
-                listState = viewModel.planetsState.collectAsState().value,
+                itemList = lastSeenUI.planets,
                 onClick = { url ->
                     navHostController.navigate(Screens.PlanetDetail.routeWithArgument(url))
-                }
+                },
+                listState = viewModel.planetsState.collectAsState().value
             )
         }
     }

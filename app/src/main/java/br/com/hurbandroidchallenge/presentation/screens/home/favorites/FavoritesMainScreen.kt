@@ -32,6 +32,7 @@ fun FavoritesMainScreen(
             viewModel.loadFavorites()
         }
     }
+    val favoritesUI = viewModel.favoritesUI.value
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Column(
             modifier = Modifier.padding(all = 16.dp),
@@ -41,24 +42,27 @@ fun FavoritesMainScreen(
             Text(text = "Favorites", style = MaterialTheme.typography.headlineSmall)
             CategorySmallItems(
                 name = Categories.Characters.title,
-                listState = viewModel.charactersState.collectAsState().value,
+                itemList = favoritesUI.characters,
                 onClick = { url ->
                     navHostController.navigate(Screens.CharacterDetail.routeWithArgument(url))
-                }
+                },
+                listState = viewModel.charactersState.collectAsState().value
             )
             CategorySmallItems(
                 name = Categories.Films.title,
-                listState = viewModel.filmsState.collectAsState().value,
+                itemList = favoritesUI.films,
                 onClick = { url ->
                     navHostController.navigate(Screens.FilmDetail.routeWithArgument(url))
-                }
+                },
+                listState = viewModel.filmsState.collectAsState().value
             )
             CategorySmallItems(
                 name = Categories.Planets.title,
-                listState = viewModel.planetsState.collectAsState().value,
+                itemList = favoritesUI.planets,
                 onClick = { url ->
                     navHostController.navigate(Screens.PlanetDetail.routeWithArgument(url))
-                }
+                },
+                listState = viewModel.planetsState.collectAsState().value
             )
         }
     }

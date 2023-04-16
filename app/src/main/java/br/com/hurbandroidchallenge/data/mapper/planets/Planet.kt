@@ -58,7 +58,7 @@ fun Planet.toEntity() = UpdateEntity(
     lastSeen = lastSeen
 )
 
-fun Planet.toSmallMode() = SmallItemModel(
+fun Planet.toSmallModel() = SmallItemModel(
     url = url,
     image = image,
     name = name

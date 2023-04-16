@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.hurbandroidchallenge.data.mapper.characters.toSmallModel
-import br.com.hurbandroidchallenge.data.mapper.planets.toSmallMode
+import br.com.hurbandroidchallenge.data.mapper.planets.toSmallModel
 import br.com.hurbandroidchallenge.domain.model.Film
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetCharacterByUrlUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.GetFilmByUrlUseCase
@@ -101,7 +101,7 @@ class FilmDetailViewModel(
                 if (_filmUI.value.planets.isEmpty())
                     _planetsState.emit(StateUI.Error("There is no planets related to this movie"))
                 else
-                    _planetsState.emit(StateUI.Processed(_filmUI.value.planets.map { it.toSmallMode() }))
+                    _planetsState.emit(StateUI.Processed(_filmUI.value.planets.map { it.toSmallModel() }))
             }
         }
     }

@@ -1,15 +1,19 @@
 package br.com.hurbandroidchallenge.presentation.screens.home.last_seen
 
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import br.com.hurbandroidchallenge.commom.extension.symmetricDifference
 import br.com.hurbandroidchallenge.data.mapper.characters.toSmallModel
 import br.com.hurbandroidchallenge.data.mapper.films.toSmallModel
-import br.com.hurbandroidchallenge.data.mapper.planets.toSmallMode
+import br.com.hurbandroidchallenge.data.mapper.planets.toSmallModel
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetLastSeenCharactersUseCase
 import br.com.hurbandroidchallenge.domain.use_case.films.GetLastSeenFilmsUseCase
 import br.com.hurbandroidchallenge.domain.use_case.planets.GetLastSeenPlanetsUseCase
 import br.com.hurbandroidchallenge.presentation.model.SmallItemModel
 import br.com.hurbandroidchallenge.presentation.model.StateUI
+import br.com.hurbandroidchallenge.presentation.screens.home.last_seen.ui.LastSeenUI
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
@@ -21,6 +25,9 @@ class LastSeenViewModel(
     private val getLastSeenCharactersUseCase: GetLastSeenCharactersUseCase,
     private val getLastSeenFilmsUseCase: GetLastSeenFilmsUseCase,
 ) : ViewModel() {
+
+    private val _lastSeenUI = mutableStateOf(LastSeenUI())
+    val lastSeenUI: State<LastSeenUI> = _lastSeenUI
 
     private val _charactersState = MutableStateFlow<StateUI<List<SmallItemModel>>>(StateUI.Idle())
     val charactersState = _charactersState.asStateFlow()
@@ -44,10 +51,19 @@ class LastSeenViewModel(
             }.catch {
                 _charactersState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                if (data.isEmpty())
+                if (data.isEmpty()) {
                     _charactersState.emit(StateUI.Error("You didn't see any characters"))
-                else
-                    _charactersState.emit(StateUI.Processed(data.map { it.toSmallModel() }))
+                } else {
+                    val models = data.map { it.toSmallModel() }
+                    val hasDifference =
+                        (models symmetricDifference _lastSeenUI.value.characters).isNotEmpty()
+                    if (hasDifference) {
+                        _lastSeenUI.value = lastSeenUI.value.copy(
+                            characters = lastSeenUI.value.characters.plus(models).distinct()
+                        )
+                    }
+                    _charactersState.emit(StateUI.Processed(models))
+                }
             }
         }
     }
@@ -59,10 +75,19 @@ class LastSeenViewModel(
             }.catch {
                 _filmsState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                if (data.isEmpty())
+                if (data.isEmpty()) {
                     _filmsState.emit(StateUI.Error("You didn't see any films"))
-                else
-                    _filmsState.emit(StateUI.Processed(data.map { it.toSmallModel() }))
+                } else {
+                    val models = data.map { it.toSmallModel() }
+                    val hasDifference =
+                        (models symmetricDifference _lastSeenUI.value.films).isNotEmpty()
+                    if (hasDifference) {
+                        _lastSeenUI.value = lastSeenUI.value.copy(
+                            films = lastSeenUI.value.films.plus(models).distinct()
+                        )
+                    }
+                    _filmsState.emit(StateUI.Processed(models))
+                }
             }
         }
     }
@@ -74,10 +99,19 @@ class LastSeenViewModel(
             }.catch {
                 _planetsState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                if (data.isEmpty())
+                if (data.isEmpty()) {
                     _planetsState.emit(StateUI.Error("You didn't see any planets"))
-                else
-                    _planetsState.emit(StateUI.Processed(data.map { it.toSmallMode() }))
+                } else {
+                    val models = data.map { it.toSmallModel() }
+                    val hasDifference =
+                        (models symmetricDifference _lastSeenUI.value.characters).isNotEmpty()
+                    if (hasDifference) {
+                        _lastSeenUI.value = lastSeenUI.value.copy(
+                            planets = lastSeenUI.value.planets.plus(models).distinct()
+                        )
+                    }
+                    _planetsState.emit(StateUI.Processed(models))
+                }
             }
         }
     }

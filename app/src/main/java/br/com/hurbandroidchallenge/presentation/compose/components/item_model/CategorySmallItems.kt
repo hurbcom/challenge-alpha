@@ -19,8 +19,9 @@ import br.com.hurbandroidchallenge.presentation.model.StateUI
 @Composable
 fun CategorySmallItems(
     name: String,
-    listState: StateUI<List<SmallItemModel>>,
+    itemList: List<SmallItemModel>,
     onClick: (url: String) -> Unit,
+    listState: StateUI<List<SmallItemModel>>,
 ) {
     Card {
         Column(
@@ -34,37 +35,33 @@ fun CategorySmallItems(
             )
             when (listState) {
                 is StateUI.Error -> DefaultErrorText(message = listState.message)
-                is StateUI.Idle -> {
-                    LazyRow{
-                        items(10) {
-                            SmallCategoryItemPlaceholder()
-                        }
+                else -> SmallItemsList(onClick = onClick, list = itemList)
+            }
+        }
+    }
+}
+
+@Composable
+private fun SmallItemsList(onClick: (url: String) -> Unit, list: List<SmallItemModel>) {
+
+    LazyRow(
+        modifier = Modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(all = 16.dp)
+    ) {
+        if (list.isEmpty()) {
+            items(10) {
+                SmallCategoryItemPlaceholder()
+            }
+        } else {
+            items(list) { item ->
+                SmallCategoryItemImage(
+                    text = item.name,
+                    textColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                    image = item.image,
+                    onClick = {
+                        onClick(item.url)
                     }
-                }
-                is StateUI.Processed -> {
-                    LazyRow(
-                        modifier = Modifier.fillMaxWidth(),
-                        contentPadding = PaddingValues(all = 16.dp)
-                    ) {
-                        items(listState.data) { item ->
-                            SmallCategoryItemImage(
-                                text = item.name,
-                                textColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                image = item.image,
-                                onClick = {
-                                    onClick(item.url)
-                                }
-                            )
-                        }
-                    }
-                }
-                is StateUI.Processing -> {
-                    LazyRow{
-                        items(10) {
-                            SmallCategoryItemPlaceholder()
-                        }
-                    }
-                }
+                )
             }
         }
     }
