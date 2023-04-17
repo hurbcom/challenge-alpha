@@ -114,6 +114,6 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
     }
 
     abstract fun initViews()
-    abstract fun pagingFilter(search: CharSequence)
     abstract fun initAdapter()
+    open fun pagingFilter(search: CharSequence) {}
 }

@@ -8,6 +8,7 @@ import br.com.vaniala.starwars.data.local.dao.FilmDao
 import br.com.vaniala.starwars.data.local.datasource.LocalCategoryDataSourceImpl
 import br.com.vaniala.starwars.data.local.datasource.LocalCharacterDataSourceImpl
 import br.com.vaniala.starwars.data.local.datasource.LocalDataSource
+import br.com.vaniala.starwars.data.local.datasource.LocalFavoritesDataSourceImpl
 import br.com.vaniala.starwars.data.local.datasource.LocalFilmDataSourceImpl
 import br.com.vaniala.starwars.data.remote.datasource.RemoteDataSource
 import br.com.vaniala.starwars.data.remote.datasource.RemoteDataSourceImpl
@@ -58,6 +59,15 @@ object ProvidesModule {
         characterDao: CharacterDao,
     ): LocalDataSource.Characters {
         return LocalCharacterDataSourceImpl(characterDao)
+    }
+
+    @Singleton
+    @Provides
+    fun providesLocalFavoritesDataSource(
+        filmDao: FilmDao,
+        characterDao: CharacterDao,
+    ): LocalDataSource.Favorites {
+        return LocalFavoritesDataSourceImpl(filmDao, characterDao)
     }
 
     @Singleton

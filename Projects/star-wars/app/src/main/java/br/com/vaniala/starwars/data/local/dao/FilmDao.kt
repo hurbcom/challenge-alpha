@@ -26,5 +26,8 @@ interface FilmDao {
     fun lastUpdated(): Long
 
     @Query("SELECT COUNT(*) FROM film")
-    fun getCount(): Int
+    suspend fun getCount(): Int
+
+    @Query("SELECT * FROM film WHERE isFavorite = 1")
+    suspend fun getFavorites(): List<Film>
 }

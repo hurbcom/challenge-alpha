@@ -1,6 +1,7 @@
 package br.com.vaniala.starwars.data.local.datasource
 
 import br.com.vaniala.starwars.domain.model.Category
+import br.com.vaniala.starwars.domain.model.Favorite
 import br.com.vaniala.starwars.domain.model.Film
 import br.com.vaniala.starwars.domain.model.People
 
@@ -27,6 +28,8 @@ interface LocalDataSource {
         suspend fun lastUpdated(): Long
 
         suspend fun getCount(): Int
+
+        suspend fun getFavorites(): List<Film>
     }
 
     interface Characters {
@@ -40,5 +43,11 @@ interface LocalDataSource {
         suspend fun lastUpdated(): Long
 
         suspend fun getCount(): Int
+
+        suspend fun getFavorites(): List<People>
+    }
+
+    interface Favorites {
+        suspend fun getFavorites(): Favorite
     }
 }

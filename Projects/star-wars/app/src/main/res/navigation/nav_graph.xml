@@ -56,4 +56,21 @@
         android:name="character"
         app:argType="br.com.vaniala.starwars.domain.model.People" />
     </fragment>
+    <fragment
+        android:id="@+id/favorites"
+        android:name="br.com.vaniala.starwars.ui.favorites.FavoritesFragment"
+        android:label="@string/nav_label_favorites"
+        tools:layout="@layout/fragment_favorites">
+    <argument
+        android:name="character"
+        app:argType="br.com.vaniala.starwars.domain.model.People" />
+        <action
+            android:id="@+id/action_favorites_to_films_details"
+            app:destination="@id/films_details"
+            app:popUpTo="@id/favorites" />
+        <action
+            android:id="@+id/action_favorites_to_characters_details"
+            app:destination="@id/characters_details"
+            app:popUpTo="@id/favorites" />
+    </fragment>
 </navigation>

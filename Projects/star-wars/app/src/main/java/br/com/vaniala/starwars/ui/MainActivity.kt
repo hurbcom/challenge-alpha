@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
+import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.ActivityMainBinding
 import br.com.vaniala.starwars.ui.viewmodel.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,5 +28,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         setContentView(binding.root)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        binding.mainActivityBottomNavigation
+            .setupWithNavController(navController)
     }
 }

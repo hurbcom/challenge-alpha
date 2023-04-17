@@ -26,4 +26,7 @@ class LocalFilmDataSourceImpl @Inject constructor(
 
     override suspend fun getCount(): Int =
         filmDao.getCount()
+
+    override suspend fun getFavorites(): List<Film> =
+        filmDao.getFavorites()
 }

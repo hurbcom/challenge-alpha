@@ -26,4 +26,7 @@ class LocalCharacterDataSourceImpl @Inject constructor(
 
     override suspend fun getCount(): Int =
         characterDao.getCount()
+
+    override suspend fun getFavorites(): List<People> =
+        characterDao.getFavorites()
 }

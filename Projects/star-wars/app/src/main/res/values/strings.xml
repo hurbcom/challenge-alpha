@@ -6,6 +6,7 @@
     <string name="nav_label_films_details">Films Details</string>
     <string name="nav_label_characters">Characters</string>
     <string name="nav_label_characters_details">Characters Details</string>
+    <string name="nav_label_favorites">Favorites</string>
     <!--    home-->
     <string name="home_title">Categories</string>
     <string name="home_empty_categories">🤡 Empty categories</string>
@@ -43,12 +44,17 @@
     <string name="characters_details_skin"><b>Skin Color:</b> %1$s</string>
     <string name="characters_details_opening_crawl">%1$s</string>
     <string name="characters_details_related_films">Related Films</string>
-
     <!--    grid-->
     <string name="grid_img_grid_description">image from category</string>
     <string name="grid_icon_back">image to back</string>
     <string name="grid_icon_favorite">image to favorite</string>
     <string name="grid_error">🥴 Something wrong</string>
-
+    <!--    favorites-->
+    <string name="favorites_title">Favorites</string>
+    <string name="favorites_search_hint">Search favorites</string>
+    <string name="favorites_empty_films">🤡 Empty favorites</string>
+    <string name="favorites_icon_back">image to back</string>
+    <string name="favorites_characters">Characters</string>
+    <string name="favorites_films">Films</string>
 
 </resources>

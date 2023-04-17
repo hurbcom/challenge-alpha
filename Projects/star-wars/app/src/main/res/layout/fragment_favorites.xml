@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/favorites"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/fragment_favorites_text_title_film"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/screen_padding_extra_large"
+        android:layout_marginStart="@dimen/screen_padding_large"
+        android:gravity="start|center_vertical"
+        android:text="@string/favorites_films"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_size_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_favorites_film_recycler"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_padding_large"
+        android:layout_marginTop="@dimen/screen_padding_extra_large"
+        android:layout_marginEnd="@dimen/screen_padding_large"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_favorites_text_title_film" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_favorites_character_recycler"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_padding_large"
+        android:layout_marginTop="@dimen/screen_padding_extra_large"
+        android:layout_marginEnd="@dimen/screen_padding_large"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_favorites_text_title_people" />
+
+    <TextView
+        android:id="@+id/fragment_favorites_text_title_people"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_padding_large"
+        android:layout_marginTop="@dimen/screen_padding_large"
+        android:gravity="start|center_vertical"
+        android:text="@string/favorites_characters"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_size_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_favorites_film_recycler" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

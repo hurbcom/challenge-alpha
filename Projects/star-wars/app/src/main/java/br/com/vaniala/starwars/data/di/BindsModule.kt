@@ -2,9 +2,11 @@ package br.com.vaniala.starwars.data.di
 
 import br.com.vaniala.starwars.data.repository.CategoryRepositoryImpl
 import br.com.vaniala.starwars.data.repository.CharacterRepositoryImpl
+import br.com.vaniala.starwars.data.repository.FavoritesRepositoryImpl
 import br.com.vaniala.starwars.data.repository.FilmRepositoryImpl
 import br.com.vaniala.starwars.domain.repository.CategoryRepository
 import br.com.vaniala.starwars.domain.repository.CharacterRepository
+import br.com.vaniala.starwars.domain.repository.FavoritesRepository
 import br.com.vaniala.starwars.domain.repository.FilmRepository
 import dagger.Binds
 import dagger.Module
@@ -38,4 +40,10 @@ interface BindsModule {
     fun bindsCharacterRepository(
         characterRepository: CharacterRepositoryImpl,
     ): CharacterRepository
+
+    @Binds
+    @Singleton
+    fun bindsFavoritesRepository(
+        characterRepository: FavoritesRepositoryImpl,
+    ): FavoritesRepository
 }

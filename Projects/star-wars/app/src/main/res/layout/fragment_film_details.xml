@@ -89,8 +89,8 @@
 
         <ImageView
             android:id="@+id/fragments_films_details_image_favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginEnd="@dimen/screen_padding_medium"
             android:contentDescription="@string/fragments_films_details"
             android:padding="@dimen/screen_padding_small"

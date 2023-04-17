@@ -8,12 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.FragmentCharactersDetailsBinding
+import br.com.vaniala.starwars.ui.characters.viewmodel.CharactersDetailsViewModel
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
@@ -29,6 +34,8 @@ class CharactersDetailsFragment : Fragment() {
     }
     private var _binding: FragmentCharactersDetailsBinding? = null
     private val binding: FragmentCharactersDetailsBinding get() = _binding!!
+
+    private val viewModel: CharactersDetailsViewModel by viewModels()
 
     private val findNavController by lazy {
         findNavController()
@@ -54,7 +61,10 @@ class CharactersDetailsFragment : Fragment() {
                 false
         }
         super.onViewCreated(view, savedInstanceState)
+        viewModel.savedStateHandle["isFavorite"] = character.isFavorite
         showCharacter()
+        setFavoriteOnClickListener()
+        observeFavoriteStatus()
         initButtonBack()
     }
 
@@ -64,6 +74,13 @@ class CharactersDetailsFragment : Fragment() {
         }
     }
 
+    private fun setFavoriteOnClickListener() {
+        binding.fragmentsCharacterDetailsImageFavorite.setOnClickListener {
+            lifecycleScope.launch {
+                viewModel.favorite(character)
+            }
+        }
+    }
     private fun isLightMode(context: Context): Boolean {
         val darkModeFlag = context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         return darkModeFlag == Configuration.UI_MODE_NIGHT_NO
@@ -82,6 +99,22 @@ class CharactersDetailsFragment : Fragment() {
             fragmentsCharactersDetailsHair.text = getString(R.string.characters_details_hair, character.hair_color)
             fragmentsCharactersDetailsSkin.text = getString(R.string.characters_details_skin, character.skin_color)
             fragmentCharactersDetailsTextName.text = character.name
+        }
+    }
+
+    private fun observeFavoriteStatus() {
+        lifecycleScope.launch {
+            viewModel.isFavorite.collectLatest { isFavorite ->
+                updateFavoriteIcon(isFavorite)
+            }
+        }
+    }
+
+    private fun updateFavoriteIcon(isFavorite: Boolean) {
+        if (isFavorite) {
+            binding.fragmentsCharacterDetailsImageFavorite.setImageResource(R.drawable.ic_action_favorite)
+        } else {
+            binding.fragmentsCharacterDetailsImageFavorite.setImageResource(R.drawable.ic_action_not_favorite)
         }
     }
 

@@ -72,13 +72,26 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+        <ImageView
+            android:id="@+id/fragments_character_details_image_favorite"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="@dimen/screen_padding_large"
+            android:contentDescription="@string/fragments_films_details"
+            android:padding="@dimen/screen_padding_small"
+            android:src="@drawable/ic_action_not_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragments_characters_details_constraint_image" />
+
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fragments_characters_details_constraint_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragments_characters_details_constraint_image">
+            app:layout_constraintTop_toBottomOf="@+id/fragments_character_details_image_favorite">
 
             <ViewAnimator
                 android:layout_width="1dp"

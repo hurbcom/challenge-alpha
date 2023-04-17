@@ -26,5 +26,8 @@ interface CharacterDao {
     fun lastUpdated(): Long
 
     @Query("SELECT COUNT(*) FROM character")
-    fun getCount(): Int
+    suspend fun getCount(): Int
+
+    @Query("SELECT * FROM character WHERE isFavorite = 1")
+    suspend fun getFavorites(): List<People>
 }
