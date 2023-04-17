@@ -3,6 +3,7 @@ package br.com.vaniala.starwars.data.di
 import br.com.vaniala.starwars.data.local.dao.CategoryDao
 import br.com.vaniala.starwars.data.local.dao.CharacterDao
 import br.com.vaniala.starwars.data.local.dao.FilmDao
+import br.com.vaniala.starwars.data.local.dao.LastSeenDao
 import br.com.vaniala.starwars.data.local.database.StarWarsDatabase
 import dagger.Module
 import dagger.Provides
@@ -31,4 +32,9 @@ class DaosModule {
     fun providesCharacterDao(
         db: StarWarsDatabase,
     ): CharacterDao = db.characterDao()
+
+    @Provides
+    fun providesLastSeenDao(
+        db: StarWarsDatabase,
+    ): LastSeenDao = db.lastSeenDao()
 }

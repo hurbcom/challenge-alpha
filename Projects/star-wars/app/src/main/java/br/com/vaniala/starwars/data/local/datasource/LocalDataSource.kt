@@ -3,6 +3,7 @@ package br.com.vaniala.starwars.data.local.datasource
 import br.com.vaniala.starwars.domain.model.Category
 import br.com.vaniala.starwars.domain.model.Favorite
 import br.com.vaniala.starwars.domain.model.Film
+import br.com.vaniala.starwars.domain.model.LastSeen
 import br.com.vaniala.starwars.domain.model.People
 
 /**
@@ -49,5 +50,9 @@ interface LocalDataSource {
 
     interface Favorites {
         suspend fun getFavorites(): Favorite
+    }
+    interface LastSeenI {
+        suspend fun getLastSeen(): List<LastSeen>
+        suspend fun insert(lastSeen: LastSeen)
     }
 }

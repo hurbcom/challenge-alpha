@@ -4,10 +4,12 @@ import br.com.vaniala.starwars.data.repository.CategoryRepositoryImpl
 import br.com.vaniala.starwars.data.repository.CharacterRepositoryImpl
 import br.com.vaniala.starwars.data.repository.FavoritesRepositoryImpl
 import br.com.vaniala.starwars.data.repository.FilmRepositoryImpl
+import br.com.vaniala.starwars.data.repository.LastSeenRepositoryImpl
 import br.com.vaniala.starwars.domain.repository.CategoryRepository
 import br.com.vaniala.starwars.domain.repository.CharacterRepository
 import br.com.vaniala.starwars.domain.repository.FavoritesRepository
 import br.com.vaniala.starwars.domain.repository.FilmRepository
+import br.com.vaniala.starwars.domain.repository.LastSeenRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -46,4 +48,10 @@ interface BindsModule {
     fun bindsFavoritesRepository(
         characterRepository: FavoritesRepositoryImpl,
     ): FavoritesRepository
+
+    @Binds
+    @Singleton
+    fun bindsLastSeenRepository(
+        lastSeeRepository: LastSeenRepositoryImpl,
+    ): LastSeenRepository
 }

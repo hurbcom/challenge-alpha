@@ -5,8 +5,10 @@ import androidx.room.RoomDatabase
 import br.com.vaniala.starwars.data.local.dao.CategoryDao
 import br.com.vaniala.starwars.data.local.dao.CharacterDao
 import br.com.vaniala.starwars.data.local.dao.FilmDao
+import br.com.vaniala.starwars.data.local.dao.LastSeenDao
 import br.com.vaniala.starwars.domain.model.Category
 import br.com.vaniala.starwars.domain.model.Film
+import br.com.vaniala.starwars.domain.model.LastSeen
 import br.com.vaniala.starwars.domain.model.People
 
 /**
@@ -19,6 +21,7 @@ import br.com.vaniala.starwars.domain.model.People
         Category::class,
         Film::class,
         People::class,
+        LastSeen::class,
     ],
     version = 1,
     exportSchema = true,
@@ -27,4 +30,5 @@ abstract class StarWarsDatabase : RoomDatabase() {
     abstract fun categoryDao(): CategoryDao
     abstract fun filmDao(): FilmDao
     abstract fun characterDao(): CharacterDao
+    abstract fun lastSeenDao(): LastSeenDao
 }
