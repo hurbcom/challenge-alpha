@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.Flow
 class GetPlanetsUseCase(
     private val repository: PlanetsRepository,
 ) {
-    operator fun invoke(url: String, clearLocalDatasource: Boolean): Flow<PagedList<Planet>> {
-        return repository.getItemList(url, clearLocalDatasource)
-    }
+    operator fun invoke(url: String, clearLocalDatasource: Boolean = false) =
+        repository.getItemList(url, clearLocalDatasource)
 }

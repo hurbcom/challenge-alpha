@@ -5,5 +5,6 @@ import br.com.hurbandroidchallenge.data.repository.FilmsRepository
 class GetFilmsUseCase(
     private val repository: FilmsRepository,
 ) {
-    operator fun invoke(url: String, clearLocalDatasource: Boolean) = repository.getItemList(url, clearLocalDatasource)
+    operator fun invoke(url: String, clearLocalDatasource: Boolean = false) =
+        repository.getItemList(url, clearLocalDatasource)
 }

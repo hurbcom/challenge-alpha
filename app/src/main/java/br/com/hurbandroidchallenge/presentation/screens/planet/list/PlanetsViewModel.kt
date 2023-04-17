@@ -35,7 +35,7 @@ class PlanetsViewModel(
 
     private fun loadPlanets() {
         viewModelScope.launch {
-            getPlanetsUseCase(url = ApiUrls.planets, clearLocalDatasource = false).onStart {
+            getPlanetsUseCase(url = ApiUrls.planets).onStart {
                 _planetsState.emit(StateUI.Processing())
             }.catch {
                 _planetsState.emit(StateUI.Error(it.message.orEmpty()))

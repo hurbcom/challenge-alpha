@@ -12,7 +12,6 @@ import br.com.hurbandroidchallenge.data.mapper.planets.toPlanet
 import br.com.hurbandroidchallenge.data.remote.data_sources.StarWarsBookRemoteDataSource
 import br.com.hurbandroidchallenge.data.remote.model.PlanetDto
 import br.com.hurbandroidchallenge.data.remote.util.NetworkManager
-import br.com.hurbandroidchallenge.data.remote.util.apiCall
 import br.com.hurbandroidchallenge.domain.model.PagedList
 import br.com.hurbandroidchallenge.domain.model.Planet
 import br.com.hurbandroidchallenge.domain.repository.StarWarsBookRepository
@@ -24,7 +23,7 @@ class PlanetsRepository(
     private val localDataSource: PlanetsLocalDataSource,
     private val planetDtoToEntityMapper: PagedListMapper<PlanetDto, PlanetEntity>,
     private val planetEntityToPlanetMapper: NullableListMapper<PlanetEntity, Planet>,
-    private val networkManager: NetworkManager
+    private val networkManager: NetworkManager,
 ) : StarWarsBookRepository<Planet> {
 
     private val preferences = PreferencesWrapper.getInstance()
@@ -35,19 +34,17 @@ class PlanetsRepository(
             if (preferences.isPlanetsUpToDate()) {
                 emit(pagedListOf(getLocalPlanets()))
             } else if (networkManager.hasInternetConnection()) {
-                apiCall {
-                    val remotePlanets = remoteDataSource.getPlanets(url)
-                    localDataSource.insertEntities(planetDtoToEntityMapper.map(remotePlanets).results)
-                    if (remotePlanets.next == null)
-                        preferences.planetsIsUpToDate()
-                    emit(
-                        PagedList(
-                            next = remotePlanets.next,
-                            previous = remotePlanets.previous,
-                            results = getLocalPlanets()
-                        )
+                val remotePlanets = remoteDataSource.getPlanets(url)
+                localDataSource.insertEntities(planetDtoToEntityMapper.map(remotePlanets).results)
+                if (remotePlanets.next == null)
+                    preferences.planetsIsUpToDate()
+                emit(
+                    PagedList(
+                        next = remotePlanets.next,
+                        previous = remotePlanets.previous,
+                        results = getLocalPlanets()
                     )
-                }
+                )
             } else {
                 emit(pagedListOf(getLocalPlanets()))
             }

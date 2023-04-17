@@ -35,7 +35,7 @@ class CharactersViewModel(
 
     fun loadCharacters() {
         viewModelScope.launch {
-            getCharactersUseCase(url = ApiUrls.characters, clearLocalDataSource = false).onStart {
+            getCharactersUseCase(url = ApiUrls.characters).onStart {
                 _charactersState.emit(StateUI.Processing())
             }.catch {
                 _charactersState.emit(StateUI.Error(it.message.orEmpty()))

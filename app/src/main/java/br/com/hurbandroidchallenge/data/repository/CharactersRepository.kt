@@ -12,7 +12,6 @@ import br.com.hurbandroidchallenge.data.mapper.characters.toPeople
 import br.com.hurbandroidchallenge.data.remote.data_sources.StarWarsBookRemoteDataSource
 import br.com.hurbandroidchallenge.data.remote.model.PeopleDto
 import br.com.hurbandroidchallenge.data.remote.util.NetworkManager
-import br.com.hurbandroidchallenge.data.remote.util.apiCall
 import br.com.hurbandroidchallenge.domain.model.PagedList
 import br.com.hurbandroidchallenge.domain.model.People
 import br.com.hurbandroidchallenge.domain.repository.StarWarsBookRepository
@@ -24,7 +23,7 @@ class CharactersRepository(
     private val localDataSource: CharactersLocalDataSource,
     private val peopleDtoToEntityMapper: PagedListMapper<PeopleDto, PeopleEntity>,
     private val peopleEntityToPeopleMapper: NullableListMapper<PeopleEntity, People>,
-    private val networkManager: NetworkManager
+    private val networkManager: NetworkManager,
 ) : StarWarsBookRepository<People> {
 
     private val preferences = PreferencesWrapper.getInstance()
@@ -36,19 +35,17 @@ class CharactersRepository(
             if (preferences.isCharactersUpToDate()) {
                 emit(pagedListOf(getLocalCharacters()))
             } else if (networkManager.hasInternetConnection()) {
-                apiCall {
-                    val remoteCharacters = remoteDataSource.getCharacters(url)
-                    localDataSource.insertEntities(peopleDtoToEntityMapper.map(remoteCharacters).results)
-                    if (remoteCharacters.next == null)
-                        preferences.charactersIsUpToDate()
-                    emit(
-                        PagedList(
-                            next = remoteCharacters.next,
-                            previous = remoteCharacters.previous,
-                            results = getLocalCharacters()
-                        )
+                val remoteCharacters = remoteDataSource.getCharacters(url)
+                localDataSource.insertEntities(peopleDtoToEntityMapper.map(remoteCharacters).results)
+                if (remoteCharacters.next == null)
+                    preferences.charactersIsUpToDate()
+                emit(
+                    PagedList(
+                        next = remoteCharacters.next,
+                        previous = remoteCharacters.previous,
+                        results = getLocalCharacters()
                     )
-                }
+                )
             } else {
                 emit(pagedListOf(getLocalCharacters()))
             }

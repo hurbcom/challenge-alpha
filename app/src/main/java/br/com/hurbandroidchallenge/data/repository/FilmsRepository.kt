@@ -12,7 +12,6 @@ import br.com.hurbandroidchallenge.data.mapper.films.toFilm
 import br.com.hurbandroidchallenge.data.remote.data_sources.StarWarsBookRemoteDataSource
 import br.com.hurbandroidchallenge.data.remote.model.FilmDto
 import br.com.hurbandroidchallenge.data.remote.util.NetworkManager
-import br.com.hurbandroidchallenge.data.remote.util.apiCall
 import br.com.hurbandroidchallenge.domain.model.Film
 import br.com.hurbandroidchallenge.domain.model.PagedList
 import br.com.hurbandroidchallenge.domain.repository.StarWarsBookRepository
@@ -29,7 +28,8 @@ class FilmsRepository(
 
     private val preferences = PreferencesWrapper.getInstance()
 
-    private suspend fun getLocalFilms() = filmEntityToPeopleMapper.map(localDataSource.getEntities())
+    private suspend fun getLocalFilms() =
+        filmEntityToPeopleMapper.map(localDataSource.getEntities())
 
     private suspend fun getLocalFilmByUrl(url: String) =
         localDataSource.getEntityById(url.idFromUrl()).toFilm()
@@ -40,20 +40,18 @@ class FilmsRepository(
             if (preferences.isFilmsUpToDate()) {
                 emit(pagedListOf(getLocalFilms()))
             } else if (networkManager.hasInternetConnection()) {
-                apiCall {
-                    val remoteFilms = remoteDataSource.getFilms(url)
-                    localDataSource.insertEntities(filmDtoToEntityMapper.map(remoteFilms).results)
-                    if (remoteFilms.next == null) {
-                        preferences.filmsIsUpToDate()
-                    }
-                    emit(
-                        PagedList(
-                            next = remoteFilms.next,
-                            previous = remoteFilms.previous,
-                            results = getLocalFilms()
-                        )
-                    )
+                val remoteFilms = remoteDataSource.getFilms(url)
+                localDataSource.insertEntities(filmDtoToEntityMapper.map(remoteFilms).results)
+                if (remoteFilms.next == null) {
+                    preferences.filmsIsUpToDate()
                 }
+                emit(
+                    PagedList(
+                        next = remoteFilms.next,
+                        previous = remoteFilms.previous,
+                        results = getLocalFilms()
+                    )
+                )
             } else {
                 emit(pagedListOf(getLocalFilms()))
             }
