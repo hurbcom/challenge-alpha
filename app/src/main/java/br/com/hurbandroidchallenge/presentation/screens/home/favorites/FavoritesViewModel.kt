@@ -51,17 +51,17 @@ class FavoritesViewModel(
             }.catch {
                 _charactersState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                if (data.isEmpty()) {
+                val models = data.map { it.toSmallModel() }
+                val hasDifference =
+                    (models symmetricDifference _favoritesUI.value.characters).isNotEmpty()
+                if (hasDifference) {
+                    _favoritesUI.value = favoritesUI.value.copy(
+                        characters = models
+                    )
+                }
+                if (favoritesUI.value.characters.isEmpty()) {
                     _charactersState.emit(StateUI.Error("You have no favorites characters"))
                 } else {
-                    val models = data.map { it.toSmallModel() }
-                    val hasDifference =
-                        (models symmetricDifference _favoritesUI.value.characters).isNotEmpty()
-                    if (hasDifference) {
-                        _favoritesUI.value = favoritesUI.value.copy(
-                            characters = favoritesUI.value.characters.plus(models).distinct()
-                        )
-                    }
                     _charactersState.emit(StateUI.Processed(models))
                 }
             }
@@ -75,17 +75,17 @@ class FavoritesViewModel(
             }.catch {
                 _filmsState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                if (data.isEmpty()) {
+                val models = data.map { it.toSmallModel() }
+                val hasDifference =
+                    (models symmetricDifference _favoritesUI.value.films).isNotEmpty()
+                if (hasDifference) {
+                    _favoritesUI.value = favoritesUI.value.copy(
+                        films = models
+                    )
+                }
+                if (favoritesUI.value.films.isEmpty()) {
                     _filmsState.emit(StateUI.Error("You have no favorites planets"))
                 } else {
-                    val models = data.map { it.toSmallModel() }
-                    val hasDifference =
-                        (models symmetricDifference _favoritesUI.value.films).isNotEmpty()
-                    if (hasDifference) {
-                        _favoritesUI.value = favoritesUI.value.copy(
-                            films = favoritesUI.value.films.plus(models).distinct()
-                        )
-                    }
                     _filmsState.emit(StateUI.Processed(models))
                 }
             }
@@ -99,17 +99,17 @@ class FavoritesViewModel(
             }.catch {
                 _planetsState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                if (data.isEmpty()) {
+                val models = data.map { it.toSmallModel() }
+                val hasDifference =
+                    (models symmetricDifference _favoritesUI.value.planets).isNotEmpty()
+                if (hasDifference) {
+                    _favoritesUI.value = favoritesUI.value.copy(
+                        planets = models
+                    )
+                }
+                if (favoritesUI.value.planets.isEmpty()) {
                     _planetsState.emit(StateUI.Error("You have no favorites planets"))
                 } else {
-                    val models = data.map { it.toSmallModel() }
-                    val hasDifference =
-                        (models symmetricDifference _favoritesUI.value.planets).isNotEmpty()
-                    if (hasDifference) {
-                        _favoritesUI.value = favoritesUI.value.copy(
-                            planets = favoritesUI.value.planets.plus(models).distinct()
-                        )
-                    }
                     _planetsState.emit(StateUI.Processed(models))
                 }
             }

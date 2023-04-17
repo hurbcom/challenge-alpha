@@ -53,14 +53,14 @@ class FilmDetailViewModel(
             }.catch {
                 _filmState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _filmUI.value = filmUI.value.copy(
-                    film = data
-                )
-                setFilmLastSeenUseCase(data).collect {
-                    _filmState.emit(StateUI.Processed(data))
+                setFilmLastSeenUseCase(data).collect { film ->
+                    _filmUI.value = filmUI.value.copy(
+                        film = film
+                    )
+                    _filmState.emit(StateUI.Processed(film))
+                    loadCharacters(film.characters)
+                    loadPlanets(film.planets)
                 }
-                loadCharacters(data.characters)
-                loadPlanets(data.planets)
             }
         }
     }

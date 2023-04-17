@@ -50,12 +50,12 @@ class PlanetDetailViewModel(
             }.catch {
                 _planetState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _planetUI.value = planetUI.value.copy(planet = data)
-                setLastSeenUseCase(data).collect {
-                    _planetState.emit(StateUI.Processed(data))
+                setLastSeenUseCase(data).collect { planet ->
+                    _planetUI.value = planetUI.value.copy(planet = planet)
+                    loadCharacters(planet.residents)
+                    loadFilms(planet.films)
+                    _planetState.emit(StateUI.Processed(planet))
                 }
-                loadCharacters(data.residents)
-                loadFilms(data.films)
             }
         }
     }

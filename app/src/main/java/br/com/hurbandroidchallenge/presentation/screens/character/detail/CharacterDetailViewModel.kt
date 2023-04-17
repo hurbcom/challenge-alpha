@@ -52,12 +52,12 @@ class CharacterDetailViewModel(
             }.catch {
                 _characterState.emit(StateUI.Error(it.message.orEmpty()))
             }.collect { data ->
-                _characterUI.value = characterUI.value.copy(character = data)
-                setCharacterLastSeenUseCase(data).collect {
-                    _characterState.emit(StateUI.Processed(data))
+                setCharacterLastSeenUseCase(data).collect { character ->
+                    _characterUI.value = characterUI.value.copy(character = character)
+                    loadFilms(character.films)
+                    loadHomeWorld(character.homeWorld)
+                    _characterState.emit(StateUI.Processed(character))
                 }
-                loadFilms(data.films)
-                loadHomeWorld(data.homeWorld)
             }
         }
     }
