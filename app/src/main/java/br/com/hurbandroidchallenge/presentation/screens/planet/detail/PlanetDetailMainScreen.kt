@@ -9,14 +9,13 @@ import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import br.com.hurbandroidchallenge.data.mapper.planets.toModel
-import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemsExpandableList
 import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemDetail
+import br.com.hurbandroidchallenge.presentation.compose.components.item_model.CategoryItemsExpandableList
 import br.com.hurbandroidchallenge.presentation.compose.navigation.Screens
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.error.DefaultErrorScreen
 import br.com.hurbandroidchallenge.presentation.compose.widgets.state.loading.DefaultLoadingScreen

@@ -1,11 +1,8 @@
 package br.com.hurbandroidchallenge.data.local
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import br.com.hurbandroidchallenge.data.mapper.characters.charactersEntity
-import br.com.hurbandroidchallenge.data.mapper.characters.toPeople
 import br.com.hurbandroidchallenge.data.remote.config.ApiUrls
 import br.com.hurbandroidchallenge.domain.use_case.characters.GetCharacterByUrlUseCase
-import br.com.hurbandroidchallenge.domain.use_case.characters.GetFavoriteCharactersUseCase
 import br.com.hurbandroidchallenge.domain.use_case.characters.SetFavoriteCharacterUseCase
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest
