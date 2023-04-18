@@ -2,7 +2,9 @@ package br.com.vaniala.starwars.ui.films
 
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadState
@@ -39,7 +41,10 @@ class FilmsFragment : BaseFragment<FilmViewModel>() {
 
     override fun pagingFilter(search: CharSequence) {
         lifecycleScope.launch {
-            viewModel.pagingFilter(search.toString())
+            if (search.isEmpty()) {
+                binding.fragmentsGridEmpty.isVisible = false
+            }
+            viewModel.pagingFilter(search.toString()).collectLatest(adapter::submitData)
         }
     }
 
@@ -52,11 +57,11 @@ class FilmsFragment : BaseFragment<FilmViewModel>() {
                 FilmsFragmentDirections.actionFilmsToFilmsDetails(it),
             )
         }
-
         lifecycleScope.launch {
-            viewModel.films.collectLatest(adapter::submitData)
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.films.collectLatest(adapter::submitData)
+            }
         }
-
         showLoadState()
     }
 
@@ -64,8 +69,11 @@ class FilmsFragment : BaseFragment<FilmViewModel>() {
         lifecycleScope.launch {
             adapter.loadStateFlow.collect { loadState ->
 
-                binding.fragmentGridShimmer.isVisible = loadState.refresh is LoadState.Loading
-                binding.fragmentGridRecycler.isVisible = loadState.refresh is LoadState.NotLoading
+                binding.fragmentGridShimmer.isVisible =
+                    viewModel.filterTitle.value.isEmpty() && adapter.itemCount < 1 && (
+                        loadState.refresh is
+                            LoadState.Loading || loadState.source.refresh is LoadState.Loading
+                        )
                 binding.fragmentsGridEmpty.isVisible =
                     adapter.itemCount == 0 && loadState.refresh is LoadState.NotLoading
 

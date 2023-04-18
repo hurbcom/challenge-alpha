@@ -7,11 +7,9 @@ import androidx.paging.cachedIn
 import br.com.vaniala.starwars.domain.model.People
 import br.com.vaniala.starwars.domain.usecase.GetCharactersBDAndRemoteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
@@ -28,16 +26,11 @@ class CharacterViewModel @Inject constructor(
     val filterName: StateFlow<String>
         get() = _filterName
 
-    private val _characters = MutableSharedFlow<PagingData<People>>()
-    val characters: SharedFlow<PagingData<People>>
-        get() = _characters
+    var characters: Flow<PagingData<People>> = getCharactersBDUseCase(_filterName.value).cachedIn(viewModelScope)
 
-    fun pagingFilter(name: String) {
+    fun pagingFilter(name: String): Flow<PagingData<People>> {
         _filterName.value = name
-        viewModelScope.launch {
-            getCharactersBDUseCase(_filterName.value).cachedIn(viewModelScope).collect {
-                _characters.emit(it)
-            }
-        }
+        characters = getCharactersBDUseCase(_filterName.value).cachedIn(viewModelScope)
+        return characters
     }
 }

@@ -25,6 +25,8 @@
     <string name="characters_search_hint">Search by name</string>
     <string name="characters_icon_back">image to back</string>
     <string name="characters_empty_characters">🤡 Empty characters</string>
+    <!--    characters footer-->
+    <string name="characters_footer_msg">Could not load</string>
     <!--    films details-->
     <string name="films_details_title">Films Details</string>
     <string name="films_details_img_film_description">image film</string>
@@ -33,7 +35,7 @@
     <string name="films_details_opening_crawl">%1$s</string>
     <string name="films_details_related_characters">Related Characters</string>
     <string name="fragments_films_details">image to favorite</string>
- <!--    characters details-->
+    <!--    characters details-->
     <string name="characters_details_name">Characters Details</string>
     <string name="characters_details_img_characters_description">image characters</string>
     <string name="characters_details_homeworld">Homeworld</string>

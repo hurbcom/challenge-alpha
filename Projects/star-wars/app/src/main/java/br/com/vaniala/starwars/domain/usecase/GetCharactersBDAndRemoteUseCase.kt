@@ -23,7 +23,6 @@ private const val PAGE_SIZE = 10
 
 class GetCharactersBDAndRemoteUseCase @Inject constructor(
     private val repository: CharacterRepository,
-    private val charactersDataSource: LocalDataSource.Characters,
     private val starWarsDatabase: StarWarsDatabase,
     private val statusConnectivity: StatusConnectivity,
 ) {

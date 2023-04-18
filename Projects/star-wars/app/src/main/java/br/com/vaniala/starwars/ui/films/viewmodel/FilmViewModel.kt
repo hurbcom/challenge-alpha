@@ -8,11 +8,9 @@ import androidx.paging.cachedIn
 import br.com.vaniala.starwars.domain.model.Film
 import br.com.vaniala.starwars.domain.usecase.GetFilmsBDAndRemoteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
@@ -31,16 +29,11 @@ class FilmViewModel @Inject constructor(
     val filterTitle: StateFlow<String>
         get() = _filterTitle
 
-    private val _films = MutableSharedFlow<PagingData<Film>>()
-    val films: SharedFlow<PagingData<Film>>
-        get() = _films
+    var films = getFilmsBDAndRemoteUseCase(_filterTitle.value).cachedIn(viewModelScope)
 
-    fun pagingFilter(title: String) {
+    fun pagingFilter(title: String): Flow<PagingData<Film>> {
         _filterTitle.value = title
-        viewModelScope.launch {
-            getFilmsBDAndRemoteUseCase(_filterTitle.value).cachedIn(this).collect {
-                _films.emit(it)
-            }
-        }
+        films = getFilmsBDAndRemoteUseCase(_filterTitle.value).cachedIn(viewModelScope)
+        return films
     }
 }

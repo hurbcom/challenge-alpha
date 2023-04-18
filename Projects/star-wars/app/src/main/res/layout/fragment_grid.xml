@@ -73,7 +73,6 @@
         android:layout_height="@dimen/zero_dp"
         android:layout_marginTop="@dimen/screen_padding_extra_large"
         android:layout_marginBottom="@dimen/title_size_large"
-        android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/fragment_grid_text_title"
