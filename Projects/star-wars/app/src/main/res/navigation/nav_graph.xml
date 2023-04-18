@@ -41,7 +41,7 @@
         android:id="@+id/characters"
         android:name="br.com.vaniala.starwars.ui.characters.CharactersFragment"
         android:label="@string/nav_label_characters"
-        tools:layout="@layout/fragment_characters" >
+        tools:layout="@layout/fragment_characters">
         <action
             android:id="@+id/action_characters_to_characters_details"
             app:destination="@id/characters_details"
@@ -52,18 +52,15 @@
         android:name="br.com.vaniala.starwars.ui.characters.CharactersDetailsFragment"
         android:label="@string/nav_label_characters_details"
         tools:layout="@layout/fragment_characters">
-    <argument
-        android:name="character"
-        app:argType="br.com.vaniala.starwars.domain.model.People" />
+        <argument
+            android:name="character"
+            app:argType="br.com.vaniala.starwars.domain.model.People" />
     </fragment>
     <fragment
         android:id="@+id/favorites"
         android:name="br.com.vaniala.starwars.ui.favorites.FavoritesFragment"
         android:label="@string/nav_label_favorites"
         tools:layout="@layout/fragment_favorites">
-    <argument
-        android:name="character"
-        app:argType="br.com.vaniala.starwars.domain.model.People" />
         <action
             android:id="@+id/action_favorites_to_films_details"
             app:destination="@id/films_details"
@@ -72,5 +69,19 @@
             android:id="@+id/action_favorites_to_characters_details"
             app:destination="@id/characters_details"
             app:popUpTo="@id/favorites" />
+    </fragment>
+    <fragment
+        android:id="@+id/last_seen"
+        android:name="br.com.vaniala.starwars.ui.lastseen.LastSeenFragment"
+        android:label="@string/nav_label_last_seen"
+        tools:layout="@layout/fragment_last_seen">
+        <action
+            android:id="@+id/action_last_seen_to_films_details"
+            app:destination="@id/films_details"
+            app:popUpTo="@id/last_seen" />
+        <action
+            android:id="@+id/action_last_seen_to_characters_details"
+            app:destination="@id/characters_details"
+            app:popUpTo="@id/last_seen" />
     </fragment>
 </navigation>

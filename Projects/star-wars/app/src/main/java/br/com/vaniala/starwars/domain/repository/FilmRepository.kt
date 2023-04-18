@@ -10,5 +10,14 @@ import br.com.vaniala.starwars.domain.model.Film
  */
 interface FilmRepository {
 
+    suspend fun insertAll(films: List<Film>)
+
+    fun filmsByTitle(query: String): List<Film>
+
+    fun getFilmByTitle(query: String): Film
+
+    suspend fun updateIsFavorite(isFavorite: Boolean, title: String)
+
     suspend fun getFilms(page: Int): ApiResponse<Film>
+    suspend fun getCount(): Int
 }

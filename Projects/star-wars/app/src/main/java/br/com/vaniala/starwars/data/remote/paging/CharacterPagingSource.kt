@@ -5,7 +5,6 @@ import androidx.paging.PagingState
 import androidx.room.withTransaction
 import br.com.vaniala.starwars.core.StatusConnectivity
 import br.com.vaniala.starwars.data.local.database.StarWarsDatabase
-import br.com.vaniala.starwars.data.local.datasource.LocalDataSource
 import br.com.vaniala.starwars.domain.model.People
 import br.com.vaniala.starwars.domain.repository.CharacterRepository
 
@@ -14,7 +13,6 @@ private const val STARTING_PAGE_INDEX = 1
 class CharacterPagingSource(
     private val query: String,
     private val repository: CharacterRepository,
-    private val charactersDataSource: LocalDataSource.Characters,
     private val starWarsDatabase: StarWarsDatabase,
     private val statusConnectivity: StatusConnectivity,
 ) : PagingSource<Int, People>() {
@@ -29,7 +27,7 @@ class CharacterPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, People> {
         var total = 0
         starWarsDatabase.withTransaction {
-            total = charactersDataSource.getCount()
+            total = repository.getCount()
         }
 
         return try {
@@ -44,7 +42,7 @@ class CharacterPagingSource(
                     characters.forEach { character ->
                         character.timestamp = System.currentTimeMillis()
                     }
-                    charactersDataSource.insertAll(characters)
+                    repository.insertAll(characters)
                     LoadResult.Page(
                         data = response.results,
                         prevKey = null,
@@ -64,7 +62,7 @@ class CharacterPagingSource(
     private suspend fun page(): LoadResult.Page<Int, People> {
         var characterByName = emptyList<People>()
         starWarsDatabase.withTransaction {
-            characterByName = charactersDataSource.characterByName(query)
+            characterByName = repository.characterByName(query)
         }
         return LoadResult.Page(
             data = characterByName,

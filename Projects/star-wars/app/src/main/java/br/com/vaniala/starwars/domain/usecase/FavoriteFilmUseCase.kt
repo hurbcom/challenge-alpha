@@ -10,11 +10,11 @@ import javax.inject.Inject
  *
  */
 class FavoriteFilmUseCase @Inject constructor(
-    private val localFilmDataSourceImpl: LocalDataSource.Films,
+    private val localDataSource: LocalDataSource.Films,
 ) {
 
     suspend operator fun invoke(film: Film) =
         film.title.let {
-            localFilmDataSourceImpl.updateIsFavorite(isFavorite = film.isFavorite, title = it)
+            localDataSource.updateIsFavorite(isFavorite = film.isFavorite, title = it)
         }
 }

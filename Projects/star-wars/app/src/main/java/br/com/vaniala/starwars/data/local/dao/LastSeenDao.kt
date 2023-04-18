@@ -17,6 +17,6 @@ interface LastSeenDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(lastSeen: LastSeen)
 
-    @Query("SELECT * FROM last_seen")
+    @Query("SELECT * FROM last_seen ORDER BY timestamp DESC LIMIT 9")
     suspend fun getLastSeen(): List<LastSeen>
 }

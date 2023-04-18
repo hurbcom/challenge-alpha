@@ -19,15 +19,18 @@ interface CharacterDao {
     @Query("SELECT * FROM character WHERE name LIKE '%' || :query || '%'")
     suspend fun characterByName(query: String): List<People>
 
-    @Query("UPDATE character SET isFavorite = :isFavorite WHERE name = :name")
+    @Query("SELECT * FROM character WHERE name = :query")
+    fun getCharacterByName(query: String): People
+
+    @Query("UPDATE character SET isFavorite_character = :isFavorite WHERE name = :name")
     suspend fun updateIsFavorite(isFavorite: Boolean, name: String)
 
-    @Query("SELECT timestamp FROM character ORDER BY timestamp DESC LIMIT 1")
+    @Query("SELECT timestamp_character FROM character ORDER BY timestamp_character DESC LIMIT 1")
     fun lastUpdated(): Long
 
     @Query("SELECT COUNT(*) FROM character")
     suspend fun getCount(): Int
 
-    @Query("SELECT * FROM character WHERE isFavorite = 1")
+    @Query("SELECT * FROM character WHERE isFavorite_character = 1")
     suspend fun getFavorites(): List<People>
 }

@@ -31,16 +31,3 @@ class FavoritesViewModel @Inject constructor(
         }
     }
 }
-
-// .doOnSuccess {
-//    val result = if (it.films.isEmpty() && it.characters.isEmpty()) State.Empty else State.Success(it)
-//    _favorites.emit(result)
-// }
-// .doOnFailure {
-//    _favorites.emit(State.Error(it?.message ?: "error"))
-// }
-// .doOnLoading {
-//    _favorites.emit(State.Loading)
-// }.collectLatest {
-//
-// }

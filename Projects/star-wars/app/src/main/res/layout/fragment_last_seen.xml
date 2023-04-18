@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/last_seen"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/fragment_last_seen_title"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/screen_padding_extra_large"
+        android:layout_marginStart="@dimen/screen_padding_large"
+        android:gravity="start|center_vertical"
+        android:text="@string/nav_label_last_seen"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_size_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_last_seen_recycler"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_marginStart="@dimen/screen_padding_large"
+        android:layout_marginTop="@dimen/screen_padding_extra_large"
+        android:layout_marginBottom="@dimen/screen_padding_extra_large"
+        android:layout_marginEnd="@dimen/screen_padding_large"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        app:spanCount="3"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/list_item_last_seen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_last_seen_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -14,11 +14,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.FragmentCharactersDetailsBinding
+import br.com.vaniala.starwars.domain.model.LastSeen
 import br.com.vaniala.starwars.ui.characters.viewmodel.CharactersDetailsViewModel
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+
+private const val TYPE_FILM = "film"
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
@@ -37,9 +40,6 @@ class CharactersDetailsFragment : Fragment() {
 
     private val viewModel: CharactersDetailsViewModel by viewModels()
 
-    private val findNavController by lazy {
-        findNavController()
-    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -62,10 +62,22 @@ class CharactersDetailsFragment : Fragment() {
         }
         super.onViewCreated(view, savedInstanceState)
         viewModel.savedStateHandle["isFavorite"] = character.isFavorite
+
         showCharacter()
         setFavoriteOnClickListener()
         observeFavoriteStatus()
         initButtonBack()
+        addLastSeen()
+    }
+
+    private fun createLastSeen(): LastSeen {
+        return LastSeen(character = character, info = character.name)
+    }
+
+    private fun addLastSeen() {
+        lifecycleScope.launch {
+            viewModel.addLastSeen(createLastSeen())
+        }
     }
 
     private fun initButtonBack() {
@@ -81,6 +93,7 @@ class CharactersDetailsFragment : Fragment() {
             }
         }
     }
+
     private fun isLightMode(context: Context): Boolean {
         val darkModeFlag = context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         return darkModeFlag == Configuration.UI_MODE_NIGHT_NO

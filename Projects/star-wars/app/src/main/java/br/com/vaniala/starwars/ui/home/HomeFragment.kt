@@ -30,7 +30,9 @@ private const val CATEGORY_CHARACTERS = "people"
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
-    private val binding: FragmentHomeBinding get() = _binding!!
+    private val binding: FragmentHomeBinding
+        get() = _binding!!
+
     private lateinit var adapter: CategoryListAdapter
 
     private val viewModel: SharedViewModel by activityViewModels()

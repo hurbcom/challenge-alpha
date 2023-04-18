@@ -5,7 +5,6 @@ import androidx.paging.PagingState
 import androidx.room.withTransaction
 import br.com.vaniala.starwars.core.StatusConnectivity
 import br.com.vaniala.starwars.data.local.database.StarWarsDatabase
-import br.com.vaniala.starwars.data.local.datasource.LocalDataSource
 import br.com.vaniala.starwars.domain.model.Film
 import br.com.vaniala.starwars.domain.repository.FilmRepository
 
@@ -19,7 +18,6 @@ private const val STARTING_PAGE_INDEX = 1
 class FilmPagingSource(
     private val query: String,
     private val repository: FilmRepository,
-    private val filmsDataSource: LocalDataSource.Films,
     private val starWarsDatabase: StarWarsDatabase,
     private val statusConnectivity: StatusConnectivity,
 ) : PagingSource<Int, Film>() {
@@ -34,7 +32,7 @@ class FilmPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Film> {
         var total = 0
         starWarsDatabase.withTransaction {
-            total = filmsDataSource.getCount()
+            total = repository.getCount()
         }
         return try {
             if (statusConnectivity.isConnected() && query.isEmpty()) {
@@ -47,7 +45,7 @@ class FilmPagingSource(
                     films.forEach { film ->
                         film.timestamp = System.currentTimeMillis()
                     }
-                    filmsDataSource.insertAll(films)
+                    repository.insertAll(films)
 
                     LoadResult.Page(
                         data = response.results,
@@ -68,7 +66,7 @@ class FilmPagingSource(
     private suspend fun page(): LoadResult.Page<Int, Film> {
         var filmsByName = emptyList<Film>()
         starWarsDatabase.withTransaction {
-            filmsByName = filmsDataSource.filmsByTitle(query)
+            filmsByName = repository.filmsByTitle(query)
         }
         return LoadResult.Page(
             data = filmsByName,

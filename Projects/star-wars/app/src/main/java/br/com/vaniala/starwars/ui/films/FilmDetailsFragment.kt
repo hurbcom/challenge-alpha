@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.FragmentFilmDetailsBinding
+import br.com.vaniala.starwars.domain.model.LastSeen
 import br.com.vaniala.starwars.ui.films.viewmodel.FilmDetailsViewModel
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
@@ -61,6 +62,11 @@ class FilmDetailsFragment : Fragment() {
         showFilm()
         setFavoriteOnClickListener()
         observeFavoriteStatus()
+        addLastSeen()
+    }
+
+    private fun createLastSeen(): LastSeen {
+        return LastSeen(film = film, urlFilm = film.image, info = film.title)
     }
 
     private fun setFavoriteOnClickListener() {
@@ -68,6 +74,12 @@ class FilmDetailsFragment : Fragment() {
             lifecycleScope.launch {
                 viewModel.favorite(film)
             }
+        }
+    }
+
+    private fun addLastSeen() {
+        lifecycleScope.launch {
+            viewModel.addLastSeen(createLastSeen())
         }
     }
 

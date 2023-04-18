@@ -37,7 +37,6 @@ class GetCharactersBDAndRemoteUseCase @Inject constructor(
                 CharacterPagingSource(
                     query,
                     repository,
-                    charactersDataSource,
                     starWarsDatabase,
                     statusConnectivity,
                 )

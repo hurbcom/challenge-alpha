@@ -7,6 +7,7 @@
     <string name="nav_label_characters">Characters</string>
     <string name="nav_label_characters_details">Characters Details</string>
     <string name="nav_label_favorites">Favorites</string>
+    <string name="nav_label_last_seen">Last Seen</string>
     <!--    home-->
     <string name="home_title">Categories</string>
     <string name="home_empty_categories">🤡 Empty categories</string>
@@ -56,5 +57,6 @@
     <string name="favorites_icon_back">image to back</string>
     <string name="favorites_characters">Characters</string>
     <string name="favorites_films">Films</string>
-
+    <!--    last seen-->
+    <string name="grid_img_last_seen_description">image from last seen</string>
 </resources>

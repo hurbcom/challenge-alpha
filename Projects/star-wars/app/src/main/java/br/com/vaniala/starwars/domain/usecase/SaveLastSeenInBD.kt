@@ -12,6 +12,8 @@ import javax.inject.Inject
 class SaveLastSeenInBD @Inject constructor(
     private val lastSeenRepository: LastSeenRepository,
 ) {
-    suspend operator fun invoke(lastSeen: LastSeen) =
+    suspend operator fun invoke(lastSeen: LastSeen) {
+        lastSeen.timestamp = System.currentTimeMillis()
         lastSeenRepository.insert(lastSeen)
+    }
 }

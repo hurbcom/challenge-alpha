@@ -24,6 +24,8 @@ interface LocalDataSource {
 
         fun filmsByTitle(query: String): List<Film>
 
+        fun getFilmByTitle(query: String): Film
+
         suspend fun updateIsFavorite(isFavorite: Boolean, title: String)
 
         suspend fun lastUpdated(): Long
@@ -38,6 +40,8 @@ interface LocalDataSource {
         suspend fun insertAll(characters: List<People>)
 
         suspend fun characterByName(query: String): List<People>
+
+        fun getCharacterByName(query: String): People
 
         suspend fun updateIsFavorite(isFavorite: Boolean, name: String)
 

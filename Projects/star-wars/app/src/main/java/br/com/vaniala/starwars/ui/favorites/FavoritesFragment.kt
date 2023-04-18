@@ -15,6 +15,7 @@ import br.com.vaniala.starwars.ui.favorites.adapter.CharactersFavoriteAdapter
 import br.com.vaniala.starwars.ui.favorites.adapter.FilmsFavoriteAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
@@ -74,15 +75,7 @@ class FavoritesFragment : Fragment() {
     }
 
     private fun setStateHome() {
-//        viewModel.favorites.onEach { homeState ->
-//            when (homeState) {
-//                is State.Loading -> timber.log.Timber.d("loading")
-//                is State.Empty -> timber.log.Timber.d("loading") // showStateEmpty()
-//                is State.Error -> timber.log.Timber.d("loading") // showStateError()
-//                is State.Success -> showStateSuccess(homeState.result)
-//            }
-//        }.launchIn(lifecycleScope)
-        viewLifecycleOwner.lifecycleScope.launchWhenCreated {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.favorites.collectLatest { stateFavorite: State<Favorite> ->
                 when (stateFavorite) {
                     is State.Loading -> timber.log.Timber.d("loading")
@@ -103,8 +96,8 @@ class FavoritesFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        super.onDestroyView()
         binding.fragmentFavoritesFilmRecycler.adapter = null
         binding.fragmentFavoritesCharacterRecycler.adapter = null
-        super.onDestroyView()
     }
 }

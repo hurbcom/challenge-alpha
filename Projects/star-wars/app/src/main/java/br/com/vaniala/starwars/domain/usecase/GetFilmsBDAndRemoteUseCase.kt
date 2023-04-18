@@ -5,7 +5,6 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import br.com.vaniala.starwars.core.StatusConnectivity
 import br.com.vaniala.starwars.data.local.database.StarWarsDatabase
-import br.com.vaniala.starwars.data.local.datasource.LocalDataSource
 import br.com.vaniala.starwars.data.remote.paging.FilmPagingSource
 import br.com.vaniala.starwars.domain.model.Film
 import br.com.vaniala.starwars.domain.repository.FilmRepository
@@ -23,7 +22,6 @@ private const val PAGE_SIZE = 10
 
 class GetFilmsBDAndRemoteUseCase @Inject constructor(
     private val repository: FilmRepository,
-    private val filmsDataSource: LocalDataSource.Films,
     private val starWarsDatabase: StarWarsDatabase,
     private val statusConnectivity: StatusConnectivity,
 ) {
@@ -37,7 +35,6 @@ class GetFilmsBDAndRemoteUseCase @Inject constructor(
                 FilmPagingSource(
                     query,
                     repository,
-                    filmsDataSource,
                     starWarsDatabase,
                     statusConnectivity,
                 )

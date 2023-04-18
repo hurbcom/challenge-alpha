@@ -1,6 +1,7 @@
 package br.com.vaniala.starwars.domain.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
@@ -31,9 +32,15 @@ data class People(
     @field:Json(name = "homeworld") var homeworld: String? = null,
     @field:Json(name = "mass") val mass: String? = null,
     @field:Json(name = "skin_color") val skin_color: String? = null,
-    @field:Json(name = "url") val url: String? = null,
+    @field:Json(name = "url")
+    @ColumnInfo(name = "url_character")
+    val url: String? = null,
     @field:Json(ignore = true) var imagePeople: String? = null,
     @field:Json(ignore = true) var imageHomeworld: String? = null,
-    @field:Json(ignore = true) var isFavorite: Boolean = false,
-    @field:Json(ignore = true) var timestamp: Long = 0L,
+    @field:Json(ignore = true)
+    @ColumnInfo(name = "isFavorite_character")
+    var isFavorite: Boolean = false,
+    @field:Json(ignore = true)
+    @ColumnInfo(name = "timestamp_character")
+    var timestamp: Long = 0L,
 ) : Parcelable

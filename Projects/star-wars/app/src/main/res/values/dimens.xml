@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="zero_dp">0dp</dimen>
+    <dimen name="screen_padding_extra_small">4dp</dimen>
     <dimen name="screen_padding_small">8dp</dimen>
     <dimen name="screen_padding_medium">16dp</dimen>
     <dimen name="screen_padding_large">24dp</dimen>

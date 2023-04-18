@@ -1,5 +1,6 @@
 package br.com.vaniala.starwars.data.repository
 
+import br.com.vaniala.starwars.data.local.datasource.LocalDataSource
 import br.com.vaniala.starwars.data.remote.datasource.RemoteDataSource
 import br.com.vaniala.starwars.domain.model.ApiResponse
 import br.com.vaniala.starwars.domain.model.People
@@ -12,8 +13,24 @@ import javax.inject.Inject
  *
  */
 class CharacterRepositoryImpl @Inject constructor(
+    private val localDataSource: LocalDataSource.Characters,
     private val dataSource: RemoteDataSource,
 ) : CharacterRepository {
+    override suspend fun insertAll(characters: List<People>) =
+        localDataSource.insertAll(characters)
+
     override suspend fun getCharacters(page: Int): ApiResponse<People> =
         dataSource.getCharacters(page)
+
+    override suspend fun characterByName(query: String): List<People> =
+        localDataSource.characterByName(query)
+
+    override fun getCharacterByName(query: String): People =
+        localDataSource.getCharacterByName(query)
+
+    override suspend fun updateIsFavorite(isFavorite: Boolean, name: String) =
+        localDataSource.updateIsFavorite(isFavorite, name)
+
+    override suspend fun getCount(): Int =
+        localDataSource.getCount()
 }

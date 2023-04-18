@@ -1,6 +1,7 @@
 package br.com.vaniala.starwars.domain.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
@@ -39,12 +40,16 @@ data class Film(
     @field:Json(name = "producer") val producer: String? = null,
     @field:Json(name = "release_date") var release_date: String? = null,
 //    @field:Json(name = "characters") val characters: List<String>?,
-    @field:Json(name = "url") val url: String? = null,
-    @field:Json(ignore = true) var isFavorite: Boolean = false,
-    @field:Json(ignore = true) var timestamp: Long = 0L,
+    @field:Json(name = "url")
+    @ColumnInfo(name = "url_film")
+    val url: String? = null,
+    @field:Json(ignore = true)
+    @ColumnInfo(name = "isFavorite_film")
+    var isFavorite: Boolean = false,
+    @field:Json(ignore = true)
+    @ColumnInfo(name = "timestamp_film")
+    var timestamp: Long = 0L,
 ) : Parcelable {
-    @IgnoredOnParcel
-    @Ignore
     var image: String? = getUrlImage(url)
 
     @Ignore

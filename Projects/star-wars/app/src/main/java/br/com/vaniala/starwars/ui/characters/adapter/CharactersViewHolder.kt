@@ -2,9 +2,9 @@ package br.com.vaniala.starwars.ui.characters.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vaniala.starwars.BuildConfig
+import br.com.vaniala.starwars.core.loadImage
 import br.com.vaniala.starwars.databinding.ListItemGridBinding
 import br.com.vaniala.starwars.domain.model.People
-import coil.load
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
@@ -25,7 +25,10 @@ class CharactersViewHolder(
         val urlHomeworld = getUrlImage(character.homeworld, "planets")
         character.imagePeople = urlImage
         character.imageHomeworld = urlHomeworld
-        binding.itemGridImage.load(urlImage)
+        binding.itemGridImage.loadImage(
+            url = urlImage,
+            progressBar = binding.itemGridProgress,
+        )
     }
 
     private fun getUrlImage(url: String?, type: String = "characters"): String? {

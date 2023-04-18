@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "bc6ac698ec8e0cab2e8a578651f252ac",
+    "identityHash": "af78746842e1e39218c3e0a6568ec451",
     "entities": [
       {
         "tableName": "category",
@@ -32,7 +32,7 @@
       },
       {
         "tableName": "film",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`title` TEXT NOT NULL, `episode_id` INTEGER, `opening_crawl` TEXT, `director` TEXT, `producer` TEXT, `release_date` TEXT, `url` TEXT, `isFavorite` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`title`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`title` TEXT NOT NULL, `episode_id` INTEGER, `opening_crawl` TEXT, `director` TEXT, `producer` TEXT, `release_date` TEXT, `url_film` TEXT, `isFavorite_film` INTEGER NOT NULL, `timestamp_film` INTEGER NOT NULL, `image` TEXT, PRIMARY KEY(`title`))",
         "fields": [
           {
             "fieldPath": "title",
@@ -72,21 +72,27 @@
           },
           {
             "fieldPath": "url",
-            "columnName": "url",
+            "columnName": "url_film",
             "affinity": "TEXT",
             "notNull": false
           },
           {
             "fieldPath": "isFavorite",
-            "columnName": "isFavorite",
+            "columnName": "isFavorite_film",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
             "fieldPath": "timestamp",
-            "columnName": "timestamp",
+            "columnName": "timestamp_film",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -100,7 +106,7 @@
       },
       {
         "tableName": "character",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `birth_year` TEXT, `created` TEXT, `edited` TEXT, `eye_color` TEXT, `gender` TEXT, `hair_color` TEXT, `height` TEXT, `homeworld` TEXT, `mass` TEXT, `skin_color` TEXT, `url` TEXT, `imagePeople` TEXT, `imageHomeworld` TEXT, `isFavorite` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`name`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `birth_year` TEXT, `created` TEXT, `edited` TEXT, `eye_color` TEXT, `gender` TEXT, `hair_color` TEXT, `height` TEXT, `homeworld` TEXT, `mass` TEXT, `skin_color` TEXT, `url_character` TEXT, `imagePeople` TEXT, `imageHomeworld` TEXT, `isFavorite_character` INTEGER NOT NULL, `timestamp_character` INTEGER NOT NULL, PRIMARY KEY(`name`))",
         "fields": [
           {
             "fieldPath": "name",
@@ -170,7 +176,7 @@
           },
           {
             "fieldPath": "url",
-            "columnName": "url",
+            "columnName": "url_character",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -188,13 +194,13 @@
           },
           {
             "fieldPath": "isFavorite",
-            "columnName": "isFavorite",
+            "columnName": "isFavorite_character",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
             "fieldPath": "timestamp",
-            "columnName": "timestamp",
+            "columnName": "timestamp_character",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -210,7 +216,7 @@
       },
       {
         "tableName": "last_seen",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`info` TEXT NOT NULL, `img` TEXT NOT NULL, `type` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`info`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`info` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `urlFilm` TEXT, `title` TEXT, `episode_id` INTEGER, `opening_crawl` TEXT, `director` TEXT, `producer` TEXT, `release_date` TEXT, `url_film` TEXT, `isFavorite_film` INTEGER, `timestamp_film` INTEGER, `image` TEXT, `name` TEXT, `birth_year` TEXT, `created` TEXT, `edited` TEXT, `eye_color` TEXT, `gender` TEXT, `hair_color` TEXT, `height` TEXT, `homeworld` TEXT, `mass` TEXT, `skin_color` TEXT, `url_character` TEXT, `imagePeople` TEXT, `imageHomeworld` TEXT, `isFavorite_character` INTEGER, `timestamp_character` INTEGER, PRIMARY KEY(`info`))",
         "fields": [
           {
             "fieldPath": "info",
@@ -219,22 +225,172 @@
             "notNull": true
           },
           {
-            "fieldPath": "img",
-            "columnName": "img",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "type",
-            "columnName": "type",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
             "fieldPath": "timestamp",
             "columnName": "timestamp",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "urlFilm",
+            "columnName": "urlFilm",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.episode_id",
+            "columnName": "episode_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.opening_crawl",
+            "columnName": "opening_crawl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.director",
+            "columnName": "director",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.producer",
+            "columnName": "producer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.release_date",
+            "columnName": "release_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.url",
+            "columnName": "url_film",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.isFavorite",
+            "columnName": "isFavorite_film",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.timestamp",
+            "columnName": "timestamp_film",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.birth_year",
+            "columnName": "birth_year",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.created",
+            "columnName": "created",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.edited",
+            "columnName": "edited",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.eye_color",
+            "columnName": "eye_color",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.gender",
+            "columnName": "gender",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.hair_color",
+            "columnName": "hair_color",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.height",
+            "columnName": "height",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.homeworld",
+            "columnName": "homeworld",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.mass",
+            "columnName": "mass",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.skin_color",
+            "columnName": "skin_color",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.url",
+            "columnName": "url_character",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.imagePeople",
+            "columnName": "imagePeople",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.imageHomeworld",
+            "columnName": "imageHomeworld",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.isFavorite",
+            "columnName": "isFavorite_character",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "character.timestamp",
+            "columnName": "timestamp_character",
+            "affinity": "INTEGER",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -250,7 +406,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bc6ac698ec8e0cab2e8a578651f252ac')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'af78746842e1e39218c3e0a6568ec451')"
     ]
   }
 }

@@ -1,5 +1,6 @@
 package br.com.vaniala.starwars.domain.model
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -14,7 +15,10 @@ import androidx.room.PrimaryKey
 data class LastSeen(
     @PrimaryKey
     val info: String,
-    val img: String,
-    val type: String,
-    val timestamp: Long,
+    @Embedded
+    var film: Film? = null,
+    @Embedded
+    var character: People? = null,
+    var timestamp: Long = 0L,
+    var urlFilm: String? = null,
 )

@@ -5,11 +5,13 @@ import br.com.vaniala.starwars.core.StatusConnectivity
 import br.com.vaniala.starwars.data.local.dao.CategoryDao
 import br.com.vaniala.starwars.data.local.dao.CharacterDao
 import br.com.vaniala.starwars.data.local.dao.FilmDao
+import br.com.vaniala.starwars.data.local.dao.LastSeenDao
 import br.com.vaniala.starwars.data.local.datasource.LocalCategoryDataSourceImpl
 import br.com.vaniala.starwars.data.local.datasource.LocalCharacterDataSourceImpl
 import br.com.vaniala.starwars.data.local.datasource.LocalDataSource
 import br.com.vaniala.starwars.data.local.datasource.LocalFavoritesDataSourceImpl
 import br.com.vaniala.starwars.data.local.datasource.LocalFilmDataSourceImpl
+import br.com.vaniala.starwars.data.local.datasource.LocalLastSeenDataSourceImpl
 import br.com.vaniala.starwars.data.remote.datasource.RemoteDataSource
 import br.com.vaniala.starwars.data.remote.datasource.RemoteDataSourceImpl
 import br.com.vaniala.starwars.data.remote.service.ApiService
@@ -68,6 +70,14 @@ object ProvidesModule {
         characterDao: CharacterDao,
     ): LocalDataSource.Favorites {
         return LocalFavoritesDataSourceImpl(filmDao, characterDao)
+    }
+
+    @Singleton
+    @Provides
+    fun providesLocalLastSeenDataSource(
+        lastSeenDao: LastSeenDao,
+    ): LocalDataSource.LastSeenI {
+        return LocalLastSeenDataSourceImpl(lastSeenDao)
     }
 
     @Singleton

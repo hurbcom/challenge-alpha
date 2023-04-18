@@ -9,6 +9,15 @@ import br.com.vaniala.starwars.domain.model.People
  *
  */
 interface CharacterRepository {
+    suspend fun insertAll(characters: List<People>)
 
     suspend fun getCharacters(page: Int): ApiResponse<People>
+
+    suspend fun characterByName(query: String): List<People>
+
+    fun getCharacterByName(query: String): People
+
+    suspend fun updateIsFavorite(isFavorite: Boolean, name: String)
+
+    suspend fun getCount(): Int
 }

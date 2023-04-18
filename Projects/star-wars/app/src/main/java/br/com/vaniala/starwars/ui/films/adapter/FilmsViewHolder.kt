@@ -1,9 +1,9 @@
 package br.com.vaniala.starwars.ui.films.adapter
 
 import androidx.recyclerview.widget.RecyclerView
+import br.com.vaniala.starwars.core.loadImage
 import br.com.vaniala.starwars.databinding.ListItemGridBinding
 import br.com.vaniala.starwars.domain.model.Film
-import coil.load
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
@@ -19,6 +19,9 @@ class FilmsViewHolder(
             onItemClickListener(film)
         }
         binding.itemGridTitle.text = film.titleFormatted
-        binding.itemGridImage.load(film.image)
+        binding.itemGridImage.loadImage(
+            url = film.image,
+            progressBar = binding.itemGridProgress,
+        )
     }
 }
