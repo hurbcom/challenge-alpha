@@ -14,7 +14,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.FragmentCharactersDetailsBinding
-import br.com.vaniala.starwars.domain.model.LastSeen
 import br.com.vaniala.starwars.ui.characters.viewmodel.CharactersDetailsViewModel
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
@@ -70,14 +69,8 @@ class CharactersDetailsFragment : Fragment() {
         addLastSeen()
     }
 
-    private fun createLastSeen(): LastSeen {
-        return LastSeen(character = character, info = character.name)
-    }
-
     private fun addLastSeen() {
-        lifecycleScope.launch {
-            viewModel.addLastSeen(createLastSeen())
-        }
+        viewModel.addLastSeen(character)
     }
 
     private fun initButtonBack() {

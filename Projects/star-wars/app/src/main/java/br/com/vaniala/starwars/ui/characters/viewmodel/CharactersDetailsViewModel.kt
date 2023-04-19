@@ -31,22 +31,18 @@ class CharactersDetailsViewModel @Inject constructor(
     val isFavorite: StateFlow<Boolean>
         get() = _isFavorite
 
-    private var _lastSeen = MutableStateFlow(false)
-    val lastSeen: StateFlow<Boolean>
-        get() = _lastSeen
-
     private val _character: MutableStateFlow<People?> = MutableStateFlow(null)
     val character: StateFlow<People?>
         get() = _character
 
-    fun addLastSeen(lastSeen: LastSeen) = viewModelScope.launch {
-        _lastSeen.emit(true)
-        saveLastSeenInBD(lastSeen)
+    fun addLastSeen(character: People) = viewModelScope.launch {
+        saveLastSeenInBD(createLastSeen(character))
     }
 
     fun favorite(character: People) = viewModelScope.launch {
         character.isFavorite = !character.isFavorite
         _isFavorite.emit(character.isFavorite)
+        addLastSeen(character)
         favoriteCharacterUseCase(character)
     }
 
@@ -54,5 +50,9 @@ class CharactersDetailsViewModel @Inject constructor(
         savedStateHandle.getStateFlow("isFavorite", false).onEach { isFavorite ->
             _isFavorite.value = isFavorite
         }.launchIn(viewModelScope)
+    }
+
+    private fun createLastSeen(character: People): LastSeen {
+        return LastSeen(character = character, info = character.name)
     }
 }

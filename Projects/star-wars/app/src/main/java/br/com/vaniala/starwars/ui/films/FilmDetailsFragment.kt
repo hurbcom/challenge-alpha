@@ -13,7 +13,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import br.com.vaniala.starwars.R
 import br.com.vaniala.starwars.databinding.FragmentFilmDetailsBinding
-import br.com.vaniala.starwars.domain.model.LastSeen
 import br.com.vaniala.starwars.ui.films.viewmodel.FilmDetailsViewModel
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
@@ -65,10 +64,6 @@ class FilmDetailsFragment : Fragment() {
         addLastSeen()
     }
 
-    private fun createLastSeen(): LastSeen {
-        return LastSeen(film = film, urlFilm = film.image, info = film.title)
-    }
-
     private fun setFavoriteOnClickListener() {
         binding.fragmentsFilmsDetailsImageFavorite.setOnClickListener {
             lifecycleScope.launch {
@@ -78,9 +73,7 @@ class FilmDetailsFragment : Fragment() {
     }
 
     private fun addLastSeen() {
-        lifecycleScope.launch {
-            viewModel.addLastSeen(createLastSeen())
-        }
+        viewModel.addLastSeen(film)
     }
 
     private fun isLightMode(context: Context): Boolean {
