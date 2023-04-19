@@ -12,14 +12,16 @@ class StatusConnectivity
     private val connectivityManager =
         context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
-    fun isConnected(): Boolean {
+    fun isNotConnected(): Boolean {
         val network = connectivityManager.activeNetwork
         val capabilities =
             connectivityManager.getNetworkCapabilities(network)
-        return capabilities != null && (
-            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
-                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
-                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
+        return !(
+            capabilities != null && (
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
+                )
             )
     }
 }

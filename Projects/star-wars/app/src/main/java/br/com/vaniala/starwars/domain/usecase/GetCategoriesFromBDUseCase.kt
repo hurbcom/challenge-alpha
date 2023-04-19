@@ -4,7 +4,7 @@ import br.com.vaniala.starwars.domain.model.Category
 import br.com.vaniala.starwars.domain.repository.CategoryRepository
 import javax.inject.Inject
 
-class GetCategoriesFromBD @Inject constructor(
+class GetCategoriesFromBDUseCase @Inject constructor(
     private val categoryRepository: CategoryRepository,
 ) {
     suspend operator fun invoke(): List<Category> =

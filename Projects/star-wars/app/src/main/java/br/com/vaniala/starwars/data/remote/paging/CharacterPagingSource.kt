@@ -27,7 +27,7 @@ class CharacterPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, People> {
         return try {
             var isDataUpdate = false
-            val isNotConnected = !statusConnectivity.isConnected()
+            val isNotConnected = statusConnectivity.isNotConnected()
 
             starWarsDatabase.withTransaction {
                 isDataUpdate = repository.isUpdate()

@@ -3,10 +3,12 @@ package br.com.vaniala.starwars.domain.usecase
 import br.com.vaniala.starwars.categoriesListMock
 import br.com.vaniala.starwars.categoriesResultMock
 import br.com.vaniala.starwars.core.Result
+import br.com.vaniala.starwars.core.StatusConnectivity
 import br.com.vaniala.starwars.domain.model.CategoryResponse
 import br.com.vaniala.starwars.domain.repository.CategoryRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
+import io.mockk.coVerifyAll
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -30,27 +32,87 @@ import retrofit2.Response
 @OptIn(ExperimentalCoroutinesApi::class)
 class GetCategoriesUseCaseTest {
 
-    private lateinit var categoryRepository: CategoryRepository
+    private val categoryRepository: CategoryRepository = mockk()
+    private val saveCategoriesInBDUseCase: SaveCategoriesInBDUseCase = mockk()
+    private val getCategoriesFromBDUseCase: GetCategoriesFromBDUseCase = mockk()
+    private val statusConnectivity: StatusConnectivity = mockk()
     private lateinit var getCategoriesUseCase: GetCategoriesUseCase
 
     @Before
     fun setUp() {
-        categoryRepository = mockk()
-        getCategoriesUseCase = GetCategoriesUseCase(categoryRepository)
+        getCategoriesUseCase =
+            GetCategoriesUseCase(
+                categoryRepository,
+                saveCategoriesInBDUseCase,
+                getCategoriesFromBDUseCase,
+                statusConnectivity,
+            )
     }
 
     @Test
-    fun `should emit firstly loading when response isSuccessful equals true`() = runTest {
+    fun `should emit loading result initially when get from db`() = runTest {
+        coEvery { categoryRepository.isUpdate() } returns false
+        coEvery { statusConnectivity.isNotConnected() } returns true
+        coEvery { getCategoriesFromBDUseCase() } returns emptyList()
+
+        val resultIsUpdateFalseAndIsNotConnectedIsTrue = getCategoriesUseCase().first()
+
+        assertTrue(resultIsUpdateFalseAndIsNotConnectedIsTrue is Result.Loading)
+
+        coVerifyAll {
+            categoryRepository.isUpdate()
+            statusConnectivity.isNotConnected()
+            getCategoriesFromBDUseCase()
+        }
+
+        coEvery { categoryRepository.isUpdate() } returns true
+        coEvery { statusConnectivity.isNotConnected() } returns false
+        coEvery { getCategoriesFromBDUseCase() } returns emptyList()
+
+        val resultIsUpdateTrueAndIsNotConnectedIsFalse = getCategoriesUseCase().first()
+        assertTrue(resultIsUpdateTrueAndIsNotConnectedIsFalse is Result.Loading)
+
+        coVerify {
+            categoryRepository.isUpdate()
+            statusConnectivity.isNotConnected()
+            getCategoriesFromBDUseCase()
+        }
+
+        coEvery { categoryRepository.isUpdate() } returns true
+        coEvery { statusConnectivity.isNotConnected() } returns true
+        coEvery { getCategoriesFromBDUseCase() } returns emptyList()
+
+        val resultIsUpdateAndIsNotConnectedIsAreTrue = getCategoriesUseCase().first()
+        assertTrue(resultIsUpdateAndIsNotConnectedIsAreTrue is Result.Loading)
+
+        coVerifyAll {
+            categoryRepository.isUpdate()
+            statusConnectivity.isNotConnected()
+            getCategoriesFromBDUseCase()
+        }
+    }
+
+    @Test
+    fun `should emit loading result initially when get from remote and isSuccessful is true`() = runTest {
         val responseMock = mockk<Response<CategoryResponse>>()
 
+        coEvery { categoryRepository.isUpdate() } returns false
+        coEvery { statusConnectivity.isNotConnected() } returns false
         coEvery { categoryRepository.getCategories() } returns responseMock
+        coEvery { saveCategoriesInBDUseCase(categoriesListMock) } returns Unit
+
         every { responseMock.isSuccessful } returns true
         every { responseMock.body() } returns categoriesResultMock
 
-        val result = getCategoriesUseCase.invoke().first()
-        assertTrue(result is Result.Loading)
+        val resultIsSuccessfulIsTrue = getCategoriesUseCase.invoke().first()
+        assertTrue(resultIsSuccessfulIsTrue is Result.Loading)
 
-        coVerify { categoryRepository.getCategories() }
+        coVerifyAll {
+            categoryRepository.isUpdate()
+            categoryRepository.isUpdate()
+            saveCategoriesInBDUseCase(categoriesListMock)
+            categoryRepository.getCategories()
+        }
         verifyAll {
             responseMock.isSuccessful
             responseMock.body()
@@ -58,16 +120,23 @@ class GetCategoriesUseCaseTest {
     }
 
     @Test
-    fun `should emit firstly loading when response isSuccessful equals false`() = runTest {
+    fun `should emit loading result initially when get from remote and isSuccessful is false`() = runTest {
         val responseMock = mockk<Response<CategoryResponse>>()
 
+        coEvery { categoryRepository.isUpdate() } returns false
+        coEvery { statusConnectivity.isNotConnected() } returns false
         coEvery { categoryRepository.getCategories() } returns responseMock
+
         every { responseMock.isSuccessful } returns false
 
-        val result = getCategoriesUseCase.invoke().first()
-        assertTrue(result is Result.Loading)
+        val resultIsSuccessfulIsTrue = getCategoriesUseCase.invoke().first()
+        assertTrue(resultIsSuccessfulIsTrue is Result.Loading)
 
-        coVerify { categoryRepository.getCategories() }
+        coVerifyAll {
+            categoryRepository.isUpdate()
+            categoryRepository.isUpdate()
+            categoryRepository.getCategories()
+        }
         verifyAll {
             responseMock.isSuccessful
         }
@@ -77,7 +146,11 @@ class GetCategoriesUseCaseTest {
     fun `should emit success with category list when response isSuccessful equals true`() = runTest {
         val responseMock = mockk<Response<CategoryResponse>>()
 
+        coEvery { categoryRepository.isUpdate() } returns false
+        coEvery { statusConnectivity.isNotConnected() } returns false
         coEvery { categoryRepository.getCategories() } returns responseMock
+        coEvery { saveCategoriesInBDUseCase(categoriesListMock) } returns Unit
+
         every { responseMock.isSuccessful } returns true
         every { responseMock.body() } returns categoriesResultMock
 
@@ -87,7 +160,12 @@ class GetCategoriesUseCaseTest {
             assertEquals(categoriesListMock, (value as Result.Success).data)
         }
 
-        coVerify { categoryRepository.getCategories() }
+        coVerifyAll {
+            categoryRepository.isUpdate()
+            categoryRepository.isUpdate()
+            saveCategoriesInBDUseCase(categoriesListMock)
+            categoryRepository.getCategories()
+        }
         verifyAll {
             responseMock.isSuccessful
             responseMock.body()
@@ -100,6 +178,9 @@ class GetCategoriesUseCaseTest {
             val body = null
             val responseMock = mockk<Response<CategoryResponse>>()
 
+            coEvery { categoryRepository.isUpdate() } returns false
+            coEvery { statusConnectivity.isNotConnected() } returns false
+
             coEvery { categoryRepository.getCategories() } returns responseMock
             every { responseMock.isSuccessful } returns false
             every { responseMock.body() } returns body
@@ -110,13 +191,20 @@ class GetCategoriesUseCaseTest {
                 assertNull(body)
                 assertEquals("Error getting categories", (value as Result.Failure).msg?.message)
             }
-            coVerify { categoryRepository.getCategories() }
+            coVerifyAll {
+                categoryRepository.isUpdate()
+                categoryRepository.isUpdate()
+                categoryRepository.getCategories()
+            }
             verify { responseMock.isSuccessful }
+            verify(exactly = 0) { responseMock.body() }
         }
 
     @Test
     fun `should emit failure with message Error exception when response throws exception`() = runTest {
         coEvery { categoryRepository.getCategories() } throws Exception("Error exception")
+        coEvery { categoryRepository.isUpdate() } returns false
+        coEvery { statusConnectivity.isNotConnected() } returns false
 
         val result = getCategoriesUseCase.invoke()
 
@@ -124,6 +212,10 @@ class GetCategoriesUseCaseTest {
             assertTrue(value is Result.Failure)
             assertEquals("Error exception", (value as Result.Failure).msg?.cause?.message)
         }
-        coVerify { categoryRepository.getCategories() }
+        coVerifyAll {
+            categoryRepository.isUpdate()
+            categoryRepository.isUpdate()
+            categoryRepository.getCategories()
+        }
     }
 }

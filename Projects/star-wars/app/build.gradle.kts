@@ -21,7 +21,7 @@ android {
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = "0.0.1"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "br.com.vaniala.starwars.HiltTestRunner"
         ksp {
             arg("room.schemaLocation", "$projectDir/schemas".toString())
         }
@@ -122,4 +122,13 @@ dependencies {
     testImplementation(libs.coroutines)
     testImplementation(libs.mockk)
     testImplementation(libs.mock.web.server)
+
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.45")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.45")
+    androidTestImplementation("androidx.navigation:navigation-testing:2.5.3")
+    debugImplementation("androidx.fragment:fragment-testing:1.6.0-alpha09")
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test:core:1.5.0")
 }

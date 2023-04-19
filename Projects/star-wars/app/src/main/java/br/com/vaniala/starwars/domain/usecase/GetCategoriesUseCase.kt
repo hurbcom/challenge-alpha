@@ -19,26 +19,25 @@ import javax.inject.Inject
  */
 class GetCategoriesUseCase @Inject constructor(
     private val repository: CategoryRepository,
-    private val saveCategoriesInBD: SaveCategoriesInBD,
-    private val getCategoriesFromBD: GetCategoriesFromBD,
+    private val saveCategoriesInBDUseCase: SaveCategoriesInBDUseCase,
+    private val getCategoriesFromBDUseCase: GetCategoriesFromBDUseCase,
     private val statusConnectivity: StatusConnectivity,
 ) {
     operator fun invoke(): Flow<Result<List<Category>>> = flow {
         emit(Result.Loading)
         val isDataUpdate = repository.isUpdate()
-        val isNotConnected = !statusConnectivity.isConnected()
+        val isNotConnected = statusConnectivity.isNotConnected()
 
         if (isDataUpdate || isNotConnected) {
-            val categories = getCategoriesFromBD()
+            val categories = getCategoriesFromBDUseCase()
             emit(Result.Success(categories))
         } else {
             val response = repository.getCategories()
-
             if (response.isSuccessful) {
                 val categoryResult = response.body()
                 if (categoryResult != null) {
                     val categoriesList = categoryResult.toCategoryList()
-                    saveCategoriesInBD(categoriesList)
+                    saveCategoriesInBDUseCase(categoriesList)
                     emit(Result.Success(categoriesList))
                 }
             } else {

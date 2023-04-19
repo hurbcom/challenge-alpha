@@ -55,7 +55,6 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
         initButtonBack()
         initListeners()
         initAdapter()
-//        filterPaging()
     }
 
     private fun initListeners() {

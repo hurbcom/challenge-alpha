@@ -33,7 +33,7 @@ class FilmPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Film> {
         return try {
             var isDataUpdate = false
-            val isNotConnected = !statusConnectivity.isConnected()
+            val isNotConnected = statusConnectivity.isNotConnected()
 
             starWarsDatabase.withTransaction {
                 isDataUpdate = repository.isUpdate()

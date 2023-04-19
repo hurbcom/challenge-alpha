@@ -9,7 +9,7 @@ import javax.inject.Inject
  * on 13/04/23.
  *
  */
-class SaveCategoriesInBD @Inject constructor(
+class SaveCategoriesInBDUseCase @Inject constructor(
     private val categoryRepository: CategoryRepository,
 ) {
     suspend operator fun invoke(categories: List<Category>) =
