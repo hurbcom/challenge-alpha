@@ -71,9 +71,9 @@ class FilmsFragment : BaseFragment<FilmViewModel>() {
 
                 binding.fragmentGridShimmer.isVisible =
                     viewModel.filterTitle.value.isEmpty() && adapter.itemCount < 1 && (
-                        loadState.refresh is
-                            LoadState.Loading || loadState.source.refresh is LoadState.Loading
-                        )
+                    loadState.refresh is
+                    LoadState.Loading || loadState.source.refresh is LoadState.Loading
+                    )
                 binding.fragmentsGridEmpty.isVisible =
                     adapter.itemCount == 0 && loadState.refresh is LoadState.NotLoading
 

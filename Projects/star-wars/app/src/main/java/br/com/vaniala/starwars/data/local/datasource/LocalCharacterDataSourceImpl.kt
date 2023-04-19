@@ -15,21 +15,18 @@ class LocalCharacterDataSourceImpl @Inject constructor(
     override suspend fun insertAll(characters: List<People>) =
         characterDao.insertAll(characters)
 
-    override suspend fun characterByName(query: String): List<People> =
-        characterDao.characterByName(query)
+    override suspend fun charactersByName(query: String): List<People> =
+        characterDao.charactersByName(query)
 
-    override fun getCharacterByName(query: String): People =
+    override suspend fun getCharacterByName(query: String): People =
         characterDao.getCharacterByName(query)
 
     override suspend fun updateIsFavorite(isFavorite: Boolean, name: String) =
         characterDao.updateIsFavorite(isFavorite, name)
 
-    override suspend fun lastUpdated(): Long =
-        characterDao.lastUpdated()
-
-    override suspend fun getCount(): Int =
-        characterDao.getCount()
-
     override suspend fun getFavorites(): List<People> =
         characterDao.getFavorites()
+
+    override suspend fun isUpdate(): Boolean =
+        characterDao.isUpdate()
 }

@@ -17,5 +17,8 @@ interface CategoryDao {
     suspend fun insertAll(categories: List<Category>)
 
     @Query("SELECT * FROM category")
-    fun getAll(): List<Category>
+    suspend fun getAll(): List<Category>
+
+    @Query("SELECT EXISTS(SELECT 1 FROM category WHERE is_update_category = 1 LIMIT 1)")
+    suspend fun isUpdate(): Boolean
 }

@@ -15,5 +15,6 @@ interface CategoryRepository {
 
     suspend fun insertAll(categories: List<Category>)
 
-    fun getAll(): List<Category>
+    suspend fun getAll(): List<Category>
+    suspend fun isUpdate(): Boolean
 }

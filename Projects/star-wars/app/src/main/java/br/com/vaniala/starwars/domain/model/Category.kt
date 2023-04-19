@@ -1,9 +1,11 @@
 package br.com.vaniala.starwars.domain.model
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import br.com.vaniala.starwars.BuildConfig
+import com.squareup.moshi.Json
 
 /**
  * Created by Vânia Almeida (Github: @vanialadev)
@@ -22,6 +24,9 @@ data class Category(
     @PrimaryKey
     val name: String,
     val url: String? = null,
+    @field:Json(ignore = true)
+    @ColumnInfo(name = "is_update_category")
+    var isUpdate: Boolean = false,
 ) {
     @Ignore
     var image: String? = getUrlImage(name)

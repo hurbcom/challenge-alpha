@@ -5,7 +5,6 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import br.com.vaniala.starwars.core.StatusConnectivity
 import br.com.vaniala.starwars.data.local.database.StarWarsDatabase
-import br.com.vaniala.starwars.data.local.datasource.LocalDataSource
 import br.com.vaniala.starwars.data.remote.paging.CharacterPagingSource
 import br.com.vaniala.starwars.domain.model.People
 import br.com.vaniala.starwars.domain.repository.CharacterRepository
@@ -26,6 +25,7 @@ class GetCharactersBDAndRemoteUseCase @Inject constructor(
     private val starWarsDatabase: StarWarsDatabase,
     private val statusConnectivity: StatusConnectivity,
 ) {
+
     operator fun invoke(query: String = ""): Flow<PagingData<People>> {
         return Pager(
             config = PagingConfig(

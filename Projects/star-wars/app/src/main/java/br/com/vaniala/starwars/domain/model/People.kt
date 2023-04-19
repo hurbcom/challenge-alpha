@@ -43,4 +43,7 @@ data class People(
     @field:Json(ignore = true)
     @ColumnInfo(name = "timestamp_character")
     var timestamp: Long = 0L,
+    @field:Json(ignore = true)
+    @ColumnInfo(name = "is_update_character")
+    var isUpdate: Boolean = false,
 ) : Parcelable

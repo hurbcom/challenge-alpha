@@ -15,6 +15,9 @@ class LocalCategoryDataSourceImpl @Inject constructor(
     override suspend fun insertAll(categories: List<Category>) =
         categoryDao.insertAll(categories)
 
-    override fun getAll(): List<Category> =
+    override suspend fun getAll(): List<Category> =
         categoryDao.getAll()
+
+    override suspend fun isUpdate(): Boolean =
+        categoryDao.isUpdate()
 }

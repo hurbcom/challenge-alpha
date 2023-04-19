@@ -7,6 +7,6 @@ import javax.inject.Inject
 class GetCategoriesFromBD @Inject constructor(
     private val categoryRepository: CategoryRepository,
 ) {
-    operator fun invoke(): List<Category> =
+    suspend operator fun invoke(): List<Category> =
         categoryRepository.getAll()
 }

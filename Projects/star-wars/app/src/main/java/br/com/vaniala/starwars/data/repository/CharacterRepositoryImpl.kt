@@ -22,15 +22,15 @@ class CharacterRepositoryImpl @Inject constructor(
     override suspend fun getCharacters(page: Int): ApiResponse<People> =
         dataSource.getCharacters(page)
 
-    override suspend fun characterByName(query: String): List<People> =
-        localDataSource.characterByName(query)
+    override suspend fun charactersByName(query: String): List<People> =
+        localDataSource.charactersByName(query)
 
-    override fun getCharacterByName(query: String): People =
+    override suspend fun getCharacterByName(query: String): People =
         localDataSource.getCharacterByName(query)
 
     override suspend fun updateIsFavorite(isFavorite: Boolean, name: String) =
         localDataSource.updateIsFavorite(isFavorite, name)
 
-    override suspend fun getCount(): Int =
-        localDataSource.getCount()
+    override suspend fun isUpdate(): Boolean =
+        localDataSource.isUpdate()
 }

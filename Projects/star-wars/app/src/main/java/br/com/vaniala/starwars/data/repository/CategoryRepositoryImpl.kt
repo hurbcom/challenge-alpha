@@ -23,6 +23,9 @@ class CategoryRepositoryImpl @Inject constructor(
     override suspend fun insertAll(categories: List<Category>) =
         localDataSource.insertAll(categories)
 
-    override fun getAll(): List<Category> =
+    override suspend fun getAll(): List<Category> =
         localDataSource.getAll()
+
+    override suspend fun isUpdate(): Boolean =
+        localDataSource.isUpdate()
 }

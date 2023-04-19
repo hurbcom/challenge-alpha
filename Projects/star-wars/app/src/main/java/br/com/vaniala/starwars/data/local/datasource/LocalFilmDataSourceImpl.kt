@@ -15,21 +15,18 @@ class LocalFilmDataSourceImpl @Inject constructor(
     override suspend fun insertAll(films: List<Film>) =
         filmDao.insertAll(films)
 
-    override fun filmsByTitle(query: String): List<Film> =
+    override suspend fun filmsByTitle(query: String): List<Film> =
         filmDao.filmsByTitle(query)
 
-    override fun getFilmByTitle(query: String): Film =
+    override suspend fun getFilmByTitle(query: String): Film =
         filmDao.getFilmByTitle(query)
 
     override suspend fun updateIsFavorite(isFavorite: Boolean, title: String) =
         filmDao.updateIsFavorite(isFavorite, title)
 
-    override suspend fun lastUpdated(): Long =
-        filmDao.lastUpdated()
-
-    override suspend fun getCount(): Int =
-        filmDao.getCount()
-
     override suspend fun getFavorites(): List<Film> =
         filmDao.getFavorites()
+
+    override suspend fun isUpdate(): Boolean =
+        filmDao.isUpdate()
 }

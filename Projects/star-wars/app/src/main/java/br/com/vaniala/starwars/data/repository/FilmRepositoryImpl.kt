@@ -13,24 +13,24 @@ import javax.inject.Inject
  *
  */
 class FilmRepositoryImpl @Inject constructor(
-    private val dataSource: RemoteDataSource,
+    private val remoteDataSource: RemoteDataSource,
     private val localDatSource: LocalDataSource.Films,
 ) : FilmRepository {
     override suspend fun insertAll(films: List<Film>) =
         localDatSource.insertAll(films)
 
-    override fun filmsByTitle(query: String): List<Film> =
+    override suspend fun filmsByTitle(query: String): List<Film> =
         localDatSource.filmsByTitle(query)
 
-    override fun getFilmByTitle(query: String): Film =
+    override suspend fun getFilmByTitle(query: String): Film =
         localDatSource.getFilmByTitle(query)
 
     override suspend fun updateIsFavorite(isFavorite: Boolean, title: String) =
         localDatSource.updateIsFavorite(isFavorite, title)
 
     override suspend fun getFilms(page: Int): ApiResponse<Film> =
-        dataSource.getFilms(page)
+        remoteDataSource.getFilms(page)
 
-    override suspend fun getCount(): Int =
-        localDatSource.getCount()
+    override suspend fun isUpdate(): Boolean =
+        localDatSource.isUpdate()
 }

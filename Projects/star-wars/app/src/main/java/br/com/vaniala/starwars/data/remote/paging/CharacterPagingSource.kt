@@ -25,45 +25,51 @@ class CharacterPagingSource(
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, People> {
-        var total = 0
-        starWarsDatabase.withTransaction {
-            total = repository.getCount()
-        }
-
         return try {
-            if (statusConnectivity.isConnected() && query.isEmpty()) {
+            var isDataUpdate = false
+            val isNotConnected = !statusConnectivity.isConnected()
+
+            starWarsDatabase.withTransaction {
+                isDataUpdate = repository.isUpdate()
+            }
+
+            if (isDataUpdate || isNotConnected) {
+                pageLocal()
+            } else {
                 val nextPage: Int = params.key ?: STARTING_PAGE_INDEX
                 val response = repository.getCharacters(nextPage)
                 val characters = response.results
 
-                if (response.count != total) {
-                    val nextPageNumber = if (response.next == null) null else nextPage + 1
+                val nextPageNumber = if (response.next == null) null else nextPage + 1
+                val isUpdate = nextPageNumber == null
 
-                    characters.forEach { character ->
-                        character.timestamp = System.currentTimeMillis()
-                    }
-                    repository.insertAll(characters)
-                    LoadResult.Page(
-                        data = response.results,
-                        prevKey = null,
-                        nextKey = nextPageNumber,
-                    )
-                } else {
-                    page()
+                characters.forEach { character ->
+                    character.timestamp = System.currentTimeMillis()
+                    character.isUpdate = isUpdate
                 }
-            } else {
-                page()
+
+                starWarsDatabase.withTransaction {
+                    repository.insertAll(characters)
+                }
+
+                LoadResult.Page(
+                    data = response.results,
+                    prevKey = null,
+                    nextKey = nextPageNumber,
+                )
             }
-        } catch (e: Exception) {
-            LoadResult.Error(e)
+        } catch (ignore: Exception) {
+            LoadResult.Error(ignore)
         }
     }
 
-    private suspend fun page(): LoadResult.Page<Int, People> {
+    private suspend fun pageLocal(): LoadResult.Page<Int, People> {
         var characterByName = emptyList<People>()
+
         starWarsDatabase.withTransaction {
-            characterByName = repository.characterByName(query)
+            characterByName = repository.charactersByName(query)
         }
+
         return LoadResult.Page(
             data = characterByName,
             prevKey = null,

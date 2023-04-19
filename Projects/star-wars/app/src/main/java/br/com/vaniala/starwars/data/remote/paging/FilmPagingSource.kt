@@ -15,6 +15,7 @@ import br.com.vaniala.starwars.domain.repository.FilmRepository
  */
 
 private const val STARTING_PAGE_INDEX = 1
+
 class FilmPagingSource(
     private val query: String,
     private val repository: FilmRepository,
@@ -30,44 +31,50 @@ class FilmPagingSource(
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Film> {
-        var total = 0
-        starWarsDatabase.withTransaction {
-            total = repository.getCount()
-        }
         return try {
-            if (statusConnectivity.isConnected() && query.isEmpty()) {
+            var isDataUpdate = false
+            val isNotConnected = !statusConnectivity.isConnected()
+
+            starWarsDatabase.withTransaction {
+                isDataUpdate = repository.isUpdate()
+            }
+
+            if (isDataUpdate || isNotConnected) {
+                pageLocal()
+            } else {
                 val nextPage: Int = params.key ?: STARTING_PAGE_INDEX
                 val response = repository.getFilms(nextPage)
                 val films = response.results
-                if (response.count != total) {
-                    val nextPageNumber = if (response.next == null) null else nextPage + 1
 
-                    films.forEach { film ->
-                        film.timestamp = System.currentTimeMillis()
-                    }
-                    repository.insertAll(films)
+                val nextPageNumber = if (response.next == null) null else nextPage + 1
+                val isUpdate = nextPageNumber == null
 
-                    LoadResult.Page(
-                        data = response.results,
-                        prevKey = null,
-                        nextKey = nextPageNumber,
-                    )
-                } else {
-                    page()
+                films.forEach { film ->
+                    film.timestamp = System.currentTimeMillis()
+                    film.isUpdate = isUpdate
                 }
-            } else {
-                page()
+                starWarsDatabase.withTransaction {
+                    repository.insertAll(films)
+                }
+
+                LoadResult.Page(
+                    data = response.results,
+                    prevKey = null,
+                    nextKey = nextPageNumber,
+                )
             }
-        } catch (e: Exception) {
-            LoadResult.Error(e)
+        } catch (ignore: Exception) {
+            LoadResult.Error(ignore)
         }
     }
 
-    private suspend fun page(): LoadResult.Page<Int, Film> {
+    private suspend fun pageLocal(): LoadResult.Page<Int, Film> {
         var filmsByName = emptyList<Film>()
+
         starWarsDatabase.withTransaction {
             filmsByName = repository.filmsByTitle(query)
         }
+
         return LoadResult.Page(
             data = filmsByName,
             prevKey = null,

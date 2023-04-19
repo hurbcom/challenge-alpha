@@ -10,11 +10,11 @@ import br.com.vaniala.starwars.domain.model.CategoryResponse
  */
 fun CategoryResponse.toCategoryList(): List<Category> {
     return listOf(
-        Category(name = "films", url = this.films),
-        Category(name = "people", url = this.people),
-        Category(name = "planets", url = this.planets),
-        Category(name = "species", url = this.species),
-        Category(name = "starships", url = this.starships),
-        Category(name = "vehicles", url = this.vehicles),
+        Category(name = "films", url = this.films, isUpdate = true),
+        Category(name = "people", url = this.people, isUpdate = true),
+        Category(name = "planets", url = this.planets, isUpdate = true),
+        Category(name = "species", url = this.species, isUpdate = true),
+        Category(name = "starships", url = this.starships, isUpdate = true),
+        Category(name = "vehicles", url = this.vehicles, isUpdate = true),
     )
 }

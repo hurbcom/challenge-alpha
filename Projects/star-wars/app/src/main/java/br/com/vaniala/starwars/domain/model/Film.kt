@@ -49,7 +49,11 @@ data class Film(
     @field:Json(ignore = true)
     @ColumnInfo(name = "timestamp_film")
     var timestamp: Long = 0L,
+    @field:Json(ignore = true)
+    @ColumnInfo(name = "is_update_film")
+    var isUpdate: Boolean = false,
 ) : Parcelable {
+    @IgnoredOnParcel
     var image: String? = getUrlImage(url)
 
     @Ignore

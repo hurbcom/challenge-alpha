@@ -16,45 +16,43 @@ interface LocalDataSource {
     interface Categories {
         suspend fun insertAll(categories: List<Category>)
 
-        fun getAll(): List<Category>
+        suspend fun getAll(): List<Category>
+
+        suspend fun isUpdate(): Boolean
     }
 
     interface Films {
         suspend fun insertAll(films: List<Film>)
 
-        fun filmsByTitle(query: String): List<Film>
+        suspend fun filmsByTitle(query: String): List<Film>
 
-        fun getFilmByTitle(query: String): Film
+        suspend fun getFilmByTitle(query: String): Film
 
         suspend fun updateIsFavorite(isFavorite: Boolean, title: String)
 
-        suspend fun lastUpdated(): Long
-
-        suspend fun getCount(): Int
-
         suspend fun getFavorites(): List<Film>
+
+        suspend fun isUpdate(): Boolean
     }
 
     interface Characters {
 
         suspend fun insertAll(characters: List<People>)
 
-        suspend fun characterByName(query: String): List<People>
+        suspend fun charactersByName(query: String): List<People>
 
-        fun getCharacterByName(query: String): People
+        suspend fun getCharacterByName(query: String): People
 
         suspend fun updateIsFavorite(isFavorite: Boolean, name: String)
 
-        suspend fun lastUpdated(): Long
-
-        suspend fun getCount(): Int
-
         suspend fun getFavorites(): List<People>
+        suspend fun isUpdate(): Boolean
     }
 
     interface Favorites {
         suspend fun getFavorites(): Favorite
     }
+
     interface LastSeenI {
         suspend fun getLastSeen(): List<LastSeen>
         suspend fun insert(lastSeen: LastSeen)

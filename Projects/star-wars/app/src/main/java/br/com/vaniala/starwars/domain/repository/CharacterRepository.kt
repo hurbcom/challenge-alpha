@@ -13,11 +13,11 @@ interface CharacterRepository {
 
     suspend fun getCharacters(page: Int): ApiResponse<People>
 
-    suspend fun characterByName(query: String): List<People>
+    suspend fun charactersByName(query: String): List<People>
 
-    fun getCharacterByName(query: String): People
+    suspend fun getCharacterByName(query: String): People
 
     suspend fun updateIsFavorite(isFavorite: Boolean, name: String)
 
-    suspend fun getCount(): Int
+    suspend fun isUpdate(): Boolean
 }

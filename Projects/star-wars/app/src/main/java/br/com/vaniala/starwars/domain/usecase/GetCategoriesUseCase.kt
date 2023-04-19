@@ -18,15 +18,21 @@ import javax.inject.Inject
  *
  */
 class GetCategoriesUseCase @Inject constructor(
-    private val categoryRepository: CategoryRepository,
+    private val repository: CategoryRepository,
     private val saveCategoriesInBD: SaveCategoriesInBD,
     private val getCategoriesFromBD: GetCategoriesFromBD,
     private val statusConnectivity: StatusConnectivity,
 ) {
     operator fun invoke(): Flow<Result<List<Category>>> = flow {
         emit(Result.Loading)
-        if (statusConnectivity.isConnected()) {
-            val response = categoryRepository.getCategories()
+        val isDataUpdate = repository.isUpdate()
+        val isNotConnected = !statusConnectivity.isConnected()
+
+        if (isDataUpdate || isNotConnected) {
+            val categories = getCategoriesFromBD()
+            emit(Result.Success(categories))
+        } else {
+            val response = repository.getCategories()
 
             if (response.isSuccessful) {
                 val categoryResult = response.body()
@@ -38,9 +44,6 @@ class GetCategoriesUseCase @Inject constructor(
             } else {
                 emit(Result.Failure(Exception("Error getting categories")))
             }
-        } else {
-            val categories = getCategoriesFromBD()
-            emit(Result.Success(categories))
         }
     }.catch { e ->
         e.printStackTrace()

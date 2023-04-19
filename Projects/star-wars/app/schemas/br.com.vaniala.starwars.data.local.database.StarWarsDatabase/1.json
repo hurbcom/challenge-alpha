@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "af78746842e1e39218c3e0a6568ec451",
+    "identityHash": "d494b476f9fbb3e38de48d6bb74bbfe8",
     "entities": [
       {
         "tableName": "category",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `url` TEXT, PRIMARY KEY(`name`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `url` TEXT, `is_update_category` INTEGER NOT NULL, PRIMARY KEY(`name`))",
         "fields": [
           {
             "fieldPath": "name",
@@ -19,6 +19,12 @@
             "columnName": "url",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "isUpdate",
+            "columnName": "is_update_category",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -32,7 +38,7 @@
       },
       {
         "tableName": "film",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`title` TEXT NOT NULL, `episode_id` INTEGER, `opening_crawl` TEXT, `director` TEXT, `producer` TEXT, `release_date` TEXT, `url_film` TEXT, `isFavorite_film` INTEGER NOT NULL, `timestamp_film` INTEGER NOT NULL, `image` TEXT, PRIMARY KEY(`title`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`title` TEXT NOT NULL, `episode_id` INTEGER, `opening_crawl` TEXT, `director` TEXT, `producer` TEXT, `release_date` TEXT, `url_film` TEXT, `isFavorite_film` INTEGER NOT NULL, `timestamp_film` INTEGER NOT NULL, `is_update_film` INTEGER NOT NULL, `image` TEXT, PRIMARY KEY(`title`))",
         "fields": [
           {
             "fieldPath": "title",
@@ -89,6 +95,12 @@
             "notNull": true
           },
           {
+            "fieldPath": "isUpdate",
+            "columnName": "is_update_film",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
             "fieldPath": "image",
             "columnName": "image",
             "affinity": "TEXT",
@@ -106,7 +118,7 @@
       },
       {
         "tableName": "character",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `birth_year` TEXT, `created` TEXT, `edited` TEXT, `eye_color` TEXT, `gender` TEXT, `hair_color` TEXT, `height` TEXT, `homeworld` TEXT, `mass` TEXT, `skin_color` TEXT, `url_character` TEXT, `imagePeople` TEXT, `imageHomeworld` TEXT, `isFavorite_character` INTEGER NOT NULL, `timestamp_character` INTEGER NOT NULL, PRIMARY KEY(`name`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `birth_year` TEXT, `created` TEXT, `edited` TEXT, `eye_color` TEXT, `gender` TEXT, `hair_color` TEXT, `height` TEXT, `homeworld` TEXT, `mass` TEXT, `skin_color` TEXT, `url_character` TEXT, `imagePeople` TEXT, `imageHomeworld` TEXT, `isFavorite_character` INTEGER NOT NULL, `timestamp_character` INTEGER NOT NULL, `is_update_character` INTEGER NOT NULL, PRIMARY KEY(`name`))",
         "fields": [
           {
             "fieldPath": "name",
@@ -203,6 +215,12 @@
             "columnName": "timestamp_character",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "isUpdate",
+            "columnName": "is_update_character",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -216,7 +234,7 @@
       },
       {
         "tableName": "last_seen",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`info` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `urlFilm` TEXT, `title` TEXT, `episode_id` INTEGER, `opening_crawl` TEXT, `director` TEXT, `producer` TEXT, `release_date` TEXT, `url_film` TEXT, `isFavorite_film` INTEGER, `timestamp_film` INTEGER, `image` TEXT, `name` TEXT, `birth_year` TEXT, `created` TEXT, `edited` TEXT, `eye_color` TEXT, `gender` TEXT, `hair_color` TEXT, `height` TEXT, `homeworld` TEXT, `mass` TEXT, `skin_color` TEXT, `url_character` TEXT, `imagePeople` TEXT, `imageHomeworld` TEXT, `isFavorite_character` INTEGER, `timestamp_character` INTEGER, PRIMARY KEY(`info`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`info` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `urlFilm` TEXT, `title` TEXT, `episode_id` INTEGER, `opening_crawl` TEXT, `director` TEXT, `producer` TEXT, `release_date` TEXT, `url_film` TEXT, `isFavorite_film` INTEGER, `timestamp_film` INTEGER, `is_update_film` INTEGER, `image` TEXT, `name` TEXT, `birth_year` TEXT, `created` TEXT, `edited` TEXT, `eye_color` TEXT, `gender` TEXT, `hair_color` TEXT, `height` TEXT, `homeworld` TEXT, `mass` TEXT, `skin_color` TEXT, `url_character` TEXT, `imagePeople` TEXT, `imageHomeworld` TEXT, `isFavorite_character` INTEGER, `timestamp_character` INTEGER, `is_update_character` INTEGER, PRIMARY KEY(`info`))",
         "fields": [
           {
             "fieldPath": "info",
@@ -287,6 +305,12 @@
           {
             "fieldPath": "film.timestamp",
             "columnName": "timestamp_film",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "film.isUpdate",
+            "columnName": "is_update_film",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -391,6 +415,12 @@
             "columnName": "timestamp_character",
             "affinity": "INTEGER",
             "notNull": false
+          },
+          {
+            "fieldPath": "character.isUpdate",
+            "columnName": "is_update_character",
+            "affinity": "INTEGER",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -406,7 +436,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'af78746842e1e39218c3e0a6568ec451')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd494b476f9fbb3e38de48d6bb74bbfe8')"
     ]
   }
 }
