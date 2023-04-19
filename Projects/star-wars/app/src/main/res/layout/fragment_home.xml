@@ -16,11 +16,11 @@
         android:textColor="@color/black"
         android:textSize="@dimen/title_size_large"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_home_img_title"
+        app:layout_constraintEnd_toStartOf="@+id/fragment_home_img_title"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/fragment_home_img_title"
-        app:layout_constraintTop_toTopOf="@id/fragment_home_img_title"
-        app:layout_constraintEnd_toStartOf="@+id/fragment_home_img_title"/>
+        app:layout_constraintTop_toTopOf="@id/fragment_home_img_title" />
 
 
     <ImageView
@@ -31,8 +31,8 @@
         android:layout_marginEnd="@dimen/screen_padding_large"
         android:contentDescription="@string/home_img_logo_description"
         android:src="@drawable/logo_yellow"
-        app:layout_constraintStart_toEndOf="@+id/fragment_home_text_title"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fragment_home_text_title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -51,10 +51,10 @@
         android:layout_width="@dimen/zero_dp"
         android:layout_height="@dimen/zero_dp"
         android:layout_marginTop="@dimen/screen_padding_extra_large"
-        android:layout_marginBottom="@dimen/screen_padding_large"
         android:layout_marginEnd="@dimen/screen_padding_large"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/screen_padding_large"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/fragment_home_text_title"
         app:layout_constraintTop_toBottomOf="@+id/fragment_home_text_title">
 
@@ -66,10 +66,11 @@
         android:layout_width="@dimen/zero_dp"
         android:layout_height="@dimen/zero_dp"
         android:layout_marginTop="@dimen/screen_padding_extra_large"
+        android:layout_marginEnd="@dimen/screen_padding_large"
         android:layout_marginBottom="@dimen/screen_padding_large"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="@dimen/screen_padding_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/fragment_home_text_title"
         app:layout_constraintTop_toBottomOf="@+id/fragment_home_text_title"

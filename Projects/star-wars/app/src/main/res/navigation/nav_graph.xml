@@ -12,11 +12,19 @@
         <action
             android:id="@+id/action_home_to_films"
             app:destination="@id/films"
-            app:popUpTo="@id/home" />
+            app:popUpTo="@id/home"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
         <action
             android:id="@+id/action_home_to_characters"
             app:destination="@id/characters"
-            app:popUpTo="@id/home" />
+            app:popUpTo="@id/home"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/films"
@@ -26,7 +34,11 @@
         <action
             android:id="@+id/action_films_to_films_details"
             app:destination="@id/films_details"
-            app:popUpTo="@id/films" />
+            app:popUpTo="@id/films"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/films_details"
@@ -45,7 +57,11 @@
         <action
             android:id="@+id/action_characters_to_characters_details"
             app:destination="@id/characters_details"
-            app:popUpTo="@id/characters" />
+            app:popUpTo="@id/characters"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/characters_details"
@@ -64,11 +80,19 @@
         <action
             android:id="@+id/action_favorites_to_films_details"
             app:destination="@id/films_details"
-            app:popUpTo="@id/favorites" />
+            app:popUpTo="@id/favorites"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
         <action
             android:id="@+id/action_favorites_to_characters_details"
             app:destination="@id/characters_details"
-            app:popUpTo="@id/favorites" />
+            app:popUpTo="@id/favorites"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/last_seen"
@@ -78,10 +102,18 @@
         <action
             android:id="@+id/action_last_seen_to_films_details"
             app:destination="@id/films_details"
-            app:popUpTo="@id/last_seen" />
+            app:popUpTo="@id/last_seen"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
         <action
             android:id="@+id/action_last_seen_to_characters_details"
             app:destination="@id/characters_details"
-            app:popUpTo="@id/last_seen" />
+            app:popUpTo="@id/last_seen"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
 </navigation>
