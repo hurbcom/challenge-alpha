@@ -17,6 +17,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
+import kotlin.math.sin
 
 data class Star(
     var x: Float,
@@ -27,7 +28,7 @@ data class Star(
 
     fun update(value: Float) {
         val x = (value - initialAlpha).toDouble()
-        val newAlpha = 0.5f + (0.5f * Math.sin(x).toFloat())
+        val newAlpha = 0.5f + (0.5f * sin(x).toFloat())
         alpha = newAlpha
     }
 }
@@ -41,7 +42,7 @@ fun SpaceView(
         initialValue = 0f,
         targetValue = 2f * Math.PI.toFloat(),
         animationSpec = infiniteRepeatable(
-            animation = tween(5000),
+            animation = tween(3000),
             repeatMode = RepeatMode.Restart
         ), label = ""
     )
@@ -55,7 +56,7 @@ fun SpaceView(
         val dimens = with(LocalDensity.current) {
             Pair(maxWidth.toPx(), maxHeight.toPx())
         }
-        //val height = maxHeight.toPx()
+
         val stars = remember {
             buildList {
                 repeat(500) {
