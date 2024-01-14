@@ -1,5 +1,6 @@
 package br.com.mdr.starwars.presentation.splash
 
+import android.util.Log
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -16,14 +17,18 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavController
 import br.com.mdr.starwars.R
 import br.com.mdr.starwars.ui.theme.Dimens.MEDIUM_PADDING
 
 @Composable
-fun SplashScreen(navController: NavController) {
+fun SplashScreen(onAnimationComplete: () -> Unit) {
 
     val scale = remember { Animatable(0f) }
+
+    if (scale.value == 1f) {
+        onAnimationComplete()
+    }
+    Log.d("SCALE", "CURRENT SCALE: ${scale.value}")
     LaunchedEffect(key1 = true) {
         scale.animateTo(
             targetValue = 1f,
@@ -32,9 +37,6 @@ fun SplashScreen(navController: NavController) {
                 delayMillis = 200
             )
         )
-//        navController.popBackStack()
-//        val route = Screen.Home.route
-//        navController.navigate(route)
     }
     Splash(scale.value)
 }

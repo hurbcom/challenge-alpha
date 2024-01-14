@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Star Wars</string>
+    <string name="categories">Categories</string>
+    <string name="favorites">Favorites</string>
+    <string name="last_seen">Last seen</string>
 
+    <!-- Content Description Section -->
     <string name="app_logo">Star Wars logo</string>
 
 </resources>
