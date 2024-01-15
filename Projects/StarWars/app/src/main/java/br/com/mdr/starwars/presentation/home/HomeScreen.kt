@@ -2,6 +2,8 @@ package br.com.mdr.starwars.presentation.home
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -10,6 +12,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -32,8 +35,12 @@ fun HomeScreen(navHostController: NavHostController = rememberNavController()) {
     Scaffold(
         contentColor = Color.Red,
         bottomBar = { BottomBar(navHostController) }
-    ) {
-        HomeNavGraph(navController = navHostController)
+    ) { paddingValues ->
+        HomeNavGraph(
+            modifier = Modifier
+                .padding(paddingValues = paddingValues)
+                .fillMaxSize(),
+            navController = navHostController)
     }
 }
 

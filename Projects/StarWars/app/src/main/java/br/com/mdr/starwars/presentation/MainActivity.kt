@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.com.mdr.starwars.navigation.RootNavGraph
-import br.com.mdr.starwars.ui.components.SpaceView
+import br.com.mdr.starwars.presentation.components.SpaceView
 import br.com.mdr.starwars.ui.theme.StarWarsTheme
 
 class MainActivity : ComponentActivity() {
