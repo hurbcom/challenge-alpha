@@ -1,4 +1,4 @@
-package br.com.mdr.starwars.ui.components
+package br.com.mdr.starwars.presentation.components
 
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
