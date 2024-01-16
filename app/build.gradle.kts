@@ -10,6 +10,7 @@ android {
     defaultConfig {
         applicationId = "com.wesleyerick.podracer"
         minSdk = 23
+        //noinspection OldTargetApi
         targetSdk = 31
         versionCode = 1
         versionName = "1.0"
@@ -37,21 +38,24 @@ android {
 
 dependencies {
 
-    val ktxVersion = "1.9.0"
-    val appCompatVersion = "1.6.1"
-    val materialVersion = "1.11.0"
+    val ktxVersion = "1.3.1"
+    val constraintLayoutVersion = "2.0.1"
+    val appCompatVersion = "1.3.1"
+    val materialVersion = "1.2.1"
     val retrofitVersion = "2.9.0"
     val koinVersion = "3.2.2"
     val glideVersion = "4.15.1"
 
     val jUnitVersion = "4.13.2"
-    val jUnitTestVersion = "1.1.5"
+    val jUnitTestVersion = "1.1.2"
     val mockkVersion = "1.12.4"
     val coroutinesTestVersion = "1.6.1"
-    val espressoVersion = "3.5.1"
+    val espressoVersion = "3.3.0"
 
+    implementation("androidx.constraintlayout:constraintlayout:$constraintLayoutVersion")
     implementation("androidx.core:core-ktx:$ktxVersion")
     implementation("androidx.appcompat:appcompat:$appCompatVersion")
+    implementation("androidx.appcompat:appcompat-resources:$appCompatVersion")
     implementation("com.google.android.material:material:$materialVersion")
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
