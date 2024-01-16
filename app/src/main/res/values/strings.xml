@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Star Wars Wiki</string>
+    <string name="home_title_name">Star Wars\nGuide</string>
 </resources>
