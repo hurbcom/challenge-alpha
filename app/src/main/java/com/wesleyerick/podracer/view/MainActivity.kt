@@ -1,12 +1,25 @@
 package com.wesleyerick.podracer.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.wesleyerick.podracer.R
+import androidx.appcompat.app.AppCompatActivity
+import com.wesleyerick.podracer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        listenersSetup()
+        setContentView(binding.root)
+    }
+
+    private fun listenersSetup() = with(binding) {
+        firstTypeButton.setOnClickListener {
+        }
+        secondTypeButton.setOnClickListener {
+        }
     }
 }
