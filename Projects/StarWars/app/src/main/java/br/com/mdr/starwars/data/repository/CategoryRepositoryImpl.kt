@@ -1,6 +1,6 @@
 package br.com.mdr.starwars.data.repository
 
-import br.com.mdr.starwars.data.remote.StarWarsApi
+import br.com.mdr.starwars.data.remote.api.StarWarsApi
 import br.com.mdr.starwars.data.remote.model.CategoryResponse
 import br.com.mdr.starwars.domain.repository.CategoryRepository
 import kotlinx.coroutines.flow.Flow

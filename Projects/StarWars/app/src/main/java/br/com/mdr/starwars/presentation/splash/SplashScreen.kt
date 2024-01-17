@@ -1,6 +1,5 @@
 package br.com.mdr.starwars.presentation.splash
 
-import android.util.Log
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -28,7 +27,7 @@ fun SplashScreen(onAnimationComplete: () -> Unit) {
     if (scale.value == 1f) {
         onAnimationComplete()
     }
-    Log.d("SCALE", "CURRENT SCALE: ${scale.value}")
+
     LaunchedEffect(key1 = true) {
         scale.animateTo(
             targetValue = 1f,

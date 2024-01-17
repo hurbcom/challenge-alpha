@@ -17,6 +17,7 @@ val ShimmerDarkGray = Color(0xFF1D1D1D)
 //NavigationBarColors
 val NavigationIndicatorColor = Color(0x33454545)
 val NavigationBarContentColor = Color(0xF2000000)
+val SearchBarColor = Color(0x80FFFFFF)
 val SelectedItemColor
     @Composable
     get() = if (isSystemInDarkTheme()) DarkSecondaryColor else PrimaryColor

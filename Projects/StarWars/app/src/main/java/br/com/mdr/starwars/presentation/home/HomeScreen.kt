@@ -33,14 +33,14 @@ import br.com.mdr.starwars.ui.theme.UnselectedItemColor
 @Composable
 fun HomeScreen(navHostController: NavHostController = rememberNavController()) {
     Scaffold(
-        contentColor = Color.Red,
         bottomBar = { BottomBar(navHostController) }
     ) { paddingValues ->
         HomeNavGraph(
             modifier = Modifier
                 .padding(paddingValues = paddingValues)
                 .fillMaxSize(),
-            navController = navHostController)
+            navController = navHostController
+        )
     }
 }
 
