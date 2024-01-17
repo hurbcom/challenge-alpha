@@ -2,6 +2,7 @@ package br.com.mdr.starwars
 
 import android.app.Application
 import br.com.mdr.starwars.di.apiModule
+import br.com.mdr.starwars.di.databaseModule
 import br.com.mdr.starwars.di.networkModule
 import br.com.mdr.starwars.di.repositoryModule
 import br.com.mdr.starwars.di.useCaseModule
@@ -24,6 +25,7 @@ class StarWarsApplication: Application() {
         startKoin {
             androidContext(this@StarWarsApplication)
             modules(
+                databaseModule,
                 apiModule,
                 networkModule,
                 repositoryModule,

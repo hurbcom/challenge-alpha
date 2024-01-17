@@ -49,7 +49,7 @@ fun EmptyScreen(
     error: PageState.Error? = null,
     viewModel: BaseViewModel) {
     var message by remember {
-        mutableStateOf("Find your Favorite Hero!")
+        mutableStateOf("")
     }
     var icon by remember {
         mutableIntStateOf(R.drawable.ic_search_document)
@@ -122,14 +122,14 @@ fun EmptyContent(
                     .alpha(alphaAnim),
                 painter = painterResource(id = icon),
                 contentDescription = stringResource(id = R.string.network_error_icon),
-                tint = if (isSystemInDarkTheme()) Color.LightGray else Color.DarkGray
+                tint = Color.White
             )
             Text(
                 modifier = Modifier
                     .padding(top = SMALL_PADDING)
                     .alpha(alphaAnim),
                 text = message,
-                color = if (isSystemInDarkTheme()) Color.LightGray else Color.DarkGray,
+                color = Color.White,
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Medium,
                 fontSize = MaterialTheme.typography.bodySmall.fontSize

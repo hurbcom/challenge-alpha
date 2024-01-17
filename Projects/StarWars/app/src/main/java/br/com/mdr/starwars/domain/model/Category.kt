@@ -1,8 +1,8 @@
 package br.com.mdr.starwars.domain.model
 
-import br.com.mdr.starwars.common.AppUrls.CATEGORIES_URL
-import br.com.mdr.starwars.common.AppUrls.IMAGE_BASE_URL
-import br.com.mdr.starwars.common.AppUrls.IMAGE_EXTENSION
+import br.com.mdr.starwars.common.Constants.CATEGORIES_URL
+import br.com.mdr.starwars.common.Constants.IMAGE_BASE_URL
+import br.com.mdr.starwars.common.Constants.IMAGE_EXTENSION
 
 private const val CHARACTER = "character"
 private const val PEOPLE = "people"

@@ -27,3 +27,7 @@ sealed class BottomBarScreen(
         label = R.string.last_seen
     )
 }
+
+sealed class CategoriesDetailsScreen(val route: String) {
+    data object FilmsScreen: CategoriesDetailsScreen("films")
+}

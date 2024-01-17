@@ -18,15 +18,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import br.com.mdr.starwars.R
 import br.com.mdr.starwars.domain.model.Category
 import br.com.mdr.starwars.domain.model.PageState
+import br.com.mdr.starwars.navigation.CategoriesDetailsScreen
 import br.com.mdr.starwars.presentation.common.EmptyScreen
 import br.com.mdr.starwars.presentation.components.ShimmerEffect
+import br.com.mdr.starwars.presentation.components.SpaceBackgroundView
 import br.com.mdr.starwars.ui.theme.Dimens
 import br.com.mdr.starwars.ui.theme.Dimens.MEDIUM_PADDING
 import br.com.mdr.starwars.utils.upperCaseFirstChar
@@ -34,6 +34,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import coil.size.Size
 import org.koin.androidx.compose.koinViewModel
+import timber.log.Timber
 
 @Composable
 fun CategoriesScreen(navController: NavHostController) {
@@ -71,24 +72,31 @@ fun HandlePagingResult(
 @Composable
 fun ListContent(categories: List<Category>, navController: NavHostController) {
     LazyColumn(
-        contentPadding = PaddingValues(all = MEDIUM_PADDING),
+        contentPadding = PaddingValues(MEDIUM_PADDING),
         verticalArrangement = Arrangement.spacedBy(MEDIUM_PADDING)
     ) {
         items(count = categories.size) { index ->
-            CategoryItem(category = categories[index], navController = navController)
+            CategoryItem(
+                category = categories[index]
+            ) { category ->
+                handleCategoryClick(
+                    category = category,
+                    navController = navController
+                )
+            }
         }
     }
 }
 
 @Composable
-fun CategoryItem(category: Category, navController: NavHostController) {
+fun CategoryItem(category: Category, onCategoryClick: (Category) -> Unit) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
             .height(Dimens.CATEGORY_ITEM_HEIGHT),
         shape = RoundedCornerShape(size = MEDIUM_PADDING),
         onClick = {
-            //TODO: Adicionar tela de detalhe de categoria
+            onCategoryClick(category)
         }
     ) {
         AsyncImage(
@@ -135,11 +143,14 @@ fun CategoryItem(category: Category, navController: NavHostController) {
     }
 }
 
-@Preview
-@Composable
-fun CategoryItemPreview() {
-    CategoryItem(
-        category = Category("films", "https://swapi.dev/api/films/"),
-        navController = rememberNavController()
-    )
+private const val FILMS_CATEGORY = "films"
+private const val CHARACTERS_CATEGORY = "people"
+private fun handleCategoryClick(category: Category, navController: NavHostController) {
+    when (category.name) {
+        FILMS_CATEGORY -> { navController.navigate(CategoriesDetailsScreen.FilmsScreen.route) }
+        CHARACTERS_CATEGORY -> {}
+        else -> { 
+            Timber.d("Category not implemented")
+        }
+    }
 }

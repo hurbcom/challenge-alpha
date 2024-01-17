@@ -11,5 +11,8 @@
 
     <!-- Content Description Section -->
     <string name="app_logo">Star Wars logo</string>
+    <string name="search_here">Pesquisar</string>
+    <string name="close_icon">Ícone fechar</string>
+    <string name="search_icon">Ícone pesquisar</string>
 
 </resources>
