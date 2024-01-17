@@ -1,13 +1,13 @@
-package com.wesleyerick.podracer.domain.usecase.vehicles
+package com.wesleyerick.podracer.domain.usecase.starships
 
 import android.content.Context
 import com.wesleyerick.podracer.R
-import com.wesleyerick.podracer.data.repository.IRepositoryVehicles
+import com.wesleyerick.podracer.data.repository.starships.IRepositoryStarships
 import com.wesleyerick.podracer.util.Result
 import com.wesleyerick.podracer.util.safeRunDispatcher
 
-class GetAllVehiclesUseCase(
-    private val repository: IRepositoryVehicles,
+class GetStarshipsListUseCase(
+    private val repository: IRepositoryStarships,
     private val context: Context,
 ) {
     suspend operator fun invoke() = when (
@@ -16,8 +16,8 @@ class GetAllVehiclesUseCase(
         }
     ) {
         is Result.Success -> {
-            val list = if (!result.data.body()?.results.isNullOrEmpty()) {
-                result.data.body()?.results
+            val list = if (!result.data.body()?.starshipsList.isNullOrEmpty()) {
+                result.data.body()?.starshipsList
             } else {
                 emptyList()
             }

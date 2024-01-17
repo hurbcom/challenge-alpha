@@ -1,4 +1,4 @@
-package com.wesleyerick.podracer.data.repository
+package com.wesleyerick.podracer.data.repository.vehicles
 
 import com.wesleyerick.podracer.data.model.vehicles.Vehicle
 import com.wesleyerick.podracer.data.model.vehicles.VehiclesList
