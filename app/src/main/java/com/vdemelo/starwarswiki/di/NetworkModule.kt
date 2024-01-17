@@ -9,7 +9,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import timber.log.Timber
 
-//TODO - colocar em data.network?
 val networkModule = module {
     single {
         val logger = HttpLoggingInterceptor { Timber.d("API $it") }
