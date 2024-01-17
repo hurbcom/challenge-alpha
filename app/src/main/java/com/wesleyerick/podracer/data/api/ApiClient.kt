@@ -1,6 +1,7 @@
 package com.wesleyerick.podracer.data.api
 
 import com.wesleyerick.podracer.BuildConfig
+import com.wesleyerick.podracer.data.service.VehiclesService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -12,4 +13,5 @@ fun getRetrofitInstance(): Retrofit {
         .build()
 }
 
-// fun getGenericService(retrofit: Retrofit): GenericService = retrofit.create(GenericService::class.java)
+fun getVehiclesService(retrofit: Retrofit): VehiclesService =
+    retrofit.create(VehiclesService::class.java)

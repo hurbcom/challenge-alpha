@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Star Wars Wiki</string>
     <string name="home_title_name">Star Wars\nGuide</string>
+    <string name="error_message">Ocorreu um erro, tente novamente mais tarde</string>
 </resources>
