@@ -1,5 +1,6 @@
 package br.com.mdr.starwars.di
 
+import android.util.Log
 import br.com.mdr.starwars.common.Constants.BASE_URL
 import br.com.mdr.starwars.data.local.AppDatabase
 import br.com.mdr.starwars.data.repository.RemoteDataSourceImpl
@@ -39,6 +40,7 @@ val networkModule = module {
     single {
         HttpLoggingInterceptor {
             Timber.i(it)
+            Log.i("OKHTTP", it)
         }.apply {
             level = HttpLoggingInterceptor.Level.BODY
         }

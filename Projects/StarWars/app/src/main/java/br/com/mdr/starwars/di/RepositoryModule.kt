@@ -8,5 +8,5 @@ import org.koin.dsl.module
 
 val repositoryModule = module {
     single<CategoryRepository> { CategoryRepositoryImpl(get()) }
-    single<FilmRepository> { FilmRepositoryImpl(get()) }
+    single<FilmRepository> { FilmRepositoryImpl(get(), get()) }
 }

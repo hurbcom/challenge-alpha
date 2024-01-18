@@ -2,6 +2,7 @@ package br.com.mdr.starwars.common
 
 object Constants {
     const val IMAGE_EXTENSION = ".jpg"
+    const val FILM_ID_KEY = "filmId"
 
     const val BASE_URL = "https://swapi.dev/"
 

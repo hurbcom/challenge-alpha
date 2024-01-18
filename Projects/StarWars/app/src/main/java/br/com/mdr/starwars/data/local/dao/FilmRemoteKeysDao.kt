@@ -12,7 +12,7 @@ interface FilmRemoteKeysDao {
     suspend fun getRemoteKeys(id: Int): FilmRemoteKeys?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addRemoteKey(heroRemoteKeys: FilmRemoteKeys)
+    suspend fun addAllRemoteKeys(heroRemoteKeys: List<FilmRemoteKeys>)
 
     @Query("DELETE FROM film_remote_keys_table")
     suspend fun deleteRemoteKeys()

@@ -2,6 +2,8 @@ package br.com.mdr.starwars.di
 
 import androidx.room.Room
 import br.com.mdr.starwars.data.local.AppDatabase
+import br.com.mdr.starwars.data.repository.LocalDataSourceImpl
+import br.com.mdr.starwars.domain.repository.LocalDataSource
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
@@ -15,4 +17,5 @@ val databaseModule = module {
         ).build()
     }
 
+    single<LocalDataSource> { LocalDataSourceImpl(get()) }
 }

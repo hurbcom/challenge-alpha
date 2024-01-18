@@ -2,37 +2,17 @@ package br.com.mdr.starwars.presentation.categories
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.font.FontWeight
-import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavHostController
-import br.com.mdr.starwars.R
 import br.com.mdr.starwars.domain.model.Category
 import br.com.mdr.starwars.domain.model.PageState
-import br.com.mdr.starwars.navigation.CategoriesDetailsScreen
+import br.com.mdr.starwars.navigation.Screen
 import br.com.mdr.starwars.presentation.common.EmptyScreen
 import br.com.mdr.starwars.presentation.components.ShimmerEffect
-import br.com.mdr.starwars.presentation.components.SpaceBackgroundView
-import br.com.mdr.starwars.ui.theme.Dimens
 import br.com.mdr.starwars.ui.theme.Dimens.MEDIUM_PADDING
-import br.com.mdr.starwars.utils.upperCaseFirstChar
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
-import coil.size.Size
 import org.koin.androidx.compose.koinViewModel
 import timber.log.Timber
 
@@ -88,66 +68,11 @@ fun ListContent(categories: List<Category>, navController: NavHostController) {
     }
 }
 
-@Composable
-fun CategoryItem(category: Category, onCategoryClick: (Category) -> Unit) {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(Dimens.CATEGORY_ITEM_HEIGHT),
-        shape = RoundedCornerShape(size = MEDIUM_PADDING),
-        onClick = {
-            onCategoryClick(category)
-        }
-    ) {
-        AsyncImage(
-            modifier = Modifier.fillMaxSize(),
-            model = ImageRequest
-                .Builder(LocalContext.current)
-                .data(category.categoryUrl)
-                .placeholder(R.drawable.app_logo)
-                .error(R.drawable.ic_error)
-                .size(Size.ORIGINAL)
-                .build(),
-            contentDescription = category.name,
-            contentScale = ContentScale.Crop
-        )
-        ConstraintLayout {
-            val (surface, label) = createRefs()
-            Surface(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(Dimens.CATEGORY_ITEM_SHADOW_HEIGHT)
-                    .constrainAs(surface) {
-                        bottom.linkTo(parent.bottom)
-                    }
-                    .alpha(0.2f),
-                color = Color.Black,
-                shape = RoundedCornerShape(
-                    bottomStart = MEDIUM_PADDING,
-                    bottomEnd = MEDIUM_PADDING
-                ),
-            ){}
-            Text(
-                text = category.name.upperCaseFirstChar(),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .constrainAs(label) {
-                        bottom.linkTo(surface.bottom)
-                        start.linkTo(surface.start, margin = MEDIUM_PADDING)
-                        top.linkTo(surface.top)
-                    },
-                fontWeight = FontWeight.SemiBold,
-                color = Color.White
-            )
-        }
-    }
-}
-
 private const val FILMS_CATEGORY = "films"
 private const val CHARACTERS_CATEGORY = "people"
 private fun handleCategoryClick(category: Category, navController: NavHostController) {
     when (category.name) {
-        FILMS_CATEGORY -> { navController.navigate(CategoriesDetailsScreen.FilmsScreen.route) }
+        FILMS_CATEGORY -> { navController.navigate(Screen.Films.route) }
         CHARACTERS_CATEGORY -> {}
         else -> { 
             Timber.d("Category not implemented")
