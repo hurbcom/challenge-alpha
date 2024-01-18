@@ -16,8 +16,8 @@ class GetStarshipsListUseCase(
         }
     ) {
         is Result.Success -> {
-            val list = if (!result.data.body()?.starshipsList.isNullOrEmpty()) {
-                result.data.body()?.starshipsList
+            val list = if (!result.data.body()?.results.isNullOrEmpty()) {
+                result.data.body()?.results
             } else {
                 emptyList()
             }

@@ -1,11 +1,11 @@
-package com.wesleyerick.podracer.data.model.starships
+package com.wesleyerick.podracer.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class StarshipsList(
+data class ListData<T>(
     val count: Int,
     val next: String,
     val previous: Any,
     @SerializedName("results")
-    val starshipsList: List<Starship>
+    val results: List<T>
 )

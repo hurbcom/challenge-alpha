@@ -29,18 +29,16 @@ class VehiclesFragment : Fragment() {
     private fun setupView() {
         viewModel.getList()
 
-        viewModel.getList()
-
         viewModel.apply {
             list.listener(viewLifecycleOwner) {
                 println("lista veiculos -> $it")
             }
 
             onError.listener(viewLifecycleOwner) {
-                println("lista veiculos onError")
-
-                Toast.makeText(requireContext(), "lista veiculos onError", Toast.LENGTH_SHORT)
-                    .show()
+                if (it.isNotEmpty()) {
+                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
         }
     }

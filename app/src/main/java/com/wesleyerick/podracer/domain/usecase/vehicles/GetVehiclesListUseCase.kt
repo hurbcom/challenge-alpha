@@ -16,8 +16,8 @@ class GetVehiclesListUseCase(
         }
     ) {
         is Result.Success -> {
-            val list = if (!result.data.body()?.vehiclesList.isNullOrEmpty()) {
-                result.data.body()?.vehiclesList
+            val list = if (!result.data.body()?.results.isNullOrEmpty()) {
+                result.data.body()?.results
             } else {
                 emptyList()
             }

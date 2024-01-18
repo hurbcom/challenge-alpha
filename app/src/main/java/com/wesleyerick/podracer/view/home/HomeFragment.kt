@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupButtons() = with(binding) {
-        Glide.with(this@HomeFragment).load
+//        Glide.with(this@HomeFragment).load
         vehiclesButton.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_vehiclesFragment)
         }
