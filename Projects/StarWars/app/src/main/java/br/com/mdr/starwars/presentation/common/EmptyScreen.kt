@@ -2,7 +2,6 @@ package br.com.mdr.starwars.presentation.common
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -132,7 +131,7 @@ fun EmptyContent(
                 color = Color.White,
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Medium,
-                fontSize = MaterialTheme.typography.bodySmall.fontSize
+                style = MaterialTheme.typography.bodyLarge
             )
         }
 

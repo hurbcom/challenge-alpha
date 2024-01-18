@@ -23,5 +23,5 @@ object GraphRoute {
     const val ROOT = "root_graph"
     const val SPLASH = "splash_graph"
     const val HOME = "home_graph"
-    const val CATEGORIES_DETAILS = "categories_details"
+    const val CATEGORIES = "categories_graph"
 }

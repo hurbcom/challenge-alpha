@@ -2,7 +2,8 @@
     android:width="161dp"
     android:height="129dp"
     android:viewportWidth="161"
-    android:viewportHeight="129">
+    android:viewportHeight="129"
+    android:tint="#FFFFFF">
   <path
       android:pathData="M2.5,2.5h156v124h-156z"
       android:strokeWidth="5"

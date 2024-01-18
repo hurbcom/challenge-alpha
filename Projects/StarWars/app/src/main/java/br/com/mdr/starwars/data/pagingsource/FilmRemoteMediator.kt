@@ -20,6 +20,7 @@ class FilmRemoteMediator(
 
     private val filmsDao = database.getFilmDao()
     private val filmsRemoteKeysDao = database.getRemoteKeysDao()
+    private var isUpdate = false
 
     // Checking whether cached data is out of date
     // and decide whether to trigger a remote refresh.
@@ -31,7 +32,9 @@ class FilmRemoteMediator(
         val diffInMinutes = (currentTime - lastUpdate) / 1000 / 60
 
         // If cache time isn't expired yet, skip server refresh
-        return if (diffInMinutes.toInt() <= cacheTimeOut) {
+        isUpdate = diffInMinutes.toInt() <= cacheTimeOut
+
+        return if (isUpdate) {
             InitializeAction.SKIP_INITIAL_REFRESH
         } else {
             InitializeAction.LAUNCH_INITIAL_REFRESH
@@ -42,49 +45,65 @@ class FilmRemoteMediator(
     override suspend fun load(loadType: LoadType, state: PagingState<Int, Film>): MediatorResult {
         return try {
 
-            val page = when (loadType) {
-                LoadType.REFRESH -> {
-                    val remoteKeys = getRemoteKeyClosestToCurrentPosition(state = state)
-                    remoteKeys?.getNextIntPage()?.minus(DEFAULT_PAGE_SIZE) ?: DEFAULT_PAGE_SIZE
-                }
-                LoadType.PREPEND -> {
-                    val remoteKeys = getRemoteKeyForFirstItem(state = state)
-                    val prevPage = remoteKeys?.getPreviousIntPage() ?: return MediatorResult.Success(
-                        endOfPaginationReached = remoteKeys != null
-                    )
-                    prevPage
-                }
-                LoadType.APPEND -> {
-                    val remoteKeys = getRemoteKeyForLastItem(state = state)
-                    val nextPage = remoteKeys?.getNextIntPage() ?: return MediatorResult.Success(
-                        endOfPaginationReached = remoteKeys != null
-                    )
-                    nextPage
-                }
-            }
-
-            val response = api.getFilms(page = page)
-            if (response.results.isNotEmpty()) {
-                database.withTransaction {
-                    //If MediatorResult is refreshing data, delete data from tables
-                    if (loadType == LoadType.REFRESH) {
-                        filmsDao.deleteAllFilms()
-                        filmsRemoteKeysDao.deleteRemoteKeys()
+            if (isUpdate) {
+                MediatorResult.Success(endOfPaginationReached = isUpdate)
+            } else {
+                val page = when (loadType) {
+                    LoadType.REFRESH -> {
+                        val remoteKeys = getRemoteKeyClosestToCurrentPosition(state = state)
+                        remoteKeys?.getNextIntPage()?.minus(DEFAULT_PAGE_SIZE) ?: DEFAULT_PAGE_SIZE
                     }
-
-                    with(response) {
-                        val key = FilmRemoteKeys(
-                            prevPage = previous,
-                            nextPage = next,
-                            lastUpdated = System.currentTimeMillis()
+                    LoadType.PREPEND -> {
+                        val remoteKeys = getRemoteKeyForFirstItem(state = state)
+                        val prevPage = remoteKeys?.getPreviousIntPage() ?: return MediatorResult.Success(
+                            endOfPaginationReached = remoteKeys != null
                         )
-
-                        filmsRemoteKeysDao.addRemoteKey(key)
-                        filmsDao.insertFilms(response.results)
+                        prevPage
+                    }
+                    LoadType.APPEND -> {
+                        val remoteKeys = getRemoteKeyForLastItem(state = state)
+                        val nextPage = remoteKeys?.getNextIntPage() ?: return MediatorResult.Success(
+                            endOfPaginationReached = remoteKeys != null
+                        )
+                        nextPage
                     }
                 }
+
+                val response = api.getFilms(page = page)
+                if (response.results.isNotEmpty()) {
+                    database.withTransaction {
+                        //If MediatorResult is refreshing data, delete data from tables
+                        if (loadType == LoadType.REFRESH) {
+                            filmsDao.deleteAllFilms()
+                            filmsRemoteKeysDao.deleteRemoteKeys()
+                        }
+
+                        with(response) {
+//                            val key = FilmRemoteKeys(
+//                                prevPage = previous,
+//                                nextPage = next,
+//                                lastUpdated = System.currentTimeMillis()
+//                            )
+
+                            val keys = results.map { film ->
+                                FilmRemoteKeys(
+                                    id = film.id,
+                                    prevPage = previous,
+                                    nextPage = next,
+                                    lastUpdated = System.currentTimeMillis()
+                                )
+                            }
+
+                            filmsRemoteKeysDao.addAllRemoteKeys(keys)
+
+                            //filmsRemoteKeysDao.addRemoteKey(key)
+                            filmsDao.insertFilms(response.results)
+                        }
+                    }
+                }
+
+                MediatorResult.Success(endOfPaginationReached = response.next == null)
             }
-            MediatorResult.Success(endOfPaginationReached = response.next == null)
         } catch (e: Exception) {
             return MediatorResult.Error(e)
         }

@@ -21,14 +21,27 @@ data class Film(
     val director: String,
     val producer: String,
     @SerializedName("opening_crawl")
-    val openingCrawl: String
+    val openingCrawl: String,
+    @SerializedName("release_date")
+    val dateCreated: String,
+    var isFavorite: Boolean = false
 ) {
     @get:Ignore
     val filmUrl
         get() = getImageUrl()
 
+    @get:Ignore
+    val episode
+        get() = getFilmEpisode()
+
     private fun getImageUrl(): String {
         val id = url[url.length - 2]
         return "$IMAGE_BASE_URL$FILMS_URL$id${Constants.IMAGE_EXTENSION}"
+    }
+
+    private fun getFilmEpisode(): String {
+        val romans = arrayOf("I", "II", "III", "IV", "V", "VI")
+        val episode = romans[id - 1]
+        return "Episode $episode: $title"
     }
 }

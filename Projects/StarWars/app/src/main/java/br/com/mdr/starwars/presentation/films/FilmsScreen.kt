@@ -16,6 +16,7 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import br.com.mdr.starwars.domain.model.Film
 import br.com.mdr.starwars.domain.model.PageState
+import br.com.mdr.starwars.navigation.Screen
 import br.com.mdr.starwars.presentation.common.EmptyScreen
 import br.com.mdr.starwars.presentation.components.SearchTopBar
 import br.com.mdr.starwars.presentation.components.ShimmerEffect
@@ -25,7 +26,7 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun FilmsScreen(navController: NavHostController) {
-    val viewModel: FilmsViewModel = koinViewModel<FilmsViewModel>()
+    val viewModel: FilmsViewModel = koinViewModel()
     val films = viewModel.films.collectAsLazyPagingItems()
     val searchQuery by viewModel.searchQuery
 
@@ -106,8 +107,8 @@ fun FilmsList(
     ) {
         items(count = films.itemCount) {index ->
             films[index]?.let { film ->
-                FilmItem(film = film) {
-
+                FilmItem(film = film) { filmId ->
+                    navController.navigate(Screen.FilmDetail.passFilmId(filmId))
                 }
             }
         }

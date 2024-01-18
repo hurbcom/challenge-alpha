@@ -7,7 +7,7 @@ import br.com.mdr.starwars.data.pagingsource.DEFAULT_PAGE_SIZE
 
 @Entity(tableName = FILM_REMOTE_KEYS_DATABASE_TABLE)
 data class FilmRemoteKeys(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey()
     val id: Int = 0,
     val prevPage: String?,
     val nextPage: String?,

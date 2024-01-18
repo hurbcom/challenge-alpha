@@ -20,6 +20,9 @@ interface FilmDao {
     @Query("SELECT * FROM film_table WHERE title LIKE '%' || :query || '%'")
     fun getFilmsByTitle(query: String): PagingSource<Int, Film>
 
+    @Query("UPDATE film_table SET isFavorite = :isFavorite WHERE id = :id")
+    suspend fun updateIsFavorite(isFavorite: Boolean, id: Int)
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFilms(films: List<Film>)
 

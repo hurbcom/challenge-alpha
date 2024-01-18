@@ -8,11 +8,17 @@
     <string name="internet_unavailable">Internet Unavailable.</string>
     <string name="empty_data">No data found!</string>
     <string name="unknown_error">Unknown error.</string>
+    
+    <string name="director_label"><![CDATA[<b>Director:</b> %1s]]></string>
+    <string name="producer_label"><![CDATA[<b>Producer(s):</b> %1s]]></string>
+    <string name="date_created"><![CDATA[<b>Date Created:</b> %1s]]></string>
 
     <!-- Content Description Section -->
     <string name="app_logo">Star Wars logo</string>
     <string name="search_here">Pesquisar</string>
     <string name="close_icon">Ícone fechar</string>
     <string name="search_icon">Ícone pesquisar</string>
+    <string name="favorite_icon">Ícone favoritar</string>
+    <string name="film_image">Imagem do filme %1s</string>
 
 </resources>

@@ -4,13 +4,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import androidx.navigation.navigation
+import br.com.mdr.starwars.common.Constants.FILM_ID_KEY
 import br.com.mdr.starwars.presentation.categories.CategoriesScreen
 import br.com.mdr.starwars.presentation.components.SpaceBackgroundView
 import br.com.mdr.starwars.presentation.favorites.FavoritesScreen
 import br.com.mdr.starwars.presentation.films.FilmsScreen
+import br.com.mdr.starwars.presentation.films.detail.FilmDetailScreen
 import br.com.mdr.starwars.presentation.lastSeen.LastSeenScreen
 
 @Composable
@@ -37,11 +41,21 @@ fun HomeNavGraph(modifier: Modifier, navController: NavHostController) {
 
 fun NavGraphBuilder.categoriesDetailsNavGraph(navController: NavHostController) {
     navigation(
-        route = GraphRoute.CATEGORIES_DETAILS,
-        startDestination = CategoriesDetailsScreen.FilmsScreen.route
+        route = GraphRoute.CATEGORIES,
+        startDestination = Screen.Films.route
     ) {
-        composable(route = CategoriesDetailsScreen.FilmsScreen.route) {
+        composable(route = Screen.Films.route) {
             FilmsScreen(navController = navController)
+        }
+        composable(
+            route = Screen.FilmDetail.route,
+            arguments = listOf(
+                navArgument(name = FILM_ID_KEY) {
+                    type = NavType.IntType
+                }
+            )
+        ) {
+            FilmDetailScreen(navController = navController)
         }
     }
 }
