@@ -1,32 +1,43 @@
 package com.wesleyerick.podracer.view.starships
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.wesleyerick.podracer.R
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.wesleyerick.podracer.databinding.FragmentStarshipsBinding
+import com.wesleyerick.podracer.util.listener
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class StarshipsFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = StarshipsFragment()
-    }
-
-    private lateinit var viewModel: StarshipsViewModel
+    private lateinit var binding: FragmentStarshipsBinding
+    private val viewModel by viewModel<StarshipsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_starships, container, false)
+    ): View {
+        binding = FragmentStarshipsBinding.inflate(inflater, container, false)
+        setupViewModel()
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(StarshipsViewModel::class.java)
-        // TODO: Use the ViewModel
+    private fun setupViewModel() {
+        viewModel.getList()
+        viewModel.apply {
+            list.listener(viewLifecycleOwner) {
+                println("lista starships -> $it")
+            }
+
+            onError.listener(viewLifecycleOwner) {
+                println("lista starships onError")
+
+                Toast.makeText(requireContext(), "lista starships onError", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
     }
 
 }

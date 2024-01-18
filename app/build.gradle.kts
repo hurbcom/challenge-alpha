@@ -59,6 +59,7 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.1.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0")
+
     val ktxVersion = "1.3.1"
     val constraintLayoutVersion = "2.0.1"
     val appCompatVersion = "1.3.1"
@@ -66,6 +67,7 @@ dependencies {
     val retrofitVersion = "2.9.0"
     val koinVersion = "3.2.2"
     val glideVersion = "4.15.1"
+    val navigationFragmentVersion = "2.2.2"
 
     val jUnitVersion = "4.13.2"
     val jUnitTestVersion = "1.1.2"
@@ -82,6 +84,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     implementation("io.insert-koin:koin-android:$koinVersion")
     implementation("com.github.bumptech.glide:glide:$glideVersion")
+    implementation("androidx.navigation:navigation-fragment-ktx:$navigationFragmentVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navigationFragmentVersion")
 
     testImplementation("junit:junit:$jUnitVersion")
     androidTestImplementation("androidx.test.ext:junit:$jUnitTestVersion")

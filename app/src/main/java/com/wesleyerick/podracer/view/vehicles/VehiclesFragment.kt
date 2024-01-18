@@ -4,17 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.wesleyerick.podracer.databinding.FragmentVehiclesBinding
+import com.wesleyerick.podracer.util.listener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class VehiclesFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = VehiclesFragment()
-    }
-
     private val viewModel by viewModel<VehiclesViewModel>()
+
     private lateinit var binding: FragmentVehiclesBinding
 
     override fun onCreateView(
@@ -29,5 +28,20 @@ class VehiclesFragment : Fragment() {
 
     private fun setupView() {
         viewModel.getList()
+
+        viewModel.getList()
+
+        viewModel.apply {
+            list.listener(viewLifecycleOwner) {
+                println("lista veiculos -> $it")
+            }
+
+            onError.listener(viewLifecycleOwner) {
+                println("lista veiculos onError")
+
+                Toast.makeText(requireContext(), "lista veiculos onError", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
     }
 }
