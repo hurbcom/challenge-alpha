@@ -11,14 +11,14 @@ import androidx.navigation.navArgument
 import androidx.navigation.navigation
 import br.com.mdr.starwars.common.Constants.CHARACTER_NAME_KEY
 import br.com.mdr.starwars.common.Constants.FILM_ID_KEY
-import br.com.mdr.starwars.presentation.categories.CategoriesScreen
-import br.com.mdr.starwars.presentation.characters.CharactersScreen
-import br.com.mdr.starwars.presentation.characters.detail.CharacterDetailScreen
-import br.com.mdr.starwars.presentation.components.SpaceBackgroundView
-import br.com.mdr.starwars.presentation.favorites.FavoritesScreen
-import br.com.mdr.starwars.presentation.films.FilmsScreen
-import br.com.mdr.starwars.presentation.films.detail.FilmDetailScreen
-import br.com.mdr.starwars.presentation.lastSeen.LastSeenScreen
+import br.com.mdr.starwars.ui.presentation.categories.CategoriesScreen
+import br.com.mdr.starwars.ui.presentation.characters.CharactersScreen
+import br.com.mdr.starwars.ui.presentation.characters.detail.CharacterDetailScreen
+import br.com.mdr.starwars.ui.presentation.components.SpaceBackgroundView
+import br.com.mdr.starwars.ui.presentation.favorites.FavoritesScreen
+import br.com.mdr.starwars.ui.presentation.films.FilmsScreen
+import br.com.mdr.starwars.ui.presentation.films.detail.FilmDetailScreen
+import br.com.mdr.starwars.ui.presentation.lastSeen.LastSeenScreen
 
 @Composable
 fun HomeNavGraph(modifier: Modifier, navController: NavHostController) {
@@ -32,7 +32,7 @@ fun HomeNavGraph(modifier: Modifier, navController: NavHostController) {
                 CategoriesScreen(navController)
             }
             composable(route = BottomBarScreen.Favorites.route) {
-                FavoritesScreen()
+                FavoritesScreen(navController)
             }
             composable(route = BottomBarScreen.LastSeen.route) {
                 LastSeenScreen()

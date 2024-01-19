@@ -1,4 +1,4 @@
-package br.com.mdr.starwars.presentation.films.detail
+package br.com.mdr.starwars.domain.usecase
 
 import br.com.mdr.starwars.domain.repository.FilmRepository
 

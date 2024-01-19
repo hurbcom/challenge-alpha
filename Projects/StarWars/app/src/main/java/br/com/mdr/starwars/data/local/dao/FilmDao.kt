@@ -28,4 +28,7 @@ interface FilmDao {
 
     @Query("DELETE FROM film_table")
     suspend fun deleteAllFilms()
+
+    @Query("SELECT * FROM film_table WHERE isFavorite = 1")
+    suspend fun getFavoriteFilms(): List<Film>
 }

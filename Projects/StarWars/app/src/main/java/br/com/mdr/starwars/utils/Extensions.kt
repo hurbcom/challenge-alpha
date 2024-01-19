@@ -5,3 +5,5 @@ fun String.upperCaseFirstChar(): String {
         if (it.isLowerCase()) it.titlecase() else it.toString()
     }
 }
+
+fun Int.isEven(): Boolean = this % 2 == 0

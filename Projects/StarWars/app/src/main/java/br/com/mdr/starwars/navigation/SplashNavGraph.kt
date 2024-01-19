@@ -4,7 +4,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import br.com.mdr.starwars.presentation.splash.SplashScreen
+import br.com.mdr.starwars.ui.presentation.splash.SplashScreen
 
 fun NavGraphBuilder.splashNavGraph(navController: NavHostController) {
     navigation(

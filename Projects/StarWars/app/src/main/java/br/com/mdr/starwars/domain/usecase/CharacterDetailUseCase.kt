@@ -1,4 +1,4 @@
-package br.com.mdr.starwars.presentation.characters.detail
+package br.com.mdr.starwars.domain.usecase
 
 import br.com.mdr.starwars.domain.repository.CharacterRepository
 

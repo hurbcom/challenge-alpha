@@ -3,6 +3,8 @@
     <string name="categories">Categories</string>
     <string name="favorites">Favorites</string>
     <string name="last_seen">Last seen</string>
+    <string name="films">Films</string>
+    <string name="characters">Characters</string>
     <string name="network_error_icon">Network Error Icon</string>
     <string name="server_unavailable">Server Unavailable.</string>
     <string name="internet_unavailable">Internet Unavailable.</string>
