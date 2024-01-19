@@ -10,10 +10,9 @@ sealed class Screen(val route: String) {
     data object FilmDetail: Screen("film_detail/{$FILM_ID_KEY}") {
         fun passFilmId(filmId: Int): String = "film_detail/$filmId"
     }
-
     data object Characters: Screen("characters")
-    data object CharacterDetail: Screen("Character_detail/{$CHARACTER_NAME_KEY}") {
-        fun passCharacterName(name: String): String = "Character_detail/$name"
+    data object CharacterDetail: Screen("character_detail/{$CHARACTER_NAME_KEY}") {
+        fun passCharacterName(name: String): String = "character_detail/$name"
     }
 }
 

@@ -10,7 +10,7 @@ import androidx.navigation.NavHostController
 import br.com.mdr.starwars.domain.model.Category
 import br.com.mdr.starwars.domain.model.PageState
 import br.com.mdr.starwars.navigation.Screen
-import br.com.mdr.starwars.presentation.common.EmptyScreen
+import br.com.mdr.starwars.presentation.components.EmptyScreen
 import br.com.mdr.starwars.presentation.components.ShimmerEffect
 import br.com.mdr.starwars.ui.theme.Dimens.MEDIUM_PADDING
 import org.koin.androidx.compose.koinViewModel

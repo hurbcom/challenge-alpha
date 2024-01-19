@@ -1,4 +1,4 @@
-package br.com.mdr.starwars.presentation.common
+package br.com.mdr.starwars.presentation.components
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween

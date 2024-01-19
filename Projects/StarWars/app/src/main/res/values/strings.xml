@@ -12,6 +12,13 @@
     <string name="director_label"><![CDATA[<b>Director:</b> %1s]]></string>
     <string name="producer_label"><![CDATA[<b>Producer(s):</b> %1s]]></string>
     <string name="date_created"><![CDATA[<b>Date Created:</b> %1s]]></string>
+    <string name="birth_year"><![CDATA[<b>Birthday Year:</b> %1s]]></string>
+    <string name="height"><![CDATA[<b>Height:</b> %1scm]]></string>
+    <string name="mass"><![CDATA[<b>Mass:</b> %1skg]]></string>
+    <string name="gender"><![CDATA[<b>Gender:</b> %1s]]></string>
+    <string name="hair_color"><![CDATA[<b>Hair Color:</b> %1s]]></string>
+    <string name="skin_color"><![CDATA[<b>Skin Color:</b> %1s]]></string>
+    <string name="eye_color"><![CDATA[<b>Eye Color:</b> %1s]]></string>
 
     <!-- Content Description Section -->
     <string name="app_logo">Star Wars logo</string>

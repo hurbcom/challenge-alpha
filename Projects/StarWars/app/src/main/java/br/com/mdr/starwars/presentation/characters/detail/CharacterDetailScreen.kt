@@ -1,4 +1,4 @@
-package br.com.mdr.starwars.presentation.films.detail
+package br.com.mdr.starwars.presentation.characters.detail
 
 import android.annotation.SuppressLint
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -19,10 +19,10 @@ import org.koin.androidx.compose.koinViewModel
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FilmDetailScreen(navController: NavHostController) {
+fun CharacterDetailScreen(navController: NavHostController) {
 
-    val viewModel: FilmDetailViewModel = koinViewModel()
-    val film by viewModel.film.collectAsState(null)
+    val viewModel: CharacterDetailViewModel = koinViewModel()
+    val character by viewModel.character.collectAsState(null)
 
     val isFavorite by viewModel.isFavorite.collectAsState()
 
@@ -42,8 +42,8 @@ fun FilmDetailScreen(navController: NavHostController) {
             )
         }
     ) {
-        film?.let{
-            FilmDetailItem(film = it)
+        character?.let{
+            CharacterDetailContent(character = it)
         } ?: EmptyScreen(viewModel = viewModel)
     }
 }
