@@ -2,8 +2,11 @@ package br.com.mdr.starwars.data.repository
 
 import br.com.mdr.starwars.data.local.AppDatabase
 import br.com.mdr.starwars.domain.model.Character
+import br.com.mdr.starwars.domain.model.Favorite
 import br.com.mdr.starwars.domain.model.Film
 import br.com.mdr.starwars.domain.repository.LocalDataSource
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 class LocalDataSourceImpl(database: AppDatabase): LocalDataSource {
 
@@ -21,5 +24,10 @@ class LocalDataSourceImpl(database: AppDatabase): LocalDataSource {
     }
     override suspend fun setFavoriteCharacter(isFavorite: Boolean, name: String) {
         characterDao.updateIsFavorite(isFavorite, name)
+    }
+    override suspend fun getFavorites(): Flow<Favorite> = flow {
+        val films = filmDao.getFavoriteFilms()
+        val characters = characterDao.getFavoriteCharacters()
+        emit(Favorite(films, characters))
     }
 }

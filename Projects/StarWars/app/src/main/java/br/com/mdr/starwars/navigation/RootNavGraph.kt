@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import br.com.mdr.starwars.presentation.home.HomeScreen
+import br.com.mdr.starwars.ui.presentation.home.HomeScreen
 
 @Composable
 fun RootNavGraph(navController: NavHostController) {

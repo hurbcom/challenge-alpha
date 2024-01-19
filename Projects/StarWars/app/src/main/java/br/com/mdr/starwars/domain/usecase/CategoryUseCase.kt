@@ -7,12 +7,11 @@ import br.com.mdr.starwars.domain.repository.CategoryRepository
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onEmpty
-import kotlinx.coroutines.flow.onStart
 
 class CategoryUseCase(
     private val repository: CategoryRepository
 ) {
-    suspend operator fun invoke() = flow {
+    suspend fun getCategories() = flow {
         repository
             .getCategories()
             .onEmpty {

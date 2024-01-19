@@ -30,4 +30,7 @@ interface CharactersDao {
 
     @Query("DELETE FROM character_table")
     suspend fun deleteAllCharacters()
+
+    @Query("SELECT * FROM character_table WHERE isFavorite = 1")
+    suspend fun getFavoriteCharacters(): List<Character>
 }
