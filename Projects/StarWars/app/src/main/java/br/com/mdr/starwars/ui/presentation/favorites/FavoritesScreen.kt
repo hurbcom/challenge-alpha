@@ -18,6 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import br.com.mdr.starwars.R
 import br.com.mdr.starwars.domain.model.Favorite
+import br.com.mdr.starwars.navigation.Screen
 import br.com.mdr.starwars.ui.presentation.components.BaseGridItem
 import br.com.mdr.starwars.ui.presentation.components.HandlePageStateResult
 import br.com.mdr.starwars.ui.theme.Dimens.MEDIUM_PADDING
@@ -67,8 +68,9 @@ fun ListContent(favorite: Favorite?, navController: NavHostController) {
                 favorite.films[index].apply {
                     BaseGridItem(
                         description = title,
-                        url = filmUrl) {
-
+                        url = filmUrl
+                    ) {
+                        navController.navigate(Screen.FilmDetail.passFilmId(this.id))
                     }
                 }
             }
@@ -97,7 +99,7 @@ fun ListContent(favorite: Favorite?, navController: NavHostController) {
                         description = name,
                         url = characterUrl
                     ) {
-
+                        navController.navigate(Screen.CharacterDetail.passCharacterName(name))
                     }
                 }
             }
