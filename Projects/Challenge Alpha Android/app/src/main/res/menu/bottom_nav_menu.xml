@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/navigation_planets_fragment"
-        android:title="@string/planets" />
 
     <item
         android:id="@+id/navigation_films_fragment"
         android:title="@string/films" />
+
+    <item
+        android:id="@+id/navigation_planets_fragment"
+        android:title="@string/planets" />
 
     <item
         android:id="@+id/navigation_species_fragment"

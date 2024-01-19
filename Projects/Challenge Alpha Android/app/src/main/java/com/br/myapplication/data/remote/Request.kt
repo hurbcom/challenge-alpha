@@ -1,4 +1,4 @@
-package com.br.myapplication.remote
+package com.br.myapplication.data.remote
 
 import retrofit2.HttpException
 import retrofit2.Response
@@ -8,7 +8,7 @@ import java.io.IOException
 sealed class SafeResponse<out T> {
     data class Success<out T>(val value: T) : SafeResponse<T>()
     data class GenericError(val code: Int? = null, val error: Response<*>? = null) : SafeResponse<Nothing>()
-    object NetworkError : SafeResponse<Nothing>()
+    data object NetworkError : SafeResponse<Nothing>()
 }
 
 suspend fun <T> safeRequest(request: suspend () -> T): SafeResponse<T> {

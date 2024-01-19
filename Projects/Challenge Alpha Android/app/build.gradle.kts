@@ -21,6 +21,11 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            isDebuggable = true
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -55,21 +60,21 @@ android {
         create("mock") {
             versionNameSuffix = "-MOCK"
             dimension = "normal"
-            buildConfigField("String", "BASE_URL", "\"https://swapi.dev/\"")
+            buildConfigField("String", "BASE_URL", "\"https://swapi.dev/api/\"")
             buildConfigField("Boolean", "IS_MOCK", "true")
         }
 
         create("dev") {
             versionNameSuffix = "-DEV"
             dimension = "normal"
-            buildConfigField("String", "BASE_URL" , "\"https://swapi.dev/\"")
+            buildConfigField("String", "BASE_URL" , "\"https://swapi.dev/api/\"")
             buildConfigField("Boolean", "IS_MOCK" , "false")
         }
 
         create("prd") {
             versionNameSuffix = "-PRD"
             dimension = "normal"
-            buildConfigField("String", "BASE_URL" , "\"https://swapi.dev/\"")
+            buildConfigField("String", "BASE_URL" , "\"https://swapi.dev/api/\"")
             buildConfigField("Boolean", "IS_MOCK" , "false")
         }
     }

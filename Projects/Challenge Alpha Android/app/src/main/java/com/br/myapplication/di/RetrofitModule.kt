@@ -1,11 +1,11 @@
 package com.br.myapplication.di
 
+import com.br.myapplication.BuildConfig
 import com.br.myapplication.BuildConfig.BASE_URL
 import com.br.myapplication.BuildConfig.IS_MOCK
-import com.br.myapplication.remote.ApiServices
-import com.br.myapplication.remote.MockApi
+import com.br.myapplication.data.remote.ApiServices
+import com.br.myapplication.data.remote.MockApi
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.squareup.picasso.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
