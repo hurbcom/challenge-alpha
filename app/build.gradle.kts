@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -10,7 +11,6 @@ android {
     defaultConfig {
         applicationId = "com.wesleyerick.podracer"
         minSdk = 23
-        //noinspection OldTargetApi
         targetSdk = 31
         versionCode = 1
         versionName = "1.0"
@@ -26,6 +26,7 @@ android {
     buildTypes {
         release {
             buildConfigField("String", "BASE_URL", "\"https://gateway.marvel.com/v1/public/\"")
+            buildConfigField("String", "BASE_IMAGE_URL", "\"https://starwars-visualguide.com/assets/img/\"")
             isMinifyEnabled = false
             isDebuggable = false
             proguardFiles(
@@ -36,6 +37,7 @@ android {
 
         debug {
             buildConfigField("String", "BASE_URL", "\"https://swapi.dev/api/\"")
+            buildConfigField("String", "BASE_IMAGE_URL", "\"https://starwars-visualguide.com/assets/img/\"")
             isMinifyEnabled = false
             isDebuggable = true
             proguardFiles(
@@ -61,16 +63,16 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0")
 
     val ktxVersion = "1.3.1"
-    val constraintLayoutVersion = "2.0.1"
+    val constraintLayoutVersion = "2.1.4"
     val appCompatVersion = "1.3.1"
     val materialVersion = "1.2.1"
     val retrofitVersion = "2.9.0"
     val koinVersion = "3.2.2"
     val glideVersion = "4.15.1"
-    val navigationFragmentVersion = "2.2.2"
+    val navigationFragmentVersion = "2.5.3"
 
     val jUnitVersion = "4.13.2"
-    val jUnitTestVersion = "1.1.2"
+    val jUnitTestVersion = "1.1.5"
     val mockkVersion = "1.12.4"
     val coroutinesTestVersion = "1.6.1"
     val espressoVersion = "3.3.0"

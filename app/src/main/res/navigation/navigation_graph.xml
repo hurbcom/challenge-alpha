@@ -9,7 +9,11 @@
         android:id="@+id/vehiclesFragment"
         android:name="com.wesleyerick.podracer.view.vehicles.VehiclesFragment"
         android:label="fragment_vehicles"
-        tools:layout="@layout/fragment_vehicles" />
+        tools:layout="@layout/fragment_vehicles" >
+        <action
+            android:id="@+id/action_vehiclesFragment_to_vehicleDetailsFragment"
+            app:destination="@id/vehicleDetailsFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/starshipsFragment"
         android:name="com.wesleyerick.podracer.view.starships.StarshipsFragment"
@@ -26,5 +30,16 @@
         <action
             android:id="@+id/action_homeFragment_to_starshipsFragment"
             app:destination="@id/starshipsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehicleDetailsFragment"
+        android:name="com.wesleyerick.podracer.view.vehicles.VehicleDetailsFragment"
+        android:label="fragment_vehicle_details"
+        tools:layout="@layout/fragment_vehicle_details">
+        <argument
+            android:name="vehicleId"
+            app:argType="string"
+            app:nullable="false"
+            android:defaultValue="null" />
     </fragment>
 </navigation>

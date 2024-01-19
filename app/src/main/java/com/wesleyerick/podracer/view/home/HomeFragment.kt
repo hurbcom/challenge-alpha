@@ -13,7 +13,7 @@ import com.wesleyerick.podracer.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-
+    private val navController by lazy { findNavController() }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,10 +26,10 @@ class HomeFragment : Fragment() {
     private fun setupButtons() = with(binding) {
 //        Glide.with(this@HomeFragment).load
         vehiclesButton.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_vehiclesFragment)
+            navController.navigate(R.id.action_homeFragment_to_vehiclesFragment)
         }
         starshipsButton.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_starshipsFragment)
+            navController.navigate(R.id.action_homeFragment_to_starshipsFragment)
         }
     }
 }
