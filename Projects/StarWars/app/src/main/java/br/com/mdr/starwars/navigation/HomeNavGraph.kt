@@ -9,9 +9,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navigation
+import br.com.mdr.starwars.common.Constants.CHARACTER_NAME_KEY
 import br.com.mdr.starwars.common.Constants.FILM_ID_KEY
 import br.com.mdr.starwars.presentation.categories.CategoriesScreen
 import br.com.mdr.starwars.presentation.characters.CharactersScreen
+import br.com.mdr.starwars.presentation.characters.detail.CharacterDetailScreen
 import br.com.mdr.starwars.presentation.components.SpaceBackgroundView
 import br.com.mdr.starwars.presentation.favorites.FavoritesScreen
 import br.com.mdr.starwars.presentation.films.FilmsScreen
@@ -60,6 +62,16 @@ fun NavGraphBuilder.categoriesDetailsNavGraph(navController: NavHostController) 
         }
         composable(route = Screen.Characters.route) {
             CharactersScreen(navController = navController)
+        }
+        composable(
+            route = Screen.CharacterDetail.route,
+            arguments = listOf(
+                navArgument(name = CHARACTER_NAME_KEY) {
+                    type = NavType.StringType
+                }
+            )
+        ) {
+            CharacterDetailScreen(navController = navController)
         }
     }
 }

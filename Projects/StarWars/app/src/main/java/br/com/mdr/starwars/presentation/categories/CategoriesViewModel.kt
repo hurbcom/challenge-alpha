@@ -1,6 +1,5 @@
 package br.com.mdr.starwars.presentation.categories
 
-import androidx.lifecycle.viewModelScope
 import br.com.mdr.starwars.domain.model.Category
 import br.com.mdr.starwars.domain.model.PageState
 import br.com.mdr.starwars.domain.usecase.CategoryUseCase
@@ -8,7 +7,6 @@ import br.com.mdr.starwars.presentation.base.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.single
-import kotlinx.coroutines.launch
 
 class CategoriesViewModel(
     private val useCase: CategoryUseCase
@@ -23,7 +21,7 @@ class CategoriesViewModel(
     }
 
     suspend fun getCategories() {
-        viewModelScope.launch {
+        launch {
             _categories.emit(useCase().single())
         }
     }

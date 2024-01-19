@@ -9,7 +9,6 @@ import br.com.mdr.starwars.domain.usecase.CharacterUseCase
 import br.com.mdr.starwars.presentation.base.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 
 class CharactersViewModel(
     private val useCase: CharacterUseCase
@@ -31,7 +30,7 @@ class CharactersViewModel(
     }
 
     fun getCharacters(query: String) {
-        viewModelScope.launch {
+        launch {
             useCase.getCharacters(query).cachedIn(viewModelScope).collect{
                 _characters.emit(it)
             }

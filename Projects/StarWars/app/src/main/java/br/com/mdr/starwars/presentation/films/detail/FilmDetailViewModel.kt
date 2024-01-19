@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import br.com.mdr.starwars.common.Constants.FILM_ID_KEY
 import br.com.mdr.starwars.domain.model.Film
-import br.com.mdr.starwars.presentation.base.BaseViewModel
+import br.com.mdr.starwars.presentation.base.BaseDetailViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 class FilmDetailViewModel(
     private val useCase: FilmDetailUseCase,
     private val savedStateHandle: SavedStateHandle
-): BaseViewModel() {
+): BaseDetailViewModel() {
     private val _film: MutableStateFlow<Film?> = MutableStateFlow(null)
     val film: StateFlow<Film?> = _film
 
@@ -40,7 +40,7 @@ class FilmDetailViewModel(
         }
     }
 
-    fun setFavorite() {
+    override fun setFavorite() {
         _film.value?.let {
             it.isFavorite = !it.isFavorite
 

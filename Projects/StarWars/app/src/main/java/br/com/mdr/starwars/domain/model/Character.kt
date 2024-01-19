@@ -19,6 +19,12 @@ data class Character(
     val mass: String,
     val gender: String,
     val url: String,
+    @SerializedName("hair_color")
+    val hairColor: String,
+    @SerializedName("skin_color")
+    val skinColor: String,
+    @SerializedName("eye_color")
+    val eyeColor: String,
     var isFavorite: Boolean = false
 ) {
     @get:Ignore
