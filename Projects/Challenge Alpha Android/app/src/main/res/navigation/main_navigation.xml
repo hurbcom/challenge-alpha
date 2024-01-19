@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/navigation_films_fragment">
+
+    <fragment
+        android:id="@+id/navigation_films_fragment"
+        android:name="com.br.myapplication.ui.film.FilmsFragment"
+        android:label="FilmsFragment"
+        tools:layout="@layout/fragment_films"/>
+
+    <fragment
+        android:id="@+id/navigation_planets_fragment"
+        android:name="com.br.myapplication.ui.planets.PlanetsFragment"
+        android:label="PlanetsFragment"
+        tools:layout="@layout/fragment_planets"/>
+
+    <fragment
+        android:id="@+id/navigation_species_fragment"
+        android:name="com.br.myapplication.ui.species.SpeciesFragment"
+        android:label="SpeciesFragment"
+        tools:layout="@layout/fragment_species"/>
+</navigation>

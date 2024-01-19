@@ -1,8 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ChallengeAlphaAndroid" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.ChallengeAlphaAndroid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/color_b70000</item>
+        <item name="colorPrimaryVariant">@color/color_b70000</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_b70000</item>
+        <item name="colorSecondaryVariant">@color/color_b70000</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/color_b70000</item>
+        <!-- Customize your theme here. -->
     </style>
 
     <style name="Theme.ChallengeAlphaAndroid" parent="Base.Theme.ChallengeAlphaAndroid" />

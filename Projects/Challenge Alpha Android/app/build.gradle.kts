@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -33,8 +34,15 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget= "1.8"
     }
+
+    buildFeatures {
+
+        dataBinding = true
+        viewBinding = true
+    }
+
     packaging {
         resources {
             excludes += "META-INF/*"
@@ -70,6 +78,8 @@ android {
 
 dependencies {
 
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
     val koinVersion = "3.5.3"
 
     implementation("androidx.core:core-ktx:1.12.0")
