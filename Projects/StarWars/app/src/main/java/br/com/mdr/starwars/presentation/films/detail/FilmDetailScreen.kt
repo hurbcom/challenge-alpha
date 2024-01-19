@@ -20,8 +20,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import br.com.mdr.starwars.R
-import br.com.mdr.starwars.presentation.common.EmptyScreen
-import br.com.mdr.starwars.ui.theme.PrimaryColor
+import br.com.mdr.starwars.presentation.characters.detail.CharacterDetailViewModel
+import br.com.mdr.starwars.presentation.components.EmptyScreen
 import br.com.mdr.starwars.ui.theme.ThemeColor
 import org.koin.androidx.compose.koinViewModel
 
@@ -30,7 +30,7 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun FilmDetailScreen(navController: NavHostController) {
 
-    val viewModel: FilmDetailViewModel = koinViewModel()
+    val viewModel: CharacterDetailViewModel = koinViewModel()
     val film by viewModel.film.collectAsState(null)
 
     val isFavorite by viewModel.isFavorite.collectAsState()
