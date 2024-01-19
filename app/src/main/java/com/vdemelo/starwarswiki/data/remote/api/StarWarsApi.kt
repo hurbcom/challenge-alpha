@@ -1,4 +1,4 @@
-package com.vdemelo.starwarswiki.data.api
+package com.vdemelo.starwarswiki.data.remote.api
 
 import com.vdemelo.starwarswiki.data.remote.response.PlanetsListResponse
 import com.vdemelo.starwarswiki.data.remote.response.SpeciesListResponse

@@ -1,6 +1,7 @@
 package com.vdemelo.starwarswiki.di
 
-import com.vdemelo.starwarswiki.data.api.StarWarsApi
+import com.vdemelo.starwarswiki.data.remote.api.StarWarsApi
+import com.vdemelo.starwarswiki.data.repository.StarWarsRepository
 import com.vdemelo.starwarswiki.utils.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -25,4 +26,5 @@ val networkModule = module {
             .build()
             .create(StarWarsApi::class.java)
     }
+    single { StarWarsRepository(get()) }
 }
