@@ -62,7 +62,7 @@ fun CategoryItem(category: Category, onCategoryClick: (Category) -> Unit) {
                 ),
             ){}
             Text(
-                text = category.name.upperCaseFirstChar(),
+                text = category.categoryName.upperCaseFirstChar(),
                 modifier = Modifier
                     .fillMaxWidth()
                     .constrainAs(label) {

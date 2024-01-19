@@ -19,7 +19,7 @@ class FilmRemoteMediator(
 ): RemoteMediator<Int, Film>() {
 
     private val filmsDao = database.getFilmDao()
-    private val filmsRemoteKeysDao = database.getRemoteKeysDao()
+    private val filmsRemoteKeysDao = database.getFilmKeysDao()
     private var isUpdate = false
 
     // Checking whether cached data is out of date
@@ -53,13 +53,9 @@ class FilmRemoteMediator(
                         val remoteKeys = getRemoteKeyClosestToCurrentPosition(state = state)
                         remoteKeys?.getNextIntPage()?.minus(DEFAULT_PAGE_SIZE) ?: DEFAULT_PAGE_SIZE
                     }
-                    LoadType.PREPEND -> {
-                        val remoteKeys = getRemoteKeyForFirstItem(state = state)
-                        val prevPage = remoteKeys?.getPreviousIntPage() ?: return MediatorResult.Success(
-                            endOfPaginationReached = remoteKeys != null
-                        )
-                        prevPage
-                    }
+                    LoadType.PREPEND -> return MediatorResult.Success(
+                        endOfPaginationReached = true
+                    )
                     LoadType.APPEND -> {
                         val remoteKeys = getRemoteKeyForLastItem(state = state)
                         val nextPage = remoteKeys?.getNextIntPage() ?: return MediatorResult.Success(
@@ -79,12 +75,6 @@ class FilmRemoteMediator(
                         }
 
                         with(response) {
-//                            val key = FilmRemoteKeys(
-//                                prevPage = previous,
-//                                nextPage = next,
-//                                lastUpdated = System.currentTimeMillis()
-//                            )
-
                             val keys = results.map { film ->
                                 FilmRemoteKeys(
                                     id = film.id,
@@ -95,8 +85,6 @@ class FilmRemoteMediator(
                             }
 
                             filmsRemoteKeysDao.addAllRemoteKeys(keys)
-
-                            //filmsRemoteKeysDao.addRemoteKey(key)
                             filmsDao.insertFilms(response.results)
                         }
                     }
@@ -116,14 +104,6 @@ class FilmRemoteMediator(
             state.closestItemToPosition(position)?.id?.let {
                 filmsRemoteKeysDao.getRemoteKeys(it)
             }
-        }
-    }
-
-    private suspend fun getRemoteKeyForFirstItem(
-        state: PagingState<Int, Film>
-    ): FilmRemoteKeys? {
-        return state.pages.firstOrNull { it.data.isNotEmpty() }?.data?.firstOrNull()?.let {
-            filmsRemoteKeysDao.getRemoteKeys(it.id)
         }
     }
 
