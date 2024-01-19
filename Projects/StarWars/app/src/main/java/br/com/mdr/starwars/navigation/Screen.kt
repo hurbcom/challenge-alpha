@@ -1,6 +1,7 @@
 package br.com.mdr.starwars.navigation
 
 import br.com.mdr.starwars.R
+import br.com.mdr.starwars.common.Constants.CHARACTER_NAME_KEY
 import br.com.mdr.starwars.common.Constants.FILM_ID_KEY
 
 sealed class Screen(val route: String) {
@@ -8,6 +9,11 @@ sealed class Screen(val route: String) {
     data object Films: Screen("films")
     data object FilmDetail: Screen("film_detail/{$FILM_ID_KEY}") {
         fun passFilmId(filmId: Int): String = "film_detail/$filmId"
+    }
+
+    data object Characters: Screen("characters")
+    data object CharacterDetail: Screen("Character_detail/{$CHARACTER_NAME_KEY}") {
+        fun passCharacterName(name: String): String = "Character_detail/$name"
     }
 }
 

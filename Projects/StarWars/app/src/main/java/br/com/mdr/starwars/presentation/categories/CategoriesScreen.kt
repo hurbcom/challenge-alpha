@@ -73,7 +73,7 @@ private const val CHARACTERS_CATEGORY = "people"
 private fun handleCategoryClick(category: Category, navController: NavHostController) {
     when (category.name) {
         FILMS_CATEGORY -> { navController.navigate(Screen.Films.route) }
-        CHARACTERS_CATEGORY -> {}
+        CHARACTERS_CATEGORY -> { navController.navigate(Screen.Characters.route) }
         else -> { 
             Timber.d("Category not implemented")
         }

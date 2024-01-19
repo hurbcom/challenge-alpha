@@ -12,12 +12,15 @@ data class Category(
     val url: String
 ) {
     val categoryUrl = getImageUrl()
+    val categoryName = getCatName()
 
-    private fun getImageUrl(): String {
-        val type = if (name == PEOPLE) {
+    private fun getImageUrl(): String =
+        "$IMAGE_BASE_URL$CATEGORIES_URL${getCatName()}$IMAGE_EXTENSION"
+
+    private fun getCatName(): String =
+        if (name == PEOPLE) {
             CHARACTER
-        } else name
-
-        return "$IMAGE_BASE_URL$CATEGORIES_URL$type$IMAGE_EXTENSION"
-    }
+        } else {
+            name
+        }
 }

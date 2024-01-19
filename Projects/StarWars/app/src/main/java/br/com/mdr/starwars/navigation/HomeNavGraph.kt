@@ -11,6 +11,7 @@ import androidx.navigation.navArgument
 import androidx.navigation.navigation
 import br.com.mdr.starwars.common.Constants.FILM_ID_KEY
 import br.com.mdr.starwars.presentation.categories.CategoriesScreen
+import br.com.mdr.starwars.presentation.characters.CharactersScreen
 import br.com.mdr.starwars.presentation.components.SpaceBackgroundView
 import br.com.mdr.starwars.presentation.favorites.FavoritesScreen
 import br.com.mdr.starwars.presentation.films.FilmsScreen
@@ -56,6 +57,9 @@ fun NavGraphBuilder.categoriesDetailsNavGraph(navController: NavHostController) 
             )
         ) {
             FilmDetailScreen(navController = navController)
+        }
+        composable(route = Screen.Characters.route) {
+            CharactersScreen(navController = navController)
         }
     }
 }

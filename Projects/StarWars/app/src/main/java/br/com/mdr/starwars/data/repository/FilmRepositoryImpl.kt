@@ -22,6 +22,6 @@ class FilmRepositoryImpl(
         localDataSource.getSelectedFilm(id)
 
     override suspend fun setFavorite(isFavorite: Boolean, filmId: Int) {
-        localDataSource.setFavorite(isFavorite, filmId)
+        localDataSource.setFavoriteMovie(isFavorite, filmId)
     }
 }
