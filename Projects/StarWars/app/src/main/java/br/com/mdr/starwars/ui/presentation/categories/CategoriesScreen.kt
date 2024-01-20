@@ -60,7 +60,7 @@ private fun handleCategoryClick(category: Category, navController: NavHostContro
     when (category.name) {
         FILMS_CATEGORY -> { navController.navigate(Screen.Films.route) }
         CHARACTERS_CATEGORY -> { navController.navigate(Screen.Characters.route) }
-        else -> { 
+        else -> {
             Timber.d("Category not implemented")
         }
     }

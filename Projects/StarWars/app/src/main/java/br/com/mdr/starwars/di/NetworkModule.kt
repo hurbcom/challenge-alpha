@@ -59,6 +59,6 @@ val networkModule = module {
         }
     }
 
-    //Remote DataSource
+    // Remote DataSource
     single<RemoteDataSource> { RemoteDataSourceImpl(get(), get<AppDatabase>()) }
 }

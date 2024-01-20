@@ -63,12 +63,13 @@ fun EmptyScreen(
         targetValue = if (startAnimation) ContentAlpha.disabled else 0f,
         animationSpec = tween(
             durationMillis = 1000
-        ), label = "alphaAnim"
+        ),
+        label = "alphaAnim"
     )
 
     if (error != null) {
-       message = getErrorMessage(error)
-       icon = R.drawable.ic_error
+        message = getErrorMessage(error)
+        icon = R.drawable.ic_error
     }
 
     LaunchedEffect(key1 = true) {
@@ -91,7 +92,6 @@ fun EmptyContent(
     message: String,
     viewModel: BaseViewModel
 ) {
-
     val refreshScope = rememberCoroutineScope()
     var refreshing by remember {
         mutableStateOf(false)
@@ -109,7 +109,6 @@ fun EmptyContent(
         modifier = Modifier
             .pullRefresh(state)
     ) {
-
         Column(
             modifier = Modifier
                 .fillMaxSize()

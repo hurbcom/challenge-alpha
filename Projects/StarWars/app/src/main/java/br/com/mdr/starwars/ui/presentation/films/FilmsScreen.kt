@@ -17,8 +17,8 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import br.com.mdr.starwars.domain.model.Film
 import br.com.mdr.starwars.domain.model.PageState
 import br.com.mdr.starwars.navigation.Screen
-import br.com.mdr.starwars.ui.presentation.components.EmptyScreen
 import br.com.mdr.starwars.ui.presentation.components.BaseGridItem
+import br.com.mdr.starwars.ui.presentation.components.EmptyScreen
 import br.com.mdr.starwars.ui.presentation.components.SearchTopBar
 import br.com.mdr.starwars.ui.presentation.components.ShimmerEffect
 import br.com.mdr.starwars.ui.theme.Dimens.MEDIUM_PADDING
@@ -106,11 +106,12 @@ fun FilmsList(
         horizontalArrangement = Arrangement.spacedBy(MEDIUM_PADDING),
         verticalArrangement = Arrangement.spacedBy(MEDIUM_PADDING)
     ) {
-        items(count = films.itemCount) {index ->
+        items(count = films.itemCount) { index ->
             films[index]?.let { film ->
                 BaseGridItem(
                     description = film.title,
-                    url = film.filmUrl) {
+                    url = film.filmUrl
+                ) {
                     navController.navigate(Screen.FilmDetail.passFilmId(film.id))
                 }
             }

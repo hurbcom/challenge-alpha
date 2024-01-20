@@ -59,8 +59,8 @@ fun CategoryItem(category: Category, onCategoryClick: (Category) -> Unit) {
                 shape = RoundedCornerShape(
                     bottomStart = Dimens.MEDIUM_PADDING,
                     bottomEnd = Dimens.MEDIUM_PADDING
-                ),
-            ){}
+                )
+            ) {}
             Text(
                 text = category.categoryName.upperCaseFirstChar(),
                 modifier = Modifier

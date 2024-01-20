@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class FilmsViewModel(
     private val useCase: FilmUseCase
-): BaseViewModel() {
+) : BaseViewModel() {
 
     private val _films = MutableStateFlow<PagingData<Film>>(PagingData.empty())
     val films: StateFlow<PagingData<Film>>
@@ -32,7 +32,7 @@ class FilmsViewModel(
 
     fun getFilms(query: String) {
         viewModelScope.launch {
-            useCase.getFilms(query).cachedIn(viewModelScope).collect{
+            useCase.getFilms(query).cachedIn(viewModelScope).collect {
                 _films.emit(it)
             }
         }

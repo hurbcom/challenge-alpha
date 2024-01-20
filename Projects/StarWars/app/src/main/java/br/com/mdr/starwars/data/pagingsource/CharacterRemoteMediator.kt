@@ -15,7 +15,7 @@ import br.com.mdr.starwars.domain.model.CharacterRemoteKeys
 class CharacterRemoteMediator(
     private val api: StarWarsApi,
     private val database: AppDatabase
-): RemoteMediator<Int, Character>() {
+) : RemoteMediator<Int, Character>() {
 
     private val charactersDao = database.getCharactersDao()
     private val charactersRemoteKeysDao = database.getCharacterKeysDao()
@@ -58,9 +58,7 @@ class CharacterRemoteMediator(
 
             val response = api.getCharacters(page = page)
             if (response.results.isNotEmpty()) {
-
                 database.withTransaction {
-
                     if (loadType == LoadType.REFRESH) {
                         charactersDao.deleteAllCharacters()
                         charactersRemoteKeysDao.deleteRemoteKeys()

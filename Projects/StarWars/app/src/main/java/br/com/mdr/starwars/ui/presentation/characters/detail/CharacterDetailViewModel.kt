@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 class CharacterDetailViewModel(
     private val useCase: CharacterDetailUseCase,
     private val savedStateHandle: SavedStateHandle
-): BaseDetailViewModel() {
+) : BaseDetailViewModel() {
     private val _character: MutableStateFlow<Character?> = MutableStateFlow(null)
     val character: StateFlow<Character?> = _character
 

@@ -6,5 +6,5 @@ data class CategoryResponse(
     val planets: String,
     val species: String,
     val starships: String,
-    val vehicles: String,
+    val vehicles: String
 )

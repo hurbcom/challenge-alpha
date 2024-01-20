@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 class FavoritesRepositoryImpl(
     private val localDataSource: LocalDataSource
-): FavoritesRepository {
+) : FavoritesRepository {
 
     override suspend fun getFavorites(): Flow<Favorite> {
         return localDataSource.getFavorites()

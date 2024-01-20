@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onEmpty
 
 class FavoritesUseCase(
-    private val favoritesRepository: FavoritesRepository,
+    private val favoritesRepository: FavoritesRepository
 ) {
     suspend fun getFavorites(): Flow<PageState<Favorite>> = flow {
         favoritesRepository

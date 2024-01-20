@@ -62,7 +62,7 @@ private fun ListContent(viewModel: LastSeenViewModel, navController: NavHostCont
         ) {
             HeaderItem(textId = R.string.films)
         }
-        items(count = films.size) {index ->
+        items(count = films.size) { index ->
             films[index].apply {
                 BaseGridItem(
                     description = title,
@@ -72,8 +72,8 @@ private fun ListContent(viewModel: LastSeenViewModel, navController: NavHostCont
                 }
             }
         }
-        //Verifica se o número de favoritos em filmes é ímpar
-        //Se for, é necessário adicionar uma coluna em branco
+        // Verifica se o número de favoritos em filmes é ímpar
+        // Se for, é necessário adicionar uma coluna em branco
         if (films.size.isEven().not()) {
             item(
                 span = {
@@ -91,7 +91,7 @@ private fun ListContent(viewModel: LastSeenViewModel, navController: NavHostCont
         ) {
             HeaderItem(textId = R.string.characters)
         }
-        items(count = characters.size) {index ->
+        items(count = characters.size) { index ->
             characters[index].apply {
                 BaseGridItem(
                     description = name,

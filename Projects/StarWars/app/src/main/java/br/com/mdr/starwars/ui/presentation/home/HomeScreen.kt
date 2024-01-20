@@ -102,5 +102,6 @@ fun RowScope.BarItem(
             unselectedIconColor = UnselectedItemColor,
             indicatorColor = NavigationIndicatorColor,
             selectedTextColor = Color.White
-        ))
+        )
+    )
 }

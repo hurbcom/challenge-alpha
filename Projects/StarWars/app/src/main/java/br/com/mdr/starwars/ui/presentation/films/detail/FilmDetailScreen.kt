@@ -20,7 +20,6 @@ import org.koin.androidx.compose.koinViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FilmDetailScreen(navController: NavHostController) {
-
     val viewModel: FilmDetailViewModel = koinViewModel()
     val film by viewModel.film.collectAsState(null)
 
@@ -42,7 +41,7 @@ fun FilmDetailScreen(navController: NavHostController) {
             )
         }
     ) {
-        film?.let{
+        film?.let {
             FilmDetailItem(film = it)
         } ?: EmptyScreen(viewModel = viewModel)
     }

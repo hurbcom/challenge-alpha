@@ -12,4 +12,4 @@ data class CharacterRemoteKeys(
     override val prevPage: String?,
     override val nextPage: String?,
     override val lastUpdated: Long?
-): BaseRemoteKeys(id, prevPage, nextPage, lastUpdated)
+) : BaseRemoteKeys(id, prevPage, nextPage, lastUpdated)

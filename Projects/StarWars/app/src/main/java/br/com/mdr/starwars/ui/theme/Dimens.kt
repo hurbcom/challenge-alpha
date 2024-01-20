@@ -15,5 +15,4 @@ object Dimens {
     val CATEGORY_ITEM_SHADOW_HEIGHT = 40.dp
     val FILM_ITEM_HEIGHT = 310.dp
     val NETWORK_ERROR_ICON_HEIGHT = 120.dp
-
 }

@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 class CharactersViewModel(
     private val useCase: CharacterUseCase
-): BaseViewModel() {
+) : BaseViewModel() {
 
     private val _characters = MutableStateFlow<PagingData<Character>>(PagingData.empty())
     val characters: StateFlow<PagingData<Character>>
@@ -31,7 +31,7 @@ class CharactersViewModel(
 
     fun getCharacters(query: String) {
         launch {
-            useCase.getCharacters(query).cachedIn(viewModelScope).collect{
+            useCase.getCharacters(query).cachedIn(viewModelScope).collect {
                 _characters.emit(it)
             }
         }

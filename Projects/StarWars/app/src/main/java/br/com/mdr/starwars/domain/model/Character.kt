@@ -35,6 +35,6 @@ data class Character(
     private fun getImageUrl(): String {
         val stringSplit = profileUrl.split("/")
         val id = stringSplit[stringSplit.size - 2]
-        return "${IMAGE_BASE_URL}${CHARACTERS_URL}$id${IMAGE_EXTENSION}"
+        return "${IMAGE_BASE_URL}${CHARACTERS_URL}$id$IMAGE_EXTENSION"
     }
 }

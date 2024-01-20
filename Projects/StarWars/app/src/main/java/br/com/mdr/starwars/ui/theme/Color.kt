@@ -13,8 +13,7 @@ val ShimmerLightGray = Color(0xFFF1F1F1)
 val ShimmerMediumGray = Color(0xFFE3E3E3)
 val ShimmerDarkGray = Color(0xFF1D1D1D)
 
-
-//NavigationBarColors
+// NavigationBarColors
 val NavigationIndicatorColor = Color(0x33454545)
 val NavigationBarContentColor = Color(0xF2000000)
 val SearchBarColor = Color(0x80FFFFFF)

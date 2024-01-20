@@ -17,8 +17,8 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import br.com.mdr.starwars.domain.model.Character
 import br.com.mdr.starwars.domain.model.PageState
 import br.com.mdr.starwars.navigation.Screen
-import br.com.mdr.starwars.ui.presentation.components.EmptyScreen
 import br.com.mdr.starwars.ui.presentation.components.BaseGridItem
+import br.com.mdr.starwars.ui.presentation.components.EmptyScreen
 import br.com.mdr.starwars.ui.presentation.components.SearchTopBar
 import br.com.mdr.starwars.ui.presentation.components.ShimmerEffect
 import br.com.mdr.starwars.ui.theme.Dimens.MEDIUM_PADDING
@@ -106,7 +106,7 @@ fun CharactersList(
         horizontalArrangement = Arrangement.spacedBy(MEDIUM_PADDING),
         verticalArrangement = Arrangement.spacedBy(MEDIUM_PADDING)
     ) {
-        items(count = characters.itemCount) {index ->
+        items(count = characters.itemCount) { index ->
             characters[index]?.let { character ->
                 BaseGridItem(
                     description = character.name,
