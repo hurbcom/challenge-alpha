@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.single
 
 class CategoriesViewModel(
     private val useCase: CategoryUseCase
-): br.com.mdr.starwars.ui.presentation.base.BaseViewModel() {
+): BaseViewModel() {
 
     private val _categories = MutableStateFlow<PageState<List<Category>>>(PageState.Loading)
     val categories: StateFlow<PageState<List<Category>>>

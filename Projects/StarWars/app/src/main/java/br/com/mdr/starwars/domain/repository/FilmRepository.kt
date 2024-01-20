@@ -9,4 +9,5 @@ interface FilmRepository {
     fun searchFilms(query: String): Flow<PagingData<Film>>
     suspend fun getFilm(id: Int): Film
     suspend fun setFavorite(isFavorite: Boolean, filmId: Int)
+    suspend fun saveLastSeen(film: Film)
 }

@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 class CharacterDetailViewModel(
     private val useCase: CharacterDetailUseCase,
     private val savedStateHandle: SavedStateHandle
-): br.com.mdr.starwars.ui.presentation.base.BaseDetailViewModel() {
+): BaseDetailViewModel() {
     private val _character: MutableStateFlow<Character?> = MutableStateFlow(null)
     val character: StateFlow<Character?> = _character
 
@@ -35,6 +35,7 @@ class CharacterDetailViewModel(
                 val character = useCase.getSelectedCharacter(it)
                 _character.emit(character)
                 _isFavorite.emit(character.isFavorite)
+                useCase.saveLastSeen(character)
             }
         }
     }

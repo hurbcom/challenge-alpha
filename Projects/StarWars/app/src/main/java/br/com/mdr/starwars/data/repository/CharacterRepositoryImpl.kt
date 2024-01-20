@@ -2,6 +2,7 @@ package br.com.mdr.starwars.data.repository
 
 import androidx.paging.PagingData
 import br.com.mdr.starwars.domain.model.Character
+import br.com.mdr.starwars.domain.model.LastSeen
 import br.com.mdr.starwars.domain.repository.CharacterRepository
 import br.com.mdr.starwars.domain.repository.LocalDataSource
 import br.com.mdr.starwars.domain.repository.RemoteDataSource
@@ -23,5 +24,13 @@ class CharacterRepositoryImpl(
 
     override suspend fun setFavorite(isFavorite: Boolean, name: String) {
         localDataSource.setFavoriteCharacter(isFavorite, name)
+    }
+
+    override suspend fun saveLastSeen(character: Character) {
+        val lastSeen = LastSeen(
+            lastSeenId = character.name,
+            character = character
+        )
+        localDataSource.saveLastSeen(lastSeen)
     }
 }

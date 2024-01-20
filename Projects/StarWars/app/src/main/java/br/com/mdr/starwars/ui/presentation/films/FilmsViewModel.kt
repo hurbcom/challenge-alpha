@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class FilmsViewModel(
     private val useCase: FilmUseCase
-): br.com.mdr.starwars.ui.presentation.base.BaseViewModel() {
+): BaseViewModel() {
 
     private val _films = MutableStateFlow<PagingData<Film>>(PagingData.empty())
     val films: StateFlow<PagingData<Film>>
