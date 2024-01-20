@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.kotlinx.serialization)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.ktlint)
 }
 
 android {
@@ -74,11 +75,11 @@ dependencies {
     // Compose Navigation
     implementation("androidx.navigation:navigation-compose:2.7.6")
 
-    //Retrofit
+    // Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-    //OkHttp
+    // OkHttp
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)
 
@@ -86,15 +87,15 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.gson)
 
-    //Koin
+    // Koin
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
     implementation(libs.koin.core)
 
-    //Timber
+    // Timber
     implementation(libs.timber)
 
-    //Coil
+    // Coil
     implementation(libs.coil)
 
     testImplementation(libs.junit)
