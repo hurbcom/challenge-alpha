@@ -42,7 +42,7 @@ fun FavoritesScreen(navController: NavHostController) {
 }
 
 @Composable
-fun ListContent(favorite: Favorite?, navController: NavHostController) {
+private fun ListContent(favorite: Favorite?, navController: NavHostController) {
     favorite?.apply {
         LazyVerticalGrid(
             modifier = Modifier

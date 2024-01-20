@@ -17,6 +17,7 @@ object Constants {
     const val FILM_REMOTE_KEYS_TABLE = "film_remote_keys_table"
     const val CHARACTER_TABLE = "character_table"
     const val CHARACTER_REMOTE_KEYS_TABLE = "character_remote_keys_table"
+    const val LAST_SEEN_TABLE = "last_seen_table"
     const val DEFAULT_PAGE_SIZE = 10
     const val DEFAULT_PAGE_SPACE_SIZE = 4
     const val DEFAULT_DB_CACHE_TIME = 720 //In minutes

@@ -9,4 +9,5 @@ interface CharacterRepository {
     fun searchCharacters(query: String): Flow<PagingData<Character>>
     suspend fun getCharacter(name: String): Character
     suspend fun setFavorite(isFavorite: Boolean, name: String)
+    suspend fun saveLastSeen(character: Character)
 }

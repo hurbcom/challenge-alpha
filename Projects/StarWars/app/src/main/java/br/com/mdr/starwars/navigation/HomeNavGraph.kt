@@ -35,7 +35,7 @@ fun HomeNavGraph(modifier: Modifier, navController: NavHostController) {
                 FavoritesScreen(navController)
             }
             composable(route = BottomBarScreen.LastSeen.route) {
-                LastSeenScreen()
+                LastSeenScreen(navController)
             }
             categoriesDetailsNavGraph(navController)
         }

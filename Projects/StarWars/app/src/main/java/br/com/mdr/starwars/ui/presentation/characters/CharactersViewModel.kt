@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 class CharactersViewModel(
     private val useCase: CharacterUseCase
-): br.com.mdr.starwars.ui.presentation.base.BaseViewModel() {
+): BaseViewModel() {
 
     private val _characters = MutableStateFlow<PagingData<Character>>(PagingData.empty())
     val characters: StateFlow<PagingData<Character>>

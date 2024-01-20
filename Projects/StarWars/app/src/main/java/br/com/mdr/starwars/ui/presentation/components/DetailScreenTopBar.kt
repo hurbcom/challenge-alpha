@@ -22,7 +22,7 @@ import br.com.mdr.starwars.ui.theme.ThemeColor
 fun DetailScreenTopBar(
     scrollBehavior: TopAppBarScrollBehavior,
     navController: NavHostController,
-    detailViewModel: br.com.mdr.starwars.ui.presentation.base.BaseDetailViewModel,
+    detailViewModel: BaseDetailViewModel,
     isFavorite: Boolean
 ) {
     TopAppBar(

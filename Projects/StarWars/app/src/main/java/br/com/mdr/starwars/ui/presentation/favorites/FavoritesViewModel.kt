@@ -4,6 +4,7 @@ import br.com.mdr.starwars.domain.model.Favorite
 import br.com.mdr.starwars.domain.model.PageState
 import br.com.mdr.starwars.domain.usecase.FavoritesUseCase
 import br.com.mdr.starwars.ui.presentation.base.BaseViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.single
@@ -24,7 +25,7 @@ class FavoritesViewModel (
     }
 
     private fun getFavorites() {
-        launch {
+        launch(Dispatchers.IO) {
             _favorites.emit(useCase.getFavorites().single())
         }
     }

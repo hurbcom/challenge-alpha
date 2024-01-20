@@ -46,7 +46,7 @@ import java.net.SocketTimeoutException
 @Composable
 fun EmptyScreen(
     error: PageState.Error? = null,
-    viewModel: br.com.mdr.starwars.ui.presentation.base.BaseViewModel
+    viewModel: BaseViewModel
 ) {
     var message by remember {
         mutableStateOf("")
@@ -89,7 +89,7 @@ fun EmptyContent(
     alphaAnim: Float,
     icon: Int,
     message: String,
-    viewModel: br.com.mdr.starwars.ui.presentation.base.BaseViewModel
+    viewModel: BaseViewModel
 ) {
 
     val refreshScope = rememberCoroutineScope()

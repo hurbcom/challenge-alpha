@@ -36,7 +36,7 @@ fun CategoriesScreen(navController: NavHostController) {
 }
 
 @Composable
-fun ListContent(categories: List<Category>, navController: NavHostController) {
+private fun ListContent(categories: List<Category>, navController: NavHostController) {
     LazyColumn(
         contentPadding = PaddingValues(MEDIUM_PADDING),
         verticalArrangement = Arrangement.spacedBy(MEDIUM_PADDING)

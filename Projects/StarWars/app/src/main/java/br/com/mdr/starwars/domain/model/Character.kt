@@ -18,7 +18,8 @@ data class Character(
     val height: String,
     val mass: String,
     val gender: String,
-    val url: String,
+    @SerializedName("url")
+    val profileUrl: String,
     @SerializedName("hair_color")
     val hairColor: String,
     @SerializedName("skin_color")
@@ -32,7 +33,7 @@ data class Character(
         get() = getImageUrl()
 
     private fun getImageUrl(): String {
-        val stringSplit = url.split("/")
+        val stringSplit = profileUrl.split("/")
         val id = stringSplit[stringSplit.size - 2]
         return "${IMAGE_BASE_URL}${CHARACTERS_URL}$id${IMAGE_EXTENSION}"
     }
