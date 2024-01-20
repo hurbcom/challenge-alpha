@@ -44,7 +44,7 @@ fun SearchTopBar(
 }
 
 @Composable
-fun SearchWidget(
+private fun SearchWidget(
     text: String,
     onTextChange: (String) -> Unit,
     onSearchClicked: (String) -> Unit,

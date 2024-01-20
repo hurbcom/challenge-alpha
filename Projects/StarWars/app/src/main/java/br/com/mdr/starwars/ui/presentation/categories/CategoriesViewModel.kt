@@ -20,7 +20,7 @@ class CategoriesViewModel(
         getCategories()
     }
 
-    suspend fun getCategories() {
+    fun getCategories() {
         launch {
             _categories.emit(useCase.getCategories().single())
         }
