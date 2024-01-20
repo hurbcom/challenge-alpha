@@ -11,7 +11,8 @@ fun RootNavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
         route = GraphRoute.ROOT,
-        startDestination = GraphRoute.SPLASH) {
+        startDestination = GraphRoute.SPLASH
+    ) {
         splashNavGraph(navController = navController)
         composable(route = GraphRoute.HOME) {
             HomeScreen()

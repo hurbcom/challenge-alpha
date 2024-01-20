@@ -14,11 +14,16 @@ import br.com.mdr.starwars.domain.model.Film
 import br.com.mdr.starwars.domain.model.FilmRemoteKeys
 import br.com.mdr.starwars.domain.model.LastSeen
 
-@Database(entities =
-    [Film::class, FilmRemoteKeys::class, Character::class,
-        CharacterRemoteKeys::class, LastSeen::class], version = 1)
+@Database(
+    entities =
+    [
+        Film::class, FilmRemoteKeys::class, Character::class,
+        CharacterRemoteKeys::class, LastSeen::class
+    ],
+    version = 1
+)
 @TypeConverters(DatabaseConverter::class)
-abstract class AppDatabase: RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
 
     abstract fun getFilmDao(): FilmDao
     abstract fun getFilmKeysDao(): FilmRemoteKeysDao

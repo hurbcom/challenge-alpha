@@ -2,7 +2,6 @@ package br.com.mdr.starwars.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 
-
 data class FilmResponse(
     val title: String?,
     val episodeId: Int?,

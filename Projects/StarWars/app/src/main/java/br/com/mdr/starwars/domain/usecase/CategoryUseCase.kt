@@ -32,7 +32,7 @@ class CategoryUseCase(
             Category(name = "planets", url = this.planets),
             Category(name = "species", url = this.species),
             Category(name = "starships", url = this.starships),
-            Category(name = "vehicles", url = this.vehicles),
+            Category(name = "vehicles", url = this.vehicles)
         )
     }
 }

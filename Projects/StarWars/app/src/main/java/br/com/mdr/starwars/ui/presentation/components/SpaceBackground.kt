@@ -23,7 +23,7 @@ import kotlin.math.sin
 data class Star(
     var x: Float,
     var y: Float,
-    var alpha: Float,
+    var alpha: Float
 ) {
     private val initialAlpha = alpha
 
@@ -35,7 +35,7 @@ data class Star(
 }
 
 @Composable
-fun SpaceBackgroundView(content: @Composable () -> Unit ) {
+fun SpaceBackgroundView(content: @Composable () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -56,15 +56,15 @@ private fun SpaceView(
         animationSpec = infiniteRepeatable(
             animation = tween(3000),
             repeatMode = RepeatMode.Restart
-        ), label = ""
+        ),
+        label = ""
     )
     BoxWithConstraints(
         modifier = modifier
             .fillMaxWidth()
             .fillMaxHeight()
-            .background(Color.Black),
+            .background(Color.Black)
     ) {
-
         val dimens = with(LocalDensity.current) {
             Pair(maxWidth.toPx(), maxHeight.toPx())
         }
@@ -82,7 +82,7 @@ private fun SpaceView(
         Canvas(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(),
+                .fillMaxHeight()
         ) {
             for (star in stars) {
                 star.update(infinitelyAnimatedFloat.value)
@@ -90,7 +90,7 @@ private fun SpaceView(
                     color = Color.White,
                     center = Offset(star.x, star.y),
                     radius = 2f,
-                    alpha = star.alpha,
+                    alpha = star.alpha
                 )
             }
         }

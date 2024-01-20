@@ -36,8 +36,10 @@ fun CharacterDetailContent(character: Character) {
             .padding(bottom = MEDIUM_PADDING)
             .verticalScroll(scrollState)
     ) {
-        val (image, titleLabel, birthdayLabel, heightLabel,
-            massLabel, genderLabel, hairLabel, skinLabel, eyeLabel) = createRefs()
+        val (
+            image, titleLabel, birthdayLabel, heightLabel,
+            massLabel, genderLabel, hairLabel, skinLabel, eyeLabel
+        ) = createRefs()
 
         AsyncImage(
             modifier = Modifier

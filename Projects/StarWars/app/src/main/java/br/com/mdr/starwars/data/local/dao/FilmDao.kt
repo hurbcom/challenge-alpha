@@ -9,8 +9,8 @@ import br.com.mdr.starwars.domain.model.Film
 
 @Dao
 interface FilmDao {
-    //Using PagingSource, allowing to paginate our db queries
-    //Room supports Paging3 by default, so you don't need to create a custom PagingSource
+    // Using PagingSource, allowing to paginate our db queries
+    // Room supports Paging3 by default, so you don't need to create a custom PagingSource
     @Query("select * from film_table ORDER BY id ASC")
     fun getFilms(): PagingSource<Int, Film>
 

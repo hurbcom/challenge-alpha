@@ -4,6 +4,7 @@ import androidx.room.TypeConverter
 
 class DatabaseConverter {
     private val separator = ","
+
     @TypeConverter
     fun convertListToString(list: List<String>): String {
         val stringBuilder = StringBuilder()

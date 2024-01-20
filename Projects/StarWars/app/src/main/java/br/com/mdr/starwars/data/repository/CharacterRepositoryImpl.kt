@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 class CharacterRepositoryImpl(
     private val dataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
-): CharacterRepository {
+) : CharacterRepository {
 
     override fun getCharacters(): Flow<PagingData<Character>> =
         dataSource.getAllCharacters()

@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.flowOn
 class RemoteDataSourceImpl(
     private val api: StarWarsApi,
     private val dataBase: AppDatabase
-): RemoteDataSource {
+) : RemoteDataSource {
     private val filmDao = dataBase.getFilmDao()
     private val charactersDao = dataBase.getCharactersDao()
 
@@ -70,5 +70,4 @@ class RemoteDataSourceImpl(
             pagingSourceFactory = pagingSourceFactory
         ).flow.flowOn(Dispatchers.IO)
     }
-
 }

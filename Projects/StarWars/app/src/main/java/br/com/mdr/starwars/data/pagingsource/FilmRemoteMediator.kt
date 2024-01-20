@@ -16,7 +16,7 @@ const val DEFAULT_PAGE_SIZE = 1
 class FilmRemoteMediator(
     private val api: StarWarsApi,
     private val database: AppDatabase
-): RemoteMediator<Int, Film>() {
+) : RemoteMediator<Int, Film>() {
 
     private val filmsDao = database.getFilmDao()
     private val filmsRemoteKeysDao = database.getFilmKeysDao()
@@ -39,12 +39,10 @@ class FilmRemoteMediator(
         } else {
             InitializeAction.LAUNCH_INITIAL_REFRESH
         }
-
     }
 
     override suspend fun load(loadType: LoadType, state: PagingState<Int, Film>): MediatorResult {
         return try {
-
             if (isUpdate) {
                 MediatorResult.Success(endOfPaginationReached = isUpdate)
             } else {
@@ -68,7 +66,7 @@ class FilmRemoteMediator(
                 val response = api.getFilms(page = page)
                 if (response.results.isNotEmpty()) {
                     database.withTransaction {
-                        //If MediatorResult is refreshing data, delete data from tables
+                        // If MediatorResult is refreshing data, delete data from tables
                         if (loadType == LoadType.REFRESH) {
                             filmsDao.deleteAllFilms()
                             filmsRemoteKeysDao.deleteRemoteKeys()

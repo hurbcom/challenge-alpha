@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 class FilmRepositoryImpl(
     private val dataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
-): FilmRepository {
+) : FilmRepository {
 
     override fun getFilms(): Flow<PagingData<Film>> =
         dataSource.getAllFilms()

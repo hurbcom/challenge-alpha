@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 class FilmDetailViewModel(
     private val useCase: FilmDetailUseCase,
     private val savedStateHandle: SavedStateHandle
-): BaseDetailViewModel() {
+) : BaseDetailViewModel() {
     private val _film: MutableStateFlow<Film?> = MutableStateFlow(null)
     val film: StateFlow<Film?> = _film
 

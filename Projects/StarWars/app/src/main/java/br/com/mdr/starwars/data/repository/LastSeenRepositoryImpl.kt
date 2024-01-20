@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 class LastSeenRepositoryImpl(
     private val localDataSource: LocalDataSource
-): LastSeenRepository {
+) : LastSeenRepository {
 
     override suspend fun getLastSeen(): Flow<List<LastSeen>> =
         localDataSource.getLastSeen()

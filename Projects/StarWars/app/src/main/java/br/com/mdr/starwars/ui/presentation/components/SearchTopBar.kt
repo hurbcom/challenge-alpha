@@ -119,6 +119,5 @@ fun SearchWidget(
 @Composable
 fun SearchWidgetPreview() {
     SearchTopBar(text = "", onTextChange = {}, onSearchClicked = {}) {
-
     }
 }

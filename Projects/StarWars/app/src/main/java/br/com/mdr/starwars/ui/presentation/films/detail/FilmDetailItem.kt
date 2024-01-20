@@ -37,8 +37,10 @@ fun FilmDetailItem(film: Film) {
             .padding(bottom = Dimens.MEDIUM_PADDING)
             .verticalScroll(scrollState)
     ) {
-        val (filmImage, titleLabel, releaseLabel, dirLabel,
-            prodLabel, descLabel) = createRefs()
+        val (
+            filmImage, titleLabel, releaseLabel, dirLabel,
+            prodLabel, descLabel
+        ) = createRefs()
 
         AsyncImage(
             modifier = Modifier

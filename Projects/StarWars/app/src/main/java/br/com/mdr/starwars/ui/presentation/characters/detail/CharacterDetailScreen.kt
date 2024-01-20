@@ -20,7 +20,6 @@ import org.koin.androidx.compose.koinViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CharacterDetailScreen(navController: NavHostController) {
-
     val viewModel: CharacterDetailViewModel = koinViewModel()
     val character by viewModel.character.collectAsState(null)
 
@@ -42,7 +41,7 @@ fun CharacterDetailScreen(navController: NavHostController) {
             )
         }
     ) {
-        character?.let{
+        character?.let {
             CharacterDetailContent(character = it)
         } ?: EmptyScreen(viewModel = viewModel)
     }

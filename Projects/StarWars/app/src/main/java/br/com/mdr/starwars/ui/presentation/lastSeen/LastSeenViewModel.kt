@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.single
 
 class LastSeenViewModel(
     private val useCase: LastSeenUseCase
-): BaseViewModel() {
+) : BaseViewModel() {
 
     private val _lastSeen = MutableStateFlow<PageState<List<LastSeen>>>(PageState.Loading)
     val lastSeen: StateFlow<PageState<List<LastSeen>>>
@@ -64,7 +64,7 @@ class LastSeenViewModel(
         return if (_lastSeen.value is PageState.Success) {
             try {
                 (_lastSeen.value as PageState.Success<List<LastSeen>>).result
-            } catch (e: Exception)  {
+            } catch (e: Exception) {
                 listOf()
             }
         } else {

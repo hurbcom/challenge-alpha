@@ -12,7 +12,7 @@ class FilmRemoteKeys(
     override val prevPage: String?,
     override val nextPage: String?,
     override val lastUpdated: Long?
-): BaseRemoteKeys(id, prevPage, nextPage, lastUpdated)
+) : BaseRemoteKeys(id, prevPage, nextPage, lastUpdated)
 
 open class BaseRemoteKeys(
     open val id: Int = 0,
@@ -23,5 +23,4 @@ open class BaseRemoteKeys(
     fun getPreviousIntPage(): Int = prevPage?.last()?.digitToIntOrNull() ?: DEFAULT_PAGE_SIZE
 
     fun getNextIntPage(): Int = nextPage?.last()?.digitToIntOrNull() ?: DEFAULT_PAGE_SIZE
-
 }

@@ -83,8 +83,8 @@ fun ShimmerItem(alpha: Float) {
                 shape = RoundedCornerShape(
                     bottomStart = MEDIUM_PADDING,
                     bottomEnd = MEDIUM_PADDING
-                ),
-            ){}
+                )
+            ) {}
             Surface(
                 modifier = Modifier
                     .alpha(alpha = alpha)
@@ -97,7 +97,7 @@ fun ShimmerItem(alpha: Float) {
                     },
                 color = Color.LightGray,
                 shape = RoundedCornerShape(EXTRA_SMALL_PADDING)
-            ){}
+            ) {}
         }
     }
 }

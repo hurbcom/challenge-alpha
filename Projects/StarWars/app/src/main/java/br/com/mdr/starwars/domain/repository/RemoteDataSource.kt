@@ -11,5 +11,4 @@ interface RemoteDataSource {
 
     fun getAllCharacters(): Flow<PagingData<Character>>
     fun searchCharacters(query: String): Flow<PagingData<Character>>
-
 }

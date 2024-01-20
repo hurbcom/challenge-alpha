@@ -21,7 +21,6 @@ import br.com.mdr.starwars.ui.theme.Dimens.MEDIUM_PADDING
 
 @Composable
 fun SplashScreen(onAnimationComplete: () -> Unit) {
-
     val scale = remember { Animatable(0f) }
 
     if (scale.value == 1f) {

@@ -9,8 +9,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.single
 
-class FavoritesViewModel (
-    private val useCase: FavoritesUseCase,
+class FavoritesViewModel(
+    private val useCase: FavoritesUseCase
 ) : BaseViewModel() {
     private val _favorites = MutableStateFlow<PageState<Favorite>>(PageState.Loading)
     val favorites: StateFlow<PageState<Favorite>>

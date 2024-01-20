@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.flow
 
 class CategoryRepositoryImpl(
     private val api: StarWarsApi
-): CategoryRepository {
+) : CategoryRepository {
 
     override suspend fun getCategories(): Flow<CategoryResponse> =
         flow {

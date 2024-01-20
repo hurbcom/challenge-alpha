@@ -9,7 +9,7 @@ import br.com.mdr.starwars.domain.repository.LocalDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class LocalDataSourceImpl(database: AppDatabase): LocalDataSource {
+class LocalDataSourceImpl(database: AppDatabase) : LocalDataSource {
 
     private val filmDao = database.getFilmDao()
     private val characterDao = database.getCharactersDao()

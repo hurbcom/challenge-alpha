@@ -64,7 +64,7 @@ private fun ListContent(favorite: Favorite?, navController: NavHostController) {
             ) {
                 HeaderItem(textId = R.string.films)
             }
-            items(count = favorite.films.size) {index ->
+            items(count = favorite.films.size) { index ->
                 favorite.films[index].apply {
                     BaseGridItem(
                         description = title,
@@ -74,8 +74,8 @@ private fun ListContent(favorite: Favorite?, navController: NavHostController) {
                     }
                 }
             }
-            //Verifica se o número de favoritos em filmes é ímpar
-            //Se for, é necessário adicionar uma coluna em branco
+            // Verifica se o número de favoritos em filmes é ímpar
+            // Se for, é necessário adicionar uma coluna em branco
             if (favorite.films.size.isEven().not()) {
                 item(
                     span = {
@@ -93,7 +93,7 @@ private fun ListContent(favorite: Favorite?, navController: NavHostController) {
             ) {
                 HeaderItem(textId = R.string.characters)
             }
-            items(count = favorite.characters.size) {index ->
+            items(count = favorite.characters.size) { index ->
                 favorite.characters[index].apply {
                     BaseGridItem(
                         description = name,
