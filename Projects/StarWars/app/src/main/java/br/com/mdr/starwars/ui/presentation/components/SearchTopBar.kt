@@ -20,10 +20,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import br.com.mdr.starwars.R
+import br.com.mdr.starwars.common.Constants.CLOSE_BUTTON
+import br.com.mdr.starwars.common.Constants.SEARCH_COMPONENT
+import br.com.mdr.starwars.common.Constants.SEARCH_TEXT_FIELD
 import br.com.mdr.starwars.ui.theme.Dimens.EXTRA_LARGE_PADDING
 import br.com.mdr.starwars.ui.theme.Dimens.SMALL_PADDING
 import br.com.mdr.starwars.ui.theme.SearchBarColor
@@ -53,14 +58,20 @@ private fun SearchWidget(
     Surface(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(SMALL_PADDING),
+            .padding(SMALL_PADDING)
+            .semantics {
+                contentDescription = SEARCH_COMPONENT
+            },
         shadowElevation = AppBarDefaults.TopAppBarElevation,
         color = SearchBarColor,
         shape = RoundedCornerShape(EXTRA_LARGE_PADDING)
     ) {
         TextField(
             modifier = Modifier
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .semantics {
+                    contentDescription = SEARCH_TEXT_FIELD
+                },
             value = text,
             onValueChange = onTextChange,
             placeholder = {
@@ -88,6 +99,10 @@ private fun SearchWidget(
             },
             trailingIcon = {
                 IconButton(
+                    modifier = Modifier
+                        .semantics {
+                            contentDescription = CLOSE_BUTTON
+                        },
                     onClick = {
                         if (text.isNotEmpty()) {
                             onTextChange("")
