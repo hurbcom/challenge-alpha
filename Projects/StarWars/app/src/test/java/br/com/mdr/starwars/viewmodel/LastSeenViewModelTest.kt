@@ -25,7 +25,7 @@ import org.koin.dsl.module
 import kotlin.test.assertEquals
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class LastSeenViewModelTest: BaseTest() {
+class LastSeenViewModelTest : BaseTest() {
 
     private val viewModel: LastSeenViewModel by inject()
     private val useCase: LastSeenUseCase by inject()
@@ -53,7 +53,7 @@ class LastSeenViewModelTest: BaseTest() {
             val films = viewModel.films
             val characters = viewModel.characters
 
-            coEvery { repository.getLastSeen() } returns flow{getLastSeen()}
+            coEvery { repository.getLastSeen() } returns flow { getLastSeen() }
             coEvery { useCase.getLastSeen() } returns emitLastSeen(lastSeen)
 
             viewModel.getLastSeen()
@@ -75,7 +75,7 @@ class LastSeenViewModelTest: BaseTest() {
             val films = viewModel.films
             val characters = viewModel.characters
 
-            coEvery { repository.getLastSeen() } returns flow{ emptyLastSeen }
+            coEvery { repository.getLastSeen() } returns flow { emptyLastSeen }
 
             viewModel.getLastSeen()
 
@@ -84,5 +84,4 @@ class LastSeenViewModelTest: BaseTest() {
             assert(characters.isEmpty())
         }
     }
-
 }

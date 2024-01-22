@@ -68,7 +68,7 @@ class SearchTopBarTest {
         val text = mutableStateOf("")
         val searchWidgetShown = mutableStateOf(true)
         composeTestRule.setContent {
-            if(searchWidgetShown.value){
+            if (searchWidgetShown.value) {
                 SearchTopBar(
                     text = text.value,
                     onTextChange = {
@@ -96,7 +96,7 @@ class SearchTopBarTest {
         val text = mutableStateOf("")
         val searchWidgetShown = mutableStateOf(true)
         composeTestRule.setContent {
-            if(searchWidgetShown.value){
+            if (searchWidgetShown.value) {
                 SearchTopBar(
                     text = text.value,
                     onTextChange = {

@@ -7,4 +7,4 @@ data class CharacterResponse(
     override val next: String?,
     override val previous: String?,
     val results: List<Character>
-): IBaseApiResponse
+) : IBaseApiResponse

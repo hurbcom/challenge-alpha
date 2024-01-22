@@ -38,10 +38,11 @@ import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class RemoteMediatorTest: BaseTest() {
+class RemoteMediatorTest : BaseTest() {
 
     private val api = mockk<StarWarsApi>()
     private val appDatabase = mockk<AppDatabase>()
+
 //        AppDatabase.create(
 //            context = ApplicationProvider.getApplicationContext(),
 //            useInMemory = true
@@ -72,7 +73,8 @@ class RemoteMediatorTest: BaseTest() {
         every { appDatabase.getFilmDao() } returns filmsDao
         every { appDatabase.getFilmKeysDao() } returns filmsRemoteKeysDao
     }
-    @Ignore //TODO: Teste quebrando com exceção ao executar DAO.
+
+    @Ignore // TODO: Teste quebrando com exceção ao executar DAO.
     @ExperimentalPagingApi
     @Test
     fun givenRefreshLoad_whenMoreDataIsPresent_thenReturnsSuccessResult() =
@@ -83,7 +85,6 @@ class RemoteMediatorTest: BaseTest() {
             coEvery { filmsDao.insertFilms(filmsResponse.results) } returns Unit
             coEvery { filmsRemoteKeysDao.deleteRemoteKeys() } just Runs
             coEvery { filmsRemoteKeysDao.addAllRemoteKeys(emptyRemoteKeys) } returns Unit
-
 
             coEvery { api.getFilms(1) } returns filmsResponse
 
@@ -103,7 +104,7 @@ class RemoteMediatorTest: BaseTest() {
             assertTrue((result as RemoteMediator.MediatorResult.Success).endOfPaginationReached)
         }
 
-    @Ignore //TODO: Teste quebrando com exceção ao executar DAO.
+    @Ignore // TODO: Teste quebrando com exceção ao executar DAO.
     @ExperimentalPagingApi
     @Test
     fun givenRefreshLoadSuccess_whenWhenNoMoreData_thenCheckEndOfPaginationTrue() =
