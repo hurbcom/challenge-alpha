@@ -29,11 +29,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.wesleyerick.podracer.R
+import com.wesleyerick.podracer.data.model.starships.Starship
 import com.wesleyerick.podracer.util.ImageTypeEnum
 import com.wesleyerick.podracer.util.getPhotoUrl
+import com.wesleyerick.podracer.view.component.PodracerCircularProgress
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class StarshipDetailFragment : Fragment() {
@@ -46,11 +50,7 @@ class StarshipDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_starship_detail, container, false)
-
         viewModel.getDetails(starshipId)
-
         return ComposeView(requireContext()).apply {
             setContent {
                 VehicleDetailsScreen()
@@ -63,9 +63,7 @@ class StarshipDetailFragment : Fragment() {
 
         val starshipDetails by viewModel.starshipsDetails.observeAsState()
 
-        MaterialTheme(
-
-        ) {
+        MaterialTheme {
             val backgroundImage = painterResource(id = R.drawable.home_background)
             Image(
                 painter = backgroundImage,
@@ -77,71 +75,87 @@ class StarshipDetailFragment : Fragment() {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-//                .background(R.drawable.home_background)
                     .padding(8.dp)
             ) {
 
                 starshipDetails?.let {
-                    Image(
-                        painter = rememberImagePainter(
-                            getPhotoUrl(it.url, path = ImageTypeEnum.STARSHIPS.path)
-                        ),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .aspectRatio(1f)
-                    )
 
-                    // Texts and Button
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .weight(1f)
-                            .padding(8.dp)
-                    ) {
-                        // Title
-                        Text(
-                            text = "Title",
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp),
-                            fontSize = 28.sp,
-                            color = Color.Yellow,
-                            textAlign = TextAlign.Center
-                        )
-
-                        // Subtitles
-                        Column(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .background(Color(0x72000000))
-                                .padding(8.dp)
-                        ) {
-                            SubtitleText(it.name)
-                            SubtitleText(it.manufacturer)
-                            SubtitleText(it.cost_in_credits)
-                            SubtitleText(it.starship_class)
-
-                            // Spacer
-                            Spacer(modifier = Modifier.height(32.dp))
-                        }
+                    if (it.url.isEmpty()) {
+                        PodracerCircularProgress()
+                    } else {
+                        StarshipContent(it)
                     }
                 }
                 // Image
 
-                // Back Button
-                Button(
-                    onClick = { /* Handle button click */ },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(24.dp)
-                        .background(Color.Yellow)
-                ) {
-                    Text(text = "Voltar", color = Color.Black, fontFamily = FontFamily.SansSerif)
-                }
+                BackButton()
             }
         }
 
+    }
+
+    @OptIn(ExperimentalCoilApi::class)
+    private @Composable
+    fun StarshipContent(it: Starship) {
+        Image(
+            painter = rememberImagePainter(
+                getPhotoUrl(it.url, path = ImageTypeEnum.STARSHIPS.path)
+            ),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxWidth()
+                .aspectRatio(1f)
+        )
+
+        // Texts and Button
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+//                .weight(1f)
+                .padding(8.dp)
+        ) {
+            // Title
+            Text(
+                text = "Title",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                fontSize = 28.sp,
+                color = Color.Yellow,
+                textAlign = TextAlign.Center
+            )
+
+            // Subtitles
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color(0x72000000))
+                    .padding(8.dp)
+            ) {
+                SubtitleText(it.name)
+                SubtitleText(it.manufacturer)
+                SubtitleText(it.cost_in_credits)
+                SubtitleText(it.starship_class)
+
+                // Spacer
+                Spacer(modifier = Modifier.height(32.dp))
+            }
+        }
+    }
+
+    @Composable
+    private fun BackButton() {
+        Button(
+            onClick = {
+                      findNavController().popBackStack()
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(24.dp)
+                .background(Color.Yellow)
+        ) {
+            Text(text = "Voltar", color = Color.Black, fontFamily = FontFamily.SansSerif)
+        }
     }
 
     @Composable

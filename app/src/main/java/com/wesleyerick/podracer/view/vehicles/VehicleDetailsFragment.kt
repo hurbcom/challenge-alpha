@@ -16,8 +16,11 @@ import com.wesleyerick.podracer.data.model.vehicles.Vehicle
 import com.wesleyerick.podracer.databinding.FragmentVehicleDetailsBinding
 import com.wesleyerick.podracer.util.ImageTypeEnum
 import com.wesleyerick.podracer.util.getPhotoUrl
+import com.wesleyerick.podracer.util.gone
 import com.wesleyerick.podracer.util.listener
+import com.wesleyerick.podracer.util.show
 import com.wesleyerick.podracer.view.ListAdapter
+import com.wesleyerick.podracer.view.component.PodracerCircularProgress
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class VehicleDetailsFragment : Fragment() {
@@ -35,24 +38,30 @@ class VehicleDetailsFragment : Fragment() {
 
         binding = FragmentVehicleDetailsBinding.inflate(inflater, container, false)
         setupView()
+        setupViewModel()
         return binding.root
     }
 
-    private fun setupView() {
-        viewModel.getDetails(vehicleId)
+    private fun setupViewModel() = with(viewModel) {
+        getDetails(vehicleId)
 
-        viewModel.apply {
-            vehicleDetails.listener(viewLifecycleOwner) {
-               setImage(it)
-                setVehicleText(it)
-            }
+        vehicleDetails.listener(viewLifecycleOwner) {
+            setImage(it)
+            setVehicleText(it)
+            isShowingProgress(it.name.isNotEmpty())
+        }
 
-            onError.listener(viewLifecycleOwner) {
-                if (it.isNotEmpty()) {
-                    showErrorMessage(it)
-                }
+        onError.listener(viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
+                showErrorMessage(it)
+                isShowingProgress(false)
             }
         }
+    }
+
+    private fun setupView() {
+        setupProgress()
+        isShowingProgress(true)
 
         binding.vehicleDetailsBackButton.setOnClickListener {
             findNavController().popBackStack()
@@ -77,4 +86,19 @@ class VehicleDetailsFragment : Fragment() {
     private fun showErrorMessage(it: String) = Toast
         .makeText(requireContext(), it, Toast.LENGTH_SHORT)
         .show()
+
+    private fun isShowingProgress(isNotEmpty: Boolean) = with(binding) {
+        if (isNotEmpty) {
+            vehicleDetailsImage.show()
+            vehicleDetailsTextListLinear.show()
+            vehicleDetailsProgressBar.gone()
+        } else {
+            vehicleDetailsImage.gone()
+            vehicleDetailsTextListLinear.gone()
+            vehicleDetailsProgressBar.show()
+        }
+    }
+    private fun setupProgress() = binding.vehicleDetailsProgressBar.setContent {
+        PodracerCircularProgress()
+    }
 }

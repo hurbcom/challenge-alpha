@@ -13,6 +13,7 @@ import com.wesleyerick.podracer.util.gone
 import com.wesleyerick.podracer.util.listener
 import com.wesleyerick.podracer.util.show
 import com.wesleyerick.podracer.view.ListAdapter
+import com.wesleyerick.podracer.view.component.PodracerCircularProgress
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class VehiclesFragment : Fragment() {
@@ -32,12 +33,12 @@ class VehiclesFragment : Fragment() {
     }
 
     private fun setupView() {
-        binding.vehiclesProgressBar.show()
+        setupProgress()
+        isShowingProgress(true)
 
         viewModel.apply {
             getList()
             vehiclesList.listener(viewLifecycleOwner) {
-                println("lista veiculos -> $it")
                 binding.vehiclesRecycler.apply {
                     adapter = ListAdapter(it) { itemListId ->
                         val action =
@@ -48,7 +49,7 @@ class VehiclesFragment : Fragment() {
                     }
                     layoutManager = LinearLayoutManager(requireContext())
                 }
-                binding.vehiclesProgressBar.gone()
+                isShowingProgress(it.isNotEmpty())
             }
 
             onError.listener(viewLifecycleOwner) {
@@ -56,8 +57,22 @@ class VehiclesFragment : Fragment() {
                     Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT)
                         .show()
                 }
-                binding.vehiclesProgressBar.gone()
+                isShowingProgress(it.isNotEmpty())
             }
         }
+    }
+
+    private fun isShowingProgress(isNotEmpty: Boolean) = with(binding) {
+        if (isNotEmpty) {
+            vehiclesRecycler.show()
+            vehiclesProgressBar.gone()
+        } else {
+            vehiclesRecycler.gone()
+            vehiclesProgressBar.show()
+        }
+    }
+
+    private fun setupProgress() = binding.vehiclesProgressBar.setContent {
+        PodracerCircularProgress()
     }
 }

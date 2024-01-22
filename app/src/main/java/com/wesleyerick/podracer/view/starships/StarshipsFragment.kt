@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -28,6 +29,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.ComposeView
@@ -42,30 +44,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.wesleyerick.podracer.R
 import com.wesleyerick.podracer.data.model.starships.Starship
-import com.wesleyerick.podracer.databinding.FragmentStarshipsBinding
 import com.wesleyerick.podracer.util.ImageTypeEnum
 import com.wesleyerick.podracer.util.getPhotoUrl
 import com.wesleyerick.podracer.util.listener
+import com.wesleyerick.podracer.view.component.PodracerCircularProgress
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class StarshipsFragment : Fragment() {
 
-    private lateinit var binding: FragmentStarshipsBinding
     private val viewModel by viewModel<StarshipsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        binding = FragmentStarshipsBinding.inflate(inflater, container, false)
-//        setupViewModel()
-//        return binding.root
-
         setupViewModel()
-
         return ComposeView(requireContext()).apply {
             setContent {
                 StarshipsFragmentScreen()
@@ -75,12 +72,9 @@ class StarshipsFragment : Fragment() {
 
     @Composable
     fun StarshipsFragmentScreen() {
-
         val list by viewModel.list.observeAsState()
 
-        MaterialTheme(
-
-        ) {
+        MaterialTheme {
             val backgroundImage = painterResource(id = R.drawable.home_background)
             Image(
                 painter = backgroundImage,
@@ -112,9 +106,15 @@ class StarshipsFragment : Fragment() {
                 )
 
                 list?.let {
-                    LazyColumn {
-                        items(it.size) { position ->
-                            StarshipItem(it, position)
+                    if (it.isEmpty()) {
+                        PodracerCircularProgress()
+                    } else {
+                        LazyColumn(
+                            modifier = Modifier.padding(bottom = 32.dp)
+                        ) {
+                            items(it.size) { position ->
+                                StarshipItem(it, position)
+                            }
                         }
                     }
                 }
@@ -135,6 +135,7 @@ class StarshipsFragment : Fragment() {
         }
     }
 
+    @OptIn(ExperimentalCoilApi::class)
     @Composable
     private fun StarshipItem(starshipList: List<Starship>, position: Int) {
         val starshipItem = starshipList[position]
@@ -143,7 +144,7 @@ class StarshipsFragment : Fragment() {
                 .fillMaxWidth()
                 .wrapContentHeight()
                 .background(Color(0x92000000))
-                .padding(8.dp)
+                .padding(top = 8.dp, bottom = 8.dp, start = 24.dp, end = 24.dp)
                 .clickable {
                     val action =
                         StarshipsFragmentDirections
@@ -153,13 +154,18 @@ class StarshipsFragment : Fragment() {
                 }
         ) {
             Row {
-                Box {
+                Box(
+                    modifier = Modifier
+                        .size(100.dp)
+                        .clip(RoundedCornerShape(8.dp))
+                ) {
                     Image(
                         painter = rememberImagePainter(
                             getPhotoUrl(starshipItem.url, path = ImageTypeEnum.STARSHIPS.path)
                         ),
                         contentDescription = null,
-                        modifier = Modifier.size(100.dp)
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxWidth()
                     )
                 }
                 Column {
