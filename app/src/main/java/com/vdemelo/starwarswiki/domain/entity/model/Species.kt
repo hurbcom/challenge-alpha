@@ -1,4 +1,4 @@
-package com.vdemelo.starwarswiki.model
+package com.vdemelo.starwarswiki.domain.entity.model
 
 import com.vdemelo.starwarswiki.data.remote.response.SpeciesResponse
 import com.vdemelo.starwarswiki.utils.nonNullOrEmpty

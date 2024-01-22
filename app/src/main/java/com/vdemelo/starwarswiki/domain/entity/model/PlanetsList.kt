@@ -1,16 +1,16 @@
-package com.vdemelo.starwarswiki.model
+package com.vdemelo.starwarswiki.domain.entity.model
 
-import com.vdemelo.starwarswiki.data.remote.response.SpeciesListResponse
+import com.vdemelo.starwarswiki.data.remote.response.PlanetsListResponse
 import com.vdemelo.starwarswiki.utils.nonNullOrEmpty
 
-class SpeciesList(
+class PlanetsList(
     val count: Int,
     val next: String?,
     val previous: String?,
-    val results: List<Species>
+    val results: List<Planet>
 ) {
 
-    constructor(response: SpeciesListResponse): this(
+    constructor(response: PlanetsListResponse): this(
         count = response.count ?: 0,
         next = response.next,
         previous = response.previous,
