@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "br.com.mdr.starwars"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "br.com.mdr.starwars"
         minSdk = 23
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -68,12 +68,12 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling)
 
     // Compose Navigation
-    implementation("androidx.navigation:navigation-compose:2.7.6")
+    implementation(libs.androidx.navigation.compose)
 
     // Retrofit
     implementation(libs.retrofit)
@@ -98,6 +98,8 @@ dependencies {
     // Coil
     implementation(libs.coil)
 
+    implementation(libs.leakcanary)
+
     testImplementation(libs.junit)
     testImplementation(libs.koin.android.test)
     testImplementation(libs.koin.test)
@@ -107,11 +109,11 @@ dependencies {
     testImplementation(libs.androidx.test.core)
     testImplementation(libs.mockk)
     testImplementation(libs.mock.web.server)
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+    testImplementation(libs.kotlin.test.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso)
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation(libs.androidx.compose.manifest.junit)
+    debugImplementation(libs.androidx.compose.manifest.test)
+    androidTestImplementation(libs.androidx.navigation.test)
 }

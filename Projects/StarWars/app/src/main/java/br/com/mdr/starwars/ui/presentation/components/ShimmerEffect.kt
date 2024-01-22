@@ -18,6 +18,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
@@ -32,6 +34,8 @@ import br.com.mdr.starwars.ui.theme.ShimmerMediumColor
 @Composable
 fun ShimmerEffect() {
     LazyColumn(
+        modifier = Modifier
+            .semantics { contentDescription = "Shimmer" },
         contentPadding = PaddingValues(all = SMALL_PADDING),
         verticalArrangement = Arrangement.spacedBy(SMALL_PADDING)
     ) {

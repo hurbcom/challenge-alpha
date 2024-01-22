@@ -21,7 +21,7 @@ import br.com.mdr.starwars.ui.presentation.films.detail.FilmDetailScreen
 import br.com.mdr.starwars.ui.presentation.lastSeen.LastSeenScreen
 
 @Composable
-fun HomeNavGraph(modifier: Modifier, navController: NavHostController) {
+fun HomeNavGraph(modifier: Modifier = Modifier, navController: NavHostController) {
     SpaceBackgroundView {
         NavHost(
             modifier = modifier,

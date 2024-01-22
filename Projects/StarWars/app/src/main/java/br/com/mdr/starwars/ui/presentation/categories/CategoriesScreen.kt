@@ -6,6 +6,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.navigation.NavHostController
 import br.com.mdr.starwars.domain.model.Category
 import br.com.mdr.starwars.navigation.Screen
@@ -38,6 +41,10 @@ fun CategoriesScreen(navController: NavHostController) {
 @Composable
 private fun ListContent(categories: List<Category>, navController: NavHostController) {
     LazyColumn(
+        modifier = Modifier
+            .semantics {
+                contentDescription = "Lista categorias"
+            },
         contentPadding = PaddingValues(MEDIUM_PADDING),
         verticalArrangement = Arrangement.spacedBy(MEDIUM_PADDING)
     ) {

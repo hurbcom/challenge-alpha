@@ -1,9 +1,4 @@
 [versions]
-compileSdk = "33"
-versionCode = "1"
-targetSdk = "33"
-minSdk = "23"
-
 androidGradlePlugin = "8.2.1"
 kotlin = "1.9.0"
 androidxCore = "1.12.0"
@@ -12,7 +7,6 @@ material3 = "1.1.2"
 androidxConstraintlayout = "1.0.1"
 timber = "5.0.1"
 ktlint = "11.3.1"
-detekt = "1.22.0"
 navigation = "2.7.6"
 retrofit = "2.9.0"
 gson = "2.10.1"
@@ -36,8 +30,6 @@ material = "1.5.4"
 kotlinSerialization = "1.6.0"
 core_testing = "2.1.0"
 test-core = "1.5.0"
-hilt = "2.48"
-coreKtx = "1.5.0"
 
 [libraries]
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
@@ -47,11 +39,18 @@ androidx-activity = { group = "androidx.activity", name = "activity-compose", ve
 androidx-material = { group = "androidx.compose.material", name = "material", version.ref = "material" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "androidxConstraintlayout" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
+androidx-navigation-test = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigation" }
+androidx-compose-manifest-test = { module = "androidx.compose.ui:ui-test-manifest" }
+androidx-compose-manifest-junit = { module = "androidx.compose.ui:ui-test-junit4" }
 androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 androidx-room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 androidx-paging = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 leakcanary = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
@@ -73,18 +72,13 @@ koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", versi
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 koin-android-test = { group = "io.insert-koin", name = "koin-android-test", version.ref = "koin" }
-koin-viewmodel = { group = "io.insert-koin", name = "koin-androidx-viewmodel", version.ref = "koin" }
 koin-test = { group = "io.insert-koin", name = "koin-test", version.ref = "koin" }
 koin-test-junit = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
-androidx-core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtx" }
+kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-hilt = {id = "com.google.dagger.hilt.android", version.ref = "hilt"}
-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
