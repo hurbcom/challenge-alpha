@@ -8,6 +8,10 @@ android {
     namespace = "com.wesleyerick.podracer"
     compileSdk = 31
 
+    packaging {
+        resources.excludes.add("META-INF/*")
+    }
+
     defaultConfig {
         applicationId = "com.wesleyerick.podracer"
         minSdk = 23
@@ -21,6 +25,10 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.2"
     }
 
     buildTypes {
@@ -70,12 +78,20 @@ dependencies {
     val koinVersion = "3.2.2"
     val glideVersion = "4.15.1"
     val navigationFragmentVersion = "2.5.3"
+    val composeVersion = "1.0.0"
 
     val jUnitVersion = "4.13.2"
     val jUnitTestVersion = "1.1.5"
     val mockkVersion = "1.12.4"
     val coroutinesTestVersion = "1.6.1"
     val espressoVersion = "3.3.0"
+
+    //Compose
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("androidx.compose.ui:ui-tooling:$composeVersion")
+    implementation("androidx.compose.material:material:$composeVersion")
+    implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
+    implementation("io.coil-kt:coil-compose:1.3.2")
 
     implementation("androidx.constraintlayout:constraintlayout:$constraintLayoutVersion")
     implementation("androidx.core:core-ktx:$ktxVersion")
@@ -84,7 +100,11 @@ dependencies {
     implementation("com.google.android.material:material:$materialVersion")
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+
+    //Koin
     implementation("io.insert-koin:koin-android:$koinVersion")
+    testImplementation("io.insert-koin:koin-test-junit5:$koinVersion")
+
     implementation("com.github.bumptech.glide:glide:$glideVersion")
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationFragmentVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navigationFragmentVersion")

@@ -36,7 +36,7 @@ class VehiclesFragment : Fragment() {
 
         viewModel.apply {
             getList()
-            list.listener(viewLifecycleOwner) {
+            vehiclesList.listener(viewLifecycleOwner) {
                 println("lista veiculos -> $it")
                 binding.vehiclesRecycler.apply {
                     adapter = ListAdapter(it) { itemListId ->
