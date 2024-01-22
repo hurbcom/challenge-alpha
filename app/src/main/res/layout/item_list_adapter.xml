@@ -6,8 +6,8 @@
     android:layout_height="wrap_content"
     android:background="#92000000"
     android:padding="8dp"
-    android:paddingStart="8dp"
-    android:paddingEnd="8dp">
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
 
     <ImageView
         android:id="@+id/item_list_image"
@@ -24,13 +24,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textColor="@color/yellow_title_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/item_list_image"
         app:layout_constraintTop_toTopOf="@+id/item_list_image"
-        android:ellipsize="end"
-        android:maxLines="1"
         tools:text="Title Text" />
 
     <TextView
@@ -67,9 +67,7 @@
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="2dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:background="#2CFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
