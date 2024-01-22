@@ -1,4 +1,9 @@
 [versions]
+compileSdk = "33"
+versionCode = "1"
+targetSdk = "33"
+minSdk = "23"
+
 androidGradlePlugin = "8.2.1"
 kotlin = "1.9.0"
 androidxCore = "1.12.0"

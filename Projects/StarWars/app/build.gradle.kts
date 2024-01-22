@@ -8,16 +8,17 @@ plugins {
 
 android {
     namespace = "br.com.mdr.starwars"
-    compileSdk = 33
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "br.com.mdr.starwars"
-        minSdk = 23
-        targetSdk = 33
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        compileSdkPreview = "UpsideDownCake"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -67,7 +68,7 @@ dependencies {
     implementation(libs.androidx.room.paging)
     ksp(libs.androidx.room.compiler)
 
-    implementation(platform("androidx.compose:compose-bom:2023.08.00"))
+    //implementation(platform("androidx.compose:compose-bom:2023.08.00"))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling)
