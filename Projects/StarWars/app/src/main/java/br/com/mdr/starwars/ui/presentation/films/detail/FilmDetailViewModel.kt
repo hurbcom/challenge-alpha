@@ -34,7 +34,7 @@ class FilmDetailViewModel(
             launch(Dispatchers.IO) {
                 val film = useCase.getSelectedFilm(filmId)
                 _film.emit(film)
-                _isFavorite.emit(film.favorite)
+                _isFavorite.emit(film.isFilmFavorite)
                 useCase.saveLastSeen(film)
             }
         }
@@ -42,12 +42,12 @@ class FilmDetailViewModel(
 
     override fun setFavorite() {
         _film.value?.let {
-            it.favorite = !it.favorite
+            it.isFilmFavorite = !it.isFilmFavorite
 
             launch(Dispatchers.IO) {
-                _isFavorite.emit(it.favorite)
+                _isFavorite.emit(it.isFilmFavorite)
                 _film.emit(it)
-                useCase.setFavorite(it.favorite, it.id)
+                useCase.setFavorite(it.isFilmFavorite, it.id)
             }
         }
     }

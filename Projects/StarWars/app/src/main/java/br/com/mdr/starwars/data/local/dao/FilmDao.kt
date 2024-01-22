@@ -20,7 +20,7 @@ interface FilmDao {
     @Query("SELECT * FROM film_table WHERE title LIKE '%' || :query || '%'")
     fun getFilmsByTitle(query: String): PagingSource<Int, Film>
 
-    @Query("UPDATE film_table SET favorite = :isFavorite WHERE id = :id")
+    @Query("UPDATE film_table SET isFilmFavorite = :isFavorite WHERE id = :id")
     suspend fun updateIsFavorite(isFavorite: Boolean, id: Int)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -29,6 +29,6 @@ interface FilmDao {
     @Query("DELETE FROM film_table")
     suspend fun deleteAllFilms()
 
-    @Query("SELECT * FROM film_table WHERE favorite = 1")
+    @Query("SELECT * FROM film_table WHERE isFilmFavorite = 1")
     suspend fun getFavoriteFilms(): List<Film>
 }

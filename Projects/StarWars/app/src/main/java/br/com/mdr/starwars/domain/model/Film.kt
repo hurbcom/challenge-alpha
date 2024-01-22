@@ -24,7 +24,7 @@ data class Film(
     val openingCrawl: String,
     @SerializedName("release_date")
     val dateCreated: String,
-    var favorite: Boolean = false
+    var isFilmFavorite: Boolean = false
 ) {
     @get:Ignore
     val filmUrl

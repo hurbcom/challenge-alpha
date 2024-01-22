@@ -40,14 +40,14 @@ abstract class BaseTest : KoinTest {
         )
     }
 
-    //protected lateinit var observerLoading: MutableStateFlow<PageState.Loading>
+    // protected lateinit var observerLoading: MutableStateFlow<PageState.Loading>
 
     fun mockErrorWrapper() = ConnectException(REQUEST_ERROR)
 
 //    fun verifyLoaderWasShown() {
 //        verifySequence {
-////            observerLoading.onChanged(true)
-////            observerLoading.onChanged(false)
+// //            observerLoading.onChanged(true)
+// //            observerLoading.onChanged(false)
 //        }
 //        confirmVerified(observerLoading)
 //    }
@@ -55,5 +55,4 @@ abstract class BaseTest : KoinTest {
 //    fun verifyLoaderWasNotShown() {
 //        confirmVerified(observerLoading)
 //    }
-
 }

@@ -5,6 +5,7 @@ import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
+import br.com.mdr.starwars.common.Constants.DEFAULT_DB_CACHE_TIME
 import br.com.mdr.starwars.data.local.AppDatabase
 import br.com.mdr.starwars.data.remote.api.StarWarsApi
 import br.com.mdr.starwars.domain.model.Film
@@ -26,12 +27,11 @@ class FilmRemoteMediator(
     override suspend fun initialize(): InitializeAction {
         val currentTime = System.currentTimeMillis()
         val lastUpdate = filmsRemoteKeysDao.getRemoteKeys(1)?.lastUpdated ?: 0L
-        val cacheTimeOut = 5 // Time in minutes to calculate when RemoteMediator should request new data from server
 
         val diffInMinutes = (currentTime - lastUpdate) / 1000 / 60
 
         // If cache time isn't expired yet, skip server refresh
-        return if (diffInMinutes.toInt() <= cacheTimeOut) {
+        return if (diffInMinutes.toInt() <= DEFAULT_DB_CACHE_TIME) {
             InitializeAction.SKIP_INITIAL_REFRESH
         } else {
             InitializeAction.LAUNCH_INITIAL_REFRESH

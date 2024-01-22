@@ -7,4 +7,4 @@ data class FilmsResponse(
     override val next: String?,
     override val previous: String?,
     val results: List<Film>
-): IBaseApiResponse
+) : IBaseApiResponse

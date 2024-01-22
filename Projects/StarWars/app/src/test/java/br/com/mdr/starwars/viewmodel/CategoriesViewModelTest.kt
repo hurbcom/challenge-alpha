@@ -23,7 +23,7 @@ import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class CategoriesViewModelTest: BaseTest() {
+class CategoriesViewModelTest : BaseTest() {
     private val viewModel: CategoriesViewModel by inject()
     private val useCase: CategoryUseCase by inject()
     private val repository: CategoryRepository by inject()
@@ -35,13 +35,13 @@ class CategoriesViewModelTest: BaseTest() {
                 single { mockk<CategoryRepository>() }
                 single { mockk<CategoryUseCase>() }
             } +
-            viewModelModule
+                viewModelModule
         )
     }
 
     @Test
     fun givenSuccess_whenLoadingCategories_thenCheckSuccessResult() {
-        //given
+        // given
         var expectedState: PageState<List<Category>> = PageState.Loading
 
         assertEquals(expectedState, viewModel.categories.value)
@@ -50,16 +50,16 @@ class CategoriesViewModelTest: BaseTest() {
 
         coEvery { useCase.getCategories() } returns emitCategories(categories)
 
-        //when
+        // when
         viewModel.getCategories()
 
-        //then
+        // then
         assertEquals(expectedState, viewModel.categories.value)
     }
 
     @Test
     fun givenSuccess_whenLoadingCategories_thenEmptyResult() {
-        //given
+        // given
         var expectedState: PageState<List<Category>> = PageState.Loading
 
         assertEquals(expectedState, viewModel.categories.value)
@@ -68,16 +68,16 @@ class CategoriesViewModelTest: BaseTest() {
 
         coEvery { useCase.getCategories() } returns emitCategories(emptyCategories)
 
-        //when
+        // when
         viewModel.getCategories()
 
-        //then
+        // then
         assertEquals(expectedState, viewModel.categories.value)
     }
 
     @Test
     fun givenError_whenLoadingCategories_thenCheckError() {
-        //given
+        // given
         var expectedState: PageState<List<Category>> = PageState.Loading
 
         assertEquals(expectedState, viewModel.categories.value)
@@ -87,11 +87,10 @@ class CategoriesViewModelTest: BaseTest() {
         coEvery { repository.getCategories() } throws mockedException
         coEvery { useCase.getCategories() } returns emitCategories(mockedError)
 
-        //when
+        // when
         viewModel.getCategories()
 
-        //then
+        // then
         assertEquals(expectedState, viewModel.categories.value)
     }
-
 }

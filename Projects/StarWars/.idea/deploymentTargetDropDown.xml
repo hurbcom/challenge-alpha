@@ -8,6 +8,9 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="givenCategoriesScreen_whenItAppears_thenCheckCategoriesIsLoaded()">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

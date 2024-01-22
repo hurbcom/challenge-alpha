@@ -28,7 +28,10 @@ class RemoteDataSourceImpl(
     override fun getAllFilms(): Flow<PagingData<Film>> {
         val pagingSourceFactory = { filmDao.getFilms() }
         return Pager(
-            config = PagingConfig(pageSize = DEFAULT_PAGE_SIZE),
+            config = PagingConfig(
+                pageSize = DEFAULT_PAGE_SIZE,
+                prefetchDistance = DEFAULT_PAGE_SPACE_SIZE
+            ),
             remoteMediator = FilmRemoteMediator(
                 api = api,
                 database = dataBase
@@ -40,7 +43,10 @@ class RemoteDataSourceImpl(
     override fun searchFilms(query: String): Flow<PagingData<Film>> {
         val pagingSourceFactory = { filmDao.getFilmsByTitle(query) }
         return Pager(
-            config = PagingConfig(pageSize = DEFAULT_PAGE_SIZE),
+            config = PagingConfig(
+                pageSize = DEFAULT_PAGE_SIZE,
+                prefetchDistance = DEFAULT_PAGE_SPACE_SIZE
+            ),
             pagingSourceFactory = pagingSourceFactory
         ).flow.flowOn(Dispatchers.IO)
     }

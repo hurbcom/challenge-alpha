@@ -11,8 +11,8 @@ interface StarWarsApi {
     suspend fun getCategories(): CategoryResponse
 
     @GET("api/films/")
-    suspend fun getFilms(@Query("page") page: Int): FilmsResponse//BaseApiResponse<Film>
+    suspend fun getFilms(@Query("page") page: Int): FilmsResponse // BaseApiResponse<Film>
 
     @GET("api/people/")
-    suspend fun getCharacters(@Query("page") page: Int): CharacterResponse//BaseApiResponse<Character>
+    suspend fun getCharacters(@Query("page") page: Int): CharacterResponse // BaseApiResponse<Character>
 }
