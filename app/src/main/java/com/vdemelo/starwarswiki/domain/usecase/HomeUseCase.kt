@@ -4,7 +4,6 @@ import com.vdemelo.starwarswiki.domain.entity.RequestStatus
 import com.vdemelo.starwarswiki.domain.entity.model.SpeciesList
 import com.vdemelo.starwarswiki.domain.repository.StarWarsLocalRepository
 import com.vdemelo.starwarswiki.domain.repository.StarWarsRemoteRepository
-import java.time.LocalDateTime
 
 private const val UNKNOWN_ERROR_MESSAGE = "An unknown error occurred."
 
