@@ -21,19 +21,23 @@ leakcanary = "2.10"
 splashscreen = "1.0.1"
 coil = "2.3.0"
 paging = "3.2.1"
-room = "2.6.1"
+room = "2.5.2"
 ksp = "1.9.20-1.0.13"
 activityCompose = "1.8.2"
-koin = "3.4.2"
+koin = "3.5.3"
 junit = "4.13.2"
 androidxTestExtJunit = "1.1.5"
 androidxTestEspresso = "3.5.1"
-coroutines = "1.7.1"
+coroutines = "1.4.2"
 mockk ="1.13.4"
 mockWebServer = "5.0.0-alpha.11"
 lifecycle = "2.7.0"
 material = "1.5.4"
 kotlinSerialization = "1.6.0"
+core_testing = "2.1.0"
+test-core = "1.5.0"
+hilt = "2.48"
+coreKtx = "1.5.0"
 
 [libraries]
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
@@ -59,14 +63,20 @@ coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExtJunit" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspresso" }
-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+androidx-core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "core_testing" }
+androidx-test-core = { group = "androidx.test", name = "core", version.ref = "test-core" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 mockk = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
 mock-web-server = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockWebServer" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
-koin-test = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
+koin-android-test = { group = "io.insert-koin", name = "koin-android-test", version.ref = "koin" }
+koin-viewmodel = { group = "io.insert-koin", name = "koin-androidx-viewmodel", version.ref = "koin" }
+koin-test = { group = "io.insert-koin", name = "koin-test", version.ref = "koin" }
+koin-test-junit = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
+androidx-core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -76,3 +86,5 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = {id = "com.google.dagger.hilt.android", version.ref = "hilt"}
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }

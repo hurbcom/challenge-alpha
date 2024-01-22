@@ -21,4 +21,9 @@ object Constants {
     const val DEFAULT_PAGE_SIZE = 10
     const val DEFAULT_PAGE_SPACE_SIZE = 4
     const val DEFAULT_DB_CACHE_TIME = 720 // In minutes
+
+    //Semantics content description
+    const val SEARCH_COMPONENT = "SearchComponent"
+    const val SEARCH_TEXT_FIELD = "SearchField"
+    const val CLOSE_BUTTON = "CloseButton"
 }

@@ -24,13 +24,11 @@ class LastSeenViewModel(
     val characters: List<Character>
         get() = filterCharacters()
 
-    init {
+    override suspend fun refresh() {
         getLastSeen()
     }
 
-    override suspend fun refresh() = Unit
-
-    private fun getLastSeen() {
+    fun getLastSeen() {
         launch(Dispatchers.IO) {
             _lastSeen.emit(useCase.getLastSeen().single())
         }

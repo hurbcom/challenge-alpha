@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -25,6 +26,10 @@ import org.koin.androidx.compose.koinViewModel
 fun LastSeenScreen(navController: NavHostController) {
     val viewModel: LastSeenViewModel = koinViewModel()
     val pageState = viewModel.lastSeen.collectAsState()
+
+    LaunchedEffect(key1 = null) {
+        viewModel.getLastSeen()
+    }
 
     HandlePageStateResult(
         pageState = pageState.value,
