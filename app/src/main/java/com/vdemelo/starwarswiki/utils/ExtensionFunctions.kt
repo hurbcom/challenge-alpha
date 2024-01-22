@@ -14,51 +14,41 @@ fun <T> List<T?>?.nonNullOrEmpty(): List<T> {
     }
 }
 
-//fun doViewWork() {
-//    //TODO
-//}
-//
-//fun doViewModelWork() {
-//    val liveData = makeAsyncTask {
-//
-//    }
-//}
-//
-//val timeHashMap = java.util.HashMap<String, Long>()
+//val cachedItems = HashMap<String, Long>()
 //
 //// TODO fazer o cache funcionar com um tipo só, Species, por exemplo
 //// TODO usar o Room pra salvar o cache
 //
-//fun <T> makeAsyncTask(
+//fun isCacheValid(
+//    cachedItems: HashMap<String, Long>,
+//    tag: String,
+//    cacheTimeOut: Int
+//): Boolean {
+//    val latestCacheTime = cachedItems[tag]
+//    val timeDiff = System.currentTimeMillis() - (latestCacheTime ?: 0)
+//
+//    return if (latestCacheTime == null) {
+//        false
+//    } else {
+//        timeDiff < cacheTimeOut
+//    }
+//}
+//
+//fun <T> makeRequest(
 //    tag: String = "",
 //    cacheTimeOut: Int = 0,
 //    func: () -> T
-//): LiveData<RequestStatus<T>> {
+//): RequestStatus<T> {
 //
-//    val liveData = MutableLiveData<RequestStatus<T>>() //TODO isso aqui vai chegar na view e ai trato erro/loading/data
+//    //TODO isso aqui vai chegar na view e ai trato erro/loading/data
+//    val response: RequestStatus<T>? = null
 //
-//    val latestCacheTime = timeHashMap[tag]
-//    if (latestCacheTime != null) {
-//        //TODO
+//    if (isCacheValid(cachedItems, tag, cacheTimeOut)) {
+//        //TODO chama local
+//    } else {
+//        //TODO chama remoto
 //    }
 //
-//    val className = T::class.java.packageName
 //
-//    // 1. ve se o cache existe e é válido
-//    // 2. recupera o cache se valido ou faz request se invalido
-//    // 3. devolve do use case pra view model
-//
-//    async {
-//        if (cacheTimeOut > 0) {
-//            val timeDiff = System.currentTimeMillis() - (timeHashMap[tag] ?: 0)
-//            if (timeDiff > cacheTimeOut) {
-//                val result = func.invoke()
-//                cacheItem?.put(tag, result)
-//            }
-//        } else {
-//            //TODO
-//        }
-//    }
-//
-//    return MutableLiveData<RequestStatus<T>>()
+//    return response ?: RequestStatus.Error(null, "Unknown error") //TODO
 //}

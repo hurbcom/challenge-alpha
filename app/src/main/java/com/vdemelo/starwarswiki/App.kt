@@ -1,8 +1,9 @@
 package com.vdemelo.starwarswiki
 
 import android.app.Application
-import com.vdemelo.starwarswiki.di.appModule
-import com.vdemelo.starwarswiki.di.networkModule
+import com.vdemelo.starwarswiki.di.presentationModule
+import com.vdemelo.starwarswiki.di.dataModule
+import com.vdemelo.starwarswiki.di.domainModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin
 
@@ -19,8 +20,9 @@ class App: Application() {
         startKoin {
             androidContext(androidContext = this@App)
             modules(
-                appModule,
-                networkModule
+                dataModule,
+                domainModule,
+                presentationModule
             )
         }
     }
