@@ -1,35 +1,35 @@
-package br.com.mdr.starwars
+package br.com.mdr.starwars.viewmodel
 
-import br.com.mdr.starwars.base.BaseViewModelTest
+import br.com.mdr.starwars.base.BaseTest
 import br.com.mdr.starwars.di.viewModelModule
 import br.com.mdr.starwars.domain.model.Category
 import br.com.mdr.starwars.domain.model.PageState
 import br.com.mdr.starwars.domain.repository.CategoryRepository
 import br.com.mdr.starwars.domain.usecase.CategoryUseCase
 import br.com.mdr.starwars.mocks.categories
-import br.com.mdr.starwars.mocks.emit
+import br.com.mdr.starwars.mocks.emitCategories
 import br.com.mdr.starwars.mocks.emptyCategories
-import br.com.mdr.starwars.mocks.errorCategory
+import br.com.mdr.starwars.mocks.mockedError
 import br.com.mdr.starwars.mocks.mockedException
 import br.com.mdr.starwars.ui.presentation.categories.CategoriesViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
+import org.koin.core.component.inject
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
-import org.koin.test.inject
-import kotlin.test.assertEquals
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class CategoriesViewModelTest: BaseViewModelTest() {
+class CategoriesViewModelTest: BaseTest() {
     private val viewModel: CategoriesViewModel by inject()
     private val useCase: CategoryUseCase by inject()
     private val repository: CategoryRepository by inject()
 
     @Before
-    fun setUp() {
+    fun setup() {
         loadKoinModules(
             module {
                 single { mockk<CategoryRepository>() }
@@ -48,7 +48,7 @@ class CategoriesViewModelTest: BaseViewModelTest() {
 
         expectedState = categories
 
-        coEvery { useCase.getCategories() } returns emit(categories)
+        coEvery { useCase.getCategories() } returns emitCategories(categories)
 
         //when
         viewModel.getCategories()
@@ -66,7 +66,7 @@ class CategoriesViewModelTest: BaseViewModelTest() {
 
         expectedState = emptyCategories
 
-        coEvery { useCase.getCategories() } returns emit(emptyCategories)
+        coEvery { useCase.getCategories() } returns emitCategories(emptyCategories)
 
         //when
         viewModel.getCategories()
@@ -82,10 +82,10 @@ class CategoriesViewModelTest: BaseViewModelTest() {
 
         assertEquals(expectedState, viewModel.categories.value)
 
-        expectedState = errorCategory
+        expectedState = mockedError
 
         coEvery { repository.getCategories() } throws mockedException
-        coEvery { useCase.getCategories() } returns emit(errorCategory)
+        coEvery { useCase.getCategories() } returns emitCategories(mockedError)
 
         //when
         viewModel.getCategories()

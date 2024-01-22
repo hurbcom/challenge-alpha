@@ -17,7 +17,7 @@ const val REQUEST_ERROR = "Error on request"
 private const val IO_DISPATCHER = "IO"
 
 @ExperimentalCoroutinesApi
-abstract class BaseViewModelTest : KoinTest {
+abstract class BaseTest : KoinTest {
 
     @get:Rule
     var rule = InstantTaskExecutorRule()

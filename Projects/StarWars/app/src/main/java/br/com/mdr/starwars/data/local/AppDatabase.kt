@@ -1,6 +1,8 @@
 package br.com.mdr.starwars.data.local
 
+import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import br.com.mdr.starwars.data.local.dao.CharacterRemoteKeysDao
@@ -24,6 +26,21 @@ import br.com.mdr.starwars.domain.model.LastSeen
 )
 @TypeConverters(DatabaseConverter::class)
 abstract class AppDatabase : RoomDatabase() {
+
+    companion object {
+        fun create(context: Context, useInMemory: Boolean): AppDatabase {
+            val databaseBuilder = if (useInMemory) {
+                Room
+                    .inMemoryDatabaseBuilder(context, AppDatabase::class.java)
+                    .allowMainThreadQueries()
+            } else {
+                Room.databaseBuilder(context, AppDatabase::class.java, "test_database.db")
+            }
+            return databaseBuilder
+                .fallbackToDestructiveMigration()
+                .build()
+        }
+    }
 
     abstract fun getFilmDao(): FilmDao
     abstract fun getFilmKeysDao(): FilmRemoteKeysDao

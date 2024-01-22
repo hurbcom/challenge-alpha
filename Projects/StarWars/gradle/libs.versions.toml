@@ -21,7 +21,7 @@ leakcanary = "2.10"
 splashscreen = "1.0.1"
 coil = "2.3.0"
 paging = "3.2.1"
-room = "2.6.1"
+room = "2.5.2"
 ksp = "1.9.20-1.0.13"
 activityCompose = "1.8.2"
 koin = "3.5.3"
@@ -36,6 +36,8 @@ material = "1.5.4"
 kotlinSerialization = "1.6.0"
 core_testing = "2.1.0"
 test-core = "1.5.0"
+hilt = "2.48"
+coreKtx = "1.5.0"
 
 [libraries]
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
@@ -74,6 +76,7 @@ koin-android-test = { group = "io.insert-koin", name = "koin-android-test", vers
 koin-viewmodel = { group = "io.insert-koin", name = "koin-androidx-viewmodel", version.ref = "koin" }
 koin-test = { group = "io.insert-koin", name = "koin-test", version.ref = "koin" }
 koin-test-junit = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
+androidx-core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -83,3 +86,5 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = {id = "com.google.dagger.hilt.android", version.ref = "hilt"}
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
