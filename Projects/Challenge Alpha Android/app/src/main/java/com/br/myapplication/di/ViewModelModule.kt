@@ -8,7 +8,8 @@ val viewModelModule = module {
 
     viewModel {
         FilmsViewModel(
-            filmRepository = get()
+            filmRepository = get(),
+            filmsDao = get()
         )
     }
 }

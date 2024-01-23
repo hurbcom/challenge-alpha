@@ -1,8 +1,15 @@
 package com.br.myapplication.data.model
 
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "species_table")
 data class Specie(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long,
+    var image: String = "",
     @SerializedName("average_height")
     val averageHeight: String,
 
@@ -24,6 +31,7 @@ data class Specie(
     val homeWorld: String,
     val language: String,
     val name: String,
+
     val people: List<String>,
 
     @SerializedName("skin_colors")

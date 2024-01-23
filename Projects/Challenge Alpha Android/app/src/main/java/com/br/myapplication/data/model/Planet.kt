@@ -1,8 +1,15 @@
 package com.br.myapplication.data.model
 
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "planets_tables")
 data class Planet(
+    @PrimaryKey(autoGenerate = true)
+    var id: Int,
+    var image: String = "",
     val climate: String,
     val created: String,
     val diameter: String,

@@ -31,7 +31,7 @@ class FilmsFragment: Fragment() {
         _binding = FragmentFilmsBinding.inflate(inflater, container, false)
 
         initObservables()
-
+        
         return binding.root
     }
 
