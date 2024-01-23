@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -60,13 +63,16 @@ dependencies {
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0") //TODO acho q n preciso
-//    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0") //TODO acho q n preciso
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     // OkHttp 3
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.12.0")
+
+    // ViewBinding
+//    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.0")
+    implementation("'com.android.databinding:viewbinding:4.0.1'")
 
 }

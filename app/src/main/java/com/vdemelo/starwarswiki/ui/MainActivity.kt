@@ -1,36 +1,38 @@
 package com.vdemelo.starwarswiki.ui
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.vdemelo.starwarswiki.R
+import com.vdemelo.starwarswiki.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     private val viewModel: HomeViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setViewBinding()
         setTest()
         setButtonClickListener()
         viewModel.fetchSpecies()
     }
 
+    private fun setViewBinding() {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+
     private fun setTest() {
-        val textView = findViewById<TextView>(R.id.title)
         viewModel.species.observe(this) {
             it?.run {
-                textView.text = it.name
+                binding.title.text = it.name
             }
         }
     }
 
     private fun setButtonClickListener() {
-        val button = findViewById<Button>(R.id.button)
-        button.setOnClickListener {
+        binding.button.setOnClickListener {
             viewModel.fetchSpecies()
         }
     }
