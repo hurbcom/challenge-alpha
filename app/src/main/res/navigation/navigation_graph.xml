@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/vehiclesFragment"
-        android:name="com.wesleyerick.podracer.view.vehicles.VehiclesFragment"
+        android:name="com.wesleyerick.podracer.view.vehicles.list.VehiclesFragment"
         android:label="fragment_vehicles"
         tools:layout="@layout/fragment_vehicles" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/starshipsFragment"
-        android:name="com.wesleyerick.podracer.view.starships.StarshipsFragment"
+        android:name="com.wesleyerick.podracer.view.starships.list.StarshipsFragment"
         android:label="fragment_starships"
         tools:layout="@layout/fragment_starships" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/vehicleDetailsFragment"
-        android:name="com.wesleyerick.podracer.view.vehicles.VehicleDetailsFragment"
+        android:name="com.wesleyerick.podracer.view.vehicles.details.VehicleDetailsFragment"
         android:label="fragment_vehicle_details"
         tools:layout="@layout/fragment_vehicle_details">
         <argument
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/starshipDetailFragment"
-        android:name="com.wesleyerick.podracer.view.starships.StarshipDetailFragment"
+        android:name="com.wesleyerick.podracer.view.starships.details.StarshipDetailsFragment"
         android:label="fragment_starship_detail"
         tools:layout="@layout/fragment_starship_detail" >
         <argument

@@ -1,4 +1,4 @@
-package com.wesleyerick.podracer.view.starships
+package com.wesleyerick.podracer.view.starships.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -46,15 +46,16 @@ import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.wesleyerick.podracer.R
 import com.wesleyerick.podracer.data.model.starships.Starship
-import com.wesleyerick.podracer.util.ImageTypeEnum
+import com.wesleyerick.podracer.util.TypeEnum
 import com.wesleyerick.podracer.util.getPhotoUrl
 import com.wesleyerick.podracer.view.component.PodracerCircularProgress
+import com.wesleyerick.podracer.view.starships.StarshipsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class StarshipDetailFragment : Fragment() {
+class StarshipDetailsFragment : Fragment() {
 
     private val viewModel by viewModel<StarshipsViewModel>()
-    private val arguments by navArgs<StarshipDetailFragmentArgs>()
+    private val arguments by navArgs<StarshipDetailsFragmentArgs>()
     private val starshipId by lazy { arguments.starshipId }
 
     override fun onCreateView(
@@ -125,7 +126,6 @@ class StarshipDetailFragment : Fragment() {
                     Modifier
                         .fillMaxWidth()
                         .padding(bottom = 56.dp, start = 24.dp, end = 24.dp)
-                        .background(Color.Yellow)
                         .constrainAs(buttonReference) {
                             start.linkTo(parent.start)
                             end.linkTo(parent.end)
@@ -156,10 +156,10 @@ class StarshipDetailFragment : Fragment() {
             }
 
             val painter = rememberImagePainter(
-                getPhotoUrl(it.url, path = ImageTypeEnum.STARSHIPS.path),
+                getPhotoUrl(it.url, path = TypeEnum.STARSHIPS.path),
                 builder = {
                     this.listener(
-                        onError = { _, exception ->
+                        onError = { _, _ ->
                             isDefaultImageEnabled = true
                         }
                     )

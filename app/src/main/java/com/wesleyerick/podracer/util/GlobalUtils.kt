@@ -5,7 +5,7 @@ import com.wesleyerick.podracer.BuildConfig
 const val IMAGE_TYPE = ".jpg"
 const val SLASH = "/"
 
-enum class ImageTypeEnum(val path: String){
+enum class TypeEnum(val path: String){
     VEHICLES("vehicles"),
     STARSHIPS("starships"),
 }

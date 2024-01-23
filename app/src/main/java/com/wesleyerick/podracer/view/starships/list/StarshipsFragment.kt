@@ -1,4 +1,4 @@
-package com.wesleyerick.podracer.view.starships
+package com.wesleyerick.podracer.view.starships.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -51,10 +51,13 @@ import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.wesleyerick.podracer.R
 import com.wesleyerick.podracer.data.model.starships.Starship
-import com.wesleyerick.podracer.util.ImageTypeEnum
+import com.wesleyerick.podracer.util.TypeEnum
 import com.wesleyerick.podracer.util.getItemListId
 import com.wesleyerick.podracer.util.getPhotoUrl
 import com.wesleyerick.podracer.view.component.PodracerCircularProgress
+import com.wesleyerick.podracer.view.component.PodracerFilter
+import com.wesleyerick.podracer.view.component.filterByName
+import com.wesleyerick.podracer.view.starships.StarshipsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class StarshipsFragment : Fragment() {
@@ -78,6 +81,7 @@ class StarshipsFragment : Fragment() {
         val onError by viewModel.onError.observeAsState()
 
         var isShowingProgress by remember { mutableStateOf(true) }
+        var newList by remember { mutableStateOf<List<Starship>>(emptyList()) }
 
 
         MaterialTheme {
@@ -107,11 +111,16 @@ class StarshipsFragment : Fragment() {
                     if (it.isEmpty()) {
                         isShowingProgress = true
                     } else {
+
+                        PodracerFilter(items = it, ::filterByName) { filteredList, _ ->
+                            newList = filteredList
+                        }
+
                         LazyColumn(
                             modifier = Modifier.padding(bottom = 32.dp)
                         ) {
-                            items(it.size) { position ->
-                                StarshipItem(it, position)
+                            items(newList.size) { position ->
+                                StarshipItem(newList, position)
                             }
                         }
                         isShowingProgress = false
@@ -168,15 +177,18 @@ class StarshipsFragment : Fragment() {
                         .size(100.dp)
                         .clip(RoundedCornerShape(8.dp))
                 ) {
-                    
+
                     var isDefaultImageEnabled by remember {
                         mutableStateOf(false)
                     }
 
                     val painter = rememberImagePainter(
-                        getPhotoUrl(starshipItem.url, path = ImageTypeEnum.STARSHIPS.path),
+                        getPhotoUrl(starshipItem.url, path = TypeEnum.STARSHIPS.path),
                         builder = {
                             this.listener(
+                                onSuccess = { _, _ ->
+                                    isDefaultImageEnabled = false
+                                },
                                 onError = { _, exception ->
                                     isDefaultImageEnabled = true
                                 }
@@ -187,7 +199,7 @@ class StarshipsFragment : Fragment() {
                     Image(
                         painter = if (!isDefaultImageEnabled) {
                             painter
-                        }else {
+                        } else {
                             painterResource(id = R.drawable.placeholder)
                         },
                         contentDescription = null,

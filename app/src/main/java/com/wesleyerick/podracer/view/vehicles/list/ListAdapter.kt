@@ -1,4 +1,4 @@
-package com.wesleyerick.podracer.view
+package com.wesleyerick.podracer.view.vehicles.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,9 +7,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.wesleyerick.podracer.R
 import com.wesleyerick.podracer.data.model.vehicles.Vehicle
 import com.wesleyerick.podracer.databinding.ItemListAdapterBinding
-import com.wesleyerick.podracer.util.ImageTypeEnum
+import com.wesleyerick.podracer.util.TypeEnum
 import com.wesleyerick.podracer.util.getItemListId
 import com.wesleyerick.podracer.util.getPhotoUrl
 
@@ -49,8 +50,9 @@ class ListAdapter(
             val requestOptions = RequestOptions().transform(CenterCrop(), RoundedCorners(48))
 
             Glide.with(itemBinding.root)
-                .load(getPhotoUrl(url = item.url, path = ImageTypeEnum.VEHICLES.path))
+                .load(getPhotoUrl(url = item.url, path = TypeEnum.VEHICLES.path))
                 .apply(requestOptions)
+                .placeholder(R.drawable.placeholder)
                 .into(itemBinding.itemListImage)
 
             itemListTitleText.text = item.name
