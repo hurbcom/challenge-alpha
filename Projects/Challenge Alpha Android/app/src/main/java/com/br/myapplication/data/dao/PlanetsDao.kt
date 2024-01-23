@@ -15,4 +15,7 @@ interface PlanetsDao {
 
     @Query("SELECT * FROM planets_tables ORDER BY id ASC")
     fun getAllPlanets(): PagingSource<Int, Planet>
+
+    @Query("SELECT * FROM planets_tables ORDER BY id ASC LIMIT :pageSize OFFSET :offset")
+    fun getAllPlanetsPaging(offset: Int, pageSize: Int): List<Planet>
 }

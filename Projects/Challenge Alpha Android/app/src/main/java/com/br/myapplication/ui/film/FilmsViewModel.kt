@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 
 class FilmsViewModel(
     val filmRepository: IFilmRepository,
-     val filmsDao: FilmsDao
+    val filmsDao: FilmsDao
 ): ViewModel() {
 
     private val _filmsList = Pager(
@@ -29,28 +29,5 @@ class FilmsViewModel(
 
     val filmsList: LiveData<PagingData<Film>>
         get() = _filmsList
-
-//    fun fetchData() : MutableLiveData<PagingData<Film>> {
-//
-//        val pager = Pager(
-//            config = PagingConfig(pageSize = 6),
-//            initialKey = 1
-//        ) {
-//            FilmsPagingSource(filmRepository)
-//        }.flow.cachedIn(viewModelScope).asLiveData()
-//
-//        filmRepository.saveFilm(filmsList.value)
-//        return pager.
-//        viewModelScope.launch {
-//            try {
-//
-//                val response  = filmRepository.getFilmsPaging().
-//                cachedIn(viewModelScope).asLiveData()
-//                     _filmsList.value = response.value
-//            } catch (e: Exception) {
-//                // Handle exceptions if needed
-//            }
-//        }
-//    }
 
 }
