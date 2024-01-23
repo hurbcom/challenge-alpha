@@ -71,7 +71,7 @@ class VehicleDetailsFragment : Fragment() {
     private fun setVehicleText(it: Vehicle) = binding.apply {
         vehicleDetailsTitleText.text = it.name
         vehicleDetailsSubtitleOneText.text = "Consumables: ${it.consumables}"
-        vehicleDetailsSubtitleTwoText.text = "manufacturer: ${it.manufacturer}"
+        vehicleDetailsSubtitleTwoText.text = "Manufacturer: ${it.manufacturer}"
         vehicleDetailsSubtitleThreeText.text = "Max Atmosphering Speed: ${it.maxAtmospheringSpeed}Km/h"
         vehicleDetailsSubtitleFourText.text = "Class: ${it.vehicleClass}"
     }

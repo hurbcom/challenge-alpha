@@ -92,6 +92,7 @@ dependencies {
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
     implementation("io.coil-kt:coil-compose:1.3.2")
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
     implementation("androidx.constraintlayout:constraintlayout:$constraintLayoutVersion")
     implementation("androidx.core:core-ktx:$ktxVersion")

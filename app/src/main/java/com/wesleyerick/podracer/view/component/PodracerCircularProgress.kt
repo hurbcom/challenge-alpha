@@ -10,11 +10,13 @@ import androidx.compose.ui.res.colorResource
 import com.wesleyerick.podracer.R
 
 @Composable
-fun PodracerCircularProgress() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        CircularProgressIndicator(color = colorResource(id = R.color.yellow_title_text))
+fun PodracerCircularProgress(isActive: Boolean = true) {
+    if (isActive) {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            CircularProgressIndicator(color = colorResource(id = R.color.yellow_title_text))
+        }
     }
 }

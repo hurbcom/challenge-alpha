@@ -27,6 +27,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -49,20 +52,19 @@ import coil.compose.rememberImagePainter
 import com.wesleyerick.podracer.R
 import com.wesleyerick.podracer.data.model.starships.Starship
 import com.wesleyerick.podracer.util.ImageTypeEnum
+import com.wesleyerick.podracer.util.getItemListId
 import com.wesleyerick.podracer.util.getPhotoUrl
-import com.wesleyerick.podracer.util.listener
 import com.wesleyerick.podracer.view.component.PodracerCircularProgress
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class StarshipsFragment : Fragment() {
 
     private val viewModel by viewModel<StarshipsViewModel>()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        setupViewModel()
+        viewModel.getList()
         return ComposeView(requireContext()).apply {
             setContent {
                 StarshipsFragmentScreen()
@@ -73,6 +75,10 @@ class StarshipsFragment : Fragment() {
     @Composable
     fun StarshipsFragmentScreen() {
         val list by viewModel.list.observeAsState()
+        val onError by viewModel.onError.observeAsState()
+
+        var isShowingProgress by remember { mutableStateOf(true) }
+
 
         MaterialTheme {
             val backgroundImage = painterResource(id = R.drawable.home_background)
@@ -96,18 +102,10 @@ class StarshipsFragment : Fragment() {
                     ),
                     modifier = Modifier.padding(top = 32.dp)
                 )
-
-                val dataList = listOf(
-                    Starship(name = "1"),
-                    Starship(name = "2"),
-                    Starship(name = "3"),
-                    Starship(name = "4"),
-                    Starship(name = "5"),
-                )
-
+                PodracerCircularProgress(isShowingProgress)
                 list?.let {
                     if (it.isEmpty()) {
-                        PodracerCircularProgress()
+                        isShowingProgress = true
                     } else {
                         LazyColumn(
                             modifier = Modifier.padding(bottom = 32.dp)
@@ -116,6 +114,13 @@ class StarshipsFragment : Fragment() {
                                 StarshipItem(it, position)
                             }
                         }
+                        isShowingProgress = false
+                    }
+                }
+                onError?.let {
+                    if (it.isNotEmpty()) {
+                        Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+                        isShowingProgress = false
                     }
                 }
 
@@ -149,7 +154,11 @@ class StarshipsFragment : Fragment() {
                     val action =
                         StarshipsFragmentDirections
                             .actionStarshipsFragmentToStarshipDetailFragment()
-                            .setStarshipId(position.toString())
+                            .setStarshipId(
+                                getItemListId(
+                                    url = starshipList[position].url
+                                )
+                            )
                     findNavController().navigate(action)
                 }
         ) {
@@ -159,10 +168,28 @@ class StarshipsFragment : Fragment() {
                         .size(100.dp)
                         .clip(RoundedCornerShape(8.dp))
                 ) {
+                    
+                    var isDefaultImageEnabled by remember {
+                        mutableStateOf(false)
+                    }
+
+                    val painter = rememberImagePainter(
+                        getPhotoUrl(starshipItem.url, path = ImageTypeEnum.STARSHIPS.path),
+                        builder = {
+                            this.listener(
+                                onError = { _, exception ->
+                                    isDefaultImageEnabled = true
+                                }
+                            )
+                        }
+                    )
+
                     Image(
-                        painter = rememberImagePainter(
-                            getPhotoUrl(starshipItem.url, path = ImageTypeEnum.STARSHIPS.path)
-                        ),
+                        painter = if (!isDefaultImageEnabled) {
+                            painter
+                        }else {
+                            painterResource(id = R.drawable.placeholder)
+                        },
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxWidth()
@@ -226,22 +253,4 @@ class StarshipsFragment : Fragment() {
     fun StarshipsFragmentScreenPreview() {
         StarshipsFragmentScreen()
     }
-
-    private fun setupViewModel() {
-        viewModel.getList()
-        viewModel.apply {
-            list.listener(viewLifecycleOwner) {
-                println("lista starships -> $it")
-            }
-
-            onError.listener(viewLifecycleOwner) {
-                if (it.isNotEmpty()) {
-                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT)
-                        .show()
-                }
-//                binding.vehiclesProgressBar.gone()
-            }
-        }
-    }
-
 }
