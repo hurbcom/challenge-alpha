@@ -2,15 +2,15 @@ package com.br.myapplication.data.remote
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.br.myapplication.data.model.Film
+import com.br.myapplication.data.dao.SpeciesDao
 import com.br.myapplication.data.model.Specie
-import com.br.myapplication.data.repository.film.IFilmRepository
 import com.br.myapplication.data.repository.specie.ISpeciesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class SpeciesPagingSource(
-    private val repository: ISpeciesRepository
+    private val repository: ISpeciesRepository,
+    private val speciesDao: SpeciesDao
 ) : PagingSource<Int, Specie>(){
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Specie> {
@@ -19,12 +19,16 @@ class SpeciesPagingSource(
             val page = params.key ?: 1
 
             withContext(Dispatchers.IO) {
-                val response = repository.geSpecieList(page.toString())
+                val speciesFromApi = repository.geSpecieList(page.toString())
+
+                speciesFromApi.forEach { speciesDao.insertSpecies(it) }
+
+                val speciesFromDb = speciesDao.getAllSpeciesPaging((page - 1) * params.loadSize, params.loadSize)
 
                 LoadResult.Page(
-                    data = response,
-                    prevKey = if (page > 1) page - 1 else null,
-                    nextKey = if (response.isNotEmpty()) page + 1 else null
+                    data = speciesFromDb,
+                    prevKey = if (page == 1) null else page - 1,
+                    nextKey = page + 1
                 )
             }
         } catch (e: Exception) {

@@ -14,4 +14,7 @@ interface SpeciesDao {
 
     @Query("SELECT * FROM species_table ORDER BY id ASC")
     fun getAllSpecies(): PagingSource<Int, Specie>
+
+    @Query("SELECT * FROM species_table ORDER BY id ASC LIMIT :pageSize OFFSET :offset")
+    fun getAllSpeciesPaging(offset: Int, pageSize: Int): List<Specie>
 }

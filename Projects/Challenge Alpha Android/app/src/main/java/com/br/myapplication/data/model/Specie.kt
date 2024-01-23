@@ -28,7 +28,7 @@ data class Specie(
     val hairColors: String,
 
     @SerializedName("homeworld")
-    val homeWorld: String,
+    val homeWorld: String?,
     val language: String,
     val name: String,
 

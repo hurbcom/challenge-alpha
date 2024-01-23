@@ -14,8 +14,8 @@ import com.br.myapplication.extensions.visible
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
 class FilmsFragment: Fragment() {
+
     private var _binding: FragmentFilmsBinding? = null
 
     private val binding get() = _binding!!
@@ -31,7 +31,7 @@ class FilmsFragment: Fragment() {
         _binding = FragmentFilmsBinding.inflate(inflater, container, false)
 
         initObservables()
-        
+
         return binding.root
     }
 

@@ -13,7 +13,10 @@ import com.br.myapplication.data.model.Planet
 import com.br.myapplication.data.remote.PlanetsPagingSource
 import com.br.myapplication.data.repository.planet.IPlanetRepository
 
-class PlanetsViewModel(val repository: IPlanetRepository, planetsDao: PlanetsDao) : ViewModel() {
+class PlanetsViewModel(
+    val repository: IPlanetRepository,
+    val planetsDao: PlanetsDao
+) : ViewModel() {
 
     private val _planetList = Pager(
         config = PagingConfig(pageSize = 10),
@@ -24,5 +27,4 @@ class PlanetsViewModel(val repository: IPlanetRepository, planetsDao: PlanetsDao
 
     val planetList: LiveData<PagingData<Planet>>
         get() = _planetList
-
 }

@@ -6,10 +6,10 @@
         android:title="@string/films" />
 
     <item
-        android:id="@+id/navigation_planets_fragment"
-        android:title="@string/planets" />
-
-    <item
         android:id="@+id/navigation_species_fragment"
         android:title="@string/species" />
+
+    <item
+        android:id="@+id/navigation_planets_fragment"
+        android:title="@string/planets" />
 </menu>

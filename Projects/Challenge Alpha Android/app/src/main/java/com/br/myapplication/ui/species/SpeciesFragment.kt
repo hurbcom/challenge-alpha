@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.br.myapplication.databinding.FragmentSpeciesBinding
 import com.br.myapplication.extensions.hide
 import com.br.myapplication.extensions.visible
@@ -39,7 +39,7 @@ class SpeciesFragment: Fragment() {
 
         val adapter = SpeciesAdapter()
         binding.speciesListRV.adapter = adapter
-        binding.speciesListRV.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        binding.speciesListRV.layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
         viewModel.specieList.observe(viewLifecycleOwner){
 
             lifecycleScope.launch {
