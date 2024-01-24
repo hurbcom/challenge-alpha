@@ -21,4 +21,7 @@ interface FilmsDao {
 
     @Query("SELECT * FROM films_table WHERE title LIKE '%' || :filter || '%'")
     fun getFilteredFilmsPagingSource(filter: String?): PagingSource<Int, Film>
+
+    @Query("SELECT * FROM films_table WHERE isFavorite = 1" )
+    fun getFavoritesFilms(): List<Film>
 }

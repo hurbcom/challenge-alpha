@@ -26,6 +26,7 @@ data class Film(
     val starships: List<String>,
     val title: String,
     val url: String,
-    val vehicles: List<String>
+    val vehicles: List<String>,
+    var isFavorite: Boolean = false
 )
 

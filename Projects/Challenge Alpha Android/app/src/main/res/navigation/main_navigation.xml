@@ -22,4 +22,9 @@
         android:name="com.br.myapplication.ui.species.SpeciesFragment"
         android:label="SpeciesFragment"
         tools:layout="@layout/fragment_species"/>
+    <fragment
+        android:id="@+id/navigation_favorites_fragment"
+        android:name="com.br.myapplication.ui.favorites.FavoritesFragment"
+        android:label="FavoritesFragment"
+        tools:layout="@layout/fragment_favorites_list"/>
 </navigation>

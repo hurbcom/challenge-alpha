@@ -1,5 +1,6 @@
 package com.br.myapplication.di
 
+import com.br.myapplication.ui.favorites.FavoritesViewModel
 import com.br.myapplication.ui.film.FilmsViewModel
 import com.br.myapplication.ui.planets.PlanetsViewModel
 import com.br.myapplication.ui.species.SpeciesViewModel
@@ -26,6 +27,12 @@ val viewModelModule = module {
         SpeciesViewModel(
             repository = get(),
             speciesDao = get()
+        )
+    }
+
+    viewModel {
+        FavoritesViewModel(
+            repository = get()
         )
     }
 }

@@ -21,4 +21,7 @@ interface SpeciesDao {
     @Query("SELECT * FROM species_table WHERE name LIKE '%' || :filter || '%'")
     fun getFilteredSpeciesPagingSource(filter: String?): PagingSource<Int, Specie>
 
+    @Query("SELECT * FROM species_table WHERE isFavorite = 1" )
+    fun getFavoritesSpecies(): List<Specie>
+
 }

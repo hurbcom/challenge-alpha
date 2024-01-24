@@ -35,5 +35,6 @@ data class Specie(
 
     @SerializedName("skin_colors")
     val skinColors: String,
-    val url: String
+    val url: String,
+    var isFavorite: Boolean = false
 )

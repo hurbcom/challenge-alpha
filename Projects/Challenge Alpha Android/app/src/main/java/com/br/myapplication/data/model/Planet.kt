@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "planets_tables")
+@Entity(tableName = "planets_table")
 data class Planet(
     @PrimaryKey(autoGenerate = true)
     var id: Int,
@@ -29,5 +29,6 @@ data class Planet(
     @SerializedName("surface_water")
     val surfaceWater: String,
     val terrain: String,
-    val url: String
+    val url: String,
+    var isFavorite: Boolean = false
 )
