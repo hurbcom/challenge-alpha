@@ -14,6 +14,7 @@ import com.br.myapplication.data.dao.FilmsDao
 import com.br.myapplication.data.model.Film
 import com.br.myapplication.data.remote.FilmsPagingSource
 import com.br.myapplication.data.repository.film.IFilmRepository
+import kotlinx.coroutines.launch
 
 class FilmsViewModel(
     val filmRepository: IFilmRepository,
@@ -47,7 +48,16 @@ class FilmsViewModel(
     private fun getFilteredFilmList(filter: String): LiveData<PagingData<Film>> {
         return Pager(
             config = PagingConfig(pageSize = 10),
-            pagingSourceFactory = { filmsDao.getFilteredFilmsPagingSource(filter) }
+            pagingSourceFactory = {
+                filmsDao.getFilteredFilmsPagingSource(filter)
+            }
         ).flow.cachedIn(viewModelScope).asLiveData()
+    }
+
+    fun updateFilm(film: Film) {
+        viewModelScope.launch {
+
+            filmsDao.updateFilm(film)
+        }
     }
 }

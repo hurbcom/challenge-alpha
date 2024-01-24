@@ -44,7 +44,9 @@ class FilmsFragment: Fragment() {
 
     private fun initObservables() {
 
-        val adapter = FilmsAdapter()
+        val adapter = FilmsAdapter {
+            viewModel.updateFilm(it)
+        }
         binding.filmsListRV.adapter = adapter
         binding.filmsListRV.layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
         viewModel.filmsList.observe(viewLifecycleOwner){

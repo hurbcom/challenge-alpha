@@ -5,11 +5,14 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.br.myapplication.R
 import com.br.myapplication.data.model.Film
 import com.br.myapplication.databinding.ItemListBinding
 import com.squareup.picasso.Picasso
 
-class FilmsAdapter : PagingDataAdapter<Film, FilmsAdapter.FilmsViewHolder>(DIFF_CALLBACK){
+class FilmsAdapter(
+    private val action : (item: Film) -> Unit
+) : PagingDataAdapter<Film, FilmsAdapter.FilmsViewHolder>(DIFF_CALLBACK){
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Film>() {
@@ -30,10 +33,25 @@ class FilmsAdapter : PagingDataAdapter<Film, FilmsAdapter.FilmsViewHolder>(DIFF_
         return FilmsViewHolder(binding)
     }
 
-
     override fun onBindViewHolder(holder: FilmsViewHolder, position: Int) {
         val item = getItem(position)
         holder.binding.itemListName.text = item?.title
+        holder.binding.itemDetailList.text = item?.releaseDate
+        holder.binding.itemListThird.text = item?.producer
+        holder.binding.itemListFavorite.setOnClickListener {
+            item?.let {
+                it.isFavorite = !item.isFavorite
+                action.invoke(it)
+            }
+            notifyItemChanged(position)
+        }
+
+        if (item != null && item.isFavorite) {
+            holder.binding.itemListFavorite.setImageResource(R.drawable.ic_filled_heart)
+        } else {
+            holder.binding.itemListFavorite.setImageResource(R.drawable.ic_heart)
+        }
+
         Picasso.get()
             .load(item?.image)
             .into(holder.binding.itemListImage)

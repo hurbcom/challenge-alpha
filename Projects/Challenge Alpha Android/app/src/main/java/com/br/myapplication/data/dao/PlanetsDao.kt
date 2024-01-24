@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.br.myapplication.data.model.Planet
 
 @Dao
@@ -23,5 +24,8 @@ interface PlanetsDao {
     fun getFilteredPlanetsPagingSource(filter: String?): PagingSource<Int, Planet>
 
     @Query("SELECT * FROM planets_table WHERE isFavorite = 1" )
-    fun getFavoritesPlanets(): List<Planet>
+    suspend fun getFavoritesPlanets(): List<Planet>
+
+    @Update
+    suspend fun updatePlanet(planet: Planet)
 }

@@ -14,6 +14,7 @@ import com.br.myapplication.data.dao.PlanetsDao
 import com.br.myapplication.data.model.Planet
 import com.br.myapplication.data.remote.PlanetsPagingSource
 import com.br.myapplication.data.repository.planet.IPlanetRepository
+import kotlinx.coroutines.launch
 
 class PlanetsViewModel(
     val repository: IPlanetRepository,
@@ -49,5 +50,12 @@ class PlanetsViewModel(
             config = PagingConfig(pageSize = 10),
             pagingSourceFactory = { planetsDao.getFilteredPlanetsPagingSource(filter) }
         ).flow.cachedIn(viewModelScope).asLiveData()
+    }
+
+    fun updatePlanet(planet: Planet) {
+        viewModelScope.launch {
+
+            planetsDao.updatePlanet(planet)
+        }
     }
 }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.br.myapplication.data.model.Favorite
 
 import com.br.myapplication.databinding.ItemListBinding
+import com.br.myapplication.extensions.hide
 import com.squareup.picasso.Picasso
 
 class FavoritesAdapter(
@@ -26,6 +27,7 @@ class FavoritesAdapter(
         holder.binding.itemListName.text = item.firstProperty
         holder.binding.itemDetailList.text = item.thirdProperty
         holder.binding.itemListThird.text = item.fourthProperty
+        holder.binding.itemListFavorite.hide()
         Picasso.get()
             .load(item.secondProperty)
             .into(holder.binding.itemListImage)

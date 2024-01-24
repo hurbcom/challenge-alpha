@@ -44,7 +44,9 @@ class PlanetsFragment: Fragment() {
 
     private fun initObservables() {
 
-        val adapter = PlanetsAdapter()
+        val adapter = PlanetsAdapter {
+            viewModel.updatePlanet(it)
+        }
         binding.planetsListRV.adapter = adapter
         binding.planetsListRV.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         viewModel.planetList.observe(viewLifecycleOwner){

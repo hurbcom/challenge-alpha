@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.br.myapplication.data.model.Specie
 
 @Dao
@@ -22,6 +23,9 @@ interface SpeciesDao {
     fun getFilteredSpeciesPagingSource(filter: String?): PagingSource<Int, Specie>
 
     @Query("SELECT * FROM species_table WHERE isFavorite = 1" )
-    fun getFavoritesSpecies(): List<Specie>
+    suspend fun getFavoritesSpecies(): List<Specie>
+
+    @Update
+    suspend fun updateSpecie(specie: Specie)
 
 }

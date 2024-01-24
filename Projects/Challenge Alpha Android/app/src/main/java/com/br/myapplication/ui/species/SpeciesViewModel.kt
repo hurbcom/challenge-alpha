@@ -14,6 +14,7 @@ import com.br.myapplication.data.dao.SpeciesDao
 import com.br.myapplication.data.model.Specie
 import com.br.myapplication.data.remote.SpeciesPagingSource
 import com.br.myapplication.data.repository.specie.ISpeciesRepository
+import kotlinx.coroutines.launch
 
 class SpeciesViewModel(
     val repository: ISpeciesRepository,
@@ -49,5 +50,11 @@ class SpeciesViewModel(
             config = PagingConfig(pageSize = 10),
             pagingSourceFactory = { speciesDao.getFilteredSpeciesPagingSource(filter) }
         ).flow.cachedIn(viewModelScope).asLiveData()
+    }
+
+    fun updateSpecie(specie: Specie) {
+        viewModelScope.launch {
+            speciesDao.updateSpecie(specie)
+        }
     }
 }

@@ -44,7 +44,9 @@ class SpeciesFragment: Fragment() {
 
     private fun initObservables() {
 
-        val adapter = SpeciesAdapter()
+        val adapter = SpeciesAdapter {
+            viewModel.updateSpecie(it)
+        }
         binding.speciesListRV.adapter = adapter
         binding.speciesListRV.layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
         viewModel.specieList.observe(viewLifecycleOwner){

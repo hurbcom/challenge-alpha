@@ -11,22 +11,25 @@ class FavoritesRepository(
     private val speciesDao: SpeciesDao,
     private val planetsDao: PlanetsDao
 ): IFavoritesRepository {
-    private fun getFavoritesFilmsList(): List<Favorite> {
+    private suspend fun getFavoritesFilmsList(): List<Favorite> {
         return filmsDao.getFavoritesFilms().mapToFavoriteList()
     }
 
-    private fun getFavoritesSpeciesList(): List<Favorite> {
+    private suspend fun getFavoritesSpeciesList(): List<Favorite> {
         return speciesDao.getFavoritesSpecies().mapToFavoriteList()
     }
 
-    private fun getFavoritesPlanetsList(): List<Favorite> {
+    private suspend fun getFavoritesPlanetsList(): List<Favorite> {
         return planetsDao.getFavoritesPlanets().mapToFavoriteList()
     }
 
     override suspend fun getFavoritesList(): List<Favorite> {
-        return getFavoritesFilmsList()
-            .plus(getFavoritesPlanetsList())
-            .plus(getFavoritesSpeciesList())
+        val films = getFavoritesFilmsList()
+        val species = getFavoritesSpeciesList()
+        val planets = getFavoritesPlanetsList()
+
+        return films.plus(species)
+            .plus(planets)
     }
 
 
