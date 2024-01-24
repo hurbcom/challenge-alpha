@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.br.myapplication.data.model.Planet
+import com.br.myapplication.data.model.Specie
 
 @Dao
 interface PlanetsDao {
@@ -18,4 +19,7 @@ interface PlanetsDao {
 
     @Query("SELECT * FROM planets_tables ORDER BY id ASC LIMIT :pageSize OFFSET :offset")
     fun getAllPlanetsPaging(offset: Int, pageSize: Int): List<Planet>
+
+    @Query("SELECT * FROM planets_tables WHERE name LIKE '%' || :filter || '%'")
+    fun getFilteredPlanetsPagingSource(filter: String?): PagingSource<Int, Planet>
 }

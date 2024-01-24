@@ -17,4 +17,8 @@ interface SpeciesDao {
 
     @Query("SELECT * FROM species_table ORDER BY id ASC LIMIT :pageSize OFFSET :offset")
     fun getAllSpeciesPaging(offset: Int, pageSize: Int): List<Specie>
+
+    @Query("SELECT * FROM species_table WHERE name LIKE '%' || :filter || '%'")
+    fun getFilteredSpeciesPagingSource(filter: String?): PagingSource<Int, Specie>
+
 }

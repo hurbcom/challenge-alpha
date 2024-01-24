@@ -3,4 +3,5 @@
     <string name="planets">Planets</string>
     <string name="films">Films</string>
     <string name="species">Species</string>
+    <string name="search">Pesquisar</string>
 </resources>

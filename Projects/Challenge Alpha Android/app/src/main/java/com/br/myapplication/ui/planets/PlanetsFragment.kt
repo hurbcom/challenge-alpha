@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +33,12 @@ class PlanetsFragment: Fragment() {
 
         initObservables()
 
+        binding.searchET.doOnTextChanged { text, start, before, count ->
+            lifecycleScope.launch {
+                viewModel.setFilter(text.toString())
+            }
+        }
+
         return binding.root
     }
 
@@ -51,6 +58,14 @@ class PlanetsFragment: Fragment() {
                 binding.planetsListRV.visible()
             }
 
+        }
+
+        viewModel.filteredPlanetList.observe(viewLifecycleOwner){
+
+            lifecycleScope.launch {
+
+                adapter.submitData(it)
+            }
         }
     }
 

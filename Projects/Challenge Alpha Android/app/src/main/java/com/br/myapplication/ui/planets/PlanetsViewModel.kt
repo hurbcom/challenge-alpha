@@ -1,8 +1,10 @@
 package com.br.myapplication.ui.planets
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
@@ -27,4 +29,25 @@ class PlanetsViewModel(
 
     val planetList: LiveData<PagingData<Planet>>
         get() = _planetList
+
+    private val _filterText = MutableLiveData<String>()
+
+    val filteredPlanetList: LiveData<PagingData<Planet>> = _filterText.switchMap { filter ->
+        if (filter.isNullOrBlank()) {
+            _planetList
+        } else {
+            getFilteredPlanetList(filter)
+        }
+    }
+
+    fun setFilter(filter: String) {
+        _filterText.value = filter
+    }
+
+    private fun getFilteredPlanetList(filter: String): LiveData<PagingData<Planet>> {
+        return Pager(
+            config = PagingConfig(pageSize = 10),
+            pagingSourceFactory = { planetsDao.getFilteredPlanetsPagingSource(filter) }
+        ).flow.cachedIn(viewModelScope).asLiveData()
+    }
 }
