@@ -12,6 +12,8 @@ import com.squareup.picasso.Picasso
 
 class SpeciesAdapter(
     private val action : (item: Specie) -> Unit
+    ,
+    private val callDetail : (item: Specie) -> Unit
 ) : PagingDataAdapter<Specie, SpeciesAdapter.SpeciesViewHolder>(DIFF_CALLBACK){
 
     companion object {
@@ -39,6 +41,13 @@ class SpeciesAdapter(
         holder.binding.itemListName.text = item?.name
         holder.binding.itemDetailList.text = item?.eyeColors
         holder.binding.itemListThird.text = item?.language
+
+        holder.itemView.setOnClickListener {
+            item?.let {
+
+                callDetail.invoke(item)
+            }
+        }
 
         holder.binding.itemListFavorite.setOnClickListener {
             item?.let {

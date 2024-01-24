@@ -11,7 +11,8 @@ import com.br.myapplication.databinding.ItemListBinding
 import com.squareup.picasso.Picasso
 
 class PlanetsAdapter(
-    private val action : (item: Planet) -> Unit
+    private val action : (item: Planet) -> Unit,
+    private val callDetail : (item: Planet) -> Unit
 ) : PagingDataAdapter<Planet, PlanetsAdapter.PlanetViewHolder>(DIFF_CALLBACK){
 
     companion object {
@@ -38,6 +39,13 @@ class PlanetsAdapter(
         holder.binding.itemListName.text = item?.name
         holder.binding.itemDetailList.text = item?.population
         holder.binding.itemListThird.text = item?.climate
+
+        holder.itemView.setOnClickListener {
+            item?.let {
+
+                callDetail.invoke(item)
+            }
+        }
 
         holder.binding.itemListFavorite.setOnClickListener {
             item?.let {

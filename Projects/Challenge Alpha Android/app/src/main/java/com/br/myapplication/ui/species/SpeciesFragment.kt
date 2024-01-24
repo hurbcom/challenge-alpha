@@ -9,13 +9,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
+import com.br.myapplication.R
+import com.br.myapplication.data.model.Specie
 import com.br.myapplication.databinding.FragmentSpeciesBinding
 import com.br.myapplication.extensions.hide
 import com.br.myapplication.extensions.visible
+import com.br.myapplication.ui.detail.DetailFragment
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SpeciesFragment: Fragment() {
+class SpeciesFragment : Fragment() {
 
     private var _binding: FragmentSpeciesBinding? = null
 
@@ -44,12 +47,16 @@ class SpeciesFragment: Fragment() {
 
     private fun initObservables() {
 
-        val adapter = SpeciesAdapter {
+        val adapter = SpeciesAdapter(action = {
             viewModel.updateSpecie(it)
-        }
+        },
+            callDetail = {
+                callDetail(it)
+            }
+        )
         binding.speciesListRV.adapter = adapter
         binding.speciesListRV.layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
-        viewModel.specieList.observe(viewLifecycleOwner){
+        viewModel.specieList.observe(viewLifecycleOwner) {
 
             lifecycleScope.launch {
 
@@ -61,13 +68,35 @@ class SpeciesFragment: Fragment() {
             }
         }
 
-        viewModel.filteredSpecieList.observe(viewLifecycleOwner){
+        viewModel.filteredSpecieList.observe(viewLifecycleOwner) {
 
             lifecycleScope.launch {
 
                 adapter.submitData(it)
             }
         }
+    }
+
+    private fun callDetail(specie: Specie) {
+
+        val fragmentDetail = DetailFragment()
+        val bundle = Bundle().apply {
+            putString("first_item", specie.name)
+            putString("second_item", specie.created)
+            putString("third_item", specie.language)
+            putString("fourth_item", specie.designation)
+            putString("fifth_item", specie.classification)
+            putString("image", specie.image)
+
+        }
+
+        fragmentDetail.arguments = bundle
+
+        val fragmentManager = requireActivity().supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment_activity_main, fragmentDetail)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
     override fun onDestroyView() {

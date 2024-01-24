@@ -9,7 +9,12 @@
         android:id="@+id/navigation_films_fragment"
         android:name="com.br.myapplication.ui.film.FilmsFragment"
         android:label="FilmsFragment"
-        tools:layout="@layout/fragment_films"/>
+        tools:layout="@layout/fragment_films">
+        <action
+            android:id="@+id/action_navigation_films_fragment_to_navigation_favorites_fragment"
+            app:destination="@id/navigation_favorites_fragment"
+            app:popUpTo="@id/navigation_films_fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_planets_fragment"

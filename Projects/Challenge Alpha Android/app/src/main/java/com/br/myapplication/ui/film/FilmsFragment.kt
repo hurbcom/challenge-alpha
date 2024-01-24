@@ -9,13 +9,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
+import com.br.myapplication.R
+import com.br.myapplication.data.model.Film
 import com.br.myapplication.databinding.FragmentFilmsBinding
 import com.br.myapplication.extensions.hide
 import com.br.myapplication.extensions.visible
+import com.br.myapplication.ui.detail.DetailFragment
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class FilmsFragment: Fragment() {
+class FilmsFragment : Fragment() {
 
     private var _binding: FragmentFilmsBinding? = null
 
@@ -44,12 +47,17 @@ class FilmsFragment: Fragment() {
 
     private fun initObservables() {
 
-        val adapter = FilmsAdapter {
+
+        val adapter = FilmsAdapter(action = {
             viewModel.updateFilm(it)
-        }
+        },
+            callDetail = {
+                callDetail(it)
+            }
+        )
         binding.filmsListRV.adapter = adapter
         binding.filmsListRV.layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
-        viewModel.filmsList.observe(viewLifecycleOwner){
+        viewModel.filmsList.observe(viewLifecycleOwner) {
 
             lifecycleScope.launch {
 
@@ -61,7 +69,7 @@ class FilmsFragment: Fragment() {
             }
         }
 
-        viewModel.filteredFilmList.observe(viewLifecycleOwner){
+        viewModel.filteredFilmList.observe(viewLifecycleOwner) {
 
             lifecycleScope.launch {
 
@@ -74,4 +82,27 @@ class FilmsFragment: Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    private fun callDetail(film: Film) {
+
+        val fragmentDetail = DetailFragment()
+        val bundle = Bundle().apply {
+            putString("first_item", film.title)
+            putString("second_item", film.created)
+            putString("third_item", film.director)
+            putString("fourth_item", film.releaseDate)
+            putString("fifth_item", film.producer)
+            putString("image", film.image)
+        }
+
+        fragmentDetail.arguments = bundle
+
+        val fragmentManager = requireActivity().supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment_activity_main, fragmentDetail)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+
 }

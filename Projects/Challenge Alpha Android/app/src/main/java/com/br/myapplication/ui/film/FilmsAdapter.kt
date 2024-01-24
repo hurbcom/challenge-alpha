@@ -11,7 +11,8 @@ import com.br.myapplication.databinding.ItemListBinding
 import com.squareup.picasso.Picasso
 
 class FilmsAdapter(
-    private val action : (item: Film) -> Unit
+    private val action : (item: Film) -> Unit,
+    private val callDetail : (item: Film) -> Unit
 ) : PagingDataAdapter<Film, FilmsAdapter.FilmsViewHolder>(DIFF_CALLBACK){
 
     companion object {
@@ -35,6 +36,12 @@ class FilmsAdapter(
 
     override fun onBindViewHolder(holder: FilmsViewHolder, position: Int) {
         val item = getItem(position)
+        holder.itemView.setOnClickListener {
+            item?.let {
+
+                callDetail.invoke(item)
+            }
+        }
         holder.binding.itemListName.text = item?.title
         holder.binding.itemDetailList.text = item?.releaseDate
         holder.binding.itemListThird.text = item?.producer

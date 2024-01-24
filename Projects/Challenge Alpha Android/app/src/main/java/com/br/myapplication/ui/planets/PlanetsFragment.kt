@@ -9,13 +9,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.br.myapplication.R
+import com.br.myapplication.data.model.Planet
+
 import com.br.myapplication.databinding.FragmentPlanetsBinding
 import com.br.myapplication.extensions.hide
 import com.br.myapplication.extensions.visible
+import com.br.myapplication.ui.detail.DetailFragment
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class PlanetsFragment: Fragment() {
+class PlanetsFragment : Fragment() {
 
     private var _binding: FragmentPlanetsBinding? = null
 
@@ -44,12 +48,17 @@ class PlanetsFragment: Fragment() {
 
     private fun initObservables() {
 
-        val adapter = PlanetsAdapter {
+        val adapter = PlanetsAdapter(action = {
             viewModel.updatePlanet(it)
-        }
+        },
+            callDetail = {
+                callDetail(it)
+            }
+        )
         binding.planetsListRV.adapter = adapter
-        binding.planetsListRV.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-        viewModel.planetList.observe(viewLifecycleOwner){
+        binding.planetsListRV.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        viewModel.planetList.observe(viewLifecycleOwner) {
 
             lifecycleScope.launch {
 
@@ -59,16 +68,36 @@ class PlanetsFragment: Fragment() {
                 binding.progressBar.hide()
                 binding.planetsListRV.visible()
             }
-
         }
-
-        viewModel.filteredPlanetList.observe(viewLifecycleOwner){
+        viewModel.filteredPlanetList.observe(viewLifecycleOwner) {
 
             lifecycleScope.launch {
 
                 adapter.submitData(it)
             }
         }
+    }
+
+    private fun callDetail(planet: Planet) {
+
+        val fragmentDetail = DetailFragment()
+        val bundle = Bundle().apply {
+            putString("first_item", planet.name)
+            putString("second_item", planet.created)
+            putString("third_item", planet.climate)
+            putString("fourth_item", planet.gravity)
+            putString("fifth_item", planet.population)
+            putString("image", planet.image)
+
+        }
+
+        fragmentDetail.arguments = bundle
+
+        val fragmentManager = requireActivity().supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment_activity_main, fragmentDetail)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
     override fun onDestroyView() {

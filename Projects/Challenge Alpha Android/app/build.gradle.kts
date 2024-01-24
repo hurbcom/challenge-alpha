@@ -2,7 +2,20 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("androidx.navigation.safeargs.kotlin") version "2.7.6"
 
+}
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:7.0.4")
+        classpath ("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21")
+        classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.6")
+    }
 }
 
 android {
@@ -49,12 +62,6 @@ android {
         viewBinding = true
     }
 
-    packaging {
-        resources {
-            excludes += "META-INF/*"
-        }
-    }
-
     flavorDimensions += "normal"
 
     productFlavors {
@@ -89,6 +96,7 @@ dependencies {
 
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
+    implementation("android.arch.navigation:navigation-fragment-ktx:1.0.0")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
