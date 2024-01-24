@@ -3,4 +3,9 @@
 
     // Details Screen
     <string name="details_screen_title_default">Details</string>
+    <string name="details_screen_title_species">Species</string>
+
+    <string name="details_screen_field_one_species">Home World: %s</string>
+    <string name="details_screen_field_two_species">Language: %s</string>
+    <string name="details_screen_field_three_species">Classification: %s</string>
 </resources>

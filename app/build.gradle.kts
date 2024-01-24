@@ -71,8 +71,4 @@ dependencies {
     // Glide
     implementation("com.github.bumptech.glide:glide:4.12.0")
 
-    // ViewBinding
-//    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.0")
-    implementation("'com.android.databinding:viewbinding:4.0.1'")
-
 }
