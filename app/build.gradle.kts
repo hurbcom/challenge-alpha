@@ -34,7 +34,11 @@ android {
     buildTypes {
         release {
             buildConfigField("String", "BASE_URL", "\"https://gateway.marvel.com/v1/public/\"")
-            buildConfigField("String", "BASE_IMAGE_URL", "\"https://starwars-visualguide.com/assets/img/\"")
+            buildConfigField(
+                "String",
+                "BASE_IMAGE_URL",
+                "\"https://starwars-visualguide.com/assets/img/\""
+            )
             isMinifyEnabled = false
             isDebuggable = false
             proguardFiles(
@@ -45,7 +49,11 @@ android {
 
         debug {
             buildConfigField("String", "BASE_URL", "\"https://swapi.dev/api/\"")
-            buildConfigField("String", "BASE_IMAGE_URL", "\"https://starwars-visualguide.com/assets/img/\"")
+            buildConfigField(
+                "String",
+                "BASE_IMAGE_URL",
+                "\"https://starwars-visualguide.com/assets/img/\""
+            )
             isMinifyEnabled = false
             isDebuggable = true
             proguardFiles(
@@ -64,11 +72,19 @@ android {
     }
 }
 
+//noinspection GradleDependency
 dependencies {
+    // Jetpack Compose
+    val composeVersion = "1.0.0"
+    val composeConstraintVersion = "1.0.1"
+    val composeCoilVersion = "1.3.2"
 
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.1.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0")
+    //Tests
+    val jUnitVersion = "4.13.2"
+    val jUnitTestVersion = "1.1.5"
+    val mockkVersion = "1.12.4"
+    val coroutinesTestVersion = "1.6.1"
+    val espressoVersion = "3.3.0"
 
     val ktxVersion = "1.3.1"
     val constraintLayoutVersion = "2.1.4"
@@ -78,22 +94,31 @@ dependencies {
     val koinVersion = "3.2.2"
     val glideVersion = "4.15.1"
     val navigationFragmentVersion = "2.5.3"
-    val composeVersion = "1.0.0"
+    val legacySupportVersion = "1.0.0"
+    val lifecycleLivedataVersion = "2.1.0"
+    val lifecycleViewmodelVersion = "2.1.0"
 
-    val jUnitVersion = "4.13.2"
-    val jUnitTestVersion = "1.1.5"
-    val mockkVersion = "1.12.4"
-    val coroutinesTestVersion = "1.6.1"
-    val espressoVersion = "3.3.0"
-
-    //Compose
+    // Jetpack Compose
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.ui:ui-tooling:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-    implementation("io.coil-kt:coil-compose:1.3.2")
-    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+    implementation("io.coil-kt:coil-compose:$composeCoilVersion")
+    implementation("androidx.constraintlayout:constraintlayout-compose:$composeConstraintVersion")
 
+    // Koin
+    implementation("io.insert-koin:koin-android:$koinVersion")
+    testImplementation("io.insert-koin:koin-test-junit5:$koinVersion")
+
+    // Tests
+    testImplementation("junit:junit:$jUnitVersion")
+    androidTestImplementation("androidx.test.ext:junit:$jUnitTestVersion")
+    testImplementation("io.insert-koin:koin-test-junit5:$koinVersion")
+    testImplementation("io.mockk:mockk:$mockkVersion")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion")
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
+
+    // Other Dependencies
     implementation("androidx.constraintlayout:constraintlayout:$constraintLayoutVersion")
     implementation("androidx.core:core-ktx:$ktxVersion")
     implementation("androidx.appcompat:appcompat:$appCompatVersion")
@@ -101,19 +126,10 @@ dependencies {
     implementation("com.google.android.material:material:$materialVersion")
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
-
-    //Koin
-    implementation("io.insert-koin:koin-android:$koinVersion")
-    testImplementation("io.insert-koin:koin-test-junit5:$koinVersion")
-
     implementation("com.github.bumptech.glide:glide:$glideVersion")
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationFragmentVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navigationFragmentVersion")
-
-    testImplementation("junit:junit:$jUnitVersion")
-    androidTestImplementation("androidx.test.ext:junit:$jUnitTestVersion")
-    testImplementation("io.insert-koin:koin-test-junit5:$koinVersion")
-    testImplementation("io.mockk:mockk:$mockkVersion")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion")
-    androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
+    implementation("androidx.legacy:legacy-support-v4:$legacySupportVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleLivedataVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleViewmodelVersion")
 }
