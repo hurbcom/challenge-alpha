@@ -9,12 +9,12 @@ private const val UNKNOWN_ERROR_MESSAGE = "An unknown error occurred."
 
 class HomeUseCase(
     private val remoteRepository: StarWarsRemoteRepository,
-    private val localRepository: StarWarsLocalRepository
+    private val localRepository: StarWarsLocalRepository //TODO se n for usar remover
 ) {
 
-    suspend fun fetchSpecies(): RequestStatus<SpeciesList> {
+    suspend fun fetchSpecies(page: Int = 0): RequestStatus<SpeciesList> {
         val response = try {
-            remoteRepository.fetchSpecies()
+            remoteRepository.fetchSpecies(page)
         } catch (e: Exception) {
             return RequestStatus.Error(message = UNKNOWN_ERROR_MESSAGE)
         }

@@ -4,6 +4,6 @@ import com.vdemelo.starwarswiki.data.remote.response.SpeciesListResponse
 
 interface StarWarsRemoteRepository {
 
-    suspend fun fetchSpecies(): SpeciesListResponse
+    suspend fun fetchSpecies(page: Int): SpeciesListResponse
 
 }

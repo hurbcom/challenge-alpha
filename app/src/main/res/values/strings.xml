@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">Star Wars Wiki</string>
 
+    //Navigation Destination Names
+    <string name="nav_dest_species_list">species_list</string>
+
+    // List Screen
+    <string name="list_screen_search_hint">Search...</string>
+
+    <string name="species_list_screen_default_name">Species Name</string>
+
     // Details Screen
     <string name="details_screen_title_default">Details</string>
     <string name="details_screen_title_species">Species</string>
@@ -11,4 +19,8 @@
     <string name="details_screen_field_one_species">Home World: %s</string>
     <string name="details_screen_field_two_species">Language: %s</string>
     <string name="details_screen_field_three_species">Classification: %s</string>
+
+    //Common
+    <string name="common_retry">Retry</string>
+
 </resources>

@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.vdemelo.starwarswiki.R
+import com.vdemelo.starwarswiki.ui.components.ImageLoader
 import com.vdemelo.starwarswiki.ui.theme.ComposeStarWarsTheme
 
 @Composable
@@ -84,7 +85,7 @@ fun DetailsScreen(
                 fontSize = 24.sp
             )
             Spacer(modifier = Modifier.height(32.dp))
-            LoadImageOrShowDefault(
+            ImageLoader(
                 modifier = Modifier
                     .fillMaxWidth()
                     .align(Alignment.CenterHorizontally)
@@ -101,27 +102,6 @@ fun DetailsScreen(
         }
     }
 
-}
-
-@Composable
-fun LoadImageOrShowDefault(
-    modifier: Modifier = Modifier,
-    url: String?,
-    contentDescription: String
-) {
-    if (url != null) {
-        AsyncImage(
-            modifier = modifier,
-            model = url,
-            contentDescription = contentDescription
-        )
-    } else {
-        Image(
-            modifier = modifier,
-            painter = painterResource(id = R.drawable.image_placeholder),
-            contentDescription = contentDescription
-        )
-    }
 }
 
 @Composable
@@ -142,7 +122,6 @@ fun ShowTextContentIfNotNull(text: String?) {
 @Composable
 fun DetailsScreenPreview(
     title: String = "Titulo dos Detalhes",
-//    imageUrl: String? = null,
     imageUrl: String? = "https://starwars-visualguide.com/assets/img/species/1.jpg",
     firstField: String? = "Coisa muito boa boa boa boa",
     secondField: String? = "Coisa muito boa boa boa boa",
