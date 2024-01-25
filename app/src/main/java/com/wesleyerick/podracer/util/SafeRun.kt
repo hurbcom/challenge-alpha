@@ -1,6 +1,5 @@
 package com.wesleyerick.podracer.util
 
-import com.wesleyerick.podracer.R
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +21,8 @@ suspend fun <T> safeRunDispatcher(
         Result.Failure(ex)
     }
 }
+
 sealed class Result<out T> {
     class Success<T>(val data: T) : Result<T>()
-    class Failure(val error: Exception, val errorMessage: String = "") : Result<Nothing>()
+    class Failure(val error: Exception, val errorMessage: String = BLANK) : Result<Nothing>()
 }

@@ -18,6 +18,7 @@ class GetVehicleDetailsUseCase(
         is Result.Success -> {
             Result.Success(result.data.body())
         }
+
         is Result.Failure -> Result.Failure(result.error, context.getString(R.string.error_message))
     }
 }

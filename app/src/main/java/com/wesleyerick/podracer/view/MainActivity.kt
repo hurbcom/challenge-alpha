@@ -7,18 +7,18 @@ import com.wesleyerick.podracer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.statusBarColor = android.graphics.Color.TRANSPARENT
+        setStatusBarStyle()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return super.onSupportNavigateUp()
+    private fun setStatusBarStyle() = window.apply {
+        WindowCompat.setDecorFitsSystemWindows(this, false)
+        this.statusBarColor = android.graphics.Color.TRANSPARENT
     }
 }

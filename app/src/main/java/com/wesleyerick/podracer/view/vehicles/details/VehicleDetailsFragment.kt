@@ -1,5 +1,6 @@
 package com.wesleyerick.podracer.view.vehicles.details
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import com.wesleyerick.podracer.data.model.vehicles.Vehicle
 import com.wesleyerick.podracer.databinding.FragmentVehicleDetailsBinding
 import com.wesleyerick.podracer.util.TypeEnum
 import com.wesleyerick.podracer.util.getPhotoUrl
+import com.wesleyerick.podracer.util.getSubtitleText
 import com.wesleyerick.podracer.util.gone
 import com.wesleyerick.podracer.util.listener
 import com.wesleyerick.podracer.util.show
@@ -66,14 +68,32 @@ class VehicleDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setVehicleText(it: Vehicle) = binding.apply {
         vehicleDetailsTitleText.text = it.name
-        vehicleDetailsSubtitleOneText.text = "Consumables: ${it.consumables}"
-        vehicleDetailsSubtitleTwoText.text = "Manufacturer: ${it.manufacturer}"
-        vehicleDetailsSubtitleThreeText.text =
-            "Max Atmosphering Speed: ${it.maxAtmospheringSpeed}Km/h"
-        vehicleDetailsSubtitleFourText.text = "Class: ${it.vehicleClass}"
+        vehicleDetailsSubtitleOneText.text = getSubtitleText(
+            context = requireContext(),
+            beforeValue = getString(R.string.consumables_subtitle),
+            value = it.consumables
+        )
+        vehicleDetailsSubtitleTwoText.text = getSubtitleText(
+            context = requireContext(),
+            beforeValue = getString(R.string.manufacturer_subtitle),
+            value = it.manufacturer
+        )
+        vehicleDetailsSubtitleThreeText.text = getSubtitleText(
+            context = requireContext(),
+            beforeValue = getString(R.string.max_speed_subtitle),
+            value = it.maxAtmospheringSpeed,
+            afterValue = getString(R.string.kilometers_per_hour)
+        )
+        vehicleDetailsSubtitleFourText.text = getSubtitleText(
+            context = requireContext(),
+            beforeValue = getString(R.string.class_subtitle),
+            value = it.vehicleClass
+        )
     }
+
 
     private fun setImage(it: Vehicle) {
         Glide.with(requireContext())

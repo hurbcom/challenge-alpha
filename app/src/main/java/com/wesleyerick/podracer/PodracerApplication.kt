@@ -14,18 +14,19 @@ class PodracerApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        initKoin()
+    }
 
-        startKoin {
-            androidLogger()
-            androidContext(this@PodracerApplication)
-            loadKoinModules(
-                listOf(
-                    viewModelModule,
-                    repositoryModule,
-                    useCaseModule,
-                    apiModule,
-                ),
-            )
-        }
+    private fun initKoin() = startKoin {
+        androidLogger()
+        androidContext(this@PodracerApplication)
+        loadKoinModules(
+            listOf(
+                viewModelModule,
+                repositoryModule,
+                useCaseModule,
+                apiModule,
+            ),
+        )
     }
 }

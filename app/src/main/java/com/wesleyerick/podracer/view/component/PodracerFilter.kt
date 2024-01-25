@@ -1,5 +1,6 @@
 package com.wesleyerick.podracer.view.component
 
+import android.content.res.Resources
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -22,10 +23,11 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.wesleyerick.podracer.R
 import com.wesleyerick.podracer.data.model.starships.Starship
 import com.wesleyerick.podracer.data.model.vehicles.Vehicle
+import com.wesleyerick.podracer.util.BLANK
+import com.wesleyerick.podracer.util.values.Dimensions
 
 fun <T> List<T>.filterList(
     query: String,
@@ -42,7 +44,7 @@ fun <T> PodracerFilter(
     filterCriteria: (T, String) -> Boolean,
     filteredListCallback: (List<T>, String) -> Unit
 ) {
-    var searchText by remember { mutableStateOf("") }
+    var searchText by remember { mutableStateOf(BLANK) }
     var filteredList by remember { mutableStateOf(items) }
 
     Column {
@@ -54,11 +56,16 @@ fun <T> PodracerFilter(
                     filterCriteria(item, query)
                 }
             },
-            label = { Text("Search") },
+            label = {
+                Text(
+                    Resources.getSystem().getString(android.R.string.search_go)
+                )
+            },
             leadingIcon = {
                 Icon(
                     Icons.Default.Search,
-                    contentDescription = null,
+                    contentDescription = Resources.getSystem()
+                        .getString(android.R.string.search_go),
                     tint = colorResource(id = R.color.yellow_title_text),
                 )
             },
@@ -68,18 +75,18 @@ fun <T> PodracerFilter(
             ),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
+                .padding(Dimensions.Padding.textFieldPaddingAll),
             colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = Color.Black,
-                textColor = Color.White,
-                cursorColor = Color.White,
+                backgroundColor = colorResource(id = R.color.text_field_background),
+                textColor = colorResource(id = R.color.white_default_text),
+                cursorColor = colorResource(id = R.color.white_default_text),
                 focusedIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent,
                 disabledIndicatorColor = Color.Transparent,
                 focusedLabelColor = colorResource(id = R.color.yellow_title_text),
-                unfocusedLabelColor = Color.White
+                unfocusedLabelColor = colorResource(id = R.color.white_default_text)
             ),
-            shape = RoundedCornerShape(8.dp)
+            shape = RoundedCornerShape(Dimensions.Shape.roundedCornerShape)
         )
         filteredListCallback.invoke(filteredList, searchText)
     }
@@ -90,9 +97,9 @@ fun <T> PodracerFilter(
 fun PodracerFilterPreview() {
     PodracerFilter(
         items = listOf(
-            Vehicle(name = "Gol"),
-            Vehicle(name = "Vectra"),
-            Vehicle(name = "Opala"),
+            Vehicle(),
+            Vehicle(),
+            Vehicle(),
         ),
         ::filterByName
     ) { _, _ -> }

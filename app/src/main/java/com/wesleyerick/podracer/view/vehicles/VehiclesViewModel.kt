@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.wesleyerick.podracer.data.model.vehicles.Vehicle
-import com.wesleyerick.podracer.data.repository.vehicles.IRepositoryVehicles
 import com.wesleyerick.podracer.domain.usecase.vehicles.VehiclesUseCases
 import com.wesleyerick.podracer.util.Result
 import kotlinx.coroutines.Dispatchers
@@ -45,7 +44,5 @@ class VehiclesViewModel(
         }
     }
 
-    private fun onError(message: String) {
-        _onError.postValue(message)
-    }
+    private fun onError(message: String) = _onError.postValue(message)
 }

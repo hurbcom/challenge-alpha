@@ -27,7 +27,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.colorResource
@@ -36,9 +35,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.core.text.isDigitsOnly
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -46,13 +44,20 @@ import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.wesleyerick.podracer.R
 import com.wesleyerick.podracer.data.model.starships.Starship
+import com.wesleyerick.podracer.util.BLANK
 import com.wesleyerick.podracer.util.TypeEnum
 import com.wesleyerick.podracer.util.getPhotoUrl
+import com.wesleyerick.podracer.util.values.Dimensions
 import com.wesleyerick.podracer.view.component.PodracerCircularProgress
 import com.wesleyerick.podracer.view.starships.StarshipsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class StarshipDetailsFragment : Fragment() {
+
+    companion object {
+        const val GUIDELINE_PERCENTAGE = 0.3F
+        const val IMAGE_ASPECT_RATIO = 1F
+    }
 
     private val viewModel by viewModel<StarshipsViewModel>()
     private val arguments by navArgs<StarshipDetailsFragmentArgs>()
@@ -80,9 +85,7 @@ class StarshipDetailsFragment : Fragment() {
 
         MaterialTheme {
             ConstraintLayout(Modifier.fillMaxSize()) {
-
                 val (backgroundReference, buttonReference) = createRefs()
-
                 val backgroundImage = painterResource(id = R.drawable.home_background)
 
                 Box(
@@ -99,20 +102,18 @@ class StarshipDetailsFragment : Fragment() {
                         painter = backgroundImage,
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
-                        modifier = Modifier
-                            .fillMaxSize(),
+                        modifier = Modifier.fillMaxSize(),
                     )
                 }
 
                 PodracerCircularProgress(isShowingProgress)
 
                 starshipDetails?.let {
-
-                    if (it.url.isEmpty()) {
-                        isShowingProgress = true
+                    isShowingProgress = if (it.url.isEmpty()) {
+                        true
                     } else {
                         StarshipContent(it)
-                        isShowingProgress = false
+                        false
                     }
                 }
                 onError?.let {
@@ -121,11 +122,12 @@ class StarshipDetailsFragment : Fragment() {
                         isShowingProgress = false
                     }
                 }
-                // Image
+
                 BackButton(
                     Modifier
                         .fillMaxWidth()
-                        .padding(bottom = 56.dp, start = 24.dp, end = 24.dp)
+                        .padding(horizontal = Dimensions.Padding.backButtonPaddingHorizontal)
+                        .padding(bottom = Dimensions.Padding.backButtonPaddingBottom)
                         .constrainAs(buttonReference) {
                             start.linkTo(parent.start)
                             end.linkTo(parent.end)
@@ -133,7 +135,6 @@ class StarshipDetailsFragment : Fragment() {
                         }
                 )
             }
-
         }
     }
 
@@ -143,18 +144,14 @@ class StarshipDetailsFragment : Fragment() {
         ConstraintLayout(
             Modifier
                 .fillMaxSize()
-                .background(Color(0x72000000))
+                .background(colorResource(id = R.color.item_details_content_background))
 
         ) {
-
-            val topGuideline = createGuidelineFromTop(0.3f)
-
+            val topGuideline = createGuidelineFromTop(GUIDELINE_PERCENTAGE)
             val (imageReference, contentReference) = createRefs()
-
             var isDefaultImageEnabled by remember {
                 mutableStateOf(false)
             }
-
             val painter = rememberImagePainter(
                 getPhotoUrl(it.url, path = TypeEnum.STARSHIPS.path),
                 builder = {
@@ -172,9 +169,9 @@ class StarshipDetailsFragment : Fragment() {
                 } else {
                     painterResource(id = R.drawable.placeholder)
                 },
-                contentDescription = null,
+                contentDescription = it.name,
                 modifier = Modifier
-                    .aspectRatio(1f)
+                    .aspectRatio(IMAGE_ASPECT_RATIO)
                     .constrainAs(imageReference) {
                         start.linkTo(parent.start)
                         end.linkTo(parent.end)
@@ -186,7 +183,7 @@ class StarshipDetailsFragment : Fragment() {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(8.dp)
+                    .padding(Dimensions.Value.dp8)
                     .constrainAs(contentReference) {
                         start.linkTo(parent.start)
                         end.linkTo(parent.end)
@@ -196,27 +193,44 @@ class StarshipDetailsFragment : Fragment() {
                 Text(
                     text = it.name,
                     style = TextStyle(
-                        fontSize = 28.sp,
+                        fontSize = Dimensions.Text.title,
                         fontFamily = FontFamily(Font(R.font.starjedi)),
                         color = colorResource(id = R.color.yellow_title_text)
                     ),
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp)
+                        .padding(Dimensions.Padding.titlePaddingAll)
                 )
 
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(8.dp)
+                        .padding(Dimensions.Value.dp8)
                 ) {
-                    SubtitleText("Manufacturer: ${it.manufacturer}")
-                    SubtitleText("Passengers: ${it.passengers}")
-                    SubtitleText("Starship Class: ${it.starship_class}")
-                    SubtitleText("Max Speed: ${it.max_atmosphering_speed}Km/h")
+                    SubtitleText(
+                        beforeValue = getString(R.string.manufacturer_subtitle),
+                        value = it.manufacturer
+                    )
+                    SubtitleText(
+                        beforeValue = getString(R.string.passengers_subtitle),
+                        value = it.passengers
+                    )
+                    SubtitleText(
+                        beforeValue = getString(R.string.class_subtitle),
+                        value = it.starshipClass
+                    )
+                    SubtitleText(
+                        beforeValue = getString(R.string.max_speed_subtitle),
+                        value = it.maxAtmospheringSpeed,
+                        typeValue = if (it.maxAtmospheringSpeed.isDigitsOnly()) {
+                            getString(R.string.kilometers_per_hour)
+                        } else {
+                            BLANK
+                        }
+                    )
 
-                    Spacer(modifier = Modifier.height(32.dp))
+                    Spacer(modifier = Modifier.height(Dimensions.Value.dp32))
                 }
             }
         }
@@ -228,14 +242,14 @@ class StarshipDetailsFragment : Fragment() {
             onClick = {
                 findNavController().popBackStack()
             },
-            shape = RoundedCornerShape(16),
+            shape = RoundedCornerShape(Dimensions.Shape.roundedCornerShape),
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = colorResource(id = R.color.yellow_title_text),
+                backgroundColor = colorResource(id = R.color.button_background),
             ),
             modifier = modifier
         ) {
             Text(
-                text = "VOLTAR",
+                text = getString(R.string.back_caps),
                 color = colorResource(id = R.color.white_default_text),
                 fontFamily = FontFamily.SansSerif
             )
@@ -243,14 +257,21 @@ class StarshipDetailsFragment : Fragment() {
     }
 
     @Composable
-    fun SubtitleText(text: String) {
+    fun SubtitleText(
+        beforeValue: String,
+        value: String,
+        typeValue: String = BLANK,
+    ) {
         Text(
-            text = text,
+            text = "$beforeValue $value $typeValue",
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp),
-            fontSize = 20.sp,
-            color = Color.White,
+                .padding(
+                    horizontal = Dimensions.Padding.itemDetailsPaddingHorizontal,
+                    vertical = Dimensions.Padding.itemDetailsPaddingVertical
+                ),
+            fontSize = Dimensions.Text.itemDetailsSubTitle,
+            color = colorResource(id = R.color.white_default_text),
             fontFamily = FontFamily.SansSerif
         )
     }

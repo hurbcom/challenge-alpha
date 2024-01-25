@@ -33,7 +33,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.colorResource
@@ -43,8 +42,6 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import coil.annotation.ExperimentalCoilApi
@@ -54,6 +51,7 @@ import com.wesleyerick.podracer.data.model.starships.Starship
 import com.wesleyerick.podracer.util.TypeEnum
 import com.wesleyerick.podracer.util.getItemListId
 import com.wesleyerick.podracer.util.getPhotoUrl
+import com.wesleyerick.podracer.util.values.Dimensions
 import com.wesleyerick.podracer.view.component.PodracerCircularProgress
 import com.wesleyerick.podracer.view.component.PodracerFilter
 import com.wesleyerick.podracer.view.component.filterByName
@@ -98,13 +96,13 @@ class StarshipsFragment : Fragment() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "StarShips List",
+                    text = getString(R.string.starships_list_title),
                     style = TextStyle(
-                        fontSize = 32.sp,
+                        fontSize = Dimensions.Text.title,
                         fontFamily = FontFamily(Font(R.font.starjedi)),
                         color = colorResource(id = R.color.yellow_title_text)
                     ),
-                    modifier = Modifier.padding(top = 32.dp)
+                    modifier = Modifier.padding(top = Dimensions.Value.dp32)
                 )
                 PodracerCircularProgress(isShowingProgress)
                 list?.let {
@@ -117,7 +115,7 @@ class StarshipsFragment : Fragment() {
                         }
 
                         LazyColumn(
-                            modifier = Modifier.padding(bottom = 32.dp)
+                            modifier = Modifier.padding(bottom = Dimensions.Value.dp32)
                         ) {
                             items(newList.size) { position ->
                                 StarshipItem(newList, position)
@@ -157,8 +155,8 @@ class StarshipsFragment : Fragment() {
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentHeight()
-                .background(Color(0x92000000))
-                .padding(top = 8.dp, bottom = 8.dp, start = 24.dp, end = 24.dp)
+                .background(colorResource(id = R.color.item_content_background))
+                .padding(horizontal = Dimensions.Value.dp24, vertical = Dimensions.Value.dp8)
                 .clickable {
                     val action =
                         StarshipsFragmentDirections
@@ -174,8 +172,8 @@ class StarshipsFragment : Fragment() {
             Row {
                 Box(
                     modifier = Modifier
-                        .size(100.dp)
-                        .clip(RoundedCornerShape(8.dp))
+                        .size(Dimensions.Size.imageItemList)
+                        .clip(RoundedCornerShape(Dimensions.Shape.roundedCornerShape))
                 ) {
 
                     var isDefaultImageEnabled by remember {
@@ -189,7 +187,7 @@ class StarshipsFragment : Fragment() {
                                 onSuccess = { _, _ ->
                                     isDefaultImageEnabled = false
                                 },
-                                onError = { _, exception ->
+                                onError = { _, _ ->
                                     isDefaultImageEnabled = true
                                 }
                             )
@@ -212,7 +210,8 @@ class StarshipsFragment : Fragment() {
                         text = starshipItem.name,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(start = 8.dp, end = 8.dp, top = 8.dp),
+                            .padding(horizontal = Dimensions.Value.dp8)
+                            .padding(top = Dimensions.Value.dp8),
                         style = TextStyle(
                             fontFamily = FontFamily(Font(R.font.starjedi)),
                             color = colorResource(id = R.color.yellow_title_text)
@@ -221,43 +220,45 @@ class StarshipsFragment : Fragment() {
                         overflow = TextOverflow.Ellipsis
                     )
 
-                    Text(
-                        text = "Consumables: ${starshipItem.consumables}",
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 8.dp, end = 8.dp, top = 8.dp),
-                        color = Color.White,
-                        fontFamily = FontFamily.SansSerif,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
+                    SubtitleListText(
+                        beforeValue = getString(R.string.consumables_subtitle),
+                        value = starshipItem.consumables
                     )
-
-                    Text(
-                        text = "Hyperdrive Rating: ${starshipItem.hyperdrive_rating}",
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 8.dp, end = 8.dp, top = 8.dp),
-                        color = Color.White,
-                        fontFamily = FontFamily.SansSerif,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
+                    SubtitleListText(
+                        beforeValue = getString(R.string.hyperdrive_rating_subtitle),
+                        value = starshipItem.hyperdriveRating
                     )
 
                     Spacer(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(16.dp)
+                            .height(Dimensions.Value.dp16)
                     )
                 }
             }
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(2.dp)
-                    .background(Color(0x2CFFFFFF))
-                    .padding(start = 16.dp, end = 16.dp)
+                    .height(Dimensions.Value.dp2)
+                    .background(colorResource(id = R.color.item_line_background))
+                    .padding(horizontal = Dimensions.Value.dp16)
             )
         }
+    }
+
+    @Composable
+    private fun SubtitleListText(beforeValue: String, value: String) {
+        Text(
+            text = "$beforeValue $value",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(Dimensions.Value.dp8)
+                .padding(top = Dimensions.Value.dp8),
+            color = colorResource(id = R.color.white_default_text),
+            fontFamily = FontFamily.SansSerif,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis
+        )
     }
 
     @Preview(showSystemUi = true, showBackground = true)

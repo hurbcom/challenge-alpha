@@ -1,5 +1,6 @@
 package com.wesleyerick.podracer.view.vehicles.list
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,15 +14,23 @@ import com.wesleyerick.podracer.databinding.ItemListAdapterBinding
 import com.wesleyerick.podracer.util.TypeEnum
 import com.wesleyerick.podracer.util.getItemListId
 import com.wesleyerick.podracer.util.getPhotoUrl
+import com.wesleyerick.podracer.util.getSubtitleText
 
 
 class ListAdapter(
+    private val context: Context,
     private val list: List<Vehicle>,
     private val onClick: (id: String) -> Unit
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    companion object {
+        const val IMAGE_ROUNDED_CORNERS = 48
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ItemViewHolder(
+            context,
             ItemListAdapterBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -39,15 +48,18 @@ class ListAdapter(
         (holder as ItemViewHolder).bind(list[position])
 
     private class ItemViewHolder(
+        private val context: Context,
         private val itemBinding: ItemListAdapterBinding,
-        private val onClick: (id: String) -> Unit) :
+        private val onClick: (id: String) -> Unit
+    ) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(
             item: Vehicle,
         ) = with(itemBinding) {
 
-            val requestOptions = RequestOptions().transform(CenterCrop(), RoundedCorners(48))
+            val requestOptions =
+                RequestOptions().transform(CenterCrop(), RoundedCorners(IMAGE_ROUNDED_CORNERS))
 
             Glide.with(itemBinding.root)
                 .load(getPhotoUrl(url = item.url, path = TypeEnum.VEHICLES.path))
@@ -56,9 +68,16 @@ class ListAdapter(
                 .into(itemBinding.itemListImage)
 
             itemListTitleText.text = item.name
-            itemListSubtitleFirstText.text = "Passengers: ${item.passengers}"
-            itemListSubtitleSecondText.text = "Model: ${item.model}"
-
+            itemListSubtitleFirstText.text = getSubtitleText(
+                context = context,
+                beforeValue = context.getString(R.string.passengers_subtitle),
+                value = item.passengers
+            )
+            itemListSubtitleSecondText.text = getSubtitleText(
+                context = context,
+                beforeValue = context.getString(R.string.model_subtitle),
+                value = item.model
+            )
             itemBinding.root.setOnClickListener {
                 onClick.invoke(getItemListId(item.url))
             }

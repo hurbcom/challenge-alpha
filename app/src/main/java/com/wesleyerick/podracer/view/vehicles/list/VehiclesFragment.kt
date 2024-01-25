@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.wesleyerick.podracer.data.model.vehicles.Vehicle
 import com.wesleyerick.podracer.databinding.FragmentVehiclesBinding
 import com.wesleyerick.podracer.util.gone
 import com.wesleyerick.podracer.util.listener
@@ -23,6 +24,7 @@ class VehiclesFragment : Fragment() {
     private val viewModel by viewModel<VehiclesViewModel>()
 
     private lateinit var binding: FragmentVehiclesBinding
+    private lateinit var adapterList: List<Vehicle>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,48 +32,57 @@ class VehiclesFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentVehiclesBinding.inflate(inflater, container, false)
-        setupView()
+        initScreen()
+        setupViewModel()
         return binding.root
     }
 
-    private fun setupView()= with(binding) {
+    private fun initScreen() = with(binding) {
         setupProgress()
         isShowingProgress(true)
+    }
 
-        viewModel.apply {
-            getList()
-            vehiclesList.listener(viewLifecycleOwner) {
-
-                var adapterList = it
-
-                vehiclesFilter.setContent {
-                    PodracerFilter(
-                        items = it,
-                        filterCriteria = ::filterByName
-                    ) { filteredList, searchText ->
-                        adapterList = if (searchText.isEmpty()) it else filteredList
-
-                        vehiclesRecycler.apply {
-                            val myAdapter = ListAdapter(adapterList) { itemListId ->
-                                onItemListClick(itemListId)
-                            }
-                            myAdapter.notifyDataSetChanged()
-                            adapter = myAdapter
-                            layoutManager = LinearLayoutManager(requireContext())
-                        }
-                    }
-                }
-                isShowingProgress(it.isNotEmpty())
+    private fun setupViewModel() = viewModel.apply {
+        getList()
+        vehiclesList.listener(viewLifecycleOwner) {
+            setupFilter(it) {
+                setupRecycler(adapterList)
             }
+            isShowingProgress(it.isNotEmpty())
+        }
 
-            onError.listener(viewLifecycleOwner) {
-                if (it.isNotEmpty()) {
-                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT)
-                        .show()
+        onError.listener(viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT)
+                    .show()
+            }
+            isShowingProgress(it.isNotEmpty())
+        }
+    }
+
+    private fun setupFilter(it: List<Vehicle>, afterFilter: () -> Unit) =
+        binding.vehiclesFilter.setContent {
+            PodracerFilter(
+                items = it,
+                filterCriteria = ::filterByName
+            ) { filteredList, searchText ->
+                adapterList = if (searchText.isEmpty()) {
+                    it
+                } else {
+                    filteredList
                 }
-                isShowingProgress(it.isNotEmpty())
+                afterFilter.invoke()
             }
         }
+
+    private fun setupRecycler(adapterList: List<Vehicle>) = binding.vehiclesRecycler.apply {
+        val myAdapter =
+            ListAdapter(requireContext(), adapterList) { itemListId ->
+                onItemListClick(itemListId)
+            }
+        myAdapter.notifyDataSetChanged()
+        adapter = myAdapter
+        layoutManager = LinearLayoutManager(requireContext())
     }
 
     private fun onItemListClick(itemListId: String) = findNavController()

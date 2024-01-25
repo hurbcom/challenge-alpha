@@ -2,6 +2,21 @@
     <string name="app_name">Star Wars Wiki</string>
     <string name="home_title_name">Wiki</string>
     <string name="error_message">Ocorreu um erro, tente novamente mais tarde</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="blank_text" />
+    <string name="manufacturer_subtitle">Manufacturer:</string>
+    <string name="passengers_subtitle">Passengers:</string>
+    <string name="model_subtitle">Model:</string>
+    <string name="class_subtitle">Class:</string>
+    <string name="subtitle_before_value">%1$s %2$s</string>
+    <string name="subtitle_before_value_after">%1$s %2$s %3$s</string>
+    <string name="max_speed_subtitle">Max Speed:</string>
+    <string name="kilometers_per_hour">Km/h</string>
+    <string name="back_caps">VOLTAR</string>
+    <string name="starships_list_title">StarShips List</string>
+    <string name="consumables_subtitle">Consumables:</string>
+    <string name="hyperdrive_rating_subtitle">Hyperdrive Rating:</string>
+    <string name="vehicles">vehicles</string>
+    <string name="starships">starships</string>
 </resources>
