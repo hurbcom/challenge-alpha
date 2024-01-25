@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
+import com.vdemelo.starwarswiki.ui.components.RetrySection
 import com.vdemelo.starwarswiki.ui.screens.base.DetailsScreen
-import com.vdemelo.starwarswiki.ui.screens.species.list.RetrySection
 import org.koin.androidx.compose.getViewModel
 
 @Composable
