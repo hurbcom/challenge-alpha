@@ -2,7 +2,9 @@ package com.vdemelo.starwarswiki.data.remote.api
 
 import com.vdemelo.starwarswiki.data.remote.response.PlanetsListResponse
 import com.vdemelo.starwarswiki.data.remote.response.SpeciesListResponse
+import com.vdemelo.starwarswiki.data.remote.response.SpeciesResponse
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface StarWarsApi {
 
@@ -11,5 +13,10 @@ interface StarWarsApi {
 
     @GET("species")
     suspend fun getSpecies(): SpeciesListResponse
+
+    @GET("species/{speciesNumber}")
+    suspend fun getSpeciesDetails(
+        @Path("speciesNumber") speciesNumber: Int
+    ): SpeciesResponse
 
 }

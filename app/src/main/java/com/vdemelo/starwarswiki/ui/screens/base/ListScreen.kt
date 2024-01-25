@@ -1,4 +1,4 @@
-package com.vdemelo.starwarswiki.ui.components
+package com.vdemelo.starwarswiki.ui.screens.base
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -20,6 +20,7 @@ import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.domain.entity.model.ItemsImageUrl
 import com.vdemelo.starwarswiki.domain.entity.model.getImageUrl
 import com.vdemelo.starwarswiki.ui.HomeViewModel
+import com.vdemelo.starwarswiki.ui.components.SearchBar
 import org.koin.androidx.compose.getViewModel
 
 @Composable

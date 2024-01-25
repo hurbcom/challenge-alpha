@@ -1,18 +1,16 @@
-package com.vdemelo.starwarswiki.ui.species
+package com.vdemelo.starwarswiki.ui.screens.species.list
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vdemelo.starwarswiki.domain.entity.RequestStatus
-import com.vdemelo.starwarswiki.domain.entity.model.ItemsImageUrl
 import com.vdemelo.starwarswiki.domain.entity.model.Species
 import com.vdemelo.starwarswiki.domain.entity.model.SpeciesList
-import com.vdemelo.starwarswiki.domain.entity.model.getImageUrl
-import com.vdemelo.starwarswiki.domain.usecase.HomeUseCase
+import com.vdemelo.starwarswiki.domain.usecase.SpeciesUseCase
 import kotlinx.coroutines.launch
 
-class SpeciesViewModel(
-    private val useCase: HomeUseCase
+class SpeciesListViewModel(
+    private val useCase: SpeciesUseCase
 ) : ViewModel() {
 
     private var currentPage = 0
@@ -35,13 +33,14 @@ class SpeciesViewModel(
                     useCase.fetchSpecies(currentPage) //TODO logica aqui retorna sempre a mesma coisa e n ta mostrando o loading
             ) {
                 is RequestStatus.Success -> {
-                    endReached.value = (speciesRequestStatus.data?.next == null) //TODO ver se ele é null quando acabam os itens
+                    endReached.value =
+                        (speciesRequestStatus.data?.next == null) //TODO ver se ele é null quando acabam os itens
                     val results = speciesRequestStatus.data?.results ?: listOf()
                     currentPage++
 
                     loadError.value = ""
                     isLoading.value = false
-                    this@SpeciesViewModel.speciesList.value += results
+                    this@SpeciesListViewModel.speciesList.value += results
                 }
 
                 is RequestStatus.Error -> {
@@ -52,22 +51,7 @@ class SpeciesViewModel(
         }
     }
 
-    //TODO remover
-    // species. url = https://swapi.dev/api/species/1/
-    // species image = https://starwars-visualguide.com/assets/img/species/1.jpg
-
-    fun getSpeciesImageUrl(speciesUrl: String?): String? {
-        return if (speciesUrl != null) {
-            val speciesNumber = getSpeciesNumber(speciesUrl)
-            ItemsImageUrl.SPECIES.getImageUrl(speciesNumber)
-        } else {
-            null
-        }
-    }
-
-    private fun getSpeciesNumber(speciesUrl: String): String {
-        val charsToDrop = if (speciesUrl.endsWith("/")) 1 else 0
-        return speciesUrl.dropLast(charsToDrop).takeLastWhile { it.isDigit() }
-    }
+    fun getSpeciesImageUrl(speciesNumber: Int): String = useCase.getSpeciesImageUrl(speciesNumber)
+    fun getSpeciesNumber(speciesUrl: String): Int? = useCase.getSpeciesNumber(speciesUrl)
 
 }

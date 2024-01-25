@@ -1,6 +1,5 @@
-package com.vdemelo.starwarswiki.ui.details
+package com.vdemelo.starwarswiki.ui.screens.base
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,34 +14,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import coil.compose.AsyncImage
 import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
 import com.vdemelo.starwarswiki.ui.theme.ComposeStarWarsTheme
-
-@Composable
-fun SpeciesDetailsScreen(
-    navController: NavController,
-    imageUrl: String?,
-    homeWorld: String?,
-    language: String?,
-    classification: String?
-) {
-    DetailsScreen(
-        title = stringResource(id = R.string.details_screen_title_species),
-        imageUrl = imageUrl,
-        firstField = homeWorld,
-        secondField = language,
-        thirdField = classification
-    )
-}
 
 @Composable
 fun PlanetDetailsScreen(

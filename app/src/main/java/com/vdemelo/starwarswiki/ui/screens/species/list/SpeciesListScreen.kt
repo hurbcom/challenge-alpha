@@ -1,4 +1,4 @@
-package com.vdemelo.starwarswiki.ui.species
+package com.vdemelo.starwarswiki.ui.screens.species.list
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -41,6 +41,7 @@ import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.domain.entity.model.Species
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
 import com.vdemelo.starwarswiki.ui.components.SearchBar
+import com.vdemelo.starwarswiki.ui.nav.buildSpeciesDetailsRoute
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -81,7 +82,7 @@ fun SpeciesListScreen(navController: NavController) {
 @Composable
 fun SpeciesList(
     navController: NavController,
-    viewModel: SpeciesViewModel = getViewModel()
+    viewModel: SpeciesListViewModel = getViewModel()
 ) {
     val speciesList by remember { viewModel.speciesList }
     val endReached by remember { viewModel.endReached }
@@ -130,8 +131,10 @@ fun SpeciesItem(
     species: Species,
     navController: NavController,
     modifier: Modifier = Modifier,
-    viewModel: SpeciesViewModel = getViewModel()
+    viewModel: SpeciesListViewModel = getViewModel()
 ) {
+    val speciesNumber = species.url?.let { viewModel.getSpeciesNumber(it) }
+    val imageUrl = speciesNumber?.let { viewModel.getSpeciesImageUrl(it) }
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
@@ -140,13 +143,14 @@ fun SpeciesItem(
             .aspectRatio(1f)
             .background(MaterialTheme.colorScheme.surface)
             .clickable {
-//                navController.navigate(
-//                    "pokemon_detail_screen/${dominantColor.toArgb()}/${entry.pokemonName}"
-//                )
+                speciesNumber?.run {
+                    navController.navigate(
+                        route = buildSpeciesDetailsRoute(number = speciesNumber.toString())
+                    )
+                }
             }
     ) {
         Column {
-            val imageUrl = viewModel.getSpeciesImageUrl(species.url)
             ImageLoader(
                 modifier = Modifier
                     .fillMaxWidth()

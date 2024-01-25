@@ -6,14 +6,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vdemelo.starwarswiki.domain.entity.RequestStatus
 import com.vdemelo.starwarswiki.domain.entity.model.ItemsImageUrl
-import com.vdemelo.starwarswiki.domain.entity.model.Species
 import com.vdemelo.starwarswiki.domain.entity.model.SpeciesList
 import com.vdemelo.starwarswiki.domain.entity.model.getImageUrl
-import com.vdemelo.starwarswiki.domain.usecase.HomeUseCase
+import com.vdemelo.starwarswiki.domain.usecase.SpeciesUseCase
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
-    private val useCase: HomeUseCase
+    private val useCase: SpeciesUseCase
 ) : ViewModel() {
 
     private val _species = MutableLiveData<RequestStatus<SpeciesList>>()
