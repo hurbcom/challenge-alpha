@@ -25,33 +25,22 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import coil.request.ImageRequest
 import com.vdemelo.starwarswiki.R
-import com.vdemelo.starwarswiki.domain.entity.model.ItemsImageUrl
 import com.vdemelo.starwarswiki.domain.entity.model.Species
-import com.vdemelo.starwarswiki.domain.entity.model.getImageUrl
-import com.vdemelo.starwarswiki.ui.HomeViewModel
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
 import com.vdemelo.starwarswiki.ui.components.SearchBar
-import com.vdemelo.starwarswiki.ui.details.DetailsScreen
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -143,25 +132,13 @@ fun SpeciesItem(
     modifier: Modifier = Modifier,
     viewModel: SpeciesViewModel = getViewModel()
 ) {
-    val defaultDominantColor = MaterialTheme.colorScheme.surface
-    var dominantColor by remember {
-        mutableStateOf(defaultDominantColor)
-    }
-
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
             .shadow(5.dp, RoundedCornerShape(10.dp))
             .clip(RoundedCornerShape(10.dp))
             .aspectRatio(1f)
-            .background(
-                Brush.verticalGradient(
-                    listOf(
-                        dominantColor,
-                        defaultDominantColor
-                    )
-                )
-            )
+            .background(MaterialTheme.colorScheme.surface)
             .clickable {
 //                navController.navigate(
 //                    "pokemon_detail_screen/${dominantColor.toArgb()}/${entry.pokemonName}"
@@ -174,36 +151,14 @@ fun SpeciesItem(
                 modifier = Modifier
                     .fillMaxWidth()
                     .align(Alignment.CenterHorizontally)
-                    .heightIn(min = 0.dp, 40.dp),
+                    .size(120.dp),
                 url = imageUrl,
-                contentDescription = stringResource(
-                    id = R.string.details_screen_image_content_description
-                )
+                contentDescription = species.name
+                    ?: stringResource(id = R.string.details_screen_image_content_description)
             )
-//            CoilImage(
-//                request = ImageRequest.Builder(LocalContext.current)
-//                    .data(entry.imageUrl)
-//                    .target { drawable ->
-//                        viewModel.calculateDominantColor(drawable) { color ->
-//                            dominantColor = color
-//                        }
-//                    }
-//                    .build(),
-//                contentDescription = entry.pokemonName,
-//                fadeIn = true,
-//                modifier = Modifier
-//                    .size(120.dp)
-//                    .align(Alignment.CenterHorizontally)
-//            ) {
-//                CircularProgressIndicator(
-//                    color = MaterialTheme.colorScheme.primary,
-//                    modifier = Modifier.scale(0.5f)
-//                )
-//            }
             Text(
-                text = species.name ?: stringResource(
-                    id = R.string.species_list_screen_default_name
-                ),
+                text = species.name
+                    ?: stringResource(id = R.string.species_list_screen_default_name),
                 fontSize = 20.sp,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()

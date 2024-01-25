@@ -1,8 +1,6 @@
 package com.vdemelo.starwarswiki.ui.species
 
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vdemelo.starwarswiki.domain.entity.RequestStatus
@@ -28,11 +26,14 @@ class SpeciesViewModel(
         loadSpeciesPaginated()
     }
 
+    //TODO mecanismo de busca n ta feito, tem q fazer :)
+
     fun loadSpeciesPaginated() {
         viewModelScope.launch {
-            val speciesRequestStatus: RequestStatus<SpeciesList> = useCase.fetchSpecies(currentPage)
-
-            when (speciesRequestStatus) {
+            when (
+                val speciesRequestStatus: RequestStatus<SpeciesList> =
+                    useCase.fetchSpecies(currentPage) //TODO logica aqui retorna sempre a mesma coisa e n ta mostrando o loading
+            ) {
                 is RequestStatus.Success -> {
                     endReached.value = (speciesRequestStatus.data?.next == null) //TODO ver se ele é null quando acabam os itens
                     val results = speciesRequestStatus.data?.results ?: listOf()
@@ -51,6 +52,7 @@ class SpeciesViewModel(
         }
     }
 
+    //TODO remover
     // species. url = https://swapi.dev/api/species/1/
     // species image = https://starwars-visualguide.com/assets/img/species/1.jpg
 
