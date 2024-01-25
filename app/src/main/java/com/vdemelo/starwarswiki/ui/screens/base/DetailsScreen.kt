@@ -40,7 +40,7 @@ fun PlanetDetailsScreen(
 }
 
 @Composable
-fun DetailsScreen(
+fun DetailsScreen( //TODO Adicionar toolbar
     title: String,
     imageUrl: String?,
     firstField: String?,
@@ -84,7 +84,7 @@ fun DetailsScreen(
 }
 
 @Composable
-fun ShowTextContentIfNotNull(text: String?) {
+fun ShowTextContentIfNotNull(text: String?) { //TODO botar uma label nos text composables
     text?.run {
         Spacer(modifier = Modifier.height(32.dp))
         Text(

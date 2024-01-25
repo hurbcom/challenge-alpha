@@ -37,6 +37,5 @@ class SpeciesDetailsViewModel (
     }
 
     fun getSpeciesImageUrl(speciesNumber: Int): String = useCase.getSpeciesImageUrl(speciesNumber)
-    //fun getSpeciesNumber(speciesUrl: String): Int? = useCase.getSpeciesNumber(speciesUrl) //TODO acho q n vai usar
 
 }

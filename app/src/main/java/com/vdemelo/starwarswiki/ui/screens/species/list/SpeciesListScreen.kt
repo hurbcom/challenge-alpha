@@ -18,7 +18,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -40,6 +39,7 @@ import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.domain.entity.model.Species
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
+import com.vdemelo.starwarswiki.ui.components.RetrySection
 import com.vdemelo.starwarswiki.ui.components.SearchBar
 import com.vdemelo.starwarswiki.ui.nav.buildSpeciesDetailsRoute
 import org.koin.androidx.compose.getViewModel
@@ -106,7 +106,6 @@ fun SpeciesList(
             )
         }
     }
-
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
@@ -123,7 +122,6 @@ fun SpeciesList(
             )
         }
     }
-
 }
 
 @Composable
@@ -196,22 +194,5 @@ fun SpeciesRow(
             }
         }
         Spacer(modifier = Modifier.height(16.dp))
-    }
-}
-
-@Composable
-fun RetrySection(
-    error: String,
-    onRetry: () -> Unit
-) {
-    Column {
-        Text(text = error, color = Color.Red, fontSize = 18.sp)
-        Spacer(modifier = Modifier.height(8.dp))
-        Button(
-            onClick = { onRetry() },
-            modifier = Modifier.align(Alignment.CenterHorizontally)
-        ) {
-            Text(text = stringResource(id = R.string.common_retry))
-        }
     }
 }

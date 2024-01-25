@@ -30,7 +30,7 @@ fun SpeciesDetailsScreen(
         //TODO criar uma tela de erro mandando voltar pra tela anterior "algo de errado aconteceu, voltar"
     } else {
         viewModel.loadSpeciesDetails(number)
-        Box(
+        Box( //TODO fazer estado de loading e de erro
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
         ) {
@@ -55,6 +55,4 @@ fun SpeciesDetailsScreen(
             }
         }
     }
-    //TODO fazer estado de loading e de erro
-
 }
