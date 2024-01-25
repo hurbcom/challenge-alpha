@@ -1,4 +1,4 @@
-package com.vdemelo.starwarswiki.ui.screens.base
+package com.vdemelo.starwarswiki.ui.screens.common
 
 import androidx.compose.runtime.Composable
 
