@@ -19,6 +19,7 @@
 
     //Common
     <string name="common_retry">Retry</string>
+    <string name="common_back">Go Back</string>
     <string name="common_unknown">Unknown</string>
 
 </resources>
