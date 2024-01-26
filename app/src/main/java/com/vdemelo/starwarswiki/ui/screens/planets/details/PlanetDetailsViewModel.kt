@@ -18,7 +18,7 @@ class PlanetDetailsViewModel (
     var loadError = mutableStateOf("")
     var isLoading = mutableStateOf(true)
 
-    fun loadSpeciesDetails(id: Int) {
+    fun loadPlanetDetails(id: Int) {
         viewModelScope.launch {
             when (
                 val planetRequestStatus: RequestStatus<Planet> =

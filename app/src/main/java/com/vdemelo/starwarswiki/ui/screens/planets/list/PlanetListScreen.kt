@@ -41,7 +41,7 @@ import com.vdemelo.starwarswiki.domain.entity.model.Planet
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
 import com.vdemelo.starwarswiki.ui.components.RetrySection
 import com.vdemelo.starwarswiki.ui.components.SearchBar
-import com.vdemelo.starwarswiki.ui.nav.buildSpeciesDetailsRoute
+import com.vdemelo.starwarswiki.ui.nav.buildPlanetDetailsRoute
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -146,7 +146,7 @@ fun PlanetItem(
             .clickable {
                 id?.run {
                     navController.navigate(
-                        route = buildSpeciesDetailsRoute(id = id.toString())
+                        route = buildPlanetDetailsRoute(id = id.toString())
                     )
                 }
             }

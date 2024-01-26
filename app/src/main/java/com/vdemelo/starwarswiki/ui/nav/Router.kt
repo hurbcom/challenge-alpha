@@ -14,3 +14,7 @@ fun buildComposableRouteMap(
 fun buildSpeciesDetailsRoute(id: String): String {
     return listOf(Screen.SPECIES_DETAILS.name, id).joinToString(separator = PATH_SEPARATOR)
 }
+
+fun buildPlanetDetailsRoute(id: String): String {
+    return listOf(Screen.PLANET_DETAILS.name, id).joinToString(separator = PATH_SEPARATOR)
+}

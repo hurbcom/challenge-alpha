@@ -36,7 +36,7 @@ fun PlanetDetailsScreen(
             navController.navigate(route = NavItem.PlanetsList.route)
         }
     } else {
-        viewModel.loadSpeciesDetails(id)
+        viewModel.loadPlanetDetails(id)
         Box( //TODO fazer estado de loading e de erro
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
@@ -56,7 +56,7 @@ fun PlanetDetailsScreen(
                 RetrySection(
                     error = loadError,
                     onRetry = {
-                        viewModel.loadSpeciesDetails(id)
+                        viewModel.loadPlanetDetails(id)
                     }
                 )
             }
