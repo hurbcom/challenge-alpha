@@ -24,22 +24,6 @@ import com.vdemelo.starwarswiki.ui.components.ImageLoader
 import com.vdemelo.starwarswiki.ui.theme.ComposeStarWarsTheme
 
 @Composable
-fun PlanetDetailsScreen(
-    imageUrl: String?,
-//    homeWorld: String?,
-//    language: String?,
-//    classification: String?
-) {
-    DetailsScreen(
-        title = stringResource(id = R.string.details_screen_title_planet),
-        imageUrl = imageUrl,
-        firstField = null,
-        secondField = null,
-        thirdField = null
-    )
-}
-
-@Composable
 fun DetailsScreen( //TODO Adicionar toolbar
     title: String,
     imageUrl: String?,
