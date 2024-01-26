@@ -14,6 +14,9 @@ fun <T> List<T?>?.nonNullOrEmpty(): List<T> {
     }
 }
 
+fun String.simpleCapitalize(): String = this.replaceFirstChar(Char::titlecase)
+
+
 //val cachedItems = HashMap<String, Long>()
 //
 //// TODO fazer o cache funcionar com um tipo só, Species, por exemplo

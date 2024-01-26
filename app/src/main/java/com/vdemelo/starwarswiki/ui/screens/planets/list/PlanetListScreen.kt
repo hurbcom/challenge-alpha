@@ -163,7 +163,7 @@ fun PlanetItem(
             )
             Text(
                 text = planet.name
-                    ?: stringResource(id = R.string.species_list_screen_default_name),
+                    ?: stringResource(id = R.string.species_list_screen_name_label),
                 fontSize = 20.sp,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
