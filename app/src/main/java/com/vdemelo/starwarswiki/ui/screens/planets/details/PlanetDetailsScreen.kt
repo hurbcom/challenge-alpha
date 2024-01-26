@@ -13,7 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.ui.components.RetrySection
-import com.vdemelo.starwarswiki.ui.nav.NavigationItem
+import com.vdemelo.starwarswiki.ui.nav.NavItem
 import com.vdemelo.starwarswiki.ui.screens.common.DetailsScreen
 import com.vdemelo.starwarswiki.ui.screens.common.ErrorScreen
 import org.koin.androidx.compose.getViewModel
@@ -33,7 +33,7 @@ fun PlanetDetailsScreen(
             error = stringResource(id = R.string.common_unknown_error),
             buttonLabel = stringResource(id = R.string.common_back)
         ) {
-            navController.navigate(route = NavigationItem.PlanetsList.route)
+            navController.navigate(route = NavItem.PlanetsList.route)
         }
     } else {
         viewModel.loadSpeciesDetails(id)

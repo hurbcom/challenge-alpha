@@ -8,13 +8,13 @@ enum class Screen {
     PLANET_DETAILS
 }
 
-sealed class NavigationItem(val route: String) {
+sealed class NavItem(val route: String) {
 
-    object Home : NavigationItem(route = Screen.HOME.name)
+    object Home : NavItem(route = Screen.HOME.name)
 
-    object SpeciesList : NavigationItem(route = Screen.SPECIES_LIST.name)
+    object SpeciesList : NavItem(route = Screen.SPECIES_LIST.name)
 
-    object SpeciesDetails : NavigationItem(
+    object SpeciesDetails : NavItem(
         route = buildComposableRouteMap(
             basePath = Screen.SPECIES_DETAILS.name,
             argumentNames = listOf(
@@ -23,9 +23,9 @@ sealed class NavigationItem(val route: String) {
         )
     )
 
-    object PlanetsList : NavigationItem(route = Screen.PLANETS_LIST.name)
+    object PlanetsList : NavItem(route = Screen.PLANETS_LIST.name)
 
-    object PlanetDetails : NavigationItem(
+    object PlanetDetails : NavItem(
         route = buildComposableRouteMap(
             basePath = Screen.PLANET_DETAILS.name,
             argumentNames = listOf(

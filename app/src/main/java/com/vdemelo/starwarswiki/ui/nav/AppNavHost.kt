@@ -8,6 +8,9 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.vdemelo.starwarswiki.ui.screens.home.HomeScreen
+import com.vdemelo.starwarswiki.ui.screens.planets.details.PlanetDetailsScreen
+import com.vdemelo.starwarswiki.ui.screens.planets.list.PlanetListScreen
 import com.vdemelo.starwarswiki.ui.screens.species.details.SpeciesDetailsScreen
 import com.vdemelo.starwarswiki.ui.screens.species.list.SpeciesListScreen
 
@@ -15,32 +18,43 @@ import com.vdemelo.starwarswiki.ui.screens.species.list.SpeciesListScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    startDestination: String = NavigationItem.Home.route
+    startDestination: String = NavItem.Home.route
 ) {
     NavHost(
         modifier = modifier,
         navController = navController,
         startDestination = startDestination
     ) {
-        composable(route = NavigationItem.SpeciesList.route) {
+        composable(route = NavItem.Home.route) {
+            HomeScreen(navController = navController)
+        }
+
+        composable(route = NavItem.SpeciesList.route) {
             SpeciesListScreen(navController = navController)
         }
 
         composable(
-            route = NavigationItem.SpeciesDetails.route,
+            route = NavItem.SpeciesDetails.route,
             arguments = listOf(
-                navArgument(NavigationArgs.ITEM_ID.name) {
-                    type = NavType.IntType
-                }
+                navArgument(NavigationArgs.ITEM_ID.name) { type = NavType.IntType }
             )
         ) {
-            val speciesNumber = remember {
-                it.arguments?.getInt(NavigationArgs.ITEM_ID.name)
-            }
-            SpeciesDetailsScreen(
-                navController = navController,
-                number = speciesNumber
+            val speciesId = remember { it.arguments?.getInt(NavigationArgs.ITEM_ID.name) }
+            SpeciesDetailsScreen(navController = navController, id = speciesId)
+        }
+
+        composable(route = NavItem.PlanetsList.route) {
+            PlanetListScreen(navController = navController)
+        }
+
+        composable(
+            route = NavItem.PlanetDetails.route,
+            arguments = listOf(
+                navArgument(NavigationArgs.ITEM_ID.name) { type = NavType.IntType }
             )
+        ) {
+            val planetId = remember { it.arguments?.getInt(NavigationArgs.ITEM_ID.name) }
+            PlanetDetailsScreen(navController = navController, id = planetId)
         }
     }
 }

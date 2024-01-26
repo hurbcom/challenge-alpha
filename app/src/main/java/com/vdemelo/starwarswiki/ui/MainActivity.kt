@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
 import com.vdemelo.starwarswiki.ui.nav.AppNavHost
-import com.vdemelo.starwarswiki.ui.nav.NavigationItem
+import com.vdemelo.starwarswiki.ui.nav.NavItem
 import com.vdemelo.starwarswiki.ui.theme.ComposeStarWarsTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
 
                 AppNavHost(
                     navController = navController,
-                    startDestination = NavigationItem.SpeciesList.route
+                    startDestination = NavItem.Home.route
                 )
 
             }

@@ -19,17 +19,17 @@ import org.koin.androidx.compose.getViewModel
 @Composable
 fun SpeciesDetailsScreen(
     navController: NavController,
-    number: Int?,
+    id: Int?,
     viewModel: SpeciesDetailsViewModel = getViewModel()
 ) {
     val species by remember { viewModel.speciesDetails }
     val loadError by remember { viewModel.loadError }
     val isLoading by remember { viewModel.isLoading }
 
-    if (number == null) {
+    if (id == null) {
         //TODO criar uma tela de erro mandando voltar pra tela anterior "algo de errado aconteceu, voltar"
     } else {
-        viewModel.loadSpeciesDetails(number)
+        viewModel.loadSpeciesDetails(id)
         Box( //TODO fazer estado de loading e de erro
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
@@ -37,7 +37,7 @@ fun SpeciesDetailsScreen(
             if (isLoading) {
                 CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
             } else if (species != null) {
-                val imageUrl = viewModel.getSpeciesImageUrl(number)
+                val imageUrl = viewModel.getSpeciesImageUrl(id)
                 DetailsScreen(
                     title = stringResource(id = R.string.details_screen_title_species),
                     imageUrl = imageUrl,
@@ -49,7 +49,7 @@ fun SpeciesDetailsScreen(
                 RetrySection(
                     error = loadError,
                     onRetry = {
-                        viewModel.loadSpeciesDetails(number)
+                        viewModel.loadSpeciesDetails(id)
                     }
                 )
             }

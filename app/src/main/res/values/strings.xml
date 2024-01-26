@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Star Wars Wiki</string>
 
+    //Home Menu
+    <string name="home_menu_item_species">Star Wars Species</string>
+    <string name="home_menu_item_planet">Star Wars Planets</string>
+
     // List Screen
     <string name="list_screen_search_hint">Search...</string>
 
