@@ -3,7 +3,9 @@ package com.vdemelo.starwarswiki.ui.nav
 enum class Screen {
     HOME,
     SPECIES_LIST,
-    SPECIES_DETAILS
+    SPECIES_DETAILS,
+    PLANETS_LIST,
+    PLANET_DETAILS
 }
 
 sealed class NavigationItem(val route: String) {
@@ -16,7 +18,18 @@ sealed class NavigationItem(val route: String) {
         route = buildComposableRouteMap(
             basePath = Screen.SPECIES_DETAILS.name,
             argumentNames = listOf(
-                NavigationArgs.SPECIES_NUMBER.name
+                NavigationArgs.ITEM_ID.name
+            )
+        )
+    )
+
+    object PlanetsList : NavigationItem(route = Screen.PLANETS_LIST.name)
+
+    object PlanetDetails : NavigationItem(
+        route = buildComposableRouteMap(
+            basePath = Screen.PLANET_DETAILS.name,
+            argumentNames = listOf(
+                NavigationArgs.ITEM_ID.name
             )
         )
     )

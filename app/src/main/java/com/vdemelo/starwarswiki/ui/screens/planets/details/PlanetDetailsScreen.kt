@@ -13,43 +13,50 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.ui.components.RetrySection
+import com.vdemelo.starwarswiki.ui.nav.NavigationItem
 import com.vdemelo.starwarswiki.ui.screens.common.DetailsScreen
+import com.vdemelo.starwarswiki.ui.screens.common.ErrorScreen
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun SpeciesDetailsScreen(
+fun PlanetDetailsScreen(
     navController: NavController,
-    number: Int?,
+    id: Int?,
     viewModel: PlanetDetailsViewModel = getViewModel()
 ) {
-    val species by remember { viewModel.speciesDetails }
+    val planet by remember { viewModel.planetDetails }
     val loadError by remember { viewModel.loadError }
     val isLoading by remember { viewModel.isLoading }
 
-    if (number == null) {
-        //TODO criar uma tela de erro mandando voltar pra tela anterior "algo de errado aconteceu, voltar"
+    if (id == null) {
+        ErrorScreen(
+            error = stringResource(id = R.string.common_unknown_error),
+            buttonLabel = stringResource(id = R.string.common_back)
+        ) {
+            navController.navigate(route = NavigationItem.PlanetsList.route)
+        }
     } else {
-        viewModel.loadSpeciesDetails(number)
+        viewModel.loadSpeciesDetails(id)
         Box( //TODO fazer estado de loading e de erro
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
         ) {
-            if (isLoading) {
+            if (isLoading) { //TODO n ta caindo aqui?
                 CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
-            } else if (species != null) {
-                val imageUrl = viewModel.getSpeciesImageUrl(number)
+            } else if (planet != null) {
+                val imageUrl = viewModel.getPlanetImageUrl(id)
                 DetailsScreen(
                     title = stringResource(id = R.string.details_screen_title_species),
                     imageUrl = imageUrl,
-                    firstField = species!!.name,
-                    secondField = species!!.language,
-                    thirdField = species!!.classification
+                    firstField = planet!!.name,
+                    secondField = planet!!.population,
+                    thirdField = planet!!.climate
                 )
             } else {
                 RetrySection(
                     error = loadError,
                     onRetry = {
-                        viewModel.loadSpeciesDetails(number)
+                        viewModel.loadSpeciesDetails(id)
                     }
                 )
             }

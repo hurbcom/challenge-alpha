@@ -3,13 +3,11 @@ package com.vdemelo.starwarswiki.ui.nav
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.ui.screens.species.details.SpeciesDetailsScreen
 import com.vdemelo.starwarswiki.ui.screens.species.list.SpeciesListScreen
 
@@ -31,13 +29,13 @@ fun AppNavHost(
         composable(
             route = NavigationItem.SpeciesDetails.route,
             arguments = listOf(
-                navArgument(NavigationArgs.SPECIES_NUMBER.name) {
+                navArgument(NavigationArgs.ITEM_ID.name) {
                     type = NavType.IntType
                 }
             )
         ) {
             val speciesNumber = remember {
-                it.arguments?.getInt(NavigationArgs.SPECIES_NUMBER.name)
+                it.arguments?.getInt(NavigationArgs.ITEM_ID.name)
             }
             SpeciesDetailsScreen(
                 navController = navController,

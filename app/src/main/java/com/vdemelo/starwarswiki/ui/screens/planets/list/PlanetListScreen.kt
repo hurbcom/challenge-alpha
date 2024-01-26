@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
-import com.vdemelo.starwarswiki.domain.entity.model.Species
+import com.vdemelo.starwarswiki.domain.entity.model.Planet
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
 import com.vdemelo.starwarswiki.ui.components.RetrySection
 import com.vdemelo.starwarswiki.ui.components.SearchBar
@@ -73,7 +73,7 @@ fun PlanetListScreen(
                     .fillMaxWidth()
                     .padding(16.dp),
                 onSearch = {
-                    viewModel.loadSpeciesPaginated(search = it)
+                    viewModel.loadPlanetsPaginated(search = it)
                 }
             )
             Spacer(modifier = Modifier.height(16.dp))
@@ -87,7 +87,7 @@ fun SpeciesList(
     navController: NavController,
     viewModel: PlanetListViewModel = getViewModel()
 ) {
-    val speciesList by remember { viewModel.speciesList }
+    val speciesList by remember { viewModel.list }
     val endReached by remember { viewModel.endReached }
     val loadError by remember { viewModel.loadError }
     val isLoading by remember { viewModel.isLoading }
@@ -100,11 +100,11 @@ fun SpeciesList(
         items(itemCount) {
             val hasScrolledDown = it >= itemCount - 1
             if (hasScrolledDown && !endReached) {
-                viewModel.loadSpeciesPaginated()
+                viewModel.loadPlanetsPaginated()
             }
-            SpeciesRow(
+            PlanetsRow(
                 rowIndex = it,
-                speciesList = speciesList,
+                planetsList = speciesList,
                 navController = navController
             )
         }
@@ -120,7 +120,7 @@ fun SpeciesList(
             RetrySection(
                 error = loadError,
                 onRetry = {
-                    viewModel.loadSpeciesPaginated()
+                    viewModel.loadPlanetsPaginated()
                 }
             )
         }
@@ -128,14 +128,14 @@ fun SpeciesList(
 }
 
 @Composable
-fun SpeciesItem(
-    species: Species,
+fun PlanetItem(
+    planet: Planet,
     navController: NavController,
     modifier: Modifier = Modifier,
     viewModel: PlanetListViewModel = getViewModel()
 ) {
-    val speciesNumber = species.url?.let { viewModel.getSpeciesNumber(it) }
-    val imageUrl = speciesNumber?.let { viewModel.getSpeciesImageUrl(it) }
+    val id = planet.url?.let { viewModel.getPlanetId(it) }
+    val imageUrl = id?.let { viewModel.getPlanetImageUrl(it) }
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
@@ -144,9 +144,9 @@ fun SpeciesItem(
             .aspectRatio(1f)
             .background(MaterialTheme.colorScheme.surface)
             .clickable {
-                speciesNumber?.run {
+                id?.run {
                     navController.navigate(
-                        route = buildSpeciesDetailsRoute(number = speciesNumber.toString())
+                        route = buildSpeciesDetailsRoute(id = id.toString())
                     )
                 }
             }
@@ -158,11 +158,11 @@ fun SpeciesItem(
                     .align(Alignment.CenterHorizontally)
                     .size(120.dp),
                 url = imageUrl,
-                contentDescription = species.name
+                contentDescription = planet.name
                     ?: stringResource(id = R.string.details_screen_image_content_description)
             )
             Text(
-                text = species.name
+                text = planet.name
                     ?: stringResource(id = R.string.species_list_screen_default_name),
                 fontSize = 20.sp,
                 textAlign = TextAlign.Center,
@@ -173,22 +173,22 @@ fun SpeciesItem(
 }
 
 @Composable
-fun SpeciesRow(
+fun PlanetsRow(
     rowIndex: Int,
-    speciesList: List<Species>,
+    planetsList: List<Planet>,
     navController: NavController
 ) {
     Column {
         Row {
-            SpeciesItem(
-                species = speciesList[rowIndex * 2],
+            PlanetItem(
+                planet = planetsList[rowIndex * 2],
                 navController = navController,
                 modifier = Modifier.weight(1f)
             )
             Spacer(modifier = Modifier.width(16.dp))
-            if (speciesList.size >= rowIndex * 2 + 2) {
-                SpeciesItem(
-                    species = speciesList[rowIndex * 2 + 1],
+            if (planetsList.size >= rowIndex * 2 + 2) {
+                PlanetItem(
+                    planet = planetsList[rowIndex * 2 + 1],
                     navController = navController,
                     modifier = Modifier.weight(1f)
                 )

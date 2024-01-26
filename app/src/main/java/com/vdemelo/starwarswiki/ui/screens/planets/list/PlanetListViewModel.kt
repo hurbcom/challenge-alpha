@@ -4,11 +4,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vdemelo.starwarswiki.domain.entity.RequestStatus
-import com.vdemelo.starwarswiki.domain.entity.model.Species
-import com.vdemelo.starwarswiki.domain.entity.model.SpeciesList
+import com.vdemelo.starwarswiki.domain.entity.model.Planet
+import com.vdemelo.starwarswiki.domain.entity.model.PlanetsList
 import com.vdemelo.starwarswiki.domain.usecase.ItemsUseCase
 import com.vdemelo.starwarswiki.domain.usecase.PlanetsUseCase
-import com.vdemelo.starwarswiki.domain.usecase.SpeciesUseCase
 import kotlinx.coroutines.launch
 
 private const val STARTING_PAGE = 1
@@ -21,38 +20,38 @@ class PlanetListViewModel(
     private var currentPage = STARTING_PAGE
     private var currentSearch: String? = null
 
-    var speciesList = mutableStateOf<List<Species>>(listOf())
+    var list = mutableStateOf<List<Planet>>(listOf())
     var loadError = mutableStateOf("")
     var isLoading = mutableStateOf(false)
     var endReached = mutableStateOf(false)
 
     init {
-        loadSpeciesPaginated()
+        loadPlanetsPaginated()
     }
 
-    fun loadSpeciesPaginated(search: String? = null) {
+    fun loadPlanetsPaginated(search: String? = null) {
         if (search != null && search != currentSearch) {
             currentSearch = search
             currentPage = STARTING_PAGE
-            speciesList.value = listOf()
+            list.value = listOf()
         }
         viewModelScope.launch {
             when (
-                val speciesRequestStatus: RequestStatus<SpeciesList> =
+                val planetRequestStatus: RequestStatus<PlanetsList> =
                     planetsUseCase.fetchPlanets(page = currentPage, search = currentSearch)
             ) {
                 is RequestStatus.Success -> {
-                    endReached.value = (speciesRequestStatus.data?.next == null)
-                    val results = speciesRequestStatus.data?.results ?: listOf()
+                    endReached.value = (planetRequestStatus.data?.next == null)
+                    val results = planetRequestStatus.data?.results ?: listOf()
                     currentPage++ //TODO has a bug that it keeps requesting after endReached
 
                     loadError.value = ""
                     isLoading.value = false
-                    this@PlanetListViewModel.speciesList.value += results
+                    this@PlanetListViewModel.list.value += results
                 }
 
                 is RequestStatus.Error -> {
-                    loadError.value = speciesRequestStatus.message!!
+                    loadError.value = planetRequestStatus.message!!
                     isLoading.value = false
                 }
             }
@@ -60,7 +59,7 @@ class PlanetListViewModel(
         //TODO n ta mostrando o loading
     }
 
-    fun getSpeciesImageUrl(speciesNumber: Int): String = planetsUseCase.getSpeciesImageUrl(speciesNumber)
-    fun getSpeciesNumber(speciesUrl: String): Int? = planetsUseCase.getSpeciesNumber(speciesUrl)
+    fun getPlanetImageUrl(id: Int): String = itemsUseCase.getPlanetImageUrl(id)
+    fun getPlanetId(url: String): Int? = itemsUseCase.getItemId(url)
 
 }

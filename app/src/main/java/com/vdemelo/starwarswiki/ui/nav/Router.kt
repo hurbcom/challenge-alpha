@@ -11,9 +11,6 @@ fun buildComposableRouteMap(
     return pieces.joinToString(separator = PATH_SEPARATOR)
 }
 
-fun buildSpeciesDetailsRoute(number: String): String {
-    return listOf<String>(
-        Screen.SPECIES_DETAILS.name,
-        number
-    ).joinToString(separator = PATH_SEPARATOR)
+fun buildSpeciesDetailsRoute(id: String): String {
+    return listOf(Screen.SPECIES_DETAILS.name, id).joinToString(separator = PATH_SEPARATOR)
 }

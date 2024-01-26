@@ -146,7 +146,7 @@ fun SpeciesItem(
             .clickable {
                 speciesNumber?.run {
                     navController.navigate(
-                        route = buildSpeciesDetailsRoute(number = speciesNumber.toString())
+                        route = buildSpeciesDetailsRoute(id = speciesNumber.toString())
                     )
                 }
             }

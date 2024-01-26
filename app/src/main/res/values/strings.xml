@@ -21,5 +21,6 @@
     <string name="common_retry">Retry</string>
     <string name="common_back">Go Back</string>
     <string name="common_unknown">Unknown</string>
+    <string name="common_unknown_error">An unknown error occurred!</string>
 
 </resources>
