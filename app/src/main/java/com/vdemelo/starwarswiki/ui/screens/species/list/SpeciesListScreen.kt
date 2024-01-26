@@ -67,6 +67,12 @@ fun SpeciesListScreen(
                         .heightIn(min = 0.dp, max = 140.dp)
                 )
             }
+            Text(
+                text = stringResource(id = R.string.species_list_screen_title),
+                fontSize = 48.sp,
+                textAlign = TextAlign.Center,
+                fontWeight = FontWeight.Bold
+            )
             SearchBar(
                 hint = stringResource(id = R.string.list_screen_search_hint),
                 modifier = Modifier
