@@ -9,6 +9,7 @@
     <string name="list_screen_search_hint">Search...</string>
 
     <string name="species_list_screen_title">Species List</string>
+    <string name="planets_list_screen_title">Planets List</string>
 
     <string name="list_screen_name_label">Name:</string>
     <string name="list_screen_language_label">Language:</string>

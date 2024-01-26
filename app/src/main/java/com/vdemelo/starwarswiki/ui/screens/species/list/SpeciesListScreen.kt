@@ -6,7 +6,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -37,11 +36,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.domain.entity.model.Species
+import com.vdemelo.starwarswiki.domain.entity.model.TextField
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
+import com.vdemelo.starwarswiki.ui.components.LabelAndTextData
 import com.vdemelo.starwarswiki.ui.components.RetrySection
 import com.vdemelo.starwarswiki.ui.components.SearchBar
 import com.vdemelo.starwarswiki.ui.nav.buildSpeciesDetailsRoute
-import com.vdemelo.starwarswiki.utils.simpleCapitalize
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -53,7 +53,10 @@ fun SpeciesListScreen(
         color = MaterialTheme.colorScheme.background,
         modifier = Modifier.fillMaxSize()
     ) {
-        Column {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Surface(
                 color = Color.Black,
                 modifier = Modifier.fillMaxWidth()
@@ -91,7 +94,7 @@ fun SpeciesList(
     navController: NavController,
     viewModel: SpeciesListViewModel = getViewModel()
 ) {
-    val speciesList by remember { viewModel.speciesList }
+    val list by remember { viewModel.speciesList }
     val endReached by remember { viewModel.endReached }
     val loadError by remember { viewModel.loadError }
     val isLoading by remember { viewModel.isLoading }
@@ -100,7 +103,7 @@ fun SpeciesList(
         modifier = Modifier.fillMaxSize()
     ) {
         LazyColumn(contentPadding = PaddingValues(16.dp)) {
-            val itemCount = speciesList.size
+            val itemCount = list.size
 
             items(itemCount) {
                 val hasScrolledDown = it >= itemCount - 8
@@ -108,7 +111,7 @@ fun SpeciesList(
                     viewModel.loadSpeciesPaginated()
                 }
                 SpeciesItem(
-                    species = speciesList[it],
+                    species = list[it],
                     navController = navController
                 )
                 Spacer(modifier = Modifier.height(24.dp))
@@ -123,9 +126,7 @@ fun SpeciesList(
             } else if (loadError.isNotEmpty()) {
                 RetrySection(
                     error = loadError,
-                    onRetry = {
-                        viewModel.loadSpeciesPaginated()
-                    }
+                    onRetry = { viewModel.loadSpeciesPaginated() }
                 )
             }
         }
@@ -139,8 +140,8 @@ fun SpeciesItem(
     modifier: Modifier = Modifier,
     viewModel: SpeciesListViewModel = getViewModel()
 ) {
-    val speciesNumber = species.url?.let { viewModel.getSpeciesNumber(it) }
-    val imageUrl = speciesNumber?.let { viewModel.getSpeciesImageUrl(it) }
+    val id = species.url?.let { viewModel.getSpeciesNumber(it) }
+    val imageUrl = id?.let { viewModel.getSpeciesImageUrl(it) }
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
@@ -149,9 +150,9 @@ fun SpeciesItem(
             .clip(RoundedCornerShape(10.dp))
             .background(MaterialTheme.colorScheme.surface)
             .clickable {
-                speciesNumber?.run {
+                id?.run {
                     navController.navigate(
-                        route = buildSpeciesDetailsRoute(id = speciesNumber.toString())
+                        route = buildSpeciesDetailsRoute(id = id.toString())
                     )
                 }
             }
@@ -171,54 +172,27 @@ fun SpeciesItem(
                     ?: stringResource(id = R.string.details_screen_image_content_description)
             )
             Spacer(modifier = Modifier.height(8.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(
-                    text = stringResource(id = R.string.list_screen_name_label),
-                    fontSize = 16.sp,
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = species.name?.simpleCapitalize()
-                        ?: stringResource(id = R.string.common_unknown),
-                    fontSize = 16.sp,
-                    textAlign = TextAlign.Center
-                )
-            }
-            Row(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(
-                    text = stringResource(id = R.string.list_screen_language_label),
-                    fontSize = 16.sp,
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = species.language?.simpleCapitalize()
-                        ?: stringResource(id = R.string.common_unknown),
-                    fontSize = 16.sp,
-                    textAlign = TextAlign.Center
-                )
-            }
-            Row(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(
-                    text = stringResource(id = R.string.list_screen_classification_label),
-                    fontSize = 16.sp,
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = species.classification?.simpleCapitalize()
-                        ?: stringResource(id = R.string.common_unknown),
-                    fontSize = 16.sp,
-                    textAlign = TextAlign.Center
-                )
+            detailsData(species).forEach {
+                LabelAndTextData(label = it.label, text = it.text)
             }
         }
     }
+}
+
+@Composable
+fun detailsData(species: Species): List<TextField> {
+    return listOf(
+        TextField(
+            label = stringResource(id = R.string.list_screen_name_label),
+            text = species.name
+        ),
+        TextField(
+            label = stringResource(id = R.string.list_screen_language_label),
+            text = species.language
+        ),
+        TextField(
+            label = stringResource(id = R.string.list_screen_classification_label),
+            text = species.classification
+        )
+    )
 }

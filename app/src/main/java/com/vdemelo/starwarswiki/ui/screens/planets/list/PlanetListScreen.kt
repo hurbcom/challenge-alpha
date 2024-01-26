@@ -32,16 +32,21 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.domain.entity.model.Planet
+import com.vdemelo.starwarswiki.domain.entity.model.Species
+import com.vdemelo.starwarswiki.domain.entity.model.TextField
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
+import com.vdemelo.starwarswiki.ui.components.LabelAndTextData
 import com.vdemelo.starwarswiki.ui.components.RetrySection
 import com.vdemelo.starwarswiki.ui.components.SearchBar
 import com.vdemelo.starwarswiki.ui.nav.buildPlanetDetailsRoute
+import com.vdemelo.starwarswiki.ui.screens.species.list.SpeciesItem
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -53,7 +58,10 @@ fun PlanetListScreen(
         color = MaterialTheme.colorScheme.background,
         modifier = Modifier.fillMaxSize()
     ) {
-        Column {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Surface(
                 color = Color.Black,
                 modifier = Modifier.fillMaxWidth()
@@ -67,6 +75,12 @@ fun PlanetListScreen(
                         .heightIn(min = 0.dp, max = 140.dp)
                 )
             }
+            Text(
+                text = stringResource(id = R.string.planets_list_screen_title),
+                fontSize = 48.sp,
+                textAlign = TextAlign.Center,
+                fontWeight = FontWeight.Bold
+            )
             SearchBar(
                 hint = stringResource(id = R.string.list_screen_search_hint),
                 modifier = Modifier
@@ -77,36 +91,34 @@ fun PlanetListScreen(
                 }
             )
             Spacer(modifier = Modifier.height(16.dp))
-            SpeciesList(navController = navController)
+            PlanetsList(navController = navController)
         }
     }
 }
 
 @Composable
-fun SpeciesList(
+fun PlanetsList(
     navController: NavController,
     viewModel: PlanetListViewModel = getViewModel()
 ) {
-    val speciesList by remember { viewModel.list }
+    val list by remember { viewModel.list }
     val endReached by remember { viewModel.endReached }
     val loadError by remember { viewModel.loadError }
     val isLoading by remember { viewModel.isLoading }
 
     LazyColumn(contentPadding = PaddingValues(16.dp)) {
-        val itemCount =
-            if (speciesList.size % 2 == 0) speciesList.size / 2
-            else speciesList.size / 2 + 1
+        val itemCount = list.size
 
         items(itemCount) {
-            val hasScrolledDown = it >= itemCount - 1
+            val hasScrolledDown = it >= itemCount - 8
             if (hasScrolledDown && !endReached) {
                 viewModel.loadPlanetsPaginated()
             }
-            PlanetsRow(
-                rowIndex = it,
-                planetsList = speciesList,
+            PlanetItem(
+                planet = list[it],
                 navController = navController
             )
+            Spacer(modifier = Modifier.height(24.dp))
         }
     }
     Box(
@@ -119,9 +131,7 @@ fun SpeciesList(
         if (loadError.isNotEmpty()) {
             RetrySection(
                 error = loadError,
-                onRetry = {
-                    viewModel.loadPlanetsPaginated()
-                }
+                onRetry = { viewModel.loadPlanetsPaginated() }
             )
         }
     }
@@ -139,9 +149,9 @@ fun PlanetItem(
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
+            .fillMaxWidth()
             .shadow(5.dp, RoundedCornerShape(10.dp))
             .clip(RoundedCornerShape(10.dp))
-            .aspectRatio(1f)
             .background(MaterialTheme.colorScheme.surface)
             .clickable {
                 id?.run {
@@ -151,7 +161,11 @@ fun PlanetItem(
                 }
             }
     ) {
-        Column {
+        Column(
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
             ImageLoader(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -161,41 +175,28 @@ fun PlanetItem(
                 contentDescription = planet.name
                     ?: stringResource(id = R.string.details_screen_image_content_description)
             )
-            Text(
-                text = planet.name
-                    ?: stringResource(id = R.string.list_screen_name_label),
-                fontSize = 20.sp,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-            )
+            Spacer(modifier = Modifier.height(8.dp))
+            detailsData(planet).forEach {
+                LabelAndTextData(label = it.label, text = it.text)
+            }
         }
     }
 }
 
 @Composable
-fun PlanetsRow(
-    rowIndex: Int,
-    planetsList: List<Planet>,
-    navController: NavController
-) {
-    Column {
-        Row {
-            PlanetItem(
-                planet = planetsList[rowIndex * 2],
-                navController = navController,
-                modifier = Modifier.weight(1f)
-            )
-            Spacer(modifier = Modifier.width(16.dp))
-            if (planetsList.size >= rowIndex * 2 + 2) {
-                PlanetItem(
-                    planet = planetsList[rowIndex * 2 + 1],
-                    navController = navController,
-                    modifier = Modifier.weight(1f)
-                )
-            } else {
-                Spacer(modifier = Modifier.weight(1f))
-            }
-        }
-        Spacer(modifier = Modifier.height(16.dp))
-    }
+fun detailsData(planet: Planet): List<TextField> {
+    return listOf(
+        TextField(
+            label = stringResource(id = R.string.list_screen_name_label),
+            text = planet.name
+        ),
+        TextField(
+            label = stringResource(id = R.string.list_screen_population_label),
+            text = planet.population
+        ),
+        TextField(
+            label = stringResource(id = R.string.list_screen_climate_label),
+            text = planet.climate
+        )
+    )
 }

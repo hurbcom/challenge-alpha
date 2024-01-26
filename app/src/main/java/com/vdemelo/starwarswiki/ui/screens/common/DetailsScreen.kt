@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.domain.entity.model.TextField
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
+import com.vdemelo.starwarswiki.ui.components.LabelAndTextData
 import com.vdemelo.starwarswiki.ui.theme.ComposeStarWarsTheme
 import com.vdemelo.starwarswiki.utils.simpleCapitalize
 
@@ -61,35 +62,13 @@ fun DetailsScreen(
                 )
             )
             fields.forEach {
+                Spacer(modifier = Modifier.height(32.dp))
                 LabelAndTextData(label = it.label, text = it.text)
             }
             Spacer(modifier = Modifier.height(32.dp))
         }
     }
 
-}
-
-@Composable
-fun LabelAndTextData(
-    label: String,
-    text: String?
-) {
-    Spacer(modifier = Modifier.height(32.dp))
-    Row(
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(
-            text = label,
-            fontSize = 16.sp,
-            textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Bold
-        )
-        Text(
-            text = text?.simpleCapitalize() ?: stringResource(id = R.string.common_unknown),
-            fontSize = 16.sp,
-            textAlign = TextAlign.Center
-        )
-    }
 }
 
 @Preview(showBackground = true)
