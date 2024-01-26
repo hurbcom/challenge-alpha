@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Star Wars Wiki</string>
+
+    //Home Menu
+    <string name="home_menu_item_species">Star Wars Species</string>
+    <string name="home_menu_item_planet">Star Wars Planets</string>
+
+    // List Screen
+    <string name="list_screen_search_hint">Search...</string>
+
+    <string name="species_list_screen_default_name">Species Name</string>
+
+    // Details Screen
+    <string name="details_screen_title_default">Details</string>
+    <string name="details_screen_title_species">Species</string>
+    <string name="details_screen_title_planet">Planet</string>
+
+    <string name="details_screen_image_content_description">Image for this item</string>
+
+    <string name="details_screen_field_one_species">Home World: %s</string>
+    <string name="details_screen_field_two_species">Language: %s</string>
+    <string name="details_screen_field_three_species">Classification: %s</string>
+
+    //Common
+    <string name="common_retry">Retry</string>
+    <string name="common_back">Go Back</string>
+    <string name="common_unknown">Unknown</string>
+    <string name="common_unknown_error">An unknown error occurred!</string>
+
 </resources>
