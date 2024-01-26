@@ -103,7 +103,7 @@ fun SpeciesList(
             val itemCount = speciesList.size
 
             items(itemCount) {
-                val hasScrolledDown = it >= itemCount - 1
+                val hasScrolledDown = it >= itemCount - 8
                 if (hasScrolledDown && !endReached) {
                     viewModel.loadSpeciesPaginated()
                 }
@@ -114,24 +114,20 @@ fun SpeciesList(
                 Spacer(modifier = Modifier.height(24.dp))
             }
         }
-        if (isLoading) {
-            CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
-        }
-    }
-
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxSize()
-    ) {
-        if (isLoading) {
-            CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
-        } else if (loadError.isNotEmpty()) {
-            RetrySection(
-                error = loadError,
-                onRetry = {
-                    viewModel.loadSpeciesPaginated()
-                }
-            )
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            if (isLoading) {
+                CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+            } else if (loadError.isNotEmpty()) {
+                RetrySection(
+                    error = loadError,
+                    onRetry = {
+                        viewModel.loadSpeciesPaginated()
+                    }
+                )
+            }
         }
     }
 }
