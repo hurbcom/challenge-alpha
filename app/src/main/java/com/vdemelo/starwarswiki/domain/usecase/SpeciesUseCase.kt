@@ -15,9 +15,9 @@ class SpeciesUseCase(
     private val localRepository: StarWarsLocalRepository //TODO se n for usar remover
 ) {
 
-    suspend fun fetchSpecies(page: Int = 0): RequestStatus<SpeciesList> {
+    suspend fun fetchSpecies(page: Int = 0, search: String? = null): RequestStatus<SpeciesList> {
         val response = try {
-            remoteRepository.fetchSpecies(page)
+            remoteRepository.fetchSpecies(page, search)
         } catch (e: Exception) {
             return RequestStatus.Error(message = UNKNOWN_ERROR_MESSAGE)
         }

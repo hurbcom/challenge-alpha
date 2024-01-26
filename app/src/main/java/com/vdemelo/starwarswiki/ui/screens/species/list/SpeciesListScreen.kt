@@ -45,7 +45,10 @@ import com.vdemelo.starwarswiki.ui.nav.buildSpeciesDetailsRoute
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun SpeciesListScreen(navController: NavController) {
+fun SpeciesListScreen(
+    navController: NavController,
+    viewModel: SpeciesListViewModel = getViewModel()
+) {
     Surface(
         color = MaterialTheme.colorScheme.background,
         modifier = Modifier.fillMaxSize()
@@ -70,7 +73,7 @@ fun SpeciesListScreen(navController: NavController) {
                     .fillMaxWidth()
                     .padding(16.dp),
                 onSearch = {
-                    //TODO recebe string e pesquisa
+                    viewModel.loadSpeciesPaginated(search = it)
                 }
             )
             Spacer(modifier = Modifier.height(16.dp))

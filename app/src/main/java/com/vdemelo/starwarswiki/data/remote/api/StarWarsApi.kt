@@ -5,6 +5,7 @@ import com.vdemelo.starwarswiki.data.remote.response.SpeciesListResponse
 import com.vdemelo.starwarswiki.data.remote.response.SpeciesResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface StarWarsApi {
 
@@ -12,7 +13,10 @@ interface StarWarsApi {
     suspend fun getPlanets(): PlanetsListResponse
 
     @GET("species")
-    suspend fun getSpecies(): SpeciesListResponse
+    suspend fun getSpecies(
+        @Query("page") page: Int? = null,
+        @Query("search") search: String? = null
+    ): SpeciesListResponse
 
     @GET("species/{speciesNumber}")
     suspend fun getSpeciesDetails(

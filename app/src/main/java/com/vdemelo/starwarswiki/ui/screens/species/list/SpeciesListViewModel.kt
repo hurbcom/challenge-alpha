@@ -9,11 +9,14 @@ import com.vdemelo.starwarswiki.domain.entity.model.SpeciesList
 import com.vdemelo.starwarswiki.domain.usecase.SpeciesUseCase
 import kotlinx.coroutines.launch
 
+private const val STARTING_PAGE = 1
+
 class SpeciesListViewModel(
     private val useCase: SpeciesUseCase
 ) : ViewModel() {
 
-    private var currentPage = 0
+    private var currentPage = STARTING_PAGE
+    private var currentSearch: String? = null
 
     var speciesList = mutableStateOf<List<Species>>(listOf())
     var loadError = mutableStateOf("")
@@ -24,19 +27,21 @@ class SpeciesListViewModel(
         loadSpeciesPaginated()
     }
 
-    //TODO mecanismo de busca n ta feito, tem q fazer :)
-
-    fun loadSpeciesPaginated() {
+    fun loadSpeciesPaginated(search: String? = null) {
+        if (search != null && search != currentSearch) {
+            currentSearch = search
+            currentPage = STARTING_PAGE
+            speciesList.value = listOf()
+        }
         viewModelScope.launch {
             when (
                 val speciesRequestStatus: RequestStatus<SpeciesList> =
-                    useCase.fetchSpecies(currentPage) //TODO logica aqui retorna sempre a mesma coisa e n ta mostrando o loading
+                    useCase.fetchSpecies(page = currentPage, search = currentSearch)
             ) {
                 is RequestStatus.Success -> {
-                    endReached.value =
-                        (speciesRequestStatus.data?.next == null) //TODO ver se ele é null quando acabam os itens
+                    endReached.value = (speciesRequestStatus.data?.next == null)
                     val results = speciesRequestStatus.data?.results ?: listOf()
-                    currentPage++
+                    currentPage++ //TODO has a bug that it keeps requesting after endReached
 
                     loadError.value = ""
                     isLoading.value = false
@@ -49,6 +54,7 @@ class SpeciesListViewModel(
                 }
             }
         }
+        //TODO n ta mostrando o loading
     }
 
     fun getSpeciesImageUrl(speciesNumber: Int): String = useCase.getSpeciesImageUrl(speciesNumber)
