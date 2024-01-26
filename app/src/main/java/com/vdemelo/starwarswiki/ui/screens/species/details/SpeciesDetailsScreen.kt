@@ -12,8 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
+import com.vdemelo.starwarswiki.domain.entity.model.TextField
 import com.vdemelo.starwarswiki.ui.components.RetrySection
+import com.vdemelo.starwarswiki.ui.nav.NavItem
 import com.vdemelo.starwarswiki.ui.screens.common.DetailsScreen
+import com.vdemelo.starwarswiki.ui.screens.common.ErrorScreen
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -27,10 +30,15 @@ fun SpeciesDetailsScreen(
     val isLoading by remember { viewModel.isLoading }
 
     if (id == null) {
-        //TODO criar uma tela de erro mandando voltar pra tela anterior "algo de errado aconteceu, voltar"
+        ErrorScreen(
+            error = stringResource(id = R.string.common_unknown_error),
+            buttonLabel = stringResource(id = R.string.common_back)
+        ) {
+            navController.navigate(route = NavItem.SpeciesList.route)
+        }
     } else {
         viewModel.loadSpeciesDetails(id)
-        Box( //TODO fazer estado de loading e de erro
+        Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
         ) {
@@ -41,9 +49,28 @@ fun SpeciesDetailsScreen(
                 DetailsScreen(
                     title = stringResource(id = R.string.details_screen_title_species),
                     imageUrl = imageUrl,
-                    firstField = species!!.name,
-                    secondField = species!!.language,
-                    thirdField = species!!.classification
+                    fields = listOf<TextField>(
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_name_label),
+                            text = species!!.name
+                        ),
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_language_label),
+                            text = species!!.language
+                        ),
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_classification_label),
+                            text = species!!.classification
+                        ),
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_average_height_label),
+                            text = species!!.averageHeight
+                        ),
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_average_lifespan_label),
+                            text = species!!.averageLifespan
+                        )
+                    )
                 )
             } else {
                 RetrySection(

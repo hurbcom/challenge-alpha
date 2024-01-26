@@ -9,11 +9,16 @@
     <string name="list_screen_search_hint">Search...</string>
 
     <string name="species_list_screen_title">Species List</string>
-    <string name="species_list_screen_name_label">Name:</string>
-    <string name="species_list_screen_language_label">Language:</string>
-    <string name="species_list_screen_classification_label">Classification:</string>
-    <string name="species_list_screen_height_label">Average Height:</string>
-    <string name="species_list_screen_lifespan_label">Average Lifespan:</string>
+
+    <string name="list_screen_name_label">Name:</string>
+    <string name="list_screen_language_label">Language:</string>
+    <string name="list_screen_classification_label">Classification:</string>
+    <string name="list_screen_average_height_label">Average Height:</string>
+    <string name="list_screen_average_lifespan_label">Average Lifespan:</string>
+    <string name="list_screen_population_label">Population:</string>
+    <string name="list_screen_climate_label">Climate:</string>
+    <string name="list_screen_diameter_label">Diameter:</string>
+    <string name="list_screen_rotation_period_label">Rotation period:</string>
 
     // Details Screen
     <string name="details_screen_title_default">Details</string>

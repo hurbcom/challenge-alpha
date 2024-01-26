@@ -78,9 +78,7 @@ fun SpeciesListScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
-                onSearch = {
-                    viewModel.loadSpeciesPaginated(search = it)
-                }
+                onSearch = { viewModel.loadSpeciesPaginated(search = it) }
             )
             Spacer(modifier = Modifier.height(16.dp))
             SpeciesList(navController = navController)
@@ -98,29 +96,36 @@ fun SpeciesList(
     val loadError by remember { viewModel.loadError }
     val isLoading by remember { viewModel.isLoading }
 
-    LazyColumn(contentPadding = PaddingValues(16.dp)) {
-        val itemCount = speciesList.size
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        LazyColumn(contentPadding = PaddingValues(16.dp)) {
+            val itemCount = speciesList.size
 
-        items(itemCount) {
-            val hasScrolledDown = it >= itemCount - 1
-            if (hasScrolledDown && !endReached) {
-                viewModel.loadSpeciesPaginated()
+            items(itemCount) {
+                val hasScrolledDown = it >= itemCount - 1
+                if (hasScrolledDown && !endReached) {
+                    viewModel.loadSpeciesPaginated()
+                }
+                SpeciesItem(
+                    species = speciesList[it],
+                    navController = navController
+                )
+                Spacer(modifier = Modifier.height(24.dp))
             }
-            SpeciesItem(
-                species = speciesList[it],
-                navController = navController
-            )
-            Spacer(modifier = Modifier.height(24.dp))
+        }
+        if (isLoading) {
+            CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
         }
     }
+
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
     ) {
         if (isLoading) {
             CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
-        }
-        if (loadError.isNotEmpty()) {
+        } else if (loadError.isNotEmpty()) {
             RetrySection(
                 error = loadError,
                 onRetry = {
@@ -174,7 +179,7 @@ fun SpeciesItem(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = stringResource(id = R.string.species_list_screen_name_label),
+                    text = stringResource(id = R.string.list_screen_name_label),
                     fontSize = 16.sp,
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold
@@ -190,7 +195,7 @@ fun SpeciesItem(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = stringResource(id = R.string.species_list_screen_language_label),
+                    text = stringResource(id = R.string.list_screen_language_label),
                     fontSize = 16.sp,
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold
@@ -206,7 +211,7 @@ fun SpeciesItem(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = stringResource(id = R.string.species_list_screen_classification_label),
+                    text = stringResource(id = R.string.list_screen_classification_label),
                     fontSize = 16.sp,
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold

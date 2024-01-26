@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
+import com.vdemelo.starwarswiki.domain.entity.model.TextField
 import com.vdemelo.starwarswiki.ui.components.RetrySection
 import com.vdemelo.starwarswiki.ui.nav.NavItem
 import com.vdemelo.starwarswiki.ui.screens.common.DetailsScreen
@@ -37,20 +38,39 @@ fun PlanetDetailsScreen(
         }
     } else {
         viewModel.loadPlanetDetails(id)
-        Box( //TODO fazer estado de loading e de erro
+        Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
         ) {
-            if (isLoading) { //TODO n ta caindo aqui?
+            if (isLoading) {
                 CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
             } else if (planet != null) {
                 val imageUrl = viewModel.getPlanetImageUrl(id)
                 DetailsScreen(
-                    title = stringResource(id = R.string.details_screen_title_species),
+                    title = stringResource(id = R.string.details_screen_title_planet),
                     imageUrl = imageUrl,
-                    firstField = planet!!.name,
-                    secondField = planet!!.population,
-                    thirdField = planet!!.climate
+                    fields = listOf<TextField>(
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_name_label),
+                            text = planet!!.name
+                        ),
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_population_label),
+                            text = planet!!.population
+                        ),
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_climate_label),
+                            text = planet!!.climate
+                        ),
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_diameter_label),
+                            text = planet!!.diameter
+                        ),
+                        TextField(
+                            label = stringResource(id = R.string.list_screen_rotation_period_label),
+                            text = planet!!.rotationPeriod
+                        )
+                    )
                 )
             } else {
                 RetrySection(

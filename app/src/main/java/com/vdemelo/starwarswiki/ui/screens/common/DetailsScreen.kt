@@ -1,6 +1,7 @@
 package com.vdemelo.starwarswiki.ui.screens.common
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,21 +16,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.vdemelo.starwarswiki.R
+import com.vdemelo.starwarswiki.domain.entity.model.TextField
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
 import com.vdemelo.starwarswiki.ui.theme.ComposeStarWarsTheme
+import com.vdemelo.starwarswiki.utils.simpleCapitalize
 
 @Composable
-fun DetailsScreen( //TODO Adicionar toolbar
+fun DetailsScreen(
     title: String,
     imageUrl: String?,
-    firstField: String?,
-    secondField: String?,
-    thirdField: String?
+    fields: List<TextField>
 ) {
 
     Surface(
@@ -58,9 +60,9 @@ fun DetailsScreen( //TODO Adicionar toolbar
                     id = R.string.details_screen_image_content_description
                 )
             )
-            ShowTextContentIfNotNull(text = firstField)
-            ShowTextContentIfNotNull(text = secondField)
-            ShowTextContentIfNotNull(text = thirdField)
+            fields.forEach {
+                LabelAndTextData(label = it.label, text = it.text)
+            }
             Spacer(modifier = Modifier.height(32.dp))
         }
     }
@@ -68,15 +70,24 @@ fun DetailsScreen( //TODO Adicionar toolbar
 }
 
 @Composable
-fun ShowTextContentIfNotNull(text: String?) { //TODO botar uma label nos text composables
-    text?.run {
-        Spacer(modifier = Modifier.height(32.dp))
+fun LabelAndTextData(
+    label: String,
+    text: String?
+) {
+    Spacer(modifier = Modifier.height(32.dp))
+    Row(
+        modifier = Modifier.fillMaxWidth()
+    ) {
         Text(
-            modifier = Modifier.fillMaxWidth(),
+            text = label,
+            fontSize = 16.sp,
             textAlign = TextAlign.Center,
-            text = text,
-            color = Color.Black,
-            fontSize = 16.sp
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = text?.simpleCapitalize() ?: stringResource(id = R.string.common_unknown),
+            fontSize = 16.sp,
+            textAlign = TextAlign.Center
         )
     }
 }
@@ -86,11 +97,14 @@ fun ShowTextContentIfNotNull(text: String?) { //TODO botar uma label nos text co
 fun DetailsScreenPreview(
     title: String = "Titulo dos Detalhes",
     imageUrl: String? = "https://starwars-visualguide.com/assets/img/species/1.jpg",
-    firstField: String? = "Coisa muito boa boa boa boa",
-    secondField: String? = "Coisa muito boa boa boa boa",
-    thirdField: String? = "Coisa muito boa boa boa boa"
+    fields: List<TextField> = listOf(
+        TextField("label top", "valor top"),
+        TextField("label top", "valor top"),
+        TextField("label top", "valor top"),
+        TextField("label top", "valor top")
+    )
 ) {
     ComposeStarWarsTheme {
-        DetailsScreen(title, imageUrl, firstField, secondField, thirdField)
+        DetailsScreen(title, imageUrl, fields)
     }
 }
