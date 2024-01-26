@@ -5,22 +5,24 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vdemelo.starwarswiki.domain.entity.RequestStatus
 import com.vdemelo.starwarswiki.domain.entity.model.Species
+import com.vdemelo.starwarswiki.domain.usecase.ItemsUseCase
 import com.vdemelo.starwarswiki.domain.usecase.SpeciesUseCase
 import kotlinx.coroutines.launch
 
 class SpeciesDetailsViewModel (
-    private val useCase: SpeciesUseCase
+    private val useCase: SpeciesUseCase,
+    private val itemsUseCase: ItemsUseCase
 ) : ViewModel() {
 
     var speciesDetails = mutableStateOf<Species?>(null)
     var loadError = mutableStateOf("")
     var isLoading = mutableStateOf(true)
 
-    fun loadSpeciesDetails(speciesNumber: Int) {
+    fun loadSpeciesDetails(id: Int) {
         viewModelScope.launch {
             when (
                 val speciesRequestStatus: RequestStatus<Species> =
-                    useCase.fetchSpeciesDetails(speciesNumber)
+                    useCase.fetchSpeciesDetails(id)
             ) {
                 is RequestStatus.Success -> {
                     loadError.value = ""
@@ -36,6 +38,6 @@ class SpeciesDetailsViewModel (
         }
     }
 
-    fun getSpeciesImageUrl(speciesNumber: Int): String = useCase.getSpeciesImageUrl(speciesNumber)
+    fun getSpeciesImageUrl(id: Int): String = itemsUseCase.getSpeciesImageUrl(id)
 
 }

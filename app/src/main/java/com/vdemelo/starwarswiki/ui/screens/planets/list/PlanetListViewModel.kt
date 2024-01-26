@@ -6,13 +6,16 @@ import androidx.lifecycle.viewModelScope
 import com.vdemelo.starwarswiki.domain.entity.RequestStatus
 import com.vdemelo.starwarswiki.domain.entity.model.Species
 import com.vdemelo.starwarswiki.domain.entity.model.SpeciesList
+import com.vdemelo.starwarswiki.domain.usecase.ItemsUseCase
+import com.vdemelo.starwarswiki.domain.usecase.PlanetsUseCase
 import com.vdemelo.starwarswiki.domain.usecase.SpeciesUseCase
 import kotlinx.coroutines.launch
 
 private const val STARTING_PAGE = 1
 
 class PlanetListViewModel(
-    private val useCase: SpeciesUseCase
+    private val planetsUseCase: PlanetsUseCase,
+    private val itemsUseCase: ItemsUseCase
 ) : ViewModel() {
 
     private var currentPage = STARTING_PAGE
@@ -36,7 +39,7 @@ class PlanetListViewModel(
         viewModelScope.launch {
             when (
                 val speciesRequestStatus: RequestStatus<SpeciesList> =
-                    useCase.fetchSpecies(page = currentPage, search = currentSearch)
+                    planetsUseCase.fetchPlanets(page = currentPage, search = currentSearch)
             ) {
                 is RequestStatus.Success -> {
                     endReached.value = (speciesRequestStatus.data?.next == null)
@@ -57,7 +60,7 @@ class PlanetListViewModel(
         //TODO n ta mostrando o loading
     }
 
-    fun getSpeciesImageUrl(speciesNumber: Int): String = useCase.getSpeciesImageUrl(speciesNumber)
-    fun getSpeciesNumber(speciesUrl: String): Int? = useCase.getSpeciesNumber(speciesUrl)
+    fun getSpeciesImageUrl(speciesNumber: Int): String = planetsUseCase.getSpeciesImageUrl(speciesNumber)
+    fun getSpeciesNumber(speciesUrl: String): Int? = planetsUseCase.getSpeciesNumber(speciesUrl)
 
 }
