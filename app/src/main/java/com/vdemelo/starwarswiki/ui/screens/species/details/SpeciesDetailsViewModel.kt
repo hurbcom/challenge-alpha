@@ -10,7 +10,7 @@ import com.vdemelo.starwarswiki.domain.usecase.SpeciesUseCase
 import kotlinx.coroutines.launch
 
 class SpeciesDetailsViewModel (
-    private val useCase: SpeciesUseCase,
+    private val speciesUseCase: SpeciesUseCase,
     private val itemsUseCase: ItemsUseCase
 ) : ViewModel() {
 
@@ -22,7 +22,7 @@ class SpeciesDetailsViewModel (
         viewModelScope.launch {
             when (
                 val speciesRequestStatus: RequestStatus<Species> =
-                    useCase.fetchSpeciesDetails(id)
+                    speciesUseCase.fetchSpeciesDetails(id)
             ) {
                 is RequestStatus.Success -> {
                     loadError.value = ""

@@ -54,7 +54,6 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("com.google.android.material:material:1.11.0")
-
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
@@ -78,9 +77,6 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-navigation:3.5.0")
     implementation("io.insert-koin:koin-androidx-compose:3.5.0")
     testImplementation("io.insert-koin:koin-test-junit4:3.5.0")
-
-    // Timber
-    implementation("com.jakewharton.timber:timber:4.7.1")
 
     // Gson
     implementation("com.google.code.gson:gson:2.10")

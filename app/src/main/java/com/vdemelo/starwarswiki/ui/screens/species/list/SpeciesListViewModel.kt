@@ -8,6 +8,8 @@ import com.vdemelo.starwarswiki.domain.entity.model.Species
 import com.vdemelo.starwarswiki.domain.entity.model.SpeciesList
 import com.vdemelo.starwarswiki.domain.usecase.ItemsUseCase
 import com.vdemelo.starwarswiki.domain.usecase.SpeciesUseCase
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 private const val STARTING_PAGE = 1
@@ -19,6 +21,7 @@ class SpeciesListViewModel(
 
     private var currentPage = STARTING_PAGE
     private var currentSearch: String? = null
+    private var lastJob: Job? = null
 
     var speciesList = mutableStateOf<List<Species>>(listOf())
     var loadError = mutableStateOf("")
@@ -30,12 +33,15 @@ class SpeciesListViewModel(
     }
 
     fun loadSpeciesPaginated(search: String? = null) {
+        isLoading.value = true
+        lastJob?.cancel()
         if (search != null && search != currentSearch) {
             currentSearch = search
             currentPage = STARTING_PAGE
             speciesList.value = listOf()
         }
-        viewModelScope.launch {
+        lastJob = viewModelScope.launch {
+            delay(500L)
             when (
                 val speciesRequestStatus: RequestStatus<SpeciesList> =
                     speciesUseCase.fetchSpecies(page = currentPage, search = currentSearch)
@@ -43,7 +49,7 @@ class SpeciesListViewModel(
                 is RequestStatus.Success -> {
                     endReached.value = (speciesRequestStatus.data?.next == null)
                     val results = speciesRequestStatus.data?.results ?: listOf()
-                    currentPage++ //TODO has a bug that it keeps requesting after endReached
+                    currentPage++
 
                     loadError.value = ""
                     isLoading.value = false
@@ -56,7 +62,6 @@ class SpeciesListViewModel(
                 }
             }
         }
-        //TODO n ta mostrando o loading
     }
 
     fun getSpeciesImageUrl(id: Int): String = itemsUseCase.getSpeciesImageUrl(id)
