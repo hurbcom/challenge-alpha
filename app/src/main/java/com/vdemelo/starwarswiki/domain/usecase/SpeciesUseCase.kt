@@ -2,10 +2,8 @@ package com.vdemelo.starwarswiki.domain.usecase
 
 import com.vdemelo.starwarswiki.domain.DefaultErrors
 import com.vdemelo.starwarswiki.domain.entity.RequestStatus
-import com.vdemelo.starwarswiki.domain.entity.model.ItemsImageUrl
 import com.vdemelo.starwarswiki.domain.entity.model.Species
 import com.vdemelo.starwarswiki.domain.entity.model.SpeciesList
-import com.vdemelo.starwarswiki.domain.entity.model.getImageUrl
 import com.vdemelo.starwarswiki.domain.repository.StarWarsRemoteRepository
 
 class SpeciesUseCase(private val remoteRepository: StarWarsRemoteRepository) {
@@ -28,24 +26,6 @@ class SpeciesUseCase(private val remoteRepository: StarWarsRemoteRepository) {
         }
         val entity = Species(response)
         return RequestStatus.Success(data = entity)
-    }
-
-    // URL examples:
-    // species.url = https://swapi.dev/api/species/1/
-    // species image = https://starwars-visualguide.com/assets/img/species/1.jpg
-
-    fun getSpeciesNumber(speciesUrl: String): Int? {
-        val charsToDrop = if (speciesUrl.endsWith("/")) 1 else 0
-        val number = try {
-            speciesUrl.dropLast(charsToDrop).takeLastWhile { it.isDigit() }.toInt()
-        } catch (e: Exception) {
-            null
-        }
-        return number
-    }
-
-    fun getSpeciesImageUrl(speciesNumber: Int): String {
-        return ItemsImageUrl.SPECIES.getImageUrl(speciesNumber.toString())
     }
 
 }

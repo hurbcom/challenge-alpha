@@ -27,7 +27,8 @@ fun LabelAndTextData(
             fontWeight = FontWeight.Bold
         )
         Text(
-            text = text?.simpleCapitalize() ?: stringResource(id = R.string.common_unknown),            fontSize = 16.sp,
+            text = text?.simpleCapitalize() ?: stringResource(id = R.string.common_unknown),
+            fontSize = 16.sp,
             textAlign = TextAlign.Center
         )
     }

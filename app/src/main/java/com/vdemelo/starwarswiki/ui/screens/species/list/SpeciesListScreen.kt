@@ -3,9 +3,11 @@ package com.vdemelo.starwarswiki.ui.screens.species.list
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -102,32 +104,53 @@ fun SpeciesList(
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        LazyColumn(contentPadding = PaddingValues(16.dp)) {
-            val itemCount = list.size
+        if (list.isNotEmpty()) {
+            LazyColumn(contentPadding = PaddingValues(16.dp)) {
+                val itemCount = list.size
 
-            items(itemCount) {
-                val hasScrolledDown = it >= itemCount - 8
-                if (hasScrolledDown && !endReached) {
-                    viewModel.loadSpeciesPaginated()
+                items(itemCount) { i ->
+                    val hasScrolledDown = i >= itemCount - 2
+                    if (hasScrolledDown && !endReached && !isLoading) {
+                        viewModel.loadSpeciesPaginated()
+                    }
+                    SpeciesItem(
+                        species = list[i],
+                        navController = navController
+                    )
+                    Spacer(modifier = Modifier.height(24.dp))
                 }
-                SpeciesItem(
-                    species = list[it],
-                    navController = navController
-                )
-                Spacer(modifier = Modifier.height(24.dp))
+
+                item {
+                    if (isLoading) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(8.dp),
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+                        }
+                    } else if (loadError.isNotEmpty()) {
+                        RetrySection(
+                            error = loadError,
+                            onRetry = { viewModel.loadSpeciesPaginated() }
+                        )
+                    }
+                }
             }
-        }
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier.fillMaxSize()
-        ) {
-            if (isLoading) {
-                CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
-            } else if (loadError.isNotEmpty()) {
-                RetrySection(
-                    error = loadError,
-                    onRetry = { viewModel.loadSpeciesPaginated() }
-                )
+        } else {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                if (isLoading) {
+                    CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+                } else if (loadError.isNotEmpty()) {
+                    RetrySection(
+                        error = loadError,
+                        onRetry = { viewModel.loadSpeciesPaginated() }
+                    )
+                }
             }
         }
     }

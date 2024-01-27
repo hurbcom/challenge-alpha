@@ -3,19 +3,18 @@ package com.vdemelo.starwarswiki.ui.screens.planets.list
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
@@ -39,14 +38,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.vdemelo.starwarswiki.R
 import com.vdemelo.starwarswiki.domain.entity.model.Planet
-import com.vdemelo.starwarswiki.domain.entity.model.Species
 import com.vdemelo.starwarswiki.domain.entity.model.TextField
 import com.vdemelo.starwarswiki.ui.components.ImageLoader
 import com.vdemelo.starwarswiki.ui.components.LabelAndTextData
 import com.vdemelo.starwarswiki.ui.components.RetrySection
 import com.vdemelo.starwarswiki.ui.components.SearchBar
 import com.vdemelo.starwarswiki.ui.nav.buildPlanetDetailsRoute
-import com.vdemelo.starwarswiki.ui.screens.species.list.SpeciesItem
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -106,33 +103,57 @@ fun PlanetsList(
     val loadError by remember { viewModel.loadError }
     val isLoading by remember { viewModel.isLoading }
 
-    LazyColumn(contentPadding = PaddingValues(16.dp)) {
-        val itemCount = list.size
-
-        items(itemCount) {
-            val hasScrolledDown = it >= itemCount - 8
-            if (hasScrolledDown && !endReached) {
-                viewModel.loadPlanetsPaginated()
-            }
-            PlanetItem(
-                planet = list[it],
-                navController = navController
-            )
-            Spacer(modifier = Modifier.height(24.dp))
-        }
-    }
-    Box(
-        contentAlignment = Alignment.Center,
+    Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        if (isLoading) {
-            CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
-        }
-        if (loadError.isNotEmpty()) {
-            RetrySection(
-                error = loadError,
-                onRetry = { viewModel.loadPlanetsPaginated() }
-            )
+        if (list.isNotEmpty()) {
+            LazyColumn(contentPadding = PaddingValues(16.dp)) {
+                val itemCount = list.size
+
+                items(itemCount) { i ->
+                    val hasScrolledDown = i >= itemCount - 2
+                    if (hasScrolledDown && !endReached && !isLoading) {
+                        viewModel.loadPlanetsPaginated()
+                    }
+                    PlanetItem(
+                        planet = list[i],
+                        navController = navController
+                    )
+                    Spacer(modifier = Modifier.height(24.dp))
+                }
+
+                item {
+                    if (isLoading) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(8.dp),
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+                        }
+                    } else if (loadError.isNotEmpty()) {
+                        RetrySection(
+                            error = loadError,
+                            onRetry = { viewModel.loadPlanetsPaginated() }
+                        )
+                    }
+                }
+            }
+        } else {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                if (isLoading) {
+                    CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+                } else if (loadError.isNotEmpty()) {
+                    RetrySection(
+                        error = loadError,
+                        onRetry = { viewModel.loadPlanetsPaginated() }
+                    )
+                }
+            }
         }
     }
 }
