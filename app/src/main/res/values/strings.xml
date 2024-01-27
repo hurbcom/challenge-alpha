@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Star Wars Wiki</string>
+
+    //Home Menu
+    <string name="home_menu_item_species">Star Wars Species</string>
+    <string name="home_menu_item_planet">Star Wars Planets</string>
+
+    // List Screen
+    <string name="list_screen_search_hint">Search...</string>
+
+    <string name="species_list_screen_title">Species List</string>
+    <string name="planets_list_screen_title">Planets List</string>
+
+    <string name="list_screen_name_label">Name:</string>
+    <string name="list_screen_language_label">Language:</string>
+    <string name="list_screen_classification_label">Classification:</string>
+    <string name="list_screen_average_height_label">Average Height:</string>
+    <string name="list_screen_average_lifespan_label">Average Lifespan:</string>
+    <string name="list_screen_population_label">Population:</string>
+    <string name="list_screen_climate_label">Climate:</string>
+    <string name="list_screen_diameter_label">Diameter:</string>
+    <string name="list_screen_rotation_period_label">Rotation period:</string>
+
+    // Details Screen
+    <string name="details_screen_title_default">Details</string>
+    <string name="details_screen_title_species">Species</string>
+    <string name="details_screen_title_planet">Planet</string>
+
+    <string name="details_screen_image_content_description">Image for this item</string>
+
+    <string name="details_screen_field_one_species">Home World: %s</string>
+    <string name="details_screen_field_two_species">Language: %s</string>
+    <string name="details_screen_field_three_species">Classification: %s</string>
+
+    //Common
+    <string name="common_retry">Retry</string>
+    <string name="common_back">Go Back</string>
+    <string name="common_unknown">Unknown</string>
+    <string name="common_unknown_error">An unknown error occurred!</string>
+
+</resources>
