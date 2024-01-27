@@ -11,7 +11,6 @@ xcuserdata
 \#*
 .\#*
 .*.sw[nop]
-*.xcscmblueprint
 /default.profraw
 Utilities/Docker/*.tar.gz
 .swiftpm
@@ -96,6 +95,9 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+fastlane/screenshots
+fastlane/readme.md
+
 
 # Code Injection
 #
@@ -179,13 +181,6 @@ freeline.py
 freeline/
 freeline_project_description.json
 
-# fastlane
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
-fastlane/test_output
-fastlane/readme.md
-
 # Version control
 vcs.xml
 
@@ -198,3 +193,24 @@ lint/tmp/
 
 # Android Profiling
 *.hprof
+
+# Android Studio generated files and folders
+.externalNativeBuild/
+output.json
+
+# IntelliJ
+.idea/
+.idea/*
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Other
+.cxx
