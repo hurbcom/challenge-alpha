@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Hurb Challenge</string>
+    <string name="bottom_nav_film_label">Films</string>
+    <string name="bottom_nav_characters_label">Characters</string>
+    <string name="retry">Retry</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="directed_by">Directed By</string>
+    <string name="episode_number">Episode Number</string>
+    <string name="release_date">Release Date</string>
+    <string name="character_name">Name</string>
+    <string name="character_gender">Gender</string>
+    <string name="character_birth_year">Birth Year</string>
+    <string name="character_height">Height</string>
+    <string name="opening_crawl">Opening Crawl</string>
+    <string name="characters">Characters</string>
+    <string name="vehicles">Vehicles</string>
+    <string name="starships">Starships</string>
+    <string name="no_item_found">No item found</string>
+</resources>
