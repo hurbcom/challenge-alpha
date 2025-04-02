@@ -1,6 +1,7 @@
 package br.com.mdr.starwars.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -52,7 +53,7 @@ fun NavGraphBuilder.categoriesDetailsNavGraph(navController: NavHostController) 
         }
         composable(
             route = Screen.FilmDetail.route,
-            arguments = listOf(
+            arguments = mutableStateListOf(
                 navArgument(name = FILM_ID_KEY) {
                     type = NavType.IntType
                 }
@@ -65,7 +66,7 @@ fun NavGraphBuilder.categoriesDetailsNavGraph(navController: NavHostController) 
         }
         composable(
             route = Screen.CharacterDetail.route,
-            arguments = listOf(
+            arguments = mutableStateListOf(
                 navArgument(name = CHARACTER_NAME_KEY) {
                     type = NavType.StringType
                 }

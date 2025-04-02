@@ -23,7 +23,7 @@ fun FilmDetailScreen(navController: NavHostController) {
     val viewModel: FilmDetailViewModel = koinViewModel()
     val film by viewModel.film.collectAsState(null)
 
-    val isFavorite by viewModel.isFavorite.collectAsState()
+    //val isFavorite by viewModel.isFavorite.collectAsState()
 
     val scrollBehavior = TopAppBarDefaults
         .enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -36,8 +36,7 @@ fun FilmDetailScreen(navController: NavHostController) {
             DetailScreenTopBar(
                 scrollBehavior = scrollBehavior,
                 navController = navController,
-                detailViewModel = viewModel,
-                isFavorite = isFavorite
+                detailViewModel = viewModel
             )
         }
     ) {

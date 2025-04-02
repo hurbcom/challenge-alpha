@@ -16,9 +16,6 @@ class FilmDetailViewModel(
     private val _film: MutableStateFlow<Film?> = MutableStateFlow(null)
     val film: StateFlow<Film?> = _film
 
-    private val _isFavorite = MutableStateFlow(false)
-    val isFavorite: StateFlow<Boolean> = _isFavorite
-
     init {
         getFilm()
     }
@@ -40,12 +37,12 @@ class FilmDetailViewModel(
         }
     }
 
-    override fun setFavorite() {
+    override fun setFavorite(isFavorite: Boolean) {
         _film.value?.let {
-            it.isFilmFavorite = !it.isFilmFavorite
+            it.isFilmFavorite = isFavorite
 
             launch(Dispatchers.IO) {
-                _isFavorite.emit(it.isFilmFavorite)
+                it.isFilmFavorite.let { it1 -> _isFavorite.emit(it1) }
                 _film.emit(it)
                 useCase.setFavorite(it.isFilmFavorite, it.id)
             }

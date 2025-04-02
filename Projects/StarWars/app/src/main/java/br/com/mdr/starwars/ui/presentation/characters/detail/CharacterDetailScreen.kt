@@ -23,7 +23,7 @@ fun CharacterDetailScreen(navController: NavHostController) {
     val viewModel: CharacterDetailViewModel = koinViewModel()
     val character by viewModel.character.collectAsState(null)
 
-    val isFavorite by viewModel.isFavorite.collectAsState()
+    //val isFavorite by viewModel.isFavorite.collectAsState()
 
     val scrollBehavior = TopAppBarDefaults
         .enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -36,8 +36,7 @@ fun CharacterDetailScreen(navController: NavHostController) {
             DetailScreenTopBar(
                 scrollBehavior = scrollBehavior,
                 navController = navController,
-                detailViewModel = viewModel,
-                isFavorite = isFavorite
+                detailViewModel = viewModel
             )
         }
     ) {

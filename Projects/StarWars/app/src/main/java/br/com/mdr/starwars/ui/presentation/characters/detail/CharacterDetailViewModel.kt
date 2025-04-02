@@ -16,9 +16,6 @@ class CharacterDetailViewModel(
     private val _character: MutableStateFlow<Character?> = MutableStateFlow(null)
     val character: StateFlow<Character?> = _character
 
-    private val _isFavorite = MutableStateFlow(false)
-    val isFavorite: StateFlow<Boolean> = _isFavorite
-
     init {
         getCharacter()
     }
@@ -40,9 +37,9 @@ class CharacterDetailViewModel(
         }
     }
 
-    override fun setFavorite() {
+    override fun setFavorite(isFavorite: Boolean) {
         _character.value?.let {
-            it.isFavorite = !it.isFavorite
+            it.isFavorite = isFavorite
 
             launch(Dispatchers.IO) {
                 _isFavorite.emit(it.isFavorite)
